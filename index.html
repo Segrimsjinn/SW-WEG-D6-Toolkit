@@ -331,10 +331,11 @@ font-family:'Share Tech Mono',monospace;font-size:14px;
 }
 
 /* Map Canvas */
+.map-container{position:relative;width:100%;margin-bottom:12px}
+.map-container img{width:100%;border-radius:var(--radius-sm);display:block}
 #mapCanvas{
-width:100%;aspect-ratio:1;background:var(--bg2);
-border-radius:var(--radius-sm);border:1px solid var(--card-border);
-margin-bottom:12px;
+position:absolute;top:0;left:0;width:100%;height:100%;
+border-radius:var(--radius-sm);
 }
 
 /* SCROLLBAR */
@@ -503,7 +504,10 @@ color:var(--text-dim);min-width:35px;text-align:right;
 
         <div class="card fade-in">
           <div class="card-title">⟐ Route Map</div>
-          <canvas id="mapCanvas"></canvas>
+          <div class="map-container">
+            <img id="mapImage" src="images/galaxy-map.jpg" alt="Galaxy Map">
+            <canvas id="mapCanvas"></canvas>
+          </div>
         </div>
 
         <div class="card fade-in">
@@ -1116,78 +1120,100 @@ function engage() {
 
 function drawMap(pathData, origin, dest, malfIdx) {
   const canvas = document.getElementById('mapCanvas');
+  const mapImg = document.getElementById('mapImage');
   const dpr = window.devicePixelRatio || 1;
-  const size = canvas.clientWidth;
-  canvas.width = size * dpr;
-  canvas.height = size * dpr;
+  const w = mapImg.clientWidth;
+  const h = mapImg.clientHeight;
+  canvas.width = w * dpr;
+  canvas.height = h * dpr;
+  canvas.style.width = w + 'px';
+  canvas.style.height = h + 'px';
   const ctx = canvas.getContext('2d');
   ctx.scale(dpr, dpr);
+  ctx.clearRect(0, 0, w, h);
 
-  const tileW = size / 21, tileH = size / 21;
-  const colLetters = 'CDEFGHIJKLMNOPQRSTUVW';
+  // Grid boundaries as percentages of image (measured from DT Strain map v.5)
+  // Map shows columns C(1) through V(20), rows 1-21
+  // Column W(21) is dead space beyond the map
+  const gridLeft = w * 0.0231;
+  const gridRight = w * 0.9763;
+  const gridTop = h * 0.014;
+  const gridBottom = h * 0.98;
+  const gridW = gridRight - gridLeft;
+  const gridH = gridBottom - gridTop;
 
-  // Background grid
-  ctx.fillStyle = '#0a0a14';
-  ctx.fillRect(0, 0, size, size);
+  // 20 columns (C-V), 21 rows
+  const tileW = gridW / 20;
+  const tileH = gridH / 21;
 
-  // Draw tiles with speed colors
-  const gridHours = GRID_DATA.grid;
-  for (let c = 1; c <= 21; c++) for (let r = 1; r <= 21; r++) {
-    const key = colLetters[c - 1] + '-' + r;
-    const hrs = gridHours[key] || 24;
-    let color;
-    if (hrs <= 0.5) color = 'rgba(0,255,100,.15)';
-    else if (hrs <= 2) color = 'rgba(0,200,255,.1)';
-    else if (hrs <= 8) color = 'rgba(255,165,0,.08)';
-    else if (hrs <= 16) color = 'rgba(180,100,255,.06)';
-    else color = 'rgba(40,40,80,.1)';
-    ctx.fillStyle = color;
-    ctx.fillRect((c - 1) * tileW, (r - 1) * tileH, tileW - 0.5, tileH - 0.5);
+  // Convert grid col/row to pixel position
+  // col 1 (C) = first column, col 19 (U) = last visible column
+  // cols 20-21 (V,W) extend past right edge
+  function gridToPixel(col, row) {
+    return {
+      x: gridLeft + (col - 1 + 0.5) * tileW,
+      y: gridTop + (row - 1 + 0.5) * tileH
+    };
   }
 
-  // Grid lines
-  ctx.strokeStyle = 'rgba(255,255,255,.04)';
-  ctx.lineWidth = 0.5;
-  for (let i = 0; i <= 21; i++) {
-    ctx.beginPath(); ctx.moveTo(i * tileW, 0); ctx.lineTo(i * tileW, size); ctx.stroke();
-    ctx.beginPath(); ctx.moveTo(0, i * tileH); ctx.lineTo(size, i * tileH); ctx.stroke();
-  }
-
-  // Route line
+  // Draw route line with glow
   if (pathData.length > 1) {
-    ctx.strokeStyle = 'rgba(255,215,0,.7)';
-    ctx.lineWidth = 2.5;
+    // Glow
+    ctx.strokeStyle = 'rgba(255,215,0,.3)';
+    ctx.lineWidth = 8;
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
     ctx.beginPath();
-    ctx.moveTo((pathData[0].col - 0.5) * tileW, (pathData[0].row - 0.5) * tileH);
+    const p0 = gridToPixel(pathData[0].col, pathData[0].row);
+    ctx.moveTo(p0.x, p0.y);
     for (let i = 1; i < pathData.length; i++) {
-      ctx.lineTo((pathData[i].col - 0.5) * tileW, (pathData[i].row - 0.5) * tileH);
+      const p = gridToPixel(pathData[i].col, pathData[i].row);
+      ctx.lineTo(p.x, p.y);
+    }
+    ctx.stroke();
+
+    // Main line
+    ctx.strokeStyle = 'rgba(255,215,0,.85)';
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.moveTo(p0.x, p0.y);
+    for (let i = 1; i < pathData.length; i++) {
+      const p = gridToPixel(pathData[i].col, pathData[i].row);
+      ctx.lineTo(p.x, p.y);
     }
     ctx.stroke();
   }
 
   // Start dot (green)
-  const sx = (pathData[0].col - 0.5) * tileW, sy = (pathData[0].row - 0.5) * tileH;
+  const sp = gridToPixel(pathData[0].col, pathData[0].row);
   ctx.fillStyle = '#00ff66';
-  ctx.beginPath(); ctx.arc(sx, sy, 4, 0, Math.PI * 2); ctx.fill();
+  ctx.shadowColor = '#00ff66';
+  ctx.shadowBlur = 8;
+  ctx.beginPath(); ctx.arc(sp.x, sp.y, 5, 0, Math.PI * 2); ctx.fill();
 
   // End dot (red)
-  const ex = (pathData[pathData.length - 1].col - 0.5) * tileW, ey = (pathData[pathData.length - 1].row - 0.5) * tileH;
+  const ep = gridToPixel(pathData[pathData.length-1].col, pathData[pathData.length-1].row);
   ctx.fillStyle = '#ff4444';
-  ctx.beginPath(); ctx.arc(ex, ey, 4, 0, Math.PI * 2); ctx.fill();
+  ctx.shadowColor = '#ff4444';
+  ctx.beginPath(); ctx.arc(ep.x, ep.y, 5, 0, Math.PI * 2); ctx.fill();
+  ctx.shadowBlur = 0;
 
   // Malfunction marker
-  const mx = (pathData[malfIdx].col - 0.5) * tileW, my = (pathData[malfIdx].row - 0.5) * tileH;
+  const mp = gridToPixel(pathData[malfIdx].col, pathData[malfIdx].row);
   ctx.strokeStyle = '#ff4444';
-  ctx.lineWidth = 1.5;
-  ctx.beginPath(); ctx.arc(mx, my, 6, 0, Math.PI * 2); ctx.stroke();
+  ctx.lineWidth = 2;
+  ctx.beginPath(); ctx.arc(mp.x, mp.y, 8, 0, Math.PI * 2); ctx.stroke();
 
   // Labels
-  ctx.font = '9px Share Tech Mono, monospace';
-  ctx.fillStyle = '#66bb6a';
+  ctx.shadowColor = 'rgba(0,0,0,.8)';
+  ctx.shadowBlur = 4;
+  ctx.font = '600 11px Rajdhani, sans-serif';
   ctx.textAlign = 'center';
-  ctx.fillText(origin.name.substring(0, 12), sx, sy - 8);
+  ctx.fillStyle = '#00ff66';
+  ctx.fillText(origin.name.substring(0, 16), sp.x, sp.y - 10);
   ctx.fillStyle = '#ff4444';
-  ctx.fillText(dest.name.substring(0, 12), ex, ey - 8);
+  ctx.fillText(dest.name.substring(0, 16), ep.x, ep.y - 10);
+  ctx.shadowBlur = 0;
 }
 
 // ============================================================
