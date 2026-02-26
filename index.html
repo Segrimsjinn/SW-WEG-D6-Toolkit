@@ -1383,32 +1383,30 @@ function highlightGalaxySystems(systems, isGridSearch) {
 // RECALIBRATE
 // ============================================================
 function recalibrate() {
-  const colLetters = 'CDEFGHIJKLMNOPQRSTUVW';
-  const speeds = GRID_DATA.speeds;
-  const oldSpeeds = {};
-  const newSpeeds = {};
+  const tierNames = ['Major', 'Common', 'Minor', 'Little Known', 'Unknown'];
+  const newSpeeds = [];
 
-  for (const [name, data] of Object.entries(speeds)) {
-    oldSpeeds[name] = data.default;
+  for (const name of tierNames) {
     const input = document.querySelector(`[data-speed="${name}"]`);
-    newSpeeds[name] = parseFloat(input.value);
+    newSpeeds.push(parseFloat(input.value));
   }
 
+  // Recalculate every cell using sub-sector tier assignments
   let changed = 0;
-  for (const [key, val] of Object.entries(GRID_DATA.grid)) {
-    for (const [name, oldVal] of Object.entries(oldSpeeds)) {
-      if (Math.abs(val - oldVal) < 0.01 && oldVal !== newSpeeds[name]) {
-        GRID_DATA.grid[key] = newSpeeds[name];
-        changed++;
-        break;
-      }
+  const subsectors = GRID_DATA.subsectors;
+  if (!subsectors) { alert('Sub-sector data not available.'); return; }
+
+  for (const [key, tiers] of Object.entries(subsectors)) {
+    const newVal = Math.round((tiers.reduce((sum, t) => sum + newSpeeds[t], 0) / 9) * 10) / 10;
+    if (GRID_DATA.grid[key] !== newVal) {
+      GRID_DATA.grid[key] = newVal;
+      changed++;
     }
   }
 
-  // Update defaults
-  for (const [name, val] of Object.entries(newSpeeds)) {
-    GRID_DATA.speeds[name].default = val;
-    GRID_DATA.speeds[name].speed = val;
+  // Update stored speeds
+  for (let i = 0; i < tierNames.length; i++) {
+    GRID_DATA.speeds[tierNames[i]].speed = newSpeeds[i];
   }
 
   alert('Recalibrated! ' + changed + ' cells updated.');
