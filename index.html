@@ -122,13 +122,16 @@ color:#000;text-shadow:none;
 }
 
 /* NPC RESULT */
-.npc-header{display:flex;gap:12px;margin-bottom:16px;align-items:flex-start}
+.npc-header{display:flex;gap:12px;margin-bottom:16px;align-items:flex-start;flex-wrap:wrap}
 .npc-portrait{
-width:140px;height:250px;border-radius:var(--radius-sm);
-border:2px solid var(--gold-dim);object-fit:cover;
+max-width:300px;height:auto;border-radius:var(--radius-sm);
+border:2px solid var(--gold-dim);object-fit:contain;
 background:var(--bg2);flex-shrink:0;
 }
-.npc-identity{flex:1;min-width:0}
+.npc-identity{flex:0 0 auto;min-width:0}
+.lore-block{flex:1;min-width:180px;padding:10px;background:var(--bg2);border-radius:var(--radius-sm);border:1px solid var(--gold-dim)}
+.lore-label{display:block;color:var(--gold);font-size:11px;font-family:'Orbitron',monospace;letter-spacing:1px;margin-bottom:6px;font-weight:700}
+.lore-text{display:block;color:var(--text);font-size:14px;line-height:1.5}
 .npc-name{
 font-family:'Orbitron',monospace;font-size:16px;font-weight:900;
 color:var(--gold);line-height:1.2;word-wrap:break-word;
@@ -415,14 +418,14 @@ color:var(--text-dim);min-width:35px;text-align:right;
                 <div class="fluff-row"><span class="fluff-lbl">FP / CP</span><span class="fluff-val"><span id="fluffFP"></span> / <span id="fluffCP"></span></span></div>
               </div>
             </div>
-          </div>
-          <div id="storyFactor" style="margin-top:6px;font-size:11px;color:var(--text-dim);display:none">
-            <span style="color:var(--gold);font-size:9px;font-family:'Orbitron',monospace;letter-spacing:1px">STORY FACTOR</span><br>
-            <span id="storyFactorText"></span>
-          </div>
-          <div id="specAbility" style="margin-top:4px;font-size:11px;color:var(--text-dim);display:none">
-            <span style="color:var(--gold);font-size:9px;font-family:'Orbitron',monospace;letter-spacing:1px">SPECIAL ABILITIES</span><br>
-            <span id="specAbilityText"></span>
+            <div id="storyFactor" class="lore-block" style="display:none">
+              <span class="lore-label">STORY FACTOR</span>
+              <span id="storyFactorText" class="lore-text"></span>
+            </div>
+            <div id="specAbility" class="lore-block" style="display:none">
+              <span class="lore-label">SPECIAL ABILITIES</span>
+              <span id="specAbilityText" class="lore-text"></span>
+            </div>
           </div>
         </div>
 
