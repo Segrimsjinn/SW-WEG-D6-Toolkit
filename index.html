@@ -452,8 +452,8 @@ color:var(--text-dim);min-width:35px;text-align:right;
       <div class="card">
         <div class="card-title">⟐ Hyperspace Travel Calculator</div>
         <div class="route-toggle">
-          <button id="routeSmuggler" class="route-opt active" onclick="setRoute('smuggler')">Smuggler's Route</button>
-          <button id="routeTrade" class="route-opt" onclick="setRoute('trade')">Trade Route</button>
+          <button id="routeTrade" class="route-opt active" onclick="setRoute('trade')">Trade Route<span style="display:block;font-size:9px;opacity:0.7;font-weight:400">(Dijkstra Shortest Path)</span></button>
+          <button id="routeSmuggler" class="route-opt" onclick="setRoute('smuggler')">Smuggler's Route<span style="display:block;font-size:9px;opacity:0.7;font-weight:400">(Bresenham Straight Line)</span></button>
         </div>
 
         <div class="input-group">
@@ -976,7 +976,7 @@ function displayNPC() {
 // ============================================================
 // TRAVEL CALCULATOR
 // ============================================================
-let routeMode = 'smuggler';
+let routeMode = 'trade';
 
 function setRoute(mode) {
   routeMode = mode;
