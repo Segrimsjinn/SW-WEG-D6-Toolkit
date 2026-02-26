@@ -1366,35 +1366,17 @@ function highlightGalaxySystems(systems, isGridSearch) {
   if (isGridSearch && systems.length > 0) {
     const col = systems[0].col;
     const row = systems[0].row;
-    const x = gridLeft + (col - 1) * tileW;
-    const y = gridTop + (row - 1) * tileH;
+    const pad = tileW * 0.15;
+    const cx = gridLeft + (col - 1 + 0.5) * tileW;
+    const cy = gridTop + (row - 1 + 0.5) * tileH;
+    const boxW = tileW + pad * 2;
+    const boxH = tileH + pad * 2;
     ctx.strokeStyle = 'rgba(255,215,0,0.8)';
     ctx.lineWidth = 3;
-    ctx.strokeRect(x, y, tileW, tileH);
+    ctx.strokeRect(cx - boxW/2, cy - boxH/2, boxW, boxH);
     ctx.fillStyle = 'rgba(255,215,0,0.1)';
-    ctx.fillRect(x, y, tileW, tileH);
+    ctx.fillRect(cx - boxW/2, cy - boxH/2, boxW, boxH);
   }
-
-  // Draw dots for each system
-  systems.forEach(s => {
-    const x = gridLeft + (s.col - 1 + 0.5) * tileW;
-    const y = gridTop + (s.row - 1 + 0.5) * tileH;
-
-    ctx.beginPath();
-    ctx.arc(x, y, isGridSearch ? 6 : 10, 0, Math.PI * 2);
-    ctx.fillStyle = 'rgba(0,229,255,0.7)';
-    ctx.fill();
-    ctx.strokeStyle = 'rgba(0,229,255,1)';
-    ctx.lineWidth = 2;
-    ctx.stroke();
-
-    // Glow
-    ctx.beginPath();
-    ctx.arc(x, y, isGridSearch ? 10 : 16, 0, Math.PI * 2);
-    ctx.strokeStyle = 'rgba(0,229,255,0.3)';
-    ctx.lineWidth = 3;
-    ctx.stroke();
-  });
 }
 
 // ============================================================
