@@ -124,7 +124,7 @@ color:#000;text-shadow:none;
 /* NPC RESULT */
 .npc-header{display:flex;gap:12px;margin-bottom:16px;align-items:flex-start}
 .npc-portrait{
-width:100px;height:120px;border-radius:var(--radius-sm);
+width:140px;height:170px;border-radius:var(--radius-sm);
 border:2px solid var(--gold-dim);object-fit:cover;
 background:var(--bg2);flex-shrink:0;
 }
@@ -1136,10 +1136,10 @@ function drawMap(pathData, origin, dest, malfIdx) {
   // Map shows columns C(1) through V(20), rows 1-21
   // Column W(21) is dead space beyond the map
   // Calibrated: centered on tiles
-  const gridLeft = w * 0.016;
+  const gridLeft = w * 0.028;
   const gridRight = w * 0.981;
   const gridTop = h * 0.018;
-  const gridBottom = h * 0.96;
+  const gridBottom = h * 0.984;
   const gridW = gridRight - gridLeft;
   const gridH = gridBottom - gridTop;
 
