@@ -1358,7 +1358,7 @@ function highlightGalaxySystems(systems, isGridSearch) {
   const gridBottom = h * 0.970;
   const gridW = gridRight - gridLeft;
   const gridH = gridBottom - gridTop;
-  const cols = 21, rows = 21;
+  const cols = 20, rows = 21;
   const tileW = gridW / cols;
   const tileH = gridH / rows;
 
@@ -1371,10 +1371,10 @@ function highlightGalaxySystems(systems, isGridSearch) {
     const cy = gridTop + (row - 1 + 0.5) * tileH;
     const boxW = tileW + pad * 2;
     const boxH = tileH + pad * 2;
-    ctx.strokeStyle = 'rgba(0,255,0,0.8)';
+    ctx.strokeStyle = 'rgba(0,100,255,0.8)';
     ctx.lineWidth = 3;
     ctx.strokeRect(cx - boxW/2, cy - boxH/2, boxW, boxH);
-    ctx.fillStyle = 'rgba(0,255,0,0.1)';
+    ctx.fillStyle = 'rgba(0,100,255,0.1)';
     ctx.fillRect(cx - boxW/2, cy - boxH/2, boxW, boxH);
   }
 }
