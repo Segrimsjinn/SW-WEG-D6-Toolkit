@@ -924,10 +924,11 @@ function displayNPC() {
   const attrValues = { Dex: npc.dex, Per: npc.per, Kno: npc.kno, Str: npc.str, Mec: npc.mec, Tec: npc.tec };
   let html = '<div class="skills-columns">';
   for (const attr of attrOrder) {
-    if (!groups[attr]) continue;
     html += `<div class="skill-section"><div class="skill-section-header">${attr.toUpperCase()} <span style="color:var(--cyan);font-family:'Eras Demi ITC','Era Demi','Rajdhani',sans-serif;font-size:13px">${attrValues[attr]}</span></div>`;
-    for (const s of groups[attr]) {
-      html += `<div class="skill-row"><span class="skill-name">${s.name}</span><span class="skill-dice">${s.dice}</span></div>`;
+    if (groups[attr]) {
+      for (const s of groups[attr]) {
+        html += `<div class="skill-row"><span class="skill-name">${s.name}</span><span class="skill-dice">${s.dice}</span></div>`;
+      }
     }
     html += '</div>';
   }
