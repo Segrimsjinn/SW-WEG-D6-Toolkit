@@ -525,7 +525,10 @@ color:var(--text-dim);min-width:35px;text-align:right;
       </div>
       <div id="galaxyCount" style="font-size:13px;color:var(--text-dim);margin-bottom:8px;padding:0 4px"></div>
       <div id="galaxyResults" class="search-results"></div>
-      <img src="galaxy-map.jpg" alt="Galaxy Map" style="width:100%;border-radius:var(--radius);border:1px solid var(--gold-dim);margin-top:12px">
+      <div style="position:relative;width:100%;margin-top:12px">
+        <img id="galaxyMapImg" src="galaxy-map.jpg" alt="Galaxy Map" style="width:100%;border-radius:var(--radius);border:1px solid var(--gold-dim);display:block">
+        <canvas id="galaxyCanvas" style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none"></canvas>
+      </div>
     </div>
 
     <!-- TAB 4: SETTINGS -->
@@ -1283,19 +1286,33 @@ function searchGalaxy(query) {
   const container = document.getElementById('galaxyResults');
   const countEl = document.getElementById('galaxyCount');
 
+  // Clear map highlights
+  clearGalaxyHighlights();
+
   if (q.length < 2) {
     container.innerHTML = '';
     countEl.textContent = SYSTEMS_DATA.length.toLocaleString() + ' systems in database';
     return;
   }
 
-  const matches = SYSTEMS_DATA.filter(s =>
-    s.name.toLowerCase().includes(q) ||
-    s.region.toLowerCase().includes(q) ||
-    s.grid.toLowerCase().includes(q)
-  ).slice(0, 100);
+  // Check if query matches a grid reference like "M-9" or "K14" or "M 9"
+  const gridMatch = q.match(/^([c-w])[- ]?(\d{1,2})$/i);
 
-  countEl.textContent = matches.length + (matches.length >= 100 ? '+' : '') + ' results';
+  let matches;
+  if (gridMatch) {
+    const colLetters = 'CDEFGHIJKLMNOPQRSTUVW';
+    const gridCol = colLetters.indexOf(gridMatch[1].toUpperCase()) + 1;
+    const gridRow = parseInt(gridMatch[2]);
+    matches = SYSTEMS_DATA.filter(s => s.col === gridCol && s.row === gridRow);
+    countEl.textContent = matches.length + ' systems in ' + gridMatch[1].toUpperCase() + '-' + gridMatch[2];
+  } else {
+    matches = SYSTEMS_DATA.filter(s =>
+      s.name.toLowerCase().includes(q) ||
+      s.region.toLowerCase().includes(q) ||
+      s.grid.toLowerCase().includes(q)
+    ).slice(0, 100);
+    countEl.textContent = matches.length + (matches.length >= 100 ? '+' : '') + ' results';
+  }
 
   container.innerHTML = matches.map(s => `
     <div class="system-card">
@@ -1306,6 +1323,78 @@ function searchGalaxy(query) {
       <div class="system-grid-tag">${s.grid}</div>
     </div>
   `).join('');
+
+  // Highlight matching systems on map
+  if (matches.length > 0 && matches.length <= 500) {
+    highlightGalaxySystems(matches, !!gridMatch);
+  }
+}
+
+function clearGalaxyHighlights() {
+  const canvas = document.getElementById('galaxyCanvas');
+  const img = document.getElementById('galaxyMapImg');
+  if (!canvas || !img) return;
+  canvas.width = img.naturalWidth || img.width;
+  canvas.height = img.naturalHeight || img.height;
+  const ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
+
+function highlightGalaxySystems(systems, isGridSearch) {
+  const canvas = document.getElementById('galaxyCanvas');
+  const img = document.getElementById('galaxyMapImg');
+  if (!canvas || !img) return;
+
+  const w = img.naturalWidth || img.width;
+  const h = img.naturalHeight || img.height;
+  canvas.width = w;
+  canvas.height = h;
+  const ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, w, h);
+
+  const gridLeft = w * 0.028;
+  const gridRight = w * 0.981;
+  const gridTop = h * 0.018;
+  const gridBottom = h * 0.984;
+  const gridW = gridRight - gridLeft;
+  const gridH = gridBottom - gridTop;
+  const cols = 21, rows = 21;
+  const tileW = gridW / cols;
+  const tileH = gridH / rows;
+
+  // If grid search, highlight the whole tile
+  if (isGridSearch && systems.length > 0) {
+    const col = systems[0].col;
+    const row = systems[0].row;
+    const x = gridLeft + (col - 1) * tileW;
+    const y = gridTop + (row - 1) * tileH;
+    ctx.strokeStyle = 'rgba(255,215,0,0.8)';
+    ctx.lineWidth = 3;
+    ctx.strokeRect(x, y, tileW, tileH);
+    ctx.fillStyle = 'rgba(255,215,0,0.1)';
+    ctx.fillRect(x, y, tileW, tileH);
+  }
+
+  // Draw dots for each system
+  systems.forEach(s => {
+    const x = gridLeft + (s.col - 1 + 0.5) * tileW;
+    const y = gridTop + (s.row - 1 + 0.5) * tileH;
+
+    ctx.beginPath();
+    ctx.arc(x, y, isGridSearch ? 6 : 10, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(0,229,255,0.7)';
+    ctx.fill();
+    ctx.strokeStyle = 'rgba(0,229,255,1)';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+
+    // Glow
+    ctx.beginPath();
+    ctx.arc(x, y, isGridSearch ? 10 : 16, 0, Math.PI * 2);
+    ctx.strokeStyle = 'rgba(0,229,255,0.3)';
+    ctx.lineWidth = 3;
+    ctx.stroke();
+  });
 }
 
 // ============================================================
