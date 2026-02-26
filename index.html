@@ -1164,9 +1164,9 @@ function drawMap(pathData, origin, dest, malfIdx) {
   // Map shows columns C(1) through V(20), rows 1-21
   // Column W(21) is dead space beyond the map
   // Calibrated: centered on tiles
-  const gridLeft = w * 0.052;
+  const gridLeft = w * 0.062;
   const gridRight = w * 0.981;
-  const gridTop = h * 0.012;
+  const gridTop = h * 0.008;
   const gridBottom = h * 0.970;
   const gridW = gridRight - gridLeft;
   const gridH = gridBottom - gridTop;
@@ -1352,9 +1352,9 @@ function highlightGalaxySystems(systems, isGridSearch) {
   const ctx = canvas.getContext('2d');
   ctx.clearRect(0, 0, w, h);
 
-  const gridLeft = w * 0.052;
+  const gridLeft = w * 0.062;
   const gridRight = w * 0.981;
-  const gridTop = h * 0.012;
+  const gridTop = h * 0.008;
   const gridBottom = h * 0.970;
   const gridW = gridRight - gridLeft;
   const gridH = gridBottom - gridTop;
@@ -1371,10 +1371,10 @@ function highlightGalaxySystems(systems, isGridSearch) {
     const cy = gridTop + (row - 1 + 0.5) * tileH;
     const boxW = tileW + pad * 2;
     const boxH = tileH + pad * 2;
-    ctx.strokeStyle = 'rgba(255,0,0,0.8)';
+    ctx.strokeStyle = 'rgba(255,165,0,0.8)';
     ctx.lineWidth = 3;
     ctx.strokeRect(cx - boxW/2, cy - boxH/2, boxW, boxH);
-    ctx.fillStyle = 'rgba(255,0,0,0.1)';
+    ctx.fillStyle = 'rgba(255,165,0,0.1)';
     ctx.fillRect(cx - boxW/2, cy - boxH/2, boxW, boxH);
   }
 }
