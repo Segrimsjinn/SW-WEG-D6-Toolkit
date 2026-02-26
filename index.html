@@ -1166,7 +1166,7 @@ function drawMap(pathData, origin, dest, malfIdx) {
   // Calibrated: centered on tiles
   const gridLeft = w * 0.062;
   const gridRight = w * 0.981;
-  const gridTop = h * 0.008;
+  const gridTop = h * 0.005;
   const gridBottom = h * 0.970;
   const gridW = gridRight - gridLeft;
   const gridH = gridBottom - gridTop;
@@ -1354,7 +1354,7 @@ function highlightGalaxySystems(systems, isGridSearch) {
 
   const gridLeft = w * 0.062;
   const gridRight = w * 0.981;
-  const gridTop = h * 0.008;
+  const gridTop = h * 0.005;
   const gridBottom = h * 0.970;
   const gridW = gridRight - gridLeft;
   const gridH = gridBottom - gridTop;
@@ -1371,10 +1371,10 @@ function highlightGalaxySystems(systems, isGridSearch) {
     const cy = gridTop + (row - 1 + 0.5) * tileH;
     const boxW = tileW + pad * 2;
     const boxH = tileH + pad * 2;
-    ctx.strokeStyle = 'rgba(255,165,0,0.8)';
+    ctx.strokeStyle = 'rgba(255,255,0,0.8)';
     ctx.lineWidth = 3;
     ctx.strokeRect(cx - boxW/2, cy - boxH/2, boxW, boxH);
-    ctx.fillStyle = 'rgba(255,165,0,0.1)';
+    ctx.fillStyle = 'rgba(255,255,0,0.1)';
     ctx.fillRect(cx - boxW/2, cy - boxH/2, boxW, boxH);
   }
 }
