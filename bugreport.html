@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bug Report — Star Wars D6 Toolkit</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  @font-face { font-family: 'Eras Demi ITC'; src: local('Eras Demi ITC'), local('Era Demi'); }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #0a0e14;
+    --card-bg: #111820;
+    --gold: #c8aa5a;
+    --cyan: #5bcefa;
+    --text: #e0e0e0;
+    --text-dim: #8899aa;
+    --border: #1e2a38;
+  }
+  body {
+    font-family: 'Eras Demi ITC', 'Era Demi', 'Rajdhani', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 16px;
+  }
+  .container {
+    max-width: 560px;
+    width: 100%;
+  }
+  h1 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--gold);
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+  .subtitle {
+    text-align: center;
+    color: var(--text-dim);
+    font-size: 13px;
+    margin-bottom: 24px;
+  }
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+  }
+  label {
+    display: block;
+    color: var(--gold);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 11px;
+    margin-bottom: 6px;
+    margin-top: 16px;
+  }
+  label:first-child { margin-top: 0; }
+  input, select, textarea {
+    width: 100%;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--text);
+    font-family: 'Eras Demi ITC', 'Era Demi', 'Rajdhani', sans-serif;
+    font-size: 14px;
+    padding: 10px 12px;
+    outline: none;
+  }
+  input:focus, select:focus, textarea:focus {
+    border-color: var(--cyan);
+  }
+  select { cursor: pointer; }
+  select option { background: var(--bg); color: var(--text); }
+  textarea { resize: vertical; min-height: 140px; line-height: 1.5; }
+  .btn {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    background: linear-gradient(135deg, #8a7430, #c8aa5a);
+    color: #000;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .btn:hover { filter: brightness(1.15); }
+  .back-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: var(--cyan);
+    font-size: 13px;
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+  }
+  .back-link:hover { text-decoration: underline; }
+  .note {
+    text-align: center;
+    color: var(--text-dim);
+    font-size: 11px;
+    margin-top: 16px;
+    line-height: 1.5;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>⚠ BUG REPORT</h1>
+  <p class="subtitle">Star Wars D6 Toolkit</p>
+
+  <div class="card">
+    <label for="bugArea">WHAT AREA?</label>
+    <select id="bugArea">
+      <option value="NPC Generator">NPC Generator</option>
+      <option value="Travel Calculator">Travel Calculator</option>
+      <option value="Galaxy Search">Galaxy Search</option>
+      <option value="Speed Calibration">Speed Calibration</option>
+      <option value="General / Other">General / Other</option>
+    </select>
+
+    <label for="bugDesc">DESCRIBE THE BUG</label>
+    <textarea id="bugDesc" placeholder="What happened? What did you expect to happen?"></textarea>
+
+    <label for="bugDevice">DEVICE / BROWSER (OPTIONAL)</label>
+    <input type="text" id="bugDevice" placeholder="e.g. iPhone Safari, Chrome on Windows">
+
+    <button class="btn" onclick="sendReport()">⟐ TRANSMIT REPORT ⟐</button>
+  </div>
+
+  <p class="note">No personal data is collected. This simply opens your email client<br>with the report details filled in. Thank you for helping improve the toolkit!</p>
+
+  <a href="index.html" class="back-link">← RETURN TO TOOLKIT</a>
+</div>
+
+<script>
+function sendReport() {
+  const area = document.getElementById('bugArea').value;
+  const desc = document.getElementById('bugDesc').value.trim();
+  const device = document.getElementById('bugDevice').value.trim();
+
+  if (!desc) {
+    alert('Please describe the bug before transmitting.');
+    return;
+  }
+
+  const subject = encodeURIComponent('Bug Report — ' + area);
+  let body = 'Area: ' + area + '\n\n';
+  body += 'Description:\n' + desc + '\n';
+  if (device) body += '\nDevice/Browser: ' + device;
+  body += '\n\n---\nSent from Star Wars D6 Toolkit Bug Report';
+
+  window.location.href = 'mailto:bugreport.rja.com@gmail.com?subject=' + subject + '&body=' + encodeURIComponent(body);
+}
+</script>
+</body>
+</html>
