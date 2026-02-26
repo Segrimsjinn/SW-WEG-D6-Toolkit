@@ -1135,11 +1135,11 @@ function drawMap(pathData, origin, dest, malfIdx) {
   // Grid boundaries as percentages of image (measured from DT Strain map v.5)
   // Map shows columns C(1) through V(20), rows 1-21
   // Column W(21) is dead space beyond the map
-  // Calibrated: shifted right and up to center on tiles
+  // Calibrated: shifted to center on tiles
   const gridLeft = w * 0.005;
   const gridRight = w * 0.958;
-  const gridTop = h * -0.01;
-  const gridBottom = h * 0.955;
+  const gridTop = h * 0.002;
+  const gridBottom = h * 0.968;
   const gridW = gridRight - gridLeft;
   const gridH = gridBottom - gridTop;
 
