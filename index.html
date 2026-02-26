@@ -161,7 +161,8 @@ color:var(--cyan);font-weight:700;
 }
 
 /* SKILL LIST */
-.skill-section{margin-bottom:12px}
+.skills-columns{display:grid;grid-template-columns:1fr 1fr;gap:4px 12px}
+.skill-section{margin-bottom:8px}
 .skill-section-header{
 font-family:'Orbitron',monospace;font-size:10px;
 color:var(--blue);letter-spacing:2px;margin-bottom:6px;
@@ -197,10 +198,24 @@ border:1px solid var(--card-border);color:var(--text);
 .power-tag.dark-side{border-color:var(--red-dim);color:var(--red)}
 
 /* FLUFF ROW */
+.fluff-compact{display:grid;grid-template-columns:1fr 1fr;gap:2px 12px}
+.fluff-row{display:flex;justify-content:space-between;align-items:center;padding:1px 0}
+.fluff-lbl{font-size:10px;color:var(--text-dark);font-weight:600;letter-spacing:.5px}
+.fluff-val{font-size:12px;color:var(--text);font-family:'Share Tech Mono',monospace}
 .fluff-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:8px}
 .fluff-box{text-align:center}
 .fluff-label{font-size:9px;color:var(--text-dim);letter-spacing:1px}
 .fluff-value{font-size:14px;color:var(--text);margin-top:2px}
+
+/* COMPACT STAT GRID */
+.stat-grid-compact{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:8px}
+.stat-box-sm{
+background:var(--bg2);border-radius:6px;
+padding:6px 8px;display:flex;justify-content:space-between;
+align-items:center;border:1px solid var(--card-border);
+}
+.stat-box-sm .stat-label{font-size:10px}
+.stat-box-sm .stat-value{font-size:14px}
 
 /* REROLL BUTTONS */
 .reroll-bar{
@@ -397,36 +412,31 @@ color:var(--text-dim);min-width:35px;text-align:right;
               <div id="npcRace" class="npc-race"></div>
               <div id="npcJob" class="npc-job"></div>
               <div id="npcTraining" class="npc-training"></div>
+              <div class="fluff-compact" style="margin-top:8px">
+                <div class="fluff-row"><span class="fluff-lbl">Sex</span><span id="statSex" class="fluff-val"></span></div>
+                <div class="fluff-row"><span class="fluff-lbl">Height</span><span id="statHeight" class="fluff-val"></span></div>
+                <div class="fluff-row"><span class="fluff-lbl">Move</span><span id="statMove" class="fluff-val"></span></div>
+                <div class="fluff-row"><span class="fluff-lbl">Force</span><span id="fluffFS" class="fluff-val"></span></div>
+                <div class="fluff-row"><span class="fluff-lbl">Credits</span><span id="fluffCreds" class="fluff-val"></span></div>
+                <div class="fluff-row"><span class="fluff-lbl">FP / CP</span><span class="fluff-val"><span id="fluffFP"></span> / <span id="fluffCP"></span></span></div>
+              </div>
             </div>
           </div>
-          <div class="stat-grid">
-            <div class="stat-box"><span class="stat-label">DEX</span><span id="statDex" class="stat-value"></span></div>
-            <div class="stat-box"><span class="stat-label">PER</span><span id="statPer" class="stat-value"></span></div>
-            <div class="stat-box"><span class="stat-label">KNO</span><span id="statKno" class="stat-value"></span></div>
-            <div class="stat-box"><span class="stat-label">STR</span><span id="statStr" class="stat-value"></span></div>
-            <div class="stat-box"><span class="stat-label">MEC</span><span id="statMec" class="stat-value"></span></div>
-            <div class="stat-box"><span class="stat-label">TEC</span><span id="statTec" class="stat-value"></span></div>
+          <div class="stat-grid-compact">
+            <div class="stat-box-sm"><span class="stat-label">DEX</span><span id="statDex" class="stat-value"></span></div>
+            <div class="stat-box-sm"><span class="stat-label">PER</span><span id="statPer" class="stat-value"></span></div>
+            <div class="stat-box-sm"><span class="stat-label">KNO</span><span id="statKno" class="stat-value"></span></div>
+            <div class="stat-box-sm"><span class="stat-label">STR</span><span id="statStr" class="stat-value"></span></div>
+            <div class="stat-box-sm"><span class="stat-label">MEC</span><span id="statMec" class="stat-value"></span></div>
+            <div class="stat-box-sm"><span class="stat-label">TEC</span><span id="statTec" class="stat-value"></span></div>
           </div>
-          <div class="stat-grid" style="margin-top:8px">
-            <div class="stat-box"><span class="stat-label">MOVE</span><span id="statMove" class="stat-value"></span></div>
-            <div class="stat-box"><span class="stat-label">HEIGHT</span><span id="statHeight" class="stat-value"></span></div>
-          </div>
-          <div id="storyFactor" style="margin-top:10px;font-size:12px;color:var(--text-dim);display:none">
-            <span style="color:var(--gold);font-size:10px;font-family:'Orbitron',monospace;letter-spacing:1px">STORY FACTOR</span><br>
+          <div id="storyFactor" style="margin-top:8px;font-size:11px;color:var(--text-dim);display:none">
+            <span style="color:var(--gold);font-size:9px;font-family:'Orbitron',monospace;letter-spacing:1px">STORY FACTOR</span><br>
             <span id="storyFactorText"></span>
           </div>
-          <div id="specAbility" style="margin-top:8px;font-size:12px;color:var(--text-dim);display:none">
-            <span style="color:var(--gold);font-size:10px;font-family:'Orbitron',monospace;letter-spacing:1px">SPECIAL ABILITIES</span><br>
+          <div id="specAbility" style="margin-top:6px;font-size:11px;color:var(--text-dim);display:none">
+            <span style="color:var(--gold);font-size:9px;font-family:'Orbitron',monospace;letter-spacing:1px">SPECIAL ABILITIES</span><br>
             <span id="specAbilityText"></span>
-          </div>
-          <div class="fluff-grid" style="margin-top:10px">
-            <div class="fluff-box"><div class="fluff-label">SEX</div><div id="statSex" class="fluff-value"></div></div>
-            <div class="fluff-box"><div class="fluff-label">FORCE SENS.</div><div id="fluffFS" class="fluff-value"></div></div>
-            <div class="fluff-box"><div class="fluff-label">CREDITS</div><div id="fluffCreds" class="fluff-value"></div></div>
-          </div>
-          <div class="fluff-grid">
-            <div class="fluff-box"><div class="fluff-label">FORCE PTS</div><div id="fluffFP" class="fluff-value"></div></div>
-            <div class="fluff-box"><div class="fluff-label">CHAR PTS</div><div id="fluffCP" class="fluff-value"></div></div>
           </div>
         </div>
 
@@ -652,25 +662,33 @@ function rollNames() {
   npc.surname = pick(NAMES_DATA.surnames);
 }
 
+function rollEquipItem(key) {
+  const blankChance = NPC_DATA[key + '_blank'] || 0;
+  if (Math.random() < blankChance) return '--';
+  const items = NPC_DATA[key];
+  return items && items.length ? pick(items) : '--';
+}
+
 function rollEquipment() {
-  npc.weapon1 = pick(NPC_DATA.weapon1);
-  npc.weapon2 = pick(NPC_DATA.weapon2);
-  npc.weapon3 = pick(NPC_DATA.weapon3);
-  npc.melee = pick(NPC_DATA.melee);
-  npc.comms = pick(NPC_DATA.comms);
-  npc.credits = pick(NPC_DATA.credits);
-  npc.jetpack = NPC_DATA.jetpack.length ? pick(NPC_DATA.jetpack) : 'None';
-  npc.sec1 = pick(NPC_DATA.sec1);
-  npc.sec2 = pick(NPC_DATA.sec2);
-  npc.booster = pick(NPC_DATA.booster);
-  npc.med = pick(NPC_DATA.med);
-  npc.armor = pick(NPC_DATA.armor);
-  npc.camo = pick(NPC_DATA.camo);
-  npc.shield = pick(NPC_DATA.shield);
-  npc.surveil1 = pick(NPC_DATA.surveil1);
-  npc.surveil2 = pick(NPC_DATA.surveil2);
-  npc.survival = pick(NPC_DATA.survival);
-  npc.tools = NPC_DATA.tools.length ? pick(NPC_DATA.tools) : 'None';
+  npc.weapon1 = rollEquipItem('weapon1');
+  npc.weapon2 = rollEquipItem('weapon2');
+  npc.weapon3 = rollEquipItem('weapon3');
+  npc.melee = rollEquipItem('melee');
+  npc.comms = rollEquipItem('comms');
+  npc.credits = rollEquipItem('credits');
+  npc.jetpack = rollEquipItem('jetpack');
+  npc.sec1 = rollEquipItem('sec1');
+  npc.sec2 = rollEquipItem('sec2');
+  npc.booster = rollEquipItem('booster');
+  npc.med = rollEquipItem('med');
+  npc.armor = rollEquipItem('armor');
+  npc.camo = rollEquipItem('camo');
+  npc.shield = rollEquipItem('shield');
+  npc.surveil1 = rollEquipItem('surveil1');
+  npc.surveil2 = rollEquipItem('surveil2');
+  npc.survival = rollEquipItem('survival');
+  npc.tools = rollEquipItem('tools');
+  npc.saber = '--';
 }
 
 function rollAllStats() {
@@ -833,6 +851,16 @@ function rerollTraining() { rollTraining(); rollSkillsNPC(); rollForceSkills(); 
 function rerollAttrs() { rollAllStats(); rollSkillsNPC(); displayNPC(); }
 function rerollSkills() { rollSkillsNPC(); displayNPC(); }
 
+function rerollEquipSlot(key) {
+  if (key === 'saber') {
+    // Saber always rolls an item (no blank chance) - it's a manual choice roll
+    npc.saber = pick(NPC_DATA.saber);
+  } else {
+    npc[key] = rollEquipItem(key);
+  }
+  displayNPC();
+}
+
 // ============================================================
 // DISPLAY NPC
 // ============================================================
@@ -891,15 +919,17 @@ function displayNPC() {
     groups[s.attr].push(s);
   }
   const attrOrder = ['Dex', 'Per', 'Kno', 'Str', 'Mec', 'Tec'];
-  let html = '';
+  const attrValues = { Dex: npc.dex, Per: npc.per, Kno: npc.kno, Str: npc.str, Mec: npc.mec, Tec: npc.tec };
+  let html = '<div class="skills-columns">';
   for (const attr of attrOrder) {
     if (!groups[attr]) continue;
-    html += `<div class="skill-section"><div class="skill-section-header">${attr.toUpperCase()}</div>`;
+    html += `<div class="skill-section"><div class="skill-section-header">${attr.toUpperCase()} <span style="color:var(--cyan);font-family:'Share Tech Mono',monospace">${attrValues[attr]}</span></div>`;
     for (const s of groups[attr]) {
       html += `<div class="skill-row"><span class="skill-name">${s.name}</span><span class="skill-dice">${s.dice}</span></div>`;
     }
     html += '</div>';
   }
+  html += '</div>';
   skillsOut.innerHTML = html;
 
   // Force
@@ -926,18 +956,26 @@ function displayNPC() {
 
   // Equipment
   const equipItems = [
-    ['Pistol', npc.weapon1], ['Rifle', npc.weapon2], ['Repeater', npc.weapon3],
-    ['Melee', npc.melee], ['Comms', npc.comms], ['Armor', npc.armor],
-    ['Shield', npc.shield], ['Sec 1', npc.sec1], ['Sec 2', npc.sec2],
-    ['Medical', npc.med], ['Booster', npc.booster], ['Camo', npc.camo],
-    ['Surveil', npc.surveil1], ['Surveil 2', npc.surveil2],
-    ['Survival', npc.survival], ['Tools', npc.tools], ['Jet Pack', npc.jetpack],
+    ['Pistol', 'weapon1', npc.weapon1], ['Rifle', 'weapon2', npc.weapon2],
+    ['Repeater', 'weapon3', npc.weapon3], ['Melee', 'melee', npc.melee],
+    ['Lightsaber', 'saber', npc.saber],
+    ['Comms', 'comms', npc.comms], ['Armor', 'armor', npc.armor],
+    ['Shield', 'shield', npc.shield], ['Sec 1', 'sec1', npc.sec1],
+    ['Sec 2', 'sec2', npc.sec2], ['Medical', 'med', npc.med],
+    ['Booster', 'booster', npc.booster], ['Camo', 'camo', npc.camo],
+    ['Surveil', 'surveil1', npc.surveil1], ['Surveil 2', 'surveil2', npc.surveil2],
+    ['Survival', 'survival', npc.survival], ['Tools', 'tools', npc.tools],
+    ['Credits', 'credits', npc.credits], ['Jet Pack', 'jetpack', npc.jetpack],
   ];
   let ehtml = '';
-  for (const [label, val] of equipItems) {
-    if (val && val !== 'None') {
-      ehtml += `<div class="equip-row"><span class="equip-label">${label}</span><span class="equip-value">${val}</span></div>`;
-    }
+  for (const [label, key, val] of equipItems) {
+    const displayVal = val || '--';
+    const dimClass = displayVal === '--' ? ' style="color:var(--text-dark)"' : '';
+    ehtml += `<div class="equip-row">
+      <span class="equip-label">${label}</span>
+      <span class="equip-value"${dimClass}>${displayVal}</span>
+      <button class="btn-reroll" style="padding:3px 8px;font-size:10px;margin-left:auto;flex-shrink:0" onclick="rerollEquipSlot('${key}','${label}')">↻</button>
+    </div>`;
   }
   document.getElementById('equipOutput').innerHTML = ehtml;
 
