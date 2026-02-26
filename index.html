@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#0a0a0f">
+<title>Star Wars D6 Toolkit</title>
+<link rel="manifest" href="manifest.json">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--bg:#0a0a0f;--bg2:#12121a;--bg3:#1a1a28;--bg4:#22223a;
+--gold:#ffd700;--gold-dim:#b8960f;--gold-glow:rgba(255,215,0,.15);
+--blue:#4fc3f7;--blue-dim:#1a6b8a;--red:#ff4444;--red-dim:#8b2222;
+--green:#66bb6a;--cyan:#00e5ff;--purple:#bb86fc;
+--text:#e8e8f0;--text-dim:#8888aa;--text-dark:#555570;
+--card:#141422;--card-border:#2a2a44;
+--radius:12px;--radius-sm:8px;
+}
+html,body{height:100%;overflow:hidden}
+body{font-family:'Rajdhani',sans-serif;background:var(--bg);color:var(--text);-webkit-tap-highlight-color:transparent}
+
+/* APP SHELL */
+.app{display:flex;flex-direction:column;height:100dvh;overflow:hidden}
+.app-header{
+background:linear-gradient(180deg,#0d0d18 0%,#0a0a12 100%);
+border-bottom:1px solid var(--card-border);
+padding:12px 16px 8px;flex-shrink:0;
+position:relative;z-index:100;
+}
+.app-title{
+font-family:'Orbitron',monospace;font-weight:900;font-size:14px;
+letter-spacing:3px;text-transform:uppercase;
+background:linear-gradient(135deg,var(--gold) 0%,#fff8c4 50%,var(--gold) 100%);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;
+text-align:center;
+}
+.app-subtitle{font-size:10px;color:var(--text-dim);text-align:center;letter-spacing:2px;margin-top:2px}
+
+.app-content{flex:1;overflow:hidden;position:relative}
+.tab-panel{
+position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;
+padding:16px;display:none;
+-webkit-overflow-scrolling:touch;
+}
+.tab-panel.active{display:block}
+
+/* NAV BAR */
+.nav-bar{
+display:flex;background:#0d0d16;
+border-top:1px solid var(--card-border);
+flex-shrink:0;padding:4px 0;
+padding-bottom:env(safe-area-inset-bottom,0);
+}
+.nav-btn{
+flex:1;display:flex;flex-direction:column;align-items:center;
+padding:8px 4px 6px;border:none;background:none;
+color:var(--text-dim);font-family:'Rajdhani',sans-serif;
+font-size:10px;font-weight:500;letter-spacing:1px;
+cursor:pointer;transition:all .2s;position:relative;
+}
+.nav-btn.active{color:var(--gold)}
+.nav-btn.active::before{
+content:'';position:absolute;top:0;left:20%;right:20%;
+height:2px;background:var(--gold);border-radius:0 0 2px 2px;
+}
+.nav-btn svg{width:22px;height:22px;margin-bottom:3px}
+
+/* CARDS */
+.card{
+background:var(--card);border:1px solid var(--card-border);
+border-radius:var(--radius);padding:16px;margin-bottom:12px;
+position:relative;overflow:hidden;
+}
+.card::before{
+content:'';position:absolute;top:0;left:0;right:0;height:1px;
+background:linear-gradient(90deg,transparent,var(--gold-dim),transparent);
+opacity:.3;
+}
+.card-title{
+font-family:'Orbitron',monospace;font-size:11px;font-weight:700;
+color:var(--gold);letter-spacing:2px;text-transform:uppercase;
+margin-bottom:12px;
+}
+
+/* BUTTONS */
+.btn{
+font-family:'Orbitron',monospace;font-weight:700;font-size:11px;
+letter-spacing:2px;text-transform:uppercase;
+border:none;border-radius:var(--radius-sm);
+padding:12px 20px;cursor:pointer;transition:all .15s;
+position:relative;overflow:hidden;
+}
+.btn-primary{
+background:linear-gradient(135deg,var(--gold-dim),var(--gold));
+color:#000;
+}
+.btn-primary:active{transform:scale(.97);filter:brightness(1.2)}
+.btn-secondary{
+background:var(--bg3);color:var(--gold);
+border:1px solid var(--gold-dim);
+}
+.btn-secondary:active{background:var(--bg4)}
+.btn-sm{padding:8px 14px;font-size:9px;letter-spacing:1px}
+.btn-danger{background:var(--red-dim);color:#fff}
+.btn-full{width:100%}
+
+/* GENERATE BUTTON - special */
+.btn-generate{
+width:100%;padding:16px;font-size:13px;
+background:linear-gradient(135deg,#1a1a00,#333300,#1a1a00);
+border:2px solid var(--gold);color:var(--gold);
+text-shadow:0 0 20px rgba(255,215,0,.5);
+letter-spacing:4px;
+}
+.btn-generate:active{
+background:linear-gradient(135deg,var(--gold-dim),var(--gold));
+color:#000;text-shadow:none;
+}
+
+/* NPC RESULT */
+.npc-header{display:flex;gap:12px;margin-bottom:16px;align-items:flex-start}
+.npc-portrait{
+width:100px;height:120px;border-radius:var(--radius-sm);
+border:2px solid var(--gold-dim);object-fit:cover;
+background:var(--bg2);flex-shrink:0;
+}
+.npc-identity{flex:1;min-width:0}
+.npc-name{
+font-family:'Orbitron',monospace;font-size:16px;font-weight:900;
+color:var(--gold);line-height:1.2;word-wrap:break-word;
+}
+.npc-race{font-size:14px;color:var(--blue);margin-top:4px}
+.npc-job{font-size:13px;color:var(--text-dim);margin-top:2px}
+.npc-training{
+display:inline-block;font-size:10px;font-family:'Orbitron',monospace;
+padding:3px 8px;border-radius:4px;margin-top:6px;
+letter-spacing:1px;font-weight:700;
+}
+.training-Novice{background:#1a2a1a;color:#66bb6a;border:1px solid #2a4a2a}
+.training-Trained{background:#1a2a2a;color:#4fc3f7;border:1px solid #2a4a4a}
+.training-Experienced{background:#2a2a1a;color:#ffd700;border:1px solid #4a4a2a}
+.training-Veteran{background:#2a1a2a;color:#bb86fc;border:1px solid #4a2a4a}
+.training-Elite{background:#2a1a1a;color:#ff7043;border:1px solid #4a2a2a}
+.training-hero{background:#2a0a0a;color:#ff4444;border:1px solid #4a1a1a}
+
+/* STAT GRID */
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.stat-box{
+background:var(--bg2);border-radius:var(--radius-sm);
+padding:8px 10px;display:flex;justify-content:space-between;
+align-items:center;border:1px solid var(--card-border);
+}
+.stat-label{font-size:11px;color:var(--text-dim);font-weight:600;letter-spacing:1px}
+.stat-value{
+font-family:'Share Tech Mono',monospace;font-size:15px;
+color:var(--cyan);font-weight:700;
+}
+
+/* SKILL LIST */
+.skill-section{margin-bottom:12px}
+.skill-section-header{
+font-family:'Orbitron',monospace;font-size:10px;
+color:var(--blue);letter-spacing:2px;margin-bottom:6px;
+padding-bottom:4px;border-bottom:1px solid var(--card-border);
+}
+.skill-row{
+display:flex;justify-content:space-between;padding:4px 0;
+font-size:13px;border-bottom:1px solid rgba(255,255,255,.03);
+}
+.skill-name{color:var(--text)}
+.skill-dice{font-family:'Share Tech Mono',monospace;color:var(--cyan);font-size:13px}
+
+/* EQUIPMENT */
+.equip-grid{display:grid;grid-template-columns:1fr;gap:4px}
+.equip-row{display:flex;gap:8px;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.03)}
+.equip-label{color:var(--text-dim);font-size:11px;min-width:70px;flex-shrink:0;font-weight:600}
+.equip-value{color:var(--text);font-size:12px;word-break:break-word}
+
+/* FORCE */
+.force-section{margin-top:12px}
+.force-attr-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:12px}
+.force-attr{
+text-align:center;background:var(--bg2);border-radius:var(--radius-sm);
+padding:8px;border:1px solid #1a1a4a;
+}
+.force-attr-name{font-size:10px;color:var(--purple);font-weight:600;letter-spacing:1px}
+.force-attr-val{font-family:'Share Tech Mono',monospace;font-size:16px;color:var(--cyan);margin-top:4px}
+.power-tag{
+display:inline-block;font-size:11px;padding:3px 8px;
+border-radius:4px;margin:2px;background:var(--bg3);
+border:1px solid var(--card-border);color:var(--text);
+}
+.power-tag.dark-side{border-color:var(--red-dim);color:var(--red)}
+
+/* FLUFF ROW */
+.fluff-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:8px}
+.fluff-box{text-align:center}
+.fluff-label{font-size:9px;color:var(--text-dim);letter-spacing:1px}
+.fluff-value{font-size:14px;color:var(--text);margin-top:2px}
+
+/* REROLL BUTTONS */
+.reroll-bar{
+display:flex;gap:6px;flex-wrap:wrap;padding:8px 0;
+}
+.btn-reroll{
+font-family:'Rajdhani',sans-serif;font-size:11px;font-weight:600;
+padding:6px 10px;border-radius:6px;border:1px solid var(--card-border);
+background:var(--bg3);color:var(--text-dim);cursor:pointer;
+letter-spacing:.5px;
+}
+.btn-reroll:active{background:var(--bg4);color:var(--gold)}
+
+/* TRAVEL CALCULATOR */
+.input-group{margin-bottom:12px}
+.input-label{
+font-size:10px;color:var(--gold);font-family:'Orbitron',monospace;
+letter-spacing:1px;margin-bottom:6px;display:block;
+}
+.input-field{
+width:100%;padding:10px 12px;border-radius:var(--radius-sm);
+border:1px solid var(--card-border);background:var(--bg2);
+color:var(--text);font-family:'Rajdhani',sans-serif;font-size:15px;
+outline:none;
+}
+.input-field:focus{border-color:var(--gold-dim)}
+.input-field::placeholder{color:var(--text-dark)}
+
+/* Autocomplete dropdown */
+.autocomplete-wrap{position:relative}
+.autocomplete-list{
+position:absolute;top:100%;left:0;right:0;
+background:var(--bg2);border:1px solid var(--card-border);
+border-radius:0 0 var(--radius-sm) var(--radius-sm);
+max-height:200px;overflow-y:auto;z-index:200;display:none;
+}
+.autocomplete-item{
+padding:10px 12px;cursor:pointer;font-size:14px;
+border-bottom:1px solid rgba(255,255,255,.03);
+}
+.autocomplete-item:active,.autocomplete-item.highlighted{background:var(--bg4);color:var(--gold)}
+.autocomplete-item .region{font-size:11px;color:var(--text-dim);margin-left:8px}
+
+/* Route type toggle */
+.route-toggle{
+display:flex;border-radius:var(--radius-sm);overflow:hidden;
+border:1px solid var(--card-border);margin-bottom:12px;
+}
+.route-opt{
+flex:1;padding:10px;text-align:center;font-size:12px;
+font-weight:600;cursor:pointer;background:var(--bg2);
+color:var(--text-dim);border:none;letter-spacing:.5px;
+transition:all .15s;
+}
+.route-opt.active{background:var(--gold);color:#000}
+
+/* HD slider */
+.hd-row{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.hd-slider{flex:1;accent-color:var(--gold)}
+.hd-value{
+font-family:'Share Tech Mono',monospace;font-size:18px;
+color:var(--cyan);min-width:40px;text-align:right;
+}
+
+/* RESULTS */
+.result-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
+.result-box{
+background:var(--bg2);border-radius:var(--radius-sm);
+padding:10px;border:1px solid var(--card-border);
+}
+.result-label{font-size:9px;color:var(--text-dim);letter-spacing:1px;font-weight:600}
+.result-value{font-size:14px;color:var(--text);margin-top:4px}
+.result-value.highlight{color:var(--cyan);font-family:'Share Tech Mono',monospace;font-size:16px}
+.result-box.wide{grid-column:1/-1}
+
+/* PATH DISPLAY */
+.path-list{max-height:300px;overflow-y:auto}
+.path-tile{
+display:flex;justify-content:space-between;padding:6px 10px;
+font-size:12px;border-bottom:1px solid rgba(255,255,255,.03);
+}
+.path-tile.malfunction{
+background:rgba(255,0,0,.08);border-left:3px solid var(--red);
+}
+.path-hrs{font-family:'Share Tech Mono',monospace}
+.hrs-fast{color:#66bb6a}
+.hrs-med{color:#4fc3f7}
+.hrs-slow{color:#ffa726}
+.hrs-vslow{color:#bb86fc}
+.hrs-crawl{color:var(--text-dark)}
+
+/* GALAXY INDEX */
+.search-wrap{position:relative;margin-bottom:12px}
+.search-input{
+width:100%;padding:12px 16px 12px 40px;border-radius:var(--radius);
+border:1px solid var(--card-border);background:var(--bg2);
+color:var(--text);font-family:'Rajdhani',sans-serif;font-size:15px;
+outline:none;
+}
+.search-input:focus{border-color:var(--gold-dim)}
+.search-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--text-dim)}
+.search-results{max-height:calc(100dvh - 200px);overflow-y:auto}
+.system-card{
+background:var(--card);border:1px solid var(--card-border);
+border-radius:var(--radius-sm);padding:12px;margin-bottom:8px;
+display:flex;justify-content:space-between;align-items:center;
+}
+.system-name{font-size:14px;font-weight:600}
+.system-meta{font-size:11px;color:var(--text-dim);margin-top:2px}
+.system-grid-tag{
+font-family:'Share Tech Mono',monospace;font-size:13px;
+color:var(--cyan);background:var(--bg2);padding:4px 10px;
+border-radius:4px;border:1px solid var(--card-border);
+}
+
+/* SETTINGS */
+.setting-row{
+display:flex;justify-content:space-between;align-items:center;
+padding:12px 0;border-bottom:1px solid var(--card-border);
+}
+.setting-label{font-size:14px}
+.setting-desc{font-size:11px;color:var(--text-dim);margin-top:2px}
+.speed-input{
+width:80px;padding:8px;text-align:center;
+border-radius:var(--radius-sm);border:1px solid var(--card-border);
+background:var(--bg2);color:var(--cyan);
+font-family:'Share Tech Mono',monospace;font-size:14px;
+}
+
+/* Map Canvas */
+#mapCanvas{
+width:100%;aspect-ratio:1;background:var(--bg2);
+border-radius:var(--radius-sm);border:1px solid var(--card-border);
+margin-bottom:12px;
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--card-border);border-radius:2px}
+
+/* Animations */
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.fade-in{animation:fadeIn .3s ease-out}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+.loading{animation:pulse 1s infinite}
+
+/* Human bias slider */
+.bias-row{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.bias-slider{flex:1;accent-color:var(--gold)}
+.bias-value{
+font-family:'Share Tech Mono',monospace;font-size:14px;
+color:var(--text-dim);min-width:35px;text-align:right;
+}
+</style>
+</head>
+<body>
+
+<div class="app">
+  <header class="app-header">
+    <div class="app-title">Star Wars D6 Toolkit</div>
+    <div class="app-subtitle">NPC Generator &amp; Astrogation</div>
+  </header>
+
+  <div class="app-content">
+    <!-- TAB 1: NPC GENERATOR -->
+    <div id="tab-npc" class="tab-panel active">
+      <div class="card">
+        <div class="card-title">⟐ Generate NPC</div>
+        <div class="bias-row">
+          <span style="font-size:11px;color:var(--text-dim)">Human Bias</span>
+          <input type="range" id="humanBias" class="bias-slider" min="0" max="100" value="15">
+          <span id="biasDisplay" class="bias-value">15%</span>
+        </div>
+        <button class="btn btn-generate" onclick="rollAll()">⟐ GENERATE NPC ⟐</button>
+      </div>
+
+      <div id="npcResult" style="display:none">
+        <div class="reroll-bar">
+          <button class="btn-reroll" onclick="rerollRace()">↻ Race</button>
+          <button class="btn-reroll" onclick="rerollJob()">↻ Job</button>
+          <button class="btn-reroll" onclick="rerollTraining()">↻ Training</button>
+          <button class="btn-reroll" onclick="rerollAttrs()">↻ Attributes</button>
+          <button class="btn-reroll" onclick="rerollSkills()">↻ Skills</button>
+          <button class="btn-reroll" onclick="rollAll()">↻ All</button>
+        </div>
+
+        <div class="card fade-in">
+          <div class="npc-header">
+            <img id="npcPortrait" class="npc-portrait" src="" alt="">
+            <div class="npc-identity">
+              <div id="npcName" class="npc-name"></div>
+              <div id="npcRace" class="npc-race"></div>
+              <div id="npcJob" class="npc-job"></div>
+              <div id="npcTraining" class="npc-training"></div>
+            </div>
+          </div>
+          <div class="stat-grid">
+            <div class="stat-box"><span class="stat-label">DEX</span><span id="statDex" class="stat-value"></span></div>
+            <div class="stat-box"><span class="stat-label">PER</span><span id="statPer" class="stat-value"></span></div>
+            <div class="stat-box"><span class="stat-label">KNO</span><span id="statKno" class="stat-value"></span></div>
+            <div class="stat-box"><span class="stat-label">STR</span><span id="statStr" class="stat-value"></span></div>
+            <div class="stat-box"><span class="stat-label">MEC</span><span id="statMec" class="stat-value"></span></div>
+            <div class="stat-box"><span class="stat-label">TEC</span><span id="statTec" class="stat-value"></span></div>
+          </div>
+          <div class="stat-grid" style="margin-top:8px">
+            <div class="stat-box"><span class="stat-label">MOVE</span><span id="statMove" class="stat-value"></span></div>
+            <div class="stat-box"><span class="stat-label">HEIGHT</span><span id="statHeight" class="stat-value"></span></div>
+          </div>
+          <div id="storyFactor" style="margin-top:10px;font-size:12px;color:var(--text-dim);display:none">
+            <span style="color:var(--gold);font-size:10px;font-family:'Orbitron',monospace;letter-spacing:1px">STORY FACTOR</span><br>
+            <span id="storyFactorText"></span>
+          </div>
+          <div id="specAbility" style="margin-top:8px;font-size:12px;color:var(--text-dim);display:none">
+            <span style="color:var(--gold);font-size:10px;font-family:'Orbitron',monospace;letter-spacing:1px">SPECIAL ABILITIES</span><br>
+            <span id="specAbilityText"></span>
+          </div>
+          <div class="fluff-grid" style="margin-top:10px">
+            <div class="fluff-box"><div class="fluff-label">SEX</div><div id="statSex" class="fluff-value"></div></div>
+            <div class="fluff-box"><div class="fluff-label">FORCE SENS.</div><div id="fluffFS" class="fluff-value"></div></div>
+            <div class="fluff-box"><div class="fluff-label">CREDITS</div><div id="fluffCreds" class="fluff-value"></div></div>
+          </div>
+          <div class="fluff-grid">
+            <div class="fluff-box"><div class="fluff-label">FORCE PTS</div><div id="fluffFP" class="fluff-value"></div></div>
+            <div class="fluff-box"><div class="fluff-label">CHAR PTS</div><div id="fluffCP" class="fluff-value"></div></div>
+          </div>
+        </div>
+
+        <div class="card fade-in" id="skillsCard">
+          <div class="card-title">⟐ Skills</div>
+          <div id="skillsOutput"></div>
+        </div>
+
+        <div class="card fade-in" id="forceCard" style="display:none">
+          <div class="card-title">⟐ Force</div>
+          <div id="forceOutput"></div>
+        </div>
+
+        <div class="card fade-in">
+          <div class="card-title">⟐ Equipment</div>
+          <div id="equipOutput" class="equip-grid"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 2: TRAVEL CALCULATOR -->
+    <div id="tab-travel" class="tab-panel">
+      <div class="card">
+        <div class="card-title">⟐ Hyperspace Travel Calculator</div>
+        <div class="route-toggle">
+          <button id="routeSmuggler" class="route-opt active" onclick="setRoute('smuggler')">Smuggler's Route</button>
+          <button id="routeTrade" class="route-opt" onclick="setRoute('trade')">Trade Route</button>
+        </div>
+
+        <div class="input-group">
+          <label class="input-label">Origin System</label>
+          <div class="autocomplete-wrap">
+            <input type="text" id="originInput" class="input-field" placeholder="Enter system name..." autocomplete="off">
+            <div id="originList" class="autocomplete-list"></div>
+          </div>
+        </div>
+        <div class="input-group">
+          <label class="input-label">Destination System</label>
+          <div class="autocomplete-wrap">
+            <input type="text" id="destInput" class="input-field" placeholder="Enter system name..." autocomplete="off">
+            <div id="destList" class="autocomplete-list"></div>
+          </div>
+        </div>
+
+        <div class="hd-row">
+          <label class="input-label" style="margin:0;white-space:nowrap">Hyperdrive ×</label>
+          <input type="range" id="hdSlider" class="hd-slider" min="0.5" max="10" step="0.5" value="1">
+          <span id="hdValue" class="hd-value">×1</span>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-bottom:8px">
+          <button class="btn btn-sm btn-secondary" style="flex:1" onclick="randomOrigin()">⟳ Random Origin</button>
+          <button class="btn btn-sm btn-secondary" style="flex:1" onclick="randomDest()">⟳ Random Dest</button>
+        </div>
+        <button class="btn btn-sm btn-secondary btn-full" style="margin-bottom:12px" onclick="randomBoth()">⟳ Random Both</button>
+        <button class="btn btn-generate" onclick="engage()">⟐ ENGAGE ⟐</button>
+      </div>
+
+      <div id="travelResult" style="display:none">
+        <div class="card fade-in">
+          <div class="card-title">⟐ Route Summary</div>
+          <div id="routeLabel" style="font-size:11px;color:var(--text-dim);margin-bottom:10px"></div>
+          <div class="result-grid">
+            <div class="result-box"><div class="result-label">ORIGIN GRID</div><div id="resOGrid" class="result-value"></div></div>
+            <div class="result-box"><div class="result-label">DEST GRID</div><div id="resDGrid" class="result-value"></div></div>
+            <div class="result-box"><div class="result-label">ORIGIN REGION</div><div id="resORegion" class="result-value"></div></div>
+            <div class="result-box"><div class="result-label">DEST REGION</div><div id="resDRegion" class="result-value"></div></div>
+            <div class="result-box"><div class="result-label">TILES</div><div id="resTiles" class="result-value highlight"></div></div>
+            <div class="result-box"><div class="result-label">TRAVEL TIME</div><div id="resTime" class="result-value highlight"></div></div>
+            <div class="result-box"><div class="result-label">BASE HOURS</div><div id="resBaseHrs" class="result-value"></div></div>
+            <div class="result-box"><div class="result-label">TOTAL HOURS</div><div id="resTotalHrs" class="result-value highlight"></div></div>
+            <div class="result-box wide"><div class="result-label">⚠ MALFUNCTION POINT</div><div id="resMalfunction" class="result-value" style="color:var(--red)"></div></div>
+          </div>
+        </div>
+
+        <div class="card fade-in">
+          <div class="card-title">⟐ Route Map</div>
+          <canvas id="mapCanvas"></canvas>
+        </div>
+
+        <div class="card fade-in">
+          <div class="card-title">⟐ Route Path</div>
+          <div id="pathOutput" class="path-list"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 3: GALAXY INDEX -->
+    <div id="tab-galaxy" class="tab-panel">
+      <div class="search-wrap">
+        <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="text" id="galaxySearch" class="search-input" placeholder="Search systems, sectors, regions...">
+      </div>
+      <div id="galaxyCount" style="font-size:11px;color:var(--text-dim);margin-bottom:8px;padding:0 4px"></div>
+      <div id="galaxyResults" class="search-results"></div>
+    </div>
+
+    <!-- TAB 4: SETTINGS -->
+    <div id="tab-settings" class="tab-panel">
+      <div class="card">
+        <div class="card-title">⟐ Speed Calibration</div>
+        <p style="font-size:12px;color:var(--text-dim);margin-bottom:12px">Adjust base hours per tile for each route classification.</p>
+        <div id="speedSettings"></div>
+        <button class="btn btn-primary btn-full" style="margin-top:12px" onclick="recalibrate()">RECALIBRATE</button>
+      </div>
+      <div class="card">
+        <div class="card-title">⟐ About</div>
+        <p style="font-size:13px;color:var(--text-dim);line-height:1.6">
+          Star Wars D6 Toolkit — NPC Generator &amp; Astrogation Calculator.<br>
+          Based on the WEG Star Wars D6 RPG system.<br>
+          Travel times based on DT Strain Travel Time Map v.5.<br><br>
+          <span style="color:var(--text-dark)">v1.0 — Built with ♦ for the tabletop</span>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav class="nav-bar">
+    <button class="nav-btn active" onclick="switchTab('npc')" data-tab="npc">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      NPC
+    </button>
+    <button class="nav-btn" onclick="switchTab('travel')" data-tab="travel">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+      TRAVEL
+    </button>
+    <button class="nav-btn" onclick="switchTab('galaxy')" data-tab="galaxy">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      GALAXY
+    </button>
+    <button class="nav-btn" onclick="switchTab('settings')" data-tab="settings">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+      SETTINGS
+    </button>
+  </nav>
+</div>
+
+<!-- DATA SCRIPTS -->
+<script src="data_npc.js"></script>
+<script src="data_races.js"></script>
+<script src="data_names.js"></script>
+<script src="data_skills.js"></script>
+<script src="data_powers.js"></script>
+<script src="data_systems.js"></script>
+<script src="data_grid.js"></script>
+<script src="data_images.js"></script>
+
+<script>
+// ============================================================
+// UTILITY FUNCTIONS
+// ============================================================
+const pick = arr => arr[Math.floor(Math.random() * arr.length)];
+const randBetween = (a, b) => Math.floor(Math.random() * (b - a + 1)) + a;
+
+function pipsToD6(pips) {
+  const d = Math.floor(pips / 3), r = pips % 3;
+  return r === 0 ? d + 'D' : d + 'D+' + r;
+}
+function d6ToPips(code) {
+  if (!code) return 0;
+  code = String(code).trim();
+  if (code.includes('D+')) { const p = code.split('D+'); return parseInt(p[0]) * 3 + parseInt(p[1]); }
+  if (code.includes('D')) { return parseInt(code.split('D')[0]) * 3; }
+  return 0;
+}
+
+function normalizeRace(name) {
+  if (String(name).trim().substring(0, 10) === 'Near-Human') return 'Near-Human';
+  return String(name).trim();
+}
+
+// ============================================================
+// TAB NAVIGATION
+// ============================================================
+function switchTab(tab) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + tab).classList.add('active');
+  document.querySelector(`[data-tab="${tab}"]`).classList.add('active');
+}
+
+// ============================================================
+// NPC STATE
+// ============================================================
+let npc = {};
+
+function rollAll() {
+  npc = {};
+  rollRace();
+  rollJob();
+  rollTraining();
+  rollAllStats();
+  rollSkillsNPC();
+  rollForceSkills();
+  rollForcePowers();
+  rollFluff();
+  rollNames();
+  rollEquipment();
+  displayNPC();
+}
+
+function rollRace() {
+  const bias = parseInt(document.getElementById('humanBias').value) / 100;
+  if (bias > 0 && Math.random() < bias) {
+    npc.race = Math.random() < 0.5 ? 'Human' : 'Near-Human';
+  } else {
+    npc.race = pick(NPC_DATA.races);
+  }
+  if (npc.race === 'Near-Human') {
+    npc.race = pick(NPC_DATA.near_human_subtypes);
+  }
+}
+
+function rollJob() { npc.job = pick(NPC_DATA.jobs); }
+function rollTraining() { npc.training = pick(NPC_DATA.training); }
+
+function rollNames() {
+  npc.firstName = pick(NAMES_DATA.firstNames);
+  npc.surname = pick(NAMES_DATA.surnames);
+}
+
+function rollEquipment() {
+  npc.weapon1 = pick(NPC_DATA.weapon1);
+  npc.weapon2 = pick(NPC_DATA.weapon2);
+  npc.weapon3 = pick(NPC_DATA.weapon3);
+  npc.melee = pick(NPC_DATA.melee);
+  npc.comms = pick(NPC_DATA.comms);
+  npc.credits = pick(NPC_DATA.credits);
+  npc.jetpack = NPC_DATA.jetpack.length ? pick(NPC_DATA.jetpack) : 'None';
+  npc.sec1 = pick(NPC_DATA.sec1);
+  npc.sec2 = pick(NPC_DATA.sec2);
+  npc.booster = pick(NPC_DATA.booster);
+  npc.med = pick(NPC_DATA.med);
+  npc.armor = pick(NPC_DATA.armor);
+  npc.camo = pick(NPC_DATA.camo);
+  npc.shield = pick(NPC_DATA.shield);
+  npc.surveil1 = pick(NPC_DATA.surveil1);
+  npc.surveil2 = pick(NPC_DATA.surveil2);
+  npc.survival = pick(NPC_DATA.survival);
+  npc.tools = NPC_DATA.tools.length ? pick(NPC_DATA.tools) : 'None';
+}
+
+function rollAllStats() {
+  const raceKey = normalizeRace(npc.race);
+  const rd = RACES_DATA[raceKey];
+  if (!rd) { console.warn('Race not found:', raceKey); return; }
+  const pickStat = key => rd[key] ? pick(rd[key]) : '';
+  npc.dex = pickStat('Dex'); npc.kno = pickStat('Kno');
+  npc.mec = pickStat('Mec'); npc.per = pickStat('Per');
+  npc.str = pickStat('Str'); npc.tec = pickStat('Tec');
+  npc.move = pickStat('Mov'); npc.height = pickStat('Height');
+  npc.sex = pickStat('Sex');
+  npc.storyFactor = pickStat('StoryFactor');
+  npc.specAbility = pickStat('SpecAb');
+}
+
+function rollSkillsNPC() {
+  const job = npc.job, training = npc.training;
+  const tData = SKILLS_DATA.training[training];
+  if (!tData) return;
+  let budget = tData.budget, cap = tData.cap;
+
+  // Collect flagged skills for this job
+  const flagged = SKILLS_DATA.skills.filter(s => s.jobs.includes(job));
+  if (!flagged.length) { npc.skills = []; return; }
+
+  // Shuffle
+  const shuffled = [...flagged].sort(() => Math.random() - 0.5);
+  const alloc = shuffled.map(s => ({ ...s, pips: 0 }));
+
+  // Novice guarantee: 3 pips each
+  if (training === 'Novice') {
+    for (const sk of alloc) {
+      const g = Math.min(3, cap, budget);
+      sk.pips = g; budget -= g;
+      if (budget <= 0) break;
+    }
+  }
+
+  // Random scatter remaining
+  let safety = 0;
+  while (budget > 0 && safety < 5000) {
+    const eligible = alloc.filter(s => s.pips < cap);
+    if (!eligible.length) break;
+    const s = pick(eligible);
+    s.pips++; budget--;
+    safety++;
+  }
+
+  // Convert to final values
+  const bases = { Dex: d6ToPips(npc.dex), Per: d6ToPips(npc.per), Kno: d6ToPips(npc.kno), Str: d6ToPips(npc.str), Mec: d6ToPips(npc.mec), Tec: d6ToPips(npc.tec) };
+  npc.skills = alloc.filter(s => s.pips > 0).map(s => ({
+    name: s.name, attr: s.attr, dice: pipsToD6((bases[s.attr] || 0) + s.pips)
+  }));
+}
+
+function rollForceSkills() {
+  npc.forceControl = ''; npc.forceSense = ''; npc.forceAlter = '';
+  const forceJobs = ['Failed Jedi', 'Minor Jedi', 'Young Jedi', 'Force Student'];
+  if (!forceJobs.includes(npc.job)) return;
+
+  const ft = SKILLS_DATA.forceTraining[npc.training];
+  if (!ft) return;
+  let budget = ft.budget, cap = ft.cap;
+  const pips = [0, 0, 0]; // Control, Sense, Alter
+
+  // Guarantee 1D each
+  for (let i = 0; i < 3; i++) {
+    const g = Math.min(3, budget); pips[i] = g; budget -= g;
+    if (budget <= 0) break;
+  }
+
+  // Weighted scatter: Control 36%, Sense 34%, Alter 30%
+  while (budget > 0) {
+    const allCapped = pips.every(p => p >= cap);
+    if (allCapped) break;
+    const roll = Math.random() * 100;
+    let idx = roll < 36 ? 0 : roll < 70 ? 1 : 2;
+    if (pips[idx] < cap) { pips[idx]++; budget--; }
+  }
+
+  npc.forceControl = pipsToD6(pips[0]);
+  npc.forceSense = pipsToD6(pips[1]);
+  npc.forceAlter = pipsToD6(pips[2]);
+}
+
+function rollForcePowers() {
+  npc.forcePowers = [];
+  const cp = d6ToPips(npc.forceControl), sp = d6ToPips(npc.forceSense), ap = d6ToPips(npc.forceAlter);
+  const total = cp + sp + ap;
+  if (!total) return;
+
+  const eligible = (cat) => {
+    switch (cat) {
+      case 'Control': return cp > 0;
+      case 'Sense': return sp > 0;
+      case 'Alter': return ap > 0;
+      case 'Control+Sense': return cp > 0 || sp > 0;
+      case 'Control+Alter': return cp > 0 || ap > 0;
+      case 'Sense+Alter': return sp > 0 || ap > 0;
+      default: return total > 0;
+    }
+  };
+
+  const awarded = [];
+  // Phase 1: no-prereq
+  const phase1 = POWERS_DATA.filter(p => !p.prereq && eligible(p.category)).sort(() => Math.random() - 0.5);
+  for (const p of phase1) {
+    if (awarded.length >= total) break;
+    awarded.push(p);
+  }
+
+  // Phase 2: prereq powers
+  let changed = true;
+  while (changed && awarded.length < total) {
+    changed = false;
+    const pool = POWERS_DATA.filter(p => p.prereq && eligible(p.category) && !awarded.includes(p)).sort(() => Math.random() - 0.5);
+    for (const p of pool) {
+      if (awarded.length >= total) break;
+      const reqs = p.prereq.split(',').map(r => r.trim()).filter(r => r);
+      const met = reqs.every(req => awarded.some(a => a.name.startsWith(req + '.')));
+      if (met) { awarded.push(p); changed = true; }
+    }
+  }
+
+  // Sort by number
+  awarded.sort((a, b) => {
+    const na = parseInt(a.name) || 0, nb = parseInt(b.name) || 0;
+    return na - nb;
+  });
+
+  npc.forcePowers = awarded;
+}
+
+function rollFluff() {
+  const forceJobs = ['Failed Jedi', 'Minor Jedi', 'Young Jedi', 'Quixotic Jedi', 'Force Student'];
+  const isForceJob = forceJobs.includes(npc.job);
+  const isForceSensitive = isForceJob || (Math.random() < 0.05);
+
+  npc.forceSensitive = isForceSensitive ? 'Yes' : 'No';
+
+  const t = npc.training;
+  const fpMap = { 'Novice': [3,4], 'Trained': [5,6], 'Experienced': [7,8], 'Veteran': [9,10], 'Elite': [11,12], 'Minor Hero/Villan': [13,14], 'Major Hero/Villan': [15,16] };
+  const cpMap = { 'Novice': [4,8], 'Trained': [9,13], 'Experienced': [14,18], 'Veteran': [19,23], 'Elite': [24,28], 'Minor Hero/Villan': [29,33], 'Major Hero/Villan': [34,38] };
+
+  if (isForceJob && fpMap[t]) npc.forcePoints = randBetween(...fpMap[t]);
+  else if (isForceSensitive) npc.forcePoints = 2;
+  else npc.forcePoints = 1;
+
+  if (cpMap[t]) npc.charPoints = randBetween(...cpMap[t]);
+  else npc.charPoints = 4;
+}
+
+// ============================================================
+// REROLL FUNCTIONS
+// ============================================================
+function rerollRace() { rollRace(); rollAllStats(); rollSkillsNPC(); displayNPC(); }
+function rerollJob() { rollJob(); rollSkillsNPC(); rollForceSkills(); rollForcePowers(); rollFluff(); displayNPC(); }
+function rerollTraining() { rollTraining(); rollSkillsNPC(); rollForceSkills(); rollForcePowers(); rollFluff(); displayNPC(); }
+function rerollAttrs() { rollAllStats(); rollSkillsNPC(); displayNPC(); }
+function rerollSkills() { rollSkillsNPC(); displayNPC(); }
+
+// ============================================================
+// DISPLAY NPC
+// ============================================================
+function displayNPC() {
+  const r = document.getElementById('npcResult');
+  r.style.display = 'block';
+
+  document.getElementById('npcName').textContent = npc.firstName + ' ' + npc.surname;
+  document.getElementById('npcRace').textContent = npc.race;
+  document.getElementById('npcJob').textContent = npc.job;
+
+  const tEl = document.getElementById('npcTraining');
+  tEl.textContent = npc.training;
+  tEl.className = 'npc-training';
+  const tc = npc.training.includes('Hero') || npc.training.includes('Villan') ? 'hero' : npc.training;
+  tEl.classList.add('training-' + tc);
+
+  // Portrait
+  const raceKey = normalizeRace(npc.race);
+  const imgFile = RACE_IMAGES[raceKey] || RACE_IMAGES[npc.race];
+  const portrait = document.getElementById('npcPortrait');
+  if (imgFile) { portrait.src = 'images/' + imgFile; portrait.style.display = 'block'; }
+  else { portrait.style.display = 'none'; }
+
+  // Stats
+  document.getElementById('statDex').textContent = npc.dex;
+  document.getElementById('statPer').textContent = npc.per;
+  document.getElementById('statKno').textContent = npc.kno;
+  document.getElementById('statStr').textContent = npc.str;
+  document.getElementById('statMec').textContent = npc.mec;
+  document.getElementById('statTec').textContent = npc.tec;
+  document.getElementById('statMove').textContent = npc.move;
+  document.getElementById('statHeight').textContent = npc.height ? npc.height + 'm' : '';
+  document.getElementById('statSex').textContent = npc.sex;
+
+  // Story factor & special abilities
+  const sf = document.getElementById('storyFactor');
+  const sa = document.getElementById('specAbility');
+  if (npc.storyFactor) { sf.style.display = 'block'; document.getElementById('storyFactorText').textContent = npc.storyFactor; }
+  else { sf.style.display = 'none'; }
+  if (npc.specAbility) { sa.style.display = 'block'; document.getElementById('specAbilityText').textContent = npc.specAbility; }
+  else { sa.style.display = 'none'; }
+
+  // Fluff
+  document.getElementById('fluffFS').textContent = npc.forceSensitive;
+  document.getElementById('fluffFS').style.color = npc.forceSensitive === 'Yes' ? 'var(--purple)' : 'var(--text-dim)';
+  document.getElementById('fluffCreds').textContent = npc.credits;
+  document.getElementById('fluffFP').textContent = npc.forcePoints;
+  document.getElementById('fluffCP').textContent = npc.charPoints;
+
+  // Skills
+  const skillsOut = document.getElementById('skillsOutput');
+  const groups = {};
+  for (const s of npc.skills) {
+    if (!groups[s.attr]) groups[s.attr] = [];
+    groups[s.attr].push(s);
+  }
+  const attrOrder = ['Dex', 'Per', 'Kno', 'Str', 'Mec', 'Tec'];
+  let html = '';
+  for (const attr of attrOrder) {
+    if (!groups[attr]) continue;
+    html += `<div class="skill-section"><div class="skill-section-header">${attr.toUpperCase()}</div>`;
+    for (const s of groups[attr]) {
+      html += `<div class="skill-row"><span class="skill-name">${s.name}</span><span class="skill-dice">${s.dice}</span></div>`;
+    }
+    html += '</div>';
+  }
+  skillsOut.innerHTML = html;
+
+  // Force
+  const forceCard = document.getElementById('forceCard');
+  if (npc.forceControl) {
+    forceCard.style.display = 'block';
+    let fhtml = '<div class="force-attr-grid">';
+    fhtml += `<div class="force-attr"><div class="force-attr-name">CONTROL</div><div class="force-attr-val">${npc.forceControl}</div></div>`;
+    fhtml += `<div class="force-attr"><div class="force-attr-name">SENSE</div><div class="force-attr-val">${npc.forceSense}</div></div>`;
+    fhtml += `<div class="force-attr"><div class="force-attr-name">ALTER</div><div class="force-attr-val">${npc.forceAlter}</div></div>`;
+    fhtml += '</div>';
+    if (npc.forcePowers.length) {
+      fhtml += '<div style="margin-top:8px">';
+      for (const p of npc.forcePowers) {
+        const cls = p.darkSide ? 'power-tag dark-side' : 'power-tag';
+        fhtml += `<span class="${cls}">${p.name}</span>`;
+      }
+      fhtml += '</div>';
+    }
+    document.getElementById('forceOutput').innerHTML = fhtml;
+  } else {
+    forceCard.style.display = 'none';
+  }
+
+  // Equipment
+  const equipItems = [
+    ['Pistol', npc.weapon1], ['Rifle', npc.weapon2], ['Repeater', npc.weapon3],
+    ['Melee', npc.melee], ['Comms', npc.comms], ['Armor', npc.armor],
+    ['Shield', npc.shield], ['Sec 1', npc.sec1], ['Sec 2', npc.sec2],
+    ['Medical', npc.med], ['Booster', npc.booster], ['Camo', npc.camo],
+    ['Surveil', npc.surveil1], ['Surveil 2', npc.surveil2],
+    ['Survival', npc.survival], ['Tools', npc.tools], ['Jet Pack', npc.jetpack],
+  ];
+  let ehtml = '';
+  for (const [label, val] of equipItems) {
+    if (val && val !== 'None') {
+      ehtml += `<div class="equip-row"><span class="equip-label">${label}</span><span class="equip-value">${val}</span></div>`;
+    }
+  }
+  document.getElementById('equipOutput').innerHTML = ehtml;
+
+  // Scroll to top
+  document.getElementById('tab-npc').scrollTop = 0;
+}
+
+// ============================================================
+// TRAVEL CALCULATOR
+// ============================================================
+let routeMode = 'smuggler';
+
+function setRoute(mode) {
+  routeMode = mode;
+  document.getElementById('routeSmuggler').classList.toggle('active', mode === 'smuggler');
+  document.getElementById('routeTrade').classList.toggle('active', mode === 'trade');
+}
+
+// Autocomplete
+function setupAutocomplete(inputId, listId) {
+  const input = document.getElementById(inputId);
+  const list = document.getElementById(listId);
+
+  input.addEventListener('input', () => {
+    const q = input.value.trim().toLowerCase();
+    if (q.length < 2) { list.style.display = 'none'; return; }
+    const matches = SYSTEMS_DATA.filter(s => s.name.toLowerCase().includes(q)).slice(0, 20);
+    if (!matches.length) { list.style.display = 'none'; return; }
+    list.innerHTML = matches.map(s => `<div class="autocomplete-item" data-name="${s.name}">${s.name}<span class="region">${s.grid} · ${s.region}</span></div>`).join('');
+    list.style.display = 'block';
+    list.querySelectorAll('.autocomplete-item').forEach(item => {
+      item.addEventListener('click', () => { input.value = item.dataset.name; list.style.display = 'none'; });
+    });
+  });
+
+  input.addEventListener('blur', () => setTimeout(() => list.style.display = 'none', 200));
+}
+
+function findSystem(name) {
+  return SYSTEMS_DATA.find(s => s.name.toLowerCase() === name.toLowerCase());
+}
+
+function randomOrigin() {
+  const s = pick(SYSTEMS_DATA);
+  document.getElementById('originInput').value = s.name;
+}
+function randomDest() {
+  const s = pick(SYSTEMS_DATA);
+  document.getElementById('destInput').value = s.name;
+}
+function randomBoth() {
+  const a = pick(SYSTEMS_DATA);
+  let b;
+  do { b = pick(SYSTEMS_DATA); } while (b.name === a.name);
+  document.getElementById('originInput').value = a.name;
+  document.getElementById('destInput').value = b.name;
+}
+
+function engage() {
+  const origin = findSystem(document.getElementById('originInput').value);
+  const dest = findSystem(document.getElementById('destInput').value);
+  if (!origin || !dest) { alert('Please enter valid system names.'); return; }
+
+  const hd = parseFloat(document.getElementById('hdSlider').value);
+  const gridHours = GRID_DATA.grid;
+  const colLetters = 'CDEFGHIJKLMNOPQRSTUVW';
+
+  let path = [];
+
+  if (routeMode === 'smuggler') {
+    // Bresenham
+    let x0 = origin.col, y0 = origin.row, x1 = dest.col, y1 = dest.row;
+    const dx = Math.abs(x1 - x0), dy = Math.abs(y1 - y0);
+    const sx = x0 < x1 ? 1 : -1, sy = y0 < y1 ? 1 : -1;
+    let err = dx - dy, cx = x0, cy = y0;
+    for (let i = 0; i < 100; i++) {
+      path.push({ col: cx, row: cy });
+      if (cx === x1 && cy === y1) break;
+      const e2 = 2 * err;
+      if (e2 > -dy && e2 < dx) { err -= dy; err += dx; cx += sx; cy += sy; }
+      else if (e2 > -dy) { err -= dy; cx += sx; }
+      else if (e2 < dx) { err += dx; cy += sy; }
+    }
+  } else {
+    // Dijkstra
+    const cost = {};
+    for (let c = 1; c <= 21; c++) for (let r = 1; r <= 21; r++) {
+      const key = colLetters[c - 1] + '-' + r;
+      cost[c + ',' + r] = gridHours[key] || 24;
+    }
+
+    const dist = {}, prev = {}, visited = {};
+    for (let c = 1; c <= 21; c++) for (let r = 1; r <= 21; r++) {
+      dist[c + ',' + r] = Infinity;
+    }
+    const startKey = origin.col + ',' + origin.row;
+    dist[startKey] = cost[startKey] || 24;
+
+    const dirs = [[0,-1],[1,-1],[1,0],[1,1],[0,1],[-1,1],[-1,0],[-1,-1]];
+
+    for (let iter = 0; iter < 441; iter++) {
+      let minD = Infinity, minK = null;
+      for (let c = 1; c <= 21; c++) for (let r = 1; r <= 21; r++) {
+        const k = c + ',' + r;
+        if (!visited[k] && dist[k] < minD) { minD = dist[k]; minK = k; }
+      }
+      if (!minK) break;
+      const [mc, mr] = minK.split(',').map(Number);
+      if (mc === dest.col && mr === dest.row) break;
+      visited[minK] = true;
+
+      for (const [dc, dr] of dirs) {
+        const nc = mc + dc, nr = mr + dr;
+        if (nc < 1 || nc > 21 || nr < 1 || nr > 21) continue;
+        const nk = nc + ',' + nr;
+        if (visited[nk]) continue;
+        const nd = dist[minK] + (cost[nk] || 24);
+        if (nd < dist[nk]) { dist[nk] = nd; prev[nk] = minK; }
+      }
+    }
+
+    // Reconstruct
+    const temp = [];
+    let tk = dest.col + ',' + dest.row;
+    for (let i = 0; i < 500; i++) {
+      const [c, r] = tk.split(',').map(Number);
+      temp.push({ col: c, row: r });
+      if (c === origin.col && r === origin.row) break;
+      if (!prev[tk]) { alert('No trade route found! Try Smuggler\'s Route.'); return; }
+      tk = prev[tk];
+    }
+    path = temp.reverse();
+  }
+
+  // Calculate hours
+  let totalBase = 0;
+  const pathData = path.map(p => {
+    const key = colLetters[p.col - 1] + '-' + p.row;
+    const hrs = gridHours[key] || 24;
+    totalBase += hrs;
+    return { ...p, grid: key, hours: hrs };
+  });
+
+  const totalHours = totalBase * hd;
+  const days = Math.floor(totalHours / 24);
+  const hrs = totalHours - days * 24;
+  const malfIdx = Math.floor(Math.random() * pathData.length);
+
+  // Display results
+  document.getElementById('travelResult').style.display = 'block';
+  document.getElementById('routeLabel').textContent = routeMode === 'smuggler' ? "Smuggler's Route (Straight Line)" : 'Trade Route (Optimal Path)';
+  document.getElementById('resOGrid').textContent = origin.grid;
+  document.getElementById('resDGrid').textContent = dest.grid;
+  document.getElementById('resORegion').textContent = origin.region;
+  document.getElementById('resDRegion').textContent = dest.region;
+  document.getElementById('resTiles').textContent = pathData.length;
+  document.getElementById('resBaseHrs').textContent = totalBase.toFixed(1) + 'h';
+  document.getElementById('resTotalHrs').textContent = totalHours.toFixed(1) + 'h';
+  document.getElementById('resTime').textContent = days + 'd ' + hrs.toFixed(1) + 'h';
+  document.getElementById('resMalfunction').textContent = pathData[malfIdx].grid;
+
+  // Path list
+  let phtml = '';
+  for (let i = 0; i < pathData.length; i++) {
+    const p = pathData[i];
+    const cls = i === malfIdx ? 'path-tile malfunction' : 'path-tile';
+    let hcls = 'hrs-crawl';
+    if (p.hours <= 1) hcls = 'hrs-fast';
+    else if (p.hours <= 2) hcls = 'hrs-med';
+    else if (p.hours <= 4) hcls = 'hrs-slow';
+    else if (p.hours <= 8) hcls = 'hrs-vslow';
+    phtml += `<div class="${cls}"><span>${i === malfIdx ? '⚠ ' : ''}${p.grid}</span><span class="path-hrs ${hcls}">${p.hours}h</span></div>`;
+  }
+  document.getElementById('pathOutput').innerHTML = phtml;
+
+  // Draw map
+  drawMap(pathData, origin, dest, malfIdx);
+  document.getElementById('tab-travel').scrollTop = 0;
+}
+
+function drawMap(pathData, origin, dest, malfIdx) {
+  const canvas = document.getElementById('mapCanvas');
+  const dpr = window.devicePixelRatio || 1;
+  const size = canvas.clientWidth;
+  canvas.width = size * dpr;
+  canvas.height = size * dpr;
+  const ctx = canvas.getContext('2d');
+  ctx.scale(dpr, dpr);
+
+  const tileW = size / 21, tileH = size / 21;
+  const colLetters = 'CDEFGHIJKLMNOPQRSTUVW';
+
+  // Background grid
+  ctx.fillStyle = '#0a0a14';
+  ctx.fillRect(0, 0, size, size);
+
+  // Draw tiles with speed colors
+  const gridHours = GRID_DATA.grid;
+  for (let c = 1; c <= 21; c++) for (let r = 1; r <= 21; r++) {
+    const key = colLetters[c - 1] + '-' + r;
+    const hrs = gridHours[key] || 24;
+    let color;
+    if (hrs <= 0.5) color = 'rgba(0,255,100,.15)';
+    else if (hrs <= 2) color = 'rgba(0,200,255,.1)';
+    else if (hrs <= 8) color = 'rgba(255,165,0,.08)';
+    else if (hrs <= 16) color = 'rgba(180,100,255,.06)';
+    else color = 'rgba(40,40,80,.1)';
+    ctx.fillStyle = color;
+    ctx.fillRect((c - 1) * tileW, (r - 1) * tileH, tileW - 0.5, tileH - 0.5);
+  }
+
+  // Grid lines
+  ctx.strokeStyle = 'rgba(255,255,255,.04)';
+  ctx.lineWidth = 0.5;
+  for (let i = 0; i <= 21; i++) {
+    ctx.beginPath(); ctx.moveTo(i * tileW, 0); ctx.lineTo(i * tileW, size); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(0, i * tileH); ctx.lineTo(size, i * tileH); ctx.stroke();
+  }
+
+  // Route line
+  if (pathData.length > 1) {
+    ctx.strokeStyle = 'rgba(255,215,0,.7)';
+    ctx.lineWidth = 2.5;
+    ctx.beginPath();
+    ctx.moveTo((pathData[0].col - 0.5) * tileW, (pathData[0].row - 0.5) * tileH);
+    for (let i = 1; i < pathData.length; i++) {
+      ctx.lineTo((pathData[i].col - 0.5) * tileW, (pathData[i].row - 0.5) * tileH);
+    }
+    ctx.stroke();
+  }
+
+  // Start dot (green)
+  const sx = (pathData[0].col - 0.5) * tileW, sy = (pathData[0].row - 0.5) * tileH;
+  ctx.fillStyle = '#00ff66';
+  ctx.beginPath(); ctx.arc(sx, sy, 4, 0, Math.PI * 2); ctx.fill();
+
+  // End dot (red)
+  const ex = (pathData[pathData.length - 1].col - 0.5) * tileW, ey = (pathData[pathData.length - 1].row - 0.5) * tileH;
+  ctx.fillStyle = '#ff4444';
+  ctx.beginPath(); ctx.arc(ex, ey, 4, 0, Math.PI * 2); ctx.fill();
+
+  // Malfunction marker
+  const mx = (pathData[malfIdx].col - 0.5) * tileW, my = (pathData[malfIdx].row - 0.5) * tileH;
+  ctx.strokeStyle = '#ff4444';
+  ctx.lineWidth = 1.5;
+  ctx.beginPath(); ctx.arc(mx, my, 6, 0, Math.PI * 2); ctx.stroke();
+
+  // Labels
+  ctx.font = '9px Share Tech Mono, monospace';
+  ctx.fillStyle = '#66bb6a';
+  ctx.textAlign = 'center';
+  ctx.fillText(origin.name.substring(0, 12), sx, sy - 8);
+  ctx.fillStyle = '#ff4444';
+  ctx.fillText(dest.name.substring(0, 12), ex, ey - 8);
+}
+
+// ============================================================
+// GALAXY INDEX
+// ============================================================
+let galaxyTimeout;
+document.addEventListener('DOMContentLoaded', () => {
+  setupAutocomplete('originInput', 'originList');
+  setupAutocomplete('destInput', 'destList');
+
+  document.getElementById('hdSlider').addEventListener('input', e => {
+    document.getElementById('hdValue').textContent = '×' + e.target.value;
+  });
+  document.getElementById('humanBias').addEventListener('input', e => {
+    document.getElementById('biasDisplay').textContent = e.target.value + '%';
+  });
+
+  // Galaxy search
+  document.getElementById('galaxySearch').addEventListener('input', e => {
+    clearTimeout(galaxyTimeout);
+    galaxyTimeout = setTimeout(() => searchGalaxy(e.target.value), 150);
+  });
+
+  // Speed settings
+  const speeds = GRID_DATA.speeds;
+  let shtml = '';
+  for (const [name, data] of Object.entries(speeds)) {
+    shtml += `<div class="setting-row">
+      <div><div class="setting-label">${name}</div><div class="setting-desc">Current: ${data.default}h</div></div>
+      <input type="number" class="speed-input" data-speed="${name}" value="${data.speed}" step="0.5" min="0.1">
+    </div>`;
+  }
+  document.getElementById('speedSettings').innerHTML = shtml;
+
+  // Show initial galaxy count
+  document.getElementById('galaxyCount').textContent = SYSTEMS_DATA.length.toLocaleString() + ' systems in database';
+});
+
+function searchGalaxy(query) {
+  const q = query.trim().toLowerCase();
+  const container = document.getElementById('galaxyResults');
+  const countEl = document.getElementById('galaxyCount');
+
+  if (q.length < 2) {
+    container.innerHTML = '';
+    countEl.textContent = SYSTEMS_DATA.length.toLocaleString() + ' systems in database';
+    return;
+  }
+
+  const matches = SYSTEMS_DATA.filter(s =>
+    s.name.toLowerCase().includes(q) ||
+    s.region.toLowerCase().includes(q) ||
+    s.grid.toLowerCase().includes(q)
+  ).slice(0, 100);
+
+  countEl.textContent = matches.length + (matches.length >= 100 ? '+' : '') + ' results';
+
+  container.innerHTML = matches.map(s => `
+    <div class="system-card">
+      <div>
+        <div class="system-name">${s.name}</div>
+        <div class="system-meta">${s.region} · ${s.quadrant}</div>
+      </div>
+      <div class="system-grid-tag">${s.grid}</div>
+    </div>
+  `).join('');
+}
+
+// ============================================================
+// RECALIBRATE
+// ============================================================
+function recalibrate() {
+  const colLetters = 'CDEFGHIJKLMNOPQRSTUVW';
+  const speeds = GRID_DATA.speeds;
+  const oldSpeeds = {};
+  const newSpeeds = {};
+
+  for (const [name, data] of Object.entries(speeds)) {
+    oldSpeeds[name] = data.default;
+    const input = document.querySelector(`[data-speed="${name}"]`);
+    newSpeeds[name] = parseFloat(input.value);
+  }
+
+  let changed = 0;
+  for (const [key, val] of Object.entries(GRID_DATA.grid)) {
+    for (const [name, oldVal] of Object.entries(oldSpeeds)) {
+      if (Math.abs(val - oldVal) < 0.01 && oldVal !== newSpeeds[name]) {
+        GRID_DATA.grid[key] = newSpeeds[name];
+        changed++;
+        break;
+      }
+    }
+  }
+
+  // Update defaults
+  for (const [name, val] of Object.entries(newSpeeds)) {
+    GRID_DATA.speeds[name].default = val;
+    GRID_DATA.speeds[name].speed = val;
+  }
+
+  alert('Recalibrated! ' + changed + ' cells updated.');
+}
+</script>
+
+</body>
+</html>
