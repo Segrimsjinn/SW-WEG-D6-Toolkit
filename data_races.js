@@ -22,9 +22,8 @@ const RACES_DATA = {
   "Mov": ["10","10","10","11","11","12","12"],
   "Height": ["1.5","1.6","1.7","1.8","1.9","2"],
   "Sex": ["M","M","M","F","M","M","M","F"],
-  "StoryFactor": ["There are many Near-Humans some of them do have special factors you'll have to look them up if you want one.
-Aquar, Arhan, Arkanian, Bimm, Boltrunian, Borneck, Brosin, Chev, Chiss, Emmerian, Enso, Enu, Epicanthix, Etti, Firrerreo, Galandan, Ganathan, Hapan, Kalzerians, Keeds, Keshiri, Khommite, Kiffar, Locan, Lorrdian, Lowen, Miraluka, Mirialan, Morellian, Nagai, Nish, Ocsinin, Ogemite, Omwati, O'reenian, Pantoran, Pau'an, Qiraash, Reussi, Ropagu, Ruusanian, Samuac, Sernpidalian, Shownarri, Skups, S'kytri, Stennes, Sullustan, Taung, Torine, Ubese (True), Utai, Vendaran, Vorzydiak, Wroonian, Xa Fel, Zelosian, Zeltron, Zisian, Zygerrian"],
-  "SpecAb": ["Aquar, Arhan, Arkanian, Bimm, Boltrunian, Borneck, Brosin, Chev, Chiss, Emmerian, Enso, Enu, Epicanthix, Etti, Firrerreo, Galandan, Ganathan, Hapan, Kalzerians, Keeds, Keshiri, Khommite, Kiffar, Locan, Lorrdian, Lowen, Miraluka, Mirialan, Morellian, Nagai, Nish, Ocsinin, Ogemite, Omwati, O'reenian, Pantoran, Pau'an, Qiraash, Reussi, Ropagu, Ruusanian, Samuac, Sernpidalian, Shownarri, Skups, S'kytri, Stennes, Sullustan, Taung, Torine, Ubese (True), Utai, Vendaran, Vorzydiak, Wroonian, Xa Fel, Zelosian, Zeltron, Zisian, Zygerrian"]
+  "StoryFactor": ["There are many Near-Humans some of them do have special factors you'll have to look them up if you want one. Aquar, Arhan, Arkanian, Bimm, Boltrunian, Borneck, Brosin, Chev, Chiss, Emmerian, Enso, Enu, Epicanthix, Etti, Firrerreo, Galandan, Ganathan, Hapan, Kalzerians, Keeds, Keshiri, Khommite, Kiffar, Locan, Lorrdian, Lowen, Miraluka, Mirialan, Morellian, Nagai, Nish, Ocsinin, Ogemite, Omwati, O'reenian, Pantoran, Pau'an, Qiraash, Reussi, Ropagu, Ruusanian, Samuac, Sernpidalian, Shownarri, Skups, S'kytri, Stennes, Sullustan, Taung, Torine, Ubese (True), Utai, Vendaran, Vorzydiak, Wroonian, Xa Fel, Zelosian, Zeltron, Zisian, Zygerrian"],
+  "SpecAb": ["Varies by Subtype please look up, image varies too"]
 },
 "Adnerem": {
   "Dex": ["1D","1D+1","1D+2","2D","2D+1","2D+2","3D"],
@@ -64,7 +63,7 @@ Aquar, Arhan, Arkanian, Bimm, Boltrunian, Borneck, Brosin, Chev, Chiss, Emmerian
   "Sex": ["M","M","M","F","M","M","M","F"],
   "StoryFactor": ["Numb Senses: Aleena are incapable of sensing smell or taste, therefore they automatically fail Perception tests based on these senses."],
   "SpecAb": ["Exceptional Reﬂexes: Gain a +1D bonus to all Perception rolls made to determine initiative.
- Furtive: At character creation only, Aleena characters get 2D for 1D spent on hide, sneak and search."]
+             Furtive: At character creation only, Aleena characters get 2D for 1D spent on hide, sneak and search."]
 },
 "Amanin": {
   "Dex": ["2D","2D+1","2D+2","3D","3D+1","3D+2","4D"],
