@@ -1173,7 +1173,7 @@ function drawMap(pathData, origin, dest, malfIdx) {
 
   // 20 columns (C-V), 21 rows
   const tileW = gridW / 20;
-  const tileH = gridH / 21;
+  const tileH = gridH / 22;
 
   // Convert grid col/row to pixel position
   // col 1 (C) = first column, col 19 (U) = last visible column
@@ -1358,7 +1358,7 @@ function highlightGalaxySystems(systems, isGridSearch) {
   const gridBottom = h * 0.970;
   const gridW = gridRight - gridLeft;
   const gridH = gridBottom - gridTop;
-  const cols = 20, rows = 21;
+  const cols = 20, rows = 22;
   const tileW = gridW / cols;
   const tileH = gridH / rows;
 
@@ -1371,10 +1371,10 @@ function highlightGalaxySystems(systems, isGridSearch) {
     const cy = gridTop + (row - 1 + 0.5) * tileH;
     const boxW = tileW + pad * 2;
     const boxH = tileH + pad * 2;
-    ctx.strokeStyle = 'rgba(0,100,255,0.8)';
+    ctx.strokeStyle = 'rgba(255,215,0,0.8)';
     ctx.lineWidth = 3;
     ctx.strokeRect(cx - boxW/2, cy - boxH/2, boxW, boxH);
-    ctx.fillStyle = 'rgba(0,100,255,0.1)';
+    ctx.fillStyle = 'rgba(255,215,0,0.1)';
     ctx.fillRect(cx - boxW/2, cy - boxH/2, boxW, boxH);
   }
 }
