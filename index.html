@@ -124,8 +124,8 @@ color:#000;text-shadow:none;
 /* NPC RESULT */
 .npc-header{display:flex;gap:12px;margin-bottom:16px;align-items:flex-start}
 .npc-portrait{
-max-width:300px;height:auto;border-radius:var(--radius-sm);
-border:2px solid var(--gold-dim);object-fit:contain;
+width:140px;height:250px;border-radius:var(--radius-sm);
+border:2px solid var(--gold-dim);object-fit:cover;
 background:var(--bg2);flex-shrink:0;
 }
 .npc-identity{flex:1;min-width:0}
@@ -868,7 +868,7 @@ function displayNPC() {
   // Portrait - try exact name, then strip "Near-Human: " prefix, then normalize
   const raceKey = normalizeRace(npc.race);
   const strippedRace = npc.race.replace(/^Near-Human:\s*/, '');
-  const imgFile = RACE_IMAGES[npc.race] || RACE_IMAGES[strippedRace] || RACE_IMAGES[raceKey];
+  const imgFile = RACE_IMAGES[npc.race] || RACE_IMAGES[raceKey] || RACE_IMAGES[strippedRace];
   const portrait = document.getElementById('npcPortrait');
   if (imgFile) { portrait.src = imgFile; portrait.style.display = 'block'; }
   else { portrait.style.display = 'none'; }
