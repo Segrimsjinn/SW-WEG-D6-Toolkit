@@ -156,7 +156,7 @@ align-items:center;border:1px solid var(--card-border);
 }
 .stat-label{font-size:11px;color:var(--text-dim);font-weight:600;letter-spacing:1px}
 .stat-value{
-font-family:'Eras Demi ITC','Eras Demi',sans-serif;font-size:15px;
+font-family:'Share Tech Mono',monospace;font-size:15px;
 color:var(--cyan);font-weight:700;
 }
 
@@ -176,7 +176,7 @@ display:flex;justify-content:space-between;padding:2px 0;
 font-size:12px;border-bottom:1px solid rgba(255,255,255,.03);
 }
 .skill-name{color:var(--text)}
-.skill-dice{font-family:'Eras Demi ITC','Eras Demi',sans-serif;color:var(--cyan);font-size:12px}
+.skill-dice{font-family:'Share Tech Mono',monospace;color:var(--cyan);font-size:12px}
 
 /* EQUIPMENT */
 .equip-grid{display:grid;grid-template-columns:1fr;gap:4px}
@@ -192,7 +192,7 @@ text-align:center;background:var(--bg2);border-radius:var(--radius-sm);
 padding:8px;border:1px solid #1a1a4a;
 }
 .force-attr-name{font-size:10px;color:var(--purple);font-weight:600;letter-spacing:1px}
-.force-attr-val{font-family:'Eras Demi ITC','Eras Demi',sans-serif;font-size:16px;color:var(--cyan);margin-top:4px}
+.force-attr-val{font-family:'Share Tech Mono',monospace;font-size:16px;color:var(--cyan);margin-top:4px}
 .power-tag{
 display:inline-block;font-size:11px;padding:3px 8px;
 border-radius:4px;margin:2px;background:var(--bg3);
@@ -205,7 +205,7 @@ border:1px solid var(--card-border);color:var(--text);
 .fluff-row{display:flex;align-items:center;gap:5px;padding:1px 0}
 .fluff-lbl{font-size:10px;color:var(--text-dark);font-weight:600;letter-spacing:.5px}
 .fluff-lbl::after{content:':'}
-.fluff-val{font-size:11px;color:var(--text);font-family:'Eras Demi ITC','Eras Demi',sans-serif}
+.fluff-val{font-size:11px;color:var(--text);font-family:'Share Tech Mono',monospace}
 .fluff-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:8px}
 .fluff-box{text-align:center}
 .fluff-label{font-size:9px;color:var(--text-dim);letter-spacing:1px}
@@ -270,7 +270,7 @@ transition:all .15s;
 .hd-row{display:flex;align-items:center;gap:12px;margin-bottom:12px}
 .hd-slider{flex:1;accent-color:var(--gold)}
 .hd-value{
-font-family:'Eras Demi ITC','Eras Demi',sans-serif;font-size:18px;
+font-family:'Share Tech Mono',monospace;font-size:18px;
 color:var(--cyan);min-width:40px;text-align:right;
 }
 
@@ -282,7 +282,7 @@ padding:10px;border:1px solid var(--card-border);
 }
 .result-label{font-size:9px;color:var(--text-dim);letter-spacing:1px;font-weight:600}
 .result-value{font-size:14px;color:var(--text);margin-top:4px}
-.result-value.highlight{color:var(--cyan);font-family:'Eras Demi ITC','Eras Demi',sans-serif;font-size:16px}
+.result-value.highlight{color:var(--cyan);font-family:'Share Tech Mono',monospace;font-size:16px}
 .result-box.wide{grid-column:1/-1}
 
 /* PATH DISPLAY */
@@ -294,7 +294,7 @@ font-size:12px;border-bottom:1px solid rgba(255,255,255,.03);
 .path-tile.malfunction{
 background:rgba(255,0,0,.08);border-left:3px solid var(--red);
 }
-.path-hrs{font-family:'Eras Demi ITC','Eras Demi',sans-serif}
+.path-hrs{font-family:'Share Tech Mono',monospace}
 .hrs-fast{color:#66bb6a}
 .hrs-med{color:#4fc3f7}
 .hrs-slow{color:#ffa726}
@@ -320,7 +320,7 @@ display:flex;justify-content:space-between;align-items:center;
 .system-name{font-size:14px;font-weight:600}
 .system-meta{font-size:11px;color:var(--text-dim);margin-top:2px}
 .system-grid-tag{
-font-family:'Eras Demi ITC','Eras Demi',sans-serif;font-size:13px;
+font-family:'Share Tech Mono',monospace;font-size:13px;
 color:var(--cyan);background:var(--bg2);padding:4px 10px;
 border-radius:4px;border:1px solid var(--card-border);
 }
@@ -336,7 +336,7 @@ padding:12px 0;border-bottom:1px solid var(--card-border);
 width:80px;padding:8px;text-align:center;
 border-radius:var(--radius-sm);border:1px solid var(--card-border);
 background:var(--bg2);color:var(--cyan);
-font-family:'Eras Demi ITC','Eras Demi',sans-serif;font-size:14px;
+font-family:'Share Tech Mono',monospace;font-size:14px;
 }
 
 /* Map Canvas */
@@ -362,7 +362,7 @@ border-radius:var(--radius-sm);
 .bias-row{display:flex;align-items:center;gap:10px;margin-bottom:8px}
 .bias-slider{flex:1;accent-color:var(--gold)}
 .bias-value{
-font-family:'Eras Demi ITC','Eras Demi',sans-serif;font-size:14px;
+font-family:'Share Tech Mono',monospace;font-size:14px;
 color:var(--text-dim);min-width:35px;text-align:right;
 }
 </style>
@@ -865,9 +865,10 @@ function displayNPC() {
   const tc = npc.training.includes('Hero') || npc.training.includes('Villan') ? 'hero' : npc.training;
   tEl.classList.add('training-' + tc);
 
-  // Portrait
+  // Portrait - try exact name, then strip "Near-Human: " prefix, then normalize
   const raceKey = normalizeRace(npc.race);
-  const imgFile = RACE_IMAGES[raceKey] || RACE_IMAGES[npc.race];
+  const strippedRace = npc.race.replace(/^Near-Human:\s*/, '');
+  const imgFile = RACE_IMAGES[npc.race] || RACE_IMAGES[strippedRace] || RACE_IMAGES[raceKey];
   const portrait = document.getElementById('npcPortrait');
   if (imgFile) { portrait.src = imgFile; portrait.style.display = 'block'; }
   else { portrait.style.display = 'none'; }
@@ -905,7 +906,7 @@ function displayNPC() {
   let html = '<div class="skills-columns">';
   for (const attr of attrOrder) {
     if (!groups[attr]) continue;
-    html += `<div class="skill-section"><div class="skill-section-header">${attr.toUpperCase()} <span style="color:var(--cyan);font-family:'Eras Demi ITC','Eras Demi',sans-serif;font-size:13px">${attrValues[attr]}</span></div>`;
+    html += `<div class="skill-section"><div class="skill-section-header">${attr.toUpperCase()} <span style="color:var(--cyan);font-family:'Share Tech Mono',monospace;font-size:13px">${attrValues[attr]}</span></div>`;
     for (const s of groups[attr]) {
       html += `<div class="skill-row"><span class="skill-name">${s.name}</span><span class="skill-dice">${s.dice}</span></div>`;
     }
