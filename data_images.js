@@ -174,4 +174,5 @@ const RACE_IMAGES = {
   'Yinchorri': 'image168.jpg',
   'Zabrak': 'image169.jpg',
   'Zexx': 'image170.jpg',
+  'Tasari': 'image171.jpg',
 };
