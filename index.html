@@ -1650,23 +1650,72 @@ function exportPDF() {
   // Equipment
   const eqCols = 3;
   const eqItems = blankSheet ? new Array(12).fill('') : equipItems;
-  const eqRows = Math.max(Math.ceil(eqItems.length / eqCols), blankSheet ? 4 : 1);
-  const eqH = 16 + eqRows * 13 + 6;
-  sectionBox(L, y, CW, eqH, 'EQUIPMENT');
   const ecw = CW / eqCols;
-  for (let i = 0; i < eqItems.length; i++) {
-    const col = i % eqCols, ri = Math.floor(i / eqCols);
-    const ex = L + 6 + col * ecw, ey = y + 28 + ri * 13;
-    if (blankSheet) {
+  const eqPad = 14; // left padding for bullet + text
+  const eqMaxTextW = ecw - eqPad - 4; // max width per cell
+
+  if (blankSheet) {
+    const eqRows = 4;
+    const eqH = 16 + eqRows * 13 + 6;
+    sectionBox(L, y, CW, eqH, 'EQUIPMENT');
+    for (let i = 0; i < 12; i++) {
+      const col = i % eqCols, ri = Math.floor(i / eqCols);
+      const ex = L + 6 + col * ecw, ey = y + 28 + ri * 13;
       doc.setFont('helvetica', 'normal'); doc.setFontSize(7);
       doc.text('\u2022', ex, ey);
       blankLine(ex + 8, ey, ecw - 16);
-    } else {
-      doc.setFont('helvetica', 'normal'); doc.setFontSize(7.5);
-      doc.text('\u2022  ' + eqItems[i], ex, ey);
     }
+    y += eqH + 5;
+  } else {
+    // Try 7.5pt first, then 6.5pt if wrapping gets too tall
+    let eqFs = 7.5, eqLh = 10;
+    for (const tryFs of [7.5, 6.5]) {
+      eqFs = tryFs; eqLh = tryFs + 2.5;
+      // Measure: wrap each item and compute total rows needed
+      doc.setFont('helvetica', 'normal'); doc.setFontSize(eqFs);
+      var eqWrapped = eqItems.map(function(item) {
+        return doc.splitTextToSize(item, eqMaxTextW);
+      });
+      // Layout into 3 columns, filling column by column (left to right, top to bottom)
+      // Actually we fill row by row: item 0=col0, item 1=col1, item 2=col2, item 3=col0...
+      // Calculate total visual rows accounting for multi-line items
+      var rowHeights = [];
+      var numRows = Math.ceil(eqItems.length / eqCols);
+      for (var ri = 0; ri < numRows; ri++) {
+        var maxLines = 1;
+        for (var ci = 0; ci < eqCols; ci++) {
+          var idx = ri * eqCols + ci;
+          if (idx < eqWrapped.length && eqWrapped[idx].length > maxLines) maxLines = eqWrapped[idx].length;
+        }
+        rowHeights.push(maxLines);
+      }
+      var totalVisualH = 0;
+      rowHeights.forEach(function(h) { totalVisualH += h * eqLh; });
+      // Check if it fits reasonably
+      if (totalVisualH < 120) break; // good enough
+    }
+    var eqTotalH = 16 + 8;
+    rowHeights.forEach(function(h) { eqTotalH += h * eqLh; });
+    eqTotalH += 4;
+
+    sectionBox(L, y, CW, eqTotalH, 'EQUIPMENT');
+    doc.setFont('helvetica', 'normal'); doc.setFontSize(eqFs);
+    var eqY = y + 26;
+    for (var ri = 0; ri < rowHeights.length; ri++) {
+      for (var ci = 0; ci < eqCols; ci++) {
+        var idx = ri * eqCols + ci;
+        if (idx >= eqWrapped.length) continue;
+        var ex = L + 6 + ci * ecw;
+        doc.text('\u2022', ex, eqY);
+        var lines = eqWrapped[idx];
+        for (var li = 0; li < lines.length; li++) {
+          doc.text(lines[li], ex + eqPad - 4, eqY + li * eqLh);
+        }
+      }
+      eqY += rowHeights[ri] * eqLh;
+    }
+    y += eqTotalH + 5;
   }
-  y += eqH + 5;
 
   // Story Factor & Special Abilities
   const sf = blankSheet ? '' : (n.storyFactor && n.storyFactor !== 'empty' ? n.storyFactor : '');
