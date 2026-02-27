@@ -460,9 +460,11 @@ color:var(--text-dim);min-width:35px;text-align:right;
         </div>
 
         <!-- Picker + Reroll controls -->
-        <div style="font-family:'Orbitron',sans-serif;font-size:8px;color:var(--text-dim);letter-spacing:.8px;padding:0 2px 4px;line-height:1.6">
-          ↻ REROLL &nbsp;|&nbsp; 🔒 LOCK TO FREEZE ON ROLL ALL &nbsp;|&nbsp; PICKING FROM DROPDOWN AUTO-LOCKS
+        <div style="font-family:'Orbitron',sans-serif;font-size:8px;color:var(--text-dim);letter-spacing:.8px;padding:0 2px 4px;line-height:1.8">
+          ↻ REROLL &nbsp;|&nbsp; 🔒 LOCK TO FREEZE ON ROLL ALL &nbsp;|&nbsp; PICKING FROM DROPDOWN AUTO-LOCKS<br>
+          <span style="color:#cc6666">🔒 RED LOCK</span> = CONFLICT — UPSTREAM FIELD (RACE → ATTRS → SKILLS) MUST BE LOCKED FIRST
         </div>
+        <div id="lockConflictHint" style="font-family:'Rajdhani',sans-serif;font-size:11px;color:#cc6666;padding:0 2px 4px;display:none"></div>
         <div class="npc-controls">
           <div class="controls-left">
             <div class="control-row">
