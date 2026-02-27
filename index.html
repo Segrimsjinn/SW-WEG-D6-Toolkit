@@ -392,13 +392,27 @@ color:var(--text-dim);min-width:35px;text-align:right;
       </div>
 
       <div id="npcResult" style="display:none">
-        <div class="reroll-bar">
-          <button class="btn-reroll" onclick="rerollRace()">↻ Race</button>
-          <button class="btn-reroll" onclick="rerollJob()">↻ Job</button>
-          <button class="btn-reroll" onclick="rerollTraining()">↻ Training</button>
-          <button class="btn-reroll" onclick="rerollAttrs()">↻ Attributes</button>
-          <button class="btn-reroll" onclick="rerollSkills()">↻ Skills</button>
-          <button class="btn-reroll" onclick="rollAll()">↻ All</button>
+        <div class="reroll-bar" style="justify-content:space-between;align-items:center">
+          <div style="display:flex;gap:6px;flex-wrap:wrap">
+            <button class="btn-reroll" onclick="rerollRace()">↻ Race</button>
+            <button class="btn-reroll" onclick="rerollJob()">↻ Job</button>
+            <button class="btn-reroll" onclick="rerollTraining()">↻ Training</button>
+            <button class="btn-reroll" onclick="rerollAttrs()">↻ Attributes</button>
+            <button class="btn-reroll" onclick="rerollSkills()">↻ Skills</button>
+            <button class="btn-reroll" onclick="rollAll()">↻ All</button>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;flex-shrink:0">
+            <label style="display:flex;align-items:center;gap:4px;cursor:pointer;font-size:10px;color:var(--text-dim);margin:0;font-family:'Rajdhani',sans-serif">
+              <input type="checkbox" id="pdfPortrait" checked style="accent-color:var(--gold);width:12px;height:12px"> Portrait
+            </label>
+            <label style="display:flex;align-items:center;gap:4px;cursor:pointer;font-size:10px;color:var(--text-dim);margin:0;font-family:'Rajdhani',sans-serif">
+              <input type="checkbox" id="pdfForce" style="accent-color:var(--gold);width:12px;height:12px"> Force
+            </label>
+            <label style="display:flex;align-items:center;gap:4px;cursor:pointer;font-size:10px;color:var(--text-dim);margin:0;font-family:'Rajdhani',sans-serif">
+              <input type="checkbox" id="pdfBlank" style="accent-color:var(--gold);width:12px;height:12px"> Blank
+            </label>
+            <button class="btn-reroll" style="border-color:var(--gold);color:var(--gold)" onclick="exportPDF()">⟐ PDF</button>
+          </div>
         </div>
 
         <div class="card fade-in">
@@ -442,24 +456,6 @@ color:var(--text-dim);min-width:35px;text-align:right;
           <div class="card fade-in equip-half">
             <div class="card-title">⟐ Equipment</div>
             <div id="equipOutput" class="equip-grid"></div>
-          </div>
-        </div>
-
-        <!-- PDF Export -->
-        <div class="card fade-in" style="padding:10px 16px;margin-top:8px">
-          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
-            <div style="display:flex;align-items:center;gap:14px">
-              <label style="display:flex;align-items:center;gap:5px;cursor:pointer;font-size:12px;color:var(--text-dim);margin:0">
-                <input type="checkbox" id="pdfPortrait" checked style="accent-color:var(--gold);width:14px;height:14px"> Portrait
-              </label>
-              <label style="display:flex;align-items:center;gap:5px;cursor:pointer;font-size:12px;color:var(--text-dim);margin:0">
-                <input type="checkbox" id="pdfForce" style="accent-color:var(--gold);width:14px;height:14px"> Force Page
-              </label>
-              <label style="display:flex;align-items:center;gap:5px;cursor:pointer;font-size:12px;color:var(--text-dim);margin:0">
-                <input type="checkbox" id="pdfBlank" style="accent-color:var(--gold);width:14px;height:14px"> Blank Sheet
-              </label>
-            </div>
-            <button class="btn btn-generate" style="margin:0;padding:8px 20px;font-size:11px;width:auto" onclick="exportPDF()">⟐ PDF ⟐</button>
           </div>
         </div>
       </div>
