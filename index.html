@@ -225,6 +225,57 @@ background:var(--bg3);color:var(--text-dim);cursor:pointer;
 letter-spacing:.5px;
 }
 .btn-reroll:active{background:var(--bg4);color:var(--gold)}
+.btn-reroll:hover{border-color:var(--gold-dim);color:var(--text)}
+
+/* NPC PICKER CONTROLS */
+.npc-controls{
+background:var(--bg2);border:1px solid var(--card-border);border-radius:8px;
+padding:10px 12px;margin-bottom:8px;
+display:flex;gap:10px;align-items:stretch;
+}
+.controls-left{flex:1;display:flex;flex-direction:column;justify-content:center;gap:6px}
+.controls-divider{width:1px;background:var(--card-border);align-self:stretch;margin:0 2px}
+.controls-right{display:grid;grid-template-columns:1fr 1fr;gap:5px;flex-shrink:0}
+.control-row{display:flex;align-items:center;gap:5px}
+.control-label{
+font-family:'Orbitron',sans-serif;font-size:9px;color:var(--text-dim);
+letter-spacing:1px;width:38px;flex-shrink:0;
+}
+.control-select{
+flex:1;background:var(--bg);border:1px solid var(--card-border);border-radius:4px;
+color:var(--text);font-family:'Rajdhani',sans-serif;font-size:13px;font-weight:600;
+padding:5px 28px 5px 8px;outline:none;cursor:pointer;
+appearance:none;-webkit-appearance:none;
+background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%238899aa'/%3E%3C/svg%3E");
+background-repeat:no-repeat;background-position:right 8px center;
+}
+.control-select:focus{border-color:var(--cyan)}
+.control-select option{background:var(--bg);color:var(--text)}
+.btn-lock{
+width:28px;height:28px;display:flex;align-items:center;justify-content:center;
+border-radius:4px;border:1px solid var(--card-border);background:var(--bg3);
+cursor:pointer;flex-shrink:0;transition:all .15s;
+}
+.btn-lock svg{width:13px;height:13px;stroke:var(--text-dim);fill:none;stroke-width:2}
+.btn-lock:hover{border-color:var(--gold-dim)}
+.btn-lock.locked{border-color:var(--gold);background:var(--gold-dim)}
+.btn-lock.locked svg{stroke:var(--gold)}
+.btn-grid{
+font-family:'Rajdhani',sans-serif;font-size:11px;font-weight:600;
+padding:7px 12px;border-radius:4px;border:1px solid var(--card-border);
+background:var(--bg3);color:var(--text-dim);cursor:pointer;
+letter-spacing:.5px;white-space:nowrap;text-align:center;
+}
+.btn-grid:hover{border-color:var(--gold-dim);color:var(--text)}
+.btn-grid:active{background:var(--bg4);color:var(--gold)}
+.btn-grid.btn-all{border-color:var(--gold-dim);color:var(--gold)}
+.btn-grid.btn-all:hover{border-color:var(--gold);background:var(--gold-dim)}
+
+@media(max-width:480px){
+  .npc-controls{flex-direction:column;gap:8px}
+  .controls-divider{width:auto;height:1px;margin:2px 0}
+  .controls-right{width:100%}
+}
 
 /* TRAVEL CALCULATOR */
 .input-group{margin-bottom:12px}
@@ -392,26 +443,46 @@ color:var(--text-dim);min-width:35px;text-align:right;
       </div>
 
       <div id="npcResult" style="display:none">
-        <div class="reroll-bar" style="justify-content:space-between;align-items:center">
-          <div style="display:flex;gap:6px;flex-wrap:wrap">
-            <button class="btn-reroll" onclick="rerollRace()">↻ Race</button>
-            <button class="btn-reroll" onclick="rerollJob()">↻ Job</button>
-            <button class="btn-reroll" onclick="rerollTraining()">↻ Training</button>
-            <button class="btn-reroll" onclick="rerollAttrs()">↻ Attributes</button>
-            <button class="btn-reroll" onclick="rerollSkills()">↻ Skills</button>
-            <button class="btn-reroll" onclick="rollAll()">↻ All</button>
+        <!-- PDF controls row -->
+        <div style="display:flex;align-items:center;justify-content:flex-end;gap:10px;padding:6px 0">
+          <label style="display:flex;align-items:center;gap:4px;cursor:pointer;font-size:10px;color:var(--text-dim);margin:0;font-family:'Rajdhani',sans-serif">
+            <input type="checkbox" id="pdfPortrait" checked style="accent-color:var(--gold);width:12px;height:12px"> Portrait
+          </label>
+          <label style="display:flex;align-items:center;gap:4px;cursor:pointer;font-size:10px;color:var(--text-dim);margin:0;font-family:'Rajdhani',sans-serif">
+            <input type="checkbox" id="pdfForce" style="accent-color:var(--gold);width:12px;height:12px"> Force
+          </label>
+          <label style="display:flex;align-items:center;gap:4px;cursor:pointer;font-size:10px;color:var(--text-dim);margin:0;font-family:'Rajdhani',sans-serif">
+            <input type="checkbox" id="pdfBlank" style="accent-color:var(--gold);width:12px;height:12px"> Blank
+          </label>
+          <button class="btn-reroll" style="border-color:var(--gold);color:var(--gold)" onclick="exportPDF()">⟐ PDF</button>
+        </div>
+
+        <!-- Picker + Reroll controls -->
+        <div class="npc-controls">
+          <div class="controls-left">
+            <div class="control-row">
+              <span class="control-label">RACE</span>
+              <select class="control-select" id="raceSelect" onchange="setRaceFromPicker()"></select>
+              <button class="btn-reroll" onclick="rerollRace()">↻</button>
+              <div class="btn-lock" id="lockRace" onclick="this.classList.toggle('locked')">
+                <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              </div>
+            </div>
+            <div class="control-row">
+              <span class="control-label">JOB</span>
+              <select class="control-select" id="jobSelect" onchange="setJobFromPicker()"></select>
+              <button class="btn-reroll" onclick="rerollJob()">↻</button>
+              <div class="btn-lock" id="lockJob" onclick="this.classList.toggle('locked')">
+                <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              </div>
+            </div>
           </div>
-          <div style="display:flex;align-items:center;gap:10px;flex-shrink:0">
-            <label style="display:flex;align-items:center;gap:4px;cursor:pointer;font-size:10px;color:var(--text-dim);margin:0;font-family:'Rajdhani',sans-serif">
-              <input type="checkbox" id="pdfPortrait" checked style="accent-color:var(--gold);width:12px;height:12px"> Portrait
-            </label>
-            <label style="display:flex;align-items:center;gap:4px;cursor:pointer;font-size:10px;color:var(--text-dim);margin:0;font-family:'Rajdhani',sans-serif">
-              <input type="checkbox" id="pdfForce" style="accent-color:var(--gold);width:12px;height:12px"> Force
-            </label>
-            <label style="display:flex;align-items:center;gap:4px;cursor:pointer;font-size:10px;color:var(--text-dim);margin:0;font-family:'Rajdhani',sans-serif">
-              <input type="checkbox" id="pdfBlank" style="accent-color:var(--gold);width:12px;height:12px"> Blank
-            </label>
-            <button class="btn-reroll" style="border-color:var(--gold);color:var(--gold)" onclick="exportPDF()">⟐ PDF</button>
+          <div class="controls-divider"></div>
+          <div class="controls-right">
+            <button class="btn-grid" onclick="rerollTraining()">↻ Training</button>
+            <button class="btn-grid" onclick="rerollAttrs()">↻ Attributes</button>
+            <button class="btn-grid" onclick="rerollSkills()">↻ Skills</button>
+            <button class="btn-grid btn-all" onclick="rollAll()">↻ All</button>
           </div>
         </div>
 
@@ -663,11 +734,86 @@ function switchTab(tab) {
 // ============================================================
 let npc = {};
 
+// Populate dropdowns on first load
+function initPickers() {
+  const raceSelect = document.getElementById('raceSelect');
+  const jobSelect = document.getElementById('jobSelect');
+  // Build full race list: Human, all Near-Human subtypes, then all alien races
+  const allRaces = ['Human'];
+  NPC_DATA.near_human_subtypes.forEach(r => allRaces.push(r));
+  NPC_DATA.races.forEach(r => { if (r !== 'Human' && r !== 'Near-Human') allRaces.push(r); });
+  allRaces.sort((a, b) => {
+    if (a === 'Human') return -1;
+    if (b === 'Human') return 1;
+    return a.localeCompare(b);
+  });
+  raceSelect.innerHTML = '';
+  allRaces.forEach(r => {
+    const opt = document.createElement('option');
+    opt.value = r; opt.textContent = r;
+    raceSelect.appendChild(opt);
+  });
+  jobSelect.innerHTML = '';
+  // Deduplicate jobs
+  const uniqueJobs = [...new Set(NPC_DATA.jobs)].sort();
+  uniqueJobs.forEach(j => {
+    const opt = document.createElement('option');
+    opt.value = j; opt.textContent = j;
+    jobSelect.appendChild(opt);
+  });
+}
+
+function syncPickers() {
+  const raceSelect = document.getElementById('raceSelect');
+  const jobSelect = document.getElementById('jobSelect');
+  // Set dropdown to current npc values
+  if (npc.race) {
+    const opt = Array.from(raceSelect.options).find(o => o.value === npc.race);
+    if (opt) raceSelect.value = npc.race;
+  }
+  if (npc.job) {
+    const opt = Array.from(jobSelect.options).find(o => o.value === npc.job);
+    if (opt) jobSelect.value = npc.job;
+  }
+}
+
+function setRaceFromPicker() {
+  npc.race = document.getElementById('raceSelect').value;
+  // Lock it automatically when manually selected
+  document.getElementById('lockRace').classList.add('locked');
+  rollAllStats();
+  rollSkillsNPC();
+  rollForceSkills();
+  rollForcePowers();
+  rollFluff();
+  rollEquipment();
+  displayNPC();
+}
+
+function setJobFromPicker() {
+  npc.job = document.getElementById('jobSelect').value;
+  document.getElementById('lockJob').classList.add('locked');
+  rollSkillsNPC();
+  rollForceSkills();
+  rollForcePowers();
+  rollFluff();
+  rollEquipment();
+  displayNPC();
+}
+
+function isLocked(id) {
+  return document.getElementById(id).classList.contains('locked');
+}
+
 function rollAll() {
   if (window.goatcounter) goatcounter.count({ path: '/npc-generated', event: true });
+  const keepRace = isLocked('lockRace');
+  const keepJob = isLocked('lockJob');
+  const savedRace = npc.race;
+  const savedJob = npc.job;
   npc = {};
-  rollRace();
-  rollJob();
+  if (keepRace) { npc.race = savedRace; } else { rollRace(); }
+  if (keepJob) { npc.job = savedJob; } else { rollJob(); }
   rollTraining();
   rollAllStats();
   rollSkillsNPC();
@@ -882,8 +1028,8 @@ function rollFluff() {
 // ============================================================
 // REROLL FUNCTIONS
 // ============================================================
-function rerollRace() { rollRace(); rollAllStats(); rollSkillsNPC(); displayNPC(); }
-function rerollJob() { rollJob(); rollSkillsNPC(); rollForceSkills(); rollForcePowers(); rollFluff(); displayNPC(); }
+function rerollRace() { document.getElementById('lockRace').classList.remove('locked'); rollRace(); rollAllStats(); rollSkillsNPC(); rollForceSkills(); rollForcePowers(); rollFluff(); rollEquipment(); displayNPC(); }
+function rerollJob() { document.getElementById('lockJob').classList.remove('locked'); rollJob(); rollSkillsNPC(); rollForceSkills(); rollForcePowers(); rollFluff(); rollEquipment(); displayNPC(); }
 function rerollTraining() { rollTraining(); rollSkillsNPC(); rollForceSkills(); rollForcePowers(); rollFluff(); displayNPC(); }
 function rerollAttrs() { rollAllStats(); rollSkillsNPC(); displayNPC(); }
 function rerollSkills() { rollSkillsNPC(); displayNPC(); }
@@ -904,6 +1050,7 @@ function rerollEquipSlot(key) {
 function displayNPC() {
   const r = document.getElementById('npcResult');
   r.style.display = 'block';
+  syncPickers();
 
   document.getElementById('npcName').textContent = npc.firstName + ' ' + npc.surname;
   document.getElementById('npcRace').textContent = npc.race;
@@ -1295,6 +1442,7 @@ function drawMap(pathData, origin, dest, malfIdx) {
 // ============================================================
 let galaxyTimeout;
 document.addEventListener('DOMContentLoaded', () => {
+  initPickers();
   setupAutocomplete('originInput', 'originList');
   setupAutocomplete('destInput', 'destList');
 
