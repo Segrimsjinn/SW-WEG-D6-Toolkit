@@ -1718,8 +1718,8 @@ function exportPDF() {
   }
 
   // Story Factor & Special Abilities
-  const sf = blankSheet ? '' : (n.storyFactor && n.storyFactor !== 'empty' ? n.storyFactor : '');
-  const sa = blankSheet ? '' : (n.specAbility && n.specAbility !== 'empty' ? n.specAbility : '');
+  const sf = blankSheet ? '' : (n.storyFactor && n.storyFactor !== 'empty' ? String(n.storyFactor).trim() : '');
+  const sa = blankSheet ? '' : (n.specAbility && n.specAbility !== 'empty' ? String(n.specAbility).trim() : '');
 
   const footerY = H - 18;
   const remaining = footerY - y - 10;
@@ -1736,20 +1736,23 @@ function exportPDF() {
   } else {
     // Adaptive: try side-by-side first, then full-width stacked if needed
     const halfW = (CW - 4) / 2;
+    const sfPad = 6, saPad = 10; // padding inside each box
+    const sfWrapW = halfW - sfPad - 6;  // text area for story factor
+    const saWrapW = halfW - saPad - 6;  // text area for special abilities
     let fitted = false;
 
     for (const fs of [8, 7, 6]) {
-      const sfLines = wrapText(sf, halfW - 12, fs);
-      const saLines = wrapText(sa, halfW - 12, fs);
+      const sfLines = wrapText(sf, sfWrapW, fs);
+      const saLines = wrapText(sa, saWrapW, fs);
       const maxL = Math.max(sfLines.length, saLines.length, 1);
       const lh = fs + 2;
       const boxH = 16 + maxL * lh + 8;
       if (y + boxH + 40 < footerY) {
         sectionBox(L, y, halfW, boxH, 'STORY FACTOR');
         doc.setFont('helvetica', 'normal'); doc.setFontSize(fs);
-        for (let i = 0; i < sfLines.length; i++) doc.text(sfLines[i], L + 6, y + 26 + i * lh);
+        for (let i = 0; i < sfLines.length; i++) doc.text(sfLines[i], L + sfPad, y + 26 + i * lh);
         sectionBox(L + halfW + 4, y, halfW, boxH, 'SPECIAL ABILITIES');
-        for (let i = 0; i < saLines.length; i++) doc.text(saLines[i], L + halfW + 10, y + 26 + i * lh);
+        for (let i = 0; i < saLines.length; i++) doc.text(saLines[i], L + halfW + 4 + saPad, y + 26 + i * lh);
         y += boxH + 5;
         fitted = true;
         break;
