@@ -1752,6 +1752,7 @@ function exportPDF() {
         doc.setFont('helvetica', 'normal'); doc.setFontSize(fs);
         for (let i = 0; i < sfLines.length; i++) doc.text(sfLines[i], L + sfPad, y + 26 + i * lh);
         sectionBox(L + halfW + 4, y, halfW, boxH, 'SPECIAL ABILITIES');
+        doc.setFont('helvetica', 'normal'); doc.setFontSize(fs);
         for (let i = 0; i < saLines.length; i++) doc.text(saLines[i], L + halfW + 4 + saPad, y + 26 + i * lh);
         y += boxH + 5;
         fitted = true;
@@ -1773,6 +1774,7 @@ function exportPDF() {
           for (let i = 0; i < sfLines.length; i++) doc.text(sfLines[i], L + 6, y + 24 + i * lh);
           y += sfH + 3;
           sectionBox(L, y, CW, saH, 'SPECIAL ABILITIES');
+          doc.setFont('helvetica', 'normal'); doc.setFontSize(fs);
           for (let i = 0; i < saLines.length; i++) doc.text(saLines[i], L + 6, y + 24 + i * lh);
           y += saH + 5;
           fitted = true;
@@ -1793,6 +1795,7 @@ function exportPDF() {
       y += sfH + 3;
       const saH = 16 + saLines.length * lh + 4;
       sectionBox(L, y, CW, saH, 'SPECIAL ABILITIES');
+      doc.setFont('helvetica', 'normal'); doc.setFontSize(6);
       for (let i = 0; i < saLines.length; i++) doc.text(saLines[i], L + 6, y + 24 + i * lh);
       y += saH + 5;
     }
