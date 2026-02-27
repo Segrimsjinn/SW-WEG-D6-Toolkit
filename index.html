@@ -655,6 +655,7 @@ function switchTab(tab) {
 let npc = {};
 
 function rollAll() {
+  if (window.goatcounter) goatcounter.count({ path: '/npc-generated', event: true });
   npc = {};
   rollRace();
   rollJob();
@@ -1059,6 +1060,7 @@ function randomBoth() {
 }
 
 function engage() {
+  if (window.goatcounter) goatcounter.count({ path: '/journey-plotted', event: true });
   const origin = findSystem(document.getElementById('originInput').value);
   const dest = findSystem(document.getElementById('destInput').value);
   if (!origin || !dest) { alert('Please enter valid system names.'); return; }
@@ -1417,6 +1419,7 @@ function highlightGalaxySystems(systems, isGridSearch) {
 // PDF EXPORT (jsPDF)
 // ============================================================
 function exportPDF() {
+  if (window.goatcounter) goatcounter.count({ path: '/pdf-exported', event: true });
   if (typeof jspdf === 'undefined' && typeof window.jspdf === 'undefined') {
     alert('PDF library loading... please try again in a moment.');
     return;
