@@ -609,6 +609,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
 </div>
 
 <!-- DATA SCRIPTS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js"></script>
 <script src="data_npc.js"></script>
 <script src="data_races.js"></script>
 <script src="data_names.js"></script>
@@ -1417,13 +1418,434 @@ function highlightGalaxySystems(systems, isGridSearch) {
 }
 
 // ============================================================
-// PDF EXPORT (placeholder — jsPDF integration coming next)
+// PDF EXPORT (jsPDF)
 // ============================================================
 function exportPDF() {
+  if (typeof jspdf === 'undefined' && typeof window.jspdf === 'undefined') {
+    alert('PDF library loading... please try again in a moment.');
+    return;
+  }
+  const { jsPDF } = window.jspdf;
   const includePortrait = document.getElementById('pdfPortrait').checked;
   const includeForcePage = document.getElementById('pdfForce').checked;
   const blankSheet = document.getElementById('pdfBlank').checked;
-  alert('PDF export coming soon!\n\nPortrait: ' + (includePortrait ? 'Yes' : 'No') + '\nForce Page: ' + (includeForcePage ? 'Yes' : 'No') + '\nBlank Sheet: ' + (blankSheet ? 'Yes' : 'No'));
+
+  const doc = new jsPDF({ unit: 'pt', format: 'letter' });
+  const W = 612, H = 792;
+  const L = 36, R = W - 36, T = H - 36, B = 36;
+  const CW = R - L;
+  const RAD = 6;
+
+  // Helpers
+  function roundedRect(x, y, w, h, r) {
+    r = r || RAD;
+    doc.roundedRect(x, y, w, h, r, r);
+  }
+  function headerBanner(x, y, w, h, label) {
+    doc.setFillColor(0, 0, 0);
+    doc.roundedRect(x, y, w, h, RAD, RAD, 'F');
+    // square off bottom corners by overlaying rect
+    doc.rect(x, y + h/2, w, h/2, 'F');
+    doc.setTextColor(255, 255, 255);
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(9);
+    doc.text(label, x + w/2, y + 11, { align: 'center' });
+    doc.setTextColor(0, 0, 0);
+  }
+  function sectionBox(x, y, w, h, label) {
+    doc.setDrawColor(0); doc.setLineWidth(0.75);
+    roundedRect(x, y, w, h);
+    headerBanner(x, y, w, 16, label);
+  }
+  function blankLine(x, y, w) {
+    doc.setDrawColor(190); doc.setLineWidth(0.5);
+    doc.line(x, y, x + w, y);
+    doc.setDrawColor(0);
+  }
+  function drawFooter(yy) {
+    doc.setFontSize(6); doc.setTextColor(128);
+    doc.text('Star Wars D6 Toolkit  \u2014  games.ryanjallen.com  \u2014  Based on WEG Star Wars 2nd Ed. Revised & Expanded', W/2, yy, { align: 'center' });
+    doc.setTextColor(0);
+  }
+  function wrapText(text, maxWidth, fontSize) {
+    doc.setFontSize(fontSize);
+    doc.setFont('helvetica', 'normal');
+    return doc.splitTextToSize(text || '', maxWidth);
+  }
+
+  // Collect NPC data
+  const n = npc;
+  const name = (n.firstName || '') + ' ' + (n.surname || '');
+  const attrOrder = ['Dex', 'Per', 'Kno', 'Str', 'Mec', 'Tec'];
+  const attrLabels = ['DEXTERITY', 'PERCEPTION', 'KNOWLEDGE', 'STRENGTH', 'MECHANICAL', 'TECHNICAL'];
+  const attrVals = [n.dex, n.per, n.kno, n.str, n.mec, n.tec];
+
+  // Group skills by attr
+  const skillGroups = {};
+  attrOrder.forEach(a => skillGroups[a] = []);
+  if (!blankSheet) {
+    (n.skills || []).forEach(s => { if (skillGroups[s.attr]) skillGroups[s.attr].push(s); });
+  }
+
+  // Equipment list (non-empty, non '--')
+  const equipItems = [];
+  if (!blankSheet) {
+    const eqFields = [
+      n.weapon1, n.weapon2, n.weapon3, n.melee, n.saber,
+      n.comms, n.armor, n.shield, n.sec1, n.sec2, n.med,
+      n.booster, n.camo, n.surveil1, n.surveil2, n.survival, n.tools, n.jetpack
+    ];
+    eqFields.forEach(v => { if (v && v !== '--') equipItems.push(v); });
+  }
+
+  // ===== PAGE 1 =====
+  let y = 36;
+
+  // Title bar
+  doc.setFillColor(0, 0, 0);
+  doc.roundedRect(L, y, CW, 26, RAD, RAD, 'F');
+  doc.setTextColor(255, 255, 255);
+  doc.setFont('helvetica', 'bold'); doc.setFontSize(15);
+  doc.text('STAR WARS D6 \u2014 NPC CHARACTER SHEET', W/2, y + 18, { align: 'center' });
+  doc.setTextColor(0);
+  y += 32;
+
+  // Info + Portrait
+  const infoW = CW * 0.65, portW = CW * 0.35 - 4;
+  const infoH = 5 * 20;
+  doc.setLineWidth(0.75); doc.setDrawColor(0);
+  roundedRect(L, y, infoW, infoH);
+
+  const fields = blankSheet
+    ? [['NAME:', ''], ['RACE:', ''], ['JOB:', ''], ['TRAINING:', '']]
+    : [['NAME:', name], ['RACE:', n.race], ['JOB:', n.job], ['TRAINING:', n.training]];
+
+  for (let i = 0; i < 4; i++) {
+    const fy = y + i * 20;
+    if (i > 0) { doc.setDrawColor(180); doc.setLineWidth(0.25); doc.line(L+3, fy, L+infoW-3, fy); doc.setDrawColor(0); }
+    doc.setFont('helvetica', 'bold'); doc.setFontSize(8);
+    doc.text(fields[i][0], L + 8, fy + 14);
+    if (blankSheet) { blankLine(L + 72, fy + 15, infoW - 80); }
+    else { doc.setFont('helvetica', 'normal'); doc.setFontSize(10); doc.text(fields[i][1], L + 72, fy + 14); }
+  }
+
+  // Fluff row
+  const fy = y + 80;
+  doc.setDrawColor(180); doc.setLineWidth(0.25); doc.line(L+3, fy, L+infoW-3, fy); doc.setDrawColor(0);
+  const fluffLabels = ['SEX:', 'HT:', 'MOVE:', 'FORCE:', 'FP/CP:', 'CREDITS:'];
+  const fluffVals = blankSheet ? ['','','','','','']
+    : [n.sex || '', (n.height ? n.height+'m' : ''), n.move || '', n.forceSensitive || '', (n.forcePoints+'/'+n.charPoints), n.credits || ''];
+  const fw = infoW / 6;
+  for (let i = 0; i < 6; i++) {
+    const fx = L + i * fw;
+    if (i > 0) { doc.setDrawColor(180); doc.setLineWidth(0.25); doc.line(fx, fy+2, fx, fy+18); doc.setDrawColor(0); }
+    doc.setFont('helvetica', 'bold'); doc.setFontSize(5.5);
+    doc.text(fluffLabels[i], fx + 3, fy + 8);
+    if (blankSheet) { blankLine(fx + 3, fy + 18, fw - 8); }
+    else { doc.setFont('helvetica', 'normal'); doc.setFontSize(8); doc.text(String(fluffVals[i]), fx + 3, fy + 17); }
+  }
+
+  // Portrait box
+  const px = L + infoW + 4;
+  roundedRect(px, y, portW, infoH);
+  if (!blankSheet && includePortrait) {
+    // Try to grab portrait from the img element
+    try {
+      const imgEl = document.getElementById('npcPortrait');
+      if (imgEl && imgEl.src && imgEl.naturalWidth > 0) {
+        const canvas = document.createElement('canvas');
+        canvas.width = imgEl.naturalWidth;
+        canvas.height = imgEl.naturalHeight;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(imgEl, 0, 0);
+        const imgData = canvas.toDataURL('image/jpeg', 0.85);
+        // Fit inside portrait box with padding
+        const pad = 3;
+        const bw = portW - pad*2, bh = infoH - pad*2;
+        const ratio = Math.min(bw / imgEl.naturalWidth, bh / imgEl.naturalHeight);
+        const iw = imgEl.naturalWidth * ratio, ih = imgEl.naturalHeight * ratio;
+        doc.addImage(imgData, 'JPEG', px + pad + (bw-iw)/2, y + pad + (bh-ih)/2, iw, ih);
+      }
+    } catch(e) { /* portrait fails silently */ }
+  } else if (blankSheet) {
+    doc.setDrawColor(210); doc.setLineWidth(0.25);
+    doc.line(px + portW/2 - 12, y + infoH/2, px + portW/2 + 12, y + infoH/2);
+    doc.line(px + portW/2, y + infoH/2 - 12, px + portW/2, y + infoH/2 + 12);
+    doc.setDrawColor(0);
+  }
+  y += infoH + 6;
+
+  // Attributes
+  const attrH = 36;
+  doc.setLineWidth(0.75);
+  roundedRect(L, y, CW, attrH);
+  headerBanner(L, y, CW, 16, 'ATTRIBUTES');
+  const aw = CW / 6;
+  for (let i = 0; i < 6; i++) {
+    const ax = L + i * aw;
+    if (i > 0) { doc.setDrawColor(180); doc.setLineWidth(0.25); doc.line(ax, y+18, ax, y+attrH-2); doc.setDrawColor(0); }
+    doc.setFont('helvetica', 'bold'); doc.setFontSize(6);
+    doc.text(attrLabels[i], ax + aw/2, y + 25, { align: 'center' });
+    if (blankSheet) { blankLine(ax + 14, y + 34, aw - 28); }
+    else { doc.setFontSize(11); doc.text(attrVals[i] || '', ax + aw/2, y + 34, { align: 'center' }); }
+  }
+  y += attrH + 5;
+
+  // Skills
+  const scw = CW / 3;
+  const SKILL_BLANK = blankSheet ? 8 : 0;
+  const SRH = 13;
+
+  for (let row = 0; row < 2; row++) {
+    let maxSkills = 0;
+    for (let col = 0; col < 3; col++) {
+      const idx = row * 3 + col;
+      const count = blankSheet ? SKILL_BLANK : skillGroups[attrOrder[idx]].length;
+      if (count > maxSkills) maxSkills = count;
+    }
+    if (maxSkills === 0) maxSkills = 1; // at least show header
+    const colH = 16 + (maxSkills + 1) * SRH + 2;
+
+    for (let col = 0; col < 3; col++) {
+      const idx = row * 3 + col;
+      const attr = attrOrder[idx];
+      const sx = L + col * scw;
+      const skills = blankSheet ? [] : skillGroups[attr];
+      const baseD = blankSheet ? '' : attrVals[idx];
+      doc.setLineWidth(0.75); doc.setDrawColor(0);
+      roundedRect(sx, y, scw, colH);
+      headerBanner(sx, y, scw, 16, attrLabels[idx] + (baseD ? '  (' + baseD + ')' : ''));
+
+      if (blankSheet) {
+        for (let si = 0; si < SKILL_BLANK; si++) {
+          const sy = y + 18 + (si + 1) * SRH;
+          blankLine(sx + 5, sy, scw * 0.53);
+          blankLine(sx + scw * 0.63, sy, scw * 0.3);
+        }
+      } else {
+        for (let si = 0; si < skills.length; si++) {
+          const sy = y + 18 + (si + 1) * SRH;
+          doc.setDrawColor(200); doc.setLineWidth(0.15);
+          doc.line(sx + 4, sy, sx + scw - 4, sy);
+          doc.setFont('helvetica', 'normal'); doc.setFontSize(7.5);
+          doc.text(skills[si].name, sx + 5, sy + 3.5);
+          doc.setFont('helvetica', 'bold'); doc.setFontSize(8.5);
+          doc.text(skills[si].dice, sx + scw - 5, sy + 3.5, { align: 'right' });
+        }
+      }
+    }
+    y += colH + 3;
+  }
+  y += 2;
+
+  // Equipment
+  const eqCols = 3;
+  const eqItems = blankSheet ? new Array(12).fill('') : equipItems;
+  const eqRows = Math.max(Math.ceil(eqItems.length / eqCols), blankSheet ? 4 : 1);
+  const eqH = 16 + eqRows * 13 + 6;
+  sectionBox(L, y, CW, eqH, 'EQUIPMENT');
+  const ecw = CW / eqCols;
+  for (let i = 0; i < eqItems.length; i++) {
+    const col = i % eqCols, ri = Math.floor(i / eqCols);
+    const ex = L + 6 + col * ecw, ey = y + 28 + ri * 13;
+    if (blankSheet) {
+      doc.setFont('helvetica', 'normal'); doc.setFontSize(7);
+      doc.text('\u2022', ex, ey);
+      blankLine(ex + 8, ey, ecw - 16);
+    } else {
+      doc.setFont('helvetica', 'normal'); doc.setFontSize(7.5);
+      doc.text('\u2022  ' + eqItems[i], ex, ey);
+    }
+  }
+  y += eqH + 5;
+
+  // Story Factor & Special Abilities
+  const sf = blankSheet ? '' : (n.storyFactor && n.storyFactor !== 'empty' ? n.storyFactor : '');
+  const sa = blankSheet ? '' : (n.specAbility && n.specAbility !== 'empty' ? n.specAbility : '');
+
+  const footerY = H - 18;
+  const remaining = footerY - y - 10;
+
+  if (blankSheet) {
+    // Side by side blank boxes
+    const halfW = (CW - 4) / 2;
+    const boxH = 70;
+    sectionBox(L, y, halfW, boxH, 'STORY FACTOR');
+    for (let i = 0; i < 5; i++) blankLine(L + 6, y + 28 + i * 10, halfW - 12);
+    sectionBox(L + halfW + 4, y, halfW, boxH, 'SPECIAL ABILITIES');
+    for (let i = 0; i < 5; i++) blankLine(L + halfW + 10, y + 28 + i * 10, halfW - 12);
+    y += boxH + 5;
+  } else {
+    // Adaptive: try side-by-side first, then full-width stacked if needed
+    const halfW = (CW - 4) / 2;
+    let fitted = false;
+
+    for (const fs of [8, 7, 6]) {
+      const sfLines = wrapText(sf, halfW - 12, fs);
+      const saLines = wrapText(sa, halfW - 12, fs);
+      const maxL = Math.max(sfLines.length, saLines.length, 1);
+      const lh = fs + 2;
+      const boxH = 16 + maxL * lh + 8;
+      if (y + boxH + 40 < footerY) {
+        sectionBox(L, y, halfW, boxH, 'STORY FACTOR');
+        doc.setFont('helvetica', 'normal'); doc.setFontSize(fs);
+        for (let i = 0; i < sfLines.length; i++) doc.text(sfLines[i], L + 6, y + 26 + i * lh);
+        sectionBox(L + halfW + 4, y, halfW, boxH, 'SPECIAL ABILITIES');
+        for (let i = 0; i < saLines.length; i++) doc.text(saLines[i], L + halfW + 10, y + 26 + i * lh);
+        y += boxH + 5;
+        fitted = true;
+        break;
+      }
+    }
+
+    if (!fitted) {
+      // Full-width stacked
+      for (const fs of [7, 6]) {
+        const sfLines = wrapText(sf, CW - 12, fs);
+        const saLines = wrapText(sa, CW - 12, fs);
+        const lh = fs + 1.5;
+        const sfH = 16 + sfLines.length * lh + 4;
+        const saH = 16 + saLines.length * lh + 4;
+        if (y + sfH + saH + 20 < footerY) {
+          sectionBox(L, y, CW, sfH, 'STORY FACTOR');
+          doc.setFont('helvetica', 'normal'); doc.setFontSize(fs);
+          for (let i = 0; i < sfLines.length; i++) doc.text(sfLines[i], L + 6, y + 24 + i * lh);
+          y += sfH + 3;
+          sectionBox(L, y, CW, saH, 'SPECIAL ABILITIES');
+          for (let i = 0; i < saLines.length; i++) doc.text(saLines[i], L + 6, y + 24 + i * lh);
+          y += saH + 5;
+          fitted = true;
+          break;
+        }
+      }
+    }
+
+    if (!fitted) {
+      // Emergency: 6pt full width, no notes
+      const sfLines = wrapText(sf, CW - 12, 6);
+      const saLines = wrapText(sa, CW - 12, 6);
+      const lh = 7.5;
+      const sfH = 16 + sfLines.length * lh + 4;
+      sectionBox(L, y, CW, sfH, 'STORY FACTOR');
+      doc.setFont('helvetica', 'normal'); doc.setFontSize(6);
+      for (let i = 0; i < sfLines.length; i++) doc.text(sfLines[i], L + 6, y + 24 + i * lh);
+      y += sfH + 3;
+      const saH = 16 + saLines.length * lh + 4;
+      sectionBox(L, y, CW, saH, 'SPECIAL ABILITIES');
+      for (let i = 0; i < saLines.length; i++) doc.text(saLines[i], L + 6, y + 24 + i * lh);
+      y += saH + 5;
+    }
+  }
+
+  // Notes box (fill remaining space)
+  const notesH = footerY - y - 16;
+  if (notesH > 30) {
+    sectionBox(L, y, CW, notesH, 'NOTES');
+    doc.setDrawColor(215); doc.setLineWidth(0.25);
+    let cl = y + 24;
+    while (cl < y + notesH - 6) { doc.line(L + 8, cl, R - 8, cl); cl += 13; }
+    doc.setDrawColor(0);
+  }
+
+  drawFooter(H - 6);
+
+  // ===== PAGE 2: FORCE =====
+  if (includeForcePage) {
+    doc.addPage();
+    let y2 = 36;
+
+    // Title
+    doc.setFillColor(0, 0, 0);
+    doc.roundedRect(L, y2, CW, 26, RAD, RAD, 'F');
+    doc.setTextColor(255, 255, 255);
+    doc.setFont('helvetica', 'bold'); doc.setFontSize(15);
+    doc.text('STAR WARS D6 \u2014 THE FORCE', W/2, y2 + 18, { align: 'center' });
+    doc.setTextColor(0);
+    y2 += 32;
+
+    // Force Attributes
+    const fH = 36;
+    roundedRect(L, y2, CW, fH);
+    headerBanner(L, y2, CW, 16, 'FORCE ATTRIBUTES');
+    const faW = CW / 3;
+    const fNames = ['CONTROL', 'SENSE', 'ALTER'];
+    const fVals = blankSheet ? ['', '', ''] : [n.forceControl || '', n.forceSense || '', n.forceAlter || ''];
+    for (let i = 0; i < 3; i++) {
+      const fax = L + i * faW;
+      if (i > 0) { doc.setDrawColor(180); doc.setLineWidth(0.25); doc.line(fax, y2+18, fax, y2+fH-2); doc.setDrawColor(0); }
+      doc.setFont('helvetica', 'bold'); doc.setFontSize(7);
+      doc.text(fNames[i], fax + faW/2, y2 + 25, { align: 'center' });
+      if (blankSheet) { blankLine(fax + 25, y2 + 34, faW - 50); }
+      else { doc.setFontSize(12); doc.text(fVals[i], fax + faW/2, y2 + 34, { align: 'center' }); }
+    }
+    y2 += fH + 6;
+
+    // Two columns of Force Powers
+    const colGap = 8;
+    const colW = (CW - colGap) / 2;
+    const notesH2 = 140;
+    const powBot = H - 18 - notesH2 - 6;
+    const powH = powBot - y2;
+    const PRH = 15;
+
+    const powers = blankSheet ? [] : (n.forcePowers || []);
+    const powPerCol = Math.floor((powH - 24) / PRH);
+
+    sectionBox(L, y2, colW, powH, 'FORCE POWERS');
+    const rx = L + colW + colGap;
+    sectionBox(rx, y2, colW, powH, 'FORCE POWERS (CONTINUED)');
+
+    if (blankSheet) {
+      for (let i = 0; i < powPerCol; i++) {
+        const py = y2 + 26 + i * PRH;
+        doc.setFont('helvetica', 'normal'); doc.setFontSize(7);
+        doc.text('\u2022', L + 6, py);
+        blankLine(L + 14, py, colW * 0.54);
+        doc.setFontSize(5.5); doc.setTextColor(128);
+        doc.text('req:', L + colW * 0.72, py);
+        doc.setTextColor(0);
+        blankLine(L + colW * 0.82, py, colW * 0.14);
+
+        doc.setFont('helvetica', 'normal'); doc.setFontSize(7);
+        doc.text('\u2022', rx + 6, py);
+        blankLine(rx + 14, py, colW * 0.54);
+        doc.setFontSize(5.5); doc.setTextColor(128);
+        doc.text('req:', rx + colW * 0.72, py);
+        doc.setTextColor(0);
+        blankLine(rx + colW * 0.82, py, colW * 0.14);
+      }
+    } else {
+      for (let i = 0; i < powers.length; i++) {
+        const col = i < powPerCol ? 0 : 1;
+        const ri = col === 0 ? i : i - powPerCol;
+        const bx = col === 0 ? L : rx;
+        const py = y2 + 26 + ri * PRH;
+        if (ri >= powPerCol) break;
+        doc.setFont('helvetica', 'normal'); doc.setFontSize(7.5);
+        doc.text('\u2022  ' + powers[i].name, bx + 6, py);
+        const req = powers[i].req || '';
+        if (req) {
+          doc.setFontSize(5.5); doc.setTextColor(100);
+          doc.text('(' + req + ')', bx + colW - 6, py, { align: 'right' });
+          doc.setTextColor(0);
+        }
+      }
+    }
+
+    // Notes on page 2
+    const ny2 = powBot + 6;
+    sectionBox(L, ny2, CW, notesH2, 'NOTES');
+    doc.setDrawColor(215); doc.setLineWidth(0.25);
+    let cl2 = ny2 + 24;
+    while (cl2 < ny2 + notesH2 - 6) { doc.line(L + 8, cl2, R - 8, cl2); cl2 += 13; }
+    doc.setDrawColor(0);
+
+    drawFooter(H - 6);
+  }
+
+  // Save
+  const filename = blankSheet ? 'SW_D6_Blank_Sheet.pdf' : 'SW_D6_' + (n.firstName || 'NPC') + '_' + (n.surname || '') + '.pdf';
+  doc.save(filename);
 }
 
 // ============================================================
