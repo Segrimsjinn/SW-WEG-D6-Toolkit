@@ -562,8 +562,9 @@ color:var(--text-dim);min-width:35px;text-align:right;
         </div>
       </div>
 
-      <div style="text-align:center;margin:16px 0 8px">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin:16px 0 8px;padding:0 4px">
         <a href="bugreport.html" style="color:var(--cyan);font-family:'Orbitron',sans-serif;font-size:13px;text-decoration:none;border:1px solid var(--cyan);padding:8px 20px;border-radius:4px;display:inline-block">⚠ REPORT A BUG</a>
+        <span style="font-family:'Orbitron',sans-serif;font-size:11px;color:var(--text-dim)"><span id="visitorCount" style="color:var(--cyan);font-size:13px">—</span> beings have accessed this terminal</span>
       </div>
     </div>
   </div>
@@ -1429,6 +1430,25 @@ function recalibrate() {
 
   alert('Recalibrated! ' + changed + ' cells updated.');
 }
+</script>
+
+<!-- GoatCounter -->
+<script data-goatcounter="https://segrimsjinn.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script>
+var gcInterval = setInterval(function() {
+  if (window.goatcounter && window.goatcounter.visit_count) {
+    clearInterval(gcInterval);
+    var r = new XMLHttpRequest();
+    r.addEventListener('load', function() {
+      try {
+        var c = JSON.parse(this.responseText).count;
+        document.getElementById('visitorCount').textContent = c;
+      } catch(e) {}
+    });
+    r.open('GET', 'https://segrimsjinn.goatcounter.com/counter/TOTAL.json');
+    r.send();
+  }
+}, 200);
 </script>
 
 </body>
