@@ -445,24 +445,23 @@ color:var(--text-dim);min-width:35px;text-align:right;
       </div>
 
       <div id="npcResult" style="display:none">
-        <!-- PDF controls row -->
-        <div style="display:flex;align-items:center;justify-content:flex-end;gap:10px;padding:6px 0">
-          <label style="display:flex;align-items:center;gap:4px;cursor:pointer;font-size:10px;color:var(--text-dim);margin:0;font-family:'Rajdhani',sans-serif">
-            <input type="checkbox" id="pdfPortrait" checked style="accent-color:var(--gold);width:12px;height:12px"> Portrait
-          </label>
-          <label style="display:flex;align-items:center;gap:4px;cursor:pointer;font-size:10px;color:var(--text-dim);margin:0;font-family:'Rajdhani',sans-serif">
-            <input type="checkbox" id="pdfForce" style="accent-color:var(--gold);width:12px;height:12px"> Force
-          </label>
-          <label style="display:flex;align-items:center;gap:4px;cursor:pointer;font-size:10px;color:var(--text-dim);margin:0;font-family:'Rajdhani',sans-serif">
-            <input type="checkbox" id="pdfBlank" style="accent-color:var(--gold);width:12px;height:12px"> Blank
-          </label>
-          <button class="btn-reroll" style="border-color:var(--gold);color:var(--gold)" onclick="exportPDF()">⟐ PDF</button>
-        </div>
-
-        <!-- Picker + Reroll controls -->
-        <div style="font-family:'Orbitron',sans-serif;font-size:8px;color:var(--text-dim);letter-spacing:.8px;padding:0 2px 4px;line-height:1.8">
-          ↻ REROLL &nbsp;|&nbsp; 🔒 LOCK TO FREEZE ON ROLL ALL &nbsp;|&nbsp; PICKING FROM DROPDOWN AUTO-LOCKS<br>
-          <span style="color:#cc6666">🔒 RED LOCK</span> = CONFLICT — UPSTREAM FIELD (RACE → ATTRS → SKILLS) MUST BE LOCKED FIRST
+        <!-- PDF controls + info row -->
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:6px 2px;flex-wrap:wrap;gap:4px">
+          <div style="font-family:'Orbitron',sans-serif;font-size:7px;color:var(--text-dim);letter-spacing:.6px">
+            ↻ REROLL &nbsp;|&nbsp; 🔒 LOCK TO FREEZE &nbsp;|&nbsp; DROPDOWN AUTO-LOCKS &nbsp;|&nbsp; <span style="color:#cc6666">🔒 RED</span> = UPSTREAM MUST LOCK FIRST (RACE → ATTRS → SKILLS)
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;flex-shrink:0">
+            <label style="display:flex;align-items:center;gap:4px;cursor:pointer;font-size:10px;color:var(--text-dim);margin:0;font-family:'Rajdhani',sans-serif">
+              <input type="checkbox" id="pdfPortrait" checked style="accent-color:var(--gold);width:12px;height:12px"> Portrait
+            </label>
+            <label style="display:flex;align-items:center;gap:4px;cursor:pointer;font-size:10px;color:var(--text-dim);margin:0;font-family:'Rajdhani',sans-serif">
+              <input type="checkbox" id="pdfForce" style="accent-color:var(--gold);width:12px;height:12px"> Force
+            </label>
+            <label style="display:flex;align-items:center;gap:4px;cursor:pointer;font-size:10px;color:var(--text-dim);margin:0;font-family:'Rajdhani',sans-serif">
+              <input type="checkbox" id="pdfBlank" style="accent-color:var(--gold);width:12px;height:12px"> Blank
+            </label>
+            <button class="btn-reroll" style="border-color:var(--gold);color:var(--gold)" onclick="exportPDF()">⟐ PDF</button>
+          </div>
         </div>
         <div id="lockConflictHint" style="font-family:'Rajdhani',sans-serif;font-size:11px;color:#cc6666;padding:0 2px 4px;display:none"></div>
         <div class="npc-controls">
