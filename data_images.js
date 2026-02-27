@@ -8,6 +8,7 @@ const RACE_IMAGES = {
   'Ansionan': 'image009.jpg',
   'Anzat': 'image010.jpg',
   'Aramandi': 'image011.jpg',
+  'Anx': 'image172.jpg',
   'Arcona': 'image012.jpg',
   'Arkanian': 'image013.jpg',
   'Arpor-Lan': 'image014.jpg',
