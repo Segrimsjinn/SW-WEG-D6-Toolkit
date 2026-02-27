@@ -867,7 +867,7 @@ function cascadeUnlock(from) {
 }
 
 function rollAll() {
-  if (window.goatcounter) goatcounter.count({ path: '/npc-generated', event: true });
+  if (window.goatcounter) goatcounter.count({ path: 'npc-generated', event: true });
   const keepRace = isLocked('lockRace');
   const keepJob = isLocked('lockJob');
   const keepTraining = isLocked('lockTraining');
@@ -1292,7 +1292,7 @@ function randomBoth() {
 }
 
 function engage() {
-  if (window.goatcounter) goatcounter.count({ path: '/journey-plotted', event: true });
+  if (window.goatcounter) goatcounter.count({ path: 'journey-plotted', event: true });
   const origin = findSystem(document.getElementById('originInput').value);
   const dest = findSystem(document.getElementById('destInput').value);
   if (!origin || !dest) { alert('Please enter valid system names.'); return; }
@@ -1551,7 +1551,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function searchGalaxy(query) {
-  if (window.goatcounter) goatcounter.count({ path: '/galaxy-searched', event: true });
+  if (window.goatcounter) goatcounter.count({ path: 'galaxy-searched', event: true });
   const q = query.trim().toLowerCase();
   const container = document.getElementById('galaxyResults');
   const countEl = document.getElementById('galaxyCount');
@@ -1653,7 +1653,7 @@ function highlightGalaxySystems(systems, isGridSearch) {
 // PDF EXPORT (jsPDF)
 // ============================================================
 function exportPDF() {
-  if (window.goatcounter) goatcounter.count({ path: '/pdf-exported', event: true });
+  if (window.goatcounter) goatcounter.count({ path: 'pdf-exported', event: true });
   if (typeof jspdf === 'undefined' && typeof window.jspdf === 'undefined') {
     alert('PDF library loading... please try again in a moment.');
     return;
@@ -2179,9 +2179,9 @@ var gcInterval = setInterval(function() {
     var base = 'https://segrimsjinn.goatcounter.com/counter/';
     var stats = [
       { path: 'TOTAL.json', el: 'statVisitors' },
-      { path: '/npc-generated.json', el: 'statNPCs' },
-      { path: '/journey-plotted.json', el: 'statJourneys' },
-      { path: '/galaxy-searched.json', el: 'statScans' }
+      { path: 'npc-generated.json', el: 'statNPCs' },
+      { path: 'journey-plotted.json', el: 'statJourneys' },
+      { path: 'galaxy-searched.json', el: 'statScans' }
     ];
     stats.forEach(function(s) {
       var r = new XMLHttpRequest();
