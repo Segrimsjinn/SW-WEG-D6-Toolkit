@@ -576,10 +576,19 @@ color:var(--text-dim);min-width:35px;text-align:right;
         </div>
       </div>
 
-      <div style="display:flex;align-items:center;justify-content:space-between;margin:16px 0 8px;padding:0 4px">
+      <div style="display:flex;align-items:center;justify-content:center;margin:16px 0 8px;padding:0 4px">
         <a href="bugreport.html" style="color:var(--cyan);font-family:'Orbitron',sans-serif;font-size:13px;text-decoration:none;border:1px solid var(--cyan);padding:8px 20px;border-radius:4px;display:inline-block">⚠ BUG REPORT / SUGGESTION</a>
-        <span style="font-family:'Orbitron',sans-serif;font-size:11px;color:var(--text-dim)"><span id="visitorCount" style="color:var(--cyan);font-size:13px">—</span> beings have accessed this terminal</span>
       </div>
+    </div>
+  </div>
+
+  <!-- STATS FOOTER -->
+  <div id="statsFooter" style="text-align:center;padding:10px 16px;border-top:1px solid var(--card-border);margin-bottom:4px">
+    <div style="font-family:'Orbitron',sans-serif;font-size:9px;color:var(--text-dim);letter-spacing:0.8px;line-height:1.8">
+      <span id="statVisitors" style="color:var(--gold);font-weight:700;font-size:11px">—</span> <span style="color:var(--cyan)">COMMANDERS</span> HAVE ENLISTED
+      <span id="statNPCs" style="color:var(--gold);font-weight:700;font-size:11px">—</span> <span style="color:var(--cyan)">MINIONS</span>, PLOTTED
+      <span id="statJourneys" style="color:var(--gold);font-weight:700;font-size:11px">—</span> <span style="color:var(--cyan)">ASTROGATION COURSES</span>, AND PERFORMED
+      <span id="statScans" style="color:var(--gold);font-weight:700;font-size:11px">—</span> <span style="color:var(--cyan)">SYSTEM SECTOR SCANS</span>
     </div>
   </div>
 
@@ -1318,6 +1327,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function searchGalaxy(query) {
+  if (window.goatcounter) goatcounter.count({ path: '/galaxy-searched', event: true });
   const q = query.trim().toLowerCase();
   const container = document.getElementById('galaxyResults');
   const countEl = document.getElementById('galaxyCount');
@@ -1885,17 +1895,31 @@ function recalibrate() {
 <script data-goatcounter="https://segrimsjinn.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <script>
 var gcInterval = setInterval(function() {
-  if (window.goatcounter && window.goatcounter.visit_count) {
+  if (window.goatcounter) {
     clearInterval(gcInterval);
-    var r = new XMLHttpRequest();
-    r.addEventListener('load', function() {
-      try {
-        var c = JSON.parse(this.responseText).count;
-        document.getElementById('visitorCount').textContent = c;
-      } catch(e) {}
+    var base = 'https://segrimsjinn.goatcounter.com/counter/';
+    var stats = [
+      { path: 'TOTAL.json', el: 'statVisitors' },
+      { path: '/npc-generated.json', el: 'statNPCs' },
+      { path: '/journey-plotted.json', el: 'statJourneys' },
+      { path: '/galaxy-searched.json', el: 'statScans' }
+    ];
+    stats.forEach(function(s) {
+      var r = new XMLHttpRequest();
+      r.addEventListener('load', function() {
+        try {
+          var c = JSON.parse(this.responseText).count;
+          var el = document.getElementById(s.el);
+          if (el) el.textContent = Number(c).toLocaleString();
+        } catch(e) {}
+      });
+      r.addEventListener('error', function() {
+        var el = document.getElementById(s.el);
+        if (el) el.textContent = '0';
+      });
+      r.open('GET', base + s.path);
+      r.send();
     });
-    r.open('GET', 'https://segrimsjinn.goatcounter.com/counter/TOTAL.json');
-    r.send();
   }
 }, 200);
 </script>
