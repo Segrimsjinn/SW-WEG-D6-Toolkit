@@ -560,30 +560,29 @@ color:var(--text-dim);min-width:35px;text-align:right;
           <div class="card fade-in skills-half" id="skillsCard">
             <div class="card-title">⟐ Skills</div>
             <div id="skillsOutput"></div>
+            <div style="margin-top:12px;border-top:1px solid var(--card-border);padding-top:12px">
+              <div class="card-title" style="margin-bottom:8px">⟐ Armor & Suit Reference</div>
+              <div style="display:flex;gap:6px;margin-bottom:8px;flex-wrap:wrap">
+                <div style="flex:1;min-width:120px">
+                  <label class="armor-label">CATEGORY</label>
+                  <select id="armorCategory" class="control-select" onchange="updateArmorList()">
+                    <option value="">— Select —</option>
+                  </select>
+                </div>
+                <div style="flex:1;min-width:120px">
+                  <label class="armor-label">ARMOR / SUIT</label>
+                  <select id="armorItem" class="control-select" onchange="showArmorDesc()">
+                    <option value="">— Select —</option>
+                  </select>
+                </div>
+              </div>
+              <div id="armorDesc" class="armor-desc" style="display:none"></div>
+            </div>
           </div>
           <div class="card fade-in equip-half">
             <div class="card-title">⟐ Equipment</div>
             <div id="equipOutput" class="equip-grid"></div>
           </div>
-        </div>
-
-        <div class="card fade-in">
-          <div class="card-title">⟐ Armor & Suit Reference</div>
-          <div style="display:flex;gap:8px;margin-bottom:8px;flex-wrap:wrap">
-            <div style="flex:1;min-width:140px">
-              <label class="armor-label">CATEGORY</label>
-              <select id="armorCategory" class="control-select" onchange="updateArmorList()">
-                <option value="">— Select Category —</option>
-              </select>
-            </div>
-            <div style="flex:2;min-width:200px">
-              <label class="armor-label">ARMOR / SUIT</label>
-              <select id="armorItem" class="control-select" onchange="showArmorDesc()">
-                <option value="">— Select Item —</option>
-              </select>
-            </div>
-          </div>
-          <div id="armorDesc" class="armor-desc" style="display:none"></div>
         </div>
       </div>
     </div>
