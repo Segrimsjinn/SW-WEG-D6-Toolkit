@@ -273,6 +273,17 @@ letter-spacing:.5px;white-space:nowrap;text-align:center;
 .btn-grid.btn-all{border-color:var(--gold-dim);color:var(--gold)}
 .btn-grid.btn-all:hover{border-color:var(--gold);background:var(--gold-dim)}
 
+/* ARMOR LOOKUP */
+.armor-label{
+font-family:'Orbitron',sans-serif;font-size:8px;color:var(--text-dim);
+letter-spacing:1px;display:block;margin-bottom:4px;
+}
+.armor-desc{
+background:var(--bg2);border:1px solid var(--card-border);border-radius:6px;
+padding:12px 14px;white-space:pre-wrap;font-family:'Rajdhani',sans-serif;
+font-size:13px;color:var(--text);line-height:1.6;max-height:400px;overflow-y:auto;
+}
+
 @media(max-width:480px){
   .npc-controls{flex-direction:column;gap:8px}
   .controls-divider{width:auto;height:1px;margin:2px 0}
@@ -555,6 +566,25 @@ color:var(--text-dim);min-width:35px;text-align:right;
             <div id="equipOutput" class="equip-grid"></div>
           </div>
         </div>
+
+        <div class="card fade-in">
+          <div class="card-title">⟐ Armor & Suit Reference</div>
+          <div style="display:flex;gap:8px;margin-bottom:8px;flex-wrap:wrap">
+            <div style="flex:1;min-width:140px">
+              <label class="armor-label">CATEGORY</label>
+              <select id="armorCategory" class="control-select" onchange="updateArmorList()">
+                <option value="">— Select Category —</option>
+              </select>
+            </div>
+            <div style="flex:2;min-width:200px">
+              <label class="armor-label">ARMOR / SUIT</label>
+              <select id="armorItem" class="control-select" onchange="showArmorDesc()">
+                <option value="">— Select Item —</option>
+              </select>
+            </div>
+          </div>
+          <div id="armorDesc" class="armor-desc" style="display:none"></div>
+        </div>
       </div>
     </div>
 
@@ -720,6 +750,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
 <script src="data_systems.js"></script>
 <script src="data_grid.js"></script>
 <script src="data_images.js"></script>
+<script src="data_armor.js"></script>
 
 <script>
 // ============================================================
@@ -1126,6 +1157,53 @@ function rerollEquipSlot(key) {
 }
 
 // ============================================================
+// ARMOR LOOKUP
+// ============================================================
+function initArmorLookup() {
+  const catSel = document.getElementById('armorCategory');
+  catSel.innerHTML = '<option value="">— Select Category —</option>';
+  Object.keys(ARMOR_DATA).forEach(cat => {
+    const opt = document.createElement('option');
+    opt.value = cat;
+    opt.textContent = cat;
+    catSel.appendChild(opt);
+  });
+}
+
+function updateArmorList() {
+  const cat = document.getElementById('armorCategory').value;
+  const itemSel = document.getElementById('armorItem');
+  const descDiv = document.getElementById('armorDesc');
+  itemSel.innerHTML = '<option value="">— Select Item —</option>';
+  descDiv.style.display = 'none';
+  descDiv.textContent = '';
+  if (!cat || !ARMOR_DATA[cat]) return;
+  ARMOR_DATA[cat].forEach((item, idx) => {
+    const opt = document.createElement('option');
+    opt.value = idx;
+    opt.textContent = item.name;
+    itemSel.appendChild(opt);
+  });
+}
+
+function showArmorDesc() {
+  const cat = document.getElementById('armorCategory').value;
+  const idx = document.getElementById('armorItem').value;
+  const descDiv = document.getElementById('armorDesc');
+  if (!cat || idx === '' || !ARMOR_DATA[cat]) {
+    descDiv.style.display = 'none';
+    return;
+  }
+  const item = ARMOR_DATA[cat][parseInt(idx)];
+  if (item && item.desc) {
+    descDiv.textContent = item.desc;
+    descDiv.style.display = 'block';
+  } else {
+    descDiv.style.display = 'none';
+  }
+}
+
+// ============================================================
 // DISPLAY NPC
 // ============================================================
 function displayNPC() {
@@ -1524,6 +1602,7 @@ function drawMap(pathData, origin, dest, malfIdx) {
 let galaxyTimeout;
 document.addEventListener('DOMContentLoaded', () => {
   initPickers();
+  initArmorLookup();
   setupAutocomplete('originInput', 'originList');
   setupAutocomplete('destInput', 'destList');
 
