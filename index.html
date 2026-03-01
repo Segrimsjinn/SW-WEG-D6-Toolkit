@@ -284,6 +284,62 @@ padding:12px 14px;white-space:pre-wrap;font-family:'Rajdhani',sans-serif;
 font-size:13px;color:var(--text);line-height:1.6;max-height:400px;overflow-y:auto;
 }
 
+/* STARSHIP STAT BLOCK */
+.ship-stat-block{
+background:var(--bg2);border:1px solid var(--card-border);border-radius:8px;
+padding:16px;font-family:'Rajdhani',sans-serif;font-size:13px;
+color:var(--text);line-height:1.7;display:none;
+}
+.ship-stat-block .ship-title{
+font-family:'Orbitron',monospace;font-size:13px;font-weight:900;
+color:var(--gold);letter-spacing:2px;text-transform:uppercase;
+margin-bottom:8px;padding-bottom:6px;
+border-bottom:1px solid var(--card-border);
+}
+.ship-stat-block .ship-rank{
+display:inline-block;font-family:'Orbitron',monospace;font-size:9px;
+font-weight:700;padding:2px 8px;border-radius:4px;margin-left:8px;
+letter-spacing:1px;vertical-align:middle;
+}
+.ship-stat-block .stat-line{margin:1px 0;font-size:13px}
+.ship-stat-block .stat-label{color:var(--gold);font-weight:700}
+.ship-stat-block .stat-section{
+margin-top:10px;padding-top:8px;border-top:1px solid var(--card-border);
+}
+.ship-stat-block .stat-section-title{
+font-family:'Orbitron',monospace;font-size:10px;font-weight:700;
+color:var(--cyan);letter-spacing:1px;margin-bottom:4px;
+}
+.ship-stat-block .weapon-block{margin:8px 0 8px 12px}
+.ship-stat-block .weapon-name{
+font-weight:700;color:var(--text);font-size:13px;margin-bottom:2px;
+}
+.ship-stat-block .weapon-stat{margin-left:12px;font-size:12px;color:var(--text-dim)}
+.ship-stat-block .ship-note{
+margin-top:10px;padding:10px;background:var(--bg3);border-radius:6px;
+font-size:12px;color:var(--text-dim);line-height:1.6;font-style:italic;
+}
+.ship-stat-block .ship-deckplan{
+margin-top:10px;text-align:center;
+}
+.ship-stat-block .ship-deckplan a{
+color:var(--cyan);font-family:'Orbitron',monospace;font-size:10px;
+letter-spacing:1px;text-decoration:none;
+border:1px solid var(--cyan);padding:6px 14px;border-radius:4px;
+display:inline-block;
+}
+.ship-stat-block .ship-deckplan a:hover{background:rgba(0,229,255,.1)}
+.ship-dropdowns{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+.ship-dropdowns>div{flex:1;min-width:140px}
+.ship-sort-row{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap}
+.ship-sort-btn{
+font-family:'Orbitron',monospace;font-size:8px;font-weight:700;
+letter-spacing:1px;padding:4px 10px;border-radius:4px;
+border:1px solid var(--card-border);background:var(--bg3);
+color:var(--text-dim);cursor:pointer;transition:all .15s;
+}
+.ship-sort-btn:hover,.ship-sort-btn.active{border-color:var(--gold-dim);color:var(--gold)}
+
 @media(max-width:480px){
   .npc-controls{flex-direction:column;gap:8px}
   .controls-divider{width:auto;height:1px;margin:2px 0}
@@ -444,7 +500,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
 <div class="app">
   <header class="app-header">
     <div class="app-title">Star Wars D6 Toolkit</div>
-    <div class="app-subtitle">NPC Generator &amp; Astrogation</div>
+    <div class="app-subtitle">NPC Generator &amp; Astrogation &amp; Starships</div>
   </header>
 
   <div class="app-content">
@@ -671,7 +727,37 @@ color:var(--text-dim);min-width:35px;text-align:right;
       </div>
     </div>
 
-    <!-- TAB 4: SETTINGS -->
+    <!-- TAB 4: STARSHIPS -->
+    <div id="tab-ships" class="tab-panel">
+      <div class="card">
+        <div class="card-title">⟐ Starship Database</div>
+        <div class="ship-dropdowns">
+          <div>
+            <label class="armor-label">CATEGORY</label>
+            <select id="shipCategory" class="control-select" onchange="updateShipList()">
+              <option value="">— Select —</option>
+            </select>
+          </div>
+          <div>
+            <label class="armor-label">STARSHIP</label>
+            <select id="shipItem" class="control-select" onchange="showShipStats()">
+              <option value="">— Select —</option>
+            </select>
+          </div>
+        </div>
+        <div class="ship-sort-row" id="shipSortRow" style="display:none">
+          <span style="font-family:'Orbitron',monospace;font-size:8px;color:var(--text-dim);letter-spacing:1px;padding:4px 0">SORT:</span>
+          <button class="ship-sort-btn active" onclick="sortShips('alpha')">A-Z</button>
+          <button class="ship-sort-btn" onclick="sortShips('rank')">RANK</button>
+          <button class="ship-sort-btn" onclick="sortShips('hull')">HULL</button>
+          <button class="ship-sort-btn" onclick="sortShips('speed')">SPEED</button>
+          <button class="ship-sort-btn" onclick="sortShips('price')">PRICE</button>
+        </div>
+        <div id="shipStatBlock" class="ship-stat-block"></div>
+      </div>
+    </div>
+
+    <!-- TAB 5: SETTINGS -->
     <div id="tab-settings" class="tab-panel">
       <div class="card">
         <div class="card-title">⟐ Speed Calibration</div>
@@ -732,6 +818,10 @@ color:var(--text-dim);min-width:35px;text-align:right;
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
       GALAXY
     </button>
+    <button class="nav-btn" onclick="switchTab('ships')" data-tab="ships">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+      SHIPS
+    </button>
     <button class="nav-btn" onclick="switchTab('settings')" data-tab="settings">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
       SETTINGS
@@ -750,6 +840,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
 <script src="data_grid.js"></script>
 <script src="data_images.js"></script>
 <script src="data_armor.js"></script>
+<script src="data_starships.js"></script>
 
 <script>
 // ============================================================
@@ -1203,6 +1294,187 @@ function showArmorDesc() {
 }
 
 // ============================================================
+// STARSHIP DATABASE
+// ============================================================
+let shipSortMode = 'alpha';
+
+function initShipLookup() {
+  const catSel = document.getElementById('shipCategory');
+  catSel.innerHTML = '<option value="">— Select Category —</option>';
+  Object.keys(STARSHIP_DATA).forEach(cat => {
+    const opt = document.createElement('option');
+    opt.value = cat;
+    opt.textContent = cat + ' (' + STARSHIP_DATA[cat].length + ')';
+    catSel.appendChild(opt);
+  });
+}
+
+function updateShipList() {
+  const cat = document.getElementById('shipCategory').value;
+  const itemSel = document.getElementById('shipItem');
+  const block = document.getElementById('shipStatBlock');
+  const sortRow = document.getElementById('shipSortRow');
+  itemSel.innerHTML = '<option value="">— Select Starship —</option>';
+  block.style.display = 'none';
+  if (!cat || !STARSHIP_DATA[cat]) { sortRow.style.display = 'none'; return; }
+  sortRow.style.display = 'flex';
+  const ships = getSortedShips(cat);
+  ships.forEach(item => {
+    const opt = document.createElement('option');
+    opt.value = item._origIdx;
+    let label = item.name;
+    if (shipSortMode === 'rank') label = '#' + item.rank + ' ' + label;
+    opt.textContent = label;
+    itemSel.appendChild(opt);
+  });
+}
+
+function getSortedShips(cat) {
+  const ships = STARSHIP_DATA[cat].map((s, i) => ({...s, _origIdx: i}));
+  switch(shipSortMode) {
+    case 'rank': ships.sort((a,b) => (a.rank||999) - (b.rank||999)); break;
+    case 'hull': ships.sort((a,b) => d6ToPips(b.hull) - d6ToPips(a.hull)); break;
+    case 'speed': ships.sort((a,b) => (parseFloat(b.space)||0) - (parseFloat(a.space)||0)); break;
+    case 'price':
+      ships.sort((a,b) => {
+        const pa = parseFloat(String(a.price_used||a.price_new||'0').replace(/,/g,'')) || 999999999;
+        const pb = parseFloat(String(b.price_used||b.price_new||'0').replace(/,/g,'')) || 999999999;
+        return pa - pb;
+      }); break;
+    default: ships.sort((a,b) => a.name.localeCompare(b.name));
+  }
+  return ships;
+}
+
+function sortShips(mode) {
+  shipSortMode = mode;
+  document.querySelectorAll('.ship-sort-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  const cat = document.getElementById('shipCategory').value;
+  if (cat) updateShipList();
+}
+
+function formatPrice(pNew, pUsed) {
+  const parts = [];
+  if (pNew) parts.push(Number(pNew).toLocaleString() + ' (new)');
+  if (pUsed) parts.push(Number(pUsed).toLocaleString() + ' (used)');
+  return parts.join('; ') || 'Not available';
+}
+
+function getRankColor(rank, total) {
+  if (!rank || !total) return {bg:'#555',text:'#fff'};
+  const pos = (rank - 1) / Math.max(total - 1, 1);
+  let r, g, b;
+  if (pos <= 0.5) {
+    const t = pos * 2;
+    r = Math.round(t * 255);
+    g = Math.round(128 + t * 127);
+    b = 0;
+  } else {
+    const t = (pos - 0.5) * 2;
+    r = Math.round(255 - t * 63);
+    g = Math.round(255 - t * 255);
+    b = 0;
+  }
+  const lum = 0.299*r + 0.587*g + 0.114*b;
+  return {
+    bg: 'rgb('+r+','+g+','+b+')',
+    text: lum < 128 ? '#fff' : '#000'
+  };
+}
+
+function showShipStats() {
+  const cat = document.getElementById('shipCategory').value;
+  const idx = document.getElementById('shipItem').value;
+  const block = document.getElementById('shipStatBlock');
+  if (!cat || idx === '' || !STARSHIP_DATA[cat]) { block.style.display = 'none'; return; }
+  const s = STARSHIP_DATA[cat][parseInt(idx)];
+  if (!s) { block.style.display = 'none'; return; }
+
+  const total = STARSHIP_DATA[cat].length;
+  const rc = getRankColor(s.rank, total);
+
+  let h = '';
+  // Title + rank badge
+  h += '<div class="ship-title">' + s.name;
+  if (s.rank) h += '<span class="ship-rank" style="background:'+rc.bg+';color:'+rc.text+'">RANK #'+s.rank+' / '+total+'</span>';
+  h += '</div>';
+
+  // Core stats - WEG format
+  const line = (label, val) => val ? '<div class="stat-line"><span class="stat-label">'+label+':</span> '+val+'</div>' : '';
+
+  h += line('Craft', s.craft);
+  h += line('Type', s.type);
+  h += line('Scale', s.scale);
+  h += line('Length', s.length);
+  h += line('Crew', s.crew + (s.gunners ? '; gunners: ' + s.gunners : ''));
+  h += line('Passengers', s.passengers);
+  h += line('Cargo Capacity', s.cargo);
+  h += line('Consumables', s.consumables);
+  h += line('Cost', formatPrice(s.price_new, s.price_used));
+  h += line('Hyperdrive Multiplier', s.hyperdrive);
+  h += line('Nav Computer', s.nav_computer);
+  h += line('Maneuverability', s.maneuverability);
+  h += line('Space', s.space);
+  if (s.atmosphere) h += line('Atmosphere', s.atmosphere + ' kmh');
+  h += line('Hull', s.hull);
+  h += line('Shields', s.shields || 'None');
+
+  // Sensors
+  if (s.sensors_passive || s.sensors_scan || s.sensors_search || s.sensors_focus) {
+    h += '<div class="stat-section"><div class="stat-section-title">SENSORS</div>';
+    h += line('Passive', s.sensors_passive);
+    h += line('Scan', s.sensors_scan);
+    h += line('Search', s.sensors_search);
+    h += line('Focus', s.sensors_focus);
+    h += '</div>';
+  }
+
+  // Weapons
+  if (s.weapons && s.weapons.length > 0) {
+    h += '<div class="stat-section"><div class="stat-section-title">WEAPONS</div>';
+    s.weapons.forEach(w => {
+      h += '<div class="weapon-block">';
+      h += '<div class="weapon-name">' + w.name + '</div>';
+      if (w.fire_arc) h += '<div class="weapon-stat"><span class="stat-label">Fire Arc:</span> ' + w.fire_arc + '</div>';
+      if (w.crew) h += '<div class="weapon-stat"><span class="stat-label">Crew:</span> ' + w.crew + '</div>';
+      if (w.skill) h += '<div class="weapon-stat"><span class="stat-label">Skill:</span> ' + w.skill + '</div>';
+      if (w.fire_control) h += '<div class="weapon-stat"><span class="stat-label">Fire Control:</span> ' + w.fire_control + '</div>';
+      if (w.space_range) h += '<div class="weapon-stat"><span class="stat-label">Space Range:</span> ' + w.space_range + '</div>';
+      if (w.atmo_range) h += '<div class="weapon-stat"><span class="stat-label">Atmosphere Range:</span> ' + w.atmo_range + '</div>';
+      if (w.damage) h += '<div class="weapon-stat"><span class="stat-label">Damage:</span> ' + w.damage + '</div>';
+      h += '</div>';
+    });
+    h += '</div>';
+  } else {
+    h += '<div class="stat-section"><div class="stat-section-title">WEAPONS</div>';
+    h += '<div class="stat-line" style="color:var(--text-dim);font-style:italic">None</div></div>';
+  }
+
+  // Source & era
+  if (s.source || s.era || s.affiliation) {
+    h += '<div class="stat-section"><div class="stat-section-title">REFERENCE</div>';
+    h += line('Source', s.source);
+    h += line('Era', s.era);
+    h += line('Affiliation', s.affiliation);
+    h += '</div>';
+  }
+
+  // Of Note
+  if (s.of_note) {
+    h += '<div class="ship-note">⟐ ' + s.of_note + '</div>';
+  }
+
+  // Deck plan link
+  if (s.deckplan) {
+    h += '<div class="ship-deckplan"><a href="' + s.deckplan + '" target="_blank">⟐ VIEW DECK PLAN</a></div>';
+  }
+
+  block.innerHTML = h;
+  block.style.display = 'block';
+}
+
+// ============================================================
 // DISPLAY NPC
 // ============================================================
 function displayNPC() {
@@ -1602,6 +1874,7 @@ let galaxyTimeout;
 document.addEventListener('DOMContentLoaded', () => {
   initPickers();
   initArmorLookup();
+  initShipLookup();
   setupAutocomplete('originInput', 'originList');
   setupAutocomplete('destInput', 'destList');
 
