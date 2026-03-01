@@ -1476,10 +1476,10 @@ function showShipStats() {
     h += '<div class="ship-note">⟐ ' + s.of_note + '</div>';
   }
 
-  // Deck plan link
-  if (s.deckplan) {
-    h += '<div class="ship-deckplan"><a href="' + s.deckplan + '" target="_blank">⟐ VIEW DECK PLAN</a></div>';
-  }
+  // TODO: Deck plan button - commented out until we have our own custom deck plan images designed
+  // if (s.deckplan) {
+  //   h += '<div class="ship-deckplan"><a href="' + s.deckplan + '" target="_blank">⟐ VIEW DECK PLAN</a></div>';
+  // }
 
   block.innerHTML = h;
   block.style.display = 'block';
