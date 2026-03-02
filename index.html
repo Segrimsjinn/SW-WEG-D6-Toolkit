@@ -756,14 +756,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
         <div id="shipStatBlock" class="ship-stat-block"></div>
         <div id="shipRankInfo" class="card" style="margin-top:12px;background:var(--bg3);border:1px solid var(--card-border);padding:12px">
           <div style="font-family:'Orbitron',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:6px">⟐ RANKING METHOD</div>
-          <div style="font-size:11px;color:var(--text-dim);line-height:1.7">
-            Ships are ranked within their category using a weighted composite score.<br><br>
-            <span style="color:var(--gold)">Combat 30%</span> — Damage (12%), Fire Control (9%), Weapon Count (9%)<br>
-            <span style="color:var(--gold)">Survivability 25%</span> — Hull (15%), Shields (10%)<br>
-            <span style="color:var(--gold)">Speed 20%</span> — Space (10%), Maneuverability (10%)<br>
-            <span style="color:var(--gold)">Utility 15%</span> — Hyperdrive (6.75%), Cargo (6%), Consumables (2.25%)<br>
-            <span style="color:var(--gold)">Value 10%</span> — Price, lower is better
-          </div>
+          <div id="rankMethodBody" style="font-size:11px;color:var(--text-dim);line-height:1.7"></div>
         </div>
       </div>
     </div>
@@ -1320,6 +1313,39 @@ function initShipLookup() {
   });
 }
 
+const RANK_METHODS = {
+  'Bulk Freighters': {
+    lines: [
+      ['Utility 40%', 'Cargo (18%), Hyperdrive (8%), Sensors (8%), Consumables (6%)'],
+      ['Survivability 25%', 'Hull (15%), Shields (10%)'],
+      ['Value 15%', 'Cargo per credit — cost efficiency'],
+      ['Speed 10%', 'Maneuverability (7%), Space (3%)'],
+      ['Combat 10%', 'Damage (4%), Fire Control (3%), Weapon Count (3%)'],
+    ],
+    note: 'Bulk freighters exist to move mass. Maneuverability weighted higher than speed because it adds to dodge rolls. Sensors folded into Utility — mining rigs demonstrate commercial value of premium sensors.'
+  }
+};
+const RANK_DEFAULT = {
+  lines: [
+    ['Combat 30%', 'Damage (12%), Fire Control (9%), Weapon Count (9%)'],
+    ['Survivability 25%', 'Hull (15%), Shields (10%)'],
+    ['Speed 20%', 'Space (10%), Maneuverability (10%)'],
+    ['Utility 15%', 'Hyperdrive (6.75%), Cargo (6%), Consumables (2.25%)'],
+    ['Value 10%', 'Price, lower is better'],
+  ],
+  note: ''
+};
+function updateRankPanel(cat) {
+  const body = document.getElementById('rankMethodBody');
+  const method = RANK_METHODS[cat] || RANK_DEFAULT;
+  let html = 'Ships are ranked within their category using a weighted composite score.<br><br>';
+  method.lines.forEach(l => {
+    html += '<span style="color:var(--gold)">' + l[0] + '</span> — ' + l[1] + '<br>';
+  });
+  if (method.note) html += '<br><span style="color:var(--text-dark);font-size:10px">' + method.note + '</span>';
+  body.innerHTML = html;
+}
+
 function updateShipList() {
   const cat = document.getElementById('shipCategory').value;
   const itemSel = document.getElementById('shipItem');
@@ -1327,6 +1353,7 @@ function updateShipList() {
   const sortRow = document.getElementById('shipSortRow');
   itemSel.innerHTML = '<option value="">— Select Starship —</option>';
   block.style.display = 'none';
+  updateRankPanel(cat);
   if (!cat || !STARSHIP_DATA[cat]) { sortRow.style.display = 'none'; return; }
   sortRow.style.display = 'flex';
   const ships = getSortedShips(cat);
@@ -1886,6 +1913,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initPickers();
   initArmorLookup();
   initShipLookup();
+  updateRankPanel('');
   setupAutocomplete('originInput', 'originList');
   setupAutocomplete('destInput', 'destList');
 
