@@ -752,6 +752,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
           <button class="ship-sort-btn" onclick="sortShips('hull')">HULL</button>
           <button class="ship-sort-btn" onclick="sortShips('speed')">SPEED</button>
           <button class="ship-sort-btn" onclick="sortShips('price')">PRICE</button>
+          <button class="ship-sort-btn" onclick="sortShips('cargo')">CARGO</button>
         </div>
         <div id="shipStatBlock" class="ship-stat-block"></div>
         <div id="shipRankInfo" class="card" style="margin-top:12px;background:var(--bg3);border:1px solid var(--card-border);padding:12px">
@@ -1344,6 +1345,62 @@ const RANK_METHODS = {
       ['Value 10%', 'Price, lower is better'],
     ],
     note: 'Combat-heavy weights — these are warships first, transports second.'
+  },
+  'Alphabet Fighters': {
+    lines: [
+      ['Speed 30%', 'Maneuverability (18%), Space (12%)'],
+      ['Combat 30%', 'Damage (12%), Fire Control (10%), Weapon Count (8%)'],
+      ['Survivability 25%', 'Hull (13%), Shields (12%)'],
+      ['Utility 10%', 'Hyperdrive (5%), Consumables (5%)'],
+      ['Value 5%', 'Price, lower is better'],
+    ],
+    note: 'Of_Note bonuses/penalties for jammers, stealth, gyro vulnerability, reliability issues, etc.'
+  },
+  'X-wing Series': {
+    lines: [
+      ['Speed 30%', 'Maneuverability (18%), Space (12%)'],
+      ['Combat 30%', 'Damage (12%), Fire Control (10%), Weapon Count (8%)'],
+      ['Survivability 25%', 'Hull (13%), Shields (12%)'],
+      ['Utility 10%', 'Hyperdrive (5%), Consumables (5%)'],
+      ['Value 5%', 'Price, lower is better'],
+    ],
+    note: 'Ranked within the X-wing family. Of_Note bonuses for stealth, shadow bombs.'
+  },
+  'Y-wing Series': {
+    lines: [
+      ['Speed 30%', 'Maneuverability (18%), Space (12%)'],
+      ['Combat 30%', 'Damage (12%), Fire Control (10%), Weapon Count (8%)'],
+      ['Survivability 25%', 'Hull (13%), Shields (12%)'],
+      ['Utility 10%', 'Hyperdrive (5%), Consumables (5%)'],
+      ['Value 5%', 'Price, lower is better'],
+    ],
+    note: 'Ranked within the Y-wing family. Support variants (tanker, early warning) rank lower.'
+  },
+  'TIE Class': {
+    lines: [
+      ['Speed 30%', 'Maneuverability (18%), Space (12%)'],
+      ['Combat 30%', 'Damage (12%), Fire Control (10%), Weapon Count (8%)'],
+      ['Survivability 25%', 'Hull (13%), Shields (12%)'],
+      ['Utility 10%', 'Hyperdrive (5%), Consumables (5%)'],
+      ['Value 5%', 'Price, lower is better'],
+    ],
+    note: 'Ranked within the TIE family. Unarmed Beltrunners penalized. Stealth/tractor bonuses applied.'
+  },
+  'Uglies': {
+    lines: [
+      ['Unranked', 'Kitbash/patchwork ships — too diverse to rank meaningfully'],
+    ],
+    note: 'Of_Note flags only. No ranking applied.'
+  },
+  'Space Superiority Fighters': {
+    lines: [
+      ['Speed 30%', 'Maneuverability (18%), Space (12%)'],
+      ['Combat 30%', 'Damage (12%), Fire Control (10%), Weapon Count (8%)'],
+      ['Survivability 25%', 'Hull (13%), Shields (12%)'],
+      ['Utility 10%', 'Hyperdrive (5%), Consumables (5%)'],
+      ['Value 5%', 'Price, lower is better'],
+    ],
+    note: '105 fighters ranked as single group. Of_Note bonuses for stealth, capital weapons, tractor beams, boarding, etc.'
   }
 };
 const RANK_DEFAULT = {
@@ -1399,6 +1456,22 @@ function getSortedShips(cat) {
         const pa = parseFloat(String(a.price_used||a.price_new||'0').replace(/,/g,'')) || 999999999;
         const pb = parseFloat(String(b.price_used||b.price_new||'0').replace(/,/g,'')) || 999999999;
         return pa - pb;
+      }); break;
+    case 'cargo':
+      ships.sort((a,b) => {
+        const parseCargo = (c) => {
+          if (!c) return 0;
+          c = String(c).toLowerCase().replace(/,/g,'');
+          const mt = c.match(/([\d.]+)\s*metric\s*ton/);
+          if (mt) return parseFloat(mt[1]) * 1000;
+          const t = c.match(/([\d.]+)\s*ton/);
+          if (t) return parseFloat(t[1]) * 1000;
+          const kg = c.match(/([\d.]+)\s*kg/);
+          if (kg) return parseFloat(kg[1]);
+          const num = parseFloat(c);
+          return isNaN(num) ? 0 : num;
+        };
+        return parseCargo(b.cargo) - parseCargo(a.cargo);
       }); break;
     default: ships.sort((a,b) => a.name.localeCompare(b.name));
   }
