@@ -331,7 +331,7 @@ display:inline-block;
 .ship-stat-block .ship-deckplan a:hover{background:rgba(0,229,255,.1)}
 .ship-dropdowns{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap}
 .ship-dropdowns>div{flex:1;min-width:140px}
-.ship-sort-row{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap}
+.ship-sort-row{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center}
 .ship-sort-btn{
 font-family:'Orbitron',monospace;font-size:8px;font-weight:700;
 letter-spacing:1px;padding:4px 10px;border-radius:4px;
@@ -339,6 +339,26 @@ border:1px solid var(--card-border);background:var(--bg3);
 color:var(--text-dim);cursor:pointer;transition:all .15s;
 }
 .ship-sort-btn:hover,.ship-sort-btn.active{border-color:var(--gold-dim);color:var(--gold)}
+.era-filter-wrap{position:relative;display:inline-block}
+.era-filter-btn{
+font-family:'Orbitron',monospace;font-size:8px;font-weight:700;
+letter-spacing:1px;padding:4px 10px;border-radius:4px;
+border:1px solid var(--card-border);background:var(--bg3);
+color:var(--text-dim);cursor:pointer;transition:all .15s;
+}
+.era-filter-btn:hover,.era-filter-btn.active{border-color:var(--gold-dim);color:var(--gold)}
+.era-dropdown{
+display:none;position:absolute;top:100%;left:0;z-index:200;
+background:var(--bg2);border:1px solid var(--gold-dim);border-radius:var(--radius-sm);
+padding:8px 10px;min-width:180px;margin-top:4px;
+box-shadow:0 4px 12px rgba(0,0,0,.5);
+}
+.era-dropdown.open{display:block}
+.era-checkbox{
+display:flex;align-items:center;gap:6px;padding:4px 0;
+font-size:11px;color:var(--text);cursor:pointer;
+}
+.era-checkbox input{accent-color:var(--gold);cursor:pointer}
 
 @media(max-width:480px){
   .npc-controls{flex-direction:column;gap:8px}
@@ -760,6 +780,17 @@ color:var(--text-dim);min-width:35px;text-align:right;
           <button class="ship-sort-btn" onclick="sortShips('speed')">SPEED</button>
           <button class="ship-sort-btn" onclick="sortShips('price')">PRICE</button>
           <button class="ship-sort-btn" onclick="sortShips('cargo')">CARGO</button>
+          <div class="era-filter-wrap">
+            <button class="era-filter-btn" onclick="toggleEraFilter()" id="eraFilterBtn">ERA ▾</button>
+            <div class="era-dropdown" id="eraDropdown">
+              <label class="era-checkbox"><input type="checkbox" checked onchange="applyEraFilter()" value="Old Republic">Old Republic</label>
+              <label class="era-checkbox"><input type="checkbox" checked onchange="applyEraFilter()" value="Rise of the Empire">Rise of the Empire</label>
+              <label class="era-checkbox"><input type="checkbox" checked onchange="applyEraFilter()" value="Rebellion">Rebellion</label>
+              <label class="era-checkbox"><input type="checkbox" checked onchange="applyEraFilter()" value="New Republic">New Republic</label>
+              <label class="era-checkbox"><input type="checkbox" checked onchange="applyEraFilter()" value="New Jedi Order">New Jedi Order</label>
+              <label class="era-checkbox"><input type="checkbox" checked onchange="applyEraFilter()" value="Legacy">Legacy</label>
+            </div>
+          </div>
         </div>
         <div id="shipStatBlock" class="ship-stat-block"></div>
         <div id="shipRankInfo" class="card" style="margin-top:12px;background:var(--bg3);border:1px solid var(--card-border);padding:12px">
@@ -1310,6 +1341,34 @@ function showArmorDesc() {
 // STARSHIP DATABASE
 // ============================================================
 let shipSortMode = 'alpha';
+let eraFilters = new Set(['Old Republic','Rise of the Empire','Rebellion','New Republic','New Jedi Order','Legacy']);
+
+function toggleEraFilter() {
+  const dd = document.getElementById('eraDropdown');
+  dd.classList.toggle('open');
+  document.getElementById('eraFilterBtn').classList.toggle('active', dd.classList.contains('open'));
+}
+
+function applyEraFilter() {
+  eraFilters.clear();
+  document.querySelectorAll('#eraDropdown input[type=checkbox]').forEach(cb => {
+    if (cb.checked) eraFilters.add(cb.value);
+  });
+  const btn = document.getElementById('eraFilterBtn');
+  const total = document.querySelectorAll('#eraDropdown input[type=checkbox]').length;
+  btn.textContent = eraFilters.size < total ? 'ERA ✦' : 'ERA ▾';
+  btn.classList.toggle('active', eraFilters.size < total);
+  const cat = document.getElementById('shipCategory').value;
+  if (cat) updateShipList();
+}
+
+// Close era dropdown when clicking outside
+document.addEventListener('click', function(e) {
+  const wrap = document.querySelector('.era-filter-wrap');
+  if (wrap && !wrap.contains(e.target)) {
+    document.getElementById('eraDropdown').classList.remove('open');
+  }
+});
 
 function initShipLookup() {
   const catSel = document.getElementById('shipCategory');
@@ -1453,7 +1512,12 @@ function updateShipList() {
 }
 
 function getSortedShips(cat) {
-  const ships = STARSHIP_DATA[cat].map((s, i) => ({...s, _origIdx: i}));
+  let ships = STARSHIP_DATA[cat].map((s, i) => ({...s, _origIdx: i}));
+  // Apply era filter
+  const totalEras = 6;
+  if (eraFilters.size < totalEras) {
+    ships = ships.filter(s => !s.era || eraFilters.has(s.era));
+  }
   switch(shipSortMode) {
     case 'rank': ships.sort((a,b) => (a.rank||999) - (b.rank||999)); break;
     case 'hull': ships.sort((a,b) => d6ToPips(b.hull) - d6ToPips(a.hull)); break;
