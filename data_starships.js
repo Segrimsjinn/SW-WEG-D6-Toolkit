@@ -4788,7 +4788,7 @@ const STARSHIP_DATA = {
  ],
  "Scout Ships": [
   {
-   "rank": 5,
+   "rank": 4,
    "name": "A-24 Sleuth Scout Vessel",
    "craft": "Incom Corporation A-24 Sleuth",
    "type": "Scout ship",
@@ -4872,59 +4872,7 @@ const STARSHIP_DATA = {
    ]
   },
   {
-   "rank": 4,
-   "name": "CL-12 Outrider",
-   "craft": "Kaeron Industrial Cartel CL-12 Outrider",
-   "type": "Light scout/starfighter",
-   "affiliation": "General",
-   "era": "",
-   "source": "",
-   "price_new": "140000",
-   "price_used": "75000",
-   "scale": "Starfighter",
-   "length": "8.8",
-   "crew": "1",
-   "gunners": "",
-   "passengers": "",
-   "cargo": "35 kg",
-   "consumables": "2 days",
-   "hyperdrive": "x2",
-   "nav_computer": "Yes (limited to 2 jumps)",
-   "maneuverability": "3D+1",
-   "space": "9",
-   "atmosphere": "1150",
-   "hull": "2D",
-   "shields": "1D",
-   "of_note": "No backup hyperdrive. Nav computer limited to 2 jumps. Skill: Starfighter piloting. High maintenance \u2014 more maintenance than flight time. Popular with local security, pirates, mercenaries. Xelandran sensor system.",
-   "sensors_passive": "25/1D",
-   "sensors_scan": "40/2D",
-   "sensors_search": "70/3D",
-   "sensors_focus": "3/4D+1",
-   "weapons": [
-    {
-     "name": "2 Light Laser Cannons (fire-linked)",
-     "fire_arc": "Front",
-     "crew": "",
-     "skill": "Starship gunnery",
-     "fire_control": "2D",
-     "space_range": "1-3/10/20",
-     "atmo_range": "100-300/1/2 km",
-     "damage": "4D"
-    },
-    {
-     "name": "Light Ion Cannon",
-     "fire_arc": "Front",
-     "crew": "",
-     "skill": "Starship gunnery",
-     "fire_control": "1D",
-     "space_range": "1-3/7/36",
-     "atmo_range": "100-300/700/3.6 km",
-     "damage": "3D+2"
-    }
-   ]
-  },
-  {
-   "rank": 18,
+   "rank": 17,
    "name": "Deep-X Explorer",
    "craft": "Uulshos DPx Yacht",
    "type": "Modified space yacht",
@@ -4966,7 +4914,7 @@ const STARSHIP_DATA = {
    ]
   },
   {
-   "rank": 8,
+   "rank": 7,
    "name": "Explorer Scout Ship",
    "craft": "Incom Corporation Explorer Scout Ship",
    "type": "Scout vessel",
@@ -5008,7 +4956,7 @@ const STARSHIP_DATA = {
    ]
   },
   {
-   "rank": 12,
+   "rank": 11,
    "name": "Far Reach Survey Vessel",
    "craft": "Loronar Far Reach IV PQR",
    "type": "Imperial survey vessel",
@@ -5050,7 +4998,7 @@ const STARSHIP_DATA = {
    ]
   },
   {
-   "rank": 6,
+   "rank": 5,
    "name": "Ferret",
    "craft": "Republic Engineering Corporation Reconnaissance Vessel",
    "type": "Stealth spyship",
@@ -5092,7 +5040,7 @@ const STARSHIP_DATA = {
    ]
   },
   {
-   "rank": 16,
+   "rank": 15,
    "name": "Flatfish Astrogator Probe Ship",
    "craft": "Astrogator-class Probe Ship",
    "type": "Astrographic charting vessel",
@@ -5123,12 +5071,12 @@ const STARSHIP_DATA = {
    "weapons": []
   },
   {
-   "rank": 11,
+   "rank": 10,
    "name": "Lone Scout-A",
    "craft": "Sienar Fleet Systems Lone Scout-A",
    "type": "Stock scout vessel",
    "affiliation": "General",
-   "era": "",
+   "era": "Rise of the Empire",
    "source": "Core Rulebook 2nd Ed. Revised (p.256)",
    "price_new": "125000",
    "price_used": "30000",
@@ -5165,12 +5113,12 @@ const STARSHIP_DATA = {
    ]
   },
   {
-   "rank": 14,
+   "rank": 13,
    "name": "Lone Scout A-2 (LSA-2)",
    "craft": "Sienar Fleet Systems LSA-2",
    "type": "Stock scout vessel",
    "affiliation": "General",
-   "era": "",
+   "era": "Rebellion",
    "source": "Galaxy Guide 8: Scouts",
    "price_new": "",
    "price_used": "",
@@ -5207,7 +5155,7 @@ const STARSHIP_DATA = {
    ]
   },
   {
-   "rank": 7,
+   "rank": 6,
    "name": "Mining Survey Ship",
    "craft": "SoroSuub MKI Mining Survey Vessel",
    "type": "Exploration vessel",
@@ -5249,7 +5197,7 @@ const STARSHIP_DATA = {
    ]
   },
   {
-   "rank": 13,
+   "rank": 12,
    "name": "Out System Scout Vessel",
    "craft": "Loronar Out System Scout Vessel",
    "type": "Light scout ship",
@@ -5291,7 +5239,7 @@ const STARSHIP_DATA = {
    ]
   },
   {
-   "rank": 9,
+   "rank": 8,
    "name": "Prowler",
    "craft": "Republic Engineering Corporation Prowler-class Reconnaissance Vessel",
    "type": "Long term spy ship",
@@ -5333,7 +5281,7 @@ const STARSHIP_DATA = {
    ]
   },
   {
-   "rank": 15,
+   "rank": 14,
    "name": "Redthorn Scoutship",
    "craft": "Tykannin Drive Redthorn-class Scout Ship",
    "type": "Scout ship",
@@ -5380,7 +5328,7 @@ const STARSHIP_DATA = {
    "craft": "Loronar SkyBlind Recon Ship",
    "type": "Reconnaissance scoutship",
    "affiliation": "General",
-   "era": "",
+   "era": "Rise of the Empire",
    "source": "",
    "price_new": "",
    "price_used": "",
@@ -5422,7 +5370,7 @@ const STARSHIP_DATA = {
    "craft": "Loronar Landing Sphere",
    "type": "Surface to starship transport",
    "affiliation": "",
-   "era": "",
+   "era": "Rise of the Empire",
    "source": "",
    "price_new": "",
    "price_used": "",
@@ -5448,7 +5396,7 @@ const STARSHIP_DATA = {
    "weapons": []
   },
   {
-   "rank": 17,
+   "rank": 16,
    "name": "Star Cab",
    "craft": "Orlean Star Explorer",
    "type": "Ancient exploration vessel",
@@ -5490,12 +5438,12 @@ const STARSHIP_DATA = {
    ]
   },
   {
-   "rank": 10,
+   "rank": 9,
    "name": "Vangaard Pathfinder",
    "craft": "Vangaard Pathfinder",
    "type": "Small fighter/scoutship",
    "affiliation": "General",
-   "era": "",
+   "era": "Old Republic",
    "source": "",
    "price_new": "",
    "price_used": "",
@@ -5584,7 +5532,7 @@ const STARSHIP_DATA = {
    ]
   },
   {
-   "rank": 19,
+   "rank": 18,
    "name": "Yvarema Scout Ship",
    "craft": "Royal Yvarema Scout Ship",
    "type": "Medium-range exploration craft",
@@ -5955,7 +5903,7 @@ const STARSHIP_DATA = {
    "craft": "CEC CE-2 Transport",
    "type": "Light freighter",
    "affiliation": "General",
-   "era": "",
+   "era": "Rise of the Empire",
    "source": "",
    "price_new": "200000",
    "price_used": "95000",
@@ -6278,7 +6226,7 @@ const STARSHIP_DATA = {
    "craft": "Sienar Ships Mark I Bulk Transport",
    "type": "Bulk transport",
    "affiliation": "General",
-   "era": "",
+   "era": "Rebellion",
    "source": "",
    "price_new": "",
    "price_used": "500000",
@@ -6320,7 +6268,7 @@ const STARSHIP_DATA = {
    "craft": "Sienar Ships Mark III Bulk Transport",
    "type": "Bulk transport",
    "affiliation": "General",
-   "era": "Rise of the Empire",
+   "era": "Rebellion",
    "source": "The Far Orbit Project pp.142-143",
    "price_new": "",
    "price_used": "400000",
@@ -6666,7 +6614,7 @@ const STARSHIP_DATA = {
    "craft": "Telgorn Corp. Aegis-class Combat Shuttle",
    "type": "Transport Shuttle",
    "affiliation": "General",
-   "era": "",
+   "era": "New Republic",
    "source": "",
    "price_new": "",
    "price_used": "40000",
@@ -6770,7 +6718,7 @@ const STARSHIP_DATA = {
    "craft": "Telgorn Corp. Delta Class Shuttle",
    "type": "Boarding Assault Shuttle",
    "affiliation": "Empire",
-   "era": "",
+   "era": "Rebellion",
    "source": "",
    "price_new": "",
    "price_used": "",
@@ -6989,7 +6937,7 @@ const STARSHIP_DATA = {
    "craft": "Incom BU-5S Grappler",
    "type": "Boarding Pod",
    "affiliation": "Empire / New Republic / General",
-   "era": "",
+   "era": "Rebellion",
    "source": "",
    "price_new": "100000",
    "price_used": "",
@@ -7135,7 +7083,7 @@ const STARSHIP_DATA = {
    "craft": "CEC Getabout",
    "type": "Light Personal Transport",
    "affiliation": "General",
-   "era": "",
+   "era": "Old Republic",
    "source": "",
    "price_new": "30000",
    "price_used": "18000",
@@ -7197,7 +7145,7 @@ const STARSHIP_DATA = {
    "craft": "Incom Gnat Inter-ship Personal Transport",
    "type": "Inter-ship Transport",
    "affiliation": "General",
-   "era": "",
+   "era": "Old Republic",
    "source": "",
    "price_new": "8000",
    "price_used": "",
@@ -9741,7 +9689,7 @@ const STARSHIP_DATA = {
    "craft": "Tallaani Shipyards Mansk-class Escort Frigate",
    "type": "Light Escort Frigate",
    "affiliation": "General",
-   "era": "",
+   "era": "Rebellion",
    "source": "Unknown",
    "price_new": "",
    "price_used": "135000",
@@ -9845,7 +9793,7 @@ const STARSHIP_DATA = {
    "craft": "Sydon Vehicle Works MRX-BR Pacifier",
    "type": "Exploration Fighter",
    "affiliation": "General",
-   "era": "",
+   "era": "Rise of the Empire",
    "source": "Unknown",
    "price_new": "",
    "price_used": "",
