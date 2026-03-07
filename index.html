@@ -1467,6 +1467,83 @@ const RANK_METHODS = {
       ['Value 5%', 'Price, lower is better'],
     ],
     note: '105 fighters ranked as single group. Of_Note bonuses for stealth, capital weapons, tractor beams, boarding, etc.'
+  },
+  'Capital Corvettes': {
+    lines: [
+      ['Speed 25%', 'Space (15%), Maneuverability (10%)'],
+      ['Combat 25%', 'Damage (10%), Fire Control (8%), Weapon Count (7%)'],
+      ['Survivability 25%', 'Hull (13%), Shields (12%)'],
+      ['Sensors 10%', 'Search (5%), Focus (5%)'],
+      ['Utility 15%', 'Cargo (7%), Hyperdrive (7%), Consumables (1%)'],
+    ],
+    note: 'Speed weighted for interception role. No-hyperdrive ships penalized heavily on HD weight.'
+  },
+  'Capital Frigates': {
+    lines: [
+      ['Combat 30%', 'Damage (12%), Fire Control (10%), Weapon Count (8%)'],
+      ['Survivability 25%', 'Hull (13%), Shields (12%)'],
+      ['Speed 20%', 'Space (12%), Maneuverability (8%)'],
+      ['Sensors 10%', 'Search (5%), Focus (5%)'],
+      ['Utility 15%', 'Hyperdrive (6%), Cargo (5%), Consumables (4%)'],
+    ],
+    note: 'Escort/line ships — combat weighted highest. Of_Note bonuses for gravity wells, stealth, shield boosters.'
+  },
+  'Capital Cruisers & SDs': {
+    lines: [
+      ['Combat 30%', 'Damage (12%), Fire Control (10%), Weapon Count (8%)'],
+      ['Survivability 28%', 'Hull (15%), Shields (13%)'],
+      ['Force Projection 12%', 'Troops (6%), Fighter Complement (6%)'],
+      ['Speed 12%', 'Maneuverability (8%), Space (4%)'],
+      ['Sensors 8%', 'Search (4%), Focus (4%)'],
+      ['Utility 10%', 'Hyperdrive (4%), Cargo (3%), Consumables (3%)'],
+    ],
+    note: '68 warships ranked together. Maneuverability weighted over speed. Troops and fighter complement factor into Force Projection.'
+  },
+  'Capital Super Ships': {
+    lines: [
+      ['Survivability 28%', 'Hull (15%), Shields (13%)'],
+      ['Combat 25%', 'Damage (10%), Fire Control (8%), Weapon Count (7%)'],
+      ['Force Projection 12%', 'Troops (6%), Fighter Complement (6%)'],
+      ['Super Weapon 10%', 'Superlaser, gravity wells, pulsemass generators'],
+      ['Speed 10%', 'Maneuverability (6%), Space (4%)'],
+      ['Sensors 8%', 'Search (4%), Focus (4%)'],
+      ['Utility 7%', 'Hyperdrive (3%), Cargo (2%), Consumables (2%)'],
+    ],
+    note: '7 super capital ships. Super weapon bonus for superlasers (scaled by output/day), gravity wells, pulsemass generators.'
+  },
+  'Capital Carriers': {
+    lines: [
+      ['Fighters 30%', 'Starfighter complement is the primary mission'],
+      ['Survivability 25%', 'Hull (13%), Shields (12%)'],
+      ['Speed 15%', 'Space (9%), Maneuverability (6%)'],
+      ['Combat 10%', 'Damage (4%), Fire Control (3%), Weapon Count (3%)'],
+      ['Sensors 10%', 'Search (5%), Focus (5%)'],
+      ['Utility 10%', 'Hyperdrive (4%), Cargo (3%), Consumables (3%)'],
+    ],
+    note: '8 dedicated carriers. Fighter complement weighted at 30% — these ships exist to deliver fighters.'
+  },
+  'Capital Transports & Support': {
+    lines: [
+      ['Utility 35%', 'Cargo (12%), Troops (10%), Hyperdrive (7%), Consumables (6%)'],
+      ['Survivability 25%', 'Hull (13%), Shields (12%)'],
+      ['Speed 15%', 'Space (9%), Maneuverability (6%)'],
+      ['Combat 15%', 'Damage (6%), Fire Control (5%), Weapon Count (4%)'],
+      ['Sensors 10%', 'Search (5%), Focus (5%)'],
+    ],
+    note: '22 transports and support vessels. Utility weighted highest — these ships exist to move troops, cargo, and provide support.'
+  },
+  'Capital Freighters & Liners': {
+    lines: [
+      ['Cargo 25%', 'Raw cargo capacity is king'],
+      ['Survivability 20%', 'Hull (10%), Shields (10%)'],
+      ['Speed 15%', 'Space (9%), Maneuverability (6%)'],
+      ['Passengers 10%', 'Passenger capacity for liners'],
+      ['Hyperdrive 8%', 'Trade route speed'],
+      ['Consumables 7%', 'Operational endurance'],
+      ['Combat 10%', 'Damage (4%), Fire Control (3%), Weapon Count (3%)'],
+      ['Sensors 5%', 'Search (3%), Focus (2%)'],
+    ],
+    note: '20 freighters and passenger liners. Cargo capacity and survivability (protecting goods) weighted highest.'
   }
 };
 const RANK_DEFAULT = {
@@ -1616,6 +1693,10 @@ function showShipStats() {
   h += line('Length', s.length);
   h += line('Crew', s.crew + (s.gunners ? '; gunners: ' + s.gunners : ''));
   h += line('Passengers', s.passengers);
+  if (s.starfighter_complement) h += line('Starfighter Complement', s.starfighter_complement);
+  if (s.support_craft) h += line('Support Craft', s.support_craft);
+  if (s.ground_vehicles) h += line('Ground Vehicles', s.ground_vehicles);
+  if (s.troop_capacity) h += line('Troop Capacity', s.troop_capacity);
   h += line('Cargo Capacity', s.cargo);
   h += line('Consumables', s.consumables);
   h += line('Cost', formatPrice(s.price_new, s.price_used));
