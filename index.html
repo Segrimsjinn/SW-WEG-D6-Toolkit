@@ -2295,7 +2295,7 @@ function addToHistory(label, total, normalDice, wildRolls, explodes, complicatio
   entry += ' <span style="color:var(--text-dark)">[' + normalDice.join(',') + '] W[' + wildRolls.join('→') + ']</span>';
   if (explodes > 0) entry += ' <span style="color:var(--cyan)">⚡×' + explodes + '</span>';
   if (complication === 'complication') entry += ' <span style="color:var(--red)">⚠ Complication</span>';
-  else if (complication && complication.startsWith('removed')) entry += ' <span style="color:var(--cyan)">↓ ' + complication + '</span>';
+  else if (complication && complication.startsWith('removed')) entry += ' <span style="color:var(--red)">↓ ' + complication + '</span>';
 
   rollHistoryList.unshift(entry);
   if (rollHistoryList.length > 50) rollHistoryList.pop();
