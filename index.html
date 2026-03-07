@@ -2207,11 +2207,21 @@ function setInitiative(side) {
   }
 }
 
+const COMBATANT_COLORS = [
+  {name:'None',hex:'transparent'},
+  {name:'Red',hex:'#ff4444'},{name:'Blue',hex:'#4488ff'},{name:'Green',hex:'#44cc44'},
+  {name:'Yellow',hex:'#ffcc00'},{name:'Orange',hex:'#ff8833'},{name:'Purple',hex:'#aa44ff'},
+  {name:'Pink',hex:'#ff66aa'},{name:'Cyan',hex:'#44dddd'},{name:'White',hex:'#dddddd'},
+  {name:'Brown',hex:'#aa6633'},{name:'Lime',hex:'#88ff44'},{name:'Teal',hex:'#22aa88'},
+  {name:'Navy',hex:'#3344aa'},{name:'Maroon',hex:'#882222'},{name:'Gold',hex:'#ccaa33'},
+  {name:'Silver',hex:'#999999'}
+];
+
 function addCombatant(side) {
   const name = prompt(side === 'pc' ? 'Player/Character name:' : 'NPC name:');
   if (!name || !name.trim()) return;
   combatIdCounter++;
-  combatants[side].push({ id: combatIdCounter, name: name.trim(), wound: 0 });
+  combatants[side].push({ id: combatIdCounter, name: name.trim(), wound: 0, color: 'transparent' });
   renderCombatants();
 }
 
@@ -2220,11 +2230,9 @@ function removeCombatant(side, id) {
   renderCombatants();
 }
 
-function cycleWound(side, id) {
+function setCombatantColor(side, id, hex) {
   const c = combatants[side].find(x => x.id === id);
-  if (!c) return;
-  c.wound = (c.wound + 1) % WOUND_LEVELS.length;
-  renderCombatants();
+  if (c) { c.color = hex; renderCombatants(); }
 }
 
 function renderCombatants() {
@@ -2239,9 +2247,18 @@ function renderCombatants() {
       const wl = WOUND_LEVELS[c.wound];
       const wc = WOUND_COLORS[c.wound];
       const isDead = c.wound >= 4;
-      html += '<div style="background:var(--bg3);border:1px solid var(--card-border);border-radius:4px;padding:6px 8px;margin-bottom:4px' + (isDead ? ';opacity:0.5' : '') + '">';
+      const borderCol = (c.color && c.color !== 'transparent') ? c.color : 'var(--card-border)';
+      const leftBar = (c.color && c.color !== 'transparent') ? 'border-left:3px solid ' + c.color + ';' : '';
+      html += '<div style="background:var(--bg3);border:1px solid ' + borderCol + ';border-radius:4px;padding:6px 8px;margin-bottom:4px;' + leftBar + (isDead ? 'opacity:0.5' : '') + '">';
       html += '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">';
+      html += '<div style="display:flex;align-items:center;gap:6px">';
+      html += '<select onchange="setCombatantColor(\'' + side + '\',' + c.id + ',this.value)" style="width:28px;height:18px;padding:0;border:1px solid var(--card-border);border-radius:3px;background:' + (c.color || 'var(--bg2)') + ';cursor:pointer;font-size:0">';
+      COMBATANT_COLORS.forEach(clr => {
+        html += '<option value="' + clr.hex + '"' + (c.color === clr.hex ? ' selected' : '') + ' style="background:' + (clr.hex === 'transparent' ? '#1a1a2e' : clr.hex) + ';color:' + (clr.hex === 'transparent' ? '#aaa' : '#000') + '">' + clr.name + '</option>';
+      });
+      html += '</select>';
       html += '<span style="font-family:\'Eras Demi ITC\',sans-serif;font-size:11px;color:var(--text);font-weight:bold;' + (isDead ? 'text-decoration:line-through' : '') + '">' + c.name + '</span>';
+      html += '</div>';
       html += '<button onclick="removeCombatant(\'' + side + '\',' + c.id + ')" style="background:none;border:none;color:var(--text-dark);cursor:pointer;font-size:14px;padding:0 4px" title="Remove">✕</button>';
       html += '</div>';
       html += '<div style="display:flex;flex-wrap:wrap;gap:2px">';
