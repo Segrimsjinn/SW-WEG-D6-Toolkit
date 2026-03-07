@@ -20105,7 +20105,7 @@ const STARSHIP_DATA = {
  ],
  "Capital Corvettes": [
   {
-   "rank": 6,
+   "rank": 7,
    "name": "Adz-class Patrol Destroyer",
    "craft": "Imperial Adz-class Patrol Destroyer",
    "type": "Border Patrol Craft",
@@ -20161,7 +20161,7 @@ const STARSHIP_DATA = {
    ]
   },
   {
-   "rank": 4,
+   "rank": 3,
    "name": "Agave Picket Ship",
    "craft": "Republic Engineering Corp. Agave-class Picket Ship",
    "type": "Tactical Reconnaissance Ship",
@@ -20217,7 +20217,7 @@ const STARSHIP_DATA = {
    ]
   },
   {
-   "rank": 18,
+   "rank": 22,
    "name": "Aramand Patrol Cruiser III",
    "craft": "Aramand System Cruiser III",
    "type": "Light Defensive Ship",
@@ -20263,7 +20263,7 @@ const STARSHIP_DATA = {
    ]
   },
   {
-   "rank": 17,
+   "rank": 21,
    "name": "Corellian CR70 Corvette",
    "craft": "CEC CR70 Corvette",
    "type": "Mid-sized Multi-purpose Vessel",
@@ -20298,7 +20298,7 @@ const STARSHIP_DATA = {
    "weapons": []
   },
   {
-   "rank": 9,
+   "rank": 12,
    "name": "Corellian CR90 Corvette",
    "craft": "CEC CR90 Corvette",
    "type": "Mid-sized Multi-purpose Vessel",
@@ -20410,7 +20410,7 @@ const STARSHIP_DATA = {
    ]
   },
   {
-   "rank": 5,
+   "rank": 6,
    "name": "Corellian Interceptor",
    "craft": "CEC Interceptor",
    "type": "Mid-sized Patrol Craft",
@@ -20466,7 +20466,7 @@ const STARSHIP_DATA = {
    ]
   },
   {
-   "rank": 3,
+   "rank": 2,
    "name": "Crusader Corvette",
    "craft": "Mandal Hypernautics Crusader-class Corvette",
    "type": "Mid-sized Anti-starfighter Warship",
@@ -20522,7 +20522,7 @@ const STARSHIP_DATA = {
    ]
   },
   {
-   "rank": 14,
+   "rank": 19,
    "name": "Discril-class Attack Cruiser",
    "craft": "Duapherm Discril-class Attack Cruiser",
    "type": "System Attack Cruiser",
@@ -20588,7 +20588,7 @@ const STARSHIP_DATA = {
    ]
   },
   {
-   "rank": 7,
+   "rank": 8,
    "name": "Dornean Braha'tok-class Gunship",
    "craft": "Dornean Braha'ket Fleetworks Braha'tok-class Gunship",
    "type": "Anti-starfighter Gunship",
@@ -20644,7 +20644,7 @@ const STARSHIP_DATA = {
    ]
   },
   {
-   "rank": 16,
+   "rank": 20,
    "name": "IPV/1 System Patrol Craft",
    "craft": "Sienar Fleet Systems IPV 1",
    "type": "Inter-system Patrol/Customs Craft",
@@ -20690,7 +20690,7 @@ const STARSHIP_DATA = {
    ]
   },
   {
-   "rank": 12,
+   "rank": 16,
    "name": "IPV/h Patrol Vessel",
    "craft": "Sienar Fleet Systems IPV/h",
    "type": "Patrol Vessel",
@@ -20746,7 +20746,7 @@ const STARSHIP_DATA = {
    ]
   },
   {
-   "rank": 19,
+   "rank": 23,
    "name": "IR-3F Patrol Ship",
    "craft": "Sienar Fleet Systems IR-3F",
    "type": "Intra-system Patrol/Customs Craft",
@@ -20792,7 +20792,7 @@ const STARSHIP_DATA = {
    ]
   },
   {
-   "rank": 2,
+   "rank": 4,
    "name": "KDY Corvette",
    "craft": "KDY Corvette",
    "type": "Mid-sized Multipurpose Vessel",
@@ -20838,7 +20838,7 @@ const STARSHIP_DATA = {
    ]
   },
   {
-   "rank": 10,
+   "rank": 13,
    "name": "Kinessa SP-25 Diamondhead",
    "craft": "Kinessa Aerospace SP-25 Diamondhead System Patrol Craft",
    "type": "Intra-system Patrol/Customs Craft",
@@ -20904,7 +20904,7 @@ const STARSHIP_DATA = {
    ]
   },
   {
-   "rank": 20,
+   "rank": 24,
    "name": "Lianna-class Corvette",
    "craft": "Santhe/Sienar Fleet Technologies Lianna-class Corvette",
    "type": "Multi-purpose Corvette",
@@ -20950,7 +20950,7 @@ const STARSHIP_DATA = {
    ]
   },
   {
-   "rank": 8,
+   "rank": 14,
    "name": "Marauder-class Corvette",
    "craft": "Republic Sienar Systems Marauder-class Corvette",
    "type": "Light Combat Cruiser",
@@ -21006,7 +21006,7 @@ const STARSHIP_DATA = {
    ]
   },
   {
-   "rank": 21,
+   "rank": 25,
    "name": "Sith Gunship",
    "craft": "Sith Gunship",
    "type": "Sith Escort Gunship",
@@ -21052,7 +21052,7 @@ const STARSHIP_DATA = {
    ]
   },
   {
-   "rank": 15,
+   "rank": 18,
    "name": "X-Q1 Patrol Craft",
    "craft": "Loronar X-Q1 Patrol Craft",
    "type": "Patrol Craft",
@@ -21098,7 +21098,7 @@ const STARSHIP_DATA = {
    ]
   },
   {
-   "rank": 11,
+   "rank": 15,
    "name": "X-Q2 System Patrol Cruiser",
    "craft": "Loronar Regulator X-Q2 System Patrol Cruiser",
    "type": "Inter-system Patrol/Customs Cruiser",
@@ -21144,7 +21144,7 @@ const STARSHIP_DATA = {
    ]
   },
   {
-   "rank": 13,
+   "rank": 17,
    "name": "Y-Head Corvette",
    "craft": "CEC Y-Head Corvette",
    "type": "Corvette",
@@ -21196,6 +21196,300 @@ const STARSHIP_DATA = {
      "space_range": "1-5/12/25",
      "atmo_range": "2-10/24/50 km",
      "damage": "5D"
+    }
+   ]
+  },
+  {
+   "rank": 5,
+   "name": "GAT-12g Skipray Blastboat",
+   "craft": "Sienar Fleet Systems GAT-12g Skipray",
+   "type": "Defense and Patrol Blastboat",
+   "affiliation": "Empire / General",
+   "era": "Rise of the Empire",
+   "source": "Pirates & Privateers (page 86)",
+   "price_new": "285000",
+   "price_used": "150000",
+   "scale": "Capital",
+   "length": "25 meters",
+   "crew": "2",
+   "gunners": "2",
+   "passengers": "",
+   "starfighter_complement": "",
+   "support_craft": "",
+   "ground_vehicles": "",
+   "troop_capacity": "",
+   "cargo": "20 metric tons",
+   "consumables": "1 month",
+   "hyperdrive": "x2",
+   "nav_computer": "Limited to 4 jumps",
+   "maneuverability": "1D+2",
+   "space": "8",
+   "atmosphere": "415; 1,200 kmh",
+   "hull": "2D+1",
+   "shields": "2D",
+   "of_note": "Skeleton 1/+5. 2D+2 maneuv in atmosphere. Tractor beam variant (replaces concussion missiles). Smallest Imperial hyperspace-capable combat ship.",
+   "sensors_passive": "35/1D",
+   "sensors_scan": "60/1D+2",
+   "sensors_search": "100/2D",
+   "sensors_focus": "3/2D+2",
+   "weapons": [
+    {
+     "name": "2 Laser Cannons (fire-linked)",
+     "fire_arc": "Turret",
+     "crew": "1",
+     "skill": "Starship Gunnery",
+     "fire_control": "1D",
+     "space_range": "1-3/12/25",
+     "atmo_range": "100-300/1.2/2.5 km",
+     "damage": "5D"
+    },
+    {
+     "name": "3 Medium Ion Cannons (fire-linked)",
+     "fire_arc": "Front",
+     "crew": "1",
+     "skill": "Capital Ship Gunnery",
+     "fire_control": "3D",
+     "space_range": "1-3/12/25",
+     "atmo_range": "100-300/1.2/2.5 km",
+     "damage": "4D"
+    },
+    {
+     "name": "Proton Torpedo Launcher",
+     "fire_arc": "Front",
+     "crew": "1",
+     "skill": "Starship Gunnery",
+     "fire_control": "2D",
+     "space_range": "1/3/7",
+     "atmo_range": "50-100/300/700",
+     "damage": "9D"
+    },
+    {
+     "name": "Tractor Beam Projector",
+     "fire_arc": "Front",
+     "crew": "1",
+     "skill": "Starship Gunnery",
+     "fire_control": "4D",
+     "space_range": "1-3/8/12",
+     "atmo_range": "100-300/800/1.2 km",
+     "damage": "6D"
+    }
+   ]
+  },
+  {
+   "rank": 10,
+   "name": "GAT-12h Skipray Blastboat",
+   "craft": "Sienar Fleet Systems GAT-12h Skipray",
+   "type": "Defense/Patrol Blastboat",
+   "affiliation": "Empire / General",
+   "era": "Rise of the Empire",
+   "source": "Imperial Sourcebook (pages 50-51)",
+   "price_new": "285000",
+   "price_used": "150000",
+   "scale": "Capital",
+   "length": "25 meters",
+   "crew": "2",
+   "gunners": "2",
+   "passengers": "",
+   "starfighter_complement": "",
+   "support_craft": "",
+   "ground_vehicles": "",
+   "troop_capacity": "",
+   "cargo": "20 metric tons",
+   "consumables": "1 month",
+   "hyperdrive": "x2",
+   "nav_computer": "Limited to 4 jumps",
+   "maneuverability": "1D+2",
+   "space": "8",
+   "atmosphere": "415; 1,200 kmh",
+   "hull": "2D+1",
+   "shields": "2D",
+   "of_note": "Skeleton 1/+5. 2D+2 maneuv in atmosphere. Most popular variant. Concussion missiles + proton torpedoes. Relies on speed/surprise for first strike.",
+   "sensors_passive": "35/1D",
+   "sensors_scan": "60/1D+2",
+   "sensors_search": "100/2D",
+   "sensors_focus": "3/2D+2",
+   "weapons": [
+    {
+     "name": "3 Medium Ion Cannons (fire-linked)",
+     "fire_arc": "Front",
+     "crew": "1",
+     "skill": "Capital Ship Gunnery",
+     "fire_control": "3D",
+     "space_range": "1-3/12/25",
+     "atmo_range": "100-300/1.2/2.5 km",
+     "damage": "4D"
+    },
+    {
+     "name": "2 Laser Cannons",
+     "fire_arc": "Turret",
+     "crew": "1",
+     "skill": "Starship Gunnery",
+     "fire_control": "1D",
+     "space_range": "1-3/12/25",
+     "atmo_range": "100-300/1.2/2.5 km",
+     "damage": "5D"
+    },
+    {
+     "name": "Proton Torpedo Launcher",
+     "fire_arc": "Front",
+     "crew": "1",
+     "skill": "Starship Gunnery",
+     "fire_control": "2D",
+     "space_range": "1/3/7",
+     "atmo_range": "50-100/300/700",
+     "damage": "9D"
+    },
+    {
+     "name": "Concussion Missile Launcher",
+     "fire_arc": "Front",
+     "crew": "1",
+     "skill": "Starship Gunnery",
+     "fire_control": "1D",
+     "space_range": "1/3/7",
+     "atmo_range": "1-50/100/250",
+     "damage": "6D"
+    }
+   ]
+  },
+  {
+   "rank": 11,
+   "name": "GAT-12j Skipray Blastboat",
+   "craft": "Sienar Fleet Systems GAT-12j Skipray",
+   "type": "Defense/Patrol Blastboat",
+   "affiliation": "Empire / General",
+   "era": "Rebellion",
+   "source": "Thrawn Trilogy Sourcebook (pages 239-242)",
+   "price_new": "",
+   "price_used": "",
+   "scale": "Capital",
+   "length": "25 meters",
+   "crew": "4",
+   "gunners": "",
+   "passengers": "",
+   "starfighter_complement": "",
+   "support_craft": "",
+   "ground_vehicles": "",
+   "troop_capacity": "",
+   "cargo": "20 metric tons",
+   "consumables": "1 month",
+   "hyperdrive": "x2",
+   "nav_computer": "Limited to 4 jumps",
+   "maneuverability": "1D+2",
+   "space": "8",
+   "atmosphere": "415; 1,200 kmh",
+   "hull": "2D+1",
+   "shields": "2D",
+   "of_note": "2D+2 maneuv in atmosphere. Thrawn Trilogy variant. 12 proton torpedoes + 18 concussion missiles. More evenly distributed gunnery. Talon Karrde used these.",
+   "sensors_passive": "35/1D",
+   "sensors_scan": "60/1D+2",
+   "sensors_search": "100/2D",
+   "sensors_focus": "3/2D+2",
+   "weapons": [
+    {
+     "name": "3 Medium Ion Cannons (fire-linked)",
+     "fire_arc": "Front",
+     "crew": "1",
+     "skill": "Capital Ship Gunnery",
+     "fire_control": "3D",
+     "space_range": "1-3/12/25",
+     "atmo_range": "100-300/1.2/2.5 km",
+     "damage": "4D"
+    },
+    {
+     "name": "2 Laser Cannons",
+     "fire_arc": "Turret",
+     "crew": "1",
+     "skill": "Starship Gunnery",
+     "fire_control": "1D",
+     "space_range": "1-3/12/25",
+     "atmo_range": "100-300/1.2/2.5 km",
+     "damage": "5D"
+    },
+    {
+     "name": "Proton Torpedo Launcher (12)",
+     "fire_arc": "Front",
+     "crew": "1",
+     "skill": "Starship Gunnery",
+     "fire_control": "1D",
+     "space_range": "1/3/7",
+     "atmo_range": "50-100/300/700",
+     "damage": "9D"
+    },
+    {
+     "name": "Concussion Missile Launcher (18)",
+     "fire_arc": "Front",
+     "crew": "1",
+     "skill": "Starship Gunnery",
+     "fire_control": "1D",
+     "space_range": "1/3/7",
+     "atmo_range": "1-50/100/250",
+     "damage": "6D"
+    }
+   ]
+  },
+  {
+   "rank": 9,
+   "name": "GAT-12m Skipray Blastboat",
+   "craft": "Sienar Fleet Systems GAT-12m Skipray",
+   "type": "Assault Blastboat",
+   "affiliation": "Empire",
+   "era": "Rebellion",
+   "source": "Unknown",
+   "price_new": "285000",
+   "price_used": "150000",
+   "scale": "Capital",
+   "length": "25 meters",
+   "crew": "2",
+   "gunners": "2",
+   "passengers": "",
+   "starfighter_complement": "",
+   "support_craft": "",
+   "ground_vehicles": "",
+   "troop_capacity": "",
+   "cargo": "20 metric tons",
+   "consumables": "1 month",
+   "hyperdrive": "x2",
+   "nav_computer": "Limited to 4 jumps",
+   "maneuverability": "1D+2",
+   "space": "8",
+   "atmosphere": "415; 1,200 kmh",
+   "hull": "2D+1",
+   "shields": "2D",
+   "of_note": "Skeleton 1/+5. 2D+2 maneuv in atmosphere. Capital concussion missiles for stand-off attacks. Deployed with 2x GAT-12j wingmen. Empire-exclusive variant after GAT-12k scandal.",
+   "sensors_passive": "35/1D",
+   "sensors_scan": "60/1D+2",
+   "sensors_search": "100/2D",
+   "sensors_focus": "3/2D+2",
+   "weapons": [
+    {
+     "name": "2 Laser Cannons (fire-linked)",
+     "fire_arc": "Turret",
+     "crew": "1",
+     "skill": "Starship Gunnery",
+     "fire_control": "1D",
+     "space_range": "1-5/15/30",
+     "atmo_range": "100-500/1.5/3 km",
+     "damage": "5D"
+    },
+    {
+     "name": "3 Medium Ion Cannons (fire-linked)",
+     "fire_arc": "Front",
+     "crew": "1",
+     "skill": "Capital Ship Gunnery",
+     "fire_control": "3D",
+     "space_range": "1-3/12/25",
+     "atmo_range": "100-300/1.2/2.5 km",
+     "damage": "4D"
+    },
+    {
+     "name": "2 Concussion Missile Launchers (3 each)",
+     "fire_arc": "Front",
+     "crew": "1",
+     "skill": "Capital Ship Gunnery",
+     "fire_control": "3D",
+     "space_range": "2-12/30/60",
+     "atmo_range": "100-1.2/3/6 km",
+     "damage": "9D"
     }
    ]
   }
