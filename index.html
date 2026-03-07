@@ -867,6 +867,45 @@ color:var(--text-dim);min-width:35px;text-align:right;
       </div>
 
       <div class="card">
+        <div class="card-title">⟐ Combat Tracker</div>
+        <!-- Initiative Header -->
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;flex-wrap:wrap;gap:8px">
+          <div style="display:flex;align-items:center;gap:8px">
+            <span style="font-family:'Orbitron',monospace;font-size:9px;color:var(--text-dim);letter-spacing:1px">ROUND:</span>
+            <button class="ship-sort-btn" onclick="adjustRound(-1)" style="padding:4px 8px;font-size:12px">◄</button>
+            <span id="roundCounter" style="font-family:'Orbitron',monospace;font-size:22px;color:var(--gold);min-width:30px;text-align:center">1</span>
+            <button class="ship-sort-btn" onclick="adjustRound(1)" style="padding:4px 8px;font-size:12px">►</button>
+          </div>
+          <div style="display:flex;align-items:center;gap:6px">
+            <span style="font-family:'Orbitron',monospace;font-size:8px;color:var(--text-dim);letter-spacing:1px">INITIATIVE:</span>
+            <button class="ship-sort-btn" id="initPCBtn" onclick="setInitiative('pc')" style="font-family:'Eras Demi ITC',sans-serif;font-size:10px;padding:4px 12px;border-color:var(--gold-dim);color:var(--gold)">PCs</button>
+            <button class="ship-sort-btn" id="initNPCBtn" onclick="setInitiative('npc')" style="font-family:'Eras Demi ITC',sans-serif;font-size:10px;padding:4px 12px">NPCs</button>
+          </div>
+          <button class="ship-sort-btn" onclick="resetCombat()" style="font-size:7px;color:var(--red);border-color:var(--red)">RESET</button>
+        </div>
+
+        <!-- Two Column Layout -->
+        <div style="display:flex;gap:8px">
+          <!-- PC Column -->
+          <div style="flex:1;min-width:0">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">
+              <span style="font-family:'Orbitron',monospace;font-size:9px;color:var(--cyan);letter-spacing:1px">PLAYERS</span>
+              <button class="ship-sort-btn" onclick="addCombatant('pc')" style="font-size:7px;padding:3px 8px">+ ADD</button>
+            </div>
+            <div id="pcColumn" style="min-height:40px"></div>
+          </div>
+          <!-- NPC Column -->
+          <div style="flex:1;min-width:0">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">
+              <span style="font-family:'Orbitron',monospace;font-size:9px;color:var(--red);letter-spacing:1px">NPCs</span>
+              <button class="ship-sort-btn" onclick="addCombatant('npc')" style="font-size:7px;padding:3px 8px">+ ADD</button>
+            </div>
+            <div id="npcColumn" style="min-height:40px"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
         <div class="card-title">⟐ Difficulty Reference</div>
         <div style="font-size:12px;color:var(--text-dim);line-height:2">
           <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:2px 0"><span style="color:var(--text)">Very Easy</span><span style="color:var(--gold)">1-5</span></div>
@@ -2138,6 +2177,113 @@ function engage() {
   drawMap(pathData, origin, dest, malfIdx);
   document.getElementById('tab-travel').scrollTop = 0;
 }
+
+// ============================================================
+// COMBAT TRACKER
+// ============================================================
+let combatRound = 1;
+let combatInitiative = 'pc';
+let combatants = { pc: [], npc: [] };
+let combatIdCounter = 0;
+
+const WOUND_LEVELS = ['Healthy', 'Stunned', 'Wounded', 'Wounded x2', 'Incapacitated', 'Mortally Wounded'];
+const WOUND_COLORS = ['var(--cyan)', 'var(--gold)', '#ff9944', '#ff6622', 'var(--red)', '#cc0000'];
+
+function adjustRound(delta) {
+  combatRound = Math.max(1, combatRound + delta);
+  document.getElementById('roundCounter').textContent = combatRound;
+}
+
+function setInitiative(side) {
+  combatInitiative = side;
+  const pcBtn = document.getElementById('initPCBtn');
+  const npcBtn = document.getElementById('initNPCBtn');
+  if (side === 'pc') {
+    pcBtn.style.borderColor = 'var(--gold-dim)'; pcBtn.style.color = 'var(--gold)';
+    npcBtn.style.borderColor = 'var(--card-border)'; npcBtn.style.color = 'var(--text-dim)';
+  } else {
+    npcBtn.style.borderColor = 'var(--gold-dim)'; npcBtn.style.color = 'var(--gold)';
+    pcBtn.style.borderColor = 'var(--card-border)'; pcBtn.style.color = 'var(--text-dim)';
+  }
+}
+
+function addCombatant(side) {
+  const name = prompt(side === 'pc' ? 'Player/Character name:' : 'NPC name:');
+  if (!name || !name.trim()) return;
+  combatIdCounter++;
+  combatants[side].push({ id: combatIdCounter, name: name.trim(), wound: 0 });
+  renderCombatants();
+}
+
+function removeCombatant(side, id) {
+  combatants[side] = combatants[side].filter(c => c.id !== id);
+  renderCombatants();
+}
+
+function cycleWound(side, id) {
+  const c = combatants[side].find(x => x.id === id);
+  if (!c) return;
+  c.wound = (c.wound + 1) % WOUND_LEVELS.length;
+  renderCombatants();
+}
+
+function renderCombatants() {
+  ['pc', 'npc'].forEach(side => {
+    const col = document.getElementById(side === 'pc' ? 'pcColumn' : 'npcColumn');
+    if (combatants[side].length === 0) {
+      col.innerHTML = '<div style="color:var(--text-dark);font-style:italic;font-size:11px;padding:8px 0">No ' + (side === 'pc' ? 'players' : 'NPCs') + ' added</div>';
+      return;
+    }
+    let html = '';
+    combatants[side].forEach(c => {
+      const wl = WOUND_LEVELS[c.wound];
+      const wc = WOUND_COLORS[c.wound];
+      const isDead = c.wound >= 4;
+      html += '<div style="background:var(--bg3);border:1px solid var(--card-border);border-radius:4px;padding:6px 8px;margin-bottom:4px' + (isDead ? ';opacity:0.5' : '') + '">';
+      html += '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">';
+      html += '<span style="font-family:\'Eras Demi ITC\',sans-serif;font-size:11px;color:var(--text);font-weight:bold;' + (isDead ? 'text-decoration:line-through' : '') + '">' + c.name + '</span>';
+      html += '<button onclick="removeCombatant(\'' + side + '\',' + c.id + ')" style="background:none;border:none;color:var(--text-dark);cursor:pointer;font-size:14px;padding:0 4px" title="Remove">✕</button>';
+      html += '</div>';
+      html += '<div style="display:flex;flex-wrap:wrap;gap:2px">';
+      WOUND_LEVELS.forEach((level, i) => {
+        const active = c.wound === i;
+        const passed = c.wound > i;
+        let bg = 'transparent';
+        let border = 'var(--card-border)';
+        let color = 'var(--text-dark)';
+        if (active) { bg = WOUND_COLORS[i]; border = WOUND_COLORS[i]; color = '#000'; }
+        else if (passed) { bg = 'var(--bg2)'; border = WOUND_COLORS[i]; color = WOUND_COLORS[i]; }
+        html += '<button onclick="setWound(\'' + side + '\',' + c.id + ',' + i + ')" style="font-size:6px;padding:2px 4px;border-radius:3px;border:1px solid ' + border + ';background:' + bg + ';color:' + color + ';cursor:pointer;font-family:\'Orbitron\',monospace;letter-spacing:0.5px">';
+        // Short labels
+        const shortLabels = ['OK', 'STN', 'WND', 'WNDx2', 'INCAP', 'MORTAL'];
+        html += shortLabels[i];
+        html += '</button>';
+      });
+      html += '</div>';
+      html += '</div>';
+    });
+    col.innerHTML = html;
+  });
+}
+
+function setWound(side, id, level) {
+  const c = combatants[side].find(x => x.id === id);
+  if (!c) return;
+  c.wound = level;
+  renderCombatants();
+}
+
+function resetCombat() {
+  if (!confirm('Reset combat? This will clear all combatants and reset the round counter.')) return;
+  combatRound = 1;
+  document.getElementById('roundCounter').textContent = 1;
+  combatants = { pc: [], npc: [] };
+  setInitiative('pc');
+  renderCombatants();
+}
+
+// Initialize empty columns on load
+document.addEventListener('DOMContentLoaded', function() { renderCombatants(); });
 
 // ============================================================
 // MAP PINCH-ZOOM
