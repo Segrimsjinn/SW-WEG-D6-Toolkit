@@ -2240,6 +2240,7 @@ function rollDice() {
     document.getElementById('diceResultWild').innerHTML = '<span style="color:var(--red)">⚠ Wild Die rolled 1 — Complication!</span>';
     document.getElementById('complicationPanel').style.display = 'block';
     document.getElementById('complicationResult').textContent = '';
+    document.getElementById('complicationPanel').querySelectorAll('button').forEach(b => b.disabled = false);
   } else {
     document.getElementById('diceResultWild').textContent = '';
     document.getElementById('complicationPanel').style.display = 'none';
