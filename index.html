@@ -771,6 +771,12 @@ color:var(--text-dim);min-width:35px;text-align:right;
               <option value="">— Select —</option>
             </select>
           </div>
+          <div style="display:flex;align-items:center;gap:8px;padding-top:18px">
+            <button class="ship-sort-btn" onclick="exportShipPDF()" style="padding:5px 12px;font-size:9px">⟐ PDF</button>
+            <label style="font-family:'Orbitron',monospace;font-size:7px;color:var(--text-dim);display:flex;align-items:center;gap:4px;cursor:pointer">
+              <input type="checkbox" id="shipPdfBlank" style="accent-color:var(--gold)"> BLANK
+            </label>
+          </div>
         </div>
         <div class="ship-sort-row" id="shipSortRow" style="display:none">
           <span style="font-family:'Orbitron',monospace;font-size:8px;color:var(--text-dim);letter-spacing:1px;padding:4px 0">SORT:</span>
@@ -2382,6 +2388,261 @@ function highlightGalaxySystems(systems, isGridSearch) {
 // ============================================================
 // PDF EXPORT (jsPDF)
 // ============================================================
+// ============================================================
+// STARSHIP PDF EXPORT
+// ============================================================
+function exportShipPDF() {
+  if (window.goatcounter) goatcounter.count({ path: 'ship-pdf-exported', event: true });
+  if (typeof window.jspdf === 'undefined') { alert('PDF library loading...'); return; }
+  const { jsPDF } = window.jspdf;
+  const blankSheet = document.getElementById('shipPdfBlank').checked;
+
+  const cat = document.getElementById('shipCategory').value;
+  const idx = document.getElementById('shipItem').value;
+  let s = null;
+  if (!blankSheet) {
+    if (!cat || idx === '') { alert('Select a starship first, or check BLANK for an empty template.'); return; }
+    s = STARSHIP_DATA[cat][parseInt(idx)];
+    if (!s) { alert('Ship not found.'); return; }
+  }
+
+  const doc = new jsPDF({ unit: 'pt', format: 'letter' });
+  const W = 612, H = 792;
+  const L = 30, R = W - 30;
+  const CW = R - L;
+  const RAD = 6;
+  const leftW = CW * 0.55;
+  const rightX = L + CW * 0.58;
+  const rightW = CW * 0.42;
+
+  // Helpers
+  function blankLine(x, y, w) {
+    doc.setDrawColor(190); doc.setLineWidth(0.5);
+    doc.line(x, y, x + w, y);
+    doc.setDrawColor(0);
+  }
+  function sectionLine(x, y, w) {
+    doc.setDrawColor(170); doc.setLineWidth(0.5);
+    doc.line(x, y, x + w, y);
+    doc.setDrawColor(0);
+  }
+
+  // Title bar - rounded top
+  doc.setFillColor(0, 0, 0);
+  doc.roundedRect(0, 0, W, 50, RAD, RAD, 'F');
+  doc.rect(0, 10, W, 40, 'F'); // square off bottom
+
+  if (blankSheet) {
+    doc.setTextColor(255); doc.setFont('helvetica','bold'); doc.setFontSize(16);
+    doc.text('________________________________________', 30, 28);
+    doc.setTextColor(180); doc.setFontSize(8);
+    doc.text('SHIP NAME', 30, 42);
+  } else {
+    doc.setTextColor(255); doc.setFont('helvetica','bold'); doc.setFontSize(16);
+    doc.text(s.name, 30, 28);
+    if (s.rank) {
+      const total = STARSHIP_DATA[cat].length;
+      doc.setTextColor(180); doc.setFontSize(9);
+      doc.text('RANK #' + s.rank + ' / ' + total, 30, 42);
+    }
+  }
+  doc.setTextColor(0);
+
+  // Image box - upper right
+  const imgX = rightX, imgY = 58, imgW = rightW, imgH = 180;
+  doc.setDrawColor(170); doc.setLineWidth(0.5);
+  doc.roundedRect(imgX, imgY, imgW, imgH, 4, 4);
+
+  // --- LEFT COLUMN: Core Stats ---
+  let y = 68;
+  const LH = 15;
+  const labelX = L;
+  const valX = L + 110;
+  const fillW = leftW - 115;
+
+  function statLine(label, value) {
+    if (!blankSheet && (!value || value === 'None' || String(value).trim() === '')) return;
+    doc.setFont('helvetica','bold'); doc.setFontSize(7.5); doc.setTextColor(100);
+    doc.text(label.toUpperCase() + ':', labelX, y);
+    if (blankSheet) {
+      blankLine(valX, y, fillW);
+    } else {
+      doc.setFont('helvetica','normal'); doc.setFontSize(8.5); doc.setTextColor(0);
+      doc.text(String(value), valX, y);
+    }
+    y += LH;
+  }
+
+  function sectionTitle(title, x, w) {
+    y += 3;
+    sectionLine(x || labelX, y - 4, w || leftW);
+    doc.setFont('helvetica','bold'); doc.setFontSize(8.5); doc.setTextColor(0);
+    doc.text(title, x || labelX, y + 4);
+    y += 12;
+  }
+
+  if (blankSheet) {
+    ['Craft','Type','Scale','Length','Crew','Passengers','Starfighters','Support Craft',
+     'Ground Vehicles','Troop Capacity','Cargo Capacity','Consumables','Cost','Hyperdrive',
+     'Nav Computer','Maneuverability','Space','Atmosphere','Hull','Shields'].forEach(f => statLine(f, ''));
+  } else {
+    statLine('Craft', s.craft);
+    statLine('Type', s.type);
+    statLine('Scale', s.scale);
+    statLine('Length', s.length);
+    let crew = s.crew || '';
+    if (s.gunners) crew += '; gunners: ' + s.gunners;
+    statLine('Crew', crew);
+    statLine('Passengers', s.passengers);
+    if (s.starfighter_complement) statLine('Starfighters', s.starfighter_complement);
+    if (s.support_craft) statLine('Support Craft', s.support_craft);
+    if (s.ground_vehicles) statLine('Ground Vehicles', s.ground_vehicles);
+    if (s.troop_capacity) statLine('Troop Capacity', s.troop_capacity);
+    statLine('Cargo Capacity', s.cargo);
+    statLine('Consumables', s.consumables);
+    let price = '';
+    if (s.price_new) price += s.price_new + ' (new)';
+    if (s.price_used) price += (price ? ', ' : '') + s.price_used + ' (used)';
+    if (price) statLine('Cost', price);
+    statLine('Hyperdrive', s.hyperdrive);
+    statLine('Nav Computer', s.nav_computer);
+    statLine('Maneuverability', s.maneuverability);
+    statLine('Space', s.space);
+    statLine('Atmosphere', s.atmosphere);
+    statLine('Hull', s.hull);
+    statLine('Shields', s.shields || 'None');
+  }
+
+  // Sensors
+  sectionTitle('SENSORS');
+  if (blankSheet) {
+    ['Passive','Scan','Search','Focus'].forEach(f => statLine(f, ''));
+  } else {
+    statLine('Passive', s.sensors_passive);
+    statLine('Scan', s.sensors_scan);
+    statLine('Search', s.sensors_search);
+    statLine('Focus', s.sensors_focus);
+  }
+
+  // Weapons 1-2 left column
+  sectionTitle('WEAPONS');
+  const weapons = blankSheet ? [] : (s.weapons || []);
+
+  function drawWeaponFilled(w) {
+    doc.setFont('helvetica','bold'); doc.setFontSize(7.5); doc.setTextColor(0);
+    doc.text(w.name, labelX + 5, y); y += 11;
+    [['Fire Arc',w.fire_arc],['Crew',w.crew],['Skill',w.skill],['Fire Control',w.fire_control],
+     ['Space Range',w.space_range],['Atmo Range',w.atmo_range],['Damage',w.damage]].forEach(function(pair) {
+      if (pair[1] && pair[1] !== 'None' && String(pair[1]).trim()) {
+        doc.setFont('helvetica','normal'); doc.setFontSize(6.5); doc.setTextColor(100);
+        doc.text(pair[0] + ': ' + pair[1], labelX + 12, y); y += 10;
+      }
+    });
+    y += 4;
+  }
+
+  function drawWeaponBlank(label, startX) {
+    const bx = startX || labelX;
+    doc.setFont('helvetica','bold'); doc.setFontSize(7.5); doc.setTextColor(0);
+    doc.text(label + ':', bx + 5, y);
+    blankLine(bx + 52, y, 200); y += 11;
+    ['Fire Arc','Crew','Skill','Fire Control','Space Range','Atmo Range','Damage'].forEach(function(wl) {
+      doc.setFont('helvetica','normal'); doc.setFontSize(6.5); doc.setTextColor(100);
+      doc.text(wl + ':', bx + 12, y);
+      blankLine(bx + 68, y, 170); y += 10;
+    });
+    y += 4;
+  }
+
+  // Left column: weapons 1-2
+  for (let i = 0; i < Math.min(2, weapons.length); i++) drawWeaponFilled(weapons[i]);
+  for (let i = weapons.length; i < 2; i++) drawWeaponBlank('Weapon ' + (i+1));
+  const leftEndY = y;
+
+  // --- RIGHT COLUMN: Weapons 3-5 below image ---
+  y = imgY + imgH + 12;
+  sectionTitle('WEAPONS (CONT.)', rightX, rightW);
+
+  function drawWeaponFilledR(w) {
+    doc.setFont('helvetica','bold'); doc.setFontSize(7.5); doc.setTextColor(0);
+    doc.text(w.name, rightX + 5, y); y += 11;
+    [['Fire Arc',w.fire_arc],['Crew',w.crew],['Skill',w.skill],['Fire Control',w.fire_control],
+     ['Space Range',w.space_range],['Atmo Range',w.atmo_range],['Damage',w.damage]].forEach(function(pair) {
+      if (pair[1] && pair[1] !== 'None' && String(pair[1]).trim()) {
+        doc.setFont('helvetica','normal'); doc.setFontSize(6.5); doc.setTextColor(100);
+        doc.text(pair[0] + ': ' + pair[1], rightX + 12, y); y += 10;
+      }
+    });
+    y += 4;
+  }
+
+  function drawWeaponBlankR(label) {
+    doc.setFont('helvetica','bold'); doc.setFontSize(7.5); doc.setTextColor(0);
+    doc.text(label + ':', rightX + 5, y);
+    blankLine(rightX + 52, y, rightW - 60); y += 11;
+    ['Fire Arc','Crew','Skill','Fire Control','Space Range','Atmo Range','Damage'].forEach(function(wl) {
+      doc.setFont('helvetica','normal'); doc.setFontSize(6.5); doc.setTextColor(100);
+      doc.text(wl + ':', rightX + 12, y);
+      blankLine(rightX + 68, y, rightW - 76); y += 10;
+    });
+    y += 4;
+  }
+
+  for (let i = 2; i < Math.min(5, weapons.length); i++) drawWeaponFilledR(weapons[i]);
+  for (let i = Math.max(2, weapons.length); i < 5; i++) drawWeaponBlankR('Weapon ' + (i+1));
+  const rightEndY = y;
+
+  // Of Note - full width
+  y = Math.max(leftEndY, rightEndY) + 6;
+  sectionLine(L, y - 4, CW);
+
+  if (blankSheet) {
+    doc.setFont('helvetica','bold'); doc.setFontSize(8); doc.setTextColor(0);
+    doc.text('OF NOTE:', L, y + 4); y += 12;
+    doc.setDrawColor(170); doc.setLineWidth(0.5);
+    doc.rect(L, y, CW, 50); // box
+    for (let i = 1; i < 5; i++) {
+      doc.setDrawColor(220); doc.line(L + 3, y + i * 11, R - 3, y + i * 11);
+    }
+    doc.setDrawColor(0);
+    y += 56;
+  } else {
+    const note = (s.of_note && s.of_note !== 'None') ? s.of_note : '';
+    if (note) {
+      doc.setFont('helvetica','bold'); doc.setFontSize(8); doc.setTextColor(0);
+      doc.text('OF NOTE:', L, y + 4); y += 12;
+      doc.setFont('helvetica','italic'); doc.setFontSize(7.5); doc.setTextColor(80);
+      const noteLines = doc.splitTextToSize(note, CW);
+      noteLines.forEach(function(nl) { doc.text(nl, L + 5, y); y += 10; });
+      y += 4;
+    }
+  }
+
+  // Reference footer
+  y += 4;
+  sectionLine(L, y - 4, CW);
+  doc.setFont('helvetica','normal'); doc.setFontSize(6.5); doc.setTextColor(150);
+  if (blankSheet) {
+    doc.text('Source: _________________ | Era: _________________ | Affiliation: _________________', L, y + 4);
+  } else {
+    const rp = [];
+    if (s.source) rp.push('Source: ' + s.source);
+    if (s.era) rp.push('Era: ' + s.era);
+    if (s.affiliation) rp.push('Affiliation: ' + s.affiliation);
+    doc.text(rp.join(' | '), L, y + 4);
+  }
+
+  // Branding - lower right
+  doc.setFont('helvetica','normal'); doc.setFontSize(5.5); doc.setTextColor(170);
+  doc.text('SEGRIMSJINN — SW WEG D6 TOOLKIT', R, H - 18, { align: 'right' });
+  doc.text('segrimsjinn.github.io/SW-WEG-D6-Toolkit', R, H - 10, { align: 'right' });
+  doc.setTextColor(0);
+
+  // Save
+  const filename = blankSheet ? 'SW_D6_Blank_Ship_Sheet.pdf' : 'SW_D6_' + s.name.replace(/[^a-zA-Z0-9]/g, '_') + '.pdf';
+  doc.save(filename);
+}
+
 function exportPDF() {
   if (window.goatcounter) goatcounter.count({ path: 'pdf-exported', event: true });
   if (typeof jspdf === 'undefined' && typeof window.jspdf === 'undefined') {
