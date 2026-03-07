@@ -2253,7 +2253,7 @@ function renderCombatants() {
         let color = 'var(--text-dark)';
         if (active) { bg = WOUND_COLORS[i]; border = WOUND_COLORS[i]; color = '#000'; }
         else if (passed) { bg = 'var(--bg2)'; border = WOUND_COLORS[i]; color = WOUND_COLORS[i]; }
-        html += '<button onclick="setWound(\'' + side + '\',' + c.id + ',' + i + ')" style="font-size:6px;padding:2px 4px;border-radius:3px;border:1px solid ' + border + ';background:' + bg + ';color:' + color + ';cursor:pointer;font-family:\'Orbitron\',monospace;letter-spacing:0.5px">';
+        html += '<button onclick="setWound(\'' + side + '\',' + c.id + ',' + i + ')" style="font-size:8px;padding:3px 6px;border-radius:3px;border:1px solid ' + border + ';background:' + bg + ';color:' + color + ';cursor:pointer;font-family:\'Eras Demi ITC\',sans-serif;letter-spacing:0.5px">';
         // Short labels
         const shortLabels = ['OK', 'STN', 'WND', 'WNDx2', 'INCAP', 'MORTAL'];
         html += shortLabels[i];
