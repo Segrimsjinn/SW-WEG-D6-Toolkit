@@ -958,6 +958,26 @@ color:var(--text-dim);min-width:35px;text-align:right;
           Use the difference between scales. E.g. Speeder (2D) vs Capital (12D) = 10D modifier. Per R&E p.66-67.
         </div>
       </div>
+
+      <div class="card">
+        <div class="card-title">⟐ Force Powers Reference</div>
+        <div style="display:flex;gap:8px;align-items:center;margin-bottom:10px">
+          <input type="text" id="forcePowerSearch" placeholder="Search powers..." oninput="filterForcePowers()" style="flex:1;padding:6px 10px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:12px;font-family:inherit">
+          <select id="forcePowerCategory" onchange="filterForcePowers()" style="padding:6px 8px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:11px;font-family:inherit">
+            <option value="">All Categories</option>
+            <option value="Control">Control</option>
+            <option value="Sense">Sense</option>
+            <option value="Alter">Alter</option>
+            <option value="Control+Sense">Control+Sense</option>
+            <option value="Control+Alter">Control+Alter</option>
+            <option value="Sense+Alter">Sense+Alter</option>
+            <option value="Control+Sense+Alter">Control+Sense+Alter</option>
+            <option value="Special">Special</option>
+          </select>
+        </div>
+        <div id="forcePowerList" style="max-height:200px;overflow-y:auto;margin-bottom:10px"></div>
+        <div id="forcePowerDetail" style="display:none;background:var(--bg3);border:1px solid var(--card-border);border-radius:var(--radius-sm);padding:12px"></div>
+      </div>
     </div>
 
     <!-- TAB 6: SETTINGS -->
@@ -1049,6 +1069,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
 <script src="data_images.js"></script>
 <script src="data_armor.js"></script>
 <script src="data_starships.js"></script>
+<script src="data_forcepowers.js"></script>
 
 <script>
 // ============================================================
@@ -2219,6 +2240,88 @@ function engage() {
   drawMap(pathData, origin, dest, malfIdx);
   document.getElementById('tab-travel').scrollTop = 0;
 }
+
+// ============================================================
+// FORCE POWERS REFERENCE
+// ============================================================
+function filterForcePowers() {
+  const search = document.getElementById('forcePowerSearch').value.toLowerCase();
+  const cat = document.getElementById('forcePowerCategory').value;
+  const list = document.getElementById('forcePowerList');
+
+  let filtered = FORCE_POWERS_DATA.filter(p => {
+    if (cat && p.category !== cat) return false;
+    if (search && !p.name.toLowerCase().includes(search) && !p.category.toLowerCase().includes(search)) return false;
+    return true;
+  });
+
+  if (filtered.length === 0) {
+    list.innerHTML = '<div style="color:var(--text-dark);font-style:italic;font-size:11px;padding:8px">No powers found</div>';
+    return;
+  }
+
+  let html = '';
+  filtered.forEach(p => {
+    const hasDetail = p.effect ? true : false;
+    const ds = p.darkSide ? ' <span style="color:var(--red);font-size:8px">● DARK SIDE</span>' : '';
+    const dim = hasDetail ? '' : 'opacity:0.5;';
+    html += '<div onclick="showForcePower(' + p.number + ')" style="padding:5px 8px;border-bottom:1px solid var(--card-border);cursor:pointer;' + dim + '" onmouseover="this.style.background=\'var(--bg2)\'" onmouseout="this.style.background=\'transparent\'">';
+    html += '<span style="font-family:\'Eras Demi ITC\',sans-serif;font-size:11px;color:var(--text)">' + p.name + '</span>';
+    html += ' <span style="font-size:9px;color:var(--text-dark)">(' + p.category + ')</span>';
+    html += ds;
+    if (!hasDetail) html += ' <span style="font-size:8px;color:var(--text-dark);font-style:italic">[pending]</span>';
+    html += '</div>';
+  });
+  list.innerHTML = html;
+}
+
+function showForcePower(num) {
+  const p = FORCE_POWERS_DATA.find(x => x.number === num);
+  if (!p) return;
+  const detail = document.getElementById('forcePowerDetail');
+
+  if (!p.effect) {
+    detail.style.display = 'block';
+    detail.innerHTML = '<div style="font-family:\'Orbitron\',monospace;font-size:12px;color:var(--gold);margin-bottom:6px">' + p.name + '</div>' +
+      '<div style="font-size:11px;color:var(--text-dim)">Category: ' + p.category + '</div>' +
+      (p.prereqs ? '<div style="font-size:11px;color:var(--text-dim)">Prerequisites: ' + p.prereqs + '</div>' : '') +
+      '<div style="font-size:11px;color:var(--text-dark);font-style:italic;margin-top:6px">Full description pending — data entry in progress.</div>';
+    return;
+  }
+
+  const ds = p.darkSide ? '<span style="color:var(--red);font-weight:bold"> ● DARK SIDE POWER</span>' : '';
+  let html = '';
+  html += '<div style="font-family:\'Orbitron\',monospace;font-size:12px;color:var(--gold);margin-bottom:8px">' + p.name + ds + '</div>';
+
+  const line = (label, val) => val ? '<div style="margin-bottom:4px"><span style="font-size:9px;color:var(--text-dark);font-weight:bold">' + label + ':</span> <span style="font-size:11px;color:var(--text-dim)">' + val + '</span></div>' : '';
+
+  html += line('Category', p.category);
+  html += line('Difficulty', p.difficulty);
+  if (p.timeToUse) html += line('Time to Use', p.timeToUse);
+  html += line('Keep Up', p.keepUp);
+  if (p.prereqs) html += line('Required Powers', p.prereqs);
+
+  html += '<div style="margin-top:8px;border-top:1px solid var(--card-border);padding-top:8px">';
+  html += '<span style="font-size:9px;color:var(--gold);font-weight:bold">EFFECT:</span>';
+  html += '<div style="font-size:11px;color:var(--text-dim);line-height:1.6;margin-top:4px">' + p.effect + '</div>';
+  html += '</div>';
+
+  if (p.source) {
+    html += '<div style="margin-top:8px;font-size:9px;color:var(--text-dark)">Source: ' + p.source + '</div>';
+  }
+
+  detail.style.display = 'block';
+  detail.innerHTML = html;
+}
+
+// Initialize force powers list on tab switch
+const origSwitchTab = switchTab;
+switchTab = function(tab) {
+  origSwitchTab(tab);
+  if (tab === 'gm' && typeof FORCE_POWERS_DATA !== 'undefined') {
+    filterForcePowers();
+  }
+};
 
 // ============================================================
 // COMBAT TRACKER
