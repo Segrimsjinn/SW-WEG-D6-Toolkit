@@ -425,11 +425,11 @@ const FORCE_POWERS_DATA = [
   "category": "Alter",
   "prereqs": "",
   "darkSide": true,
-  "difficulty": "",
+  "difficulty": "Moderate.",
   "timeToUse": "",
-  "keepUp": "",
-  "effect": "",
-  "source": ""
+  "keepUp": "No",
+  "effect": "The Force-user creates a radiant sphere of pure hatred which he can hurl at any target within line of sight. After a successful alter roll, the Force-wielder makes a thrown weapons roll with a +2D bonus to launch the bolt. Characters hit suffer 6D damage and automatically lose a Character Point. Dark Side Point for use.",
+  "source": "Tales of the Jedi Companion (page 87)"
  },
  {
   "number": 37,
@@ -437,11 +437,11 @@ const FORCE_POWERS_DATA = [
   "category": "Alter",
   "prereqs": "",
   "darkSide": true,
-  "difficulty": "",
+  "difficulty": "Difficult.",
   "timeToUse": "",
-  "keepUp": "",
-  "effect": "",
-  "source": ""
+  "keepUp": "Yes",
+  "effect": "Summons strands of dark side power that wrap around the target, ensnaring them in a mesh of brilliance. The lattice severs the connection between the Force and the trapped individual and saps body strength. The target loses Force skill dice up to the number of the Force-wielder's alter dice, distributed across control, sense, and alter in any combination. If desired, the user may also include Strength in the reduction. Dark Side Point for use.",
+  "source": "Tales of the Jedi Companion (page 87)"
  },
  {
   "number": 38,
@@ -449,11 +449,11 @@ const FORCE_POWERS_DATA = [
   "category": "Alter",
   "prereqs": "23,24",
   "darkSide": true,
-  "difficulty": "",
+  "difficulty": "Target's control or Perception roll.",
   "timeToUse": "",
-  "keepUp": "",
-  "effect": "",
-  "source": ""
+  "keepUp": "No",
+  "effect": "The attacker must be touching the target (successful brawling attack in the same round). If the alter roll beats the target's control or Perception, figure damage as if the alter roll was a damage total and the control/Perception roll was a Strength roll to resist damage. Dark Side Point for use.",
+  "source": "R&E (page 147)"
  },
  {
   "number": 39,
@@ -461,11 +461,11 @@ const FORCE_POWERS_DATA = [
   "category": "Alter",
   "prereqs": "",
   "darkSide": false,
-  "difficulty": "",
+  "difficulty": "Very Easy for 1kg or less; Easy for 1-10kg; Moderate for 11-100kg; Difficult for 101kg-1 metric ton; Very Difficult for 1,001kg-10 metric tons; Heroic for 10,001kg-100 metric tons. +5 per additional 10m/round movement. +1 to +5 gentle turns; +6 to +10 easy maneuvers; +11 to +25+ complex maneuvers. Modified by proximity.",
   "timeToUse": "",
-  "keepUp": "",
-  "effect": "",
-  "source": ""
+  "keepUp": "Yes",
+  "effect": "Levitate and move objects with the mind. Multiple objects require separate rolls. Can levitate self or others. Targets may resist with Perception or control added to difficulty. Using levitated objects to attack gives a Dark Side Point. Damage by weight: under 1kg=1D, 1-10kg=2D, 11-100kg=4D, 101kg-1ton=3D speeder-scale, 1-10 tons=3D starfighter-scale, 11-100 tons=5D starfighter-scale. Attack requires additional control roll vs target's dodge (Easy if no dodge). Can serve as emergency space drive.",
+  "source": "R&E (page 147)"
  },
  {
   "number": 40,
@@ -473,11 +473,11 @@ const FORCE_POWERS_DATA = [
   "category": "Control+Sense",
   "prereqs": "24",
   "darkSide": false,
-  "difficulty": "",
-  "timeToUse": "",
-  "keepUp": "",
-  "effect": "",
-  "source": ""
+  "difficulty": "Control: Very Easy, modified by proximity (+5 to +20 for past, +10 to +30+ for future). Sense: Very Easy if friendly/no resistance; target's control or Perception if resisting. Modified by relationship.",
+  "timeToUse": "At least one minute",
+  "keepUp": "No",
+  "effect": "See a person or place as it currently exists, including immediate surroundings. Can see past or future. Requires calm, no danger. Vision accuracy by roll vs sense difficulty \u2014 Past/Present: 0-10=50%, 11-20=75%, 21-30=90%, 31+=100%. Future: 0-10=10%, 11-20=25%, 21-30=50%, 31+=75%. The future is always fluid. GM should make honest effort to represent what will happen at the rolled accuracy level.",
+  "source": "Tales of the Jedi Companion (page 53)"
  },
  {
   "number": 41,
@@ -485,11 +485,11 @@ const FORCE_POWERS_DATA = [
   "category": "Control+Sense",
   "prereqs": "23,24,26,29",
   "darkSide": false,
-  "difficulty": "",
-  "timeToUse": "",
-  "keepUp": "",
-  "effect": "",
-  "source": ""
+  "difficulty": "Control: Moderate. Sense: varies by level (see effect). Modified by proximity.",
+  "timeToUse": "1D weeks to form bond",
+  "keepUp": "Yes",
+  "effect": "Permanent mental link with one other individual (normally a mate). Easy sense: aware of general location and emotional state. Moderate sense: experience other's senses (see, hear, feel); share pain; if one injured, other suffers one level lower injury. Difficult sense: telepathic link, read surface thoughts (if willing). Very Difficult sense: send thoughts (projective telepathy). Premonitions automatic within 1,000km; scaling difficulty beyond. Both must agree. Only one bond at a time. Death severs the bond \u2014 survivor enters catatonic shock for 1D days, then -1D to all die codes for same duration as bond formation. Partner receives Dark Side Points for bonded partner's evil actions. If both have the power, reduce sense difficulties one level.",
+  "source": "Tales of the Jedi Companion (page 54)"
  },
  {
   "number": 42,
@@ -497,11 +497,11 @@ const FORCE_POWERS_DATA = [
   "category": "Control+Sense",
   "prereqs": "",
   "darkSide": false,
-  "difficulty": "",
+  "difficulty": "Control: Moderate. Sense: Easy.",
   "timeToUse": "",
-  "keepUp": "",
-  "effect": "",
-  "source": ""
+  "keepUp": "Yes",
+  "effect": "Add sense dice to lightsaber skill when attacking and parrying. Add or subtract part/all of control dice to lightsaber damage (decide when activated). If activation fails, can only use lightsaber skill for the combat. Can parry blaster bolts as a reaction skill. Can attempt to redirect deflected bolts (additional action, no full parry): control roll vs range difficulty or target's dodge, original bolt damage. Power drops if stunned, wounded, or worse; may attempt to re-activate.",
+  "source": "R&E (page 148)"
  },
  {
   "number": 43,
@@ -509,11 +509,11 @@ const FORCE_POWERS_DATA = [
   "category": "Control+Sense",
   "prereqs": "23,24,29",
   "darkSide": false,
-  "difficulty": "",
+  "difficulty": "Control: Very Easy (+5 to +10 if cannot verbalize). Modified by proximity. Sense: Very Easy if friendly/no resistance; target's Perception or control if resisting. Modified by relationship.",
   "timeToUse": "",
-  "keepUp": "",
-  "effect": "",
-  "source": ""
+  "keepUp": "No",
+  "effect": "The target 'hears' the Jedi's thoughts and 'feels' her emotions. Can only broadcast feelings, emotions and perhaps a couple of words \u2014 cannot send sentences or hold conversations. Target knows the thoughts are not their own. If the Jedi doesn't identify herself, the target doesn't know who is projecting. Can only communicate, not control minds.",
+  "source": "R&E (page 148)"
  },
  {
   "number": 44,
@@ -521,11 +521,11 @@ const FORCE_POWERS_DATA = [
   "category": "Control+Alter",
   "prereqs": "6,47",
   "darkSide": false,
-  "difficulty": "",
-  "timeToUse": "",
-  "keepUp": "",
-  "effect": "",
-  "source": ""
+  "difficulty": "Control: Very Easy, modified by relationship. Alter: Very Easy.",
+  "timeToUse": "One minute",
+  "keepUp": "No",
+  "effect": "The target may make extra healing rolls as outlined in Accelerate Healing. The Jedi must be touching the character when activating this power.",
+  "source": "R&E (page 148)"
  },
  {
   "number": 45,
@@ -533,11 +533,11 @@ const FORCE_POWERS_DATA = [
   "category": "Control+Alter",
   "prereqs": "",
   "darkSide": true,
-  "difficulty": "",
+  "difficulty": "Control: Easy, modified by proximity. Alter: Easy.",
   "timeToUse": "",
-  "keepUp": "",
-  "effect": "",
-  "source": ""
+  "keepUp": "Yes",
+  "effect": "Projects a field of vague discomfort and unease, causing all non-sentient creatures to go out of their way to avoid the user. Dark Side Point for use.",
+  "source": "Tales of the Jedi Companion (page 87)"
  },
  {
   "number": 46,
@@ -545,11 +545,11 @@ const FORCE_POWERS_DATA = [
   "category": "Control+Alter",
   "prereqs": "2,5",
   "darkSide": false,
-  "difficulty": "",
-  "timeToUse": "",
-  "keepUp": "",
-  "effect": "",
-  "source": ""
+  "difficulty": "Control: Very Easy, modified by relationship. Alter: Same as Control Disease.",
+  "timeToUse": "30 minutes to several uses over weeks",
+  "keepUp": "No",
+  "effect": "Allows a Jedi to heal another character's disease using the same rules as Control Disease. The Jedi must be touching the character to be healed.",
+  "source": "R&E (page 148-149)"
  },
  {
   "number": 47,
@@ -557,11 +557,11 @@ const FORCE_POWERS_DATA = [
   "category": "Control+Alter",
   "prereqs": "6",
   "darkSide": false,
-  "difficulty": "",
+  "difficulty": "Control: Very Easy, modified by relationship. Alter: Easy for wounded; Moderate for incapacitated; Difficult for mortally wounded.",
   "timeToUse": "",
-  "keepUp": "",
-  "effect": "",
-  "source": ""
+  "keepUp": "Yes (new roll when target injured again)",
+  "effect": "Allows a Jedi to help another character control pain under the same rules as Control Pain. The Jedi must be touching the character.",
+  "source": "R&E (page 149)"
  },
  {
   "number": 48,
@@ -569,11 +569,11 @@ const FORCE_POWERS_DATA = [
   "category": "Control+Alter",
   "prereqs": "3,11,39",
   "darkSide": false,
-  "difficulty": "",
+  "difficulty": "Control: Moderate. Alter: Very Difficult.",
   "timeToUse": "",
-  "keepUp": "",
-  "effect": "",
-  "source": ""
+  "keepUp": "Yes (drops if incapacitated or willfully dropped)",
+  "effect": "Controls the amount of oxygen flowing into the Jedi's body by pulling oxygen molecules through the skin into the lungs. Effectively breathe underwater; water breathers can survive on land. Negates the need for breath masks, mechgills, or rebreathers. Useless in the cold of space or hard vacuum \u2014 not enough oxygen to 'grab' even if the Jedi could survive the pressure and temperature.",
+  "source": "Tales of the Jedi Companion (page 56)"
  },
  {
   "number": 49,
@@ -581,11 +581,11 @@ const FORCE_POWERS_DATA = [
   "category": "Control+Alter",
   "prereqs": "2,6,7,44,47",
   "darkSide": false,
-  "difficulty": "",
-  "timeToUse": "",
-  "keepUp": "",
-  "effect": "",
-  "source": ""
+  "difficulty": "Control: Very Easy, modified by relationship. Alter: Very Easy for mild poison (alcohol); Easy for mild poison; Moderate for average poison; Difficult for virulent poison; Very Difficult to Heroic for neurotoxin.",
+  "timeToUse": "Five minutes",
+  "keepUp": "No",
+  "effect": "Removes or detoxifies poison from a patient's body. Jedi must remain in physical contact with the patient. While in contact, the patient is immune to the poison's effects. Failure to make the required rolls or breaking physical contact causes the patient a wound.",
+  "source": "Tales of the Jedi Companion (page 56)"
  },
  {
   "number": 50,
@@ -593,11 +593,11 @@ const FORCE_POWERS_DATA = [
   "category": "Control+Alter",
   "prereqs": "1,62",
   "darkSide": true,
-  "difficulty": "",
+  "difficulty": "Control: Easy for non-sentient machines; Moderate for sentient; Difficult for hostile sentient. Modified by proximity. Alter: Easy for slight alterations; Moderate for significant changes; Difficult for major reprogramming.",
   "timeToUse": "",
-  "keepUp": "",
-  "effect": "",
-  "source": ""
+  "keepUp": "No",
+  "effect": "Channels anger into circuits of a computer, droid, or machine to reprogram it by manipulating physical and electrical components. Only existing programming can be altered; the machine may not be given programming it doesn't have. Dark Side Point for use.",
+  "source": "Tales of the Jedi Companion (page 87)"
  },
  {
   "number": 51,
@@ -605,11 +605,11 @@ const FORCE_POWERS_DATA = [
   "category": "Control+Alter",
   "prereqs": "30",
   "darkSide": true,
-  "difficulty": "",
+  "difficulty": "Control: Moderate when first activated, Very Easy each round after. Alter: Moderate when first activated; no additional rolls.",
   "timeToUse": "",
-  "keepUp": "",
-  "effect": "",
-  "source": ""
+  "keepUp": "Yes",
+  "effect": "Feeds off a foe's anger, fear, hatred, or other negative emotions to become stronger. In any round where a light side Force-sensitive in the user's presence gains a Dark Side Point, the user gains a Dark Side Point and a Force Point. Multiple characters gaining Dark Side Points = multiple Force Points. Force Points must be spent within 5 minutes. The only way to stop this power is to resist the dark side \u2014 brute force will not work. Dark Side Point for use. Warning: avoid overuse, can severely disrupt game balance.",
+  "source": "Tales of the Jedi Companion (page 56-57)"
  },
  {
   "number": 52,
@@ -617,11 +617,11 @@ const FORCE_POWERS_DATA = [
   "category": "Control+Alter",
   "prereqs": "1,38,53",
   "darkSide": false,
-  "difficulty": "",
+  "difficulty": "Control: Difficult, modified by proximity (line of sight). Alter: Target's Perception or control roll.",
   "timeToUse": "",
-  "keepUp": "",
-  "effect": "",
-  "source": ""
+  "keepUp": "No",
+  "effect": "Produces bolts of white or blue energy from the user's fingertips. Cannot be parried or dodged. Victim's only defense is rolling higher with Perception or control. Can be blocked by lightsaber combat (higher control total) but cannot be redirected. Can be absorbed with absorb/dissipate energy. Damage: 1D per 1D of alter the user has. Armor is useless. If the target is stunned, wounded, or worse, they cannot act for the rest of the round and the next round. Dark Side Point for use.",
+  "source": "Tales of the Jedi Companion (page 57)"
  },
  {
   "number": 53,
@@ -629,11 +629,11 @@ const FORCE_POWERS_DATA = [
   "category": "Control+Alter",
   "prereqs": "6,24",
   "darkSide": false,
-  "difficulty": "",
+  "difficulty": "Control: Very Easy, modified by proximity. Alter: Target's control or Perception, modified by proximity.",
   "timeToUse": "",
-  "keepUp": "",
-  "effect": "",
-  "source": ""
+  "keepUp": "No",
+  "effect": "The target experiences great agony. Damage is rolled with alter vs target's control, Perception, or willpower. Damage is treated as a stun attack. If the target suffers any damage at all, they are incapable of acting for the rest of the round and the next round. Dark Side Point for use.",
+  "source": "Tales of the Jedi Companion (page 57)"
  },
  {
   "number": 54,
@@ -641,11 +641,11 @@ const FORCE_POWERS_DATA = [
   "category": "Control+Alter",
   "prereqs": "11",
   "darkSide": false,
-  "difficulty": "",
-  "timeToUse": "",
-  "keepUp": "",
-  "effect": "",
-  "source": ""
+  "difficulty": "Control: Very Easy, modified by relationship. Alter: Very Easy, modified by proximity.",
+  "timeToUse": "Five minutes",
+  "keepUp": "No",
+  "effect": "Places another character into a hibernation trance. Must be in physical contact and target must agree \u2014 cannot be used as an attack. Can bring another character out of hibernation trance with +10 to alter difficulty.",
+  "source": "R&E (page 149)"
  },
  {
   "number": 55,
@@ -653,11 +653,11 @@ const FORCE_POWERS_DATA = [
   "category": "Control+Alter",
   "prereqs": "2,6,16,44,47",
   "darkSide": false,
-  "difficulty": "",
+  "difficulty": "Control: Easy. Alter: Moderate, modified by proximity and relationship.",
   "timeToUse": "",
-  "keepUp": "",
-  "effect": "",
-  "source": ""
+  "keepUp": "No",
+  "effect": "Removes effects of fatigue in another character. Unlike the self version, the Jedi must wait until the target is actually fatigued before offering assistance. Penalties from failing stamina checks can be counteracted but must be addressed as they occur.",
+  "source": "Tales of the Jedi Companion (page 57)"
  },
  {
   "number": 56,
@@ -665,11 +665,11 @@ const FORCE_POWERS_DATA = [
   "category": "Control+Alter",
   "prereqs": "6,15",
   "darkSide": false,
-  "difficulty": "",
+  "difficulty": "Control: Easy, modified by proximity and relationship. Alter: Easy for incapacitated; Difficult for mortally wounded.",
   "timeToUse": "",
-  "keepUp": "",
-  "effect": "",
-  "source": ""
+  "keepUp": "No",
+  "effect": "The target returns to consciousness with the same restrictions as Remain Conscious. Must be touching the Jedi.",
+  "source": "R&E (page 149)"
  },
  {
   "number": 57,
@@ -677,11 +677,11 @@ const FORCE_POWERS_DATA = [
   "category": "Control+Alter",
   "prereqs": "6,47",
   "darkSide": false,
-  "difficulty": "",
-  "timeToUse": "",
-  "keepUp": "",
-  "effect": "",
-  "source": ""
+  "difficulty": "Control: Easy, modified by relationship. Alter: Moderate.",
+  "timeToUse": "One minute",
+  "keepUp": "No",
+  "effect": "Saves a mortally wounded character from dying by transferring life force. Target remains mortally wounded but will not die unless injured again. Target enters hibernation for up to 6 weeks. Must be touching the target. Costs a Force Point (always considered heroic \u2014 the Jedi gets the Force Point back at end of adventure). Recipient must be willing.",
+  "source": "R&E (page 149)"
  },
  {
   "number": 58,
@@ -689,11 +689,11 @@ const FORCE_POWERS_DATA = [
   "category": "Control+Alter",
   "prereqs": "",
   "darkSide": true,
-  "difficulty": "",
+  "difficulty": "Control: Moderate for 1-2m; Difficult for 3-10m; Very Difficult for 11-20m; Heroic for 21-30m. Alter: same scale.",
   "timeToUse": "",
-  "keepUp": "",
-  "effect": "",
-  "source": ""
+  "keepUp": "Yes",
+  "effect": "Channels anger into an expanding sphere of dark side energy. Anyone entering the area must make a Willpower or Control roll vs the Jedi's control roll. Failure: can't act current round or next round, must flee the following round. Success: confused, limited to one action per turn until leaving the area. Dark Side Point for use.",
+  "source": "Tales of the Jedi Companion (page 87)"
  },
  {
   "number": 59,
@@ -701,11 +701,11 @@ const FORCE_POWERS_DATA = [
   "category": "Sense+Alter",
   "prereqs": "",
   "darkSide": false,
-  "difficulty": "",
+  "difficulty": "Sense: Easy, modified by proximity. Alter: Target's control or Perception.",
   "timeToUse": "",
-  "keepUp": "",
-  "effect": "",
-  "source": ""
+  "keepUp": "Yes",
+  "effect": "Greatly reduces the target's Perception and all Perception skills. Alter beats control/Perception by: 0-5 = -1 pip; 6-10 = -2 pips; 11-15 = -1D; 16-20 = -2D; 21+ = -3D. Can target multiple people: +3 to sense difficulty per additional target, using the highest control/Perception in the group.",
+  "source": "Tales of the Jedi Companion (page 64)"
  },
  {
   "number": 60,
@@ -713,11 +713,11 @@ const FORCE_POWERS_DATA = [
   "category": "Sense+Alter",
   "prereqs": "1,3,26,39",
   "darkSide": false,
-  "difficulty": "",
+  "difficulty": "Sense: Easy. Alter: Moderate.",
   "timeToUse": "",
-  "keepUp": "",
-  "effect": "",
-  "source": ""
+  "keepUp": "Yes",
+  "effect": "Surrounds the Jedi's body with a Force-generated shield that repels energy and physical matter down to the molecular level. Acts as STR+1D armor against all energy and physical attacks, including non-directional attacks like gas clouds and grenade blasts. Not particularly strong but can be enough to prevent serious injury.",
+  "source": "Tales of the Jedi Companion (page 65)"
  },
  {
   "number": 61,
@@ -725,11 +725,11 @@ const FORCE_POWERS_DATA = [
   "category": "Sense+Alter",
   "prereqs": "26,33,39",
   "darkSide": false,
-  "difficulty": "",
+  "difficulty": "Sense: Moderate. Alter: Moderate for 5m; Difficult for 10m; Very Difficult for 15m.",
   "timeToUse": "",
-  "keepUp": "",
-  "effect": "",
-  "source": ""
+  "keepUp": "Yes",
+  "effect": "Channels air currents into a powerful tornado. Damage equals the Jedi's alter dice to anyone within range.",
+  "source": "Tales of the Jedi Companion (page 88)"
  },
  {
   "number": 62,
