@@ -737,11 +737,11 @@ const FORCE_POWERS_DATA = [
   "category": "Control+Sense+Alter",
   "prereqs": "",
   "darkSide": false,
-  "difficulty": "",
+  "difficulty": "Control: Very Easy for perceptions; Easy for memories; Moderate for conclusions. Modified by proximity. Sense: Target's control or Perception. Alter: Very Easy for slight/momentary misperceptions, minor distant memory changes, or indifferent targets; Easy for brief visible phenomena, memories <1 year, or minor emotional investment; Moderate for short hallucinations, memories <1 day, or strict orders; Difficult for slight facial disguises, two-sense hallucinations, memories <1 minute, or very important matters; Very Difficult for all-five-senses hallucinations, major memory changes, or virtually impossible wrong conclusions.",
   "timeToUse": "",
-  "keepUp": "",
-  "effect": "",
-  "source": ""
+  "keepUp": "No",
+  "effect": "Three modes: alter perceptions (illusions), memories (permanent alteration), or conclusions (wrong logic). Target believes illusions are real \u2014 illusory blows cause felt pain, illusory death causes unconsciousness \u2014 but no true injury occurs. Jedi must describe the exact intended effect before rolling. Normally affects one target; multiple targets require multiple uses. Cannot affect droids or recording devices.",
+  "source": "R&E (page 149)"
  },
  {
   "number": 63,
@@ -749,11 +749,11 @@ const FORCE_POWERS_DATA = [
   "category": "Control+Sense+Alter",
   "prereqs": "",
   "darkSide": false,
-  "difficulty": "",
-  "timeToUse": "",
-  "keepUp": "",
-  "effect": "",
-  "source": ""
+  "difficulty": "Control/Sense/Alter: all scale with number of targets. Very Easy for 1-2; Easy for 3-20; Moderate for 21-100; Difficult for 101-1,000; Very Difficult for 1,001-10,000; Heroic for 10,001+.",
+  "timeToUse": "5 minutes",
+  "keepUp": "Yes",
+  "effect": "Two possible effects (choose before activating). 1) Turn enemies against each other: Jedi's highest Force skill roll becomes difficulty targets must beat or they attack their own allies. Must maintain each round. 2) Buff allies/debuff enemies: enemies lose 1D per 4D in Jedi's best Force skill (to a chosen attribute, minimum 1D); allies gain the same bonus to a chosen attribute. Targets must have initiated combat. Enemies = those opposing Jedi's immediate goal; allies = those supporting it.",
+  "source": "Tales of the Jedi Companion (page 58-59)"
  },
  {
   "number": 64,
@@ -761,11 +761,11 @@ const FORCE_POWERS_DATA = [
   "category": "Control+Sense+Alter",
   "prereqs": "DS 29,39,62",
   "darkSide": false,
-  "difficulty": "",
+  "difficulty": "Control: Easy for dark siders, Moderate for light siders. Modified by relationship. Sense: Target's Perception or control. Alter: scales by number of targets and dark/light side status. Dark side: 1=Very Easy, 2=Easy, 3=Moderate, 4-5=Difficult, 6-8=Very Difficult, 9-15=Heroic. Light side: 1=Moderate, 2=Difficult, 3=Very Difficult. Variant adds willing/unwilling distinction.",
   "timeToUse": "",
-  "keepUp": "",
-  "effect": "",
-  "source": ""
+  "keepUp": "Yes (new roll when adding/switching targets)",
+  "effect": "Takes control of others, turning them into puppets. Substantially easier for dark siders. Force-sensitive targets can resist with control or Perception. Cannot affect droids or computers. Controlled characters may attempt new escape rolls when Jedi adds new targets. Dark Side Point per use, plus additional Dark Side Point per evil action forced on victims.",
+  "source": "Tales of the Jedi Companion (page 87)"
  },
  {
   "number": 65,
@@ -773,11 +773,11 @@ const FORCE_POWERS_DATA = [
   "category": "Control+Sense+Alter",
   "prereqs": "DS 11,12,13,23,24,26,29,30,39,40,43",
   "darkSide": false,
-  "difficulty": "",
+  "difficulty": "Control: Heroic. Sense: Heroic. Alter: Heroic, modified by proximity. +5 for 100m or less, +10 for 100m-1km, +15 for 1km base (+2 per km diameter). +5 per 1D of damage. Heroic each round to control. Very Difficult to dissipate.",
   "timeToUse": "",
-  "keepUp": "",
-  "effect": "",
-  "source": ""
+  "keepUp": "Yes (must roll each round)",
+  "effect": "The single most destructive Force power known. Creates vast storms of Force energy by twisting space-time. Capital-scale damage. Can swallow whole fleets or tear surfaces off worlds. If the Jedi fails any roll, the storm attempts to consume the summoner. If the summoner is destroyed, the storm dissipates within minutes. Can create vortices to draw victims to a point (+10 difficulty). Requires focusing hate and anger. Dark Side Point for use.",
+  "source": "Tales of the Jedi Companion (page 60)"
  },
  {
   "number": 66,
@@ -785,11 +785,11 @@ const FORCE_POWERS_DATA = [
   "category": "Control+Sense+Alter",
   "prereqs": "DS 6,8,23,24,26,29,30,39,43,47,57,59,62",
   "darkSide": false,
-  "difficulty": "",
-  "timeToUse": "",
-  "keepUp": "",
-  "effect": "",
-  "source": ""
+  "difficulty": "Control: Very Difficult. Sense: Very Difficult. Alter: Heroic.",
+  "timeToUse": "Five minutes",
+  "keepUp": "Yes (must re-roll every 5 minutes)",
+  "effect": "Creates an illusory duplicate of the user that appears real to all interactions. Registers as normal on all droid audio and video sensors. The user can sense through the doppleganger's normal senses. The duplicate acts with half the user's skill dice. If the Jedi stops using the power or the doppleganger is fatally injured, it simply fades away. Dark Side Point for use.",
+  "source": "Tales of the Jedi Companion (page 60)"
  },
  {
   "number": 67,
@@ -797,11 +797,11 @@ const FORCE_POWERS_DATA = [
   "category": "Control+Sense+Alter",
   "prereqs": "DS 6,16,23,24,26,30,47",
   "darkSide": false,
-  "difficulty": "",
+  "difficulty": "Control: Easy. Sense: Easy, modified by proximity. Alter: Easy.",
   "timeToUse": "",
-  "keepUp": "",
-  "effect": "",
-  "source": ""
+  "keepUp": "Yes",
+  "effect": "Draws power from nearby non-sentient beings. While kept up, the Jedi will not fatigue or require sleep. May not be used on sentient beings. Dark Side Point for use.",
+  "source": "Tales of the Jedi Companion (page 88)"
  },
  {
   "number": 68,
@@ -809,11 +809,11 @@ const FORCE_POWERS_DATA = [
   "category": "Control+Sense+Alter",
   "prereqs": "DS 6,11,23,24,26,29,30,39,40,43,47,57,59,62,64",
   "darkSide": false,
-  "difficulty": "",
+  "difficulty": "Control: Very Difficult, inversely modified by relationship (close relatives +30, strangers of other species +0). Sense: scales by victims \u2014 Very Easy 1-5, Easy 6-50, Moderate 51-1,000, Difficult 1,001-50,000, Very Difficult 50,001-1M, Heroic 1M-10M. Alter: Easy for willing/worshipful, Difficult for ambivalent, Heroic for enemies (+10 if imbued with Light Side).",
   "timeToUse": "",
-  "keepUp": "",
-  "effect": "",
-  "source": ""
+  "keepUp": "Yes (roll once per day)",
+  "effect": "Draws life energy from surrounding beings and channels dark side effects into victims. Force Point gain scales by number drained: 1-5 = 1 FP/week, up to 1M-10M = 1 FP/12 hours. After 1 week to 1 month of sustained drain, also gains Force skill bonuses: 1-5 victims = +1D, scaling to 1M-10M = +4D+2. Jedi must roll daily; power is always 'up' with associated die penalties. Dark Side Point for use.",
+  "source": "Tales of the Jedi Companion (page 60-61)"
  },
  {
   "number": 69,
@@ -821,11 +821,11 @@ const FORCE_POWERS_DATA = [
   "category": "Control+Sense+Alter",
   "prereqs": "24,62",
   "darkSide": false,
-  "difficulty": "",
+  "difficulty": "Control: Moderate. Sense: Difficult. Alter: scales by targets \u2014 Very Easy 1-10, Easy 11-100, Moderate 101-500, Difficult 501-5,000, Very Difficult 5,001-50,000, Heroic 51,000-500,000. Modified by proximity.",
   "timeToUse": "",
-  "keepUp": "",
-  "effect": "",
-  "source": ""
+  "keepUp": "Yes (new roll when coordinating new troops or changing skills)",
+  "effect": "Coordinates group activities to increase effectiveness. Used by Palpatine and C'baoth on troops. Only works on targets who agree with the Jedi's intent (no mental control granted). Links troops subconsciously for better organization. Jedi picks 3 specific Dexterity, Mechanical, or Strength skills; all troops receive +1D per 3D (rounded down) they have in those skills.",
+  "source": "Tales of the Jedi Companion (page 62)"
  },
  {
   "number": 70,
@@ -833,11 +833,11 @@ const FORCE_POWERS_DATA = [
   "category": "Control+Sense+Alter",
   "prereqs": "23,24,29,43",
   "darkSide": false,
-  "difficulty": "",
+  "difficulty": "Control: Difficult, modified by proximity. Sense: Difficult, modified by relationship. Alter: Moderate.",
   "timeToUse": "",
-  "keepUp": "",
-  "effect": "",
-  "source": ""
+  "keepUp": "Yes",
+  "effect": "Allows several willing Jedi to manifest the Light Side as a shield against dark side powers. Grants +5D per Force user linked to resist dark side effects. Max linked Jedi = initiator's lower of control or sense dice. If both control and sense rolls exceed the dark side power's highest success roll, the dark side power is interrupted (all 'up' powers interrupted as if stunned). Does not cancel dark side presence but distracts its servants. Note: keeping up costs -2D penalty.",
+  "source": "Tales of the Jedi Companion (page 62-63)"
  },
  {
   "number": 71,
@@ -845,11 +845,11 @@ const FORCE_POWERS_DATA = [
   "category": "Control+Sense+Alter",
   "prereqs": "DS 6,11,23,24,26,29,30,39,40,43,59,62,64",
   "darkSide": false,
-  "difficulty": "",
+  "difficulty": "Control: Moderate. Sense: Target's control or Perception, modified by relationship. Alter: Target's control or Perception, modified by relationship.",
   "timeToUse": "",
-  "keepUp": "",
-  "effect": "",
-  "source": ""
+  "keepUp": "No",
+  "effect": "Allows the Jedi to sift through a target's mind and destroy all knowledge of a specific event or a learned skill. Requires direct physical contact. Only one specified objective per attempt. Dark Side Point for use.",
+  "source": "Tales of the Jedi Companion (page 88)"
  },
  {
   "number": 72,
@@ -857,11 +857,11 @@ const FORCE_POWERS_DATA = [
   "category": "Control+Sense+Alter",
   "prereqs": "3,39",
   "darkSide": false,
-  "difficulty": "",
+  "difficulty": "Control: Difficult. Sense: Difficult. Alter: Moderate, modified by proximity.",
   "timeToUse": "",
-  "keepUp": "",
-  "effect": "",
-  "source": ""
+  "keepUp": "Yes (as long as distance stays roughly the same)",
+  "effect": "Strike at an opponent and inflict damage without physical contact. Line of sight required. After activating, make an Easy brawling roll (Force-sensitive targets may brawling parry; others cannot dodge). If successful, roll full Strength vs target's Strength. Can target specific body parts at -1D to brawling. Stun damage only to avoid Dark Side Point \u2014 any greater damage or non-protective use earns a Dark Side Point. Must re-roll if target moves significantly or switching targets.",
+  "source": "Tales of the Jedi Companion (page 63)"
  },
  {
   "number": 73,
@@ -869,11 +869,11 @@ const FORCE_POWERS_DATA = [
   "category": "Control+Sense+Alter",
   "prereqs": "DS 6,24,38,53",
   "darkSide": false,
-  "difficulty": "",
+  "difficulty": "Control: Easy, modified by proximity. Sense: Easy, modified by proximity. Alter: Target's control or Perception.",
   "timeToUse": "",
-  "keepUp": "",
-  "effect": "",
-  "source": ""
+  "keepUp": "No",
+  "effect": "Telekinetically injures or kills a target. Alter roll vs target's control or Perception determines damage. Methods vary: collapse trachea, stir the brain, squeeze the heart, etc. Dark Side Point for use.",
+  "source": "Tales of the Jedi Companion (page 63)"
  },
  {
   "number": 74,
@@ -881,11 +881,11 @@ const FORCE_POWERS_DATA = [
   "category": "Control+Sense+Alter",
   "prereqs": "DS 1,2,6,7,8,11,14,15,17,23,24,26,29,30,38,39,40,43,44,47,51,53,56,57,59,62,64",
   "darkSide": false,
-  "difficulty": "",
+  "difficulty": "Control: Heroic, modified by relationship (+15 if unwilling). Sense: Heroic, modified by proximity (+15 if unwilling). Alter: Prepared clone body = Easy; recently dead body = Moderate; live willing host = Very Difficult; live unwilling host = Heroic. Force-sensitive targets may make opposed alter or willpower roll.",
   "timeToUse": "",
-  "keepUp": "",
-  "effect": "",
-  "source": ""
+  "keepUp": "No",
+  "effect": "Transfers the user's life energy into another body. The key to immortality \u2014 one of the most difficult and evil dark side powers. Nearly impossible to overcome a spirit already in a body, which is why cloning host bodies is almost required. If the user's body perishes during a failed attempt, life energy is lost and dispersed. 2 Dark Side Points for use; 4 Dark Side Points if attempting to possess an unwilling host.",
+  "source": "Tales of the Jedi Companion (page 63-64)"
  },
  {
   "number": 75,
@@ -893,11 +893,11 @@ const FORCE_POWERS_DATA = [
   "category": "Special",
   "prereqs": "",
   "darkSide": true,
-  "difficulty": "",
-  "timeToUse": "",
-  "keepUp": "",
-  "effect": "",
-  "source": ""
+  "difficulty": "Involuntary \u2014 Difficult willpower roll to suppress when angered to rage.",
+  "timeToUse": "Instantaneous (involuntary)",
+  "keepUp": "No",
+  "effect": "An involuntary dark side reflex triggered when a dark Jedi loses control of their temper. Produces a shockwave through the Force. If the willpower roll fails: all die codes reduced by -2D for 1 hour, must rest 1 hour or suffer cumulative additional -2D. Causes damage equal to the dark Jedi's alter skill to all beings within 50 meters, including the user. Force-sensitive characters resist with alter; non-Force users resist with Strength.",
+  "source": "Tales of the Jedi Companion (page 65)"
  },
  {
   "number": 76,
@@ -905,10 +905,10 @@ const FORCE_POWERS_DATA = [
   "category": "Special",
   "prereqs": "",
   "darkSide": false,
-  "difficulty": "",
-  "timeToUse": "",
-  "keepUp": "",
-  "effect": "",
-  "source": ""
+  "difficulty": "Control: Difficult. Sense: Difficult.",
+  "timeToUse": "Instantaneous",
+  "keepUp": "No",
+  "effect": "Does not need to be learned \u2014 any Jedi with 9D+ total in Force skills can attempt it at the moment of death. The Jedi calms mind and body (Difficult control), then reaches out tracing the Force (Difficult sense). On success, the spirit exits the body and becomes one with the Force; the body fades into nothingness. The Jedi can make visitations to close friends equal to their Force Points at death. Duration of each visitation = combined sense + alter + control roll in minutes. At GM discretion, only Force-sensitive characters may witness visitations. After death, the Jedi cannot influence the material world beyond visitations.",
+  "source": "D6 Holocron"
  }
 ];
