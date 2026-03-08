@@ -1008,7 +1008,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
           </div>
         </div>
         <div style="display:flex;gap:8px;align-items:center;margin-bottom:10px">
-          <input type="text" id="forcePowerSearch" placeholder="Search by name or # (01-77)..." oninput="filterForcePowers()" style="flex:1;padding:6px 10px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:12px;font-family:inherit">
+          <input type="text" id="forcePowerSearch" placeholder="Search by name or # (01-76)..." oninput="filterForcePowers()" style="flex:1;padding:6px 10px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:12px;font-family:inherit">
           <select id="forcePowerCategory" onchange="filterForcePowers()" style="padding:6px 8px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:11px;font-family:inherit">
             <option value="">All Categories</option>
             <option value="Control">Control</option>
@@ -2295,7 +2295,7 @@ function filterForcePowers() {
   const results = document.getElementById('forcePowerResults');
 
   if (!search && !cat) {
-    results.innerHTML = '<div style="color:var(--text-dark);font-style:italic;font-size:11px;padding:8px">Type a power name or number (01-77), or select a category.</div>';
+    results.innerHTML = '<div style="color:var(--text-dark);font-style:italic;font-size:11px;padding:8px">Type a power name or number (01-76), or select a category.</div>';
     return;
   }
 
