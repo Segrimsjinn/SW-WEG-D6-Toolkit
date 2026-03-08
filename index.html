@@ -961,8 +961,37 @@ color:var(--text-dim);min-width:35px;text-align:right;
 
       <div class="card">
         <div class="card-title">⟐ Force Powers Reference</div>
+        <div style="display:flex;gap:12px;margin-bottom:12px;flex-wrap:wrap">
+          <div style="flex:1;min-width:140px">
+            <div style="font-family:'Orbitron',monospace;font-size:8px;color:var(--gold);letter-spacing:1px;margin-bottom:4px">RELATIONSHIP</div>
+            <div style="font-size:10px;color:var(--text-dim);line-height:1.9">
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Close relatives</span><span style="color:var(--gold)">—</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Close friends</span><span style="color:var(--gold)">+2</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Friends</span><span style="color:var(--gold)">+5</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Acquaintances</span><span style="color:var(--gold)">+7</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Slight acquaintances</span><span style="color:var(--gold)">+10</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Met once</span><span style="color:var(--gold)">+12</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Never met, known by rep</span><span style="color:var(--gold)">+15</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Complete strangers</span><span style="color:var(--gold)">+20</span></div>
+              <div style="display:flex;justify-content:space-between;padding:1px 0"><span>Strangers, diff. species</span><span style="color:var(--gold)">+30</span></div>
+            </div>
+          </div>
+          <div style="flex:1;min-width:140px">
+            <div style="font-family:'Orbitron',monospace;font-size:8px;color:var(--gold);letter-spacing:1px;margin-bottom:4px">PROXIMITY</div>
+            <div style="font-size:10px;color:var(--text-dim);line-height:1.9">
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Touching</span><span style="color:var(--gold)">—</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Line of sight, not touching</span><span style="color:var(--gold)">+2</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Not in sight, 1-100m</span><span style="color:var(--gold)">+5</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>101m to 10 km</span><span style="color:var(--gold)">+7</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>11 to 1,000 km</span><span style="color:var(--gold)">+10</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Same planet, 1,000+ km</span><span style="color:var(--gold)">+15</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Same system, diff. planet</span><span style="color:var(--gold)">+20</span></div>
+              <div style="display:flex;justify-content:space-between;padding:1px 0"><span>Different star system</span><span style="color:var(--gold)">+30</span></div>
+            </div>
+          </div>
+        </div>
         <div style="display:flex;gap:8px;align-items:center;margin-bottom:10px">
-          <input type="text" id="forcePowerSearch" placeholder="Search powers..." oninput="filterForcePowers()" style="flex:1;padding:6px 10px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:12px;font-family:inherit">
+          <input type="text" id="forcePowerSearch" placeholder="Search by name or # (01-77)..." oninput="filterForcePowers()" style="flex:1;padding:6px 10px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:12px;font-family:inherit">
           <select id="forcePowerCategory" onchange="filterForcePowers()" style="padding:6px 8px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:11px;font-family:inherit">
             <option value="">All Categories</option>
             <option value="Control">Control</option>
@@ -975,8 +1004,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
             <option value="Special">Special</option>
           </select>
         </div>
-        <div id="forcePowerList" style="max-height:200px;overflow-y:auto;margin-bottom:10px"></div>
-        <div id="forcePowerDetail" style="display:none;background:var(--bg3);border:1px solid var(--card-border);border-radius:var(--radius-sm);padding:12px"></div>
+        <div id="forcePowerResults" style="max-height:300px;overflow-y:auto"></div>
       </div>
     </div>
 
@@ -2245,76 +2273,91 @@ function engage() {
 // FORCE POWERS REFERENCE
 // ============================================================
 function filterForcePowers() {
-  const search = document.getElementById('forcePowerSearch').value.toLowerCase();
+  const search = document.getElementById('forcePowerSearch').value.trim().toLowerCase();
   const cat = document.getElementById('forcePowerCategory').value;
-  const list = document.getElementById('forcePowerList');
+  const results = document.getElementById('forcePowerResults');
+
+  if (!search && !cat) {
+    results.innerHTML = '<div style="color:var(--text-dark);font-style:italic;font-size:11px;padding:8px">Type a power name or number (01-77), or select a category.</div>';
+    return;
+  }
 
   let filtered = FORCE_POWERS_DATA.filter(p => {
     if (cat && p.category !== cat) return false;
-    if (search && !p.name.toLowerCase().includes(search) && !p.category.toLowerCase().includes(search)) return false;
+    if (search) {
+      const numStr = String(p.number).padStart(2, '0');
+      if (!p.name.toLowerCase().includes(search) && !numStr.startsWith(search) && !String(p.number) === search) return false;
+    }
     return true;
   });
 
   if (filtered.length === 0) {
-    list.innerHTML = '<div style="color:var(--text-dark);font-style:italic;font-size:11px;padding:8px">No powers found</div>';
+    results.innerHTML = '<div style="color:var(--text-dark);font-style:italic;font-size:11px;padding:8px">No powers found.</div>';
     return;
   }
 
+  // If exactly one match, show detail directly
+  if (filtered.length === 1) {
+    results.innerHTML = buildPowerDetail(filtered[0]);
+    return;
+  }
+
+  // Multiple matches — show compact clickable list
   let html = '';
   filtered.forEach(p => {
-    const hasDetail = p.effect ? true : false;
-    const ds = p.darkSide ? ' <span style="color:var(--red);font-size:8px">● DARK SIDE</span>' : '';
-    const dim = hasDetail ? '' : 'opacity:0.5;';
-    html += '<div onclick="showForcePower(' + p.number + ')" style="padding:5px 8px;border-bottom:1px solid var(--card-border);cursor:pointer;' + dim + '" onmouseover="this.style.background=\'var(--bg2)\'" onmouseout="this.style.background=\'transparent\'">';
+    const numStr = String(p.number).padStart(2, '0');
+    const ds = p.darkSide ? ' <span style="color:var(--red);font-size:8px">● DARK</span>' : '';
+    const hasDetail = p.effect ? '' : ' <span style="font-size:8px;color:var(--text-dark);font-style:italic">[pending]</span>';
+    const dim = p.effect ? '' : 'opacity:0.5;';
+    html += '<div onclick="showSinglePower(' + p.number + ')" style="padding:5px 8px;border-bottom:1px solid var(--card-border);cursor:pointer;' + dim + '" onmouseover="this.style.background=\'var(--bg2)\'" onmouseout="this.style.background=\'transparent\'">';
+    html += '<span style="font-family:\'Orbitron\',monospace;font-size:9px;color:var(--text-dark);margin-right:6px">' + numStr + '</span>';
     html += '<span style="font-family:\'Eras Demi ITC\',sans-serif;font-size:11px;color:var(--text)">' + p.name + '</span>';
     html += ' <span style="font-size:9px;color:var(--text-dark)">(' + p.category + ')</span>';
-    html += ds;
-    if (!hasDetail) html += ' <span style="font-size:8px;color:var(--text-dark);font-style:italic">[pending]</span>';
+    html += ds + hasDetail;
     html += '</div>';
   });
-  list.innerHTML = html;
+  results.innerHTML = html;
 }
 
-function showForcePower(num) {
+function showSinglePower(num) {
   const p = FORCE_POWERS_DATA.find(x => x.number === num);
   if (!p) return;
-  const detail = document.getElementById('forcePowerDetail');
+  document.getElementById('forcePowerResults').innerHTML = buildPowerDetail(p);
+}
+
+function buildPowerDetail(p) {
+  const numStr = String(p.number).padStart(2, '0');
+  const ds = p.darkSide ? '<span style="color:var(--red);font-weight:bold"> ● DARK SIDE POWER</span>' : '';
 
   if (!p.effect) {
-    detail.style.display = 'block';
-    detail.innerHTML = '<div style="font-family:\'Orbitron\',monospace;font-size:12px;color:var(--gold);margin-bottom:6px">' + p.name + '</div>' +
+    return '<div style="background:var(--bg3);border:1px solid var(--card-border);border-radius:var(--radius-sm);padding:12px">' +
+      '<div style="font-family:\'Orbitron\',monospace;font-size:12px;color:var(--gold);margin-bottom:6px"><span style="color:var(--text-dark);margin-right:6px">#' + numStr + '</span>' + p.name + ds + '</div>' +
       '<div style="font-size:11px;color:var(--text-dim)">Category: ' + p.category + '</div>' +
       (p.prereqs ? '<div style="font-size:11px;color:var(--text-dim)">Prerequisites: ' + p.prereqs + '</div>' : '') +
-      '<div style="font-size:11px;color:var(--text-dark);font-style:italic;margin-top:6px">Full description pending — data entry in progress.</div>';
-    return;
+      '<div style="font-size:11px;color:var(--text-dark);font-style:italic;margin-top:6px">Full description pending — data entry in progress.</div></div>';
   }
 
-  const ds = p.darkSide ? '<span style="color:var(--red);font-weight:bold"> ● DARK SIDE POWER</span>' : '';
-  let html = '';
-  html += '<div style="font-family:\'Orbitron\',monospace;font-size:12px;color:var(--gold);margin-bottom:8px">' + p.name + ds + '</div>';
+  const line = function(label, val) {
+    return val ? '<div style="margin-bottom:4px"><span style="font-size:9px;color:var(--text-dark);font-weight:bold">' + label + ':</span> <span style="font-size:11px;color:var(--text-dim)">' + val + '</span></div>' : '';
+  };
 
-  const line = (label, val) => val ? '<div style="margin-bottom:4px"><span style="font-size:9px;color:var(--text-dark);font-weight:bold">' + label + ':</span> <span style="font-size:11px;color:var(--text-dim)">' + val + '</span></div>' : '';
-
+  let html = '<div style="background:var(--bg3);border:1px solid var(--card-border);border-radius:var(--radius-sm);padding:12px">';
+  html += '<div style="font-family:\'Orbitron\',monospace;font-size:12px;color:var(--gold);margin-bottom:8px"><span style="color:var(--text-dark);margin-right:6px">#' + numStr + '</span>' + p.name + ds + '</div>';
   html += line('Category', p.category);
   html += line('Difficulty', p.difficulty);
   if (p.timeToUse) html += line('Time to Use', p.timeToUse);
   html += line('Keep Up', p.keepUp);
   if (p.prereqs) html += line('Required Powers', p.prereqs);
-
   html += '<div style="margin-top:8px;border-top:1px solid var(--card-border);padding-top:8px">';
   html += '<span style="font-size:9px;color:var(--gold);font-weight:bold">EFFECT:</span>';
   html += '<div style="font-size:11px;color:var(--text-dim);line-height:1.6;margin-top:4px">' + p.effect + '</div>';
   html += '</div>';
-
-  if (p.source) {
-    html += '<div style="margin-top:8px;font-size:9px;color:var(--text-dark)">Source: ' + p.source + '</div>';
-  }
-
-  detail.style.display = 'block';
-  detail.innerHTML = html;
+  if (p.source) html += '<div style="margin-top:8px;font-size:9px;color:var(--text-dark)">Source: ' + p.source + '</div>';
+  html += '</div>';
+  return html;
 }
 
-// Initialize force powers list on tab switch
+// Initialize on tab switch
 const origSwitchTab = switchTab;
 switchTab = function(tab) {
   origSwitchTab(tab);
