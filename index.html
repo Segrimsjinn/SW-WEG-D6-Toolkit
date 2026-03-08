@@ -2441,8 +2441,9 @@ let combatInitiative = 'pc';
 let combatants = { pc: [], npc: [] };
 let combatIdCounter = 0;
 
-const WOUND_LEVELS = ['Healthy', 'Stunned', 'Wounded', 'Wounded x2', 'Incapacitated', 'Mortally Wounded'];
-const WOUND_COLORS = ['var(--cyan)', 'var(--gold)', '#ff9944', '#ff6622', 'var(--red)', '#cc0000'];
+const WOUND_LEVELS = ['Healthy', 'Stunned', 'Wounded', 'Wounded x2', 'Incapacitated', 'Mortally Wounded', 'Killed'];
+const WOUND_COLORS = ['var(--cyan)', 'var(--gold)', '#ff9944', '#ff6622', 'var(--red)', '#cc0000', '#660000'];
+const WOUND_THRESHOLDS = [0, 1, 4, 9, 13, 16]; // damage values where status changes
 
 function adjustRound(delta) {
   combatRound = Math.max(1, combatRound + delta);
@@ -2476,7 +2477,7 @@ function addCombatant(side) {
   const name = prompt(side === 'pc' ? 'Player/Character name:' : 'NPC name:');
   if (!name || !name.trim()) return;
   combatIdCounter++;
-  combatants[side].push({ id: combatIdCounter, name: name.trim(), wound: 0, color: 'transparent' });
+  combatants[side].push({ id: combatIdCounter, name: name.trim(), wound: 0, damage: 0, color: 'transparent' });
   renderCombatants();
 }
 
@@ -2501,10 +2502,12 @@ function renderCombatants() {
     combatants[side].forEach(c => {
       const wl = WOUND_LEVELS[c.wound];
       const wc = WOUND_COLORS[c.wound];
-      const isDead = c.wound >= 4;
+      const isDead = c.wound >= 5;
+      const isKilled = c.wound >= 6;
       const borderCol = (c.color && c.color !== 'transparent') ? c.color : 'var(--card-border)';
       const leftBar = (c.color && c.color !== 'transparent') ? 'border-left:3px solid ' + c.color + ';' : '';
-      html += '<div style="background:var(--bg3);border:1px solid ' + borderCol + ';border-radius:4px;padding:6px 8px;margin-bottom:4px;' + leftBar + (isDead ? 'opacity:0.5' : '') + '">';
+      html += '<div style="background:var(--bg3);border:1px solid ' + borderCol + ';border-radius:4px;padding:6px 8px;margin-bottom:4px;' + leftBar + (isDead ? 'opacity:0.5;' : '') + (isKilled ? 'opacity:0.3;' : '') + '">';
+      // Name row
       html += '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">';
       html += '<div style="display:flex;align-items:center;gap:6px">';
       html += '<select onchange="setCombatantColor(\'' + side + '\',' + c.id + ',this.value)" style="width:36px;height:20px;padding:0 12px 0 0;border:1px solid var(--card-border);border-radius:3px;background:' + (c.color || 'var(--bg2)') + ';cursor:pointer;font-size:0;-webkit-appearance:none;appearance:none;background-image:url(' + String.fromCharCode(39) + 'data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%228%22 height=%225%22><path d=%22M0 0l4 5 4-5z%22 fill=%22%23999%22/></svg>' + String.fromCharCode(39) + ');background-repeat:no-repeat;background-position:right 3px center">';
@@ -2512,11 +2515,26 @@ function renderCombatants() {
         html += '<option value="' + clr.hex + '"' + (c.color === clr.hex ? ' selected' : '') + ' style="background:' + (clr.hex === 'transparent' ? '#1a1a2e' : clr.hex) + ';color:' + (clr.hex === 'transparent' ? '#aaa' : '#000') + '">' + clr.name + '</option>';
       });
       html += '</select>';
-      html += '<span style="font-family:\'Eras Demi ITC\',sans-serif;font-size:11px;color:var(--text);font-weight:bold;' + (isDead ? 'text-decoration:line-through' : '') + '">' + c.name + '</span>';
+      html += '<span style="font-family:\'Eras Demi ITC\',sans-serif;font-size:11px;color:var(--text);font-weight:bold;' + (isKilled ? 'text-decoration:line-through' : '') + '">' + c.name + '</span>';
       html += '</div>';
       html += '<button onclick="removeCombatant(\'' + side + '\',' + c.id + ')" style="background:none;border:none;color:var(--text-dark);cursor:pointer;font-size:14px;padding:0 4px" title="Remove">✕</button>';
       html += '</div>';
+      // Damage bar
+      var barPct = Math.min(100, (c.damage / 16) * 100);
+      var barColor = c.damage >= 16 ? '#660000' : c.damage >= 13 ? '#cc0000' : c.damage >= 9 ? 'var(--red)' : c.damage >= 4 ? '#ff9944' : c.damage >= 1 ? 'var(--gold)' : 'var(--cyan)';
+      html += '<div style="display:flex;align-items:center;gap:6px;margin-bottom:4px">';
+      html += '<button onclick="adjustDamage(\'' + side + '\',' + c.id + ',-1)" style="background:none;border:1px solid var(--card-border);color:var(--text-dim);cursor:pointer;border-radius:3px;padding:1px 5px;font-size:10px">−</button>';
+      html += '<div style="flex:1;height:14px;background:var(--bg2);border-radius:3px;overflow:hidden;position:relative">';
+      html += '<div style="height:100%;width:' + barPct + '%;background:' + barColor + ';border-radius:3px;transition:width 0.2s"></div>';
+      html += '<span style="position:absolute;top:0;left:0;right:0;text-align:center;font-family:\'Orbitron\',monospace;font-size:8px;color:#fff;line-height:14px;text-shadow:0 0 3px #000">' + c.damage + '/16</span>';
+      html += '</div>';
+      html += '<button onclick="adjustDamage(\'' + side + '\',' + c.id + ',1)" style="background:none;border:1px solid var(--card-border);color:var(--text-dim);cursor:pointer;border-radius:3px;padding:1px 5px;font-size:10px">+</button>';
+      html += '</div>';
+      // Status label
+      html += '<div style="text-align:center;font-family:\'Eras Demi ITC\',sans-serif;font-size:9px;color:' + wc + ';font-weight:bold;margin-bottom:3px">' + wl + '</div>';
+      // Wound status buttons
       html += '<div style="display:flex;flex-wrap:wrap;gap:2px">';
+      const shortLabels = ['OK', 'STN', 'WND', 'WNDx2', 'INCAP', 'MORTAL', 'KILLED'];
       WOUND_LEVELS.forEach((level, i) => {
         const active = c.wound === i;
         const passed = c.wound > i;
@@ -2526,8 +2544,6 @@ function renderCombatants() {
         if (active) { bg = WOUND_COLORS[i]; border = WOUND_COLORS[i]; color = '#000'; }
         else if (passed) { bg = 'var(--bg2)'; border = WOUND_COLORS[i]; color = WOUND_COLORS[i]; }
         html += '<button onclick="setWound(\'' + side + '\',' + c.id + ',' + i + ')" style="font-size:8px;padding:3px 6px;border-radius:3px;border:1px solid ' + border + ';background:' + bg + ';color:' + color + ';cursor:pointer;font-family:\'Eras Demi ITC\',sans-serif;letter-spacing:0.5px">';
-        // Short labels
-        const shortLabels = ['OK', 'STN', 'WND', 'WNDx2', 'INCAP', 'MORTAL'];
         html += shortLabels[i];
         html += '</button>';
       });
@@ -2536,6 +2552,24 @@ function renderCombatants() {
     });
     col.innerHTML = html;
   });
+}
+
+function adjustDamage(side, id, delta) {
+  const c = combatants[side].find(x => x.id === id);
+  if (!c) return;
+  c.damage = Math.max(0, Math.min(16, c.damage + delta));
+  // Auto-set wound level based on damage
+  if (c.damage >= 16) c.wound = 6;      // Killed
+  else if (c.damage >= 13) c.wound = 5;  // Mortally Wounded
+  else if (c.damage >= 9) c.wound = 4;   // Incapacitated
+  else if (c.damage >= 4) {
+    // 4-8 = Wounded, but track if already wounded
+    if (c.wound < 2) c.wound = 2;        // Wounded
+    else if (c.wound === 2) c.wound = 3;  // Wounded x2
+  }
+  else if (c.damage >= 1) { if (c.wound < 1) c.wound = 1; } // Stunned
+  else c.wound = 0; // Healthy
+  renderCombatants();
 }
 
 function setWound(side, id, level) {
