@@ -633,6 +633,23 @@ color:var(--text-dim);min-width:35px;text-align:right;
         <div class="card fade-in" id="forceCard" style="display:none">
           <div class="card-title">⟐ Force</div>
           <div id="forceOutput"></div>
+          <div style="margin-top:12px;border-top:1px solid var(--card-border);padding-top:10px">
+            <div style="display:flex;gap:8px;align-items:center;margin-bottom:8px">
+              <input type="text" id="npcForcePowerSearch" placeholder="Look up power by name or # (01-76)..." oninput="filterNpcForcePowers()" style="flex:1;padding:6px 10px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:11px;font-family:inherit">
+              <select id="npcForcePowerCategory" onchange="filterNpcForcePowers()" style="padding:6px 8px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:10px;font-family:inherit">
+                <option value="">All</option>
+                <option value="Control">Control</option>
+                <option value="Sense">Sense</option>
+                <option value="Alter">Alter</option>
+                <option value="Control+Sense">Control+Sense</option>
+                <option value="Control+Alter">Control+Alter</option>
+                <option value="Sense+Alter">Sense+Alter</option>
+                <option value="Control+Sense+Alter">Control+Sense+Alter</option>
+                <option value="Special">Special</option>
+              </select>
+            </div>
+            <div id="npcForcePowerResults" style="max-height:300px;overflow-y:auto"></div>
+          </div>
         </div>
 
         <div class="skills-equip-row">
@@ -2365,6 +2382,56 @@ switchTab = function(tab) {
     filterForcePowers();
   }
 };
+
+function filterNpcForcePowers() {
+  const search = document.getElementById('npcForcePowerSearch').value.trim().toLowerCase();
+  const cat = document.getElementById('npcForcePowerCategory').value;
+  const results = document.getElementById('npcForcePowerResults');
+
+  if (!search && !cat) {
+    results.innerHTML = '<div style="color:var(--text-dark);font-style:italic;font-size:11px;padding:4px">Type a power name or number to look up details.</div>';
+    return;
+  }
+
+  let filtered = FORCE_POWERS_DATA.filter(p => {
+    if (cat && p.category !== cat) return false;
+    if (search) {
+      const numStr = String(p.number).padStart(2, '0');
+      if (!p.name.toLowerCase().includes(search) && !numStr.startsWith(search)) return false;
+    }
+    return true;
+  });
+
+  if (filtered.length === 0) {
+    results.innerHTML = '<div style="color:var(--text-dark);font-style:italic;font-size:11px;padding:4px">No powers found.</div>';
+    return;
+  }
+
+  if (filtered.length === 1) {
+    results.innerHTML = buildPowerDetail(filtered[0]);
+    return;
+  }
+
+  let html = '';
+  filtered.forEach(p => {
+    const numStr = String(p.number).padStart(2, '0');
+    const ds = p.darkSide ? ' <span style="color:var(--red);font-size:8px">● DARK</span>' : '';
+    const hasDetail = p.effect ? '' : ' <span style="font-size:8px;color:var(--text-dark);font-style:italic">[pending]</span>';
+    const dim = p.effect ? '' : 'opacity:0.5;';
+    html += '<div onclick="showNpcSinglePower(' + p.number + ')" style="padding:4px 8px;border-bottom:1px solid var(--card-border);cursor:pointer;' + dim + '" onmouseover="this.style.background=\'var(--bg2)\'" onmouseout="this.style.background=\'transparent\'">';
+    html += '<span style="font-family:\'Orbitron\',monospace;font-size:9px;color:var(--text-dark);margin-right:6px">' + numStr + '</span>';
+    html += '<span style="font-family:\'Eras Demi ITC\',sans-serif;font-size:11px;color:var(--text)">' + p.name + '</span>';
+    html += ' <span style="font-size:9px;color:var(--text-dark)">(' + p.category + ')</span>';
+    html += ds + hasDetail + '</div>';
+  });
+  results.innerHTML = html;
+}
+
+function showNpcSinglePower(num) {
+  const p = FORCE_POWERS_DATA.find(x => x.number === num);
+  if (!p) return;
+  document.getElementById('npcForcePowerResults').innerHTML = buildPowerDetail(p);
+}
 
 // ============================================================
 // COMBAT TRACKER
