@@ -6080,6 +6080,7 @@ const SB = {
       const wp = list[w.idx];
       const flLabel = w.firelink <= 1 ? 'Single' : w.firelink === 2 ? 'Twin (+1D)' : w.firelink === 3 ? 'Triple (+2D)' : 'Quad (+3D)';
       const bonusD = Math.max(0, (w.firelink || 1) - 1);
+      const fl = w.firelink || 1;
       const baseDmg = wp.dmg;
       const linkedDmg = bonusD > 0 ? baseDmg + '+' + bonusD + 'D' : baseDmg;
 
