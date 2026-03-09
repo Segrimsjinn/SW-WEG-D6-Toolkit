@@ -793,6 +793,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
             <label style="font-family:'Orbitron',monospace;font-size:7px;color:var(--text-dim);display:flex;align-items:center;gap:4px;cursor:pointer">
               <input type="checkbox" id="shipPdfBlank" style="accent-color:var(--gold)"> BLANK
             </label>
+            <button class="ship-sort-btn" onclick="toggleCompareMode()" id="compareModeBtn" style="padding:5px 12px;font-size:9px">⟐ COMPARE</button>
           </div>
         </div>
         <div class="ship-sort-row" id="shipSortRow" style="display:none">
@@ -819,6 +820,36 @@ color:var(--text-dim);min-width:35px;text-align:right;
         <div id="shipRankInfo" class="card" style="margin-top:12px;background:var(--bg3);border:1px solid var(--card-border);padding:12px">
           <div style="font-family:'Orbitron',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:6px">⟐ RANKING METHOD</div>
           <div id="rankMethodBody" style="font-size:11px;color:var(--text-dim);line-height:1.7"></div>
+        </div>
+
+        <!-- COMPARE MODE PANEL -->
+        <div id="comparePanel" class="card" style="display:none;margin-top:12px;background:var(--bg3);border:1px solid var(--gold-dim);padding:12px">
+          <div style="font-family:'Orbitron',monospace;font-size:10px;color:var(--gold);letter-spacing:1px;margin-bottom:10px">⟐ SHIP COMPARISON</div>
+          <div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap">
+            <div style="flex:1;min-width:120px">
+              <label style="font-family:'Orbitron',monospace;font-size:7px;color:var(--text-dim);letter-spacing:1px">SHIP A — CATEGORY</label>
+              <select id="compareCatA" class="control-select" onchange="updateCompareShipList('A')" style="width:100%;margin-top:2px">
+                <option value="">— Select —</option>
+              </select>
+              <label style="font-family:'Orbitron',monospace;font-size:7px;color:var(--text-dim);letter-spacing:1px;margin-top:4px;display:block">SHIP A</label>
+              <select id="compareShipA" class="control-select" style="width:100%;margin-top:2px">
+                <option value="">— Select —</option>
+              </select>
+            </div>
+            <div style="display:flex;align-items:center;padding-top:16px;font-size:16px;color:var(--gold)">⚔</div>
+            <div style="flex:1;min-width:120px">
+              <label style="font-family:'Orbitron',monospace;font-size:7px;color:var(--text-dim);letter-spacing:1px">SHIP B — CATEGORY</label>
+              <select id="compareCatB" class="control-select" onchange="updateCompareShipList('B')" style="width:100%;margin-top:2px">
+                <option value="">— Select —</option>
+              </select>
+              <label style="font-family:'Orbitron',monospace;font-size:7px;color:var(--text-dim);letter-spacing:1px;margin-top:4px;display:block">SHIP B</label>
+              <select id="compareShipB" class="control-select" style="width:100%;margin-top:2px">
+                <option value="">— Select —</option>
+              </select>
+            </div>
+          </div>
+          <button class="btn btn-primary" onclick="runComparison()" style="padding:6px 20px;font-size:10px;letter-spacing:1px;margin-bottom:10px">⟐ COMPARE</button>
+          <div id="compareResult"></div>
         </div>
       </div>
     </div>
@@ -3092,6 +3123,189 @@ function highlightGalaxySystems(systems, isGridSearch) {
 // ============================================================
 // PDF EXPORT (jsPDF)
 // ============================================================
+// ============================================================
+// SHIP COMPARISON MODE
+// ============================================================
+let compareMode = false;
+
+function toggleCompareMode() {
+  compareMode = !compareMode;
+  const panel = document.getElementById('comparePanel');
+  const btn = document.getElementById('compareModeBtn');
+  if (compareMode) {
+    panel.style.display = 'block';
+    btn.style.borderColor = 'var(--gold-dim)';
+    btn.style.color = 'var(--gold)';
+    initCompareDropdowns();
+  } else {
+    panel.style.display = 'none';
+    btn.style.borderColor = '';
+    btn.style.color = '';
+    document.getElementById('compareResult').innerHTML = '';
+  }
+}
+
+function initCompareDropdowns() {
+  ['A', 'B'].forEach(side => {
+    const sel = document.getElementById('compareCat' + side);
+    sel.innerHTML = '<option value="">— Select —</option>';
+    Object.keys(STARSHIP_DATA).forEach(cat => {
+      const opt = document.createElement('option');
+      opt.value = cat;
+      opt.textContent = cat + ' (' + STARSHIP_DATA[cat].length + ')';
+      sel.appendChild(opt);
+    });
+  });
+}
+
+function updateCompareShipList(side) {
+  const cat = document.getElementById('compareCat' + side).value;
+  const sel = document.getElementById('compareShip' + side);
+  sel.innerHTML = '<option value="">— Select —</option>';
+  if (!cat || !STARSHIP_DATA[cat]) return;
+  STARSHIP_DATA[cat].forEach((s, i) => {
+    const opt = document.createElement('option');
+    opt.value = i;
+    opt.textContent = (s.rank ? '#' + s.rank + ' ' : '') + s.name;
+    sel.appendChild(opt);
+  });
+}
+
+function parseCompareVal(val) {
+  if (!val || val === 'None' || val === '') return null;
+  var v = String(val).trim().toUpperCase();
+  var m = v.match(/^(\d+)D?\+?(\d*)/);
+  if (m) return parseInt(m[1]) + (parseInt(m[2]) || 0) / 3.0;
+  var n = parseFloat(String(val).replace(/[^0-9.]/g, ''));
+  return isNaN(n) ? null : n;
+}
+
+function runComparison() {
+  const catA = document.getElementById('compareCatA').value;
+  const idxA = document.getElementById('compareShipA').value;
+  const catB = document.getElementById('compareCatB').value;
+  const idxB = document.getElementById('compareShipB').value;
+  
+  if (!catA || idxA === '' || !catB || idxB === '') {
+    document.getElementById('compareResult').innerHTML = '<div style="color:var(--red);font-size:11px">Select both ships to compare.</div>';
+    return;
+  }
+  
+  const a = STARSHIP_DATA[catA][parseInt(idxA)];
+  const b = STARSHIP_DATA[catB][parseInt(idxB)];
+  if (!a || !b) return;
+  
+  var html = '<div style="overflow-x:auto">';
+  html += '<table style="width:100%;border-collapse:collapse;font-size:11px">';
+  
+  // Header row
+  html += '<tr>';
+  html += '<td style="padding:6px 8px;font-family:\'Orbitron\',monospace;font-size:8px;color:var(--text-dark);border-bottom:2px solid var(--gold)">STAT</td>';
+  html += '<td style="padding:6px 8px;font-family:\'Orbitron\',monospace;font-size:9px;color:var(--cyan);border-bottom:2px solid var(--gold);text-align:center">' + a.name + '</td>';
+  html += '<td style="padding:6px 8px;font-family:\'Orbitron\',monospace;font-size:9px;color:var(--red);border-bottom:2px solid var(--gold);text-align:center">' + b.name + '</td>';
+  html += '</tr>';
+  
+  // Stat rows - higher is better unless noted
+  var stats = [
+    ['Type', 'type', false],
+    ['Scale', 'scale', false],
+    ['Length', 'length', false],
+    ['Crew', 'crew', false],
+    ['Passengers', 'passengers', false],
+    ['Cargo', 'cargo', false],
+    ['Consumables', 'consumables', false],
+    ['Cost (New)', 'price_new', false],
+    ['Hyperdrive', 'hyperdrive', true],  // lower is better
+    ['Maneuverability', 'maneuverability', false],
+    ['Space', 'space', false],
+    ['Atmosphere', 'atmosphere', false],
+    ['Hull', 'hull', false],
+    ['Shields', 'shields', false],
+  ];
+  
+  // Add capital-specific fields if either ship has them
+  if (a.starfighter_complement || b.starfighter_complement) stats.push(['Starfighters', 'starfighter_complement', false]);
+  if (a.support_craft || b.support_craft) stats.push(['Support Craft', 'support_craft', false]);
+  if (a.troop_capacity || b.troop_capacity) stats.push(['Troop Capacity', 'troop_capacity', false]);
+  
+  stats.push(['Sensors (Passive)', 'sensors_passive', false]);
+  stats.push(['Sensors (Scan)', 'sensors_scan', false]);
+  stats.push(['Sensors (Search)', 'sensors_search', false]);
+  stats.push(['Sensors (Focus)', 'sensors_focus', false]);
+  
+  var comparableStats = ['maneuverability', 'space', 'hull', 'shields', 'sensors_passive', 'sensors_scan', 'sensors_search', 'sensors_focus', 'hyperdrive'];
+  
+  stats.forEach(function(stat) {
+    var label = stat[0];
+    var key = stat[1];
+    var lowerBetter = stat[2];
+    var valA = a[key] || '';
+    var valB = b[key] || '';
+    
+    var styleA = 'color:var(--text-dim)';
+    var styleB = 'color:var(--text-dim)';
+    
+    // Compare numeric values for applicable stats
+    if (comparableStats.indexOf(key) >= 0 && valA && valB) {
+      var numA = parseCompareVal(valA);
+      var numB = parseCompareVal(valB);
+      if (numA !== null && numB !== null && numA !== numB) {
+        if (lowerBetter) {
+          styleA = numA < numB ? 'color:#44cc44;font-weight:bold' : 'color:var(--red)';
+          styleB = numB < numA ? 'color:#44cc44;font-weight:bold' : 'color:var(--red)';
+        } else {
+          styleA = numA > numB ? 'color:#44cc44;font-weight:bold' : 'color:var(--red)';
+          styleB = numB > numA ? 'color:#44cc44;font-weight:bold' : 'color:var(--red)';
+        }
+      }
+    }
+    
+    html += '<tr style="border-bottom:1px solid var(--card-border)">';
+    html += '<td style="padding:4px 8px;font-weight:bold;color:var(--text-dark);white-space:nowrap">' + label + '</td>';
+    html += '<td style="padding:4px 8px;text-align:center;' + styleA + '">' + (valA || '—') + '</td>';
+    html += '<td style="padding:4px 8px;text-align:center;' + styleB + '">' + (valB || '—') + '</td>';
+    html += '</tr>';
+  });
+  
+  // Weapons comparison
+  html += '<tr><td colspan="3" style="padding:8px 8px 4px;font-family:\'Orbitron\',monospace;font-size:8px;color:var(--gold);border-top:2px solid var(--gold)">WEAPONS</td></tr>';
+  
+  var maxWeapons = Math.max((a.weapons || []).length, (b.weapons || []).length);
+  if (maxWeapons === 0) {
+    html += '<tr><td colspan="3" style="padding:4px 8px;color:var(--text-dark);font-style:italic">Neither ship is armed</td></tr>';
+  } else {
+    for (var w = 0; w < maxWeapons; w++) {
+      var wA = (a.weapons || [])[w];
+      var wB = (b.weapons || [])[w];
+      html += '<tr style="border-bottom:1px solid var(--card-border)">';
+      html += '<td style="padding:4px 8px;font-size:9px;color:var(--text-dark)">#' + (w+1) + '</td>';
+      html += '<td style="padding:4px 8px;font-size:10px;text-align:center;color:var(--text-dim)">';
+      if (wA) html += '<span style="color:var(--text)">' + wA.name + '</span><br><span style="font-size:9px">FC: ' + (wA.fire_control || '—') + ' | Dmg: ' + (wA.damage || '—') + '</span>';
+      else html += '—';
+      html += '</td>';
+      html += '<td style="padding:4px 8px;font-size:10px;text-align:center;color:var(--text-dim)">';
+      if (wB) html += '<span style="color:var(--text)">' + wB.name + '</span><br><span style="font-size:9px">FC: ' + (wB.fire_control || '—') + ' | Dmg: ' + (wB.damage || '—') + '</span>';
+      else html += '—';
+      html += '</td>';
+      html += '</tr>';
+    }
+  }
+  
+  // Of Note
+  if (a.of_note || b.of_note) {
+    html += '<tr><td colspan="3" style="padding:8px 8px 4px;font-family:\'Orbitron\',monospace;font-size:8px;color:var(--gold);border-top:2px solid var(--gold)">OF NOTE</td></tr>';
+    html += '<tr>';
+    html += '<td></td>';
+    html += '<td style="padding:4px 8px;font-size:10px;color:var(--text-dim);font-style:italic;vertical-align:top">' + (a.of_note || '—') + '</td>';
+    html += '<td style="padding:4px 8px;font-size:10px;color:var(--text-dim);font-style:italic;vertical-align:top">' + (b.of_note || '—') + '</td>';
+    html += '</tr>';
+  }
+  
+  html += '</table></div>';
+  
+  document.getElementById('compareResult').innerHTML = html;
+}
+
 // ============================================================
 // STARSHIP PDF EXPORT
 // ============================================================
