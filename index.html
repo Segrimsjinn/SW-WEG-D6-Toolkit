@@ -549,9 +549,15 @@ color:var(--text-dim);min-width:35px;text-align:right;
           <input type="text" id="creatureSearch" placeholder="Search by name, planet, type, ability..." oninput="filterCreatures()"
             style="width:100%;padding:10px 12px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:13px;font-family:inherit;margin-bottom:8px">
           <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px">
-            <select id="creatureHabitat" onchange="filterCreatures()" style="flex:1;min-width:100px;padding:8px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:12px;font-family:inherit">
-              <option value="">All Habitats</option>
-            </select>
+            <!-- Habitat multi-select toggle -->
+            <div style="flex:1;min-width:100px;position:relative">
+              <div id="habitatToggle" onclick="toggleHabitatDropdown()" style="padding:8px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:12px;font-family:inherit;cursor:pointer;display:flex;align-items:center;justify-content:space-between;user-select:none">
+                <span id="habitatLabel">All Habitats</span>
+                <span style="font-size:10px;color:var(--text-dim)">▼</span>
+              </div>
+              <div id="habitatDropdown" style="display:none;position:absolute;top:100%;left:0;right:0;z-index:50;background:var(--bg2);border:1px solid var(--card-border);border-top:none;border-radius:0 0 var(--radius-sm) var(--radius-sm);max-height:240px;overflow-y:auto;padding:4px 0">
+              </div>
+            </div>
             <select id="creaturePlanet" onchange="filterCreatures()" style="flex:1;min-width:100px;padding:8px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:12px;font-family:inherit">
               <option value="">All Planets</option>
             </select>
@@ -4523,19 +4529,37 @@ var gcInterval = setInterval(function() {
 let creaturePanelOpen = false;
 let creatureFiltered = [];
 let selectedCreature = null;
+let selectedHabitats = new Set();
+let habitatDropdownOpen = false;
 
 function toggleCreaturePanel() {
   creaturePanelOpen = !creaturePanelOpen;
   document.getElementById('creaturePanel').style.display = creaturePanelOpen ? 'block' : 'none';
   document.getElementById('creatureToggleIcon').textContent = creaturePanelOpen ? '▲' : '▼';
-  if (creaturePanelOpen && !document.getElementById('creatureHabitat').options.length > 1) initCreatureFilters();
+  if (creaturePanelOpen) initCreatureFilters();
 }
 
+function toggleHabitatDropdown() {
+  habitatDropdownOpen = !habitatDropdownOpen;
+  document.getElementById('habitatDropdown').style.display = habitatDropdownOpen ? 'block' : 'none';
+}
+
+// Close habitat dropdown when clicking outside
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('#habitatToggle') && !e.target.closest('#habitatDropdown')) {
+    habitatDropdownOpen = false;
+    const dd = document.getElementById('habitatDropdown');
+    if (dd) dd.style.display = 'none';
+  }
+});
+
+let creatureFiltersInited = false;
 function initCreatureFilters() {
   if (typeof CREATURES_DATA === 'undefined' || !CREATURES_DATA.length) return;
+  if (creatureFiltersInited) return;
+  creatureFiltersInited = true;
   document.getElementById('creatureCountBadge').textContent = '(' + CREATURES_DATA.length + ')';
 
-  // Build habitat list from data - split on / only
   const habitats = new Set();
   const planets = new Set();
   CREATURES_DATA.forEach(c => {
@@ -4547,24 +4571,146 @@ function initCreatureFilters() {
     }
     if (c.planet) planets.add(c.planet.trim());
   });
-  const habSel = document.getElementById('creatureHabitat');
-  [...habitats].sort().forEach(h => { const o = document.createElement('option'); o.value = h; o.textContent = h; habSel.appendChild(o); });
-  const plnSel = document.getElementById('creaturePlanet');
-  [...planets].sort().forEach(p => { const o = document.createElement('option'); o.value = p; o.textContent = p; plnSel.appendChild(o); });
 
+  // Build habitat checkbox dropdown
+  const dd = document.getElementById('habitatDropdown');
+  let ddHtml = '<div onclick="toggleAllHabitats()" style="padding:6px 10px;cursor:pointer;display:flex;align-items:center;gap:6px;border-bottom:1px solid var(--card-border)" onmouseover="this.style.background=\'var(--bg3)\'" onmouseout="this.style.background=\'none\'">'
+    + '<input type="checkbox" id="habAll" checked style="accent-color:var(--gold);width:13px;height:13px;pointer-events:none">'
+    + '<span style="font-size:12px;color:var(--gold);font-weight:600">All Habitats</span></div>';
+  [...habitats].sort().forEach(h => {
+    ddHtml += '<div onclick="toggleHabitat(\'' + h + '\')" style="padding:5px 10px;cursor:pointer;display:flex;align-items:center;gap:6px" onmouseover="this.style.background=\'var(--bg3)\'" onmouseout="this.style.background=\'none\'">'
+      + '<input type="checkbox" id="hab_' + h + '" checked style="accent-color:var(--gold);width:12px;height:12px;pointer-events:none">'
+      + '<span style="font-size:11px;color:var(--text)">' + h + '</span></div>';
+  });
+  dd.innerHTML = ddHtml;
+
+  // Planet dropdown - built dynamically based on habitat selection
+  rebuildPlanetDropdown();
+
+  // Start with all habitats selected
+  selectedHabitats = new Set(habitats);
+  updateHabitatLabel();
   filterCreatures();
+}
+
+function rebuildPlanetDropdown() {
+  const plnSel = document.getElementById('creaturePlanet');
+  const currentVal = plnSel.value;
+  // Clear all but first option
+  while (plnSel.options.length > 1) plnSel.remove(1);
+
+  if (typeof CREATURES_DATA === 'undefined') return;
+
+  // Get all habitats count to check if "all" selected
+  const allHabCount = document.getElementById('habitatDropdown')
+    ? document.getElementById('habitatDropdown').querySelectorAll('input[id^="hab_"]:not(#habAll)').length : 0;
+  const allSelected = selectedHabitats.size === allHabCount || selectedHabitats.size === 0;
+
+  // Collect planets from creatures matching current habitat filter
+  const planets = new Set();
+  CREATURES_DATA.forEach(c => {
+    if (!c.planet || !c.planet.trim()) return;
+    if (allSelected) {
+      planets.add(c.planet.trim());
+    } else {
+      const cHabs = (c.habitat || '').split('/').map(h => h.trim());
+      if (cHabs.some(h => selectedHabitats.has(h))) {
+        planets.add(c.planet.trim());
+      }
+    }
+  });
+
+  [...planets].sort().forEach(p => {
+    const o = document.createElement('option');
+    o.value = p; o.textContent = p;
+    plnSel.appendChild(o);
+  });
+
+  // Restore selection if still valid, otherwise reset
+  if (planets.has(currentVal)) {
+    plnSel.value = currentVal;
+  } else {
+    plnSel.value = '';
+  }
+}
+
+function toggleHabitat(h) {
+  if (selectedHabitats.has(h)) {
+    selectedHabitats.delete(h);
+  } else {
+    selectedHabitats.add(h);
+  }
+  const cb = document.getElementById('hab_' + h);
+  if (cb) cb.checked = selectedHabitats.has(h);
+  // Update "All" checkbox
+  const allHabs = document.getElementById('habitatDropdown').querySelectorAll('input[id^="hab_"]');
+  const allCount = allHabs.length - 1; // minus the "All" one
+  document.getElementById('habAll').checked = selectedHabitats.size === allCount;
+  updateHabitatLabel();
+  rebuildPlanetDropdown();
+  filterCreatures();
+}
+
+function toggleAllHabitats() {
+  const allHabs = [];
+  document.getElementById('habitatDropdown').querySelectorAll('input[id^="hab_"]').forEach(cb => {
+    if (cb.id !== 'habAll') allHabs.push(cb.id.replace('hab_', ''));
+  });
+  const allChecked = document.getElementById('habAll').checked;
+  if (allChecked) {
+    // Was checked, uncheck all
+    selectedHabitats.clear();
+    document.getElementById('habAll').checked = false;
+  } else {
+    // Was unchecked, check all
+    selectedHabitats = new Set(allHabs);
+    document.getElementById('habAll').checked = true;
+  }
+  allHabs.forEach(h => {
+    const cb = document.getElementById('hab_' + h);
+    if (cb) cb.checked = selectedHabitats.has(h);
+  });
+  updateHabitatLabel();
+  rebuildPlanetDropdown();
+  filterCreatures();
+}
+
+function updateHabitatLabel() {
+  const allHabs = [];
+  document.getElementById('habitatDropdown').querySelectorAll('input[id^="hab_"]').forEach(cb => {
+    if (cb.id !== 'habAll') allHabs.push(cb.id.replace('hab_', ''));
+  });
+  const label = document.getElementById('habitatLabel');
+  if (selectedHabitats.size === 0) {
+    label.textContent = 'No Habitats';
+    label.style.color = 'var(--red)';
+  } else if (selectedHabitats.size === allHabs.length) {
+    label.textContent = 'All Habitats';
+    label.style.color = 'var(--text)';
+  } else if (selectedHabitats.size <= 3) {
+    label.textContent = [...selectedHabitats].join(', ');
+    label.style.color = 'var(--cyan)';
+  } else {
+    label.textContent = selectedHabitats.size + ' Habitats';
+    label.style.color = 'var(--cyan)';
+  }
 }
 
 function filterCreatures() {
   if (typeof CREATURES_DATA === 'undefined') return;
   const q = (document.getElementById('creatureSearch').value || '').toLowerCase();
-  const hab = document.getElementById('creatureHabitat').value;
   const pln = document.getElementById('creaturePlanet').value;
 
+  // Get all possible habitats count for "all selected" check
+  const allHabCount = document.getElementById('habitatDropdown')
+    ? document.getElementById('habitatDropdown').querySelectorAll('input[id^="hab_"]:not(#habAll)').length : 0;
+  const allSelected = selectedHabitats.size === allHabCount || selectedHabitats.size === 0;
+
   creatureFiltered = CREATURES_DATA.filter(c => {
-    if (hab) {
+    // Habitat filter (multi-select)
+    if (!allSelected && selectedHabitats.size > 0) {
       const cHabs = (c.habitat || '').split('/').map(h => h.trim());
-      if (!cHabs.includes(hab)) return false;
+      if (!cHabs.some(h => selectedHabitats.has(h))) return false;
     }
     if (pln && (c.planet || '').trim() !== pln) return false;
     if (q) {
@@ -4670,8 +4816,9 @@ function randomCreature() {
   if (typeof CREATURES_DATA === 'undefined' || !CREATURES_DATA.length) return;
   if (!creaturePanelOpen) toggleCreaturePanel();
   document.getElementById('creatureSearch').value = '';
-  document.getElementById('creatureHabitat').value = '';
   document.getElementById('creaturePlanet').value = '';
+  // Reset habitats to all
+  resetAllHabitats();
   creatureFiltered = [...CREATURES_DATA];
   const idx = Math.floor(Math.random() * creatureFiltered.length);
   renderCreatureList();
@@ -4681,15 +4828,27 @@ function randomCreature() {
 function randomCreatureByHabitat() {
   if (typeof CREATURES_DATA === 'undefined' || !CREATURES_DATA.length) return;
   if (!creaturePanelOpen) toggleCreaturePanel();
-  const hab = document.getElementById('creatureHabitat').value;
-  if (!hab) {
-    // Pick a random habitat first
-    const allHabs = new Set();
-    CREATURES_DATA.forEach(c => { if (c.habitat) c.habitat.split('/').forEach(h => allHabs.add(h.trim())); });
-    const habArr = [...allHabs];
-    const rh = habArr[Math.floor(Math.random() * habArr.length)];
-    document.getElementById('creatureHabitat').value = rh;
+  
+  // If no specific habitats selected (all or none), pick a random one
+  const allHabs = [];
+  document.getElementById('habitatDropdown').querySelectorAll('input[id^="hab_"]').forEach(cb => {
+    if (cb.id !== 'habAll') allHabs.push(cb.id.replace('hab_', ''));
+  });
+  
+  if (selectedHabitats.size === allHabs.length || selectedHabitats.size === 0) {
+    // Pick one random habitat
+    const rh = allHabs[Math.floor(Math.random() * allHabs.length)];
+    selectedHabitats.clear();
+    selectedHabitats.add(rh);
+    allHabs.forEach(h => {
+      const cb = document.getElementById('hab_' + h);
+      if (cb) cb.checked = (h === rh);
+    });
+    document.getElementById('habAll').checked = false;
+    updateHabitatLabel();
+    rebuildPlanetDropdown();
   }
+  
   document.getElementById('creatureSearch').value = '';
   document.getElementById('creaturePlanet').value = '';
   filterCreatures();
@@ -4699,10 +4858,22 @@ function randomCreatureByHabitat() {
   }
 }
 
+function resetAllHabitats() {
+  const allHabs = [];
+  document.getElementById('habitatDropdown').querySelectorAll('input[id^="hab_"]').forEach(cb => {
+    if (cb.id !== 'habAll') allHabs.push(cb.id.replace('hab_', ''));
+    cb.checked = true;
+  });
+  document.getElementById('habAll').checked = true;
+  selectedHabitats = new Set(allHabs);
+  updateHabitatLabel();
+  rebuildPlanetDropdown();
+}
+
 function clearCreatureFilters() {
   document.getElementById('creatureSearch').value = '';
-  document.getElementById('creatureHabitat').value = '';
   document.getElementById('creaturePlanet').value = '';
+  resetAllHabitats();
   document.getElementById('creatureDetail').style.display = 'none';
   filterCreatures();
 }
