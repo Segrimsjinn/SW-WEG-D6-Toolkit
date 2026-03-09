@@ -561,6 +561,54 @@ color:var(--text-dim);min-width:35px;text-align:right;
             <button class="btn btn-primary" onclick="randomCreatureByHabitat()" style="flex:1;padding:10px 8px;font-size:10px;letter-spacing:1.5px;background:linear-gradient(135deg,var(--blue-dim),var(--blue));color:#000">⟐ BY HABITAT</button>
             <button class="btn btn-primary" onclick="clearCreatureFilters()" style="padding:10px 12px;font-size:10px;letter-spacing:1.5px;background:var(--bg3);color:var(--text-dim);border:1px solid var(--card-border)">CLEAR</button>
           </div>
+          <!-- Orneriness & Habitat Reference (collapsible) -->
+          <div style="margin-bottom:10px">
+            <div onclick="document.getElementById('creatureRefPanel').style.display=document.getElementById('creatureRefPanel').style.display==='none'?'block':'none';this.querySelector('span:last-child').textContent=document.getElementById('creatureRefPanel').style.display==='none'?'▼':'▲'" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer;padding:6px 8px;background:var(--bg);border:1px solid var(--card-border);border-radius:var(--radius-sm)">
+              <span style="font-family:'Orbitron',monospace;font-size:9px;color:var(--text-dim);letter-spacing:1px">ORNERINESS & HABITAT GUIDE</span>
+              <span style="font-size:11px;color:var(--text-dim)">▼</span>
+            </div>
+            <div id="creatureRefPanel" style="display:none;padding:10px;background:var(--bg);border:1px solid var(--card-border);border-top:none;border-radius:0 0 var(--radius-sm) var(--radius-sm)">
+              <!-- Orneriness Rules -->
+              <div style="margin-bottom:10px">
+                <div style="font-family:'Orbitron',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:6px">ORNERINESS (BEAST RIDING)</div>
+                <div style="font-size:11px;color:var(--text);line-height:1.6">
+                  Creatures with an <span style="color:var(--cyan)">Orneriness</span> code can be used as mounts. The rider rolls <span style="color:var(--cyan)">beast riding</span> vs the creature's Orneriness each round to maintain control. On failure, the mount acts on its own — bolting, bucking, stopping, or attacking.
+                </div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:6px">
+                  <div style="font-size:10px;padding:4px 6px;background:var(--bg2);border-radius:4px"><span style="color:var(--green)">Beat by 0-3:</span> <span style="color:var(--text-dim)">Basic control</span></div>
+                  <div style="font-size:10px;padding:4px 6px;background:var(--bg2);border-radius:4px"><span style="color:var(--green)">Beat by 4-8:</span> <span style="color:var(--text-dim)">Good control, can push</span></div>
+                  <div style="font-size:10px;padding:4px 6px;background:var(--bg2);border-radius:4px"><span style="color:var(--gold)">Beat by 9+:</span> <span style="color:var(--text-dim)">Full mastery, tricks</span></div>
+                  <div style="font-size:10px;padding:4px 6px;background:var(--bg2);border-radius:4px"><span style="color:var(--red)">Fail by 1-5:</span> <span style="color:var(--text-dim)">Mount acts on own</span></div>
+                  <div style="font-size:10px;padding:4px 6px;background:var(--bg2);border-radius:4px"><span style="color:var(--red)">Fail by 6-10:</span> <span style="color:var(--text-dim)">Mount bolts/bucks</span></div>
+                  <div style="font-size:10px;padding:4px 6px;background:var(--bg2);border-radius:4px"><span style="color:var(--red)">Fail by 11+:</span> <span style="color:var(--text-dim)">Thrown (fall damage)</span></div>
+                </div>
+                <div style="font-size:10px;color:var(--text-dim);margin-top:6px;line-height:1.5">
+                  <span style="color:var(--cyan)">Domesticated</span> mounts get −1D to −3D Orneriness. <span style="color:var(--cyan)">Startled</span> mounts get +1D to +2D. Unfamiliar species add +5 to difficulty. Combat situations add +5 unless war-trained.
+                </div>
+              </div>
+              <!-- Habitat Guide -->
+              <div>
+                <div style="font-family:'Orbitron',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:6px">HABITAT TYPES</div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:3px">
+                  <div style="font-size:10px;padding:4px 6px;background:var(--bg2);border-radius:4px"><span style="color:var(--gold)">Aquatic</span> <span style="color:var(--text-dark)">— oceans, lakes, rivers, deep sea</span></div>
+                  <div style="font-size:10px;padding:4px 6px;background:var(--bg2);border-radius:4px"><span style="color:var(--gold)">Arctic</span> <span style="color:var(--text-dark)">— ice, tundra, frozen wastes</span></div>
+                  <div style="font-size:10px;padding:4px 6px;background:var(--bg2);border-radius:4px"><span style="color:var(--gold)">Atmosphere</span> <span style="color:var(--text-dark)">— gas giants, high-altitude skies</span></div>
+                  <div style="font-size:10px;padding:4px 6px;background:var(--bg2);border-radius:4px"><span style="color:var(--gold)">Cave</span> <span style="color:var(--text-dark)">— caverns, grottos, lairs</span></div>
+                  <div style="font-size:10px;padding:4px 6px;background:var(--bg2);border-radius:4px"><span style="color:var(--gold)">Desert</span> <span style="color:var(--text-dark)">— sand, rock, arid wasteland</span></div>
+                  <div style="font-size:10px;padding:4px 6px;background:var(--bg2);border-radius:4px"><span style="color:var(--gold)">Forest</span> <span style="color:var(--text-dark)">— temperate woods, wroshyr trees</span></div>
+                  <div style="font-size:10px;padding:4px 6px;background:var(--bg2);border-radius:4px"><span style="color:var(--gold)">Jungle</span> <span style="color:var(--text-dark)">— dense tropical, rainforest</span></div>
+                  <div style="font-size:10px;padding:4px 6px;background:var(--bg2);border-radius:4px"><span style="color:var(--gold)">Mountain</span> <span style="color:var(--text-dark)">— peaks, cliffs, highland crags</span></div>
+                  <div style="font-size:10px;padding:4px 6px;background:var(--bg2);border-radius:4px"><span style="color:var(--gold)">Plains</span> <span style="color:var(--text-dark)">— grassland, savanna, steppe</span></div>
+                  <div style="font-size:10px;padding:4px 6px;background:var(--bg2);border-radius:4px"><span style="color:var(--gold)">Space</span> <span style="color:var(--text-dark)">— vacuum, asteroid fields, hulls</span></div>
+                  <div style="font-size:10px;padding:4px 6px;background:var(--bg2);border-radius:4px"><span style="color:var(--gold)">Subterranean</span> <span style="color:var(--text-dark)">— tunnels, underground, mines</span></div>
+                  <div style="font-size:10px;padding:4px 6px;background:var(--bg2);border-radius:4px"><span style="color:var(--gold)">Swamp</span> <span style="color:var(--text-dark)">— bogs, marshes, wetlands</span></div>
+                  <div style="font-size:10px;padding:4px 6px;background:var(--bg2);border-radius:4px"><span style="color:var(--gold)">Urban</span> <span style="color:var(--text-dark)">— cities, ruins, settlements</span></div>
+                  <div style="font-size:10px;padding:4px 6px;background:var(--bg2);border-radius:4px"><span style="color:var(--gold)">Various</span> <span style="color:var(--text-dark)">— adaptable, multiple biomes</span></div>
+                  <div style="font-size:10px;padding:4px 6px;background:var(--bg2);border-radius:4px"><span style="color:var(--gold)">Volcanic</span> <span style="color:var(--text-dark)">— lava fields, volcanic vents</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
           <!-- Creature results list -->
           <div id="creatureList" style="max-height:300px;overflow-y:auto;margin-bottom:8px"></div>
           <!-- Creature detail card -->
@@ -4487,11 +4535,16 @@ function initCreatureFilters() {
   if (typeof CREATURES_DATA === 'undefined' || !CREATURES_DATA.length) return;
   document.getElementById('creatureCountBadge').textContent = '(' + CREATURES_DATA.length + ')';
 
-  // Build habitat list from data
+  // Build habitat list from data - split on / only
   const habitats = new Set();
   const planets = new Set();
   CREATURES_DATA.forEach(c => {
-    if (c.habitat) c.habitat.split('/').forEach(h => habitats.add(h.trim()));
+    if (c.habitat) {
+      c.habitat.split('/').forEach(h => {
+        const ht = h.trim();
+        if (ht) habitats.add(ht);
+      });
+    }
     if (c.planet) planets.add(c.planet.trim());
   });
   const habSel = document.getElementById('creatureHabitat');
@@ -4509,7 +4562,10 @@ function filterCreatures() {
   const pln = document.getElementById('creaturePlanet').value;
 
   creatureFiltered = CREATURES_DATA.filter(c => {
-    if (hab && !(c.habitat || '').split('/').some(h => h.trim() === hab)) return false;
+    if (hab) {
+      const cHabs = (c.habitat || '').split('/').map(h => h.trim());
+      if (!cHabs.includes(hab)) return false;
+    }
     if (pln && (c.planet || '').trim() !== pln) return false;
     if (q) {
       const blob = [c.name, c.type, c.planet, c.habitat, c.special, c.source].join(' ').toLowerCase();
@@ -4532,9 +4588,10 @@ function renderCreatureList() {
   creatureFiltered.forEach((c, i) => {
     const strVal = c.str || '?';
     const habShort = (c.habitat || '').split('/')[0];
+    const isMount = c.orneriness && c.orneriness.trim() !== '';
     html += '<div onclick="showCreature(' + i + ')" style="display:flex;align-items:center;justify-content:space-between;padding:8px 10px;margin-bottom:2px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);cursor:pointer;transition:border-color .15s" onmouseover="this.style.borderColor=\'var(--gold-dim)\'" onmouseout="this.style.borderColor=\'var(--card-border)\'">'
       + '<div style="flex:1;min-width:0">'
-      + '<div style="font-size:13px;color:var(--gold);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">' + c.name + '</div>'
+      + '<div style="font-size:13px;color:var(--gold);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">' + c.name + (isMount ? ' <span style="font-size:9px;color:var(--green);font-family:\'Orbitron\',monospace;letter-spacing:1px;vertical-align:middle">⟐ MOUNT</span>' : '') + '</div>'
       + '<div style="font-size:10px;color:var(--text-dim)">' + (c.type || '') + (c.planet ? ' — ' + c.planet : '') + '</div>'
       + '</div>'
       + '<div style="display:flex;gap:10px;align-items:center;flex-shrink:0;margin-left:8px">'
