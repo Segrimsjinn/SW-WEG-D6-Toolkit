@@ -629,18 +629,23 @@ color:var(--text-dim);min-width:35px;text-align:right;
           <span id="equipToggleIcon" style="font-size:14px;color:var(--text-dim);transition:transform .2s">▼</span>
         </div>
         <div id="equipPanel" style="display:none">
+          <!-- Availability checkboxes -->
+          <div style="display:flex;align-items:center;gap:4px;margin-bottom:8px;flex-wrap:wrap">
+            <span style="font-family:'Orbitron',monospace;font-size:8px;color:var(--text-dim);letter-spacing:1px;margin-right:4px">AVAIL:</span>
+            <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--green)"><input type="checkbox" checked class="equipAvailCb" value="1" onchange="filterEquipment()" style="accent-color:var(--green);width:13px;height:13px">1</label>
+            <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--green)"><input type="checkbox" checked class="equipAvailCb" value="2" onchange="filterEquipment()" style="accent-color:var(--green);width:13px;height:13px">2</label>
+            <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--gold)"><input type="checkbox" checked class="equipAvailCb" value="3" onchange="filterEquipment()" style="accent-color:var(--gold);width:13px;height:13px">3</label>
+            <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--red)"><input type="checkbox" checked class="equipAvailCb" value="4" onchange="filterEquipment()" style="accent-color:var(--red);width:13px;height:13px">4</label>
+            <span style="color:var(--card-border);margin:0 2px">│</span>
+            <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--cyan)"><input type="checkbox" checked class="equipLegalCb" value="F" onchange="filterEquipment()" style="accent-color:var(--cyan);width:13px;height:13px">F</label>
+            <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--gold)"><input type="checkbox" checked class="equipLegalCb" value="R" onchange="filterEquipment()" style="accent-color:var(--gold);width:13px;height:13px">R</label>
+            <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--red)"><input type="checkbox" checked class="equipLegalCb" value="X" onchange="filterEquipment()" style="accent-color:var(--red);width:13px;height:13px">X</label>
+          </div>
           <input type="text" id="equipSearch" placeholder="Search by name, category, stats..." oninput="filterEquipment()"
             style="width:100%;padding:10px 12px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:13px;font-family:inherit;margin-bottom:8px">
           <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px">
             <select id="equipCategory" onchange="filterEquipment()" style="flex:1;min-width:140px;padding:8px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:12px;font-family:inherit">
               <option value="">All Categories</option>
-            </select>
-            <select id="equipAvailability" onchange="filterEquipment()" style="flex:0 0 auto;padding:8px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:12px;font-family:inherit">
-              <option value="">Any Avail</option>
-              <option value="1">1 — Common</option>
-              <option value="2">2 — Available</option>
-              <option value="3">3 — Scarce</option>
-              <option value="4">4 — Rare/Illegal</option>
             </select>
           </div>
           <div style="display:flex;gap:6px;margin-bottom:10px">
@@ -684,6 +689,18 @@ color:var(--text-dim);min-width:35px;text-align:right;
           <span id="weapToggleIcon" style="font-size:14px;color:var(--text-dim);transition:transform .2s">▼</span>
         </div>
         <div id="weapPanel" style="display:none">
+          <!-- Availability checkboxes -->
+          <div style="display:flex;align-items:center;gap:4px;margin-bottom:8px;flex-wrap:wrap">
+            <span style="font-family:'Orbitron',monospace;font-size:8px;color:var(--text-dim);letter-spacing:1px;margin-right:4px">AVAIL:</span>
+            <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--green)"><input type="checkbox" checked class="weapAvailCb" value="1" onchange="filterWeapons()" style="accent-color:var(--green);width:13px;height:13px">1</label>
+            <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--green)"><input type="checkbox" checked class="weapAvailCb" value="2" onchange="filterWeapons()" style="accent-color:var(--green);width:13px;height:13px">2</label>
+            <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--gold)"><input type="checkbox" checked class="weapAvailCb" value="3" onchange="filterWeapons()" style="accent-color:var(--gold);width:13px;height:13px">3</label>
+            <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--red)"><input type="checkbox" checked class="weapAvailCb" value="4" onchange="filterWeapons()" style="accent-color:var(--red);width:13px;height:13px">4</label>
+            <span style="color:var(--card-border);margin:0 2px">│</span>
+            <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--cyan)"><input type="checkbox" checked class="weapLegalCb" value="F" onchange="filterWeapons()" style="accent-color:var(--cyan);width:13px;height:13px">F</label>
+            <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--gold)"><input type="checkbox" checked class="weapLegalCb" value="R" onchange="filterWeapons()" style="accent-color:var(--gold);width:13px;height:13px">R</label>
+            <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--red)"><input type="checkbox" checked class="weapLegalCb" value="X" onchange="filterWeapons()" style="accent-color:var(--red);width:13px;height:13px">X</label>
+          </div>
           <input type="text" id="weapSearch" placeholder="Search by name, category, damage, skill..." oninput="filterWeapons()"
             style="width:100%;padding:10px 12px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:13px;font-family:inherit;margin-bottom:8px">
           <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px">
@@ -1072,6 +1089,18 @@ color:var(--text-dim);min-width:35px;text-align:right;
           <span id="vehToggleIcon" style="font-size:14px;color:var(--text-dim);transition:transform .2s">▼</span>
         </div>
         <div id="vehPanel" style="display:none">
+          <!-- Availability checkboxes -->
+          <div style="display:flex;align-items:center;gap:4px;margin-bottom:8px;flex-wrap:wrap">
+            <span style="font-family:'Orbitron',monospace;font-size:8px;color:var(--text-dim);letter-spacing:1px;margin-right:4px">AVAIL:</span>
+            <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--green)"><input type="checkbox" checked class="vehAvailCb" value="1" onchange="filterVehicles()" style="accent-color:var(--green);width:13px;height:13px">1</label>
+            <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--green)"><input type="checkbox" checked class="vehAvailCb" value="2" onchange="filterVehicles()" style="accent-color:var(--green);width:13px;height:13px">2</label>
+            <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--gold)"><input type="checkbox" checked class="vehAvailCb" value="3" onchange="filterVehicles()" style="accent-color:var(--gold);width:13px;height:13px">3</label>
+            <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--red)"><input type="checkbox" checked class="vehAvailCb" value="4" onchange="filterVehicles()" style="accent-color:var(--red);width:13px;height:13px">4</label>
+            <span style="color:var(--card-border);margin:0 2px">│</span>
+            <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--cyan)"><input type="checkbox" checked class="vehLegalCb" value="F" onchange="filterVehicles()" style="accent-color:var(--cyan);width:13px;height:13px">F</label>
+            <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--gold)"><input type="checkbox" checked class="vehLegalCb" value="R" onchange="filterVehicles()" style="accent-color:var(--gold);width:13px;height:13px">R</label>
+            <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--red)"><input type="checkbox" checked class="vehLegalCb" value="X" onchange="filterVehicles()" style="accent-color:var(--red);width:13px;height:13px">X</label>
+          </div>
           <input type="text" id="vehSearch" placeholder="Search by name, category, weapons..." oninput="filterVehicles()"
             style="width:100%;padding:10px 12px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:13px;font-family:inherit;margin-bottom:8px">
           <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px">
@@ -1526,6 +1555,13 @@ color:var(--text-dim);min-width:35px;text-align:right;
       <div style="display:flex;align-items:center;justify-content:center;margin:16px 0 8px;padding:0 4px">
         <a href="bugreport.html" style="color:var(--cyan);font-family:'Orbitron',sans-serif;font-size:13px;text-decoration:none;border:1px solid var(--cyan);padding:8px 20px;border-radius:4px;display:inline-block">⚠ BUG REPORT / SUGGESTION</a>
       </div>
+    </div>
+  </div>
+
+  <!-- AVAILABILITY REFERENCE FOOTER -->
+  <div id="availFooter" style="text-align:center;padding:8px 16px 4px;border-top:1px solid var(--card-border)">
+    <div style="font-family:'Orbitron',sans-serif;font-size:8px;color:var(--text-dark);letter-spacing:0.6px;line-height:2">
+      AVAILABILITY: <span style="color:var(--green)">1</span> Common · <span style="color:var(--green)">2</span> Available · <span style="color:var(--gold)">3</span> Specialized · <span style="color:var(--red)">4</span> Rare &nbsp;|&nbsp; LEGALITY: <span style="color:var(--cyan)">F</span> Permit · <span style="color:var(--gold)">R</span> Restricted · <span style="color:var(--red)">X</span> Illegal
     </div>
   </div>
 
@@ -2852,6 +2888,9 @@ switchTab = function(tab) {
   if (tab === 'gm' && typeof FORCE_POWERS_DATA !== 'undefined') {
     filterForcePowers();
   }
+  // Show availability footer on tabs with equipment/weapons/ships/vehicles
+  const af = document.getElementById('availFooter');
+  if (af) af.style.display = (tab === 'npc' || tab === 'ships') ? 'block' : 'none';
 };
 
 function filterNpcForcePowers() {
@@ -5102,15 +5141,37 @@ function initEquipFilters() {
   filterEquipment();
 }
 
+// Shared availability checker
+function checkAvailFilter(availStr, availClass, legalClass) {
+  if (!availStr) return true; // no availability listed = always show
+  const checkedAvails = new Set([...document.querySelectorAll('.' + availClass + ':checked')].map(c => c.value));
+  const checkedLegals = new Set([...document.querySelectorAll('.' + legalClass + ':checked')].map(c => c.value));
+  const allAvails = document.querySelectorAll('.' + availClass).length;
+  const allLegals = document.querySelectorAll('.' + legalClass).length;
+  // If all checked, skip filter
+  if (checkedAvails.size === allAvails && checkedLegals.size === allLegals) return true;
+  const str = availStr.toString();
+  // Check availability number (1-4)
+  const numMatch = str.match(/^(\d)/);
+  if (numMatch && !checkedAvails.has(numMatch[1])) return false;
+  // Check legality codes (F, R, X) — if item has a code and that code is unchecked, hide it
+  const hasF = /\bF\b/.test(str);
+  const hasR = /\bR\b/.test(str);
+  const hasX = /\bX\b/.test(str);
+  if (hasF && !checkedLegals.has('F')) return false;
+  if (hasR && !checkedLegals.has('R')) return false;
+  if (hasX && !checkedLegals.has('X')) return false;
+  return true;
+}
+
 function filterEquipment() {
   if (typeof EQUIPMENT_DATA === 'undefined') return;
   const q = (document.getElementById('equipSearch').value || '').toLowerCase();
   const cat = document.getElementById('equipCategory').value;
-  const avail = document.getElementById('equipAvailability').value;
 
   equipFiltered = EQUIPMENT_DATA.filter(e => {
     if (cat && e.category !== cat) return false;
-    if (avail && !(e.availability || '').startsWith(avail)) return false;
+    if (!checkAvailFilter(e.availability, 'equipAvailCb', 'equipLegalCb')) return false;
     if (q) {
       const blob = [e.name, e.category, e.game_notes, e.cost, e.source].join(' ').toLowerCase();
       return blob.includes(q);
@@ -5213,7 +5274,7 @@ function randomEquipment() {
 function clearEquipFilters() {
   document.getElementById('equipSearch').value = '';
   document.getElementById('equipCategory').value = '';
-  document.getElementById('equipAvailability').value = '';
+  document.querySelectorAll('.equipAvailCb, .equipLegalCb').forEach(cb => cb.checked = true);
   document.getElementById('equipDetail').style.display = 'none';
   filterEquipment();
 }
@@ -5259,6 +5320,7 @@ function filterWeapons() {
   const cat = document.getElementById('weapCategory').value;
   weapFiltered = WEAPONS_DATA.filter(w => {
     if (cat && w.category !== cat) return false;
+    if (!checkAvailFilter(w.availability, 'weapAvailCb', 'weapLegalCb')) return false;
     if (q) {
       const blob = [w.name, w.category, w.skill, w.damage, w.game_notes, w.range, w.source].join(' ').toLowerCase();
       return blob.includes(q);
@@ -5346,6 +5408,7 @@ function randomWeapon() {
 function clearWeapFilters() {
   document.getElementById('weapSearch').value = '';
   document.getElementById('weapCategory').value = '';
+  document.querySelectorAll('.weapAvailCb, .weapLegalCb').forEach(cb => cb.checked = true);
   document.getElementById('weapDetail').style.display = 'none';
   filterWeapons();
 }
@@ -5390,6 +5453,7 @@ function filterVehicles() {
   vehFiltered = VEHICLES_DATA.filter(v => {
     if (cat && v.category !== cat) return false;
     if (scl && (v.scale || '') !== scl) return false;
+    if (!checkAvailFilter(v.cost, 'vehAvailCb', 'vehLegalCb')) return false;
     if (q) {
       const blob = [v.name, v.category, v.scale, v.weapons, v.game_notes, v.crew, v.passengers, v.source].join(' ').toLowerCase();
       return blob.includes(q);
@@ -5479,6 +5543,7 @@ function clearVehFilters() {
   document.getElementById('vehSearch').value = '';
   document.getElementById('vehCategory').value = '';
   document.getElementById('vehScale').value = '';
+  document.querySelectorAll('.vehAvailCb, .vehLegalCb').forEach(cb => cb.checked = true);
   document.getElementById('vehDetail').style.display = 'none';
   filterVehicles();
 }
