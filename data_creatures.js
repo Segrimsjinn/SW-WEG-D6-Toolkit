@@ -14,20 +14,6 @@ const CREATURES_DATA = [
   "source": "d20 Core Rulebook (page 335)"
  },
  {
-  "name": "Mutant Acklay",
-  "type": "Huge mutated predator",
-  "planet": "Geonosis",
-  "habitat": "Desert/Aquatic",
-  "dex": "1D+1",
-  "per": "2D+1",
-  "str": "7D",
-  "move": "12",
-  "size": "6 meters long",
-  "orneriness": "",
-  "special": "Armor: +2D STR vs physical. Bite: STR+2. Claws: STR+1D+2. Exceptional Reflexes: +1D initiative. Resistant to Radiation: +1D STR vs radiation. Blindsight. Breathe Underwater.",
-  "source": "Geonosis and the Outer Rim Worlds (page 65)"
- },
- {
   "name": "Adar",
   "type": "Adaptive Carnivore",
   "planet": "Omiddelon III",
@@ -266,6 +252,20 @@ const CREATURES_DATA = [
   "source": "Galaxy Guide 2 (pages 23-24)"
  },
  {
+  "name": "B'karr",
+  "type": "Scavenger",
+  "planet": "Goroth",
+  "habitat": "Mountain/Desert",
+  "dex": "2D",
+  "per": "2D+1",
+  "str": "1D",
+  "move": "13",
+  "size": "0.3 meters long",
+  "orneriness": "",
+  "special": "Bite: STR+1. Poisonous Saliva: 3D stun on damage. Poison Resistance: +3D STR vs poison. Camouflage: +1D sneak in broken rock.",
+  "source": "Goroth, Slave of the Empire (pages 91-92)"
+ },
+ {
   "name": "Bandara",
   "type": "Semi-aquatic pest",
   "planet": "Devaron",
@@ -306,20 +306,6 @@ const CREATURES_DATA = [
   "orneriness": "2D",
   "special": "Horns: STR-1D. Trample: STR.",
   "source": "Core Rulebook (page 222)"
- },
- {
-  "name": "Kashyyyk Bantha",
-  "type": "Herd animal",
-  "planet": "Kashyyyk",
-  "habitat": "Forest",
-  "dex": "1D+2",
-  "per": "2D+1",
-  "str": "8D",
-  "move": "6",
-  "size": "2-3 meters tall",
-  "orneriness": "2D",
-  "special": "Gore: STR+2D.",
-  "source": ""
  },
  {
   "name": "Barri",
@@ -364,17 +350,17 @@ const CREATURES_DATA = [
   "source": "Twin Star of Kira (page 72)"
  },
  {
-  "name": "Beck-tori (Medium)",
+  "name": "Beck-tori (Colossal)",
   "type": "Aquatic parasite",
   "planet": "Nam Priax",
   "habitat": "Aquatic",
-  "dex": "3D+1",
+  "dex": "1D",
   "per": "1D+2",
-  "str": "2D",
-  "move": "16 (swim)/4 (crawl)",
-  "size": "Medium",
+  "str": "9D+2",
+  "move": "10 (swim)/2 (crawl)",
+  "size": "Colossal",
   "orneriness": "",
-  "special": "Bite: STR+1. Breathe Underwater: +1D+1 swimming. Force-Sensitive. Low-light Vision. Swallow Whole: STR+1 then 3D acid/round. Spikes: STR+1.",
+  "special": "Bite: STR+1D+2. Breathe Underwater. Force-Sensitive (Control 3D, Sense 3D+1). Swallow Whole: STR+1D+2 then 3D acid/round. Spikes: STR+1D+2.",
   "source": "Power of the Jedi Sourcebook (pages 77-79)"
  },
  {
@@ -392,17 +378,17 @@ const CREATURES_DATA = [
   "source": "Power of the Jedi Sourcebook (pages 77-79)"
  },
  {
-  "name": "Beck-tori (Colossal)",
+  "name": "Beck-tori (Medium)",
   "type": "Aquatic parasite",
   "planet": "Nam Priax",
   "habitat": "Aquatic",
-  "dex": "1D",
+  "dex": "3D+1",
   "per": "1D+2",
-  "str": "9D+2",
-  "move": "10 (swim)/2 (crawl)",
-  "size": "Colossal",
+  "str": "2D",
+  "move": "16 (swim)/4 (crawl)",
+  "size": "Medium",
   "orneriness": "",
-  "special": "Bite: STR+1D+2. Breathe Underwater. Force-Sensitive (Control 3D, Sense 3D+1). Swallow Whole: STR+1D+2 then 3D acid/round. Spikes: STR+1D+2.",
+  "special": "Bite: STR+1. Breathe Underwater: +1D+1 swimming. Force-Sensitive. Low-light Vision. Swallow Whole: STR+1 then 3D acid/round. Spikes: STR+1.",
   "source": "Power of the Jedi Sourcebook (pages 77-79)"
  },
  {
@@ -474,20 +460,6 @@ const CREATURES_DATA = [
   "orneriness": "",
   "special": "Horn-Claws: STR+2D. Bite: STR+1D. Carapace: +2D resist.",
   "source": "DarkStryder Campaign \u2013 Endgame (page 106)"
- },
- {
-  "name": "B'karr",
-  "type": "Scavenger",
-  "planet": "Goroth",
-  "habitat": "Mountain/Desert",
-  "dex": "2D",
-  "per": "2D+1",
-  "str": "1D",
-  "move": "13",
-  "size": "0.3 meters long",
-  "orneriness": "",
-  "special": "Bite: STR+1. Poisonous Saliva: 3D stun on damage. Poison Resistance: +3D STR vs poison. Camouflage: +1D sneak in broken rock.",
-  "source": "Goroth, Slave of the Empire (pages 91-92)"
  },
  {
   "name": "Black Behemoth",
@@ -770,6 +742,20 @@ const CREATURES_DATA = [
   "source": "Galaxy Guide 3 (page 63)"
  },
  {
+  "name": "C'Oron Bel (Silverjaw)",
+  "type": "Fast aquatic predator",
+  "planet": "Goroth",
+  "habitat": "Aquatic",
+  "dex": "2D",
+  "per": "3D",
+  "str": "2D+2",
+  "move": "18 (swim)/6",
+  "size": "1.5-1.8m long",
+  "orneriness": "",
+  "special": "Jaws: STR+2D. Charge: Move 18 max 2m from water. Armor: +1D physical (metal scales).",
+  "source": "Goroth, Slave of the Empire (pages 93-94)"
+ },
+ {
   "name": "Cairnmog",
   "type": "",
   "planet": "",
@@ -910,6 +896,20 @@ const CREATURES_DATA = [
   "source": "Death in the Undercity (page 55)"
  },
  {
+  "name": "Chrysalide Rancor",
+  "type": "",
+  "planet": "",
+  "habitat": "Various",
+  "dex": "2D+2",
+  "per": "1D+1",
+  "str": "10D",
+  "move": "30",
+  "size": "5m tall",
+  "orneriness": "",
+  "special": "Claws: STR+1D+2. Low Light Vision. Natural Armor: +2D+1 physical and energy. Teeth: STR+1D+1. Terrifying Presence: Difficult Willpower/Control or flee/attack (fail 10+ = cower).",
+  "source": "Dark Side Sourcebook (pages 120-121)"
+ },
+ {
   "name": "Cidwen",
   "type": "Aggressive avian",
   "planet": "Atraken",
@@ -922,6 +922,20 @@ const CREATURES_DATA = [
   "orneriness": "",
   "special": "Beak: STR+2D. Claws: STR+2D+2.",
   "source": "Planets Collection (page 200)"
+ },
+ {
+  "name": "Claw Vine",
+  "type": "Medium forest scavenger",
+  "planet": "Kashyyyk",
+  "habitat": "Forest",
+  "dex": "2D",
+  "per": "1D+1",
+  "str": "4D",
+  "move": "0",
+  "size": "2 meters",
+  "orneriness": "",
+  "special": "Blindsight: 4m range. Exceptional Reflexes: +1D initiative.",
+  "source": "Ultimate Adversaries (page 74)"
  },
  {
   "name": "Clawbird",
@@ -952,18 +966,18 @@ const CREATURES_DATA = [
   "source": "Goroth, Slave of the Empire (pages 92-93)"
  },
  {
-  "name": "Claw Vine",
-  "type": "Medium forest scavenger",
-  "planet": "Kashyyyk",
-  "habitat": "Forest",
-  "dex": "2D",
-  "per": "1D+1",
-  "str": "4D",
-  "move": "0",
-  "size": "2 meters",
+  "name": "Cliff Wampa",
+  "type": "",
+  "planet": "Hoth",
+  "habitat": "Arctic/Mountain",
+  "dex": "3D+2",
+  "per": "4D",
+  "str": "7D",
+  "move": "12/10 (climbing)",
+  "size": "3.5m tall",
   "orneriness": "",
-  "special": "Blindsight: 4m range. Exceptional Reflexes: +1D initiative.",
-  "source": "Ultimate Adversaries (page 74)"
+  "special": "Claws: STR+2D+1. Bite: STR+1D+2. Climbing: +2D. Camouflage: +2D sneak in snow. Cold Resistant.",
+  "source": "Galaxy Guide 3 (page 66)"
  },
  {
   "name": "Cliffborer Worm",
@@ -1076,20 +1090,6 @@ const CREATURES_DATA = [
   "orneriness": "",
   "special": "Dew Claw Attack: called shot to neck, STR+1D, MW/Kill = decapitation. Exceptional Reflexes: +1D initiative. Foreclaw: STR+1.",
   "source": "Coruscant and the Core Worlds (page 99)"
- },
- {
-  "name": "C'Oron Bel (Silverjaw)",
-  "type": "Fast aquatic predator",
-  "planet": "Goroth",
-  "habitat": "Aquatic",
-  "dex": "2D",
-  "per": "3D",
-  "str": "2D+2",
-  "move": "18 (swim)/6",
-  "size": "1.5-1.8m long",
-  "orneriness": "",
-  "special": "Jaws: STR+2D. Charge: Move 18 max 2m from water. Armor: +1D physical (metal scales).",
-  "source": "Goroth, Slave of the Empire (pages 93-94)"
  },
  {
   "name": "Corrupted Snake",
@@ -1216,6 +1216,20 @@ const CREATURES_DATA = [
   "orneriness": "",
   "special": "Blindsight: 10m hearing. Slam Attack: STR damage.",
   "source": "Coruscant and the Core Worlds (page 35)"
+ },
+ {
+  "name": "D'oemir Bear",
+  "type": "Arctic predator",
+  "planet": "Neftali",
+  "habitat": "Arctic",
+  "dex": "2D",
+  "per": "2D+1",
+  "str": "6D",
+  "move": "10",
+  "size": "1.3m (fours)/1.98m (standing)",
+  "orneriness": "",
+  "special": "Hibernation: up to 1 year. Claws: STR+1D. Bite: STR+2.",
+  "source": "Black Sands of Socorro (page 99)"
  },
  {
   "name": "Danchaf (Tree Goblin)",
@@ -1398,20 +1412,6 @@ const CREATURES_DATA = [
   "orneriness": "",
   "special": "Bite: STR+1.",
   "source": ""
- },
- {
-  "name": "D'oemir Bear",
-  "type": "Arctic predator",
-  "planet": "Neftali",
-  "habitat": "Arctic",
-  "dex": "2D",
-  "per": "2D+1",
-  "str": "6D",
-  "move": "10",
-  "size": "1.3m (fours)/1.98m (standing)",
-  "orneriness": "",
-  "special": "Hibernation: up to 1 year. Claws: STR+1D. Bite: STR+2.",
-  "source": "Black Sands of Socorro (page 99)"
  },
  {
   "name": "Draagax",
@@ -1960,6 +1960,48 @@ const CREATURES_DATA = [
   "source": "Core Rulebook (page 223)"
  },
  {
+  "name": "Giant Tauntaun",
+  "type": "",
+  "planet": "Hoth",
+  "habitat": "Arctic",
+  "dex": "2D",
+  "per": "3D+2",
+  "str": "5D+2",
+  "move": "18",
+  "size": "3.5m tall",
+  "orneriness": "3D",
+  "special": "Head Butt: STR+2D. Kick: STR+1D. Cold Resistant.",
+  "source": "Galaxy Guide 3 (page 65)"
+ },
+ {
+  "name": "Giant Thranta",
+  "type": "",
+  "planet": "Bespin",
+  "habitat": "Atmosphere",
+  "dex": "2D+2",
+  "per": "2D",
+  "str": "8D",
+  "move": "35 (flying)",
+  "size": "30m+ wingspan",
+  "orneriness": "2D",
+  "special": "Tail Slap: STR+2D. Mounts: can carry multiple riders/cargo. Walker Scale.",
+  "source": "Galaxy Guide 3 (page 67)"
+ },
+ {
+  "name": "Glacier Tauntaun",
+  "type": "",
+  "planet": "Hoth",
+  "habitat": "Arctic",
+  "dex": "2D+1",
+  "per": "3D+2",
+  "str": "4D+2",
+  "move": "14",
+  "size": "2m tall",
+  "orneriness": "3D+1",
+  "special": "Head Butt: STR+1D. Kick: STR+2. Cold Resistant. Climbing: +1D over ice.",
+  "source": "Galaxy Guide 3 (page 65)"
+ },
+ {
   "name": "Glim Worm",
   "type": "Tunneling predator",
   "planet": "",
@@ -1972,6 +2014,20 @@ const CREATURES_DATA = [
   "orneriness": "",
   "special": "Grappling Attack: opposed brawling vs STR. Pulls to mouth.",
   "source": "Creatures of the Galaxy (pages 29-30)"
+ },
+ {
+  "name": "Glittering Mynock",
+  "type": "Glowing parasite",
+  "planet": "",
+  "habitat": "Space",
+  "dex": "3D",
+  "per": "1D",
+  "str": "1D",
+  "move": "15 (flying)",
+  "size": "1m long",
+  "orneriness": "",
+  "special": "Stun Resistant: absorbs stun energy. Energy Drain: rainbow glow while draining.",
+  "source": "Twin Star of Kira (page 73)"
  },
  {
   "name": "Gorax",
@@ -2112,6 +2168,20 @@ const CREATURES_DATA = [
   "orneriness": "",
   "special": "Sonic Motion Detection: +1D+2 search. Sonic Stun: 4D stun in 45\u00b0 arc, 5m. Claws: STR+2. Tail: STR+1.",
   "source": "Creatures of the Galaxy (pages 32-33)"
+ },
+ {
+  "name": "Greater Krayt Dragon",
+  "type": "Colossal desert predator",
+  "planet": "Tatooine",
+  "habitat": "Desert",
+  "dex": "3D",
+  "per": "2D",
+  "str": "8D",
+  "move": "14/20 (burrowing sand)",
+  "size": "100m long",
+  "orneriness": "",
+  "special": "Claws: STR. Teeth: STR+1D. Walker Scale.",
+  "source": "Ultimate Adversaries (pages 96-97)"
  },
  {
   "name": "Grotseth",
@@ -2576,6 +2646,20 @@ const CREATURES_DATA = [
   "source": "Wretched Hives (page 17)"
  },
  {
+  "name": "K'lor'slug",
+  "type": "",
+  "planet": "",
+  "habitat": "Various",
+  "dex": "4D",
+  "per": "4D",
+  "str": "2D",
+  "move": "10",
+  "size": "2-3m long",
+  "orneriness": "",
+  "special": "Pincers: STR+1D+2. Tail sting: STR+1D + Difficult DEX or neurotoxin (Difficult stamina or immobile 1D min).",
+  "source": "Alien Anthology (pages 34-35)"
+ },
+ {
   "name": "Kaadu",
   "type": "",
   "planet": "Naboo",
@@ -2644,6 +2728,20 @@ const CREATURES_DATA = [
   "orneriness": "",
   "special": "Thick Hide: +1D physical. Bite: STR. Tail spikes: variable by age (STR+1D to STR+4D).",
   "source": "Lords of the Expanse (page 59)"
+ },
+ {
+  "name": "Kashyyyk Bantha",
+  "type": "Herd animal",
+  "planet": "Kashyyyk",
+  "habitat": "Forest",
+  "dex": "1D+2",
+  "per": "2D+1",
+  "str": "8D",
+  "move": "6",
+  "size": "2-3 meters tall",
+  "orneriness": "2D",
+  "special": "Gore: STR+2D.",
+  "source": ""
  },
  {
   "name": "Katarn",
@@ -2814,20 +2912,6 @@ const CREATURES_DATA = [
   "source": "Ultimate Adversaries (pages 94-95)"
  },
  {
-  "name": "K'lor'slug",
-  "type": "",
-  "planet": "",
-  "habitat": "Various",
-  "dex": "4D",
-  "per": "4D",
-  "str": "2D",
-  "move": "10",
-  "size": "2-3m long",
-  "orneriness": "",
-  "special": "Pincers: STR+1D+2. Tail sting: STR+1D + Difficult DEX or neurotoxin (Difficult stamina or immobile 1D min).",
-  "source": "Alien Anthology (pages 34-35)"
- },
- {
   "name": "Knobby Spider",
   "type": "Mobile predatory plant",
   "planet": "Dagobah",
@@ -2870,20 +2954,6 @@ const CREATURES_DATA = [
   "source": "Truce at Bakura Sourcebook (page 106)"
  },
  {
-  "name": "Krakana",
-  "type": "",
-  "planet": "Mon Calamari",
-  "habitat": "Aquatic",
-  "dex": "2D",
-  "per": "2D",
-  "str": "6D",
-  "move": "24 (swimming)",
-  "size": "14.5-25m",
-  "orneriness": "",
-  "special": "Tentacles: 4D+1 each (3+ = caught, drawn to mouth). Teeth: STR+2D+2. Speeder Scale.",
-  "source": "Alien Anthology (page 37)"
- },
- {
   "name": "Krak'jya",
   "type": "Intelligent predator",
   "planet": "Bothawui",
@@ -2898,6 +2968,20 @@ const CREATURES_DATA = [
   "source": "Shadows of the Empire Planets Guide (pages 61-62)"
  },
  {
+  "name": "Krakana",
+  "type": "",
+  "planet": "Mon Calamari",
+  "habitat": "Aquatic",
+  "dex": "2D",
+  "per": "2D",
+  "str": "6D",
+  "move": "24 (swimming)",
+  "size": "14.5-25m",
+  "orneriness": "",
+  "special": "Tentacles: 4D+1 each (3+ = caught, drawn to mouth). Teeth: STR+2D+2. Speeder Scale.",
+  "source": "Alien Anthology (page 37)"
+ },
+ {
   "name": "Krayt Dragon",
   "type": "",
   "planet": "Tatooine",
@@ -2910,20 +2994,6 @@ const CREATURES_DATA = [
   "orneriness": "",
   "special": "Claws: 8D. Teeth: 15D. Motion Tracking: +1D PER vs moving targets (Difficult sneak to stand still enough).",
   "source": "Star Wars Trilogy Sourcebook SE (page 176)"
- },
- {
-  "name": "Greater Krayt Dragon",
-  "type": "Colossal desert predator",
-  "planet": "Tatooine",
-  "habitat": "Desert",
-  "dex": "3D",
-  "per": "2D",
-  "str": "8D",
-  "move": "14/20 (burrowing sand)",
-  "size": "100m long",
-  "orneriness": "",
-  "special": "Claws: STR. Teeth: STR+1D. Walker Scale.",
-  "source": "Ultimate Adversaries (pages 96-97)"
  },
  {
   "name": "Kril",
@@ -3388,6 +3458,20 @@ const CREATURES_DATA = [
   "source": "Ultimate Adversaries (pages 103-104)"
  },
  {
+  "name": "Mutant Acklay",
+  "type": "Huge mutated predator",
+  "planet": "Geonosis",
+  "habitat": "Desert/Aquatic",
+  "dex": "1D+1",
+  "per": "2D+1",
+  "str": "7D",
+  "move": "12",
+  "size": "6 meters long",
+  "orneriness": "",
+  "special": "Armor: +2D STR vs physical. Bite: STR+2. Claws: STR+1D+2. Exceptional Reflexes: +1D initiative. Resistant to Radiation: +1D STR vs radiation. Blindsight. Breathe Underwater.",
+  "source": "Geonosis and the Outer Rim Worlds (page 65)"
+ },
+ {
   "name": "Mutriok",
   "type": "Desert scavenger/hunter",
   "planet": "Socorro",
@@ -3428,20 +3512,6 @@ const CREATURES_DATA = [
   "orneriness": "",
   "special": "Energy Drain: drain from starships. Flight. Silicon life form: survive vacuum.",
   "source": "Star Wars Sourcebook (pages 88-89)"
- },
- {
-  "name": "Glittering Mynock",
-  "type": "Glowing parasite",
-  "planet": "",
-  "habitat": "Space",
-  "dex": "3D",
-  "per": "1D",
-  "str": "1D",
-  "move": "15 (flying)",
-  "size": "1m long",
-  "orneriness": "",
-  "special": "Stun Resistant: absorbs stun energy. Energy Drain: rainbow glow while draining.",
-  "source": "Twin Star of Kira (page 73)"
  },
  {
   "name": "Myntor",
@@ -3976,20 +4046,6 @@ const CREATURES_DATA = [
   "source": "Core Rulebook (page 224)"
  },
  {
-  "name": "Chrysalide Rancor",
-  "type": "",
-  "planet": "",
-  "habitat": "Various",
-  "dex": "2D+2",
-  "per": "1D+1",
-  "str": "10D",
-  "move": "30",
-  "size": "5m tall",
-  "orneriness": "",
-  "special": "Claws: STR+1D+2. Low Light Vision. Natural Armor: +2D+1 physical and energy. Teeth: STR+1D+1. Terrifying Presence: Difficult Willpower/Control or flee/attack (fail 10+ = cower).",
-  "source": "Dark Side Sourcebook (pages 120-121)"
- },
- {
   "name": "Ranphyx",
   "type": "Intelligent herd predator",
   "planet": "Elom",
@@ -4144,20 +4200,6 @@ const CREATURES_DATA = [
   "source": "Rules of Engagement (page 54)"
  },
  {
-  "name": "Yavinian Runyip",
-  "type": "Swamp marsupial",
-  "planet": "Yavin IV",
-  "habitat": "Swamp",
-  "dex": "4D",
-  "per": "3D",
-  "str": "3D+2",
-  "move": "8",
-  "size": "1-1.4m tall",
-  "orneriness": "4D",
-  "special": "Head Butt: STR+1D.",
-  "source": "Galaxy Guide 12 (pages 19-20)"
- },
- {
   "name": "Salt Mynock",
   "type": "Desert parasite",
   "planet": "Crait",
@@ -4268,6 +4310,20 @@ const CREATURES_DATA = [
   "orneriness": "",
   "special": "Bite: STR+2D. Claws: STR+1D+2. Armor: +2D physical, +1D energy. Rock Throw: STR+1D, range 5-10/30/60.",
   "source": ""
+ },
+ {
+  "name": "Scaly Tauntaun",
+  "type": "",
+  "planet": "Hoth",
+  "habitat": "Arctic",
+  "dex": "2D+2",
+  "per": "3D+1",
+  "str": "4D",
+  "move": "16",
+  "size": "1.8m tall",
+  "orneriness": "2D+2",
+  "special": "Head Butt: STR+1D. Kick: STR+2. Cold Resistant. Natural Armor: +1D physical.",
+  "source": "Galaxy Guide 3 (page 66)"
  },
  {
   "name": "Scimitar Horned Tusk-Cat",
@@ -4802,6 +4858,20 @@ const CREATURES_DATA = [
   "source": "Galaxy Guide 3 (page 68)"
  },
  {
+  "name": "Swamp Wampa",
+  "type": "",
+  "planet": "Dromund Kaas",
+  "habitat": "Swamp",
+  "dex": "3D",
+  "per": "3D+2",
+  "str": "6D",
+  "move": "12/8 (swimming)",
+  "size": "2.8m tall",
+  "orneriness": "",
+  "special": "Claws: STR+2D. Bite: STR+1D. Camouflage: +1D+2 sneak in swamp. Amphibious.",
+  "source": ""
+ },
+ {
   "name": "Swamp Worm",
   "type": "",
   "planet": "Dagobah",
@@ -4870,48 +4940,6 @@ const CREATURES_DATA = [
   "orneriness": "3D",
   "special": "Head Butt: STR+1D. Kick: STR+2. Cold Resistant.",
   "source": "Core Rulebook (page 228)"
- },
- {
-  "name": "Giant Tauntaun",
-  "type": "",
-  "planet": "Hoth",
-  "habitat": "Arctic",
-  "dex": "2D",
-  "per": "3D+2",
-  "str": "5D+2",
-  "move": "18",
-  "size": "3.5m tall",
-  "orneriness": "3D",
-  "special": "Head Butt: STR+2D. Kick: STR+1D. Cold Resistant.",
-  "source": "Galaxy Guide 3 (page 65)"
- },
- {
-  "name": "Glacier Tauntaun",
-  "type": "",
-  "planet": "Hoth",
-  "habitat": "Arctic",
-  "dex": "2D+1",
-  "per": "3D+2",
-  "str": "4D+2",
-  "move": "14",
-  "size": "2m tall",
-  "orneriness": "3D+1",
-  "special": "Head Butt: STR+1D. Kick: STR+2. Cold Resistant. Climbing: +1D over ice.",
-  "source": "Galaxy Guide 3 (page 65)"
- },
- {
-  "name": "Scaly Tauntaun",
-  "type": "",
-  "planet": "Hoth",
-  "habitat": "Arctic",
-  "dex": "2D+2",
-  "per": "3D+1",
-  "str": "4D",
-  "move": "16",
-  "size": "1.8m tall",
-  "orneriness": "2D+2",
-  "special": "Head Butt: STR+1D. Kick: STR+2. Cold Resistant. Natural Armor: +1D physical.",
-  "source": "Galaxy Guide 3 (page 66)"
  },
  {
   "name": "Teek",
@@ -5010,20 +5038,6 @@ const CREATURES_DATA = [
   "orneriness": "2D",
   "special": "Tail Slap: STR+1D. Mounts: ridden by Alderaanian nobility. Speeder Scale.",
   "source": ""
- },
- {
-  "name": "Giant Thranta",
-  "type": "",
-  "planet": "Bespin",
-  "habitat": "Atmosphere",
-  "dex": "2D+2",
-  "per": "2D",
-  "str": "8D",
-  "move": "35 (flying)",
-  "size": "30m+ wingspan",
-  "orneriness": "2D",
-  "special": "Tail Slap: STR+2D. Mounts: can carry multiple riders/cargo. Walker Scale.",
-  "source": "Galaxy Guide 3 (page 67)"
  },
  {
   "name": "Tidal Bore Squid",
@@ -5390,34 +5404,6 @@ const CREATURES_DATA = [
   "source": "Core Rulebook (page 229)"
  },
  {
-  "name": "Cliff Wampa",
-  "type": "",
-  "planet": "Hoth",
-  "habitat": "Arctic/Mountain",
-  "dex": "3D+2",
-  "per": "4D",
-  "str": "7D",
-  "move": "12/10 (climbing)",
-  "size": "3.5m tall",
-  "orneriness": "",
-  "special": "Claws: STR+2D+1. Bite: STR+1D+2. Climbing: +2D. Camouflage: +2D sneak in snow. Cold Resistant.",
-  "source": "Galaxy Guide 3 (page 66)"
- },
- {
-  "name": "Swamp Wampa",
-  "type": "",
-  "planet": "Dromund Kaas",
-  "habitat": "Swamp",
-  "dex": "3D",
-  "per": "3D+2",
-  "str": "6D",
-  "move": "12/8 (swimming)",
-  "size": "2.8m tall",
-  "orneriness": "",
-  "special": "Claws: STR+2D. Bite: STR+1D. Camouflage: +1D+2 sneak in swamp. Amphibious.",
-  "source": ""
- },
- {
   "name": "Wandrella",
   "type": "",
   "planet": "Circarpous V",
@@ -5626,6 +5612,20 @@ const CREATURES_DATA = [
   "orneriness": "",
   "special": "Talons: STR+2D. Beak: STR+1D. Keen Sight: +3D search visual. Dive Attack: +2D damage from height.",
   "source": ""
+ },
+ {
+  "name": "Yavinian Runyip",
+  "type": "Swamp marsupial",
+  "planet": "Yavin IV",
+  "habitat": "Swamp",
+  "dex": "4D",
+  "per": "3D",
+  "str": "3D+2",
+  "move": "8",
+  "size": "1-1.4m tall",
+  "orneriness": "4D",
+  "special": "Head Butt: STR+1D.",
+  "source": "Galaxy Guide 12 (pages 19-20)"
  },
  {
   "name": "Ysalamiri",
