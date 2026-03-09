@@ -1170,8 +1170,21 @@ color:var(--text-dim);min-width:35px;text-align:right;
           <!-- Steps container -->
           <div id="sbSteps"></div>
 
-          <!-- Summary -->
-          <div id="sbSummary" style="display:none;margin-top:12px"></div>
+          <!-- Finalize -->
+          <div style="margin-top:12px;padding:10px;background:var(--bg3);border:1px solid var(--gold-dim);border-radius:var(--radius-sm)">
+            <div style="font-family:'Exo 2',sans-serif;font-size:11px;color:var(--gold);font-weight:700;letter-spacing:1px;margin-bottom:8px">⟐ FINALIZE</div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:end">
+              <div style="flex:1;min-width:180px">
+                <div style="font-size:10px;color:var(--text-dim);margin-bottom:2px">Ship Name</div>
+                <input type="text" id="sbShipName" placeholder="Enter ship name..." style="width:100%;padding:8px;background:var(--bg);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--gold);font-family:'Exo 2',sans-serif;font-size:14px;font-weight:700;letter-spacing:0.5px">
+              </div>
+              <div style="flex:1;min-width:180px">
+                <div style="font-size:10px;color:var(--text-dim);margin-bottom:2px">Ship Class / Type (optional)</div>
+                <input type="text" id="sbShipClass" placeholder="e.g. Light Freighter" style="width:100%;padding:8px;background:var(--bg);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-family:'Exo 2',sans-serif;font-size:12px">
+              </div>
+              <button onclick="SB.exportPDF()" style="padding:10px 20px;background:var(--gold);color:var(--bg);border:none;border-radius:var(--radius-sm);cursor:pointer;font-family:'Exo 2',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;white-space:nowrap">⟐ DOWNLOAD PDF</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -5840,6 +5853,7 @@ const SB = {
 
     // STEP 3: Life Support
     h += mkStep(3,'Life Support','sbLife');
+    h += '<div style="font-size:10px;color:var(--text-dim);margin-bottom:4px">Must cover <span style="color:var(--gold)">crew + passengers</span> combined. Minimum = crew size.</div>';
     h += '<select id="sbLifeSelect" onchange="SB.setLife()" style="width:100%;padding:8px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:12px;font-family:inherit"><option value="">— Select first —</option></select></div></div>';
 
     // STEP 4: Cargo
@@ -6130,6 +6144,156 @@ const SB = {
     const over = empUsed > max;
     info.innerHTML = `Emplacements: <span style="color:${over?'var(--red)':'var(--green)'}"> ${empUsed} / ${max}</span> — Weapon Cost: <span style="color:var(--cyan)">${cost.toLocaleString()} cr</span>${over?' <span style="color:var(--red)">⚠ OVER LIMIT</span>':''}`;
     this.recalc();
+  },
+
+  exportPDF() {
+    if (typeof window.jspdf === 'undefined') { alert('PDF library still loading, try again in a moment.'); return; }
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF({ unit: 'pt', format: 'letter' });
+    const W = 612, H = 792;
+    const s = this.state;
+    const shipName = document.getElementById('sbShipName').value.trim() || 'Unnamed Vessel';
+    const shipClass = document.getElementById('sbShipClass').value.trim();
+
+    // Helpers
+    const gold = [218, 165, 32];
+    const cyan = [0, 210, 210];
+    const white = [230, 230, 230];
+    const dim = [140, 140, 140];
+    const darkBg = [18, 18, 24];
+    const cardBg = [28, 28, 38];
+    const lineBg = [22, 22, 32];
+    let y = 40;
+
+    const setC = (c) => doc.setTextColor(c[0],c[1],c[2]);
+    const setF = (c) => doc.setFillColor(c[0],c[1],c[2]);
+
+    // Background
+    setF(darkBg); doc.rect(0, 0, W, H, 'F');
+
+    // Header
+    setC(gold); doc.setFont('helvetica','bold'); doc.setFontSize(22);
+    doc.text(shipName.toUpperCase(), W/2, y, {align:'center'}); y += 18;
+    if (shipClass) { setC(dim); doc.setFontSize(10); doc.text(shipClass.toUpperCase(), W/2, y, {align:'center'}); }
+    y += 14;
+
+    // Gold line
+    doc.setDrawColor(gold[0],gold[1],gold[2]); doc.setLineWidth(1);
+    doc.line(40, y, W-40, y); y += 16;
+
+    // Get selected values from dropdowns
+    const getSelText = (id) => { const el = document.getElementById(id); return el && el.selectedIndex > 0 ? el.options[el.selectedIndex].text : '—'; };
+    const getSelVal = (id) => document.getElementById(id)?.value || '';
+
+    // Ship info
+    const sizeInfo = s.size !== undefined ? this.sizes[s.size] : null;
+
+    // Stat block function
+    const statRow = (label, value, indent) => {
+      const x = indent ? 60 : 40;
+      setF(lineBg); doc.rect(x, y-10, W - x - 40, 14, 'F');
+      setC(gold); doc.setFont('helvetica','bold'); doc.setFontSize(9);
+      doc.text(label, x + 6, y);
+      setC(white); doc.setFont('helvetica','normal'); doc.setFontSize(9);
+      doc.text(String(value), 220, y);
+      y += 16;
+      if (y > H - 50) { doc.addPage(); setF(darkBg); doc.rect(0,0,W,H,'F'); y = 40; }
+    };
+
+    const sectionHead = (title) => {
+      y += 4;
+      setC(cyan); doc.setFont('helvetica','bold'); doc.setFontSize(10);
+      doc.text('⟐ ' + title, 40, y); y += 14;
+    };
+
+    // === STATS ===
+    sectionHead('SHIP SPECIFICATIONS');
+    if (sizeInfo) {
+      statRow('Scale', sizeInfo.scale);
+      statRow('Length', sizeInfo.length);
+      statRow('Mass', sizeInfo.mass);
+      statRow('Size Category', sizeInfo.sizeNum);
+      statRow('Base Hull', sizeInfo.baseHull);
+    }
+    statRow('Crew', getSelText('sbCrewSelect'));
+    statRow('Life Support', getSelText('sbLifeSelect'));
+    statRow('Cargo', getSelText('sbCargoSelect'));
+    statRow('Consumables', getSelText('sbConsSelect'));
+
+    sectionHead('PROPULSION');
+    statRow('Hyperdrive', getSelText('sbHyperSelect'));
+    statRow('Backup Hyperdrive', getSelText('sbBackupHyperSelect'));
+    statRow('Sublight Speed', getSelText('sbSpeedSelect'));
+    statRow('Maneuverability', getSelText('sbManSelect'));
+
+    sectionHead('DEFENSE');
+    // Total hull
+    const structText = getSelText('sbStructSelect');
+    const baseHull = sizeInfo ? sizeInfo.baseHull : '—';
+    statRow('Base Hull', baseHull);
+    statRow('Added Structure', structText);
+    const hullTotal = document.getElementById('sbHullTotal')?.textContent || '';
+    if (hullTotal) statRow('Total Hull', hullTotal);
+    statRow('Shields', getSelText('sbShieldSelect'));
+
+    sectionHead('SENSORS');
+    const sRange = parseInt(document.getElementById('sbSensorRange')?.value) || 0;
+    const sPwr = parseInt(document.getElementById('sbSensorPower')?.value) || 0;
+    if (sRange > 0 || sPwr > 0) {
+      statRow('Passive', sRange * 5);
+      statRow('Scan', sRange * 10);
+      statRow('Search', sRange * 20);
+      statRow('Focus', sRange);
+      statRow('Sensor Power', Math.floor(sPwr/3) + 'D+' + (sPwr%3));
+    } else {
+      statRow('Sensors', 'None');
+    }
+
+    // Weapons
+    sectionHead('WEAPONS');
+    statRow('Emplacements', getSelText('sbMountSelect'));
+    const wList = this.isCapital() ? this.weaponsCap : this.weaponsSF;
+    if (s.weapons && s.weapons.length > 0) {
+      s.weapons.forEach((w, i) => {
+        const wp = wList[w.idx];
+        const fl = w.firelink || 1;
+        const flName = fl === 1 ? '' : fl === 2 ? 'Twin ' : fl === 3 ? 'Triple ' : 'Quad ';
+        const bonusD = Math.max(0, fl - 1);
+        const dmg = bonusD > 0 ? wp.dmg + '+' + bonusD + 'D' : wp.dmg;
+        const turret = w.turret ? ' [Turret]' : '';
+        const qty = w.qty > 1 ? w.qty + '× ' : '';
+        statRow('Weapon ' + (i+1), qty + flName + wp.name + turret);
+        statRow('  Damage / FC / Range', dmg + ' / ' + wp.fc + ' / ' + wp.range, true);
+      });
+    } else {
+      statRow('Weapons', 'None');
+    }
+
+    // Cost summary
+    sectionHead('COST SUMMARY');
+    const cpTotal = parseInt(document.getElementById('sbCPTotal').textContent) || 0;
+    const hullPrice = this.cpToPrice(cpTotal);
+    const sensorCost = s.sensorCost || 0;
+    const weaponCost = s.weaponCost || 0;
+    const total = hullPrice + sensorCost + weaponCost;
+    statRow('Construction Points', cpTotal);
+    statRow('Hull Price', hullPrice.toLocaleString() + ' credits');
+    statRow('Sensor Cost', sensorCost.toLocaleString() + ' credits');
+    statRow('Weapon Cost', weaponCost.toLocaleString() + ' credits');
+    y += 4;
+    setF([40, 35, 20]); doc.rect(40, y-10, W-80, 16, 'F');
+    setC(gold); doc.setFont('helvetica','bold'); doc.setFontSize(11);
+    doc.text('TOTAL COST', 46, y+1);
+    doc.text(total.toLocaleString() + ' CREDITS', W-46, y+1, {align:'right'});
+    y += 24;
+
+    // Footer
+    setC(dim); doc.setFont('helvetica','normal'); doc.setFontSize(7);
+    doc.text('Generated by Segrimsjinn SW WEG D6 Toolkit — Ship Builder (Krapou/Grimace CP System)', W/2, H-20, {align:'center'});
+
+    // Save
+    const safeName = shipName.replace(/[^a-zA-Z0-9 _-]/g,'').replace(/ /g,'_');
+    doc.save(safeName + '_Ship_Sheet.pdf');
   },
 };
 
