@@ -539,6 +539,35 @@ color:var(--text-dim);min-width:35px;text-align:right;
         <button class="btn btn-generate" onclick="rollAll()">⟐ GENERATE NPC ⟐</button>
       </div>
 
+      <!-- CREATURE LOOKUP -->
+      <div class="card" style="margin-top:8px">
+        <div class="card-title" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer" onclick="toggleCreaturePanel()">
+          <span>⟐ Creature Lookup <span id="creatureCountBadge" style="color:var(--text-dim);font-weight:400;font-size:10px;letter-spacing:1px"></span></span>
+          <span id="creatureToggleIcon" style="font-size:14px;color:var(--text-dim);transition:transform .2s">▼</span>
+        </div>
+        <div id="creaturePanel" style="display:none">
+          <input type="text" id="creatureSearch" placeholder="Search by name, planet, type, ability..." oninput="filterCreatures()"
+            style="width:100%;padding:10px 12px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:13px;font-family:inherit;margin-bottom:8px">
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px">
+            <select id="creatureHabitat" onchange="filterCreatures()" style="flex:1;min-width:100px;padding:8px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:12px;font-family:inherit">
+              <option value="">All Habitats</option>
+            </select>
+            <select id="creaturePlanet" onchange="filterCreatures()" style="flex:1;min-width:100px;padding:8px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:12px;font-family:inherit">
+              <option value="">All Planets</option>
+            </select>
+          </div>
+          <div style="display:flex;gap:6px;margin-bottom:10px">
+            <button class="btn btn-primary" onclick="randomCreature()" style="flex:1;padding:10px 8px;font-size:10px;letter-spacing:1.5px">⟐ RANDOM</button>
+            <button class="btn btn-primary" onclick="randomCreatureByHabitat()" style="flex:1;padding:10px 8px;font-size:10px;letter-spacing:1.5px;background:linear-gradient(135deg,var(--blue-dim),var(--blue));color:#000">⟐ BY HABITAT</button>
+            <button class="btn btn-primary" onclick="clearCreatureFilters()" style="padding:10px 12px;font-size:10px;letter-spacing:1.5px;background:var(--bg3);color:var(--text-dim);border:1px solid var(--card-border)">CLEAR</button>
+          </div>
+          <!-- Creature results list -->
+          <div id="creatureList" style="max-height:300px;overflow-y:auto;margin-bottom:8px"></div>
+          <!-- Creature detail card -->
+          <div id="creatureDetail" style="display:none"></div>
+        </div>
+      </div>
+
       <div id="npcResult" style="display:none">
         <!-- PDF controls + info row -->
         <div style="display:flex;align-items:center;justify-content:space-between;padding:6px 2px;flex-wrap:wrap;gap:4px">
@@ -1315,6 +1344,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
 <script src="data_armor.js"></script>
 <script src="data_starships.js"></script>
 <script src="data_forcepowers.js"></script>
+<script src="data_creatures.js"></script>
 
 <script>
 // ============================================================
@@ -4436,6 +4466,196 @@ var gcInterval = setInterval(function() {
     });
   }
 }, 200);
+</script>
+
+<script>
+// ============================================================
+// CREATURE LOOKUP
+// ============================================================
+let creaturePanelOpen = false;
+let creatureFiltered = [];
+let selectedCreature = null;
+
+function toggleCreaturePanel() {
+  creaturePanelOpen = !creaturePanelOpen;
+  document.getElementById('creaturePanel').style.display = creaturePanelOpen ? 'block' : 'none';
+  document.getElementById('creatureToggleIcon').textContent = creaturePanelOpen ? '▲' : '▼';
+  if (creaturePanelOpen && !document.getElementById('creatureHabitat').options.length > 1) initCreatureFilters();
+}
+
+function initCreatureFilters() {
+  if (typeof CREATURES_DATA === 'undefined' || !CREATURES_DATA.length) return;
+  document.getElementById('creatureCountBadge').textContent = '(' + CREATURES_DATA.length + ')';
+
+  // Build habitat list from data
+  const habitats = new Set();
+  const planets = new Set();
+  CREATURES_DATA.forEach(c => {
+    if (c.habitat) c.habitat.split('/').forEach(h => habitats.add(h.trim()));
+    if (c.planet) planets.add(c.planet.trim());
+  });
+  const habSel = document.getElementById('creatureHabitat');
+  [...habitats].sort().forEach(h => { const o = document.createElement('option'); o.value = h; o.textContent = h; habSel.appendChild(o); });
+  const plnSel = document.getElementById('creaturePlanet');
+  [...planets].sort().forEach(p => { const o = document.createElement('option'); o.value = p; o.textContent = p; plnSel.appendChild(o); });
+
+  filterCreatures();
+}
+
+function filterCreatures() {
+  if (typeof CREATURES_DATA === 'undefined') return;
+  const q = (document.getElementById('creatureSearch').value || '').toLowerCase();
+  const hab = document.getElementById('creatureHabitat').value;
+  const pln = document.getElementById('creaturePlanet').value;
+
+  creatureFiltered = CREATURES_DATA.filter(c => {
+    if (hab && !(c.habitat || '').split('/').some(h => h.trim() === hab)) return false;
+    if (pln && (c.planet || '').trim() !== pln) return false;
+    if (q) {
+      const blob = [c.name, c.type, c.planet, c.habitat, c.special, c.source].join(' ').toLowerCase();
+      return blob.includes(q);
+    }
+    return true;
+  });
+
+  renderCreatureList();
+}
+
+function renderCreatureList() {
+  const el = document.getElementById('creatureList');
+  if (!creatureFiltered.length) {
+    el.innerHTML = '<div style="text-align:center;color:var(--text-dim);font-size:12px;padding:16px">No creatures found.</div>';
+    return;
+  }
+  // Show count + scrollable list of compact rows
+  let html = '<div style="font-size:10px;color:var(--text-dim);margin-bottom:6px;font-family:\'Orbitron\',monospace;letter-spacing:1px">' + creatureFiltered.length + ' CREATURES</div>';
+  creatureFiltered.forEach((c, i) => {
+    const strVal = c.str || '?';
+    const habShort = (c.habitat || '').split('/')[0];
+    html += '<div onclick="showCreature(' + i + ')" style="display:flex;align-items:center;justify-content:space-between;padding:8px 10px;margin-bottom:2px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);cursor:pointer;transition:border-color .15s" onmouseover="this.style.borderColor=\'var(--gold-dim)\'" onmouseout="this.style.borderColor=\'var(--card-border)\'">'
+      + '<div style="flex:1;min-width:0">'
+      + '<div style="font-size:13px;color:var(--gold);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">' + c.name + '</div>'
+      + '<div style="font-size:10px;color:var(--text-dim)">' + (c.type || '') + (c.planet ? ' — ' + c.planet : '') + '</div>'
+      + '</div>'
+      + '<div style="display:flex;gap:10px;align-items:center;flex-shrink:0;margin-left:8px">'
+      + '<span style="font-size:10px;color:var(--blue);font-family:\'Share Tech Mono\',monospace">' + habShort + '</span>'
+      + '<span style="font-size:11px;color:var(--red);font-family:\'Share Tech Mono\',monospace;min-width:32px;text-align:right">STR ' + strVal + '</span>'
+      + '</div></div>';
+  });
+  el.innerHTML = html;
+}
+
+function showCreature(idx) {
+  const c = creatureFiltered[idx];
+  if (!c) return;
+  selectedCreature = c;
+  const el = document.getElementById('creatureDetail');
+  el.style.display = 'block';
+
+  // Parse stats into a grid
+  const statPairs = [
+    ['DEX', c.dex], ['PER', c.per], ['STR', c.str],
+    ['MOVE', c.move], ['SIZE', c.size]
+  ];
+  if (c.orneriness) statPairs.push(['ORNERINESS', c.orneriness]);
+
+  let statsHtml = '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:10px">';
+  statPairs.forEach(([lbl, val]) => {
+    statsHtml += '<div style="background:var(--bg);border:1px solid var(--card-border);border-radius:var(--radius-sm);padding:6px 8px;text-align:center">'
+      + '<div style="font-family:\'Orbitron\',monospace;font-size:8px;color:var(--text-dim);letter-spacing:1px;margin-bottom:2px">' + lbl + '</div>'
+      + '<div style="font-family:\'Share Tech Mono\',monospace;font-size:13px;color:var(--gold)">' + (val || '—') + '</div></div>';
+  });
+  statsHtml += '</div>';
+
+  // Special abilities
+  let specialHtml = '';
+  if (c.special) {
+    const abilities = c.special.split(/\.\s+(?=[A-Z])/).filter(Boolean);
+    specialHtml = '<div style="margin-bottom:10px"><div style="font-family:\'Orbitron\',monospace;font-size:9px;color:var(--text-dim);letter-spacing:1px;margin-bottom:6px">SPECIAL ABILITIES</div>';
+    abilities.forEach(a => {
+      const cleaned = a.replace(/\.$/, '').trim();
+      const colonIdx = cleaned.indexOf(':');
+      if (colonIdx > 0 && colonIdx < 40) {
+        const label = cleaned.substring(0, colonIdx);
+        const desc = cleaned.substring(colonIdx + 1).trim();
+        specialHtml += '<div style="font-size:12px;line-height:1.5;margin-bottom:4px"><span style="color:var(--cyan);font-weight:600">' + label + ':</span> <span style="color:var(--text)">' + desc + '</span></div>';
+      } else {
+        specialHtml += '<div style="font-size:12px;line-height:1.5;margin-bottom:4px;color:var(--text)">' + cleaned + '</div>';
+      }
+    });
+    specialHtml += '</div>';
+  }
+
+  // Source
+  let sourceHtml = '';
+  if (c.source) {
+    sourceHtml = '<div style="font-size:10px;color:var(--text-dim);border-top:1px solid var(--card-border);padding-top:8px;margin-top:4px"><span style="color:var(--text-dark)">SOURCE:</span> ' + c.source + '</div>';
+  }
+
+  el.innerHTML = '<div style="background:var(--bg);border:1px solid var(--gold-dim);border-radius:var(--radius);padding:12px;position:relative">'
+    + '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">'
+    + '<div>'
+    + '<div style="font-family:\'Orbitron\',monospace;font-size:14px;color:var(--gold);font-weight:700;letter-spacing:1px">' + c.name + '</div>'
+    + '<div style="font-size:11px;color:var(--text-dim);margin-top:2px">' + (c.type || '') + (c.planet ? ' — ' + c.planet : '') + (c.habitat ? ' <span style="color:var(--blue)">(' + c.habitat + ')</span>' : '') + '</div>'
+    + '</div>'
+    + '<button onclick="document.getElementById(\'creatureDetail\').style.display=\'none\'" style="background:none;border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text-dim);cursor:pointer;padding:4px 8px;font-size:11px">✕</button>'
+    + '</div>'
+    + statsHtml
+    + specialHtml
+    + sourceHtml
+    + '</div>';
+
+  // Scroll detail into view
+  el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function randomCreature() {
+  if (typeof CREATURES_DATA === 'undefined' || !CREATURES_DATA.length) return;
+  if (!creaturePanelOpen) toggleCreaturePanel();
+  document.getElementById('creatureSearch').value = '';
+  document.getElementById('creatureHabitat').value = '';
+  document.getElementById('creaturePlanet').value = '';
+  creatureFiltered = [...CREATURES_DATA];
+  const idx = Math.floor(Math.random() * creatureFiltered.length);
+  renderCreatureList();
+  showCreature(idx);
+}
+
+function randomCreatureByHabitat() {
+  if (typeof CREATURES_DATA === 'undefined' || !CREATURES_DATA.length) return;
+  if (!creaturePanelOpen) toggleCreaturePanel();
+  const hab = document.getElementById('creatureHabitat').value;
+  if (!hab) {
+    // Pick a random habitat first
+    const allHabs = new Set();
+    CREATURES_DATA.forEach(c => { if (c.habitat) c.habitat.split('/').forEach(h => allHabs.add(h.trim())); });
+    const habArr = [...allHabs];
+    const rh = habArr[Math.floor(Math.random() * habArr.length)];
+    document.getElementById('creatureHabitat').value = rh;
+  }
+  document.getElementById('creatureSearch').value = '';
+  document.getElementById('creaturePlanet').value = '';
+  filterCreatures();
+  if (creatureFiltered.length) {
+    const idx = Math.floor(Math.random() * creatureFiltered.length);
+    showCreature(idx);
+  }
+}
+
+function clearCreatureFilters() {
+  document.getElementById('creatureSearch').value = '';
+  document.getElementById('creatureHabitat').value = '';
+  document.getElementById('creaturePlanet').value = '';
+  document.getElementById('creatureDetail').style.display = 'none';
+  filterCreatures();
+}
+
+// Init on load
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof CREATURES_DATA !== 'undefined') {
+    document.getElementById('creatureCountBadge').textContent = '(' + CREATURES_DATA.length + ')';
+  }
+});
 </script>
 
 </body>
