@@ -1148,6 +1148,31 @@ color:var(--text-dim);min-width:35px;text-align:right;
           <div id="vehDetail" style="display:none"></div>
         </div>
       </div>
+
+      <!-- SHIP BUILDER -->
+      <div class="card" style="margin-top:8px">
+        <div class="card-title" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer" onclick="toggleShipBuilder()">
+          <span>⟐ Ship Builder</span>
+          <span id="sbToggleIcon" style="font-size:14px;color:var(--text-dim)">▼</span>
+        </div>
+        <div id="sbPanel" style="display:none">
+          <div style="font-size:11px;color:var(--text-dim);margin-bottom:10px;line-height:1.5">Build a ship from the ground up using the Krapou/Grimace Construction Point system. Each step adds CPs to determine final price.</div>
+
+          <!-- Running totals bar -->
+          <div id="sbTotals" style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;padding:8px 10px;background:var(--bg);border:1px solid var(--gold-dim);border-radius:var(--radius-sm);position:sticky;top:0;z-index:10">
+            <div style="flex:1;text-align:center"><div style="font-family:'Exo 2',sans-serif;font-size:7px;color:var(--text-dim);letter-spacing:1px">CPs</div><div id="sbCPTotal" style="font-family:'IBM Plex Mono',monospace;font-size:16px;color:var(--gold);font-weight:700">0</div></div>
+            <div style="flex:1;text-align:center"><div style="font-family:'Exo 2',sans-serif;font-size:7px;color:var(--text-dim);letter-spacing:1px">HULL PRICE</div><div id="sbHullPrice" style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:var(--green)">0</div></div>
+            <div style="flex:1;text-align:center"><div style="font-family:'Exo 2',sans-serif;font-size:7px;color:var(--text-dim);letter-spacing:1px">EXTRAS</div><div id="sbExtrasPrice" style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:var(--cyan)">0</div></div>
+            <div style="flex:1;text-align:center"><div style="font-family:'Exo 2',sans-serif;font-size:7px;color:var(--text-dim);letter-spacing:1px">TOTAL</div><div id="sbTotalPrice" style="font-family:'IBM Plex Mono',monospace;font-size:16px;color:var(--gold);font-weight:700">0 cr</div></div>
+          </div>
+
+          <!-- Steps container -->
+          <div id="sbSteps"></div>
+
+          <!-- Summary -->
+          <div id="sbSummary" style="display:none;margin-top:12px"></div>
+        </div>
+      </div>
     </div>
 
     <!-- TAB 5: GM TOOLS -->
@@ -5551,6 +5576,534 @@ function clearVehFilters() {
 document.addEventListener('DOMContentLoaded', function() {
   if (typeof VEHICLES_DATA !== 'undefined') document.getElementById('vehCountBadge').textContent = '(' + VEHICLES_DATA.length + ')';
 });
+</script>
+
+<script>
+// ============================================================
+// SHIP BUILDER - Krapou/Grimace CP System
+// ============================================================
+const SB = {
+  open: false,
+  state: {},
+
+  // DATA TABLES
+  sizes: [
+    {label:'< 5m',length:'< 5m',mass:'< 3 mt',scale:'Starfighter',baseHull:'1 pip',sizeNum:1,baseCPs:1},
+    {label:'5-10m',length:'5-10m',mass:'12.5 mt',scale:'Starfighter',baseHull:'1 pip',sizeNum:2,baseCPs:1},
+    {label:'11-20m',length:'11-20m',mass:'110 mt',scale:'Starfighter',baseHull:'2 pip',sizeNum:3,baseCPs:2},
+    {label:'21-30m',length:'21-30m',mass:'325 mt',scale:'Starfighter',baseHull:'1D',sizeNum:4,baseCPs:3},
+    {label:'31-50m',length:'31-50m',mass:'1,500 mt',scale:'Starfighter',baseHull:'1D',sizeNum:4,baseCPs:3},
+    {label:'51-100m',length:'51-100m',mass:'12,500 mt',scale:'Capital',baseHull:'1 pip',sizeNum:5,baseCPs:15},
+    {label:'101-150m',length:'101-150m',mass:'40,000 mt',scale:'Capital',baseHull:'1 pip',sizeNum:5,baseCPs:25},
+    {label:'151-250m',length:'151-250m',mass:'200,000 mt',scale:'Capital',baseHull:'2 pip',sizeNum:6,baseCPs:35},
+    {label:'251-350m',length:'251-350m',mass:'550,000 mt',scale:'Capital',baseHull:'2 pip',sizeNum:6,baseCPs:45},
+    {label:'351-500m',length:'351-500m',mass:'1,500,000 mt',scale:'Capital',baseHull:'1D',sizeNum:7,baseCPs:55},
+    {label:'501-750m',length:'501-750m',mass:'5,000,000 mt',scale:'Capital',baseHull:'1D',sizeNum:7,baseCPs:68},
+    {label:'751-1000m',length:'751-1000m',mass:'12,500,000 mt',scale:'Capital',baseHull:'1D+1',sizeNum:8,baseCPs:82},
+    {label:'1001-1500m',length:'1001-1500m',mass:'40,000,000 mt',scale:'Capital',baseHull:'1D+1',sizeNum:8,baseCPs:100},
+    {label:'1501-2500m',length:'1501-2500m',mass:'200,000,000 mt',scale:'Capital',baseHull:'1D+2',sizeNum:9,baseCPs:130},
+  ],
+
+  automation: [
+    {crew:1,sizes:{2:1,3:2,4:8}},
+    {crew:2,sizes:{2:0,3:1,4:4}},
+    {crew:5,sizes:{3:0,4:2}},
+    {crew:10,sizes:{4:1,5:70}},
+    {crew:25,sizes:{4:0,5:50}},
+    {crew:50,sizes:{5:35}},
+    {crew:100,sizes:{5:20}},
+    {crew:150,sizes:{5:10}},
+    {crew:250,sizes:{5:0,6:90}},
+    {crew:500,sizes:{6:55}},
+    {crew:1000,sizes:{6:40}},
+    {crew:1500,sizes:{6:25,7:100}},
+    {crew:2500,sizes:{6:10,7:75}},
+    {crew:3500,sizes:{6:0,7:45,8:120}},
+    {crew:5000,sizes:{7:25,8:85}},
+    {crew:7500,sizes:{7:10,8:55,9:140}},
+    {crew:10000,sizes:{7:0,8:30,9:90}},
+    {crew:15000,sizes:{8:15,9:60}},
+    {crew:25000,sizes:{8:0,9:35}},
+    {crew:35000,sizes:{9:15}},
+    {crew:50000,sizes:{9:0}},
+  ],
+
+  lifeSupport: [
+    {people:2,minSize:0,cps:1},{people:5,minSize:2,cps:2},{people:10,minSize:2,cps:3},
+    {people:25,minSize:3,cps:4},{people:50,minSize:3,cps:6},{people:100,minSize:4,cps:8},
+    {people:250,minSize:4,cps:10},{people:500,minSize:5,cps:12},{people:1000,minSize:5,cps:14},
+    {people:2500,minSize:6,cps:16},{people:5000,minSize:6,cps:18},{people:10000,minSize:7,cps:20},
+    {people:25000,minSize:7,cps:25},{people:50000,minSize:8,cps:30},
+  ],
+
+  cargo: [
+    {cap:'100 kg',minSize:1,cps:1},{cap:'500 kg',minSize:1,cps:2},{cap:'1 mt',minSize:2,cps:3},
+    {cap:'5 mt',minSize:2,cps:4},{cap:'10 mt',minSize:2,cps:5},{cap:'25 mt',minSize:3,cps:6},
+    {cap:'50 mt',minSize:3,cps:7},{cap:'100 mt',minSize:4,cps:8},{cap:'150 mt',minSize:4,cps:9},
+    {cap:'200 mt',minSize:4,cps:10},{cap:'500 mt',minSize:4,cps:12},{cap:'1,000 mt',minSize:5,cps:14},
+    {cap:'2,500 mt',minSize:5,cps:16},{cap:'5,000 mt',minSize:5,cps:18},{cap:'10,000 mt',minSize:5,cps:20},
+    {cap:'15,000 mt',minSize:5,cps:25},{cap:'25,000 mt',minSize:5,cps:30},{cap:'40,000 mt',minSize:6,cps:35},
+    {cap:'55,000 mt',minSize:6,cps:40},{cap:'75,000 mt',minSize:6,cps:45},{cap:'100,000 mt',minSize:6,cps:50},
+  ],
+
+  consumables: [
+    {dur:'1 day',minSize:0,cps:0},{dur:'3 days',minSize:0,cps:1},{dur:'1 week',minSize:2,cps:2},
+    {dur:'2 weeks',minSize:2,cps:3},{dur:'3 weeks',minSize:3,cps:4},{dur:'1 month',minSize:3,cps:5},
+    {dur:'2 months',minSize:4,cps:6},{dur:'3 months',minSize:4,cps:8},{dur:'6 months',minSize:4,cps:10},
+    {dur:'9 months',minSize:5,cps:12},{dur:'1 year',minSize:5,cps:14},{dur:'2 years',minSize:5,cps:16},
+    {dur:'4 years',minSize:6,cps:18},{dur:'6 years',minSize:6,cps:20},
+  ],
+
+  hyperdrive: [
+    {speed:'x15',cps:1},{speed:'x10',cps:2},{speed:'x6',cps:3},{speed:'x4',cps:4},
+    {speed:'x3',cps:5},{speed:'x2',cps:8},{speed:'x1',cps:12},{speed:'x0.5',cps:25},
+  ],
+
+  sublight: [
+    {speed:3,maxSize:99,cps:2},{speed:5,maxSize:99,cps:4},{speed:6,maxSize:99,cps:6},
+    {speed:7,maxSize:99,cps:8},{speed:8,maxSize:99,cps:10},{speed:9,maxSize:4,cps:12},
+    {speed:10,maxSize:4,cps:15},{speed:15,maxSize:3,cps:30},{speed:20,maxSize:2,cps:50},
+  ],
+
+  maneuver: [
+    {man:'1D',minSpeed:0,cps:3},{man:'1D+1',minSpeed:0,cps:4},{man:'1D+2',minSpeed:0,cps:5},
+    {man:'2D',minSpeed:0,cps:6},{man:'2D+1',minSpeed:5,cps:8},{man:'2D+2',minSpeed:6,cps:10},
+    {man:'3D',minSpeed:7,cps:12},{man:'3D+1',minSpeed:8,cps:15},{man:'3D+2',minSpeed:9,cps:18},
+    {man:'4D',minSpeed:10,cps:20},{man:'5D',minSpeed:12,cps:30},{man:'6D',minSpeed:15,cps:50},
+  ],
+
+  structureSF: [
+    {hull:'+1D',minSize:1,cps:1},{hull:'+1D+1',minSize:1,cps:2},{hull:'+1D+2',minSize:1,cps:3},
+    {hull:'+2D',minSize:1,cps:4},{hull:'+2D+1',minSize:1,cps:5},{hull:'+2D+2',minSize:1,cps:6},
+    {hull:'+3D',minSize:2,cps:7},{hull:'+3D+1',minSize:2,cps:8},{hull:'+3D+2',minSize:2,cps:10},
+    {hull:'+4D',minSize:2,cps:12},{hull:'+4D+1',minSize:3,cps:14},{hull:'+4D+2',minSize:3,cps:16},
+    {hull:'+5D',minSize:3,cps:18},{hull:'+5D+1',minSize:3,cps:20},{hull:'+5D+2',minSize:3,cps:25},
+    {hull:'+6D',minSize:4,cps:30},
+  ],
+
+  structureCap: [
+    {hull:'+1D',minSize:5,cps:2},{hull:'+1D+1',minSize:5,cps:4},{hull:'+1D+2',minSize:5,cps:6},
+    {hull:'+2D',minSize:5,cps:8},{hull:'+2D+1',minSize:5,cps:10},{hull:'+2D+2',minSize:5,cps:12},
+    {hull:'+3D',minSize:5,cps:14},{hull:'+3D+1',minSize:5,cps:16},{hull:'+3D+2',minSize:5,cps:18},
+    {hull:'+4D',minSize:5,cps:20},{hull:'+4D+1',minSize:5,cps:22},{hull:'+4D+2',minSize:5,cps:24},
+    {hull:'+5D',minSize:6,cps:26},{hull:'+5D+1',minSize:6,cps:28},{hull:'+5D+2',minSize:6,cps:30},
+    {hull:'+6D',minSize:7,cps:35},{hull:'+6D+1',minSize:7,cps:40},{hull:'+6D+2',minSize:7,cps:45},
+    {hull:'+7D',minSize:8,cps:50},{hull:'+7D+1',minSize:8,cps:55},{hull:'+7D+2',minSize:8,cps:60},
+    {hull:'+8D',minSize:9,cps:65},
+  ],
+
+  shieldsSF: [
+    {str:'+1D',minSize:0,cps:1},{str:'+1D+1',minSize:0,cps:2},{str:'+1D+2',minSize:0,cps:3},
+    {str:'+2D',minSize:0,cps:4},{str:'+2D+1',minSize:2,cps:6},{str:'+2D+2',minSize:2,cps:8},
+    {str:'+3D',minSize:2,cps:10},{str:'+3D+1',minSize:3,cps:15},{str:'+3D+2',minSize:3,cps:20},
+    {str:'+4D',minSize:3,cps:25},{str:'+4D+1',minSize:4,cps:30},{str:'+4D+2',minSize:4,cps:35},
+    {str:'+5D',minSize:4,cps:40},
+  ],
+
+  shieldsCap: [
+    {str:'+1D',cps:4},{str:'+1D+1',cps:6},{str:'+1D+2',cps:8},{str:'+2D',cps:10},
+    {str:'+2D+1',cps:12},{str:'+2D+2',cps:14},{str:'+3D',cps:16},{str:'+3D+1',cps:18},
+    {str:'+3D+2',cps:20},{str:'+4D',cps:22},{str:'+4D+1',cps:24},{str:'+4D+2',cps:26},
+    {str:'+5D',cps:28},{str:'+5D+1',cps:30},{str:'+5D+2',cps:32},{str:'+6D',cps:34},
+    {str:'+6D+1',cps:36},{str:'+6D+2',cps:40},{str:'+7D',cps:45},{str:'+7D+1',cps:50},
+    {str:'+7D+2',cps:55},{str:'+8D',cps:60},{str:'+8D+1',cps:65},
+  ],
+
+  weaponMounts: [
+    {emp:4,minSize:0,cps:1},{emp:8,minSize:0,cps:2},{emp:12,minSize:2,cps:4},
+    {emp:16,minSize:2,cps:7},{emp:25,minSize:3,cps:10},{emp:35,minSize:3,cps:13},
+    {emp:50,minSize:3,cps:18},{emp:75,minSize:4,cps:24},{emp:100,minSize:4,cps:30},
+    {emp:150,minSize:5,cps:35},{emp:250,minSize:5,cps:40},{emp:500,minSize:6,cps:50},
+    {emp:750,minSize:6,cps:60},{emp:1000,minSize:7,cps:70},{emp:1250,minSize:7,cps:80},
+    {emp:1500,minSize:8,cps:90},{emp:1750,minSize:8,cps:100},{emp:2000,minSize:9,cps:110},
+    {emp:2250,minSize:9,cps:120},{emp:2500,minSize:9,cps:135},
+  ],
+
+  weaponsSF: [
+    {name:'Light Laser Cannon',dmg:'3D',fc:'2D',range:'1-3/12/25',emp:3,cost:1500},
+    {name:'Laser Cannon',dmg:'4D',fc:'2D',range:'1-3/12/25',emp:4,cost:2500},
+    {name:'Heavy Laser Cannon',dmg:'5D',fc:'2D',range:'1-3/12/25',emp:7,cost:4000},
+    {name:'Double Heavy Laser Cannon',dmg:'6D',fc:'2D',range:'1-3/12/25',emp:12,cost:7000},
+    {name:'Assault Cannon',dmg:'7D',fc:'1D',range:'1-3/12/25',emp:25,cost:15000},
+    {name:'Light Blaster',dmg:'2D',fc:'1D',range:'1-5/10/17',emp:3,cost:500},
+    {name:'Triple Blaster',dmg:'3D',fc:'1D',range:'1-5/10/17',emp:5,cost:1000},
+    {name:'Blaster Cannon',dmg:'4D',fc:'2D',range:'1-5/10/17',emp:7,cost:2000},
+    {name:'Heavy Blaster Cannon',dmg:'5D',fc:'2D',range:'1-5/10/17',emp:10,cost:3000},
+    {name:'Light Ion Cannon',dmg:'2D',fc:'2D',range:'1-3/7/36',emp:2,cost:1000},
+    {name:'Ion Cannon',dmg:'3D',fc:'2D',range:'1-3/7/36',emp:3,cost:1500},
+    {name:'Heavy Ion Cannon',dmg:'4D',fc:'2D',range:'1-3/7/36',emp:4,cost:2500},
+    {name:'Concussion Missile Launcher (×10)',dmg:'8D',fc:'1D',range:'1-2/8/15',emp:4,cost:3500},
+    {name:'Proton Torpedo Launcher (×12)',dmg:'9D',fc:'2D',range:'1/3/7',emp:5,cost:2500},
+    {name:'GP Warhead Launcher',dmg:'10-11D',fc:'3D',range:'1/2/5',emp:6,cost:8500},
+    {name:'Light Tractor Beam',dmg:'4D',fc:'2D',range:'1-3/12/20',emp:2,cost:2000},
+    {name:'Tractor Beam',dmg:'5D',fc:'2D',range:'1-3/12/20',emp:3,cost:3500},
+    {name:'Heavy Tractor Beam',dmg:'6D',fc:'2D',range:'1-3/12/20',emp:5,cost:5000},
+  ],
+
+  weaponsCap: [
+    {name:'Laser Cannon',dmg:'3D',fc:'2D',range:'1-3/12/25',emp:3,cost:8000},
+    {name:'Heavy Laser Cannon',dmg:'4D',fc:'2D',range:'1-3/12/25',emp:5,cost:10000},
+    {name:'Light Turbolaser',dmg:'3D',fc:'2D',range:'3-15/35/75',emp:4,cost:10000},
+    {name:'Turbolaser',dmg:'4D',fc:'2D',range:'3-15/35/75',emp:6,cost:12000},
+    {name:'Heavy Turbolaser',dmg:'5D',fc:'2D',range:'3-15/35/75',emp:10,cost:18000},
+    {name:'Double Turbolaser',dmg:'6D',fc:'2D',range:'3-15/35/75',emp:15,cost:25000},
+    {name:'Turbolaser Battery',dmg:'7D',fc:'1D',range:'3-15/35/75',emp:20,cost:40000},
+    {name:'Heavy Turbolaser Battery',dmg:'10D',fc:'0D',range:'3-15/35/75',emp:25,cost:60000},
+    {name:'Light Ion Cannon',dmg:'3D',fc:'2D',range:'1-10/25/50',emp:3,cost:8000},
+    {name:'Ion Cannon',dmg:'4D',fc:'2D',range:'1-10/25/50',emp:5,cost:10000},
+    {name:'Heavy Ion Cannon',dmg:'5D',fc:'2D',range:'1-10/25/50',emp:8,cost:15000},
+    {name:'Proton Torpedo Tube (×10)',dmg:'6D',fc:'3D',range:'2-12/30/60',emp:3,cost:8000},
+    {name:'Concussion Missile Tube (×10)',dmg:'9D',fc:'2D',range:'2-5/30/60',emp:8,cost:12000},
+    {name:'Light Tractor Beam',dmg:'4D',fc:'2D',range:'1-5/15/30',emp:3,cost:8000},
+    {name:'Tractor Beam',dmg:'5D',fc:'2D',range:'1-5/15/30',emp:5,cost:15000},
+    {name:'Heavy Tractor Beam',dmg:'6D',fc:'2D',range:'1-5/15/30',emp:8,cost:20000},
+    {name:'Gravity Well Projector',dmg:'special',fc:'4D',range:'1-5/15/30',emp:300,cost:2000000},
+  ],
+
+  // PRICING TABLE
+  pricingTable: [
+    [10,37000,800],[20,45000,1000],[30,55000,1500],[40,70000,2000],[50,90000,3000],
+    [60,120000,4000],[70,160000,6000],[80,220000,8000],[90,300000,10000],[100,400000,15000],
+    [110,550000,20000],[120,750000,25000],[130,1000000,30000],[140,1300000,35000],
+    [150,1650000,40000],[160,2050000,45000],[170,2500000,50000],[180,3000000,60000],
+    [190,3600000,70000],[200,4300000,80000],[210,5100000,90000],[220,6000000,100000],
+    [230,7000000,110000],[240,8100000,120000],[250,9300000,140000],[260,10700000,160000],
+    [270,12300000,180000],[280,14100000,200000],[290,16100000,220000],[300,18300000,240000],
+    [310,20700000,260000],[320,23300000,300000],[330,26300000,350000],[340,29800000,400000],
+    [350,33800000,450000],[400,61300000,700000],[500,162000000,1500000],
+    [600,360000000,2800000],[700,770000000,7000000],[800,1520000000,10000000],[1000,3520000000,20000000],
+  ],
+
+  cpToPrice(cp) {
+    if (cp <= 0) return 0;
+    const t = this.pricingTable;
+    for (let i = t.length - 1; i >= 0; i--) {
+      if (cp >= t[i][0]) {
+        return t[i][1] + (cp - t[i][0]) * t[i][2];
+      }
+    }
+    return cp * 800;
+  },
+
+  formatCredits(n) {
+    if (n >= 1e9) return (n / 1e9).toFixed(1) + 'B';
+    if (n >= 1e6) return (n / 1e6).toFixed(n >= 1e7 ? 0 : 1) + 'M';
+    if (n >= 1e3) return (n / 1e3).toFixed(n >= 1e5 ? 0 : 1) + 'K';
+    return n.toLocaleString();
+  },
+
+  recalc() {
+    const s = this.state;
+    let cp = 0, extras = 0;
+    if (s.size !== undefined) cp += this.sizes[s.size].baseCPs;
+    if (s.crewCPs !== undefined) cp += s.crewCPs;
+    if (s.lifeCPs !== undefined) cp += s.lifeCPs;
+    if (s.cargoCPs !== undefined) cp += s.cargoCPs;
+    if (s.consCPs !== undefined) cp += s.consCPs;
+    if (s.hyperCPs !== undefined) cp += s.hyperCPs;
+    if (s.backupHyperCPs !== undefined) cp += s.backupHyperCPs;
+    if (s.speedCPs !== undefined) cp += s.speedCPs;
+    if (s.manCPs !== undefined) cp += s.manCPs;
+    if (s.structCPs !== undefined) cp += s.structCPs;
+    if (s.shieldCPs !== undefined) cp += s.shieldCPs;
+    if (s.mountCPs !== undefined) cp += s.mountCPs;
+    // Sensors and weapons are extras (credits not CPs)
+    if (s.sensorCost !== undefined) extras += s.sensorCost;
+    if (s.weaponCost !== undefined) extras += s.weaponCost;
+
+    const hullPrice = this.cpToPrice(cp);
+    document.getElementById('sbCPTotal').textContent = cp;
+    document.getElementById('sbHullPrice').textContent = this.formatCredits(hullPrice);
+    document.getElementById('sbExtrasPrice').textContent = this.formatCredits(extras);
+    document.getElementById('sbTotalPrice').textContent = this.formatCredits(hullPrice + extras) + ' cr';
+  },
+
+  getScale() { return this.state.size !== undefined ? this.sizes[this.state.size].scale : null; },
+  getSizeNum() { return this.state.size !== undefined ? this.sizes[this.state.size].sizeNum : 0; },
+  isCapital() { return this.getScale() === 'Capital'; },
+
+  init() {
+    const el = document.getElementById('sbSteps');
+    const mkStep = (num, title, id) => `<div style="margin-bottom:6px"><div onclick="document.getElementById('${id}').style.display=document.getElementById('${id}').style.display==='none'?'block':'none'" style="display:flex;align-items:center;gap:8px;cursor:pointer;padding:6px 8px;background:var(--bg3);border:1px solid var(--card-border);border-radius:var(--radius-sm)"><span style="font-family:'Exo 2',sans-serif;font-size:10px;color:var(--gold);font-weight:700;min-width:28px">STEP ${num}</span><span style="font-family:'Exo 2',sans-serif;font-size:11px;color:var(--text);letter-spacing:0.5px">${title}</span><span id="${id}CP" style="margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text-dim)"></span></div><div id="${id}" style="display:none;padding:8px;background:var(--bg);border:1px solid var(--card-border);border-top:none;border-radius:0 0 var(--radius-sm) var(--radius-sm)">`;
+
+    let h = '';
+    // STEP 1: Ship Size
+    h += mkStep(1,'Ship Size','sbSize');
+    h += '<select id="sbSizeSelect" onchange="SB.setSize()" style="width:100%;padding:8px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:12px;font-family:inherit"><option value="">— Select Ship Length —</option>';
+    this.sizes.forEach((s,i) => { h += `<option value="${i}">${s.label} (${s.scale}, Size ${s.sizeNum}, Base Hull ${s.baseHull}, ${s.baseCPs} CPs)</option>`; });
+    h += '</select><div id="sbSizeInfo" style="margin-top:6px;font-size:11px;color:var(--text-dim)"></div></div></div>';
+
+    // STEP 2: Crew
+    h += mkStep(2,'Automation (Crew)','sbCrew');
+    h += '<select id="sbCrewSelect" onchange="SB.setCrew()" style="width:100%;padding:8px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:12px;font-family:inherit"><option value="">— Select first —</option></select></div></div>';
+
+    // STEP 3: Life Support
+    h += mkStep(3,'Life Support','sbLife');
+    h += '<select id="sbLifeSelect" onchange="SB.setLife()" style="width:100%;padding:8px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:12px;font-family:inherit"><option value="">— Select first —</option></select></div></div>';
+
+    // STEP 4: Cargo
+    h += mkStep(4,'Storage / Cargo','sbCargo');
+    h += '<select id="sbCargoSelect" onchange="SB.setCargo()" style="width:100%;padding:8px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:12px;font-family:inherit"><option value="">— Select first —</option></select></div></div>';
+
+    // STEP 5: Consumables
+    h += mkStep(5,'Consumables','sbCons');
+    h += '<select id="sbConsSelect" onchange="SB.setCons()" style="width:100%;padding:8px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:12px;font-family:inherit"><option value="">— Select first —</option></select></div></div>';
+
+    // STEP 6: Hyperdrive
+    h += mkStep(6,'Hyperdrive','sbHyper');
+    h += '<div style="font-size:10px;color:var(--text-dim);margin-bottom:4px">Primary Drive</div>';
+    h += '<select id="sbHyperSelect" onchange="SB.setHyper()" style="width:100%;padding:8px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:12px;font-family:inherit;margin-bottom:6px"><option value="">None</option>';
+    this.hyperdrive.forEach((d,i) => { h += `<option value="${i}">${d.speed} (${d.cps} CPs)</option>`; });
+    h += '</select><div style="font-size:10px;color:var(--text-dim);margin-bottom:4px">Backup Drive</div>';
+    h += '<select id="sbBackupHyperSelect" onchange="SB.setBackupHyper()" style="width:100%;padding:8px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:12px;font-family:inherit"><option value="">None</option>';
+    this.hyperdrive.forEach((d,i) => { h += `<option value="${i}">${d.speed} (${d.cps} CPs)</option>`; });
+    h += '</select></div></div>';
+
+    // STEP 7: Sublight Speed
+    h += mkStep(7,'Sublight Speed','sbSpeed');
+    h += '<select id="sbSpeedSelect" onchange="SB.setSpeed()" style="width:100%;padding:8px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:12px;font-family:inherit"><option value="">— Select first —</option></select></div></div>';
+
+    // STEP 8: Maneuverability
+    h += mkStep(8,'Maneuverability','sbMan');
+    h += '<select id="sbManSelect" onchange="SB.setMan()" style="width:100%;padding:8px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:12px;font-family:inherit"><option value="">— Select speed first —</option></select></div></div>';
+
+    // STEP 9: Structure (Hull)
+    h += mkStep(9,'Structure (Hull)','sbStruct');
+    h += '<select id="sbStructSelect" onchange="SB.setStruct()" style="width:100%;padding:8px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:12px;font-family:inherit"><option value="">— Select first —</option></select><div id="sbHullTotal" style="margin-top:4px;font-size:11px;color:var(--gold)"></div></div></div>';
+
+    // STEP 10: Shields
+    h += mkStep(10,'Shields','sbShield');
+    h += '<select id="sbShieldSelect" onchange="SB.setShield()" style="width:100%;padding:8px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:12px;font-family:inherit"><option value="">None</option></select></div></div>';
+
+    // STEP 11: Sensors
+    h += mkStep(11,'Sensors','sbSensor');
+    h += '<div style="display:flex;gap:8px;margin-bottom:6px"><div style="flex:1"><div style="font-size:10px;color:var(--text-dim);margin-bottom:2px">Range Increments (max 10)</div><input type="number" id="sbSensorRange" min="0" max="10" value="0" onchange="SB.setSensor()" style="width:100%;padding:6px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:12px;font-family:inherit"></div>';
+    h += '<div style="flex:1"><div style="font-size:10px;color:var(--text-dim);margin-bottom:2px">Power (pips, max 18)</div><input type="number" id="sbSensorPower" min="0" max="18" value="0" onchange="SB.setSensor()" style="width:100%;padding:6px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:12px;font-family:inherit"></div></div>';
+    h += '<div id="sbSensorInfo" style="font-size:10px;color:var(--text-dim)"></div></div></div>';
+
+    // STEP 12: Weapons
+    h += mkStep(12,'Weapon Mounts & Weapons','sbWeapon');
+    h += '<select id="sbMountSelect" onchange="SB.setMount()" style="width:100%;padding:8px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:12px;font-family:inherit;margin-bottom:8px"><option value="">No weapon mounts</option></select>';
+    h += '<div id="sbWeaponList"></div><div style="margin-top:6px"><button class="btn btn-primary" onclick="SB.addWeapon()" style="padding:6px 14px;font-size:10px">+ ADD WEAPON</button></div>';
+    h += '<div id="sbWeaponTotal" style="margin-top:6px;font-size:11px;color:var(--text-dim)"></div></div></div>';
+
+    el.innerHTML = h;
+  },
+
+  setSize() {
+    const v = document.getElementById('sbSizeSelect').value;
+    if (v === '') { delete this.state.size; } else { this.state.size = parseInt(v); }
+    this.state.weapons = [];
+    this.state.weaponCost = 0;
+    this.rebuildDependents();
+    this.recalc();
+  },
+
+  rebuildDependents() {
+    const sn = this.getSizeNum();
+    const cap = this.isCapital();
+    const mult = cap ? 2 : 1;
+
+    // Crew options
+    let ch = '<option value="">— Select Crew Size —</option>';
+    this.automation.forEach((a,i) => { if (a.sizes[sn] !== undefined) ch += `<option value="${i}">${a.crew.toLocaleString()} crew (${a.sizes[sn]} CPs)</option>`; });
+    document.getElementById('sbCrewSelect').innerHTML = ch;
+
+    // Life support
+    let lh = '<option value="">— Select Life Support —</option>';
+    this.lifeSupport.forEach((l,i) => { if (l.minSize <= sn) lh += `<option value="${i}">${l.people.toLocaleString()} people (${l.cps} CPs)</option>`; });
+    document.getElementById('sbLifeSelect').innerHTML = lh;
+
+    // Cargo
+    let cgh = '<option value="">None</option>';
+    this.cargo.forEach((c,i) => { if (c.minSize <= sn) cgh += `<option value="${i}">${c.cap} (${c.cps} CPs)</option>`; });
+    document.getElementById('sbCargoSelect').innerHTML = cgh;
+
+    // Consumables
+    let coh = '<option value="">— Select —</option>';
+    this.consumables.forEach((c,i) => { if (c.minSize <= sn) coh += `<option value="${i}">${c.dur} (${c.cps} CPs)</option>`; });
+    document.getElementById('sbConsSelect').innerHTML = coh;
+
+    // Sublight
+    let sph = '<option value="">— Select Speed —</option>';
+    this.sublight.forEach((s,i) => { if (s.maxSize >= sn) { const c = s.cps * mult; sph += `<option value="${i}">Space ${s.speed} (${c} CPs${cap?' — Capital ×2':''})</option>`; }});
+    document.getElementById('sbSpeedSelect').innerHTML = sph;
+
+    // Structure
+    const structs = cap ? this.structureCap : this.structureSF;
+    let sth = '<option value="">None (base hull only)</option>';
+    structs.forEach((s,i) => { if (s.minSize <= sn) sth += `<option value="${i}">${s.hull} (${s.cps} CPs)</option>`; });
+    document.getElementById('sbStructSelect').innerHTML = sth;
+
+    // Shields
+    const shields = cap ? this.shieldsCap : this.shieldsSF;
+    let shh = '<option value="">None</option>';
+    shields.forEach((s,i) => { if (!s.minSize || s.minSize <= sn) shh += `<option value="${i}">${s.str} (${s.cps} CPs)</option>`; });
+    document.getElementById('sbShieldSelect').innerHTML = shh;
+
+    // Weapon mounts
+    let wmh = '<option value="">No weapon mounts</option>';
+    this.weaponMounts.forEach((w,i) => {
+      const dbl = w.minSize > sn;
+      const cpCost = dbl ? w.cps * 2 : w.cps;
+      if (w.minSize <= sn + 1) wmh += `<option value="${i}">${w.emp} emplacements (${cpCost} CPs${dbl?' — undersized ×2':''})</option>`;
+    });
+    document.getElementById('sbMountSelect').innerHTML = wmh;
+
+    // Clear dependents
+    delete this.state.crewCPs; delete this.state.lifeCPs; delete this.state.cargoCPs;
+    delete this.state.consCPs; delete this.state.speedCPs; delete this.state.manCPs;
+    delete this.state.structCPs; delete this.state.shieldCPs; delete this.state.mountCPs;
+    delete this.state.hyperCPs; delete this.state.backupHyperCPs;
+    delete this.state.sensorCost;
+  },
+
+  setCrew() { const v = document.getElementById('sbCrewSelect').value; if (v==='') { delete this.state.crewCPs; } else { const a = this.automation[parseInt(v)]; this.state.crewCPs = a.sizes[this.getSizeNum()]; this.state.crewSize = a.crew; } this.recalc(); },
+  setLife() { const v = document.getElementById('sbLifeSelect').value; if (v==='') { delete this.state.lifeCPs; } else { this.state.lifeCPs = this.lifeSupport[parseInt(v)].cps; } this.recalc(); },
+  setCargo() { const v = document.getElementById('sbCargoSelect').value; if (v==='') { delete this.state.cargoCPs; this.state.cargoCPs = 0; } else { this.state.cargoCPs = this.cargo[parseInt(v)].cps; } this.recalc(); },
+  setCons() { const v = document.getElementById('sbConsSelect').value; if (v==='') { delete this.state.consCPs; } else { this.state.consCPs = this.consumables[parseInt(v)].cps; } this.recalc(); },
+
+  setHyper() {
+    const v = document.getElementById('sbHyperSelect').value;
+    const mult = this.isCapital() ? 2 : 1;
+    if (v==='') { delete this.state.hyperCPs; } else { this.state.hyperCPs = this.hyperdrive[parseInt(v)].cps * mult; }
+    this.recalc();
+  },
+  setBackupHyper() {
+    const v = document.getElementById('sbBackupHyperSelect').value;
+    const mult = this.isCapital() ? 2 : 1;
+    if (v==='') { delete this.state.backupHyperCPs; } else { this.state.backupHyperCPs = this.hyperdrive[parseInt(v)].cps * mult; }
+    this.recalc();
+  },
+
+  setSpeed() {
+    const v = document.getElementById('sbSpeedSelect').value;
+    const mult = this.isCapital() ? 2 : 1;
+    if (v==='') { delete this.state.speedCPs; delete this.state.speedVal; } else {
+      const s = this.sublight[parseInt(v)];
+      this.state.speedCPs = s.cps * mult;
+      this.state.speedVal = s.speed;
+    }
+    // Rebuild maneuverability options
+    let mh = '<option value="">None</option>';
+    const spd = this.state.speedVal || 0;
+    this.maneuver.forEach((m,i) => {
+      if (m.minSpeed <= spd) {
+        const c = m.cps * mult;
+        mh += `<option value="${i}">${m.man} (${c} CPs${this.isCapital()?' — Capital ×2':''})</option>`;
+      }
+    });
+    document.getElementById('sbManSelect').innerHTML = mh;
+    delete this.state.manCPs;
+    this.recalc();
+  },
+
+  setMan() {
+    const v = document.getElementById('sbManSelect').value;
+    const mult = this.isCapital() ? 2 : 1;
+    if (v==='') { delete this.state.manCPs; } else { this.state.manCPs = this.maneuver[parseInt(v)].cps * mult; }
+    this.recalc();
+  },
+
+  setStruct() {
+    const v = document.getElementById('sbStructSelect').value;
+    const structs = this.isCapital() ? this.structureCap : this.structureSF;
+    if (v==='') { delete this.state.structCPs; } else { this.state.structCPs = structs[parseInt(v)].cps; }
+    // Show total hull
+    const base = this.state.size !== undefined ? this.sizes[this.state.size].baseHull : '0';
+    const added = v !== '' ? structs[parseInt(v)].hull : '+0';
+    document.getElementById('sbHullTotal').textContent = v !== '' ? `Total Hull: ${base} + ${added}` : `Base Hull: ${base}`;
+    this.recalc();
+  },
+
+  setShield() {
+    const v = document.getElementById('sbShieldSelect').value;
+    const shields = this.isCapital() ? this.shieldsCap : this.shieldsSF;
+    if (v==='') { delete this.state.shieldCPs; } else { this.state.shieldCPs = shields[parseInt(v)].cps; }
+    this.recalc();
+  },
+
+  setSensor() {
+    const rng = parseInt(document.getElementById('sbSensorRange').value) || 0;
+    const pwr = parseInt(document.getElementById('sbSensorPower').value) || 0;
+    const mult = this.isCapital() ? 1000 : 100;
+    const cost = (rng + pwr) * mult;
+    this.state.sensorCost = cost;
+    const info = document.getElementById('sbSensorInfo');
+    if (rng > 0 || pwr > 0) {
+      info.textContent = `Passive: ${rng*5}/Scan: ${rng*10}/Search: ${rng*20}/Focus: ${rng} — Power: ${Math.floor(pwr/3)}D+${pwr%3} — Cost: ${cost.toLocaleString()} cr`;
+    } else { info.textContent = ''; }
+    this.recalc();
+  },
+
+  setMount() {
+    const v = document.getElementById('sbMountSelect').value;
+    if (v==='') { delete this.state.mountCPs; this.state.maxEmp = 0; } else {
+      const w = this.weaponMounts[parseInt(v)];
+      const dbl = w.minSize > this.getSizeNum();
+      this.state.mountCPs = dbl ? w.cps * 2 : w.cps;
+      this.state.maxEmp = w.emp;
+    }
+    this.recalc();
+  },
+
+  addWeapon() {
+    if (!this.state.weapons) this.state.weapons = [];
+    this.state.weapons.push({ idx: 0, qty: 1, turret: false });
+    this.renderWeapons();
+  },
+
+  removeWeapon(i) {
+    this.state.weapons.splice(i, 1);
+    this.renderWeapons();
+    this.calcWeaponCost();
+  },
+
+  renderWeapons() {
+    const el = document.getElementById('sbWeaponList');
+    const list = this.isCapital() ? this.weaponsCap : this.weaponsSF;
+    if (!this.state.weapons || !this.state.weapons.length) { el.innerHTML = ''; return; }
+    let h = '';
+    this.state.weapons.forEach((w, i) => {
+      h += `<div style="display:flex;gap:4px;align-items:center;margin-bottom:4px;flex-wrap:wrap">`;
+      h += `<select onchange="SB.state.weapons[${i}].idx=parseInt(this.value);SB.calcWeaponCost()" style="flex:1;min-width:120px;padding:5px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:10px;font-family:inherit">`;
+      list.forEach((wp, j) => { h += `<option value="${j}"${w.idx===j?' selected':''}>${wp.name} (${wp.dmg}, ${wp.emp} emp, ${wp.cost.toLocaleString()} cr)</option>`; });
+      h += `</select>`;
+      h += `<input type="number" value="${w.qty}" min="1" max="99" onchange="SB.state.weapons[${i}].qty=parseInt(this.value);SB.calcWeaponCost()" style="width:40px;padding:5px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:11px;text-align:center;font-family:inherit">`;
+      h += `<label style="font-size:10px;color:var(--text-dim);display:flex;align-items:center;gap:2px"><input type="checkbox" ${w.turret?'checked':''} onchange="SB.state.weapons[${i}].turret=this.checked;SB.calcWeaponCost()" style="accent-color:var(--gold);width:12px;height:12px">Turret</label>`;
+      h += `<button onclick="SB.removeWeapon(${i})" style="background:none;border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--red);cursor:pointer;padding:2px 6px;font-size:10px">✕</button></div>`;
+    });
+    el.innerHTML = h;
+    this.calcWeaponCost();
+  },
+
+  calcWeaponCost() {
+    const list = this.isCapital() ? this.weaponsCap : this.weaponsSF;
+    let cost = 0, empUsed = 0;
+    (this.state.weapons || []).forEach(w => {
+      const wp = list[w.idx];
+      let wCost = wp.cost * w.qty;
+      if (w.turret) wCost = Math.floor(wCost * 1.5);
+      cost += wCost;
+      empUsed += wp.emp * w.qty;
+    });
+    this.state.weaponCost = cost;
+    const max = this.state.maxEmp || 0;
+    const info = document.getElementById('sbWeaponTotal');
+    const over = empUsed > max;
+    info.innerHTML = `Emplacements: <span style="color:${over?'var(--red)':'var(--green)'}"> ${empUsed} / ${max}</span> — Weapon Cost: <span style="color:var(--cyan)">${cost.toLocaleString()} cr</span>${over?' <span style="color:var(--red)">⚠ OVER LIMIT</span>':''}`;
+    this.recalc();
+  },
+};
+
+function toggleShipBuilder() {
+  SB.open = !SB.open;
+  document.getElementById('sbPanel').style.display = SB.open ? 'block' : 'none';
+  document.getElementById('sbToggleIcon').textContent = SB.open ? '▲' : '▼';
+  if (SB.open && !document.getElementById('sbSizeSelect')) SB.init();
+  if (SB.open && document.getElementById('sbSizeSelect')) {} // already init
+  if (SB.open) SB.init();
+}
 </script>
 
 </body>
