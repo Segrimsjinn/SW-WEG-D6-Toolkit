@@ -622,6 +622,36 @@ color:var(--text-dim);min-width:35px;text-align:right;
         </div>
       </div>
 
+      <!-- EQUIPMENT LOOKUP -->
+      <div class="card" style="margin-top:8px">
+        <div class="card-title" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer" onclick="toggleEquipPanel()">
+          <span>⟐ Equipment Lookup <span id="equipCountBadge" style="color:var(--text-dim);font-weight:400;font-size:10px;letter-spacing:1px"></span></span>
+          <span id="equipToggleIcon" style="font-size:14px;color:var(--text-dim);transition:transform .2s">▼</span>
+        </div>
+        <div id="equipPanel" style="display:none">
+          <input type="text" id="equipSearch" placeholder="Search by name, category, stats..." oninput="filterEquipment()"
+            style="width:100%;padding:10px 12px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:13px;font-family:inherit;margin-bottom:8px">
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px">
+            <select id="equipCategory" onchange="filterEquipment()" style="flex:1;min-width:140px;padding:8px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:12px;font-family:inherit">
+              <option value="">All Categories</option>
+            </select>
+            <select id="equipAvailability" onchange="filterEquipment()" style="flex:0 0 auto;padding:8px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:12px;font-family:inherit">
+              <option value="">Any Avail</option>
+              <option value="1">1 — Common</option>
+              <option value="2">2 — Available</option>
+              <option value="3">3 — Scarce</option>
+              <option value="4">4 — Rare/Illegal</option>
+            </select>
+          </div>
+          <div style="display:flex;gap:6px;margin-bottom:10px">
+            <button class="btn btn-primary" onclick="randomEquipment()" style="flex:1;padding:10px 8px;font-size:10px;letter-spacing:1.5px">⟐ RANDOM</button>
+            <button class="btn btn-primary" onclick="clearEquipFilters()" style="padding:10px 12px;font-size:10px;letter-spacing:1.5px;background:var(--bg3);color:var(--text-dim);border:1px solid var(--card-border)">CLEAR</button>
+          </div>
+          <div id="equipList" style="max-height:300px;overflow-y:auto;margin-bottom:8px"></div>
+          <div id="equipDetail" style="display:none"></div>
+        </div>
+      </div>
+
       <div id="npcResult" style="display:none">
         <!-- PDF controls + info row -->
         <div style="display:flex;align-items:center;justify-content:space-between;padding:6px 2px;flex-wrap:wrap;gap:4px">
@@ -1399,6 +1429,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
 <script src="data_starships.js"></script>
 <script src="data_forcepowers.js"></script>
 <script src="data_creatures.js"></script>
+<script src="data_equipment.js"></script>
 
 <script>
 // ============================================================
@@ -4882,6 +4913,159 @@ function clearCreatureFilters() {
 document.addEventListener('DOMContentLoaded', function() {
   if (typeof CREATURES_DATA !== 'undefined') {
     document.getElementById('creatureCountBadge').textContent = '(' + CREATURES_DATA.length + ')';
+  }
+});
+</script>
+
+<script>
+// ============================================================
+// EQUIPMENT LOOKUP
+// ============================================================
+let equipPanelOpen = false;
+let equipFiltered = [];
+let equipFiltersInited = false;
+
+function toggleEquipPanel() {
+  equipPanelOpen = !equipPanelOpen;
+  document.getElementById('equipPanel').style.display = equipPanelOpen ? 'block' : 'none';
+  document.getElementById('equipToggleIcon').textContent = equipPanelOpen ? '▲' : '▼';
+  if (equipPanelOpen) initEquipFilters();
+}
+
+function initEquipFilters() {
+  if (typeof EQUIPMENT_DATA === 'undefined' || !EQUIPMENT_DATA.length) return;
+  if (equipFiltersInited) return;
+  equipFiltersInited = true;
+  document.getElementById('equipCountBadge').textContent = '(' + EQUIPMENT_DATA.length + ')';
+
+  const cats = new Set();
+  EQUIPMENT_DATA.forEach(e => { if (e.category) cats.add(e.category); });
+  const catSel = document.getElementById('equipCategory');
+  [...cats].sort().forEach(c => { const o = document.createElement('option'); o.value = c; o.textContent = c; catSel.appendChild(o); });
+
+  filterEquipment();
+}
+
+function filterEquipment() {
+  if (typeof EQUIPMENT_DATA === 'undefined') return;
+  const q = (document.getElementById('equipSearch').value || '').toLowerCase();
+  const cat = document.getElementById('equipCategory').value;
+  const avail = document.getElementById('equipAvailability').value;
+
+  equipFiltered = EQUIPMENT_DATA.filter(e => {
+    if (cat && e.category !== cat) return false;
+    if (avail && !(e.availability || '').startsWith(avail)) return false;
+    if (q) {
+      const blob = [e.name, e.category, e.game_notes, e.cost, e.source].join(' ').toLowerCase();
+      return blob.includes(q);
+    }
+    return true;
+  });
+
+  renderEquipList();
+}
+
+function renderEquipList() {
+  const el = document.getElementById('equipList');
+  if (!equipFiltered.length) {
+    el.innerHTML = '<div style="text-align:center;color:var(--text-dim);font-size:12px;padding:16px">No equipment found.</div>';
+    return;
+  }
+  let html = '<div style="font-size:10px;color:var(--text-dim);margin-bottom:6px;font-family:\'Orbitron\',monospace;letter-spacing:1px">' + equipFiltered.length + ' ITEMS</div>';
+  equipFiltered.forEach((e, i) => {
+    const costShort = (e.cost || '—').length > 20 ? (e.cost || '—').substring(0, 18) + '…' : (e.cost || '—');
+    html += '<div onclick="showEquipItem(' + i + ')" style="display:flex;align-items:center;justify-content:space-between;padding:8px 10px;margin-bottom:2px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);cursor:pointer;transition:border-color .15s" onmouseover="this.style.borderColor=\'var(--gold-dim)\'" onmouseout="this.style.borderColor=\'var(--card-border)\'">'
+      + '<div style="flex:1;min-width:0">'
+      + '<div style="font-size:13px;color:var(--gold);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">' + e.name + '</div>'
+      + '<div style="font-size:10px;color:var(--text-dim)">' + (e.category || '') + '</div>'
+      + '</div>'
+      + '<div style="display:flex;gap:10px;align-items:center;flex-shrink:0;margin-left:8px">'
+      + '<span style="font-size:10px;color:var(--green);font-family:\'Share Tech Mono\',monospace">' + costShort + '</span>'
+      + '</div></div>';
+  });
+  el.innerHTML = html;
+}
+
+function showEquipItem(idx) {
+  const e = equipFiltered[idx];
+  if (!e) return;
+  const el = document.getElementById('equipDetail');
+  el.style.display = 'block';
+
+  // Info grid
+  let infoHtml = '<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:10px">';
+  infoHtml += '<div style="background:var(--bg);border:1px solid var(--card-border);border-radius:var(--radius-sm);padding:6px 8px">'
+    + '<div style="font-family:\'Orbitron\',monospace;font-size:8px;color:var(--text-dim);letter-spacing:1px;margin-bottom:2px">COST</div>'
+    + '<div style="font-family:\'Share Tech Mono\',monospace;font-size:12px;color:var(--green)">' + (e.cost || '—') + '</div></div>';
+  infoHtml += '<div style="background:var(--bg);border:1px solid var(--card-border);border-radius:var(--radius-sm);padding:6px 8px">'
+    + '<div style="font-family:\'Orbitron\',monospace;font-size:8px;color:var(--text-dim);letter-spacing:1px;margin-bottom:2px">AVAILABILITY</div>'
+    + '<div style="font-family:\'Share Tech Mono\',monospace;font-size:12px;color:var(--cyan)">' + (e.availability || '—') + '</div></div>';
+  infoHtml += '</div>';
+
+  // Game notes - parse key:value patterns
+  let notesHtml = '';
+  if (e.game_notes) {
+    const parts = e.game_notes.split(/\.\s+/).filter(Boolean);
+    notesHtml = '<div style="margin-bottom:10px"><div style="font-family:\'Orbitron\',monospace;font-size:9px;color:var(--text-dim);letter-spacing:1px;margin-bottom:6px">GAME NOTES</div>';
+    parts.forEach(p => {
+      const cleaned = p.replace(/\.$/, '').trim();
+      const colonIdx = cleaned.indexOf(':');
+      if (colonIdx > 0 && colonIdx < 40) {
+        const label = cleaned.substring(0, colonIdx);
+        const desc = cleaned.substring(colonIdx + 1).trim();
+        notesHtml += '<div style="font-size:12px;line-height:1.5;margin-bottom:4px"><span style="color:var(--cyan);font-weight:600">' + label + ':</span> <span style="color:var(--text)">' + desc + '</span></div>';
+      } else {
+        notesHtml += '<div style="font-size:12px;line-height:1.5;margin-bottom:4px;color:var(--text)">' + cleaned + '.</div>';
+      }
+    });
+    notesHtml += '</div>';
+  }
+
+  let sourceHtml = '';
+  if (e.source) {
+    sourceHtml = '<div style="font-size:10px;color:var(--text-dim);border-top:1px solid var(--card-border);padding-top:8px;margin-top:4px"><span style="color:var(--text-dark)">SOURCE:</span> ' + e.source + '</div>';
+  }
+
+  el.innerHTML = '<div style="background:var(--bg);border:1px solid var(--gold-dim);border-radius:var(--radius);padding:12px;position:relative">'
+    + '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">'
+    + '<div>'
+    + '<div style="font-family:\'Orbitron\',monospace;font-size:14px;color:var(--gold);font-weight:700;letter-spacing:1px">' + e.name + '</div>'
+    + '<div style="font-size:11px;color:var(--text-dim);margin-top:2px">' + (e.category || '') + '</div>'
+    + '</div>'
+    + '<button onclick="document.getElementById(\'equipDetail\').style.display=\'none\'" style="background:none;border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text-dim);cursor:pointer;padding:4px 8px;font-size:11px">✕</button>'
+    + '</div>'
+    + infoHtml
+    + notesHtml
+    + sourceHtml
+    + '</div>';
+
+  el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function randomEquipment() {
+  if (typeof EQUIPMENT_DATA === 'undefined' || !EQUIPMENT_DATA.length) return;
+  if (!equipPanelOpen) toggleEquipPanel();
+  document.getElementById('equipSearch').value = '';
+  document.getElementById('equipCategory').value = '';
+  document.getElementById('equipAvailability').value = '';
+  equipFiltered = [...EQUIPMENT_DATA];
+  const idx = Math.floor(Math.random() * equipFiltered.length);
+  renderEquipList();
+  showEquipItem(idx);
+}
+
+function clearEquipFilters() {
+  document.getElementById('equipSearch').value = '';
+  document.getElementById('equipCategory').value = '';
+  document.getElementById('equipAvailability').value = '';
+  document.getElementById('equipDetail').style.display = 'none';
+  filterEquipment();
+}
+
+// Init count on load
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof EQUIPMENT_DATA !== 'undefined') {
+    document.getElementById('equipCountBadge').textContent = '(' + EQUIPMENT_DATA.length + ')';
   }
 });
 </script>
