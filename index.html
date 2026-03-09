@@ -652,6 +652,29 @@ color:var(--text-dim);min-width:35px;text-align:right;
         </div>
       </div>
 
+      <!-- WEAPONS LOOKUP -->
+      <div class="card" style="margin-top:8px">
+        <div class="card-title" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer" onclick="toggleWeapPanel()">
+          <span>⟐ Weapons Lookup <span id="weapCountBadge" style="color:var(--text-dim);font-weight:400;font-size:10px;letter-spacing:1px"></span></span>
+          <span id="weapToggleIcon" style="font-size:14px;color:var(--text-dim);transition:transform .2s">▼</span>
+        </div>
+        <div id="weapPanel" style="display:none">
+          <input type="text" id="weapSearch" placeholder="Search by name, category, damage, skill..." oninput="filterWeapons()"
+            style="width:100%;padding:10px 12px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:13px;font-family:inherit;margin-bottom:8px">
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px">
+            <select id="weapCategory" onchange="filterWeapons()" style="flex:1;min-width:140px;padding:8px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:12px;font-family:inherit">
+              <option value="">All Categories</option>
+            </select>
+          </div>
+          <div style="display:flex;gap:6px;margin-bottom:10px">
+            <button class="btn btn-primary" onclick="randomWeapon()" style="flex:1;padding:10px 8px;font-size:10px;letter-spacing:1.5px">⟐ RANDOM</button>
+            <button class="btn btn-primary" onclick="clearWeapFilters()" style="padding:10px 12px;font-size:10px;letter-spacing:1.5px;background:var(--bg3);color:var(--text-dim);border:1px solid var(--card-border)">CLEAR</button>
+          </div>
+          <div id="weapList" style="max-height:300px;overflow-y:auto;margin-bottom:8px"></div>
+          <div id="weapDetail" style="display:none"></div>
+        </div>
+      </div>
+
       <div id="npcResult" style="display:none">
         <!-- PDF controls + info row -->
         <div style="display:flex;align-items:center;justify-content:space-between;padding:6px 2px;flex-wrap:wrap;gap:4px">
@@ -1430,6 +1453,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
 <script src="data_forcepowers.js"></script>
 <script src="data_creatures.js"></script>
 <script src="data_equipment.js"></script>
+<script src="data_weapons.js"></script>
 
 <script>
 // ============================================================
@@ -5067,6 +5091,135 @@ document.addEventListener('DOMContentLoaded', function() {
   if (typeof EQUIPMENT_DATA !== 'undefined') {
     document.getElementById('equipCountBadge').textContent = '(' + EQUIPMENT_DATA.length + ')';
   }
+});
+</script>
+
+<script>
+// ============================================================
+// WEAPONS LOOKUP
+// ============================================================
+let weapPanelOpen = false;
+let weapFiltered = [];
+let weapFiltersInited = false;
+
+function toggleWeapPanel() {
+  weapPanelOpen = !weapPanelOpen;
+  document.getElementById('weapPanel').style.display = weapPanelOpen ? 'block' : 'none';
+  document.getElementById('weapToggleIcon').textContent = weapPanelOpen ? '▲' : '▼';
+  if (weapPanelOpen) initWeapFilters();
+}
+
+function initWeapFilters() {
+  if (typeof WEAPONS_DATA === 'undefined' || !WEAPONS_DATA.length) return;
+  if (weapFiltersInited) return;
+  weapFiltersInited = true;
+  document.getElementById('weapCountBadge').textContent = '(' + WEAPONS_DATA.length + ')';
+  const cats = new Set();
+  WEAPONS_DATA.forEach(w => { if (w.category) cats.add(w.category); });
+  const catSel = document.getElementById('weapCategory');
+  [...cats].sort().forEach(c => { const o = document.createElement('option'); o.value = c; o.textContent = c; catSel.appendChild(o); });
+  filterWeapons();
+}
+
+function filterWeapons() {
+  if (typeof WEAPONS_DATA === 'undefined') return;
+  const q = (document.getElementById('weapSearch').value || '').toLowerCase();
+  const cat = document.getElementById('weapCategory').value;
+  weapFiltered = WEAPONS_DATA.filter(w => {
+    if (cat && w.category !== cat) return false;
+    if (q) {
+      const blob = [w.name, w.category, w.skill, w.damage, w.game_notes, w.range, w.source].join(' ').toLowerCase();
+      return blob.includes(q);
+    }
+    return true;
+  });
+  renderWeapList();
+}
+
+function renderWeapList() {
+  const el = document.getElementById('weapList');
+  if (!weapFiltered.length) {
+    el.innerHTML = '<div style="text-align:center;color:var(--text-dim);font-size:12px;padding:16px">No weapons found.</div>';
+    return;
+  }
+  let html = '<div style="font-size:10px;color:var(--text-dim);margin-bottom:6px;font-family:\'Orbitron\',monospace;letter-spacing:1px">' + weapFiltered.length + ' WEAPONS</div>';
+  weapFiltered.forEach((w, i) => {
+    html += '<div onclick="showWeapItem(' + i + ')" style="display:flex;align-items:center;justify-content:space-between;padding:8px 10px;margin-bottom:2px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);cursor:pointer;transition:border-color .15s" onmouseover="this.style.borderColor=\'var(--gold-dim)\'" onmouseout="this.style.borderColor=\'var(--card-border)\'">'
+      + '<div style="flex:1;min-width:0">'
+      + '<div style="font-size:13px;color:var(--gold);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">' + w.name + '</div>'
+      + '<div style="font-size:10px;color:var(--text-dim)">' + (w.category || '') + '</div>'
+      + '</div>'
+      + '<div style="display:flex;gap:10px;align-items:center;flex-shrink:0;margin-left:8px">'
+      + '<span style="font-size:11px;color:var(--red);font-family:\'Share Tech Mono\',monospace;white-space:nowrap">' + (w.damage || '—') + '</span>'
+      + '</div></div>';
+  });
+  el.innerHTML = html;
+}
+
+function showWeapItem(idx) {
+  const w = weapFiltered[idx];
+  if (!w) return;
+  const el = document.getElementById('weapDetail');
+  el.style.display = 'block';
+
+  // Stat grid
+  const statPairs = [['DAMAGE', w.damage], ['RANGE', w.range], ['SKILL', w.skill], ['AMMO', w.ammo], ['COST', w.cost], ['AVAIL', w.availability]];
+  let statsHtml = '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:10px">';
+  statPairs.forEach(([lbl, val]) => {
+    if (!val) return;
+    const color = lbl === 'DAMAGE' ? 'var(--red)' : lbl === 'COST' ? 'var(--green)' : 'var(--gold)';
+    statsHtml += '<div style="background:var(--bg);border:1px solid var(--card-border);border-radius:var(--radius-sm);padding:6px 8px;text-align:center">'
+      + '<div style="font-family:\'Orbitron\',monospace;font-size:8px;color:var(--text-dim);letter-spacing:1px;margin-bottom:2px">' + lbl + '</div>'
+      + '<div style="font-family:\'Share Tech Mono\',monospace;font-size:12px;color:' + color + ';word-break:break-word">' + val + '</div></div>';
+  });
+  statsHtml += '</div>';
+
+  let notesHtml = '';
+  if (w.game_notes) {
+    const parts = w.game_notes.split(/\.\s+/).filter(Boolean);
+    notesHtml = '<div style="margin-bottom:10px"><div style="font-family:\'Orbitron\',monospace;font-size:9px;color:var(--text-dim);letter-spacing:1px;margin-bottom:6px">GAME NOTES</div>';
+    parts.forEach(p => {
+      const cleaned = p.replace(/\.$/, '').trim();
+      const colonIdx = cleaned.indexOf(':');
+      if (colonIdx > 0 && colonIdx < 40) {
+        notesHtml += '<div style="font-size:12px;line-height:1.5;margin-bottom:4px"><span style="color:var(--cyan);font-weight:600">' + cleaned.substring(0, colonIdx) + ':</span> <span style="color:var(--text)">' + cleaned.substring(colonIdx + 1).trim() + '</span></div>';
+      } else {
+        notesHtml += '<div style="font-size:12px;line-height:1.5;margin-bottom:4px;color:var(--text)">' + cleaned + '.</div>';
+      }
+    });
+    notesHtml += '</div>';
+  }
+
+  let sourceHtml = w.source ? '<div style="font-size:10px;color:var(--text-dim);border-top:1px solid var(--card-border);padding-top:8px;margin-top:4px"><span style="color:var(--text-dark)">SOURCE:</span> ' + w.source + '</div>' : '';
+
+  el.innerHTML = '<div style="background:var(--bg);border:1px solid var(--gold-dim);border-radius:var(--radius);padding:12px;position:relative">'
+    + '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">'
+    + '<div><div style="font-family:\'Orbitron\',monospace;font-size:14px;color:var(--gold);font-weight:700;letter-spacing:1px">' + w.name + '</div>'
+    + '<div style="font-size:11px;color:var(--text-dim);margin-top:2px">' + (w.category || '') + '</div></div>'
+    + '<button onclick="document.getElementById(\'weapDetail\').style.display=\'none\'" style="background:none;border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text-dim);cursor:pointer;padding:4px 8px;font-size:11px">✕</button>'
+    + '</div>' + statsHtml + notesHtml + sourceHtml + '</div>';
+  el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function randomWeapon() {
+  if (typeof WEAPONS_DATA === 'undefined' || !WEAPONS_DATA.length) return;
+  if (!weapPanelOpen) toggleWeapPanel();
+  document.getElementById('weapSearch').value = '';
+  document.getElementById('weapCategory').value = '';
+  weapFiltered = [...WEAPONS_DATA];
+  renderWeapList();
+  showWeapItem(Math.floor(Math.random() * weapFiltered.length));
+}
+
+function clearWeapFilters() {
+  document.getElementById('weapSearch').value = '';
+  document.getElementById('weapCategory').value = '';
+  document.getElementById('weapDetail').style.display = 'none';
+  filterWeapons();
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof WEAPONS_DATA !== 'undefined') document.getElementById('weapCountBadge').textContent = '(' + WEAPONS_DATA.length + ')';
 });
 </script>
 
