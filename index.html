@@ -647,6 +647,31 @@ color:var(--text-dim);min-width:35px;text-align:right;
             <button class="btn btn-primary" onclick="randomEquipment()" style="flex:1;padding:10px 8px;font-size:10px;letter-spacing:1.5px">⟐ RANDOM</button>
             <button class="btn btn-primary" onclick="clearEquipFilters()" style="padding:10px 12px;font-size:10px;letter-spacing:1.5px;background:var(--bg3);color:var(--text-dim);border:1px solid var(--card-border)">CLEAR</button>
           </div>
+          <!-- Availability Guide (collapsible) -->
+          <div style="margin-bottom:10px">
+            <div onclick="document.getElementById('equipAvailRef').style.display=document.getElementById('equipAvailRef').style.display==='none'?'block':'none';this.querySelector('span:last-child').textContent=document.getElementById('equipAvailRef').style.display==='none'?'▼':'▲'" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer;padding:6px 8px;background:var(--bg);border:1px solid var(--card-border);border-radius:var(--radius-sm)">
+              <span style="font-family:'Orbitron',monospace;font-size:9px;color:var(--text-dim);letter-spacing:1px">AVAILABILITY & LEGALITY GUIDE</span>
+              <span style="font-size:11px;color:var(--text-dim)">▼</span>
+            </div>
+            <div id="equipAvailRef" style="display:none;padding:10px;background:var(--bg);border:1px solid var(--card-border);border-top:none;border-radius:0 0 var(--radius-sm) var(--radius-sm)">
+              <div style="font-family:'Orbitron',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:6px">AVAILABILITY NUMBER</div>
+              <div style="display:grid;grid-template-columns:auto 1fr;gap:4px 10px;margin-bottom:8px;font-size:11px">
+                <span style="color:var(--green);font-weight:600">1</span><span style="color:var(--text)">Readily available throughout the galaxy</span>
+                <span style="color:var(--green);font-weight:600">2</span><span style="color:var(--text)">Normally available, may require brief search</span>
+                <span style="color:var(--gold);font-weight:600">3</span><span style="color:var(--text)">Specialized item, limited supply — may need specific dealers</span>
+                <span style="color:var(--red);font-weight:600">4</span><span style="color:var(--text)">Rare, hard to find — black market, special order, or unique</span>
+              </div>
+              <div style="font-family:'Orbitron',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:6px">LEGALITY CODES</div>
+              <div style="display:grid;grid-template-columns:auto 1fr;gap:4px 10px;font-size:11px">
+                <span style="color:var(--cyan);font-weight:600">F</span><span style="color:var(--text)">Fee or permit required — legal but regulated</span>
+                <span style="color:var(--gold);font-weight:600">R</span><span style="color:var(--text)">Restricted — military/law enforcement only, license needed</span>
+                <span style="color:var(--red);font-weight:600">X</span><span style="color:var(--text)">Illegal — banned, black market only, severe penalties</span>
+              </div>
+              <div style="font-size:10px;color:var(--text-dim);margin-top:8px;line-height:1.5">
+                Example: <span style="color:var(--cyan)">2, R</span> = normally available but restricted to licensed buyers. <span style="color:var(--cyan)">4, X</span> = rare and illegal. Availability can vary by planet — Core Worlds are stricter, Outer Rim more lenient. The GM may adjust prices by 25-100% for restricted/illegal items.
+              </div>
+            </div>
+          </div>
           <div id="equipList" style="max-height:300px;overflow-y:auto;margin-bottom:8px"></div>
           <div id="equipDetail" style="display:none"></div>
         </div>
@@ -669,6 +694,31 @@ color:var(--text-dim);min-width:35px;text-align:right;
           <div style="display:flex;gap:6px;margin-bottom:10px">
             <button class="btn btn-primary" onclick="randomWeapon()" style="flex:1;padding:10px 8px;font-size:10px;letter-spacing:1.5px">⟐ RANDOM</button>
             <button class="btn btn-primary" onclick="clearWeapFilters()" style="padding:10px 12px;font-size:10px;letter-spacing:1.5px;background:var(--bg3);color:var(--text-dim);border:1px solid var(--card-border)">CLEAR</button>
+          </div>
+          <!-- Availability Guide (collapsible) -->
+          <div style="margin-bottom:10px">
+            <div onclick="document.getElementById('weapAvailRef').style.display=document.getElementById('weapAvailRef').style.display==='none'?'block':'none';this.querySelector('span:last-child').textContent=document.getElementById('weapAvailRef').style.display==='none'?'▼':'▲'" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer;padding:6px 8px;background:var(--bg);border:1px solid var(--card-border);border-radius:var(--radius-sm)">
+              <span style="font-family:'Orbitron',monospace;font-size:9px;color:var(--text-dim);letter-spacing:1px">AVAILABILITY & LEGALITY GUIDE</span>
+              <span style="font-size:11px;color:var(--text-dim)">▼</span>
+            </div>
+            <div id="weapAvailRef" style="display:none;padding:10px;background:var(--bg);border:1px solid var(--card-border);border-top:none;border-radius:0 0 var(--radius-sm) var(--radius-sm)">
+              <div style="font-family:'Orbitron',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:6px">AVAILABILITY NUMBER</div>
+              <div style="display:grid;grid-template-columns:auto 1fr;gap:4px 10px;margin-bottom:8px;font-size:11px">
+                <span style="color:var(--green);font-weight:600">1</span><span style="color:var(--text)">Readily available throughout the galaxy</span>
+                <span style="color:var(--green);font-weight:600">2</span><span style="color:var(--text)">Normally available, may require brief search</span>
+                <span style="color:var(--gold);font-weight:600">3</span><span style="color:var(--text)">Specialized item, limited supply — may need specific dealers</span>
+                <span style="color:var(--red);font-weight:600">4</span><span style="color:var(--text)">Rare, hard to find — black market, special order, or unique</span>
+              </div>
+              <div style="font-family:'Orbitron',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:6px">LEGALITY CODES</div>
+              <div style="display:grid;grid-template-columns:auto 1fr;gap:4px 10px;font-size:11px">
+                <span style="color:var(--cyan);font-weight:600">F</span><span style="color:var(--text)">Fee or permit required — legal but regulated</span>
+                <span style="color:var(--gold);font-weight:600">R</span><span style="color:var(--text)">Restricted — military/law enforcement only, license needed</span>
+                <span style="color:var(--red);font-weight:600">X</span><span style="color:var(--text)">Illegal — banned, black market only, severe penalties</span>
+              </div>
+              <div style="font-size:10px;color:var(--text-dim);margin-top:8px;line-height:1.5">
+                Example: <span style="color:var(--cyan)">2, R</span> = normally available but restricted to licensed buyers. <span style="color:var(--cyan)">4, X</span> = rare and illegal. Availability can vary by planet — Core Worlds are stricter, Outer Rim more lenient. The GM may adjust prices by 25-100% for restricted/illegal items.
+              </div>
+            </div>
           </div>
           <div id="weapList" style="max-height:300px;overflow-y:auto;margin-bottom:8px"></div>
           <div id="weapDetail" style="display:none"></div>
@@ -958,6 +1008,32 @@ color:var(--text-dim);min-width:35px;text-align:right;
           <div id="rankMethodBody" style="font-size:11px;color:var(--text-dim);line-height:1.7"></div>
         </div>
 
+        <!-- Availability Guide (collapsible) -->
+        <div style="margin-top:12px">
+          <div onclick="document.getElementById('shipAvailRef').style.display=document.getElementById('shipAvailRef').style.display==='none'?'block':'none';this.querySelector('span:last-child').textContent=document.getElementById('shipAvailRef').style.display==='none'?'▼':'▲'" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer;padding:6px 8px;background:var(--bg);border:1px solid var(--card-border);border-radius:var(--radius-sm)">
+            <span style="font-family:'Orbitron',monospace;font-size:9px;color:var(--text-dim);letter-spacing:1px">AVAILABILITY & LEGALITY GUIDE</span>
+            <span style="font-size:11px;color:var(--text-dim)">▼</span>
+          </div>
+          <div id="shipAvailRef" style="display:none;padding:10px;background:var(--bg);border:1px solid var(--card-border);border-top:none;border-radius:0 0 var(--radius-sm) var(--radius-sm)">
+            <div style="font-family:'Orbitron',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:6px">AVAILABILITY NUMBER</div>
+            <div style="display:grid;grid-template-columns:auto 1fr;gap:4px 10px;margin-bottom:8px;font-size:11px">
+              <span style="color:var(--green);font-weight:600">1</span><span style="color:var(--text)">Readily available throughout the galaxy</span>
+              <span style="color:var(--green);font-weight:600">2</span><span style="color:var(--text)">Normally available, may require brief search</span>
+              <span style="color:var(--gold);font-weight:600">3</span><span style="color:var(--text)">Specialized item, limited supply — may need specific dealers</span>
+              <span style="color:var(--red);font-weight:600">4</span><span style="color:var(--text)">Rare, hard to find — black market, special order, or unique</span>
+            </div>
+            <div style="font-family:'Orbitron',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:6px">LEGALITY CODES</div>
+            <div style="display:grid;grid-template-columns:auto 1fr;gap:4px 10px;font-size:11px">
+              <span style="color:var(--cyan);font-weight:600">F</span><span style="color:var(--text)">Fee or permit required — legal but regulated</span>
+              <span style="color:var(--gold);font-weight:600">R</span><span style="color:var(--text)">Restricted — military/law enforcement only, license needed</span>
+              <span style="color:var(--red);font-weight:600">X</span><span style="color:var(--text)">Illegal — banned, black market only, severe penalties</span>
+            </div>
+            <div style="font-size:10px;color:var(--text-dim);margin-top:8px;line-height:1.5">
+              Example: <span style="color:var(--cyan)">2, R</span> = normally available but restricted to licensed buyers. <span style="color:var(--cyan)">4, X</span> = rare and illegal. Availability can vary by planet — Core Worlds are stricter, Outer Rim more lenient. The GM may adjust prices by 25-100% for restricted/illegal items.
+            </div>
+          </div>
+        </div>
+
         <!-- COMPARE MODE PANEL -->
         <div id="comparePanel" class="card" style="display:none;margin-top:12px;background:var(--bg3);border:1px solid var(--gold-dim);padding:12px">
           <div style="font-family:'Orbitron',monospace;font-size:10px;color:var(--gold);letter-spacing:1px;margin-bottom:10px">⟐ SHIP COMPARISON</div>
@@ -1013,6 +1089,31 @@ color:var(--text-dim);min-width:35px;text-align:right;
           <div style="display:flex;gap:6px;margin-bottom:10px">
             <button class="btn btn-primary" onclick="randomVehicle()" style="flex:1;padding:10px 8px;font-size:10px;letter-spacing:1.5px">⟐ RANDOM</button>
             <button class="btn btn-primary" onclick="clearVehFilters()" style="padding:10px 12px;font-size:10px;letter-spacing:1.5px;background:var(--bg3);color:var(--text-dim);border:1px solid var(--card-border)">CLEAR</button>
+          </div>
+          <!-- Availability Guide (collapsible) -->
+          <div style="margin-bottom:10px">
+            <div onclick="document.getElementById('vehAvailRef').style.display=document.getElementById('vehAvailRef').style.display==='none'?'block':'none';this.querySelector('span:last-child').textContent=document.getElementById('vehAvailRef').style.display==='none'?'▼':'▲'" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer;padding:6px 8px;background:var(--bg);border:1px solid var(--card-border);border-radius:var(--radius-sm)">
+              <span style="font-family:'Orbitron',monospace;font-size:9px;color:var(--text-dim);letter-spacing:1px">AVAILABILITY & LEGALITY GUIDE</span>
+              <span style="font-size:11px;color:var(--text-dim)">▼</span>
+            </div>
+            <div id="vehAvailRef" style="display:none;padding:10px;background:var(--bg);border:1px solid var(--card-border);border-top:none;border-radius:0 0 var(--radius-sm) var(--radius-sm)">
+              <div style="font-family:'Orbitron',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:6px">AVAILABILITY NUMBER</div>
+              <div style="display:grid;grid-template-columns:auto 1fr;gap:4px 10px;margin-bottom:8px;font-size:11px">
+                <span style="color:var(--green);font-weight:600">1</span><span style="color:var(--text)">Readily available throughout the galaxy</span>
+                <span style="color:var(--green);font-weight:600">2</span><span style="color:var(--text)">Normally available, may require brief search</span>
+                <span style="color:var(--gold);font-weight:600">3</span><span style="color:var(--text)">Specialized item, limited supply — may need specific dealers</span>
+                <span style="color:var(--red);font-weight:600">4</span><span style="color:var(--text)">Rare, hard to find — black market, special order, or unique</span>
+              </div>
+              <div style="font-family:'Orbitron',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:6px">LEGALITY CODES</div>
+              <div style="display:grid;grid-template-columns:auto 1fr;gap:4px 10px;font-size:11px">
+                <span style="color:var(--cyan);font-weight:600">F</span><span style="color:var(--text)">Fee or permit required — legal but regulated</span>
+                <span style="color:var(--gold);font-weight:600">R</span><span style="color:var(--text)">Restricted — military/law enforcement only, license needed</span>
+                <span style="color:var(--red);font-weight:600">X</span><span style="color:var(--text)">Illegal — banned, black market only, severe penalties</span>
+              </div>
+              <div style="font-size:10px;color:var(--text-dim);margin-top:8px;line-height:1.5">
+                Example: <span style="color:var(--cyan)">2, R</span> = normally available but restricted to licensed buyers. <span style="color:var(--cyan)">4, X</span> = rare and illegal. Availability can vary by planet — Core Worlds are stricter, Outer Rim more lenient. The GM may adjust prices by 25-100% for restricted/illegal items.
+              </div>
+            </div>
           </div>
           <div id="vehList" style="max-height:400px;overflow-y:auto;margin-bottom:8px"></div>
           <div id="vehDetail" style="display:none"></div>
