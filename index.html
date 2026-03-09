@@ -3210,7 +3210,7 @@ function runComparison() {
     ['Type', 'type', false],
     ['Scale', 'scale', false],
     ['Length', 'length', false],
-    ['Crew', 'crew', false],
+    ['Crew', 'crew', true],  // lower is better
     ['Passengers', 'passengers', false],
     ['Cargo', 'cargo', false],
     ['Consumables', 'consumables', false],
@@ -3233,7 +3233,7 @@ function runComparison() {
   stats.push(['Sensors (Search)', 'sensors_search', false]);
   stats.push(['Sensors (Focus)', 'sensors_focus', false]);
   
-  var comparableStats = ['maneuverability', 'space', 'hull', 'shields', 'sensors_passive', 'sensors_scan', 'sensors_search', 'sensors_focus', 'hyperdrive'];
+  var comparableStats = ['maneuverability', 'space', 'hull', 'shields', 'sensors_passive', 'sensors_scan', 'sensors_search', 'sensors_focus', 'hyperdrive', 'crew', 'passengers', 'cargo', 'starfighter_complement', 'troop_capacity'];
   
   stats.forEach(function(stat) {
     var label = stat[0];
