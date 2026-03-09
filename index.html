@@ -1009,113 +1009,175 @@ color:var(--text-dim);min-width:35px;text-align:right;
 
       <div class="card">
         <div class="card-title">⟐ Chase & Movement Reference</div>
-        <div style="display:flex;gap:12px;margin-bottom:10px;flex-wrap:wrap">
-          <!-- Speed Levels -->
-          <div style="flex:1;min-width:200px">
-            <div style="font-family:'Orbitron',monospace;font-size:8px;color:var(--gold);letter-spacing:1px;margin-bottom:4px">SPEED LEVELS</div>
-            <div style="font-size:10px;color:var(--text-dim);line-height:1.9">
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Cautious — ½ Move</span><span style="color:var(--gold)">Free*</span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Cruising — Move</span><span style="color:var(--gold)">1 Action*</span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>High Speed — 2× Move</span><span style="color:var(--gold)">+5 Diff</span></div>
-              <div style="display:flex;justify-content:space-between;padding:1px 0"><span>All-Out — 4× Move</span><span style="color:var(--red)">+10 Diff†</span></div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <!-- Col 1: Speed Levels -->
+          <div style="flex:1;min-width:140px">
+            <div style="font-family:'Orbitron',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin-bottom:3px">SPEED LEVELS</div>
+            <div style="font-size:9px;color:var(--text-dim);line-height:1.8">
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Cautious ½×</span><span style="color:var(--gold)">Free*</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Cruising 1×</span><span style="color:var(--gold)">1 Action*</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>High 2×</span><span style="color:var(--gold)">+5 Diff</span></div>
+              <div style="display:flex;justify-content:space-between;padding:1px 0"><span>All-Out 4×</span><span style="color:var(--red)">+10†</span></div>
             </div>
-            <div style="font-size:9px;color:var(--text-dark);font-style:italic;margin-top:3px;line-height:1.4">
-              * Free/auto in Easy terrain. Must roll in Difficult+.<br>
-              † All-Out: NO other actions (no shooting, dodging, or shields).
+            <div style="font-size:8px;color:var(--text-dark);font-style:italic;margin-top:2px;line-height:1.3">* Auto in Easy terrain. † No other actions.</div>
+            <div style="font-family:'Orbitron',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin-top:6px;margin-bottom:3px">ACCELERATION</div>
+            <div style="font-size:9px;color:var(--text-dim);line-height:1.8">
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>1 level/round</span><span style="color:var(--gold)">Free</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>2 levels</span><span style="color:var(--gold)">15+</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>3 levels</span><span style="color:var(--gold)">30+</span></div>
+              <div style="display:flex;justify-content:space-between;padding:1px 0"><span>4 levels</span><span style="color:var(--gold)">45+</span></div>
             </div>
           </div>
-          <!-- Acceleration -->
-          <div style="flex:1;min-width:200px">
-            <div style="font-family:'Orbitron',monospace;font-size:8px;color:var(--gold);letter-spacing:1px;margin-bottom:4px">ACCELERATION</div>
-            <div style="font-size:10px;color:var(--text-dim);line-height:1.9">
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Normal (1 level/round)</span><span style="color:var(--gold)">Free</span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>2 levels in 1 round</span><span style="color:var(--gold)">15+</span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>3 levels in 1 round</span><span style="color:var(--gold)">30+</span></div>
-              <div style="display:flex;justify-content:space-between;padding:1px 0"><span>4 levels (stop↔all-out)</span><span style="color:var(--gold)">45+</span></div>
+          <!-- Col 2: Maneuvers -->
+          <div style="flex:1;min-width:140px">
+            <div style="font-family:'Orbitron',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin-bottom:3px">MANEUVERS (+ to diff)</div>
+            <div style="font-size:9px;color:var(--text-dim);line-height:1.8">
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Bootlegger 180°</span><span style="color:var(--gold)">+6–15</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Extreme Turn 45°+</span><span style="color:var(--gold)">+6–15</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Extreme Climb/Dive</span><span style="color:var(--gold)">+6–20+</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Overshot (retro brake)</span><span style="color:var(--gold)">+15</span></div>
+              <div style="display:flex;justify-content:space-between;padding:1px 0"><span>Obstacles</span><span style="color:var(--gold)">+1D–4D</span></div>
             </div>
-            <div style="font-size:9px;color:var(--text-dark);font-style:italic;margin-top:3px;line-height:1.4">
-              Deceleration uses same rules. Fail = only 1 level change. Critical fail = no change (engine malfunction).
+            <div style="font-size:8px;color:var(--text-dark);font-style:italic;margin-top:2px;line-height:1.3">Overshot: drop 2 speed, pursuer flies past, ±30° facing. Fail = spin out.</div>
+            <div style="font-family:'Orbitron',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin-top:6px;margin-bottom:3px">SKILL BY TYPE</div>
+            <div style="font-size:9px;color:var(--text-dim);line-height:1.8">
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>On foot</span><span style="color:var(--gold)">Running/DEX</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Vehicle</span><span style="color:var(--gold)">Oper + Maneuv</span></div>
+              <div style="display:flex;justify-content:space-between;padding:1px 0"><span>Starship</span><span style="color:var(--gold)">Pilot + Maneuv</span></div>
+            </div>
+          </div>
+          <!-- Col 3: Terrain -->
+          <div style="flex:1;min-width:140px">
+            <div style="font-family:'Orbitron',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin-bottom:3px">TERRAIN DIFFICULTY</div>
+            <div style="font-size:9px;color:var(--text-dim);line-height:1.8">
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Open/clear</span><span style="color:var(--gold)">VE (1-5)</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Light traffic</span><span style="color:var(--gold)">E (6-10)</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Heavy traffic</span><span style="color:var(--gold)">M (11-15)</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Canyon/dense</span><span style="color:var(--gold)">D (16-20)</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Asteroid field</span><span style="color:var(--gold)">VD (21-30)</span></div>
+              <div style="display:flex;justify-content:space-between;padding:1px 0"><span>Dense asteroid</span><span style="color:var(--gold)">H (31+)</span></div>
+            </div>
+            <div style="font-size:8px;color:var(--text-dark);font-style:italic;margin-top:2px;line-height:1.3">Cautious: −1 level. High: Diff+ terrain +1 level. All-Out: Diff+ terrain +2 levels.</div>
+          </div>
+          <!-- Col 4: Multi-Action, Dodge, Strain -->
+          <div style="flex:1;min-width:140px">
+            <div style="font-family:'Orbitron',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin-bottom:3px">MULTI-ACTION</div>
+            <div style="font-size:9px;color:var(--text-dim);line-height:1.8">
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>1 action</span><span style="color:var(--gold)">—</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>2 actions</span><span style="color:var(--gold)">−1D all</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>3 actions</span><span style="color:var(--gold)">−2D all</span></div>
+              <div style="display:flex;justify-content:space-between;padding:1px 0"><span>Each extra</span><span style="color:var(--gold)">−1D more</span></div>
+            </div>
+            <div style="font-family:'Orbitron',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin-top:6px;margin-bottom:3px">DODGE / STRAIN</div>
+            <div style="font-size:9px;color:var(--text-dim);line-height:1.5">
+              <div style="border-bottom:1px solid var(--card-border);padding:2px 0"><span style="color:var(--gold)">Dodge:</span> Pilot + Maneuv replaces hit difficulty</div>
+              <div style="border-bottom:1px solid var(--card-border);padding:2px 0"><span style="color:var(--gold)">Full dodge:</span> only action, adds to ALL attacks</div>
+              <div style="padding:2px 0"><span style="color:var(--gold)">All-Out strain:</span> Body STR roll every 10 min (VE→escalating)</div>
             </div>
           </div>
         </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">⟐ Character Points & Force Points (In-Scene)</div>
         <div style="display:flex;gap:12px;margin-bottom:10px;flex-wrap:wrap">
-          <!-- Maneuvers -->
           <div style="flex:1;min-width:200px">
-            <div style="font-family:'Orbitron',monospace;font-size:8px;color:var(--gold);letter-spacing:1px;margin-bottom:4px">GROUND & FLYING VEHICLE MANEUVERS</div>
-            <div style="font-size:10px;color:var(--text-dim);line-height:1.9">
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Sliding Sideways</span><span style="color:var(--gold)">+1 to +5</span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Bootlegger Turn (180°)</span><span style="color:var(--gold)">+6 to +15</span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Jumping</span><span style="color:var(--gold)">+5 to +20+</span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Turn (up to 45°)</span><span style="color:var(--gold)">+1 to +5</span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Double Turn (45°-90°)</span><span style="color:var(--gold)">+11 to +15</span></div>
-              <div style="display:flex;justify-content:space-between;padding:1px 0"><span>Rotate</span><span style="color:var(--gold)">+5 to +15</span></div>
-            </div>
-            <div style="font-family:'Orbitron',monospace;font-size:8px;color:var(--gold);letter-spacing:1px;margin-top:8px;margin-bottom:4px">FLYING VEHICLES ONLY</div>
-            <div style="font-size:10px;color:var(--text-dim);line-height:1.9">
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Climb (up to 45°)</span><span style="color:var(--gold)">+6 to +10</span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Extreme Climb (up to 90°)</span><span style="color:var(--gold)">+11 to +20+</span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Dive (up to 45°)</span><span style="color:var(--gold)">+1 to +5</span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Extreme Dive (up to 90°)</span><span style="color:var(--gold)">+6 to +15+</span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Loop</span><span style="color:var(--gold)">+15 to +30+</span></div>
-              <div style="display:flex;justify-content:space-between;padding:1px 0"><span>Spiral</span><span style="color:var(--gold)">+5 per 45°</span></div>
-            </div>
-            <div style="font-size:9px;color:var(--text-dark);font-style:italic;margin-top:3px;line-height:1.4">
-              Overshot (+15): Slam retro thrusters, drop 2 speed levels, pursuer flies past. Adjust facing 30°. Fail = spin out.
+            <div style="font-family:'Orbitron',monospace;font-size:8px;color:var(--gold);letter-spacing:1px;margin-bottom:4px">CHARACTER POINTS (CP)</div>
+            <div style="font-size:10px;color:var(--text-dim);line-height:1.7">
+              <div style="border-bottom:1px solid var(--card-border);padding:2px 0">Spend 1 CP = roll <span style="color:var(--gold)">+1D</span> added to any single action</div>
+              <div style="border-bottom:1px solid var(--card-border);padding:2px 0">Can spend multiple CP on same roll (1 at a time, decide after each)</div>
+              <div style="border-bottom:1px solid var(--card-border);padding:2px 0">Each extra die follows wild die rules (6 explodes)</div>
+              <div style="border-bottom:1px solid var(--card-border);padding:2px 0">Once you say "done," no more CP on that roll</div>
+              <div style="padding:2px 0"><span style="color:var(--red)">Cannot use CP in same round as Force Point</span></div>
             </div>
           </div>
-          <!-- Multi-Action & Skills + Movement Failures -->
           <div style="flex:1;min-width:200px">
-            <div style="font-family:'Orbitron',monospace;font-size:8px;color:var(--gold);letter-spacing:1px;margin-bottom:4px">MULTI-ACTION PENALTY</div>
-            <div style="font-size:10px;color:var(--text-dim);line-height:1.9">
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>1 action</span><span style="color:var(--gold)">No penalty</span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>2 actions (pilot + shoot)</span><span style="color:var(--gold)">−1D all</span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>3 actions (pilot + shoot + dodge)</span><span style="color:var(--gold)">−2D all</span></div>
-              <div style="display:flex;justify-content:space-between;padding:1px 0"><span>Each additional action</span><span style="color:var(--gold)">−1D more</span></div>
-            </div>
-            <div style="font-family:'Orbitron',monospace;font-size:8px;color:var(--gold);letter-spacing:1px;margin-top:8px;margin-bottom:4px">MOVEMENT FAILURES</div>
-            <div style="font-size:10px;color:var(--text-dim);line-height:1.9">
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Failed by 1-3</span><span style="color:var(--gold)">Slip: −1D rest of round</span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Failed by 4-6</span><span style="color:var(--gold)">Serious: −3D round, −1D next</span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Failed by 7-10</span><span style="color:var(--red)">Spin: random dir, 1 round stuck</span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Failed by 11-15</span><span style="color:var(--red)">Minor collision (−3D dmg)</span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Failed by 16-20</span><span style="color:var(--red)">Collision (normal dmg)</span></div>
-              <div style="display:flex;justify-content:space-between;padding:1px 0"><span>Failed by 21+</span><span style="color:var(--red)">CRASH! (+4D to collision dmg)</span></div>
-            </div>
-            <div style="font-family:'Orbitron',monospace;font-size:8px;color:var(--gold);letter-spacing:1px;margin-top:8px;margin-bottom:4px">SKILL BY TYPE</div>
-            <div style="font-size:10px;color:var(--text-dim);line-height:1.9">
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>On foot</span><span style="color:var(--gold)">Running (or DEX)</span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Ground/air vehicle</span><span style="color:var(--gold)">Operation + Maneuv</span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Starfighter</span><span style="color:var(--gold)">SF Piloting + Maneuv</span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Transport</span><span style="color:var(--gold)">ST Piloting + Maneuv</span></div>
-              <div style="display:flex;justify-content:space-between;padding:1px 0"><span>Capital ship</span><span style="color:var(--gold)">CS Piloting + Maneuv</span></div>
+            <div style="font-family:'Orbitron',monospace;font-size:8px;color:var(--gold);letter-spacing:1px;margin-bottom:4px">FORCE POINTS (FP)</div>
+            <div style="font-size:10px;color:var(--text-dim);line-height:1.7">
+              <div style="border-bottom:1px solid var(--card-border);padding:2px 0">Spend 1 FP = <span style="color:var(--gold)">DOUBLE all skill &amp; attribute dice</span> for 1 round</div>
+              <div style="border-bottom:1px solid var(--card-border);padding:2px 0">Does NOT double weapon damage, ship hull, etc.</div>
+              <div style="border-bottom:1px solid var(--card-border);padding:2px 0">Melee: double STR but not weapon bonus</div>
+              <div style="border-bottom:1px solid var(--card-border);padding:2px 0">Only 1 FP per round. Cannot use CP same round</div>
+              <div style="border-bottom:1px solid var(--card-border);padding:2px 0"><span style="color:#44cc44">Heroic use</span> → FP returned + may gain extra</div>
+              <div style="border-bottom:1px solid var(--card-border);padding:2px 0"><span style="color:var(--text-dark)">Unheroic use</span> → FP lost permanently</div>
+              <div style="padding:2px 0"><span style="color:var(--red)">Evil use</span> → FP lost + gain Dark Side Point</div>
             </div>
           </div>
         </div>
         <div style="display:flex;gap:12px;flex-wrap:wrap">
-          <!-- Terrain Difficulty -->
           <div style="flex:1;min-width:200px">
-            <div style="font-family:'Orbitron',monospace;font-size:8px;color:var(--gold);letter-spacing:1px;margin-bottom:4px">TERRAIN DIFFICULTY</div>
-            <div style="font-size:10px;color:var(--text-dim);line-height:1.9">
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Open road / clear space</span><span style="color:var(--gold)">Very Easy (1-5)</span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Light traffic / scattered debris</span><span style="color:var(--gold)">Easy (6-10)</span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Heavy traffic / forest</span><span style="color:var(--gold)">Moderate (11-15)</span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Canyon / dense debris</span><span style="color:var(--gold)">Difficult (16-20)</span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Asteroid field / storm</span><span style="color:var(--gold)">V. Difficult (21-30)</span></div>
-              <div style="display:flex;justify-content:space-between;padding:1px 0"><span>Dense asteroid / impossible</span><span style="color:var(--gold)">Heroic (31+)</span></div>
-            </div>
-            <div style="font-size:9px;color:var(--text-dark);font-style:italic;margin-top:3px;line-height:1.4">
-              Cautious speed reduces terrain difficulty by 1 level. High Speed increases Diff+ terrain by 1 level. All-Out increases Diff+ terrain by 2 levels.
+            <div style="font-family:'Orbitron',monospace;font-size:8px;color:var(--red);letter-spacing:1px;margin-bottom:4px">DARK SIDE POINTS</div>
+            <div style="font-size:10px;color:var(--text-dim);line-height:1.7">
+              <div style="border-bottom:1px solid var(--card-border);padding:2px 0">Gained by: evil acts, unnecessary killing, using Force in anger</div>
+              <div style="border-bottom:1px solid var(--card-border);padding:2px 0">On gaining a DSP: roll 1D. If result &lt; current DSP count → consumed by dark side</div>
+              <div style="padding:2px 0">Force-sensitive characters gain DSP for ANY evil act</div>
             </div>
           </div>
-          <!-- All-Out Strain -->
           <div style="flex:1;min-width:200px">
-            <div style="font-family:'Orbitron',monospace;font-size:8px;color:var(--gold);letter-spacing:1px;margin-bottom:4px">ALL-OUT VEHICLE STRAIN</div>
-            <div style="font-size:10px;color:var(--text-dim);line-height:1.5;margin-bottom:6px">
-              Vehicles going all-out must make a body strength roll every 10 minutes. First roll is Very Easy; difficulty increases 1 level per subsequent roll. Fail by 1-10: vehicle overheating, must rest 2× the time spent at all-out. Fail by 11+: vehicle breaks down.
+            <div style="font-family:'Orbitron',monospace;font-size:8px;color:var(--red);letter-spacing:1px;margin-bottom:4px">CALLING UPON THE DARK SIDE</div>
+            <div style="font-size:10px;color:var(--text-dim);line-height:1.7">
+              <div style="border-bottom:1px solid var(--card-border);padding:2px 0">Force-sensitive only. Gain a Dark Side Point</div>
+              <div style="border-bottom:1px solid var(--card-border);padding:2px 0">Add <span style="color:var(--gold)">+1D per DSP</span> currently held to a single roll</div>
+              <div style="padding:2px 0">GM may modify the bonus based on the act</div>
             </div>
-            <div style="font-family:'Orbitron',monospace;font-size:8px;color:var(--gold);letter-spacing:1px;margin-bottom:4px">DODGE AS REACTION</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">⟐ Character Advancement (Between Adventures)</div>
+        <div style="display:flex;gap:12px;margin-bottom:10px;flex-wrap:wrap">
+          <div style="flex:1;min-width:220px">
+            <div style="font-family:'Orbitron',monospace;font-size:8px;color:var(--gold);letter-spacing:1px;margin-bottom:4px">SKILL IMPROVEMENT (1 pip per adventure)</div>
+            <div style="font-size:10px;color:var(--text-dim);line-height:1.9">
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Skill (+1 pip)</span><span style="color:var(--gold)">= # before the D in CP</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Specialization (+1 pip)</span><span style="color:var(--gold)">= ½ # before D (round up)</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Advanced Skill (+1 pip)</span><span style="color:var(--gold)">= 2× # before the D</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Force Skill (+1 pip)</span><span style="color:var(--gold)">= # before the D in CP</span></div>
+              <div style="display:flex;justify-content:space-between;padding:1px 0"><span>Attribute (+1 pip)</span><span style="color:var(--gold)">= # before D × 10 CP</span></div>
+            </div>
+            <div style="font-size:9px;color:var(--text-dark);font-style:italic;margin-top:4px;line-height:1.4">
+              Example: 5D Blaster → 5D+1 costs 5 CP.<br>
+              Example: 3D STR → 3D+1 costs 30 CP.<br>
+              3D+2 → 4D still counts as +1 pip.
+            </div>
+          </div>
+          <div style="flex:1;min-width:220px">
+            <div style="font-family:'Orbitron',monospace;font-size:8px;color:var(--gold);letter-spacing:1px;margin-bottom:4px">TRAINING TIME</div>
+            <div style="font-size:10px;color:var(--text-dim);line-height:1.9">
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Skill used last adventure</span><span style="color:var(--gold)">None</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>With teacher (skill 5D+)</span><span style="color:var(--gold)">1 day per CP spent</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Without teacher</span><span style="color:var(--gold)">2 days per CP spent</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Force skill (with teacher)</span><span style="color:var(--gold)">1 day per CP spent</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Force skill (no teacher)</span><span style="color:var(--gold)">2× CP cost, 2 days/CP</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Attribute (with teacher)</span><span style="color:var(--gold)">1 week per CP spent</span></div>
+              <div style="display:flex;justify-content:space-between;padding:1px 0"><span>Attribute (no teacher)</span><span style="color:var(--gold)">2 weeks per CP spent</span></div>
+            </div>
+            <div style="font-size:9px;color:var(--text-dark);font-style:italic;margin-top:4px;line-height:1.4">
+              Reduce training by 1 day per extra CP spent (min 1 day).<br>
+              New Force power learned each time a Force skill improves 1 pip.
+            </div>
+          </div>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <div style="flex:1;min-width:220px">
+            <div style="font-family:'Orbitron',monospace;font-size:8px;color:var(--gold);letter-spacing:1px;margin-bottom:4px">ATTRIBUTE IMPROVEMENT</div>
             <div style="font-size:10px;color:var(--text-dim);line-height:1.5">
-              Pilot can dodge as a reaction skill (counts as action). Roll piloting + maneuverability — replaces the difficulty to hit the vehicle for that round. Full reaction (only action): roll piloting + maneuverability, add to ALL attacks against vehicle that round.
+              When an attribute improves +1 pip, ALL skills under that attribute (except advanced skills) also improve +1 pip. At end of training, roll new attribute vs GM rolls species maximum. Character roll ≤ GM roll: success. Character roll &gt; GM roll: fails, get half CP back. Character has hit their ceiling for that attribute.
+            </div>
+          </div>
+          <div style="flex:1;min-width:220px">
+            <div style="font-family:'Orbitron',monospace;font-size:8px;color:var(--gold);letter-spacing:1px;margin-bottom:4px">MOVE IMPROVEMENT</div>
+            <div style="font-size:10px;color:var(--text-dim);line-height:1.5">
+              Improve Move +1 meter at a time. CP cost = current Move score. Training: 1 week/CP with teacher, 2 weeks/CP without.
+            </div>
+            <div style="font-family:'Orbitron',monospace;font-size:8px;color:var(--gold);letter-spacing:1px;margin-top:8px;margin-bottom:4px">SKILL BENCHMARKS</div>
+            <div style="font-size:10px;color:var(--text-dim);line-height:1.9">
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>2D</span><span style="color:var(--text-dark)">Average human</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>4D</span><span style="color:var(--text-dark)">Professional</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>6D</span><span style="color:var(--text-dark)">Best in a city / 1 in 100K</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>8D</span><span style="color:var(--text-dark)">Best on a planet / 1 in 100M</span></div>
+              <div style="display:flex;justify-content:space-between;padding:1px 0"><span>10D+</span><span style="color:var(--text-dark)">Legendary / galactic elite</span></div>
             </div>
           </div>
         </div>
