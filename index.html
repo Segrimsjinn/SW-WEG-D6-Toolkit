@@ -1164,6 +1164,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
             <div style="flex:1;text-align:center"><div style="font-family:'Exo 2',sans-serif;font-size:7px;color:var(--text-dim);letter-spacing:1px">HULL PRICE</div><div id="sbHullPrice" style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:var(--green)">0</div></div>
             <div style="flex:1;text-align:center"><div style="font-family:'Exo 2',sans-serif;font-size:7px;color:var(--text-dim);letter-spacing:1px">EXTRAS</div><div id="sbExtrasPrice" style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:var(--cyan)">0</div></div>
             <div style="flex:1;text-align:center"><div style="font-family:'Exo 2',sans-serif;font-size:7px;color:var(--text-dim);letter-spacing:1px">TOTAL</div><div id="sbTotalPrice" style="font-family:'IBM Plex Mono',monospace;font-size:16px;color:var(--gold);font-weight:700">0 cr</div></div>
+            <button onclick="SB.clearAll()" style="align-self:center;background:var(--bg3);border:1px solid var(--red-dim);border-radius:var(--radius-sm);color:var(--red);cursor:pointer;padding:4px 10px;font-family:'Exo 2',sans-serif;font-size:9px;font-weight:700;letter-spacing:1px">CLEAR</button>
           </div>
 
           <!-- Steps container -->
@@ -6047,9 +6048,15 @@ const SB = {
     this.recalc();
   },
 
+  clearAll() {
+    this.state = {};
+    this.init();
+    this.recalc();
+  },
+
   addWeapon() {
     if (!this.state.weapons) this.state.weapons = [];
-    this.state.weapons.push({ idx: 0, qty: 1, turret: false });
+    this.state.weapons.push({ idx: 0, qty: 1, turret: false, firelink: 1 });
     this.renderWeapons();
   },
 
@@ -6063,15 +6070,41 @@ const SB = {
     const el = document.getElementById('sbWeaponList');
     const list = this.isCapital() ? this.weaponsCap : this.weaponsSF;
     if (!this.state.weapons || !this.state.weapons.length) { el.innerHTML = ''; return; }
-    let h = '';
+
+    // Fire-link reference
+    let h = '<div style="font-size:10px;color:var(--text-dim);margin-bottom:6px;padding:4px 6px;background:var(--bg3);border-radius:var(--radius-sm);line-height:1.6">'
+      + '<span style="color:var(--gold);font-weight:600">Fire-Linking:</span> Combine identical weapons into one shot. Each additional weapon adds <span style="color:var(--cyan)">+1D damage</span> and costs <span style="color:var(--cyan)">+100 cr</span> per link. '
+      + 'Twin = +1D (+100 cr), Triple = +2D (+200 cr), Quad = +3D (+300 cr). All linked weapons fire as one, using emplacements for each weapon in the group.</div>';
+
     this.state.weapons.forEach((w, i) => {
+      const wp = list[w.idx];
+      const flLabel = w.firelink <= 1 ? 'Single' : w.firelink === 2 ? 'Twin (+1D)' : w.firelink === 3 ? 'Triple (+2D)' : 'Quad (+3D)';
+      const bonusD = Math.max(0, (w.firelink || 1) - 1);
+      const baseDmg = wp.dmg;
+      const linkedDmg = bonusD > 0 ? baseDmg + '+' + bonusD + 'D' : baseDmg;
+
       h += `<div style="display:flex;gap:4px;align-items:center;margin-bottom:4px;flex-wrap:wrap">`;
-      h += `<select onchange="SB.state.weapons[${i}].idx=parseInt(this.value);SB.calcWeaponCost()" style="flex:1;min-width:120px;padding:5px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:10px;font-family:inherit">`;
-      list.forEach((wp, j) => { h += `<option value="${j}"${w.idx===j?' selected':''}>${wp.name} (${wp.dmg}, ${wp.emp} emp, ${wp.cost.toLocaleString()} cr)</option>`; });
+      h += `<select onchange="SB.state.weapons[${i}].idx=parseInt(this.value);SB.renderWeapons()" style="flex:1;min-width:100px;padding:5px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:10px;font-family:inherit">`;
+      list.forEach((wp2, j) => { h += `<option value="${j}"${w.idx===j?' selected':''}>${wp2.name} (${wp2.dmg}, ${wp2.emp} emp)</option>`; });
       h += `</select>`;
-      h += `<input type="number" value="${w.qty}" min="1" max="99" onchange="SB.state.weapons[${i}].qty=parseInt(this.value);SB.calcWeaponCost()" style="width:40px;padding:5px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:11px;text-align:center;font-family:inherit">`;
-      h += `<label style="font-size:10px;color:var(--text-dim);display:flex;align-items:center;gap:2px"><input type="checkbox" ${w.turret?'checked':''} onchange="SB.state.weapons[${i}].turret=this.checked;SB.calcWeaponCost()" style="accent-color:var(--gold);width:12px;height:12px">Turret</label>`;
-      h += `<button onclick="SB.removeWeapon(${i})" style="background:none;border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--red);cursor:pointer;padding:2px 6px;font-size:10px">✕</button></div>`;
+      // Qty
+      h += `<input type="number" value="${w.qty}" min="1" max="99" title="Number of sets" onchange="SB.state.weapons[${i}].qty=parseInt(this.value);SB.calcWeaponCost()" style="width:34px;padding:5px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:11px;text-align:center;font-family:inherit">`;
+      // Fire-link selector
+      h += `<select onchange="SB.state.weapons[${i}].firelink=parseInt(this.value);SB.renderWeapons()" style="width:70px;padding:5px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--cyan);font-size:10px;font-family:inherit">`;
+      h += `<option value="1"${(w.firelink||1)===1?' selected':''}>Single</option>`;
+      h += `<option value="2"${w.firelink===2?' selected':''}>Twin</option>`;
+      h += `<option value="3"${w.firelink===3?' selected':''}>Triple</option>`;
+      h += `<option value="4"${w.firelink===4?' selected':''}>Quad</option>`;
+      h += `</select>`;
+      // Turret
+      h += `<label style="font-size:9px;color:var(--text-dim);display:flex;align-items:center;gap:2px"><input type="checkbox" ${w.turret?'checked':''} onchange="SB.state.weapons[${i}].turret=this.checked;SB.calcWeaponCost()" style="accent-color:var(--gold);width:12px;height:12px">Trrt</label>`;
+      // Remove
+      h += `<button onclick="SB.removeWeapon(${i})" style="background:none;border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--red);cursor:pointer;padding:2px 6px;font-size:10px">✕</button>`;
+      // Damage summary
+      const flCost = fl > 1 ? (fl - 1) * 100 : 0;
+      const perSetCost = wp.cost * fl + flCost;
+      h += `<span style="font-size:9px;color:var(--text-dim);width:100%;margin-top:1px">→ ${linkedDmg} dmg, ${perSetCost.toLocaleString()} cr${fl > 1 ? ' ('+fl+'×'+wp.cost.toLocaleString()+' +'+flCost+' link)' : ''}${w.turret ? ' +50% turret' : ''} ×${w.qty} set${w.qty > 1 ? 's' : ''}</span>`;
+      h += `</div>`;
     });
     el.innerHTML = h;
     this.calcWeaponCost();
@@ -6082,10 +6115,13 @@ const SB = {
     let cost = 0, empUsed = 0;
     (this.state.weapons || []).forEach(w => {
       const wp = list[w.idx];
-      let wCost = wp.cost * w.qty;
+      const fl = w.firelink || 1;
+      // Cost = base cost × firelink count + 100cr per extra link, ×qty, +50% if turret
+      let wCost = (wp.cost * fl + (fl > 1 ? (fl - 1) * 100 : 0)) * w.qty;
       if (w.turret) wCost = Math.floor(wCost * 1.5);
       cost += wCost;
-      empUsed += wp.emp * w.qty;
+      // Emplacements = base emp × firelink × qty
+      empUsed += wp.emp * fl * w.qty;
     });
     this.state.weaponCost = cost;
     const max = this.state.maxEmp || 0;
