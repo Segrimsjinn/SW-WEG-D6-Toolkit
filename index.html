@@ -541,6 +541,126 @@ color:var(--text-dim);min-width:35px;text-align:right;
         <button class="btn btn-generate" onclick="rollAll()">⟐ GENERATE NPC ⟐</button>
       </div>
 
+      <!-- WEAPONS LOOKUP -->
+      <div class="card" style="margin-top:8px">
+        <div class="card-title" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer" onclick="toggleWeapPanel()">
+          <span>⟐ Weapons Lookup <span id="weapCountBadge" style="color:var(--text-dim);font-weight:400;font-size:10px;letter-spacing:1px"></span></span>
+          <span id="weapToggleIcon" style="font-size:14px;color:var(--text-dim);transition:transform .2s">▼</span>
+        </div>
+        <div id="weapPanel" style="display:none">
+          <!-- Availability checkboxes -->
+          <div style="display:flex;align-items:center;gap:4px;margin-bottom:8px;flex-wrap:wrap">
+            <span style="font-family:'Exo 2',monospace;font-size:8px;color:var(--text-dim);letter-spacing:1px;margin-right:4px">AVAIL:</span>
+            <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--green)"><input type="checkbox" checked class="weapAvailCb" value="1" onchange="filterWeapons()" style="accent-color:var(--green);width:13px;height:13px">1</label>
+            <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--green)"><input type="checkbox" checked class="weapAvailCb" value="2" onchange="filterWeapons()" style="accent-color:var(--green);width:13px;height:13px">2</label>
+            <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--gold)"><input type="checkbox" checked class="weapAvailCb" value="3" onchange="filterWeapons()" style="accent-color:var(--gold);width:13px;height:13px">3</label>
+            <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--red)"><input type="checkbox" checked class="weapAvailCb" value="4" onchange="filterWeapons()" style="accent-color:var(--red);width:13px;height:13px">4</label>
+            <span style="color:var(--card-border);margin:0 2px">│</span>
+            <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--cyan)"><input type="checkbox" checked class="weapLegalCb" value="F" onchange="filterWeapons()" style="accent-color:var(--cyan);width:13px;height:13px">F</label>
+            <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--gold)"><input type="checkbox" checked class="weapLegalCb" value="R" onchange="filterWeapons()" style="accent-color:var(--gold);width:13px;height:13px">R</label>
+            <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--red)"><input type="checkbox" checked class="weapLegalCb" value="X" onchange="filterWeapons()" style="accent-color:var(--red);width:13px;height:13px">X</label>
+          </div>
+          <input type="text" id="weapSearch" placeholder="Search by name, category, damage, skill..." oninput="filterWeapons()"
+            style="width:100%;padding:10px 12px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:13px;font-family:inherit;margin-bottom:8px">
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px">
+            <select id="weapCategory" onchange="filterWeapons()" style="flex:1;min-width:140px;padding:8px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:12px;font-family:inherit">
+              <option value="">All Categories</option>
+            </select>
+          </div>
+          <div style="display:flex;gap:6px;margin-bottom:10px">
+            <button class="btn btn-primary" onclick="randomWeapon()" style="flex:1;padding:10px 8px;font-size:10px;letter-spacing:1.5px">⟐ RANDOM</button>
+            <button class="btn btn-primary" onclick="clearWeapFilters()" style="padding:10px 12px;font-size:10px;letter-spacing:1.5px;background:var(--bg3);color:var(--text-dim);border:1px solid var(--card-border)">CLEAR</button>
+          </div>
+          <!-- Availability Guide (collapsible) -->
+          <div style="margin-bottom:10px">
+            <div onclick="document.getElementById('weapAvailRef').style.display=document.getElementById('weapAvailRef').style.display==='none'?'block':'none';this.querySelector('span:last-child').textContent=document.getElementById('weapAvailRef').style.display==='none'?'▼':'▲'" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer;padding:6px 8px;background:var(--bg);border:1px solid var(--card-border);border-radius:var(--radius-sm)">
+              <span style="font-family:'Exo 2',monospace;font-size:9px;color:var(--text-dim);letter-spacing:1px">AVAILABILITY & LEGALITY GUIDE</span>
+              <span style="font-size:11px;color:var(--text-dim)">▼</span>
+            </div>
+            <div id="weapAvailRef" style="display:none;padding:10px;background:var(--bg);border:1px solid var(--card-border);border-top:none;border-radius:0 0 var(--radius-sm) var(--radius-sm)">
+              <div style="font-family:'Exo 2',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:6px">AVAILABILITY NUMBER</div>
+              <div style="display:grid;grid-template-columns:auto 1fr;gap:4px 10px;margin-bottom:8px;font-size:11px">
+                <span style="color:var(--green);font-weight:600">1</span><span style="color:var(--text)">Readily available throughout the galaxy</span>
+                <span style="color:var(--green);font-weight:600">2</span><span style="color:var(--text)">Normally available, may require brief search</span>
+                <span style="color:var(--gold);font-weight:600">3</span><span style="color:var(--text)">Specialized item, limited supply — may need specific dealers</span>
+                <span style="color:var(--red);font-weight:600">4</span><span style="color:var(--text)">Rare, hard to find — black market, special order, or unique</span>
+              </div>
+              <div style="font-family:'Exo 2',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:6px">LEGALITY CODES</div>
+              <div style="display:grid;grid-template-columns:auto 1fr;gap:4px 10px;font-size:11px">
+                <span style="color:var(--cyan);font-weight:600">F</span><span style="color:var(--text)">Fee or permit required — legal but regulated</span>
+                <span style="color:var(--gold);font-weight:600">R</span><span style="color:var(--text)">Restricted — military/law enforcement only, license needed</span>
+                <span style="color:var(--red);font-weight:600">X</span><span style="color:var(--text)">Illegal — banned, black market only, severe penalties</span>
+              </div>
+              <div style="font-size:10px;color:var(--text-dim);margin-top:8px;line-height:1.5">
+                Example: <span style="color:var(--cyan)">2, R</span> = normally available but restricted to licensed buyers. <span style="color:var(--cyan)">4, X</span> = rare and illegal. Availability can vary by planet — Core Worlds are stricter, Outer Rim more lenient. The GM may adjust prices by 25-100% for restricted/illegal items.
+              </div>
+            </div>
+          </div>
+          <div id="weapList" style="max-height:300px;overflow-y:auto;margin-bottom:8px"></div>
+          <div id="weapDetail" style="display:none"></div>
+        </div>
+      </div>
+
+      <!-- EQUIPMENT LOOKUP -->
+      <div class="card" style="margin-top:8px">
+        <div class="card-title" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer" onclick="toggleEquipPanel()">
+          <span>⟐ Equipment Lookup <span id="equipCountBadge" style="color:var(--text-dim);font-weight:400;font-size:10px;letter-spacing:1px"></span></span>
+          <span id="equipToggleIcon" style="font-size:14px;color:var(--text-dim);transition:transform .2s">▼</span>
+        </div>
+        <div id="equipPanel" style="display:none">
+          <!-- Availability checkboxes -->
+          <div style="display:flex;align-items:center;gap:4px;margin-bottom:8px;flex-wrap:wrap">
+            <span style="font-family:'Exo 2',monospace;font-size:8px;color:var(--text-dim);letter-spacing:1px;margin-right:4px">AVAIL:</span>
+            <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--green)"><input type="checkbox" checked class="equipAvailCb" value="1" onchange="filterEquipment()" style="accent-color:var(--green);width:13px;height:13px">1</label>
+            <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--green)"><input type="checkbox" checked class="equipAvailCb" value="2" onchange="filterEquipment()" style="accent-color:var(--green);width:13px;height:13px">2</label>
+            <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--gold)"><input type="checkbox" checked class="equipAvailCb" value="3" onchange="filterEquipment()" style="accent-color:var(--gold);width:13px;height:13px">3</label>
+            <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--red)"><input type="checkbox" checked class="equipAvailCb" value="4" onchange="filterEquipment()" style="accent-color:var(--red);width:13px;height:13px">4</label>
+            <span style="color:var(--card-border);margin:0 2px">│</span>
+            <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--cyan)"><input type="checkbox" checked class="equipLegalCb" value="F" onchange="filterEquipment()" style="accent-color:var(--cyan);width:13px;height:13px">F</label>
+            <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--gold)"><input type="checkbox" checked class="equipLegalCb" value="R" onchange="filterEquipment()" style="accent-color:var(--gold);width:13px;height:13px">R</label>
+            <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--red)"><input type="checkbox" checked class="equipLegalCb" value="X" onchange="filterEquipment()" style="accent-color:var(--red);width:13px;height:13px">X</label>
+          </div>
+          <input type="text" id="equipSearch" placeholder="Search by name, category, stats..." oninput="filterEquipment()"
+            style="width:100%;padding:10px 12px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:13px;font-family:inherit;margin-bottom:8px">
+          <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px">
+            <select id="equipCategory" onchange="filterEquipment()" style="flex:1;min-width:140px;padding:8px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:12px;font-family:inherit">
+              <option value="">All Categories</option>
+            </select>
+          </div>
+          <div style="display:flex;gap:6px;margin-bottom:10px">
+            <button class="btn btn-primary" onclick="randomEquipment()" style="flex:1;padding:10px 8px;font-size:10px;letter-spacing:1.5px">⟐ RANDOM</button>
+            <button class="btn btn-primary" onclick="clearEquipFilters()" style="padding:10px 12px;font-size:10px;letter-spacing:1.5px;background:var(--bg3);color:var(--text-dim);border:1px solid var(--card-border)">CLEAR</button>
+          </div>
+          <!-- Availability Guide (collapsible) -->
+          <div style="margin-bottom:10px">
+            <div onclick="document.getElementById('equipAvailRef').style.display=document.getElementById('equipAvailRef').style.display==='none'?'block':'none';this.querySelector('span:last-child').textContent=document.getElementById('equipAvailRef').style.display==='none'?'▼':'▲'" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer;padding:6px 8px;background:var(--bg);border:1px solid var(--card-border);border-radius:var(--radius-sm)">
+              <span style="font-family:'Exo 2',monospace;font-size:9px;color:var(--text-dim);letter-spacing:1px">AVAILABILITY & LEGALITY GUIDE</span>
+              <span style="font-size:11px;color:var(--text-dim)">▼</span>
+            </div>
+            <div id="equipAvailRef" style="display:none;padding:10px;background:var(--bg);border:1px solid var(--card-border);border-top:none;border-radius:0 0 var(--radius-sm) var(--radius-sm)">
+              <div style="font-family:'Exo 2',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:6px">AVAILABILITY NUMBER</div>
+              <div style="display:grid;grid-template-columns:auto 1fr;gap:4px 10px;margin-bottom:8px;font-size:11px">
+                <span style="color:var(--green);font-weight:600">1</span><span style="color:var(--text)">Readily available throughout the galaxy</span>
+                <span style="color:var(--green);font-weight:600">2</span><span style="color:var(--text)">Normally available, may require brief search</span>
+                <span style="color:var(--gold);font-weight:600">3</span><span style="color:var(--text)">Specialized item, limited supply — may need specific dealers</span>
+                <span style="color:var(--red);font-weight:600">4</span><span style="color:var(--text)">Rare, hard to find — black market, special order, or unique</span>
+              </div>
+              <div style="font-family:'Exo 2',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:6px">LEGALITY CODES</div>
+              <div style="display:grid;grid-template-columns:auto 1fr;gap:4px 10px;font-size:11px">
+                <span style="color:var(--cyan);font-weight:600">F</span><span style="color:var(--text)">Fee or permit required — legal but regulated</span>
+                <span style="color:var(--gold);font-weight:600">R</span><span style="color:var(--text)">Restricted — military/law enforcement only, license needed</span>
+                <span style="color:var(--red);font-weight:600">X</span><span style="color:var(--text)">Illegal — banned, black market only, severe penalties</span>
+              </div>
+              <div style="font-size:10px;color:var(--text-dim);margin-top:8px;line-height:1.5">
+                Example: <span style="color:var(--cyan)">2, R</span> = normally available but restricted to licensed buyers. <span style="color:var(--cyan)">4, X</span> = rare and illegal. Availability can vary by planet — Core Worlds are stricter, Outer Rim more lenient. The GM may adjust prices by 25-100% for restricted/illegal items.
+              </div>
+            </div>
+          </div>
+          <div id="equipList" style="max-height:300px;overflow-y:auto;margin-bottom:8px"></div>
+          <div id="equipDetail" style="display:none"></div>
+        </div>
+      </div>
+
       <!-- CREATURE LOOKUP -->
       <div class="card" style="margin-top:8px">
         <div class="card-title" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer" onclick="toggleCreaturePanel()">
@@ -624,125 +744,34 @@ color:var(--text-dim);min-width:35px;text-align:right;
         </div>
       </div>
 
-      <!-- EQUIPMENT LOOKUP -->
+      <!-- NOTABLE NPC LOOKUP -->
       <div class="card" style="margin-top:8px">
-        <div class="card-title" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer" onclick="toggleEquipPanel()">
-          <span>⟐ Equipment Lookup <span id="equipCountBadge" style="color:var(--text-dim);font-weight:400;font-size:10px;letter-spacing:1px"></span></span>
-          <span id="equipToggleIcon" style="font-size:14px;color:var(--text-dim);transition:transform .2s">▼</span>
+        <div class="card-title" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer" onclick="toggleNotableNpcPanel()">
+          <span>⟐ Notable NPC Lookup <span id="notableNpcCountBadge" style="color:var(--text-dim);font-weight:400;font-size:10px;letter-spacing:1px"></span></span>
+          <span id="notableNpcToggleIcon" style="font-size:14px;color:var(--text-dim);transition:transform .2s">▼</span>
         </div>
-        <div id="equipPanel" style="display:none">
-          <!-- Availability checkboxes -->
-          <div style="display:flex;align-items:center;gap:4px;margin-bottom:8px;flex-wrap:wrap">
-            <span style="font-family:'Exo 2',monospace;font-size:8px;color:var(--text-dim);letter-spacing:1px;margin-right:4px">AVAIL:</span>
-            <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--green)"><input type="checkbox" checked class="equipAvailCb" value="1" onchange="filterEquipment()" style="accent-color:var(--green);width:13px;height:13px">1</label>
-            <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--green)"><input type="checkbox" checked class="equipAvailCb" value="2" onchange="filterEquipment()" style="accent-color:var(--green);width:13px;height:13px">2</label>
-            <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--gold)"><input type="checkbox" checked class="equipAvailCb" value="3" onchange="filterEquipment()" style="accent-color:var(--gold);width:13px;height:13px">3</label>
-            <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--red)"><input type="checkbox" checked class="equipAvailCb" value="4" onchange="filterEquipment()" style="accent-color:var(--red);width:13px;height:13px">4</label>
-            <span style="color:var(--card-border);margin:0 2px">│</span>
-            <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--cyan)"><input type="checkbox" checked class="equipLegalCb" value="F" onchange="filterEquipment()" style="accent-color:var(--cyan);width:13px;height:13px">F</label>
-            <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--gold)"><input type="checkbox" checked class="equipLegalCb" value="R" onchange="filterEquipment()" style="accent-color:var(--gold);width:13px;height:13px">R</label>
-            <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--red)"><input type="checkbox" checked class="equipLegalCb" value="X" onchange="filterEquipment()" style="accent-color:var(--red);width:13px;height:13px">X</label>
-          </div>
-          <input type="text" id="equipSearch" placeholder="Search by name, category, stats..." oninput="filterEquipment()"
+        <div id="notableNpcPanel" style="display:none">
+          <div style="font-size:10px;color:var(--text-dark);margin-bottom:10px;line-height:1.5">Search sourcebook NPCs by name, system, species, or affiliation.</div>
+          <input type="text" id="notableNpcSearch" placeholder="Search name, system, species, affiliation..." oninput="filterNotableNpcs()"
             style="width:100%;padding:10px 12px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:13px;font-family:inherit;margin-bottom:8px">
           <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px">
-            <select id="equipCategory" onchange="filterEquipment()" style="flex:1;min-width:140px;padding:8px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:12px;font-family:inherit">
-              <option value="">All Categories</option>
+            <select id="notableNpcSystemFilter" onchange="filterNotableNpcs()" style="flex:1;min-width:120px;padding:8px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:12px;font-family:inherit">
+              <option value="">All Systems</option>
+            </select>
+            <select id="notableNpcAffFilter" onchange="filterNotableNpcs()" style="flex:1;min-width:120px;padding:8px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:12px;font-family:inherit">
+              <option value="">All Affiliations</option>
             </select>
           </div>
           <div style="display:flex;gap:6px;margin-bottom:10px">
-            <button class="btn btn-primary" onclick="randomEquipment()" style="flex:1;padding:10px 8px;font-size:10px;letter-spacing:1.5px">⟐ RANDOM</button>
-            <button class="btn btn-primary" onclick="clearEquipFilters()" style="padding:10px 12px;font-size:10px;letter-spacing:1.5px;background:var(--bg3);color:var(--text-dim);border:1px solid var(--card-border)">CLEAR</button>
+            <button class="btn btn-primary" onclick="randomNotableNpc()" style="flex:1;padding:10px 8px;font-size:10px;letter-spacing:1.5px">⟐ RANDOM</button>
+            <button class="btn btn-primary" onclick="clearNotableNpcFilters()" style="padding:10px 12px;font-size:10px;letter-spacing:1.5px;background:var(--bg3);color:var(--text-dim);border:1px solid var(--card-border)">CLEAR</button>
           </div>
-          <!-- Availability Guide (collapsible) -->
-          <div style="margin-bottom:10px">
-            <div onclick="document.getElementById('equipAvailRef').style.display=document.getElementById('equipAvailRef').style.display==='none'?'block':'none';this.querySelector('span:last-child').textContent=document.getElementById('equipAvailRef').style.display==='none'?'▼':'▲'" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer;padding:6px 8px;background:var(--bg);border:1px solid var(--card-border);border-radius:var(--radius-sm)">
-              <span style="font-family:'Exo 2',monospace;font-size:9px;color:var(--text-dim);letter-spacing:1px">AVAILABILITY & LEGALITY GUIDE</span>
-              <span style="font-size:11px;color:var(--text-dim)">▼</span>
-            </div>
-            <div id="equipAvailRef" style="display:none;padding:10px;background:var(--bg);border:1px solid var(--card-border);border-top:none;border-radius:0 0 var(--radius-sm) var(--radius-sm)">
-              <div style="font-family:'Exo 2',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:6px">AVAILABILITY NUMBER</div>
-              <div style="display:grid;grid-template-columns:auto 1fr;gap:4px 10px;margin-bottom:8px;font-size:11px">
-                <span style="color:var(--green);font-weight:600">1</span><span style="color:var(--text)">Readily available throughout the galaxy</span>
-                <span style="color:var(--green);font-weight:600">2</span><span style="color:var(--text)">Normally available, may require brief search</span>
-                <span style="color:var(--gold);font-weight:600">3</span><span style="color:var(--text)">Specialized item, limited supply — may need specific dealers</span>
-                <span style="color:var(--red);font-weight:600">4</span><span style="color:var(--text)">Rare, hard to find — black market, special order, or unique</span>
-              </div>
-              <div style="font-family:'Exo 2',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:6px">LEGALITY CODES</div>
-              <div style="display:grid;grid-template-columns:auto 1fr;gap:4px 10px;font-size:11px">
-                <span style="color:var(--cyan);font-weight:600">F</span><span style="color:var(--text)">Fee or permit required — legal but regulated</span>
-                <span style="color:var(--gold);font-weight:600">R</span><span style="color:var(--text)">Restricted — military/law enforcement only, license needed</span>
-                <span style="color:var(--red);font-weight:600">X</span><span style="color:var(--text)">Illegal — banned, black market only, severe penalties</span>
-              </div>
-              <div style="font-size:10px;color:var(--text-dim);margin-top:8px;line-height:1.5">
-                Example: <span style="color:var(--cyan)">2, R</span> = normally available but restricted to licensed buyers. <span style="color:var(--cyan)">4, X</span> = rare and illegal. Availability can vary by planet — Core Worlds are stricter, Outer Rim more lenient. The GM may adjust prices by 25-100% for restricted/illegal items.
-              </div>
-            </div>
-          </div>
-          <div id="equipList" style="max-height:300px;overflow-y:auto;margin-bottom:8px"></div>
-          <div id="equipDetail" style="display:none"></div>
+          <div id="notableNpcCount" style="font-family:'Exo 2',monospace;font-size:9px;color:var(--text-dark);letter-spacing:1px;margin-bottom:8px"></div>
+          <div id="notableNpcResults" style="max-height:400px;overflow-y:auto;margin-bottom:8px"></div>
+          <div id="notableNpcDetail" style="display:none"></div>
         </div>
       </div>
 
-      <!-- WEAPONS LOOKUP -->
-      <div class="card" style="margin-top:8px">
-        <div class="card-title" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer" onclick="toggleWeapPanel()">
-          <span>⟐ Weapons Lookup <span id="weapCountBadge" style="color:var(--text-dim);font-weight:400;font-size:10px;letter-spacing:1px"></span></span>
-          <span id="weapToggleIcon" style="font-size:14px;color:var(--text-dim);transition:transform .2s">▼</span>
-        </div>
-        <div id="weapPanel" style="display:none">
-          <!-- Availability checkboxes -->
-          <div style="display:flex;align-items:center;gap:4px;margin-bottom:8px;flex-wrap:wrap">
-            <span style="font-family:'Exo 2',monospace;font-size:8px;color:var(--text-dim);letter-spacing:1px;margin-right:4px">AVAIL:</span>
-            <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--green)"><input type="checkbox" checked class="weapAvailCb" value="1" onchange="filterWeapons()" style="accent-color:var(--green);width:13px;height:13px">1</label>
-            <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--green)"><input type="checkbox" checked class="weapAvailCb" value="2" onchange="filterWeapons()" style="accent-color:var(--green);width:13px;height:13px">2</label>
-            <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--gold)"><input type="checkbox" checked class="weapAvailCb" value="3" onchange="filterWeapons()" style="accent-color:var(--gold);width:13px;height:13px">3</label>
-            <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--red)"><input type="checkbox" checked class="weapAvailCb" value="4" onchange="filterWeapons()" style="accent-color:var(--red);width:13px;height:13px">4</label>
-            <span style="color:var(--card-border);margin:0 2px">│</span>
-            <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--cyan)"><input type="checkbox" checked class="weapLegalCb" value="F" onchange="filterWeapons()" style="accent-color:var(--cyan);width:13px;height:13px">F</label>
-            <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--gold)"><input type="checkbox" checked class="weapLegalCb" value="R" onchange="filterWeapons()" style="accent-color:var(--gold);width:13px;height:13px">R</label>
-            <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--red)"><input type="checkbox" checked class="weapLegalCb" value="X" onchange="filterWeapons()" style="accent-color:var(--red);width:13px;height:13px">X</label>
-          </div>
-          <input type="text" id="weapSearch" placeholder="Search by name, category, damage, skill..." oninput="filterWeapons()"
-            style="width:100%;padding:10px 12px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:13px;font-family:inherit;margin-bottom:8px">
-          <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px">
-            <select id="weapCategory" onchange="filterWeapons()" style="flex:1;min-width:140px;padding:8px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:12px;font-family:inherit">
-              <option value="">All Categories</option>
-            </select>
-          </div>
-          <div style="display:flex;gap:6px;margin-bottom:10px">
-            <button class="btn btn-primary" onclick="randomWeapon()" style="flex:1;padding:10px 8px;font-size:10px;letter-spacing:1.5px">⟐ RANDOM</button>
-            <button class="btn btn-primary" onclick="clearWeapFilters()" style="padding:10px 12px;font-size:10px;letter-spacing:1.5px;background:var(--bg3);color:var(--text-dim);border:1px solid var(--card-border)">CLEAR</button>
-          </div>
-          <!-- Availability Guide (collapsible) -->
-          <div style="margin-bottom:10px">
-            <div onclick="document.getElementById('weapAvailRef').style.display=document.getElementById('weapAvailRef').style.display==='none'?'block':'none';this.querySelector('span:last-child').textContent=document.getElementById('weapAvailRef').style.display==='none'?'▼':'▲'" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer;padding:6px 8px;background:var(--bg);border:1px solid var(--card-border);border-radius:var(--radius-sm)">
-              <span style="font-family:'Exo 2',monospace;font-size:9px;color:var(--text-dim);letter-spacing:1px">AVAILABILITY & LEGALITY GUIDE</span>
-              <span style="font-size:11px;color:var(--text-dim)">▼</span>
-            </div>
-            <div id="weapAvailRef" style="display:none;padding:10px;background:var(--bg);border:1px solid var(--card-border);border-top:none;border-radius:0 0 var(--radius-sm) var(--radius-sm)">
-              <div style="font-family:'Exo 2',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:6px">AVAILABILITY NUMBER</div>
-              <div style="display:grid;grid-template-columns:auto 1fr;gap:4px 10px;margin-bottom:8px;font-size:11px">
-                <span style="color:var(--green);font-weight:600">1</span><span style="color:var(--text)">Readily available throughout the galaxy</span>
-                <span style="color:var(--green);font-weight:600">2</span><span style="color:var(--text)">Normally available, may require brief search</span>
-                <span style="color:var(--gold);font-weight:600">3</span><span style="color:var(--text)">Specialized item, limited supply — may need specific dealers</span>
-                <span style="color:var(--red);font-weight:600">4</span><span style="color:var(--text)">Rare, hard to find — black market, special order, or unique</span>
-              </div>
-              <div style="font-family:'Exo 2',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:6px">LEGALITY CODES</div>
-              <div style="display:grid;grid-template-columns:auto 1fr;gap:4px 10px;font-size:11px">
-                <span style="color:var(--cyan);font-weight:600">F</span><span style="color:var(--text)">Fee or permit required — legal but regulated</span>
-                <span style="color:var(--gold);font-weight:600">R</span><span style="color:var(--text)">Restricted — military/law enforcement only, license needed</span>
-                <span style="color:var(--red);font-weight:600">X</span><span style="color:var(--text)">Illegal — banned, black market only, severe penalties</span>
-              </div>
-              <div style="font-size:10px;color:var(--text-dim);margin-top:8px;line-height:1.5">
-                Example: <span style="color:var(--cyan)">2, R</span> = normally available but restricted to licensed buyers. <span style="color:var(--cyan)">4, X</span> = rare and illegal. Availability can vary by planet — Core Worlds are stricter, Outer Rim more lenient. The GM may adjust prices by 25-100% for restricted/illegal items.
-              </div>
-            </div>
-          </div>
-          <div id="weapList" style="max-height:300px;overflow-y:auto;margin-bottom:8px"></div>
-          <div id="weapDetail" style="display:none"></div>
-        </div>
-      </div>
 
       <div id="npcResult" style="display:none">
         <!-- PDF controls + info row -->
@@ -1671,6 +1700,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
 <script src="data_weapons.js"></script>
 <script src="data_vehicles.js"></script>
 <script src="data_planets.js"></script>
+<script src="data_npcs_notable.js"></script>
 
 <script>
 // ============================================================
@@ -2930,12 +2960,219 @@ function buildPowerDetail(p) {
   return html;
 }
 
+// ═══════════════════════════════════════════════════════
+// NOTABLE NPC LOOKUP
+// ═══════════════════════════════════════════════════════
+let notableNpcInited = false;
+let notableNpcPanelOpen = false;
+
+function toggleNotableNpcPanel() {
+  notableNpcPanelOpen = !notableNpcPanelOpen;
+  document.getElementById('notableNpcPanel').style.display = notableNpcPanelOpen ? 'block' : 'none';
+  document.getElementById('notableNpcToggleIcon').textContent = notableNpcPanelOpen ? '▲' : '▼';
+  if (notableNpcPanelOpen) initNotableNpcFilters();
+}
+
+function initNotableNpcFilters() {
+  if (notableNpcInited || typeof NOTABLE_NPCS === 'undefined') return;
+  notableNpcInited = true;
+  // Build system dropdown
+  const systems = [...new Set(NOTABLE_NPCS.map(n => n.system))].sort();
+  const sysSel = document.getElementById('notableNpcSystemFilter');
+  systems.forEach(s => { const o = document.createElement('option'); o.value = s; o.textContent = s; sysSel.appendChild(o); });
+  // Build affiliation dropdown
+  const affs = [...new Set(NOTABLE_NPCS.flatMap(n => n.affiliations))].sort();
+  const affSel = document.getElementById('notableNpcAffFilter');
+  affs.forEach(a => { const o = document.createElement('option'); o.value = a; o.textContent = a; affSel.appendChild(o); });
+  // Badge + count
+  const badge = document.getElementById('notableNpcCountBadge');
+  if (badge) badge.textContent = '(' + NOTABLE_NPCS.length + ')';
+  document.getElementById('notableNpcCount').textContent = NOTABLE_NPCS.length + ' NOTABLE NPCs IN DATABASE';
+  filterNotableNpcs();
+}
+
+function clearNotableNpcFilters() {
+  document.getElementById('notableNpcSearch').value = '';
+  document.getElementById('notableNpcSystemFilter').value = '';
+  document.getElementById('notableNpcAffFilter').value = '';
+  document.getElementById('notableNpcDetail').style.display = 'none';
+  document.getElementById('notableNpcResults').style.display = 'block';
+  filterNotableNpcs();
+}
+
+function randomNotableNpc() {
+  if (typeof NOTABLE_NPCS === 'undefined' || !NOTABLE_NPCS.length) return;
+  if (!notableNpcPanelOpen) toggleNotableNpcPanel();
+  // Filter out generic templates for random
+  const named = NOTABLE_NPCS.filter(n => !n.type.startsWith('Generic'));
+  const pick = named.length ? named[Math.floor(Math.random() * named.length)] : NOTABLE_NPCS[Math.floor(Math.random() * NOTABLE_NPCS.length)];
+  document.getElementById('notableNpcSearch').value = '';
+  document.getElementById('notableNpcSystemFilter').value = '';
+  document.getElementById('notableNpcAffFilter').value = '';
+  showNotableNpcDetail(pick);
+}
+
+function filterNotableNpcs() {
+  const search = (document.getElementById('notableNpcSearch').value || '').trim().toLowerCase();
+  const sysFilt = document.getElementById('notableNpcSystemFilter').value;
+  const affFilt = document.getElementById('notableNpcAffFilter').value;
+  const listEl = document.getElementById('notableNpcResults');
+  const detailEl = document.getElementById('notableNpcDetail');
+
+  // Show list, hide detail
+  listEl.style.display = 'block';
+  detailEl.style.display = 'none';
+
+  if (!search && !sysFilt && !affFilt) {
+    listEl.innerHTML = '<div style="color:var(--text-dark);font-style:italic;font-size:11px;padding:8px">Search by name, species, system, or affiliation — or select filters above.</div>';
+    document.getElementById('notableNpcCount').textContent = NOTABLE_NPCS.length + ' NOTABLE NPCs IN DATABASE';
+    return;
+  }
+
+  let filtered = NOTABLE_NPCS.filter(n => {
+    if (sysFilt && n.system !== sysFilt) return false;
+    if (affFilt && !n.affiliations.includes(affFilt)) return false;
+    if (search) {
+      const hay = [n.name, n.species, n.system, n.location, n.role, n.type, ...n.affiliations].join(' ').toLowerCase();
+      if (!hay.includes(search)) return false;
+    }
+    return true;
+  });
+
+  document.getElementById('notableNpcCount').textContent = filtered.length + ' OF ' + NOTABLE_NPCS.length + ' NPCs';
+
+  if (filtered.length === 0) {
+    listEl.innerHTML = '<div style="color:var(--text-dark);font-style:italic;font-size:11px;padding:8px">No NPCs found matching those criteria.</div>';
+    return;
+  }
+
+  // If 1 result, show detail directly
+  if (filtered.length === 1) {
+    showNotableNpcDetail(filtered[0]);
+    return;
+  }
+
+  // Multiple — show compact list
+  let html = '';
+  filtered.forEach(n => {
+    const isGeneric = n.type.startsWith('Generic');
+    const nameColor = isGeneric ? 'var(--text-dim)' : 'var(--text)';
+    html += '<div onclick="showNotableNpcByName(\'' + encodeURIComponent(n.name) + '\')" style="padding:6px 8px;border-bottom:1px solid var(--card-border);cursor:pointer" onmouseover="this.style.background=\'var(--bg2)\'" onmouseout="this.style.background=\'transparent\'">';
+    html += '<div style="display:flex;justify-content:space-between;align-items:baseline">';
+    html += '<span style="font-family:\'Eras Demi ITC\',sans-serif;font-size:11px;color:' + nameColor + '">' + n.name + '</span>';
+    html += '<span style="font-family:\'Exo 2\',monospace;font-size:8px;color:var(--text-dark);letter-spacing:0.5px">' + n.system + '</span>';
+    html += '</div>';
+    html += '<div style="font-size:9px;color:var(--text-dark);margin-top:1px">' + n.species + ' · ' + n.role + '</div>';
+    html += '</div>';
+  });
+  listEl.innerHTML = html;
+}
+
+function showNotableNpcByName(encodedName) {
+  const name = decodeURIComponent(encodedName);
+  const n = NOTABLE_NPCS.find(x => x.name === name);
+  if (n) showNotableNpcDetail(n);
+}
+
+function showNotableNpcDetail(n) {
+  const listEl = document.getElementById('notableNpcResults');
+  const detailEl = document.getElementById('notableNpcDetail');
+  listEl.style.display = 'none';
+  detailEl.style.display = 'block';
+  detailEl.innerHTML = buildNotableNpcDetail(n);
+}
+
+function buildNotableNpcDetail(n) {
+  let html = '<div style="background:var(--bg3);border:1px solid var(--card-border);border-radius:var(--radius-sm);padding:12px">';
+
+  // Header
+  html += '<div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:2px">';
+  html += '<div style="font-family:\'Exo 2\',monospace;font-size:13px;color:var(--gold)">' + n.name + '</div>';
+  html += '<div style="font-family:\'Exo 2\',monospace;font-size:8px;color:var(--text-dark);letter-spacing:0.5px">' + n.source + '</div>';
+  html += '</div>';
+
+  // Subtitle line
+  html += '<div style="font-size:10px;color:var(--cyan);margin-bottom:8px">' + n.type + '</div>';
+
+  // Info grid
+  const infoLine = (label, val) => val ? '<div style="display:flex;gap:6px;margin-bottom:2px"><span style="font-size:9px;color:var(--text-dark);font-weight:bold;min-width:70px">' + label + ':</span><span style="font-size:10px;color:var(--text-dim)">' + val + '</span></div>' : '';
+  html += infoLine('Species', n.species);
+  html += infoLine('System', n.system);
+  html += infoLine('Location', n.location);
+  html += infoLine('Role', n.role);
+  html += infoLine('Affiliations', n.affiliations.join(', '));
+
+  // Stat block
+  html += '<div style="margin-top:10px;border-top:1px solid var(--card-border);padding-top:10px">';
+  html += '<div style="font-family:\'Exo 2\',monospace;font-size:8px;color:var(--gold);letter-spacing:1px;margin-bottom:6px">ATTRIBUTES & SKILLS</div>';
+
+  const attrOrder = ['DEXTERITY', 'KNOWLEDGE', 'MECHANICAL', 'PERCEPTION', 'STRENGTH', 'TECHNICAL'];
+  const attrColors = { DEXTERITY: '#e06050', KNOWLEDGE: '#50a0e0', MECHANICAL: '#e0a040', PERCEPTION: '#50c878', STRENGTH: '#c070d0', TECHNICAL: '#a0a0a0' };
+  const attrAbbr = { DEXTERITY: 'DEX', KNOWLEDGE: 'KNO', MECHANICAL: 'MEC', PERCEPTION: 'PER', STRENGTH: 'STR', TECHNICAL: 'TEC' };
+
+  attrOrder.forEach(attr => {
+    const data = n.stats[attr];
+    if (!data) return;
+    const color = attrColors[attr] || 'var(--text)';
+    const skills = Object.entries(data.skills || {});
+    html += '<div style="margin-bottom:6px">';
+    html += '<div style="font-family:\'Exo 2\',monospace;font-size:9px;font-weight:bold;color:' + color + ';letter-spacing:0.5px">' + attrAbbr[attr] + ' <span style="color:var(--gold)">' + data.base + '</span></div>';
+    if (skills.length > 0) {
+      html += '<div style="padding-left:12px;font-size:10px;color:var(--text-dim);line-height:1.7">';
+      skills.forEach(([sk, val]) => {
+        html += '<span style="margin-right:10px">' + sk + ' <span style="color:' + color + ';font-weight:bold">' + val + '</span></span>';
+      });
+      html += '</div>';
+    }
+    html += '</div>';
+  });
+  html += '</div>';
+
+  // Special abilities
+  if (n.specialAbilities) {
+    html += '<div style="margin-top:6px;border-top:1px solid var(--card-border);padding-top:8px">';
+    html += '<div style="font-family:\'Exo 2\',monospace;font-size:8px;color:var(--gold);letter-spacing:1px;margin-bottom:4px">SPECIAL ABILITIES</div>';
+    html += '<div style="font-size:10px;color:var(--text-dim);line-height:1.5">' + n.specialAbilities + '</div>';
+    html += '</div>';
+  }
+
+  // Footer stats line
+  html += '<div style="display:flex;gap:16px;margin-top:8px;padding-top:8px;border-top:1px solid var(--card-border);font-family:\'Exo 2\',monospace;font-size:9px;flex-wrap:wrap">';
+  if (n.forcePoints) html += '<span style="color:var(--cyan)">Force Points: <span style="color:var(--gold)">' + n.forcePoints + '</span></span>';
+  if (n.characterPoints) html += '<span style="color:var(--cyan)">Character Points: <span style="color:var(--gold)">' + n.characterPoints + '</span></span>';
+  html += '<span style="color:var(--cyan)">Move: <span style="color:var(--gold)">' + n.move + '</span></span>';
+  html += '</div>';
+
+  // Equipment
+  if (n.equipment) {
+    html += '<div style="margin-top:6px;font-size:9px;color:var(--text-dark)"><span style="font-weight:bold">Equipment:</span> ' + n.equipment + '</div>';
+  }
+
+  // Capsule
+  if (n.capsule) {
+    html += '<div style="margin-top:10px;border-top:1px solid var(--card-border);padding-top:8px">';
+    html += '<div style="font-size:10px;color:var(--text-dim);line-height:1.6;font-style:italic">' + n.capsule + '</div>';
+    html += '</div>';
+  }
+
+  // Back button
+  html += '<div style="margin-top:10px;text-align:center">';
+  html += '<button class="ship-sort-btn" onclick="clearNotableNpcFilters()" style="font-size:8px;padding:4px 16px">◄ BACK TO RESULTS</button>';
+  html += '</div>';
+
+  html += '</div>';
+  return html;
+}
+
 // Initialize on tab switch
 const origSwitchTab = switchTab;
 switchTab = function(tab) {
   origSwitchTab(tab);
-  if (tab === 'gm' && typeof FORCE_POWERS_DATA !== 'undefined') {
-    filterForcePowers();
+  if (tab === 'gm') {
+    if (typeof FORCE_POWERS_DATA !== 'undefined') filterForcePowers();
+  }
+  if (tab === 'npc') {
+    initNotableNpcFilters();
   }
   // Show availability footer on tabs with equipment/weapons/ships/vehicles
   const af = document.getElementById('availFooter');
