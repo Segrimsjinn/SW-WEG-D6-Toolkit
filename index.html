@@ -3139,6 +3139,7 @@ function buildNotableNpcDetail(n) {
   // Footer stats line
   html += '<div style="display:flex;gap:16px;margin-top:8px;padding-top:8px;border-top:1px solid var(--card-border);font-family:\'Exo 2\',monospace;font-size:9px;flex-wrap:wrap">';
   if (n.forcePoints) html += '<span style="color:var(--cyan)">Force Points: <span style="color:var(--gold)">' + n.forcePoints + '</span></span>';
+  if (n.darkSidePoints) html += '<span style="color:var(--red)">Dark Side Points: <span style="color:var(--gold)">' + n.darkSidePoints + '</span></span>';
   if (n.characterPoints) html += '<span style="color:var(--cyan)">Character Points: <span style="color:var(--gold)">' + n.characterPoints + '</span></span>';
   html += '<span style="color:var(--cyan)">Move: <span style="color:var(--gold)">' + n.move + '</span></span>';
   html += '</div>';
