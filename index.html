@@ -465,6 +465,8 @@ background:var(--card);border:1px solid var(--card-border);
 border-radius:var(--radius-sm);padding:12px;margin-bottom:8px;
 display:flex;justify-content:space-between;align-items:center;
 }
+.system-card.has-planet{border-color:var(--gold-dim);transition:border-color .2s,background .2s}
+.system-card.has-planet:hover{border-color:var(--gold);background:rgba(255,215,0,0.06)}
 .system-name{font-size:14px;font-weight:600}
 .system-meta{font-size:11px;color:var(--text-dim);margin-top:2px}
 .system-grid-tag{
@@ -972,9 +974,16 @@ color:var(--text-dim);min-width:35px;text-align:right;
         <canvas id="galaxyCanvas" style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none"></canvas>
         </div>
       </div>
-    </div>
 
-    <!-- TAB 4: STARSHIPS -->
+      <!-- Planet Detail Lookup -->
+      <div id="planetDetail" style="display:none;margin-top:16px;padding:16px;background:var(--card-bg);border:1px solid var(--gold-dim);border-radius:var(--radius)">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+          <h3 id="planetDetailName" style="margin:0;color:var(--gold);font-size:18px"></h3>
+          <button onclick="document.getElementById('planetDetail').style.display='none'" style="background:none;border:1px solid var(--text-dim);color:var(--text-dim);border-radius:4px;padding:2px 8px;cursor:pointer;font-size:12px">✕</button>
+        </div>
+        <div id="planetDetailBody" style="font-size:13px;color:var(--text-secondary);line-height:1.6"></div>
+      </div>
+    </div>
     <div id="tab-ships" class="tab-panel">
       <div class="card">
         <div class="card-title">⟐ Starship Database</div>
@@ -1661,6 +1670,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
 <script src="data_equipment.js"></script>
 <script src="data_weapons.js"></script>
 <script src="data_vehicles.js"></script>
+<script src="data_planets.js"></script>
 
 <script>
 // ============================================================
@@ -3729,20 +3739,63 @@ function searchGalaxy(query) {
     countEl.textContent = matches.length + (matches.length >= 100 ? '+' : '') + ' results';
   }
 
-  container.innerHTML = matches.map(s => `
-    <div class="system-card">
+  container.innerHTML = matches.map(s => {
+    const hasPlanet = typeof PLANETS_DATA !== 'undefined' && PLANETS_DATA.some(p => p.name.toLowerCase() === s.name.toLowerCase());
+    return `<div class="system-card${hasPlanet ? ' has-planet' : ''}"${hasPlanet ? ` onclick="showPlanetDetail('${s.name.replace(/'/g,"\\'")}')" style="cursor:pointer"` : ''}>
       <div>
-        <div class="system-name">${s.name}</div>
+        <div class="system-name">${s.name}${hasPlanet ? ' <span style="color:var(--gold);font-size:11px;margin-left:4px" title="Planet details available">🌍</span>' : ''}</div>
         <div class="system-meta">${s.region} · ${s.quadrant}</div>
       </div>
       <div class="system-grid-tag">${s.grid}</div>
-    </div>
-  `).join('');
+    </div>`;
+  }).join('');
 
   // Highlight matching systems on map
   if (matches.length > 0 && matches.length <= 500) {
     highlightGalaxySystems(matches, !!gridMatch);
   }
+}
+
+function showPlanetDetail(name) {
+  if (typeof PLANETS_DATA === 'undefined') return;
+  const p = PLANETS_DATA.find(pl => pl.name.toLowerCase() === name.toLowerCase());
+  if (!p) return;
+  const el = document.getElementById('planetDetail');
+  const nameEl = document.getElementById('planetDetailName');
+  const bodyEl = document.getElementById('planetDetailBody');
+  nameEl.textContent = p.name;
+
+  const field = (label, val) => val ? `<div style="display:flex;gap:8px;padding:3px 0;border-bottom:1px solid rgba(255,255,255,0.04)"><span style="color:var(--text-dim);min-width:120px;flex-shrink:0">${label}</span><span style="color:var(--text-primary)">${val}</span></div>` : '';
+
+  bodyEl.innerHTML = `
+    <div style="display:grid;gap:0;margin-bottom:14px">
+      ${field('System', p.system)} ${field('Star', p.star)} ${field('Grid', p.grid)} ${field('Region', p.region)}
+    </div>
+    <div style="display:grid;gap:0;margin-bottom:14px;padding:10px;background:rgba(0,0,0,0.2);border-radius:6px">
+      ${field('Type', p.type)} ${field('Temperature', p.temperature)} ${field('Atmosphere', p.atmosphere)} ${field('Hydrosphere', p.hydrosphere)}
+      ${field('Gravity', p.gravity)} ${field('Terrain', p.terrain)} ${field('Day Length', p.lengthOfDay)} ${field('Year Length', p.lengthOfYear)}
+    </div>
+    <div style="display:grid;gap:0;margin-bottom:14px">
+      ${field('Species', p.sapientSpecies)} ${field('Starport', p.starport)} ${field('Population', p.population)}
+      ${field('Function', p.function)} ${field('Government', p.government)} ${field('Tech Level', p.techLevel)}
+      ${field('Exports', p.majorExports)} ${field('Imports', p.majorImports || 'N/A')}
+    </div>
+    <div style="margin-bottom:12px">
+      <div style="color:var(--gold);font-size:12px;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">Summary</div>
+      <div style="color:var(--text-secondary);line-height:1.7">${p.summary}</div>
+    </div>
+    ${p.locations ? `<div style="margin-bottom:12px">
+      <div style="color:var(--gold);font-size:12px;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">Key Locations</div>
+      <div style="color:var(--text-secondary);line-height:1.7">${p.locations}</div>
+    </div>` : ''}
+    ${p.ofNote ? `<div style="margin-bottom:12px">
+      <div style="color:var(--gold);font-size:12px;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">Of Note</div>
+      <div style="color:var(--text-secondary);line-height:1.7">${p.ofNote}</div>
+    </div>` : ''}
+    <div style="color:var(--text-dim);font-size:11px;font-style:italic;margin-top:8px">Source: ${p.source}</div>
+  `;
+  el.style.display = 'block';
+  el.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 function clearGalaxyHighlights() {
