@@ -762,5 +762,129 @@ const NOTABLE_NPCS = [
     equipment: "Starship repair tools (+1D to repair rolls), work coveralls",
     capsule: "Omze keeps several excellent outlaw technicians on staff, most recruited from swoop gangs and pirate crews. They are professional and efficient despite their backgrounds. Repairs and modifications cost 150–200% of regular prices but the work is far more durable and malfunctions far less than work at most starports. The repair bay stocks everything from hyperdrive motivators to quad laser cannons to brand new (and illegal) sensor systems.",
     source: "WEG40217 Platt's Starport Guide p.88"
+  },
+
+  // ── BYBLOS STARPORT TOWER 214 (WEG40217 Platt's Starport Guide p.98–116) ──
+  {
+    name: "Lieutenant Vadid Shenvehr",
+    species: "Human",
+    system: "Byblos",
+    location: "Byblos Starport Tower 214 — Docking Hangar 217-11",
+    affiliations: ["Byblos Starport Tower 214", "Imperial Starport Administration"],
+    role: "Hangar controller",
+    type: "Hangar Controller",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { blaster: "4D" } },
+      KNOWLEDGE: { base: "3D+1", skills: { bureaucracy: "7D+2", business: "5D", languages: "6D+1", "law enforcement": "7D" } },
+      MECHANICAL: { base: "3D+2", skills: { astrogation: "5D+1", communications: "7D", "repulsorlift operation": "4D", sensors: "6D+2", "space transports": "6D" } },
+      PERCEPTION: { base: "3D+2", skills: { command: "6D+2", investigation: "5D+2", persuasion: "5D", sneak: "6D" } },
+      STRENGTH: { base: "2D", skills: { brawling: "4D", lifting: "4D+2", stamina: "5D" } },
+      TECHNICAL: { base: "3D+1", skills: { "capital starship repair": "5D", "droid programming": "6D+2", "first aid": "5D+1", security: "7D", "space transports repair": "5D+2" } }
+    },
+    specialAbilities: "",
+    forcePoints: 2,
+    characterPoints: 10,
+    move: 10,
+    equipment: "Blaster pistol (4D), datapad, headset comlink",
+    capsule: "Lieutenant Shenvehr is hangar controller of docking hangar 217-11. He oversees all operations within his hangar, even when he isn't supposed to be on duty. He's often on the deck in his off hours, helping supervise cargo and maintenance crews and inspecting conditions himself. Shenvehr is a serious and tall man with thinning hair and tan skin, businesslike at all times, precise with orders to both starship captains and hangar crew. He speaks his mind when others disobey hangar rules and endanger lives. He knows Imperial flight regulations and Byblos traffic regulations inside and out and is a fully qualified starship pilot. Impartial to the conflict between the Empire and the Rebel Alliance, he puts his life into his job — making sure operations run as smoothly as possible.",
+    source: "WEG40217 Platt's Starport Guide p.106"
+  },
+  {
+    name: "Lieutenant Selnia Gergeroe",
+    species: "Human",
+    system: "Byblos",
+    location: "Byblos Starport Tower 214 — Docking Hangar 217-11",
+    affiliations: ["Imperial Customs", "Byblos Starport Tower 214"],
+    role: "Imperial Customs officer",
+    type: "Imperial Customs Officer",
+    stats: {
+      DEXTERITY: { base: "2D+2", skills: { blaster: "4D+2", dodge: "5D" } },
+      KNOWLEDGE: { base: "4D", skills: { "alien species": "5D", bureaucracy: "6D", business: "5D+2", intimidation: "6D+2", languages: "5D", "law enforcement": "7D", value: "6D+2" } },
+      MECHANICAL: { base: "2D+2", skills: { communications: "3D+2", "repulsorlift operation": "4D", sensors: "4D" } },
+      PERCEPTION: { base: "4D", skills: { bargain: "6D", command: "6D+2", investigation: "5D+2", search: "7D" } },
+      STRENGTH: { base: "2D+1", skills: {} },
+      TECHNICAL: { base: "2D+1", skills: { security: "4D+2" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 11,
+    move: 10,
+    equipment: "Blaster pistol (4D), datapad, headset comlink",
+    capsule: "Lieutenant Gergeroe was formerly a captain's assistant aboard a Star Destroyer patrolling the Outer Rim but transferred to Byblos as an Imperial Customs officer because she and her commander did not get along. A conservative beauty even in an Imperial officer's uniform, she carries herself strictly and stoically. Tired of being taken for granted as a female officer, she doesn't overcompensate by being tougher than her male counterparts but makes sure she does a thorough and professional job. She sees the Empire as establishing order and enforces that order fairly and reasonably. Her customs guards respect her for her good nature, businesslike attitude, and calm manner around spacers.",
+    source: "WEG40217 Platt's Starport Guide p.110"
+  },
+  {
+    name: "Doctor Reina Solov",
+    species: "Human",
+    system: "Byblos",
+    location: "University of Byblos",
+    affiliations: ["University of Byblos", "Fellowship of Kooroo (researcher)"],
+    role: "Associate professor of galactic archaeology",
+    type: "University Archaeologist",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { blaster: "4D", dodge: "4D+2" } },
+      KNOWLEDGE: { base: "4D", skills: { "alien species": "5D+2", cultures: "7D", languages: "6D+1", "planetary systems": "6D", "scholar: galactic archaeology": "10D", survival: "5D+2" } },
+      MECHANICAL: { base: "2D+2", skills: { "beast riding": "4D", "repulsorlift operation": "5D", sensors: "4D+2" } },
+      PERCEPTION: { base: "3D+2", skills: { bargain: "5D+2", investigation: "7D", persuasion: "5D", search: "6D+2" } },
+      STRENGTH: { base: "2D+2", skills: { brawling: "3D", "climbing/jumping": "4D", lifting: "3D+1", stamina: "4D" } },
+      TECHNICAL: { base: "2D", skills: { "computer programming/repair": "5D", "droid programming": "4D+2", "first aid": "5D+2", security: "3D+1" } }
+    },
+    specialAbilities: "",
+    forcePoints: 1,
+    characterPoints: 6,
+    move: 10,
+    equipment: "Datapad, vocorecorder",
+    capsule: "Doctor Reina Solov is an associate professor of galactic archaeology at the University of Byblos, specializing in ancient cultures, their structures, and treasures. Well-versed in legends of the past and stories of lost civilizations. During breaks she hires free-traders to take her to archaeological sites around the galaxy. Her current research centers on the secretive Fellowship of Kooroo and its attachment to certain ancient sites. A regal woman of middle age who carries herself as a professional, she is friendly with those who respect her theories and are knowledgeable about her field.",
+    source: "WEG40217 Platt's Starport Guide p.115"
+  },
+
+  // ── BYBLOS — Generic NPC Templates ──
+  {
+    name: "Byblos Customs Guards",
+    species: "Human",
+    system: "Byblos",
+    location: "Byblos Starport Tower 214 — Docking Hangars",
+    affiliations: ["Imperial Customs", "Byblos Starport Tower 214"],
+    role: "Customs patrol guards",
+    type: "Generic — Customs Guards",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { blaster: "4D", dodge: "4D" } },
+      KNOWLEDGE: { base: "2D", skills: { bureaucracy: "3D+2", "law enforcement": "4D" } },
+      MECHANICAL: { base: "2D", skills: { "repulsorlift operation": "3D+1" } },
+      PERCEPTION: { base: "3D", skills: { search: "4D+2" } },
+      STRENGTH: { base: "3D", skills: {} },
+      TECHNICAL: { base: "2D", skills: { security: "3D+1" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 10,
+    equipment: "Blaster pistol (4D), blast helmet (+1D physical, +1 energy), blast vest (+1D physical, +1 energy, torso only), headset comlink in helmet",
+    capsule: "Imperial Customs guards patrol the docking hangars of Byblos Starport Tower 214 under the command of customs officers like Lieutenant Gergeroe. Teams of 4 to 8 guards (sometimes replaced by stormtroopers) visit each docked ship to inspect documentation, cargo manifests, and weapons load-outs. They spot-check cargo being loaded and unloaded throughout the hangar.",
+    source: "WEG40217 Platt's Starport Guide p.110"
+  },
+  {
+    name: "Byblos Hangar Personnel",
+    species: "Human",
+    system: "Byblos",
+    location: "Byblos Starport Tower 214 — Docking Hangars",
+    affiliations: ["Byblos Starport Tower 214"],
+    role: "Hangar crew — technicians, load controllers, maintenance",
+    type: "Generic — Hangar Crew",
+    stats: {
+      DEXTERITY: { base: "2D", skills: {} },
+      KNOWLEDGE: { base: "2D", skills: { bureaucracy: "3D", business: "2D+2", "law enforcement": "2D+2" } },
+      MECHANICAL: { base: "2D", skills: { "repulsorlift operation": "4D" } },
+      PERCEPTION: { base: "2D", skills: {} },
+      STRENGTH: { base: "2D", skills: { lifting: "3D" } },
+      TECHNICAL: { base: "2D", skills: { "droid programming": "4D", "space transports repair": "4D" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 10,
+    equipment: "Belt with several tools, comlink, datapad, tan technician uniform",
+    capsule: "Hangar personnel handle all ground operations within Byblos Starport Tower 214's docking bays — from load controllers and refueling technicians to maintenance foremen. They coordinate cargo loading/unloading, supply replenishment, and ship repairs through the hangar control office.",
+    source: "WEG40217 Platt's Starport Guide p.105"
   }
 ];
