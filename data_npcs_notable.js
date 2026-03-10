@@ -886,5 +886,129 @@ const NOTABLE_NPCS = [
     equipment: "Belt with several tools, comlink, datapad, tan technician uniform",
     capsule: "Hangar personnel handle all ground operations within Byblos Starport Tower 214's docking bays — from load controllers and refueling technicians to maintenance foremen. They coordinate cargo loading/unloading, supply replenishment, and ship repairs through the hangar control office.",
     source: "WEG40217 Platt's Starport Guide p.105"
+  },
+
+  // ── DARKNON STATION (WEG40217 Platt's Starport Guide p.118–134) ──
+  {
+    name: "Rexis Lovech",
+    species: "Human",
+    system: "Itani",
+    location: "Darknon Station — Darknon Control",
+    affiliations: ["Darknon Station"],
+    role: "Delusional station controller",
+    type: "Station Controller",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { blaster: "3D+1", dodge: "3D+2" } },
+      KNOWLEDGE: { base: "3D", skills: { "alien species": "4D", bureaucracy: "6D", cultures: "4D+2", languages: "5D", "law enforcement": "5D", willpower: "5D" } },
+      MECHANICAL: { base: "3D", skills: { "archaic starship piloting": "4D+2", communications: "6D", sensors: "6D+1" } },
+      PERCEPTION: { base: "4D", skills: { command: "5D" } },
+      STRENGTH: { base: "2D", skills: { stamina: "4D" } },
+      TECHNICAL: { base: "3D", skills: { "droid programming": "3D+2", "droid repair": "3D+1", "first aid": "4D", security: "4D+2" } }
+    },
+    specialAbilities: "",
+    forcePoints: 1,
+    characterPoints: 3,
+    move: 9,
+    equipment: "Ancient threadbare uniform, blaster pistol (4D), datapad, headset comlink",
+    capsule: "Rexis Lovech is the somewhat crazed yet competent starport controller of Darknon Station. A generally harmless old man, he dodders about Darknon Control believing he is keeping the station's traffic pattern running smoothly despite the obvious 'absence of most of the base crew today.' He is ancient, dressed in a threadbare uniform of some long-lost government, hiding his frazzled hair beneath a controller's cap. His hands are never still — always fidgeting with his headset comlink, entering figures on his datapad, or twiddling console controls. Despite his delusions, he is somehow able to tell real ships from imaginary ones and can competently guide vessels through landing and departure. He is fiercely protective of Darknon Control and warns all visitors away by shouting about disrupting business and waving his blaster. He threatens fines, security, and the brig — but is essentially harmless. It's doubtful he's replaced the power pack in his blaster in years. His two 'station colleagues' are Sergeant Nethius (his 'security force') and Olev Madak ('base maintenance chief'). All others are pests interfering with his very important work.",
+    source: "WEG40217 Platt's Starport Guide p.120"
+  },
+  {
+    name: "Sergeant Nethius",
+    species: "Human",
+    system: "Itani",
+    location: "Darknon Station — Customs Plaza",
+    affiliations: ["Darknon Station", "Galactic Empire (covert)"],
+    role: "Customs officer & Imperial spy",
+    type: "Imperial Spy / Customs Officer",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { blaster: "7D", "brawling parry": "6D+2", dodge: "6D", grenade: "5D", "melee combat": "6D+2", "melee parry": "6D", "pick pocket": "7D", running: "4D+2", "thrown weapon": "5D+2" } },
+      KNOWLEDGE: { base: "2D+2", skills: { "alien species": "4D", bureaucracy: "5D", cultures: "3D+2", languages: "6D+2", "law enforcement": "6D", "planetary systems": "5D+2", streetwise: "7D", survival: "5D", value: "4D", willpower: "5D+1" } },
+      MECHANICAL: { base: "3D", skills: { astrogation: "5D+2", communications: "7D", "repulsorlift operation": "6D", sensors: "6D+2", "space transports": "6D", "starfighter piloting": "6D", "starship gunnery": "6D+1", "starship shields": "5D" } },
+      PERCEPTION: { base: "4D", skills: { command: "5D", con: "8D", hide: "5D+2", persuasion: "7D", search: "7D+2", sneak: "7D+1" } },
+      STRENGTH: { base: "3D", skills: { brawling: "7D", "climbing/jumping": "5D", stamina: "5D+2" } },
+      TECHNICAL: { base: "2D+1", skills: { "blaster repair": "4D+1", demolitions: "5D+2", "droid programming": "5D", "droid repair": "4D+2", "first aid": "6D", security: "7D", "space transports repair": "5D", "starfighter repair": "5D" } }
+    },
+    specialAbilities: "",
+    forcePoints: 2,
+    darkSidePoints: 4,
+    characterPoints: 13,
+    move: 10,
+    equipment: "Blast helmet (+1D physical, +1 energy), blast vest (+1D physical, +1 energy, torso only), comlink, heavy blaster pistol (5D), hold-out blaster (3D), knife (STR+1D)",
+    capsule: "Sergeant Nethius appears to be a young, cheerful soldier assigned to a backwater post — full of curiosity about the galaxy and helpfulness toward visiting spacers. In truth he is a trained Imperial soldier and secret operative sent to Darknon Station to monitor spacer traffic and alert Imperial officials to any suspicious activity. His customs computer in the station's old customs office is directly linked to Darknon Control's communications and sensor equipment, allowing him to monitor incoming and outgoing ships, eavesdrop on system communications, and transmit coded reports to the Empire. His primary mission is protecting the secret Imperial research station hidden deep in the Itani Nebula. Through casual, friendly conversation with spacers he probes for their true intentions, assesses whether they should be watched, and warns the research station of any possible Rebel activity. He rarely reveals anything about his past, simply stating he was 'assigned to this post.' He lives in the former customs offices at one end of the plaza — neat, sparse quarters with a cot, a locker, and the still-functional customs computer.",
+    source: "WEG40217 Platt's Starport Guide p.125"
+  },
+  {
+    name: "Olev Madak",
+    species: "Duros",
+    system: "Itani",
+    location: "Darknon Station — Repair Bay",
+    affiliations: ["Darknon Station"],
+    role: "Duros starship mechanic",
+    type: "Duros Mechanic",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { blaster: "4D", dodge: "5D+2" } },
+      KNOWLEDGE: { base: "2D+2", skills: { "alien species": "4D+2", "business: starships": "6D", languages: "5D", streetwise: "4D+2", "value: starships": "6D" } },
+      MECHANICAL: { base: "3D", skills: { astrogation: "5D", communications: "4D+2", sensors: "4D+1", "space transports": "6D", "starship shields": "5D+1" } },
+      PERCEPTION: { base: "2D+2", skills: { bargain: "6D+2" } },
+      STRENGTH: { base: "2D+2", skills: { "climbing/jumping": "4D", lifting: "3D+2", stamina: "4D+2" } },
+      TECHNICAL: { base: "4D", skills: { "droid repair": "5D", "repulsorlift repair": "5D+2", security: "6D", "space transports repair": "8D+2", "starfighter repair": "6D+1", "starship weapon repair": "6D" } }
+    },
+    specialAbilities: "",
+    forcePoints: 2,
+    characterPoints: 11,
+    move: 10,
+    equipment: "Dirty worksuit, hydrospanner, tool belt",
+    capsule: "Olev Madak was once a free-trader much like those passing through Darknon Station today. After fleeing bounty hunters pursuing him for debts owed to a crimelord, and after a particularly close call with several Imperial cruisers, Olev limped back to Darknon Station. His ship barely made it into the dilapidated repair bay before it began falling apart in the station's artificial gravity. Since that day he has eked out a meager living repairing spacers' starships and keeping Darknon Station somewhat operational. He charges 50 credits an hour for his time, not including inflated charges for rare replacement parts. He can often be found scurrying about the station — disappearing into abandoned sections, maintenance ducts, and control stations with his trusty tool belt and hydrospanner. He prefers ships be moved to his personal repair bay rather than working in the other docking bays, as he cannot always guarantee the atmospheric and magnetic field systems in those bays will hold. Olev has little time for socializing; he asks only what he needs to know to fix a ship. He will pay around 500 credits per crate of used spare parts from visiting spacers. He also maintains Darknon Control's sensors and communications equipment and monitors the station's power generator and life support.",
+    source: "WEG40217 Platt's Starport Guide p.127"
+  },
+  {
+    name: "Gulek Lohn",
+    species: "Rodian",
+    system: "Itani",
+    location: "Darknon Station — Stormview Lounge",
+    affiliations: ["Darknon Station", "Independent Criminal"],
+    role: "Rodian restaurateur & informant",
+    type: "Rodian Restaurateur",
+    stats: {
+      DEXTERITY: { base: "4D", skills: { blaster: "7D", "brawling parry": "5D", dodge: "6D+1", "melee combat": "5D", "melee parry": "5D", "pick pocket": "6D+2" } },
+      KNOWLEDGE: { base: "3D", skills: { "alien species": "5D+1", business: "4D+2", intimidation: "6D", languages: "7D+2", "planetary systems": "6D+1", streetwise: "8D", value: "5D+2" } },
+      MECHANICAL: { base: "2D", skills: { "repulsorlift operation": "4D+2" } },
+      PERCEPTION: { base: "3D+2", skills: { bargain: "5D+2", con: "7D+1", forgery: "6D", gambling: "5D+1", hide: "5D", investigation: "6D", search: "5D", sneak: "6D+2" } },
+      STRENGTH: { base: "3D+1", skills: { brawling: "5D", "climbing/jumping": "4D" } },
+      TECHNICAL: { base: "2D", skills: { security: "4D+2" } }
+    },
+    specialAbilities: "",
+    forcePoints: 1,
+    darkSidePoints: 1,
+    characterPoints: 6,
+    move: 10,
+    equipment: "Hold-out blaster (3D)",
+    capsule: "Gulek Lohn is the seedy proprietor of the Stormview Lounge, Darknon Station's only eating establishment. A grumpy, grizzled Rodian, he serves bland food and watered-down drinks at inflated prices (15–20 credits for a meal, 3–5 credits for drinks) and dares disgruntled patrons to find better elsewhere — which they cannot. His suspicious appearance is enhanced by odd 'eyelids' that keep his bulbous eyes perpetually half-covered, as if he's ready to doze off. Most of the lounge's transparisteel viewports are deliberately sealed with metal plates — Gulek arranged this so patrons are forced to sit at one of only two booths with nebula views. The ceiling acoustics above those booths are designed to project conversations directly to the bar where Gulek works, allowing him to eavesdrop on supposedly private discussions. He tracks who spacers are and where they're heading, selling information to bounty hunters willing to pay small sums. His credit box never holds more than 250–400 credits at any given time. He will pay up to 100 credits per spacer for food and beverages brought to him, though he haggles bitterly over the price.",
+    source: "WEG40217 Platt's Starport Guide p.129"
+  },
+  {
+    name: "T'nadar Nadar",
+    species: "Chadra-Fan",
+    system: "Itani",
+    location: "Darknon Station — Galaxy Shop",
+    affiliations: ["Darknon Station"],
+    role: "Chadra-Fan pawnshop owner",
+    type: "Chadra-Fan Merchant",
+    stats: {
+      DEXTERITY: { base: "2D", skills: {} },
+      KNOWLEDGE: { base: "2D+2", skills: { business: "6D+1", cultures: "5D", "planetary systems": "5D+2", streetwise: "6D", value: "7D" } },
+      MECHANICAL: { base: "2D", skills: {} },
+      PERCEPTION: { base: "3D+2", skills: { bargain: "6D+2", con: "5D", forgery: "4D+2", hide: "4D", persuasion: "5D+2" } },
+      STRENGTH: { base: "2D", skills: {} },
+      TECHNICAL: { base: "2D", skills: {} }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 10,
+    equipment: "Datapad, hold-out blaster (3D)",
+    capsule: "T'nadar Nadar runs the Galaxy Shop — the dusty remnant of what was once Darknon's tourist novelty store. The Chadra-Fan has filled it with an extraordinary clutter of items traded, bought, or stolen from spacers passing through over the years: small vials of Gruvian Tovash, muss-hide covered furniture, fire lamps from Vundaria, ancient tools, and countless other oddities from across the galaxy. He gladly bargains on any item, accepting both credits and interesting trades, and will work out deals for spacers who need ready capital but have goods to pawn. He rarely has large amounts of credits on hand. Nadar is perhaps best known for a rumor that persists to this day: he once briefly possessed an actual lightsaber, which he intended to auction to the highest bidder — but it vanished mysteriously after only three days, stolen right from beneath his snout. He insists the story is true and bristles at any suggestion it was a fabrication for attention.",
+    source: "WEG40217 Platt's Starport Guide p.128"
   }
 ];
