@@ -437,5 +437,31 @@ const NOTABLE_NPCS = [
     equipment: "Vacation holos (extensive collection), Core Worlds travel clearance documents",
     capsule: "Olaal Da'aapp is one of two Gruvian tourists (along with Benja) who frequent the Kuat Passenger Port. They are intensely friendly and have legitimate Core Worlds clearance, making them potentially useful for obtaining transit permits. However, any companion must endure hours of vacation holos.",
     source: "WEG40217 Platt's Starport Guide p.38"
+  },
+
+  // ── PLATT OKEEFE (WEG40217 Platt's Starport Guide p.6) ──
+  {
+    name: "Platt Okeefe",
+    species: "Human",
+    system: "Varies",
+    location: "Varies (based on Brentaal, frequents Gelgelar Free Port and others)",
+    affiliations: ["Independent Smuggler"],
+    role: "Smuggler & entrepreneur",
+    type: "Smuggler",
+    stats: {
+      DEXTERITY: { base: "3D+1", skills: { blaster: "6D+1", dodge: "5D", running: "5D+1" } },
+      KNOWLEDGE: { base: "2D+1", skills: { "alien species": "4D+1", languages: "4D", "languages: Sullustan": "6D", "planetary systems": "8D", streetwise: "6D" } },
+      MECHANICAL: { base: "3D+2", skills: { astrogation: "5D", sensors: "4D+2", "space transports": "6D+2", "starship gunnery": "5D" } },
+      PERCEPTION: { base: "3D", skills: { bargain: "5D", con: "4D", sneak: "4D+2" } },
+      STRENGTH: { base: "3D", skills: { brawling: "5D", "climbing/jumping": "4D+2", stamina: "4D" } },
+      TECHNICAL: { base: "2D+2", skills: { "space transports repair": "5D+2", "starship weapon repair": "4D" } }
+    },
+    specialAbilities: "",
+    forcePoints: 5,
+    characterPoints: 12,
+    move: 10,
+    equipment: "Comlink, datapad, heavy blaster pistol (5D). Often accompanied by co-pilots including the Twi'lek gunrunner Tru'eb Cholakk and a Sullustan from the Suuliem family. ◆ THE LAST CHANCE — Modified CEC YT-1300 Transport. Scale: Starfighter. Length: 27m. Crew: 1–2 (can coordinate), Gunners: 2. Passengers: 6. Cargo: 100 metric tons. Consumables: 2 months. Hyperdrive: x1 (Backup: x10). Nav Computer: Yes. Maneuverability: 2D. Space: 4. Atmosphere: 480; 800 kmh. Hull: 4D+2. Shields: 2D. Sensors — Passive: 10/0D, Scan: 25/1D, Search: 40/2D, Focus: 2/3D. Weapons: 2 Quad Laser Cannons (turret, Fire Control 2D, Space Range 1-3/12/25, Atmo 100-300/1.2/2.5 km, Damage 6D), Concussion Missile Tube (front, Fire Control 2D, Space Range 1/3/7, Atmo 50-100/300/700, Damage 9D). The crew lounge is fancifully decorated with collectibles from her journeys, not all lawfully acquired.",
+    capsule: "Platt Okeefe considers herself a legendary entrepreneur who has been causing trouble for the Empire, running legal and not-so-legal cargoes, and getting into trouble throughout the galaxy for several years. She always loved space travel — growing up on Brentaal, she spent her afternoons at the starport watching freighters. On her twelfth birthday she ran away and signed on as a cabin steward aboard a Sullustan starliner. She later joined a tramp freighter crew plying the Anarid Cluster and has since gone through different ships like clothing goes through styles. During her extensive travels she has recorded everything she could about the spacefaring life and cultivated a network of contacts so her information on systems and starports is accurate. Her most remarkable features are her silvery white hair streaming down her back (often tied with a silver and red striped sash) and her bright outfit — white blouse with red pants, boots, and vest. Her heavy blaster is always at her side. She enjoys stunning unsuspecting spacer jocks with her girlish smile. Platt is easygoing and has great concern for her fellow smugglers, offering help whenever it won't jeopardize her own affairs.",
+    source: "WEG40217 Platt's Starport Guide p.6"
   }
 ];
