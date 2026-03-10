@@ -646,5 +646,32 @@ const PLANETS_DATA = [
     summary: "Ergeshui is a giant swamp world with heavy gravity and a Type III atmosphere, bathed in eerie crimson light from its red giant sun. The Ergesh are 2-meter-tall mounds of slimy plant matter weighing half a metric ton, covered in tentacles ranging from 2cm to 3m long. They communicate via bubbling speech, reproduce asexually by planting seeds in the Shoolbloorp swamp, and are immune to most poisons. Their technology is entirely organic — living buildings that recognize their owners, biological Starjumper spaceships grown in tidal flats, and a Living Monorail of giant vine-cars propelled by methane. The 'Bad Water Pull' (annual dual-moon alignment) drives all Ergesh temporarily insane. Outworlder City provides a climate-controlled dome for visitors.",
     locations: "Erglush (capital, continent of Ersheg, mud/organic buildings 40m tall, columns and pyramids, no doors). Industrial Swampfields (grow organic machines and Starjumpers, 2,000+ workers). Outworlder City (domed, climate-controlled 20°C, standard gravity, 50K aliens, bars/casinos/hotels, New Republic embassy with 30 staff). Communal Pool (continent of Queesh, monthly 40-hour clan meetings, 80 clan leaders). Living Monorail (giant vine cars, 4-hour ride, free, instinct-driven). Shoolbloorp ('Land of Beginnings', Ergesh reproductive swamp).",
     ofNote: "Heavy gravity: -1D STR/DEX, Moderate stamina/round of exertion, +2D falling/collision damage (not in Outworlder City). Type III atmo requires breath mask. Ergesh: 2m tall, half metric ton, asexual (seed planting), 200yr lifespan, immune to most poisons. Kaloob drink: cleanses Ergesh, causes violent purging + 30min nausea in non-Ergesh (but cures all toxins). 'Bad Water Pull': annual dual-moon event, all Ergesh go violently irrational — off-worlders stay clear. Ergesh body armor +2D physical/+1D energy. Starjumpers: living organic ships (200m, x6 hyperdrive, self-healing, electrical beam 5D, only Ergesh can pilot, argumentative personalities). 'Not wet' is a curse word. No concept of gender or 'dry.' Tidal waves: 60 kph, 4D damage + Difficult swim checks. Swamp Skimmers: reptilian ambush predators (STR 6D, swallow whole on +10 hit). Muckworms: fluid-draining predators (2D/round after bite)."
+  },
+  {
+    name: "Port Haven",
+    system: "Whendyll",
+    star: "Unknown",
+    grid: "L-6",
+    region: "Outer Rim Territories",
+    type: "Terrestrial",
+    temperature: "Hot",
+    atmosphere: "Type I (breathable)",
+    hydrosphere: "Moist",
+    gravity: "Standard",
+    terrain: "Jungles, mountains, oceans",
+    lengthOfDay: "31 standard hours",
+    lengthOfYear: "209 local days",
+    sapientSpecies: "Human, Mon Calamari",
+    starport: "Landing field",
+    population: "2",
+    function: "Abandoned colony, smugglers' haven",
+    government: "None",
+    techLevel: "Feudal",
+    majorExports: "Animal skins, cured meat, Haven water",
+    majorImports: "None",
+    source: "WEG40092 Platt's Starport Guide p.20",
+    summary: "Port Haven is a tiny, isolated settlement on the third planet of seven in the Whendyll system, forgotten many years ago after the original colony was abandoned. Today it serves as a smugglers' retreat — a place to recuperate from injuries, repair ships, or hide out until the heat cools off. Its astrogational coordinates are a closely guarded secret among smugglers, passed only to trusted colleagues as a mark of respect. About 250 years ago, idealists from Salliche founded a colony seeking a more natural way of life, but they were unprepared for the savage jungle beasts and abandoned the settlement within a few years. Only two permanent residents remain: Hallomar, a rugged big game hunter who serves as the impromptu governor, and Mister Mxil, a Mon Calamari refugee and former chief steward of the starliner Kuari Princess who runs the port's only tavern.",
+    locations: "Haven's Water (only tavern, stone building, animal fat lanterns, wind chimes, serves jungle-brewed ale, distilled fruit liquor, and herbal teas — all free). Technical Hangar (wood/metal/thatch structure, scavenged starship parts, skeleton of old Z-95 Headhunter). Hallomar's Shack and Curing Tent. Buried Rip-Ship (ancient light freighter half-buried in beach sand). Haven's Water Spring (10-minute jungle trail, ice-cold bubbling pool, rumored healing properties). Landing Beach (packed hard sand, room for ~5 ships). 10+ abandoned stone colony buildings (used by visiting smugglers as temporary homes, hospitals, or cargo storage).",
+    ofNote: "Astrogation coordinates are a closely guarded smuggler secret — receiving them is a mark of peer respect. Smugglers who betray the location are killed. Tacit rules: no slaves allowed (Hallomar frees them), no firefights or brawls (all conflicts 'covered by the jungle'), take what you need/leave what you don't. No currency system — all hospitality is free. Hallomar gives departing smugglers animal skins (50–200 cr each, up to 10) and cured meat (10–50 cr per bundle, up to 200 cr to specialty restaurants). Haven water skins worth ~40 cr each. 3-meter high trash heap wall surrounds settlement — repels jungle beasts via odor Humans can't detect. Tech hangar parts: Heroic search for working parts, Difficult search + Very Difficult repair for damaged parts. Jungle creatures: Modrols (5m tall, STR 7D, claws STR+2D, camouflage +1D sneak, Move 18, Creature scale), Tree Fishers (carnivorous plants, catch-vines dangle from treetops, maw 2D/round, nest in groups of 4–5). Hallomar (blaster rifle 9D, brawling 8D, survival jungle 9D+2, search tracking 8D+2, Force Points 5). Mister Mxil (drink mixicology 9D, survival jungle 8D, first aid 6D+2, Mon Cal moist environment +1D bonus active)."
   }
 ];

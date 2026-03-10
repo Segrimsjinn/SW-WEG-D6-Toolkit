@@ -3740,8 +3740,11 @@ function searchGalaxy(query) {
   }
 
   container.innerHTML = matches.map(s => {
-    const hasPlanet = typeof PLANETS_DATA !== 'undefined' && PLANETS_DATA.some(p => p.name.toLowerCase() === s.name.toLowerCase());
-    return `<div class="system-card${hasPlanet ? ' has-planet' : ''}"${hasPlanet ? ` onclick="showPlanetDetail('${s.name.replace(/'/g,"\\'")}')" style="cursor:pointer"` : ''}>
+    const sLow = s.name.toLowerCase();
+    const findPlanet = typeof PLANETS_DATA !== 'undefined' && PLANETS_DATA.find(p => p.name.toLowerCase() === sLow || p.system.toLowerCase() === sLow || sLow.startsWith(p.name.toLowerCase() + ' -'));
+    const hasPlanet = !!findPlanet;
+    const planetKey = findPlanet ? findPlanet.name : s.name;
+    return `<div class="system-card${hasPlanet ? ' has-planet' : ''}"${hasPlanet ? ` onclick="showPlanetDetail('${planetKey.replace(/'/g,"\\'")}')" style="cursor:pointer"` : ''}>
       <div>
         <div class="system-name">${s.name}${hasPlanet ? ' <span style="color:var(--gold);font-size:11px;margin-left:4px" title="Planet details available">🌍</span>' : ''}</div>
         <div class="system-meta">${s.region} · ${s.quadrant}</div>
