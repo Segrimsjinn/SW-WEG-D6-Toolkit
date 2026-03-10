@@ -463,5 +463,55 @@ const NOTABLE_NPCS = [
     equipment: "Comlink, datapad, heavy blaster pistol (5D). Often accompanied by co-pilots including the Twi'lek gunrunner Tru'eb Cholakk and a Sullustan from the Suuliem family. ◆ THE LAST CHANCE — Modified CEC YT-1300 Transport. Scale: Starfighter. Length: 27m. Crew: 1–2 (can coordinate), Gunners: 2. Passengers: 6. Cargo: 100 metric tons. Consumables: 2 months. Hyperdrive: x1 (Backup: x10). Nav Computer: Yes. Maneuverability: 2D. Space: 4. Atmosphere: 480; 800 kmh. Hull: 4D+2. Shields: 2D. Sensors — Passive: 10/0D, Scan: 25/1D, Search: 40/2D, Focus: 2/3D. Weapons: 2 Quad Laser Cannons (turret, Fire Control 2D, Space Range 1-3/12/25, Atmo 100-300/1.2/2.5 km, Damage 6D), Concussion Missile Tube (front, Fire Control 2D, Space Range 1/3/7, Atmo 50-100/300/700, Damage 9D). The crew lounge is fancifully decorated with collectibles from her journeys, not all lawfully acquired.",
     capsule: "Platt Okeefe considers herself a legendary entrepreneur who has been causing trouble for the Empire, running legal and not-so-legal cargoes, and getting into trouble throughout the galaxy for several years. She always loved space travel — growing up on Brentaal, she spent her afternoons at the starport watching freighters. On her twelfth birthday she ran away and signed on as a cabin steward aboard a Sullustan starliner. She later joined a tramp freighter crew plying the Anarid Cluster and has since gone through different ships like clothing goes through styles. During her extensive travels she has recorded everything she could about the spacefaring life and cultivated a network of contacts so her information on systems and starports is accurate. Her most remarkable features are her silvery white hair streaming down her back (often tied with a silver and red striped sash) and her bright outfit — white blouse with red pants, boots, and vest. Her heavy blaster is always at her side. She enjoys stunning unsuspecting spacer jocks with her girlish smile. Platt is easygoing and has great concern for her fellow smugglers, offering help whenever it won't jeopardize her own affairs.",
     source: "WEG40217 Platt's Starport Guide p.6"
+  },
+
+  // ── PORT HAVEN (WEG40217 Platt's Starport Guide p.20–35) ──
+  {
+    name: "Hallomar",
+    species: "Human",
+    system: "Whendyll",
+    location: "Port Haven",
+    affiliations: ["Port Haven Administration", "Independent"],
+    role: "Hunter & impromptu governor of Port Haven",
+    type: "Hunter",
+    stats: {
+      DEXTERITY: { base: "4D", skills: { "archaic guns": "8D+2", blaster: "7D", "blaster: blaster rifle": "9D", "brawling parry": "7D+2", dodge: "8D", "melee combat": "7D", "melee parry": "6D+2", running: "7D+1", "thrown weapon": "7D" } },
+      KNOWLEDGE: { base: "2D+2", skills: { intimidation: "5D", "survival: jungle": "9D+2", willpower: "7D" } },
+      MECHANICAL: { base: "2D+2", skills: { "beast riding": "5D+2" } },
+      PERCEPTION: { base: "3D", skills: { search: "6D", "search: tracking": "8D+2", "sneak: jungle": "8D" } },
+      STRENGTH: { base: "3D+2", skills: { brawling: "8D", "climbing/jumping": "6D+1", lifting: "5D+2", stamina: "7D", swimming: "6D" } },
+      TECHNICAL: { base: "2D", skills: { "archaic gun repair": "5D", "first aid": "7D+2" } }
+    },
+    specialAbilities: "",
+    forcePoints: 5,
+    characterPoints: 15,
+    move: 10,
+    equipment: "Ammo bandolier, animal hide clothing, large knife (STR+1D+2), leather satchel, needle-shell rifle (5D+2), pipe, wood axe (STR+2D)",
+    capsule: "Few smugglers who visit Port Haven know of Hallomar's true origins. Some say he was an outlaw who came to escape some unknown crime, while others believe he's the last survivor from the group of colonists who tried to settle the planet. Whatever his origins, Hallomar is a rugged survivor who carves his simple life from the jungles of Port Haven. He stands just over two meters tall, sporting a long unkempt brown beard and a nest of shaggy hair, wearing piles of animal skin clothing over the vestiges of a tattered tunic. This rugged mountain of a man is the impromptu governor of Port Haven. He seldom talks and when he does, he has a deep voice punctuated by grunts and huffs. He cares little for visitors as long as they don't raise trouble. He spends half his time hunting immense jungle beasts with his ancient oversized needle-shell rifle, and the rest butchering prey, curing skins, and smoking meat in his curing tent. Evenings are spent brooding in a dark corner of Haven's Water, drinking frothy ale and smoking his hand-carved pipe. He rarely gives away more than 10 skins at a time (worth 50–200 credits each depending on market). His smoked meat strips are tasty if you like chewing on something with the consistency of spacer's gloves — sold as novelty for 10–50 credits, or up to 100 credits to specialty restaurants.",
+    source: "WEG40217 Platt's Starport Guide p.30"
+  },
+  {
+    name: "Mister Mxil",
+    species: "Mon Calamari",
+    system: "Whendyll",
+    location: "Port Haven — Haven's Water tavern",
+    affiliations: ["Haven's Water", "Independent", "Mon Calamari Refugee"],
+    role: "Tavern host & bartender",
+    type: "Mon Calamari Bartender",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { dodge: "4D+2" } },
+      KNOWLEDGE: { base: "4D", skills: { "alien species": "6D+2", cultures: "6D", "drink mixicology": "9D", languages: "5D", "planetary systems": "6D", "survival: jungle": "8D" } },
+      MECHANICAL: { base: "2D", skills: {} },
+      PERCEPTION: { base: "3D", skills: { persuasion: "5D", search: "6D+1", sneak: "4D+1" } },
+      STRENGTH: { base: "2D+1", skills: { stamina: "4D", swimming: "6D+1" } },
+      TECHNICAL: { base: "3D+2", skills: { "first aid": "6D+2" } }
+    },
+    specialAbilities: "Moist Environments: In moist environments (such as Port Haven), Mon Calamari receive +1D bonus to all Dexterity, Perception, and Strength attribute and skill checks.",
+    forcePoints: 1,
+    characterPoints: 9,
+    move: 10,
+    equipment: "Apron, worn tunic",
+    capsule: "A refugee from his homeworld of Calamari, Mister Mxil is the host of all visitors to Haven's Water, the only tavern in Port Haven. He was formerly a chief steward aboard the Mon Calamari starliner Kuari Princess, responsible for all meals, bars, and culinary satisfaction of passengers. When he ran into trouble speaking out about the Empire enslaving his homeworld, he quickly became an Imperial fugitive and found sanctuary in Port Haven. After fixing up one of the larger structures and learning the ways of the jungle with Hallomar's help, he opened Haven's Water to visiting spacers. He serves natural drinks brewed, distilled, and steeped from jungle ingredients — ale from beans and bark, liquor from fruits, tea from dried herbs, leaves, and flower petals. He cooks spicy stew and tasty roasts served with jungle fruits, tubers, and vegetables, using meat supplied by Hallomar. All food and drink is offered as a gift of hospitality. Occasionally he gifts skins of Haven water from a nearby jungle spring, worth up to 40 credits. A red-and-green-dappled Mon Calamari in a tattered service tunic and apron, he lives on a hammock in the back room among hanging herbs and leaves.",
+    source: "WEG40217 Platt's Starport Guide p.32"
   }
 ];
