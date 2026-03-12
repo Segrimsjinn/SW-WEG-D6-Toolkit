@@ -2260,5 +2260,29 @@ const NOTABLE_NPCS = [
     equipment: "Datapad, holocam, blaster pistol (4D), falsified ID, 700 credits",
     capsule: "Voren Na'al is an unimposing young man with the talent of fading into the background — a useful skill for a war correspondent. A former stringer for the Galactic News Service, he joined the Rebel Alliance after witnessing Imperial stormtroopers arrest an entire press pool on Corsin and dismantle its planetary government. Placed in the Alliance Historian Corps, he documents the people, places, and events of the Galactic Civil War. Quick-witted and lucky, he is also a bit of a coward — though he never abandons a job until it's complete (his definition of 'complete' sometimes fluctuates with the danger level).",
     source: "WEG40124 Galaxy Guide 1: A New Hope p.5"
+  },
+  {
+    name: "Jawa (Typical)",
+    species: "Jawa",
+    system: "Tatooine",
+    location: "Tatooine — Desert / Sandcrawler",
+    affiliations: ["The Fringe"],
+    role: "Scavenger / trader",
+    type: "Generic",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { blaster: "2D+2", dodge: "3D" } },
+      KNOWLEDGE: { base: "2D", skills: { streetwise: "4D", "survival: desert": "4D+2", value: "3D+1" } },
+      MECHANICAL: { base: "3D", skills: { "ground vehicle operation: sandcrawler": "3D+2" } },
+      PERCEPTION: { base: "1D", skills: { bargain: "4D", con: "3D+1" } },
+      STRENGTH: { base: "1D", skills: { "climbing/jumping": "2D+2" } },
+      TECHNICAL: { base: "3D", skills: { "computer programming/repair": "4D+2" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 8,
+    equipment: "Jawa ionization gun (+1D to blaster, 3D ionization damage, ranges 3-4/8/12), tool kit",
+    capsule: "Jawas are small, robed scavengers native to Tatooine who travel the desert in massive sandcrawlers, collecting and refurbishing discarded technology. They trade droids and salvaged equipment to moisture farmers and settlers. Shrewd bargainers who exploit their customers' limited options, Jawas are nonetheless an essential part of Tatooine's informal economy.",
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.12"
   }
 ];
