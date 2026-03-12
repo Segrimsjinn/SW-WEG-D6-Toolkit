@@ -2818,5 +2818,29 @@ const NOTABLE_NPCS = [
     equipment: "Blaster pistol (4D), datapad, comlink, rank code cylinder",
     capsule: "Admiral Conan Antonio Motti was the third man in the Death Star's command triumvirate alongside Tarkin and General Tagge. A career Imperial officer who confused ambition for genius, Motti's defining moment came when he publicly mocked Darth Vader's 'sorcerer's ways' in the Death Star conference room — earning a brief but humiliating demonstration of Force choke before Tarkin intervened. He died with the Death Star at Yavin, his faith in technological superiority vindicated by nothing.",
     source: "WEG40124 Galaxy Guide 1: A New Hope p.52"
+  },
+  {
+    name: "General Tagge",
+    species: "Human",
+    system: "Generic & Varies",
+    location: "Galactic Empire — Death Star",
+    affiliations: ["Galactic Empire"],
+    role: "Imperial General",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { "blaster": "3D+2", "brawling parry": "3D", "dodge": "4D", "grenade": "4D" } },
+      KNOWLEDGE: { base: "3D+1", skills: { "bureaucracy": "4D+1", "business": "8D", "business: Tagge Industries": "10D+2", "military history": "7D", "survival": "4D+2", "tactics: capital ships": "7D", "tactics: fleets": "8D", "tactics: sieges": "7D+2", "tactics: starfighters": "6D+2" } },
+      MECHANICAL: { base: "3D+2", skills: { "beast riding": "4D+1", "repulsorlift operation": "5D+1" } },
+      PERCEPTION: { base: "3D", skills: { "command": "4D+2", "search": "5D" } },
+      STRENGTH: { base: "3D", skills: { "brawling": "4D+2", "lifting": "4D" } },
+      TECHNICAL: { base: "3D", skills: { "computer programming/repair": "5D", "demolitions": "5D+1", "security": "4D" } }
+    },
+    specialAbilities: "Tagge Family Wealth: General Tagge is a scion of the powerful Tagge Industries conglomerate, one of the galaxy's largest corporations. He can draw on family resources and political connections that extend well beyond his military rank.\n\nCautious Tactician: Tagge's instinct is preparation and caution. He receives +1D to tactics rolls when given time to plan, but suffers −1D when forced to improvise under pressure.\n\nRebel Realist: Unlike most Imperial commanders, Tagge genuinely respected the Rebel Alliance as a threat. He advocated strongly — and unsuccessfully — against disbanding the Imperial Senate.",
+    forcePoints: 0,
+    characterPoints: 12,
+    move: 10,
+    equipment: "Blaster pistol (4D), datapad, comlink, command rank code cylinder",
+    capsule: "General Cassio Tagge was the Death Star's tactical commander — the man responsible for day-to-day defense, logistics, and crew morale beneath Tarkin's grand strategic vision. Of the three Death Star commanders, Tagge was the most grounded and the most prescient: he openly warned that the Rebel Alliance should not be underestimated and argued against abolishing the Senate. He was overruled at every turn. A product of military discipline, he followed the chain of command to his death at the Battle of Yavin rather than take his objections directly to the Emperor.",
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.53"
   }
 ];
