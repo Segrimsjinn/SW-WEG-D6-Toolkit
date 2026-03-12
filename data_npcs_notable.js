@@ -3258,5 +3258,29 @@ const NOTABLE_NPCS = [
     equipment: "Blaster carbine (5D), hydrospanner, macrobinoculars, farm tools",
     capsule: "Jahn is a tall, solidly built man with piercing eyes and a neatly trimmed beard. Commanding and firm, but also an entertaining host. He favors the tan tunic and leggings of the typical Tatooine farmer.",
     source: "WEG40124 Galaxy Guide 1: A New Hope (Wayfar scenario)"
+  },
+  {
+    name: "Mayor Kaimer",
+    species: "Human",
+    system: "Tatooine",
+    location: "Tatooine — Wayfar",
+    affiliations: ["Neutral"],
+    role: "Wayfar Mayor",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { "blaster": "3D+2", "dodge": "4D" } },
+      KNOWLEDGE: { base: "3D", skills: { "bureaucracy": "4D", "business": "4D", "survival": "3D+2" } },
+      MECHANICAL: { base: "2D", skills: {} },
+      PERCEPTION: { base: "3D", skills: { "command": "4D", "persuasion": "3D+2" } },
+      STRENGTH: { base: "2D", skills: { "stamina": "4D" } },
+      TECHNICAL: { base: "2D", skills: { "droid programming": "3D", "droid repair": "4D", "farm equipment repair": "5D+1" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 6,
+    move: 10,
+    equipment: "Hold-out blaster (3D+2), comlink",
+    capsule: "Kaimer is a tough old coot — a moisture farmer for years before retiring into the mayor's seat. He speaks rapidly and is a bit difficult to understand at times, nearly always with a thick cigar clamped in his mouth.",
+    source: "WEG40124 Galaxy Guide 1: A New Hope (Wayfar scenario)"
   }
 ];
