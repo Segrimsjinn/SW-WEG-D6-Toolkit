@@ -443,7 +443,7 @@ const NOTABLE_NPCS = [
   {
     name: "Platt Okeefe",
     species: "Human",
-    system: "Varies",
+    system: "Generic & Varies",
     location: "Varies (based on Brentaal, frequents Gelgelar Free Port and others)",
     affiliations: ["Independent Smuggler"],
     role: "Smuggler & entrepreneur",
@@ -519,7 +519,7 @@ const NOTABLE_NPCS = [
   {
     name: "Omze",
     species: "Sludir",
-    system: "Varies",
+    system: "Generic & Varies",
     location: "Omze's Incredible Traveling Starport (bridge/command area)",
     affiliations: ["Omze's Incredible Traveling Starport", "Former Gladiator"],
     role: "Owner & operator of the Incredible Traveling Starport",
@@ -544,7 +544,7 @@ const NOTABLE_NPCS = [
   {
     name: "Ne'Chak",
     species: "Rodian",
-    system: "Varies",
+    system: "Generic & Varies",
     location: "Omze's Incredible Traveling Starport (command center/corridors)",
     affiliations: ["Omze's Incredible Traveling Starport", "Rodian Mercenary Company"],
     role: "Mercenary captain & head of security",
@@ -569,7 +569,7 @@ const NOTABLE_NPCS = [
   {
     name: "Golben",
     species: "Jillsarian",
-    system: "Varies",
+    system: "Generic & Varies",
     location: "Omze's Incredible Traveling Starport — Repair Bay",
     affiliations: ["Omze's Incredible Traveling Starport", "Repair Bay"],
     role: "Chief technician & repair bay supervisor",
@@ -593,7 +593,7 @@ const NOTABLE_NPCS = [
   {
     name: "Con'varra",
     species: "Twi'lek",
-    system: "Varies",
+    system: "Generic & Varies",
     location: "Omze's Incredible Traveling Starport — Con'varra's Datawork Central",
     affiliations: ["Omze's Incredible Traveling Starport", "Datawork Central"],
     role: "Master forger & document specialist",
@@ -618,7 +618,7 @@ const NOTABLE_NPCS = [
   {
     name: "Futor",
     species: "Sullustan",
-    system: "Varies",
+    system: "Generic & Varies",
     location: "Omze's Incredible Traveling Starport — Futor's Network",
     affiliations: ["Omze's Incredible Traveling Starport", "Futor's Network", "Information Broker"],
     role: "Infochant & slicer",
@@ -643,7 +643,7 @@ const NOTABLE_NPCS = [
   {
     name: "Broadside",
     species: "Wookiee",
-    system: "Varies",
+    system: "Generic & Varies",
     location: "Omze's Incredible Traveling Starport — Starboard Broadside Club",
     affiliations: ["Omze's Incredible Traveling Starport", "Starboard Broadside Club", "Former Gladiator"],
     role: "Bartender & club enforcer",
@@ -668,7 +668,7 @@ const NOTABLE_NPCS = [
   {
     name: "Brobius",
     species: "Bith",
-    system: "Varies",
+    system: "Generic & Varies",
     location: "Omze's Incredible Traveling Starport — General Quarters",
     affiliations: ["Omze's Incredible Traveling Starport", "General Quarters"],
     role: "Steward & cabin rental manager",
@@ -692,7 +692,7 @@ const NOTABLE_NPCS = [
   {
     name: "Lady Felsing",
     species: "Wroonian",
-    system: "Varies",
+    system: "Generic & Varies",
     location: "Varies (operates near Omze's Incredible Traveling Starport)",
     affiliations: ["Independent Criminal", "Con Artist"],
     role: "Con-woman & high-stakes trickster posing as nobility",
@@ -718,7 +718,7 @@ const NOTABLE_NPCS = [
   {
     name: "Rodian Security Mercenaries",
     species: "Rodian",
-    system: "Varies",
+    system: "Generic & Varies",
     location: "Omze's Incredible Traveling Starport (corridors/docking bays)",
     affiliations: ["Omze's Incredible Traveling Starport", "Rodian Mercenary Company"],
     role: "Security guards & docking fee collectors",
@@ -742,7 +742,7 @@ const NOTABLE_NPCS = [
   {
     name: "Omze's Technicians",
     species: "Various",
-    system: "Varies",
+    system: "Generic & Varies",
     location: "Omze's Incredible Traveling Starport — Repair Bay",
     affiliations: ["Omze's Incredible Traveling Starport", "Repair Bay"],
     role: "Outlaw techs & starship mechanics",
@@ -1364,7 +1364,7 @@ const NOTABLE_NPCS = [
   {
     name: "Imperial Stormtrooper (Typical)",
     species: "Human",
-    system: "Varies",
+    system: "Generic & Varies",
     location: "Varies",
     affiliations: ["Galactic Empire", "Stormtrooper Corps"],
     role: "Elite trooper",
@@ -1388,7 +1388,7 @@ const NOTABLE_NPCS = [
   {
     name: "Aquatic Assault Stormtrooper (Seatrooper)",
     species: "Human",
-    system: "Varies",
+    system: "Generic & Varies",
     location: "Varies",
     affiliations: ["Galactic Empire", "Stormtrooper Corps"],
     role: "Aquatic assault specialist",
@@ -1412,7 +1412,7 @@ const NOTABLE_NPCS = [
   {
     name: "Scout Trooper (Typical)",
     species: "Human",
-    system: "Varies",
+    system: "Generic & Varies",
     location: "Varies",
     affiliations: ["Galactic Empire", "Stormtrooper Corps"],
     role: "Scout / reconnaissance",
@@ -1436,7 +1436,7 @@ const NOTABLE_NPCS = [
   {
     name: "Cold Assault Stormtrooper (Snowtrooper)",
     species: "Human",
-    system: "Varies",
+    system: "Generic & Varies",
     location: "Varies",
     affiliations: ["Galactic Empire", "Stormtrooper Corps"],
     role: "Cold-weather assault specialist",
@@ -1460,7 +1460,7 @@ const NOTABLE_NPCS = [
   {
     name: "Zero-G Assault Stormtrooper (Spacetrooper)",
     species: "Human",
-    system: "Varies",
+    system: "Generic & Varies",
     location: "Varies (space stations, capital ships, boarding actions)",
     affiliations: ["Galactic Empire", "Stormtrooper Corps"],
     role: "Zero-gravity assault specialist",
@@ -1484,7 +1484,7 @@ const NOTABLE_NPCS = [
   {
     name: "Imperial Naval Officer (Typical)",
     species: "Human",
-    system: "Varies",
+    system: "Generic & Varies",
     location: "Varies (Imperial capital ships, space stations)",
     affiliations: ["Galactic Empire", "Imperial Navy"],
     role: "Naval officer",
@@ -1508,7 +1508,7 @@ const NOTABLE_NPCS = [
   {
     name: "Imperial Army Officer (Typical)",
     species: "Human",
-    system: "Varies",
+    system: "Generic & Varies",
     location: "Varies (Imperial ground installations, garrisons)",
     affiliations: ["Galactic Empire", "Imperial Army"],
     role: "Army officer",
@@ -1532,7 +1532,7 @@ const NOTABLE_NPCS = [
   {
     name: "Imperial Army Trooper (Typical)",
     species: "Human",
-    system: "Varies",
+    system: "Generic & Varies",
     location: "Varies (Imperial garrisons, ground forces)",
     affiliations: ["Galactic Empire", "Imperial Army"],
     role: "Army trooper",
@@ -1556,7 +1556,7 @@ const NOTABLE_NPCS = [
   {
     name: "Imperial Army Trooper (Veteran)",
     species: "Human",
-    system: "Varies",
+    system: "Generic & Varies",
     location: "Varies (Imperial garrisons, ground forces)",
     affiliations: ["Galactic Empire", "Imperial Army"],
     role: "Veteran army trooper",
@@ -1580,7 +1580,7 @@ const NOTABLE_NPCS = [
   {
     name: "Imperial Pilot (Typical)",
     species: "Human",
-    system: "Varies",
+    system: "Generic & Varies",
     location: "Varies (Imperial capital ships, transports)",
     affiliations: ["Galactic Empire", "Imperial Navy"],
     role: "Capital ship / transport pilot",
@@ -1604,7 +1604,7 @@ const NOTABLE_NPCS = [
   {
     name: "TIE Fighter Pilot (Typical)",
     species: "Human",
-    system: "Varies",
+    system: "Generic & Varies",
     location: "Varies (Imperial starfighter squadrons)",
     affiliations: ["Galactic Empire", "Imperial Navy"],
     role: "TIE fighter pilot",
@@ -1628,7 +1628,7 @@ const NOTABLE_NPCS = [
   {
     name: "Imperial Naval Trooper (Typical)",
     species: "Human",
-    system: "Varies",
+    system: "Generic & Varies",
     location: "Varies (Imperial capital ships, space stations)",
     affiliations: ["Galactic Empire", "Imperial Navy"],
     role: "Naval trooper / shipboard security",
@@ -1654,7 +1654,7 @@ const NOTABLE_NPCS = [
   {
     name: "Rebel Alliance Soldier (Typical)",
     species: "Human",
-    system: "Varies",
+    system: "Generic & Varies",
     location: "Varies",
     affiliations: ["Rebel Alliance", "New Republic"],
     role: "Infantry soldier",
@@ -1678,7 +1678,7 @@ const NOTABLE_NPCS = [
   {
     name: "Rebel Pilot (Typical)",
     species: "Human",
-    system: "Varies",
+    system: "Generic & Varies",
     location: "Varies",
     affiliations: ["Rebel Alliance", "New Republic"],
     role: "Starfighter pilot",
@@ -1704,7 +1704,7 @@ const NOTABLE_NPCS = [
   {
     name: "Clone Trooper (Typical)",
     species: "Human (clone)",
-    system: "Varies",
+    system: "Generic & Varies",
     location: "Varies",
     affiliations: ["Galactic Republic", "Grand Army of the Republic"],
     role: "Clone infantry",
@@ -1728,7 +1728,7 @@ const NOTABLE_NPCS = [
   {
     name: "ARC Trooper",
     species: "Human (clone)",
-    system: "Varies",
+    system: "Generic & Varies",
     location: "Varies",
     affiliations: ["Galactic Republic", "Grand Army of the Republic"],
     role: "Elite clone commando",
@@ -1754,7 +1754,7 @@ const NOTABLE_NPCS = [
   {
     name: "Assassin (Typical)",
     species: "Varies",
-    system: "Varies",
+    system: "Generic & Varies",
     location: "Varies",
     affiliations: ["The Fringe"],
     role: "Professional assassin",
@@ -1778,7 +1778,7 @@ const NOTABLE_NPCS = [
   {
     name: "Bounty Hunter (Novice)",
     species: "Varies",
-    system: "Varies",
+    system: "Generic & Varies",
     location: "Varies",
     affiliations: ["The Fringe"],
     role: "Bounty hunter",
@@ -1802,7 +1802,7 @@ const NOTABLE_NPCS = [
   {
     name: "Bounty Hunter (Veteran)",
     species: "Varies",
-    system: "Varies",
+    system: "Generic & Varies",
     location: "Varies",
     affiliations: ["The Fringe"],
     role: "Bounty hunter",
@@ -1826,7 +1826,7 @@ const NOTABLE_NPCS = [
   {
     name: "Bounty Hunter (Master)",
     species: "Varies",
-    system: "Varies",
+    system: "Generic & Varies",
     location: "Varies",
     affiliations: ["The Fringe"],
     role: "Bounty hunter",
@@ -1850,7 +1850,7 @@ const NOTABLE_NPCS = [
   {
     name: "Enforcer (Typical)",
     species: "Varies",
-    system: "Varies",
+    system: "Generic & Varies",
     location: "Varies",
     affiliations: ["The Fringe"],
     role: "Criminal enforcer",
@@ -1874,7 +1874,7 @@ const NOTABLE_NPCS = [
   {
     name: "Smuggler (Typical)",
     species: "Varies",
-    system: "Varies",
+    system: "Generic & Varies",
     location: "Varies",
     affiliations: ["The Fringe"],
     role: "Smuggler",
@@ -1898,7 +1898,7 @@ const NOTABLE_NPCS = [
   {
     name: "Merchant (Typical)",
     species: "Varies",
-    system: "Varies",
+    system: "Generic & Varies",
     location: "Varies",
     affiliations: ["The Fringe"],
     role: "Merchant / trader",
@@ -1922,7 +1922,7 @@ const NOTABLE_NPCS = [
   {
     name: "Gambler (Typical)",
     species: "Varies",
-    system: "Varies",
+    system: "Generic & Varies",
     location: "Varies",
     affiliations: ["The Fringe"],
     role: "Gambler",
@@ -1946,7 +1946,7 @@ const NOTABLE_NPCS = [
   {
     name: "Thug (Typical)",
     species: "Varies",
-    system: "Varies",
+    system: "Generic & Varies",
     location: "Varies",
     affiliations: ["The Fringe"],
     role: "Thug / muscle",
@@ -1972,7 +1972,7 @@ const NOTABLE_NPCS = [
   {
     name: "Gamorrean Guard (Typical)",
     species: "Gamorrean",
-    system: "Varies",
+    system: "Generic & Varies",
     location: "Varies",
     affiliations: ["The Fringe"],
     role: "Guard / muscle",
@@ -1996,7 +1996,7 @@ const NOTABLE_NPCS = [
   {
     name: "Sulahb",
     species: "Sullustans",
-    system: "Varies",
+    system: "Generic & Varies",
     location: "Varies",
     affiliations: ["Neutral"],
     role: "Mechanic",
