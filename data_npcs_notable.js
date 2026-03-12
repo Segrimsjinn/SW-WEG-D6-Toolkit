@@ -3062,5 +3062,29 @@ const NOTABLE_NPCS = [
     equipment: "Blaster pistol (4D), comlink, sealed flight suit",
     capsule: "Biggs Darklighter grew up on Tatooine as the privileged son of food magnate Huff Darklighter, spending his teenage years racing skyhoppers and dreaming of space with his best friend Luke Skywalker. He made it to the Imperial Academy ahead of Luke, but his conscience drove him to defect — jumping ship with sympathetic crewmates to join the Rebel Alliance. At Yavin he served as Red Three, briefly reuniting with Luke in the hangar before the assault. He was shot down by Darth Vader in the Death Star trench, dying so the Rebellion could live.",
     source: "WEG40124 Galaxy Guide 1: A New Hope p.65"
+  },
+  {
+    name: "Wedge Antilles (0 BBY)",
+    species: "Human (Corellian)",
+    system: "Yavin",
+    location: "Yavin — Yavin 4 Base",
+    affiliations: ["Rebel Alliance"],
+    role: "Brash Pilot",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "4D+2", "dodge": "5D+1" } },
+      KNOWLEDGE: { base: "2D", skills: { "alien species": "3D+2", "bureaucracy": "4D+2", "planetary systems": "4D+2" } },
+      MECHANICAL: { base: "4D", skills: { "astrogation": "6D", "space transports": "5D+2", "starfighter piloting: X-wing": "5D+2", "starship gunnery": "5D", "starship shields": "4D+2" } },
+      PERCEPTION: { base: "3D", skills: { "bargain": "4D", "gambling": "4D+1" } },
+      STRENGTH: { base: "3D", skills: { "stamina": "4D" } },
+      TECHNICAL: { base: "3D", skills: { "computer programming/repair": "5D", "repulsorlift repair": "3D+2", "space transports repair": "4D+1", "starfighter repair": "4D+1" } }
+    },
+    specialAbilities: "Corellian Hot-Shot: Wedge grew up around repulsorlifts and hyperdrives at his parents' fueling depot. He receives +1D to any starship repair roll when working on a vessel he has flown himself.\n\nCo-Founder, Rogue Squadron: Following Yavin, Wedge and Luke Skywalker jointly founded Rogue Squadron — the Alliance's elite starfighter unit. At this era he is Red Two.",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 10,
+    equipment: "Blaster pistol (4D), sealed flight suit, comlink, tool kit",
+    capsule: "Wedge Antilles is a Corellian pilot who traded a struggling life as a freighter owner-operator for a career as one of the Alliance's finest combat aviators. Orphaned when pirates destroyed his parents' fueling depot, he taught himself to fly and modify ships before joining the Rebellion as a weapons smuggler. At Yavin he flew as Red Two, tallied half a dozen kills, and was one of the only pilots to pull out of the trench run alive — breaking off to protect Luke's final approach. He went on to co-found Rogue Squadron and fight at Endor, cementing his place as one of the most decorated pilots in Rebel history.",
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.66"
   }
 ];
