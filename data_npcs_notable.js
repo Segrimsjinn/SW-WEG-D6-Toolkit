@@ -460,7 +460,7 @@ const NOTABLE_NPCS = [
     forcePoints: 5,
     characterPoints: 12,
     move: 10,
-    equipment: "Comlink, datapad, heavy blaster pistol (5D). Often accompanied by co-pilots including the Twi'lek gunrunner Tru'eb Cholakk and a Sullustan from the Suuliem family. ◆ THE LAST CHANCE — Modified CEC YT-1300 Transport. Scale: Starfighter. Length: 27m. Crew: 1–2 (can coordinate), Gunners: 2. Passengers: 6. Cargo: 100 metric tons. Consumables: 2 months. Hyperdrive: x1 (Backup: x10). Nav Computer: Yes. Maneuverability: 2D. Space: 4. Atmosphere: 480; 800 kmh. Hull: 4D+2. Shields: 2D. Sensors — Passive: 10/0D, Scan: 25/1D, Search: 40/2D, Focus: 2/3D. Weapons: 2 Quad Laser Cannons (turret, Fire Control 2D, Space Range 1-3/12/25, Atmo 100-300/1.2/2.5 km, Damage 6D), Concussion Missile Tube (front, Fire Control 2D, Space Range 1/3/7, Atmo 50-100/300/700, Damage 9D). The crew lounge is fancifully decorated with collectibles from her journeys, not all lawfully acquired.",
+    equipment: "Comlink, datapad, heavy blaster pistol (5D). Often accompanied by co-pilots including the Twi'lek gunrunner Tru'eb Cholakk and a Sullustan from the Suuliem family. ◆ LAST CHANCE — Modified CEC YT-1300 Transport. Scale: Starfighter. Length: 27m. Crew: 1–2 (can coordinate), Gunners: 2. Passengers: 6. Cargo: 100 metric tons. Consumables: 2 months. Hyperdrive: x1 (Backup: x10). Nav Computer: Yes. Maneuverability: 2D. Space: 4. Atmosphere: 480; 800 kmh. Hull: 4D+2. Shields: 2D. Sensors — Passive: 10/0D, Scan: 25/1D, Search: 40/2D, Focus: 2/3D. Weapons: 2 Quad Laser Cannons (turret, Fire Control 2D, Space Range 1-3/12/25, Atmo 100-300/1.2/2.5 km, Damage 6D), Concussion Missile Tube (front, Fire Control 2D, Space Range 1/3/7, Atmo 50-100/300/700, Damage 9D). The crew lounge is fancifully decorated with collectibles from her journeys, not all lawfully acquired.",
     capsule: "Platt Okeefe considers herself a legendary entrepreneur who has been causing trouble for the Empire, running legal and not-so-legal cargoes, and getting into trouble throughout the galaxy for several years. She always loved space travel — growing up on Brentaal, she spent her afternoons at the starport watching freighters. On her twelfth birthday she ran away and signed on as a cabin steward aboard a Sullustan starliner. She later joined a tramp freighter crew plying the Anarid Cluster and has since gone through different ships like clothing goes through styles. During her extensive travels she has recorded everything she could about the spacefaring life and cultivated a network of contacts so her information on systems and starports is accurate. Her most remarkable features are her silvery white hair streaming down her back (often tied with a silver and red striped sash) and her bright outfit — white blouse with red pants, boots, and vest. Her heavy blaster is always at her side. She enjoys stunning unsuspecting spacer jocks with her girlish smile. Platt is easygoing and has great concern for her fellow smugglers, offering help whenever it won't jeopardize her own affairs.",
     source: "WEG40217 Platt's Starport Guide p.6"
   },
@@ -1061,5 +1061,302 @@ const NOTABLE_NPCS = [
     equipment: "Apron",
     capsule: "Mal'aa is the gregarious Twi'lek hostess of Mal'aa's Kitchens, the one eatery available to spacers on Kala'uun's restricted starport level. Her establishment — a cave complex behind a cantina facade across the Procession from the Starport Master's seat — serves as the social heart of the starport. Spacers conduct deals over long metal tables, sleep on scush-fungus bags spread across the main room floor at night, and negotiate with Mal'aa for preserved pots of rycrit stew to carry on the next leg of their journey. A decent meal costs about 5 credits: rycrit stew, a mug of fermented fungus ale, munch-fungus bread, and raw munch-fungus in warm broth; second helpings are 1 credit. Unlike the deeply suspicious Twi'leks of the upper city, Mal'aa and her corps of young serving maids are openly hospitable — their business depends on outside traffic. Her reputation for generosity and good food is widely known among the free-traders who frequent Kala'uun.",
     source: "WEG40217 Platt's Starport Guide p.153"
+  },
+
+  // ── ESSOWYN / SAURTON SYSTEM (WEG40100 The Planets Collection p.46) ──
+  {
+    name: "Vin Feal",
+    species: "Human",
+    system: "Saurton",
+    location: "Essowyn",
+    affiliations: ["Independent Trader"],
+    role: "Trader & smuggler",
+    type: "Villain",
+    stats: {
+      DEXTERITY: { base: "2D+2", skills: { blaster: "4D+2", "blaster artillery": "5D", dodge: "4D", "melee combat": "3D+2", "melee parry": "3D+1" } },
+      KNOWLEDGE: { base: "1D+2", skills: { "alien species": "2D", cultures: "2D+1", languages: "2D", "planetary systems": "2D+2" } },
+      MECHANICAL: { base: "3D", skills: { astrogation: "4D+2", "repulsorlift operation": "5D", "space transports": "6D+2", "starship gunnery": "6D", "starship shields": "4D" } },
+      PERCEPTION: { base: "2D", skills: { con: "4D" } },
+      STRENGTH: { base: "2D+1", skills: {} },
+      TECHNICAL: { base: "2D+2", skills: { "repulsorlift repair": "3D+1", "space transports repair": "4D" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 4,
+    move: 10,
+    equipment: "Heavy blaster pistol (5D), blaster rifle (5D), protective helmet (STR+1D physical, STR+1 energy), vibro-axe (STR+2D), cloak. \u25c6 THE BLACK BUTCHER \u2014 Modified Nova-Drive #3-Z Light Freighter. Scale: Starfighter. Length: 28m. Crew: 1, Gunners: 2. Passengers: 10. Cargo: 150 metric tons. Consumables: 1 month. Hyperdrive: x2 (Backup: x15). Nav Computer: Yes. Maneuverability: 1D. Space: 4. Atmosphere: 280; 800 kmh. Hull: 5D. Shields: 1D+2. Sensors \u2014 Passive: 20/0D, Scan: 30/1D, Search: 40/1D+2, Focus: 2/2D. Weapons: Dual Laser Cannons fire-linked (fire arc: front/right/back, Crew: 1, Fire Control: 2D, Space Range: 1-3/6/10, Atmo: 100-300/600/1 km, Damage: 6D), Laser Cannon (fire arc: front/left/back, Crew: 1 or remote at Fire Control 0D, Fire Control: 1D, Space Range: 1-3/12/25, Atmo: 100-300/1.2/2.5 km, Damage: 3D).",
+    capsule: "Vin Feal is a thin Human with close-cropped red hair and sidelocks who wears a bright red matching blast vest and cloak. He operates as a troublesome independent trader in the Essowyn system, where his activities — including driving hoska herds away from Saurton hunting grounds — have made him enemies among the native hunters. He pilots The Black Butcher, a modified Nova-Drive #3-Z light freighter, and can serve as a recurring villain in tramp freighter campaigns.",
+    source: "WEG40100 The Planets Collection p.46"
+  },
+
+  // ── GORSH (WEG40100 The Planets Collection p.54) ──
+  {
+    name: "Genetech Scientist (Typical)",
+    species: "Human",
+    system: "Gorsh",
+    location: "Gorsh — Genetech Orbiting Research Lab",
+    affiliations: ["Genetech Laboratories"],
+    role: "Scientist",
+    type: "Generic",
+    stats: {
+      DEXTERITY: { base: "1D+1", skills: {} },
+      KNOWLEDGE: { base: "3D", skills: { "alien species": "3D+2", "organic chemistry": "5D", "planetary systems": "4D", survival: "4D" } },
+      MECHANICAL: { base: "2D", skills: {} },
+      PERCEPTION: { base: "2D", skills: {} },
+      STRENGTH: { base: "2D", skills: {} },
+      TECHNICAL: { base: "1D+2", skills: {} }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 2,
+    move: 10,
+    equipment: "Varies by assignment",
+    capsule: "Typical Genetech Laboratories scientists stationed on Gorsh or the orbiting research lab. Character points vary by individual, typically 0–3. They conduct research on Gorshian flora and fauna — including the sentient Orgons, whose biochemistry they harvest without understanding the subjects are sapient.",
+    source: "WEG40100 The Planets Collection p.54"
+  },
+  {
+    name: "Genetech Guard (Typical)",
+    species: "Human",
+    system: "Gorsh",
+    location: "Gorsh — Genetech Orbiting Research Lab",
+    affiliations: ["Genetech Laboratories"],
+    role: "Security guard",
+    type: "Generic",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { blaster: "3D+2", dodge: "3D+2" } },
+      KNOWLEDGE: { base: "2D", skills: {} },
+      MECHANICAL: { base: "2D", skills: {} },
+      PERCEPTION: { base: "2D", skills: {} },
+      STRENGTH: { base: "2D", skills: {} },
+      TECHNICAL: { base: "2D", skills: {} }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 10,
+    equipment: "Blaster pistol (4D), comlink, datapad, medpac, breather mask, blast vest (+1D physical, +1 energy). \u25c6 GENETECH ORBITING RESEARCH LAB \u2014 Orbiting Research Station. Scale: Starfighter. Length: 53m tall, 22m diameter. Crew: 5, Gunners: 1. Passengers: 30 (scientists) + 10 (guards). Cargo: 300 metric tons. Consumables: 6 months. Cost: Not for sale. Space: N/A (geosynchronous orbit). Hull: 9D. Weapons: Dual Laser Cannons fire-linked (turret, Scale: Capital, Skill: capital ship gunnery, Crew: 1, Fire Control: 2D, Space Range: 1-3/10/25, Damage: 3D).",
+    capsule: "Security personnel employed by Genetech Laboratories to enforce access restrictions on Gorsh and the orbiting research lab. The system is restricted — unauthorized entry carries a 5 million credit fine or 20 years imprisonment.",
+    source: "WEG40100 The Planets Collection p.54"
+  },
+
+  // ── ISEN IV — VOID DEMON BASE (WEG40100 The Planets Collection p.61–64) ──
+  {
+    name: "Abav Ghart",
+    species: "Gotal",
+    system: "Isen",
+    location: "Isen IV — Void Demon Base",
+    affiliations: ["Void Demons"],
+    role: "Pirate leader",
+    type: "Villain",
+    stats: {
+      DEXTERITY: { base: "2D+2", skills: { blaster: "5D", dodge: "7D", "melee combat": "4D" } },
+      KNOWLEDGE: { base: "2D", skills: { intimidation: "7D", streetwise: "5D", value: "3D" } },
+      MECHANICAL: { base: "5D", skills: { astrogation: "6D", "repulsorlift operation": "6D+1", "space transports": "8D", "starship gunnery": "7D+2", "starfighter piloting": "9D", "starship shields": "5D+2" } },
+      PERCEPTION: { base: "5D", skills: { bargain: "6D", "command: Void Demons": "7D", con: "7D+2", search: "7D" } },
+      STRENGTH: { base: "2D+1", skills: { "repulse-hand": "3D" } },
+      TECHNICAL: { base: "1D", skills: { security: "3D", "space transports repair": "2D+2" } }
+    },
+    specialAbilities: "Gotal racial abilities — Energy Sensitivity: +3D to search in open areas, +1D in crowded areas, -1D in intense radiation. Mood Detection: Moderate PER roll to gain bonus on opposed PER skills for rest of encounter (miss by 6+: -3D; by 2-5: -2D; by 1: -1D; beat by 0-7: +1D; by 8-14: +2D; by 15+: +3D). Fast Initiative: +1D to initiative vs non-Gotal opponents. Cybernetics — Motion Interface Package: boosts Mechanical attribute beyond Gotal species maximum. Repulse-Hand: STR+1D damage; uses repulse-hand skill to attack.",
+    forcePoints: 3,
+    darkSidePoints: 6,
+    characterPoints: 15,
+    move: 13,
+    equipment: "Blaster pistol (4D), blaster rifle (5D), vibroblade (STR+1D+2), comlink, gold pendant (trademark). \u25c6 VOID DEMON BASE \u2014 Fortified Pirate Base (Isen IV). Scale: Capital. Consumables: 6 months. Hull: 3D. Personnel: 47 starfighter pilots, 320 boarding troops, 23 admin, 140 droids. Facilities: 12 starfighter bays, 1 transport bay, 1 landing deck, 36 starfighters. Weapons: 8 Laser Cannons (turret, Scale: Starfighter, Crew: 1, Skill: starship gunnery, Fire Control: 2D, Space Range: 1-3/10/17, Atmo: 100-300/1/1.7 km, Damage: 3D), 3 Turbolaser Batteries (turret, Crew: 3, Skill: capital ship gunnery, Fire Control: 1D, Space Range: 3-15/35/75, Atmo: 300-1.5/3.5/7.5 km, Damage: 3D+2), 8 Tractor Beam Projectors (turret, Crew: 12, Skill: capital ship gunnery, Fire Control: 2D, Space Range: 1-5/15/30, Atmo: 2-10/30/60 km, Damage: 4D).",
+    capsule: "Abav Ghart is a two-meter-tall Gotal who has turned piracy into a frighteningly lucrative occupation over nearly five decades. He started the Void Demons over 30 years ago; the gang is now wanted in at least 15 sectors for piracy, assault, terrorism, and murder — with 50+ hijackings attributed to them. He carries obvious cybernetic enhancements (repulse-hand, motion interface package), dresses in expensive brightly-colored clothing with a complete array of weapons, and wears a gold pendant on his belt as his trademark. Ghart is a cold-blooded fiend willing to do anything for profit; his own henchmen are as likely to face his wrath as his victims. Bounty: 300,000 cr (500,000 alive).",
+    source: "WEG40100 The Planets Collection p.63"
+  },
+  {
+    name: "Burnal Terrup",
+    species: "Devaronian",
+    system: "Isen",
+    location: "Isen IV — Void Demon Base",
+    affiliations: ["Void Demons"],
+    role: "Second-in-command",
+    type: "Villain",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { blaster: "4D", dodge: "3D" } },
+      KNOWLEDGE: { base: "3D", skills: { "alien species": "5D", cultures: "4D", languages: "5D", "planetary systems": "4D+1", streetwise: "4D+2" } },
+      MECHANICAL: { base: "1D", skills: { "space transports": "2D+1" } },
+      PERCEPTION: { base: "2D+2", skills: { command: "3D", hide: "3D", sneak: "3D", search: "3D+2" } },
+      STRENGTH: { base: "2D+1", skills: {} },
+      TECHNICAL: { base: "1D", skills: {} }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 6,
+    move: 9,
+    equipment: "Blaster pistol (4D), comlink, datapad",
+    capsule: "Burnal Terrup is a Devaronian hired by Ghart a decade ago who has risen to second-in-command through servility and behind-the-scenes manipulation. In Ghart's presence he grovels to a nauseating degree, complimenting every decision and ridiculing anyone Ghart dominates. Away from Ghart he is manipulative and seemingly on the verge of psychosis. He wears a worn, tattered blue and orange uniform.",
+    source: "WEG40100 The Planets Collection p.64"
+  },
+  {
+    name: "Void Demon Boarding Troop (Typical)",
+    species: "Human",
+    system: "Isen",
+    location: "Isen IV — Void Demon Base",
+    affiliations: ["Void Demons"],
+    role: "Boarding trooper",
+    type: "Generic",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { blaster: "4D", dodge: "4D+1" } },
+      KNOWLEDGE: { base: "2D", skills: {} },
+      MECHANICAL: { base: "2D", skills: {} },
+      PERCEPTION: { base: "2D", skills: {} },
+      STRENGTH: { base: "2D", skills: {} },
+      TECHNICAL: { base: "2D", skills: {} }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 10,
+    equipment: "Blaster pistol (4D), blast vest (+1D physical, +1 energy, front and back)",
+    capsule: "The Void Demons' 320-strong boarding force. Deployed after starfighters have softened up a target vessel; transported by Ghart's highly modified Corellian gunship.",
+    source: "WEG40100 The Planets Collection p.64"
+  },
+  {
+    name: "Void Demon Pilot (Typical)",
+    species: "Human",
+    system: "Isen",
+    location: "Isen IV — Void Demon Base",
+    affiliations: ["Void Demons"],
+    role: "Starfighter pilot",
+    type: "Generic",
+    stats: {
+      DEXTERITY: { base: "2D", skills: {} },
+      KNOWLEDGE: { base: "2D", skills: {} },
+      MECHANICAL: { base: "2D", skills: { "capital ship piloting": "3D+1", "space transports": "3D", "starfighter piloting": "3D+2", "starship gunnery": "3D" } },
+      PERCEPTION: { base: "2D", skills: {} },
+      STRENGTH: { base: "2D", skills: {} },
+      TECHNICAL: { base: "2D", skills: {} }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 10,
+    equipment: "Blaster pistol (4D), comlink, flight suit. \u25c6 Starfighter complement (36 total, various types): Z-95 MK1 HEADHUNTER (3x) \u2014 Maneuver: 1D, Space: 5, Atmo: 365/1,050 kmh, Hull: 4D, Shields: 1D. Sensors: Passive 15/0D, Scan 25/1D, Search 40/2D, Focus 1/2D. Weapons: 2 Triple Blasters fire-linked (front, FC: 1D, SR: 1-5/10/17, Atmo: 100-500/1/1.7 km, Damage: 3D), Concussion Missiles (front, FC: 1D, SR: 1/3/7, Atmo: 50-100/300/700, Damage: 7D). \u25c6 Z-95 B3 HEADHUNTER (12x) \u2014 Identical to MK1 except: Cargo: 85kg, Space: 7, Atmo: 400/1,150 kmh. \u25c6 ZEBRA STARFIGHTER (10x) \u2014 Maneuver: 2D, Space: 7, Atmo: 350/1,000 kmh, Hull: 2D, no shields. Sensors: Passive 15/0D, Scan 25/1D+1, Search 45/2D, Focus 3/2D+2. Weapons: 2 Laser Cannons fire-linked (front, FC: 1D, SR: 1-5/10/17, Atmo: 100-500/1/1.7 km, Damage: 5D). \u25c6 GAUNTLET STARFIGHTER (11x) \u2014 Crew: 1 + gunner 1, Maneuver: 2D, Space: 6, Atmo: 295/850 kmh, Hull: 3D+2, Shields: 1D. Sensors: Passive 20/1D, Scan 35/1D+2, Search 45/2D, Focus 5/3D. Weapons: 2 Laser Cannons fire-linked (front, FC: 2D, SR: 1-3/10/17, Atmo: 100-300/1/1.7 km, Damage: 4D), 2 Laser Cannons fire-linked (turret, Crew: 1, FC: 2D, SR: 1-3/12/25, Atmo: 100-300/1.2/2.5 km, Damage: 5D), Proton Torpedo Launcher (turret, Crew: 1, FC: 2D, SR: 1/3/7, Atmo: 50-100/300/700, Damage: 8D).",
+    capsule: "47 pirate pilots forming the Void Demons' starfighter wing. They fly a mixed complement of 36 acquired craft across four types.",
+    source: "WEG40100 The Planets Collection p.64"
+  },
+  {
+    name: "Void Demon Gunner (Typical)",
+    species: "Human",
+    system: "Isen",
+    location: "Isen IV — Void Demon Base",
+    affiliations: ["Void Demons"],
+    role: "Gunner",
+    type: "Generic",
+    stats: {
+      DEXTERITY: { base: "2D", skills: {} },
+      KNOWLEDGE: { base: "2D", skills: {} },
+      MECHANICAL: { base: "2D", skills: { "capital ship gunnery": "3D", "starship gunnery": "3D+2" } },
+      PERCEPTION: { base: "2D", skills: {} },
+      STRENGTH: { base: "2D", skills: {} },
+      TECHNICAL: { base: "2D", skills: {} }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 10,
+    equipment: "Blaster pistol (4D), comlink, flight suit",
+    capsule: "Gunners stationed at the Void Demon base turrets and aboard capital vessels. Man the base's laser cannon and turbolaser emplacements.",
+    source: "WEG40100 The Planets Collection p.64"
+  },
+
+  // ── JORALLA (WEG40100 The Planets Collection p.71–72) ──
+  {
+    name: "Adriav Kavos",
+    species: "Human",
+    system: "Joralla",
+    location: "Joralla",
+    affiliations: ["Crew of the Isilia"],
+    role: "Freighter captain",
+    type: "Scoundrel",
+    stats: {
+      DEXTERITY: { base: "2D+2", skills: { blaster: "4D+1", dodge: "3D+2" } },
+      KNOWLEDGE: { base: "3D", skills: { bureaucracy: "4D+2", cultures: "3D+2", languages: "5D", "planetary systems": "4D+2" } },
+      MECHANICAL: { base: "3D+2", skills: { astrogation: "4D+2", "space transports": "6D" } },
+      PERCEPTION: { base: "3D", skills: { bargain: "5D", command: "3D+2", con: "4D+2" } },
+      STRENGTH: { base: "2D", skills: {} },
+      TECHNICAL: { base: "3D+1", skills: { demolition: "4D", "space transports repair": "5D+2" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 2,
+    move: 10,
+    equipment: "Blaster pistol (4D), comlink. \u25c6 THE ISILIA \u2014 Modified Ghtroc Industries Class 440 Freighter. Scale: Starfighter. Length: 28m. Crew: 2, Gunners: 2 (skeleton: 1/+5). Passengers: 4. Cargo: 100 metric tons. Consumables: 2 months. Cost: 18,500 cr. Hyperdrive: x3 (Backup: x15). Nav Computer: Yes. Maneuverability: 1D. Space: 4. Atmosphere: 280; 800 kmh. Hull: 4D. Shields: 1D. Sensors \u2014 Passive: 12/0D, Scan: 25/1D, Search: 35/2D, Focus: 3/3D. Weapons: 2 Laser Cannons (turret, Crew: 1, Fire Control: 2D, Space Range: 1-3/12/25, Atmo: 100-300/1.2/2.5 km, Damage: 2D).",
+    capsule: "Adriav Kavos has been running star lanes for years with modest success — never thriving, never quite failing. He appears far older than he is; years of struggling in a dangerous business have worn him down. He is a wanderer by nature, lacking direction in business and life, and is desperately seeking the one big score that will let him retire (or at least keep himself in steady liquor). He is likeable enough but neither bright, trustworthy, nor talented. He stumbled into possession of a Rebel datadisk after his crew ambushed what seemed like 'suspicious' tramp freighter crew members — and is now obsessed with selling it without realizing he's walking into an Imperial trap.",
+    source: "WEG40100 The Planets Collection p.71"
+  },
+  {
+    name: "Gezzov-tak",
+    species: "Arcona",
+    system: "Joralla",
+    location: "Joralla",
+    affiliations: ["Crew of the Isilia"],
+    role: "Henchman",
+    type: "Scoundrel",
+    stats: {
+      DEXTERITY: { base: "2D+1", skills: { blaster: "3D+2", dodge: "4D", "melee combat": "2D" } },
+      KNOWLEDGE: { base: "1D+1", skills: { streetwise: "3D" } },
+      MECHANICAL: { base: "1D+2", skills: {} },
+      PERCEPTION: { base: "2D+1", skills: { hide: "3D", search: "5D", sneak: "4D" } },
+      STRENGTH: { base: "2D+2", skills: { digging: "4D+2" } },
+      TECHNICAL: { base: "1D+1", skills: {} }
+    },
+    specialAbilities: "Senses: +10 to difficulty of all vision tasks at distances >15m; +1D to all PER skills involving heat, smell, or movement within 15m. Thick Hide: +1D to STR when resisting physical damage. Talons: +1D to climbing, STR (brawling damage), or digging. Salt Weakness: addicted to salt — requires 25g/day or suffers -1D to all actions.",
+    forcePoints: 0,
+    characterPoints: 1,
+    move: 8,
+    equipment: "Blaster pistol (4D), comlink, datapad",
+    capsule: "Arcona henchman aboard the Isilia.",
+    source: "WEG40100 The Planets Collection p.71"
+  },
+  {
+    name: "Nabkess",
+    species: "Ortolan",
+    system: "Joralla",
+    location: "Joralla",
+    affiliations: ["Crew of the Isilia"],
+    role: "Henchwoman",
+    type: "Scoundrel",
+    stats: {
+      DEXTERITY: { base: "1D+2", skills: { blaster: "3D", dodge: "3D+2" } },
+      KNOWLEDGE: { base: "2D", skills: {} },
+      MECHANICAL: { base: "1D", skills: { "starship gunnery": "3D" } },
+      PERCEPTION: { base: "2D+1", skills: {} },
+      STRENGTH: { base: "2D+2", skills: {} },
+      TECHNICAL: { base: "2D+1", skills: { "computer programming/repair": "4D", "space transports repair": "5D" } }
+    },
+    specialAbilities: "Foraging: +2D to any foraging attempt. Ingestion: +1D to resist any type of poison.",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 6,
+    equipment: "Blaster pistol (4D), comlink, sack of food",
+    capsule: "Ortolan henchwoman aboard the Isilia.",
+    source: "WEG40100 The Planets Collection p.72"
+  },
+  {
+    name: "Segken Tels",
+    species: "Quarren",
+    system: "Joralla",
+    location: "Joralla",
+    affiliations: ["Crew of the Isilia"],
+    role: "Henchwoman",
+    type: "Scoundrel",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { blaster: "3D", dodge: "3D+2" } },
+      KNOWLEDGE: { base: "1D+2", skills: {} },
+      MECHANICAL: { base: "2D", skills: { "starship gunnery": "4D" } },
+      PERCEPTION: { base: "2D+1", skills: { bargain: "4D", con: "4D+2" } },
+      STRENGTH: { base: "2D+1", skills: {} },
+      TECHNICAL: { base: "1D+2", skills: {} }
+    },
+    specialAbilities: "Aquatic: can breathe both air and water and withstand extreme ocean-depth pressures.",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: "10 (walking), 12 (swimming)",
+    equipment: "Blaster pistol (4D), datapad, comlink",
+    capsule: "Quarren henchwoman aboard the Isilia.",
+    source: "WEG40100 The Planets Collection p.72"
   }
 ];
