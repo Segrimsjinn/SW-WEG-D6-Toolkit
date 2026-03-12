@@ -2380,5 +2380,53 @@ const NOTABLE_NPCS = [
     equipment: "Lightsaber (5D), robes",
     capsule: "Obi-Wan Kenobi — known as 'Old Ben' on Tatooine — is a Jedi Master living in self-imposed exile in the Jundland Wastes. Once a general of the Clone Wars and Anakin Skywalker's master, he has watched over Luke from a distance for nearly two decades. At 0 BBY he emerges from hiding when Luke is attacked by Sand People, revealing himself as a Jedi and ultimately dying aboard the Death Star to allow Luke and the others to escape — becoming one with the Force.",
     source: "WEG40124 Galaxy Guide 1: A New Hope p.19"
+  },
+  {
+    name: "Sandtrooper (Typical)",
+    species: "Human",
+    system: "Tatooine",
+    location: "Tatooine — Desert Patrol",
+    affiliations: ["Galactic Empire", "Stormtrooper Corps"],
+    role: "Desert assault trooper",
+    type: "Generic",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { blaster: "4D", "brawling parry": "4D", dodge: "4D", "vehicle blasters": "4D" } },
+      KNOWLEDGE: { base: "2D", skills: { survival: "4D" } },
+      MECHANICAL: { base: "2D", skills: { "beast riding": "4D+1" } },
+      PERCEPTION: { base: "2D", skills: { search: "3D+2" } },
+      STRENGTH: { base: "2D", skills: { brawling: "3D" } },
+      TECHNICAL: { base: "2D", skills: {} }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 10,
+    equipment: "Heavy blast armor (+1D STR vs damage, -1D DEX and related actions), blaster pistol (4D), heavy blaster rifle (6D), long-range comlink, food/water pack. ◆ DEWBACK (patrol mount) — Desert mount; DEX 3D, STR 4D, Move 35 (day)/7 (night), Orneriness 3D; slows dramatically at night.",
+    capsule: "Sandtroopers are Imperial stormtroopers specially equipped and trained for desert operations. Deployed on Tatooine during the search for the stolen Death Star plans, they patrol the Dune Sea and Jundland Wastes on dewback mounts. Their heavier armor and survival gear make them more resilient than standard stormtroopers in extreme heat environments.",
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.20"
+  },
+  {
+    name: "DSS-0956",
+    species: "Human",
+    system: "Tatooine",
+    location: "Tatooine — Desert Patrol",
+    affiliations: ["Galactic Empire", "Stormtrooper Corps"],
+    role: "Desert Sands Senior Officer",
+    type: "Supporting Character",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { blaster: "4D+2", "brawling parry": "4D", dodge: "5D", "vehicle blasters": "4D" } },
+      KNOWLEDGE: { base: "2D", skills: { intimidation: "5D", survival: "5D" } },
+      MECHANICAL: { base: "2D", skills: { "beast riding": "4D+1" } },
+      PERCEPTION: { base: "2D", skills: { command: "4D", search: "3D+2" } },
+      STRENGTH: { base: "2D", skills: { brawling: "3D" } },
+      TECHNICAL: { base: "2D", skills: {} }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 10,
+    equipment: "Heavy blast armor (+1D STR vs damage, -1D DEX and related actions), blaster pistol (4D), heavy blaster rifle (6D), long-range comlink, food/water pack. ◆ DEWBACK (patrol mount) — Desert mount; DEX 3D, STR 4D, Move 35 (day)/7 (night), Orneriness 3D; slows dramatically at night.",
+    capsule: "DSS-0956 is the senior officer commanding the Desert Sands sandtrooper detachment deployed on Tatooine during the search for the stolen Death Star plans. More aggressive and experienced than his troopers, he leads mounted dewback patrols through the desert wilderness with authority.",
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.21"
   }
 ];
