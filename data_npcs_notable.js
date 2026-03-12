@@ -2742,5 +2742,31 @@ const NOTABLE_NPCS = [
     equipment: "Comlink (encrypted, Imperial frequency), hold-out blaster (3D+1), electrobinoculars, recording rod",
     capsule: "Garindan — known in Mos Eisley as 'Long Snoot' — is the Empire's most reliable informant in the spaceport. Hidden behind his long proboscis and traveler's cloak, he moves unseen through the cantinas and docking bays, selling information to Imperial Intelligence. He tracked the droids R2-D2 and C-3PO to Docking Bay 94 and called in the stormtrooper assault that nearly caught the Millennium Falcon. He works for credits and survival — the Empire simply pays best.",
     source: "WEG40124 Galaxy Guide 1: A New Hope p.43"
+  },
+
+  // ── GALAXY GUIDE 1 — Death Star (p.50) ──
+  {
+    name: "Darth Vader (0 BBY)",
+    species: "Human (cyborg)",
+    system: "Generic & Varies",
+    location: "Galactic Empire — Death Star",
+    affiliations: ["Galactic Empire"],
+    role: "Dark Lord of the Sith",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "5D", "blaster artillery": "4D+1", "brawling parry": "6D+1", "dodge": "6D", "lightsaber": "11D+2", "melee combat": "7D", "melee parry": "9D", "vehicle blasters": "6D" } },
+      KNOWLEDGE: { base: "3D+2", skills: { "alien species": "7D+1", "bureaucracy": "9D+1", "cultures": "7D", "intimidation": "10D+1", "languages": "6D+1", "planetary systems": "7D", "streetwise": "7D", "survival": "5D", "value": "6D", "willpower": "8D+1" } },
+      MECHANICAL: { base: "4D", skills: { "astrogation": "6D+1", "capital ship piloting": "8D", "capital ship shields": "5D", "repulsorlift operation": "5D+2", "starfighter piloting": "10D", "starship gunnery": "8D", "starship shields": "5D" } },
+      PERCEPTION: { base: "3D+1", skills: { "bargain": "4D", "command": "10D", "con": "4D", "gambling": "4D+1", "hide": "4D+1", "persuasion": "8D+1", "search": "8D", "sneak": "4D+1" } },
+      STRENGTH: { base: "3D", skills: { "brawling": "8D+2", "climbing/jumping": "7D", "lifting": "8D", "stamina": "8D" } },
+      TECHNICAL: { base: "3D", skills: { "armor repair": "6D+1", "capital ship repair": "5D", "lightsaber repair": "7D+2", "security": "6D", "starfighter repair": "5D" } }
+    },
+    specialAbilities: "Force Skills: Control 11D, Sense 12D, Alter 10D+1\n\nForce Powers —\nControl: Absorb/dissipate energy, accelerate healing, concentrate, control pain, detoxify poison, enhance attribute, hibernation trance, reduce injury, remain conscious, resist stun\nSense: Combat sense, danger sense, instinctive astrogation, life detection, life sense, magnify senses, receptive telepathy, sense Force\nAlter: Injure/kill, telekinesis\nControl + Sense: Farseeing, lightsaber combat, projective telepathy\nControl + Alter: Feed on dark side, inflict pain\nControl + Sense + Alter: Affect mind, telekinetic kill\n\nCybernetic Life Support: Vader's black armor and respirator are not optional — they sustain his severely damaged body. If his armor is breached or respirator disabled, he suffers increasing wound levels each round until repaired or removed to a medical facility.\n\nDark Side Points: 14",
+    forcePoints: 13,
+    characterPoints: 27,
+    move: 10,
+    equipment: "Lightsaber (5D), full body armor (+1D all attacks; integrated life-support respirator — required to keep Vader alive)",
+    capsule: "Darth Vader is the Emperor's enforcer and the most feared man in the galaxy. Once Anakin Skywalker — Jedi Knight, hero of the Clone Wars, and the prophesied Chosen One — he was seduced by the dark side and helped Palpatine exterminate the Jedi Order. His scarred, broken body is encased in life-sustaining black armor. Aboard the Death Star at Yavin, he oversaw Princess Leia's interrogation, cut down Obi-Wan Kenobi, and nearly prevented the Rebel assault — only to be sent spinning into space by Han Solo's last-second intervention, allowing Luke Skywalker to destroy the station.",
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.50"
   }
 ];
