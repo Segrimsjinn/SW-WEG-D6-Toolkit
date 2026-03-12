@@ -2916,5 +2916,29 @@ const NOTABLE_NPCS = [
     equipment: "Targeting computer linkup helmet (+2D fire control, capital scale weapons only), blaster pistol (4D), protective armor (+1D physical, +2 energy), tool kit",
     capsule: "Death Star gunners are specialists trained exclusively for the station's vast weapons emplacements — turbolasers, ion cannons, and tractor beam projectors. Their targeting helmets interface directly with the fire control systems of capital-scale weapons, giving them a decisive edge in battery-level engagements. Outside their gun stations they are barely combat-capable.",
     source: "WEG40124 Galaxy Guide 1: A New Hope p.54"
+  },
+  {
+    name: "TIE Fighter Pilot (Typical)",
+    species: "Human",
+    system: "Generic & Varies",
+    location: "Galactic Empire — Death Star",
+    affiliations: ["Galactic Empire"],
+    role: "TIE Fighter Pilot",
+    type: "Typical NPC",
+    stats: {
+      DEXTERITY: { base: "3D+1", skills: { "blaster": "4D+1", "dodge": "4D+1" } },
+      KNOWLEDGE: { base: "2D", skills: { "planetary systems": "3D" } },
+      MECHANICAL: { base: "4D", skills: { "sensors": "4D+2", "starfighter piloting": "6D", "starship gunnery": "5D" } },
+      PERCEPTION: { base: "3D", skills: { "command": "4D", "search": "4D" } },
+      STRENGTH: { base: "3D", skills: { "stamina": "4D" } },
+      TECHNICAL: { base: "2D", skills: { "computer programming/repair": "3D+1", "starfighter repair": "5D" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 10,
+    equipment: "Navigation computer linkup helmet (internal comlink, +1D to sensors), high-gravity stress flight suit with life support, blaster pistol (4D), survival gear, one week emergency rations",
+    capsule: "TIE fighter pilots are among the Empire's most elite personnel — rigorously selected and trained at academies like Carida and Prefsbelt IV. Their TIE fighters carry no shields or hyperdrive, demanding exceptional skill to survive. The navigation helmet interfaces directly with the fighter's systems, giving pilots a sensor edge that partly compensates for the TIE's lack of deflector screens.",
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.54"
   }
 ];
