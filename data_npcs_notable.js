@@ -2940,5 +2940,29 @@ const NOTABLE_NPCS = [
     equipment: "Navigation computer linkup helmet (internal comlink, +1D to sensors), high-gravity stress flight suit with life support, blaster pistol (4D), survival gear, one week emergency rations",
     capsule: "TIE fighter pilots are among the Empire's most elite personnel — rigorously selected and trained at academies like Carida and Prefsbelt IV. Their TIE fighters carry no shields or hyperdrive, demanding exceptional skill to survive. The navigation helmet interfaces directly with the fighter's systems, giving pilots a sensor edge that partly compensates for the TIE's lack of deflector screens.",
     source: "WEG40124 Galaxy Guide 1: A New Hope p.54"
+  },
+  {
+    name: "IT-0 Interrogation Droid (Typical)",
+    species: "Droid",
+    system: "Generic & Varies",
+    location: "Galactic Empire — Death Star",
+    affiliations: ["Galactic Empire"],
+    role: "Imperial Interrogation Droid",
+    type: "Typical NPC",
+    stats: {
+      DEXTERITY: { base: "1D", skills: { "dodge": "3D", "melee combat": "3D", "melee parry": "3D", "interrogation devices": "4D+1" } },
+      KNOWLEDGE: { base: "3D", skills: { "intimidation: interrogation": "7D+2" } },
+      MECHANICAL: { base: "2D", skills: {} },
+      PERCEPTION: { base: "4D", skills: { "search": "5D" } },
+      STRENGTH: { base: "3D", skills: {} },
+      TECHNICAL: { base: "2D", skills: { "first aid": "4D", "security": "4D" } }
+    },
+    specialAbilities: "Equipped With: Laser scalpel (3D damage), hypodermic injectors (4D stun damage), power shears (5D damage), grasping claw (+1D to lifting).\n\nRepulsorlift Locomotion: The IT-0 hovers silently at low altitude, manoeuvring without sound — a deliberate design choice to maximise psychological impact on subjects.",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 3,
+    equipment: "",
+    capsule: "The IT-0 Interrogator is a black, spherical Imperial torture droid — one of the most feared sights in the galaxy. Fitted with hypodermic injectors loaded with chemicals that suppress the will and heighten pain sensitivity, laser scalpels, power shears, and grasping claws, it hovers silently into a prisoner's cell and goes to work without a word. Its intimidation: interrogation skill of 7D+2 reflects decades of refined psychological technique built into its programming. Princess Leia Organa endured an IT-0 session aboard the Death Star.",
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.55"
   }
 ];
