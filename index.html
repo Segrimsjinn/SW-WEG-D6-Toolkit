@@ -251,6 +251,11 @@ background-repeat:no-repeat;background-position:right 8px center;
 }
 .control-select:focus{border-color:var(--cyan)}
 .control-select option{background:var(--bg);color:var(--text)}
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-track{background:var(--bg2)}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:#e8b84b}
+*{scrollbar-width:thin;scrollbar-color:var(--gold) var(--bg2)}
 .btn-lock{
 width:28px;height:28px;display:flex;align-items:center;justify-content:center;
 border-radius:4px;border:1px solid var(--card-border);background:var(--bg3);
@@ -330,7 +335,7 @@ display:inline-block;
 }
 .ship-stat-block .ship-deckplan a:hover{background:rgba(0,229,255,.1)}
 .ship-dropdowns{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap}
-.ship-dropdowns>div{flex:1;min-width:170px}
+.ship-dropdowns>div{flex:1;min-width:140px}
 .ship-sort-row{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center}
 .ship-sort-btn{
 font-family:'Exo 2',monospace;font-size:8px;font-weight:700;
@@ -2315,7 +2320,7 @@ function initShipLookup() {
   Object.keys(STARSHIP_DATA).forEach(cat => {
     const opt = document.createElement('option');
     opt.value = cat;
-    opt.textContent = cat + ' (' + STARSHIP_DATA[cat].length + ')';
+    opt.textContent = cat;
     catSel.appendChild(opt);
   });
 }
@@ -4291,7 +4296,7 @@ function initCompareDropdowns() {
     Object.keys(STARSHIP_DATA).forEach(cat => {
       const opt = document.createElement('option');
       opt.value = cat;
-      opt.textContent = cat + ' (' + STARSHIP_DATA[cat].length + ')';
+      opt.textContent = cat;
       sel.appendChild(opt);
     });
   });
