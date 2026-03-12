@@ -11,7 +11,7 @@ Deployed to GitHub Pages (see `CNAME`). To publish changes: edit files locally, 
 ## Architecture
 
 ### index.html
-The entire app. Contains all CSS (minified, inline `<style>`), all HTML tab panels, and all JavaScript logic (after the `<!-- DATA SCRIPTS -->` block). Tabs: **NPC** (random NPC generator), **GM** (creatures lookup + Notable NPC lookup), **GALAXY** (planet detail + astrogation calculator), **SETTINGS**.
+The entire app. Contains all CSS (minified, inline `<style>`), all HTML tab panels, and all JavaScript logic (after the `<!-- DATA SCRIPTS -->` block). Tabs: **NPC** (random NPC generator + Notable NPC lookup), **GM** (creatures lookup), **GALAXY** (planet detail + astrogation calculator), **SETTINGS**.
 
 ### Data Files → Global Constants
 
@@ -23,7 +23,7 @@ The entire app. Contains all CSS (minified, inline `<style>`), all HTML tab pane
 | `data_skills.js` | `SKILLS_DATA` | — | Skill definitions |
 | `data_powers.js` | `POWERS_DATA` | — | Force power data |
 | `data_forcepowers.js` | — | — | Extended Force powers |
-| `data_systems.js` | `SYSTEMS_DATA` | **Minified single line** | Sorted alphabetically; fields: `name, grid, region, col, row, quadrant, hours` |
+| `data_systems.js` | `SYSTEMS_DATA` | Multi-line, one entry per line | Sorted alphabetically; fields: `name, grid, region, col, row, quadrant, hours` |
 | `data_grid.js` | — | — | Galaxy grid reference |
 | `data_images.js` | — | — | Image references |
 | `data_planets.js` | `PLANETS_DATA` | Array of objects | Rich planet/location entries (see below) |
@@ -74,7 +74,7 @@ The entire app. Contains all CSS (minified, inline `<style>`), all HTML tab pane
 
 ## Important Conventions
 
-- `data_systems.js` is **always minified** (single-line JSON). Use `sed` or a bash substitution to edit it — the Read/Edit tools cannot handle its size. Entries must remain **alphabetically sorted by name**.
+- `data_systems.js` is multi-line (one entry per line). Entries must remain **alphabetically sorted by name**. The file is large (~6,800 lines) but the Edit tool can handle it for targeted changes.
 - All other data files use readable, indented formatting.
 - Source citations follow the format `"WEG##### Book Title p.##"`.
 - Planet `aliases` array enables alternate-name lookups without duplicating entries.

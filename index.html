@@ -3061,7 +3061,7 @@ function filterNotableNpcs() {
   filtered.forEach(n => {
     const isGeneric = n.type.startsWith('Generic');
     const nameColor = isGeneric ? 'var(--text-dim)' : 'var(--text)';
-    html += '<div onclick="showNotableNpcByName(\'' + encodeURIComponent(n.name) + '\')" style="padding:6px 8px;border-bottom:1px solid var(--card-border);cursor:pointer" onmouseover="this.style.background=\'var(--bg2)\'" onmouseout="this.style.background=\'transparent\'">';
+    html += '<div onclick="showNotableNpcByName(\'' + encodeURIComponent(n.name).replace(/'/g, '%27') + '\')" style="padding:6px 8px;border-bottom:1px solid var(--card-border);cursor:pointer" onmouseover="this.style.background=\'var(--bg2)\'" onmouseout="this.style.background=\'transparent\'">';
     html += '<div style="display:flex;justify-content:space-between;align-items:baseline">';
     html += '<span style="font-family:\'Eras Demi ITC\',sans-serif;font-size:11px;color:' + nameColor + '">' + n.name + '</span>';
     html += '<span style="font-family:\'Exo 2\',monospace;font-size:8px;color:var(--text-dark);letter-spacing:0.5px">' + n.system + '</span>';
