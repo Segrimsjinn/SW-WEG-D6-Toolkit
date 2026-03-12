@@ -3086,5 +3086,29 @@ const NOTABLE_NPCS = [
     equipment: "Blaster pistol (4D), sealed flight suit, comlink, tool kit",
     capsule: "Wedge Antilles is a Corellian pilot who traded a struggling life as a freighter owner-operator for a career as one of the Alliance's finest combat aviators. Orphaned when pirates destroyed his parents' fueling depot, he taught himself to fly and modify ships before joining the Rebellion as a weapons smuggler. At Yavin he flew as Red Two, tallied half a dozen kills, and was one of the only pilots to pull out of the trench run alive — breaking off to protect Luke's final approach. He went on to co-found Rogue Squadron and fight at Endor, cementing his place as one of the most decorated pilots in Rebel history.",
     source: "WEG40124 Galaxy Guide 1: A New Hope p.66"
+  },
+  {
+    name: "Jek Porkins",
+    species: "Human",
+    system: "Yavin",
+    location: "Yavin — Yavin 4 Base",
+    affiliations: ["Rebel Alliance"],
+    role: "Brash Pilot",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "3D+1", "vehicle blasters": "4D" } },
+      KNOWLEDGE: { base: "2D", skills: { "alien species": "4D" } },
+      MECHANICAL: { base: "4D", skills: { "starfighter piloting": "5D", "starship gunnery": "6D" } },
+      PERCEPTION: { base: "3D", skills: { "con": "4D" } },
+      STRENGTH: { base: "3D+2", skills: { "stamina": "4D+2" } },
+      TECHNICAL: { base: "2D", skills: { "security": "3D" } }
+    },
+    specialAbilities: "Strafing Specialist: Porkins honed his low-altitude attack runs hunting sink-crabs on Bestine IV's rocky islands. He receives +1D to starship gunnery rolls when performing strafing runs against fixed or slow-moving ground targets.\n\nKenobi Medallion (posthumous): One of the first recipients of the Alliance's highest honor for heroic sacrifice, awarded for his actions at the Battle of Yavin.",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 10,
+    equipment: "Blaster pistol (4D), comlink, sealed flight suit",
+    capsule: "Jek 'Belly Runner' Porkins was a free trader from Bestine IV who joined the Rebel Alliance after the Empire forcibly displaced his entire homeworld's population to build a military base. In under 40 hours of combat time he racked up 16 confirmed kills, making him one of the most effective young pilots in the Alliance. A strafing specialist who learned his craft hunting sink-crabs back home, his considerable physical presence earned him his nickname. He flew as Red Six at the Battle of Yavin, where he was killed in action — one of the first recipients of the posthumous Kenobi Medallion, whose likeness now hangs in the pilot's lounge at Tierfon Fighter Base.",
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.67"
   }
 ];
