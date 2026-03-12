@@ -3136,5 +3136,29 @@ const NOTABLE_NPCS = [
     equipment: "Lightsaber (5D), blaster pistol (4D), macrobinoculars (+3D to search at ranges greater than 100 meters), comlink",
     capsule: "Luke Skywalker at the Battle of Yavin is a young man of immense raw potential who has barely scratched the surface of what he will become. Raised on Tatooine as a moisture farmer's nephew, he spent his teens racing T-16 skyhoppers across the Dune Sea and dreaming of the stars. His piloting instincts and repulsorlift skills are already extraordinary. His Force training at this point consists of a few hours on the Falcon under Obi-Wan Kenobi — but when the targeting computer failed him in the Death Star trench, he shut it off and fired by feel alone, destroying the station with a single proton torpedo.",
     source: "WEG40124 Galaxy Guide 1: A New Hope p.73"
+  },
+  {
+    name: "Princess Leia Organa (0 BBY)",
+    species: "Human",
+    system: "Yavin",
+    location: "Yavin — Yavin 4 Base",
+    affiliations: ["Rebel Alliance"],
+    role: "Young Senatorial",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "5D", "brawling parry": "4D", "dodge": "6D", "grenade": "4D", "melee combat": "5D", "melee parry": "4D", "vehicle blasters": "4D" } },
+      KNOWLEDGE: { base: "4D", skills: { "alien species": "7D", "bureaucracy": "8D", "cultures": "8D", "languages": "5D", "planetary systems": "5D", "survival": "5D", "value": "5D", "willpower": "6D+1" } },
+      MECHANICAL: { base: "2D+2", skills: { "astrogation": "3D+2", "beast riding": "3D+2", "repulsorlift operation": "4D+2", "starfighter piloting": "5D", "starship gunnery": "4D", "starship shields": "5D" } },
+      PERCEPTION: { base: "3D+1", skills: { "bargain": "6D", "command": "8D", "con": "5D+1", "gambling": "4D", "hide": "4D", "persuasion": "5D", "persuasion: debate": "7D+2", "search": "4D+1", "sneak": "5D+1" } },
+      STRENGTH: { base: "3D", skills: { "brawling": "4D", "climbing/jumping": "4D", "stamina": "6D", "swimming": "5D" } },
+      TECHNICAL: { base: "2D", skills: { "computer programming/repair": "3D", "droid programming": "4D", "droid repair": "4D", "first aid": "4D", "security": "3D" } }
+    },
+    specialAbilities: "Force-Sensitive: Leia has latent Force sensitivity — untrained and unacknowledged at this point in her life, but present. It manifests as intuition, emotional resonance, and an occasional prescience she attributes to instinct rather than the Force.\n\nSenatorial Authority: Leia served as the youngest Senator in Imperial history and a key Alliance Intelligence operative. She receives +1D to bureaucracy, command, and persuasion rolls when dealing with political or diplomatic situations.",
+    forcePoints: 4,
+    characterPoints: 13,
+    move: 10,
+    equipment: "Hold-out blaster (3D), comlink, technical readouts of the Death Star",
+    capsule: "Princess Leia Organa of Alderaan is one of the founding figures of the Rebel Alliance — a senator, spy, and soldier who carried the Death Star plans inside R2-D2 and endured torture at Vader's hands rather than betray the Rebellion. Her command and persuasion: debate stats at 8D and 7D+2 reflect a political mind shaped by years in the Imperial Senate. With Alderaan destroyed by Tarkin's order, she arrived at Yavin having lost her homeworld, her adoptive father, and her cover — and immediately set to work coordinating the base's defense. She presented the medals at the ceremony following the Battle of Yavin.",
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.74"
   }
 ];
