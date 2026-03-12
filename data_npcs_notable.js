@@ -2794,5 +2794,29 @@ const NOTABLE_NPCS = [
     equipment: "Blaster pistol (4D), datapad, comlink, rank code cylinders",
     capsule: "Grand Moff Wilhuff Tarkin was the Empire's most celebrated military governor — architect of the Tarkin Doctrine and the driving force behind the Death Star project. Ruthless, brilliant, and supremely self-confident, he leveraged the destruction of Alderaan as a demonstration of the Death Star's power and his own willingness to commit genocide in service of the New Order. His personal authority was so great that even Darth Vader deferred to him aboard the station. His refusal to evacuate the Death Star when the Rebel attack commenced — certain that no fighter assault could threaten it — cost him his life at the Battle of Yavin.",
     source: "WEG40124 Galaxy Guide 1: A New Hope p.51"
+  },
+  {
+    name: "Admiral Motti",
+    species: "Human",
+    system: "Generic & Varies",
+    location: "Galactic Empire — Death Star",
+    affiliations: ["Galactic Empire"],
+    role: "Imperial Admiral",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D+2", skills: { "blaster": "5D", "blaster artillery": "5D", "dodge": "5D" } },
+      KNOWLEDGE: { base: "3D+1", skills: { "bureaucracy": "5D+2", "planetary systems": "5D+1", "tactics: fleets": "9D+2", "tactics: sieges": "7D" } },
+      MECHANICAL: { base: "3D", skills: { "astrogation": "5D", "capital ship piloting": "4D+2" } },
+      PERCEPTION: { base: "2D+2", skills: { "bargain": "3D+2", "command": "5D+1" } },
+      STRENGTH: { base: "2D+1", skills: { "brawling": "4D", "stamina": "4D+1" } },
+      TECHNICAL: { base: "3D", skills: { "computer programming/repair": "4D", "security": "4D+1" } }
+    },
+    specialAbilities: "Force Skeptic: Motti holds the Force in open contempt, dismissing it as 'an ancient religion.' This arrogance is a persistent blind spot — he is psychologically unprepared to factor Force-users into his tactical calculations.\n\nCareer Opportunist: Motti's rise was built on loyalty and political positioning rather than exceptional talent. He functions best within established Imperial command structures and is poorly suited to improvisation.",
+    forcePoints: 0,
+    characterPoints: 7,
+    move: 10,
+    equipment: "Blaster pistol (4D), datapad, comlink, rank code cylinder",
+    capsule: "Admiral Conan Antonio Motti was the third man in the Death Star's command triumvirate alongside Tarkin and General Tagge. A career Imperial officer who confused ambition for genius, Motti's defining moment came when he publicly mocked Darth Vader's 'sorcerer's ways' in the Death Star conference room — earning a brief but humiliating demonstration of Force choke before Tarkin intervened. He died with the Death Star at Yavin, his faith in technological superiority vindicated by nothing.",
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.52"
   }
 ];
