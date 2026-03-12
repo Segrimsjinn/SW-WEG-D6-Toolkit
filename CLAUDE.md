@@ -60,7 +60,8 @@ The entire app. Contains all CSS (minified, inline `<style>`), all HTML tab pane
     DEXTERITY: { base: "XD", skills: { "skill name": "XD", ... } },
     // KNOWLEDGE, MECHANICAL, PERCEPTION, STRENGTH, TECHNICAL same shape
   },
-  specialAbilities, forcePoints, characterPoints, move, equipment, capsule,
+  specialAbilities, forcePoints, darkSidePoints, characterPoints, move, equipment, capsule,
+  // darkSidePoints — optional, Dark Side characters only; rendered in red between Force Points and Character Points
   source   // "WEGxxxxx Book Title p.##"
 }
 ```
