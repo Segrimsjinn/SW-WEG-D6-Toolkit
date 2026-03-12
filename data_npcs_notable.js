@@ -2842,5 +2842,79 @@ const NOTABLE_NPCS = [
     equipment: "Blaster pistol (4D), datapad, comlink, command rank code cylinder",
     capsule: "General Cassio Tagge was the Death Star's tactical commander — the man responsible for day-to-day defense, logistics, and crew morale beneath Tarkin's grand strategic vision. Of the three Death Star commanders, Tagge was the most grounded and the most prescient: he openly warned that the Rebel Alliance should not be underestimated and argued against abolishing the Senate. He was overruled at every turn. A product of military discipline, he followed the chain of command to his death at the Battle of Yavin rather than take his objections directly to the Emperor.",
     source: "WEG40124 Galaxy Guide 1: A New Hope p.53"
+  },
+
+  // ── GALAXY GUIDE 1 — Death Star Crew Templates (p.54) ──
+  {
+    name: "Death Star Officer (Typical)",
+    species: "Human",
+    system: "Generic & Varies",
+    location: "Galactic Empire — Death Star",
+    affiliations: ["Galactic Empire"],
+    role: "Death Star Officer",
+    type: "Typical NPC",
+    stats: {
+      DEXTERITY: { base: "2D+2", skills: { "blaster": "4D+2", "dodge": "3D+2", "grenade": "3D+2" } },
+      KNOWLEDGE: { base: "3D", skills: { "bureaucracy": "4D", "intimidation": "4D", "tactics: fleets": "5D" } },
+      MECHANICAL: { base: "3D+2", skills: {} },
+      PERCEPTION: { base: "3D+1", skills: { "command": "5D+1" } },
+      STRENGTH: { base: "2D+1", skills: { "brawling": "3D+1" } },
+      TECHNICAL: { base: "3D", skills: { "security": "4D" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 10,
+    equipment: "Blaster pistol (4D), comlink, rank command cylinder",
+    capsule: "The Death Star's officer corps comprised thousands of mid-level Imperial commanders responsible for coordinating the station's departments, defense rotations, and crew discipline. Competent but interchangeable, they represent the administrative backbone that kept the battle station operational.",
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.54"
+  },
+  {
+    name: "Death Star Trooper (Typical)",
+    species: "Human",
+    system: "Generic & Varies",
+    location: "Galactic Empire — Death Star",
+    affiliations: ["Galactic Empire"],
+    role: "Death Star Trooper",
+    type: "Typical NPC",
+    stats: {
+      DEXTERITY: { base: "3D+1", skills: { "blaster": "4D", "blaster: blaster pistol": "5D+1", "blaster artillery": "4D+2", "dodge": "4D+1", "grenade": "4D+1", "vehicle blasters": "4D+2" } },
+      KNOWLEDGE: { base: "2D+1", skills: { "streetwise": "3D+1" } },
+      MECHANICAL: { base: "2D+2", skills: {} },
+      PERCEPTION: { base: "4D", skills: { "command": "5D", "search": "5D+2" } },
+      STRENGTH: { base: "3D+2", skills: { "brawling": "5D+2" } },
+      TECHNICAL: { base: "2D", skills: {} }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 10,
+    equipment: "Blaster pistol (4D), blaster rifle (5D), grenades (5D), comlink, blast helmet (+1D physical, +1 energy)",
+    capsule: "Death Star troopers are the station's internal security force — heavier and more aggressive than standard stormtroopers, trained for shipboard combat in the station's vast corridors and hangars. Their distinctive black helmets and armor mark them as Death Star crew rather than the regular stormtrooper corps.",
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.54"
+  },
+  {
+    name: "Death Star Gunner (Typical)",
+    species: "Human",
+    system: "Generic & Varies",
+    location: "Galactic Empire — Death Star",
+    affiliations: ["Galactic Empire"],
+    role: "Death Star Gunner",
+    type: "Typical NPC",
+    stats: {
+      DEXTERITY: { base: "2D+2", skills: { "blaster": "3D+2", "blaster artillery": "4D+2", "vehicle blasters": "4D+2" } },
+      KNOWLEDGE: { base: "1D+1", skills: {} },
+      MECHANICAL: { base: "3D", skills: { "capital ship gunnery": "5D", "capital ship shields": "4D" } },
+      PERCEPTION: { base: "1D+1", skills: {} },
+      STRENGTH: { base: "1D+1", skills: {} },
+      TECHNICAL: { base: "2D", skills: { "capital ship weapon repair": "4D" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 10,
+    equipment: "Targeting computer linkup helmet (+2D fire control, capital scale weapons only), blaster pistol (4D), protective armor (+1D physical, +2 energy), tool kit",
+    capsule: "Death Star gunners are specialists trained exclusively for the station's vast weapons emplacements — turbolasers, ion cannons, and tractor beam projectors. Their targeting helmets interface directly with the fire control systems of capital-scale weapons, giving them a decisive edge in battery-level engagements. Outside their gun stations they are barely combat-capable.",
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.54"
   }
 ];
