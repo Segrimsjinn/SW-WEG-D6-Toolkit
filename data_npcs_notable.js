@@ -2356,5 +2356,29 @@ const NOTABLE_NPCS = [
     equipment: "Farm equipment, household appliances",
     capsule: "Beru Lars is Luke Skywalker's aunt and Owen's wife. Warm and perceptive, she sees Luke's restless nature more clearly than Owen does and quietly supports his dreams. A capable homesteader with deep knowledge of moisture farming technology, she holds the Lars household together on their isolated desert farm.",
     source: "WEG40124 Galaxy Guide 1: A New Hope p.15"
+  },
+  {
+    name: "Obi-Wan Kenobi (0 BBY)",
+    species: "Human",
+    system: "Tatooine",
+    location: "Tatooine — Jundland Wastes",
+    affiliations: ["Rebel Alliance"],
+    role: "Jedi Knight / hermit",
+    type: "Major Character",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { blaster: "5D", "brawling parry": "6D", dodge: "6D", lightsaber: "11D", "melee combat": "6D", "melee parry": "9D" } },
+      KNOWLEDGE: { base: "3D+2", skills: { "alien species": "8D", bureaucracy: "6D", cultures: "6D", intimidation: "5D+2", languages: "6D", "planetary systems": "6D", "scholar: Jedi lore": "9D+1", streetwise: "5D+2", survival: "8D", value: "6D+1" } },
+      MECHANICAL: { base: "2D", skills: { astrogation: "5D+2", "beast riding": "4D", "capital ship gunnery": "4D+1", "capital ship piloting": "5D", "capital ship shields": "3D", "repulsorlift operation": "4D", "space transports": "6D", "starfighter piloting": "3D+1", "starship gunnery": "6D", "starship shields": "6D" } },
+      PERCEPTION: { base: "3D+1", skills: { bargain: "7D", command: "9D+1", con: "6D", gambling: "5D+2", hide: "5D+2", search: "6D+1", sneak: "7D" } },
+      STRENGTH: { base: "3D", skills: { brawling: "5D", "climbing/jumping": "6D", stamina: "6D" } },
+      TECHNICAL: { base: "3D", skills: { "droid programming": "4D", "droid repair": "5D", "first aid": "5D", security: "6D" } }
+    },
+    specialAbilities: "Force Skills: Control 12D, Sense 12D, Alter 8D. Control: absorb/dissipate energy, accelerate healing, concentrate, control pain, detoxify poison, emptiness, enhance attribute, hibernation trance, reduce injury, remain conscious, resist stun, short-term memory enhancement. Sense: combat sense, danger sense, instinctive astrogation, life detection, life sense, magnify senses, receptive telepathy, sense Force, sense path. Alter: injure/kill, telekinesis. Control+Sense: farseeing, lightsaber combat, projective telepathy. Control+Alter: accelerate another's healing, control another's pain, return another to consciousness, transfer Force. Control+Sense+Alter: affect mind, enhanced coordination. Sense+Alter: dim other's senses.",
+    forcePoints: 9,
+    characterPoints: 20,
+    move: 10,
+    equipment: "Lightsaber (5D), robes",
+    capsule: "Obi-Wan Kenobi — known as 'Old Ben' on Tatooine — is a Jedi Master living in self-imposed exile in the Jundland Wastes. Once a general of the Clone Wars and Anakin Skywalker's master, he has watched over Luke from a distance for nearly two decades. At 0 BBY he emerges from hiding when Luke is attacked by Sand People, revealing himself as a Jedi and ultimately dying aboard the Death Star to allow Luke and the others to escape — becoming one with the Force.",
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.19"
   }
 ];
