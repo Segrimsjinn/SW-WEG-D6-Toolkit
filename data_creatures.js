@@ -308,6 +308,20 @@ const CREATURES_DATA = [
   "source": "Core Rulebook (page 222)"
  },
  {
+  "name": "Bantha (Tatooine)",
+  "type": "Beast of burden / Tusken mount",
+  "planet": "Tatooine",
+  "habitat": "Desert",
+  "dex": "2D",
+  "per": "1D",
+  "str": "5D, stamina 8D",
+  "move": "15",
+  "size": "2-3m at shoulder",
+  "orneriness": "3",
+  "special": "Hardy constitution: Can go weeks without food or water and quickly adapts to new surroundings and climates.",
+  "source": "WEG40124 Galaxy Guide 1: A New Hope p.21"
+ },
+ {
   "name": "Barri",
   "type": "Mysterious spacefaring creature",
   "planet": "",
