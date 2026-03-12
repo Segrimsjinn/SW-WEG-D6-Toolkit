@@ -953,6 +953,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
         </div>
         <button class="btn btn-sm btn-secondary btn-full" style="margin-bottom:12px" onclick="randomBoth()">⟳ Random Both</button>
         <button class="btn btn-generate" onclick="engage()">⟐ PLOT ASTROGATION ⟐</button>
+        <button class="btn btn-sm btn-secondary btn-full" style="margin-top:8px" onclick="resetAstrogation()">✕ Clear Route</button>
       </div>
 
       <div id="travelResult" style="display:none">
@@ -2711,6 +2712,19 @@ function setRoute(mode) {
   routeMode = mode;
   document.getElementById('routeSmuggler').classList.toggle('active', mode === 'smuggler');
   document.getElementById('routeTrade').classList.toggle('active', mode === 'trade');
+}
+
+function resetAstrogation() {
+  document.getElementById('originInput').value = '';
+  document.getElementById('destInput').value = '';
+  document.getElementById('originList').innerHTML = '';
+  document.getElementById('destList').innerHTML = '';
+  document.getElementById('travelResult').style.display = 'none';
+  const canvas = document.getElementById('mapCanvas');
+  if (canvas) {
+    const ctx = canvas.getContext('2d');
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  }
 }
 
 // Autocomplete
