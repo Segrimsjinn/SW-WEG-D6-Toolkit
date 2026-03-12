@@ -3979,7 +3979,7 @@ function searchGalaxy(query) {
 
   container.innerHTML = matches.map(s => {
     const sLow = s.name.toLowerCase();
-    const findPlanet = typeof PLANETS_DATA !== 'undefined' && PLANETS_DATA.find(p => p.name.toLowerCase() === sLow || p.system.toLowerCase() === sLow || sLow.startsWith(p.name.toLowerCase() + ' -'));
+    const findPlanet = typeof PLANETS_DATA !== 'undefined' && PLANETS_DATA.find(p => p.name.toLowerCase() === sLow || p.system.toLowerCase() === sLow || sLow.startsWith(p.name.toLowerCase() + ' -') || (p.aliases && p.aliases.some(a => a.toLowerCase() === sLow)));
     const hasPlanet = !!findPlanet;
     const planetKey = findPlanet ? findPlanet.name : s.name;
     return `<div class="system-card${hasPlanet ? ' has-planet' : ''}"${hasPlanet ? ` onclick="showPlanetDetail('${planetKey.replace(/'/g,"\\'")}')" style="cursor:pointer"` : ''}>
