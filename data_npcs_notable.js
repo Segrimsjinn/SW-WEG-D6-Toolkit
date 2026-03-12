@@ -2234,5 +2234,31 @@ const NOTABLE_NPCS = [
     equipment: "Datapad",
     capsule: "Jimmer is a Mostlaa — a weasel-like 1.3-meter-tall alien — who serves as Nilya Fek'ra's executive assistant. Quiet and unnervingly observant, his investigation skill of 9D makes him the best intelligence-gatherer in Fek'ra's operation. He tracks finances, logistics, and any irregularities that might threaten his employer.",
     source: "WEG40065 Gamemaster Handbook p.116"
+  },
+
+  // ── GALAXY GUIDE 1: A NEW HOPE (WEG40124) ──
+  {
+    name: "Voren Na'al",
+    species: "Human",
+    system: "Generic & Varies",
+    location: "Varies",
+    affiliations: ["Rebel Alliance"],
+    role: "Historian / Journalist",
+    type: "Generic",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { blaster: "3D+2", dodge: "4D+1" } },
+      KNOWLEDGE: { base: "4D", skills: { "alien species": "5D", bureaucracy: "4D+2", cultures: "4D+2", "scholar: history": "7D+1" } },
+      MECHANICAL: { base: "2D+2", skills: { "repulsorlift operation": "3D+1" } },
+      PERCEPTION: { base: "3D+2", skills: { bargain: "4D+2", investigation: "6D+2" } },
+      STRENGTH: { base: "2D+2", skills: {} },
+      TECHNICAL: { base: "2D", skills: { "computer programming/repair": "4D", "first aid": "2D+2", "repulsorlift repair": "3D" } }
+    },
+    specialAbilities: "",
+    forcePoints: 1,
+    characterPoints: 12,
+    move: 10,
+    equipment: "Datapad, holocam, blaster pistol (4D), falsified ID, 700 credits",
+    capsule: "Voren Na'al is an unimposing young man with the talent of fading into the background — a useful skill for a war correspondent. A former stringer for the Galactic News Service, he joined the Rebel Alliance after witnessing Imperial stormtroopers arrest an entire press pool on Corsin and dismantle its planetary government. Placed in the Alliance Historian Corps, he documents the people, places, and events of the Galactic Civil War. Quick-witted and lucky, he is also a bit of a coward — though he never abandons a job until it's complete (his definition of 'complete' sometimes fluctuates with the danger level).",
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.5"
   }
 ];
