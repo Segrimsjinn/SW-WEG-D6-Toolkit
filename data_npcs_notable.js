@@ -3110,5 +3110,31 @@ const NOTABLE_NPCS = [
     equipment: "Blaster pistol (4D), comlink, sealed flight suit",
     capsule: "Jek 'Belly Runner' Porkins was a free trader from Bestine IV who joined the Rebel Alliance after the Empire forcibly displaced his entire homeworld's population to build a military base. In under 40 hours of combat time he racked up 16 confirmed kills, making him one of the most effective young pilots in the Alliance. A strafing specialist who learned his craft hunting sink-crabs back home, his considerable physical presence earned him his nickname. He flew as Red Six at the Battle of Yavin, where he was killed in action — one of the first recipients of the posthumous Kenobi Medallion, whose likeness now hangs in the pilot's lounge at Tierfon Fighter Base.",
     source: "WEG40124 Galaxy Guide 1: A New Hope p.67"
+  },
+
+  // ── GALAXY GUIDE 1 — Chapter Five: The Heroes of Yavin (p.73+) ──
+  {
+    name: "Luke Skywalker (0 BBY)",
+    species: "Human",
+    system: "Yavin",
+    location: "Yavin — Yavin 4 Base",
+    affiliations: ["Rebel Alliance"],
+    role: "Brash Pilot",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "6D", "brawling parry": "4D", "dodge": "6D", "lightsaber": "4D+1", "melee combat": "4D", "melee parry": "5D" } },
+      KNOWLEDGE: { base: "2D", skills: { "alien species": "3D", "bureaucracy": "2D+2", "streetwise": "2D+1", "survival": "6D", "value": "4D" } },
+      MECHANICAL: { base: "4D", skills: { "astrogation": "5D", "beast riding": "4D+2", "repulsorlift operation": "8D", "repulsorlift operation: airspeeder": "8D", "starfighter piloting": "7D", "starship gunnery": "6D", "starship shields": "5D" } },
+      PERCEPTION: { base: "2D+1", skills: { "bargain": "3D", "command": "5D", "hide": "3D", "search": "3D", "sneak": "3D" } },
+      STRENGTH: { base: "3D", skills: { "brawling": "5D+1", "climbing/jumping": "6D", "lifting": "4D", "stamina": "6D" } },
+      TECHNICAL: { base: "3D", skills: { "computer programming/repair": "5D", "droid programming": "4D", "droid repair": "6D", "first aid": "3D+2", "repulsorlift repair": "7D", "starfighter repair": "5D" } }
+    },
+    specialAbilities: "Force Skills: Control 3D, Sense 2D\n\nForce Powers —\nControl: Accelerate healing, concentration\n\nForce-Sensitive: Luke has only just begun his Force training under Obi-Wan Kenobi on the Falcon — a handful of lightsaber drills with a blast shield over his eyes. His lightsaber skill and Force abilities are nascent, but his instincts are already extraordinary. He trusted the Force over his targeting computer at the Battle of Yavin.",
+    forcePoints: 6,
+    characterPoints: 15,
+    move: 10,
+    equipment: "Lightsaber (5D), blaster pistol (4D), macrobinoculars (+3D to search at ranges greater than 100 meters), comlink",
+    capsule: "Luke Skywalker at the Battle of Yavin is a young man of immense raw potential who has barely scratched the surface of what he will become. Raised on Tatooine as a moisture farmer's nephew, he spent his teens racing T-16 skyhoppers across the Dune Sea and dreaming of the stars. His piloting instincts and repulsorlift skills are already extraordinary. His Force training at this point consists of a few hours on the Falcon under Obi-Wan Kenobi — but when the targeting computer failed him in the Death Star trench, he shut it off and fired by feel alone, destroying the station with a single proton torpedo.",
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.73"
   }
 ];
