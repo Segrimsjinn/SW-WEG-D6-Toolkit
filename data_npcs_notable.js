@@ -2964,5 +2964,31 @@ const NOTABLE_NPCS = [
     equipment: "",
     capsule: "The IT-0 Interrogator is a black, spherical Imperial torture droid — one of the most feared sights in the galaxy. Fitted with hypodermic injectors loaded with chemicals that suppress the will and heighten pain sensitivity, laser scalpels, power shears, and grasping claws, it hovers silently into a prisoner's cell and goes to work without a word. Its intimidation: interrogation skill of 7D+2 reflects decades of refined psychological technique built into its programming. Princess Leia Organa endured an IT-0 session aboard the Death Star.",
     source: "WEG40124 Galaxy Guide 1: A New Hope p.55"
+  },
+
+  // ── GALAXY GUIDE 1 — Chapter Four: Yavin (p.61+) ──
+  {
+    name: "General Jan Dodonna",
+    species: "Human",
+    system: "Yavin",
+    location: "Yavin — Yavin 4 Base",
+    affiliations: ["Rebel Alliance"],
+    role: "Alliance General",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "2D+2", skills: { "blaster": "3D+2", "dodge": "4D+1" } },
+      KNOWLEDGE: { base: "3D", skills: { "alien species": "6D", "bureaucracy": "5D+2", "military history": "7D", "military history: modern fleet battles": "11D", "tactics: capital ships": "8D", "tactics: fleets": "7D", "tactics: sieges": "9D+1", "tactics: starfighters": "6D+1" } },
+      MECHANICAL: { base: "3D+2", skills: { "astrogation": "5D+1", "space transports": "4D+2", "starship gunnery": "4D+2" } },
+      PERCEPTION: { base: "3D+1", skills: { "bargain": "4D+2", "command": "7D" } },
+      STRENGTH: { base: "2D+1", skills: { "stamina": "4D+1" } },
+      TECHNICAL: { base: "3D", skills: { "computer programming/repair": "7D", "droid programming": "6D+1", "droid repair": "4D+2", "security": "6D+2" } }
+    },
+    specialAbilities: "Old Republic Veteran: Dodonna served as one of the finest Star Destroyer captains of the Old Republic era, co-authoring modern interstellar combat doctrine alongside Adar Tallon. He receives +1D to all tactics rolls when commanding a planned engagement (as opposed to reacting to surprise).\n\nFounder's Authority: Dodonna is second in Alliance military authority only to Mon Mothma. Rebel personnel under his command receive +1D to morale checks.",
+    forcePoints: 1,
+    characterPoints: 6,
+    move: 9,
+    equipment: "Blaster pistol (4D), datapad, comlink, holographic map projector and pointer",
+    capsule: "General Jan Dodonna is the military architect of the Rebel Alliance's greatest early victory. A celebrated Old Republic Star Destroyer captain who co-wrote modern fleet doctrine with Adar Tallon, Dodonna came out of retirement when the Empire ordered his execution — stumbling aboard a Rebel shuttle in his nightshirt with blaster burns across it. Reinvigorated, he became the Alliance's most indispensable commander. It was Dodonna who analyzed the Death Star's technical readouts, identified the two-meter exhaust port vulnerability, and devised the trench-run attack plan that destroyed it. His military history: modern fleet battles skill of 11D stands as one of the highest specialist ratings in the Alliance.",
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.61"
   }
 ];
