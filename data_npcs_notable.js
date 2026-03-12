@@ -2308,5 +2308,53 @@ const NOTABLE_NPCS = [
     equipment: "Blaster carbine (5D, ranges 0-25/50/250), gaffi stick (STR+2D), breath mask",
     capsule: "Tusken Raiders — also called Sand People — are the nomadic, territorial warriors of Tatooine's desert wastes. Fiercely hostile to outsiders, they attack moisture farms, ambush travelers, and raid settlements. They ride banthas in single-file to disguise their numbers and are expert desert survivalists. Their gaffi sticks are traditional melee weapons, though they also carry blaster carbines taken from victims.",
     source: "WEG40124 Galaxy Guide 1: A New Hope p.13"
+  },
+  {
+    name: "Owen Lars",
+    species: "Human",
+    system: "Tatooine",
+    location: "Tatooine — Lars Moisture Farm",
+    affiliations: ["Neutral"],
+    role: "Moisture farmer",
+    type: "Supporting Character",
+    stats: {
+      DEXTERITY: { base: "2D", skills: {} },
+      KNOWLEDGE: { base: "2D", skills: { survival: "3D+2" } },
+      MECHANICAL: { base: "2D", skills: { "repulsorlift operation": "2D+1" } },
+      PERCEPTION: { base: "2D", skills: { command: "4D" } },
+      STRENGTH: { base: "2D", skills: { lifting: "2D+1" } },
+      TECHNICAL: { base: "2D", skills: { "droid programming": "2D+2", "droid repair": "3D", "farm equipment repair": "4D" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 9,
+    equipment: "Blaster carbine (5D), hydrospanner, macrobinoculars, farm tools",
+    capsule: "Owen Lars is Luke Skywalker's uncle and guardian, a stubborn, hard-working moisture farmer on Tatooine. He keeps a tight grip on his homestead and on Luke, reluctant to let the boy follow dreams beyond the farm. Practical and cautious, he distrusts outsiders and wants nothing to do with the wider galactic conflict — a stance that ultimately costs him everything.",
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.15"
+  },
+  {
+    name: "Beru Lars",
+    species: "Human",
+    system: "Tatooine",
+    location: "Tatooine — Lars Moisture Farm",
+    affiliations: ["Neutral"],
+    role: "Moisture farmer / homesteader",
+    type: "Supporting Character",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { blaster: "3D" } },
+      KNOWLEDGE: { base: "2D", skills: { survival: "5D" } },
+      MECHANICAL: { base: "2D", skills: { "repulsorlift operation": "3D+1" } },
+      PERCEPTION: { base: "2D", skills: { bargain: "4D" } },
+      STRENGTH: { base: "2D", skills: {} },
+      TECHNICAL: { base: "2D", skills: { "first aid": "3D+2", "moisture farm technology": "5D+2" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 9,
+    equipment: "Farm equipment, household appliances",
+    capsule: "Beru Lars is Luke Skywalker's aunt and Owen's wife. Warm and perceptive, she sees Luke's restless nature more clearly than Owen does and quietly supports his dreams. A capable homesteader with deep knowledge of moisture farming technology, she holds the Lars household together on their isolated desert farm.",
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.15"
   }
 ];
