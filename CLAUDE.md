@@ -81,3 +81,12 @@ The entire app. Contains all CSS (minified, inline `<style>`), all HTML tab pane
 - Planet `aliases` array enables alternate-name lookups without duplicating entries.
 - When adding a new starport/station, add it to: `data_systems.js` (for galaxy map search), `data_planets.js` (for detail card), `data_npcs_notable.js` (for any named NPCs), and `data_creatures.js` if the location has notable creatures.
 - **Multi-era NPCs**: Characters who appear across multiple sourcebooks with improved stats get one entry per era. Use BBY/ABY in the `name` field: `"Luke Skywalker (0 BBY)"`, `"Luke Skywalker (3 ABY)"`, etc. Searching by first name returns all versions. The `source` field confirms which book each stat block came from.
+- **NPC Affiliations — 7 canonical primary values** (always the first element in the array):
+  - `"Galactic Empire"` — all Imperial branches and agents (use secondary tag for branch: `"Stormtrooper Corps"`, `"Imperial Navy"`, `"Imperial Army"`, `"Imperial Customs"`, etc.)
+  - `"Rebel Alliance"` — Rebellion era fighters, operatives, supporters
+  - `"New Republic"` — post-Endor Republic characters
+  - `"Old Republic"` — prequel/clone wars era (senators, Jedi, clone troopers); replaces "Galactic Republic" and "Grand Army of the Republic" as primary
+  - `"The Fringe"` — above-board independents: traders, pilots, smugglers, mercenaries, bounty hunters
+  - `"Criminal Underworld"` — crime lords, pirates, assassins, gangs, hired killers
+  - `"Neutral"` — civilians, academics, journalists, truly neutral parties
+  - Specific faction/org tags (e.g. `"Void Demons"`, `"Omze's Incredible Traveling Starport"`) may be kept as a **second** array element for search value. Location-only tags belong in the `location` field, not `affiliations`.
