@@ -3316,7 +3316,7 @@ const NOTABLE_NPCS = [
     role: "Farmer / Sharpshooter",
     type: "Named NPC",
     stats: {
-      DEXTERITY: { base: "2D", skills: { "blaster": "6D+2", "dodge": "3D+2" } },
+      DEXTERITY: { base: "2D", skills: { "blaster": "5D", "dodge": "3D+2" } },
       KNOWLEDGE: { base: "1D", skills: {} },
       MECHANICAL: { base: "2D", skills: {} },
       PERCEPTION: { base: "2D", skills: {} },
@@ -3328,7 +3328,7 @@ const NOTABLE_NPCS = [
     characterPoints: 0,
     move: 10,
     equipment: "Blaster rifle (5D)",
-    capsule: "Ran is a rather rotund farmer of 55 with graying hair and big bushy eyebrows. He is fond of cracking jokes and lovely ladies — and is also an expert marksman. Note: blaster skill reconstructed from heavily garbled OCR; verify against physical book.",
+    capsule: "Ran is a rather rotund farmer of 55 with graying hair and big bushy eyebrows. He is fond of cracking jokes and lovely ladies — and is also an expert marksman.",
     source: "WEG40124 Galaxy Guide 1: A New Hope (Wayfar scenario)"
   },
   {
