@@ -2452,5 +2452,29 @@ const NOTABLE_NPCS = [
     equipment: "Built-in arc welder (3D, 0.3m range), fine manipulation arms, video display screen (cost new: 1,450 credits)",
     capsule: "R5-D4 is a battered Industrial Automaton R5 astromech droid sold by Jawas to Owen Lars alongside R2-D2. His motivator blew out almost immediately — a malfunction that, as it turned out, was anything but accidental. R5 is representative of the budget-tier R5 line: capable astromechs with solid technical skills but prone to reliability issues. Serves as a template for any R5-series droid encountered in the field.",
     source: "WEG40124 Galaxy Guide 1: A New Hope p.24"
+  },
+  {
+    name: "Power Droid (Typical)",
+    species: "Droid (EG-6 Power Droid)",
+    system: "Generic & Varies",
+    location: "Varies",
+    affiliations: ["Neutral"],
+    role: "Mobile power source",
+    type: "Generic",
+    stats: {
+      DEXTERITY: { base: "1D", skills: { dodge: "1D+2" } },
+      KNOWLEDGE: { base: "2D", skills: {} },
+      MECHANICAL: { base: "1D", skills: { "energize power cells": "5D+2" } },
+      PERCEPTION: { base: "1D", skills: { bargain: "2D" } },
+      STRENGTH: { base: "2D", skills: {} },
+      TECHNICAL: { base: "3D", skills: { "systems diagnosis": "5D" } }
+    },
+    specialAbilities: "Video sensor. Bipedal locomotion. Ultra-fine manipulation arm (+1D to all Technical skills). Cybot acoustic signaller (cannot speak Basic or other common languages — communicates in binary only).",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 2,
+    equipment: "Built-in power cell energizer, ultra-fine manipulation arm (cost new: 1,750 credits)",
+    capsule: "The Veril Line Systems EG-6 Power Droid — commonly called a 'gonk' droid for its distinctive vocalizations — is a ubiquitous mobile power source found throughout the galaxy. Slow-moving and simple, they waddle between equipment needing a charge and are ignored by almost everyone. Despite their limited mobility and communication ability, their diagnostic and energizing skills make them invaluable in remote installations, starship bays, and battlefields alike.",
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.25"
   }
 ];
