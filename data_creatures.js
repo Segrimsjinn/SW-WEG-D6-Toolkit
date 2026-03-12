@@ -417,7 +417,7 @@ const CREATURES_DATA = [
   "size": "800m to 10km",
   "orneriness": "",
   "special": "Electrolocomotion. Electrolocation: 2km scan. Walker Scale.",
-  "source": "Galaxy Guide 2 (pages 53-54)"
+  "source": "WEG40119 Galaxy Guide 2: Yavin and Bespin p.53–54"
  },
  {
   "name": "Bergruutfa",
@@ -738,8 +738,8 @@ const CREATURES_DATA = [
   "move": "8",
   "size": "3 meters long",
   "orneriness": "",
-  "special": "Heat Radiation: 4D damage to anyone approaching.",
-  "source": "Galaxy Guide 2 (pages 28-29)"
+  "special": "Heat Radiation: Absorbs solar energy and radiates waves of heat at will — 4D damage to anyone approaching. Multiple burning snakes can combine attacks. Habitat: sunny desert flats (does not seek shade).",
+  "source": "WEG40119 Galaxy Guide 2: Yavin and Bespin p.28–29"
  },
  {
   "name": "Butcherbug",
@@ -3122,6 +3122,20 @@ const CREATURES_DATA = [
   "source": "Truce at Bakura Sourcebook (pages 104-105)"
  },
  {
+  "name": "Herbivore Burrower",
+  "type": "Herbivore burrower",
+  "planet": "Yavin 8",
+  "habitat": "Tundra",
+  "dex": "2D",
+  "per": "2D",
+  "str": "1D",
+  "move": "12",
+  "size": "0.5m long",
+  "orneriness": "",
+  "special": "Teeth: STR+1. Slipperiness: +1D to dodge. Shy — avoids confrontation but will scavenge food stores.",
+  "source": "WEG40119 Galaxy Guide 2: Yavin and Bespin p.22"
+ },
+ {
   "name": "Loper",
   "type": "Carnivorous burrower",
   "planet": "Yavin 8",
@@ -3134,6 +3148,48 @@ const CREATURES_DATA = [
   "orneriness": "",
   "special": "Teeth: STR+1. Claws: STR+1. Barbed Tail: STR+1D.",
   "source": "Galaxy Guide 2 (page 23)"
+ },
+ {
+  "name": "Moss-hopper",
+  "type": "Carnivorous burrower",
+  "planet": "Yavin 8",
+  "habitat": "Tundra",
+  "dex": "2D",
+  "per": "3D",
+  "str": "1D",
+  "move": "9",
+  "size": "0.3m long",
+  "orneriness": "",
+  "special": "Venomous Teeth: STR+1 damage with weak venom injected via hollow incisors (Moderate stamina or mild illness). Search 4D. Sneak 5D. Fearlessly attacks creatures many times its size.",
+  "source": "WEG40119 Galaxy Guide 2: Yavin and Bespin p.23"
+ },
+ {
+  "name": "Raith",
+  "type": "Carnivorous rodent",
+  "planet": "Yavin 8",
+  "habitat": "Mountain / Equatorial",
+  "dex": "2D",
+  "per": "2D",
+  "str": "1D",
+  "move": "8",
+  "size": "0.5–0.8m long (excluding tail)",
+  "orneriness": "",
+  "special": "Teeth: STR+1D. Hide 4D, Search 5D. Large black rodent with thick hairless tail; eats carrion, small animals, and eggs including Melodie eggs. Very common in equatorial region.",
+  "source": "WEG40119 Galaxy Guide 2: Yavin and Bespin p.23"
+ },
+ {
+  "name": "Ropedancer",
+  "type": "Tundra serpent",
+  "planet": "Yavin 8",
+  "habitat": "Tundra marshes and ponds",
+  "dex": "2D",
+  "per": "3D",
+  "str": "7D",
+  "move": "12",
+  "size": "12–18m long",
+  "orneriness": "",
+  "special": "Fangs: STR+2 damage. Plated skin: +1D STR for defense. Search 6D+1, Sneak 4D. Swallows prey whole; body expands to twice normal diameter. Migrates south ahead of winter freeze.",
+  "source": "WEG40119 Galaxy Guide 2: Yavin and Bespin p.24"
  },
  {
   "name": "Lrashtash",
@@ -5152,6 +5208,20 @@ const CREATURES_DATA = [
   "source": ""
  },
  {
+  "name": "Tripion",
+  "type": "Desert crustacean",
+  "planet": "Yavin 13",
+  "habitat": "Desert/Rocky plains",
+  "dex": "3D+2",
+  "per": "1D+2",
+  "str": "1D–5D",
+  "move": "12",
+  "size": "1–18 meters long",
+  "orneriness": "8",
+  "special": "Pincers: seize and hold prey — target must make Moderate DEX roll or suffer -2D DEX; breaking free requires opposed STR roll beating tripion by 6+. Three venomous tails: all three can strike in the same turn; smaller species 1D–2D stun, larger species 3D–4D+1 regular damage. Over 600 species logged; nocturnal/crepuscular — shelters under stones by day. Will not attack character-sized prey unless provoked.",
+  "source": "WEG40119 Galaxy Guide 2: Yavin and Bespin p.29"
+ },
+ {
   "name": "Tunnel Snakes",
   "type": "",
   "planet": "",
@@ -5178,6 +5248,20 @@ const CREATURES_DATA = [
   "orneriness": "",
   "special": "Claws: STR+1D. Tusks: STR+2D. Keen Senses: +1D search. Stealthy: +1D+2 sneak.",
   "source": "Secrets of Naboo (page 62)"
+ },
+ {
+  "name": "Twilight Lizard",
+  "type": "Small lizard",
+  "planet": "Yavin 13",
+  "habitat": "Desert/Rocky plains",
+  "dex": "2D",
+  "per": "1D+1",
+  "str": "1D",
+  "move": "8",
+  "size": "0.6–1 meter long",
+  "orneriness": "2",
+  "special": "Teeth: STR+2. Claws: STR+2. Running 4D, Sneak 3D+1. Crepuscular — active only during twilight periods. Retains nearly its entire body weight as liquid; an excellent source of water and nourishment. Valuable trade commodity with the Slith (though this is not common knowledge).",
+  "source": "WEG40119 Galaxy Guide 2: Yavin and Bespin p.28"
  },
  {
   "name": "Tynnan Furbog",
@@ -5264,6 +5348,20 @@ const CREATURES_DATA = [
   "source": ""
  },
  {
+  "name": "Ursod",
+  "type": "Ursoid carnivore",
+  "planet": "Yavin 8",
+  "habitat": "Tundra / Ice cap",
+  "dex": "4D",
+  "per": "3D",
+  "str": "5D",
+  "move": "10",
+  "size": "3m tall",
+  "orneriness": "",
+  "special": "Brawling 6D. Teeth: STR+1D. Claws: STR+1D. Thick hide: +2D STR for defense. Camouflage: chameleon-like fur shifts from white to mottled colors; +1D to sneak in snow or lichen terrain. Search 4D+1, Sneak 5D. Hunts by following songbuk herds on seasonal migrations.",
+  "source": "WEG40119 Galaxy Guide 2: Yavin and Bespin p.24"
+ },
+ {
   "name": "Varactyl",
   "type": "Reptilian mount",
   "planet": "Utapau",
@@ -5304,6 +5402,20 @@ const CREATURES_DATA = [
   "orneriness": "",
   "special": "Talons: STR+2D. Electric Shock: 4D stun on contact. Speeder Scale.",
   "source": "Galaxy Guide 3 (page 67)"
+ },
+ {
+  "name": "Velker (large)",
+  "type": "Flying predator",
+  "planet": "Bespin",
+  "habitat": "Atmosphere",
+  "dex": "2D",
+  "per": "2D",
+  "str": "4D",
+  "move": "140 (400 km/h flying)",
+  "size": "200–350 meters wingspan",
+  "orneriness": "15",
+  "special": "Energy Bolt: ionized electrical bolt — 10D stun damage; used to stun prey before landing. Teeth: STR+1D. Sneak 4D, Search 4D. Walker Scale. Packs of several dozen; electrolocation range 10km (100km in large groups). Attacks ships, cloud cars, and Cloud City itself. Feasts on beldons — lands along beldon surface, attaches with meter-long claws, feeds until beldon sinks to lethal altitude.",
+  "source": "WEG40119 Galaxy Guide 2: Yavin and Bespin p.54–55"
  },
  {
   "name": "Vine Snake",

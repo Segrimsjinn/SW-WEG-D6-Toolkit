@@ -209,6 +209,25 @@ const VEHICLES_DATA = [
   "source": "Rebellion Era Sourcebook (page 147)"
  },
  {
+  "name": "Para-Wing Glider (ShadoWing-4)",
+  "category": "Gliders",
+  "scale": "Speeder",
+  "length": "4m",
+  "skill": "Repulsorlift operation: glider",
+  "crew": "1",
+  "passengers": "",
+  "cargo": "",
+  "cover": "1/4",
+  "cost": "15,000 (4,000 used)",
+  "maneuverability": "2D",
+  "move": "70; 200 kmh",
+  "body": "+2",
+  "shields": "",
+  "weapons": "",
+  "game_notes": "Tourist models retrofitted with radar beacon, comp-controlled navigation, and emergency thrusters (reduces speed and maneuverability vs. bare military version). Geomorphous wing: pilot shifts weight to change shape/direction. Launched from repulsorlift platforms ~500m from Cloud City. If pilot strays too far, cloud car retrieval is dispatched. Bare ShadoWing used for covert military missions: near-silent, extremely low sensor profile.",
+  "source": "WEG40119 Galaxy Guide 2: Yavin and Bespin p.61"
+ },
+ {
   "name": "Paraglider",
   "category": "Gliders",
   "scale": "Speeder",
@@ -2069,5 +2088,24 @@ const VEHICLES_DATA = [
   "weapons": "",
   "game_notes": "Altitude range: water level to 1,000m.",
   "source": ""
+ },
+ {
+  "name": "OmoTact Roahks Skyship (7m)",
+  "category": "Skyships",
+  "scale": "Walker",
+  "length": "7–15m",
+  "skill": "Repulsorlift operation: skyship",
+  "crew": "6 (skeleton: 2/+5)",
+  "passengers": "8",
+  "cargo": "250kg",
+  "cover": "Full",
+  "cost": "35,000 (15,000 used)",
+  "maneuverability": "1D",
+  "move": "105; 300 kmh",
+  "body": "1D",
+  "shields": "",
+  "weapons": "",
+  "game_notes": "Wind-propelled; masts extend up, down, and sideways. Side sails for altitude/glide; top/bottom sails for direction and vertical stabilization. No water resistance — can reach 300 kph in good winds. Equipped with Ponrez/Arc repulsorlift backup engine (keeps ship afloat/stationary only; cannot provide meaningful propulsion). If becalmed, signals for tow. Crew skill: Repulsorlift operation: skyship 2D. Rare outside Bespin; primarily a Cloud City tourist attraction. Captains are typically obsessive enthusiasts who would sail empty rather than not at all.",
+  "source": "WEG40119 Galaxy Guide 2: Yavin and Bespin p.61"
  }
 ];
