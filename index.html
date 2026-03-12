@@ -3210,6 +3210,37 @@ function showNotableNpcByName(encodedName) {
   if (n) showNotableNpcDetail(n);
 }
 
+function lookupNotableNpcFromPlanet(name) {
+  switchTab('npc');
+  if (!notableNpcPanelOpen) toggleNotableNpcPanel();
+  const searchEl = document.getElementById('notableNpcSearch');
+  if (!searchEl) return;
+  searchEl.value = name;
+  filterNotableNpcs();
+  setTimeout(() => searchEl.scrollIntoView({ behavior: 'smooth', block: 'center' }), 120);
+}
+
+function linkifyNpcNames(text) {
+  if (!text || typeof NOTABLE_NPCS === 'undefined' || !NOTABLE_NPCS.length) return text;
+  // Build deduplicated base names (strip era suffix like "(0 BBY)")
+  const seen = new Set();
+  const names = [];
+  NOTABLE_NPCS.forEach(n => {
+    const base = n.name.replace(/\s*\([^)]*\)\s*$/, '').trim();
+    if (!seen.has(base) && base.length >= 4) { seen.add(base); names.push(base); }
+  });
+  // Sort longest first to prevent partial substitution
+  names.sort((a, b) => b.length - a.length);
+  let result = text;
+  names.forEach(name => {
+    const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const re = new RegExp('\\b' + escaped + '\\b', 'g');
+    const enc = encodeURIComponent(name);
+    result = result.replace(re, `<span style="color:var(--cyan);cursor:pointer;border-bottom:1px dotted var(--cyan)" onclick="lookupNotableNpcFromPlanet(decodeURIComponent('${enc}'))">$&</span>`);
+  });
+  return result;
+}
+
 function showNotableNpcDetail(n) {
   const listEl = document.getElementById('notableNpcResults');
   const detailEl = document.getElementById('notableNpcDetail');
@@ -4163,11 +4194,11 @@ function showPlanetDetail(name) {
     </div>
     ${p.locations ? `<div style="margin-bottom:12px">
       <div style="color:var(--gold);font-size:12px;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">Key Locations</div>
-      <div style="color:var(--text-secondary);line-height:1.7">${p.locations}</div>
+      <div style="color:var(--text-secondary);line-height:1.7">${linkifyNpcNames(p.locations)}</div>
     </div>` : ''}
     ${p.ofNote ? `<div style="margin-bottom:12px">
       <div style="color:var(--gold);font-size:12px;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">Of Note</div>
-      <div style="color:var(--text-secondary);line-height:1.7">${p.ofNote}</div>
+      <div style="color:var(--text-secondary);line-height:1.7">${linkifyNpcNames(p.ofNote)}</div>
     </div>` : ''}
     <div style="color:var(--text-dim);font-size:11px;font-style:italic;margin-top:8px">Source: ${p.source}</div>
   `;
