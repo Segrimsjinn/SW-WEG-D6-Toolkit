@@ -2284,5 +2284,29 @@ const NOTABLE_NPCS = [
     equipment: "Jawa ionization gun (+1D to blaster, 3D ionization damage, ranges 3-4/8/12), tool kit",
     capsule: "Jawas are small, robed scavengers native to Tatooine who travel the desert in massive sandcrawlers, collecting and refurbishing discarded technology. They trade droids and salvaged equipment to moisture farmers and settlers. Shrewd bargainers who exploit their customers' limited options, Jawas are nonetheless an essential part of Tatooine's informal economy.",
     source: "WEG40124 Galaxy Guide 1: A New Hope p.12"
+  },
+  {
+    name: "Tusken Raider (Typical)",
+    species: "Tusken Raider",
+    system: "Tatooine",
+    location: "Tatooine — Desert / Dune Sea",
+    affiliations: ["Neutral"],
+    role: "Raider / warrior",
+    type: "Generic",
+    stats: {
+      DEXTERITY: { base: "2D+1", skills: { "blaster: blaster carbine": "3D+1", "brawling parry": "4D+1", dodge: "4D+1", "melee combat: gaffi stick": "4D" } },
+      KNOWLEDGE: { base: "2D", skills: { survival: "4D", "survival: desert": "5D+2" } },
+      MECHANICAL: { base: "1D", skills: { "beast riding": "3D", "beast riding: bantha": "4D+2" } },
+      PERCEPTION: { base: "2D", skills: { hide: "2D+1", search: "2D+2", sneak: "3D+1" } },
+      STRENGTH: { base: "3D+2", skills: { brawling: "4D+2", lifting: "4D+2", stamina: "4D" } },
+      TECHNICAL: { base: "1D", skills: {} }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 10,
+    equipment: "Blaster carbine (5D, ranges 0-25/50/250), gaffi stick (STR+2D), breath mask",
+    capsule: "Tusken Raiders — also called Sand People — are the nomadic, territorial warriors of Tatooine's desert wastes. Fiercely hostile to outsiders, they attack moisture farms, ambush travelers, and raid settlements. They ride banthas in single-file to disguise their numbers and are expert desert survivalists. Their gaffi sticks are traditional melee weapons, though they also carry blaster carbines taken from victims.",
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.13"
   }
 ];
