@@ -3160,5 +3160,29 @@ const NOTABLE_NPCS = [
     equipment: "Hold-out blaster (3D), comlink, technical readouts of the Death Star",
     capsule: "Princess Leia Organa of Alderaan is one of the founding figures of the Rebel Alliance — a senator, spy, and soldier who carried the Death Star plans inside R2-D2 and endured torture at Vader's hands rather than betray the Rebellion. Her command and persuasion: debate stats at 8D and 7D+2 reflect a political mind shaped by years in the Imperial Senate. With Alderaan destroyed by Tarkin's order, she arrived at Yavin having lost her homeworld, her adoptive father, and her cover — and immediately set to work coordinating the base's defense. She presented the medals at the ceremony following the Battle of Yavin.",
     source: "WEG40124 Galaxy Guide 1: A New Hope p.74"
+  },
+  {
+    name: "Han Solo (0 BBY)",
+    species: "Human (Corellian)",
+    system: "Yavin",
+    location: "Yavin — Yavin 4 Base",
+    affiliations: ["The Fringe"],
+    role: "Smuggler",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D+1", skills: { "blaster": "6D+2", "blaster: heavy blaster pistol": "9D+1", "blaster: blaster rifle": "5D+1", "blaster artillery": "6D+1", "brawling parry": "6D", "dodge": "8D", "grenade": "5D+1", "melee combat": "6D+1", "melee parry": "5D", "missile weapons": "4D", "pick pocket": "4D+1", "running": "3D+2", "vehicle blasters": "6D+1" } },
+      KNOWLEDGE: { base: "2D", skills: { "alien species": "6D", "bureaucracy": "5D", "business": "4D", "business: smugglers": "5D", "cultures": "4D", "intimidation": "5D+1", "languages": "5D", "law enforcement": "5D", "planetary systems": "7D", "streetwise": "7D", "streetwise: Jabba the Hutt's organization": "8D+2", "survival": "6D", "value": "5D", "willpower": "3D" } },
+      MECHANICAL: { base: "3D+2", skills: { "astrogation": "8D", "beast riding": "5D+2", "capital ship gunnery": "5D+1", "capital ship piloting": "7D", "capital ship shields": "4D+1", "communications": "4D", "ground vehicle operation": "4D+2", "repulsorlift operation": "7D", "sensors": "4D+2", "space transports": "6D+2", "space transports: YT-1300 transports": "10D", "starfighter piloting": "5D+1", "starship gunnery": "9D", "starship shields": "6D+2", "swoop operation": "6D+2" } },
+      PERCEPTION: { base: "3D", skills: { "bargain": "8D", "command": "6D", "con": "8D", "forgery": "5D", "forgery: ship IDs": "7D", "gambling": "8D", "hide": "7D+1", "persuasion": "5D", "search": "5D+2", "sneak": "4D+1" } },
+      STRENGTH: { base: "3D", skills: { "brawling": "7D", "climbing/jumping": "6D", "lifting": "5D+1", "stamina": "7D", "swimming": "4D+2" } },
+      TECHNICAL: { base: "2D+2", skills: { "blaster repair": "4D", "computer programming/repair": "7D", "demolitions": "4D+2", "droid programming": "5D", "droid repair": "5D", "ground vehicle repair": "3D", "repulsorlift repair": "7D", "security": "7D", "space transports repair": "5D", "space transports repair: YT-1300 transports": "9D", "starship weapons repair": "4D" } }
+    },
+    specialAbilities: "Corellian Luck: Han's uncanny survival instinct borders on preternatural. Once per session the GM may allow Han to reroll one disastrous result — a tradition as old as the Kessel Run.\n\nYT-1300 Mastery: Han knows the Millennium Falcon better than anyone alive. His space transports: YT-1300 10D and repair specialization 9D reflect decades of personal modification and intimate familiarity with every jury-rigged system aboard.",
+    forcePoints: 2,
+    characterPoints: 22,
+    move: 10,
+    equipment: "Heavy blaster pistol (5D), comlink",
+    capsule: "Han Solo is a Corellian smuggler and former Imperial Navy washout who has made a career of staying one step ahead of Jabba the Hutt's enforcers, Imperial customs, and his own better judgment. His blaster: heavy blaster pistol at 9D+1, starship gunnery at 9D, and dodge at 8D make him one of the most dangerous individuals in a fight in the galaxy. He arrived at Yavin ostensibly to collect his reward for rescuing Leia — then turned the Falcon around and blasted Vader out of the trench run, giving Luke the clear shot that destroyed the Death Star. He received a medal and left without technically joining anything.",
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.75"
   }
 ];
