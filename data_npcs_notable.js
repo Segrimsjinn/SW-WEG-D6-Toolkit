@@ -7,7 +7,7 @@ const NOTABLE_NPCS = [
     species: "Sullustan",
     system: "Gelgelar",
     location: "Gelgelar Free Port",
-    affiliations: ["Eels Family", "Gelgelar Free Port Administration"],
+    affiliations: ["The Fringe", "Eels Family"],
     role: "Unofficial mayor & entrepreneur",
     type: "Sullustan Entrepreneur",
     stats: {
@@ -31,7 +31,7 @@ const NOTABLE_NPCS = [
     species: "Sullustan",
     system: "Gelgelar",
     location: "Gelgelar Free Port — Nofre Repair Bay",
-    affiliations: ["Eels Family", "Nofre Repair Bay"],
+    affiliations: ["The Fringe", "Eels Family"],
     role: "Master mechanic & repair bay operator",
     type: "Sullustan Mechanic",
     stats: {
@@ -55,7 +55,7 @@ const NOTABLE_NPCS = [
     species: "Sullustan",
     system: "Gelgelar",
     location: "Gelgelar Free Port — Gelgelar Outfitters",
-    affiliations: ["Eels Family", "Gelgelar Outfitters"],
+    affiliations: ["The Fringe", "Eels Family"],
     role: "General store owner & cargo buyer",
     type: "Sullustan Entrepreneur",
     stats: {
@@ -79,7 +79,7 @@ const NOTABLE_NPCS = [
     species: "Rodian",
     system: "Gelgelar",
     location: "Gelgelar Free Port — Fenn's Landing",
-    affiliations: ["Fenn's Landing", "Independent Criminal"],
+    affiliations: ["Criminal Underworld"],
     role: "Criminal & rival docking platform operator",
     type: "Rodian Criminal",
     stats: {
@@ -103,7 +103,7 @@ const NOTABLE_NPCS = [
     species: "Ithorian",
     system: "Gelgelar",
     location: "Gelgelar Free Port — Slippery Gelgelar Eel cantina",
-    affiliations: ["Slippery Gelgelar Eel", "Independent"],
+    affiliations: ["The Fringe"],
     role: "Bartender & information broker",
     type: "Ithorian Bartender",
     stats: {
@@ -127,7 +127,7 @@ const NOTABLE_NPCS = [
     species: "Unknown",
     system: "Gelgelar",
     location: "Gelgelar Free Port — Farmers' Landing Warehouses",
-    affiliations: ["Farmers' Landing", "Independent"],
+    affiliations: ["The Fringe"],
     role: "Vohis mold warehouse manager",
     type: "Warehouse Manager",
     stats: {
@@ -151,7 +151,7 @@ const NOTABLE_NPCS = [
     species: "Unknown",
     system: "Gelgelar",
     location: "Gelgelar Free Port — Shvash Gas Cooperative",
-    affiliations: ["Shvash Gas Cooperative", "Independent"],
+    affiliations: ["The Fringe"],
     role: "Shvash gas dealer",
     type: "Gas Dealer",
     stats: {
@@ -175,7 +175,7 @@ const NOTABLE_NPCS = [
     species: "Human",
     system: "Gelgelar",
     location: "Gelgelar Free Port — Fenn's Landing",
-    affiliations: ["Fenn's Landing"],
+    affiliations: ["The Fringe"],
     role: "Mechanic (burned out)",
     type: "Human Mechanic",
     stats: {
@@ -199,7 +199,7 @@ const NOTABLE_NPCS = [
     species: "Suiraon",
     system: "Gelgelar",
     location: "Gelgelar Free Port — Red Threxa's Boarding House",
-    affiliations: ["Red Threxa's Boarding House", "Independent"],
+    affiliations: ["The Fringe"],
     role: "Boarding house owner",
     type: "Suiraon Innkeeper",
     stats: {
@@ -223,7 +223,7 @@ const NOTABLE_NPCS = [
     species: "Human",
     system: "Gelgelar",
     location: "Gelgelar — Shrine of Kooroo",
-    affiliations: ["Fellowship of Kooroo", "Force-Sensitive"],
+    affiliations: ["Neutral"],
     role: "Mystic & shrine keeper (former Jedi apprentice)",
     type: "Mystic",
     stats: {
@@ -249,7 +249,7 @@ const NOTABLE_NPCS = [
     species: "Various aliens",
     system: "Gelgelar",
     location: "Gelgelar Free Port — Fenn's Landing",
-    affiliations: ["Fenn's Landing"],
+    affiliations: ["Criminal Underworld"],
     role: "Platform guards & petty thieves",
     type: "Generic — Thugs",
     stats: {
@@ -273,7 +273,7 @@ const NOTABLE_NPCS = [
     species: "Sullustan",
     system: "Gelgelar",
     location: "Gelgelar Free Port — Nofre Repair Bay",
-    affiliations: ["Eels Family", "Nofre Repair Bay"],
+    affiliations: ["The Fringe", "Eels Family"],
     role: "Starship repair technicians",
     type: "Generic — Mechanics",
     stats: {
@@ -297,7 +297,7 @@ const NOTABLE_NPCS = [
     species: "Sullustan",
     system: "Gelgelar",
     location: "Gelgelar Free Port — Gelgelar Outfitters",
-    affiliations: ["Eels Family", "Gelgelar Outfitters"],
+    affiliations: ["The Fringe", "Eels Family"],
     role: "Retail clerks",
     type: "Generic — Clerks",
     stats: {
@@ -323,7 +323,7 @@ const NOTABLE_NPCS = [
     species: "Human",
     system: "Kuat",
     location: "Kuat Passenger Port",
-    affiliations: ["Kuat Starport Security", "Imperial Administration"],
+    affiliations: ["Galactic Empire"],
     role: "Security officer (sympathetic to free-traders)",
     type: "Security Officer",
     stats: {
@@ -347,7 +347,7 @@ const NOTABLE_NPCS = [
     species: "Unknown",
     system: "Kuat",
     location: "Kuat Passenger Port",
-    affiliations: ["Independent", "Information Broker"],
+    affiliations: ["The Fringe"],
     role: "Pack tracker & information broker",
     type: "Information Broker",
     stats: {
@@ -371,7 +371,7 @@ const NOTABLE_NPCS = [
     species: "Duros",
     system: "Kuat",
     location: "Kuat Passenger Port — Kuat Central Plaza",
-    affiliations: ["Independent Pilot"],
+    affiliations: ["The Fringe"],
     role: "Transport pilot & KDY stardock informant",
     type: "Transport Pilot",
     stats: {
@@ -395,7 +395,7 @@ const NOTABLE_NPCS = [
     species: "Gruvian",
     system: "Kuat",
     location: "Kuat Passenger Port",
-    affiliations: ["Gruvian Tourists"],
+    affiliations: ["Neutral"],
     role: "Tourist (useful for obtaining Core transit permits)",
     type: "Gruvian Tourist",
     stats: {
@@ -419,7 +419,7 @@ const NOTABLE_NPCS = [
     species: "Gruvian",
     system: "Kuat",
     location: "Kuat Passenger Port",
-    affiliations: ["Gruvian Tourists"],
+    affiliations: ["Neutral"],
     role: "Tourist (useful for obtaining Core transit permits)",
     type: "Gruvian Tourist",
     stats: {
@@ -445,7 +445,7 @@ const NOTABLE_NPCS = [
     species: "Human",
     system: "Generic & Varies",
     location: "Varies (based on Brentaal, frequents Gelgelar Free Port and others)",
-    affiliations: ["Independent Smuggler"],
+    affiliations: ["The Fringe"],
     role: "Smuggler & entrepreneur",
     type: "Smuggler",
     stats: {
@@ -471,7 +471,7 @@ const NOTABLE_NPCS = [
     species: "Human",
     system: "Whendyll",
     location: "Port Haven",
-    affiliations: ["Port Haven Administration", "Independent"],
+    affiliations: ["The Fringe"],
     role: "Hunter & impromptu governor of Port Haven",
     type: "Hunter",
     stats: {
@@ -495,7 +495,7 @@ const NOTABLE_NPCS = [
     species: "Mon Calamari",
     system: "Whendyll",
     location: "Port Haven — Haven's Water tavern",
-    affiliations: ["Haven's Water", "Independent", "Mon Calamari Refugee"],
+    affiliations: ["Neutral"],
     role: "Tavern host & bartender",
     type: "Mon Calamari Bartender",
     stats: {
@@ -521,7 +521,7 @@ const NOTABLE_NPCS = [
     species: "Sludir",
     system: "Generic & Varies",
     location: "Omze's Incredible Traveling Starport (bridge/command area)",
-    affiliations: ["Omze's Incredible Traveling Starport", "Former Gladiator"],
+    affiliations: ["The Fringe", "Omze's Incredible Traveling Starport"],
     role: "Owner & operator of the Incredible Traveling Starport",
     type: "Sludir Entrepreneur",
     stats: {
@@ -546,7 +546,7 @@ const NOTABLE_NPCS = [
     species: "Rodian",
     system: "Generic & Varies",
     location: "Omze's Incredible Traveling Starport (command center/corridors)",
-    affiliations: ["Omze's Incredible Traveling Starport", "Rodian Mercenary Company"],
+    affiliations: ["The Fringe", "Omze's Incredible Traveling Starport"],
     role: "Mercenary captain & head of security",
     type: "Rodian Mercenary Captain",
     stats: {
@@ -571,7 +571,7 @@ const NOTABLE_NPCS = [
     species: "Jillsarian",
     system: "Generic & Varies",
     location: "Omze's Incredible Traveling Starport — Repair Bay",
-    affiliations: ["Omze's Incredible Traveling Starport", "Repair Bay"],
+    affiliations: ["The Fringe", "Omze's Incredible Traveling Starport"],
     role: "Chief technician & repair bay supervisor",
     type: "Jillsarian Technician",
     stats: {
@@ -595,7 +595,7 @@ const NOTABLE_NPCS = [
     species: "Twi'lek",
     system: "Generic & Varies",
     location: "Omze's Incredible Traveling Starport — Con'varra's Datawork Central",
-    affiliations: ["Omze's Incredible Traveling Starport", "Datawork Central"],
+    affiliations: ["Criminal Underworld", "Omze's Incredible Traveling Starport"],
     role: "Master forger & document specialist",
     type: "Twi'lek Forger",
     stats: {
@@ -620,7 +620,7 @@ const NOTABLE_NPCS = [
     species: "Sullustan",
     system: "Generic & Varies",
     location: "Omze's Incredible Traveling Starport — Futor's Network",
-    affiliations: ["Omze's Incredible Traveling Starport", "Futor's Network", "Information Broker"],
+    affiliations: ["Criminal Underworld", "Omze's Incredible Traveling Starport"],
     role: "Infochant & slicer",
     type: "Sullustan Infochant",
     stats: {
@@ -645,7 +645,7 @@ const NOTABLE_NPCS = [
     species: "Wookiee",
     system: "Generic & Varies",
     location: "Omze's Incredible Traveling Starport — Starboard Broadside Club",
-    affiliations: ["Omze's Incredible Traveling Starport", "Starboard Broadside Club", "Former Gladiator"],
+    affiliations: ["The Fringe", "Omze's Incredible Traveling Starport"],
     role: "Bartender & club enforcer",
     type: "Wookiee Bartender",
     stats: {
@@ -670,7 +670,7 @@ const NOTABLE_NPCS = [
     species: "Bith",
     system: "Generic & Varies",
     location: "Omze's Incredible Traveling Starport — General Quarters",
-    affiliations: ["Omze's Incredible Traveling Starport", "General Quarters"],
+    affiliations: ["The Fringe", "Omze's Incredible Traveling Starport"],
     role: "Steward & cabin rental manager",
     type: "Bith Steward",
     stats: {
@@ -694,7 +694,7 @@ const NOTABLE_NPCS = [
     species: "Wroonian",
     system: "Generic & Varies",
     location: "Varies (operates near Omze's Incredible Traveling Starport)",
-    affiliations: ["Independent Criminal", "Con Artist"],
+    affiliations: ["Criminal Underworld"],
     role: "Con-woman & high-stakes trickster posing as nobility",
     type: "Wroonian Con Artist",
     stats: {
@@ -720,7 +720,7 @@ const NOTABLE_NPCS = [
     species: "Rodian",
     system: "Generic & Varies",
     location: "Omze's Incredible Traveling Starport (corridors/docking bays)",
-    affiliations: ["Omze's Incredible Traveling Starport", "Rodian Mercenary Company"],
+    affiliations: ["The Fringe", "Omze's Incredible Traveling Starport"],
     role: "Security guards & docking fee collectors",
     type: "Generic — Security",
     stats: {
@@ -744,7 +744,7 @@ const NOTABLE_NPCS = [
     species: "Various",
     system: "Generic & Varies",
     location: "Omze's Incredible Traveling Starport — Repair Bay",
-    affiliations: ["Omze's Incredible Traveling Starport", "Repair Bay"],
+    affiliations: ["The Fringe", "Omze's Incredible Traveling Starport"],
     role: "Outlaw techs & starship mechanics",
     type: "Generic — Technicians",
     stats: {
@@ -770,7 +770,7 @@ const NOTABLE_NPCS = [
     species: "Human",
     system: "Byblos",
     location: "Byblos Starport Tower 214 — Docking Hangar 217-11",
-    affiliations: ["Byblos Starport Tower 214", "Imperial Starport Administration"],
+    affiliations: ["Galactic Empire"],
     role: "Hangar controller",
     type: "Hangar Controller",
     stats: {
@@ -794,7 +794,7 @@ const NOTABLE_NPCS = [
     species: "Human",
     system: "Byblos",
     location: "Byblos Starport Tower 214 — Docking Hangar 217-11",
-    affiliations: ["Imperial Customs", "Byblos Starport Tower 214"],
+    affiliations: ["Galactic Empire", "Imperial Customs"],
     role: "Imperial Customs officer",
     type: "Imperial Customs Officer",
     stats: {
@@ -818,7 +818,7 @@ const NOTABLE_NPCS = [
     species: "Human",
     system: "Byblos",
     location: "University of Byblos",
-    affiliations: ["University of Byblos", "Fellowship of Kooroo (researcher)"],
+    affiliations: ["Neutral"],
     role: "Associate professor of galactic archaeology",
     type: "University Archaeologist",
     stats: {
@@ -844,7 +844,7 @@ const NOTABLE_NPCS = [
     species: "Human",
     system: "Byblos",
     location: "Byblos Starport Tower 214 — Docking Hangars",
-    affiliations: ["Imperial Customs", "Byblos Starport Tower 214"],
+    affiliations: ["Galactic Empire", "Imperial Customs"],
     role: "Customs patrol guards",
     type: "Generic — Customs Guards",
     stats: {
@@ -868,7 +868,7 @@ const NOTABLE_NPCS = [
     species: "Human",
     system: "Byblos",
     location: "Byblos Starport Tower 214 — Docking Hangars",
-    affiliations: ["Byblos Starport Tower 214"],
+    affiliations: ["The Fringe"],
     role: "Hangar crew — technicians, load controllers, maintenance",
     type: "Generic — Hangar Crew",
     stats: {
@@ -894,7 +894,7 @@ const NOTABLE_NPCS = [
     species: "Human",
     system: "Itani",
     location: "Darknon Station — Darknon Control",
-    affiliations: ["Darknon Station"],
+    affiliations: ["Neutral"],
     role: "Delusional station controller",
     type: "Station Controller",
     stats: {
@@ -918,7 +918,7 @@ const NOTABLE_NPCS = [
     species: "Human",
     system: "Itani",
     location: "Darknon Station — Customs Plaza",
-    affiliations: ["Darknon Station", "Galactic Empire (covert)"],
+    affiliations: ["Galactic Empire"],
     role: "Customs officer & Imperial spy",
     type: "Imperial Spy / Customs Officer",
     stats: {
@@ -943,7 +943,7 @@ const NOTABLE_NPCS = [
     species: "Duros",
     system: "Itani",
     location: "Darknon Station — Repair Bay",
-    affiliations: ["Darknon Station"],
+    affiliations: ["The Fringe"],
     role: "Duros starship mechanic",
     type: "Duros Mechanic",
     stats: {
@@ -967,7 +967,7 @@ const NOTABLE_NPCS = [
     species: "Rodian",
     system: "Itani",
     location: "Darknon Station — Stormview Lounge",
-    affiliations: ["Darknon Station", "Independent Criminal"],
+    affiliations: ["Criminal Underworld"],
     role: "Rodian restaurateur & informant",
     type: "Rodian Restaurateur",
     stats: {
@@ -992,7 +992,7 @@ const NOTABLE_NPCS = [
     species: "Chadra-Fan",
     system: "Itani",
     location: "Darknon Station — Galaxy Shop",
-    affiliations: ["Darknon Station"],
+    affiliations: ["The Fringe"],
     role: "Chadra-Fan pawnshop owner",
     type: "Chadra-Fan Merchant",
     stats: {
@@ -1018,7 +1018,7 @@ const NOTABLE_NPCS = [
     species: "Twi'lek",
     system: "Ryloth",
     location: "Kala'uun — Starport",
-    affiliations: ["Kala'uun", "Head-clan"],
+    affiliations: ["The Fringe", "Head-clan"],
     role: "Starport Master, head-clan member",
     type: "Twi'lek Starport Master",
     stats: {
@@ -1043,7 +1043,7 @@ const NOTABLE_NPCS = [
     species: "Twi'lek",
     system: "Ryloth",
     location: "Kala'uun — Mal'aa's Kitchens",
-    affiliations: ["Kala'uun"],
+    affiliations: ["The Fringe"],
     role: "Hostess and innkeeper",
     type: "Twi'lek Hostess",
     stats: {
@@ -1069,7 +1069,7 @@ const NOTABLE_NPCS = [
     species: "Human",
     system: "Saurton",
     location: "Essowyn",
-    affiliations: ["Independent Trader"],
+    affiliations: ["Criminal Underworld"],
     role: "Trader & smuggler",
     type: "Villain",
     stats: {
@@ -1095,7 +1095,7 @@ const NOTABLE_NPCS = [
     species: "Human",
     system: "Gorsh",
     location: "Gorsh — Genetech Orbiting Research Lab",
-    affiliations: ["Genetech Laboratories"],
+    affiliations: ["The Fringe", "Genetech Laboratories"],
     role: "Scientist",
     type: "Generic",
     stats: {
@@ -1119,7 +1119,7 @@ const NOTABLE_NPCS = [
     species: "Human",
     system: "Gorsh",
     location: "Gorsh — Genetech Orbiting Research Lab",
-    affiliations: ["Genetech Laboratories"],
+    affiliations: ["The Fringe", "Genetech Laboratories"],
     role: "Security guard",
     type: "Generic",
     stats: {
@@ -1145,7 +1145,7 @@ const NOTABLE_NPCS = [
     species: "Gotal",
     system: "Isen",
     location: "Isen IV — Void Demon Base",
-    affiliations: ["Void Demons"],
+    affiliations: ["Criminal Underworld", "Void Demons"],
     role: "Pirate leader",
     type: "Villain",
     stats: {
@@ -1170,7 +1170,7 @@ const NOTABLE_NPCS = [
     species: "Devaronian",
     system: "Isen",
     location: "Isen IV — Void Demon Base",
-    affiliations: ["Void Demons"],
+    affiliations: ["Criminal Underworld", "Void Demons"],
     role: "Second-in-command",
     type: "Villain",
     stats: {
@@ -1194,7 +1194,7 @@ const NOTABLE_NPCS = [
     species: "Human",
     system: "Isen",
     location: "Isen IV — Void Demon Base",
-    affiliations: ["Void Demons"],
+    affiliations: ["Criminal Underworld", "Void Demons"],
     role: "Boarding trooper",
     type: "Generic",
     stats: {
@@ -1218,7 +1218,7 @@ const NOTABLE_NPCS = [
     species: "Human",
     system: "Isen",
     location: "Isen IV — Void Demon Base",
-    affiliations: ["Void Demons"],
+    affiliations: ["Criminal Underworld", "Void Demons"],
     role: "Starfighter pilot",
     type: "Generic",
     stats: {
@@ -1242,7 +1242,7 @@ const NOTABLE_NPCS = [
     species: "Human",
     system: "Isen",
     location: "Isen IV — Void Demon Base",
-    affiliations: ["Void Demons"],
+    affiliations: ["Criminal Underworld", "Void Demons"],
     role: "Gunner",
     type: "Generic",
     stats: {
@@ -1268,7 +1268,7 @@ const NOTABLE_NPCS = [
     species: "Human",
     system: "Joralla",
     location: "Joralla",
-    affiliations: ["Crew of the Isilia"],
+    affiliations: ["The Fringe", "Crew of the Isilia"],
     role: "Freighter captain",
     type: "Scoundrel",
     stats: {
@@ -1292,7 +1292,7 @@ const NOTABLE_NPCS = [
     species: "Arcona",
     system: "Joralla",
     location: "Joralla",
-    affiliations: ["Crew of the Isilia"],
+    affiliations: ["The Fringe", "Crew of the Isilia"],
     role: "Henchman",
     type: "Scoundrel",
     stats: {
@@ -1316,7 +1316,7 @@ const NOTABLE_NPCS = [
     species: "Ortolan",
     system: "Joralla",
     location: "Joralla",
-    affiliations: ["Crew of the Isilia"],
+    affiliations: ["The Fringe", "Crew of the Isilia"],
     role: "Henchwoman",
     type: "Scoundrel",
     stats: {
@@ -1340,7 +1340,7 @@ const NOTABLE_NPCS = [
     species: "Quarren",
     system: "Joralla",
     location: "Joralla",
-    affiliations: ["Crew of the Isilia"],
+    affiliations: ["The Fringe", "Crew of the Isilia"],
     role: "Henchwoman",
     type: "Scoundrel",
     stats: {
@@ -1706,7 +1706,7 @@ const NOTABLE_NPCS = [
     species: "Human (clone)",
     system: "Generic & Varies",
     location: "Varies",
-    affiliations: ["Galactic Republic", "Grand Army of the Republic"],
+    affiliations: ["Old Republic", "Grand Army of the Republic"],
     role: "Clone infantry",
     type: "Generic",
     stats: {
@@ -1730,7 +1730,7 @@ const NOTABLE_NPCS = [
     species: "Human (clone)",
     system: "Generic & Varies",
     location: "Varies",
-    affiliations: ["Galactic Republic", "Grand Army of the Republic"],
+    affiliations: ["Old Republic", "Grand Army of the Republic"],
     role: "Elite clone commando",
     type: "Generic",
     stats: {
@@ -1756,7 +1756,7 @@ const NOTABLE_NPCS = [
     species: "Varies",
     system: "Generic & Varies",
     location: "Varies",
-    affiliations: ["The Fringe"],
+    affiliations: ["Criminal Underworld"],
     role: "Professional assassin",
     type: "Generic",
     stats: {
@@ -1852,7 +1852,7 @@ const NOTABLE_NPCS = [
     species: "Varies",
     system: "Generic & Varies",
     location: "Varies",
-    affiliations: ["The Fringe"],
+    affiliations: ["Criminal Underworld"],
     role: "Criminal enforcer",
     type: "Generic",
     stats: {
