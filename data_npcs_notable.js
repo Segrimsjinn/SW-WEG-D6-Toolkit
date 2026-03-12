@@ -3038,5 +3038,29 @@ const NOTABLE_NPCS = [
     equipment: "Blaster pistol (4D), comlink, sealed flight suit",
     capsule: "Rebel starfighter pilots are volunteers drawn from across the galaxy — former Imperial Academy washouts, civilian hotshots, and defectors who chose the Alliance over a paycheck. Outgunned and outnumbered in almost every engagement, they rely on skill, improvisation, and sheer determination. The X-wing specialization reflects the Alliance's primary fighter at Yavin.",
     source: "WEG40124 Galaxy Guide 1: A New Hope p.62"
+  },
+  {
+    name: "Biggs Darklighter",
+    species: "Human",
+    system: "Yavin",
+    location: "Yavin — Yavin 4 Base",
+    affiliations: ["Rebel Alliance"],
+    role: "Brash Pilot",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "4D+2", "dodge": "5D+1" } },
+      KNOWLEDGE: { base: "2D+2", skills: { "cultures": "4D+2", "planetary systems": "4D", "streetwise": "3D+2" } },
+      MECHANICAL: { base: "4D", skills: { "repulsorlift operation": "5D+1", "starfighter piloting": "6D", "starship gunnery": "6D" } },
+      PERCEPTION: { base: "3D", skills: { "con": "4D" } },
+      STRENGTH: { base: "3D", skills: { "brawling": "4D+1", "stamina": "5D" } },
+      TECHNICAL: { base: "3D", skills: { "computer programming/repair": "4D+1", "repulsorlift repair": "3D+2", "security": "3D+2" } }
+    },
+    specialAbilities: "TIE-Hunter Instinct: Biggs had a natural gift for hunting TIE fighters with no equal until Luke Skywalker entered the scene. When engaged in dogfighting against TIE-class fighters specifically, he may re-roll one failed starship gunnery result per encounter.",
+    forcePoints: 0,
+    characterPoints: 4,
+    move: 10,
+    equipment: "Blaster pistol (4D), comlink, sealed flight suit",
+    capsule: "Biggs Darklighter grew up on Tatooine as the privileged son of food magnate Huff Darklighter, spending his teenage years racing skyhoppers and dreaming of space with his best friend Luke Skywalker. He made it to the Imperial Academy ahead of Luke, but his conscience drove him to defect — jumping ship with sympathetic crewmates to join the Rebel Alliance. At Yavin he served as Red Three, briefly reuniting with Luke in the hangar before the assault. He was shot down by Darth Vader in the Death Star trench, dying so the Rebellion could live.",
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.65"
   }
 ];
