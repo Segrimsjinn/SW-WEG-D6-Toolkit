@@ -2769,5 +2769,30 @@ const NOTABLE_NPCS = [
     equipment: "Lightsaber (5D), full body armor (+1D all attacks; integrated life-support respirator — required to keep Vader alive)",
     capsule: "Darth Vader is the Emperor's enforcer and the most feared man in the galaxy. Once Anakin Skywalker — Jedi Knight, hero of the Clone Wars, and the prophesied Chosen One — he was seduced by the dark side and helped Palpatine exterminate the Jedi Order. His scarred, broken body is encased in life-sustaining black armor. Aboard the Death Star at Yavin, he oversaw Princess Leia's interrogation, cut down Obi-Wan Kenobi, and nearly prevented the Rebel assault — only to be sent spinning into space by Han Solo's last-second intervention, allowing Luke Skywalker to destroy the station.",
     source: "WEG40124 Galaxy Guide 1: A New Hope p.50"
+  },
+  {
+    name: "Grand Moff Tarkin",
+    species: "Human",
+    system: "Generic & Varies",
+    location: "Galactic Empire — Death Star",
+    affiliations: ["Galactic Empire"],
+    role: "Imperial Grand Moff",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "5D", "dodge": "6D+2", "melee combat": "4D+2", "melee parry": "5D+2" } },
+      KNOWLEDGE: { base: "4D", skills: { "alien species": "7D", "bureaucracy": "9D", "cultures": "7D", "intimidation": "7D+1", "languages": "6D+1", "planetary systems": "6D", "tactics: fleets": "9D", "tactics: sieges": "10D", "value": "5D" } },
+      MECHANICAL: { base: "3D+2", skills: { "astrogation": "5D", "battle station piloting": "5D", "beast riding": "5D", "capital ship gunnery": "4D", "capital ship piloting": "5D", "capital ship shields": "4D+1", "repulsorlift operation": "3D+1", "space transports": "4D+1", "starship gunnery": "4D", "starship shields": "4D+1" } },
+      PERCEPTION: { base: "3D+1", skills: { "bargain": "6D+2", "command": "10D+2", "con": "6D+2", "gambling": "5D+1", "search": "5D" } },
+      STRENGTH: { base: "2D", skills: { "brawling": "4D+1", "stamina": "5D", "swimming": "5D" } },
+      TECHNICAL: { base: "2D", skills: { "computer programming/repair": "3D", "first aid": "3D", "repulsorlift repair": "3D", "security": "5D" } }
+    },
+    specialAbilities: "Tarkin Doctrine: Tarkin's governing philosophy — rule through fear of force rather than force itself — permeates every Imperial command decision. NPCs under his command gain +1D to morale and obedience checks when Tarkin is present.\n\nPolitical Authority: As Grand Moff, Tarkin holds supreme authority over the Outer Rim Territories and the Death Star project. He can override Imperial Navy admirals and moffs without appeal.",
+    forcePoints: 4,
+    darkSidePoints: 5,
+    characterPoints: 22,
+    move: 10,
+    equipment: "Blaster pistol (4D), datapad, comlink, rank code cylinders",
+    capsule: "Grand Moff Wilhuff Tarkin was the Empire's most celebrated military governor — architect of the Tarkin Doctrine and the driving force behind the Death Star project. Ruthless, brilliant, and supremely self-confident, he leveraged the destruction of Alderaan as a demonstration of the Death Star's power and his own willingness to commit genocide in service of the New Order. His personal authority was so great that even Darth Vader deferred to him aboard the station. His refusal to evacuate the Death Star when the Rebel attack commenced — certain that no fighter assault could threaten it — cost him his life at the Battle of Yavin.",
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.51"
   }
 ];
