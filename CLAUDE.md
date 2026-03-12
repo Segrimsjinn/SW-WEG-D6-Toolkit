@@ -11,7 +11,7 @@ Deployed to GitHub Pages (see `CNAME`). To publish changes: edit files locally, 
 ## Architecture
 
 ### index.html
-The entire app. Contains all CSS (minified, inline `<style>`), all HTML tab panels, and all JavaScript logic (after the `<!-- DATA SCRIPTS -->` block). Tabs: **NPC** (random NPC generator + Notable NPC lookup), **GM** (creatures lookup), **GALAXY** (planet detail + astrogation calculator), **SETTINGS**.
+The entire app. Contains all CSS (minified, inline `<style>`), all HTML tab panels, and all JavaScript logic (after the `<!-- DATA SCRIPTS -->` block). Tabs: **NPC** (random NPC generator + Notable NPC lookup), **TRAVEL** (astrogation calculator + quick reference), **GALAXY** (planet detail + galaxy map), **SHIPS** (starship/vehicle/equipment lookup), **DICE** (creatures lookup + dice roller + combat tracker), **SETTINGS** (calibration + how-to guide + about).
 
 ### Data Files → Global Constants
 
@@ -70,6 +70,7 @@ The entire app. Contains all CSS (minified, inline `<style>`), all HTML tab pane
 - **Galaxy search → planet detail**: `PLANETS_DATA` entries link to `SYSTEMS_DATA` via `system` field. A system card becomes clickable when `p.name === sLow`, `p.system === sLow`, `sLow.startsWith(p.name + ' -')`, or `p.aliases.includes(sLow)` (see `index.html` line ~3982).
 - **Starport locations in data_systems.js**: Added as separate named entries (e.g. `"Port Haven - Starport"`) alongside their parent system so both are searchable on the galaxy map.
 - **Notable NPC filtering**: Filtered by `system`, `location`, `affiliations`, `species`, `name`, `role`, `type` — all searched as a joined lowercase string.
+- **Planet detail → Notable NPC cross-link**: `linkifyNpcNames(text, system)` in `index.html` scans `NOTABLE_NPCS` base names against `p.locations` and `p.ofNote` text at render time. Any match becomes a cyan clickable span that calls `lookupNotableNpcsBySystem(system)` — switching to the NPC tab and setting the system filter to the planet's `system` field, showing all NPCs in that system. **The planet's `system` field must exactly match the NPC's `system` field for the filter to return results.**
 - **Creatures**: Linked to planets via the `planet` field (plain string).
 
 ## Important Conventions
