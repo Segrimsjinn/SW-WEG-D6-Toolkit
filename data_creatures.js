@@ -5698,6 +5698,20 @@ const CREATURES_DATA = [
   "source": "Secrets of Naboo (page 63)"
  },
  {
+  "name": "Desert Worm",
+  "type": "Desert reptile",
+  "planet": "Tatooine",
+  "habitat": "Desert (Dune Sea)",
+  "dex": "3D+1",
+  "per": "2D",
+  "str": "11D",
+  "move": "15",
+  "size": "10m tall, 20–50m long",
+  "orneriness": "20",
+  "special": "Claws: 8D damage. Teeth: 15D damage. Burrowing: Desert worms travel just under the surface of soft sand for several kilometers, ambushing prey from below.",
+  "source": "WEG40124 Galaxy Guide 1: A New Hope (Wayfar scenario)"
+ },
+ {
   "name": "Zuxu",
   "type": "Trained attack fish",
   "planet": "Gala",
