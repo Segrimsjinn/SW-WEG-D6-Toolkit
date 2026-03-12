@@ -1212,5 +1212,32 @@ const PLANETS_DATA = [
     summary: "Yavin 4 is a jungle moon in an unremarkable Outer Rim system far from major space lanes, yet it has been a pivotal site in galactic history multiple times. Its dense surface is blanketed by enormous Massassi trees with great crowning branches, supporting climbing ferns, nebula orchids, and thick blueleaf shrub mulch. Fauna includes woolamanders, whisper birds, anglers, piranha-beetles, runyips, and strange creatures descended from ancient Sith experiments. The moon was first settled by the Sith Lord Naga Sadow and his Massassi warriors. The renegade Exar Kun was later chased here; the Jedi burned off much of the jungle in an orbital bombardment and subsequently installed a subterranean terraforming station. The Jedi then erased the moon from star charts. Hyperspace scouts of the Hydian Way rediscovered the system; it briefly saw a rush for Corusca gemstones found in the atmosphere of the gas giant Yavin. During the Galactic Civil War, Rebels from Dantooine established a base in the abandoned Great Temple of the Massassi. Tracked by the Death Star, the Rebels launched a desperate fighter assault and Luke Skywalker destroyed the battle station. After a long abandonment, Skywalker returned to establish a Jedi academy. The Yuuzhan Vong later colonized it as a Shaper caste installation; Jedi Anakin Solo helped redeem a Shamed One there, inadvertently giving rise to the Jeedai cult that would help undermine the Vong invasion.",
     locations: "Great Temple of the Massassi (ancient Sith structure repurposed as the primary Rebel Alliance base, 0 BBY; later location of Luke Skywalker's Jedi academy). Massassi Ruins (scattered ancient structures throughout the jungle; connected to Sith history). Temple of Exar Kun (site connected to the spirit of Exar Kun; source of Jedi trials during the New Jedi Order era).",
     ofNote: "Site of the Battle of Yavin (0 BBY) — the Rebel X-wing assault that destroyed the first Death Star; this battle defines the BBY/ABY dating system used across the galaxy. The moon is difficult to locate without accurate charts (deliberately erased from Jedi Archives). No permanent population, no starport facilities — just a clearing used as a landing field. During the New Jedi Order era (11–12 ABY), Luke Skywalker's academy here trained the first generation of new Jedi Knights. The moon's 13.2-standard-year orbital period around the Yavin gas giant means local seasons are extreme."
+  },
+  {
+    name: "Syned",
+    system: "Syned",
+    star: "Unknown",
+    grid: "N-17",
+    region: "Outer Rim Territories",
+    type: "Urban trade world",
+    temperature: "Frigid",
+    atmosphere: "Type IV (environmental suit required)",
+    hydrosphere: "Saturated",
+    gravity: "Light",
+    terrain: "Domed urban, glaciers",
+    lengthOfDay: "147 standard hours",
+    lengthOfYear: "15,245 local days (~256 standard years)",
+    sapientSpecies: "Duros, Humans, Sluissi, Sullustans",
+    starport: "Standard class",
+    population: "2 million",
+    function: "Trade",
+    government: "Imperial governor, city councillors",
+    techLevel: "Space",
+    majorExports: "None",
+    majorImports: "Foodstuffs, high tech",
+    source: "WEG40065 Gamemaster Handbook p.112",
+    summary: "Syned is a cold, dark world on the edge of its system. Its star's proximity to the Duros Space Run made it an excellent location for a trade center, but the frigid climate required the construction of underground and domed cities to support life. Countless tons of goods pass through its docking bays every day, making it a popular drop-off point for independent cargo haulers — millions of credits worth of goods transfer on cargo-sleds every hour. Because the world lacks a normal day/night cycle, it is bustling at all times with constant work shifts.",
+    locations: "Domed cities (climate-controlled, connected by enclosed transit). Underground settlements (built beneath the surface to escape the frigid atmosphere). Cargo transfer facilities (massive docking bays and cargo-sled networks handling constant freight traffic).",
+    ofNote: "Type IV atmosphere means all visitors require full environmental suits outside sealed areas — plan accordingly. The Imperial governor keeps a tight rein with a noticeable military presence; each city is administered by a councillor enforcing the governor's will. Syned's position near the Duros Space Run makes it a useful neutral stopover, but the constant Imperial oversight makes it a risky place for Rebel sympathizers or contraband runs."
   }
 ];
