@@ -3282,5 +3282,101 @@ const NOTABLE_NPCS = [
     equipment: "Hold-out blaster (3D+2), comlink",
     capsule: "Kaimer is a tough old coot — a moisture farmer for years before retiring into the mayor's seat. He speaks rapidly and is a bit difficult to understand at times, nearly always with a thick cigar clamped in his mouth.",
     source: "WEG40124 Galaxy Guide 1: A New Hope (Wayfar scenario)"
+  },
+  {
+    name: "Wayfar Armed Farmer (Typical)",
+    species: "Human",
+    system: "Tatooine",
+    location: "Tatooine — Wayfar",
+    affiliations: ["Neutral"],
+    role: "Armed Farmer",
+    type: "Typical NPC",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { "blaster": "3D+1", "dodge": "3D+2" } },
+      KNOWLEDGE: { base: "1D", skills: {} },
+      MECHANICAL: { base: "2D", skills: {} },
+      PERCEPTION: { base: "2D", skills: { "command": "3D" } },
+      STRENGTH: { base: "3D", skills: {} },
+      TECHNICAL: { base: "1D", skills: {} }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 10,
+    equipment: "Blaster rifle (5D)",
+    capsule: "Of the 500 people gathered in Wayfar, roughly 275 are able to fight. Most own at least one weapon but have no experience using one in a combat situation. Stats may vary somewhat — a few sharpshooters may be in the crowd. A few days of weapons and tactics tutoring from the player characters can meaningfully improve their odds.",
+    source: "WEG40124 Galaxy Guide 1: A New Hope (Wayfar scenario)"
+  },
+  {
+    name: "Ran Padell",
+    species: "Human",
+    system: "Tatooine",
+    location: "Tatooine — Wayfar",
+    affiliations: ["Neutral"],
+    role: "Farmer / Sharpshooter",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { "blaster": "6D+2", "dodge": "3D+2" } },
+      KNOWLEDGE: { base: "1D", skills: {} },
+      MECHANICAL: { base: "2D", skills: {} },
+      PERCEPTION: { base: "2D", skills: {} },
+      STRENGTH: { base: "3D", skills: {} },
+      TECHNICAL: { base: "1D", skills: {} }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 10,
+    equipment: "Blaster rifle (5D)",
+    capsule: "Ran is a rather rotund farmer of 55 with graying hair and big bushy eyebrows. He is fond of cracking jokes and lovely ladies — and is also an expert marksman. Note: blaster skill reconstructed from heavily garbled OCR; verify against physical book.",
+    source: "WEG40124 Galaxy Guide 1: A New Hope (Wayfar scenario)"
+  },
+  {
+    name: "Camelle",
+    species: "Human",
+    system: "Tatooine",
+    location: "Tatooine — Wayfar",
+    affiliations: ["Neutral"],
+    role: "Motel Owner / Former Nurse",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { "blaster": "4D+1", "dodge": "3D+2" } },
+      KNOWLEDGE: { base: "1D", skills: {} },
+      MECHANICAL: { base: "2D", skills: {} },
+      PERCEPTION: { base: "2D", skills: {} },
+      STRENGTH: { base: "3D", skills: {} },
+      TECHNICAL: { base: "1D", skills: { "first aid": "4D+2" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 10,
+    equipment: "Blaster rifle (5D)",
+    capsule: "A tough old woman who followed her man from the Mid-Rim to settle on Tatooine years ago. Her husband is long dead and she now runs the motel on the edge of town. She was once a nurse and still remembers a bit about medicine.",
+    source: "WEG40124 Galaxy Guide 1: A New Hope (Wayfar scenario)"
+  },
+  {
+    name: "Karl Mott",
+    species: "Human",
+    system: "Tatooine",
+    location: "Tatooine — Wayfar",
+    affiliations: ["Neutral"],
+    role: "Skyhopper Hangar Owner / Mechanic",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { "blaster": "3D+1", "dodge": "3D+2" } },
+      KNOWLEDGE: { base: "1D", skills: {} },
+      MECHANICAL: { base: "2D", skills: { "repulsorlift vehicle repair": "4D" } },
+      PERCEPTION: { base: "2D", skills: {} },
+      STRENGTH: { base: "3D", skills: {} },
+      TECHNICAL: { base: "1D", skills: {} }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 10,
+    equipment: "Blaster rifle (5D), tools",
+    capsule: "Karl is the owner of the skyhopper hangar and its resident mechanic. A large hairy man who wears grease-stained coveralls. He says little, but when he does speak it is usually worth hearing.",
+    source: "WEG40124 Galaxy Guide 1: A New Hope (Wayfar scenario)"
   }
 ];
