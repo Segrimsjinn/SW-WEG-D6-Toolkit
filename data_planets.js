@@ -1239,5 +1239,32 @@ const PLANETS_DATA = [
     summary: "Syned is a cold, dark world on the edge of its system. Its star's proximity to the Duros Space Run made it an excellent location for a trade center, but the frigid climate required the construction of underground and domed cities to support life. Countless tons of goods pass through its docking bays every day, making it a popular drop-off point for independent cargo haulers — millions of credits worth of goods transfer on cargo-sleds every hour. Because the world lacks a normal day/night cycle, it is bustling at all times with constant work shifts.",
     locations: "Domed cities (climate-controlled, connected by enclosed transit). Underground settlements (built beneath the surface to escape the frigid atmosphere). Cargo transfer facilities (massive docking bays and cargo-sled networks handling constant freight traffic).",
     ofNote: "Type IV atmosphere means all visitors require full environmental suits outside sealed areas — plan accordingly. The Imperial governor keeps a tight rein with a noticeable military presence; each city is administered by a councillor enforcing the governor's will. Syned's position near the Duros Space Run makes it a useful neutral stopover, but the constant Imperial oversight makes it a risky place for Rebel sympathizers or contraband runs."
+  },
+  {
+    name: "Dravian Starport",
+    system: "Dravian Starport",
+    star: "N/A (space station)",
+    grid: "N-18",
+    region: "Outer Rim Territories",
+    type: "Independent space station",
+    temperature: "Controlled (interior)",
+    atmosphere: "Type I (maintained, breathable inside)",
+    hydrosphere: "None",
+    gravity: "Artificial",
+    terrain: "Space station interior",
+    lengthOfDay: "N/A",
+    lengthOfYear: "N/A",
+    sapientSpecies: "Varies (Humans, Twi'leks, Gamorreans, Rodians, Devaronians, and others)",
+    starport: "Independent (criminal haven)",
+    population: "Transient",
+    function: "Underworld hub, independent trade and repair",
+    government: "Independent station management",
+    techLevel: "Space",
+    majorExports: "N/A",
+    majorImports: "N/A",
+    source: "WEG40065 Gamemaster Handbook p.114",
+    summary: "Dravian Starport is an independent space station nearly a kilometer long, lit only by hull spotlights against the black of open space. Its dozens of docking protrusions bristle with heavily modified, illegal starships — powerful weapons, massive shield generators, and thick hull-plating mark this as a haven for the galactic underworld. The corridors are dark, cramped affairs with loose wiring, discolored ceiling panels, and creaking floors; dirty, banged-up servant droids shuffle throughout. Visitors openly carry sidearms, hide their faces behind cloaks, or display battle scars and cyborg parts to intimidate others. Everyone gives each other space, and no one asks too many questions.",
+    locations: "Level 5 Marketplace (restaurants, specialty shops selling fezzgems, Muzzlian squills, holonovels, clothing, droid sales and repair, weapons shops). Casinos, hotels and lounges (35–1,000 credits/day, varying amenity quality). Cargo merchant offices (multiple levels; haul contracts available for independent pilots). Docking protrusions (dozens of bays; immediate repair slotting available at ~3,000 cr). 45 public levels total — power generators, security areas, and command center are off-limits.",
+    ofNote: "All visitors are issued permits at 10 credits per person. Ship repairs cost ~3,000 credits and take roughly two days. The station control will hail any approaching ship — a plausible cover story is needed to receive docking coordinates. Security guards wear brown and gold uniforms with Dravian Starport insignia. The station is crawling with thieves, slavers, and hired muscle; isolated corridors with burned-out lights are prime ambush territory. Cargo hauling opportunities are regularly available from resident merchants — destinations include Dreffon IV, Ather, Bazaar, and Vlemoth Port."
   }
 ];
