@@ -2428,5 +2428,29 @@ const NOTABLE_NPCS = [
     equipment: "Heavy blast armor (+1D STR vs damage, -1D DEX and related actions), blaster pistol (4D), heavy blaster rifle (6D), long-range comlink, food/water pack. ◆ DEWBACK (patrol mount) — Desert mount; DEX 3D, STR 4D, Move 35 (day)/7 (night), Orneriness 3D; slows dramatically at night.",
     capsule: "DSS-0956 is the senior officer commanding the Desert Sands sandtrooper detachment deployed on Tatooine during the search for the stolen Death Star plans. More aggressive and experienced than his troopers, he leads mounted dewback patrols through the desert wilderness with authority.",
     source: "WEG40124 Galaxy Guide 1: A New Hope p.21"
+  },
+  {
+    name: "R5-D4",
+    species: "Droid (R5 Astromech)",
+    system: "Tatooine",
+    location: "Tatooine — Lars Moisture Farm",
+    affiliations: ["Neutral"],
+    role: "Astromech droid",
+    type: "Supporting Character",
+    stats: {
+      DEXTERITY: { base: "1D", skills: { dodge: "2D+1" } },
+      KNOWLEDGE: { base: "1D", skills: { "planetary systems": "5D", value: "3D" } },
+      MECHANICAL: { base: "3D", skills: { astrogation: "5D", "starfighter piloting": "4D", "starship gunnery": "3D+2", "starship shields": "4D" } },
+      PERCEPTION: { base: "2D", skills: {} },
+      STRENGTH: { base: "2D", skills: { lifting: "2D+2" } },
+      TECHNICAL: { base: "3D", skills: { "computer programming/repair": "4D", "droid programming": "3D+1", "droid repair": "4D", "repulsorlift repair": "3D+2", "starship repair": "4D+1" } }
+    },
+    specialAbilities: "Three wheeled legs (one retractable). Two fine manipulation arms (+1D to all repair skills). Arc welder (3D damage, 0.3m range). Video sensor. Video display screen. Cybot acoustic signaller (droid and computer languages only).",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 5,
+    equipment: "Built-in arc welder (3D, 0.3m range), fine manipulation arms, video display screen (cost new: 1,450 credits)",
+    capsule: "R5-D4 is a battered Industrial Automaton R5 astromech droid sold by Jawas to Owen Lars alongside R2-D2. His motivator blew out almost immediately — a malfunction that, as it turned out, was anything but accidental. R5 is representative of the budget-tier R5 line: capable astromechs with solid technical skills but prone to reliability issues. Serves as a template for any R5-series droid encountered in the field.",
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.24"
   }
 ];
