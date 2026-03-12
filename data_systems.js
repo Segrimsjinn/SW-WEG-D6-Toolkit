@@ -6476,6 +6476,7 @@ const SYSTEMS_DATA = [
   { "name": "Wasco", "grid": "I-17", "region": "Outer Rim Territories", "col": 7, "row": 17, "quadrant": "SW", "hours": 7.3 },
   { "name": "Waskiro", "grid": "R-7", "region": "Outer Rim Territories", "col": 16, "row": 7, "quadrant": "NE", "hours": 3.0 },
   { "name": "Wayland", "grid": "N-7", "region": "Outer Rim Territories", "col": 12, "row": 7, "quadrant": "NE", "hours": 3.0 },
+  { "name": "Wayfar", "grid": "R-16", "region": "Outer Rim Territories", "col": 16, "row": 16, "quadrant": "SE", "hours": 3.0 },
   { "name": "Waymancy", "grid": "K-8", "region": "Inner Rim", "col": 9, "row": 8, "quadrant": "C", "hours": 4.7 },
   { "name": "Wazta", "grid": "J-18", "region": "Outer Rim Territories", "col": 8, "row": 18, "quadrant": "S", "hours": 3.8 },
   { "name": "Wecacoe", "grid": "K-13", "region": "Colonies", "col": 9, "row": 13, "quadrant": "C", "hours": 5.0 },
