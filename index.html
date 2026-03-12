@@ -989,6 +989,64 @@ color:var(--text-dim);min-width:35px;text-align:right;
           <div class="card-title">⟐ Route Path</div>
           <div id="pathOutput" class="path-list"></div>
         </div>
+
+        <div class="card fade-in">
+          <div class="card-title">⟐ Astrogation Quick Reference</div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <!-- Col 1: Difficulty Modifiers -->
+            <div style="flex:1;min-width:150px">
+              <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin-bottom:3px">DIFFICULTY MODIFIERS</div>
+              <div style="font-size:10px;color:var(--text-dim);line-height:1.9">
+                <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Base difficulty</span><span style="color:var(--gold)">Moderate (11)</span></div>
+                <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>No nav computer / astromech</span><span style="color:var(--red)">+30</span></div>
+                <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Hasty entry (1 round)</span><span style="color:var(--red)">×2</span></div>
+                <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Lightly damaged ship</span><span style="color:var(--red)">+5</span></div>
+                <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Heavily damaged ship</span><span style="color:var(--red)">+10</span></div>
+                <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Each hour saved</span><span style="color:var(--red)">+1</span></div>
+                <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Each extra hour added</span><span style="color:var(--cyan)">−1</span></div>
+                <div style="display:flex;justify-content:space-between;padding:1px 0"><span>Obstacles</span><span style="color:var(--red)">+1 to 30+</span></div>
+              </div>
+              <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin-top:8px;margin-bottom:3px">ROLL OUTCOMES</div>
+              <div style="font-size:10px;color:var(--text-dim);line-height:1.9">
+                <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Beat difficulty</span><span style="color:var(--cyan)">Success</span></div>
+                <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Miss by 1–9</span><span style="color:var(--gold)">Mishap (2D)</span></div>
+                <div style="display:flex;justify-content:space-between;padding:1px 0"><span>Miss by 10+</span><span style="color:var(--red)">Cannot jump, re-roll</span></div>
+              </div>
+            </div>
+            <!-- Col 2: Calc Time + Hyperdrive Startup -->
+            <div style="flex:1;min-width:150px">
+              <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin-bottom:3px">CALCULATION TIME</div>
+              <div style="font-size:10px;color:var(--text-dim);line-height:1.9">
+                <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Well-traveled / precalc'd</span><span style="color:var(--gold)">1 min</span></div>
+                <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Emergency (×2 diff)</span><span style="color:var(--red)">1 round</span></div>
+                <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Known systems</span><span style="color:var(--gold)">~30 min</span></div>
+                <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Unknown destination</span><span style="color:var(--gold)">Few hours</span></div>
+                <div style="display:flex;justify-content:space-between;padding:1px 0"><span>Unknown position (misjump)</span><span style="color:var(--red)">1 day</span></div>
+              </div>
+              <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin-top:8px;margin-bottom:3px">HYPERDRIVE START-UP (× MULTIPLIER)</div>
+              <div style="font-size:10px;color:var(--text-dim);line-height:1.9">
+                <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Starfighter</span><span style="color:var(--gold)">2 rounds</span></div>
+                <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Space transport</span><span style="color:var(--gold)">4 rounds</span></div>
+                <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Capital &lt;500m</span><span style="color:var(--gold)">10 rounds</span></div>
+                <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Capital 500m–1km</span><span style="color:var(--gold)">20 rounds</span></div>
+                <div style="display:flex;justify-content:space-between;padding:1px 0"><span>Capital &gt;1km</span><span style="color:var(--gold)">30 rounds</span></div>
+              </div>
+            </div>
+            <!-- Col 3: Mishap Table -->
+            <div style="flex:1;min-width:160px">
+              <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin-bottom:3px">MISHAP TABLE (ROLL 2D)</div>
+              <div style="font-size:10px;color:var(--text-dim);line-height:1.7">
+                <div style="display:flex;gap:6px;border-bottom:1px solid var(--card-border);padding:2px 0"><span style="color:var(--gold);min-width:20px">2</span><span>Hyperdrive cut-out &amp; damaged. Moderate repair roll or use backup drive to limp to nearest system.</span></div>
+                <div style="display:flex;gap:6px;border-bottom:1px solid var(--card-border);padding:2px 0"><span style="color:var(--gold);min-width:20px">3-4</span><span>Radiation fluctuations. Journey ±1D hours per point missed.</span></div>
+                <div style="display:flex;gap:6px;border-bottom:1px solid var(--card-border);padding:2px 0"><span style="color:var(--gold);min-width:20px">5-6</span><span>Hyperdrive cut-out. Mass shadow detected; dropped to realspace. Plot new route from current position.</span></div>
+                <div style="display:flex;gap:6px;border-bottom:1px solid var(--card-border);padding:2px 0"><span style="color:var(--gold);min-width:20px">7-8</span><span>Off course. Emerge in wrong system; plot entirely new route.</span></div>
+                <div style="display:flex;gap:6px;border-bottom:1px solid var(--card-border);padding:2px 0"><span style="color:var(--gold);min-width:20px">9</span><span>Mynocks on power cables. Journey extended by +1D days.</span></div>
+                <div style="display:flex;gap:6px;border-bottom:1px solid var(--card-border);padding:2px 0"><span style="color:var(--gold);min-width:20px">10</span><span>Close call. Ship completes journey but one secondary system (sublight, nav computer, escape pods, or weapons) is damaged on arrival.</span></div>
+                <div style="display:flex;gap:6px;padding:2px 0"><span style="color:var(--red);min-width:20px">11-12</span><span style="color:var(--red)">Collision — heavy damage. Hull breach, ship not spaceworthy. Abandon ship. Crew must reach survival suits in 1 round or face stamina checks each round (Easy → Moderate → Difficult → Very Difficult → Heroic…).</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
