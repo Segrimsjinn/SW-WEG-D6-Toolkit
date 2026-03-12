@@ -79,3 +79,4 @@ The entire app. Contains all CSS (minified, inline `<style>`), all HTML tab pane
 - Source citations follow the format `"WEG##### Book Title p.##"`.
 - Planet `aliases` array enables alternate-name lookups without duplicating entries.
 - When adding a new starport/station, add it to: `data_systems.js` (for galaxy map search), `data_planets.js` (for detail card), `data_npcs_notable.js` (for any named NPCs), and `data_creatures.js` if the location has notable creatures.
+- **Multi-era NPCs**: Characters who appear across multiple sourcebooks with improved stats get one entry per era. Use BBY/ABY in the `name` field: `"Luke Skywalker (0 BBY)"`, `"Luke Skywalker (3 ABY)"`, etc. Searching by first name returns all versions. The `source` field confirms which book each stat block came from.
