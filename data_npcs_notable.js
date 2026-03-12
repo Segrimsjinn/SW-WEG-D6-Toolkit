@@ -3014,5 +3014,29 @@ const NOTABLE_NPCS = [
     equipment: "Blaster pistol (4D), grenades (5D), comlink, macrobinoculars (+1D search at ranges greater than 50 meters), blast vest (+1 energy, +1D physical), blast helmet (+1 energy, +1D physical)",
     capsule: "The backbone of the Rebel Alliance's ground forces — volunteers from across the galaxy who chose conscience over comfort. Rebel soldiers are lightly equipped compared to Imperial stormtroopers but compensate with motivation, fieldcraft, and local knowledge. Their combat training is focused and practical: shoot, move, demolish, and survive.",
     source: "WEG40124 Galaxy Guide 1: A New Hope p.62"
+  },
+  {
+    name: "Rebel Pilot (Typical)",
+    species: "Human",
+    system: "Generic & Varies",
+    location: "Rebel Alliance — Starfighter Command",
+    affiliations: ["Rebel Alliance"],
+    role: "Rebel Starfighter Pilot",
+    type: "Typical NPC",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { "blaster": "4D", "dodge": "3D" } },
+      KNOWLEDGE: { base: "1D", skills: { "planetary systems": "2D+2" } },
+      MECHANICAL: { base: "3D", skills: { "starfighter piloting": "5D", "starfighter piloting: X-wing": "6D", "starship gunnery": "4D" } },
+      PERCEPTION: { base: "1D+2", skills: {} },
+      STRENGTH: { base: "2D+2", skills: {} },
+      TECHNICAL: { base: "2D", skills: { "computer programming/repair": "3D" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 10,
+    equipment: "Blaster pistol (4D), comlink, sealed flight suit",
+    capsule: "Rebel starfighter pilots are volunteers drawn from across the galaxy — former Imperial Academy washouts, civilian hotshots, and defectors who chose the Alliance over a paycheck. Outgunned and outnumbered in almost every engagement, they rely on skill, improvisation, and sheer determination. The X-wing specialization reflects the Alliance's primary fighter at Yavin.",
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.62"
   }
 ];
