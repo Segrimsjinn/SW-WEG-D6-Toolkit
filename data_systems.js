@@ -2901,6 +2901,7 @@ const SYSTEMS_DATA = [
   { "name": "Kamdon", "grid": "U-7", "region": "Outer Rim Territories", "col": 19, "row": 7, "quadrant": "NE", "hours": 34.7 },
   { "name": "Kamgeddon", "grid": "O-12", "region": "Expansion Region", "col": 13, "row": 12, "quadrant": "E", "hours": 4.5 },
   { "name": "Kamil", "grid": "J-6", "region": "Wild Space", "col": 8, "row": 6, "quadrant": "N", "hours": 8.2 },
+  { "name": "Kamino", "grid": "S-15", "region": "Extra-galactic", "col": 17, "row": 15, "quadrant": "SE", "hours": 12.0 },
   { "name": "Kammia", "grid": "G-16", "region": "Wild Space", "col": 5, "row": 16, "quadrant": "SW", "hours": 74.7 },
   { "name": "Kamori", "grid": "M-11", "region": "Core Worlds", "col": 11, "row": 11, "quadrant": "C", "hours": 5.7 },
   { "name": "Kamparas", "grid": "K-9", "region": "Core Worlds", "col": 9, "row": 9, "quadrant": "C", "hours": 3.7 },
