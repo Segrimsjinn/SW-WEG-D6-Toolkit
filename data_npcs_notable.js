@@ -1966,5 +1966,79 @@ const NOTABLE_NPCS = [
     equipment: "Comlink, vibroblade (STR+1D), blast vest (+1D physical, +1 energy)",
     capsule: "Street toughs working for a crime lord, aspiring swoop champions, crooked security guards, or law enforcers who prefer breaking heads to enforcing rules.",
     source: "REUP Star Wars RPG: Revised Expanded Updated p.276"
+  },
+
+  // ── GAMEMASTER HANDBOOK (WEG40065) — NPC Templates p.52 ──
+  {
+    name: "Gamorrean Guard (Typical)",
+    species: "Gamorrean",
+    system: "Varies",
+    location: "Varies",
+    affiliations: ["The Fringe"],
+    role: "Guard / muscle",
+    type: "Generic",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { "melee combat": "4D+1", "melee parry": "3D" } },
+      KNOWLEDGE: { base: "2D", skills: {} },
+      MECHANICAL: { base: "2D", skills: {} },
+      PERCEPTION: { base: "2D", skills: {} },
+      STRENGTH: { base: "4D", skills: {} },
+      TECHNICAL: { base: "2D", skills: {} }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 8,
+    equipment: "Vibroaxe (STR+3D+1)",
+    capsule: "A minimal-role guard who appears in a single encounter with a very limited range of actions. Gamorreans are hulking, pig-faced warriors hired as cheap muscle by crime lords and warlords throughout the galaxy.",
+    source: "WEG40065 Gamemaster Handbook p.52"
+  },
+  {
+    name: "Sulahb",
+    species: "Sullustans",
+    system: "Varies",
+    location: "Varies",
+    affiliations: ["Neutral"],
+    role: "Mechanic",
+    type: "Supporting Character",
+    stats: {
+      DEXTERITY: { base: "1D", skills: { blaster: "2D", dodge: "3D" } },
+      KNOWLEDGE: { base: "2D", skills: { value: "3D" } },
+      MECHANICAL: { base: "2D", skills: { "space transports": "2D+2" } },
+      PERCEPTION: { base: "2D", skills: { bargain: "3D+1" } },
+      STRENGTH: { base: "1D+1", skills: {} },
+      TECHNICAL: { base: "3D+2", skills: { "droid repair": "4D", "space transports repair": "6D" } }
+    },
+    specialAbilities: "Enhanced Senses: +2D to Perception or search in low-light conditions. Location Sense: Once she has visited an area, she always remembers how to return; +1D to astrogation rolls when jumping to a previously visited location.",
+    forcePoints: 0,
+    characterPoints: 3,
+    move: 10,
+    equipment: "Tools, work coveralls",
+    capsule: "Sulahb is a Sullustans mechanic who repairs the player characters' starship. She is quiet, hard-working, and meticulous. She can anchor the beginning or end of every adventure — crawling out from under a leaking landing strut to report repairs, hold up worn parts she found, and caution the crew to treat their ship (and themselves) with more care.",
+    source: "WEG40065 Gamemaster Handbook p.52"
+  },
+  {
+    name: "Kare Fontin",
+    species: "Human",
+    system: "Coruscant",
+    location: "Coruscant — Senate District",
+    affiliations: ["New Republic"],
+    role: "Former Senator / Diplomat",
+    type: "Major Character",
+    stats: {
+      DEXTERITY: { base: "1D", skills: {} },
+      KNOWLEDGE: { base: "4D", skills: { "alien species": "9D", bureaucracy: "12D", cultures: "8D", languages: "10D", willpower: "10D" } },
+      MECHANICAL: { base: "3D", skills: { astrogation: "4D+2" } },
+      PERCEPTION: { base: "4D", skills: { bargain: "10D", command: "10D", con: "12D", hide: "7D", persuasion: "8D", search: "7D" } },
+      STRENGTH: { base: "1D", skills: {} },
+      TECHNICAL: { base: "1D", skills: { "droid programming": "3D", security: "4D" } }
+    },
+    specialAbilities: "",
+    forcePoints: 3,
+    characterPoints: 16,
+    move: 8,
+    equipment: "Senate robes, comlink, datapad",
+    capsule: "Kare Fontin is a very old former senator who served during the days of the Old Republic — well over 100 years old. His body is frail and he is a little hard of hearing, but his mind and wit are as keen as ever. He can be introduced when the characters are charged with escorting him from Coruscant to Beta Olikark as a New Republic diplomatic envoy. If he gets along with the characters, he may call upon them for future diplomatic escorts and can grant special favors as a powerful friend in the Republican government.",
+    source: "WEG40065 Gamemaster Handbook p.52"
   }
 ];
