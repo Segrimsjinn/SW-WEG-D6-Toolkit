@@ -974,11 +974,13 @@ color:var(--text-dim);min-width:35px;text-align:right;
 
         <div class="card fade-in">
           <div class="card-title">⟐ Route Map</div>
+          <div style="padding:16px 0">
           <div class="map-container" id="travelMapContainer">
             <div class="map-zoom-wrap" id="travelMapZoom">
             <img id="mapImage" src="galaxy-map.jpg" alt="Galaxy Map">
             <canvas id="mapCanvas"></canvas>
             </div>
+          </div>
           </div>
         </div>
 
@@ -997,11 +999,13 @@ color:var(--text-dim);min-width:35px;text-align:right;
       </div>
       <div id="galaxyCount" style="font-size:13px;color:var(--text-dim);margin-bottom:8px;padding:0 4px"></div>
       <div id="galaxyResults" class="search-results"></div>
+      <div style="padding:16px 0">
       <div class="galaxy-map-container" id="galaxyMapContainer">
         <div class="map-zoom-wrap" id="galaxyMapZoom">
         <img id="galaxyMapImg" src="galaxy-map.jpg" alt="Galaxy Map" style="width:100%;border-radius:var(--radius);border:1px solid var(--gold-dim);display:block">
         <canvas id="galaxyCanvas" style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none"></canvas>
         </div>
+      </div>
       </div>
 
       <!-- Planet Detail Lookup -->
