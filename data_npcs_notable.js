@@ -3184,5 +3184,29 @@ const NOTABLE_NPCS = [
     equipment: "Heavy blaster pistol (5D), comlink",
     capsule: "Han Solo is a Corellian smuggler and former Imperial Navy washout who has made a career of staying one step ahead of Jabba the Hutt's enforcers, Imperial customs, and his own better judgment. His blaster: heavy blaster pistol at 9D+1, starship gunnery at 9D, and dodge at 8D make him one of the most dangerous individuals in a fight in the galaxy. He arrived at Yavin ostensibly to collect his reward for rescuing Leia — then turned the Falcon around and blasted Vader out of the trench run, giving Luke the clear shot that destroyed the Death Star. He received a medal and left without technically joining anything.",
     source: "WEG40124 Galaxy Guide 1: A New Hope p.75"
+  },
+  {
+    name: "Chewbacca (0 BBY)",
+    species: "Wookiee",
+    system: "Yavin",
+    location: "Yavin — Yavin 4 Base",
+    affiliations: ["The Fringe"],
+    role: "Wookiee First Mate",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "2D+2", skills: { "blaster": "5D+2", "bowcaster": "9D", "brawling parry": "7D", "dodge": "6D", "grenade": "5D", "melee combat": "8D", "melee parry": "8D", "vehicle blasters": "6D+1" } },
+      KNOWLEDGE: { base: "2D", skills: { "alien species": "6D+2", "bureaucracy": "4D", "business": "4D", "cultures": "3D+1", "intimidation": "8D+2", "languages": "5D+2", "planetary systems": "7D", "streetwise": "6D+1", "survival": "7D", "value": "7D+1" } },
+      MECHANICAL: { base: "3D", skills: { "astrogation": "8D", "beast riding": "4D", "communications": "3D+1", "repulsorlift operation": "7D", "sensors": "5D", "space transports": "6D+1", "space transports: YT-1300 transports": "8D", "starship gunnery": "7D", "starship shields": "6D" } },
+      PERCEPTION: { base: "2D", skills: { "bargain": "5D", "command": "4D+2", "gambling": "4D+1", "hide": "3D", "search": "3D", "sneak": "3D" } },
+      STRENGTH: { base: "5D", skills: { "brawling": "10D", "climbing/jumping": "7D", "lifting": "9D", "stamina": "10D", "swimming": "7D" } },
+      TECHNICAL: { base: "3D+1", skills: { "blaster repair": "5D+1", "bowcaster repair": "5D+2", "computer programming/repair": "8D", "demolitions": "5D+2", "droid programming": "7D", "droid repair": "6D", "first aid": "5D", "repulsorlift repair": "6D", "security": "6D+1", "space transports repair": "6D+2", "space transports repair: YT-1300 transports": "10D+2" } }
+    },
+    specialAbilities: "Berserker Rage: When brawling in berserker rage, Chewbacca gains +2D to Strength. The GM may trigger this when Chewie is sufficiently provoked or a close friend is threatened.\n\nClimbing Claws: Chewbacca's retractable climbing claws grant +2D to climbing/jumping rolls involving vertical surfaces.\n\nWookiee Strength: With STR 5D base, brawling 10D, and lifting 9D, Chewbacca is among the most physically powerful beings in the Alliance. He can rip arms out of their sockets — and has.",
+    forcePoints: 1,
+    characterPoints: 16,
+    move: 13,
+    equipment: "Bowcaster (4D), ammo bandolier, droid tool kit, starship tool kit, waist pouch",
+    capsule: "Chewbacca is a two-hundred-year-old Wookiee from Kashyyyk who serves as first mate and co-pilot aboard the Millennium Falcon. A life debt to Han Solo binds them as partners, though Chewie's technical expertise, navigational skill, and combat ability make him Han's equal in every practical sense. His YT-1300 repair specialization at 10D+2 means he knows the Falcon's systems as well as Han does — arguably better. At Yavin he co-piloted the run that broke Vader's attack, receiving recognition alongside Han and Luke.",
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.76"
   }
 ];
