@@ -3234,5 +3234,29 @@ const NOTABLE_NPCS = [
     equipment: "Blaster carbine (5D), hydrospanner, macrobinoculars, farm tools",
     capsule: "Shan is a lanky youth of 15, deeply tanned, wearing a dusty tan tunic, blue leggings, and a canvas hat that drapes down the back to protect his neck. Typical of his age in craving adventure, his eyes are bigger than his stomach in that regard — the coming week will give him more than his fill. He isn't a hero, but he will do what he has to to protect his town and family.",
     source: "WEG40124 Galaxy Guide 1: A New Hope (Wayfar scenario)"
+  },
+  {
+    name: "Jahn Tanner",
+    species: "Human",
+    system: "Tatooine",
+    location: "Tatooine — Wayfar",
+    affiliations: ["Neutral"],
+    role: "Moisture Farmer",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { "blaster": "3D", "dodge": "2D+2" } },
+      KNOWLEDGE: { base: "2D", skills: { "business": "4D", "survival": "3D+2" } },
+      MECHANICAL: { base: "2D", skills: { "repulsorlift operation": "3D" } },
+      PERCEPTION: { base: "2D", skills: {} },
+      STRENGTH: { base: "2D", skills: {} },
+      TECHNICAL: { base: "2D", skills: { "droid programming": "3D", "droid repair": "4D", "farm equipment repair": "5D+1" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 4,
+    move: 10,
+    equipment: "Blaster carbine (5D), hydrospanner, macrobinoculars, farm tools",
+    capsule: "Jahn is a tall, solidly built man with piercing eyes and a neatly trimmed beard. Commanding and firm, but also an entertaining host. He favors the tan tunic and leggings of the typical Tatooine farmer.",
+    source: "WEG40124 Galaxy Guide 1: A New Hope (Wayfar scenario)"
   }
 ];
