@@ -1,4 +1,4 @@
-﻿const SYSTEMS_DATA = [
+const SYSTEMS_DATA = [
   { "name": "23 Mere", "grid": "M-13", "region": "Colonies", "col": 11, "row": 13, "quadrant": "C", "hours": 2.3 },
   { "name": "2GS-91E20", "grid": "M-11", "region": "Core Worlds", "col": 11, "row": 11, "quadrant": "C", "hours": 5.7 },
   { "name": "5251977", "grid": "P-18", "region": "Outer Rim Territories", "col": 14, "row": 18, "quadrant": "SE", "hours": 2.7 },
@@ -2870,6 +2870,7 @@
   { "name": "Kajim", "grid": "O-8", "region": "Expansion Region", "col": 13, "row": 8, "quadrant": "E", "hours": 3.0 },
   { "name": "Kakra", "grid": "I-14", "region": "Wild Space", "col": 7, "row": 14, "quadrant": "W", "hours": 8.0 },
   { "name": "Kal'Shebbol", "grid": "M-21", "region": "Outer Rim Territories", "col": 11, "row": 21, "quadrant": "S", "hours": 71.5 },
+  { "name": "Kala'uun - Starport", "grid": "R-17", "region": "Outer Rim Territories", "col": 16, "row": 17, "quadrant": "SE", "hours": 2.2 },
   { "name": "Kalaan", "grid": "J-7", "region": "Mid Rim", "col": 8, "row": 7, "quadrant": "N", "hours": 5.3 },
   { "name": "Kalab", "grid": "M-19", "region": "Outer Rim Territories", "col": 11, "row": 19, "quadrant": "S", "hours": 0.5 },
   { "name": "Kalandis", "grid": "N-14", "region": "Inner Rim", "col": 12, "row": 14, "quadrant": "E", "hours": 2.2 },

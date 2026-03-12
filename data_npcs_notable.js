@@ -1010,5 +1010,56 @@ const NOTABLE_NPCS = [
     equipment: "Datapad, hold-out blaster (3D)",
     capsule: "T'nadar Nadar runs the Galaxy Shop — the dusty remnant of what was once Darknon's tourist novelty store. The Chadra-Fan has filled it with an extraordinary clutter of items traded, bought, or stolen from spacers passing through over the years: small vials of Gruvian Tovash, muss-hide covered furniture, fire lamps from Vundaria, ancient tools, and countless other oddities from across the galaxy. He gladly bargains on any item, accepting both credits and interesting trades, and will work out deals for spacers who need ready capital but have goods to pawn. He rarely has large amounts of credits on hand. Nadar is perhaps best known for a rumor that persists to this day: he once briefly possessed an actual lightsaber, which he intended to auction to the highest bidder — but it vanished mysteriously after only three days, stolen right from beneath his snout. He insists the story is true and bristles at any suggestion it was a fabrication for attention.",
     source: "WEG40217 Platt's Starport Guide p.128"
+  },
+
+  // ── KALA'UUN, RYLOTH (WEG40217 Platt's Starport Guide p.136–154) ──
+  {
+    name: "Koh'shak",
+    species: "Twi'lek",
+    system: "Ryloth",
+    location: "Kala'uun — Starport",
+    affiliations: ["Kala'uun", "Head-clan"],
+    role: "Starport Master, head-clan member",
+    type: "Twi'lek Starport Master",
+    stats: {
+      DEXTERITY: { base: "2D+2", skills: { "archaic guns": "4D", dodge: "3D+2", "pick pocket": "6D+2" } },
+      KNOWLEDGE: { base: "4D", skills: { "alien species": "7D+2", bureaucracy: "9D", business: "8D", cultures: "5D", languages: "6D+2", "streetwise: Ryloth": "7D+2", value: "7D" } },
+      MECHANICAL: { base: "2D", skills: {} },
+      PERCEPTION: { base: "4D+1", skills: { bargain: "10D+2", command: "5D+2", con: "5D", investigation: "6D", persuasion: "6D+2", search: "6D" } },
+      STRENGTH: { base: "2D", skills: {} },
+      TECHNICAL: { base: "2D", skills: { "computer programming/repair": "4D", security: "5D" } }
+    },
+    specialAbilities: "Tentacles: Twi'leks can use their head tails to communicate with other Twi'leks or others fluent in their secret language.",
+    forcePoints: 1,
+    darkSidePoints: 2,
+    characterPoints: 12,
+    move: 10,
+    equipment: "Datapad, fine robes, 2 Sevari flashpistols (4D+2)",
+    capsule: "Koh'shak is the officious Starport Master for Kala'uun and one of the city's five head-clan members — the member responsible for overseeing starport services. Ungainly and portly for a middle-aged Twi'lek, he can most often be found doddering around the parked starships or slumped asleep near his office door. His robes are perpetually wrinkled, saved from disgrace only by his head-clan amulet, a red and silver sash restraining his wide girth, and the two Sevari flashpistols shoved into that sash — a gift he claims came from a spice lord of Sevarcos. Koh'shak is pompous and obstinate during ship inspections, complaining about every violation and levying seemingly outrageous taxes on cargo. The fact is that Kala'uun charges no import taxes whatsoever; Koh'shak invented them for personal enrichment, though most proceeds go into his clan's coffers. He drops all charges in exchange for personal gifts, which are exempt from clan claims. Koh'shak's actual authority extends only to the main starport level — beyond that, he is little more than the city's ambassador to visiting spacers, and his head-clan peers treat him as an inferior. He uses a corps of young Twi'lek runners as messengers, cargo informants, and personal spies.",
+    source: "WEG40217 Platt's Starport Guide p.144"
+  },
+  {
+    name: "Mal'aa",
+    species: "Twi'lek",
+    system: "Ryloth",
+    location: "Kala'uun — Mal'aa's Kitchens",
+    affiliations: ["Kala'uun"],
+    role: "Hostess and innkeeper",
+    type: "Twi'lek Hostess",
+    stats: {
+      DEXTERITY: { base: "2D+1", skills: { blaster: "4D+2", "brawling parry": "3D+1", dodge: "5D", "pick pocket": "6D+2" } },
+      KNOWLEDGE: { base: "4D", skills: { bureaucracy: "5D", business: "6D+1", cultures: "5D+2", languages: "6D", "planetary systems": "5D+2", streetwise: "8D", value: "6D", willpower: "7D" } },
+      MECHANICAL: { base: "2D", skills: {} },
+      PERCEPTION: { base: "4D+2", skills: { bargain: "7D+2", command: "5D+1", con: "6D", investigation: "8D+1", persuasion: "6D+2", search: "7D+2", sneak: "8D+2" } },
+      STRENGTH: { base: "2D", skills: { brawling: "4D", lifting: "3D+2" } },
+      TECHNICAL: { base: "2D", skills: { "first aid": "4D+2" } }
+    },
+    specialAbilities: "Tentacles: Twi'leks can use their head tails to communicate with other Twi'leks or others fluent in their secret language.",
+    forcePoints: 2,
+    characterPoints: 11,
+    move: 10,
+    equipment: "Apron",
+    capsule: "Mal'aa is the gregarious Twi'lek hostess of Mal'aa's Kitchens, the one eatery available to spacers on Kala'uun's restricted starport level. Her establishment — a cave complex behind a cantina facade across the Procession from the Starport Master's seat — serves as the social heart of the starport. Spacers conduct deals over long metal tables, sleep on scush-fungus bags spread across the main room floor at night, and negotiate with Mal'aa for preserved pots of rycrit stew to carry on the next leg of their journey. A decent meal costs about 5 credits: rycrit stew, a mug of fermented fungus ale, munch-fungus bread, and raw munch-fungus in warm broth; second helpings are 1 credit. Unlike the deeply suspicious Twi'leks of the upper city, Mal'aa and her corps of young serving maids are openly hospitable — their business depends on outside traffic. Her reputation for generosity and good food is widely known among the free-traders who frequent Kala'uun.",
+    source: "WEG40217 Platt's Starport Guide p.153"
   }
 ];
