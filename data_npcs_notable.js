@@ -2990,5 +2990,29 @@ const NOTABLE_NPCS = [
     equipment: "Blaster pistol (4D), datapad, comlink, holographic map projector and pointer",
     capsule: "General Jan Dodonna is the military architect of the Rebel Alliance's greatest early victory. A celebrated Old Republic Star Destroyer captain who co-wrote modern fleet doctrine with Adar Tallon, Dodonna came out of retirement when the Empire ordered his execution — stumbling aboard a Rebel shuttle in his nightshirt with blaster burns across it. Reinvigorated, he became the Alliance's most indispensable commander. It was Dodonna who analyzed the Death Star's technical readouts, identified the two-meter exhaust port vulnerability, and devised the trench-run attack plan that destroyed it. His military history: modern fleet battles skill of 11D stands as one of the highest specialist ratings in the Alliance.",
     source: "WEG40124 Galaxy Guide 1: A New Hope p.61"
+  },
+  {
+    name: "Rebel Soldier (Typical)",
+    species: "Human",
+    system: "Generic & Varies",
+    location: "Rebel Alliance — Field Forces",
+    affiliations: ["Rebel Alliance"],
+    role: "Rebel Soldier",
+    type: "Typical NPC",
+    stats: {
+      DEXTERITY: { base: "3D+2", skills: { "blaster": "5D+2", "grenade": "4D+2" } },
+      KNOWLEDGE: { base: "1D", skills: {} },
+      MECHANICAL: { base: "1D+1", skills: {} },
+      PERCEPTION: { base: "1D+1", skills: { "hide": "2D", "sneak": "2D+1" } },
+      STRENGTH: { base: "3D", skills: { "brawling": "4D" } },
+      TECHNICAL: { base: "1D+2", skills: { "demolitions": "2D+2" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 10,
+    equipment: "Blaster pistol (4D), grenades (5D), comlink, macrobinoculars (+1D search at ranges greater than 50 meters), blast vest (+1 energy, +1D physical), blast helmet (+1 energy, +1D physical)",
+    capsule: "The backbone of the Rebel Alliance's ground forces — volunteers from across the galaxy who chose conscience over comfort. Rebel soldiers are lightly equipped compared to Imperial stormtroopers but compensate with motivation, fieldcraft, and local knowledge. Their combat training is focused and practical: shoot, move, demolish, and survive.",
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.62"
   }
 ];
