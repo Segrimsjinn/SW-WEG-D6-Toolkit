@@ -3210,17 +3210,21 @@ function showNotableNpcByName(encodedName) {
   if (n) showNotableNpcDetail(n);
 }
 
-function lookupNotableNpcFromPlanet(name) {
+function lookupNotableNpcsBySystem(system) {
   switchTab('npc');
   if (!notableNpcPanelOpen) toggleNotableNpcPanel();
   const searchEl = document.getElementById('notableNpcSearch');
-  if (!searchEl) return;
-  searchEl.value = name;
+  const sysEl = document.getElementById('notableNpcSystemFilter');
+  const affEl = document.getElementById('notableNpcAffFilter');
+  if (!searchEl || !sysEl) return;
+  searchEl.value = '';
+  if (affEl) affEl.value = '';
+  sysEl.value = system;
   filterNotableNpcs();
-  setTimeout(() => searchEl.scrollIntoView({ behavior: 'smooth', block: 'center' }), 120);
+  setTimeout(() => sysEl.scrollIntoView({ behavior: 'smooth', block: 'center' }), 120);
 }
 
-function linkifyNpcNames(text) {
+function linkifyNpcNames(text, system) {
   if (!text || typeof NOTABLE_NPCS === 'undefined' || !NOTABLE_NPCS.length) return text;
   // Build deduplicated base names (strip era suffix like "(0 BBY)")
   const seen = new Set();
@@ -3231,12 +3235,12 @@ function linkifyNpcNames(text) {
   });
   // Sort longest first to prevent partial substitution
   names.sort((a, b) => b.length - a.length);
+  const encSys = encodeURIComponent(system || '');
   let result = text;
   names.forEach(name => {
     const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     const re = new RegExp('\\b' + escaped + '\\b', 'g');
-    const enc = encodeURIComponent(name);
-    result = result.replace(re, `<span style="color:var(--cyan);cursor:pointer;border-bottom:1px dotted var(--cyan)" onclick="lookupNotableNpcFromPlanet(decodeURIComponent('${enc}'))">$&</span>`);
+    result = result.replace(re, `<span style="color:var(--cyan);cursor:pointer;border-bottom:1px dotted var(--cyan)" onclick="lookupNotableNpcsBySystem(decodeURIComponent('${encSys}'))">$&</span>`);
   });
   return result;
 }
@@ -4194,11 +4198,11 @@ function showPlanetDetail(name) {
     </div>
     ${p.locations ? `<div style="margin-bottom:12px">
       <div style="color:var(--gold);font-size:12px;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">Key Locations</div>
-      <div style="color:var(--text-secondary);line-height:1.7">${linkifyNpcNames(p.locations)}</div>
+      <div style="color:var(--text-secondary);line-height:1.7">${linkifyNpcNames(p.locations, p.system)}</div>
     </div>` : ''}
     ${p.ofNote ? `<div style="margin-bottom:12px">
       <div style="color:var(--gold);font-size:12px;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">Of Note</div>
-      <div style="color:var(--text-secondary);line-height:1.7">${linkifyNpcNames(p.ofNote)}</div>
+      <div style="color:var(--text-secondary);line-height:1.7">${linkifyNpcNames(p.ofNote, p.system)}</div>
     </div>` : ''}
     <div style="color:var(--text-dim);font-size:11px;font-style:italic;margin-top:8px">Source: ${p.source}</div>
   `;
