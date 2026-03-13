@@ -91,3 +91,4 @@ The entire app. Contains all CSS (minified, inline `<style>`), all HTML tab pane
   - `"Criminal Underworld"` — crime lords, pirates, assassins, gangs, hired killers
   - `"Neutral"` — civilians, academics, journalists, truly neutral parties
   - Specific faction/org tags (e.g. `"Void Demons"`, `"Omze's Incredible Traveling Starport"`) may be kept as a **second** array element for search value. Location-only tags belong in the `location` field, not `affiliations`.
+- **Auto-push UI/layout changes**: When making format or layout changes to the website (card layouts, column arrangements, styling in `index.html`), commit and push immediately without asking.
