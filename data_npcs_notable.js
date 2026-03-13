@@ -4754,6 +4754,32 @@ const NOTABLE_NPCS = [
     source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.59"
   },
 
+  // ── GALAXY GUIDE 3 — Chapter 6: Dagobah ──
+  {
+    name: "Yoda (3 ABY)",
+    species: "Unknown",
+    system: "Dagobah",
+    location: "Dagobah — Dagobah System (Exile)",
+    affiliations: ["Old Republic"],
+    role: "Jedi Master",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "2D+1", skills: { "dodge": "7D", "melee combat": "5D", "melee parry": "7D", "vehicle blasters": "3D" } },
+      KNOWLEDGE: { base: "4D+1", skills: { "alien species": "10D", "bureaucracy": "5D+1", "cultures": "7D", "languages": "8D", "planetary systems": "6D", "survival": "8D", "willpower": "12D+2" } },
+      MECHANICAL: { base: "2D", skills: { "astrogation": "3D", "beast riding": "4D" } },
+      PERCEPTION: { base: "4D+1", skills: { "bargain": "7D", "command": "9D+1", "con": "7D", "gambling": "5D+1", "hide": "8D", "persuasion": "9D", "search": "6D+1", "sneak": "8D" } },
+      STRENGTH: { base: "3D", skills: { "stamina": "6D" } },
+      TECHNICAL: { base: "2D", skills: { "first aid": "6D" } }
+    },
+    specialAbilities: "Force Skills: Control 14D, Sense 13D, Alter 10D. Force Powers — Control: absorb/dissipate energy, accelerate healing, concentrate, control pain, detoxify poison, emptiness, enhance attribute, hibernation trance, reduce injury, remain conscious, resist stun, short-term memory enhancement. Sense: combat sense, danger sense, instinctive astrogation, life detection, life sense, magnify senses, receptive telepathy, sense Force, sense path. Alter: injure/kill, telekinesis. Control & Sense: farseeing, lightsaber combat, projective telepathy. Control & Alter: accelerate another's healing, control another's pain, return another to consciousness, transfer Force. Control, Sense & Alter: affect mind, control mind, Force harmony. Sense & Alter: dim other's senses. This character is Force-sensitive.",
+    forcePoints: 35,
+    characterPoints: 50,
+    move: 5,
+    equipment: "Walking stick",
+    capsule: "Yoda, over 800 years old, was the preeminent Jedi Master of the Old Republic — a being of immense wisdom and Force power who trained generations of Jedi. Despite his small, unimposing frame, his connection to the Force is virtually unparalleled. He lives in deliberate simplicity on Dagobah, a planet wrapped in a dark side nexus — residual energy from the Bpfasshi Dark Jedi who fled here long ago. That nexus masks Yoda's luminous Force presence, keeping him hidden from both the Emperor and Darth Vader. He arrived at Dagobah in 19 BBY after failing to defeat Palpatine. In 3 ABY, Obi-Wan Kenobi's Force ghost directed Luke Skywalker to him. Yoda began Luke's training — teaching that the Force is not a weapon but a presence to be channeled with patience and understanding — before Luke left to save his friends on Bespin.",
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.62"
+  },
+
   // ── GALAXY GUIDE 2 — Yavin System: Typicals (p.30–34) ──
   {
     name: "Damarind Station Security (Typical)",
