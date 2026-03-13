@@ -3655,8 +3655,8 @@ const NOTABLE_NPCS = [
     characterPoints: 12,
     move: 10,
     equipment: "Brain-enhancing cyborg implants (borg implant bracket on head), portable data storage facility (holds up to three knowledge cartridges)",
-    capsule: "Lobot is 38 standard years old. Attached to his bald head is a borg implant bracket. When he accesses the city's main computer, Lobot gets a faraway look in his eyes. In recent years certain borg neural connections have worn away at Lobot's speech centers, and he speaks rarely. Born a slaver's son, Lobot traveled the galaxy aiding his father in raids on primitive systems. Around his fifteenth birthday his father's ship was besieged by pirates — his father killed, the ship scuttled. The boy was made a slave for two years. His escape led him to Cloud City, where Baroness-Administrator Ellisa Shallence proposed he indenture himself to the city as a borg to pay his debts. Now he spends more and more of his time in silent contemplation, re-working observations of the world in terms of formulas and numbers — giving him a distanced, eerie quality that disturbs most people.",
-    source: "WEG40119 Galaxy Guide 2: Yavin and Bespin p.89"
+    capsule: "Lobot is 38 standard years old. Attached to his bald head is a borg implant bracket. When he accesses the city's main computer, Lobot gets a faraway look in his eyes. In recent years certain borg neural connections have worn away at Lobot's speech centers, and he speaks rarely. Born a slaver's son, Lobot traveled the galaxy aiding his father in raids on primitive systems. Around his fifteenth birthday his father's ship was besieged by pirates — his father killed, the ship scuttled. The boy was made a slave for two years. His escape led him to Cloud City, where Baroness-Administrator Ellisa Shallence proposed he indenture himself to the city as a borg to pay his debts. Now he spends more and more of his time in silent contemplation, re-working observations of the world in terms of formulas and numbers — giving him a distanced, eerie quality that disturbs most people. It was under Lando Calrissian that Lobot's full potential was finally realized — Lando used his abilities in novel clandestine ways, and Lobot in turn urged Lando to side with the Rebellion when forced to choose. After the Imperial takeover, Lobot remained as computer liaison officer under Imperial Captain Treece; the Alliance believes he is still working in Cloud City's best interest rather than the Empire's.",
+    source: "WEG40119 Galaxy Guide 2: Yavin and Bespin p.89; WEG40125 Galaxy Guide 3: The Empire Strikes Back p.70"
   },
   {
     name: "K'cri Elban",
@@ -3922,7 +3922,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Blaster rifle (5D), blast vest (+1 energy, +1D physical)",
     capsule: "Cloud City Wing Guard customs officers. Thorough by reputation, though officers assigned to Port Town are notably less so — and more open to bribes. All packages and goods entering the city are inspected. Ships are not routinely boarded but customs reserves the right to board any vessel at any time; they do so occasionally when slaves or capital-scale explosives are suspected. Unannounced arrivals face a fine of ~100 credits to cover Wing Guard diversion costs.",
-    source: "WEG40119 Galaxy Guide 2: Yavin and Bespin p.63"
+    source: "WEG40119 Galaxy Guide 2: Yavin and Bespin p.63; WEG40125 Galaxy Guide 3: The Empire Strikes Back p.71"
   },
 
   // ── GALAXY GUIDE 3 — Hoth System: Imperials ──
@@ -4778,6 +4778,469 @@ const NOTABLE_NPCS = [
     equipment: "Walking stick",
     capsule: "Yoda, over 800 years old, was the preeminent Jedi Master of the Old Republic — a being of immense wisdom and Force power who trained generations of Jedi. Despite his small, unimposing frame, his connection to the Force is virtually unparalleled. He lives in deliberate simplicity on Dagobah, a planet wrapped in a dark side nexus — residual energy from the Bpfasshi Dark Jedi who fled here long ago. That nexus masks Yoda's luminous Force presence, keeping him hidden from both the Emperor and Darth Vader. He arrived at Dagobah in 19 BBY after failing to defeat Palpatine. In 3 ABY, Obi-Wan Kenobi's Force ghost directed Luke Skywalker to him. Yoda began Luke's training — teaching that the Force is not a weapon but a presence to be channeled with patience and understanding — before Luke left to save his friends on Bespin.",
     source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.62"
+  },
+
+  // ── GALAXY GUIDE 3 — Chapter 7: Cloud City ──
+  {
+    name: "Lando Calrissian (3 ABY)",
+    species: "Human",
+    system: "Bespin",
+    location: "Bespin — Cloud City (Baron-Administrator, defecting to Rebel Alliance)",
+    affiliations: ["Rebel Alliance", "The Fringe"],
+    role: "Gambler / Former Baron-Administrator of Cloud City",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D+2", skills: { "blaster": "6D+2", "blaster: hold-out blaster": "7D", "brawling parry": "5D+1", "dodge": "6D", "grenade": "4D+2", "melee combat": "4D+2", "melee parry": "5D+1" } },
+      KNOWLEDGE: { base: "3D", skills: { "alien species": "5D", "bureaucracy": "7D", "business": "7D", "business: mining": "10D+1", "business administration": "7D+1", "cultures": "6D+2", "languages": "5D", "planetary systems": "5D", "streetwise": "7D+1", "survival": "5D", "value": "5D+1" } },
+      MECHANICAL: { base: "2D+1", skills: { "archaic starship piloting": "3D+1", "astrogation": "6D+2", "communications": "4D", "ground vehicle operation": "3D+1", "repulsorlift operation": "4D", "repulsorlift operation: cloud car": "5D+1", "sensors": "4D+2", "space transports": "8D", "starfighter piloting": "8D", "starship gunnery": "7D", "starship shields": "7D", "swoop operation": "4D+2" } },
+      PERCEPTION: { base: "4D", skills: { "bargain": "8D", "bargain: tibanna gas": "10D+1", "command": "6D", "con": "8D+2", "forgery": "6D+1", "gambling": "9D+2", "hide": "6D", "persuasion": "6D+1", "sneak": "6D" } },
+      STRENGTH: { base: "2D+2", skills: { "brawling": "5D+1", "climbing/jumping": "5D", "lifting": "4D+2", "stamina": "5D", "swimming": "4D" } },
+      TECHNICAL: { base: "2D+2", skills: { "computer programming/repair": "4D", "droid programming": "3D", "repulsorlift repair": "4D", "security": "6D+1", "space transports repair": "6D+2", "starship weapon repair": "4D" } }
+    },
+    specialAbilities: "",
+    forcePoints: 1,
+    characterPoints: 10,
+    move: 10,
+    equipment: "Hold-out blaster (4D), comlink, sabacc card deck",
+    capsule: "Lando Calrissian — gambler, rogue, and interstellar con-man — had reinvented himself as Baron-Administrator of Cloud City, trading daily chaos for the comfortable pressures of civic leadership. By day he presided over labor disputes and charity luncheons; by night he circulated through the city's casinos in various disguises, including 'the old man' — a mysterious figure who ran the Royal Casino's table for three months straight, only to bet it all away on a single spin each night before leaving. When Darth Vader arrived and forced him to betray Han Solo as the price of Cloud City's survival, Lando chose a different answer: he freed Leia and Chewie, lost Cloud City entirely, and joined the Rebellion. Solo's legendary sabacc win of the Millennium Falcon from Lando was, ironically, the event that prompted Lando to settle down on Bespin in the first place.",
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.70"
+  },
+  {
+    name: "Wing Guard Officer (Typical)",
+    species: "Human",
+    system: "Bespin",
+    location: "Bespin — Cloud City",
+    affiliations: ["Neutral", "Cloud City Administration"],
+    role: "Wing Guard Officer",
+    type: "Generic NPC",
+    stats: {
+      DEXTERITY: { base: "2D+2", skills: { "blaster": "4D", "brawling parry": "4D", "dodge": "4D", "melee combat": "4D+1", "melee parry": "3D+2" } },
+      KNOWLEDGE: { base: "2D", skills: { "streetwise": "3D+1", "streetwise: Cloud City": "5D", "willpower": "4D" } },
+      MECHANICAL: { base: "2D", skills: {} },
+      PERCEPTION: { base: "2D", skills: { "con": "3D", "investigation: Cloud City": "6D+1", "search": "5D+1", "sneak": "4D+1" } },
+      STRENGTH: { base: "2D", skills: { "brawling": "3D" } },
+      TECHNICAL: { base: "2D", skills: { "security": "4D+2" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 10,
+    equipment: "Blaster rifle (5D), blast vest (+1 energy, +1D physical), comlink",
+    capsule: "Supervisory Wing Guard officers overseeing Cloud City patrol areas. More experienced than standard members, with enhanced melee and investigation skills and a stronger grasp of Cloud City's criminal geography.",
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.71"
+  },
+  {
+    name: "Wing Guard Member (Typical)",
+    species: "Human",
+    system: "Bespin",
+    location: "Bespin — Cloud City",
+    affiliations: ["Neutral", "Cloud City Administration"],
+    role: "Wing Guard Security Officer",
+    type: "Generic NPC",
+    stats: {
+      DEXTERITY: { base: "3D+1", skills: { "blaster": "4D", "dodge": "4D" } },
+      KNOWLEDGE: { base: "2D+1", skills: { "bureaucracy": "3D+1" } },
+      MECHANICAL: { base: "2D+2", skills: { "repulsorlift operation: cloud car": "4D+2" } },
+      PERCEPTION: { base: "3D", skills: { "command": "3D+2", "search": "4D" } },
+      STRENGTH: { base: "3D+1", skills: { "brawling": "4D" } },
+      TECHNICAL: { base: "3D+1", skills: { "security": "4D+2" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 10,
+    equipment: "Blaster pistol (4D), comlink, binders",
+    capsule: "Standard Wing Guard security personnel. All are trained to operate cloud cars for pursuit and patrol duties.",
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.71"
+  },
+  {
+    name: "Wing Guard Pilot (Typical)",
+    species: "Human",
+    system: "Bespin",
+    location: "Bespin — Cloud City",
+    affiliations: ["Neutral", "Cloud City Administration"],
+    role: "Wing Guard Cloud Car Pilot",
+    type: "Generic NPC",
+    stats: {
+      DEXTERITY: { base: "3D+1", skills: { "blaster": "4D", "dodge": "4D", "vehicle blasters": "5D+2" } },
+      KNOWLEDGE: { base: "2D+1", skills: { "bureaucracy": "3D+1" } },
+      MECHANICAL: { base: "2D+2", skills: { "repulsorlift operation: cloud car": "6D+2" } },
+      PERCEPTION: { base: "3D", skills: { "command": "3D+2", "search": "4D" } },
+      STRENGTH: { base: "3D+1", skills: { "brawling": "4D" } },
+      TECHNICAL: { base: "3D+1", skills: { "security": "4D+2" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 10,
+    equipment: "Blaster pistol (4D), comlink, binders",
+    capsule: "Specialized Wing Guard pilots who fly Cloud City's twin-pod cloud cars. Same base profile as standard Wing Guard members but with expert vehicle blasters and cloud car piloting skills.",
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.71"
+  },
+  {
+    name: "Jerrol Blendin",
+    species: "Human",
+    system: "Bespin",
+    location: "Bespin — Cloud City (Level 120, above Port Town)",
+    affiliations: ["Neutral", "Cloud City Administration"],
+    role: "Corrupt Wing Guard Captain",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D+1", skills: { "blaster": "4D", "dodge": "4D" } },
+      KNOWLEDGE: { base: "2D+1", skills: { "bureaucracy": "3D+1", "streetwise": "4D" } },
+      MECHANICAL: { base: "2D+2", skills: { "repulsorlift operation: cloud car": "4D+2" } },
+      PERCEPTION: { base: "3D", skills: { "command": "3D+2", "search": "4D" } },
+      STRENGTH: { base: "3D+1", skills: { "brawling": "4D" } },
+      TECHNICAL: { base: "3D+1", skills: { "security": "4D+2" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 10,
+    equipment: "Blaster pistol (4D), comlink, binders",
+    capsule: "Blendin started as an idealistic rookie cop under the despotic Baron Raynor, whose administration was thoroughly corrupt. Watching his chief take bribes and skim profits, Blendin eventually followed suit, rising to captain just as Lando Calrissian took over and restructured the Wing Guard. Feeling cheated out of a corrupt windfall he'd worked toward, Blendin requested assignment to Level 120 — just above Port Town — and now runs his beat as a personal protection racket, taking small cuts from locals and roughing up Port Town criminals who venture up. He keeps his men from going too far to avoid drawing attention. His fate after Calrissian's evacuation order is unknown.",
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.72"
+  },
+  {
+    name: "Danta Belissa",
+    species: "Human",
+    system: "Bespin",
+    location: "Bespin — Cloud City (Level 120, Port Town border)",
+    affiliations: ["Neutral"],
+    role: "Food & Souvenir Merchant (Tibanna Gas Black Marketeer)",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "2D", skills: {} },
+      KNOWLEDGE: { base: "2D", skills: { "business": "4D", "scholar: galactic history": "4D", "value": "4D" } },
+      MECHANICAL: { base: "2D", skills: { "repulsorlift operation: cloud car": "5D" } },
+      PERCEPTION: { base: "2D", skills: { "bargain": "5D" } },
+      STRENGTH: { base: "2D", skills: {} },
+      TECHNICAL: { base: "2D", skills: {} }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 10,
+    equipment: "Credit changer",
+    capsule: "Danta Belissa runs a small, tucked-away Corellian food and souvenir shop on Level 120 — just above Port Town. His wife and daughter do the cooking while he manages the business and an adjacent antiques shop. The scent of roast kelbird and fried dinnd draws customers from the surrounding breezeways. Business turned ugly when both Wonn Ionstrike's Port Town thugs and the corrupt Officer Blendin began demanding protection money. Facing ruin, Belissa discovered an exposed tibanna gas conduit hidden behind a fryer unit in his storage room. He fitted a small siphon and now sells bootleg tibanna to pilots and rogues who know where to ask — generating enough extra income to keep the shop alive without either Ionstrike or Blendin finding out. His fate after Calrissian's evacuation order is unknown.",
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.73"
+  },
+  {
+    name: "Wiorkettle",
+    species: "Snivvian",
+    system: "Bespin",
+    location: "Bespin — Cloud City (Planet Dreams, Inc. offices)",
+    affiliations: ["Neutral"],
+    role: "Snivvian Artist / Planet Dreams Co-Executive",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "2D+2", skills: {} },
+      KNOWLEDGE: { base: "4D", skills: { "alien species": "4D+2", "artist: sculpting": "6D+2", "bureaucracy": "4D+1", "business": "5D", "planetary systems": "5D+2" } },
+      MECHANICAL: { base: "2D", skills: {} },
+      PERCEPTION: { base: "4D+1", skills: {} },
+      STRENGTH: { base: "3D", skills: {} },
+      TECHNICAL: { base: "2D", skills: { "computer programming/repair": "4D+2", "droid repair": "4D+2" } }
+    },
+    specialAbilities: "Adaptive Skin: Snivvians can survive temperatures from -30°C to +45°C without harm or protective clothing. Snivvian skin provides +1D armor bonus vs physical damage.",
+    forcePoints: 0,
+    characterPoints: 2,
+    move: 10,
+    equipment: "Datapad, holo-sculpture projector",
+    capsule: "Wiorkettle is a Snivvian male and the chief artist of Planet Dreams, Inc. — a terraforming company that builds habitable environment domes on private asteroids for the galaxy's wealthiest clients, with operations centered around the Mestra system and the Oseon. He relocated the company's head offices to Cloud City for the low overhead and privacy. He throws himself completely into each project, working through the night until the aesthetic is perfect. When partner Ozz discovered embezzlement within the company, the investigation was cut short by the Imperial arrival. Wiorkettle and Treva Horme evacuated in their private shuttle; Ozz's current whereabouts are unknown.",
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.74"
+  },
+  {
+    name: "Treva Horme",
+    species: "Lutrillian",
+    system: "Bespin",
+    location: "Bespin — Cloud City (Planet Dreams, Inc. offices)",
+    affiliations: ["Neutral"],
+    role: "Lutrillian Businesswoman / Planet Dreams Co-Executive",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "2D+2", skills: { "running": "4D" } },
+      KNOWLEDGE: { base: "3D+1", skills: { "alien species": "4D", "bureaucracy": "5D", "business": "6D+1", "cultures": "4D+2", "languages": "4D+2", "willpower": "4D+2" } },
+      MECHANICAL: { base: "2D+2", skills: { "space transports": "5D" } },
+      PERCEPTION: { base: "4D", skills: { "bargain": "6D", "command": "5D+2", "con": "4D+1", "persuasion": "6D+2" } },
+      STRENGTH: { base: "2D+2", skills: {} },
+      TECHNICAL: { base: "2D+2", skills: { "computer programming/repair": "4D+2" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 10,
+    equipment: "Datapad",
+    capsule: "Treva Horme is a Lutrillian female and the executive planner for Planet Dreams, Inc. She manages production schedules, resource allocation, and deadlines. Not the strongest accountant, her real skill is in presentation — all sales pitches fall to her. She and Wiorkettle evacuated Cloud City together when the Empire arrived, escaping in their private executive shuttle. They have since relocated to the Oseon asteroid belt.",
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.74"
+  },
+  {
+    name: "Ugnaught Worker (Typical)",
+    species: "Ugnaught",
+    system: "Bespin",
+    location: "Bespin — Cloud City (Mining Quarter)",
+    affiliations: ["Neutral"],
+    role: "Ugnaught Miner / Laborer",
+    type: "Generic NPC",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { "dodge": "2D+2" } },
+      KNOWLEDGE: { base: "1D", skills: {} },
+      MECHANICAL: { base: "2D+1", skills: { "mining tool operation": "3D" } },
+      PERCEPTION: { base: "2D+1", skills: { "bargain": "3D+1" } },
+      STRENGTH: { base: "3D", skills: { "brawling": "4D" } },
+      TECHNICAL: { base: "1D+1", skills: {} }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 10,
+    equipment: "Datapad, force pick, laser spade",
+    capsule: "The backbone of Cloud City's workforce. Ugnaughts of Bespin are descendants of the original immigrants who came to work for Lord Figg when the city was founded, lured by the promise of a miner's coalition run by and for the workers. Three tribes — Irden, Botrut, and Isced — occupy distinct areas of the Mining Quarter. Strongly anti-Empire; their oral tradition preserves generations of slavery history and they will quietly aid anyone working against Imperial interests.",
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.75"
+  },
+  {
+    name: "Ugloste",
+    species: "Ugnaught",
+    system: "Bespin",
+    location: "Bespin — Cloud City (Carbon-Freeze Chamber)",
+    affiliations: ["Neutral"],
+    role: "Ugnaught Worker, Carbon-Freeze Chamber Operator",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "2D", skills: {} },
+      KNOWLEDGE: { base: "1D", skills: { "streetwise": "3D", "streetwise: Cloud City": "4D+1", "willpower": "5D+2" } },
+      MECHANICAL: { base: "2D+1", skills: { "carbon-freezing chamber operation": "5D+1" } },
+      PERCEPTION: { base: "2D+1", skills: { "bargain": "5D+1", "con": "4D", "sneak": "3D" } },
+      STRENGTH: { base: "3D", skills: {} },
+      TECHNICAL: { base: "1D+1", skills: { "carbon-freezing chamber repair": "5D+1" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 10,
+    equipment: "Force pick, laser spade",
+    capsule: "Ugloste is 120 standard years old and harbors a deep, quiet contempt for humans earned through a lifetime of slavery — including watching his first wife die under a bureaucrat's orders. Cloud City is one of the few places he has ever been able to simply be an Ugnaught: raising twelve Ugletts, teaching them gas mining and respect for their elders, hearing uglejig music echo through the mining levels. When the Empire arrived and ordered him to modify the carbon-freeze chamber for human use, he complied without question. As Han Solo was marched in, Ugloste recognized Chewbacca as the same Wookiee who had once tried to steal from his smelting station — but watching the Wookiee fight for the human, and seeing Solo kiss the woman, something shifted. He made one small, silent adjustment to the gas mixture. The freeze would be painful, but not deadly. He had seen enough suffering.",
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.76"
+  },
+  {
+    name: "Princess Leia Organa (3 ABY)",
+    species: "Human",
+    system: "Bespin",
+    location: "Bespin — Cloud City",
+    affiliations: ["Rebel Alliance"],
+    role: "Young Senatorial / Alliance Leader",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "7D+1", "blaster artillery": "3D+2", "brawling parry": "4D", "dodge": "7D", "grenade": "4D", "melee combat": "5D", "melee parry": "4D", "vehicle blasters": "4D" } },
+      KNOWLEDGE: { base: "4D", skills: { "alien species": "7D", "bureaucracy": "9D+1", "cultures": "9D", "languages": "6D+2", "planetary systems": "9D", "streetwise": "6D", "survival": "7D+1", "value": "6D+1", "willpower": "6D+1" } },
+      MECHANICAL: { base: "2D+2", skills: { "astrogation": "3D+2", "beast riding": "3D+2", "repulsorlift operation": "4D+2", "starfighter piloting": "5D", "starship gunnery": "4D", "starship shields": "5D" } },
+      PERCEPTION: { base: "3D+1", skills: { "bargain": "6D", "command": "10D", "con": "5D+1", "gambling": "4D", "hide": "6D", "persuasion": "7D", "persuasion: debate": "8D+2", "search": "5D+2", "sneak": "6D" } },
+      STRENGTH: { base: "3D", skills: { "brawling": "4D", "climbing/jumping": "4D", "swimming": "5D" } },
+      TECHNICAL: { base: "2D", skills: { "computer programming/repair": "4D+2", "droid programming": "4D", "droid repair": "4D", "first aid": "6D", "security": "3D" } }
+    },
+    specialAbilities: "This character is Force-sensitive.",
+    forcePoints: 6,
+    characterPoints: 20,
+    move: 10,
+    equipment: "Blaster pistol (4D), blaster rifle (5D), comlink, breath mask",
+    capsule: "Princess Leia Organa of Alderaan — senator, Alliance leader, and one of the most capable and determined figures in the Rebellion. By 3 ABY she had survived the destruction of her homeworld, the Battle of Yavin, and the fall of Echo Base on Hoth. Fleeing with Han Solo aboard the Millennium Falcon after Hoth, she was eventually captured at Cloud City through Lando Calrissian's forced deal with Darth Vader. She was used as bait to lure Luke Skywalker to Bespin. Though Force-sensitive, she has had no formal training.",
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.79"
+  },
+
+  {
+    name: "Han Solo (3 ABY)",
+    species: "Human",
+    system: "Bespin",
+    location: "Bespin — Cloud City",
+    affiliations: ["Rebel Alliance", "The Fringe"],
+    role: "Smuggler",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D+1", skills: { "blaster": "7D", "blaster: heavy blaster pistol": "10D", "blaster: blaster rifle": "5D+1", "blaster artillery": "6D+1", "brawling parry": "7D+1", "dodge": "8D", "grenade": "5D+1", "melee combat": "6D+1", "melee parry": "5D+1", "missile weapons": "4D+2", "pickpocket": "4D+1", "running": "3D+2", "vehicle blasters": "6D+1" } },
+      KNOWLEDGE: { base: "2D", skills: { "alien species": "6D+2", "bureaucracy": "5D", "business": "6D", "business: smugglers": "7D", "cultures": "5D+1", "intimidation": "6D+2", "languages": "5D+2", "law enforcement": "5D", "planetary systems": "7D+2", "streetwise": "7D+2", "streetwise: Jabba the Hutt's organization": "9D+2", "survival": "7D+2", "value": "5D", "willpower": "4D+1" } },
+      MECHANICAL: { base: "3D+2", skills: { "astrogation": "8D", "beast riding": "5D+2", "beast riding: tauntaun": "6D", "capital ship gunnery": "5D+1", "capital ship piloting": "7D", "capital ship shields": "4D+1", "communications": "5D+1", "ground vehicle operation": "4D+2", "repulsorlift operation": "7D+1", "sensors": "4D+2", "space transports": "7D", "space transports: YT-1300 transports": "11D+1", "starfighter piloting": "6D", "starship gunnery": "9D", "starship shields": "6D+2", "swoop operation": "6D+2" } },
+      PERCEPTION: { base: "3D", skills: { "bargain": "8D", "command": "6D", "con": "8D", "forgery": "5D", "forgery: ship IDs": "7D", "gambling": "8D", "hide": "8D", "persuasion": "5D", "search": "5D+2", "sneak": "4D+2" } },
+      STRENGTH: { base: "3D", skills: { "brawling": "7D+2", "climbing/jumping": "6D", "lifting": "5D+1", "stamina": "7D", "swimming": "4D+2" } },
+      TECHNICAL: { base: "2D+2", skills: { "blaster repair": "4D+2", "computer programming/repair": "7D", "demolitions": "6D+2", "droid programming": "5D+1", "droid repair": "5D+1", "repulsorlift repair": "7D+1", "security": "7D", "space transports repair": "6D", "space transports repair: YT-1300 transports": "9D", "starship weapons repair": "4D" } }
+    },
+    forcePoints: 3,
+    characterPoints: 30,
+    move: 10,
+    equipment: "Modified heavy blaster pistol (5D+1), modified blaster rifle (6D+2), comlink",
+    capsule: "Han Solo at the height of the Rebellion's darkest hour — the same reckless smuggler from Mos Eisley, but now carrying the weight of something he won't quite admit he believes in. His blaster: heavy blaster pistol at 10D and starship gunnery at 9D make him one of the most lethally effective individuals in the galaxy in a fight. His YT-1300 transports specialty at 11D+1 means no one in the sector knows the Falcon's quirks better. At Bespin, Lando's forced betrayal delivered him into Vader's hands — used as bait for Luke Skywalker. He was sealed in carbonite and handed to Boba Fett, alive and in hibernation sickness, bound for Jabba the Hutt.",
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.81"
+  },
+
+  {
+    name: "Luke Skywalker (3 ABY)",
+    species: "Human",
+    system: "Bespin",
+    location: "Bespin — Cloud City",
+    affiliations: ["Rebel Alliance"],
+    role: "Brash Pilot",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "6D+2", "brawling parry": "5D+2", "dodge": "7D+1", "lightsaber": "7D+2", "melee combat": "4D", "melee parry": "9D" } },
+      KNOWLEDGE: { base: "2D", skills: { "alien species": "4D", "bureaucracy": "5D+1", "streetwise": "6D", "survival": "6D", "value": "4D" } },
+      MECHANICAL: { base: "4D", skills: { "astrogation": "6D", "beast riding": "4D+2", "beast riding: tauntaun": "6D+1", "repulsorlift operation": "8D", "repulsorlift operation: airspeeder": "8D", "sensors": "4D+1", "starfighter piloting": "7D", "starfighter piloting: X-wing": "9D+2", "starship gunnery": "7D+1", "starship shields": "7D" } },
+      PERCEPTION: { base: "2D+1", skills: { "bargain": "3D", "command": "5D", "hide": "4D+2", "search": "5D", "sneak": "4D+2" } },
+      STRENGTH: { base: "3D", skills: { "brawling": "5D+1", "climbing/jumping": "6D", "lifting": "4D", "stamina": "6D" } },
+      TECHNICAL: { base: "3D", skills: { "computer programming/repair": "5D", "droid programming": "5D", "droid repair": "6D", "first aid": "4D+2", "lightsaber repair": "7D+1", "repulsorlift repair": "7D", "security": "4D+1", "starfighter repair": "5D+2" } }
+    },
+    specialAbilities: "Force Skills: Control 9D, Sense 7D, Alter 6D. Force Powers — Control: accelerate healing, concentrate, detoxify poison, emptiness, enhance attribute, hibernation trance, reduce injury, remain conscious, resist stun. Sense: danger sense, instinctive astrogation, life detection, life sense, receptive telepathy, sense Force. Alter: telekinesis. Control & Sense: farseeing, lightsaber combat, projective telepathy. This character is Force-sensitive.",
+    forcePoints: 12,
+    characterPoints: 30,
+    move: 10,
+    equipment: "Blaster pistol (4D), lightsaber (5D), comlink",
+    capsule: "Luke Skywalker in the months following the Battle of Yavin — a farmboy from Tatooine who destroyed the Death Star and is now the Rebellion's most wanted pilot. Trained in secret by Yoda on Dagobah, his Force abilities have grown dramatically: Control 9D and lightsaber combat put him leagues ahead of where he stood at Yavin. His starfighter piloting: X-wing at 9D+2 makes him arguably the finest X-wing pilot alive. But he is still brash — he abandoned his training against Yoda's warnings when he sensed Han and Leia in danger, arriving at Cloud City too late to save them and walking into a trap. There Vader revealed the truth of Luke's parentage and severed his right hand, leaving him clinging to an antenna below Bespin's gas platforms until Leia sensed his call.",
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.83"
+  },
+
+  {
+    name: "R2-D2 (Artoo-Detoo) (3 ABY)",
+    species: "Droid",
+    system: "Bespin",
+    location: "Bespin — Cloud City",
+    affiliations: ["Rebel Alliance"],
+    role: "Industrial Automaton R2 Astromech Droid",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { "dodge": "4D", "electroshock prod": "4D+1" } },
+      KNOWLEDGE: { base: "2D", skills: { "planetary systems": "8D+2", "survival": "6D+2", "value": "6D+2" } },
+      MECHANICAL: { base: "4D", skills: { "astrogation": "10D+2", "communications": "6D", "sensors": "7D", "starfighter piloting": "6D", "starfighter piloting: X-wing": "8D+1", "starship gunnery": "4D+1", "starship shields": "4D+1" } },
+      PERCEPTION: { base: "3D", skills: { "con": "3D+2", "gambling": "6D", "sneak": "4D+1" } },
+      STRENGTH: { base: "3D", skills: { "lifting": "4D" } },
+      TECHNICAL: { base: "4D", skills: { "computer programming/repair": "8D+2", "droid programming": "5D+1", "droid repair": "6D+2", "machinery repair": "5D+2", "repulsorlift repair": "4D", "security": "6D", "starfighter repair": "6D+1", "starfighter repair: X-wing": "7D+2", "space transports repair": "5D+2", "space transports repair: YT-1300 transports": "7D+1" } }
+    },
+    specialAbilities: "Equipped with: three wheeled legs (one retractable); retractable heavy grasper arm (+1D to lifting); retractable fine work grasper arm; extendable 0.3m video sensor (360° rotation); small electric arc welder (3D damage, 0.3m range); small circular saw (4D damage, 0.3m range); video display screen; holographic projector/recorder (1m range); fire extinguisher; small internal cargo area (20cm × 8cm); high-pitch acoustic signaller; long-range sensing array including radar, radiation counter, life form sensor, infrared receptors, and electromagnetic field receptor (+3D to search at up to 100m range); broad-band antenna receiver (monitors all broadcast and communication frequencies); compressed air launcher (lightsabers or flares).",
+    forcePoints: 1,
+    characterPoints: 13,
+    move: 5,
+    equipment: "Size: 0.96 meters. Cost: 1,250 credits (as purchased by Owen Lars).",
+    capsule: "R2-D2 is an Industrial Automaton R2-series astromech assigned to Anakin Skywalker during the Clone Wars and later to Luke Skywalker. His memory has never been wiped — an oversight that has allowed a rich and fiercely loyal personality to develop behind a wall of electronic bleeps. His astrogation at 10D+2 and X-wing specialization at 8D+1 make him arguably the most capable astromech in the Rebellion. At Cloud City, R2 was blasted by Imperial forces and had to be carried out in pieces by Chewbacca before being reassembled aboard the Falcon.",
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.85"
+  },
+
+  {
+    name: "C-3PO (See-Threepio) (3 ABY)",
+    species: "Droid",
+    system: "Bespin",
+    location: "Bespin — Cloud City",
+    affiliations: ["Rebel Alliance"],
+    role: "Cybot Galactica 3PO Human-Cyborg Relations Droid",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { "dodge": "4D+2" } },
+      KNOWLEDGE: { base: "5D+2", skills: { "alien species": "7D+1", "bureaucracy": "8D", "cultures": "8D", "languages": "12D+1", "planetary systems": "6D", "survival": "5D+2", "value": "5D+2" } },
+      MECHANICAL: { base: "3D", skills: { "repulsorlift operation": "4D" } },
+      PERCEPTION: { base: "3D+1", skills: { "bargain": "6D", "con": "5D" } },
+      STRENGTH: { base: "2D", skills: {} },
+      TECHNICAL: { base: "3D", skills: { "first aid": "4D" } }
+    },
+    specialAbilities: "Equipped with: humanoid body (two arms, two legs, head); two visual and two audial sensors — human range; broad-band antenna receiver; Verbobrain; TranLang III Communication module with over six million languages; Vocabulator speech/sound system capable of an extraordinarily wide range of sound effects and exact impersonation of voices.",
+    forcePoints: 1,
+    characterPoints: 12,
+    move: 8,
+    equipment: "Size: 1.67 meters. Cost: not available for sale.",
+    capsule: "C-3PO is a Cybot Galactica 3PO-series protocol droid built by a young Anakin Skywalker on Tatooine, fluent in over six million forms of communication. Perpetually anxious, endlessly verbose, and inexplicably indispensable, he serves as translator, diplomat, and reluctant adventurer alongside R2-D2. His languages skill at 12D+1 is essentially without peer. At Cloud City he was shot apart by stormtroopers and carried around in a bag by Chewbacca — reassembled incorrectly, his head briefly backwards.",
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.85"
+  },
+
+  {
+    name: "Chewbacca (3 ABY)",
+    species: "Wookiee",
+    system: "Bespin",
+    location: "Bespin — Cloud City",
+    affiliations: ["Rebel Alliance", "The Fringe"],
+    role: "Wookiee First Mate",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "2D+2", skills: { "blaster": "6D", "bowcaster": "9D", "brawling parry": "7D+1", "dodge": "6D+1", "grenade": "5D+1", "melee combat": "8D", "melee parry": "8D", "vehicle blasters": "6D+1" } },
+      KNOWLEDGE: { base: "2D", skills: { "alien species": "7D", "bureaucracy": "4D", "business": "4D+2", "cultures": "3D+1", "intimidation": "8D+2", "languages": "6D", "planetary systems": "7D+2", "streetwise": "7D", "survival": "7D", "value": "7D+1" } },
+      MECHANICAL: { base: "3D", skills: { "astrogation": "8D+1", "beast riding": "4D", "communications": "4D+2", "repulsorlift operation": "7D+1", "sensors": "6D", "space transports": "6D+2", "space transports: YT-1300 transports": "8D", "starship gunnery": "8D", "starship shields": "6D+1" } },
+      PERCEPTION: { base: "2D", skills: { "bargain": "5D", "command": "4D+2", "gambling": "5D", "hide": "3D+2", "search": "3D", "sneak": "3D+1" } },
+      STRENGTH: { base: "5D", skills: { "brawling": "10D", "climbing/jumping": "7D+2", "lifting": "10D", "stamina": "10D", "swimming": "7D" } },
+      TECHNICAL: { base: "3D+1", skills: { "blaster repair": "5D+1", "bowcaster repair": "5D+2", "computer programming/repair": "8D", "demolitions": "5D+2", "droid programming": "7D+2", "droid repair": "7D+2", "first aid": "5D", "repulsorlift repair": "6D", "security": "6D+1", "space transports repair": "8D", "space transports repair: YT-1300 transports": "10D+2" } }
+    },
+    specialAbilities: "Berserker Rage: When brawling in berserker rage, Chewbacca gains +2D to Strength.\n\nClimbing Claws: Chewbacca's retractable climbing claws grant +2D to climbing/jumping rolls involving vertical surfaces.",
+    forcePoints: 3,
+    characterPoints: 21,
+    move: 13,
+    equipment: "Bowcaster (4D), ammo bandolier, droid tool kit, starship tool kit, waist pouch",
+    capsule: "Chewbacca is a 200-year-old Wookiee from Kashyyyk, first mate and co-pilot of the Millennium Falcon, bound to Han Solo by a life debt. His physical capabilities are extraordinary — brawling 10D, lifting 10D, stamina 10D — and his technical skills nearly match his combat ability, with YT-1300 repair at 10D+2 and computer programming/repair at 8D. At Bespin he fought ferociously to protect his companions, was captured alongside Leia, and tried to reassemble C-3PO after the droid was blasted apart. When Han was frozen in carbonite, Chewie launched himself at the stormtroopers before being restrained.",
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.86"
+  },
+
+  // ── GALAXY GUIDE 3 — Chapter 8: Adventure Hooks ──
+  {
+    name: "Chreeto the Defiant",
+    species: "Rodian",
+    system: "Bespin",
+    location: "Bespin — Cloud City",
+    affiliations: ["The Fringe", "Galactic Empire"],
+    role: "Rodian Bounty Hunter",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "4D", skills: { "blaster": "5D+2", "brawling parry": "4D+2", "dodge": "5D" } },
+      KNOWLEDGE: { base: "2D+2", skills: { "alien species": "4D+1", "intimidation": "5D+2", "streetwise": "3D+2", "survival": "5D", "value": "4D" } },
+      MECHANICAL: { base: "2D+2", skills: { "astrogation": "5D+1", "space transports": "5D+1", "starship gunnery": "4D+1", "starship shields": "3D+1" } },
+      PERCEPTION: { base: "3D", skills: { "command": "3D+2", "con": "3D+2", "gambling": "3D+2" } },
+      STRENGTH: { base: "3D+2", skills: { "brawling": "4D+2" } },
+      TECHNICAL: { base: "2D", skills: { "demolitions": "4D+1" } }
+    },
+    forcePoints: 0,
+    characterPoints: 7,
+    move: 10,
+    equipment: "Blaster rifle (6D), binders.\n\nProwling Wolf — Corellian Engineering Corporation YT-1300 modified light freighter. Scale: Starfighter. Length: 26.7m. Crew: 1 (1 can coordinate), gunners: 1. Passengers: 6. Cargo: 100 metric tons. Consumables: 1 month. Cost: not for sale. Hyperdrive: x1, backup x12. Nav computer: yes. Maneuverability: 1D. Space: 7. Atmosphere: 350/1,000 kmh. Hull: 4D+1. Shields: 4D. Sensors — Passive: 20/1D+2, Scan: 50/2D+2, Search: 60/3D, Focus: 5/4D. Weapons: Heavy Laser Cannon (fire arc: turret, crew: 1, skill: starship gunnery, fire control: 4D, space range: 1-7/12/25, atmosphere range: 100-300m/1.2/2.5km, damage: 6D).",
+    capsule: "Chreeto is a flamboyant Rodian bounty hunter on Imperial retainer who genuinely revels in his work and is regarded as a hero in his home province on Rodia. He prefers to take at least one target alive — so he can explain to them why he is excellent. He dresses in a light tan jumpsuit with bright green piping and a red sash pinned with Rodian awards. He commands a crew of six human and near-human ruffians aboard the Prowling Wolf, a modified YT-1300 freighter.",
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.90"
+  },
+
+  {
+    name: "Chreeto's Crew (Typical)",
+    species: "Human",
+    system: "Bespin",
+    location: "Bespin — Cloud City",
+    affiliations: ["The Fringe", "Galactic Empire"],
+    role: "Bounty Hunter Crew",
+    type: "Generic NPC",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "4D", "dodge": "3D+1" } },
+      KNOWLEDGE: { base: "3D", skills: {} },
+      MECHANICAL: { base: "3D", skills: { "space transports": "4D", "starship gunnery": "4D+1", "starship shields": "3D+2" } },
+      PERCEPTION: { base: "3D", skills: {} },
+      STRENGTH: { base: "3D", skills: { "brawling": "4D" } },
+      TECHNICAL: { base: "3D", skills: {} }
+    },
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 10,
+    equipment: "Blaster pistol (4D)",
+    capsule: "Six human and near-human ruffians in Chreeto's employ aboard the Prowling Wolf.",
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.90"
+  },
+
+  {
+    name: "Inkur",
+    species: "Ugnaught",
+    system: "Bespin",
+    location: "Bespin — Cloud City",
+    affiliations: ["Neutral"],
+    role: "Ugnaught Dealmaker",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { "dodge": "2D+1" } },
+      KNOWLEDGE: { base: "1D", skills: { "cultures: Ugnaught tribes": "5D", "languages": "3D+2", "streetwise": "4D" } },
+      MECHANICAL: { base: "2D+1", skills: { "repulsorlift operation": "3D+1" } },
+      PERCEPTION: { base: "2D+1", skills: { "con": "3D+1", "investigation: Cloud City": "4D+1" } },
+      STRENGTH: { base: "3D", skills: { "brawling": "3D+2" } },
+      TECHNICAL: { base: "1D+1", skills: { "security": "2D+2" } }
+    },
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 10,
+    equipment: "Datapad",
+    capsule: "Inkur is a dealmaker for the Irden Ugnaught tribe, in his mid-thirties, wearing a faded red smock. He has light brown skin and a bright pink snout. He frequents Port Town, keeping his senses open for newcomers and new business. A skeptical and shrewd judge of character, Inkur has been quietly securing large repulsorlift generators for a secret Ugnaught building project.",
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.92"
   },
 
   // ── GALAXY GUIDE 2 — Yavin System: Typicals (p.30–34) ──
