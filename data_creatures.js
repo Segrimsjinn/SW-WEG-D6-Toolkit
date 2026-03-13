@@ -226,7 +226,7 @@ const CREATURES_DATA = [
  {
   "name": "Attack Stohl",
   "type": "Domestic defense pet",
-  "planet": "Ichtor 8",
+  "planet": "Ichtor 8, Endor",
   "habitat": "Various",
   "dex": "3D",
   "per": "2D",
@@ -3612,6 +3612,20 @@ const CREATURES_DATA = [
   "source": "Abduction of Crying Dawn Singer (page 21)"
  },
  {
+  "name": "Najoon",
+  "type": "Wild avian",
+  "planet": "Endor",
+  "habitat": "Forest",
+  "dex": "3D+2",
+  "per": "2D+1",
+  "str": "1D+2",
+  "move": "3/15 (flying)",
+  "size": "0.25-0.5m long, 0.45-0.7m wingspan",
+  "orneriness": "",
+  "special": "",
+  "source": "WEG40126 Galaxy Guide 5: Return of the Jedi p.82"
+ },
+ {
   "name": "Narglatch",
   "type": "Swamp alpha predator",
   "planet": "Naboo",
@@ -3920,6 +3934,20 @@ const CREATURES_DATA = [
   "source": "Operation: Elrood (page 38)"
  },
  {
+  "name": "Preducor",
+  "type": "Nocturnal predator",
+  "planet": "Endor",
+  "habitat": "Forest",
+  "dex": "4D",
+  "per": "3D",
+  "str": "6D",
+  "move": "8",
+  "size": "4m tall, 5m long",
+  "orneriness": "",
+  "special": "Teeth: 7D damage. Claws: 6D damage. Tail: 5D+1 damage. Sneak: forest 4D. Stamina 8D. Fights until wounded, then leaps back into forest to sneak around for a surprise attack.",
+  "source": "WEG40126 Galaxy Guide 5: Return of the Jedi p.82"
+ },
+ {
   "name": "Preying Makthier",
   "type": "Cave carnivore",
   "planet": "Makthierse",
@@ -4103,9 +4131,9 @@ const CREATURES_DATA = [
  },
  {
   "name": "Rancor",
-  "type": "",
+  "type": "Gigantic predator",
   "planet": "Dathomir",
-  "habitat": "Forest/Cave",
+  "habitat": "Forest/Cave, Jabba's Palace",
   "dex": "4D",
   "per": "1D",
   "str": "7D",
@@ -4341,9 +4369,9 @@ const CREATURES_DATA = [
  },
  {
   "name": "Sarlacc",
-  "type": "",
-  "planet": "",
-  "habitat": "Desert",
+  "type": "Solitary, stationary carnivore",
+  "planet": "Tatooine",
+  "habitat": "Desert, Great Pit of Carkoon",
   "dex": "4D",
   "per": "4D",
   "str": "5D",
@@ -5657,9 +5685,9 @@ const CREATURES_DATA = [
  },
  {
   "name": "Worrt",
-  "type": "",
+  "type": "Voracious predator",
   "planet": "Tatooine",
-  "habitat": "Desert",
+  "habitat": "Desert, Jabba's Palace",
   "dex": "2D",
   "per": "3D",
   "str": "3D+2",

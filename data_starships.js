@@ -31795,6 +31795,101 @@ const STARSHIP_DATA = {
      "damage": "5D (capital scale)"
     }
    ]
+  },
+  {
+   "name": "Death Star II",
+   "craft": "Custom Deep Space Battle Station",
+   "type": "Deep space mobile battle station",
+   "affiliation": "Empire",
+   "era": "Rebellion",
+   "source": "WEG40126 Galaxy Guide 5: Return of the Jedi p.43",
+   "price_new": "Not for sale",
+   "price_used": "",
+   "scale": "Death Star",
+   "length": "160 km (diameter)",
+   "crew": "485,560",
+   "gunners": "152,276",
+   "passengers": "1,295,950 troops; 127,570 stormtroopers; 75,860 starship support staff; 334,432 support ship pilots and crew",
+   "starfighter_complement": "",
+   "support_craft": "",
+   "ground_vehicles": "",
+   "troop_capacity": "",
+   "cargo": "Over 1 million kilotons",
+   "consumables": "3 years",
+   "hyperdrive": "x3",
+   "nav_computer": "Yes",
+   "maneuverability": "",
+   "space": "2",
+   "atmosphere": "",
+   "hull": "18D",
+   "shields": "3D",
+   "of_note": "Skeleton 127,850/+15. x20 backup hyperdrive. Divided into 24 distinct weapon zones — only weapons in the zone adjacent to an attacking vessel can be brought to bear; actual number often significantly lower. Superlaser generates 2D damage per minute (up to 16D max); energy cells can produce 48D per day without severely straining reactors. Millions of millimeter-wide heat dispersion ducts replaced the original's thermal exhaust port. Destroyed at the Battle of Endor (4 ABY) while still under construction.",
+   "sensors_passive": "350/1D",
+   "sensors_scan": "1,500/2D",
+   "sensors_search": "7,500/3D",
+   "sensors_focus": "60/4D+2",
+   "weapons": [
+    {
+     "name": "Superlaser",
+     "fire_arc": "Front",
+     "crew": "168 (skeleton 48/+10)",
+     "skill": "Capital ship gunnery: superlaser",
+     "fire_control": "1D",
+     "space_range": "1-20/40/100",
+     "atmo_range": "",
+     "damage": "2D–16D (Death Star scale; accumulates 2D/minute)"
+    },
+    {
+     "name": "15,000 Turbolaser Batteries",
+     "fire_arc": "Turret (zone-limited)",
+     "crew": "3",
+     "skill": "Starship gunnery",
+     "fire_control": "1D",
+     "space_range": "1-5/10/15",
+     "atmo_range": "",
+     "damage": "5D (starfighter scale; body 3D capital scale)"
+    },
+    {
+     "name": "15,000 Heavy Turbolasers",
+     "fire_arc": "Turret (zone-limited)",
+     "crew": "4",
+     "skill": "Starship gunnery",
+     "fire_control": "1D",
+     "space_range": "1-7/15/30",
+     "atmo_range": "",
+     "damage": "7D (starfighter scale; body 4D capital scale)"
+    },
+    {
+     "name": "7,500 Laser Cannons",
+     "fire_arc": "Turret (zone-limited)",
+     "crew": "3",
+     "skill": "Capital ship gunnery",
+     "fire_control": "1D",
+     "space_range": "1-5/10/15",
+     "atmo_range": "",
+     "damage": "7D (capital scale; body 4D capital scale)"
+    },
+    {
+     "name": "5,000 Ion Cannons",
+     "fire_arc": "Turret (zone-limited)",
+     "crew": "4",
+     "skill": "Capital ship gunnery",
+     "fire_control": "1D",
+     "space_range": "1-3/7/10",
+     "atmo_range": "",
+     "damage": "4D (capital scale; body 4D capital scale)"
+    },
+    {
+     "name": "768 Tractor Beam Emplacements",
+     "fire_arc": "Turret (zone-limited)",
+     "crew": "6",
+     "skill": "Capital ship gunnery",
+     "fire_control": "3D",
+     "space_range": "1-5/10/25",
+     "atmo_range": "",
+     "damage": "5D (capital scale; body 5D capital scale)"
+    }
+   ]
   }
  ]
 };
