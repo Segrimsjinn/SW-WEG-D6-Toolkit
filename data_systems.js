@@ -3772,6 +3772,7 @@ const SYSTEMS_DATA = [
   { "name": "Minntaa", "grid": "S-5", "region": "Outer Rim Territories", "col": 17, "row": 5, "quadrant": "NE", "hours": 4.8 },
   { "name": "Minntooine", "grid": "T-6", "region": "Outer Rim Territories", "col": 18, "row": 6, "quadrant": "NE", "hours": 5.3 },
   { "name": "Minoth", "grid": "J-17", "region": "Mid Rim", "col": 8, "row": 17, "quadrant": "S", "hours": 4.3 },
+  { "name": "Minos Cluster", "grid": "M-20", "region": "Outer Rim Territories", "col": 11, "row": 20, "quadrant": "S", "hours": 14.7 },
   { "name": "Mirak Major", "grid": "M-14", "region": "Inner Rim", "col": 11, "row": 14, "quadrant": "C", "hours": 3.2 },
   { "name": "Mircapala", "grid": "S-3", "region": "Wild Space", "col": 17, "row": 3, "quadrant": "NE", "hours": 60.6 },
   { "name": "Mirial", "grid": "Q-4", "region": "Outer Rim Territories", "col": 15, "row": 4, "quadrant": "NE", "hours": 3.3 },
