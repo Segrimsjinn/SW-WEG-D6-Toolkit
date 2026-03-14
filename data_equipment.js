@@ -520,6 +520,22 @@ const EQUIPMENT_DATA = [
   "source": ""
  },
  {
+  "name": "Cybot Galactica FL Exploration Droid",
+  "category": "Droids",
+  "cost": "",
+  "availability": "",
+  "game_notes": "Scout Companion Droid. Height: 1m. Move: 10. DEX 2D, KNO 1D (survival 4D), MEC 2D (communications 2D, sensors 5D), PER 1D (hide 2D, sneak 2D, search 3D), STR 1D (lifting 2D), TEC 1D (security 2D). Four legs, heavy grasper jaw (designed for holding without crushing), video/hearing/odor sensor arrays on head, movement sensor, communications link to ship computer. Limited verbal communication — narrow range of warning sounds.",
+  "source": "WEG40061 Galaxy Guide 8: Scouts"
+ },
+ {
+  "name": "PackTack 41LT-R MULE Droid",
+  "category": "Droids",
+  "cost": "",
+  "availability": "",
+  "game_notes": "Mechanical Universal Labor Eliminating Droid. Height: 1.5m. Move: 7 (repulsorlift, max altitude 1m). DEX 1D, KNO 1D, MEC 3D (repulsorlift operation 4D+1), PER 3D (search 3D+2), STR 6D (lifting 7D), TEC 2D (droid programming 4D, droid repair 5D). One heavy lifting claw, one large storage bay (2 cubic meters, +1D armor). Has self-repair feature — uses droid programming and droid repair to assist a scout with combined actions repairs.",
+  "source": "WEG40061 Galaxy Guide 8: Scouts"
+ },
+ {
   "name": "Droid Caller",
   "category": "Droid Gear",
   "cost": "50",

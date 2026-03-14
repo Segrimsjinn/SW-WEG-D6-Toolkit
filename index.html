@@ -1061,7 +1061,8 @@ color:var(--text-dim);min-width:35px;text-align:right;
         <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
         <input type="text" id="galaxySearch" class="search-input" placeholder="Search systems, sectors, regions...">
       </div>
-      <div id="galaxyCount" style="font-size:13px;color:var(--text-dim);margin-bottom:8px;padding:0 4px"></div>
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;padding:0 4px;flex-wrap:wrap"><span id="galaxyCount" style="font-size:13px;color:var(--text-dim)"></span><button id="sysgenBtn" onclick="generateWildSpaceSystem()" style="font-size:12px;color:var(--cyan);background:none;border:1px solid var(--cyan);border-radius:var(--radius);padding:2px 10px;cursor:pointer;font-family:inherit;white-space:nowrap">...or Generate a Wild Space System</button></div>
+      <div id="sysgenResult" class="search-results" style="display:none"></div>
       <div id="galaxyResults" class="search-results"></div>
       <div style="padding:16px 0">
       <div class="galaxy-map-container" id="galaxyMapContainer">
@@ -1946,6 +1947,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
 <script src="data_vehicles.js"></script>
 <script src="data_planets.js"></script>
 <script src="data_npcs_notable.js"></script>
+<script src="data_sysgen.js"></script>
 
 <script>
 // ============================================================
@@ -4272,7 +4274,7 @@ function searchGalaxy(query) {
 
   container.innerHTML = matches.map(s => {
     const sLow = s.name.toLowerCase();
-    const findPlanet = typeof PLANETS_DATA !== 'undefined' && PLANETS_DATA.find(p => p.name.toLowerCase() === sLow || p.system.toLowerCase() === sLow || sLow.startsWith(p.name.toLowerCase() + ' -') || (p.aliases && p.aliases.some(a => a.toLowerCase() === sLow)));
+    const findPlanet = typeof PLANETS_DATA !== 'undefined' && PLANETS_DATA.filter(p => p.name.toLowerCase() === sLow || p.system.toLowerCase() === sLow || sLow.startsWith(p.name.toLowerCase() + ' -') || (p.aliases && p.aliases.some(a => a.toLowerCase() === sLow))).sort((a, b) => b.name.length - a.name.length)[0];
     const hasPlanet = !!findPlanet;
     const planetKey = findPlanet ? findPlanet.name : s.name;
     return `<div class="system-card${hasPlanet ? ' has-planet' : ''}"${hasPlanet ? ` onclick="showPlanetDetail('${planetKey.replace(/'/g,"\\'")}')" style="cursor:pointer"` : ''}>
@@ -4330,6 +4332,180 @@ function showPlanetDetail(name) {
   `;
   el.style.display = 'block';
   el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// ---- Wild Space System Generator (GG8 Ch.9) ----
+function rollD(n) { return Math.floor(Math.random() * n) + 1; }
+function roll2D() { return rollD(6) + rollD(6); }
+function rollD6Pct() { return rollD(6) * 10 + rollD(6); }
+
+function rollOnTable(tbl, diceType, mod) {
+  mod = mod || 0;
+  let r;
+  if (diceType === '2D') r = roll2D() + mod;
+  else if (diceType === '1D') r = rollD(6) + mod;
+  else if (diceType === 'D6%') r = rollD6Pct();
+  else r = roll2D() + mod;
+  for (const entry of tbl) {
+    if (r >= entry.range[0] && r <= entry.range[1]) return entry;
+  }
+  return tbl[0];
+}
+
+function generatePopulation(mod) {
+  const mag = rollOnTable(SYSGEN_DATA.population.table, '1D', mod);
+  // Sub-rolls for detail
+  const scaleRoll = rollD(6);
+  let scale = scaleRoll <= 2 ? '' : scaleRoll <= 4 ? 'tens of ' : 'hundreds of ';
+  const numRoll = rollD(6);
+  let num = numRoll <= 3 ? rollD(5) : rollD(4) + 5;
+  let popStr;
+  if (mag.value === 'Hundreds') {
+    popStr = num * 100 + ' – ' + (num * 100 + 99);
+  } else if (mag.value === 'Thousands') {
+    popStr = num + ' ' + scale + 'thousand';
+  } else if (mag.value === 'Millions') {
+    popStr = num + ' ' + scale + 'million';
+  } else {
+    popStr = num + ' ' + scale + 'billion';
+  }
+  return popStr.replace(/  +/g, ' ').trim();
+}
+
+function generateDayLength() {
+  const r = rollD(6);
+  let base;
+  if (r <= 2) base = roll2D() + 10;
+  else if (r <= 4) base = rollD(6) + 20;
+  else if (r === 5) base = rollD(6) + 25;
+  else base = rollD(6) + 30;
+  return base + ' standard hours';
+}
+
+function generateYearLength(dayLen) {
+  const r1 = rollD(6) * 15;
+  const r2Lookup = [75, 150, 225, 225, 300, 375];
+  const r2 = r2Lookup[rollD(6) - 1];
+  return (r1 + r2) + ' local days';
+}
+
+function generateStarType() {
+  const types = SYSGEN_DATA.starType.table;
+  // Weighted toward M/K/G as most common
+  const weights = [1, 4, 3, 3, 2, 1, 1, 1];
+  const total = weights.reduce((a,b) => a+b, 0);
+  let r = Math.random() * total;
+  for (let i = 0; i < types.length; i++) {
+    r -= weights[i];
+    if (r <= 0) return types[i];
+  }
+  return types[1];
+}
+
+function generateWildSpaceSystem() {
+  if (window.goatcounter) goatcounter.count({ path: 'sysgen-generated', event: true });
+  const region = 'wilderness';
+  const regionMod = (tbl) => (tbl.regionMods && tbl.regionMods[region]) || 0;
+
+  // Roll base characteristics
+  const planetType = rollOnTable(SYSGEN_DATA.planetType.table, '2D');
+  const temperature = rollOnTable(SYSGEN_DATA.temperature.table, '2D');
+  const gravity = rollOnTable(SYSGEN_DATA.gravity.table, '2D');
+  const hydrosphere = rollOnTable(SYSGEN_DATA.hydrosphere.table, '2D');
+
+  // Atmosphere with gravity modifier
+  const atmoMod = (gravity.mods && gravity.mods.atmosphere) || 0;
+  const atmosphere = rollOnTable(SYSGEN_DATA.atmosphere.table, '2D', atmoMod);
+
+  // Terrain — reroll if incompatible with hydrosphere/temperature/atmosphere
+  let terrain, attempts = 0;
+  do {
+    terrain = rollOnTable(SYSGEN_DATA.terrain.table, 'D6%');
+    attempts++;
+    if (attempts > 20) break;
+    // Check incompatibilities
+    let ok = true;
+    if (terrain.incompatible) {
+      if (terrain.incompatible.hydrosphere && terrain.incompatible.hydrosphere.includes(hydrosphere.value)) ok = false;
+      if (terrain.incompatible.temperature && terrain.incompatible.temperature.includes(temperature.value)) ok = false;
+      if (terrain.incompatible.atmosphere && terrain.incompatible.atmosphere.includes(atmosphere.value)) ok = false;
+    }
+    if (ok) break;
+  } while (true);
+
+  // Planet function — reroll if incompatible
+  let planetFunc;
+  attempts = 0;
+  do {
+    planetFunc = rollOnTable(SYSGEN_DATA.planetFunction.table, 'D6%');
+    attempts++;
+    if (attempts > 20) break;
+    let ok = true;
+    if (planetFunc.incompatible) {
+      if (planetFunc.incompatible.planetType && planetFunc.incompatible.planetType.includes(planetType.value)) ok = false;
+      if (planetFunc.incompatible.terrain && planetFunc.incompatible.terrain.includes(terrain.value)) ok = false;
+    }
+    if (ok) break;
+  } while (true);
+
+  const government = rollOnTable(SYSGEN_DATA.government.table, 'D6%');
+
+  // Starport and tech with function/government/region mods
+  let spMod = regionMod(SYSGEN_DATA.starport);
+  if (planetFunc.mods && planetFunc.mods.starport) spMod += planetFunc.mods.starport;
+  if (government.mods && government.mods.starport) spMod += government.mods.starport;
+  const starport = rollOnTable(SYSGEN_DATA.starport.table, '2D', spMod);
+
+  let tlMod = regionMod(SYSGEN_DATA.techLevel);
+  if (planetFunc.mods && planetFunc.mods.techLevel) tlMod += planetFunc.mods.techLevel;
+  if (government.mods && government.mods.techLevel) tlMod += government.mods.techLevel;
+  const techLevel = rollOnTable(SYSGEN_DATA.techLevel.table, '2D', tlMod);
+
+  // Population with mods
+  let popMod = regionMod(SYSGEN_DATA.population);
+  if (planetType.mods && planetType.mods.population) popMod += planetType.mods.population;
+  if (terrain.mods && terrain.mods.population) popMod += terrain.mods.population;
+  const pop = generatePopulation(popMod);
+
+  const dayLen = generateDayLength();
+  const yearLen = generateYearLength();
+  const star = generateStarType();
+
+  // Build output
+  const field = (label, val) => val ? `<div style="display:flex;gap:8px;padding:3px 0;border-bottom:1px solid rgba(255,255,255,0.04)"><span style="color:var(--text-dim);min-width:120px;flex-shrink:0">${label}</span><span style="color:var(--text-primary)">${val}</span></div>` : '';
+
+  const html = `<div class="card" style="border:1px solid var(--cyan);margin-bottom:12px">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+      <div style="color:var(--cyan);font-size:16px;font-weight:700;letter-spacing:1px">WILD SPACE SYSTEM</div>
+      <button onclick="generateWildSpaceSystem()" style="font-size:11px;color:var(--gold);background:none;border:1px solid var(--gold);border-radius:var(--radius);padding:2px 8px;cursor:pointer;font-family:inherit">Re-roll</button>
+    </div>
+    <div style="display:grid;gap:0;margin-bottom:14px">
+      ${field('Star Type', star.value + ' — ' + star.color + ' (' + star.temp + 'K)')}
+      ${field('Planet Type', planetType.value + (planetType.note ? ' (' + planetType.note + ')' : ''))}
+    </div>
+    <div style="display:grid;gap:0;margin-bottom:14px;padding:10px;background:rgba(0,0,0,0.2);border-radius:6px">
+      ${field('Temperature', temperature.value + (temperature.desc ? ' — ' + temperature.desc : ''))}
+      ${field('Atmosphere', atmosphere.value + (atmosphere.desc ? ' — ' + atmosphere.desc : ''))}
+      ${field('Hydrosphere', hydrosphere.value + (hydrosphere.desc ? ' — ' + hydrosphere.desc : ''))}
+      ${field('Gravity', gravity.value)}
+      ${field('Terrain', terrain.value)}
+      ${field('Day Length', dayLen)}
+      ${field('Year Length', yearLen)}
+    </div>
+    <div style="display:grid;gap:0;margin-bottom:14px">
+      ${field('Starport', starport.value + (starport.desc ? ' — ' + starport.desc : ''))}
+      ${field('Population', pop)}
+      ${field('Function', planetFunc.value)}
+      ${field('Government', government.value)}
+      ${field('Tech Level', techLevel.value + (techLevel.desc ? ' — ' + techLevel.desc : ''))}
+    </div>
+    <div style="color:var(--text-dim);font-size:11px;font-style:italic;margin-top:8px">Generated using WEG40061 Galaxy Guide 8: Scouts system generation tables</div>
+  </div>`;
+
+  const container = document.getElementById('sysgenResult');
+  container.innerHTML = html;
+  container.style.display = 'block';
+  container.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 function clearGalaxyHighlights() {

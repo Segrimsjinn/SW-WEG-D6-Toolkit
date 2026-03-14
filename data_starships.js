@@ -6452,7 +6452,7 @@ const STARSHIP_DATA = {
   },
   {
    "rank": 13,
-   "name": "Trilon Mining Barge",
+   "name": "Trilon Mining Barque",
    "craft": "Trilon Inc. Mobile Mining Vehicle",
    "type": "Work ship",
    "affiliation": "General",

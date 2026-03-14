@@ -300,6 +300,18 @@ const WEAPONS_DATA = [
   "source": ""
  },
  {
+  "name": "BlasTech DL-68 Cutting Blaster",
+  "category": "Blaster Pistols",
+  "skill": "Blaster: cutting blaster (-1D due to inaccuracy)",
+  "cost": "",
+  "availability": "",
+  "damage": "5D",
+  "range": "2-4/7/10",
+  "ammo": "50",
+  "game_notes": "Used for clearing brush or making a trail. 4-hour recharge time.",
+  "source": "WEG40061 Galaxy Guide 8: Scouts"
+ },
+ {
   "name": "BlasTech A280",
   "category": "Blaster Rifles",
   "skill": "Blaster: blaster rifle",

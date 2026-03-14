@@ -34,6 +34,7 @@ The entire app. Contains all CSS (minified, inline `<style>`), all HTML tab pane
 | `data_equipment.js` | — | — | Equipment entries |
 | `data_weapons.js` | — | — | Weapon entries |
 | `data_vehicles.js` | — | — | Vehicle entries |
+| `data_sysgen.js` | `SYSGEN_DATA` | Object of table arrays | GG8 random system generation tables (planet type, terrain, atmosphere, etc.) |
 
 ### PLANETS_DATA Entry Shape
 ```js
@@ -69,7 +70,7 @@ The entire app. Contains all CSS (minified, inline `<style>`), all HTML tab pane
 ## Key Cross-File Relationships
 
 - **Galaxy search → planet detail**: `PLANETS_DATA` entries link to `SYSTEMS_DATA` via `system` field. A system card becomes clickable when `p.name === sLow`, `p.system === sLow`, `sLow.startsWith(p.name + ' -')`, or `p.aliases.includes(sLow)` (see `index.html` line ~3982).
-- **Starport locations in data_systems.js**: Added as separate named entries (e.g. `"Port Haven - Starport"`) alongside their parent system so both are searchable on the galaxy map.
+- **Sub-locations in data_systems.js**: Cities, districts, and points of interest are added as separate entries using hierarchical dash notation: `"Planet - City"`, `"Planet - City - Location"`. Examples: `"Tatooine - Mos Eisley"`, `"Tatooine - Mos Eisley - Docking Bay 94"`, `"Bespin - Cloud City - Upper Plaza"`, `"Tatooine - Wayfar"`. These entries are sorted alphabetically and grouped under their parent planet (not scattered by their sub-name). The planet detail cross-link uses longest-name matching so `"Bespin - Cloud City - Upper Plaza"` links to the Cloud City planet entry, not Bespin.
 - **Notable NPC filtering**: Filtered by `system`, `location`, `affiliations`, `species`, `name`, `role`, `type` — all searched as a joined lowercase string.
 - **Planet detail → Notable NPC cross-link**: `linkifyNpcNames(text, system)` in `index.html` scans `NOTABLE_NPCS` base names against `p.locations` and `p.ofNote` text at render time. Any match becomes a cyan clickable span that calls `lookupNotableNpcsBySystem(system)` — switching to the NPC tab and setting the system filter to the planet's `system` field, showing all NPCs in that system. **The planet's `system` field must exactly match the NPC's `system` field for the filter to return results.**
 - **Creatures**: Linked to planets via the `planet` field (plain string).
@@ -80,7 +81,7 @@ The entire app. Contains all CSS (minified, inline `<style>`), all HTML tab pane
 - All other data files use readable, indented formatting.
 - Source citations follow the format `"WEG##### Book Title p.##"`.
 - Planet `aliases` array enables alternate-name lookups without duplicating entries.
-- When adding a new starport/station, add it to: `data_systems.js` (for galaxy map search), `data_planets.js` (for detail card), `data_npcs_notable.js` (for any named NPCs), and `data_creatures.js` if the location has notable creatures.
+- When adding a new starport/station/city, add it to: `data_systems.js` (for galaxy map search, using `"Planet - City"` or `"Planet - City - Location"` naming), `data_planets.js` (for detail card), `data_npcs_notable.js` (for any named NPCs), and `data_creatures.js` if the location has notable creatures.
 - **Multi-era NPCs**: Characters who appear across multiple sourcebooks with improved stats get one entry per era. Use BBY/ABY in the `name` field: `"Luke Skywalker (0 BBY)"`, `"Luke Skywalker (3 ABY)"`, etc. Searching by first name returns all versions. The `source` field confirms which book each stat block came from.
 - **NPC Affiliations — 7 canonical primary values** (always the first element in the array):
   - `"Galactic Empire"` — all Imperial branches and agents (use secondary tag for branch: `"Stormtrooper Corps"`, `"Imperial Navy"`, `"Imperial Army"`, `"Imperial Customs"`, etc.)
