@@ -4354,22 +4354,22 @@ function rollOnTable(tbl, diceType, mod) {
 
 function generatePopulation(mod) {
   const mag = rollOnTable(SYSGEN_DATA.population.table, '1D', mod);
-  // Sub-rolls for detail
   const scaleRoll = rollD(6);
-  let scale = scaleRoll <= 2 ? '' : scaleRoll <= 4 ? 'tens of ' : 'hundreds of ';
+  let multiplier = scaleRoll <= 2 ? 1 : scaleRoll <= 4 ? 10 : 100;
   const numRoll = rollD(6);
   let num = numRoll <= 3 ? rollD(5) : rollD(4) + 5;
-  let popStr;
+  let total;
   if (mag.value === 'Hundreds') {
-    popStr = num * 100 + ' – ' + (num * 100 + 99);
+    total = num * multiplier;
+    if (total < 1) total = 1;
   } else if (mag.value === 'Thousands') {
-    popStr = num + ' ' + scale + 'thousand';
+    total = num * multiplier * 1000;
   } else if (mag.value === 'Millions') {
-    popStr = num + ' ' + scale + 'million';
+    total = num * multiplier * 1000000;
   } else {
-    popStr = num + ' ' + scale + 'billion';
+    total = num * multiplier * 1000000000;
   }
-  return popStr.replace(/  +/g, ' ').trim();
+  return total.toLocaleString();
 }
 
 function generateDayLength() {
