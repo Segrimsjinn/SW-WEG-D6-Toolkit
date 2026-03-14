@@ -32,6 +32,110 @@ const EQUIPMENT_DATA = [
   "source": "Arms and Equipment Guide (page 45)"
  },
  {
+  "name": "Lum",
+  "category": "Beverages",
+  "cost": "6-10 (pitcher)",
+  "availability": "1",
+  "game_notes": "Powerful beverage favored in Corellian space. Used in 'lumguzzling' drinking competitions: each player drinks a pitcher and makes a Very Easy stamina roll. Failure = pass out. Success = remain conscious but stamina reduced by 1D for the next round. Continue until one player remains. Tastes sweet and slightly soapy. Imbibers cannot overdose on lum — lumguzzling is less dangerous than other drinking games.",
+  "source": "WEG40063 Galaxy Guide 9: Fragments from the Rim p.84"
+ },
+ {
+  "name": "Renan Irongut",
+  "category": "Beverages",
+  "cost": "3-5 (shot)",
+  "availability": "2",
+  "game_notes": "Named after what you need to drink it. Downing in one shot requires a Moderate stamina roll. Tradition claims it also works as a potent rust remover, though at 3-5 credits a shot it's cheaper to buy actual rust remover.",
+  "source": "WEG40063 Galaxy Guide 9: Fragments from the Rim p.84"
+ },
+ {
+  "name": "Elshandruu Pica Thundercloud",
+  "category": "Beverages",
+  "cost": "Varies",
+  "availability": "2",
+  "game_notes": "Mixed drink likened to a starfighter flyover — you see it coming, it flashes overhead, brief pause, then an almighty explosion hits. Drinker must make an Easy stamina roll or fall off their seat. Active ingredients produce a miniature cloud of ionized gas above the glass; most establishments serve it in a container that fires microshocks into the cloud, simulating an electrical storm.",
+  "source": "WEG40063 Galaxy Guide 9: Fragments from the Rim p.84"
+ },
+ {
+  "name": "Pink Lizard Thunderbolt",
+  "category": "Beverages",
+  "cost": "Varies",
+  "availability": "2",
+  "game_notes": "A variant of the Elshandruu Pica Thundercloud. For added realism, the drinker can taste the mud from the ground after being knocked over. Moderate stamina roll to avoid falling over. Named after its inventor — a small, scaly lizard of indeterminate species, gender, and color who frequented Margath's bars on Elshandruu Pica.",
+  "source": "WEG40063 Galaxy Guide 9: Fragments from the Rim p.84"
+ },
+ {
+  "name": "Starshine Surprise",
+  "category": "Beverages",
+  "cost": "Varies",
+  "availability": "2",
+  "game_notes": "Called the Starshine Surprise because after drinking it, the next thing you notice is the stars above you — probably because you're flat on your back in the street. Only for non-Humans and the most hardened Human drinkers.",
+  "source": "WEG40063 Galaxy Guide 9: Fragments from the Rim p.85"
+ },
+ {
+  "name": "Tatooine Sunburn",
+  "category": "Beverages",
+  "cost": "Varies",
+  "availability": "3",
+  "game_notes": "Tatooine is a binary system — a Tatooine Sunburn is two Starshine Surprises in the same glass. Never attempt a Cassandra Sunrise (rumored to make excellent sunburn salve, but only if you have extremely thick skin).",
+  "source": "WEG40063 Galaxy Guide 9: Fragments from the Rim p.85"
+ },
+ {
+  "name": "Skannbult Likker",
+  "category": "Beverages",
+  "cost": "15-25 (double measure)",
+  "availability": "3",
+  "game_notes": "Possibly the most volatile fire-water in the galaxy. Brewed from Dust-Corn and Dry Gene Wheat on the planet Skann in Astal Sector, distilled in rock basins by local farmers. Quality is highly variable — the good stuff is only brewed by small farmers outside town. Traders usually only encounter quick-brewed rotgut. Margath's on Elshandruu Pica stocks the good stuff (sold as 'Fire Liquor'), price rising to 20 credits/single.",
+  "source": "WEG40063 Galaxy Guide 9: Fragments from the Rim p.85"
+ },
+ {
+  "name": "Daranu",
+  "category": "Beverages",
+  "cost": "Varies",
+  "availability": "3",
+  "game_notes": "Obscure drink from Parein II 4 in Sarin Sector. Made from local Terrberries and spicy nuts, fermented in drilled-out hardnut shells from Parein Sweetgreen Fruit. Rich, refreshing, and warming — then hits like a well-aimed blaster shot about half an hour later.",
+  "source": "WEG40063 Galaxy Guide 9: Fragments from the Rim p.85"
+ },
+ {
+  "name": "The Reactor Core",
+  "category": "Beverages",
+  "cost": "Varies",
+  "availability": "3",
+  "game_notes": "Many hardened drinkers claim this should only be available by prescription due to the narcotic agents released by mixing Spice Liqueur and Blue Tonic. Fans insist no narcotics are released and — by the way, did you know you've just turned into a lampstand?",
+  "source": "WEG40063 Galaxy Guide 9: Fragments from the Rim p.85"
+ },
+ {
+  "name": "The Meltdown",
+  "category": "Beverages",
+  "cost": "10-12",
+  "availability": "3",
+  "game_notes": "Supposedly more sophisticated than The Reactor Core. The combination of Lum and Spice Liqueur doesn't need to release narcotic agents to produce exactly the same effect. Much more expensive than the Reactor Core.",
+  "source": "WEG40063 Galaxy Guide 9: Fragments from the Rim p.85"
+ },
+ {
+  "name": "Corellian Whisky",
+  "category": "Beverages",
+  "cost": "Varies (expensive)",
+  "availability": "2",
+  "game_notes": "The Corellians have sewn up the galaxy's whisky market on both manufacturing and consumption sides. Good quality but expensive due to import costs from the Corellian System. Most non-Corellians consider it too pricey for anything but special occasions.",
+  "source": "WEG40063 Galaxy Guide 9: Fragments from the Rim p.86"
+ },
+ {
+  "name": "Savareen Brandy",
+  "category": "Beverages",
+  "cost": "Varies (premium)",
+  "availability": "2",
+  "game_notes": "Along with Cassandran brandy, one of the only types worthy of all the arcane procedures that dedicated brandy drinkers like to indulge in. Everyone else agrees they're 'quite nice.'",
+  "source": "WEG40063 Galaxy Guide 9: Fragments from the Rim p.86"
+ },
+ {
+  "name": "Cassandran Choholl",
+  "category": "Beverages",
+  "cost": "500+ (per bottle)",
+  "availability": "3",
+  "game_notes": "Cassandra's brandy may be good, but their Choholl is better. Grada brand Cassandran Choholl is particularly sought after throughout the galaxy.",
+  "source": "WEG40063 Galaxy Guide 9: Fragments from the Rim p.86"
+ },
+ {
   "name": "Camo Armor",
   "category": "Camouflage Armor",
   "cost": "1,500",

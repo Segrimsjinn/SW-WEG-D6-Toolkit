@@ -4896,6 +4896,7 @@ const SYSTEMS_DATA = [
   { "name": "Reena", "grid": "L-13", "region": "Colonies", "col": 10, "row": 13, "quadrant": "C", "hours": 3.0 },
   { "name": "Reena Minor", "grid": "R-14", "region": "Mid Rim", "col": 16, "row": 14, "quadrant": "E", "hours": 3.3 },
   { "name": "Reesaria", "grid": "U-10", "region": "Outer Rim Territories", "col": 19, "row": 10, "quadrant": "E", "hours": 32.2 },
+  { "name": "Reuss", "grid": "", "region": "Outer Rim Territories", "col": 0, "row": 0, "quadrant": "", "hours": 0 },
   { "name": "Refgar", "grid": "M-10", "region": "Core Worlds", "col": 11, "row": 10, "quadrant": "C", "hours": 2.2 },
   { "name": "Refnar", "grid": "T-6", "region": "Outer Rim Territories", "col": 18, "row": 6, "quadrant": "NE", "hours": 5.3 },
   { "name": "Refnu", "grid": "N-5", "region": "Outer Rim Territories", "col": 12, "row": 5, "quadrant": "NE", "hours": 3.8 },
