@@ -160,7 +160,7 @@ const SYSGEN_DATA = {
     dice: "D6%"
   },
   starType: {
-    table: [
+    normal: [
       { value: "N", color: "Brown", temp: "2,500 or less" },
       { value: "M", color: "Red", temp: "2,500–3,500" },
       { value: "K", color: "Orange", temp: "3,500–5,000" },
@@ -169,6 +169,16 @@ const SYSGEN_DATA = {
       { value: "A", color: "Blue-White / White", temp: "7,500–11,000" },
       { value: "B", color: "Blue", temp: "11,000–28,000" },
       { value: "O", color: "Blue", temp: "28,000–40,000" }
+    ],
+    abnormal: [
+      { value: "Red Giant", color: "Red", desc: "Hydrogen fuel exhausted; star has ballooned to huge size, possibly enveloping inner planets. May be variable. Stable terrestrial planets possible." },
+      { value: "Red Dwarf", color: "Red", desc: "Small star with insufficient fuel to grow large. Planets likely small with trace atmospheres but possibly valuable mineral deposits." },
+      { value: "Brown Dwarf", color: "Brown", desc: "Insufficient fuel to become a true star. Often companion to another star. Small terrestrial worlds possible." },
+      { value: "White Dwarf", color: "White", desc: "Collapsed remains of an exhausted star. Remnant dust clouds make excellent hiding places. May have captured rogue planets." },
+      { value: "Neutron Star", color: "Pulsar", desc: "Remains of an exploded star, 10–20 km across. Intense gravity and radiation. Nearby worlds bathed in x-ray and gamma radiation; marine life may survive underwater. Source of unique minerals and crystals." },
+      { value: "Black Hole", color: "None", desc: "Pocket of gravity so intense nothing escapes. No system per se, but may affect nearby stars. Scientific stations and trapped ships possible. Navigation hazard." },
+      { value: "Nebula", color: "Varies", desc: "Extensive dust cloud, possibly forming a system. Obscures sensors; must be investigated directly. Good hiding place for pirate bases and secret facilities." },
+      { value: "Nova", color: "Varies", desc: "Exploding star giving off intense light, gas, and radiation. Area is extremely dangerous. Dead worlds may hold remnant civilizations or artifacts." }
     ]
   }
 };

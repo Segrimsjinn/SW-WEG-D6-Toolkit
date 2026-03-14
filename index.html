@@ -4390,7 +4390,12 @@ function generateYearLength(dayLen) {
 }
 
 function generateStarType() {
-  const types = SYSGEN_DATA.starType.table;
+  // ~15% chance of abnormal star in Wild Space
+  if (Math.random() < 0.15) {
+    const abn = SYSGEN_DATA.starType.abnormal;
+    return abn[Math.floor(Math.random() * abn.length)];
+  }
+  const types = SYSGEN_DATA.starType.normal;
   // Weighted toward M/K/G as most common
   const weights = [1, 4, 3, 3, 2, 1, 1, 1];
   const total = weights.reduce((a,b) => a+b, 0);
@@ -4480,7 +4485,7 @@ function generateWildSpaceSystem() {
       <button onclick="generateWildSpaceSystem()" style="font-size:11px;color:var(--gold);background:none;border:1px solid var(--gold);border-radius:var(--radius);padding:2px 8px;cursor:pointer;font-family:inherit">Re-roll</button>
     </div>
     <div style="display:grid;gap:0;margin-bottom:14px">
-      ${field('Star Type', star.value + ' — ' + star.color + ' (' + star.temp + 'K)')}
+      ${field('Star Type', star.temp ? star.value + ' — ' + star.color + ' (' + star.temp + 'K)' : star.value + ' — ' + star.color + (star.desc ? '. ' + star.desc : ''))}
       ${field('Planet Type', planetType.value + (planetType.note ? ' (' + planetType.note + ')' : ''))}
     </div>
     <div style="display:grid;gap:0;margin-bottom:14px;padding:10px;background:rgba(0,0,0,0.2);border-radius:6px">
