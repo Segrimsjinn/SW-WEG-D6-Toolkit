@@ -55,6 +55,10 @@ const ARMOR_DATA = {
       "desc": "Model: Corellian 611 Combat Armor\nType: Personal battle armor\nCost: 5,000\nAvailability: 3, F\nGame Notes: provides +2D to Strength for physical attacks, +1D for energy attacks. Add +10 to the difficulty number of any swimming rolls made while wearing this armor."
     },
     {
+      "name": "Corondexx Blast Vest",
+      "desc": "Corondexx Blast Vest\nModel: Corondexx Blast Vest\nType: Protective vest\nCost: 3,000; 25 (power cells)\nAvailability: 2\nGame Effects:\nProtective Vest: Power cells project an ablative power screen that adds +1D for energy attacks; +2 physical attacks. Torso only.\nPower Cell Storage: Vest can store six standard power cells. Cells are drained in 10 minutes of continuous operation.\nPower Jacks: In place of power cells, vest has power jacks allowing a small capacitor to be charged from a portable power generator. Requires one hour to charge; capacitor powers vest for two minutes of continuous operation.\nSource: WEG40073 Galaxy Guide 10: Bounty Hunters p.86"
+    },
+    {
       "name": "Corellian Industries Huntsuit Armor",
       "desc": "Type: Medium Non-powered Armor\nScale: Character\nCovered Areas: Head, Neck, Torso, Shoulders, Arms, Front and Back of Legs, Buttocks and Groin\nProtection: +2D/+1D\nAvailability: 3, R or X\nSensor Pod: +1D to all Search attempts made within 50 meters.\nPower Suit: Adds +1D to Lifting.\nCost: 6000\nDescription: This armor has good expansion capabilities (see Corellian Power Suit for sample). As the suit is light and flexible, no Dexterity penalties are incurred thought its use. A repair kit (8 uses) is included in the price."
     },
@@ -65,6 +69,10 @@ const ARMOR_DATA = {
     {
       "name": "Cresh Luck Armor",
       "desc": "Model: Modified Creshaldyne Industries Riot Armor\nType: Personal battle armor\nCost: 500\nAvailability: 2\nGame Effects:\nBasic Suit: +2D physical; +1D energy for torso (front and back) and legs (front)\nInfrared Motion Sensor Array: Has a range of 30 meters. An alarm is triggered when any mass over 10 kilograms is detected traveling in excess of 1 meter per second (this alarm can be audio or be run into a blast helmet for interior audio or visual)."
+    },
+    {
+      "name": "Koromondain Half-Vest",
+      "desc": "Koromondain Half-Vest\nModel: Modified Koromondain PDS, Inc. Mk45 Protective Vest\nType: Protective vest\nCost: 250\nAvailability: 1\nGame Effects:\nVest: +1D+2 from physical; +2 from energy attacks to torso front and back.\nCapsule: Commonly referred to as bounty hunter insurance, this protective vest is specifically designed to protect the wearer from sudden attacks from unexpected quarters (and dubious friends in dark places).\nSource: WEG40073 Galaxy Guide 10: Bounty Hunters p.86"
     },
     {
       "name": "Dura-Armor",

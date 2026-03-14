@@ -480,6 +480,18 @@ const WEAPONS_DATA = [
   "source": "Rulebook (page 231)"
  },
  {
+  "name": "Prax Arms AXM-50 \"Blast and Smash\"",
+  "category": "Blaster Rifles",
+  "skill": "Blaster: blaster rifle / Missile weapons: micro-grenade launcher",
+  "cost": "4,500 (250/bi-pod, 1,000/grenade magazine, 100/power pack, 500/backpack generator)",
+  "availability": "3, F or R",
+  "damage": "5D (blaster) / 4D/3D/2D (micro-grenade)",
+  "range": "3-25/50/75 (blaster), 5-25/100/200 (grenade)",
+  "ammo": "250 (blaster), 30 (micro-grenade magazine)",
+  "game_notes": "Combined blaster rifle and micro-grenade launcher. Fire rate 7 (blaster), 1 (grenade). Grenade blast radius 0-2/4/6. Computerized grenade fire control: Moderate Perception roll (free action) adds +1D to hit; automatic +1D for 2nd and following shots at same target. Bi-pod adds +1D to blaster roll.",
+  "source": "WEG40073 Galaxy Guide 10: Bounty Hunters p.83"
+ },
+ {
   "name": "Combat Gloves",
   "category": "Brawling Weapons",
   "skill": "Brawling",
@@ -804,6 +816,18 @@ const WEAPONS_DATA = [
   "source": "Gundark's Fantastic Technology (pages 22-23)"
  },
  {
+  "name": "Corondexx VES-700 Pulse Rifle",
+  "category": "Energy Weapons",
+  "skill": "Blaster: pulse rifle",
+  "cost": "5,000 (200/power pack, 300/filaments)",
+  "availability": "4, X",
+  "damage": "6D/5D/3D",
+  "range": "1-10/20/30",
+  "ammo": "15 (power pack); filaments replaced every 20 shots",
+  "game_notes": "Cone-of-fire weapon. Target and all within 1m radius take full 6D. All within 15° of target take 5D. All within 30° take 3D. Unlimited ammo with power generator. If filaments aren't changed on schedule: roll 2D for first overdue shot, +1 per additional shot. On 7+, overload circuits shut weapon down (250cr damage, Moderate blaster repair to fix). On 11+, overload circuits fail and weapon explodes in user's hands: 9D damage, 2m blast radius.",
+  "source": "WEG40073 Galaxy Guide 10: Bounty Hunters p.84"
+ },
+ {
   "name": "8-Gauge Shotgun",
   "category": "Firearms",
   "skill": "Firearms: shotgun",
@@ -1006,6 +1030,18 @@ const WEAPONS_DATA = [
   "ammo": "5",
   "game_notes": "2 rounds to reload.",
   "source": "Cracken's Rebel Field Guide (page 72)"
+ },
+ {
+  "name": "Locris Syndicates MGL-1 Micro-Grenade Launcher",
+  "category": "Grenade Launchers",
+  "skill": "Missile weapons: micro-grenade launcher",
+  "cost": "2,500 (1,000/magazine)",
+  "availability": "3, F",
+  "damage": "4D/3D/2D (fragmentation; other micro-grenades available)",
+  "range": "5-25/100/200",
+  "ammo": "30 (magazine)",
+  "game_notes": "Blast radius 0-2/4/6. Fire rate 1. Computerized fire control: Moderate Perception roll (free action, no penalties) adds +1D to hit. If firing at the same target repeatedly, +1D is automatic for 2nd and following shots.",
+  "source": "WEG40073 Galaxy Guide 10: Bounty Hunters p.83"
  },
  {
   "name": "Anti-Vehicle Grenade",
@@ -1606,6 +1642,18 @@ const WEAPONS_DATA = [
   "ammo": "4 (20 external)",
   "game_notes": "Blast Radius: 0-1.",
   "source": "Rules of Engagement (page 65)"
+ },
+ {
+  "name": "Locris Syndicates RDP-12 Rocket Launcher",
+  "category": "Missile Launchers",
+  "skill": "Missile weapons: rocket launcher",
+  "cost": "1,500 (200/Type-12A clip, 250/Type-12B clip, 12/single 12A, 15/single 12B)",
+  "availability": "3, F or R",
+  "damage": "4D (Type-12A) / 5D stun (Type-12B)",
+  "range": "3-30/100/300",
+  "ammo": "4 (internal, individually loaded) or 20 (external clip)",
+  "game_notes": "Blast radius 0-1. Type-12B capsules: in addition to stun damage from kinetic impact, target must make Difficult stamina roll or be incapacitated by FGA-583 nerve agent. Success still results in -1D to all actions for 6 rounds (cumulative for multiple hits).",
+  "source": "WEG40073 Galaxy Guide 10: Bounty Hunters p.84"
  },
  {
   "name": "ACP Array Gun",
@@ -2592,6 +2640,30 @@ const WEAPONS_DATA = [
   "source": "Classic Adventures Vol. 4 (page 131)"
  },
  {
+  "name": "Mennotor DAS-430 Neural Inhibitor (Rifle)",
+  "category": "Stun Firearms",
+  "skill": "Firearms: rail gun",
+  "cost": "5,000 (750/ammo)",
+  "availability": "4, R or X",
+  "damage": "3D+1 impact + 6D stun (neurotoxin)",
+  "range": "3-20/50/150",
+  "ammo": "240",
+  "game_notes": "Portable rail gun. Fire rate 4. If neurotoxin achieves unconscious result: Difficult stamina to revive after 5 min, Moderate after 10 min, Easy after 12 min. Targets over 150kg reduce difficulty by one level and revive at 4/3/1 min intervals. Targets over 300kg reduce by two levels and revive at 2/1/1 min intervals.",
+  "source": "WEG40073 Galaxy Guide 10: Bounty Hunters p.82-83"
+ },
+ {
+  "name": "Mennotor DAS-430 Neural Inhibitor (Pistol)",
+  "category": "Stun Firearms",
+  "skill": "Firearms: rail gun",
+  "cost": "4,000 (750/ammo)",
+  "availability": "4, R or X",
+  "damage": "3D+1 impact + 6D stun (neurotoxin)",
+  "range": "3-10/25/50",
+  "ammo": "240",
+  "game_notes": "Portable rail gun (pistol variant). Fire rate 4. If neurotoxin achieves unconscious result: Difficult stamina to revive after 5 min, Moderate after 10 min, Easy after 12 min. Targets over 150kg reduce difficulty by one level and revive at 4/3/1 min intervals. Targets over 300kg reduce by two levels and revive at 2/1/1 min intervals.",
+  "source": "WEG40073 Galaxy Guide 10: Bounty Hunters p.82-83"
+ },
+ {
   "name": "Buzz-Knuck",
   "category": "Stun Melee",
   "skill": "Melee combat: buzz-knuck",
@@ -2770,6 +2842,30 @@ const WEAPONS_DATA = [
   "ammo": "5",
   "game_notes": "Opposed STR vs stun damage to break free of tangler.",
   "source": "Gundark's Fantastic Technology (page 73)"
+ },
+ {
+  "name": "Loronar ABX-110 ABC Scrambler",
+  "category": "Stun Missiles",
+  "skill": "Missile weapons: ABC scrambler",
+  "cost": "3,000 (350/pod)",
+  "availability": "2, R or X",
+  "damage": "8D/5D/3D stun",
+  "range": "50-200/350/500",
+  "ammo": "1 (per pod)",
+  "game_notes": "Antipersonnel sensory disorientation device. FC 1D+2. Blast radius 0-10/20/30. Launch tube is 1.2m long; each pod is a back-attached box (20x10x5 cm). Pod change takes 1 minute normally. Rush change requires Technical roll: Heroic = 1 round, Very Difficult = 2 rounds, Difficult = 3 rounds, Moderate = 4 rounds, Easy = 5 rounds.",
+  "source": "WEG40073 Galaxy Guide 10: Bounty Hunters p.82"
+ },
+ {
+  "name": "Golon Arms RGL-80 Electronet",
+  "category": "Stun Missiles",
+  "skill": "Missile weapons: grenade launcher",
+  "cost": "2,000 (magazine)",
+  "availability": "2, F",
+  "damage": "1-10D (variable stun or normal)",
+  "range": "10-250/350/500",
+  "ammo": "5 (force-fed magazine with power generator)",
+  "game_notes": "Antipersonnel wire-guided grenade. Fire rate 1/2 — power generator can only control one activated net at a time. Attaches to grenade magazine holder.",
+  "source": "WEG40073 Galaxy Guide 10: Bounty Hunters p.82"
  },
  {
   "name": "Bow",

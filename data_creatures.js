@@ -4326,6 +4326,20 @@ const CREATURES_DATA = [
   "source": "Secrets of Tatooine (page 93)"
  },
  {
+  "name": "Sand Bear",
+  "type": "Carnivore",
+  "planet": "Kallistas",
+  "habitat": "Desert",
+  "dex": "3D+2",
+  "per": "3D",
+  "str": "3D",
+  "move": "12 (under sand), 9 (on surface)",
+  "size": "",
+  "orneriness": "",
+  "special": "Silent sand movement: +2D to sneak when moving under sand. Claws: STR+1D+2 damage. Primarily nocturnal ambush predators; will attack in daylight when food is scarce. Presently the only known carnivore on Kallistas.",
+  "source": "WEG40073 Galaxy Guide 10: Bounty Hunters p.105"
+ },
+ {
   "name": "Sand Burrower",
   "type": "Aquatic/subterranean predator",
   "planet": "Mon Calamari",

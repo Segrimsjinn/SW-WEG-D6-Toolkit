@@ -640,6 +640,14 @@ const EQUIPMENT_DATA = [
   "source": "WEG40061 Galaxy Guide 8: Scouts"
  },
  {
+  "name": "House Paramexor Squire Armorer Droid",
+  "category": "Droids",
+  "cost": "Not for sale",
+  "availability": "4",
+  "game_notes": "Armorer/weapons maintenance droid. Height: 1.5m. Move: 6 (repulsorlift, ground level-1m). DEX 2D, KNO 2D (bureaucracy 2D+1, law enforcement 2D+2), MEC 2D, PER 2D (search 4D), STR 1D, TEC 3D (armor repair 5D+1, blaster repair 6D, hover vehicle repair 3D+1, repulsorlift repair 3D+1). AA-12X Verbobrain, comms link to shipboard computer, vocabulator, two visual/auditory sensors (Human range). Weapons Database: detailed specs on most known personal weapons. IMR Module: specialized tools for weapons/equipment maintenance, modification, and safety checks.",
+  "source": "WEG40073 Galaxy Guide 10: Bounty Hunters p.90"
+ },
+ {
   "name": "Droid Caller",
   "category": "Droid Gear",
   "cost": "50",
@@ -854,6 +862,14 @@ const EQUIPMENT_DATA = [
   "availability": "2",
   "game_notes": "Rocket pack. Move 120m horizontal, 80m vertical. Moderate rocket pack operation. 15 charges, 3 per round max.",
   "source": ""
+ },
+ {
+  "name": "Greshnohr DRPV-78 HSS Thruster Pack",
+  "category": "Jet Packs",
+  "cost": "600",
+  "availability": "2, R",
+  "game_notes": "Rocket pack. Each burst: 500m horizontal, 300m vertical. 12 bursts total; must cool 1 round between bursts. Repulsorlift hover mode: Move 15, max 10 min continuous operation, must cool for 2x operating time. Rocket and repulsor cannot be used simultaneously. Skill: rocket pack operation.",
+  "source": "WEG40073 Galaxy Guide 10: Bounty Hunters p.90"
  },
  {
   "name": "Anti-Shock Blanket",
@@ -1336,12 +1352,44 @@ const EQUIPMENT_DATA = [
   "source": ""
  },
  {
+  "name": "Magnaharness",
+  "category": "Security",
+  "cost": "200",
+  "availability": "2, F",
+  "game_notes": "Full-sized magnacuff restraint. Attaches at neck and torso with optional clips for arms, hands, upper/lower legs, and feet. Greatly restricts movement. STR 8D to hold individuals.",
+  "source": "WEG40073 Galaxy Guide 10: Bounty Hunters p.89"
+ },
+ {
+  "name": "Man Trap",
+  "category": "Security",
+  "cost": "8,000",
+  "availability": "3, F",
+  "game_notes": "Miniaturized reversed repulsorlift field. 1m square metal plate, hidden (make hide roll). Powered by small repulsorlift generator with 10m cord (additional lengths available), plus remote activator. Creates high-intensity gravity field that immobilizes anyone stepping on/over it. Target makes opposed Strength roll vs trap's variable gravity setting (5D-15D). Potential targets making a successful Perception roll notice the trap.",
+  "source": "WEG40073 Galaxy Guide 10: Bounty Hunters p.89"
+ },
+ {
+  "name": "Restraint Capsule",
+  "category": "Security",
+  "cost": "10,700",
+  "availability": "3, F",
+  "game_notes": "Upgraded shipboard force cage. Multiple layers of low-level force fields with power regulators for minimal ship power drain. Shock system variable 1D-7D (stun or normal). STR 7D to break out. Requires security skill to operate.",
+  "source": "WEG40073 Galaxy Guide 10: Bounty Hunters p.89"
+ },
+ {
   "name": "Stun Cuffs",
   "category": "Security",
   "cost": "250",
   "availability": "2",
   "game_notes": "Restraints that deliver stun shock if tampered with. 4D stun per escape attempt. Difficult security to bypass stun feature.",
   "source": ""
+ },
+ {
+  "name": "Corellidyne Doubler Suit",
+  "category": "Security",
+  "cost": "30,000",
+  "availability": "4, X",
+  "game_notes": "Holographic projector bodysuit. Requires 1 hour recording of subject, then Difficult computer programming/repair to create holo-composite. Easy Mechanical roll projects lifelike image up to 10m away in any direction. Viewers must make Very Difficult Perception/search to detect the image at 50+ meters; difficulty reduces by one level per 10m closer. Allows hunter to draw enemy fire with minimal exposure.",
+  "source": "WEG40073 Galaxy Guide 10: Bounty Hunters p.87"
  },
  {
   "name": "Comm Scanner",
