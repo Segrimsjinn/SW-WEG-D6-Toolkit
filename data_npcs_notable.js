@@ -13468,5 +13468,56 @@ const NOTABLE_NPCS = [
     equipment: "Blaster pistol (4D), comlink",
     capsule: "Mobvekhar is Cakhmaim's lieutenant, serving as an apprentice to the Noghri warrior. Quite young, he is recognized as a gifted hunter and warrior. He has apprenticed with Cakhmaim for two years and participated in a number of military operations with the leader of the Noghri Mal'ary'ush honor guard. Mobvekhar was duty-bound to die for Princess Leia if necessary.",
     source: "WEG40131 The Thrawn Trilogy Sourcebook p.169"
+  },
+  // ── Thrawn Trilogy Chapter 10: Mount Tantiss ──
+  {
+    name: "Corporal Terkuss",
+    species: "Human",
+    system: "Wayland",
+    location: "Wayland — Mount Tantiss",
+    affiliations: ["Galactic Empire", "Imperial Army"],
+    role: "Assault trooper, genetic template for Mount Tantiss clones",
+    type: "Imperial Army Assault Trooper",
+    stats: {
+      DEXTERITY: { base: "3D+2", skills: { blaster: "6D+2", "blaster: blaster rifle": "9D", "blaster: repeating blaster": "7D+2", "blaster artillery": "5D+2", "brawling parry": "5D+2", dodge: "6D+2", grenade: "4D+2", "melee combat": "5D+2", "melee parry": "5D+2", running: "4D+2", "vehicle blasters": "6D+2" } },
+      KNOWLEDGE: { base: "2D", skills: { intimidation: "5D", streetwise: "4D", survival: "5D" } },
+      MECHANICAL: { base: "4D+2", skills: { communications: "5D+2", "ground vehicle operation": "6D+2", "hover vehicle operation": "7D+2", "repulsorlift operation": "5D+2" } },
+      PERCEPTION: { base: "3D+1", skills: { command: "5D+1", search: "6D+1", sneak: "4D+1" } },
+      STRENGTH: { base: "2D+1", skills: { brawling: "5D+1", "climbing/jumping": "4D+1", stamina: "5D+1" } },
+      TECHNICAL: { base: "2D", skills: { "armor repair": "3D", "blaster repair": "3D", "first aid": "3D+2", "repulsorlift repair": "3D" } }
+    },
+    specialAbilities: "",
+    forcePoints: 2,
+    darkSidePoints: 6,
+    characterPoints: 8,
+    move: 10,
+    equipment: "Blaster rifle (5D), field armor and helmet (+1D physical, +2 energy), grenades (5D), helmet comlink, survival gear, utility belt with supplies",
+    capsule: "Corporal Terkuss was conscripted into the Imperial Army — they threatened to destroy his homeworld if he and the other recruits didn't cooperate. After training began, he learned what the Empire stood for and dedicated himself to the Imperial cause with unquestioning loyalty. In two years under General Covell's command, Terkuss became one of the general's best soldiers. Covell's recommendation led to Terkuss' reassignment to Grand Admiral Thrawn's Mount Tantiss project, where he served as a genetic template for clones to pit against the New Republic.",
+    source: "WEG40131 The Thrawn Trilogy Sourcebook p.182"
+  },
+  {
+    name: "Lieutenant Creb",
+    species: "Human",
+    system: "Wayland",
+    location: "Chimaera — Pilots' Ready Room",
+    affiliations: ["Galactic Empire", "Imperial Navy"],
+    role: "TIE fighter squadron commander, genetic template for Mount Tantiss clones",
+    type: "TIE Fighter Pilot",
+    stats: {
+      DEXTERITY: { base: "3D+1", skills: { blaster: "6D+1", "brawling parry": "5D+1", dodge: "7D+1", "missile weapons": "4D+1" } },
+      KNOWLEDGE: { base: "2D", skills: { intimidation: "6D", "planetary systems": "6D", survival: "6D", "tactics: starfighter": "5D+2", value: "4D", willpower: "5D" } },
+      MECHANICAL: { base: "4D", skills: { astrogation: "6D", communications: "5D", "starfighter piloting": "8D", "starship gunnery": "7D", "starship shields": "5D+1" } },
+      PERCEPTION: { base: "3D", skills: { command: "5D", "command: Black Wing Squadron": "6D", hide: "5D", persuasion: "4D+2", search: "5D", "search: tracking": "5D+1", sneak: "6D" } },
+      STRENGTH: { base: "3D", skills: { brawling: "5D", "climbing/jumping": "5D", stamina: "6D" } },
+      TECHNICAL: { base: "2D", skills: { "computer programming/repair": "4D", "first aid": "5D", security: "3D+2", "starfighter repair": "6D", "starship weapon repair": "4D" } }
+    },
+    specialAbilities: "",
+    forcePoints: 1,
+    darkSidePoints: 5,
+    characterPoints: 11,
+    move: 10,
+    equipment: "Navigational computer linkup helmet (internal comlink, +1D to sensors), high gravity stress flight suit with life support equipment, one week emergency rations, blaster pistol (4D), survival gear",
+    capsule: "Lieutenant Creb is a rarity — a TIE fighter pilot who survived more than ten missions, completing sixteen combat engagements in less than two years. He turned down numerous promotions to remain at the controls of his TIE, loving the speed and excitement. He craves the glory of battle and hopes to test his skill against Rogue Squadron. His Black Wing Squadron has become something of a legend throughout the Imperial Fleet. While reprimanded for taking too many risks, his success record cannot be denied. He was selected as one of the genetic templates for the clones at Mount Tantiss.",
+    source: "WEG40131 The Thrawn Trilogy Sourcebook p.183"
   }
 ];
