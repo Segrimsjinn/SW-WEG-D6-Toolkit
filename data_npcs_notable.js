@@ -13249,5 +13249,30 @@ const NOTABLE_NPCS = [
     equipment: "Blaster pistol (4D), comlink, datapad",
     capsule: "Lishma the Gotal made a reputation for himself by his sheer single-minded determination. Anyone who disputed him was stepped on as quickly and hard as possible. While more than a little cantankerous, his insight into smuggling matters was quite keen. Lishma was killed in an Imperial ambush during the first meeting of what would become Talon Karrde's smuggler coalition. It is ironic that the Gotal was killed — he did not think opposing the Empire was a wise idea.",
     source: "WEG40131 The Thrawn Trilogy Sourcebook p.106"
+  },
+  // ── Thrawn Trilogy Chapter 6: Planets ──
+  {
+    name: "Governor Raccyx Staffa",
+    species: "Human",
+    system: "Berchest",
+    location: "Berchest — Calius Saj Leeloo",
+    affiliations: ["Galactic Empire"],
+    role: "Imperial Governor of Berchest, former smuggler",
+    type: "Imperial Governor",
+    stats: {
+      DEXTERITY: { base: "2D+2", skills: { blaster: "4D", "brawling parry": "5D+2", dodge: "5D" } },
+      KNOWLEDGE: { base: "3D+2", skills: { "alien species": "5D+2", bureaucracy: "6D", business: "4D+2", "business: exports": "7D+2", "business: smuggling": "6D+1", streetwise: "5D" } },
+      MECHANICAL: { base: "2D+1", skills: { astrogation: "4D+1", "ground vehicle operation": "3D+1", "hover vehicle operation": "3D+1", "repulsorlift operation": "4D+1", "space transports": "4D" } },
+      PERCEPTION: { base: "4D", skills: { bargain: "6D", command: "8D", con: "7D", forgery: "7D+2", investigation: "5D" } },
+      STRENGTH: { base: "2D+2", skills: { stamina: "4D+2" } },
+      TECHNICAL: { base: "2D+2", skills: {} }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 8,
+    move: 10,
+    equipment: "Comlink, Imperial ID, pouch, 5,000 credits",
+    capsule: "Governor Raccyx Staffa is rather unusual for an Imperial governor: he used to be a fair smuggler. While never a great success, Staffa was a shrewd businessman, and when he retired he still had wealth, property, and friends — a rare commodity for a smuggler. After retiring to Berchest, he realized he truly loved the planet and its people, and legitimately desired to make their lives better. He entered politics and was elected to the Berchestian Council. When he discovered the previous Imperial governor's habit of taking kickbacks from wanted smugglers, Staffa blackmailed him into early retirement and had himself recommended for the governorship. Falling back into smuggling habits, he set up an 'informal taxation system' with smuggler acquaintances including Talon Karrde, allowing them to operate on Berchest for a cut. Staffa believes his illegal activities have escaped Imperial notice — he is mistaken, and the main reason he is allowed to operate is that his ties to the smuggling community may help Imperial Intelligence root out troublesome fringe members. Staffa is a short, overweight human with thinning brown hair and a handlebar mustache, generally wearing loose-fitting tunics and robes of good quality. His personal guards are Imperial stormtroopers.",
+    source: "WEG40131 The Thrawn Trilogy Sourcebook p.110"
   }
 ];
