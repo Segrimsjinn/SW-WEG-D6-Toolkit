@@ -4005,5 +4005,33 @@ const PLANETS_DATA = [
     summary: "In the city of Nystao sits the Common Room of Honoghr, in the Grand Dukha. Within rests the gleaming High Seat, from which the Grand Admiral holds his convocates of dynasts. Each dynast comes to present himself before the Grand Admiral, affirming his loyalty to Thrawn and Empire.",
     locations: "Grand Dukha (Common Room of Honoghr; contains the gleaming High Seat used by Grand Admiral Thrawn for convocates of dynasts). Imperial Spaceport (primitive by Core standards; maintained by specially trained Noghri who can service and repair transports and small starships; control tower and sensor station for monitoring near-space traffic; most technologically advanced area on the planet). Supply Warehouses (periodically filled by the Empire with food and water; the dynast of Nystao distributes supplies to outer clan villages). Bakehouses (prepare food for families). Training Grounds (for training of the young and daily warrior practices). Family Huts (densely packed, using limited Clean Land space).",
     ofNote: "Nystao is larger than the other clan villages, with more Noghri living within its confines. The city isn't open to visitation from outsiders — the Empire intentionally kept the ravaged world isolated, and there are no modern trading centers or luxury accommodations for visitors. The dynast of Nystao is considered slightly superior to other dynasts because of more prominent contact with Thrawn and the Empire."
+  },
+  // ── Thrawn Trilogy Chapter 10: Wayland ──
+  {
+    name: "Wayland",
+    system: "Wayland",
+    star: "Wayland system primary",
+    grid: "N-7",
+    region: "Outer Rim Territories",
+    type: "Terrestrial",
+    temperature: "Moderate",
+    atmosphere: "Type I (breathable)",
+    hydrosphere: "Moderate",
+    gravity: "Standard",
+    terrain: "Forests",
+    lengthOfDay: "23 standard hours",
+    lengthOfYear: "353 local days",
+    sapientSpecies: "Humans, Myneyrsh (native), Psadan (native)",
+    starport: "Landing field",
+    population: "28 million",
+    function: "Subsistence",
+    government: "Dictatorship (Joruus C'baoth)",
+    techLevel: "Feudal",
+    majorExports: "None",
+    majorImports: "None",
+    source: "WEG40131 The Thrawn Trilogy Sourcebook p.170",
+    summary: "Wayland was discovered during the Old Republic's second wave of expansion. A colony ship full of humans was launched, but the world was logged improperly due to a clerical error — Wayland ceased to exist in planetary logs and astrogation charts. The colonists were cut off before they even reached their new home. The colony ship crashed on approach, but the planet had a pleasant, life-sustaining environment with two indigenous intelligent species: the Psadan and the Myneyrsh, neither of which had developed technology beyond the bow-and-arrow stage. The humans initially dominated with blasters and repulsors, but without fresh supplies their technology failed and they were forced to adopt native weapons.",
+    locations: "Mount Tantiss (one of the largest peaks on the planet; hollowed out by Imperial engineers as one of the Emperor's personal storehouses; internal maze of defenses; contained cloaking shield technology, Spaarti cloning cylinders, and other treasures; sealed with a Guardian — the dark Jedi Joruus C'baoth). City at the base of Mount Tantiss (constructed under C'baoth's influence; combines human houses, Psadan huts, and Myneyrsh castles; includes a palace incorporating all three architectural styles). Landing Field (basic starport).",
+    ofNote: "When the planet was rediscovered by the Empire, the Emperor personally visited and ordered all records stricken from permanent files. Imperial engineers hollowed out Mount Tantiss to serve as a secret storehouse, its contents placed by stormtroopers and members of the Imperial court. The Emperor's Guardian — Joruus C'baoth — grew lonely after Endor and ventured out, forging the three species into a single society through dark Force manipulation. The inhabitants worshipped and feared him as almost a god or devil. Grand Admiral Thrawn found a reference to Wayland in the Obroa-skai libraries and recovered cloaking shield technology and Spaarti cloning cylinders. With C'baoth's departure, the combined society has begun to disintegrate, held together only by fear of the Guardian's return."
   }
 ];
