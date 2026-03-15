@@ -31890,6 +31890,138 @@ const STARSHIP_DATA = {
      "damage": "5D (capital scale; body 5D capital scale)"
     }
    ]
+  },
+  {
+   "rank": 10,
+   "name": "Golan I Space Defense Station",
+   "craft": "Golan Space Defenses SpaceGun",
+   "type": "Systems Defense Platform",
+   "affiliation": "General",
+   "era": "All Eras",
+   "source": "WEG40131 The Thrawn Trilogy Sourcebook p.206",
+   "price_new": "Not for sale to civilians",
+   "price_used": "",
+   "scale": "Capital",
+   "length": "1,231 meters",
+   "crew": "213",
+   "gunners": "112",
+   "passengers": "40 (troops)",
+   "starfighter_complement": "",
+   "support_craft": "",
+   "ground_vehicles": "",
+   "troop_capacity": "",
+   "cargo": "5,000 metric tons",
+   "consumables": "3 months",
+   "hyperdrive": "",
+   "nav_computer": "",
+   "maneuverability": "",
+   "space": "",
+   "atmosphere": "",
+   "hull": "4D",
+   "shields": "2D",
+   "of_note": "Stationary orbital defense platform. Used around smaller outposts, civilian shipbuilding facilities, and colony worlds. New Republic deployed these around the Sluis Van shipyards.",
+   "sensors_passive": "25/0D",
+   "sensors_scan": "50/1D",
+   "sensors_search": "75/2D",
+   "sensors_focus": "3/2D+1",
+   "weapons": [
+    {
+     "name": "28 Turbolaser Batteries",
+     "fire_arc": "Turret",
+     "crew": "3",
+     "skill": "Capital ship gunnery",
+     "fire_control": "2D",
+     "space_range": "1-5/8/14",
+     "atmo_range": "",
+     "damage": "4D+2"
+    },
+    {
+     "name": "5 Proton Torpedo Launchers",
+     "fire_arc": "Turret",
+     "crew": "2",
+     "skill": "Capital ship gunnery",
+     "fire_control": "2D",
+     "space_range": "1/3/7",
+     "atmo_range": "",
+     "damage": "7D"
+    },
+    {
+     "name": "6 Tractor Beam Projectors",
+     "fire_arc": "Turret",
+     "crew": "3",
+     "skill": "Capital ship gunnery",
+     "fire_control": "2D",
+     "space_range": "1-5/10/15",
+     "atmo_range": "",
+     "damage": "4D"
+    }
+   ]
+  },
+  {
+   "rank": 11,
+   "name": "Golan II Space Defense Station",
+   "craft": "Golan II Space Defense SpaceGun",
+   "type": "Systems Defense Platform",
+   "affiliation": "General",
+   "era": "All Eras",
+   "source": "WEG40131 The Thrawn Trilogy Sourcebook p.207",
+   "price_new": "Not for sale to civilians",
+   "price_used": "",
+   "scale": "Capital",
+   "length": "2,158 meters",
+   "crew": "550",
+   "gunners": "149",
+   "passengers": "80 (troops)",
+   "starfighter_complement": "",
+   "support_craft": "",
+   "ground_vehicles": "",
+   "troop_capacity": "",
+   "cargo": "10,000 metric tons",
+   "consumables": "3 months",
+   "hyperdrive": "",
+   "nav_computer": "",
+   "maneuverability": "",
+   "space": "",
+   "atmosphere": "",
+   "hull": "4D",
+   "shields": "2D+2",
+   "of_note": "Up-gunned from original Golan I design with more efficient power generation for greater shield power. Unique 'crossbeam' hull structure absorbs great punishment. Designed for repelling starfighter and light capital combat starship assaults.",
+   "sensors_passive": "35/0D",
+   "sensors_scan": "60/1D",
+   "sensors_search": "100/2D",
+   "sensors_focus": "3/2D+1",
+   "weapons": [
+    {
+     "name": "35 Turbolaser Batteries",
+     "fire_arc": "Turret",
+     "crew": "3",
+     "skill": "Capital ship gunnery",
+     "fire_control": "2D+1",
+     "space_range": "1-5/10/17",
+     "atmo_range": "",
+     "damage": "5D"
+    },
+    {
+     "name": "10 Proton Torpedo Launchers",
+     "fire_arc": "Turret",
+     "crew": "2",
+     "skill": "Capital ship gunnery",
+     "fire_control": "2D",
+     "space_range": "1/3/7",
+     "atmo_range": "",
+     "damage": "9D"
+    },
+    {
+     "name": "8 Tractor Beam Projectors",
+     "fire_arc": "Turret",
+     "crew": "3",
+     "skill": "Capital ship gunnery",
+     "fire_control": "4D",
+     "space_range": "1-5/15/30",
+     "atmo_range": "",
+     "damage": "6D"
+    }
+   ]
   }
  ]
 };
