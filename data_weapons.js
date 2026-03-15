@@ -396,6 +396,18 @@ const WEAPONS_DATA = [
   "source": "Gundark's Fantastic Technology (page 31)"
  },
  {
+  "name": "Modified BlasTech E-11/S",
+  "category": "Blaster Rifles",
+  "skill": "Blaster (blaster mode), Firearms (slug-thrower mode)",
+  "cost": "7,000",
+  "availability": "X, 4",
+  "damage": "5D (blaster) / 4D (slug-thrower)",
+  "range": "3-30/100/300 (blaster), 3-30/150/400 (slug-thrower)",
+  "ammo": "25 (blaster), 6 (slug-thrower)",
+  "game_notes": "Modified blaster/slug-thrower combo weapon. Dual firing modes with separate ammo supplies.",
+  "source": "WEG40075 Galaxy Guide 11: Criminal Organizations p.81"
+ },
+ {
   "name": "BlasTech EE-3",
   "category": "Blaster Rifles",
   "skill": "Blaster: blaster rifle",
@@ -826,6 +838,18 @@ const WEAPONS_DATA = [
   "ammo": "15 (power pack); filaments replaced every 20 shots",
   "game_notes": "Cone-of-fire weapon. Target and all within 1m radius take full 6D. All within 15° of target take 5D. All within 30° take 3D. Unlimited ammo with power generator. If filaments aren't changed on schedule: roll 2D for first overdue shot, +1 per additional shot. On 7+, overload circuits shut weapon down (250cr damage, Moderate blaster repair to fix). On 11+, overload circuits fail and weapon explodes in user's hands: 9D damage, 2m blast radius.",
   "source": "WEG40073 Galaxy Guide 10: Bounty Hunters p.84"
+ },
+ {
+  "name": "Mandroxan Droid Disabler (EDWX-843)",
+  "category": "Energy Weapons",
+  "skill": "Blaster",
+  "cost": "10,000 (black market)",
+  "availability": "4, X",
+  "damage": "6D stun; +1D for each hit after the first",
+  "range": "5-10/30/50",
+  "ammo": "10 (power pack)",
+  "game_notes": "Anti-droid weapon. Fires phased energy particles that cling to a droid's exterior and disrupt neural pattern flow. When hit, droids suffer -1D to skill and attribute rolls for 3 rounds if stunned; otherwise rendered 'unconscious' per Stun Damage rules. No permanent damage, but a diagnostic overhaul and power-up is required to reactivate the droid.",
+  "source": "WEG40075 Galaxy Guide 11: Criminal Organizations p.81"
  },
  {
   "name": "8-Gauge Shotgun",
@@ -1654,6 +1678,18 @@ const WEAPONS_DATA = [
   "ammo": "4 (internal, individually loaded) or 20 (external clip)",
   "game_notes": "Blast radius 0-1. Type-12B capsules: in addition to stun damage from kinetic impact, target must make Difficult stamina roll or be incapacitated by FGA-583 nerve agent. Success still results in -1D to all actions for 6 rounds (cumulative for multiple hits).",
   "source": "WEG40073 Galaxy Guide 10: Bounty Hunters p.84"
+ },
+ {
+  "name": "Thalassian Corodex Snare Gun",
+  "category": "Missile Launchers",
+  "skill": "Missile weapons: Thalassian snare gun",
+  "cost": "1,200 (black market)",
+  "availability": "3, F or X",
+  "damage": "2D stun",
+  "range": "5-10/25/50",
+  "ammo": "6",
+  "game_notes": "Shoulder-mounted tube-launched restraint weapon. Emits a cone of chemically treated wire filaments that coil around the target. Upon contact, target must make an opposed Strength roll vs. the snare's beginning Strength of 3D to avoid entanglement. The snare's Strength increases by +1D each additional round as filaments constrict and harden. Filaments cause no physical damage. A special dissolving agent can degrade the filaments.",
+  "source": "WEG40075 Galaxy Guide 11: Criminal Organizations p.81"
  },
  {
   "name": "ACP Array Gun",

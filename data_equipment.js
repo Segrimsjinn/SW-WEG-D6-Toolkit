@@ -648,6 +648,22 @@ const EQUIPMENT_DATA = [
   "source": "WEG40073 Galaxy Guide 10: Bounty Hunters p.90"
  },
  {
+  "name": "Droxian Model GDA-8 Gambling Droid",
+  "category": "Droids",
+  "cost": "10,000 (new)",
+  "availability": "3",
+  "game_notes": "Herglic-invented gambling droid. Height: 1.9m. Move: 7 (repulsorlift). DEX 2D, KNO 3D (value: currency conversion 4D, cultures 3D+2, languages 4D), MEC 1D, PER 3D (gambling 6D, persuasion 4D), STR 1D, TEC 2D (droid repair 3D). Semi-humanoid body with two arms and repulsorlift base. Two visual/auditory sensors (Human range), vocabulator, AA-1 Verbobrain, video display screen. Gambling Database: rules, procedures, and odds for up to 100 games (expandable to 500 with modular memory add-ons). Currency Reservoir: holds up to 10,000 credits; some models exchange multiple planetary currencies. Credit Verification/Transfer System via onboard comlink with house banking agency. Most have at least some gaming programs rigged to favor the house.",
+  "source": "WEG40075 Galaxy Guide 11: Criminal Organizations p.87"
+ },
+ {
+  "name": "Seeker (Criminal Location Detection Droid)",
+  "category": "Droids",
+  "cost": "15,000 (new; not legally available to private concerns)",
+  "availability": "4, R",
+  "game_notes": "Spherical law enforcement droid. Size: 0.35m diameter. Move: 13 (repulsorlift, ground level to 50m). DEX 2D (blaster 3D, dodge 3D, missile weapons 3D), KNO 2D+1 (languages 3D+1, law enforcement 4D), MEC 1D, PER 2D+2 (investigation 3D+2, search 4D), STR 1D, TEC 1D (security 2D). Visual/auditory sensors (Human range), vocabulator, AA-1 Verbobrain, TranLang I-A module (50,000+ languages), comlink to police command central. Perfect Memory: permanent record of all visual/auditory experiences. DNA Tracer Module: +3D to search when tracking a target via DNA traces. Threat Evaluation Module: determines whether to attempt disarm/detain or request assistance. Originally used by Imperial law enforcement; largely ineffective due to limited range and programming, but still employed on backwater worlds for surveillance and riot control.",
+  "source": "WEG40075 Galaxy Guide 11: Criminal Organizations p.92"
+ },
+ {
   "name": "Droid Caller",
   "category": "Droid Gear",
   "cost": "50",
@@ -1320,6 +1336,46 @@ const EQUIPMENT_DATA = [
   "source": ""
  },
  {
+  "name": "Fingerprint Masque",
+  "category": "Security",
+  "cost": "15,000 (black market)",
+  "availability": "4, X",
+  "game_notes": "Palm-sized device that overlays fingerprint patterns with a biochemical screen. Uses computer programming/repair skill to operate. Masque pattern can be random or conform to pre-set patterns entered into the device's memory. Re-patternization takes less than a minute per digit and lasts 10-12 hours depending on physiology. Very difficult to apply a different species' masque pattern. Flip-top surface contains a liquid crystal display for commands and pattern display; bottom half has an input panel and sensor pad.",
+  "source": "WEG40075 Galaxy Guide 11: Criminal Organizations p.81"
+ },
+ {
+  "name": "Retinal Disguiser",
+  "category": "Security",
+  "cost": "25,000 (black market)",
+  "availability": "4, X",
+  "game_notes": "Retinal pattern falsification device. Uses medicine skill; normal operation requires Easy medicine total. If a pre-existing pattern has been loaded (rather than a live subject scan), GM determines relative accuracy and may require a higher difficulty roll. Sufficiently proficient users may attempt to manufacture retinal patterns 'from scratch' if sufficient data on the subject is available, but this always results in much higher medicine difficulties.",
+  "source": "WEG40075 Galaxy Guide 11: Criminal Organizations p.84"
+ },
+ {
+  "name": "DimSim",
+  "category": "Security",
+  "cost": "5,000",
+  "availability": "4, X",
+  "game_notes": "Portable holographic projector that projects a 'shield' of darkness over the user's face, completely concealing facial features. Defeats computer imaging systems that can see through traditional masks. Small cap or helmet with a micro powerpack that snaps into a side compartment. Uses standard datapad/portable computer powerpacks; lasts up to 20 minutes of continuous operation.",
+  "source": "WEG40075 Galaxy Guide 11: Criminal Organizations p.84"
+ },
+ {
+  "name": "Sensor No-Show",
+  "category": "Security",
+  "cost": "5,000 (black market)",
+  "availability": "4, X",
+  "game_notes": "Miniature field generators mounted in a wristband configuration. Generates an electromagnetic field that covers the user, interfering with heat and infrared detectors. Motion or vision-based sensors are unaffected. Grants +2D to sneak rolls against heat- and infrared-based sensors. Uses sneak skill. Standard power cell is completely drained after 15 minutes of use.",
+  "source": "WEG40075 Galaxy Guide 11: Criminal Organizations p.85"
+ },
+ {
+  "name": "Shipjacking Kit",
+  "category": "Security",
+  "cost": "8,000 (licensed collection agency), 16,000+ (black market)",
+  "availability": "4, F or X",
+  "game_notes": "Series of small hand-held electronic decoders used to gain access to ships while in port. Electronically searches out the proper encoded combination and replicates it in seconds. Adds +3D to security roll to break through a ship's security code system.",
+  "source": "WEG40075 Galaxy Guide 11: Criminal Organizations p.85"
+ },
+ {
   "name": "Force Cage",
   "category": "Security",
   "cost": "15,000",
@@ -1846,5 +1902,13 @@ const EQUIPMENT_DATA = [
   "availability": "1",
   "game_notes": "Diagnostic scanner for mechanical systems. +1D to repair skill diagnostic rolls.",
   "source": ""
+ },
+ {
+  "name": "Opirus Tri-Laser Engraver (KL-543)",
+  "category": "Tools",
+  "cost": "4,000; 8,000+ (black market)",
+  "availability": "3, F or R",
+  "game_notes": "Counterfeiting tool. Uses forgery skill. Micro-miniature array of laser beams replicates finely textured incisions on metal and plastic plates used for planetary currency production. Adjustable angle, pitch, and beam width for each individual laser produces patterns virtually indistinguishable from originals. Long-term close-up use without proper protective eyewear can lead to temporary visual distress and permanent injury.",
+  "source": "WEG40075 Galaxy Guide 11: Criminal Organizations p.86"
  }
 ];
