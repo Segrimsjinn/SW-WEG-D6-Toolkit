@@ -1514,7 +1514,7 @@ const PLANETS_DATA = [
     ofNote: "The Tatoo system contains three orbital bodies: Tatooine (1 moon), the gas giant Ohann (3 moons), and the gas giant Adriana (4 moons). Sector: Arkanis; Moff Alexander Julstan IV; Governor Tour Aryon. The most famous backwater in the galaxy — birthplace of Anakin Skywalker and the world where R2-D2 and C-3PO were found by Luke Skywalker, triggering the events of the Galactic Civil War. Mos Eisley Spaceport is a practical haven for smugglers and criminals; the local Imperial presence is minimal and easily bribed. Hutt law supersedes Imperial authority in practice. Any significant commercial activity requires Hutt approval or willingness to operate covertly. Moisture farming is the primary legitimate occupation; water is Tatooine's most valuable natural commodity. The Dune Sea and Jundland Wastes are extremely dangerous — Tusken Raiders, dragonsnakes, and worse."
   },
   {
-    name: "Mos Eisley",
+    name: "Tatooine - Mos Eisley",
     system: "Tatoo",
     star: "Tatoo I, Tatoo II (yellow binary)",
     grid: "R-16",
