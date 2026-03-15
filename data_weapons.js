@@ -3154,5 +3154,17 @@ const WEAPONS_DATA = [
   "ammo": "",
   "game_notes": "Very Easy difficulty.",
   "source": "Arms and Equipment Guide (page 30)"
+ },
+ {
+  "name": "Conner Net (Type I Restraining Net)",
+  "category": "Starship Weapons",
+  "skill": "Starship gunnery",
+  "cost": "5,000 per canister",
+  "availability": "3, R",
+  "damage": "10D",
+  "range": "5-25/50/100 (starfighter scale)",
+  "ammo": "1 per canister",
+  "game_notes": "Starfighter scale. Difficult starship gunnery roll to activate. Net is 50 meters in diameter. All ships touched by the net suffer +5D penalty to any electrical system (drives, weapons, sensors, ship-integrated communications). Any unprotected person touching a charged net suffers 10D damage every round of contact.",
+  "source": "WEG40131 The Thrawn Trilogy Sourcebook p.192"
  }
 ];

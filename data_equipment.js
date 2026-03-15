@@ -1910,5 +1910,93 @@ const EQUIPMENT_DATA = [
   "availability": "3, F or R",
   "game_notes": "Counterfeiting tool. Uses forgery skill. Micro-miniature array of laser beams replicates finely textured incisions on metal and plastic plates used for planetary currency production. Adjustable angle, pitch, and beam width for each individual laser produces patterns virtually indistinguishable from originals. Long-term close-up use without proper protective eyewear can lead to temporary visual distress and permanent injury.",
   "source": "WEG40075 Galaxy Guide 11: Criminal Organizations p.86"
+ },
+ {
+  "name": "Holorecording Macrobinoculars (Neuro-Saav TT4)",
+  "category": "Tools",
+  "cost": "2,000",
+  "availability": "2",
+  "game_notes": "+2D to search or Perception rolls at ranges over 100 meters. Can record up to 3 standard hours of visuals on a standard data card.",
+  "source": "WEG40131 The Thrawn Trilogy Sourcebook p.186"
+ },
+ {
+  "name": "Industrial Automaton Decon III Droid",
+  "category": "Droids",
+  "cost": "",
+  "availability": "",
+  "game_notes": "Decontamination droid. Height: 1.3m. Move: 6 (treads). DEX 2D, KNO 1D (decontamination processes 3D), MEC 1D+1, PER 2D (search 3D, search: contaminants 5D), STR 2D (lifting 2D+1), TEC 2D. Internal four-stage decontamination processor (uses decontamination processes skill, 3 kg/hour, difficulty varies by contamination level). Visual, infrared, and analyzation sensors. Heavy scooper (+1D lifting). Retractable arm. Chemical spray appendages for radiation-absorbing foam.",
+  "source": "WEG40131 The Thrawn Trilogy Sourcebook p.195"
+ },
+ {
+  "name": "MerenData Espionage Droid (Protocol Shell)",
+  "category": "Droids",
+  "cost": "",
+  "availability": "X",
+  "game_notes": "Espionage droid in protocol droid shell. Height: 1.7m. Move: 8. DEX 2D (dodge 2D+2, pick pocket 3D), KNO 3D (culture 4D, languages 8D, value 6D), MEC 2D+1 (communications 5D+1, sensors 5D+1), PER 4D (con 6D, hide 6D+1, investigation 6D, search 6D, sneak 6D+1), STR 2D, TEC 3D (computer programming 5D, security 6D). Humanoid body. Information recording and coded retrieval/broadcast system. Vocabulator. Broad-band antenna receiver. AA-1 VerboBrain. TranLang III protocol module. Espionage hard-wired module (survives standard memory wipes; must be physically pulled to remove).",
+  "source": "WEG40131 The Thrawn Trilogy Sourcebook p.196"
+ },
+ {
+  "name": "Arakyd G-2RD Guard Droid",
+  "category": "Droids",
+  "cost": "",
+  "availability": "",
+  "game_notes": "Security guard droid. Height: 1.2m. Move: 10 (repulsorlift). DEX 3D (blaster 5D, dodge 4D, melee combat 4D+1, running 4D), KNO 2D (bureaucracy 3D, intimidation 4D, intimidation: interrogation 5D, languages 3D, law enforcement 3D+2), MEC 2D (repulsorlift operation 4D, sensors 5D), PER 4D (command 5D, investigation 5D, search 7D), STR 4D+1, TEC 2D (first aid 3D, security 5D). Visual/sound sensors. Vocabulator. Broad-band antenna. Stun appendage (6D stun). Blaster appendage (5D, ranges 3-7/25/50). Grasping claw (+1D lifting). Programming allows deadly force if necessary.",
+  "source": "WEG40131 The Thrawn Trilogy Sourcebook p.196"
+ },
+ {
+  "name": "Rebaxan Colmuni MSE-6 General Purpose Droid",
+  "category": "Droids",
+  "cost": "",
+  "availability": "",
+  "game_notes": "Mouse droid. Height: 0.3m. Move: 5 (treads). DEX 2D, KNO 1D, MEC 1D, PER 1D, STR 1D, TEC 1D. Electro-photoreceptor. Auditory sensor. Holocam. Retractable heavy manipulator (+2D lifting). Retractable fine manipulator (+1D lifting). One interchangeable skill matrix programmed with one skill at a time (bureaucracy 3D, sensors 3D, hide 3D, search 4D, armor repair 3D, blaster repair 3D, capital ship repair 4D, capital ship weapon repair 3D, computer programming/repair 3D, droid programming 3D, droid repair 3D, security 3D, or starfighter repair 3D).",
+  "source": "WEG40131 The Thrawn Trilogy Sourcebook p.197"
+ },
+ {
+  "name": "Imperial IT-0 Interrogator Droid",
+  "category": "Droids",
+  "cost": "",
+  "availability": "X",
+  "game_notes": "Interrogation droid. Height: 1m. Move: 3 (repulsorlift). DEX 1D (dodge 3D, melee combat 3D, melee combat: interrogation tools 4D+1), KNO 3D (alien species 4D, humanoid biology 5D, intimidation 6D, intimidation: interrogation 7D), MEC 2D (sensors 3D), PER 4D (investigation 5D, search 5D), STR 3D, TEC 2D (first aid 5D, medicine 5D, security 4D). Visual/sound sensors. Vocabulator. Laser scalpel (2D damage). Hypodermic injectors (4D stun). Power shears (5D damage). Grasping claw (+1D lifting). Monitors vital signs to apply maximum pain with minimal damage.",
+  "source": "WEG40131 The Thrawn Trilogy Sourcebook p.197"
+ },
+ {
+  "name": "Industrial Automaton MD-5 Medical Droid",
+  "category": "Droids",
+  "cost": "",
+  "availability": "",
+  "game_notes": "General practitioner medical droid. Height: 1.6m. Move: 7 (within medical bay). DEX 2D, KNO 4D (alien species 5D, humanoid biology 5D), MEC 2D+2 (sensors 3D+2), PER 3D (bargain 4D, investigation 4D+1, search 4D+1), STR 2D+1, TEC 3D (first aid 6D, medicine 8D). Computer interface tether. Medical diagnostic computer. Analytical computer. Surgical attachments. Hypodermic injectors (4D stun). Medicine dispensers. Must treat all injuries/illnesses encountered — code cannot be altered without destroying behavioral matrix.",
+  "source": "WEG40131 The Thrawn Trilogy Sourcebook p.198"
+ },
+ {
+  "name": "Industrial Automaton MN-2E Maintenance Droid",
+  "category": "Droids",
+  "cost": "800",
+  "availability": "",
+  "game_notes": "Janitorial/maintenance droid. Height: 1m. Move: 7 (repulsorlift, max altitude 75m). DEX 1D, KNO 1D, MEC 2D, PER 1D, STR 2D, TEC 2D. Wastestream Systems refuse recycling unit. Vibro-shears (STR+2). Extendable arm with buffer and polisher attachments. Extendable cleanser applicator. Refuse collection scanning computer. Communicates via electronic squawks and clucks. Can be equipped with program modules for specialized duties (plant care, sensitive sanitation protocols).",
+  "source": "WEG40131 The Thrawn Trilogy Sourcebook p.198"
+ },
+ {
+  "name": "Arakyd Viper Probe Droid",
+  "category": "Droids",
+  "cost": "",
+  "availability": "X",
+  "game_notes": "Imperial probe droid (probot). Height: 1.5m. Move: 12 (repulsorlift). DEX 3D (blaster 5D, dodge 5D), KNO 2D+2 (intimidation 7D+2, planetary systems 4D+2), MEC 3D (astrogation 5D, communications 6D, sensors 6D, space transports: hyperdrive pod 5D), PER 3D (con 4D, hide 5D, investigation 6D, search 6D, sneak 5D), STR 4D, TEC 2D+1. Multi-purpose appendages. Planetary sensor array — Passive: 10m/0D, Scan: 100m/1D, Search: 500m/2D, Focus: 10m/3D. Recording devices. Broad-band broadcast antenna. Blaster (4D+2, ranges 3-10/30/120). Can be launched in Arakyd Predator I hyperdrive pod (starfighter scale, 4m, x2 hyperdrive, 3 jumps, Hull 3D, Shields 1D).",
+  "source": "WEG40131 The Thrawn Trilogy Sourcebook p.199"
+ },
+ {
+  "name": "Industrial Automaton SE4 Servant Droid",
+  "category": "Droids",
+  "cost": "",
+  "availability": "",
+  "game_notes": "Domestic servant droid. Height: 1.6m. Move: 8. DEX 2D, KNO 2D (culinary arts 4D, culture 3D, home economics 4D, languages 3D), MEC 2D (communications 3D, repulsorlift operation 3D), PER 2D (bargain 3D), STR 2D (lifting 3D), TEC 2D (first aid 3D). Humanoid body. Vocabulator. Photoreceptors. Auditory sensors. Programmable personality modules. Memory stores full of recipes, dining etiquette, and domestic service information.",
+  "source": "WEG40131 The Thrawn Trilogy Sourcebook p.199"
+ },
+ {
+  "name": "Industrial Automaton Hound-W2 SPD Droid",
+  "category": "Droids",
+  "cost": "3,500",
+  "availability": "",
+  "game_notes": "Scanning Patrol Detail security droid. Height: 0.4m. Move: 7 (treads). DEX 2D, KNO 1D, MEC 1D, PER 5D (search 6D, search: transmitting devices 8D+2), STR 1D, TEC 1D. Fabritech communications/sensor array. Four retractable extensor arms (extend up to 15m). Retractable fine work grasper arm. Extendable video sensor. Four sensor modules (thermal imaging +1D search, audio receptors, laser scan, pulse scan). Probability projection computer for detailed search procedures. Communicates in astromech-style chirps and beeps.",
+  "source": "WEG40131 The Thrawn Trilogy Sourcebook p.200"
  }
 ];
