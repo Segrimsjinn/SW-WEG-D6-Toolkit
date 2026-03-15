@@ -78,6 +78,7 @@ The entire app. Contains all CSS (minified, inline `<style>`), all HTML tab pane
 ## Important Conventions
 
 - `data_systems.js` is multi-line (one entry per line). Entries must remain **alphabetically sorted by name**. The file is large (~6,800 lines) but the Edit tool can handle it for targeted changes.
+- **All other data files are NOT alphabetically sorted** — entries are grouped by sourcebook order. New entries should be **appended to the end** of the array (or after the last entry of the same category for `data_weapons.js`, `data_equipment.js`, `data_vehicles.js`). Do not try to insert alphabetically.
 - All other data files use readable, indented formatting.
 - Source citations follow the format `"WEG##### Book Title p.##"`.
 - Planet `aliases` array enables alternate-name lookups without duplicating entries.
