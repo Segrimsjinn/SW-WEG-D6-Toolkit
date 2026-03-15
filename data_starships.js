@@ -32022,6 +32022,72 @@ const STARSHIP_DATA = {
      "damage": "6D"
     }
    ]
+  },
+  {
+   "rank": 12,
+   "name": "Golan III Space Defense Station",
+   "craft": "Golan III Space Defense NovaGun",
+   "type": "Systems Defense Platform",
+   "affiliation": "General",
+   "era": "All Eras",
+   "source": "WEG40131 The Thrawn Trilogy Sourcebook p.207",
+   "price_new": "Not for sale to civilians",
+   "price_used": "",
+   "scale": "Capital",
+   "length": "2,600 meters",
+   "crew": "880",
+   "gunners": "228",
+   "passengers": "100 (troops)",
+   "starfighter_complement": "",
+   "support_craft": "",
+   "ground_vehicles": "",
+   "troop_capacity": "",
+   "cargo": "15,000 metric tons",
+   "consumables": "3 months",
+   "hyperdrive": "",
+   "nav_computer": "",
+   "maneuverability": "",
+   "space": "",
+   "atmosphere": "",
+   "hull": "5D+2",
+   "shields": "4D",
+   "of_note": "Most powerful Golan Arms defense platform. Geared towards military installations and vital civilian facilities. Largest platform Golan Arms manufactures.",
+   "sensors_passive": "35/0D",
+   "sensors_scan": "60/1D",
+   "sensors_search": "100/2D",
+   "sensors_focus": "3/2D+1",
+   "weapons": [
+    {
+     "name": "50 Turbolaser Batteries",
+     "fire_arc": "Turret",
+     "crew": "3",
+     "skill": "Capital ship gunnery",
+     "fire_control": "2D+1",
+     "space_range": "1-5/10/17",
+     "atmo_range": "",
+     "damage": "5D"
+    },
+    {
+     "name": "24 Proton Torpedo Launchers",
+     "fire_arc": "Turret",
+     "crew": "2",
+     "skill": "Capital ship gunnery",
+     "fire_control": "2D",
+     "space_range": "1/3/7",
+     "atmo_range": "",
+     "damage": "9D"
+    },
+    {
+     "name": "15 Tractor Beam Projectors",
+     "fire_arc": "Turret",
+     "crew": "3",
+     "skill": "Capital ship gunnery",
+     "fire_control": "4D",
+     "space_range": "1-5/15/30",
+     "atmo_range": "",
+     "damage": "6D"
+    }
+   ]
   }
  ]
 };
