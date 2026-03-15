@@ -1535,6 +1535,7 @@ const SYSTEMS_DATA = [
   { "name": "Dolis", "grid": "J-3", "region": "Outer Rim Territories", "col": 8, "row": 3, "quadrant": "N", "hours": 61.8 },
   { "name": "Dolla", "grid": "L-18", "region": "Outer Rim Territories", "col": 10, "row": 18, "quadrant": "S", "hours": 1.3 },
   { "name": "Dolomar", "grid": "K-9", "region": "Core Worlds", "col": 9, "row": 9, "quadrant": "C", "hours": 3.7 },
+  { "name": "Dolomar - Diflu", "grid": "K-9", "region": "Core Worlds", "col": 9, "row": 9, "quadrant": "C", "hours": 3.7 },
   { "name": "Dolsan", "grid": "K-9", "region": "Core Worlds", "col": 9, "row": 9, "quadrant": "C", "hours": 3.7 },
   { "name": "Dolstan", "grid": "M-21", "region": "Outer Rim Territories", "col": 11, "row": 21, "quadrant": "S", "hours": 71.5 },
   { "name": "Dolva Prime", "grid": "I-16", "region": "Mid Rim", "col": 7, "row": 16, "quadrant": "SW", "hours": 6.0 },
