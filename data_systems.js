@@ -4533,6 +4533,7 @@ const SYSTEMS_DATA = [
   { "name": "Peppel", "grid": "P-3", "region": "Outer Rim Territories", "col": 14, "row": 3, "quadrant": "NE", "hours": 48.0 },
   { "name": "Per Lupelo", "grid": "L-8", "region": "Inner Rim", "col": 10, "row": 8, "quadrant": "C", "hours": 3.0 },
   { "name": "Peragus", "grid": "Q-4", "region": "Outer Rim Territories", "col": 15, "row": 4, "quadrant": "NE", "hours": 3.3 },
+  { "name": "Peregrine's Nest", "grid": "", "region": "Unknown", "col": 0, "row": 0, "quadrant": "", "hours": 0 },
   { "name": "Pergitor", "grid": "M-20", "region": "Outer Rim Territories", "col": 11, "row": 20, "quadrant": "S", "hours": 14.7 },
   { "name": "Peridon's Folly", "grid": "Q-11", "region": "Mid Rim", "col": 15, "row": 11, "quadrant": "E", "hours": 5.3 },
   { "name": "Perilious", "grid": "R-17", "region": "Outer Rim Territories", "col": 16, "row": 17, "quadrant": "SE", "hours": 2.2 },
