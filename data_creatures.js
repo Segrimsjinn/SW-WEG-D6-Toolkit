@@ -5516,6 +5516,20 @@ const CREATURES_DATA = [
   "source": ""
  },
  {
+  "name": "Vornskr (Domesticated)",
+  "type": "Force-sensitive predator",
+  "planet": "Myrkr",
+  "habitat": "Domesticated (Talon Karrde's pets Sturm and Drang)",
+  "dex": "4D",
+  "per": "2D+2",
+  "str": "3D+2",
+  "move": "15",
+  "size": "0.8m tall, up to 1.6m long (including tail)",
+  "orneriness": "",
+  "special": "Teeth: STR+2D damage. Force Sense: 3D ability to detect Force-users (Very Easy within 10m, Easy 11-25m, Moderate 26-50m, Difficult 51-100m, Heroic 100m+); become very agitated and aggressive upon sensing Force-users, confusing them with ysalamiri. Sneak 5D.",
+  "source": "WEG40131 The Thrawn Trilogy Sourcebook p.142"
+ },
+ {
   "name": "Voxyn",
   "type": "Engineered Force-hunting beast",
   "planet": "",
