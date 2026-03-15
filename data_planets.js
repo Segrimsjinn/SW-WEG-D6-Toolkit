@@ -1051,7 +1051,7 @@ const PLANETS_DATA = [
     ofNote: "Tibanna gas is spin-sealed on Cloud City for use in blaster weapons — a lucrative but legally grey operation historically hidden from the Mining Guild behind Cloud City's resort facade. Cloud City was occupied by Imperial forces following Darth Vader's visit (3 ABY); liberated post-Endor and handed to Ugnaught leadership under the New Republic. Cloud City has its own Wing Guard security force and is loosely governed — a useful neutral ground for smugglers and tramp freighter crews. The Life Zone's native megafauna (beldons, velkers) pose a hazard to low-flying ships without shields. Rawwks have colonized abandoned prospecting stations throughout the atmosphere.\n\nBespin's atmosphere layers from core outward: solid metal sphere core (~6,000km radius); 30,000km liquid-metal rethen layer; 22,000km liquid rethen sea; 1,000km cloud layer (the Life Zone sits 150km below the top, 30km deep). Storm rule: every 5 rounds in a cloudspout, roll 1D — on a 1 or 6, only buffeting; on 2–5, titanic wind or liquid rethen strike does damage equal to the die result in pips (e.g. roll of 3 = 3D damage vs. hull)."
   },
   {
-    name: "Cloud City",
+    name: "Bespin - Cloud City",
     system: "Bespin",
     star: "Bespin system primary",
     grid: "K-18",
