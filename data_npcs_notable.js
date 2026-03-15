@@ -13274,5 +13274,29 @@ const NOTABLE_NPCS = [
     equipment: "Comlink, Imperial ID, pouch, 5,000 credits",
     capsule: "Governor Raccyx Staffa is rather unusual for an Imperial governor: he used to be a fair smuggler. While never a great success, Staffa was a shrewd businessman, and when he retired he still had wealth, property, and friends — a rare commodity for a smuggler. After retiring to Berchest, he realized he truly loved the planet and its people, and legitimately desired to make their lives better. He entered politics and was elected to the Berchestian Council. When he discovered the previous Imperial governor's habit of taking kickbacks from wanted smugglers, Staffa blackmailed him into early retirement and had himself recommended for the governorship. Falling back into smuggling habits, he set up an 'informal taxation system' with smuggler acquaintances including Talon Karrde, allowing them to operate on Berchest for a cut. Staffa believes his illegal activities have escaped Imperial notice — he is mistaken, and the main reason he is allowed to operate is that his ties to the smuggling community may help Imperial Intelligence root out troublesome fringe members. Staffa is a short, overweight human with thinning brown hair and a handlebar mustache, generally wearing loose-fitting tunics and robes of good quality. His personal guards are Imperial stormtroopers.",
     source: "WEG40131 The Thrawn Trilogy Sourcebook p.110"
+  },
+  {
+    name: "Tol dosLa",
+    species: "Ukian",
+    system: "Ukio",
+    location: "Ukio — Overliege Palace",
+    affiliations: ["Neutral"],
+    role: "Spokesman for the Ukian Overliege, heir to the throne",
+    type: "Ukian Bureaucrat",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { dodge: "5D" } },
+      KNOWLEDGE: { base: "3D+2", skills: { "alien species": "4D+2", bureaucracy: "5D+2", "bureaucracy: Ukio": "7D+2", business: "5D+2", "business: agriculture": "8D+2", languages: "6D+2", "value: foodstuffs": "7D+2" } },
+      MECHANICAL: { base: "2D+2", skills: {} },
+      PERCEPTION: { base: "4D", skills: { bargain: "5D", "bargain: foodstuffs": "9D+1", command: "7D+1", persuasion: "7D+2" } },
+      STRENGTH: { base: "2D+1", skills: { swimming: "4D+1" } },
+      TECHNICAL: { base: "3D", skills: { "computer programming/repair": "5D+1" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 2,
+    move: 10,
+    equipment: "Datapad (listing harvest production schedules)",
+    capsule: "Tol dosLa is the spokesman for the Ukian Overliege, the ruler of the planet. DosLa is well known and respected on Ukio, both for his agreeable nature and his shrewd political skills. He is the oldest son of Gol dosLa, the Overliege, and is next in line for the position. Tol dosLa is tall and reedy, as is typical for the Ukian people, and is very soft spoken. He is not afraid to speak his mind, but he is always very gentle in persuading people to consider his point of view — a tactic that has proven very effective in the past.",
+    source: "WEG40131 The Thrawn Trilogy Sourcebook p.136"
   }
 ];
