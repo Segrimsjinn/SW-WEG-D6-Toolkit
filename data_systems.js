@@ -5173,6 +5173,7 @@ const SYSTEMS_DATA = [
   { "name": "Sarina", "grid": "L-17", "region": "Mid Rim", "col": 10, "row": 17, "quadrant": "S", "hours": 4.7 },
   { "name": "Sarjenn", "grid": "N-5", "region": "Outer Rim Territories", "col": 12, "row": 5, "quadrant": "NE", "hours": 3.8 },
   { "name": "Sarka", "grid": "Q-8", "region": "Mid Rim", "col": 15, "row": 8, "quadrant": "E", "hours": 4.7 },
+  { "name": "Sarka - Salyrini", "grid": "Q-8", "region": "Mid Rim", "col": 15, "row": 8, "quadrant": "E", "hours": 4.7 },
   { "name": "Sarkania", "grid": "M-14", "region": "Inner Rim", "col": 11, "row": 14, "quadrant": "C", "hours": 3.2 },
   { "name": "Sarkhai", "grid": "M-7", "region": "Mid Rim", "col": 11, "row": 7, "quadrant": "N", "hours": 4.0 },
   { "name": "Sarko", "grid": "O-12", "region": "Expansion Region", "col": 13, "row": 12, "quadrant": "E", "hours": 4.5 },
