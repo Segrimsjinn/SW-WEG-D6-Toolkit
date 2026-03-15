@@ -2542,6 +2542,7 @@ const SYSTEMS_DATA = [
   { "name": "Homana", "grid": "M-6", "region": "Mid Rim", "col": 11, "row": 6, "quadrant": "N", "hours": 4.0 },
   { "name": "Homon", "grid": "M-7", "region": "Mid Rim", "col": 11, "row": 7, "quadrant": "N", "hours": 4.0 },
   { "name": "Honoghr", "grid": "T-10", "region": "Outer Rim Territories", "col": 18, "row": 10, "quadrant": "E", "hours": 5.3 },
+  { "name": "Honoghr - Nystao", "grid": "T-10", "region": "Outer Rim Territories", "col": 18, "row": 10, "quadrant": "E", "hours": 5.3 },
   { "name": "Hoogon", "grid": "J-6", "region": "Outer Rim Territories", "col": 8, "row": 6, "quadrant": "N", "hours": 8.2 },
   { "name": "Hope Station", "grid": "Q-14", "region": "Mid Rim", "col": 15, "row": 14, "quadrant": "E", "hours": 4.3 },
   { "name": "Horain", "grid": "L-14", "region": "Inner Rim", "col": 10, "row": 14, "quadrant": "C", "hours": 2.2 },
