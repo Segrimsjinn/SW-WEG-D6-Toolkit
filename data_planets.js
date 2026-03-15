@@ -2815,5 +2815,32 @@ const PLANETS_DATA = [
     summary: "Tresidiss is privately owned and operated by a collection of Herglic criminals who find the enterprise a wonderful way of mixing illegal business with pleasure. Unlike other haven worlds where criminal activities may be hidden, on Tresidiss gambling and its associated vices are openly proclaimed. Located near a major trade route into the Parmic sector, Tresidiss is also home to intelligence operatives from both the Empire and the New Republic — espionage and intrigue are as common as bankrupt executives.",
     locations: "Over 4,000 independent gambling halls and casinos, twice as many banks and lending institutions, and easily three times the number of ancillary establishments catering to other vices.",
     ofNote: "Few gambling concerns are without rigged tables. The banks are mostly legalized loan sharking operations. Tresidiss stays in business through close ties to the Empire — several local governors and even a few Moffs are suspected of being silent partners. It also serves as convenient neutral ground where intelligence agents can quietly make deals. Maintains one of the least stringent tariff policies in the galaxy: every product has the same uniform low tax rate, and any item — however illegal elsewhere — can be sold here. More than a few terrorist and sabotage missions are secretly funded, recruited, and equipped from Tresidiss. The Herglic syndicate has an unusual arrangement with the Hutts — they voluntarily turn over a select number of gambling casinos each year, keeping the Hutts away from their other operations while maintaining a profitable alliance."
+  },
+  {
+    name: "Peregrine's Nest",
+    system: "Generic & Varies",
+    star: "Unknown",
+    grid: "Unknown",
+    region: "Unknown",
+    type: "Hidden Military Base",
+    temperature: "Unknown",
+    atmosphere: "Type I (breathable)",
+    hydrosphere: "Unknown",
+    gravity: "Standard",
+    terrain: "Unknown (concealed base)",
+    lengthOfDay: "Unknown",
+    lengthOfYear: "Unknown",
+    sapientSpecies: "Humans",
+    starport: "Limited (refurbishing hangars)",
+    population: "Military personnel",
+    function: "Military base",
+    government: "General Garm Bel Iblis",
+    techLevel: "Space",
+    majorExports: "None",
+    majorImports: "Military supplies, equipment, fuel",
+    source: "WEG40131 The Thrawn Trilogy Sourcebook p.99",
+    summary: "Peregrine's Nest is the secret military base of General Garm Bel Iblis and his private rebel army. All buildings are covered in camo-netting and sensor-diffusing materials, giving the whole base a sensor mask of +2D (increases difficulty to detect with sensors). The base served as headquarters for Bel Iblis's years-long private war against the Empire before he joined the New Republic.",
+    locations: "Living Quarters: 12-24 soldiers share each standard cabin with spartan furnishings; every spare space filled with emergency supplies. Officer Quarters: 6-10 officers share 'deluxe' cabins with more privacy and stockpiled equipment. Admin Buildings: Intelligence units, long-range planning teams, supply and procurement details. Supply Sheds: Parts, equipment, and special vaults for perishables — only supply officers or command personnel can open them. Maintenance Buildings: Handle a variety of tasks from keeping shuttles and starships in shape to repairing ground and repulsorlift vehicles; teams serve as jacks-of-all-trades. Tool Storage Sheds: Extra tools including power cutters, shovels, and drivers. Refurbishing Hangars: Reinforced hangars sheltering small transports and shuttles with computer/navigation links, cold engine starters, external power sources, overhead winches, repulsor tractors, and emergency crash wagons. Vehicle Garages: Camo-net protected with sensor-diffusing jammers; store ground, hover, and repulsorlift vehicles from unarmed transports to heavily-armed combat vehicles. Armory: Heavily-armored vault storing personal weapons, grenades, blaster artillery, and ship/vehicle weapons. Command Center: Constantly monitors communications and sensor readings; all missions monitored from here; Bel Iblis maintains an office here. Galley/Mess/Meeting Hall: Full kitchen, walk-in freezers, dry-food lockers; meeting hall large enough for a quarter of the Nest's personnel. Sentry Towers: Concealed and open towers crewed around the chrono with macrobinoculars and portable sensor arrays.",
+    ofNote: "Medical Building: Field-tested facility treating up to 100 wounded at a time with full diagnostic sensors, medical computers, two surgical theaters, and twelve bacta tanks. Crewed by six doctors, twelve medical aides, and six medical droids. Anti-Infantry Batteries: Perimeter defense towers with own crew, power source, and ammunition supply — constantly crewed. Anti-Vehicle Cannons: Perimeter defense towers protecting against ground assault vehicles — crewed around the chrono. Anti-Orbit Cannons: Two types — capital ship defenders and anti-starfighter turbolasers — each with own crew, power source, and ammunition supply, crewed around the chrono. Fuel Storage: High energy capacitors store power for recharging vehicle and ship power cells; hidden generators constantly charge cells and can be routed to vital base systems and protective shields if main generators fail."
   }
 ];
