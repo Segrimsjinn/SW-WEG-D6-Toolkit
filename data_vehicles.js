@@ -2145,5 +2145,24 @@ const VEHICLES_DATA = [
   "weapons": "",
   "game_notes": "Wind-propelled; masts extend up, down, and sideways. Side sails for altitude/glide; top/bottom sails for direction and vertical stabilization. No water resistance — can reach 300 kph in good winds. Equipped with Ponrez/Arc repulsorlift backup engine (keeps ship afloat/stationary only; cannot provide meaningful propulsion). If becalmed, signals for tow. Crew skill: Repulsorlift operation: skyship 2D. Rare outside Bespin; primarily a Cloud City tourist attraction. Captains are typically obsessive enthusiasts who would sail empty rather than not at all.",
   "source": "WEG40119 Galaxy Guide 2: Yavin and Bespin p.61"
+ },
+ {
+  "name": "Compact Assault Vehicle (CAV)",
+  "category": "Military Ground Vehicles",
+  "scale": "Speeder",
+  "length": "5.1m",
+  "skill": "Ground vehicle operation: CAVw PX-10",
+  "crew": "1",
+  "passengers": "",
+  "cargo": "100kg",
+  "cover": "Full",
+  "cost": "Not for sale",
+  "maneuverability": "1D",
+  "move": "90; 260 kmh",
+  "body": "3D+2",
+  "shields": "",
+  "weapons": "Medium Blaster Cannon (turret, FC 2D, 50-250/750/1.5 km, 5D).",
+  "game_notes": "Nen-Carvon CAVw PX-10. Single-trooper assault vehicle combining transportation, communications, and combat equipment. Onboard sensors allow the CAV to drive itself so the trooper can concentrate on combat. Primary rule: never get out of the vehicle. Computer technology can be jammed, causing sensory breakdown and rendering assistance programs inoperable — less useful against high-tech foes but more than adequate for primitive worlds.",
+  "source": "WEG40092 Imperial Sourcebook p.70"
  }
 ];
