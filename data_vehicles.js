@@ -2164,5 +2164,24 @@ const VEHICLES_DATA = [
   "weapons": "Medium Blaster Cannon (turret, FC 2D, 50-250/750/1.5 km, 5D).",
   "game_notes": "Nen-Carvon CAVw PX-10. Single-trooper assault vehicle combining transportation, communications, and combat equipment. Onboard sensors allow the CAV to drive itself so the trooper can concentrate on combat. Primary rule: never get out of the vehicle. Computer technology can be jammed, causing sensory breakdown and rendering assistance programs inoperable — less useful against high-tech foes but more than adequate for primitive worlds.",
   "source": "WEG40092 Imperial Sourcebook p.70"
+ },
+ {
+  "name": "Mobile Command Base (PX-4)",
+  "category": "Military Ground Vehicles",
+  "scale": "Speeder",
+  "length": "21.8m",
+  "skill": "Ground vehicle operation: PX-4",
+  "crew": "2 (+1 gunner)",
+  "passengers": "7",
+  "cargo": "1 metric ton",
+  "cover": "Full",
+  "cost": "Not for sale",
+  "maneuverability": "0D",
+  "move": "35; 100 kmh",
+  "body": "7D",
+  "shields": "",
+  "weapons": "Heavy Laser Cannon (limited turret: left/front/right only, moves one arc per turn, FC 2D, 50-500/1/2 km, 4D+2).",
+  "game_notes": "Nen-Carvon PX-4. Protective metallic shell almost half a meter thick with additional inner command pod shell and reflective shielding. Sophisticated sensors and computers monitor and analyze an entire battle, providing up-to-the-minute data and suggestions. Also monitors enemy communications. Designed as an observer and command post, not a direct combat vehicle. Some planetary prefects and governors on hostile worlds live inside these vehicles permanently.",
+  "source": "WEG40092 Imperial Sourcebook p.71"
  }
 ];
