@@ -14372,8 +14372,8 @@ const NOTABLE_NPCS = [
   {
     name: "Bogga the Hutt (4000 BBY)",
     species: "Hutt",
-    system: "Stenness Node",
-    location: "Stenness Node — Personal Moon",
+    system: "Taboon",
+    location: "Taboon - Vo Dasha — Bogga's Citadel",
     affiliations: ["Criminal Underworld"],
     role: "Hutt Ganglord",
     type: "Named NPC",
@@ -14397,8 +14397,8 @@ const NOTABLE_NPCS = [
   {
     name: "Grimorg (4000 BBY)",
     species: "Weequay",
-    system: "Stenness Node",
-    location: "Stenness Node — Bogga's Moon",
+    system: "Taboon",
+    location: "Taboon - Vo Dasha — Bogga's Citadel",
     affiliations: ["Criminal Underworld"],
     role: "Weequay Palace Enforcer",
     type: "Named NPC",
@@ -14421,8 +14421,8 @@ const NOTABLE_NPCS = [
   {
     name: "Bogga's Thugs (4000 BBY)",
     species: "Various",
-    system: "",
-    location: "Stenness Node — Various",
+    system: "Taboon",
+    location: "Taboon - Vo Dasha — Bogga's Citadel",
     affiliations: ["Criminal Underworld"],
     role: "Generic enforcers in service to Bogga the Hutt",
     type: "Generic NPC",

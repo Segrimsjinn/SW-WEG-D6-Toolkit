@@ -5920,5 +5920,33 @@ const CREATURES_DATA = [
   "orneriness": "3D+1",
   "special": "Flight: can fly but cannot hover. Speeder scale. Brawling 7D+2, stamina 8D, dodge 4D+2.",
   "source": "WEG40082 Tales of the Jedi Companion p.109"
+ },
+ {
+  "name": "Kabus-Dabeh Monstrosity",
+  "type": "Aquatic predator",
+  "planet": "Muzara",
+  "habitat": "Ruins of Kabus-Dabeh (submerged/aquatic)",
+  "dex": "3D",
+  "per": "2D",
+  "str": "6D",
+  "move": "2 (crawling), 14 (swimming)",
+  "size": "Large",
+  "orneriness": "4D",
+  "special": "Brawling 7D+2, swimming 8D. Maw: 7D damage. Tentacle barbs: 6D stun damage. 4000 BBY era.",
+  "source": "WEG40082 Tales of the Jedi Companion pp.149-169"
+ },
+ {
+  "name": "Togarn",
+  "type": "Nocturnal predator",
+  "planet": "Muzara",
+  "habitat": "Ruins of Kabus-Dabeh",
+  "dex": "1D+2",
+  "per": "3D",
+  "str": "3D",
+  "move": "4",
+  "size": "Medium",
+  "orneriness": "3D",
+  "special": "All other stats 2D. Sneak 3D+2, survival 3D, brawling 4D. Spiked tail: 4D damage. Light sensitivity: when exposed to bright light suffers -1D penalty to all attribute and skill rolls. Character Points: 3. 4000 BBY era.",
+  "source": "WEG40082 Tales of the Jedi Companion pp.149-169"
  }
 ];
