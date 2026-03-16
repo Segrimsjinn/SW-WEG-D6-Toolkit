@@ -627,7 +627,7 @@ const CREATURES_DATA = [
   "size": "2-3m tall",
   "orneriness": "3D",
   "special": "Claws: STR+2D. Spikes: 6D damage to melee attackers.",
-  "source": "Tales of the Jedi Companion (pages 106-107)"
+  "source": "WEG40082 Tales of the Jedi Companion pp.106-107"
  },
  {
   "name": "Bonegnawer",
@@ -1047,7 +1047,7 @@ const CREATURES_DATA = [
   "size": "1-1.5 km long",
   "orneriness": "",
   "special": "Space Survival. Starfighter Scale.",
-  "source": "Tales of the Jedi Companion (page 107)"
+  "source": "WEG40082 Tales of the Jedi Companion p.107"
  },
  {
   "name": "Condor Dragon",
@@ -2097,7 +2097,7 @@ const CREATURES_DATA = [
   "size": "1-1.5m long",
   "orneriness": "",
   "special": "Bite: STR+1D. Lethal Venom: Moderate stamina or instantly Mortally Wounded.",
-  "source": "Tales of the Jedi Companion (pages 107-108)"
+  "source": "WEG40082 Tales of the Jedi Companion pp.107-108"
  },
  {
   "name": "Gornt",
@@ -3665,7 +3665,7 @@ const CREATURES_DATA = [
   "size": "0.25-0.5m",
   "orneriness": "",
   "special": "Visual Acuity: +2D visual search. Audial Acuity: +1D+2 audial search.",
-  "source": "Tales of the Jedi Companion (pages 108-109)"
+  "source": "WEG40082 Tales of the Jedi Companion pp.108-109"
  },
  {
   "name": "Nek Battle Dog",
@@ -4799,7 +4799,7 @@ const CREATURES_DATA = [
   "size": "2m tall, 3m long",
   "orneriness": "2D",
   "special": "Gore: STR+1D+2. Trample: STR+1D. Herd Stampede: 8D damage if caught in path.",
-  "source": "Tales of the Jedi Companion (page 109)"
+  "source": "WEG40082 Tales of the Jedi Companion p.109"
  },
  {
   "name": "Stalker Lizard",

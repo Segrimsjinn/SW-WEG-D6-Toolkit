@@ -45,7 +45,7 @@ const FORCE_POWERS_DATA = [
   "timeToUse": "",
   "keepUp": "No",
   "effect": "The character may escape bonds by contorting in painful and difficult (but still physically possible) ways. By stretching, twisting, and dislocating joints a Jedi can escape almost any physical restraining device. Jedi are trained to block out the pain and focus on the task at hand.",
-  "source": "Tales of the Jedi Companion (page 41), Jedi Academy Sourcebook (page 42)"
+  "source": "WEG40082 Tales of the Jedi Companion p.41, Jedi Academy Sourcebook (page 42)"
  },
  {
   "number": 5,
@@ -105,7 +105,7 @@ const FORCE_POWERS_DATA = [
   "timeToUse": "One round",
   "keepUp": "No (duration determined by roll, extendable with Character Points)",
   "effect": "Increases a single attribute for a limited time. All skills controlled by the enhanced attribute increase by the same amount. Only one attribute at a time \u2014 enhancing a second drops the first. Duration extendable by spending Character Points (+1 round per point, spent any time before power fades). Beat difficulty by 0-13: +1D for 3 rounds. Beat by 14-25: +2D for 2 rounds. Beat by 26+: +3D for 1 round.",
-  "source": "Tales of the Jedi Companion (page 44-45)"
+  "source": "WEG40082 Tales of the Jedi Companion pp.44-45"
  },
  {
   "number": 10,
@@ -117,7 +117,7 @@ const FORCE_POWERS_DATA = [
   "timeToUse": "One round",
   "keepUp": "Yes",
   "effect": "The character uses Willpower skill to fight hostile mind-based Force powers. Add Willpower to Control or Perception to create a 'protection number.' If attack roll < Control/Perception: no effect. If attack roll > protection number: full effects. If attack roll between the two: protected, but Willpower is 'battered' (-1D to Willpower, reroll protection number). If Willpower reaches 0D, power drops automatically. Recovery: 1 day per 1D, or 1 hour in emptiness/rage per 1D. Does NOT protect against Force lightning, Force storms, or telekinetically hurled objects (external powers). DOES work against injure/kill, telekinetic kill, inflict pain, and other powers that directly use the Force on the target.",
-  "source": "Tales of the Jedi Companion (page 45), Jedi Academy Sourcebook (page 44)"
+  "source": "WEG40082 Tales of the Jedi Companion p.45, Jedi Academy Sourcebook (page 44)"
  },
  {
   "number": 11,
@@ -141,7 +141,7 @@ const FORCE_POWERS_DATA = [
   "timeToUse": "One minute",
   "keepUp": "No",
   "effect": "The Jedi calculates hyperspace equations mentally rather than feeling them through the Force (the sense-based version). If control roll succeeds, a Very Easy astrogation roll enters the routes into the nav computer. If the roll fails, the Jedi overlooks an obstacle \u2014 astrogation difficulty increases to Very Difficult. If missed by 5+, astrogation difficulty increases to Heroic. A largely unknown and rarely studied application \u2014 little more than a curiosity among Jedi theoreticians.",
-  "source": "Tales of the Jedi Companion (page 46)"
+  "source": "WEG40082 Tales of the Jedi Companion p.46"
  },
  {
   "number": 13,
@@ -153,7 +153,7 @@ const FORCE_POWERS_DATA = [
   "timeToUse": "",
   "keepUp": "No (see description)",
   "effect": "Dark side counterpart to Emptiness. Character enters a trance, appearing lifeless, face clenched in horror. Must declare duration. Difficult control roll every 4 hours to stay in trance. After exiting: +10 modifier to all Force skill rolls for a period equal to time in rage. Then takes 1D damage per 2 hours spent in rage. Adds rage control roll to difficulty of Force powers targeting the user. Dehydrates twice as fast. -1D to Strength vs physical/energy damage while in rage. Physical contact by a living being may revive (Moderate control roll) and provoke instant berserker attack \u2014 Difficult control roll to stop before killing the person. Can anticipate a foe's arrival with Difficult sense roll (life sense) when entering rage \u2014 Easy control roll to awaken instantly when expected person comes within 5 meters. Can be used as preparation for transfer life \u2014 original body consumed by dark side (blue flames), 1D damage per 3 points over difficulty (3m blast radius).",
-  "source": "Dark Empire Sourcebook (page 68), Tales of the Jedi Companion (page 46)"
+  "source": "Dark Empire Sourcebook (page 68), WEG40082 Tales of the Jedi Companion p.46"
  },
  {
   "number": 14,
@@ -189,7 +189,7 @@ const FORCE_POWERS_DATA = [
   "timeToUse": "",
   "keepUp": "Yes",
   "effect": "Combats the effects of strenuous work by manipulating the Force to eject bodily toxins more efficiently, allowing greater stamina. While kept up, must make a stamina check once per day. Must fail two stamina checks before becoming fatigued. Still must eat and drink normally. If fatigued (two failed checks): -1D penalty to all attributes and skills for 1D hours. Note: Cannot be used for Lifting \u2014 use Enhance Attribute instead.",
-  "source": "Tales of the Jedi Companion (page 47), Jedi Academy Sourcebook (page 44)"
+  "source": "WEG40082 Tales of the Jedi Companion p.47, Jedi Academy Sourcebook (page 44)"
  },
  {
   "number": 17,
@@ -213,7 +213,7 @@ const FORCE_POWERS_DATA = [
   "timeToUse": "",
   "keepUp": "No",
   "effect": "The Jedi can replay recent events to examine images and peripheral occurrences more carefully. Can freeze images and scan memory tracks to recall details that were seen but didn't register consciously. Can alert the Jedi to information, items, characters, or anything that passed before their senses. If the GM provided clues that players missed, this power can recall them. How far back: beat difficulty by 0-8 = current episode; 9-20 = last episode; 21+ = last two episodes.",
-  "source": "Tales of the Jedi Companion (page 47)"
+  "source": "WEG40082 Tales of the Jedi Companion p.47"
  },
  {
   "number": 19,
@@ -225,7 +225,7 @@ const FORCE_POWERS_DATA = [
   "timeToUse": "",
   "keepUp": "Yes",
   "effect": "Allows the Jedi to translate beast-language and speak it. The Jedi reads differences in surface emotions within grunts, growls, and body language cues. Creatures rarely have 'true' languages. For beasts that can be ridden, subtract 2D from their orneriness code while in effect (minimum 0D).",
-  "source": "Tales of the Jedi Companion (page 48), Jedi Academy Sourcebook (page 45-46)"
+  "source": "WEG40082 Tales of the Jedi Companion p.48, Jedi Academy Sourcebook (page 45-46)"
  },
  {
   "number": 20,
@@ -237,7 +237,7 @@ const FORCE_POWERS_DATA = [
   "timeToUse": "",
   "keepUp": "No (lasts 10 combat rounds)",
   "effect": "The Jedi focuses entirely on combat. All targets become mentally highlighted. Advantages: 1) The Jedi decides when to act during a round \u2014 no initiative rolls needed. If multiple Jedi use this, highest roll determines order. 2) Attack and defense rolls increased by +2D. Lasts 10 combat rounds. Does not count as a 'skill use' for determining die code penalties.",
-  "source": "Tales of the Jedi Companion (page 47)"
+  "source": "WEG40082 Tales of the Jedi Companion p.47"
  },
  {
   "number": 21,
@@ -249,7 +249,7 @@ const FORCE_POWERS_DATA = [
   "timeToUse": "",
   "keepUp": "Yes",
   "effect": "The Jedi extends senses like protective sensors, creating an early warning system. When active, the Jedi detects any attacks the round before they are made, giving one round to decide how to react. Any character planning to attack the Jedi on the next round must declare their action the round before. Attackers may roll their control skill to increase the difficulty of this power.",
-  "source": "Tales of the Jedi Companion (page 48)"
+  "source": "WEG40082 Tales of the Jedi Companion p.48"
  },
  {
   "number": 22,
@@ -261,7 +261,7 @@ const FORCE_POWERS_DATA = [
   "timeToUse": "",
   "keepUp": "No",
   "effect": "The better-known ability to calculate hyperspace routes without a nav computer. The Jedi uses sense to feel through the myriad possible routes to determine the safest path. If successful, only an Easy astrogation roll is needed to plot the route. If the sense roll fails, astrogation difficulty becomes Very Difficult. If missed by 5+, astrogation difficulty becomes Heroic.",
-  "source": "Tales of the Jedi Companion (page 48-49)"
+  "source": "WEG40082 Tales of the Jedi Companion pp.48-49"
  },
  {
   "number": 23,
@@ -297,7 +297,7 @@ const FORCE_POWERS_DATA = [
   "timeToUse": "Two days (each additional 2 days adds +1D to sense roll)",
   "keepUp": "No",
   "effect": "Detects large concentrations of a specific species. The Jedi senses general direction toward the population. Beat difficulty by 10+: approximate distance (hundreds/thousands of km, or tens/hundreds/thousands of light-years). Force-user must choose one specific species as specialization when selecting this power. Additional species cost 3 Character Points each. Must be familiar with the species (spent time with a member). Requires at least 2 days continuous concentration.",
-  "source": "Tales of the Jedi Companion (page 49)"
+  "source": "WEG40082 Tales of the Jedi Companion p.49"
  },
  {
   "number": 26,
@@ -357,7 +357,7 @@ const FORCE_POWERS_DATA = [
   "timeToUse": "",
   "keepUp": "No",
   "effect": "Senses the ambient Force within a place. Cannot specifically detect sentient beings. Tells the character: rough magnitude of the Force (rich, moderate, or poor), rough type and quantity of life-forms, and whether the area tends toward dark or light side (e.g., the dark side tree on Dagobah). An area rich in negative or positive energies may indicate past events or activities of past inhabitants. The Jedi may also receive vague premonitions ('I sense something wrong,' 'I sense a great impending tragedy').",
-  "source": "Tales of the Jedi Companion (page 50)"
+  "source": "WEG40082 Tales of the Jedi Companion p.50"
  },
  {
   "number": 31,
@@ -369,7 +369,7 @@ const FORCE_POWERS_DATA = [
   "timeToUse": "Six rounds",
   "keepUp": "No",
   "effect": "Probes the mind of a target to determine Force potential. Force-sensitive people have an involuntary subconscious shield that pushes back against intruders. The magnitude of the backlash indicates Force strength: merely Force-sensitive = shoved back several feet; actual Force skills with little training = sent reeling across the room; well-trained or great raw talent = sent flying across the room.",
-  "source": "Tales of the Jedi Companion (page 50)"
+  "source": "WEG40082 Tales of the Jedi Companion p.50"
  },
  {
   "number": 32,
@@ -381,7 +381,7 @@ const FORCE_POWERS_DATA = [
   "timeToUse": "",
   "keepUp": "Yes",
   "effect": "Informs the character of the 'path' he travels: whether current actions lead toward the dark side, and whether specified future actions are likely to do so. Like farseeing without control \u2014 the Jedi cannot choose to see past, present, or future; visions are allegorical rather than specific. Can tell a Jedi with Dark Side Points how successful atonement has been. Can be used consciously or as a GM plot device \u2014 to warn, encourage, provide hints, or foreshadow events. Different Jedi receive different renditions of the same scene. The path of darkness may be clear but the light may be elusive. A skilled Dark Jedi can twist the readings to suit their own ends.",
-  "source": "Tales of the Jedi Companion (page 50-51)"
+  "source": "WEG40082 Tales of the Jedi Companion pp.50-51"
  },
  {
   "number": 33,
@@ -393,7 +393,7 @@ const FORCE_POWERS_DATA = [
   "timeToUse": "",
   "keepUp": "Yes",
   "effect": "The character may shift senses to detect phenomena of a different type than normal \u2014 infrared vision, frequencies above or below normal range, etc. This power counts as a 'skill use' for determining die code penalties. Note: useful but limited. For example, a Jedi may detect comm frequencies but cannot listen in on the transmission. Can detect a transmission is present but may not locate the source, and certainly cannot decode the information.",
-  "source": "Tales of the Jedi Companion (page 51-52)"
+  "source": "WEG40082 Tales of the Jedi Companion pp.51-52"
  },
  {
   "number": 34,
@@ -405,7 +405,7 @@ const FORCE_POWERS_DATA = [
   "timeToUse": "",
   "keepUp": "Yes",
   "effect": "Translates a language and allows the Jedi to speak it. Can decipher body language, spoken words, or ancient texts. Must first hear the target speak or see written form. One application to 'understand' a language \u2014 as long as all speakers use the same language and the power is kept up, no additional rolls needed. Droids can be communicated with since they 'speak' using beeps and whistles. Note: the character does not truly know the language \u2014 once the power drops, the Jedi cannot understand or speak it again.",
-  "source": "Tales of the Jedi Companion (page 52)"
+  "source": "WEG40082 Tales of the Jedi Companion p.52"
  },
  {
   "number": 35,
@@ -417,7 +417,7 @@ const FORCE_POWERS_DATA = [
   "timeToUse": "",
   "keepUp": "Yes",
   "effect": "Attunes the Jedi to local weather patterns by sensing movements of clouds, winds, tides, and solar bodies. Can discern patterns and make limited predictions about atmospheric phenomena. Usually takes weeks to become accustomed to local patterns and topography for accurate readings. Prediction effective for 4 hours; difficulty increases for more extended forecasts.",
-  "source": "Tales of the Jedi Companion (page 52)"
+  "source": "WEG40082 Tales of the Jedi Companion p.52"
  },
  {
   "number": 36,
@@ -429,7 +429,7 @@ const FORCE_POWERS_DATA = [
   "timeToUse": "",
   "keepUp": "No",
   "effect": "The Force-user creates a radiant sphere of pure hatred which he can hurl at any target within line of sight. After a successful alter roll, the Force-wielder makes a thrown weapons roll with a +2D bonus to launch the bolt. Characters hit suffer 6D damage and automatically lose a Character Point. Dark Side Point for use.",
-  "source": "Tales of the Jedi Companion (page 87)"
+  "source": "WEG40082 Tales of the Jedi Companion p.87"
  },
  {
   "number": 37,
@@ -441,7 +441,7 @@ const FORCE_POWERS_DATA = [
   "timeToUse": "",
   "keepUp": "Yes",
   "effect": "Summons strands of dark side power that wrap around the target, ensnaring them in a mesh of brilliance. The lattice severs the connection between the Force and the trapped individual and saps body strength. The target loses Force skill dice up to the number of the Force-wielder's alter dice, distributed across control, sense, and alter in any combination. If desired, the user may also include Strength in the reduction. Dark Side Point for use.",
-  "source": "Tales of the Jedi Companion (page 87)"
+  "source": "WEG40082 Tales of the Jedi Companion p.87"
  },
  {
   "number": 38,
@@ -477,7 +477,7 @@ const FORCE_POWERS_DATA = [
   "timeToUse": "At least one minute",
   "keepUp": "No",
   "effect": "See a person or place as it currently exists, including immediate surroundings. Can see past or future. Requires calm, no danger. Vision accuracy by roll vs sense difficulty \u2014 Past/Present: 0-10=50%, 11-20=75%, 21-30=90%, 31+=100%. Future: 0-10=10%, 11-20=25%, 21-30=50%, 31+=75%. The future is always fluid. GM should make honest effort to represent what will happen at the rolled accuracy level.",
-  "source": "Tales of the Jedi Companion (page 53)"
+  "source": "WEG40082 Tales of the Jedi Companion p.53"
  },
  {
   "number": 41,
@@ -489,7 +489,7 @@ const FORCE_POWERS_DATA = [
   "timeToUse": "1D weeks to form bond",
   "keepUp": "Yes",
   "effect": "Permanent mental link with one other individual (normally a mate). Easy sense: aware of general location and emotional state. Moderate sense: experience other's senses (see, hear, feel); share pain; if one injured, other suffers one level lower injury. Difficult sense: telepathic link, read surface thoughts (if willing). Very Difficult sense: send thoughts (projective telepathy). Premonitions automatic within 1,000km; scaling difficulty beyond. Both must agree. Only one bond at a time. Death severs the bond \u2014 survivor enters catatonic shock for 1D days, then -1D to all die codes for same duration as bond formation. Partner receives Dark Side Points for bonded partner's evil actions. If both have the power, reduce sense difficulties one level.",
-  "source": "Tales of the Jedi Companion (page 54)"
+  "source": "WEG40082 Tales of the Jedi Companion p.54"
  },
  {
   "number": 42,
@@ -537,7 +537,7 @@ const FORCE_POWERS_DATA = [
   "timeToUse": "",
   "keepUp": "Yes",
   "effect": "Projects a field of vague discomfort and unease, causing all non-sentient creatures to go out of their way to avoid the user. Dark Side Point for use.",
-  "source": "Tales of the Jedi Companion (page 87)"
+  "source": "WEG40082 Tales of the Jedi Companion p.87"
  },
  {
   "number": 46,
@@ -573,7 +573,7 @@ const FORCE_POWERS_DATA = [
   "timeToUse": "",
   "keepUp": "Yes (drops if incapacitated or willfully dropped)",
   "effect": "Controls the amount of oxygen flowing into the Jedi's body by pulling oxygen molecules through the skin into the lungs. Effectively breathe underwater; water breathers can survive on land. Negates the need for breath masks, mechgills, or rebreathers. Useless in the cold of space or hard vacuum \u2014 not enough oxygen to 'grab' even if the Jedi could survive the pressure and temperature.",
-  "source": "Tales of the Jedi Companion (page 56)"
+  "source": "WEG40082 Tales of the Jedi Companion p.56"
  },
  {
   "number": 49,
@@ -585,7 +585,7 @@ const FORCE_POWERS_DATA = [
   "timeToUse": "Five minutes",
   "keepUp": "No",
   "effect": "Removes or detoxifies poison from a patient's body. Jedi must remain in physical contact with the patient. While in contact, the patient is immune to the poison's effects. Failure to make the required rolls or breaking physical contact causes the patient a wound.",
-  "source": "Tales of the Jedi Companion (page 56)"
+  "source": "WEG40082 Tales of the Jedi Companion p.56"
  },
  {
   "number": 50,
@@ -597,7 +597,7 @@ const FORCE_POWERS_DATA = [
   "timeToUse": "",
   "keepUp": "No",
   "effect": "Channels anger into circuits of a computer, droid, or machine to reprogram it by manipulating physical and electrical components. Only existing programming can be altered; the machine may not be given programming it doesn't have. Dark Side Point for use.",
-  "source": "Tales of the Jedi Companion (page 87)"
+  "source": "WEG40082 Tales of the Jedi Companion p.87"
  },
  {
   "number": 51,
@@ -609,7 +609,7 @@ const FORCE_POWERS_DATA = [
   "timeToUse": "",
   "keepUp": "Yes",
   "effect": "Feeds off a foe's anger, fear, hatred, or other negative emotions to become stronger. In any round where a light side Force-sensitive in the user's presence gains a Dark Side Point, the user gains a Dark Side Point and a Force Point. Multiple characters gaining Dark Side Points = multiple Force Points. Force Points must be spent within 5 minutes. The only way to stop this power is to resist the dark side \u2014 brute force will not work. Dark Side Point for use. Warning: avoid overuse, can severely disrupt game balance.",
-  "source": "Tales of the Jedi Companion (page 56-57)"
+  "source": "WEG40082 Tales of the Jedi Companion pp.56-57"
  },
  {
   "number": 52,
@@ -621,7 +621,7 @@ const FORCE_POWERS_DATA = [
   "timeToUse": "",
   "keepUp": "No",
   "effect": "Produces bolts of white or blue energy from the user's fingertips. Cannot be parried or dodged. Victim's only defense is rolling higher with Perception or control. Can be blocked by lightsaber combat (higher control total) but cannot be redirected. Can be absorbed with absorb/dissipate energy. Damage: 1D per 1D of alter the user has. Armor is useless. If the target is stunned, wounded, or worse, they cannot act for the rest of the round and the next round. Dark Side Point for use.",
-  "source": "Tales of the Jedi Companion (page 57)"
+  "source": "WEG40082 Tales of the Jedi Companion p.57"
  },
  {
   "number": 53,
@@ -633,7 +633,7 @@ const FORCE_POWERS_DATA = [
   "timeToUse": "",
   "keepUp": "No",
   "effect": "The target experiences great agony. Damage is rolled with alter vs target's control, Perception, or willpower. Damage is treated as a stun attack. If the target suffers any damage at all, they are incapable of acting for the rest of the round and the next round. Dark Side Point for use.",
-  "source": "Tales of the Jedi Companion (page 57)"
+  "source": "WEG40082 Tales of the Jedi Companion p.57"
  },
  {
   "number": 54,
@@ -657,7 +657,7 @@ const FORCE_POWERS_DATA = [
   "timeToUse": "",
   "keepUp": "No",
   "effect": "Removes effects of fatigue in another character. Unlike the self version, the Jedi must wait until the target is actually fatigued before offering assistance. Penalties from failing stamina checks can be counteracted but must be addressed as they occur.",
-  "source": "Tales of the Jedi Companion (page 57)"
+  "source": "WEG40082 Tales of the Jedi Companion p.57"
  },
  {
   "number": 56,
@@ -693,7 +693,7 @@ const FORCE_POWERS_DATA = [
   "timeToUse": "",
   "keepUp": "Yes",
   "effect": "Channels anger into an expanding sphere of dark side energy. Anyone entering the area must make a Willpower or Control roll vs the Jedi's control roll. Failure: can't act current round or next round, must flee the following round. Success: confused, limited to one action per turn until leaving the area. Dark Side Point for use.",
-  "source": "Tales of the Jedi Companion (page 87)"
+  "source": "WEG40082 Tales of the Jedi Companion p.87"
  },
  {
   "number": 59,
@@ -705,7 +705,7 @@ const FORCE_POWERS_DATA = [
   "timeToUse": "",
   "keepUp": "Yes",
   "effect": "Greatly reduces the target's Perception and all Perception skills. Alter beats control/Perception by: 0-5 = -1 pip; 6-10 = -2 pips; 11-15 = -1D; 16-20 = -2D; 21+ = -3D. Can target multiple people: +3 to sense difficulty per additional target, using the highest control/Perception in the group.",
-  "source": "Tales of the Jedi Companion (page 64)"
+  "source": "WEG40082 Tales of the Jedi Companion p.64"
  },
  {
   "number": 60,
@@ -717,7 +717,7 @@ const FORCE_POWERS_DATA = [
   "timeToUse": "",
   "keepUp": "Yes",
   "effect": "Surrounds the Jedi's body with a Force-generated shield that repels energy and physical matter down to the molecular level. Acts as STR+1D armor against all energy and physical attacks, including non-directional attacks like gas clouds and grenade blasts. Not particularly strong but can be enough to prevent serious injury.",
-  "source": "Tales of the Jedi Companion (page 65)"
+  "source": "WEG40082 Tales of the Jedi Companion p.65"
  },
  {
   "number": 61,
@@ -729,7 +729,7 @@ const FORCE_POWERS_DATA = [
   "timeToUse": "",
   "keepUp": "Yes",
   "effect": "Channels air currents into a powerful tornado. Damage equals the Jedi's alter dice to anyone within range.",
-  "source": "Tales of the Jedi Companion (page 88)"
+  "source": "WEG40082 Tales of the Jedi Companion p.88"
  },
  {
   "number": 62,
@@ -753,7 +753,7 @@ const FORCE_POWERS_DATA = [
   "timeToUse": "5 minutes",
   "keepUp": "Yes",
   "effect": "Two possible effects (choose before activating). 1) Turn enemies against each other: Jedi's highest Force skill roll becomes difficulty targets must beat or they attack their own allies. Must maintain each round. 2) Buff allies/debuff enemies: enemies lose 1D per 4D in Jedi's best Force skill (to a chosen attribute, minimum 1D); allies gain the same bonus to a chosen attribute. Targets must have initiated combat. Enemies = those opposing Jedi's immediate goal; allies = those supporting it.",
-  "source": "Tales of the Jedi Companion (page 58-59)"
+  "source": "WEG40082 Tales of the Jedi Companion pp.58-59"
  },
  {
   "number": 64,
@@ -765,7 +765,7 @@ const FORCE_POWERS_DATA = [
   "timeToUse": "",
   "keepUp": "Yes (new roll when adding/switching targets)",
   "effect": "Takes control of others, turning them into puppets. Substantially easier for dark siders. Force-sensitive targets can resist with control or Perception. Cannot affect droids or computers. Controlled characters may attempt new escape rolls when Jedi adds new targets. Dark Side Point per use, plus additional Dark Side Point per evil action forced on victims.",
-  "source": "Tales of the Jedi Companion (page 87)"
+  "source": "WEG40082 Tales of the Jedi Companion p.87"
  },
  {
   "number": 65,
@@ -777,7 +777,7 @@ const FORCE_POWERS_DATA = [
   "timeToUse": "",
   "keepUp": "Yes (must roll each round)",
   "effect": "The single most destructive Force power known. Creates vast storms of Force energy by twisting space-time. Capital-scale damage. Can swallow whole fleets or tear surfaces off worlds. If the Jedi fails any roll, the storm attempts to consume the summoner. If the summoner is destroyed, the storm dissipates within minutes. Can create vortices to draw victims to a point (+10 difficulty). Requires focusing hate and anger. Dark Side Point for use.",
-  "source": "Tales of the Jedi Companion (page 60)"
+  "source": "WEG40082 Tales of the Jedi Companion p.60"
  },
  {
   "number": 66,
@@ -789,7 +789,7 @@ const FORCE_POWERS_DATA = [
   "timeToUse": "Five minutes",
   "keepUp": "Yes (must re-roll every 5 minutes)",
   "effect": "Creates an illusory duplicate of the user that appears real to all interactions. Registers as normal on all droid audio and video sensors. The user can sense through the doppleganger's normal senses. The duplicate acts with half the user's skill dice. If the Jedi stops using the power or the doppleganger is fatally injured, it simply fades away. Dark Side Point for use.",
-  "source": "Tales of the Jedi Companion (page 60)"
+  "source": "WEG40082 Tales of the Jedi Companion p.60"
  },
  {
   "number": 67,
@@ -801,7 +801,7 @@ const FORCE_POWERS_DATA = [
   "timeToUse": "",
   "keepUp": "Yes",
   "effect": "Draws power from nearby non-sentient beings. While kept up, the Jedi will not fatigue or require sleep. May not be used on sentient beings. Dark Side Point for use.",
-  "source": "Tales of the Jedi Companion (page 88)"
+  "source": "WEG40082 Tales of the Jedi Companion p.88"
  },
  {
   "number": 68,
@@ -813,7 +813,7 @@ const FORCE_POWERS_DATA = [
   "timeToUse": "",
   "keepUp": "Yes (roll once per day)",
   "effect": "Draws life energy from surrounding beings and channels dark side effects into victims. Force Point gain scales by number drained: 1-5 = 1 FP/week, up to 1M-10M = 1 FP/12 hours. After 1 week to 1 month of sustained drain, also gains Force skill bonuses: 1-5 victims = +1D, scaling to 1M-10M = +4D+2. Jedi must roll daily; power is always 'up' with associated die penalties. Dark Side Point for use.",
-  "source": "Tales of the Jedi Companion (page 60-61)"
+  "source": "WEG40082 Tales of the Jedi Companion pp.60-61"
  },
  {
   "number": 69,
@@ -825,7 +825,7 @@ const FORCE_POWERS_DATA = [
   "timeToUse": "",
   "keepUp": "Yes (new roll when coordinating new troops or changing skills)",
   "effect": "Coordinates group activities to increase effectiveness. Used by Palpatine and C'baoth on troops. Only works on targets who agree with the Jedi's intent (no mental control granted). Links troops subconsciously for better organization. Jedi picks 3 specific Dexterity, Mechanical, or Strength skills; all troops receive +1D per 3D (rounded down) they have in those skills.",
-  "source": "Tales of the Jedi Companion (page 62)"
+  "source": "WEG40082 Tales of the Jedi Companion p.62"
  },
  {
   "number": 70,
@@ -837,7 +837,7 @@ const FORCE_POWERS_DATA = [
   "timeToUse": "",
   "keepUp": "Yes",
   "effect": "Allows several willing Jedi to manifest the Light Side as a shield against dark side powers. Grants +5D per Force user linked to resist dark side effects. Max linked Jedi = initiator's lower of control or sense dice. If both control and sense rolls exceed the dark side power's highest success roll, the dark side power is interrupted (all 'up' powers interrupted as if stunned). Does not cancel dark side presence but distracts its servants. Note: keeping up costs -2D penalty.",
-  "source": "Tales of the Jedi Companion (page 62-63)"
+  "source": "WEG40082 Tales of the Jedi Companion pp.62-63"
  },
  {
   "number": 71,
@@ -849,7 +849,7 @@ const FORCE_POWERS_DATA = [
   "timeToUse": "",
   "keepUp": "No",
   "effect": "Allows the Jedi to sift through a target's mind and destroy all knowledge of a specific event or a learned skill. Requires direct physical contact. Only one specified objective per attempt. Dark Side Point for use.",
-  "source": "Tales of the Jedi Companion (page 88)"
+  "source": "WEG40082 Tales of the Jedi Companion p.88"
  },
  {
   "number": 72,
@@ -861,7 +861,7 @@ const FORCE_POWERS_DATA = [
   "timeToUse": "",
   "keepUp": "Yes (as long as distance stays roughly the same)",
   "effect": "Strike at an opponent and inflict damage without physical contact. Line of sight required. After activating, make an Easy brawling roll (Force-sensitive targets may brawling parry; others cannot dodge). If successful, roll full Strength vs target's Strength. Can target specific body parts at -1D to brawling. Stun damage only to avoid Dark Side Point \u2014 any greater damage or non-protective use earns a Dark Side Point. Must re-roll if target moves significantly or switching targets.",
-  "source": "Tales of the Jedi Companion (page 63)"
+  "source": "WEG40082 Tales of the Jedi Companion p.63"
  },
  {
   "number": 73,
@@ -873,7 +873,7 @@ const FORCE_POWERS_DATA = [
   "timeToUse": "",
   "keepUp": "No",
   "effect": "Telekinetically injures or kills a target. Alter roll vs target's control or Perception determines damage. Methods vary: collapse trachea, stir the brain, squeeze the heart, etc. Dark Side Point for use.",
-  "source": "Tales of the Jedi Companion (page 63)"
+  "source": "WEG40082 Tales of the Jedi Companion p.63"
  },
  {
   "number": 74,
@@ -885,7 +885,7 @@ const FORCE_POWERS_DATA = [
   "timeToUse": "",
   "keepUp": "No",
   "effect": "Transfers the user's life energy into another body. The key to immortality \u2014 one of the most difficult and evil dark side powers. Nearly impossible to overcome a spirit already in a body, which is why cloning host bodies is almost required. If the user's body perishes during a failed attempt, life energy is lost and dispersed. 2 Dark Side Points for use; 4 Dark Side Points if attempting to possess an unwilling host.",
-  "source": "Tales of the Jedi Companion (page 63-64)"
+  "source": "WEG40082 Tales of the Jedi Companion pp.63-64"
  },
  {
   "number": 75,
@@ -897,7 +897,7 @@ const FORCE_POWERS_DATA = [
   "timeToUse": "Instantaneous (involuntary)",
   "keepUp": "No",
   "effect": "An involuntary dark side reflex triggered when a dark Jedi loses control of their temper. Produces a shockwave through the Force. If the willpower roll fails: all die codes reduced by -2D for 1 hour, must rest 1 hour or suffer cumulative additional -2D. Causes damage equal to the dark Jedi's alter skill to all beings within 50 meters, including the user. Force-sensitive characters resist with alter; non-Force users resist with Strength.",
-  "source": "Tales of the Jedi Companion (page 65)"
+  "source": "WEG40082 Tales of the Jedi Companion p.65"
  },
  {
   "number": 76,

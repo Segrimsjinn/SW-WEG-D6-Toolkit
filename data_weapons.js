@@ -2361,7 +2361,7 @@ const WEAPONS_DATA = [
   "range": "",
   "ammo": "",
   "game_notes": "Easy difficulty.",
-  "source": "Tales of the Jedi Companion (pages 124-125)"
+  "source": "WEG40082 Tales of the Jedi Companion pp.124-125"
  },
  {
   "name": "Club",
@@ -2505,7 +2505,7 @@ const WEAPONS_DATA = [
   "range": "",
   "ammo": "",
   "game_notes": "Moderate difficulty. Indestructible \u2014 can parry lightsabers and blaster bolts. Wielder auto-loses a FP and gains a DSP.",
-  "source": "Tales of the Jedi Companion (page 82)"
+  "source": "WEG40082 Tales of the Jedi Companion p.82"
  },
  {
   "name": "Snap Baton",
@@ -2553,7 +2553,7 @@ const WEAPONS_DATA = [
   "range": "",
   "ammo": "",
   "game_notes": "Easy difficulty.",
-  "source": "Tales of the Jedi Companion (page 125)"
+  "source": "WEG40082 Tales of the Jedi Companion p.125"
  },
  {
   "name": "Thogk",
