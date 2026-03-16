@@ -8682,6 +8682,37 @@ const STARSHIP_DATA = {
      "damage": "4D"
     }
    ]
+  },
+  {
+   "rank": 40,
+   "name": "Plexus Droid Vessel (PDV)",
+   "craft": "Imperial Intelligence Tech 4 PDV",
+   "type": "Unmanned Messenger Pod",
+   "affiliation": "Empire",
+   "era": "Rebellion",
+   "source": "WEG40092 Imperial Sourcebook",
+   "price_new": "Not for sale",
+   "price_used": "",
+   "scale": "Starfighter",
+   "length": "9 meters",
+   "crew": "0 (droid-operated: 12-CG storage/receiving, I2AM captain/astrogator, A/E analysis/encoding/translation computer)",
+   "gunners": "",
+   "passengers": "",
+   "cargo": "",
+   "consumables": "",
+   "hyperdrive": "x0.5",
+   "nav_computer": "Yes",
+   "maneuverability": "5D",
+   "space": "15",
+   "atmosphere": "",
+   "hull": "2D",
+   "shields": "",
+   "of_note": "No life support or accommodations. Essentially a fuel source and engine with droids attached. Can avoid long-range sensor detection; given minimal camouflage to resemble mining probes or scavenger droids. Jump duration never exceeds one standard day. Droid Package skills: languages 9D, planetary systems 5D, astrogation 3D, plexus droid vessel piloting 4D, search 5D, sneak 7D, computer programming/repair 7D, plexus droid vessel repair 7D.",
+   "sensors_passive": "",
+   "sensors_scan": "",
+   "sensors_search": "",
+   "sensors_focus": "",
+   "weapons": []
   }
  ],
  "Military Transports": [
