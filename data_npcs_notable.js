@@ -3135,7 +3135,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Lightsaber (5D), blaster pistol (4D), macrobinoculars (+3D to search at ranges greater than 100 meters), comlink",
     capsule: "Luke Skywalker at the Battle of Yavin is a young man of immense raw potential who has barely scratched the surface of what he will become. Raised on Tatooine as a moisture farmer's nephew, he spent his teens racing T-16 skyhoppers across the Dune Sea and dreaming of the stars. His piloting instincts and repulsorlift skills are already extraordinary. His Force training at this point consists of a few hours on the Falcon under Obi-Wan Kenobi — but when the targeting computer failed him in the Death Star trench, he shut it off and fired by feel alone, destroying the station with a single proton torpedo.",
-    source: "WEG40124 Galaxy Guide 1: A New Hope p.73"
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.73; WEG40093 Star Wars Sourcebook p.124"
   },
   {
     name: "Princess Leia Organa (0 BBY)",
@@ -3159,7 +3159,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Hold-out blaster (3D), comlink, technical readouts of the Death Star",
     capsule: "Princess Leia Organa of Alderaan is one of the founding figures of the Rebel Alliance — a senator, spy, and soldier who carried the Death Star plans inside R2-D2 and endured torture at Vader's hands rather than betray the Rebellion. Her command and persuasion: debate stats at 8D and 7D+2 reflect a political mind shaped by years in the Imperial Senate. With Alderaan destroyed by Tarkin's order, she arrived at Yavin having lost her homeworld, her adoptive father, and her cover — and immediately set to work coordinating the base's defense. She presented the medals at the ceremony following the Battle of Yavin.",
-    source: "WEG40124 Galaxy Guide 1: A New Hope p.74"
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.74; WEG40093 Star Wars Sourcebook p.126"
   },
   {
     name: "Han Solo (0 BBY)",
@@ -3183,7 +3183,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Heavy blaster pistol (5D), comlink",
     capsule: "Han Solo is a Corellian smuggler and former Imperial Navy washout who has made a career of staying one step ahead of Jabba the Hutt's enforcers, Imperial customs, and his own better judgment. His blaster: heavy blaster pistol at 9D+1, starship gunnery at 9D, and dodge at 8D make him one of the most dangerous individuals in a fight in the galaxy. He arrived at Yavin ostensibly to collect his reward for rescuing Leia — then turned the Falcon around and blasted Vader out of the trench run, giving Luke the clear shot that destroyed the Death Star. He received a medal and left without technically joining anything.\n\nHan's Debts to Jabba the Hutt (0 BBY): Jettisoned spice cargo 12,400 cr. Dead employee (Greedo) 4,100 cr. Loss of services (Millennium Falcon) 125,640 cr to date. Bounty hunter notices 320 cr. Boba Fett's expenses 5,000 cr (500 cr/day). Additional bounty hunter fees 2,000 cr (50 cr/day/hunter). 50% interest 74,730 cr. Total: 224,190 credits.",
-    source: "WEG40124 Galaxy Guide 1: A New Hope p.75"
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.75; WEG40093 Star Wars Sourcebook p.129"
   },
   {
     name: "Chewbacca (0 BBY)",
@@ -3207,7 +3207,7 @@ const NOTABLE_NPCS = [
     move: 13,
     equipment: "Bowcaster (4D), ammo bandolier, droid tool kit, starship tool kit, waist pouch",
     capsule: "Chewbacca is a two-hundred-year-old Wookiee from Kashyyyk who serves as first mate and co-pilot aboard the Millennium Falcon. A life debt to Han Solo binds them as partners, though Chewie's technical expertise, navigational skill, and combat ability make him Han's equal in every practical sense. His YT-1300 repair specialization at 10D+2 means he knows the Falcon's systems as well as Han does — arguably better. At Yavin he co-piloted the run that broke Vader's attack, receiving recognition alongside Han and Luke.",
-    source: "WEG40124 Galaxy Guide 1: A New Hope p.76"
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.76; WEG40093 Star Wars Sourcebook p.130"
   },
 
   // ── GALAXY GUIDE 1 — Wayfar Scenario (Tatooine) ──
@@ -13812,30 +13812,7 @@ const NOTABLE_NPCS = [
   },
 
   // ── WEG40093 STAR WARS SOURCEBOOK — Heroes & Villains (0 BBY) ──
-  {
-    name: "Leia Organa (0 BBY)",
-    species: "Human",
-    system: "Alderaan",
-    location: "Various",
-    affiliations: ["Rebel Alliance"],
-    role: "Senator, Rebel Leader",
-    type: "Named NPC",
-    stats: {
-      DEXTERITY: { base: "3D", skills: { blaster: "5D", "brawling parry": "4D", dodge: "6D", grenade: "4D", "melee combat": "5D", "melee parry": "4D", "vehicle blasters": "4D" } },
-      KNOWLEDGE: { base: "4D", skills: { "alien species": "7D", bureaucracy: "8D", cultures: "8D", languages: "5D", "planetary systems": "5D", survival: "5D", value: "5D", willpower: "6D+1" } },
-      MECHANICAL: { base: "2D+2", skills: { astrogation: "3D+2", "beast riding": "3D+2", "repulsorlift operation": "4D+2", "starfighter piloting": "5D", "starship gunnery": "4D", "starship shields": "5D" } },
-      PERCEPTION: { base: "3D+1", skills: { bargain: "6D", command: "8D", con: "5D+1", gambling: "4D", hide: "4D", persuasion: "5D", "persuasion: debate": "7D+2", search: "4D+1", sneak: "5D+1" } },
-      STRENGTH: { base: "3D", skills: { brawling: "4D", "climbing/jumping": "4D", stamina: "6D", swimming: "5D" } },
-      TECHNICAL: { base: "2D", skills: { "computer programming/repair": "3D", "droid programming": "4D", "droid repair": "4D", "first aid": "4D", security: "3D" } }
-    },
-    specialAbilities: "Force-sensitive.",
-    forcePoints: 4,
-    characterPoints: 13,
-    move: 10,
-    equipment: "Hold-out blaster (3D), comlink, technical readouts of the Death Star",
-    capsule: "Princess of Alderaan, Imperial Senator, and one of the key leaders of the Rebel Alliance. Youngest senator ever elected to the Imperial Senate.",
-    source: "WEG40093 Star Wars Sourcebook p.126"
-  },
+  // Luke, Leia, Han, Chewie — identical stats to GG1, sources added to those entries
 
   // page corrections: Mon Mothma p.132, Lando p.133
   {
