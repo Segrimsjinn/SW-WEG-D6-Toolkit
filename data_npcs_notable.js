@@ -10958,7 +10958,7 @@ const NOTABLE_NPCS = [
     forcePoints: 3,
     characterPoints: 31,
     move: 10,
-    equipment: "Modified BlasTech DL-44 heavy blaster pistol (5D+1), comlink, Millennium Falcon (modified Corellian YT-1300 freighter)",
+    equipment: "Modified BlasTech DL-44 heavy blaster pistol (5D+1), comlink, Millennium Falcon (9 ABY) (modified Corellian YT-1300 freighter)",
     capsule: "Han Solo is perhaps the most colorful figure of all the Heroes of Yavin — a former pirate, smuggler, mercenary and freelance lawbreaker now married to one of the most respected members of the New Republic Provisional Council. His reputation as a reckless adventurer remains intact due to his actions in many prominent battles. Solo has been trying to convince his former smuggling contacts to ship cargo for the New Republic, but most feel he has 'gone legit' and is out of touch. His disrespect for authority of any kind is near-legendary; his actions on behalf of the New Republic stem from dedication to his wife and children rather than any political philosophy. He only wishes they could find some time for themselves in the middle of saving the galaxy again.",
     source: "WEG40131 The Thrawn Trilogy Sourcebook p.29"
   },
@@ -10982,7 +10982,7 @@ const NOTABLE_NPCS = [
     forcePoints: 5,
     characterPoints: 40,
     move: 10,
-    equipment: "Modified BlasTech DL-44 heavy blaster pistol (5D+1), comlink, Millennium Falcon (modified Corellian YT-1300 freighter)",
+    equipment: "Modified BlasTech DL-44 heavy blaster pistol (5D+1), comlink, Millennium Falcon (9 ABY) (modified Corellian YT-1300 freighter)",
     capsule: "Han Solo is perhaps the most colorful figure of all the Heroes of Yavin — a former pirate, smuggler, mercenary and freelance lawbreaker now married to one of the most respected members of the New Republic Provisional Council. His reputation as a reckless adventurer remains intact due to his actions in many prominent battles. Solo has been trying to convince his former smuggling contacts to ship cargo for the New Republic, but most feel he has 'gone legit' and is out of touch. His disrespect for authority of any kind is near-legendary; his actions on behalf of the New Republic stem from dedication to his wife and children rather than any political philosophy. He only wishes they could find some time for themselves in the middle of saving the galaxy again.",
     source: "WEG40131 The Thrawn Trilogy Sourcebook p.29"
   },
@@ -11006,7 +11006,7 @@ const NOTABLE_NPCS = [
     forcePoints: 6,
     characterPoints: 47,
     move: 10,
-    equipment: "Modified BlasTech DL-44 heavy blaster pistol (5D+1), comlink, Millennium Falcon (modified Corellian YT-1300 freighter)",
+    equipment: "Modified BlasTech DL-44 heavy blaster pistol (5D+1), comlink, Millennium Falcon (9 ABY) (modified Corellian YT-1300 freighter)",
     capsule: "Han Solo is perhaps the most colorful figure of all the Heroes of Yavin — a former pirate, smuggler, mercenary and freelance lawbreaker now married to one of the most respected members of the New Republic Provisional Council. His reputation as a reckless adventurer remains intact due to his actions in many prominent battles. Solo has been trying to convince his former smuggling contacts to ship cargo for the New Republic, but most feel he has 'gone legit' and is out of touch. His disrespect for authority of any kind is near-legendary; his actions on behalf of the New Republic stem from dedication to his wife and children rather than any political philosophy. He only wishes they could find some time for themselves in the middle of saving the galaxy again.",
     source: "WEG40131 The Thrawn Trilogy Sourcebook p.30"
   },
@@ -11030,7 +11030,7 @@ const NOTABLE_NPCS = [
     forcePoints: 3,
     characterPoints: 6,
     move: 13,
-    equipment: "Bowcaster (4D), ammo bandolier, droid tool kit, starship tool kit, waist pouch",
+    equipment: "Bowcaster (4D), ammo bandolier, droid tool kit, starship tool kit, waist pouch, Millennium Falcon (9 ABY) (modified Corellian YT-1300 freighter)",
     capsule: "Chewbacca is a Wookiee over 200 years old, now in his middle years and showing no signs of slowing down. He demonstrated a natural talent for all things mechanical at an early age, especially starship engines and bowcaster energy cores. As a young Wookiee he explored the galaxy for over a century. When the Empire enslaved Kashyyyk, slavers captured Chewbacca after he killed five of them bare-handed. A young officer named Han Solo rescued him, and Chewbacca pledged a sacred Wookiee life debt. Their friendship has only grown stronger over the years. He has extended his life debt to include Luke Skywalker, Princess Leia, R2-D2 and C-3PO as his 'honor family,' and to a lesser degree the whole Alliance for freeing Kashyyyk. He practices the Wookiee form of hand-to-hand combat, considers the Falcon his personal domain for maintenance, and understands many galactic languages including Basic, though his anatomy allows him to speak only his native tongue.",
     source: "WEG40131 The Thrawn Trilogy Sourcebook p.31"
   },
@@ -11054,7 +11054,7 @@ const NOTABLE_NPCS = [
     forcePoints: 3,
     characterPoints: 9,
     move: 13,
-    equipment: "Bowcaster (4D), ammo bandolier, droid tool kit, starship tool kit, waist pouch",
+    equipment: "Bowcaster (4D), ammo bandolier, droid tool kit, starship tool kit, waist pouch, Millennium Falcon (9 ABY) (modified Corellian YT-1300 freighter)",
     capsule: "Chewbacca is a Wookiee over 200 years old, now in his middle years and showing no signs of slowing down. He demonstrated a natural talent for all things mechanical at an early age, especially starship engines and bowcaster energy cores. As a young Wookiee he explored the galaxy for over a century. When the Empire enslaved Kashyyyk, slavers captured Chewbacca after he killed five of them bare-handed. A young officer named Han Solo rescued him, and Chewbacca pledged a sacred Wookiee life debt. Their friendship has only grown stronger over the years. He has extended his life debt to include Luke Skywalker, Princess Leia, R2-D2 and C-3PO as his 'honor family,' and to a lesser degree the whole Alliance for freeing Kashyyyk. He practices the Wookiee form of hand-to-hand combat and has learned the rudiments of Noghri martial arts. He considers the Falcon his personal domain for maintenance, and understands many galactic languages including Basic, though his anatomy allows him to speak only his native tongue.",
     source: "WEG40131 The Thrawn Trilogy Sourcebook p.31"
   },
