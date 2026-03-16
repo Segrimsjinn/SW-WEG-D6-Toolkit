@@ -11585,7 +11585,7 @@ const NOTABLE_NPCS = [
     forcePoints: 25,
     characterPoints: 40,
     move: 10,
-    equipment: "Lightsaber (5D), comlink",
+    equipment: "Lightsaber (5D), comlink, Shroud freighter/fighter (modified Ghtroc 720 with X-wing bay), X-wing starfighter",
     capsule: "Luke Skywalker began his part in the Rebellion as a farm boy on Tatooine. Now, almost a decade later, he is a full Jedi Knight and the first of a new line of Jedi destined to serve as guardians of the New Republic. He has become a symbol of all the new galactic union stands for, traveling far and wide to inspire hope and win trust — without rank or official standing. He worries constantly about the gaps in his Jedi knowledge, concerned that training other Jedi could lead to the same failure Obi-Wan experienced with Anakin Skywalker. He has begun teaching his sister Leia, and plans to train her Force-sensitive twins Jaina and Jacen. He carries no weapon other than his lightsaber and travels in his X-wing. His right hand is a cybernetic replacement lost to Darth Vader on Cloud City.",
     source: "WEG40131 The Thrawn Trilogy Sourcebook p.51"
   },
@@ -11609,7 +11609,7 @@ const NOTABLE_NPCS = [
     forcePoints: 30,
     characterPoints: 65,
     move: 10,
-    equipment: "Lightsaber (5D), comlink",
+    equipment: "Lightsaber (5D), comlink, Shroud freighter/fighter (modified Ghtroc 720 with X-wing bay), X-wing starfighter",
     capsule: "Luke Skywalker began his part in the Rebellion as a farm boy on Tatooine. Now, almost a decade later, he is a full Jedi Knight and the first of a new line of Jedi destined to serve as guardians of the New Republic. He has become a symbol of all the new galactic union stands for, traveling far and wide to inspire hope and win trust — without rank or official standing. He worries constantly about the gaps in his Jedi knowledge, concerned that training other Jedi could lead to the same failure Obi-Wan experienced with Anakin Skywalker. He has begun teaching his sister Leia, and plans to train her Force-sensitive twins Jaina and Jacen. He carries no weapon other than his lightsaber and travels in his X-wing. His right hand is a cybernetic replacement lost to Darth Vader on Cloud City.",
     source: "WEG40131 The Thrawn Trilogy Sourcebook p.51"
   },
@@ -11633,7 +11633,7 @@ const NOTABLE_NPCS = [
     forcePoints: 33,
     characterPoints: 70,
     move: 10,
-    equipment: "Lightsaber (5D), comlink",
+    equipment: "Lightsaber (5D), comlink, Shroud freighter/fighter (modified Ghtroc 720 with X-wing bay), X-wing starfighter",
     capsule: "Luke Skywalker began his part in the Rebellion as a farm boy on Tatooine. Now, almost a decade later, he is a full Jedi Knight and the first of a new line of Jedi destined to serve as guardians of the New Republic. He has become a symbol of all the new galactic union stands for, traveling far and wide to inspire hope and win trust — without rank or official standing. He worries constantly about the gaps in his Jedi knowledge, concerned that training other Jedi could lead to the same failure Obi-Wan experienced with Anakin Skywalker. During the Thrawn crisis he endured capture by smugglers, deception by a dark Jedi, and being rendered powerless by ysalamiri — yet he never despaired. He now intends to complete his sister's Jedi instruction and begin teaching his niece and nephew in the ways of the Force.",
     source: "WEG40131 The Thrawn Trilogy Sourcebook p.51"
   },

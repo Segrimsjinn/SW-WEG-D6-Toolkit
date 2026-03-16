@@ -985,6 +985,58 @@ const STARSHIP_DATA = {
    ]
   },
   {
+   "rank": 86,
+   "name": "Shroud Freighter/Fighter (Luke's Ship)",
+   "craft": "Modified Ghtroc Industries Class 720 Freighter",
+   "type": "Modified light freighter",
+   "affiliation": "New Republic",
+   "era": "New Republic",
+   "source": "WEG40131 The Thrawn Trilogy Sourcebook p.230",
+   "price_new": "143,500 (98,500 freighter + 45,000 modifications)",
+   "price_used": "",
+   "scale": "Starfighter",
+   "length": "38 meters",
+   "crew": "1 (1 can coordinate)",
+   "gunners": "1",
+   "passengers": "",
+   "cargo": "X-wing and 15 kg",
+   "consumables": "1 week",
+   "hyperdrive": "x2",
+   "nav_computer": "Yes",
+   "maneuverability": "1D",
+   "space": "3",
+   "atmosphere": "260; 750 kmh",
+   "hull": "2D+2",
+   "shields": "1D",
+   "of_note": "x15 backup. 1 astromech droid (R2-D2). Modified cargo bay stores one X-wing and can release it in flight. Shroud Package: repulsor shunt distributes metallic particle cloud adding +1D to sensor check difficulty and +3D to tractor beam attempt difficulty within or through the cloud.",
+   "sensors_passive": "15/0D",
+   "sensors_scan": "30/1D",
+   "sensors_search": "50/3D",
+   "sensors_focus": "2/4D",
+   "weapons": [
+    {
+     "name": "Double Laser Cannon",
+     "fire_arc": "Turret",
+     "crew": "1",
+     "skill": "Starship gunnery",
+     "fire_control": "1D+1",
+     "space_range": "1-3/12/25",
+     "atmo_range": "100-300/1.2/2.5 km",
+     "damage": "4D"
+    },
+    {
+     "name": "Proton Torpedo Launcher",
+     "fire_arc": "Rear",
+     "crew": "",
+     "skill": "Starship gunnery",
+     "fire_control": "1D",
+     "space_range": "1/3/7",
+     "atmo_range": "50-100/300/700",
+     "damage": "7D"
+    }
+   ]
+  },
+  {
    "rank": 87,
    "name": "Gozanti Cruiser",
    "craft": "Gozanti-class Cruiser",
