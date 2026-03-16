@@ -3158,6 +3158,68 @@ const STARSHIP_DATA = {
    ]
   },
   {
+   "rank": 46,
+   "name": "Millennium Falcon (9 ABY)",
+   "craft": "Modified Corellian YT-1300",
+   "type": "Modified light freighter",
+   "affiliation": "Rebel Alliance",
+   "era": "New Republic",
+   "source": "WEG40131 The Thrawn Trilogy Sourcebook p.226",
+   "price_new": "",
+   "price_used": "",
+   "scale": "Starfighter",
+   "length": "26.7 meters",
+   "crew": "2",
+   "gunners": "",
+   "passengers": "6",
+   "cargo": "100 metric tons",
+   "consumables": "2 months",
+   "hyperdrive": "x0.5",
+   "nav_computer": "Yes",
+   "maneuverability": "2D",
+   "space": "8",
+   "atmosphere": "365; 1,050 kmh",
+   "hull": "6D",
+   "shields": "3D",
+   "of_note": "x10 backup. Han Solo and Chewbacca's ship. Retractable speeder-scale blaster cannon fired from cockpit.",
+   "sensors_passive": "50/1D",
+   "sensors_scan": "60/2D",
+   "sensors_search": "75/3D",
+   "sensors_focus": "4/4D",
+   "weapons": [
+    {
+     "name": "2 Quad Laser Cannons (fire separately)",
+     "fire_arc": "Turret",
+     "crew": "1",
+     "skill": "Starship gunnery",
+     "fire_control": "3D",
+     "space_range": "1-3/12/25",
+     "atmo_range": "100-300/1.2/2.5 km",
+     "damage": "6D"
+    },
+    {
+     "name": "2 Concussion Missile Tubes (fire-linked)",
+     "fire_arc": "Front",
+     "crew": "",
+     "skill": "Missile weapons: concussion missiles",
+     "fire_control": "3D",
+     "space_range": "1/3/7",
+     "atmo_range": "50-100/300/700",
+     "damage": "9D"
+    },
+    {
+     "name": "Retractable Blaster Cannon",
+     "fire_arc": "Turret",
+     "crew": "",
+     "skill": "Vehicle blasters (speeder scale, fired from cockpit)",
+     "fire_control": "4D",
+     "space_range": "",
+     "atmo_range": "1-50/100/250",
+     "damage": "3D+2"
+    }
+   ]
+  },
+  {
    "rank": 47,
    "name": "YT-1350 Transport",
    "craft": "Corellian Engineering Corp. YT-1350 Transport",
