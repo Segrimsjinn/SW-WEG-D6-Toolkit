@@ -14561,5 +14561,381 @@ const NOTABLE_NPCS = [
     equipment: "Pulse-wave blaster (4D).",
     capsule: "Generic independent trader operating in the Stenness Node and surrounding space during the Old Republic era.",
     source: "WEG40082 Tales of the Jedi Companion p.99"
+  },
+
+  {
+    name: "Mon Mothma (14 ABY)",
+    species: "Human",
+    system: "Coruscant",
+    location: "Coruscant — New Republic Inner Council",
+    affiliations: ["New Republic"],
+    role: "Chief of State",
+    type: "New Republic Chief of State",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "3D+1", "dodge": "4D" } },
+      KNOWLEDGE: { base: "4D", skills: { "alien species": "9D+2", "bureaucracy": "12D", "bureaucracy: New Republic Inner Council": "13D+2", "bureaucracy: New Republic Senate": "12D+2", "cultures": "11D", "intimidation": "7D", "languages": "8D", "planetary systems": "9D", "survival": "7D", "value": "6D", "willpower": "8D" } },
+      MECHANICAL: { base: "3D", skills: { "astrogation": "5D", "beast riding": "3D+2", "communications": "5D+2", "repulsorlift operation": "4D+1", "space transports": "4D", "starfighter piloting": "4D" } },
+      PERCEPTION: { base: "4D", skills: { "bargain": "11D", "command": "10D", "command: New Republic bureaucrats": "10D+2", "command: New Republic soldiers": "11D+1", "con": "9D", "gambling": "6D", "hide": "6D+2", "persuasion": "8D", "persuasion: debate": "10D+2", "persuasion: oration": "11D+1", "search": "7D", "sneak": "4D+1" } },
+      STRENGTH: { base: "2D", skills: { "stamina": "3D+1", "swimming": "2D+2" } },
+      TECHNICAL: { base: "2D", skills: { "computer programming/repair": "6D", "droid programming": "5D", "droid repair": "4D", "first aid": "7D", "security": "5D+1", "starfighter repair": "2D+1" } }
+    },
+    specialAbilities: "Some skills have been lowered to reflect aging and lack of use. All stats represent Mon Mothma at the onset of her illness; most skills drop considerably as her illness progresses.",
+    forcePoints: 5,
+    characterPoints: 10,
+    move: "8",
+    equipment: "Comlink, datapad.",
+    capsule: "Elegant and strong-willed, Mon Mothma has guided the New Republic virtually from its inception. As Chief of State, she oversees diplomacy, economic planning, and galactic security, launching an aggressive program to court neutral and pro-Imperial worlds. As Furgan's nano virus weakens her, she delegates increasing responsibility to Leia Organa Solo, ultimately turning her office over to Leia with Inner Council support.",
+    source: "WEG40114 The Jedi Academy Sourcebook p.7"
+  },
+
+  {
+    name: "Admiral Ackbar (14 ABY)",
+    species: "Mon Calamari",
+    system: "Mon Calamari",
+    location: "Mon Calamari — Reef Home City",
+    affiliations: ["New Republic"],
+    role: "Minister of Defense / Admiral (retired)",
+    type: "Mon Calamari Admiral",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "5D+2", "blaster artillery": "4D+1", "dodge": "4D+1", "melee combat": "5D+1", "missile weapons": "4D+1", "missile weapons: power harpoon": "5D+1" } },
+      KNOWLEDGE: { base: "3D", skills: { "alien species": "7D+1", "bureaucracy": "8D+1", "bureaucracy: New Republic Senate": "8D+2", "cultures": "5D", "intimidation": "5D+1", "languages": "6D", "planetary systems": "8D", "scholar: Mon Calamari marine geology": "4D+1", "survival": "4D", "survival: ocean/undersea": "6D+2", "tactics: capital ships": "9D+1", "tactics: fleets": "9D+2", "tactics: starfighters": "7D+1", "value": "5D+2", "willpower": "6D" } },
+      MECHANICAL: { base: "3D+1", skills: { "astrogation": "8D", "capital ship gunnery": "7D+2", "capital ship piloting": "8D+1", "capital ship piloting: Mon Calamari battle cruiser": "10D", "capital ship shields": "6D+1", "repulsorlift operation": "5D+1", "repulsorlift operation: submersible": "4D+1", "sensors": "5D+1", "space transports": "5D+2", "starfighter piloting": "7D" } },
+      PERCEPTION: { base: "2D+1", skills: { "bargain": "7D", "command": "9D", "command: Mon Calamari crewmen": "12D", "hide": "4D+1", "persuasion": "6D", "search": "5D+1", "sneak": "4D+2" } },
+      STRENGTH: { base: "3D", skills: { "lifting": "4D", "stamina": "6D", "swimming": "8D+2" } },
+      TECHNICAL: { base: "3D+1", skills: { "capital ship repair": "5D+1", "capital ship weapon repair": "4D+2", "computer programming/repair": "4D+1", "droid programming": "4D+1", "first aid": "4D+1", "first aid: Mon Calamari": "5D+1", "repulsorlift repair": "5D+1", "security": "7D+1" } }
+    },
+    specialAbilities: "Moist Environments: When in moist environments, Mon Calamari receive a +1D bonus to all Dexterity, Perception, and Strength attribute and skill checks.\n\nDry Environments: When in very dry environments, Mon Calamari suffer a -1D penalty to all Dexterity, Perception, and Strength attribute and skill checks.",
+    forcePoints: 3,
+    characterPoints: 15,
+    move: "10",
+    equipment: "Comlink (wired into the HoloNet), datapad, military dress uniform, standard military uniform.",
+    capsule: "Guilt-ridden after crashing his B-wing into the Cathedral of Winds on Vortex — unaware it was sabotage by his aide Terpfen — Ackbar resigns his commission and retreats to Mon Calamari, devoting himself to geological studies at Reef Home City. He rallies when Daala attacks, and again when Leia needs his help rescuing Anakin Solo from Furgan at Anoth. He ultimately realizes he cannot run from his duties and responsibilities.",
+    source: "WEG40114 The Jedi Academy Sourcebook p.9"
+  },
+
+  {
+    name: "Leia Organa Solo (14 ABY)",
+    species: "Human",
+    system: "Coruscant",
+    location: "Coruscant — New Republic Inner Council",
+    affiliations: ["New Republic"],
+    role: "Minister of State / Chief of State",
+    type: "Minister of State",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "9D", "blaster artillery": "4D+1", "brawling parry": "5D+2", "dodge": "8D", "grenade": "4D+1", "lightsaber": "5D+2", "melee combat": "6D+2", "melee parry": "6D+1", "running": "5D", "vehicle blasters": "4D" } },
+      KNOWLEDGE: { base: "4D", skills: { "alien species": "8D", "bureaucracy": "9D+2", "bureaucracy: New Republic Inner Council": "10D", "bureaucracy: New Republic Senate": "10D", "cultures": "9D+1", "languages": "7D+2", "law enforcement": "7D+1", "planetary systems": "9D+1", "streetwise": "7D", "survival": "8D", "value": "6D+1", "willpower": "7D+2" } },
+      MECHANICAL: { base: "2D+2", skills: { "astrogation": "5D", "beast riding": "4D+1", "communications": "5D+2", "hover vehicle operation": "3D+2", "repulsorlift operation": "5D+1", "sensors": "4D+2", "space transports": "3D+1", "starfighter piloting": "6D", "starship gunnery": "6D+1", "starship shields": "5D+2" } },
+      PERCEPTION: { base: "3D+1", skills: { "bargain": "7D", "command": "11D", "con": "6D", "gambling": "5D", "hide": "7D", "persuasion": "9D", "persuasion: debate": "11D", "persuasion: oration": "11D+2", "search": "6D", "sneak": "7D+1" } },
+      STRENGTH: { base: "3D", skills: { "brawling": "4D+2", "climbing/jumping": "5D+1", "stamina": "7D", "swimming": "5D+1" } },
+      TECHNICAL: { base: "2D", skills: { "computer programming/repair": "4D+2", "demolitions": "3D+1", "droid programming": "5D", "first aid": "7D", "security": "6D", "space transports repair": "4D+1" } }
+    },
+    specialAbilities: "Force Skills: Control 5D+1, Sense 4D+2, Alter 3D. Control: Absorb/dissipate energy, control pain, resist stun. Sense: Danger sense, life detection, life sense, magnify senses, receptive telepathy. Alter: Telekinesis. Control, Sense, and Alter: Force harmony. This character is Force-sensitive.",
+    forcePoints: 4,
+    characterPoints: 14,
+    move: "10",
+    equipment: "Lightsaber (5D), comlink, datapad, hold-out blaster (3D).",
+    capsule: "Leia's duties as Minister of State shift dramatically as Mon Mothma's illness forces more responsibilities onto her shoulders, ultimately resulting in Leia being appointed Chief of State. She struggles to balance her professional duties with family time — overjoyed to have Jacen and Jaina home but constantly pulled away. She personally selects the location for Luke's Jedi academy despite her packed schedule. Children: twins Jacen and Jaina Solo (age 2.5) and infant Anakin Solo. The twins are Force-sensitive and share a psychic link, communicating in half-sentences or complete silence.",
+    source: "WEG40114 The Jedi Academy Sourcebook p.11"
+  },
+
+  {
+    name: "Han Solo (14 ABY)",
+    species: "Human",
+    system: "Coruscant",
+    location: "Coruscant — New Republic Inner Council",
+    affiliations: ["New Republic", "The Fringe"],
+    role: "Smuggler / New Republic General",
+    type: "Smuggler",
+    stats: {
+      DEXTERITY: { base: "3D+1", skills: { "blaster": "8D+2", "blaster: blaster rifle": "5D+1", "blaster: heavy blaster pistol": "10D+1", "blaster artillery": "6D+1", "brawling parry": "8D", "dodge": "8D+2", "dodge: energy weapons": "9D+2", "grenade": "6D+1", "melee combat": "6D+1", "melee parry": "5D+1", "missile weapons": "6D+1", "pick pocket": "5D+2", "running": "5D+2", "thrown weapons": "5D+1", "vehicle blasters": "6D+1" } },
+      KNOWLEDGE: { base: "2D", skills: { "alien species": "7D", "bureaucracy": "7D", "business": "6D", "business: smugglers": "7D+2", "cultures": "6D+1", "intimidation": "8D", "languages": "6D", "law enforcement": "6D", "planetary systems": "8D", "streetwise": "9D", "streetwise: Jabba the Hutt's organization": "10D+1", "survival": "8D", "value": "6D", "willpower": "6D+2" } },
+      MECHANICAL: { base: "3D+2", skills: { "astrogation": "9D", "beast riding": "5D+2", "beast riding: Tauntaun": "6D", "capital ship gunnery": "6D+2", "capital ship piloting": "8D+2", "capital ship shields": "6D+2", "communications": "5D+2", "ground vehicle operation": "5D+2", "repulsorlift operation": "8D+1", "sensors": "6D", "space transports": "8D", "space transports: YT-1300 transports": "12D", "starfighter piloting": "7D+2", "starship gunnery": "9D", "starship shields": "7D+1", "swoop operation": "8D+2" } },
+      PERCEPTION: { base: "3D", skills: { "bargain": "8D+1", "command": "8D", "con": "8D+1", "forgery": "5D", "forgery: ships IDs": "7D", "gambling": "8D+2", "hide": "8D+2", "persuasion": "6D+2", "search": "6D+1", "sneak": "6D" } },
+      STRENGTH: { base: "3D", skills: { "brawling": "7D+2", "climbing/jumping": "6D", "lifting": "5D+2", "stamina": "8D", "swimming": "4D+2" } },
+      TECHNICAL: { base: "2D+2", skills: { "blaster repair": "5D", "computer programming/repair": "7D+1", "demolitions": "6D+2", "droid programming": "6D+1", "first aid": "3D+2", "ground vehicle repair": "5D+2", "repulsorlift repair": "7D", "security": "7D+1", "space transports repair": "7D+2", "space transports repair: YT-1300 transports": "9D+2", "starship weapons repair": "5D" } }
+    },
+    specialAbilities: "",
+    forcePoints: 1,
+    characterPoints: 10,
+    move: "10",
+    equipment: "Modified heavy blaster pistol (5D+2), comlink.",
+    capsule: "Han has traded some of his freedom as a smuggler captain for family life with Leia and their children — a trade he considers more than worthwhile, even if State dinners and political formality aren't exactly his style. Old acquaintances continue to resurface; a run to Kessel lands him in the spice mines at the hands of Moruth Doole, where he befriends young Kyp Durron. He later uses that bond to pull Kyp back from the dark side.",
+    source: "WEG40114 The Jedi Academy Sourcebook p.13"
+  },
+
+  {
+    name: "Chewbacca (14 ABY)",
+    species: "Wookiee",
+    system: "Coruscant",
+    location: "Coruscant",
+    affiliations: ["New Republic"],
+    role: "Co-pilot / Warrior",
+    type: "Wookiee",
+    stats: {
+      DEXTERITY: { base: "2D+2", skills: { "blaster": "7D", "bowcaster": "10D", "brawling parry": "8D+1", "dodge": "7D", "grenade": "5D+1", "melee combat": "8D", "melee parry": "8D", "vehicle blasters": "7D" } },
+      KNOWLEDGE: { base: "2D", skills: { "alien species": "7D+1", "bureaucracy": "4D+2", "business": "5D+1", "cultures": "3D+2", "languages": "6D", "planetary systems": "8D", "streetwise": "7D", "survival": "7D+2", "value": "8D" } },
+      MECHANICAL: { base: "3D", skills: { "astrogation": "8D+2", "beast riding": "4D", "communications": "5D+1", "repulsorlift operation": "7D+2", "sensors": "7D", "space transports": "8D+1", "space transports: YT-1300 transports": "11D+2", "starship gunnery": "8D+1", "starship shields": "7D", "walker operation: AT-ST": "4D+2" } },
+      PERCEPTION: { base: "2D", skills: { "bargain": "5D+1", "command": "5D+2", "gambling": "5D+1", "hide": "4D+2", "search": "4D+1", "sneak": "4D+2" } },
+      STRENGTH: { base: "5D", skills: { "brawling": "11D", "brawling: martial arts": "6D", "climbing/jumping": "8D", "lifting": "11D", "stamina": "10D", "swimming": "7D" } },
+      TECHNICAL: { base: "3D+1", skills: { "blaster repair": "5D+2", "bowcaster repair": "6D", "computer programming/repair": "9D", "demolitions": "6D", "droid programming": "8D", "droid repair": "7D+2", "first aid": "5D+1", "repulsorlift repair": "7D+1", "security": "7D+2", "space transports repair": "11D", "space transports repair: YT-1300 transports": "12D+2" } }
+    },
+    specialAbilities: "Brawling Martial Arts: Chewbacca learned the rudiments of the Noghri martial arts style. He gets +2D to brawling when fighting someone without this specialization and causes STR+1D+2 damage (see Dark Force Rising Sourcebook p.94).\n\nBerserker Rage: Chewbacca gains +2D to Strength when brawling in berserker rage (see Star Wars RPG 2nd Edition p.137 and Star Wars Gamemaster Handbook p.124).\n\nClimbing Claws: +2D to climbing.",
+    forcePoints: 1,
+    characterPoints: 10,
+    move: "13",
+    equipment: "Bowcaster (4D damage), ammo, droid tool kit, starship tool kit, waist pouch.",
+    capsule: "Chewbacca has spent nearly two centuries witnessing Imperial atrocities and bears deep psychological scars from his own enslavement. His life-debt to Han Solo has gradually steered both of them toward a more respectable life. After brutal experiences at Kessel and Maw Installation reopen old wounds, he makes freeing the enslaved Wookiees held there his personal mission — ultimately convincing the Inner Council to send a rescue force, then leading the freed Wookiees in an assault on the Installation himself.",
+    source: "WEG40114 The Jedi Academy Sourcebook p.15"
+  },
+
+  {
+    name: "Winter",
+    species: "Human",
+    system: "Anoth",
+    location: "Anoth — Solo Children's Safe House",
+    affiliations: ["New Republic"],
+    role: "Councilor Aide / Nanny",
+    type: "Councilor Aide",
+    stats: {
+      DEXTERITY: { base: "3D+1", skills: { "blaster": "5D+2", "blaster: holdout blaster": "7D+1", "brawling parry": "4D+1", "dodge": "6D+2", "grenade": "4D+1" } },
+      KNOWLEDGE: { base: "4D", skills: { "alien species": "6D", "bureaucracy": "6D", "bureaucracy: New Republic Inner Council": "7D+2", "cultures": "5D", "cultures: Alderaan royalty": "9D", "Imperial supplies": "6D", "languages": "7D", "planetary systems": "7D", "streetwise": "5D", "value": "7D+1", "willpower": "6D" } },
+      MECHANICAL: { base: "2D", skills: { "beast riding": "4D", "communications": "5D+1", "repulsorlift operation": "3D", "sensors": "4D+2", "space transports": "5D", "starfighter piloting": "3D+1", "starship shields": "3D+2" } },
+      PERCEPTION: { base: "3D+1", skills: { "bargain": "6D+1", "bargain: military supplies": "8D+2", "command": "4D+1", "con": "7D+1", "forgery": "5D+2", "hide": "6D+2", "persuasion": "5D+1", "search": "4D+2", "sneak": "5D+1" } },
+      STRENGTH: { base: "2D+2", skills: { "brawling": "3D", "stamina": "4D+2", "swimming": "4D+2" } },
+      TECHNICAL: { base: "2D+2", skills: { "computer programming/repair": "4D+2", "droid programming": "4D", "first aid": "4D+2", "security": "7D+1" } }
+    },
+    specialAbilities: "Perfect Memory: Winter has 'holographic memory' — she has instant and total recall of everything she has ever heard, felt, witnessed, researched, or otherwise experienced.",
+    forcePoints: 1,
+    characterPoints: 15,
+    move: "10",
+    equipment: "Hold-out blaster (3D+1), comlink, New Republic Consular ID.",
+    capsule: "Leia's most trusted aide and lifelong friend. Winter serves as nanny and protectress to the Solo children during their years in hiding on Anoth, fiercely devoted to her charges. When Furgan invades to kidnap Anakin Solo, she single-handedly holds the base using automated defenses and assassin droids, luring stormtroopers into the computer core until New Republic reinforcements arrive.",
+    source: "WEG40114 The Jedi Academy Sourcebook p.17"
+  },
+
+  {
+    name: "R2-D2 (Artoo-Detoo) (14 ABY)",
+    species: "Droid (R2 Astromech)",
+    system: "Coruscant",
+    location: "Coruscant",
+    affiliations: ["New Republic"],
+    role: "Astromech Droid",
+    type: "Industrial Automaton R2 Astromech Droid",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { "electroshock prod": "4D+2", "dodge": "5D" } },
+      KNOWLEDGE: { base: "2D", skills: { "planetary systems": "9D", "survival": "6D+2", "value": "7D+2" } },
+      MECHANICAL: { base: "4D", skills: { "astrogation": "12D", "communications": "7D", "repulsorlift operation": "6D+2", "sensors": "8D+1", "starfighter piloting": "7D", "starfighter piloting: X-wing": "9D", "starship gunnery": "5D", "starship shields": "5D+2" } },
+      PERCEPTION: { base: "3D", skills: { "command": "4D", "con": "4D+2", "gambling": "6D", "search": "4D", "sneak": "5D" } },
+      STRENGTH: { base: "3D", skills: { "lifting": "4D", "swimming": "3D+1" } },
+      TECHNICAL: { base: "4D", skills: { "computer programming/repair": "9D+2", "droid programming": "5D+2", "droid repair": "8D", "machinery repair": "5D+2", "repulsorlift repair": "5D", "security": "7D+1", "starfighter repair": "7D", "starfighter repair: X-wing": "9D+2", "space transports repair": "7D", "space transports repair: YT-1300 transport": "9D+1" } }
+    },
+    specialAbilities: "Equipped with: three wheeled legs (one retractable); retractable heavy grasper arm (+1D to lifting); retractable fine work grasper arm; extendable 0.3m video sensor (360° rotation); small electric arc welder (3D damage, 0.3m range); small circular saw (4D damage, 0.3m range); video display screen; holographic projector/recorder (1m range); fire extinguisher; small internal cargo area (20cm x 8cm); inner pitch acoustic signaller; one long-range sensing array including radar, Geiger counter, life form sensor, infrared receptors, and electromagnetic field receptors (+3D to search at ranges up to 100m); broad-band antenna receiver (monitors all broadcast and communication frequencies); information storage/retrieval jack for computer link-up; one compressed air launcher (for lightsabers or flares).",
+    forcePoints: 1,
+    characterPoints: 6,
+    move: "5",
+    equipment: "Long-range comlink attachment (100 kilometer range).",
+    capsule: "R2-D2 has spent most of the past decade at Luke Skywalker's side, accumulating more adventures than any droid has a right to. He combs Imperial databases searching for Jedi academy candidates, assists Lando on a trip to Umgul, and guards Luke's comatose body on Yavin Four after Kyp Durron places him in a Sith-induced coma.",
+    source: "WEG40114 The Jedi Academy Sourcebook p.19"
+  },
+
+  {
+    name: "C-3PO (See-Threepio) (14 ABY)",
+    species: "Droid (Protocol)",
+    system: "Coruscant",
+    location: "Coruscant",
+    affiliations: ["New Republic"],
+    role: "Protocol Droid",
+    type: "Cybot Galactica 3PO Human-Cyborg Relations Droid",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { "dodge": "5D+2" } },
+      KNOWLEDGE: { base: "5D+2", skills: { "alien species": "8D+1", "bureaucracy": "9D", "cultures": "8D", "languages": "13D", "planetary systems": "6D", "scholar: child care": "6D", "survival": "5D+2", "value": "5D+2" } },
+      MECHANICAL: { base: "3D", skills: { "repulsorlift operation": "5D+2", "space transports": "4D", "starship shields": "3D" } },
+      PERCEPTION: { base: "3D+1", skills: { "bargain": "7D", "con": "6D+1", "hide": "5D", "sneak": "5D" } },
+      STRENGTH: { base: "2D", skills: {} },
+      TECHNICAL: { base: "3D", skills: { "first aid": "4D" } }
+    },
+    specialAbilities: "Equipped with: humanoid body (two arms, two legs, head); two visual and two audial sensors (Human range); broad-band antenna receiver; AA-1 Verbo-brain; TranLang III Communication module with over seven million languages; Vocabulator speech/sound system capable of an extraordinarily wide range of sounds including exact impersonation of Princess Leia's voice and very passable imitations of Han Solo, Chewbacca, Lando Calrissian, and Luke Skywalker.",
+    forcePoints: 1,
+    characterPoints: 5,
+    move: "8",
+    equipment: "None.",
+    capsule: "C-3PO serves as domestic aide and babysitter for Leia Organa Solo, having been discovered to have prior experience supervising preschoolers on Alderaan. He escapes babysitting duty — along with Chewbacca — by accidentally misplacing the Solo twins on a field trip, only to be immediately reassigned to accompany Chewbacca and Page's Commandos on a raid of Maw Installation. There he serves as data analyst and translator for alien scientists, and is dragooned into flying combat against Daala as battle coordinator for Imperial assault shuttles.",
+    source: "WEG40114 The Jedi Academy Sourcebook p.21"
+  },
+
+  {
+    name: "Wedge Antilles (14 ABY)",
+    species: "Human",
+    system: "Coruscant",
+    location: "Coruscant",
+    affiliations: ["New Republic"],
+    role: "General / Rogue Squadron Commander",
+    type: "Brash Pilot",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "6D", "brawling parry": "4D+1", "dodge": "6D+1", "melee combat": "4D+1", "melee parry": "4D", "vehicle blasters": "4D" } },
+      KNOWLEDGE: { base: "2D", skills: { "alien species": "6D", "bureaucracy": "6D+1", "cultures": "4D", "languages": "4D+2", "planetary systems": "6D+2", "streetwise": "5D", "survival": "5D", "tactics": "5D" } },
+      MECHANICAL: { base: "4D", skills: { "astrogation": "7D+2", "repulsorlift operation": "5D+2", "space transports": "5D+2", "starfighter piloting: X-wing": "7D+2", "starship gunnery": "7D+1", "starship shields": "6D" } },
+      PERCEPTION: { base: "3D", skills: { "bargain": "5D", "command": "7D+1", "command: Rogue Wing": "8D+2", "gambling": "5D", "hide": "4D", "search": "5D", "sneak": "4D" } },
+      STRENGTH: { base: "3D", skills: { "brawling": "4D", "stamina": "6D", "swimming": "5D" } },
+      TECHNICAL: { base: "3D", skills: { "computer programming/repair": "6D", "repulsorlift repair": "4D+1", "space transports repair": "6D", "starfighter repair: X-wing": "6D+2" } }
+    },
+    specialAbilities: "",
+    forcePoints: 1,
+    characterPoints: 8,
+    move: "10",
+    equipment: "Blaster pistol (5D damage), comlink, blast vest (+1D physical, +1 energy), New Republic uniform, survival pack.",
+    capsule: "Taking a leave from Rogue Squadron to explore a normal life, Wedge oversees debris salvage around Coruscant, leads reconstruction crews in Imperial City, and relocates the Eol Sha colony to Dantooine. He becomes the de facto bodyguard and companion to defecting Imperial scientist Qwi Xux, developing a personal relationship with her. He blames himself when Kyp steals Qwi's memories, though Luke reminds him that even a Jedi Master could not resist Kyp's Sith-augmented powers. Daala's offensive ends his leave.",
+    source: "WEG40114 The Jedi Academy Sourcebook p.23"
+  },
+
+  {
+    name: "General Jan Dodonna (14 ABY)",
+    species: "Human",
+    system: "Coruscant",
+    location: "Coruscant — New Republic Inner Council",
+    affiliations: ["New Republic"],
+    role: "Elder Statesman / New Republic General",
+    type: "New Republic General",
+    stats: {
+      DEXTERITY: { base: "1D+2", skills: { "blaster": "3D", "dodge": "3D", "melee combat": "3D+1" } },
+      KNOWLEDGE: { base: "3D", skills: { "alien species": "6D", "bureaucracy": "6D+2", "cultures": "7D+1", "languages": "9D", "military history": "7D+2", "military history: modern fleet battles": "12D+2", "planetary systems": "8D+1", "tactics: capital ships": "9D+2", "tactics: fleets": "7D+1", "tactics: sieges": "10D+2", "tactics: starfighters": "7D+2" } },
+      MECHANICAL: { base: "3D+2", skills: { "astrogation": "5D+2", "repulsorlift operation": "6D", "space transports": "4D+2", "starship gunnery": "4D+2" } },
+      PERCEPTION: { base: "3D+1", skills: { "bargain": "5D+1", "command": "9D", "con": "9D", "gambling": "9D+2", "search": "7D", "sneak": "5D" } },
+      STRENGTH: { base: "1D+2", skills: {} },
+      TECHNICAL: { base: "3D", skills: { "computer programming/repair": "7D", "demolitions": "5D", "droid programming": "7D", "droid repair": "5D+2", "security": "7D+1" } }
+    },
+    specialAbilities: "Some attributes and skills have been lowered to reflect aging and lack of use.",
+    forcePoints: 2,
+    characterPoints: 18,
+    move: "8",
+    equipment: "Datapad, blaster pistol (4D), comlink.",
+    capsule: "The brilliant general who conceived the Rebel attack on the first Death Star now serves the New Republic Inner Council as elder statesman by special appointment, directing no ministry but taking on projects that interest him. Currently overseeing the reintegration of feral Undercity humans into mainstream Coruscant life — a daunting program that has grown to place several hundred families in housing and employment.",
+    source: "WEG40114 The Jedi Academy Sourcebook p.25"
+  },
+
+  {
+    name: "General Crix Madine (14 ABY)",
+    species: "Human",
+    system: "Coruscant",
+    location: "Coruscant — New Republic Inner Council",
+    affiliations: ["New Republic"],
+    role: "Minister of the Army",
+    type: "New Republic General",
+    stats: {
+      DEXTERITY: { base: "2D+2", skills: { "blaster": "6D+2", "blaster artillery": "5D+2", "blaster artillery: anti-infantry": "9D", "blaster artillery: anti-vehicle": "7D+2", "brawling parry": "5D", "dodge": "7D+1", "grenade": "5D+2", "melee combat": "5D", "melee combat: force pike": "7D", "melee parry": "4D" } },
+      KNOWLEDGE: { base: "3D", skills: { "alien species": "6D+2", "bureaucracy": "7D", "languages": "4D+2", "military history": "12D", "planetary systems": "7D", "streetwise": "5D", "survival": "5D", "tactics: ground assault": "10D+2", "tactics: squads": "14D", "willpower": "5D+2" } },
+      MECHANICAL: { base: "3D+2", skills: { "beast riding": "5D+2", "beast riding: Cracian thumper": "6D+2", "capital ship gunnery": "4D+2", "ground vehicle operation": "5D+2", "powersuit operation": "5D", "repulsorlift operation": "6D", "starship gunnery": "5D" } },
+      PERCEPTION: { base: "3D+1", skills: { "bargain": "5D+1", "command": "11D", "con": "5D+1", "gambling": "4D+2", "hide": "6D+1", "persuasion": "5D+2", "search": "7D", "sneak": "6D+1", "sneak: forest": "6D+2" } },
+      STRENGTH: { base: "2D+1", skills: { "brawling": "6D", "climbing/jumping": "4D+1", "stamina": "6D+1", "swimming": "3D+1" } },
+      TECHNICAL: { base: "3D", skills: { "computer programming/repair": "5D", "demolitions": "6D", "droid repair": "4D+2", "first aid": "4D+1", "ground vehicle repair": "4D+2", "security": "8D", "space transports repair": "6D", "starfighter repair": "4D+2" } }
+    },
+    specialAbilities: "",
+    forcePoints: 1,
+    characterPoints: 12,
+    move: "10",
+    equipment: "Blaster pistol (4D damage), comlink, datapad.",
+    capsule: "A military man uncomfortable in politics, Madine serves as New Republic Minister of the Army following a drastic reshuffling of the officer corps. He takes Mon Mothma's lead on non-military votes and is a vocal opponent of superweapons and weapons of mass destruction — a conviction shaped by his defection from the Empire after being ordered to unleash the Candorian Plague on Dentaal. He adamantly opposes any use of the Sun Crusher.",
+    source: "WEG40114 The Jedi Academy Sourcebook p.27"
+  },
+
+  {
+    name: "Garm Bel Iblis (14 ABY)",
+    species: "Human",
+    system: "Coruscant",
+    location: "Coruscant — New Republic Inner Council",
+    affiliations: ["New Republic"],
+    role: "Senator / Inner Council Member",
+    type: "New Republic Senator",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "8D", "blaster artillery": "7D", "brawling parry": "6D", "dodge": "7D", "grenade": "5D", "melee combat": "5D", "melee parry": "5D", "missile weapons": "5D+2", "thrown weapons": "4D+2", "vehicle blasters": "6D" } },
+      KNOWLEDGE: { base: "4D", skills: { "alien species": "8D+1", "bureaucracy": "8D", "bureaucracy: New Republic Inner Council": "8D+1", "bureaucracy: New Republic Senate": "8D+2", "business": "8D", "cultures": "7D+2", "intimidation": "7D", "languages": "7D", "law enforcement": "6D", "law enforcement: Old Republic law": "7D+2", "law enforcement: New Republic law": "5D+2", "planetary systems": "7D+2", "streetwise": "7D", "survival": "6D", "tactics: ground assault": "9D+1", "tactics: capital ships": "9D", "tactics: starfighters": "8D+2", "value": "5D", "willpower": "7D" } },
+      MECHANICAL: { base: "3D", skills: { "astrogation": "5D", "beast riding": "5D", "capital ship gunnery": "5D+2", "capital ship piloting": "7D", "capital ship shields": "5D+2", "communications": "5D", "ground vehicle operation": "6D", "repulsorlift operation": "6D", "sensors": "6D", "space transports": "5D+1", "starfighter piloting": "6D", "starship gunnery": "6D", "starship shields": "6D" } },
+      PERCEPTION: { base: "4D", skills: { "bargain": "9D", "command": "9D+2", "command: Peregrine's Nest troops": "11D", "con": "6D", "gambling": "7D", "hide": "7D", "investigation": "6D", "persuasion": "7D+2", "persuasion: debate": "9D+1", "persuasion: oration": "8D+2", "search": "5D", "sneak": "7D" } },
+      STRENGTH: { base: "2D", skills: { "brawling": "6D", "climbing/jumping": "3D+1", "lifting": "3D", "stamina": "5D+1", "swimming": "4D" } },
+      TECHNICAL: { base: "2D", skills: { "capital ship repair": "3D+2", "capital ship weapon repair": "3D+2", "computer programming/repair": "3D", "demolitions": "3D", "droid programming": "3D", "droid repair": "3D", "first aid": "5D", "ground vehicle repair": "4D", "repulsorlift repair": "4D", "security": "5D", "space transports repair": "4D" } }
+    },
+    specialAbilities: "",
+    forcePoints: 2,
+    characterPoints: 26,
+    move: "10",
+    equipment: "Sporting blaster (3D+2), comlink, datapad.",
+    capsule: "One of the founders of the Rebel Alliance, Bel Iblis leads the Senate opposition to Mon Mothma's diplomatic foreign policy, arguing that the New Republic must disrupt or contain the Imperial Core before the Empire regroups. He champions using the Sun Crusher to strike key Imperial systems without diverting diplomatic resources, but is blocked by Mothma's coalition on moral grounds — not the first time the two have disagreed.",
+    source: "WEG40114 The Jedi Academy Sourcebook p.29"
+  },
+
+  {
+    name: "Senator Hrekin Thorm (14 ABY)",
+    species: "Human",
+    system: "Coruscant",
+    location: "Coruscant — New Republic Inner Council",
+    affiliations: ["New Republic"],
+    role: "Senator / Inner Council Member",
+    type: "New Republic Senator",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "dodge": "4D" } },
+      KNOWLEDGE: { base: "4D", skills: { "alien species": "6D+1", "bureaucracy": "6D", "bureaucracy: New Republic Inner Council": "7D+2", "bureaucracy: New Republic Senate": "8D+2", "cultures": "6D", "intimidation": "7D", "languages": "7D", "planetary systems": "9D", "survival": "4D+2", "value": "6D+1", "willpower": "7D+1" } },
+      MECHANICAL: { base: "3D", skills: { "astrogation": "4D", "communications": "5D+2", "repulsorlift operation": "5D+1", "space transports": "4D+2" } },
+      PERCEPTION: { base: "4D", skills: { "bargain": "9D", "command": "8D+2", "command: New Republic bureaucrats": "9D+2", "con": "9D", "gambling": "7D", "hide": "6D+2", "persuasion": "8D", "persuasion: debate": "8D+2", "persuasion: oration": "6D", "search": "7D", "sneak": "5D" } },
+      STRENGTH: { base: "2D", skills: { "brawling": "4D+1" } },
+      TECHNICAL: { base: "2D", skills: { "computer programming/repair": "6D+2", "droid programming": "5D+1", "droid repair": "3D+2", "first aid": "5D", "security": "5D+1" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 14,
+    move: "9",
+    equipment: "Comlink, datapad.",
+    capsule: "A pragmatic senator from the wealthy Core world Fedalle, Thorm vaguely supported the Emperor when convenient and vaguely supports Mon Mothma now — his loyalty follows whoever controls the agenda. He holds an influential Inner Council seat backed by Core industry contacts, and prefers to go along with the flow, though he can be ruthless when an opponent is already down. An obese, stylishly dressed man with a vast repertoire of jokes for every occasion.",
+    source: "WEG40114 The Jedi Academy Sourcebook p.31"
+  },
+
+  {
+    name: "Captain Tresk Ortola (14 ABY)",
+    species: "Human",
+    system: "Coruscant",
+    location: "Coruscant",
+    affiliations: ["New Republic"],
+    role: "Corellian Corvette Captain",
+    type: "New Republic Captain",
+    stats: {
+      DEXTERITY: { base: "2D+2", skills: { "blaster": "5D+1", "blaster artillery": "3D+1", "brawling parry": "4D", "dodge": "5D", "grenade": "3D+2", "melee combat": "3D+1", "melee parry": "4D", "running": "3D" } },
+      KNOWLEDGE: { base: "3D", skills: { "alien species": "5D", "bureaucracy": "6D", "intimidation": "4D+1", "planetary systems": "6D", "tactics: capital ships": "7D", "streetwise": "5D+1", "survival": "4D+2", "willpower": "4D" } },
+      MECHANICAL: { base: "3D+2", skills: { "astrogation": "6D", "capital ship gunnery": "5D+1", "capital ship piloting": "5D", "capital ship piloting: Corellian corvette": "8D+1", "capital ship piloting: Corellian gunship": "7D", "repulsorlift operation": "5D+2", "sensors": "5D+2", "space transports": "6D+1" } },
+      PERCEPTION: { base: "3D+1", skills: { "bargain": "5D", "command": "7D", "con": "5D+1", "gambling": "4D+2", "hide": "4D+1", "persuasion": "6D", "search": "5D", "sneak": "4D+1" } },
+      STRENGTH: { base: "2D+1", skills: { "brawling": "4D", "climbing/jumping": "3D+2", "lifting": "4D", "stamina": "3D+1" } },
+      TECHNICAL: { base: "3D", skills: { "capital ship repair": "4D", "computer programming/repair": "5D+1", "first aid": "4D", "security": "5D+2" } }
+    },
+    specialAbilities: "",
+    forcePoints: 1,
+    characterPoints: 9,
+    move: "10",
+    equipment: "Comlink, datapad, hold-out blaster (3D).",
+    capsule: "A bold Rebel-turned-New Republic captain with a reputation for selective hearing and creative interpretation of orders when he thinks he has a better solution. Commands the aging Corellian corvette Vouaflare. His gut-instinct daring has produced his biggest successes, but also kept him from advancing to larger, more modern ships.",
+    source: "WEG40114 The Jedi Academy Sourcebook p.33"
+  },
+
+  {
+    name: "Terpfen (14 ABY)",
+    species: "Mon Calamari",
+    system: "Mon Calamari",
+    location: "Mon Calamari — Reef Home City",
+    affiliations: ["New Republic"],
+    role: "Chief Starship Technician",
+    type: "Mon Calamari Starship Mechanic",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "4D+2", "blaster artillery": "4D", "dodge": "4D+1", "melee combat": "5D+1", "missile weapons": "4D", "missile weapons: power harpoon": "4D" } },
+      KNOWLEDGE: { base: "3D", skills: { "alien species": "4D+1", "bureaucracy": "4D+1", "cultures": "5D", "languages": "6D", "planetary systems": "6D", "survival": "4D", "survival: ocean/undersea": "6D", "value": "5D+2" } },
+      MECHANICAL: { base: "3D+1", skills: { "astrogation": "8D", "capital ship gunnery": "5D+2", "capital ship piloting": "4D+1", "capital ship piloting: Mon Calamari battle cruiser": "5D", "capital ship shields": "4D+1", "repulsorlift operation": "5D+2", "sensors": "5D", "space transports": "4D+2", "starfighter piloting": "4D+1" } },
+      PERCEPTION: { base: "2D+1", skills: { "bargain": "5D", "command": "7D", "command: Mon Calamari crewmen": "8D+2", "hide": "4D+1", "persuasion": "4D+1", "search": "5D+1", "sneak": "4D+2" } },
+      STRENGTH: { base: "3D", skills: { "lifting": "4D", "stamina": "6D", "swimming": "7D+2" } },
+      TECHNICAL: { base: "3D+1", skills: { "capital ship repair": "7D+1", "capital ship weapon repair": "7D+2", "computer programming/repair": "6D+2", "droid programming": "5D+1", "first aid": "4D+1", "first aid: Mon Calamari": "5D+2", "repulsorlift repair": "5D+2", "security": "7D+1", "space transports repair": "8D", "starfighter repair": "10D", "starship weapon repair": "8D+2" } }
+    },
+    specialAbilities: "Moist Environments: When in moist environments, Mon Calamari receive a +1D bonus to all Dexterity, Perception, and Strength attribute and skill checks.\n\nDry Environments: When in very dry environments, Mon Calamari suffer a -1D penalty to all Dexterity, Perception, and Strength attribute and skill checks.\n\nImperial Conditioning: Due to organic circuitry implanted in his brain by Imperial doctors on Carida, Terpfen cannot resist commands issued by an Imperial officer. His willpower is always assumed to be zero in such cases, though Force and Character Points may modify this.",
+    forcePoints: 1,
+    darkSidePoints: 2,
+    characterPoints: 12,
+    move: "10",
+    equipment: "Comlink, datapad, military dress uniform, standard military uniform.",
+    capsule: "Admiral Ackbar's chief starship technician, secretly an unwilling Imperial spy controlled by organic circuitry implanted in his brain by doctors on Carida. Compelled by Ambassador Furgan to commit acts of sabotage and treason — including sabotaging Ackbar's B-wing and betraying Anakin Solo's location — Terpfen's conditioning breaks down after Carida's destruction. He confesses to Leia and Ackbar, helps foil Furgan at Anoth, and is granted a full pardon by Mon Mothma. He ultimately returns to Mon Calamari to help rebuild Reef Home City.",
+    source: "WEG40114 The Jedi Academy Sourcebook p.35"
   }
 ];
