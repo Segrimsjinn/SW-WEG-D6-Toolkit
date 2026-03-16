@@ -618,7 +618,7 @@ const CREATURES_DATA = [
  {
   "name": "Boma Beast",
   "type": "Monstrous forest creature",
-  "planet": "",
+  "planet": "Onderon",
   "habitat": "Forest",
   "dex": "3D+2",
   "per": "4D",
@@ -1038,7 +1038,7 @@ const CREATURES_DATA = [
  {
   "name": "Colossus Wasp",
   "type": "Giant insect",
-  "planet": "",
+  "planet": "Ithull",
   "habitat": "Space",
   "dex": "2D",
   "per": "4D",
@@ -2088,7 +2088,7 @@ const CREATURES_DATA = [
  {
   "name": "Gorm-Worm",
   "type": "Venomous reptile",
-  "planet": "",
+  "planet": "Gorm",
   "habitat": "Various",
   "dex": "5D",
   "per": "3D",
@@ -2461,7 +2461,7 @@ const CREATURES_DATA = [
   "size": "1.75-2m long",
   "orneriness": "",
   "special": "Light-side Disruption: -2D penalty to non-dark-side Force skills nearby (2D or less = cannot use).",
-  "source": "Dark Side Sourcebook (pages 113-114)"
+  "source": "Dark Side Sourcebook (pages 113-114); WEG40082 Tales of the Jedi Companion p.108 (STR 3D in this source)"
  },
  {
   "name": "Humbaba",
@@ -3656,7 +3656,7 @@ const CREATURES_DATA = [
  {
   "name": "Neek",
   "type": "Herbivorous reptile",
-  "planet": "",
+  "planet": "Onderon",
   "habitat": "Various",
   "dex": "2D+1",
   "per": "6D",
@@ -5906,5 +5906,19 @@ const CREATURES_DATA = [
   "orneriness": "1D",
   "special": "Claws: STR+1 damage. Tail: STR+1D+2 damage. Silent Movement: +1D+2 to sneak if making two moves or less per round. Can carry up to 100kg cargo, or a rider and up to 50kg.",
   "source": "WEG40091 Rebel Alliance Sourcebook p.105"
+ },
+ {
+  "name": "Warbeast",
+  "type": "Armored avian flying mount",
+  "planet": "Dxun",
+  "habitat": "Jungle/Forest",
+  "dex": "3D+1",
+  "per": "2D",
+  "str": "7D",
+  "move": "22 (flying), 3 (walking)",
+  "size": "2-2.5m long",
+  "orneriness": "3D+1",
+  "special": "Flight: can fly but cannot hover. Speeder scale. Brawling 7D+2, stamina 8D, dodge 4D+2.",
+  "source": "WEG40082 Tales of the Jedi Companion p.109"
  }
 ];

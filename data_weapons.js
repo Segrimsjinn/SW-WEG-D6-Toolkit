@@ -504,6 +504,18 @@ const WEAPONS_DATA = [
   "source": "WEG40073 Galaxy Guide 10: Bounty Hunters p.83"
  },
  {
+  "name": "Blast-Rifle (4000 BBY)",
+  "category": "Blaster Rifles",
+  "skill": "Blast-rifle",
+  "cost": "1,500 (power packs: 50)",
+  "availability": "2, F, R or X",
+  "damage": "5D",
+  "range": "3-15/30/150",
+  "ammo": "50",
+  "game_notes": "Core World Arms BR1-Z. At long range, increase difficulty by +5. 4000 BBY era tech.",
+  "source": "WEG40082 Tales of the Jedi Companion"
+ },
+ {
   "name": "Combat Gloves",
   "category": "Brawling Weapons",
   "skill": "Brawling",
@@ -1536,6 +1548,18 @@ const WEAPONS_DATA = [
   "source": "Rulebook (page 234)"
  },
  {
+  "name": "Magneta-Mine (4000 BBY)",
+  "category": "Mines",
+  "skill": "Demolitions",
+  "cost": "1,500",
+  "availability": "2, X",
+  "damage": "5D/4D/3D/2D (Speeder scale)",
+  "range": "",
+  "ammo": "",
+  "game_notes": "Greff-Timms Industrial Magnetic-fastening Explosive Device. Blast Radius: 0-2/4/6/10. Can be attached to any ferrous metallic surface. 4000 BBY era tech.",
+  "source": "WEG40082 Tales of the Jedi Companion"
+ },
+ {
   "name": "Deck-Clearing Blaster",
   "category": "Misc Blasters",
   "skill": "Blaster: deck clearer",
@@ -1582,6 +1606,54 @@ const WEAPONS_DATA = [
   "ammo": "15",
   "game_notes": "Overload: non-reversible, 15sec charge, blast radius 1-2/4/6.",
   "source": "Galaxy Guide 10 (page 86)"
+ },
+ {
+  "name": "Pulse-Wave Blaster (4000 BBY)",
+  "category": "Misc Blasters",
+  "skill": "Pulse-wave weapons: blaster",
+  "cost": "600 (power packs: 35)",
+  "availability": "1, F, R or X",
+  "damage": "4D",
+  "range": "3-8/20/100",
+  "ammo": "50",
+  "game_notes": "Greff-Timms Industrial ATA Pulse-wave Blaster. Fire rate 1. 4000 BBY era tech.",
+  "source": "WEG40082 Tales of the Jedi Companion"
+ },
+ {
+  "name": "Pulse-Wave Light Cannon (4000 BBY)",
+  "category": "Misc Blasters",
+  "skill": "Pulse-wave weapons: light cannon",
+  "cost": "7,000",
+  "availability": "2, X",
+  "damage": "7D",
+  "range": "3-50/100/300",
+  "ammo": "100",
+  "game_notes": "Greff-Timms Industrial Intimidator PC2. Two-person weapon. With slight modifications, can be mounted on any atmosphere-capable vehicle. 4000 BBY era tech.",
+  "source": "WEG40082 Tales of the Jedi Companion"
+ },
+ {
+  "name": "Pulse-Wave Rifle (4000 BBY)",
+  "category": "Misc Blasters",
+  "skill": "Pulse-wave weapons: rifle",
+  "cost": "2,000 (power packs: 50)",
+  "availability": "3",
+  "damage": "5D",
+  "range": "3-20/75/150",
+  "ammo": "50",
+  "game_notes": "Greff-Timms Industrial Type A pulse-wave rifle. Fire rate 1. 4000 BBY era tech.",
+  "source": "WEG40082 Tales of the Jedi Companion"
+ },
+ {
+  "name": "Quick-Draw Pulse-Wave Blaster (4000 BBY)",
+  "category": "Misc Blasters",
+  "skill": "Pulse-wave weapons: quick-draw blaster",
+  "cost": "300 (power packs: 20)",
+  "availability": "2, R or X",
+  "damage": "3D",
+  "range": "2-3/6/10",
+  "ammo": "3",
+  "game_notes": "Greff-Timms SnapShoot DT3. Fire rate 1. The quick-draw feature allows a character to draw and fire in one round without a multi-action penalty. 4000 BBY era tech.",
+  "source": "WEG40082 Tales of the Jedi Companion"
  },
  {
   "name": "E-60R Missile Launcher",
@@ -2062,6 +2134,30 @@ const WEAPONS_DATA = [
   "ammo": "1",
   "game_notes": "10 rounds (1 min) to reload.",
   "source": "Adventure Journal 15 (page 191)"
+ },
+ {
+  "name": "Auto-Caster (4000 BBY)",
+  "category": "Projectile Weapons",
+  "skill": "Missile weapons: crossbow",
+  "cost": "700",
+  "availability": "1, 2",
+  "damage": "3D",
+  "range": "3-8/20/35",
+  "ammo": "20 quarrels",
+  "game_notes": "Drolan Plasteel Repeating Crossbow. Fire rate 2. Upon releasing a quarrel, the next projectile automatically loads into the firing groove. 4000 BBY era tech.",
+  "source": "WEG40082 Tales of the Jedi Companion"
+ },
+ {
+  "name": "Wrist-Caster (4000 BBY)",
+  "category": "Projectile Weapons",
+  "skill": "Missile weapons: wrist projectile launcher",
+  "cost": "500",
+  "availability": "2",
+  "damage": "2D+2",
+  "range": "1-4/10/20",
+  "ammo": "2 quarrels",
+  "game_notes": "Drolan Plasteel QuickShot. Fire rate 1. 4000 BBY era tech.",
+  "source": "WEG40082 Tales of the Jedi Companion"
  },
  {
   "name": "BlasTech Medium Repeater",
@@ -3022,6 +3118,18 @@ const WEAPONS_DATA = [
   "ammo": "",
   "game_notes": "Mistryl Shadow Guard weapon. Full damage only with specialization.",
   "source": "Gundark's Fantastic Technology (page 15)"
+ },
+ {
+  "name": "Throwing Knife (4000 BBY)",
+  "category": "Thrown Weapons",
+  "skill": "Thrown weapons: knife",
+  "cost": "50",
+  "availability": "1",
+  "damage": "STR+1D (maximum: 6D)",
+  "range": "2-3/5/10",
+  "ammo": "",
+  "game_notes": "Standard throwing knife. May be used as a normal knife in melee. 4000 BBY era tech.",
+  "source": "WEG40082 Tales of the Jedi Companion"
  },
  {
   "name": "Double Vibroblade",

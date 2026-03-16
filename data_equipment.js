@@ -888,6 +888,14 @@ const EQUIPMENT_DATA = [
   "source": "WEG40073 Galaxy Guide 10: Bounty Hunters p.90"
  },
  {
+  "name": "Rocket Pack (4000 BBY)",
+  "category": "Jet Packs",
+  "cost": "750",
+  "availability": "2, 3",
+  "game_notes": "Zim Systems ROCKET. Personal rocket pack. Skill: rocket pack operation. Can carry 80 kilograms up to 40 meters vertically and 120 meters horizontally on a single charge. 10 charges. 4000 BBY era tech.",
+  "source": "WEG40082 Tales of the Jedi Companion"
+ },
+ {
   "name": "Anti-Shock Blanket",
   "category": "Medical",
   "cost": "50",
