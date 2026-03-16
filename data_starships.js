@@ -4495,6 +4495,48 @@ const STARSHIP_DATA = {
    "weapons": []
   },
   {
+   "rank": 5,
+   "name": "Lady Luck",
+   "craft": "Modified SoroSuub Luxury 3000",
+   "type": "Modified private space yacht",
+   "affiliation": "The Fringe",
+   "era": "New Republic",
+   "source": "WEG40131 The Thrawn Trilogy Sourcebook p.229",
+   "price_new": "",
+   "price_used": "",
+   "scale": "Starfighter",
+   "length": "50 meters",
+   "crew": "1",
+   "gunners": "",
+   "passengers": "10",
+   "cargo": "100 metric tons",
+   "consumables": "1 month",
+   "hyperdrive": "x2",
+   "nav_computer": "Yes",
+   "maneuverability": "1D",
+   "space": "7",
+   "atmosphere": "350; 1,000 kmh",
+   "hull": "2D+2",
+   "shields": "1D",
+   "of_note": "Lando Calrissian's personal yacht. x14 backup. Retractable laser cannon.",
+   "sensors_passive": "25/1D",
+   "sensors_scan": "50/2D",
+   "sensors_search": "75/2D+2",
+   "sensors_focus": "3/3D",
+   "weapons": [
+    {
+     "name": "Laser Cannon (retractable)",
+     "fire_arc": "Turret",
+     "crew": "",
+     "skill": "Starship gunnery",
+     "fire_control": "2D",
+     "space_range": "1-5/10/17",
+     "atmo_range": "100-500/1/1.7 km",
+     "damage": "2D+2"
+    }
+   ]
+  },
+  {
    "rank": 6,
    "name": "Luxury 5000 Yacht",
    "craft": "SoroSuub Luxury 5000",

@@ -12370,7 +12370,7 @@ const NOTABLE_NPCS = [
     forcePoints: 4,
     characterPoints: 42,
     move: 10,
-    equipment: "Comlink, hold-out blaster (3D+1), sabacc card deck",
+    equipment: "Comlink, hold-out blaster (3D+1), sabacc card deck, Lady Luck (modified SoroSuub Luxury 3000 yacht)",
     capsule: "Lando Calrissian has been a wanderer, gambler, rogue, smuggler, mercenary, adventurer and con artist. After serving as Baron Administrator of Cloud City, the Empire pushed him into a deal he didn't want, then reneged on it. He declared war, helping rescue Han Solo and leading the assault on the second Death Star. After Endor, Lando resigned his general's commission and set up a mining operation on Nkllon, sending raw materials to the New Republic. Then the Empire stole fifty-one of his mole miners for the attack on the Sluis Van Shipyards. Of all the many games of chance he has mastered, perhaps he is best at sabacc. 'I just hate to see brutal clods like the Imperials pick up too many winning hands,' he admitted. 'These clowns just have no finesse.'",
     source: "WEG40131 The Thrawn Trilogy Sourcebook p.83"
   },
@@ -12394,7 +12394,7 @@ const NOTABLE_NPCS = [
     forcePoints: 5,
     characterPoints: 34,
     move: 10,
-    equipment: "Comlink, hold-out blaster (3D+1), sabacc card deck",
+    equipment: "Comlink, hold-out blaster (3D+1), sabacc card deck, Lady Luck (modified SoroSuub Luxury 3000 yacht)",
     capsule: "When the possibility of finding the Katana fleet surfaced, Lando knew he was in this game to stay. He once searched for the legendary Dark Force himself but couldn't find so much as a seat cushion from one of the Dreadnaughts. From New Cov to the casino ship Coral Vanda to the bridge of the Katana, Lando has been of incalculable value to the New Republic.",
     source: "WEG40131 The Thrawn Trilogy Sourcebook p.83"
   },
@@ -12418,7 +12418,7 @@ const NOTABLE_NPCS = [
     forcePoints: 6,
     characterPoints: 24,
     move: 10,
-    equipment: "Comlink, hold-out blaster (3D+1), sabacc card deck",
+    equipment: "Comlink, hold-out blaster (3D+1), sabacc card deck, Lady Luck (modified SoroSuub Luxury 3000 yacht)",
     capsule: "From New Cov to the casino ship Coral Vanda to the bridge of the Katana to the Emperor's storehouse on Wayland, Lando Calrissian has been of incalculable value to the New Republic. He has picked up knife-throwing, Imperial Navy procedures, urban survival skills, and tactical knowledge over the course of the campaign against Thrawn.",
     source: "WEG40131 The Thrawn Trilogy Sourcebook p.83"
   },
