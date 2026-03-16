@@ -2054,5 +2054,37 @@ const EQUIPMENT_DATA = [
   "availability": "",
   "game_notes": "Remote-controlled surveillance droid. Height: 0.7m. Move: 10 (repulsorlift, max height 3m). DEX 2D (dodge 4D), KNO 1D, MEC 1D, PER 3D (search 6D, sneak 4D), STR 1D+1, TEC 1D. Visual range holocam (500m range) with simultaneous transmitter. Holo receiver unit. Joystick controller (max range 500m).",
   "source": "WEG40091 Rebel Alliance Sourcebook p.117"
+ },
+ {
+  "name": "Industrial Automaton R2 Astromech Droid",
+  "category": "Droids",
+  "cost": "4,525",
+  "availability": "",
+  "game_notes": "Astromech droid. Height: 1m. Move: 5 (three wheeled legs, one retractable). DEX 1D, KNO 1D, MEC 2D (astrogation 5D, space transports 3D, starfighter piloting 3D), PER 1D, STR 1D, TEC 2D (computer programming/repair 4D, starfighter repair 5D). May attempt starship repairs while in flight if acting as co-pilot. Retractable heavy grasper arm (lifting 2D). Retractable fine work grasper arm. Extendable 0.3m video sensor (360° rotation). Electric arc welder (1D-5D, 0.3m range). Circular saw (4D, 0.3m range). Video display screen. Holographic projector/recorder. Fire extinguisher. Small internal cargo area (20cm x 8cm).",
+  "source": "WEG40093 Star Wars Sourcebook p.52"
+ },
+ {
+  "name": "Cybot Galactica 3PO Protocol Droid",
+  "category": "Droids",
+  "cost": "3,000",
+  "availability": "",
+  "game_notes": "Human-cyborg relations droid. Height: 1.7m. Move: 8. DEX 1D, KNO 3D (cultures 6D, languages 10D), MEC 1D, PER 1D, STR 1D, TEC 1D. Humanoid body. Two visual and two audial sensors (human range). Vocabulator speech/sound system (can reproduce virtually any sound heard or programmed). Broad-band antenna receiver. AA-1 VerboBrain. TranLang III Communication module with over seven million languages.",
+  "source": "WEG40093 Star Wars Sourcebook p.53"
+ },
+ {
+  "name": "Industrial Automaton 2-1B Surgical Droid",
+  "category": "Droids",
+  "cost": "4,300",
+  "availability": "",
+  "game_notes": "Too-Onebee series surgical droid. Height: 1.5m. Move: 4. DEX 1D, KNO 2D (alien species 5D), MEC 2D ((A) bacta tank operation 5D), PER 3D ((A) injury/ailment diagnostics 6D), STR 1D, TEC 3D (first aid 6D, (A) medicine 9D). Computer interface tether (5m range, +2D to all medical skills). Medical diagnostic computer. Analytical computer. Surgical attachments. Hypodermic injectors (4D stun). Medicine dispensers. Many have performed flawlessly for decades. Can perform cyborg adaptations, replacing damaged body parts by integrating automated machinery into the patient's CNS. Sought after by military units; many independents serve voluntarily with the Rebel Alliance.\n\nEmdee (MD) Series Variants (replaced the antiquated FX series): MD-0 Diagnostic, MD-1 Lab Tech, MD-2 Anesthesiologist, MD-3 Pharmaceutical, MD-4 Microsurgeon, MD-5 General Practitioner.",
+  "source": "WEG40093 Star Wars Sourcebook p.54"
+ },
+ {
+  "name": "Eliminator 434 Assassin Droid",
+  "category": "Droids",
+  "cost": "Not for sale",
+  "availability": "X",
+  "game_notes": "Assassin droid (manufacturer unknown). Height: 1.8m. Move: 11. DEX 2D (blaster 5D, missile weapons 5D), KNO 1D, MEC 1D, PER 2D (search 5D), STR 5D, TEC 1D. Humanoid body. Broad-band antenna receiver (monitors comlink channels). Blaster cannon (0-50/150/300, 6D). Concussion missile launcher (0-50/100/200, ammo: 20, 7D). Assassin droids are illegal by Imperial edict — penalty of death for operating, harboring, or repairing them. Rogue assassin droids remain at large galaxy-wide, some hunting alternate targets or freelancing as bounty hunters. The ISD reportedly uses assassin droids for one-third of all secret high-level arrests and eliminations.",
+  "source": "WEG40093 Star Wars Sourcebook p.57"
  }
 ];

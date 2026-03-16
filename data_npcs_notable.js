@@ -2379,7 +2379,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Lightsaber (5D), robes",
     capsule: "Obi-Wan Kenobi — known as 'Old Ben' on Tatooine — is a Jedi Master living in self-imposed exile in the Jundland Wastes. Once a general of the Clone Wars and Anakin Skywalker's master, he has watched over Luke from a distance for nearly two decades. At 0 BBY he emerges from hiding when Luke is attacked by Sand People, revealing himself as a Jedi and ultimately dying aboard the Death Star to allow Luke and the others to escape — becoming one with the Force.",
-    source: "WEG40124 Galaxy Guide 1: A New Hope p.19"
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.19; WEG40093 Star Wars Sourcebook p.135"
   },
   {
     name: "Sandtrooper (Typical)",
@@ -2768,7 +2768,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Lightsaber (5D), full body armor (+1D all attacks; integrated life-support respirator — required to keep Vader alive)",
     capsule: "Darth Vader is the Emperor's enforcer and the most feared man in the galaxy. Once Anakin Skywalker — Jedi Knight, hero of the Clone Wars, and the prophesied Chosen One — he was seduced by the dark side and helped Palpatine exterminate the Jedi Order. His scarred, broken body is encased in life-sustaining black armor. Aboard the Death Star at Yavin, he oversaw Princess Leia's interrogation, cut down Obi-Wan Kenobi, and nearly prevented the Rebel assault — only to be sent spinning into space by Han Solo's last-second intervention, allowing Luke Skywalker to destroy the station.",
-    source: "WEG40124 Galaxy Guide 1: A New Hope p.50"
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.50; WEG40093 Star Wars Sourcebook p.142"
   },
   {
     name: "Grand Moff Tarkin",
@@ -3182,7 +3182,7 @@ const NOTABLE_NPCS = [
     characterPoints: 22,
     move: 10,
     equipment: "Heavy blaster pistol (5D), comlink",
-    capsule: "Han Solo is a Corellian smuggler and former Imperial Navy washout who has made a career of staying one step ahead of Jabba the Hutt's enforcers, Imperial customs, and his own better judgment. His blaster: heavy blaster pistol at 9D+1, starship gunnery at 9D, and dodge at 8D make him one of the most dangerous individuals in a fight in the galaxy. He arrived at Yavin ostensibly to collect his reward for rescuing Leia — then turned the Falcon around and blasted Vader out of the trench run, giving Luke the clear shot that destroyed the Death Star. He received a medal and left without technically joining anything.",
+    capsule: "Han Solo is a Corellian smuggler and former Imperial Navy washout who has made a career of staying one step ahead of Jabba the Hutt's enforcers, Imperial customs, and his own better judgment. His blaster: heavy blaster pistol at 9D+1, starship gunnery at 9D, and dodge at 8D make him one of the most dangerous individuals in a fight in the galaxy. He arrived at Yavin ostensibly to collect his reward for rescuing Leia — then turned the Falcon around and blasted Vader out of the trench run, giving Luke the clear shot that destroyed the Death Star. He received a medal and left without technically joining anything.\n\nHan's Debts to Jabba the Hutt (0 BBY): Jettisoned spice cargo 12,400 cr. Dead employee (Greedo) 4,100 cr. Loss of services (Millennium Falcon) 125,640 cr to date. Bounty hunter notices 320 cr. Boba Fett's expenses 5,000 cr (500 cr/day). Additional bounty hunter fees 2,000 cr (50 cr/day/hunter). 50% interest 74,730 cr. Total: 224,190 credits.",
     source: "WEG40124 Galaxy Guide 1: A New Hope p.75"
   },
   {
@@ -4609,7 +4609,7 @@ const NOTABLE_NPCS = [
 
   // ── GALAXY GUIDE 3 — Chapter 5: Bounty Hunters ──
   {
-    name: "Boba Fett (3-4 ABY)",
+    name: "Boba Fett (0-4 ABY)",
     species: "Human",
     system: "Bespin",
     location: "Bespin — Cloud City (Hired Contractor), Tatooine — Jabba's Palace",
@@ -4631,7 +4631,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Blaster rifle (6D), Wookiee scalps dangling from belt, comlink. Mandalorian Battle Armor (Modified): Basic suit +4D STR vs physical/+3D vs energy, covers head/torso/arms, no DEX penalty. Wrist Lasers: 5D, armor weapons, ranges 3-5/25/50. Rocket Dart Launcher: 6D, missile weapons, ranges 3-5/10/25, poison-tipped (5D for 5 rounds; alt poisons/stun serums usable). Turbo-Projected Grappling Hook: 20m lanyard, missile weapons, ranges 0-3/10/20, magnetic grapple. Flame Projector: 5D, armor weapons, 1m wide cone 1–5m long. Concussion Grenade Launcher: 6D/5m blast, missile weapons, ranges 1-250/350/500, 20 grenades. Jet Pack: 100m horizontal/70m vertical, jet pack operation, Easy base difficulty, 20 charges (up to 2/round). Sensor Pod: +2D search. Infrared/Motion Sensor: +1D PER/search in darkness or vs moving objects. Macrobinoculars: +3D PER/search at 100–500m, scomp-linked to blaster rifle (reduces range 2 levels). Sound Sensors: +1D PER/search (quiet situations only). Internal Comlink: linked to Slave I control system (beckon call), adjustable frequencies, external speaker. Broad-band Antenna: intercepts/decodes standard-frequency transmissions; can patch into shipboard comms. Winch: lifts 100kg. Sealed Enviro Filter: blocks harmful molecules; fully seals with 2-hour internal O2. Slave I (Kuat Systems Engineering Firespray-class patrol/attack craft; Scale: Starfighter; Length: 21.5m; Skill: space transports: Firespray; Crew: 1; Passengers: 6 prisoners; Cargo: 40MT; Consumables: 1 month; Hyperdrive x1/x8 backup; Nav computer; Maneuverability 1D; Space 7; Atmo 350/1,000 kmh; Hull 4D+2; Shields 2D+2; Sensors — Passive 35/0D, Scan 60/1D, Search 100/2D, Focus 3/2D+1; Sensor Mask: adds +2D to difficulties to detect Slave I beyond 50 units; Sensor Jamming: +3D to identify difficulty, -2D+2 to detect. Weapons — 2 Twin Blaster Cannons (turret): FC 2D+2, 1-7/20/30, 5D; Concussion Missile Launcher (front): FC 3D, 1-3/5/7, 4D; Ion Cannon (front): FC 2D, 1-5/10/15, 5D+2; Tractor Beam (turret): FC 2D, 1-8/15/20, 5D; 2 Proton Torpedo Launchers (turret): FC 1D+2, 1-5/15/30, attaches homing beacon or S-thread tracker. Cargo hold converted to top-security holding area with force-cages and hull reinforcements.)",
     capsule: "Boba Fett is regarded galaxy-wide as one of the deadliest bounty hunters alive — a man who kills without remorse and owes allegiance to no one but credits. During the Hoth campaign he was working both sides of the Solo bounty: already on retainer to Jabba the Hutt to capture the Corellian smuggler, he accepted Vader's offer to find Solo for the Empire first, with the guarantee he could still deliver Solo to Jabba afterward. His history and identity remain unknown; he wears armor similar to that of the Mandalorian warriors defeated by the Jedi during the Clone Wars, but whether he was among them or simply acquired the armor is a mystery. Wookiee scalps hang from his belt as a testament to his lethality.",
-    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.49"
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.49; WEG40093 Star Wars Sourcebook p.140"
   },
   {
     name: "Dengar",
@@ -4777,7 +4777,7 @@ const NOTABLE_NPCS = [
     move: 5,
     equipment: "Walking stick",
     capsule: "Yoda, over 800 years old, was the preeminent Jedi Master of the Old Republic — a being of immense wisdom and Force power who trained generations of Jedi. Despite his small, unimposing frame, his connection to the Force is virtually unparalleled. He lives in deliberate simplicity on Dagobah, a planet wrapped in a dark side nexus — residual energy from the Bpfasshi Dark Jedi who fled here long ago. That nexus masks Yoda's luminous Force presence, keeping him hidden from both the Emperor and Darth Vader. He arrived at Dagobah in 19 BBY after failing to defeat Palpatine. In 3 ABY, Obi-Wan Kenobi's Force ghost directed Luke Skywalker to him. Yoda began Luke's training — teaching that the Force is not a weapon but a presence to be channeled with patience and understanding — before Luke left to save his friends on Bespin.",
-    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.62"
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.62; WEG40093 Star Wars Sourcebook p.136"
   },
 
   // ── GALAXY GUIDE 3 — Chapter 7: Cloud City ──
@@ -13809,5 +13809,129 @@ const NOTABLE_NPCS = [
     equipment: "Datapad, comlink, blaster pistol (4D)",
     capsule: "Alliance General assigned to Atrivis Sector. A fleet tactician with deep bureaucratic expertise, particularly within the ORCC (Operational Regional Command Center).",
     source: "WEG40091 Rebel Alliance Sourcebook p.33"
+  },
+
+  // ── WEG40093 STAR WARS SOURCEBOOK — Heroes & Villains (0 BBY) ──
+  {
+    name: "Leia Organa (0 BBY)",
+    species: "Human",
+    system: "Alderaan",
+    location: "Various",
+    affiliations: ["Rebel Alliance"],
+    role: "Senator, Rebel Leader",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { blaster: "5D", "brawling parry": "4D", dodge: "6D", grenade: "4D", "melee combat": "5D", "melee parry": "4D", "vehicle blasters": "4D" } },
+      KNOWLEDGE: { base: "4D", skills: { "alien species": "7D", bureaucracy: "8D", cultures: "8D", languages: "5D", "planetary systems": "5D", survival: "5D", value: "5D", willpower: "6D+1" } },
+      MECHANICAL: { base: "2D+2", skills: { astrogation: "3D+2", "beast riding": "3D+2", "repulsorlift operation": "4D+2", "starfighter piloting": "5D", "starship gunnery": "4D", "starship shields": "5D" } },
+      PERCEPTION: { base: "3D+1", skills: { bargain: "6D", command: "8D", con: "5D+1", gambling: "4D", hide: "4D", persuasion: "5D", "persuasion: debate": "7D+2", search: "4D+1", sneak: "5D+1" } },
+      STRENGTH: { base: "3D", skills: { brawling: "4D", "climbing/jumping": "4D", stamina: "6D", swimming: "5D" } },
+      TECHNICAL: { base: "2D", skills: { "computer programming/repair": "3D", "droid programming": "4D", "droid repair": "4D", "first aid": "4D", security: "3D" } }
+    },
+    specialAbilities: "Force-sensitive.",
+    forcePoints: 4,
+    characterPoints: 13,
+    move: 10,
+    equipment: "Hold-out blaster (3D), comlink, technical readouts of the Death Star",
+    capsule: "Princess of Alderaan, Imperial Senator, and one of the key leaders of the Rebel Alliance. Youngest senator ever elected to the Imperial Senate.",
+    source: "WEG40093 Star Wars Sourcebook p.126"
+  },
+
+  // page corrections: Mon Mothma p.132, Lando p.133
+  {
+    name: "Mon Mothma (0 BBY)",
+    species: "Human",
+    system: "",
+    location: "Various",
+    affiliations: ["Rebel Alliance"],
+    role: "Alliance Leader, Senator",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { blaster: "3D+2", dodge: "5D", "melee parry": "3D+1" } },
+      KNOWLEDGE: { base: "4D", skills: { "alien species": "8D+2", bureaucracy: "10D+1", cultures: "10D+1", intimidation: "4D+2", languages: "8D", "planetary systems": "8D", survival: "7D", value: "5D+2", willpower: "5D+2" } },
+      MECHANICAL: { base: "3D", skills: { astrogation: "5D", "beast riding": "3D+2", "repulsorlift operation": "4D+1", "space transports": "4D", "starfighter piloting": "4D" } },
+      PERCEPTION: { base: "4D", skills: { bargain: "10D", command: "10D", con: "8D+1", gambling: "6D", hide: "6D+2", persuasion: "6D+1", "persuasion: debate": "8D+2", "persuasion: oration": "9D", search: "7D", sneak: "4D+2" } },
+      STRENGTH: { base: "2D", skills: { stamina: "6D", swimming: "4D+1" } },
+      TECHNICAL: { base: "2D", skills: { "computer programming/repair": "5D", "droid programming": "4D", "droid repair": "4D", "first aid": "6D", security: "5D", "starfighter repair": "2D+1" } }
+    },
+    specialAbilities: "",
+    forcePoints: 1,
+    characterPoints: 15,
+    move: 10,
+    equipment: "Comlink (shielded and scrambled), hold-out blaster (3D), portable computer (comm-linked to private transport vessel)",
+    capsule: "One of the original architects of the Rebellion. As a respected Imperial Senator, Mon Mothma fought to retain basic freedoms as Palpatine stripped them away. Forced underground, she grew the Rebellion from a ragtag group into a viable fighting force.",
+    source: "WEG40093 Star Wars Sourcebook p.132"
+  },
+  {
+    name: "Lando Calrissian (0 BBY)",
+    species: "Human",
+    system: "",
+    location: "Various",
+    affiliations: ["The Fringe"],
+    role: "Gambler, Con Artist",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D+2", skills: { blaster: "6D+2", "blaster: hold-out blaster": "7D", "brawling parry": "5D+1", dodge: "6D", grenade: "4D+2", "melee combat": "4D+2", "melee parry": "5D+1" } },
+      KNOWLEDGE: { base: "3D", skills: { "alien species": "5D", bureaucracy: "7D", business: "7D", "business: mining": "8D", "business administration": "5D+1", cultures: "6D+2", languages: "5D", "planetary systems": "5D", streetwise: "7D+1", survival: "5D", value: "5D+1" } },
+      MECHANICAL: { base: "2D+1", skills: { "archaic starship piloting": "3D+1", astrogation: "6D+2", communications: "4D", "ground vehicle operation": "3D+1", "repulsorlift operation": "4D", "repulsorlift operation: cloud car": "5D+1", sensors: "4D+2", "space transports": "8D", "starfighter piloting": "8D", "starship gunnery": "7D", "starship shields": "7D" } },
+      PERCEPTION: { base: "4D", skills: { bargain: "8D", "bargain: tibanna gas": "10D+1", command: "6D", con: "8D+2", forgery: "6D+1", gambling: "9D+2", hide: "6D", persuasion: "6D+1", sneak: "6D" } },
+      STRENGTH: { base: "2D+2", skills: { brawling: "5D+1", "climbing/jumping": "5D", lifting: "4D+2", stamina: "5D", swimming: "4D" } },
+      TECHNICAL: { base: "2D+2", skills: { "computer programming/repair": "4D", "droid programming": "3D", "repulsorlift repair": "4D", security: "6D+1", "space transports repair": "6D+2" } }
+    },
+    specialAbilities: "",
+    forcePoints: 1,
+    characterPoints: 8,
+    move: 10,
+    equipment: "Hold-out blaster (4D), comlink, sabacc card deck",
+    capsule: "Pre-Cloud City Lando — a gambler, rogue, and interstellar con artist wandering the galaxy looking for the next big score. Not yet the Baron-Administrator of Bespin.",
+    source: "WEG40093 Star Wars Sourcebook p.133"
+  },
+  {
+    name: "R2-D2 (Artoo-Detoo) (0 BBY)",
+    species: "Droid",
+    system: "Tatooine",
+    location: "Various",
+    affiliations: ["Rebel Alliance"],
+    role: "Industrial Automaton R2 Astromech Droid",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { dodge: "3D", "electroshock prod": "4D" } },
+      KNOWLEDGE: { base: "2D", skills: { "planetary systems": "8D", survival: "6D", value: "6D" } },
+      MECHANICAL: { base: "4D", skills: { astrogation: "10D", communications: "5D+1", sensors: "7D", "starfighter piloting": "6D", "starship gunnery": "4D", "starship shields": "4D" } },
+      PERCEPTION: { base: "3D", skills: { gambling: "6D", sneak: "4D" } },
+      STRENGTH: { base: "3D", skills: { lifting: "4D" } },
+      TECHNICAL: { base: "4D", skills: { "computer programming/repair": "8D", "droid programming": "5D", "droid repair": "5D", "machinery repair": "5D+2", "repulsorlift repair": "4D", security: "6D", "starfighter repair": "6D", "space transports repair": "5D" } }
+    },
+    specialAbilities: "Equipped with: three wheeled legs (one retractable); retractable heavy grasper arm (+1D to lifting); retractable fine work grasper arm; extendable 0.3m video sensor (360° rotation); small electric arc welder (3D damage, 0.3m range); small circular saw (4D damage, 0.3m range); video display screen; holographic projector/recorder (1m range); fire extinguisher; small internal cargo area (20cm × 8cm); high-pitch acoustic signaller; long-range sensing array including radar, Geiger counter, life form sensor, infrared receptors, and electromagnetic field receptor (+3D to search at up to 100m range); broad-band antenna receiver (monitors all broadcast and communication frequencies); information storage/retrieval jack for computer link-up; compressed air launcher (lightsabers or flares).",
+    forcePoints: 1,
+    characterPoints: 13,
+    move: 5,
+    equipment: "Size: 0.96 meters. Cost: 1,250 credits (as purchased by Owen Lars).",
+    capsule: "R2-D2 as of the Battle of Yavin. Memory never wiped — fiercely loyal personality behind a wall of electronic bleeps. Carries the Death Star plans to the Rebel Alliance.",
+    source: "WEG40093 Star Wars Sourcebook p.134"
+  },
+  {
+    name: "C-3PO (See-Threepio) (0 BBY)",
+    species: "Droid",
+    system: "Tatooine",
+    location: "Various",
+    affiliations: ["Rebel Alliance"],
+    role: "Cybot Galactica 3PO Human-Cyborg Relations Droid",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { dodge: "4D" } },
+      KNOWLEDGE: { base: "5D+2", skills: { "alien species": "7D", bureaucracy: "8D", cultures: "8D", languages: "12D", "planetary systems": "6D", survival: "5D+2", value: "5D+2" } },
+      MECHANICAL: { base: "3D", skills: { "repulsorlift operation": "4D" } },
+      PERCEPTION: { base: "3D+1", skills: { bargain: "6D", con: "5D" } },
+      STRENGTH: { base: "2D", skills: {} },
+      TECHNICAL: { base: "3D", skills: {} }
+    },
+    specialAbilities: "Equipped with: humanoid body (two arms, two legs, head); two visual and two audial sensors — human range; broad-band antenna receiver; AA-1 VerboBrain; TranLang III Communication module with over six million languages; Vocabulator speech/sound system capable of an extraordinarily wide range of sound effects and exact impersonation of voices.",
+    forcePoints: 1,
+    characterPoints: 8,
+    move: 8,
+    equipment: "Size: 1.67 meters. Cost: 1,700 credits (as purchased by Owen Lars).",
+    capsule: "C-3PO as of the Battle of Yavin. Perpetually anxious protocol droid fluent in over six million forms of communication.",
+    source: "WEG40093 Star Wars Sourcebook p.134"
   }
 ];

@@ -31978,6 +31978,45 @@ const STARSHIP_DATA = {
    "sensors_search": "90/3D",
    "sensors_focus": "5/4D",
    "weapons": []
+  },
+  {
+   "rank": 22,
+   "name": "Lady of Mindor",
+   "craft": "Shobquix Yards Lady-class Luxury Liner",
+   "type": "Luxury passenger liner",
+   "scale": "Capital",
+   "length": "310m",
+   "skill": "Space transports: Lady-class liner",
+   "crew": "117 (+4 gunners, skeleton 47/+15)",
+   "passengers": "600",
+   "cargo": "1,000 metric tons",
+   "consumables": "300 days",
+   "cost": "19 million",
+   "hyperdrive": "x2",
+   "hyperdrive_backup": "x20",
+   "nav_computer": "Yes",
+   "maneuverability": "",
+   "space": "6",
+   "atmosphere": "",
+   "hull": "2D",
+   "shields": "",
+   "of_note": "",
+   "sensors_passive": "20/0D",
+   "sensors_scan": "30/1D",
+   "sensors_search": "40/2D",
+   "sensors_focus": "2/2D+2",
+   "weapons": [
+    {
+     "name": "4 Twin Blaster Cannons (fire-linked)",
+     "fire_arc": "Turret",
+     "crew": "1",
+     "skill": "Capital ship gunnery",
+     "fire_control": "1D",
+     "space_range": "1-3/6/9",
+     "atmo_range": "",
+     "damage": "4D"
+    }
+   ]
   }
  ],
  "Battle Stations": [
