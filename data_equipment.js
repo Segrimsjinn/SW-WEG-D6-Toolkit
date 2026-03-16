@@ -1986,7 +1986,7 @@ const EQUIPMENT_DATA = [
  {
   "name": "Industrial Automaton SE4 Servant Droid",
   "category": "Droids",
-  "cost": "",
+  "cost": "2,600 (1,300 used)",
   "availability": "",
   "game_notes": "Domestic servant droid. Height: 1.6m. Move: 8. DEX 2D, KNO 2D (culinary arts 4D, culture 3D, home economics 4D, languages 3D), MEC 2D (communications 3D, repulsorlift operation 3D), PER 2D (bargain 3D), STR 2D (lifting 3D), TEC 2D (first aid 3D). Humanoid body. Vocabulator. Photoreceptors. Auditory sensors. Programmable personality modules. Memory stores full of recipes, dining etiquette, and domestic service information.",
   "source": "WEG40131 The Thrawn Trilogy Sourcebook p.199"
@@ -1998,5 +1998,61 @@ const EQUIPMENT_DATA = [
   "availability": "",
   "game_notes": "Scanning Patrol Detail security droid. Height: 0.4m. Move: 7 (treads). DEX 2D, KNO 1D, MEC 1D, PER 5D (search 6D, search: transmitting devices 8D+2), STR 1D, TEC 1D. Fabritech communications/sensor array. Four retractable extensor arms (extend up to 15m). Retractable fine work grasper arm. Extendable video sensor. Four sensor modules (thermal imaging +1D search, audio receptors, laser scan, pulse scan). Probability projection computer for detailed search procedures. Communicates in astromech-style chirps and beeps.",
   "source": "WEG40131 The Thrawn Trilogy Sourcebook p.200"
+ },
+ {
+  "name": "Melihat UniScan Sensor System",
+  "category": "Planetary Sensors",
+  "cost": "7,800 (3,600 used)",
+  "availability": "2, R",
+  "game_notes": "Focused uni-direction sensor dish. Crew: 5 (skeleton 3/+10). Skill: Sensors: uni-direction sensor dish. Maximum range 10 km. Scans a small focused area: 100m wide x 100m long x 20m high. Adds +2D to sensors skill to identify targets only. Provides no bonus in rough, hilly, mountainous, or cluttered urban terrain where targets can hide behind obstacles.",
+  "source": "WEG40091 Rebel Alliance Sourcebook p.105"
+ },
+ {
+  "name": "Siep-Irol GlobeScan",
+  "category": "Planetary Sensors",
+  "cost": "12,500 (6,250 used)",
+  "availability": "2, R",
+  "game_notes": "Omni-directional sensor globe. Crew: 10 (skeleton 4/-10). Skill: Sensors: omni-directional sensor globe. Scans in a 20 km radius in all directions (including atmosphere). Adds +1D to sensors skill to detect targets only. Provides no bonus in rough, hilly, mountainous, or cluttered urban terrain where targets can hide behind obstacles.",
+  "source": "WEG40091 Rebel Alliance Sourcebook p.105"
+ },
+ {
+  "name": "Tana Ire GroundSweeper-3",
+  "category": "Planetary Sensors",
+  "cost": "18,000 (12,000 used)",
+  "availability": "2, R",
+  "game_notes": "Omniprobe sensor array. Crew: 5 (skeleton 2/-15). Skill: Sensors: omniprobe sensor array. Scans in a 5 km radius up to 2m height. Adds +1D to sensors skill to detect targets only. Rough terrain provides no protection (unlike other sensor types).",
+  "source": "WEG40091 Rebel Alliance Sourcebook p.105"
+ },
+ {
+  "name": "LesTech Explorer Droid",
+  "category": "Droids",
+  "cost": "13,000 (5,500 used)",
+  "availability": "",
+  "game_notes": "Exploration and survey droid. Height: 1.3m. Move: 5 (treads). DEX 1D, KNO 1D (planetary systems 4D+2, survival 4D+2), MEC 1D, PER 1D (search 4D+2), STR 5D, TEC 1D. Seismic sensors (+1D search for ground vibrations and source identification). Movement sensors (+1D search to spot moving objects up to 500m). Electromagnetic spectrum sensors. Visual and infrared range sensors. Radiation sensors (detects levels harmful to organics). Heavy grasper arm (+1D lifting). Fine manipulator arm (+1D to DEX/TEC tasks requiring fine manipulation, used to gather samples). Holcam. Specimen hopper (5kg capacity).",
+  "source": "WEG40091 Rebel Alliance Sourcebook p.117"
+ },
+ {
+  "name": "Industrial Automaton V1 Pilot Droid",
+  "category": "Droids",
+  "cost": "11,800 (9,600 used)",
+  "availability": "",
+  "game_notes": "Autopilot droid. Height: 1m. Move: 5 (three wheeled legs, one retractable). DEX 1D, KNO 1D, MEC 1D (astrogation 3D, space transports 5D), PER 1D, STR 2D, TEC 1D (computer programming/repair 3D, space transports repair 3D). One retractable arm. Visual sensor (human range). Starship interface jack. Video display screen. Memory for three pre-programmed hyperspace jumps.",
+  "source": "WEG40091 Rebel Alliance Sourcebook p.117"
+ },
+ {
+  "name": "AccuTronics B1 Worker Droid",
+  "category": "Droids",
+  "cost": "9,800 (6,400 used)",
+  "availability": "",
+  "game_notes": "Heavy labor droid. Height: 1.5m. Move: 6. DEX 1D, KNO 1D, MEC 1D, PER 1D, STR 8D (lifting 10D, stamina 4D), TEC 1D. Suction/magnetic-tipped digits. Retractable third leg (+1D to lifting when deployed). Visual spectrum scanners.",
+  "source": "WEG40091 Rebel Alliance Sourcebook p.117"
+ },
+ {
+  "name": "Cybot Galactica AC1 \"Spy-Eye\" Surveillance Droid",
+  "category": "Droids",
+  "cost": "5,300 (2,600 used)",
+  "availability": "",
+  "game_notes": "Remote-controlled surveillance droid. Height: 0.7m. Move: 10 (repulsorlift, max height 3m). DEX 2D (dodge 4D), KNO 1D, MEC 1D, PER 3D (search 6D, sneak 4D), STR 1D+1, TEC 1D. Visual range holocam (500m range) with simultaneous transmitter. Holo receiver unit. Joystick controller (max range 500m).",
+  "source": "WEG40091 Rebel Alliance Sourcebook p.117"
  }
 ];

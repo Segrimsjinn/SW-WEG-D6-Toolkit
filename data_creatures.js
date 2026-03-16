@@ -5892,5 +5892,19 @@ const CREATURES_DATA = [
   "orneriness": "",
   "special": "Bite: STR+2D. Keen Smell: +2D search in water. Trainable: responds to sonic commands. Armor: +1D physical (scales).",
   "source": ""
+ },
+ {
+  "name": "Cracian Thumper",
+  "type": "Domesticated transport mount",
+  "planet": "Craci",
+  "habitat": "Various",
+  "dex": "3D",
+  "per": "3D+2",
+  "str": "3D",
+  "move": "12",
+  "size": "1.8m at shoulder (4.8m with tail)",
+  "orneriness": "1D",
+  "special": "Claws: STR+1 damage. Tail: STR+1D+2 damage. Silent Movement: +1D+2 to sneak if making two moves or less per round. Can carry up to 100kg cargo, or a rider and up to 50kg.",
+  "source": "WEG40091 Rebel Alliance Sourcebook p.105"
  }
 ];
