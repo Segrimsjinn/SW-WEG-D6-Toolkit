@@ -1,15 +1,15 @@
 const WEAPONS_DATA = [
  {
-  "name": "Anti-Orbital Ion Cannon",
+  "name": "KDY v-150 Planet Defender",
   "category": "Artillery",
-  "skill": "\u2014",
-  "cost": "\u2014",
-  "availability": "X",
-  "damage": "Variable",
-  "range": "Surface to orbit",
-  "ammo": "Power generator",
-  "game_notes": "Planetary defense ion cannon. Capital scale. Like the v-150 Planet Defender on Hoth.",
-  "source": ""
+  "skill": "Blaster artillery: surface-to-space",
+  "cost": "500,000 (100,000 used)",
+  "availability": "3, X",
+  "damage": "12D ionization (Capital scale)",
+  "range": "Atmosphere / Low Orbit (1 unit) / High Orbit (3 units)",
+  "ammo": "Unlimited (power generator)",
+  "game_notes": "Crew: 27 (skeleton 12/+10). FC 5D. Body 5D. Fire Rate 1. Heavy ion surface-to-space cannon. The Hoth ion cannon that disabled Imperial Star Destroyers during the Rebel evacuation. Orbital range units refer to distance from the planet if conducting a space battle.",
+  "source": "WEG40092 Imperial Sourcebook p.87"
  },
  {
   "name": "Atgar 1.4 FD P-Tower",
@@ -32,8 +32,8 @@ const WEAPONS_DATA = [
   "damage": "4D (Speeder scale)",
   "range": "20-600/3/16km",
   "ammo": "Power generator",
-  "game_notes": "Crew: 3. FC 2D. Body 3D. Fire Rate 2. 8m blast radius.",
-  "source": "Imperial Sourcebook (page 118)"
+  "game_notes": "Crew: 3. FC 2D. Body 3D. Fire Rate 2. 8m blast radius. Variants: Twin DF.9 — fire rate 6, 5m blast radius, body 4D, 18,000 cr, Imperial-only. SP.9 — fire rate 6, 5m blast radius, body 3D, Move 21; 60 kmh, 20,000 cr, Imperial-only. C/AF.9 — fire rate 1, FC 2D, range 20-600/3/6 km, 5m blast radius, 3D damage, 7,500 cr (obsolete model).",
+  "source": "WEG40092 Imperial Sourcebook p.118"
  },
  {
   "name": "Repeating Blaster Turret",
@@ -68,20 +68,20 @@ const WEAPONS_DATA = [
   "damage": "7D/5D+2/3D+2 (Speeder scale)",
   "range": "50-600/5/25km",
   "ammo": "6 cells / 50 trailer / generator",
-  "game_notes": "Crew: 8. FC 1D. Body 3D+1. Fire Rate 1/3. 20m blast radius. Heavy anti-vehicle gun.",
-  "source": "Imperial Sourcebook (page 119)"
+  "game_notes": "Crew: 8. FC 1D. Body 3D+1. Fire Rate 1/3. 20m blast radius. Heavy anti-vehicle gun. Damage degrades with range: 7D (short), 5D+2 (medium), 3D+2 (long). First introduced during the Clone Wars. Most are placed in fixed fortifications hooked to power converters; mobile versions mounted on Aratech 440 Super-Heavy Armored Chassis. Some Rebel units rumored to have v-188s on modern repulsorlift vehicles.",
+  "source": "WEG40092 Imperial Sourcebook p.119"
  },
  {
-  "name": "Turbolaser Battery",
+  "name": "Loronar Turbolaser System 1",
   "category": "Artillery",
   "skill": "Blaster artillery",
-  "cost": "\u2014",
-  "availability": "X",
-  "damage": "7D (Speeder scale)",
-  "range": "",
-  "ammo": "Power generator",
-  "game_notes": "Heavy ground-based turbolaser emplacement.",
-  "source": ""
+  "cost": "250,000 (125,000 used)",
+  "availability": "3, X",
+  "damage": "6D (Starfighter scale)",
+  "range": "50-600/5/25 km",
+  "ammo": "Unlimited (power generator)",
+  "game_notes": "Crew: 5. FC 1D. Body 4D. Fire Rate 2. 10m blast radius. Heavy fixed turbolaser emplacement. Overheat risk: after 5 consecutive rounds, roll 1D each round — overheats on 3+ (after 9 rounds: 2+, after 15 rounds: automatic). When overheated, roll 1D: 1-3 = repairable (Moderate repair, 1 hour), 4-6 = destroyed beyond repair, must be replaced.",
+  "source": "WEG40092 Imperial Sourcebook p.119"
  },
  {
   "name": "BlasTech Sharpshooter V",
@@ -3166,5 +3166,41 @@ const WEAPONS_DATA = [
   "ammo": "1 per canister",
   "game_notes": "Starfighter scale. Difficult starship gunnery roll to activate. Net is 50 meters in diameter. All ships touched by the net suffer +5D penalty to any electrical system (drives, weapons, sensors, ship-integrated communications). Any unprotected person touching a charged net suffers 10D damage every round of contact.",
   "source": "WEG40131 The Thrawn Trilogy Sourcebook p.192"
+ },
+ {
+  "name": "CoMar G-003 Tri-Tracker",
+  "category": "Artillery",
+  "skill": "Blaster artillery: CoMar G-003",
+  "cost": "50,000 (25,000 used)",
+  "availability": "3, X",
+  "damage": "5D (Starfighter scale)",
+  "range": "20-600/3/16 km",
+  "ammo": "40 (battery)",
+  "game_notes": "Crew: 2 (skeleton 1/+10). FC 4D. Body 1D. Fire Rate 1/3. 10m blast radius. Medium surface-to-air defense, anti-atmospheric gun. Full cover.",
+  "source": "WEG40092 Imperial Sourcebook p.86"
+ },
+ {
+  "name": "Speizoc C-136 \"Grandfather Gun\"",
+  "category": "Artillery",
+  "skill": "Blaster artillery: surface-to-surface",
+  "cost": "100,000 (used only)",
+  "availability": "4, X",
+  "damage": "9D ionization (Capital scale)",
+  "range": "50-600/5/25 km",
+  "ammo": "40 (power generator)",
+  "game_notes": "Crew: 7. FC 3D. Body 3D. Fire Rate 1/10. 100m blast radius. Perhaps the largest land-based ion cannon ever built. Designed for line-of-sight bombardment against cities, bridges, dams, structures, and stationary low-orbit targets. Now obsolete but still used on frontier and less advanced worlds. Takes 6-12 hours to set up or disassemble. Requires forward observer for accurate medium/long-range fire. No longer in production — spare parts increasingly scarce. Enormous power drain. Energy discharge causes unusual atmospheric effects and can create ionization hazards for friendly troops.",
+  "source": "WEG40092 Imperial Sourcebook p.87"
+ },
+ {
+  "name": "Bryn & Gweith Leveler 1",
+  "category": "Artillery",
+  "skill": "Missile weapons: concussion missile launcher",
+  "cost": "55,000 (25,000 used)",
+  "availability": "2, R or X",
+  "damage": "7D (Speeder scale)",
+  "range": "20-600/3/16 km",
+  "ammo": "28",
+  "game_notes": "Crew: 6. FC 2D. Body 2D. Fire Rate up to 28. 20m blast radius. 1/4 cover. Self-propelled concussion missile launcher on heavy-track chassis. 28 tubes in 4x7 formation — can fire individually, in salvos of 7, or all 28 at once. Reload: 2 rounds per tube (no firing during reload). Carries no extra ammo — accompanied by repulsorlift ammo wagon. DER (dedicated energy receptors) for over-the-horizon targeting with salvo pattern selection (narrow/medium/wide).",
+  "source": "WEG40092 Imperial Sourcebook p.118"
  }
 ];
