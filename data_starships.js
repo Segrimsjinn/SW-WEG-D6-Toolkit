@@ -10412,6 +10412,58 @@ const STARSHIP_DATA = {
    ]
   },
   {
+   "rank": 21,
+   "name": "Raptor / Skyclaw (Mazzic's Preybirds)",
+   "craft": "Modified SoroSuub Preybird-class Starfighters",
+   "type": "Heavy Assault Starfighter",
+   "affiliation": "The Fringe",
+   "era": "New Republic",
+   "source": "WEG40131 The Thrawn Trilogy Sourcebook p.225",
+   "price_new": "200,000",
+   "price_used": "",
+   "scale": "Starfighter",
+   "length": "21 meters",
+   "crew": "1",
+   "gunners": "1",
+   "passengers": "",
+   "cargo": "15 kg",
+   "consumables": "4 days",
+   "hyperdrive": "x3",
+   "nav_computer": "Limited to 5 jumps",
+   "maneuverability": "1D",
+   "space": "9",
+   "atmosphere": "400; 1,150 kmh",
+   "hull": "4D+2",
+   "shields": "1D+2",
+   "of_note": "Mazzic's personal heavily modified Preybirds with classified Imperial tech and custom components. Birdlike predatory appearance with flaming bird-of-prey paint schemes (Skyclaw in red, Raptor in blue) has intimidated better-armed ships into submission. Rear concussion missile launcher.",
+   "sensors_passive": "20/0D",
+   "sensors_scan": "40/1D",
+   "sensors_search": "60/2D",
+   "sensors_focus": "3/3D",
+   "weapons": [
+    {
+     "name": "2 Heavy Laser Cannons (fire-linked)",
+     "fire_arc": "Front",
+     "crew": "",
+     "skill": "Starship gunnery",
+     "fire_control": "2D+1",
+     "space_range": "1-3/12/25",
+     "atmo_range": "100-300/1.2/2.5 km",
+     "damage": "5D+1"
+    },
+    {
+     "name": "2 Concussion Missile Launchers",
+     "fire_arc": "Front / Rear",
+     "crew": "",
+     "skill": "Starship gunnery",
+     "fire_control": "",
+     "space_range": "1/3/7",
+     "atmo_range": "50-100/300/700",
+     "damage": "8D"
+    }
+   ]
+  },
+  {
    "rank": 22,
    "name": "Y-4 Raptor Transport",
    "craft": "Incom Corporation Y-4 Military Transport",
