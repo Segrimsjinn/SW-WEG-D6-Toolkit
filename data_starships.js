@@ -5731,6 +5731,48 @@ const STARSHIP_DATA = {
    "weapons": []
   },
   {
+   "rank": 1,
+   "name": "Wild Karrde",
+   "craft": "Modified Corellian Action VI Transport",
+   "type": "Modified medium bulk freighter",
+   "affiliation": "The Fringe",
+   "era": "New Republic",
+   "source": "WEG40131 The Thrawn Trilogy Sourcebook p.228",
+   "price_new": "",
+   "price_used": "",
+   "scale": "Capital",
+   "length": "125 meters",
+   "crew": "28",
+   "gunners": "",
+   "passengers": "",
+   "cargo": "50,000 metric tons",
+   "consumables": "6 months",
+   "hyperdrive": "x1",
+   "nav_computer": "Yes",
+   "maneuverability": "2D",
+   "space": "6",
+   "atmosphere": "330; 950 kmh",
+   "hull": "4D",
+   "shields": "3D",
+   "of_note": "Talon Karrde's personal ship. x10 backup. Sensor mask adds 4D+2 to difficulty to detect ship with sensors.",
+   "sensors_passive": "40/2D",
+   "sensors_scan": "80/2D+2",
+   "sensors_search": "75/3D",
+   "sensors_focus": "4/3D+1",
+   "weapons": [
+    {
+     "name": "3 Turbolasers (fire separately)",
+     "fire_arc": "Turret",
+     "crew": "",
+     "skill": "Starship gunnery",
+     "fire_control": "2D",
+     "space_range": "3-15/35/75",
+     "atmo_range": "300-1.5/3.5/7.5 km",
+     "damage": "5D"
+    }
+   ]
+  },
+  {
    "rank": 2,
    "name": "Asteroid Mining Ship",
    "craft": "KDY Asteroid Prospector AP-300",
