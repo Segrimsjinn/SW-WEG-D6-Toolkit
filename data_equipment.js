@@ -856,6 +856,14 @@ const EQUIPMENT_DATA = [
   "source": "Galladinium's Fantastic Technology (page 57)"
  },
  {
+  "name": "Organic Gill",
+  "category": "Environmental Suits",
+  "cost": "200",
+  "availability": "3",
+  "game_notes": "Mon Calamari synthetic organic gill. Gelatinous symbiotic blob worn over breathing apertures; filters oxygen from water. Lasts several weeks underwater before dying. Small microphone/earphone inserts allow muffled communication. Usable by most species with compatible atmospheric requirements. Sullustans have an allergic reaction and cannot use it.",
+  "source": "WEG40114 The Jedi Academy Sourcebook p.140"
+ },
+ {
   "name": "Hush-About Jet Pack",
   "category": "Jet Packs",
   "cost": "1,000",
@@ -1442,10 +1450,10 @@ const EQUIPMENT_DATA = [
  {
   "name": "Stun Cuffs",
   "category": "Security",
-  "cost": "250",
-  "availability": "2",
-  "game_notes": "Restraints that deliver stun shock if tampered with. 4D stun per escape attempt. Difficult security to bypass stun feature.",
-  "source": ""
+  "cost": "100",
+  "availability": "2, F",
+  "game_notes": "BlasTech AR-101. Passive when wearer is still. If the cuffed character struggles, cuffs deal stun damage equal to the character's Strength.",
+  "source": "WEG40114 The Jedi Academy Sourcebook p.141"
  },
  {
   "name": "Corellidyne Doubler Suit",
@@ -1474,10 +1482,10 @@ const EQUIPMENT_DATA = [
  {
   "name": "Force Detector",
   "category": "Sensors",
-  "cost": "10,000",
+  "cost": "Not for sale",
   "availability": "4, X",
-  "game_notes": "Detects Force usage within 500m. Moderate sensors roll to detect active Force use. Very Difficult to detect passive Force sensitivity.",
-  "source": ""
+  "game_notes": "Government Issue Force Detector Unit. Three-component system: control pack + two sheet-crystal reader paddles. Operator brackets subject with paddles; unit scans and projects a wire-frame hologram with color-coded aura overlay. Blue aura = Force-sensitive (stronger corona = stronger in Force); no aura = non-sensitive; red streaks = dark side influence. Tells operator if subject is Force-sensitive and whether they have any Dark Side Points (not how many). Fewer than 10,000 produced; most lost or destroyed.",
+  "source": "WEG40114 The Jedi Academy Sourcebook p.140"
  },
  {
   "name": "General Purpose Scanner",
@@ -1848,6 +1856,14 @@ const EQUIPMENT_DATA = [
   "source": ""
  },
  {
+  "name": "Organic Gill",
+  "category": "Survival",
+  "cost": "200",
+  "availability": "3",
+  "game_notes": "Mon Calamari synthetic organic gill. Gelatinous symbiotic blob worn over breathing apertures; filters oxygen from water. Lasts several weeks underwater before dying. Small microphone/earphone inserts allow muffled communication. Usable by most species with compatible atmospheric requirements. Sullustans have an allergic reaction and cannot use it.",
+  "source": "WEG40114 The Jedi Academy Sourcebook p.140"
+ },
+ {
   "name": "Fusion Cutter",
   "category": "Tools",
   "cost": "150",
@@ -2094,5 +2110,37 @@ const EQUIPMENT_DATA = [
   "availability": "X",
   "game_notes": "Assassin droid (manufacturer unknown). Height: 1.8m. Move: 11. DEX 2D (blaster 5D, missile weapons 5D), KNO 1D, MEC 1D, PER 2D (search 5D), STR 5D, TEC 1D. Humanoid body. Broad-band antenna receiver (monitors comlink channels). Blaster cannon (0-50/150/300, 6D). Concussion missile launcher (0-50/100/200, ammo: 20, 7D). Assassin droids are illegal by Imperial edict — penalty of death for operating, harboring, or repairing them. Rogue assassin droids remain at large galaxy-wide, some hunting alternate targets or freelancing as bounty hunters. The ISD reportedly uses assassin droids for one-third of all secret high-level arrests and eliminations.",
   "source": "WEG40093 Star Wars Sourcebook p.57"
+ },
+ {
+  "name": "Cybot Galactica IC-M General Utility Droid",
+  "category": "Droids",
+  "cost": "500 (used)",
+  "availability": "",
+  "game_notes": "Commonly called the 'Eyesee-em.' Height: 1.5m. Move: 7 (caterpillar treads). DEX 1D, KNO 1D, MEC 2D, PER 2D, STR 3D (lifting 5D), TEC 4D (computer programming/repair 5D, general repair 5D, machinery repair 5D). Seven manipulator arms with interchangeable attachments. Rear storage bay with cleaning fluids, supplies, and tools. Fitted with restraining bolt and locational transponder (very difficult to remove). Performs maintenance, lighting replacement, groundskeeping, and tourist directions on Coruscant.",
+  "source": "WEG40114 The Jedi Academy Sourcebook p.141"
+ },
+ {
+  "name": "Industrial Automaton 2-ZH Surgical Droid",
+  "category": "Droids",
+  "cost": "3,000 (used)",
+  "availability": "",
+  "game_notes": "Imperial prison medical droid. Height: 1.5m. Move: 4. DEX 1D, KNO 2D (alien species 3D+1), MEC 2D, PER 3D ((A) injury/ailment diagnosis 4D+2), STR 1D, TEC 3D (first aid 6D, (A) medicine 7D). Computer interface tether (5m range, +2D to all medical skills). Medical diagnostic computer. Analytical computer. Surgical attachments. Hypodermic injectors (4D stun). Medicine dispensers. Not programmed for patient comfort — prioritizes physical health only, often resulting in needlessly painful recoveries. Painted unappetizing green with black rubberized optical sheath.",
+  "source": "WEG40114 The Jedi Academy Sourcebook p.141"
+ },
+ {
+  "name": "XL-Lioness TDL Nanny Droid",
+  "category": "Droids",
+  "cost": "9,000 (new)",
+  "availability": "",
+  "game_notes": "Height: 1.9m. Move: 10. DEX 4D (blaster: arm blaster 7D, dodge 5D+1), KNO 3D (cultures 6D, languages 5D, scholar: child care 9D), MEC 1D, PER 2D (hide 3D+1, search 3D, sneak 4D), STR 2D, TEC 1D (first aid 5D, security 4D). Humanoid body (four arms, two legs). Armor plating (+2D vs physical and energy). Two heavy blasters concealed in lower arms (4D+2, 0-3/10/20). Two visual and two audial sensors (human range). Vocabulator speech/sound system. AA-1 VerboBrain. TranLang III Communications module with over seven million languages.",
+  "source": "WEG40114 The Jedi Academy Sourcebook pp.141-143"
+ },
+ {
+  "name": "FIDO (Foreign Intruder Defense Organism)",
+  "category": "Droids",
+  "cost": "Not for sale",
+  "availability": "",
+  "game_notes": "Semi-organic defense droid patterned after the Calamarian krakana. Central pod buried in target area; 26 extendible attack tentacles up to 100m long. Stationary (tentacles Move 15). DEX 6D (brawling parry 6D+2, dodge 7D), KNO 1D, MEC 1D, PER 5D (search 6D), STR 12D (brawling 13D, lifting 15D), TEC 1D (security 6D). All stats apply to tentacles and sensors — central pod is stationary. Tentacles: STR+2D damage. Armored central pod: +4D vs physical and energy attacks. Long-range sensor: +1D to search between 200m–5km. Movement sensor: +2D to search for moving objects up to 100m. Can be activated remotely or programmed for time/event triggers. Can distinguish cleared personnel from intruders.",
+  "source": "WEG40114 The Jedi Academy Sourcebook p.143"
  }
 ];
