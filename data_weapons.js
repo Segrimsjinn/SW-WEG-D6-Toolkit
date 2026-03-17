@@ -3322,5 +3322,17 @@ const WEAPONS_DATA = [
   "ammo": "28",
   "game_notes": "Crew: 6. FC 2D. Body 2D. Fire Rate up to 28. 20m blast radius. 1/4 cover. Self-propelled concussion missile launcher on heavy-track chassis. 28 tubes in 4x7 formation — can fire individually, in salvos of 7, or all 28 at once. Reload: 2 rounds per tube (no firing during reload). Carries no extra ammo — accompanied by repulsorlift ammo wagon. DER (dedicated energy receptors) for over-the-horizon targeting with salvo pattern selection (narrow/medium/wide).",
   "source": "WEG40092 Imperial Sourcebook p.118"
+ },
+ {
+  "name": "Merr-Sonn Taser Staff",
+  "category": "Powered Melee",
+  "skill": "Melee combat: taser staff",
+  "cost": "500",
+  "availability": "2, R",
+  "damage": "5D or 5D stun (uncharged: STR+1D)",
+  "range": "",
+  "ammo": "50 charges (power packs: 40 credits)",
+  "game_notes": "Moderate difficulty. Standard melee weapon of Coruscant Guards. Delivers lethal or stun charge on contact; crackles with energy when striking. Balanced with weighted ends — effective even when power pack is fully drained. Weight: 10kg. Can be separated into 3 pieces for backpack carry.",
+  "source": "WEG40122 Shadows of the Empire p.113"
  }
 ];

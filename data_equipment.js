@@ -1024,6 +1024,30 @@ const EQUIPMENT_DATA = [
   "source": ""
  },
  {
+  "name": "Traxes BioElectronics Myostim Couch",
+  "category": "Medical",
+  "cost": "30,000",
+  "availability": "3",
+  "game_notes": "Contour chair with sensor field and computerized electromyoclonic broadcaster that exercises muscles passively. For every 12 hours spent on the unit, Strength is increased by +1 (maximum bonus +1D). Bonus lasts 1 week. Extended use risk: after more than 6 months of use, characters in an extremely stressful situation may suffer a -2 penalty to Dexterity, Knowledge, Perception, and all related skills; with a mishap, the character becomes enraged and uncontrollable.",
+  "source": "WEG40122 Shadows of the Empire p.113"
+ },
+ {
+  "name": "Athakam/RSMA Hyperbaric Medical Chamber",
+  "category": "Medical",
+  "cost": "50,000",
+  "availability": "3, F",
+  "game_notes": "Large pressurized living quarters that simulates nearly any atmospheric condition. Can adjust atmospheric pressure, oxygenation, medicated fields, and repulsor-field gravity to suit any species or medical condition. Negates any atmospheric/respiratory penalties and eliminates the need for life-support apparatus while inside the chamber. Used in major medical facilities to allow beings in cybernetic life-support systems to spend time outside their survival suits. Not recommended for extended habitation.",
+  "source": "WEG40122 Shadows of the Empire p.112"
+ },
+ {
+  "name": "Athakam/RSMA Bioscan Unit",
+  "category": "Medical",
+  "cost": "13,000",
+  "availability": "3, F",
+  "game_notes": "Bioscan sensor array and analysis unit. Scale: Character. Skills: computer programming/repair to set up; first aid or medicine to use. Requires Easy to Difficult computer programming/repair roll to set up (depending on situation). If properly set up, adds +2D to first aid, medicine, or Technical rolls. Maximum range: 3 meters. Provides detailed data on subject's species, sex, heartbeat, respiration, muscle tone index, height, weight, temperature, approximate skin age, biological anomalies or variations, and presence of diseases or viruses. Can also detect and analyze power sources, comm transmissions, hidden weapons, explosives, and other electronic devices concealed on or implanted within a subject. Sensors must be firmly mounted to a stationary frame for accurate readings; any irregularities in placement result in faulty readings. Developed by the Rhinnal State Medical Academy.",
+  "source": "WEG40122 Shadows of the Empire p.110"
+ },
+ {
   "name": "ARC Trooper Armor",
   "category": "Military Armor",
   "cost": "Not for sale",
@@ -1126,6 +1150,14 @@ const EQUIPMENT_DATA = [
   "availability": "3, X",
   "game_notes": "+2D physical, +1D energy, -1D DEX. Tongue-activated comlink. Sealed body glove/breath mask. MFTAS: +2D PER in low-vis, +2D ranged vs targets moving 10+ m/round. Utility belt.",
   "source": "Rulebook (page 234)"
+ },
+ {
+  "name": "Coruscant Guard Armor",
+  "category": "Military Armor",
+  "cost": "Not for sale",
+  "availability": "X",
+  "game_notes": "Standard Coruscant Guard armor. Basic Suit: +2D physical, +1D energy, -1D DEX and related skills. Optic Sensors: no penalty operating in complete darkness. Filter: self-sealing filter screens all dangerous particulates and crowd control gases; lacks oxygen supply — requires a breathable-but-polluted atmosphere (will not function as vacuum suit). Comlink Scrambler: linked to other Coruscant Guard units and command; optional tracking beacon software adds beacon so unit commander knows troop positions; unit commander's helmet has verbally activated heads-up display showing trooper positions. Climate Control Body Glove: comfortable operation in extreme heat or cold for several hours.",
+  "source": "WEG40122 Shadows of the Empire p.113"
  },
  {
   "name": "AV-1A Assault Armor",
@@ -1462,6 +1494,14 @@ const EQUIPMENT_DATA = [
   "availability": "4, X",
   "game_notes": "Holographic projector bodysuit. Requires 1 hour recording of subject, then Difficult computer programming/repair to create holo-composite. Easy Mechanical roll projects lifelike image up to 10m away in any direction. Viewers must make Very Difficult Perception/search to detect the image at 50+ meters; difficulty reduces by one level per 10m closer. Allows hunter to draw enemy fire with minimal exposure.",
   "source": "WEG40073 Galaxy Guide 10: Bounty Hunters p.87"
+ },
+ {
+  "name": "Fabritech CN-15 Camouflage Netting",
+  "category": "Security",
+  "cost": "3,500",
+  "availability": "2, R",
+  "game_notes": "A physical tarp/netting draped over a small area (ship, vehicle, equipment cache) to hide it from sensor detection. Skill: hide. Adds +2D to the difficulty to detect the camouflaged object with sensor-scanning equipment at ranges greater than 250 meters. No bonus at ranges less than 250 meters. If more than 3 nets are used in tandem, sensor-scanning equipment gains +1D to detect the nets due to interference caused by stacking.",
+  "source": "WEG40122 Shadows of the Empire p.112"
  },
  {
   "name": "Comm Scanner",
@@ -2142,5 +2182,45 @@ const EQUIPMENT_DATA = [
   "availability": "",
   "game_notes": "Semi-organic defense droid patterned after the Calamarian krakana. Central pod buried in target area; 26 extendible attack tentacles up to 100m long. Stationary (tentacles Move 15). DEX 6D (brawling parry 6D+2, dodge 7D), KNO 1D, MEC 1D, PER 5D (search 6D), STR 12D (brawling 13D, lifting 15D), TEC 1D (security 6D). All stats apply to tentacles and sensors — central pod is stationary. Tentacles: STR+2D damage. Armored central pod: +4D vs physical and energy attacks. Long-range sensor: +1D to search between 200m–5km. Movement sensor: +2D to search for moving objects up to 100m. Can be activated remotely or programmed for time/event triggers. Can distinguish cleared personnel from intruders.",
   "source": "WEG40114 The Jedi Academy Sourcebook p.143"
+ },
+ {
+  "name": "Industrial Automaton ASP-7 Labor Droid",
+  "category": "Droids",
+  "cost": "1,000",
+  "availability": "1",
+  "game_notes": "Light-duty labor droid. Height: 1.6m. Move: 6. DEX 1D, KNO 1D, MEC 1D, PER 1D (search 2D), STR 1D (lifting 2D), TEC 1D. Equipped: humanoid body (two arms, two legs, head, torso), one visual ocular (human-range vision), two audial receivers. Story Factors — Basic Programming: programmed only for menial tasks; out of place in specialized settings (starship engineering bays, medical suites, battlefields); can be upgraded with improved programming and attachments at additional cost. Restricted Vocabulary: basic unit can only reply 'affirmative' or 'negative' regardless of question or situation encountered.",
+  "source": "WEG40122 Shadows of the Empire p.102"
+ },
+ {
+  "name": "Modified ASP-19 Lightsaber Training Droid (Mark IX)",
+  "category": "Droids",
+  "cost": "Not for sale",
+  "availability": "Unique",
+  "game_notes": "Modified Industrial Automaton ASP-19, Lightsaber Training Configuration, Mark IX. Maintained by Darth Vader at his castle in Imperial Center for personal combat training. Height: 2.2m. Move: 12. DEX 3D (lightsaber 8D+2), KNO 1D, MEC 1D, PER 3D, STR 4D (brawling 5D), TEC 1D. Equipped: reinforced alloy humanoid body (two arms, two legs, head, torso), one high-speed visual sensor, two audial receivers, AA-1 Verbo-brain (packed with combat techniques; rumored to include lightsaber training data from a Jedi holocron of Master Vo'ren Faalo's personal techniques), armor plating and reinforced alloys (+2D STR vs physical and energy damage). Equipment: Lightsaber (5D) — a single spare lightsaber shared among the training units. Story Factors — Attack Restrictions: programming restricts attacks only to opponents wielding lightsabers; all others are ignored.",
+  "source": "WEG40122 Shadows of the Empire p.104"
+ },
+ {
+  "name": "Veril Line Systems IN-4 Information Droid",
+  "category": "Droids",
+  "cost": "2,500",
+  "availability": "1",
+  "game_notes": "Public information and directions droid. Height: 1.3m. Move: 3 (treadwell locomotion). DEX 1D, KNO 4D (languages 5D), MEC 1D, PER 1D, STR 1D, TEC 1D (computer programming/repair 4D). Equipped: box frame body, treadwell locomotion unit, video sensor, vocabulator speech/sound system, extendible I/O computer jack. Programmed with up to two dozen languages (customizable at purchase). I/O jack access is hardwired to lowest data levels only — cannot be used to slice into protected data even by a skilled slicer. Rebel operatives have modified these droids with extra c-boards to add voice and visual ID recognition, converting them into inconspicuous dead-drop points for messages and datacards (concealed datacard slot behind a service panel).",
+  "source": "WEG40122 Shadows of the Empire p.105"
+ },
+ {
+  "name": "Arakyd AS-M12 Seeker Message Droid",
+  "category": "Droids",
+  "cost": "4,000",
+  "availability": "2",
+  "game_notes": "Compact globe-shaped message droid hovering on repulsorlift. Height: 0.5m. Move: 10. DEX 1D, KNO 2D (planetary systems 3D), MEC 1D (sensors 3D), PER 2D (search 4D), STR 2D, TEC 1D (computer programming/repair 3D). Equipped: repulsorlift generator, visual and audial sensors, vocabulator speech/sound system (normally Basic only; additional languages purchasable), retractable fine-work grasper arm, holographic projector/recorder (hidden behind access panel; databanks deleted seconds after message delivery), computer I/O jack. Loaded into a hyperspace transport pod (sold separately) for interstellar delivery; pod and droid are retrievable and reusable after modest refitting. Special Abilities — Message Security: will not convey information without proper passcode; circumventing without the passcode requires a Heroic droid programming roll. Some owners modify units to self-destruct after delivery.",
+  "source": "WEG40122 Shadows of the Empire p.108"
+ },
+ {
+  "name": "Arakyd Seeker Transport (Message Droid Hyperspace Pod)",
+  "category": "Droids",
+  "cost": "20,000",
+  "availability": "2",
+  "game_notes": "Single-use hyperspace delivery pod for the AS-M12 message droid. Craft: Arakyd Seeker Transport. Scale: Starfighter. Length: 2m. Crew: None (fully automated droid brain; astrogation 4D, space transports 4D). Passengers: 1 message droid. Consumables: 1 month. Hyperdrive x1 (limited to 1 jump). Space 6. Atmosphere 330/950 kmh. Hull 1D+2. Sensors — Passive 20/1D, Scan 40/2D, Search 60/3D, Focus 3/4D. Pod and droid are retrievable and reusable after modest refitting.",
+  "source": "WEG40122 Shadows of the Empire p.108"
  }
 ];

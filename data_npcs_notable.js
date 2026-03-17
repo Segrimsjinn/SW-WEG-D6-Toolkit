@@ -2766,7 +2766,7 @@ const NOTABLE_NPCS = [
     darkSidePoints: 14,
     characterPoints: 27,
     move: 10,
-    equipment: "Lightsaber (5D), full body armor (+1D all attacks; integrated life-support respirator — required to keep Vader alive)",
+    equipment: "Body armor (+1D all attacks, respirator is necessary to keep Vader alive), lightsaber (5D)",
     capsule: "Darth Vader is the Emperor's enforcer and the most feared man in the galaxy. Once Anakin Skywalker — Jedi Knight, hero of the Clone Wars, and the prophesied Chosen One — he was seduced by the dark side and helped Palpatine exterminate the Jedi Order. His scarred, broken body is encased in life-sustaining black armor. Aboard the Death Star at Yavin, he oversaw Princess Leia's interrogation, cut down Obi-Wan Kenobi, and nearly prevented the Rebel assault — only to be sent spinning into space by Han Solo's last-second intervention, allowing Luke Skywalker to destroy the station.",
     source: "WEG40124 Galaxy Guide 1: A New Hope p.50; WEG40093 Star Wars Sourcebook p.142"
   },
@@ -3513,7 +3513,7 @@ const NOTABLE_NPCS = [
     species: "Human",
     system: "Yavin",
     location: "Yavin — Imperial Salvage Station",
-    affiliations: ["Galactic Empire"],
+    affiliations: ["Galactic Empire", "ISB Agents"],
     role: "Imperial Major / ISB Salvage Commander",
     type: "Named NPC",
     stats: {
@@ -4151,7 +4151,7 @@ const NOTABLE_NPCS = [
     species: "Human",
     system: "Hoth",
     location: "Hoth — Echo Base (Rogue Group)",
-    affiliations: ["Rebel Alliance"],
+    affiliations: ["Rebel Alliance", "Rogue Squadron"],
     role: "Rebel Snowspeeder Pilot",
     type: "Generic NPC",
     stats: {
@@ -4175,7 +4175,7 @@ const NOTABLE_NPCS = [
     species: "Human",
     system: "Hoth",
     location: "Hoth — Echo Base (Rogue Group)",
-    affiliations: ["Rebel Alliance", "Rogue Group"],
+    affiliations: ["Rebel Alliance", "Rogue Squadron"],
     role: "Brash Pilot, Rogue Group",
     type: "Named NPC",
     stats: {
@@ -4194,12 +4194,162 @@ const NOTABLE_NPCS = [
     capsule: "Wedge Antilles and Luke Skywalker were the only surviving members of Red Squadron at the Battle of Yavin — that group was cobbled together from the Ecliptic Evaders, Dantooine Squadron, and Tierfon Yellow Aces. After the Yavin evacuation, which Wedge helped organize, he was permanently assigned to Alliance High Command's roving group. Under Commander Narra of Renegade Flight, Rogue Group took form. Wedge struck up a close friendship with Wes Janson, often flying as wingmen and sharing a love of sabacc and Corellian ale. After Hoth, Wedge was promoted to commander and is forming Rogue Squadron from the survivors.",
     source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.27"
   },
+
+  {
+    name: "Wedge Antilles (3.5 ABY)",
+    species: "Human",
+    system: "Coruscant",
+    location: "Coruscant — Imperial City",
+    affiliations: ["Rebel Alliance", "Rogue Squadron"],
+    role: "Brash Pilot / Commander, Rogue Squadron",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "5D", "brawling parry": "3D+1", "dodge": "5D+2", "melee combat": "3D+1", "vehicle blasters": "3D+1" } },
+      KNOWLEDGE: { base: "2D", skills: { "alien species": "4D", "bureaucracy": "5D+1", "cultures": "2D+1", "languages": "3D", "planetary systems": "4D+2" } },
+      MECHANICAL: { base: "4D", skills: { "astrogation": "6D+1", "space transports": "5D+2", "starfighter piloting: X-wing": "6D", "starship gunnery": "5D+1", "starship shields": "4D+2" } },
+      PERCEPTION: { base: "3D", skills: { "bargain": "4D", "command": "4D+1", "gambling": "4D+1" } },
+      STRENGTH: { base: "3D", skills: { "stamina": "4D+1" } },
+      TECHNICAL: { base: "3D", skills: { "computer programming/repair": "5D", "repulsorlift repair": "3D+2", "space transports repair": "4D+2", "starfighter repair": "4D+1", "starfighter repair: X-wing": "4D+2" } }
+    },
+    specialAbilities: "",
+    forcePoints: 1,
+    characterPoints: 6,
+    move: 10,
+    equipment: "Blaster pistol (4D), comlink, Rebel flight suit, tool kit",
+    capsule: "Wedge Antilles, newly promoted to Commander and formally leading Rogue Squadron following Luke Skywalker's departure for Jedi training. A veteran of Yavin and Hoth, his piloting skills have continued to sharpen — X-wing at 6D, starship gunnery up to 5D+1 — and he has developed genuine command ability. He still defers 'Rogue Leader' to Luke when Skywalker flies with the unit. Rogue Squadron is stationed aboard Home One and deployed to Coruscant during the Xizor crisis.",
+    source: "WEG40122 Shadows of the Empire p.17"
+  },
+
+  {
+    name: "Will Scotian",
+    species: "Human",
+    system: "Coruscant",
+    location: "Coruscant — Imperial City",
+    affiliations: ["Rebel Alliance", "Rogue Squadron"],
+    role: "Brash Pilot, Rogue Two",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "4D", "dodge": "4D" } },
+      KNOWLEDGE: { base: "2D", skills: { "planetary systems": "4D", "streetwise": "3D+2", "tactics: starfighters": "3D+1" } },
+      MECHANICAL: { base: "4D", skills: { "astrogation": "5D", "repulsorlift operation": "5D+2", "space transports": "4D+2", "starfighter piloting: X-wing": "5D+2", "starship gunnery": "5D" } },
+      PERCEPTION: { base: "3D", skills: { "con": "4D", "persuasion": "3D+2" } },
+      STRENGTH: { base: "3D", skills: { "lifting": "4D" } },
+      TECHNICAL: { base: "3D", skills: {} }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 3,
+    move: 10,
+    equipment: "Blaster pistol (4D), comlink, Rebel flight suit",
+    capsule: "Will Scotian, Rogue Two, is a native of Brentaal who worked his way up from cargo skiffs and bulk freighters to the Rebellion's most elite starfighter unit. His outstanding combat record at Oracle Base in Brak sector caught Wedge Antilles' attention and earned him a spot in Rogue Squadron. Aggressive to a fault — he has to be ordered to withdraw even in a crippled fighter — he believes he's invincible and thrives when everything is on the line.",
+    source: "WEG40122 Shadows of the Empire p.17"
+  },
+
+  {
+    name: "Dix Rivan",
+    species: "Human",
+    system: "Coruscant",
+    location: "Coruscant — Imperial City",
+    affiliations: ["Rebel Alliance", "Rogue Squadron"],
+    role: "Rebel Pilot, Rogue Five",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "5D", "dodge": "3D+2", "melee combat": "4D+1" } },
+      KNOWLEDGE: { base: "2D", skills: { "languages": "3D", "planetary systems": "4D", "streetwise": "3D+2", "survival": "4D+1" } },
+      MECHANICAL: { base: "4D", skills: { "astrogation": "4D+2", "repulsorlift operation": "5D", "starfighter piloting: X-wing": "5D", "starship gunnery": "5D", "starship shields": "4D+2" } },
+      PERCEPTION: { base: "3D", skills: { "search": "5D" } },
+      STRENGTH: { base: "3D", skills: { "brawling": "5D", "climbing/jumping": "4D" } },
+      TECHNICAL: { base: "3D", skills: { "repulsorlift repair": "4D" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 10,
+    equipment: "Blaster pistol (4D), comlink, Rebel flight suit",
+    capsule: "Dix Rivan, known affectionately as 'Dixie,' is Rogue Five — a quiet, private man whose origins are unknown to his squadmates. He serves as Rogue Squadron's rear guard, always watching out for his friends and racing to their aid, though he tends to neglect his own back in the process. He finds family in the squadron's camaraderie, even if he listens far more than he speaks.",
+    source: "WEG40122 Shadows of the Empire p.17"
+  },
+
+  {
+    name: "Chief (Viera Cheran)",
+    species: "Human",
+    system: "Coruscant",
+    location: "Coruscant — Imperial City",
+    affiliations: ["Rebel Alliance", "Rogue Squadron"],
+    role: "Rebel Technician / Crew Chief, Rogue Squadron",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "3D+2" } },
+      KNOWLEDGE: { base: "2D+2", skills: { "business: starships": "4D", "value: starships": "3D+1" } },
+      MECHANICAL: { base: "3D", skills: { "astrogation": "3D+1", "repulsorlift operation": "4D", "space transports": "4D" } },
+      PERCEPTION: { base: "3D", skills: { "bargain": "4D", "con": "5D+2", "hide": "4D+1", "search": "5D", "sneak": "5D+2" } },
+      STRENGTH: { base: "2D+1", skills: { "lifting": "3D" } },
+      TECHNICAL: { base: "4D", skills: { "computer programming/repair": "6D", "demolitions": "4D+2", "droid programming": "6D+2", "droid repair": "6D", "repulsorlift repair": "5D+1", "security": "5D", "space transports repair": "5D", "starfighter repair": "6D", "starfighter repair: X-wing": "8D+1", "starship weapon repair": "6D+2" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 10,
+    equipment: "Hold-out blaster (3D), duty coveralls, technical kit",
+    capsule: "Chief Technician Viera Cheran — 'Chief' to the Rogues — directs the techs that keep Rogue Squadron's X-wings flying and manages flight deck operations wherever the unit is stationed. Her X-wing repair skill at 8D+1 is exceptional. Disenchanted by thankless work and lack of recognition, she was approached by an operative offering 10,000 credits to sabotage Luke Skywalker's fighter — with much more promised when his death was confirmed. A tempting offer for a woman who could buy her own freighter and walk away from it all.",
+    source: "WEG40122 Shadows of the Empire p.19"
+  },
+
+  {
+    name: "Typical Bothan Spynet Operative",
+    species: "Bothan",
+    system: "Bothawui",
+    location: "Bothawui — Bothan Spynet",
+    affiliations: ["The Fringe", "Bothan Spynet"],
+    role: "Bothan Spynet Operative",
+    type: "Typical NPC",
+    stats: {
+      DEXTERITY: { base: "3D+1", skills: { "blaster": "4D+1", "dodge": "4D+1" } },
+      KNOWLEDGE: { base: "3D", skills: { "intimidation": "3D+2", "languages": "3D+2", "planetary systems": "3D+1", "streetwise": "4D+2", "survival": "3D+2" } },
+      MECHANICAL: { base: "2D", skills: {} },
+      PERCEPTION: { base: "4D", skills: { "con": "5D", "forgery": "4D+2", "search": "5D", "sneak": "5D" } },
+      STRENGTH: { base: "2D+2", skills: {} },
+      TECHNICAL: { base: "3D", skills: { "computer programming/repair": "5D", "security": "5D" } }
+    },
+    specialAbilities: "Story Factors — Opportunist: Bothans are very opportunistic and predatory. Communication: Bothans can manipulate their fur to express emotions and further statements.",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 10,
+    equipment: "Comlink, hold-out blaster (3D), security datapad",
+    source: "WEG40122 Shadows of the Empire p.20"
+  },
+
+  {
+    name: "Koth Melan",
+    species: "Bothan",
+    system: "Bothawui",
+    location: "Bothawui — Bothan Trade Mission",
+    affiliations: ["The Fringe", "Bothan Spynet"],
+    role: "Bothan Spymaster",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D+1", skills: { "blaster": "5D", "dodge": "4D", "pick pocket": "6D" } },
+      KNOWLEDGE: { base: "3D", skills: { "alien species": "5D", "bureaucracy": "5D+2", "bureaucracy: Bothan spynet": "9D", "bureaucracy: Bothan Trade Mission": "7D+1", "bureaucracy: clan Alya spynet": "10D+2", "business": "6D", "cultures": "6D+2", "cultures: clan Alya": "8D+2", "intimidation": "7D", "languages": "6D+1", "law enforcement": "5D+2", "planetary systems": "6D", "streetwise": "8D", "survival": "6D+2", "value": "5D+1", "willpower": "4D" } },
+      MECHANICAL: { base: "2D", skills: { "communications": "4D", "repulsorlift operation": "3D+1", "sensors": "4D" } },
+      PERCEPTION: { base: "4D", skills: { "bargain": "6D+2", "command": "7D", "con": "8D", "forgery": "7D+1", "hide": "5D", "investigation": "7D+2", "persuasion": "6D+1", "search": "8D", "sneak": "7D+2" } },
+      STRENGTH: { base: "2D+2", skills: { "brawling": "3D", "climbing/jumping": "3D+2" } },
+      TECHNICAL: { base: "3D", skills: { "computer programming/repair": "6D", "droid programming": "5D", "first aid": "4D", "security": "8D" } }
+    },
+    specialAbilities: "Story Factors — Opportunist: Bothans are very opportunistic and predatory. Communication: Bothans can manipulate their fur to express emotions and further statements.",
+    forcePoints: 1,
+    characterPoints: 3,
+    move: 10,
+    equipment: "Comlink, datapad, hold-out blaster (3D)",
+    capsule: "Ostensibly the assistant consul general for the Bothan Trade Mission, Melan is actually one of the spynet's top spymasters. His father was executed by the Empire 20 years ago on a false espionage charge — in reality just a teacher — and Melan refuses to accept the 'lya' clan honorific until he has avenged his father by helping bring down the Empire. He never travels without a heavily armed entourage of spynet operatives doubling as bureaucratic staff. His spies discovered Imperial plans for a new secret military project and he sought out the Rebel Alliance to act on that intelligence.",
+    source: "WEG40122 Shadows of the Empire p.20"
+  },
+
   {
     name: "Zev Senesca",
     species: "Human",
     system: "Hoth",
     location: "Hoth — Echo Base (Rogue Group)",
-    affiliations: ["Rebel Alliance", "Rogue Group"],
+    affiliations: ["Rebel Alliance", "Rogue Squadron"],
     role: "Brash Pilot, Rogue Group (KIA — Battle of Hoth)",
     type: "Named NPC",
     stats: {
@@ -4223,7 +4373,7 @@ const NOTABLE_NPCS = [
     species: "Human",
     system: "Hoth",
     location: "Hoth — Echo Base (Rogue Group)",
-    affiliations: ["Rebel Alliance", "Rogue Group"],
+    affiliations: ["Rebel Alliance", "Rogue Squadron"],
     role: "Brash Pilot / Gunner, Rogue Group (True Gunner)",
     type: "Named NPC",
     stats: {
@@ -4242,12 +4392,38 @@ const NOTABLE_NPCS = [
     capsule: "Wes Janson holds the True Gunner's insignia — the highest gunnery order in the Rebel Alliance, awarded by General Dodonna at Tierfon Fighter Base. He flew with the Tierfon Yellow Aces and was close friends with Jek Porkins. When Tierfon was boosted to full active status before Yavin, Janson was on the transfer list to Yavin Base but was laid up with Hesken Fever — his slot was filled by Porkins, who never returned. Janson has never forgiven himself. He and Wedge Antilles became close friends and frequent wingmen in Rogue Group.",
     source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.28"
   },
+
+  {
+    name: "Wes Janson (3.5 ABY)",
+    species: "Human",
+    system: "Coruscant",
+    location: "Coruscant — Imperial City",
+    affiliations: ["Rebel Alliance", "Rogue Squadron"],
+    role: "Brash Pilot, Rogue Six",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "4D+1", "dodge": "4D+1", "melee combat": "4D+2", "missile weapons": "6D", "vehicle blasters": "6D+2" } },
+      KNOWLEDGE: { base: "2D", skills: { "languages": "3D", "planetary systems": "4D+2" } },
+      MECHANICAL: { base: "4D", skills: { "astrogation": "5D+1", "repulsorlift operation": "4D+2", "starfighter piloting": "4D+2", "starship gunnery": "6D+1", "starship shields": "5D+1" } },
+      PERCEPTION: { base: "3D", skills: { "command": "3D+2", "con": "3D+2" } },
+      STRENGTH: { base: "3D", skills: { "brawling": "4D+2", "stamina": "4D+1" } },
+      TECHNICAL: { base: "3D", skills: { "first aid": "4D", "starfighter repair": "4D+2" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 3,
+    move: 10,
+    equipment: "Blaster pistol (4D), comlink, Rebel flight suit",
+    capsule: "Wes Janson, Rogue Six — holder of the True Gunner's insignia — has transitioned from rear-gunner to full X-wing pilot since the Battle of Hoth, where he crewed Wedge's snowspeeder and helped topple the first AT-AT with a tow cable. His exceptional gunnery skills at 6D+1 and vehicle blasters at 6D+2 follow him into the cockpit, aided by an R2 unit that manages starfighter systems so Janson can focus entirely on his shot.",
+    source: "WEG40122 Shadows of the Empire p.18"
+  },
+
   {
     name: "Hobbie Klivian",
     species: "Human",
     system: "Hoth",
     location: "Hoth — Echo Base (Rogue Group)",
-    affiliations: ["Rebel Alliance", "Rogue Group"],
+    affiliations: ["Rebel Alliance", "Rogue Squadron"],
     role: "Brash Pilot, Rogue Group (Derek 'Hobbie' Klivian)",
     type: "Named NPC",
     stats: {
@@ -4271,7 +4447,7 @@ const NOTABLE_NPCS = [
     species: "Human",
     system: "Hoth",
     location: "Hoth — Echo Base (Rogue Group)",
-    affiliations: ["Rebel Alliance", "Rogue Group"],
+    affiliations: ["Rebel Alliance", "Rogue Squadron"],
     role: "Brash Pilot / Gunner, Rogue Group (KIA — Battle of Hoth)",
     type: "Named NPC",
     stats: {
@@ -4295,7 +4471,7 @@ const NOTABLE_NPCS = [
     species: "Human",
     system: "Hoth",
     location: "Hoth — Echo Base (Rogue Group, Rogue Ten)",
-    affiliations: ["Rebel Alliance", "Rogue Group"],
+    affiliations: ["Rebel Alliance", "Rogue Squadron"],
     role: "Brash Pilot, Rogue Ten / Transport Pilot (Thon's Orchard)",
     type: "Named NPC",
     stats: {
@@ -4319,7 +4495,7 @@ const NOTABLE_NPCS = [
     species: "Human",
     system: "Hoth",
     location: "Hoth — Echo Base (Rogue Group, Rogue Eleven)",
-    affiliations: ["Rebel Alliance", "Rogue Group"],
+    affiliations: ["Rebel Alliance", "Rogue Squadron"],
     role: "Brash Pilot, Rogue Eleven (KIA — Battle of Hoth)",
     type: "Named NPC",
     stats: {
@@ -4554,10 +4730,36 @@ const NOTABLE_NPCS = [
     darkSidePoints: 25,
     characterPoints: 35,
     move: 10,
-    equipment: "Lightsaber (5D), body armor (+1D all attacks; respirator is necessary to keep Vader alive)",
+    equipment: "Body armor (+1D all attacks, respirator is necessary to keep Vader alive), lightsaber (5D)",
     capsule: "Darth Vader, Dark Lord of the Sith, survived the Battle of Yavin and returned from the void stronger than before. He and the Emperor recognized the Empire had underestimated the Rebellion, and Vader was assigned to personally hunt down those responsible for the Death Star's destruction — given command of the Imperial Death Squadron, one of the most powerful fleets ever assembled. Alongside this campaign he specifically sought Luke Skywalker, whose connection to the Force Vader had sensed at Yavin. He briefly confronted Skywalker on the fog-shrouded world of Mimban before the young pilot slipped away. After Hoth, Vader pursued Solo and the Princess relentlessly, using them as bait to lure Skywalker to Cloud City — where the two finally faced each other. Skywalker escaped, scarred but alive.",
     source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.45"
   },
+
+  {
+    name: "Darth Vader (3.5 ABY)",
+    species: "Human (Cyborg)",
+    system: "Coruscant",
+    location: "Coruscant — Imperial Palace",
+    affiliations: ["Galactic Empire"],
+    role: "Dark Lord of the Sith",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "5D", "blaster artillery": "4D+1", "brawling parry": "7D", "dodge": "7D", "lightsaber": "11D+2", "melee combat": "7D", "melee parry": "9D", "vehicle blasters": "6D" } },
+      KNOWLEDGE: { base: "3D+2", skills: { "alien species": "7D+1", "bureaucracy": "9D+1", "cultures": "7D", "intimidation": "10D+2", "languages": "6D+1", "planetary systems": "8D", "streetwise": "7D", "survival": "6D", "value": "6D", "willpower": "8D+1" } },
+      MECHANICAL: { base: "4D", skills: { "astrogation": "7D+1", "capital ship gunnery": "8D", "capital ship piloting": "8D", "capital ship shields": "5D", "repulsorlift operation": "5D+2", "starfighter piloting": "10D", "starship gunnery": "8D", "starship shields": "5D" } },
+      PERCEPTION: { base: "3D+1", skills: { "bargain": "4D", "command": "11D+1", "con": "4D", "gambling": "4D+1", "hide": "5D+2", "persuasion": "8D+1", "search": "8D", "sneak": "5D+2" } },
+      STRENGTH: { base: "3D", skills: { "brawling": "9D", "climbing/jumping": "7D+1", "lifting": "8D+1", "stamina": "8D+1" } },
+      TECHNICAL: { base: "3D", skills: { "armor repair": "6D+1", "capital ship repair": "5D", "lightsaber repair": "7D+2", "security": "6D+2", "starfighter repair": "5D" } }
+    },
+    specialAbilities: "Force Skills: Control 11D+1, Sense 12D+1, Alter 11D. Force Powers — Control: absorb/dissipate energy, accelerate healing, concentrate, control pain, detoxify poison, enhance attribute, hibernation trance, reduce injury, remain conscious, resist stun. Sense: combat sense, danger sense, instinctive astrogation, life detection, life sense, magnify senses, receptive telepathy, sense Force. Alter: injure/kill, telekinesis. Control & Sense: farseeing, lightsaber combat, projective telepathy. Control & Alter: feed on dark side, inflict pain. Control, Sense & Alter: affect mind, telekinetic kill. This character is Force-sensitive.",
+    forcePoints: 21,
+    darkSidePoints: 28,
+    characterPoints: 40,
+    move: 10,
+    equipment: "Body armor (+1D all attacks, respirator is necessary to keep Vader alive), lightsaber (5D)",
+    source: "WEG40122 Shadows of the Empire p.24"
+  },
+
   {
     name: "Lieutenant Venka",
     species: "Human",
@@ -4805,6 +5007,32 @@ const NOTABLE_NPCS = [
     capsule: "Lando Calrissian — gambler, rogue, and interstellar con-man — had reinvented himself as Baron-Administrator of Cloud City, trading daily chaos for the comfortable pressures of civic leadership. By day he presided over labor disputes and charity luncheons; by night he circulated through the city's casinos in various disguises, including 'the old man' — a mysterious figure who ran the Royal Casino's table for three months straight, only to bet it all away on a single spin each night before leaving. When Darth Vader arrived and forced him to betray Han Solo as the price of Cloud City's survival, Lando chose a different answer: he freed Leia and Chewie, lost Cloud City entirely, and joined the Rebellion. Solo's legendary sabacc win of the Millennium Falcon from Lando was, ironically, the event that prompted Lando to settle down on Bespin in the first place.",
     source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.70"
   },
+
+  {
+    name: "Lando Calrissian (3.5 ABY)",
+    species: "Human",
+    system: "Coruscant",
+    location: "Coruscant — Imperial City",
+    affiliations: ["Rebel Alliance", "The Fringe"],
+    role: "Gambler",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D+2", skills: { "blaster": "6D+2", "blaster: hold-out blaster": "7D", "brawling parry": "5D+1", "dodge": "6D", "grenade": "4D+2", "melee combat": "4D+2", "melee parry": "5D+1" } },
+      KNOWLEDGE: { base: "3D", skills: { "alien species": "5D", "bureaucracy": "7D", "business": "7D", "business: mining": "10D+1", "business administration": "7D+1", "cultures": "6D+2", "languages": "5D", "planetary systems": "5D", "streetwise": "7D+2", "survival": "5D", "value": "5D+1" } },
+      MECHANICAL: { base: "2D+1", skills: { "archaic starship piloting": "3D+1", "astrogation": "6D+2", "communications": "4D", "ground vehicle operation": "3D+1", "repulsorlift operation": "4D", "repulsorlift operation: cloud car": "5D+1", "sensors": "4D+2", "space transports": "8D", "starfighter piloting": "8D", "starship gunnery": "7D", "starship shields": "7D", "swoop operation": "4D+2" } },
+      PERCEPTION: { base: "4D", skills: { "bargain": "8D", "bargain: tibanna gas": "10D+1", "command": "6D+2", "con": "8D+2", "forgery": "6D+1", "gambling": "9D+2", "hide": "6D", "persuasion": "6D+1", "sneak": "6D" } },
+      STRENGTH: { base: "2D+2", skills: { "brawling": "5D+1", "climbing/jumping": "5D", "lifting": "4D+2", "stamina": "5D", "swimming": "4D" } },
+      TECHNICAL: { base: "2D+2", skills: { "computer programming/repair": "4D", "droid programming": "3D", "repulsorlift repair": "4D", "security": "6D+1", "space transports repair": "6D+2", "starship weapon repair": "4D" } }
+    },
+    specialAbilities: "",
+    forcePoints: 1,
+    characterPoints: 14,
+    move: 10,
+    equipment: "Hold-out blaster (4D), comlink, sabacc card deck",
+    capsule: "Lando Calrissian between the fall of Cloud City and the rescue of Han Solo — haunted by his betrayal of Solo and determined to make it right. Having surrendered the Baron-Administratorship and joined the Rebellion, he is now calling in every favor owed to him across the Outer Rim to track down Boba Fett and find Han. His improved command ability and street savvy reflect hard-won experience navigating Imperial space in pursuit of Solo, including a pivotal role in exposing Prince Xizor's scheme on Coruscant.",
+    source: "WEG40122 Shadows of the Empire p.13"
+  },
+
   {
     name: "Wing Guard Officer (Typical)",
     species: "Human",
@@ -5047,6 +5275,31 @@ const NOTABLE_NPCS = [
   },
 
   {
+    name: "Princess Leia Organa (3.5 ABY)",
+    species: "Human",
+    system: "Coruscant",
+    location: "Coruscant — Imperial City",
+    affiliations: ["Rebel Alliance"],
+    role: "Young Senatorial",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "7D+1", "blaster artillery": "3D+2", "brawling parry": "4D", "dodge": "7D", "grenade": "4D", "melee combat": "5D", "melee parry": "4D", "vehicle blasters": "4D" } },
+      KNOWLEDGE: { base: "4D", skills: { "alien species": "7D", "bureaucracy": "9D+1", "cultures": "9D", "languages": "6D+2", "planetary systems": "9D", "streetwise": "6D", "survival": "7D+2", "value": "6D+1", "willpower": "6D+1" } },
+      MECHANICAL: { base: "2D+2", skills: { "astrogation": "3D+2", "beast riding": "3D+2", "repulsorlift operation": "4D+2", "starfighter piloting": "5D", "starship gunnery": "4D", "starship shields": "5D" } },
+      PERCEPTION: { base: "3D+1", skills: { "bargain": "6D", "command": "10D", "con": "5D+1", "gambling": "4D", "hide": "6D", "persuasion": "7D", "persuasion: debate": "8D+2", "search": "5D+2", "sneak": "6D" } },
+      STRENGTH: { base: "3D", skills: { "brawling": "4D", "climbing/jumping": "4D", "stamina": "6D", "swimming": "5D" } },
+      TECHNICAL: { base: "2D", skills: { "computer programming/repair": "4D+2", "droid programming": "4D", "droid repair": "4D", "first aid": "6D", "security": "3D+2", "starfighter repair": "2D+2" } }
+    },
+    specialAbilities: "This character is Force-sensitive.",
+    forcePoints: 6,
+    characterPoints: 23,
+    move: 10,
+    equipment: "Blaster pistol (4D), comlink",
+    capsule: "Princess Leia Organa between the Battle of Hoth and the rescue of Han Solo — setting aside her duties to the Alliance to pursue the man she loves, working alongside Chewbacca and Lando Calrissian to track down Solo. Her experience shows in subtle growth: improved survival skills and security proficiency. She plays a key role in exposing Prince Xizor's machinations on Coruscant, navigating the Imperial capital's underworld to strike at the Black Sun underlord.",
+    source: "WEG40122 Shadows of the Empire p.10"
+  },
+
+  {
     name: "Han Solo (3 ABY)",
     species: "Human",
     system: "Bespin",
@@ -5096,6 +5349,32 @@ const NOTABLE_NPCS = [
   },
 
   {
+    name: "Luke Skywalker (3.5 ABY)",
+    species: "Human",
+    system: "Coruscant",
+    location: "Coruscant — Imperial City",
+    affiliations: ["Rebel Alliance"],
+    role: "Brash Pilot",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "6D+2", "brawling parry": "5D+2", "dodge": "7D+1", "lightsaber": "8D", "melee combat": "4D", "melee parry": "9D" } },
+      KNOWLEDGE: { base: "2D", skills: { "alien species": "4D", "bureaucracy": "5D+1", "streetwise": "6D", "survival": "6D", "value": "4D" } },
+      MECHANICAL: { base: "4D", skills: { "astrogation": "6D", "beast riding": "4D+2", "beast riding: tauntaun": "6D+1", "repulsorlift operation": "8D", "repulsorlift operation: airspeeder": "8D", "sensors": "4D+1", "starfighter piloting: X-wing": "9D+2", "starship gunnery": "7D+1", "starship shields": "7D" } },
+      PERCEPTION: { base: "2D+1", skills: { "bargain": "3D", "command": "5D+2", "hide": "4D+2", "search": "5D", "sneak": "4D+2" } },
+      STRENGTH: { base: "3D", skills: { "brawling": "5D+1", "climbing/jumping": "6D", "lifting": "4D", "stamina": "6D" } },
+      TECHNICAL: { base: "3D", skills: { "computer programming/repair": "5D", "droid programming": "5D+1", "droid repair": "6D", "first aid": "4D+2", "lightsaber repair": "7D+1", "repulsorlift repair": "7D", "security": "4D+1", "starfighter repair": "5D+2" } }
+    },
+    specialAbilities: "Force Skills: Control 9D+2, Sense 7D+2, Alter 6D+2. Force Powers — Control: accelerate healing, concentration, control pain, detoxify poison, emptiness, enhance attribute, hibernation trance, reduce injury, remain conscious, resist stun. Sense: danger sense, instinctive astrogation, life detection, life sense, receptive telepathy, sense Force. Alter: telekinesis. Control & Sense: farseeing, lightsaber combat, projective telepathy. Control, Sense & Alter: affect mind. This character is Force-sensitive.",
+    forcePoints: 19,
+    darkSidePoints: 1,
+    characterPoints: 35,
+    move: 10,
+    equipment: "Blaster pistol (4D), lightsaber (5D), comlink",
+    capsule: "Luke Skywalker between the Battle of Hoth and the rescue of Han Solo — shaken by Vader's revelation on Cloud City and spending the intervening months rebuilding his confidence through Jedi research and constructing a new lightsaber. His Force abilities have grown markedly since Bespin: Control, Sense, and Alter each advanced +2 pips, and he has learned control pain and the rare affect mind power. He plays a central role in uncovering and dismantling Prince Xizor's scheme on Coruscant, navigating the Imperial capital's undercity to strike at the Black Sun underlord before the rescue of Han Solo.",
+    source: "WEG40122 Shadows of the Empire p.9"
+  },
+
+  {
     name: "R2-D2 (Artoo-Detoo) (3 ABY)",
     species: "Droid",
     system: "Bespin",
@@ -5118,6 +5397,31 @@ const NOTABLE_NPCS = [
     equipment: "Size: 0.96 meters. Cost: 1,250 credits (as purchased by Owen Lars).",
     capsule: "R2-D2 is an Industrial Automaton R2-series astromech assigned to Anakin Skywalker during the Clone Wars and later to Luke Skywalker. His memory has never been wiped — an oversight that has allowed a rich and fiercely loyal personality to develop behind a wall of electronic bleeps. His astrogation at 10D+2 and X-wing specialization at 8D+1 make him arguably the most capable astromech in the Rebellion. At Cloud City, R2 was blasted by Imperial forces and had to be carried out in pieces by Chewbacca before being reassembled aboard the Falcon.",
     source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.85"
+  },
+
+  {
+    name: "R2-D2 (Artoo-Detoo) (3.5 ABY)",
+    species: "Droid",
+    system: "Tatooine",
+    location: "Tatooine",
+    affiliations: ["Rebel Alliance"],
+    role: "Industrial Automaton R2 Astromech Droid",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { "dodge": "4D", "electroshock prod": "4D+1" } },
+      KNOWLEDGE: { base: "2D", skills: { "planetary systems": "8D+2", "survival": "6D+2", "value": "6D+2" } },
+      MECHANICAL: { base: "4D", skills: { "astrogation": "10D+2", "communications": "6D", "sensors": "7D", "starfighter piloting": "6D", "starfighter piloting: X-wing": "8D+1", "starship gunnery": "4D+1", "starship shields": "4D+1" } },
+      PERCEPTION: { base: "3D", skills: { "con": "3D+2", "gambling": "6D", "sneak": "4D+1" } },
+      STRENGTH: { base: "3D", skills: { "lifting": "4D", "swimming": "3D+1" } },
+      TECHNICAL: { base: "4D", skills: { "computer programming/repair": "8D+2", "droid programming": "5D+1", "droid repair": "6D+2", "machinery repair": "5D+2", "repulsorlift repair": "4D", "security": "6D", "starfighter repair": "6D+1", "starfighter repair: X-wing": "7D+2", "space transports repair": "5D+2", "space transports repair: YT-1300 transports": "7D+1" } }
+    },
+    specialAbilities: "Equipped with: three wheeled legs (one retractable); retractable heavy grasper arm (+1D to lifting); retractable fine work grasper arm; extendable 0.3m video sensor (360° rotation); small electric arc welder (3D damage, 0.3m range); small circular saw (4D damage, 0.3m range); video display screen; holographic projector/recorder (1m range); fire extinguisher; small internal cargo area (20cm × 8cm); high-pitch acoustic signaller; long-range sensing array including radar, radiation counter, life form sensor, infrared receptors, and electromagnetic field receptor (+3D to search at up to 100m range); broad-band antenna receiver (monitors all broadcast and communication frequencies); information storage/retrieval jack for computer link-up; compressed air launcher (lightsabers or flares).",
+    forcePoints: 2,
+    characterPoints: 19,
+    move: 5,
+    equipment: "Size: 0.96 meters. Cost: not available for sale.",
+    capsule: "R2-D2 between the fall of Cloud City and the rescue of Han Solo — keeping close to Luke Skywalker as the young Jedi researches ancient texts and constructs a new lightsaber. His Force Point total has grown and his swimming capability has been tested during the Dagobah sojourn. He serves as Luke's X-wing astromech and indispensable mechanical aide throughout the mission period leading up to the assault on Jabba's palace.",
+    source: "WEG40122 Shadows of the Empire p.14"
   },
 
   {
@@ -5146,6 +5450,31 @@ const NOTABLE_NPCS = [
   },
 
   {
+    name: "C-3PO (See-Threepio) (3.5 ABY)",
+    species: "Droid",
+    system: "Coruscant",
+    location: "Coruscant — Imperial City",
+    affiliations: ["Rebel Alliance"],
+    role: "Cybot Galactica 3PO Human-Cyborg Relations Droid",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { "dodge": "4D+2" } },
+      KNOWLEDGE: { base: "5D+2", skills: { "alien species": "7D+1", "bureaucracy": "8D+1", "cultures": "8D", "languages": "12D+1", "planetary systems": "6D", "survival": "5D+2", "value": "5D+2" } },
+      MECHANICAL: { base: "3D", skills: { "repulsorlift operation": "4D+1" } },
+      PERCEPTION: { base: "3D+1", skills: { "bargain": "6D", "con": "5D", "hide": "3D+2", "sneak": "4D" } },
+      STRENGTH: { base: "2D", skills: {} },
+      TECHNICAL: { base: "3D", skills: { "first aid": "4D" } }
+    },
+    specialAbilities: "Equipped with: humanoid body (two arms, two legs, head); two visual and two audial sensors (human range); broad-band antenna receiver; AA-1 Verbo-brain; TranLang III Communication module with over six million languages; Vocabulator speech/sound system capable of an extraordinarily wide range of sound effects and exact impersonations of voices.",
+    forcePoints: 1,
+    characterPoints: 13,
+    move: 8,
+    equipment: "Size: 1.67 meters. Cost: not available for sale.",
+    capsule: "C-3PO between the fall of Cloud City and the rescue of Han Solo — accompanying Princess Leia on Alliance diplomatic and intelligence missions, including the dangerous foray into Coruscant's Imperial City. He has acquired a slight edge in stealth and misdirection from repeated narrow escapes, and his bureaucratic knowledge has deepened. His languages at 12D+1 remain essential for navigating the sprawling complexity of Coruscant's underworld.",
+    source: "WEG40122 Shadows of the Empire p.14"
+  },
+
+  {
     name: "Chewbacca (3 ABY)",
     species: "Wookiee",
     system: "Bespin",
@@ -5168,6 +5497,31 @@ const NOTABLE_NPCS = [
     equipment: "Bowcaster (4D), ammo bandolier, droid tool kit, starship tool kit, waist pouch",
     capsule: "Chewbacca is a 200-year-old Wookiee from Kashyyyk, first mate and co-pilot of the Millennium Falcon, bound to Han Solo by a life debt. His physical capabilities are extraordinary — brawling 10D, lifting 10D, stamina 10D — and his technical skills nearly match his combat ability, with YT-1300 repair at 10D+2 and computer programming/repair at 8D. At Bespin he fought ferociously to protect his companions, was captured alongside Leia, and tried to reassemble C-3PO after the droid was blasted apart. When Han was frozen in carbonite, Chewie launched himself at the stormtroopers before being restrained.",
     source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.86"
+  },
+
+  {
+    name: "Chewbacca (3.5 ABY)",
+    species: "Wookiee",
+    system: "Coruscant",
+    location: "Coruscant — Imperial City",
+    affiliations: ["Rebel Alliance", "The Fringe"],
+    role: "Wookiee First Mate",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "2D+2", skills: { "blaster": "6D+1", "bowcaster": "9D", "brawling parry": "7D+1", "dodge": "6D+1", "grenade": "5D+1", "melee combat": "8D", "melee parry": "8D", "vehicle blasters": "6D+1" } },
+      KNOWLEDGE: { base: "2D", skills: { "alien species": "7D", "bureaucracy": "4D", "business": "4D+2", "cultures": "3D+1", "intimidation": "8D+2", "languages": "6D", "planetary systems": "7D+2", "streetwise": "7D", "survival": "7D", "value": "7D+1" } },
+      MECHANICAL: { base: "3D", skills: { "astrogation": "8D+1", "beast riding": "4D", "communications": "4D+2", "repulsorlift operation": "7D+1", "sensors": "6D", "space transports": "6D+2", "space transports: YT-1300 transports": "8D", "starship gunnery": "8D", "starship shields": "6D+1" } },
+      PERCEPTION: { base: "2D", skills: { "bargain": "5D", "command": "4D+2", "gambling": "5D", "hide": "3D+2", "search": "3D", "sneak": "3D+1" } },
+      STRENGTH: { base: "5D", skills: { "brawling": "10D", "climbing/jumping": "7D+2", "lifting": "10D", "stamina": "10D", "swimming": "7D" } },
+      TECHNICAL: { base: "3D+1", skills: { "blaster repair": "5D+1", "bowcaster repair": "5D+2", "computer programming/repair": "8D", "demolitions": "5D+2", "droid programming": "7D+2", "droid repair": "7D+2", "first aid": "5D", "repulsorlift repair": "6D", "security": "6D+2", "space transports repair": "8D", "space transports repair: YT-1300 transports": "10D+2" } }
+    },
+    specialAbilities: "Berserker Rage: When brawling in berserker rage, Chewbacca gains +2D to Strength.\n\nClimbing Claws: Chewbacca's retractable climbing claws grant +2D to climbing/jumping rolls involving vertical surfaces.",
+    forcePoints: 3,
+    characterPoints: 22,
+    move: 13,
+    equipment: "Bowcaster (4D), ammo bandolier, droid tool kit, starship tool kit, waist pouch",
+    capsule: "Chewbacca between the Battle of Hoth and the rescue of Han Solo — haunted by his failure to prevent Solo's imprisonment in carbonite and bound by his life debt to watch over Princess Leia in Han's absence. He and Leia form an uneasy team as they pursue leads on Solo's whereabouts, with Lando Calrissian's aid eventually drawing them into the heart of Prince Xizor's operations on Coruscant.",
+    source: "WEG40122 Shadows of the Empire p.12"
   },
 
   // ── GALAXY GUIDE 3 — Chapter 8: Adventure Hooks ──
@@ -5899,10 +6253,1210 @@ const NOTABLE_NPCS = [
     darkSidePoints: 30,
     characterPoints: 43,
     move: 10,
-    equipment: "Lightsaber (5D), body armor (+1D all attacks; respirator is necessary to keep Vader alive)",
+    equipment: "Body armor (+1D all attacks, respirator is necessary to keep Vader alive), lightsaber (5D)",
     capsule: "By the time of Endor, Vader had grown conflicted. After the confrontation with his son at Cloud City, the Dark Lord pursued his own interests while Piett commanded the fleet. The Emperor sensed Vader's conflict and orchestrated the final confrontation — using Luke as bait to either turn the young Jedi or destroy him. When Luke surrendered on Endor, Vader brought him before the Emperor aboard the Death Star II. In the throne room, father and son dueled as the Emperor watched. When Palpatine unleashed Force lightning to kill Luke, Vader — moved by his son's refusal to turn — seized the Emperor and hurled him into the reactor shaft, destroying the Sith Master at the cost of his own life. In his final moments, Anakin Skywalker asked his son to remove his mask so he could see him with his own eyes.",
     source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.48"
   },
+  {
+    name: "Emperor Palpatine (3.5 ABY)",
+    species: "Human",
+    system: "Coruscant",
+    location: "Coruscant — Imperial Palace",
+    affiliations: ["Galactic Empire"],
+    role: "Galactic Emperor / Dark Lord of the Sith",
+    type: "Named Villain",
+    stats: {
+      DEXTERITY: { base: "2D+1", skills: { "dodge": "7D" } },
+      KNOWLEDGE: { base: "4D+1", skills: { "alien species": "10D", "bureaucracy: Empire": "12D", "cultures": "9D", "intimidation": "13D", "languages": "8D", "law enforcement: Empire": "6D", "military history": "10D+2", "planetary systems": "7D", "scholar: archaic library systems": "8D", "scholar: arcane technologies": "7D", "scholar: clone vat systems": "7D+2", "scholar: dark side lore": "11D", "scholar: Jedi lore": "12D+1", "scholar: lightsaber histories": "12D", "tactics: fleets": "10D", "tactics: ground assault": "5D", "willpower": "12D+1" } },
+      MECHANICAL: { base: "2D", skills: {} },
+      PERCEPTION: { base: "4D+1", skills: { "bargain": "10D", "command": "10D", "command: Imperial forces": "12D+1", "con": "8D", "hide": "5D+2", "investigation": "7D", "persuasion": "11D", "persuasion: oration": "13D+2", "search": "7D" } },
+      STRENGTH: { base: "3D", skills: { "stamina": "6D" } },
+      TECHNICAL: { base: "2D", skills: { "lightsaber repair": "8D" } }
+    },
+    specialAbilities: "Force Skills: Control 13D, Sense 15D, Alter 14D. Force Powers — Control: absorb/dissipate energy, accelerate healing, concentrate, control pain, detoxify poison, enhance attribute, hibernation trance, rage, reduce injury, remain conscious, resist stun, short-term memory enhancement. Sense: combat sense, danger sense, instinctive astrogation, life detection, life sense, magnify senses, receptive telepathy, sense Force. Alter: injure/kill, telekinesis. Control & Sense: farseeing, lightsaber combat, projective telepathy. Control & Alter: accelerate another's healing, control another's pain, feed on dark side, Force lightning, inflict pain, return another to consciousness, transfer Force. Control, Sense & Alter: affect mind, control mind, doppelganger, drain life essence, enhanced coordination, telekinetic kill, transfer life. Sense & Alter: dim other's senses. This character is Force-sensitive.",
+    forcePoints: 33,
+    darkSidePoints: 40,
+    characterPoints: 58,
+    move: 10,
+    equipment: "",
+    source: "WEG40122 Shadows of the Empire p.25"
+  },
+
+  {
+    name: "Coruscant Guard",
+    species: "Human",
+    system: "Coruscant",
+    location: "Coruscant — Imperial City",
+    affiliations: ["Galactic Empire", "Stormtrooper Corps"],
+    role: "Coruscant Guard",
+    type: "Typical NPC",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { "blaster": "5D+2", "brawling parry": "5D", "dodge": "5D+1", "melee combat": "4D+2", "melee parry": "4D+2" } },
+      KNOWLEDGE: { base: "2D", skills: { "law enforcement": "4D" } },
+      MECHANICAL: { base: "2D", skills: {} },
+      PERCEPTION: { base: "2D", skills: { "investigation": "5D", "search": "4D+2" } },
+      STRENGTH: { base: "2D", skills: { "brawling": "4D" } },
+      TECHNICAL: { base: "2D", skills: { "first aid": "3D+2", "security": "4D" } }
+    },
+    forcePoints: 0,
+    characterPoints: 5,
+    move: 10,
+    equipment: "Blaster rifle (5D), Coruscant Guard armor (+2D physical, +1D energy, -1D to Dexterity and related skills; optic sensors — can see in darkness with no penalty), taser staff (5D stun or 5D regular damage)",
+    source: "WEG40122 Shadows of the Empire p.26"
+  },
+
+  {
+    name: "Admiral Okins",
+    species: "Human",
+    system: "Coruscant",
+    location: "Coruscant — Imperial Palace",
+    affiliations: ["Galactic Empire", "Imperial Navy"],
+    role: "Imperial Admiral",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D+2", skills: { "blaster": "4D+2", "blaster artillery": "5D", "dodge": "4D" } },
+      KNOWLEDGE: { base: "3D+1", skills: { "bureaucracy: Imperial Navy": "6D", "intimidation": "4D", "planetary systems": "4D", "tactics: capital ships": "5D+2", "tactics: fleets": "4D+2" } },
+      MECHANICAL: { base: "3D", skills: { "astrogation": "5D", "capital ship piloting": "4D", "communications": "4D+2", "sensors": "4D+1" } },
+      PERCEPTION: { base: "2D+2", skills: { "command": "6D", "investigation": "4D+1" } },
+      STRENGTH: { base: "2D+1", skills: {} },
+      TECHNICAL: { base: "3D", skills: { "computer programming/repair": "4D+2", "security": "5D" } }
+    },
+    forcePoints: 0,
+    characterPoints: 8,
+    move: 10,
+    equipment: "Blaster pistol (4D), comlink, datapad",
+    source: "WEG40122 Shadows of the Empire p.26"
+  },
+
+  {
+    name: "Bentu Pall Tarlen",
+    species: "Human",
+    system: "Coruscant",
+    location: "Coruscant — Imperial Center Construction Contracts Division",
+    affiliations: ["Galactic Empire", "Black Sun"],
+    role: "Minor Imperial Bureaucrat / Black Sun Informant",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "2D", skills: {} },
+      KNOWLEDGE: { base: "2D", skills: { "bureaucracy: Imperial": "7D", "business: construction": "7D+2", "streetwise": "4D+2", "value": "5D+1" } },
+      MECHANICAL: { base: "2D", skills: {} },
+      PERCEPTION: { base: "2D", skills: { "bargain": "6D", "command": "4D+2", "con": "5D+2", "forgery": "5D", "gambling": "6D", "investigation": "7D", "persuasion": "6D" } },
+      STRENGTH: { base: "2D", skills: {} },
+      TECHNICAL: { base: "2D", skills: { "computer programming/repair": "4D" } }
+    },
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 10,
+    equipment: "Datapad",
+    capsule: "Chief of the Imperial Center Construction Contracts Division, Tarlen steers major government construction contracts to three firms — Core Construction, Durasteel Corporation, and Hightower Conglomerate — all Black Sun fronts. He feeds them competitors' bids so they can come in lower, then approves cost overruns to pad Black Sun's profits. As a bonus, Prince Xizor receives plans for every new government and military facility built, allowing surveillance devices to be planted during construction.",
+    source: "WEG40122 Shadows of the Empire p.29"
+  },
+
+  {
+    name: "General Harrid Sendo",
+    species: "Human",
+    system: "Coruscant",
+    location: "Coruscant — Imperial Intelligence, Destabilization Branch",
+    affiliations: ["Galactic Empire", "Black Sun"],
+    role: "Imperial Intelligence Bureaucrat / Black Sun Informant",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "2D+1", skills: { "blaster": "3D" } },
+      KNOWLEDGE: { base: "4D", skills: { "bureaucracy: Imperial Intelligence": "6D+1", "intimidation": "4D+2", "languages": "5D", "law enforcement: Imperial": "5D", "planetary systems": "5D", "streetwise": "5D+2" } },
+      MECHANICAL: { base: "2D+2", skills: { "communications": "4D", "sensors": "3D" } },
+      PERCEPTION: { base: "4D", skills: { "bargain": "5D", "command": "5D+2", "con": "6D", "forgery": "6D+2", "investigation": "7D", "persuasion": "5D", "search": "4D+2" } },
+      STRENGTH: { base: "2D+1", skills: {} },
+      TECHNICAL: { base: "2D+2", skills: { "computer programming/repair": "6D", "droid programming": "4D+2", "security": "5D" } }
+    },
+    forcePoints: 0,
+    characterPoints: 3,
+    move: 10,
+    equipment: "Datapad, recording rod",
+    capsule: "A veteran Imperial Intelligence officer in the Destabilization branch, Sendo has sold out to Black Sun out of self-interest — funding a retirement villa on Avenelle. He provides Xizor with regular reports on Intelligence activities, erases inconvenient scandocs, and meets Xizor personally once a month to deliver particularly sensitive data. He is unaware he is merely one of hundreds of Black Sun informants embedded in Imperial security forces on Coruscant.",
+    source: "WEG40122 Shadows of the Empire p.30"
+  },
+
+  {
+    name: "Prince Xizor",
+    species: "Falleen",
+    system: "Coruscant",
+    location: "Coruscant — Xizor's Palace",
+    affiliations: ["Criminal Underworld", "Black Sun"],
+    role: "Leader of Black Sun / Head of Xizor Transport Systems",
+    type: "Named Villain",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "9D+2", "brawling parry": "7D", "dodge": "8D", "melee combat": "6D+2", "melee parry": "6D", "thrown weapons": "6D" } },
+      KNOWLEDGE: { base: "4D", skills: { "alien species": "6D+2", "bureaucracy: Black Sun": "9D", "bureaucracy: Imperial": "8D+1", "business: Black Sun": "9D", "business: XTS": "9D", "cultures": "6D", "intimidation": "8D+2", "languages": "5D+2", "law enforcement": "7D+2", "planetary systems": "7D", "streetwise": "8D", "streetwise: Black Sun": "10D", "value": "8D", "willpower": "7D+2" } },
+      MECHANICAL: { base: "2D", skills: { "astrogation": "4D", "space transports": "5D+2", "starfighter piloting": "6D", "starship gunnery": "5D", "starship shields": "5D" } },
+      PERCEPTION: { base: "4D", skills: { "bargain": "8D+1", "command": "9D", "con": "8D+2", "investigation": "8D", "persuasion": "7D", "persuasion: seduction": "8D", "search": "6D", "sneak": "5D" } },
+      STRENGTH: { base: "4D", skills: { "brawling": "8D", "brawling: martial arts": "9D+1", "climbing/jumping": "5D+2", "lifting": "6D", "stamina": "7D", "swimming": "5D" } },
+      TECHNICAL: { base: "2D", skills: { "computer programming/repair": "5D", "security": "7D" } }
+    },
+    specialAbilities: "Attraction Pheromones: Exuding special pheromones and changing skin color gives Falleen a +1D bonus to persuasion, with an additional +1D for each hour of continuous preparation and meditation to enhance the effects — the bonus may total no more than +3D for any one skill attempt, and the attempt must be made within one hour of completing meditation. Amphibious: Falleen can breathe water for up to 12 hours and receive +1D to swimming skill rolls.",
+    forcePoints: 4,
+    darkSidePoints: 13,
+    characterPoints: 15,
+    move: 10,
+    equipment: "Comlink, modified hold-out blaster (4D), battle-shield (+1D energy, +2D physical; use melee parry or dodge skill depending on type of attack)",
+    capsule: "Publicly known as president of Xizor Transport Systems, Xizor is secretly the head of Black Sun, the galaxy's most powerful criminal syndicate. A century-old Falleen prince, he plays the Empire and Rebellion against each other while gathering power for himself. His personal vendetta against Darth Vader — whose orbital bombardment of Falleen killed 200,000 including Xizor's entire family — drives him to engineer Vader's downfall by plotting to assassinate Luke Skywalker and frame Vader for the act.",
+    source: "WEG40122 Shadows of the Empire p.33"
+  },
+
+  {
+    name: "Guri",
+    species: "Droid (Human Replica)",
+    system: "Coruscant",
+    location: "Coruscant — Xizor's Palace",
+    affiliations: ["Criminal Underworld", "Black Sun"],
+    role: "Chief Lieutenant and Bodyguard to Prince Xizor",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "5D", skills: { "blaster": "7D", "brawling parry": "11D", "dodge": "8D", "melee combat": "7D", "melee parry": "7D", "thrown weapons": "7D" } },
+      KNOWLEDGE: { base: "3D", skills: { "bureaucracy: Black Sun": "7D", "business: Black Sun": "7D", "business: XTS": "7D", "intimidation": "9D", "streetwise": "6D", "streetwise: Black Sun": "7D", "survival": "6D" } },
+      MECHANICAL: { base: "2D", skills: { "astrogation": "4D", "repulsorlift operation": "4D", "space transports": "5D", "starfighter piloting": "4D", "starship gunnery": "4D", "starship shields": "4D" } },
+      PERCEPTION: { base: "4D", skills: { "command": "6D", "investigation": "7D", "search": "6D", "sneak": "7D" } },
+      STRENGTH: { base: "5D", skills: { "brawling: martial arts": "10D", "climbing/jumping": "7D" } },
+      TECHNICAL: { base: "2D", skills: { "first aid: Falleen": "6D", "security": "7D" } }
+    },
+    specialAbilities: "Human Replica: Designed to pass for human in every aspect, including behavior and biology. A Very Difficult sensors roll is needed to notice 'something odd' about a human replica droid masquerading as human. Equipped with: humanoid body, highly modified AA-1 Verbo-brain, human bio-fibers, clone vat-grown skin.",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 15,
+    equipment: "None carried — Guri is herself the weapon",
+    capsule: "One of only a handful of human replica droids ever built, Guri was constructed by outlaw tech Simonelle the Ingoian for nine million credits on behalf of Prince Xizor. She serves as Xizor's chief lieutenant, enforcer, and bodyguard, and is so convincingly human that most assume she is Black Sun's Underlord. Her programming makes her absolutely loyal to Xizor and drives her to eliminate any threat to him or Black Sun — including, ultimately, her own creator.",
+    source: "WEG40122 Shadows of the Empire p.34"
+  },
+
+  {
+    name: "Clezo",
+    species: "Rodian",
+    system: "Rodia",
+    location: "Rodia — Chattza Clan Territory",
+    affiliations: ["Criminal Underworld", "Black Sun"],
+    role: "Black Sun Vigo",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "4D", skills: { "blaster": "6D", "brawling parry": "4D+2", "dodge": "5D", "melee combat": "5D+2" } },
+      KNOWLEDGE: { base: "3D", skills: { "alien species": "4D+2", "bureaucracy: Black Sun": "8D", "business: Black Sun": "7D+2", "intimidation": "5D+1", "law enforcement": "5D+2", "planetary systems": "6D", "streetwise": "6D", "streetwise: Black Sun": "8D", "value": "8D", "willpower": "7D" } },
+      MECHANICAL: { base: "2D", skills: {} },
+      PERCEPTION: { base: "3D+2", skills: { "bargain": "7D+2", "command": "8D", "con": "6D", "forgery": "5D+2", "gambling": "8D", "investigation": "7D", "persuasion": "7D", "search": "5D", "sneak": "5D" } },
+      STRENGTH: { base: "3D+1", skills: { "brawling": "5D", "stamina": "4D" } },
+      TECHNICAL: { base: "2D", skills: { "computer programming/repair": "5D", "droid programming": "4D", "security": "3D+2" } }
+    },
+    forcePoints: 1,
+    darkSidePoints: 3,
+    characterPoints: 7,
+    move: 10,
+    equipment: "Datapad, finely-tailored business suit, hold-out blaster (3D), knife (STR+1D)",
+    capsule: "A member of the fierce Chattza clan of Rodians, Clezo runs his Black Sun operations like a business — conservative, diversified, and discreet. He funds bounty hunting groups including the Granse Confederacy and House Tresario, and controls much of Rodia's criminal underworld. He is currently maneuvering to install his subordinate Chorh-dha as Chattza clan chief after assassinating current leader Navik the Red, consolidating Black Sun's grip on his homeworld.",
+    source: "WEG40122 Shadows of the Empire p.37"
+  },
+
+  {
+    name: "Durga the Hutt",
+    species: "Hutt",
+    system: "Nar Shaddaa",
+    location: "Nar Shaddaa",
+    affiliations: ["Criminal Underworld", "Black Sun"],
+    role: "Black Sun Vigo",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "2D", skills: {} },
+      KNOWLEDGE: { base: "5D", skills: { "bureaucracy: Black Sun": "7D", "bureaucracy: Imperial": "6D", "business: Black Sun": "7D", "intimidation": "6D+2", "law enforcement": "6D+1", "streetwise": "7D", "streetwise: Black Sun": "9D", "value": "7D", "value: slaves": "9D" } },
+      MECHANICAL: { base: "2D", skills: {} },
+      PERCEPTION: { base: "5D", skills: { "bargain": "8D", "command": "7D", "con": "8D", "gambling": "6D+2", "investigation": "6D", "persuasion": "7D+2" } },
+      STRENGTH: { base: "4D", skills: {} },
+      TECHNICAL: { base: "2D", skills: {} }
+    },
+    specialAbilities: "Force Resistance: Hutts have an innate defense against Force-based mind manipulation techniques and roll double their Perception dice to resist such attacks.",
+    forcePoints: 0,
+    darkSidePoints: 4,
+    characterPoints: 5,
+    move: 3,
+    equipment: "",
+    capsule: "A Hutt Vigo who outwardly plays Black Sun's political games while secretly plotting to overthrow Xizor by rallying the other Vigos. He has manipulated Vigo Green into advancing his schemes, staying distant enough to avoid blame when Green inevitably fails. His operations center on smuggling through Nar Shaddaa and Hutt-affiliated channels, slaving, and gun-running. His true loyalty is only to himself.",
+    source: "WEG40122 Shadows of the Empire p.38"
+  },
+
+  {
+    name: "Green",
+    species: "Human",
+    system: "Coruscant",
+    location: "Coruscant — Black Sun Operations",
+    affiliations: ["Criminal Underworld", "Black Sun"],
+    role: "Black Sun Vigo",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "5D", "dodge": "6D", "melee combat": "5D+1", "pick pocket": "4D+2" } },
+      KNOWLEDGE: { base: "3D+2", skills: { "bureaucracy: Black Sun": "6D+2", "bureaucracy: Imperial": "5D+1", "business: Black Sun": "5D", "cultures: Core Worlds": "7D", "intimidation": "4D+2", "law enforcement: Imperial": "6D", "planetary systems: Core Worlds": "5D+2", "streetwise": "6D", "streetwise: Black Sun": "7D", "value": "6D+2" } },
+      MECHANICAL: { base: "2D+1", skills: { "communications": "4D+2", "sensors": "5D" } },
+      PERCEPTION: { base: "3D", skills: { "bargain": "5D+1", "command": "6D", "con": "5D+2", "forgery": "6D", "gambling": "5D", "investigation": "7D", "persuasion": "5D", "search": "5D+2" } },
+      STRENGTH: { base: "3D", skills: {} },
+      TECHNICAL: { base: "3D", skills: { "computer programming/repair": "5D", "droid programming": "5D", "droid repair": "4D+2", "security": "5D+2" } }
+    },
+    forcePoints: 0,
+    darkSidePoints: 2,
+    characterPoints: 4,
+    move: 10,
+    equipment: "Comlink, datapad, fancy robes, hold-out blaster (3D), knife (STR+1D)",
+    capsule: "The only human among Xizor's Vigos, Green is foolishly ambitious and increasingly neglecting his duties in pursuit of a scheme to usurp Xizor's position — a scheme secretly encouraged by Durga the Hutt, who is using Green as a pawn. His primary contribution to Black Sun is a Core Worlds spynet specializing in racketeering and blackmail. He is unaware that his seditious activities have already come to Xizor's attention.",
+    source: "WEG40122 Shadows of the Empire p.39"
+  },
+
+  {
+    name: "Kreet'ah",
+    species: "Kian'thar",
+    system: "Shaum Hii",
+    location: "Shaum Hii",
+    affiliations: ["Criminal Underworld", "Black Sun"],
+    role: "Black Sun Vigo",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "2D+1", skills: { "archaic guns": "4D", "blaster": "3D+2", "brawling parry": "4D+2" } },
+      KNOWLEDGE: { base: "4D", skills: { "alien species": "5D+1", "bureaucracy": "7D", "bureaucracy: Black Sun": "8D+2", "business": "6D+1", "business: Black Sun": "7D", "law enforcement": "5D+2", "streetwise": "5D+2", "streetwise: Black Sun": "7D", "survival: aquatic": "5D", "value": "6D", "willpower": "5D+1" } },
+      MECHANICAL: { base: "2D+2", skills: { "beast riding: bentail": "5D+2", "repulsorlift operation": "4D" } },
+      PERCEPTION: { base: "4D+1", skills: { "bargain": "6D+1", "command": "7D", "con": "6D+2", "forgery": "5D", "investigation": "8D", "persuasion": "6D" } },
+      STRENGTH: { base: "2D+2", skills: { "brawling": "5D", "swimming": "6D" } },
+      TECHNICAL: { base: "2D", skills: { "computer programming/repair": "5D", "repulsorlift repair": "3D+1", "security": "4D" } }
+    },
+    specialAbilities: "Emotion Sense 5D: Kian'thar can sense the intentions and emotions of others. Base difficulty is Easy, with an additional +3 to the difficulty for every meter away the target is. Characters can resist with Perception or control rolls: for every 4 points on their roll (round down), add +1 to the difficulty.",
+    forcePoints: 3,
+    darkSidePoints: 1,
+    characterPoints: 11,
+    move: 10,
+    equipment: "Datapad, derlac whistle, rancher clothes",
+    capsule: "Kreet'ah inherited his Vigo position from his mother, a rare distinction in Black Sun. Raised on Shaum Hii managing his family's derlac cattle yards, he brings a businesslike rancher's pragmatism to his role. His spynet has infiltrated major galactic corporations including Sienar Fleet Systems and SoroSuub, stealing secrets, blackmailing executives, and misrouting shipments. He stays out of the Vigos' infighting — his position is hereditary and secure.",
+    source: "WEG40122 Shadows of the Empire p.40"
+  },
+
+  {
+    name: "Lonay",
+    species: "Twi'lek",
+    system: "Ryloth",
+    location: "Ryloth",
+    affiliations: ["Criminal Underworld", "Black Sun"],
+    role: "Black Sun Vigo",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "brawling parry": "5D", "dodge": "4D+1", "melee combat": "5D", "melee parry": "4D+2", "pick pocket": "5D+2", "thrown weapons": "3D+2" } },
+      KNOWLEDGE: { base: "3D", skills: { "alien species": "7D", "bureaucracy: Black Sun": "6D+2", "business: Black Sun": "7D", "cultures": "5D", "languages": "4D+1", "law enforcement": "5D", "law enforcement: Imperial": "5D+2", "planetary systems": "7D", "streetwise": "6D", "streetwise: Black Sun": "7D+1", "value": "5D", "value: slaves": "6D+1", "value: weapons": "6D", "willpower": "4D+2" } },
+      MECHANICAL: { base: "2D", skills: {} },
+      PERCEPTION: { base: "4D+1", skills: { "bargain": "7D+2", "command": "6D", "con": "6D+2", "forgery": "5D", "gambling": "5D+2", "persuasion": "6D", "sneak": "5D" } },
+      STRENGTH: { base: "2D+2", skills: { "brawling": "5D", "lifting": "4D+2", "stamina": "4D" } },
+      TECHNICAL: { base: "2D", skills: { "computer programming/repair": "3D+2", "droid repair": "3D" } }
+    },
+    specialAbilities: "Head-tails: Twi'leks can use their head-tails to communicate secretly with each other even in a room full of others. The complex movements are a 'secret' language in which all Twi'leks are fluent.",
+    forcePoints: 5,
+    darkSidePoints: 2,
+    characterPoints: 16,
+    move: 10,
+    equipment: "Jeweled dagger (STR+2), robes and jewelry",
+    capsule: "A Twi'lek Vigo who keeps his operations confined to the Outer Rim, focusing on slaving, gun-running, spice smuggling, and gambling. He controls the Mytaranor Slaving Council and exploits ryll sources on Ryloth. Rebel activity has cut into his profits significantly, but he knows better than to show ambition beyond his Vigo rank — Xizor's tolerance for reduced revenues has limits.",
+    source: "WEG40122 Shadows of the Empire p.40"
+  },
+
+  {
+    name: "Perit",
+    species: "Mon Calamari",
+    system: "Coruscant",
+    location: "Coruscant — Black Sun Operations",
+    affiliations: ["Criminal Underworld", "Black Sun"],
+    role: "Black Sun Vigo / Technology Expert",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D", skills: {} },
+      KNOWLEDGE: { base: "3D+2", skills: { "alien species": "4D+2", "bureaucracy: Black Sun": "6D+2", "bureaucracy: Sienar Fleet Systems": "7D", "business: Black Sun": "6D", "business: Sienar Fleet Systems": "7D", "intimidation": "5D", "streetwise": "6D+2", "streetwise: Black Sun": "8D", "value": "6D", "willpower": "5D+1" } },
+      MECHANICAL: { base: "2D", skills: { "communications": "3D+2", "repulsorlift operation": "4D", "sensors": "3D+1" } },
+      PERCEPTION: { base: "3D", skills: { "bargain": "4D+2", "command": "6D", "con": "4D", "forgery": "8D", "investigation": "7D+1", "persuasion": "5D", "search": "5D+2" } },
+      STRENGTH: { base: "2D+1", skills: {} },
+      TECHNICAL: { base: "4D", skills: { "computer programming/repair": "9D", "droid programming": "7D", "droid repair": "6D+1", "security": "6D" } }
+    },
+    specialAbilities: "Moist Environments: When in moist environments, Mon Calamari receive a +1D bonus to all Dexterity, Perception, and Strength attribute and skill checks (psychological advantage). Dry Environments: When in very dry environments, Mon Calamari suffer a -1D penalty to all Dexterity, Perception, and Strength attribute and skill checks (psychological disadvantage). Aquatic: Mon Calamari can breathe both air and water and can withstand extreme pressures found in ocean depths.",
+    forcePoints: 4,
+    darkSidePoints: 1,
+    characterPoints: 15,
+    move: 10,
+    equipment: "Comlink, datapad, portable computer",
+    capsule: "A former Imperial slave who served a senior Sienar Fleet Systems executive on Byblos, Perit taught himself computer slicing by snooping Sienar's corporate datanet. Transferred to Coruscant and eventually into Xizor's service, he rose from sub-lieutenant to Vigo when Xizor became Underlord. He runs the technology and financial crime wing of Black Sun — bank fraud, credit laundering, corporate espionage, and electronic manipulation of sector economies — with a team of Verpine slicers and Nimbanese bankers.",
+    source: "WEG40122 Shadows of the Empire p.42"
+  },
+
+  {
+    name: "Sprax",
+    species: "Nalroni",
+    system: "Celanon",
+    location: "Celanon",
+    affiliations: ["Criminal Underworld", "Black Sun"],
+    role: "Black Sun Vigo / Trade and Shipping Specialist",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "5D", "dodge": "4D+2", "pick pocket": "6D" } },
+      KNOWLEDGE: { base: "4D", skills: { "bureaucracy": "6D", "bureaucracy: Black Sun": "7D+2", "business": "6D+2", "business: Black Sun": "8D", "business: Brentaal trade houses": "7D+2", "business: XTS": "7D", "cultures": "4D+2", "intimidation": "5D", "languages": "4D+2", "planetary systems": "6D", "streetwise": "5D", "streetwise: Black Sun": "6D+2", "value": "8D" } },
+      MECHANICAL: { base: "2D", skills: {} },
+      PERCEPTION: { base: "4D+2", skills: { "bargain": "7D+1", "command": "6D", "con": "5D", "forgery": "6D+2", "investigation": "7D+1", "persuasion": "6D" } },
+      STRENGTH: { base: "2D+1", skills: {} },
+      TECHNICAL: { base: "2D", skills: { "computer programming/repair": "4D+2", "security": "4D" } }
+    },
+    forcePoints: 3,
+    darkSidePoints: 1,
+    characterPoints: 11,
+    move: 9,
+    equipment: "Comlink, datapad, hold-out blaster (3D)",
+    capsule: "Recruited into Black Sun as a young Nalroni heir from Celanon, Sprax was apprenticed to a Brentaal merchant house before joining Xizor Transport Systems as a cover for his Vigo induction. His criminal empire revolves around the theft and misrouting of shipments — using bribed executives, shipjackers, and crooked starport officials — and he also quietly supplies both the Empire and Rebel Alliance with weapons and starship parts on Xizor's orders, hedging Black Sun's bets on the war's outcome.",
+    source: "WEG40122 Shadows of the Empire p.43"
+  },
+
+  {
+    name: "Vekker",
+    species: "Quarren",
+    system: "Calamari",
+    location: "Calamari",
+    affiliations: ["Criminal Underworld", "Black Sun"],
+    role: "Black Sun Vigo / Entertainment and Casino Operations",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "pick pocket": "5D" } },
+      KNOWLEDGE: { base: "4D", skills: { "bureaucracy: Black Sun": "6D", "business": "5D+2", "business: Black Sun": "6D+2", "cultures": "5D", "law enforcement": "5D+2", "planetary systems": "5D", "streetwise": "6D", "streetwise: Black Sun": "7D", "value": "5D" } },
+      MECHANICAL: { base: "2D+1", skills: { "astrogation": "3D", "repulsorlift operation": "4D", "space transports": "3D+2" } },
+      PERCEPTION: { base: "3D+2", skills: { "bargain": "4D+1", "command": "5D", "con": "6D", "forgery": "4D+2", "gambling": "7D", "investigation": "4D", "search": "5D" } },
+      STRENGTH: { base: "3D", skills: {} },
+      TECHNICAL: { base: "2D", skills: { "computer programming/repair": "3D+2", "droid programming": "4D" } }
+    },
+    specialAbilities: "Aquatic: Quarren can breathe both air and water and can withstand extreme pressures found in ocean depths.",
+    forcePoints: 0,
+    characterPoints: 6,
+    move: 10,
+    equipment: "",
+    capsule: "The most unambitious of Xizor's Vigos, Vekker inherited a crime syndicate built around casinos, entertainment venues, and leisure industries — legal fronts that practically run themselves. He has no desire to expand his power or plot against his peers, trading ambition for stability. Xizor tolerates him precisely because a contented Vigo is a predictable one.",
+    source: "WEG40122 Shadows of the Empire p.44"
+  },
+
+  {
+    name: "Wumdi",
+    species: "Etti",
+    system: "Etti IV",
+    location: "Etti IV",
+    affiliations: ["Criminal Underworld", "Black Sun"],
+    role: "Black Sun Vigo / Corporate Sector Authority Operations",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "5D", "dodge": "6D", "pick pocket": "5D+2" } },
+      KNOWLEDGE: { base: "4D", skills: { "bureaucracy": "6D", "bureaucracy: Black Sun": "7D+1", "bureaucracy: CSA": "8D", "business: Black Sun": "6D+2", "business: CSA": "7D", "cultures": "4D+2", "intimidation": "5D", "law enforcement: CSA": "7D", "planetary systems: CSA": "6D+2", "streetwise": "6D", "streetwise: Black Sun": "7D+1", "value": "6D" } },
+      MECHANICAL: { base: "2D+2", skills: { "astrogation": "3D+1", "communications": "3D+2", "sensors": "4D", "space transports": "4D" } },
+      PERCEPTION: { base: "3D+2", skills: { "bargain": "5D+1", "command": "6D", "con": "6D", "investigation": "6D+2", "persuasion": "6D" } },
+      STRENGTH: { base: "2D+1", skills: {} },
+      TECHNICAL: { base: "2D+1", skills: {} }
+    },
+    forcePoints: 2,
+    darkSidePoints: 1,
+    characterPoints: 5,
+    move: 8,
+    equipment: "Blaster pistol (4D), comlink, datapad",
+    capsule: "Black Sun's primary operative within the Corporate Sector, Wumdi maintains a palatial estate on Etti IV and runs a vast network of paid-off CSA officials, crooked Espos, and reprogrammed droids. His operations cover casino and pleasure palace operations for CSA workers, commerce piracy, and corporate espionage. He has been skimming large sums from Black Sun's revenue — and his own spynet is too weak to spot Xizor's informants watching him.",
+    source: "WEG40122 Shadows of the Empire p.45"
+  },
+
+  {
+    name: "Avaro Sookcool",
+    species: "Rodian",
+    system: "Rodia",
+    location: "Rodia — Equator City",
+    affiliations: ["Criminal Underworld", "Black Sun"],
+    role: "Black Sun Casino Boss / Rodia Operations",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "4D", skills: { "blaster: hold-out blaster": "6D", "dodge": "5D", "pick pocket": "6D+2" } },
+      KNOWLEDGE: { base: "3D", skills: { "bureaucracy": "5D", "business: casinos": "6D", "cultures": "4D+1", "languages": "4D", "streetwise: Rodia": "6D+2", "value": "5D+1" } },
+      MECHANICAL: { base: "2D", skills: {} },
+      PERCEPTION: { base: "3D+2", skills: { "bargain": "5D+2", "command": "4D", "con": "5D", "gambling": "6D", "investigation": "6D", "persuasion": "6D+2" } },
+      STRENGTH: { base: "3D+1", skills: {} },
+      TECHNICAL: { base: "2D", skills: { "computer programming/repair": "3D+2", "droid programming": "4D", "security": "4D+2" } }
+    },
+    forcePoints: 0,
+    characterPoints: 7,
+    move: 10,
+    equipment: "Datapad, hold-out blaster (3D)",
+    capsule: "Black Sun's most prominent representative on Rodia, Sookcool runs the Flip of the Credit casino in Equator City — a modest establishment that serves as the nerve center for Black Sun's Rodia operations. Payments flow through rigged gambling machines, syndicate business is conducted in the casino lounges, and all visitors are scanned by hidden surveillance. A member of the Tetsus clan, he is protected from Navik the Red's persecution by his Black Sun ties.",
+    source: "WEG40122 Shadows of the Empire p.47"
+  },
+
+  {
+    name: "Howzmin",
+    species: "Human",
+    system: "Coruscant",
+    location: "Coruscant — Xizor's Palace",
+    affiliations: ["Criminal Underworld", "Black Sun"],
+    role: "Chief of Security, Xizor's Palace",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "7D", "brawling parry": "6D", "dodge": "5D", "melee combat": "6D" } },
+      KNOWLEDGE: { base: "3D", skills: { "bureaucracy: Xizor's Palace": "7D", "business": "5D", "intimidation": "5D+2", "streetwise": "5D", "streetwise: Black Sun": "7D" } },
+      MECHANICAL: { base: "2D", skills: { "communications": "3D+2", "repulsorlift operation": "5D", "sensors": "4D" } },
+      PERCEPTION: { base: "3D", skills: { "investigation": "5D", "search": "6D", "sneak": "5D+1" } },
+      STRENGTH: { base: "4D", skills: { "brawling": "7D", "climbing/jumping": "5D+2", "lifting": "5D", "stamina": "6D" } },
+      TECHNICAL: { base: "3D", skills: { "computer programming/repair": "6D", "droid programming": "6D", "security": "7D" } }
+    },
+    specialAbilities: "Infrared Cyber-Optics: Adds +1D to Perception in darkness or obscured visual conditions. Pager Implant: Cybernetic implant remotely activated by Xizor, allowing silent summons anywhere in the palace.",
+    forcePoints: 1,
+    darkSidePoints: 2,
+    characterPoints: 4,
+    move: 10,
+    equipment: "Blaster pistol (4D), security code card",
+    capsule: "Chief of security and operations at Xizor's palace on Coruscant, Howzmin oversees guards, monitors all surveillance feeds, controls blast door codes and repulsorlift tubeways, and personally escorts important guests inside. He is short, squat, bald, and rarely speaks — preferring gestures and nods. His black-chromed teeth and cybernetic eye implants (infrared vision) and pager implant make him unsettling to visitors.",
+    source: "WEG40122 Shadows of the Empire p.48"
+  },
+
+  {
+    name: "Zan Pike",
+    species: "Epicanthix",
+    system: "Bunduki",
+    location: "Bunduki — Pacanth Reach",
+    affiliations: ["The Fringe", "Black Sun"],
+    role: "Martial Arts Assassin",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "4D+2", skills: { "brawling parry": "6D", "dodge": "7D", "running": "5D+2" } },
+      KNOWLEDGE: { base: "2D", skills: { "cultures": "5D", "intimidation": "4D", "languages": "3D+2", "planetary systems": "4D", "streetwise": "3D+2", "survival": "4D+2", "willpower": "5D" } },
+      MECHANICAL: { base: "2D", skills: {} },
+      PERCEPTION: { base: "4D", skills: { "search": "5D", "sneak": "6D+2" } },
+      STRENGTH: { base: "3D+1", skills: { "brawling: teras kasi martial arts": "8D", "climbing/jumping": "5D+2", "stamina": "5D" } },
+      TECHNICAL: { base: "2D", skills: {} }
+    },
+    specialAbilities: "Brawling: Teras Kasi Martial Arts — A character making a teras kasi attack may not make any other actions in the round, including dodges or parries. Before attacking, split the brawling: teras kasi martial arts dice into 'attack dice' and 'damage dice.' Roll only the attack dice to hit; if successful, add the damage dice to the character's Strength when determining damage. No more than half the teras kasi dice may be allocated to damage.",
+    forcePoints: 1,
+    darkSidePoints: 2,
+    characterPoints: 8,
+    move: 10,
+    equipment: "Palawa tunic, satchel with personal mementos",
+    capsule: "One of the Epicanthix Pike twins, trained in teras kasi martial arts ('steel hands') by the Followers of Palawa on Bunduki. Zan is the more combat-focused of the two, with the highest dodge and teras kasi rating. The sisters are hired freelance by Xizor with no formal Black Sun ties.",
+    source: "WEG40122 Shadows of the Empire p.50"
+  },
+
+  {
+    name: "Zu Pike",
+    species: "Epicanthix",
+    system: "Bunduki",
+    location: "Bunduki — Pacanth Reach",
+    affiliations: ["The Fringe", "Black Sun"],
+    role: "Martial Arts Assassin",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "4D+2", skills: { "brawling parry": "5D", "dodge": "5D", "running": "5D" } },
+      KNOWLEDGE: { base: "2D", skills: { "cultures": "5D", "intimidation": "5D", "languages": "4D", "planetary systems": "4D+2", "streetwise": "5D", "survival": "4D+2", "willpower": "4D" } },
+      MECHANICAL: { base: "2D", skills: {} },
+      PERCEPTION: { base: "4D", skills: { "search": "5D+2", "sneak": "7D" } },
+      STRENGTH: { base: "3D+1", skills: { "brawling: teras kasi martial arts": "7D+2", "climbing/jumping": "5D", "stamina": "5D" } },
+      TECHNICAL: { base: "2D", skills: {} }
+    },
+    specialAbilities: "Brawling: Teras Kasi Martial Arts — A character making a teras kasi attack may not make any other actions in the round, including dodges or parries. Before attacking, split the brawling: teras kasi martial arts dice into 'attack dice' and 'damage dice.' Roll only the attack dice to hit; if successful, add the damage dice to the character's Strength when determining damage. No more than half the teras kasi dice may be allocated to damage.",
+    forcePoints: 1,
+    darkSidePoints: 2,
+    characterPoints: 10,
+    move: 10,
+    equipment: "Datapad with poetry, Palawa tunic, satchel with personal mementos",
+    capsule: "One of the Epicanthix Pike twins, trained in teras kasi martial arts by the Followers of Palawa on Bunduki. Zu is the stealthier of the two — sneak 7D vs Zan's combat-focused dodge — and carries a datapad with poetry, reflecting the philosophical education they received alongside their martial training.",
+    source: "WEG40122 Shadows of the Empire p.50"
+  },
+
+  {
+    name: "Dash Rendar (3.5 ABY)",
+    species: "Human",
+    system: "Generic & Varies",
+    location: "Various",
+    affiliations: ["The Fringe"],
+    role: "Smuggler / Mercenary",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "7D", "blaster: heavy blaster pistol": "8D+2", "brawling parry": "5D", "dodge": "7D+2", "grenade": "4D+2", "melee combat": "6D", "melee parry": "6D", "pick pocket": "5D", "running": "4D", "vehicle blasters": "3D+2" } },
+      KNOWLEDGE: { base: "2D", skills: { "alien species": "5D", "bureaucracy": "4D", "business": "3D+2", "business: smugglers": "5D", "intimidation": "5D+2", "languages": "4D", "law enforcement": "5D", "planetary systems": "6D+2", "streetwise": "7D+1", "survival": "5D", "value": "5D", "willpower": "4D" } },
+      MECHANICAL: { base: "4D", skills: { "astrogation": "7D+2", "capital ship piloting": "5D", "repulsorlift operation": "8D", "space transports": "9D", "starfighter piloting": "8D", "starship gunnery": "8D", "starship shields": "7D+1", "swoop operation": "7D+2" } },
+      PERCEPTION: { base: "3D", skills: { "bargain": "7D+2", "command": "5D", "con": "6D+2", "forgery": "6D", "gambling": "6D+1", "hide": "5D", "persuasion": "5D+2", "search": "5D", "sneak": "5D" } },
+      STRENGTH: { base: "3D", skills: { "brawling": "6D+2", "climbing/jumping": "5D", "lifting": "5D+2", "stamina": "4D" } },
+      TECHNICAL: { base: "3D", skills: { "blaster repair": "4D", "computer programming/repair": "6D", "demolition": "4D", "droid programming": "6D+2", "droid repair": "6D", "repulsorlift repair": "4D+2", "security": "5D+2", "space transports repair": "8D", "starship weapon repair": "7D" } }
+    },
+    forcePoints: 4,
+    darkSidePoints: 1,
+    characterPoints: 7,
+    move: 10,
+    equipment: "Blast vest (+1D physical, +1 energy, torso only), heavy blaster pistol (5D), visual wrist comm, back-up comlink",
+    capsule: "A hot-shot freighter jock who flies the heavily modified Outrider with his co-pilot droid Leebo. Banished from the Core Worlds after his brother's freighter accident destroyed Emperor Palpatine's private museum, Dash has carved out a reputation in the fringe as one of the best pilots and shots around. A pure mercenary — half up front, half on completion — he has never joined the Rebellion and never intends to, though he accepts their credits readily enough.",
+    source: "WEG40122 Shadows of the Empire p.52"
+  },
+
+  {
+    name: "Leebo (LE-BO2D9) (3.5 ABY)",
+    species: "Droid (LE-Series Repair Droid)",
+    system: "Generic & Varies",
+    location: "Various",
+    affiliations: ["The Fringe"],
+    role: "Co-pilot Droid / Repair Specialist",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "1D", skills: { "dodge": "3D" } },
+      KNOWLEDGE: { base: "3D", skills: { "bureaucracy: starport customs": "4D", "languages": "5D", "law enforcement: Imperial Customs": "4D", "planetary systems": "5D", "streetwise": "4D+2" } },
+      MECHANICAL: { base: "2D", skills: { "astrogation": "3D", "communications": "3D", "sensors": "3D", "space transports": "5D+2", "starship gunnery": "4D", "starship shields": "4D" } },
+      PERCEPTION: { base: "1D", skills: { "bargain": "3D", "investigation": "2D", "search": "3D" } },
+      STRENGTH: { base: "3D", skills: {} },
+      TECHNICAL: { base: "3D", skills: { "capital starship repair": "4D", "computer programming/repair": "5D", "security": "3D+2", "space transports repair": "5D" } }
+    },
+    specialAbilities: "Equipped with: stripped-down skeletal body (two arms, two legs, torso, head); visual and audio sensors (human range); holographic projector/recorder; vocabulator speech/sound system; broad-band antenna receiver/transmitter; long-range shielded single-channel comlink linked to Dash Rendar's unit. Quirky sense of humor programmed by a former comedy-circuit owner.",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 7,
+    equipment: "Satchel with starship repair tools",
+    capsule: "An early-model Cybot Galactica LE-series repair droid who has passed through many hands — starport portmaster, smuggler captains, a comedian touring the Outer Rim — before being acquired by Dash Rendar. Each owner added programming layers; Leebo now handles translation, customs negotiations, astrogation, and combat flying as readily as he does repairs. His quirky humor is a feature, not a bug.",
+    source: "WEG40122 Shadows of the Empire p.54"
+  },
+
+  {
+    name: "Big Gizz",
+    species: "Human",
+    system: "Tatooine",
+    location: "Tatooine — Mos Eisley",
+    affiliations: ["Criminal Underworld", "Jabba's Organization"],
+    role: "Swoop Gang Leader",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "6D+2", "brawling parry": "4D", "dodge": "5D", "melee combat": "5D", "melee parry": "5D" } },
+      KNOWLEDGE: { base: "2D", skills: { "intimidation": "5D+2", "streetwise": "5D", "survival: desert": "4D" } },
+      MECHANICAL: { base: "4D", skills: { "repulsorlift operation": "5D", "swoop operation": "6D+2" } },
+      PERCEPTION: { base: "3D+2", skills: { "command": "5D", "con": "4D+2", "gambling": "6D" } },
+      STRENGTH: { base: "3D", skills: { "brawling": "5D" } },
+      TECHNICAL: { base: "2D+1", skills: { "repulsorlift repair": "4D" } }
+    },
+    forcePoints: 1,
+    darkSidePoints: 5,
+    characterPoints: 3,
+    move: 10,
+    equipment: "Blaster carbine (5D), boot knife (STR+1D), gear bag (with 100 credits, rations, and snuff of ryll), heavy blaster pistol (5D), swoop",
+    capsule: "The wild-haired, gold-ring-nosed leader of Jabba's swoop gang on Tatooine. Gizz runs the gang like his personal party — quick to incite violence, slow to rein it in, and periodically forgetting he answers to Jabba. Jabba tolerates his ruffian theatrics because they keep people afraid, but occasionally feeds one of Gizz's underlings to the rancor to remind him who is in charge.",
+    source: "WEG40122 Shadows of the Empire p.56"
+  },
+
+  {
+    name: "Spiker",
+    species: "Human",
+    system: "Tatooine",
+    location: "Tatooine — Mos Eisley",
+    affiliations: ["Criminal Underworld", "Jabba's Organization"],
+    role: "Swoop Gang Lieutenant / Jabba's Informant",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "7D+2", "brawling parry": "5D", "dodge": "6D", "melee combat": "5D", "melee parry": "5D" } },
+      KNOWLEDGE: { base: "2D", skills: { "intimidation": "5D", "streetwise": "5D+2", "survival: desert": "5D", "willpower": "4D" } },
+      MECHANICAL: { base: "4D", skills: { "repulsorlift operation": "6D", "swoop operation": "7D+2" } },
+      PERCEPTION: { base: "4D", skills: { "command": "5D", "con": "6D", "gambling": "5D", "search": "6D", "sneak": "5D+2" } },
+      STRENGTH: { base: "3D", skills: { "brawling": "6D", "climbing/jumping": "5D+1", "stamina": "4D" } },
+      TECHNICAL: { base: "2D", skills: { "first aid": "4D", "security": "4D+2" } }
+    },
+    specialAbilities: "Spiked Armor: +2D physical, +1D energy, -1D Dexterity and related skills; spikes cause STR+1D damage when brawling.",
+    forcePoints: 1,
+    darkSidePoints: 3,
+    characterPoints: 6,
+    move: 10,
+    equipment: "Heavy blaster pistol (5D), hold-out blaster (3D), 2 knives (STR+1D), spiked armor (+2D physical, +1D energy, -1D Dexterity and related skills; spikes cause STR+1D damage when brawling), swoop",
+    capsule: "Gizz's lieutenant and secret informant for Jabba, placed in the gang to ensure Jabba receives his cut of all profits. Spiker plays the role of a maniacal, death-defying thrill-seeker — the insanity is an act. In reality he has the strategic mind the gang actually runs on. His spiked armor was a gift from Jabba to keep his spy protected.",
+    source: "WEG40122 Shadows of the Empire p.57"
+  },
+
+  {
+    name: "Typical Swoop Trooper (Jabba's Gang)",
+    species: "Human",
+    system: "Tatooine",
+    location: "Tatooine — Mos Eisley",
+    affiliations: ["Criminal Underworld", "Jabba's Organization"],
+    role: "Swoop Gang Member",
+    type: "Typical NPC",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { "blaster": "4D+2", "dodge": "3D", "melee combat": "4D" } },
+      KNOWLEDGE: { base: "2D", skills: { "intimidation": "3D", "streetwise": "2D+2" } },
+      MECHANICAL: { base: "2D", skills: { "swoop operation": "5D" } },
+      PERCEPTION: { base: "2D", skills: {} },
+      STRENGTH: { base: "2D", skills: { "brawling": "4D+2" } },
+      TECHNICAL: { base: "2D", skills: {} }
+    },
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 10,
+    equipment: "Blaster pistol (4D), various melee weapons (STR+2 to STR+3D), swoop",
+    source: "WEG40122 Shadows of the Empire p.58"
+  },
+
+  {
+    name: "Jix",
+    species: "Human",
+    system: "Tatooine",
+    location: "Tatooine — Mos Eisley",
+    affiliations: ["Galactic Empire"],
+    role: "Imperial Deep-Cover Spy",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "7D+2", "brawling parry": "5D", "dodge": "6D+1", "melee combat": "5D", "melee parry": "5D", "pick pocket": "5D+2", "running": "4D", "thrown weapons": "5D+2" } },
+      KNOWLEDGE: { base: "2D+2", skills: { "intimidation": "3D", "streetwise": "5D" } },
+      MECHANICAL: { base: "3D+1", skills: { "communications": "5D", "repulsorlift operation": "4D+2", "swoop operation": "6D+2" } },
+      PERCEPTION: { base: "3D+2", skills: { "con": "7D", "forgery": "6D", "hide": "5D", "investigation": "6D+2", "persuasion": "6D", "search": "6D", "sneak": "6D+2" } },
+      STRENGTH: { base: "2D+2", skills: { "brawling": "6D", "stamina": "4D" } },
+      TECHNICAL: { base: "2D+2", skills: { "computer programming/repair": "4D", "security": "5D", "space transports repair": "4D+2" } }
+    },
+    forcePoints: 3,
+    characterPoints: 11,
+    move: 10,
+    equipment: "2 blaster pistols (4D), blaster rifle (5D), concealed throwing knife (STR+1D), goggles, hydrospanner",
+    capsule: "A deep-cover Imperial spy sent personally by Darth Vader to infiltrate Jabba's swoop gang, monitor Hutt crime activities, and ensure Luke Skywalker is not killed. Posing as a burned-out drifter with a talent for brawling and swoops, Jix has access to Imperial Intelligence support personnel in Mos Eisley and priority comms to Vader himself. His con 7D and sneak 6D+2 are the real weapons.",
+    source: "WEG40122 Shadows of the Empire p.58"
+  },
+
+  {
+    name: "Skahtul",
+    species: "Barabel",
+    system: "Tatooine",
+    location: "Tatooine",
+    affiliations: ["The Fringe"],
+    role: "Bounty Hunter",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: {
+        base: "4D",
+        skills: {
+          "blaster": "6D",
+          "brawling parry": "5D+2",
+          "dodge": "5D",
+          "grenade": "4D+2",
+          "melee combat": "5D",
+          "melee parry": "4D+2",
+          "thrown weapons": "5D"
+        }
+      },
+      KNOWLEDGE: {
+        base: "2D",
+        skills: {
+          "intimidation": "3D+2",
+          "planetary systems": "3D",
+          "streetwise": "4D"
+        }
+      },
+      MECHANICAL: {
+        base: "2D",
+        skills: {
+          "beast riding": "3D+2",
+          "repulsorlift operation": "4D"
+        }
+      },
+      PERCEPTION: {
+        base: "3D+1",
+        skills: {
+          "command": "5D",
+          "investigation": "4D",
+          "search": "4D+2",
+          "sneak": "4D"
+        }
+      },
+      STRENGTH: {
+        base: "4D+2",
+        skills: {
+          "brawling": "6D",
+          "climbing/jumping": "5D"
+        }
+      },
+      TECHNICAL: {
+        base: "2D",
+        skills: {
+          "blaster repair": "4D",
+          "first aid": "3D+1"
+        }
+      }
+    },
+    specialAbilities: "Natural Body Armor: +2D physical, +1D energy. Radiation Resistance: +2D to resist radiation damage. Infrared Vision: no penalty in darkness.",
+    forcePoints: 3,
+    characterPoints: 11,
+    move: 11,
+    equipment: "Ammo bandolier, blaster pistol (4D), blaster rifle (5D), hold-out blaster (3D), 2 knives (STR+1D), restraining bands, 2 stun grenades (5D stun)",
+    capsule: "A Barabel bounty hunter who has assembled a loose coalition of Fringe mercenaries and hunters on Tatooine. She targets the Millennium Falcon on Xizor's contract, coordinating attacks on Luke Skywalker and Han Solo's crew. Her natural Barabel toughness — heavy hide, radiation resistance, and infrared vision — makes her dangerous in any terrain.",
+    source: "WEG40122 Shadows of the Empire p.62"
+  },
+
+  {
+    name: "Calliose",
+    species: "Kajain'sa'Nikto",
+    system: "Tatooine",
+    location: "Tatooine",
+    affiliations: ["The Fringe"],
+    role: "Bounty Hunter",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: {
+        base: "4D+1",
+        skills: {
+          "blaster": "6D",
+          "dodge": "4D+2",
+          "grenade": "4D+2",
+          "melee combat": "5D"
+        }
+      },
+      KNOWLEDGE: {
+        base: "2D",
+        skills: {
+          "bureaucracy: Klatooinan Trade Guild": "4D",
+          "intimidation": "4D+2",
+          "streetwise": "5D",
+          "survival: desert": "3D"
+        }
+      },
+      MECHANICAL: {
+        base: "2D",
+        skills: {
+          "astrogation": "3D",
+          "space transports": "4D",
+          "starship gunnery": "3D+2"
+        }
+      },
+      PERCEPTION: {
+        base: "3D+2",
+        skills: {
+          "command": "4D+2",
+          "con": "5D",
+          "search": "5D+2",
+          "sneak": "5D"
+        }
+      },
+      STRENGTH: {
+        base: "4D",
+        skills: {
+          "brawling": "4D+2",
+          "climbing/jumping": "4D+1"
+        }
+      },
+      TECHNICAL: {
+        base: "2D",
+        skills: {
+          "first aid": "4D",
+          "security": "3D+1"
+        }
+      }
+    },
+    specialAbilities: "Vision: Kajain'sa'Nikto have a keratin eye-shield that protects against sandstorms and underwater environments — no penalty in those conditions. Kajain'sa'Nikto Stamina: +1D to survival: desert and stamina rolls.",
+    forcePoints: 1,
+    darkSidePoints: 2,
+    characterPoints: 4,
+    move: 10,
+    equipment: "Blast vest (+1D physical, +1 energy, torso only), 3 grenades (5D), heavy blaster pistol (5D), knife (STR+1D), macrobinoculars, medpac",
+    capsule: "A Kajain'sa'Nikto bounty hunter and member of Skahtul's coalition on Tatooine. Desert-hardened and well-connected through the Klatooinan Trade Guild, Calliose brings logistics, starship capability, and a ruthless con artist's flexibility to the coalition's hunt for Luke Skywalker.",
+    source: "WEG40122 Shadows of the Empire p.62"
+  },
+
+  {
+    name: "Boushh",
+    species: "Ubese",
+    system: "",
+    location: "",
+    affiliations: ["The Fringe"],
+    role: "Bounty Hunter",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: {
+        base: "4D+2",
+        skills: {
+          "archaic guns": "6D",
+          "blaster": "7D+2",
+          "brawling parry": "5D",
+          "dodge": "6D",
+          "grenade": "8D",
+          "melee combat": "7D+1",
+          "melee parry": "7D"
+        }
+      },
+      KNOWLEDGE: {
+        base: "2D",
+        skills: {
+          "alien species": "4D",
+          "business": "5D",
+          "cultures": "3D",
+          "intimidation": "6D",
+          "languages": "4D",
+          "law enforcement": "5D",
+          "planetary systems": "4D",
+          "streetwise": "5D+2",
+          "survival": "4D",
+          "value": "3D+2"
+        }
+      },
+      MECHANICAL: {
+        base: "2D",
+        skills: {
+          "astrogation": "3D+2",
+          "repulsorlift operation": "4D",
+          "space transports": "4D",
+          "starship gunnery": "4D",
+          "starship shields": "3D+1"
+        }
+      },
+      PERCEPTION: {
+        base: "4D+1",
+        skills: {
+          "bargain": "5D",
+          "investigation": "7D",
+          "persuasion": "5D",
+          "search": "6D",
+          "sneak": "6D+2"
+        }
+      },
+      STRENGTH: {
+        base: "2D+1",
+        skills: {
+          "brawling": "5D",
+          "climbing/jumping": "3D+2"
+        }
+      },
+      TECHNICAL: {
+        base: "2D+2",
+        skills: {
+          "armor repair": "4D+2",
+          "blaster repair": "4D",
+          "computer programming/repair": "3D+2",
+          "demolition": "7D",
+          "droid programming": "3D+2",
+          "first aid": "4D",
+          "security": "5D+1"
+        }
+      }
+    },
+    specialAbilities: "Survival: 'True Ubese' receive a +2D bonus to their survival skill due to the harsh conditions of their homeworld. Type II Atmosphere Breathing: 'True Ubese' require adjusted breath masks to filter Type I atmospheres. Without masks, -1D to all skills and attributes.",
+    forcePoints: 1,
+    darkSidePoints: 4,
+    characterPoints: 4,
+    move: 10,
+    equipment: "Energy pike (STR+2D+2), flash canister (4D stun), 2 grenades (5D), heavy blaster pistol (5D), timer detonator with 1 block detonite. Modified Ubese Raider Armor: Basic Suit +2D STR vs physical/+1D vs energy, covers torso and head only, no DEX penalty. Sealed Enviro-Filter: maintains Type II atmosphere within helmet, filters harmful molecules and odors. Flash Guard Visor: nullifies all stun damage from visual sources (flash canisters, grenades). Infrared Sensors: +1D PER in darkness. Macrobinoculars: +3D PER/search at 100–500m. Sound Sensors: +1D PER/search (quiet situations only). Spiked Knuckle Guards: STR+1 when brawling.",
+    capsule: "A 'True Ubese' bounty hunter who roams the Outer Rim taking short-term contracts rather than committing to any one organization. His demolition 7D and grenade 8D reflect a deep obsession with explosives — flash canisters, smoke grenades, plasma-burn tape, thermal detonators, and precision detonation timers fill his bandoliers. He researches employers as thoroughly as he researches prey, treating both as potential threats and sources of blackmail leverage. Rumors circulate of an elite Ubese mercenary unit he quietly funds from his earnings.",
+    source: "WEG40122 Shadows of the Empire p.64"
+  },
+
+  {
+    name: "Snoova",
+    species: "Wookiee",
+    system: "",
+    location: "",
+    affiliations: ["The Fringe"],
+    role: "Bounty Hunter",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: {
+        base: "3D+1",
+        skills: {
+          "blaster": "5D+1",
+          "blaster: repeating blaster": "6D",
+          "bowcaster": "4D",
+          "brawling parry": "6D+2",
+          "dodge": "5D",
+          "grenade": "4D+2",
+          "melee combat": "5D",
+          "running": "4D+1"
+        }
+      },
+      KNOWLEDGE: {
+        base: "2D+1",
+        skills: {
+          "intimidation": "5D",
+          "law enforcement": "3D+1",
+          "planetary systems": "4D",
+          "streetwise": "5D+1",
+          "survival": "3D+2"
+        }
+      },
+      MECHANICAL: {
+        base: "2D+1",
+        skills: {
+          "astrogation": "3D+2",
+          "repulsorlift operation": "4D",
+          "space transports": "4D",
+          "starship gunnery": "3D+2",
+          "starship shields": "3D"
+        }
+      },
+      PERCEPTION: {
+        base: "2D+1",
+        skills: {
+          "search": "5D",
+          "sneak": "4D+1"
+        }
+      },
+      STRENGTH: {
+        base: "5D",
+        skills: {
+          "brawling": "7D+2",
+          "climbing/jumping": "6D"
+        }
+      },
+      TECHNICAL: {
+        base: "2D+2",
+        skills: {
+          "blaster repair": "3D+2",
+          "demolition": "4D",
+          "first aid": "3D+2",
+          "security": "3D+1"
+        }
+      }
+    },
+    specialAbilities: "Berserker Rage: Snoova gains +2D to Strength when brawling in berserker rage. Climbing Claws: +2D to climbing/jumping. As a dishonored Wookiee with a death-mark, Snoova may also use his claws in brawling to inflict STR+1D damage.",
+    forcePoints: 1,
+    darkSidePoints: 7,
+    characterPoints: 6,
+    move: 11,
+    equipment: "Ammo bandolier, grenade (5D), heavy blaster pistol (5D), light repeating blaster (6D), medpac, monocle ocular enhancer (+2D to search in darkness), satchel, vibro-ax (STR+2D)",
+    capsule: "One of the few known Wookiee bounty hunters, and among the most vicious. Exiled from Kashyyyk after maiming a rival with his climbing claws — an act considered deeply dishonorable among Wookiees — Snoova fled and indentured himself to a minor crime lord named Asteria until his earnings bought his freedom. He now operates largely within Imperial space, often taking Imperial contracts; the Empire tolerates him as a useful instrument. Short-tempered and deliberately antisocial, he avoids other Wookiees who are culturally obligated to kill him on sight for his dishonor. His friendship with Boushh is one of the few partnerships he has sustained.",
+    source: "WEG40122 Shadows of the Empire p.66"
+  },
+
+  {
+    name: "Wendell Wright-Sims",
+    species: "Human",
+    system: "Coruscant",
+    location: "Coruscant — Imperial Center",
+    affiliations: ["The Fringe"],
+    role: "Spice Importer",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: {
+        base: "3D",
+        skills: {
+          "blaster": "3D+2"
+        }
+      },
+      KNOWLEDGE: {
+        base: "4D",
+        skills: {
+          "bureaucracy: Imperial": "6D",
+          "business": "6D",
+          "business: spice": "10D+2",
+          "cultures: Coruscant": "5D+2",
+          "languages": "4D+2",
+          "streetwise: Coruscant": "6D",
+          "value: spice": "9D+1"
+        }
+      },
+      MECHANICAL: {
+        base: "2D",
+        skills: {
+          "beast riding": "4D",
+          "repulsorlift operation": "3D+1"
+        }
+      },
+      PERCEPTION: {
+        base: "4D",
+        skills: {
+          "bargain": "8D",
+          "command": "5D+1",
+          "con": "4D+2",
+          "forgery": "6D",
+          "investigation": "5D",
+          "persuasion": "7D"
+        }
+      },
+      STRENGTH: {
+        base: "3D",
+        skills: {}
+      },
+      TECHNICAL: {
+        base: "2D",
+        skills: {}
+      }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    darkSidePoints: 1,
+    characterPoints: 12,
+    move: 10,
+    equipment: "Datapad link to newsnets, fashionable clothes, hold-out blaster (3D)",
+    capsule: "Coruscant's most prominent spice dealer, operating with the Emperor's express permission. A consummate socialite who attends costume balls, lunches at the Manarai, and mingles in the Imperial Palace's public corridors — all while quietly fulfilling the spice needs of the capital's wealthiest citizens. Wright-Sims does not indulge in his own merchandise; his pleasure is the extravagant lifestyle itself. Prince Xizor has kept Black Sun's own dealers out of his territory as a professional courtesy, and Wright-Sims reciprocates with regular gifts of choice spice to Xizor's palace. His business: spice 10D+2 and value: spice 9D+1 make him arguably the foremost spice expert in the galaxy.",
+    source: "WEG40122 Shadows of the Empire p.68"
+  },
+
+  {
+    name: "Mayli Weng",
+    species: "Human",
+    system: "Coruscant",
+    location: "Coruscant — Imperial Center",
+    affiliations: ["The Fringe", "Black Sun"],
+    role: "Entertainment Union Representative",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: {
+        base: "3D",
+        skills: {
+          "pick pocket": "5D"
+        }
+      },
+      KNOWLEDGE: {
+        base: "4D",
+        skills: {
+          "bureaucracy: Exotic Entertainers' Union": "7D",
+          "business: entertainment": "6D",
+          "cultures": "6D+2",
+          "streetwise": "5D",
+          "value": "5D+2",
+          "willpower": "5D+1"
+        }
+      },
+      MECHANICAL: {
+        base: "2D",
+        skills: {}
+      },
+      PERCEPTION: {
+        base: "4D",
+        skills: {
+          "bargain": "9D",
+          "con": "4D+2",
+          "hide": "5D",
+          "investigation": "5D+2",
+          "persuasion": "6D",
+          "persuasion: seduction": "8D+2",
+          "sneak": "6D"
+        }
+      },
+      STRENGTH: {
+        base: "3D",
+        skills: {}
+      },
+      TECHNICAL: {
+        base: "2D",
+        skills: {}
+      }
+    },
+    specialAbilities: "",
+    forcePoints: 1,
+    characterPoints: 17,
+    move: 10,
+    equipment: "Business datapad, exotic dress",
+    capsule: "Representative of the Exotic Entertainers' Union, speaking for 20,000 workers across the Core Worlds. A former entertainer herself, now elevated to Coruscant's elite through her union administration role. She lobbies business leaders, courts Imperial Court favor, and quietly reports developments in her industry to Prince Xizor — alerting him to anything that might expose Vigo operations. Xizor has returned the favor by pressuring the Entertainment Owners' League into union concessions. Exceptionally charming and persuasive in public, she conceals a private melancholy behind her social brilliance.",
+    source: "WEG40122 Shadows of the Empire p.70"
+  },
+
+  {
+    name: "Benedict Vidkun",
+    species: "Human",
+    system: "Coruscant",
+    location: "Coruscant — Southern Underground",
+    affiliations: ["Neutral"],
+    role: "Civil Waste Disposal Engineer",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: {
+        base: "2D",
+        skills: {
+          "blaster": "4D"
+        }
+      },
+      KNOWLEDGE: {
+        base: "2D",
+        skills: {
+          "streetwise": "5D",
+          "survival: waste disposal levels": "6D"
+        }
+      },
+      MECHANICAL: {
+        base: "2D",
+        skills: {
+          "machinery operation": "5D",
+          "repulsorlift operation": "3D+1"
+        }
+      },
+      PERCEPTION: {
+        base: "2D",
+        skills: {
+          "bargain": "5D",
+          "con": "5D+2",
+          "search": "4D+1"
+        }
+      },
+      STRENGTH: {
+        base: "2D",
+        skills: {
+          "brawling": "4D+2",
+          "climbing/jumping": "5D"
+        }
+      },
+      TECHNICAL: {
+        base: "2D",
+        skills: {
+          "machinery repair": "6D",
+          "security": "5D+1"
+        }
+      }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 2,
+    move: 10,
+    equipment: "Helmet with luma mount, hold-out blaster (3D), maintenance toolkit, water-proof boots, work coveralls",
+    capsule: "A maintenance engineer responsible for the sewage system beneath the Imperial Complex on Coruscant. Pale, adapted to darkness, and intimately familiar with every spillway, dump chute, and sludgeway under the Emperor's Palace, Vader's castle, Xizor's palace, the old Senate Hall, and several ministry buildings. He occasionally sells detailed maps and security codes to those who need covert access to Coruscant's depths — at steep prices he uses to fund his wife's expensive tastes. His brother-in-law Daiv has construction plans for several complexes; another, Lair, holds security override codes from the last renovation. Vidkun knows that anyone who enters those tunnels is entirely at his mercy.",
+    source: "WEG40122 Shadows of the Empire p.71"
+  },
+
+  {
+    name: "Spero",
+    species: "Ho'Din",
+    system: "Coruscant",
+    location: "Coruscant — Southern Underground",
+    affiliations: ["Neutral"],
+    role: "Master Gardener / Information Broker",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: {
+        base: "3D",
+        skills: {}
+      },
+      KNOWLEDGE: {
+        base: "4D",
+        skills: {
+          "alien species": "6D+2",
+          "cultures": "5D+2",
+          "ecology: Moltok": "6D",
+          "languages": "5D",
+          "planetary systems": "6D",
+          "streetwise": "7D",
+          "streetwise: Southern Underground": "9D"
+        }
+      },
+      MECHANICAL: {
+        base: "2D",
+        skills: {
+          "archaic starship piloting": "4D",
+          "astrogation": "3D+2",
+          "sensors": "4D"
+        }
+      },
+      PERCEPTION: {
+        base: "4D",
+        skills: {
+          "bargain": "5D",
+          "con": "4D+2",
+          "investigation": "5D",
+          "persuasion": "5D+2"
+        }
+      },
+      STRENGTH: {
+        base: "2D",
+        skills: {
+          "climbing/jumping": "3D+2",
+          "stamina": "4D"
+        }
+      },
+      TECHNICAL: {
+        base: "3D",
+        skills: {
+          "first aid": "5D+2",
+          "first aid: Ho'Din herbal medicines (Advanced)": "4D"
+        }
+      }
+    },
+    specialAbilities: "",
+    forcePoints: 1,
+    characterPoints: 9,
+    move: 10,
+    equipment: "Gardening tools, pinch of snuff-fungus",
+    capsule: "A three-meter-tall Ho'Din master gardener who tends a small plant shop in Coruscant's Southern Underground. Inventor of a yellow fungus that converts noxious gases to oxygen without sunlight — a discovery incorporated into architecture across the Core Worlds. Formerly chief gardener to the Royal House of Alderaan, he cultivated the Organa estate gardens and maintained consulate holdings throughout the Core. Princess Leia arranged his disappearance to protect him from Imperial agents. Now he tends the Southern Underground's air supply, treats its inhabitants with Ho'Din herbal medicines, and quietly serves as one of the most reliable information brokers in Coruscant's depths.",
+    source: "WEG40122 Shadows of the Empire p.73"
+  },
+
   {
     name: "Emperor Palpatine (4 ABY)",
     species: "Human",
@@ -7895,7 +9449,7 @@ const NOTABLE_NPCS = [
     species: "Human",
     system: "Generic & Varies",
     location: "Parmic Sector (posing as Moff Balfour's personal aide)",
-    affiliations: ["Galactic Empire", "COMPNOR"],
+    affiliations: ["Galactic Empire", "COMPNOR", "ISB Agents"],
     role: "COMPNOR operative hunting her brother Corwin",
     type: "COMPNOR Operative",
     stats: {
@@ -14969,7 +16523,7 @@ const NOTABLE_NPCS = [
     species: "Human",
     system: "Yavin",
     location: "Yavin 4 — Jedi Praxeum",
-    affiliations: ["New Republic"],
+    affiliations: ["New Republic", "Jedi Praxeum"],
     role: "Jedi Master",
     type: "Jedi Master",
     stats: {
@@ -14995,7 +16549,7 @@ const NOTABLE_NPCS = [
     species: "Human",
     system: "Yavin",
     location: "Yavin 4 — Jedi Praxeum",
-    affiliations: ["New Republic"],
+    affiliations: ["New Republic", "Jedi Praxeum"],
     role: "Jedi Student / Colony Leader",
     type: "Colony Leader",
     stats: {
@@ -15021,7 +16575,7 @@ const NOTABLE_NPCS = [
     species: "Human",
     system: "Yavin",
     location: "Yavin 4 — Jedi Praxeum",
-    affiliations: ["New Republic"],
+    affiliations: ["New Republic", "Jedi Praxeum"],
     role: "Jedi Knight",
     type: "Kessel Miner",
     stats: {
@@ -15047,7 +16601,7 @@ const NOTABLE_NPCS = [
     species: "Human",
     system: "Yavin",
     location: "Yavin 4 — Jedi Praxeum",
-    affiliations: ["New Republic"],
+    affiliations: ["New Republic", "Jedi Praxeum"],
     role: "Jedi Student / Gas Prospector",
     type: "Tibanna Gas Prospector",
     stats: {
@@ -15073,7 +16627,7 @@ const NOTABLE_NPCS = [
     species: "Human",
     system: "Yavin",
     location: "Yavin 4 — Jedi Praxeum",
-    affiliations: ["New Republic"],
+    affiliations: ["New Republic", "Jedi Praxeum"],
     role: "Jedi Student / Dathomir Witch",
     type: "Young Dathomir Witch",
     stats: {
@@ -15098,7 +16652,7 @@ const NOTABLE_NPCS = [
     species: "Khomm",
     system: "Yavin",
     location: "Yavin 4 — Jedi Praxeum",
-    affiliations: ["New Republic"],
+    affiliations: ["New Republic", "Jedi Praxeum"],
     role: "Jedi Student / Bureaucrat",
     type: "Khomm Bureaucrat",
     stats: {
@@ -15123,7 +16677,7 @@ const NOTABLE_NPCS = [
     species: "Human",
     system: "Yavin",
     location: "Yavin 4 — Jedi Praxeum",
-    affiliations: ["New Republic"],
+    affiliations: ["New Republic", "Jedi Praxeum"],
     role: "Jedi Apprentice",
     type: "Jedi Apprentice",
     stats: {
@@ -15149,7 +16703,7 @@ const NOTABLE_NPCS = [
     species: "Human",
     system: "Yavin",
     location: "Yavin 4 — Jedi Praxeum",
-    affiliations: ["New Republic"],
+    affiliations: ["New Republic", "Jedi Praxeum"],
     role: "Jedi Student / Minstrel / Historian",
     type: "Minstrel",
     stats: {
@@ -15174,7 +16728,7 @@ const NOTABLE_NPCS = [
     species: "Mon Calamari",
     system: "Yavin",
     location: "Yavin 4 — Jedi Praxeum",
-    affiliations: ["New Republic"],
+    affiliations: ["New Republic", "Jedi Praxeum"],
     role: "Jedi Student / Ambassador",
     type: "Calamarian Ambassador",
     stats: {
@@ -15325,7 +16879,7 @@ const NOTABLE_NPCS = [
     species: "Human",
     system: "Maw Cluster",
     location: "Maw Installation — Command Deck",
-    affiliations: ["Galactic Empire", "Imperial Navy"],
+    affiliations: ["Galactic Empire", "Imperial Navy", "Maw Installation"],
     role: "Imperial Navy Admiral / Maw Installation Commander",
     type: "Imperial Navy Officer",
     stats: {
@@ -15351,7 +16905,7 @@ const NOTABLE_NPCS = [
     species: "Human",
     system: "Maw Cluster",
     location: "Maw Installation — ISD Gorgon",
-    affiliations: ["Galactic Empire", "Imperial Navy"],
+    affiliations: ["Galactic Empire", "Imperial Navy", "Maw Installation"],
     role: "Captain of the ISD Gorgon / Daala's Advisor",
     type: "Imperial Navy Officer",
     stats: {
@@ -15377,7 +16931,7 @@ const NOTABLE_NPCS = [
     species: "Human",
     system: "Maw Cluster",
     location: "Maw Installation — ISD Hydra",
-    affiliations: ["Galactic Empire", "Imperial Navy"],
+    affiliations: ["Galactic Empire", "Imperial Navy", "Maw Installation"],
     role: "Captain of the ISD Hydra",
     type: "Imperial Navy Officer",
     stats: {
@@ -15403,7 +16957,7 @@ const NOTABLE_NPCS = [
     species: "Human",
     system: "Maw Cluster",
     location: "Maw Installation — ISD Manticore",
-    affiliations: ["Galactic Empire", "Imperial Navy"],
+    affiliations: ["Galactic Empire", "Imperial Navy", "Maw Installation"],
     role: "Captain of the ISD Manticore",
     type: "Imperial Navy Officer",
     stats: {
@@ -15429,7 +16983,7 @@ const NOTABLE_NPCS = [
     species: "Human",
     system: "Maw Cluster",
     location: "Maw Installation — ISD Basilisk",
-    affiliations: ["Galactic Empire", "Imperial Navy"],
+    affiliations: ["Galactic Empire", "Imperial Navy", "Maw Installation"],
     role: "Captain of the ISD Basilisk",
     type: "Imperial Navy Officer",
     stats: {
@@ -15455,7 +17009,7 @@ const NOTABLE_NPCS = [
     species: "Human",
     system: "Maw Cluster",
     location: "Maw Installation — Imperial Army Command",
-    affiliations: ["Galactic Empire", "Imperial Army"],
+    affiliations: ["Galactic Empire", "Imperial Army", "Maw Installation"],
     role: "Commanding General, Maw Installation Ground Forces",
     type: "Imperial Army Officer",
     stats: {
@@ -15481,7 +17035,7 @@ const NOTABLE_NPCS = [
     species: "Twi'lek",
     system: "Maw Cluster",
     location: "Maw Installation — Director's Office",
-    affiliations: ["Galactic Empire"],
+    affiliations: ["Galactic Empire", "Maw Installation"],
     role: "Director of Maw Installation",
     type: "Director of Maw Installation",
     stats: {
@@ -15507,7 +17061,7 @@ const NOTABLE_NPCS = [
     species: "Human",
     system: "Maw Cluster",
     location: "Maw Installation — HECIL Division",
-    affiliations: ["Galactic Empire"],
+    affiliations: ["Galactic Empire", "Maw Installation"],
     role: "Director, High-Energy Concepts and Implementations Labs (HECIL)",
     type: "Maw Scientist",
     stats: {
@@ -15533,7 +17087,7 @@ const NOTABLE_NPCS = [
     species: "Human",
     system: "Maw Cluster",
     location: "Maw Installation — Ordnance Research Division",
-    affiliations: ["Galactic Empire"],
+    affiliations: ["Galactic Empire", "Maw Installation"],
     role: "Director, Ordnance Research and Development",
     type: "Maw Scientist",
     stats: {
@@ -15558,7 +17112,7 @@ const NOTABLE_NPCS = [
     species: "Devaronian",
     system: "Maw Cluster",
     location: "Maw Installation — Administration Division",
-    affiliations: ["Galactic Empire"],
+    affiliations: ["Galactic Empire", "Maw Installation"],
     role: "Director of Administration and Personal Resources",
     type: "Devaronian Director of Administration",
     stats: {
@@ -15583,7 +17137,7 @@ const NOTABLE_NPCS = [
     species: "Omwati",
     system: "Maw Cluster",
     location: "Maw Installation — Sun Crusher Project Lab",
-    affiliations: ["Galactic Empire"],
+    affiliations: ["Galactic Empire", "Maw Installation"],
     role: "Sun Crusher Project Director",
     type: "Near-Human Sun Crusher Project Director",
     stats: {
@@ -15609,7 +17163,7 @@ const NOTABLE_NPCS = [
     species: "Human",
     system: "Maw Cluster",
     location: "Maw Installation — Plant Operations",
-    affiliations: ["Galactic Empire"],
+    affiliations: ["Galactic Empire", "Maw Installation"],
     role: "Director of Plant Operations",
     type: "Plant Supervisor",
     stats: {
@@ -15635,7 +17189,7 @@ const NOTABLE_NPCS = [
     species: "Human",
     system: "Maw Cluster",
     location: "Maw Installation — Imperial Garrison",
-    affiliations: ["Galactic Empire", "Stormtrooper Corps"],
+    affiliations: ["Galactic Empire", "Stormtrooper Corps", "Maw Installation"],
     role: "Garrison Commander, Maw Installation",
     type: "Stormtrooper Garrison Commander",
     stats: {
@@ -15661,7 +17215,7 @@ const NOTABLE_NPCS = [
     species: "Human",
     system: "Maw Cluster",
     location: "Maw Installation — Involuntary Labor Division",
-    affiliations: ["Galactic Empire"],
+    affiliations: ["Galactic Empire", "Maw Installation"],
     role: "Wookiee Slave Overseer",
     type: "Wookiee Keeper",
     stats: {
@@ -15686,7 +17240,7 @@ const NOTABLE_NPCS = [
     species: "Wookiee",
     system: "Maw Cluster",
     location: "Maw Installation — Wookiee Labor Pool",
-    affiliations: ["Neutral"],
+    affiliations: ["Neutral", "Maw Installation"],
     role: "Enslaved Wookiee Mechanic / Elder of Nysshyyyk Clan",
     type: "Enslaved Wookiee Mechanic",
     stats: {

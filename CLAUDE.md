@@ -93,5 +93,11 @@ The entire app. Contains all CSS (minified, inline `<style>`), all HTML tab pane
   - `"Criminal Underworld"` — crime lords, pirates, assassins, gangs, hired killers
   - `"Neutral"` — civilians, academics, journalists, truly neutral parties
   - Specific faction/org tags (e.g. `"Void Demons"`, `"Omze's Incredible Traveling Starport"`) may be kept as a **second** array element for search value. Location-only tags belong in the `location` field, not `affiliations`.
+  - **Known secondary tags in use** (append to primary, never replace it):
+    - Imperial branches: `"Stormtrooper Corps"`, `"Imperial Navy"`, `"Imperial Army"`, `"Imperial Customs"`, `"ISB Agents"`, `"COMPNOR"`
+    - Rebel/NR units: `"Rogue Squadron"`
+    - Organizations: `"Jedi Praxeum"`, `"Maw Installation"`
+    - Fringe/Criminal groups: `"Bothan Spynet"`, `"Bounty Hunters' Guild"`, `"Black Sun"`, `"Jabba's Organization"`, `"Void Demons"`, `"Omze's Incredible Traveling Starport"`
+    - When adding a new secondary tag, add it to this list so future sessions can find it.
 - **Droids — stock vs. NPC**: Stock/template droids (generic models with a cost, meant to be purchased) go in `data_equipment.js` under the `"Droids"` category, with stats condensed into the `game_notes` field (e.g. `"Height: 1.5m. Move: 6. DEX 2D, KNO 2D, ..."`). Named/unique NPC droids (IG-88, 4-LOM, GSAD-43, etc.) go in `data_npcs_notable.js` with full stat blocks like any other NPC.
 - **Auto-push UI/layout changes**: When making format or layout changes to the website (card layouts, column arrangements, styling in `index.html`), commit and push immediately without asking.
