@@ -3670,6 +3670,7 @@ const SYSTEMS_DATA = [
   { "name": "Mavinia", "grid": "N-13", "region": "Inner Rim", "col": 12, "row": 13, "quadrant": "E", "hours": 1.3 },
   { "name": "Mavva", "grid": "R-3", "region": "Outer Rim Territories", "col": 16, "row": 3, "quadrant": "NE", "hours": 58.0 },
   { "name": "Maw Cluster", "grid": "T-10", "region": "Outer Rim Territories", "col": 18, "row": 10, "quadrant": "E", "hours": 5.3 },
+  { "name": "Maw Cluster - Maw Installation", "grid": "T-10", "region": "Outer Rim Territories", "col": 18, "row": 10, "quadrant": "E", "hours": 5.3 },
   { "name": "Mawan", "grid": "M-11", "region": "Core Worlds", "col": 11, "row": 11, "quadrant": "C", "hours": 5.7 },
   { "name": "Maxca", "grid": "O-14", "region": "Expansion Region", "col": 13, "row": 14, "quadrant": "E", "hours": 1.3 },
   { "name": "Maxet", "grid": "N-5", "region": "Outer Rim Territories", "col": 12, "row": 5, "quadrant": "NE", "hours": 3.8 },

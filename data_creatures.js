@@ -5948,5 +5948,19 @@ const CREATURES_DATA = [
   "orneriness": "3D",
   "special": "All other stats 2D. Sneak 3D+2, survival 3D, brawling 4D. Spiked tail: 4D damage. Light sensitivity: when exposed to bright light suffers -1D penalty to all attribute and skill rolls. Character Points: 3. 4000 BBY era.",
   "source": "WEG40082 Tales of the Jedi Companion pp.149-169"
+ },
+ {
+  "name": "Coruscani Ogre",
+  "type": "Semi-intelligent Undercity denizen",
+  "planet": "Coruscant",
+  "habitat": "Undercity",
+  "dex": "2D",
+  "per": "3D",
+  "str": "5D",
+  "move": "11",
+  "size": "Large",
+  "orneriness": "4D",
+  "special": "Brawling parry 4D, dodge 4D+1, melee combat 3D+2, melee parry 4D, thrown weapons 3D. Survival: Coruscant Undercity 5D+2. Hide 6D, search 6D, sneak 7D+2. Brawling 7D+1, climbing/jumping 6D+2, lifting 6D, stamina 7D+1. Equipment: chains, large club (STR+2D). Smell: hunts as much by smell as sight — does not incur penalties using Perception skills in the dark. Character Points: 2.",
+  "source": "WEG40114 The Jedi Academy Sourcebook p.40"
  }
 ];

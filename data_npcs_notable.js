@@ -14937,5 +14937,747 @@ const NOTABLE_NPCS = [
     equipment: "Comlink, datapad, military dress uniform, standard military uniform.",
     capsule: "Admiral Ackbar's chief starship technician, secretly an unwilling Imperial spy controlled by organic circuitry implanted in his brain by doctors on Carida. Compelled by Ambassador Furgan to commit acts of sabotage and treason — including sabotaging Ackbar's B-wing and betraying Anakin Solo's location — Terpfen's conditioning breaks down after Carida's destruction. He confesses to Leia and Ackbar, helps foil Furgan at Anoth, and is granted a full pardon by Mon Mothma. He ultimately returns to Mon Calamari to help rebuild Reef Home City.",
     source: "WEG40114 The Jedi Academy Sourcebook p.35"
+  },
+
+  {
+    name: "King Daykim (14 ABY)",
+    species: "Human",
+    system: "Coruscant",
+    location: "Coruscant — The Undercity",
+    affiliations: ["Neutral"],
+    role: "Undercity King / Former Bureaucrat",
+    type: "Feral Bureaucrat",
+    stats: {
+      DEXTERITY: { base: "3D+1", skills: { "archaic guns": "4D", "blaster": "5D+1", "bow": "5D", "brawling parry": "4D+1", "dodge": "4D+2", "running": "5D" } },
+      KNOWLEDGE: { base: "4D", skills: { "alien species": "5D+2", "bureaucracy": "6D", "scholar: accounting": "4D+2", "streetwise": "7D", "survival: Coruscant Undercity": "11D" } },
+      MECHANICAL: { base: "2D", skills: { "swoop operation": "3D" } },
+      PERCEPTION: { base: "3D+1", skills: { "bargain": "5D", "command: Daykim's Kingdom": "9D+2", "con": "4D", "hide": "6D+1", "persuasion": "8D", "search": "5D", "sneak": "4D+2" } },
+      STRENGTH: { base: "2D+1", skills: { "brawling": "4D", "climbing/jumping": "4D+2", "stamina": "5D" } },
+      TECHNICAL: { base: "3D", skills: { "blaster repair": "4D", "bow repair": "3D+2", "computer programming/repair": "5D", "droid programming": "5D", "droid repair": "4D+2", "first aid": "5D+1", "security": "5D" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 14,
+    move: "10",
+    equipment: "Hold-out blaster (3D), bow (2D+1), knife (STR+1D), heavy cloak.",
+    capsule: "Born Onibald Daykim, a low-level civil servant at Coruscant's Corusca Bank, he became briefly famous when an accounting error by his staff placed Emperor Palpatine at the top of the publicly-posted loan defaulters list for two hours. Rather than face the Emperor's wrath, Daykim fled into the Undercity with fellow implicated bureaucrats and has lived there ever since. A naturally optimistic and cheerful man, he has kept his people alive through many dark times. Now pale-skinned with a badly healed broken nose and wispy beard, he rules his Undercity band wearing fine animal skins and stormtrooper shoulder pads and gloves.",
+    source: "WEG40114 The Jedi Academy Sourcebook p.41"
+  },
+
+  {
+    name: "Luke Skywalker (14 ABY)",
+    species: "Human",
+    system: "Yavin",
+    location: "Yavin 4 — Jedi Praxeum",
+    affiliations: ["New Republic"],
+    role: "Jedi Master",
+    type: "Jedi Master",
+    stats: {
+      DEXTERITY: { base: "3D+2", skills: { "blaster": "6D+2", "brawling parry": "6D+2", "dodge": "9D", "melee combat": "5D+2", "melee parry": "10D+2", "lightsaber": "11D" } },
+      KNOWLEDGE: { base: "3D", skills: { "alien species": "5D+2", "bureaucracy": "5D+2", "intimidation": "6D", "languages": "4D", "planetary systems": "5D+1", "scholar": "5D", "streetwise": "6D+1", "survival": "8D", "value": "5D", "willpower": "8D" } },
+      MECHANICAL: { base: "4D", skills: { "astrogation": "7D", "beast riding": "5D+1", "beast riding: Tauntaun": "6D+1", "communications": "4D+1", "repulsorlift operation": "8D+1", "repulsorlift operation: airspeeder": "8D+2", "starfighter piloting": "8D+1", "starfighter piloting: X-wing": "10D+1", "starship gunnery": "8D+1", "starship shields": "7D+1" } },
+      PERCEPTION: { base: "3D", skills: { "bargain": "5D", "command": "8D+1", "con": "4D", "hide": "7D", "search": "6D", "sneak": "7D+1" } },
+      STRENGTH: { base: "3D+2", skills: { "brawling": "6D+2", "climbing/jumping": "7D+2", "lifting": "6D", "stamina": "8D+2" } },
+      TECHNICAL: { base: "3D", skills: { "computer programming/repair": "5D+2", "droid programming": "6D+1", "droid repair": "6D", "droid repair: astromech": "7D+1", "first aid": "5D+1", "lightsaber repair": "9D", "repulsorlift repair": "7D+1", "security": "5D+1", "starfighter repair": "6D+1" } }
+    },
+    specialAbilities: "Force Skills: Control 13D+1, Sense 11D+1, Alter 10D+2. Control: Absorb/dissipate energy, accelerate healing, concentration, control pain, detoxify poison, emptiness, enhance attribute, hibernation trance, reduce injury, remain conscious, resist stun, short-term memory enhancement. Sense: Combat sense, danger sense, instinctive astrogation, life detection, life sense, magnify senses, receptive telepathy, sense Force, sense Force potential. Alter: Injure/kill, telekinesis. Control and Sense: Farseeing, lightsaber combat, projective telepathy. Control and Alter: Control another's pain, inflict pain. Control, Sense, and Alter: Affect mind, doppleganger, Force harmony, telekinetic kill. Sense and Alter: Dim other's senses, lesser Force shield. This character is Force-sensitive.",
+    forcePoints: 7,
+    darkSidePoints: 3,
+    characterPoints: 24,
+    move: "10",
+    equipment: "Lightsaber (5D), comlink, cloak.",
+    capsule: "Having defeated the reborn Emperor, Luke dedicates himself to founding a new Jedi Order, establishing the Jedi Praxeum on Yavin 4 with twelve students. The corrupting influence of the long-dead Sith Lord Exar Kun nearly destroys the academy — Kyp Durron falls to Kun's influence and places Luke in a Force coma. Luke's students and Leia ultimately defeat Kun and restore Luke. He forgives Kyp and accepts him back, requiring only that Kyp cast the Sun Crusher into the Maw.",
+    source: "WEG40114 The Jedi Academy Sourcebook p.49"
+  },
+
+  {
+    name: "Gantoris (14 ABY)",
+    species: "Human",
+    system: "Yavin",
+    location: "Yavin 4 — Jedi Praxeum",
+    affiliations: ["New Republic"],
+    role: "Jedi Student / Colony Leader",
+    type: "Colony Leader",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "archaic guns": "5D", "blaster": "4D+2", "bows": "4D+2", "brawling parry": "5D+2", "dodge": "6D", "lightsaber": "4D", "melee combat": "5D", "melee parry": "6D", "missile weapons": "5D+1", "running": "5D", "thrown weapons": "5D+1" } },
+      KNOWLEDGE: { base: "4D", skills: { "alien species": "4D+2", "cultures": "4D+1", "intimidation": "5D", "languages": "4D", "survival": "5D", "survival: Eol Sha": "7D+1", "survival: Yavin Four": "4D+1", "willpower": "6D+2" } },
+      MECHANICAL: { base: "2D", skills: { "beast riding": "5D" } },
+      PERCEPTION: { base: "3D", skills: { "bargain": "4D+2", "command": "5D", "command: Eol Sha colony": "7D+1", "con": "5D", "hide": "6D", "persuasion": "4D+2", "search": "6D", "sneak": "5D+2" } },
+      STRENGTH: { base: "4D", skills: { "brawling": "6D+2", "climbing/jumping": "7D", "lifting": "5D", "stamina": "6D+2", "swimming": "5D" } },
+      TECHNICAL: { base: "2D", skills: { "armor repair": "4D", "first aid": "5D+1", "lightsaber repair": "4D" } }
+    },
+    specialAbilities: "Force Skills: Control 1D, Sense 1D+1, Alter 2D. Control: Accelerate healing, concentration, control pain, hibernation trance, rage, reduce injury, remain conscious. Sense: Combat sense, danger sense, life detection, life sense, magnify senses, sense Force. Alter: Telekinesis. Control and Alter: Aura of uneasiness. Control and Sense: Farseeing, lightsaber combat. Control, Sense, and Alter: Drain life energy. Note: abilities were unnaturally augmented by Exar Kun. This character is Force-sensitive.",
+    forcePoints: 1,
+    darkSidePoints: 3,
+    characterPoints: 12,
+    move: "10",
+    equipment: "Knapsack, Jedi cloak, double-bladed lightsaber (6D), knife (STR+1D).",
+    capsule: "Charismatic leader of the abandoned Eol Sha colony, Force-sensitive from childhood. Haunted by a premonition of a dark man who would promise him glory and then destroy him, he nonetheless joins Luke's Jedi Praxeum. A talented and disciplined student, his impatience and fierce independence make him vulnerable to Exar Kun's influence. Seduced by promises of secret Jedi knowledge, he secretly builds a lightsaber and challenges Luke to a duel. He senses too late that he has taken the wrong path. Believing he can face Exar Kun alone, he is goaded into striking out with his passions and is burned to ashes — fulfilling his lifelong premonition. (Deceased)",
+    source: "WEG40114 The Jedi Academy Sourcebook p.51"
+  },
+
+  {
+    name: "Kyp Durron (14 ABY)",
+    species: "Human",
+    system: "Yavin",
+    location: "Yavin 4 — Jedi Praxeum",
+    affiliations: ["New Republic"],
+    role: "Jedi Knight",
+    type: "Kessel Miner",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "3D+2", "dodge": "4D+2", "lightsaber": "5D", "melee parry": "4D", "pick pocket": "4D+1", "running": "5D+1" } },
+      KNOWLEDGE: { base: "2D", skills: { "alien species": "3D", "bureaucracy: Kessel mining installation": "3D+2", "intimidation": "3D", "languages": "2D+2", "survival": "3D", "survival: Kessel": "4D+2", "survival: Yavin Four": "3D+2", "value": "3D+1", "willpower": "4D" } },
+      MECHANICAL: { base: "4D", skills: { "astrogation": "4D+1", "repulsorlift operation": "5D", "space transports": "4D+2", "starfighter piloting": "4D+1", "starfighter piloting: Sun Crusher": "4D+2", "starship gunnery": "4D+2", "starship shields": "4D+1" } },
+      PERCEPTION: { base: "3D", skills: { "bargain": "4D", "con": "4D+1", "hide": "5D+1", "persuasion": "5D", "search": "4D", "sneak": "4D+1" } },
+      STRENGTH: { base: "4D", skills: { "brawling": "4D+2", "climbing/jumping": "4D+1", "lifting": "4D+1", "stamina": "4D+2" } },
+      TECHNICAL: { base: "2D", skills: { "blaster repair": "2D+2", "computer programming/repair": "3D", "first aid": "2D+2", "lightsaber repair": "3D" } }
+    },
+    specialAbilities: "Force Skills: Control 5D+2, Sense 5D, Alter 3D+2. Control: Accelerate healing, contort/escape, control pain, hibernation trance, rage, receptive telepathy, reduce injury, remain conscious, remove fatigue. Sense: Combat sense, danger sense, instinctive astrogation, life detection, life sense, magnify senses, sense Force. Alter: Telekinesis. Control and Alter: Aura of uneasiness, Force lightning. Control and Sense: Farseeing, lightsaber combat, projective telepathy. Control, Sense, and Alter: Affect mind, control mind, drain life energy, telekinetic kill. Sense and Alter: Dim other's senses. Note: abilities were unnaturally augmented by Exar Kun. This character is Force-sensitive.",
+    forcePoints: 2,
+    darkSidePoints: 3,
+    characterPoints: 15,
+    move: "10",
+    equipment: "Jedi robes, black cape, datapad, lightsaber (5D), blaster pistol (4D).",
+    capsule: "Born in the Deyer colony of the Anoat system, Kyp spent eight years in the Kessel spice mines after his family was imprisoned for speaking out against Palpatine. Befriended by Han Solo in the mines, he is brought to Luke's Jedi Praxeum where his raw Force talent rapidly surpasses the other students. Seduced by Exar Kun with promises of secret power, he falls to the dark side — placing Luke in a coma, stealing the Sun Crusher, and destroying Carida in a failed attempt to rescue his brother. After Exar Kun's defeat breaks the dark side's hold, Kyp faces Luke and accepts penance: confronting Kun's temple and casting the Sun Crusher into the Maw. He emerges as a Jedi Knight, forever marked by his journey — his face looks far older than his 18 years.",
+    source: "WEG40114 The Jedi Academy Sourcebook p.53"
+  },
+
+  {
+    name: "Streen (14 ABY)",
+    species: "Human",
+    system: "Yavin",
+    location: "Yavin 4 — Jedi Praxeum",
+    affiliations: ["New Republic"],
+    role: "Jedi Student / Gas Prospector",
+    type: "Tibanna Gas Prospector",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { "blaster": "3D+1", "brawling parry": "3D", "dodge": "3D+2", "lightsaber": "2D+2", "melee combat": "2D+2", "melee parry": "3D" } },
+      KNOWLEDGE: { base: "3D", skills: { "bureaucracy": "4D", "bureaucracy: Cloud City": "5D", "business": "3D+2", "business: tibanna gas industry": "4D+2", "planetary systems": "5D", "streetwise": "4D+1", "survival": "4D", "survival: Yavin Four": "4D+2", "value": "3D+1", "value: tibanna gas": "4D+2" } },
+      MECHANICAL: { base: "4D", skills: { "airship piloting": "6D", "hover vehicle operation": "4D+2", "repulsorlift operation": "5D", "sensors": "5D", "space transports": "4D+2", "swoop operation": "4D+1" } },
+      PERCEPTION: { base: "2D", skills: { "bargain": "3D", "con": "3D+1", "hide": "3D+2", "persuasion": "4D", "search: tibanna gas eruptions": "5D", "sneak": "4D+1" } },
+      STRENGTH: { base: "3D+1", skills: { "climbing/jumping": "4D", "lifting": "3D+2", "stamina": "4D+2" } },
+      TECHNICAL: { base: "3D+2", skills: { "airship repair": "5D+1", "computer programming/repair": "4D", "droid repair": "4D", "first aid": "4D+2", "lightsaber repair": "4D", "machinery repair: tibanna gas processor": "5D+1", "repulsorlift repair": "5D", "security": "4D+1" } }
+    },
+    specialAbilities: "Force Skills: Control 3D+1, Sense 4D, Alter 4D. Control: Accelerate healing, concentration, control pain, emptiness, hibernation trance, reduce injury, remain conscious, remove fatigue. Sense: Danger sense, life detection, life sense, magnify senses, receptive telepathy, shift sense, weather sense. Alter: Telekinesis. Sense and Alter: Force wind. Control, Sense, and Alter: Lesser Force shield. Note: abilities were unnaturally augmented by Exar Kun. This character is Force-sensitive.",
+    forcePoints: 2,
+    darkSidePoints: 1,
+    characterPoints: 15,
+    move: "10",
+    equipment: "Jedi robes, jumpsuit with many pockets, datapad, toolkit, hold-out blaster (3D+2).",
+    capsule: "Elderly reclusive gas prospector from Bespin with a Force talent for predicting tibanna gas eruptions. Lured to Luke's Praxeum by the promise of learning to silence the clamoring voices he hears in crowds. Detects Exar Kun's dark presence but is manipulated into attacking Luke's sleeping body — creating a Force wind that lifts Luke toward a skylight before being tackled out of his trance. He redeems himself by volunteering to guard Luke's body and protect the group from Kun's throat-constricting attack during the final confrontation.",
+    source: "WEG40114 The Jedi Academy Sourcebook p.55"
+  },
+
+  {
+    name: "Kirana Ti (14 ABY)",
+    species: "Human",
+    system: "Yavin",
+    location: "Yavin 4 — Jedi Praxeum",
+    affiliations: ["New Republic"],
+    role: "Jedi Student / Dathomir Witch",
+    type: "Young Dathomir Witch",
+    stats: {
+      DEXTERITY: { base: "3D+2", skills: { "blaster": "4D+1", "dodge": "4D", "melee combat": "4D", "melee parry": "4D", "running": "5D", "thrown weapons": "4D" } },
+      KNOWLEDGE: { base: "2D+1", skills: { "alien species": "3D", "cultures": "2D+2", "survival": "3D", "survival: Dathomir": "4D+1", "survival: Yavin Four": "3D+1", "value": "2D+2", "willpower": "4D" } },
+      MECHANICAL: { base: "2D+2", skills: { "beast riding: rancor": "5D" } },
+      PERCEPTION: { base: "4D", skills: { "command: Singing Mountain Clan troops": "4D+1", "hide": "5D", "persuasion": "5D+1", "search": "4D+1", "sneak": "4D+1" } },
+      STRENGTH: { base: "3D+1", skills: { "brawling": "4D", "climbing/jumping": "3D+2", "stamina": "4D+2" } },
+      TECHNICAL: { base: "2D", skills: { "armor repair": "3D+1", "blaster repair": "2D+2", "first aid": "3D" } }
+    },
+    specialAbilities: "Force Skills: Control 3D, Sense 4D, Alter 2D. Control: Accelerate healing, concentration, control pain, emptiness, hibernation trance, reduce injury, remain conscious, remove fatigue. Sense: Beast languages, danger sense, life detection, life sense, magnify senses, receptive telepathy, sense Force. Alter: Telekinesis. Control and Sense: Projective telepathy. Dathomir Spells (roll spell's die code against power difficulty, no control/sense/alter required): Control pain 4D, Force of will 3D+1, telekinesis 3D, translation 4D. This character is Force-sensitive.",
+    forcePoints: 3,
+    characterPoints: 11,
+    move: "10",
+    equipment: "Helm (+1D physical, +1 energy), exotic robes, wuffa boots.",
+    capsule: "A young witch of the Singing Mountain Clan on Dathomir who leaves her husband and daughter to study at Luke's Jedi Praxeum. A warrior first — she wears her reptile-skin armor and lacquered battle helm whenever danger threatens. Previously helped Luke recover the ancient wrecked starship Chu'unthor on Dathomir, which held invaluable old Jedi training records. At the Praxeum, she tackles Streen to break his Exar Kun-induced trance before he can harm Luke.",
+    source: "WEG40114 The Jedi Academy Sourcebook p.57"
+  },
+
+  {
+    name: "Dorsk 81 (14 ABY)",
+    species: "Khomm",
+    system: "Yavin",
+    location: "Yavin 4 — Jedi Praxeum",
+    affiliations: ["New Republic"],
+    role: "Jedi Student / Bureaucrat",
+    type: "Khomm Bureaucrat",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { "dodge": "4D", "lightsaber": "3D+1", "melee combat": "3D", "melee parry": "3D+1", "running": "4D" } },
+      KNOWLEDGE: { base: "5D", skills: { "alien species": "5D+2", "bureaucracy": "5D+2", "bureaucracy: Khomm civil service": "7D", "business": "6D", "cultures": "6D", "planetary systems": "5D+2", "survival": "5D+2", "survival: Yavin Four": "6D", "willpower": "5D+1" } },
+      MECHANICAL: { base: "2D", skills: { "astrogation": "3D+2", "beast riding": "4D", "ground vehicle operation": "4D+1", "repulsorlift operation": "4D+1", "sensors": "3D+1", "space transports": "3D", "starship shields": "3D" } },
+      PERCEPTION: { base: "4D", skills: { "bargain": "5D+2", "investigation: bureaucratic audit": "6D+1", "persuasion": "5D" } },
+      STRENGTH: { base: "2D", skills: { "climbing/jumping": "2D+2", "lifting": "2D+1", "stamina": "3D" } },
+      TECHNICAL: { base: "3D", skills: { "computer programming/repair": "4D", "first aid": "4D+2", "lightsaber repair": "3D+2", "security": "4D", "space transports repair": "3D+1" } }
+    },
+    specialAbilities: "Force Skills: Control 4D, Sense 3D+1, Alter 3D. Control: Accelerate healing, concentration, control pain, emptiness, hibernation trance, reduce injury, remain conscious, remove fatigue. Sense: Danger sense, life detection, life sense, magnify senses, sense Force. Alter: Telekinesis. Control and Alter: Accelerate another's healing, control another's pain, remove another's fatigue. This character is Force-sensitive.",
+    forcePoints: 2,
+    characterPoints: 9,
+    move: "10",
+    equipment: "Jedi robes, staff, datapad.",
+    capsule: "The eighty-first clone of an unbroken genetic line on Khomm, born with a slight variance — Force sensitivity — that his culture considers a shameful failure. He hid his abilities for years before Luke recruited him for the Jedi Praxeum. Constantly fighting culturally-ingrained shame over his deviation from the Dorsk template, he struggles with deep insecurity even as he learns to harness his unique talents.",
+    source: "WEG40114 The Jedi Academy Sourcebook p.59"
+  },
+
+  {
+    name: "Kam Solusar (14 ABY)",
+    species: "Human",
+    system: "Yavin",
+    location: "Yavin 4 — Jedi Praxeum",
+    affiliations: ["New Republic"],
+    role: "Jedi Apprentice",
+    type: "Jedi Apprentice",
+    stats: {
+      DEXTERITY: { base: "4D", skills: { "blaster": "6D+2", "brawling parry": "5D", "dodge": "5D+2", "lightsaber": "5D", "melee combat": "5D+2", "melee parry": "4D+2", "running": "5D", "thrown weapons": "5D" } },
+      KNOWLEDGE: { base: "4D", skills: { "alien species": "5D", "cultures": "5D+1", "intimidation": "6D", "languages": "4D+2", "planetary systems": "5D", "streetwise": "5D+2", "survival": "4D+2", "survival: Yavin Four": "5D", "value": "5D", "willpower": "6D" } },
+      MECHANICAL: { base: "3D", skills: { "archaic starship piloting": "4D+2", "astrogation": "4D+1", "beast riding": "5D", "ground vehicle operation": "4D+2", "repulsorlift operation": "5D", "sensors": "3D+2", "space transports": "5D", "starship gunnery": "4D+2", "starship shields": "4D" } },
+      PERCEPTION: { base: "3D", skills: { "bargain": "4D+1", "command": "4D+2", "forgery": "3D+1", "hide": "4D", "persuasion": "5D+2", "search": "4D+2", "sneak": "5D" } },
+      STRENGTH: { base: "2D", skills: { "brawling": "4D", "climbing/jumping": "5D+1", "stamina": "5D" } },
+      TECHNICAL: { base: "2D", skills: { "blaster repair": "3D+1", "computer programming/repair": "4D", "droid programming": "3D", "first aid": "4D", "lightsaber repair": "4D+1", "repulsorlift repair": "3D+1", "security": "4D", "space transports repair": "3D+2" } }
+    },
+    specialAbilities: "Force Skills: Control 2D+2, Sense 4D+1, Alter 6D. Control: Accelerate healing, concentration, control pain, emptiness, hibernation trance, reduce injury, remain conscious, remove fatigue. Sense: Danger sense, life detection, life sense, magnify senses, sense Force. Alter: Injure/kill, telekinesis. Control and Alter: Accelerate another's healing, control another's pain, inflict pain, remove another's fatigue. Sense and Alter: Dim others' senses. This character is Force-sensitive.",
+    forcePoints: 2,
+    darkSidePoints: 1,
+    characterPoints: 17,
+    move: "10",
+    equipment: "Lightsaber (5D), comlink.",
+    capsule: "Son of Jedi Master Ranik Solusar, Kam trained under his father until the Imperial Jedi purges separated them — Ranik was killed by Darth Vader. Kam went into hiding in the Outer Rim, was captured and tortured by dark Jedi, and twisted to serve the dark side before Luke Skywalker won him back to the light. His Force abilities are uneven — advanced in some areas, weak in others — reflecting incomplete training. Luke brought him to serve as his apprentice at the Praxeum, where his training tradition complements Obi-Wan's and Yoda's methods.",
+    source: "WEG40114 The Jedi Academy Sourcebook p.61"
+  },
+
+  {
+    name: "Tionne (14 ABY)",
+    species: "Human",
+    system: "Yavin",
+    location: "Yavin 4 — Jedi Praxeum",
+    affiliations: ["New Republic"],
+    role: "Jedi Student / Minstrel / Historian",
+    type: "Minstrel",
+    stats: {
+      DEXTERITY: { base: "2D+2", skills: { "blaster": "3D+1", "dodge": "4D", "lightsaber": "3D", "pick pocket": "3D+2", "running": "4D" } },
+      KNOWLEDGE: { base: "4D", skills: { "alien species": "5D", "business": "4D+2", "cultures": "4D+1", "languages": "4D+1", "planetary systems": "4D+2", "scholar: folklore": "5D+2", "scholar: Holocron": "5D", "scholar: Jedi history": "6D", "streetwise": "5D+1", "survival": "4D+2", "survival: Yavin Four": "5D", "value": "5D+1" } },
+      MECHANICAL: { base: "3D+1", skills: { "beast riding": "4D", "musical instrument operation: double viol": "6D", "repulsorlift operation": "4D+2", "sensors": "4D", "space transports": "4D+1", "swoop operation": "4D" } },
+      PERCEPTION: { base: "4D", skills: { "bargain": "5D+1", "con": "5D", "gambling": "4D+2", "persuasion": "5D", "persuasion: storytelling": "6D+1", "search": "4D+2", "sneak": "5D" } },
+      STRENGTH: { base: "2D", skills: { "brawling": "3D", "climbing/jumping": "3D+1", "swimming": "4D" } },
+      TECHNICAL: { base: "2D", skills: { "blaster repair": "3D", "computer programming/repair": "3D", "droid programming": "3D+1", "first aid": "4D", "lightsaber repair": "3D", "musical instrument repair: stringed instruments": "4D+2" } }
+    },
+    specialAbilities: "Force Skills: Control 2D+2, Sense 2D, Alter 1D+2. Control: Accelerate healing, concentration, control pain, reduce injury, remain conscious. Sense: Danger sense, life detection, life sense, magnify senses. Alter: Telekinesis. This character is Force-sensitive.",
+    forcePoints: 3,
+    characterPoints: 13,
+    move: "10",
+    equipment: "Jedi robes, blaster pistol (4D), double viol, datapad.",
+    capsule: "Silver-haired minstrel and historian with a lifelong obsession with Jedi lore, nurtured by her grandmother who remembered the Jedi before the purge. Not especially powerful in the Force, but the heart and soul of Luke's first Jedi class — the morale booster who keeps the group together. She studied the Jedi Holocron more deeply than anyone else alive, and it is her research into the Great Sith War that gives the students the insight needed to defeat Exar Kun: that a combined Force effort overcame him before, and can again.",
+    source: "WEG40114 The Jedi Academy Sourcebook p.63"
+  },
+
+  {
+    name: "Cilghal (14 ABY)",
+    species: "Mon Calamari",
+    system: "Yavin",
+    location: "Yavin 4 — Jedi Praxeum",
+    affiliations: ["New Republic"],
+    role: "Jedi Student / Ambassador",
+    type: "Calamarian Ambassador",
+    stats: {
+      DEXTERITY: { base: "3D+1", skills: { "blaster": "4D+1", "dodge": "4D+2", "lightsaber": "3D+2" } },
+      KNOWLEDGE: { base: "4D", skills: { "alien species": "5D+2", "bureaucracy": "5D", "bureaucracy: Calamari": "7D+2", "bureaucracy: New Republic": "6D+2", "business": "5D", "cultures": "5D", "languages": "4D+2", "language: Calamarian Knowledge Bank": "5D", "planetary systems": "5D+1", "survival": "4D+1", "survival: Yavin Four": "4D+2", "willpower": "6D" } },
+      MECHANICAL: { base: "2D", skills: { "astrogation": "3D", "beast riding": "3D", "repulsorlift operation": "2D+2", "space transports": "3D+2", "starfighter piloting": "3D", "starship gunnery": "2D+1", "starship shields": "2D+2" } },
+      PERCEPTION: { base: "3D", skills: { "bargain": "5D+2", "command": "7D+1", "hide": "4D+1", "persuasion": "5D", "persuasion: oration": "7D+2", "search": "3D+2" } },
+      STRENGTH: { base: "3D", skills: { "brawling": "3D+2", "stamina": "4D", "swimming": "6D" } },
+      TECHNICAL: { base: "2D+2", skills: { "computer programming/repair": "4D", "droid programming": "3D", "first aid": "6D+2", "lightsaber repair": "3D", "security": "4D+1" } }
+    },
+    specialAbilities: "Moist Environments: When in moist environments, Mon Calamari receive a +1D bonus to all Dexterity, Perception, and Strength attribute and skill checks.\n\nDry Environments: When in very dry environments, Mon Calamari suffer a -1D penalty to all Dexterity, Perception, and Strength attribute and skill checks.\n\nExtended Danger Sense: Cilghal can peer a few seconds into the future to determine which members of a specific group locked in combat will be alive or dead. The vision comes only seconds before the event, giving little time to act.\n\nForce Skills: Control 4D, Sense 3D+2, Alter 5D. Control: Accelerate healing, concentration, control pain, detoxify poison, emptiness, hibernation trance, reduce injury, remain conscious, remove fatigue. Sense: Danger sense, life detection, life sense, magnify senses, sense Force. Alter: Telekinesis. Control and Alter: Accelerate another's healing, control another's pain, detoxify poison in another, remove another's fatigue. This character is Force-sensitive.",
+    forcePoints: 2,
+    characterPoints: 13,
+    move: "10",
+    equipment: "Jedi robes, datapad.",
+    capsule: "Mon Calamari ambassador who assists Leia in locating Admiral Ackbar on Mon Calamari. During Daala's attack she reveals a unique Force talent for sensing which combatants are about to die. Leia brings her to Luke, who immediately sees her potential as a great healer and takes her as his newest student. A natural consensus-builder, she becomes the de facto leader of the Jedi students after Luke falls into his Force coma. She fulfills her potential by spending hours isolating and ejecting every molecule of Furgan's nano virus from Mon Mothma's body, saving her life.",
+    source: "WEG40114 The Jedi Academy Sourcebook p.65"
+  },
+
+  {
+    name: "Exar Kun (Spirit)",
+    species: "Human",
+    system: "Yavin",
+    location: "Yavin 4 — Temple of Exar Kun",
+    affiliations: ["Criminal Underworld", "Sith Brotherhood"],
+    role: "Dark Lord of the Sith (disembodied spirit)",
+    type: "Sith Lord",
+    stats: {
+      DEXTERITY: { base: "—", skills: {} },
+      KNOWLEDGE: { base: "—", skills: {} },
+      MECHANICAL: { base: "—", skills: {} },
+      PERCEPTION: { base: "—", skills: {} },
+      STRENGTH: { base: "—", skills: {} },
+      TECHNICAL: { base: "—", skills: {} }
+    },
+    specialAbilities: "Disembodied spirit — no physical form, no physical stats. Exists as a shade trapped within his Yavin 4 temples, sustained by the residual dark side energy of the Massassi architecture he designed. Powers demonstrated in spirit form: illusion projection (appeared as Anakin Skywalker to Luke), Force feeding (drains energy and life from Force-sensitive beings to sustain himself — killed Gantoris by total drain), possession/compulsion (bent Gantoris, Kyp Durron, and Streen to his will, channeling Force lightning and other Sith powers through them), mental seduction (offers forbidden knowledge to tempt impatient Jedi students). Grows stronger when fed by anger, hate, fear, or the Force energy of nearby sensitives. Defeated when Luke's united students — anchored by Tionne's research, the Solo twins' ability to speak with Luke's ghost-state, and Leia's guidance — combine their power against him. Kirana Ti and Streen deliver the final blow with Luke's and Gantoris's lightsabers.",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: "0",
+    equipment: "None — exists as a spirit within his temple.",
+    capsule: "Exar Kun was a disciple of Jedi Master Vodo-Siosk Baas who, 4,000 years before the Battle of Yavin, delved into forbidden Sith teachings despite his master's warnings. Seduced by the shade of Freedon Nadd, he traveled to Onderon and then to Yavin 4, where he fully embraced the dark side and destroyed Nadd. On Yavin 4 he enslaved the Massassi people, fused Jedi and Sith teachings into a new philosophy, and declared himself the first Dark Lord of the Sith. He formed the Brotherhood of the Sith and, allying with fallen Jedi Ulic Qel-Droma, nearly brought the Old Republic to ruin in the Great Sith War. When Ulic betrayed him and the Jedi united against him, Kun drained every last Massassi slave to trap his own spirit within his temples rather than die — surviving in uneasy slumber for millennia. When Luke's Jedi students arrived at Yavin 4, Kun awakened and systematically seduced Gantoris and Kyp Durron, feeding on their anger and augmenting their powers. He was ultimately destroyed by the combined Force effort of Luke's students at 14 ABY.",
+    source: "WEG40114 The Jedi Academy Sourcebook pp.69-75"
+  },
+
+  {
+    name: "Ambassador Furgan (14 ABY)",
+    species: "Human",
+    system: "Carida",
+    location: "Carida — Imperial Military Academy",
+    affiliations: ["Galactic Empire", "Imperial Army"],
+    role: "Imperial Ambassador / Fanatic",
+    type: "Imperial Diplomat",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { "blaster": "3D", "dodge": "4D+2", "running": "2D+2" } },
+      KNOWLEDGE: { base: "4D", skills: { "alien species": "5D", "bureaucracy": "5D", "bureaucracy: Carida": "10D", "bureaucracy: Imperial Army": "7D+2", "business": "6D+1", "cultures": "4D+2", "intimidation": "5D+2", "languages": "5D", "law enforcement: Carida": "7D+1", "planetary systems": "5D", "tactics": "4D+1", "willpower": "6D" } },
+      MECHANICAL: { base: "3D+1", skills: { "communications": "4D+2", "hover vehicle operation": "4D", "repulsorlift operation": "4D+2", "sensors": "4D+1", "walker operation": "3D+2" } },
+      PERCEPTION: { base: "3D+2", skills: { "bargain": "5D", "command": "7D", "con": "5D+2", "hide": "4D", "investigation": "4D", "persuasion": "6D", "persuasion: oration": "8D+1", "search": "4D+1", "sneak": "4D" } },
+      STRENGTH: { base: "2D", skills: { "brawling": "3D+1", "climbing/jumping": "3D", "stamina": "3D" } },
+      TECHNICAL: { base: "3D", skills: { "computer programming/repair": "5D", "droid programming": "4D+1", "first aid": "4D", "security": "6D+2" } }
+    },
+    specialAbilities: "None.",
+    forcePoints: 5,
+    darkSidePoints: 12,
+    characterPoints: 22,
+    move: "9",
+    equipment: "Ornate custom Imperial uniform, comlink, datapad.",
+    capsule: "The fanatical Imperial ambassador to Carida, Furgan is among the most virulent anti-alien voices in the remnant Empire and harbors a deep personal hatred for Mon Mothma. He sabotages the peace summit on Pinnacle Moon by spiking Mon Mothma's drink with a nano-virus that slowly disintegrates her nervous system, then mounts a kidnapping mission to Anoth targeting Anakin Solo — piloting a spider walker in the assault. He is killed at Anoth when his own treachery unravels: Terpfen, wracked with guilt over his role in the operation, turns on Furgan during the battle and destroys his walker.",
+    source: "WEG40114 The Jedi Academy Sourcebook p.80"
+  },
+
+  {
+    name: "Colonel Ardax (14 ABY)",
+    species: "Human",
+    system: "Carida",
+    location: "Carida — Dreadnaught Vendetta",
+    affiliations: ["Galactic Empire", "Imperial Army"],
+    role: "Imperial Army Officer / Capital Ship Commander",
+    type: "Imperial Army Officer",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "5D", "dodge": "4D+2", "grenade": "4D", "vehicle blasters": "4D+2" } },
+      KNOWLEDGE: { base: "2D+1", skills: { "bureaucracy": "3D", "bureaucracy: Imperial Army": "6D+2", "cultures": "3D+2", "intimidation": "3D", "law enforcement: Imperial law": "5D", "planetary systems": "4D+1", "survival": "4D", "tactics: capital ships": "5D", "tactics: ground assault": "7D", "willpower": "3D+1" } },
+      MECHANICAL: { base: "3D+2", skills: { "astrogation": "4D", "capital ship gunnery": "4D+1", "capital ship piloting": "5D+2", "capital ship shields": "4D+2", "communications": "5D", "hover vehicle operation": "4D+2", "repulsorlift operation": "5D", "sensors": "5D", "space transports": "4D+2", "starship gunnery": "4D", "starship shields": "4D+1", "walker operation": "4D+1" } },
+      PERCEPTION: { base: "2D+2", skills: { "bargain": "3D", "command: Vendetta crew": "8D+1", "hide": "3D+2", "investigation": "4D", "persuasion": "4D", "search": "4D+1" } },
+      STRENGTH: { base: "1D", skills: { "brawling": "6D", "stamina": "5D" } },
+      TECHNICAL: { base: "2D+1", skills: { "capital ship repair": "3D", "capital ship weapon repair": "3D+2", "computer programming/repair": "4D", "droid programming": "3D+2", "first aid": "4D", "repulsorlift repair": "3D", "security": "4D+1" } }
+    },
+    specialAbilities: "None.",
+    forcePoints: 1,
+    characterPoints: 12,
+    move: "10",
+    equipment: "Imperial Army uniform, comlink, datapad.",
+    capsule: "A middle-aged Chandrilaan officer equally at home commanding men on a bridge or on the ground, Ardax spent a decade in the Carida system before taking command of the Dreadnaught Vendetta. A tough but fair taskmaster who always puts his crew first, he has honed the Vendetta into a finely-tuned machine with fierce crew loyalty in return. When Furgan conscripts the Vendetta for the Anoth assault and then evacuates the doomed Carida aboard her, Ardax chafes under the bureaucrat's nominal command — he is a real captain, not an aide. During the New Republic's arrival at Anoth he abandons Furgan's ground team without hesitation and attempts to escape to hyperspace by threading through the sensor-blind gap between the largest fragments of the shattered world. The massive static discharges generated by the planetary debris discharge directly onto the Vendetta's hull, destroying her and killing Ardax.",
+    source: "WEG40114 The Jedi Academy Sourcebook p.82"
+  },
+
+  {
+    name: "Lieutenant Dauren (14 ABY)",
+    species: "Human",
+    system: "Carida",
+    location: "Carida — Imperial Military Academy",
+    affiliations: ["Galactic Empire", "Imperial Army"],
+    role: "Imperial Communications Officer",
+    type: "Imperial Army Officer",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "4D+2", "dodge": "5D+1", "grenade": "4D" } },
+      KNOWLEDGE: { base: "2D", skills: { "bureaucracy": "4D", "planetary systems": "5D", "value": "4D+1" } },
+      MECHANICAL: { base: "3D+1", skills: { "communications": "6D+2", "repulsorlift operation": "4D", "sensors": "5D+1", "space transports": "4D", "walker operation": "4D+1" } },
+      PERCEPTION: { base: "2D", skills: { "bargain": "4D", "command": "3D+2", "con": "4D", "investigation": "3D", "persuasion": "4D+2", "search": "3D+1" } },
+      STRENGTH: { base: "2D", skills: { "brawling": "3D", "lifting": "3D", "stamina": "3D+1" } },
+      TECHNICAL: { base: "2D", skills: { "computer programming/repair": "4D", "droid programming": "3D+2", "droid repair": "3D", "first aid": "4D+1", "security": "5D" } }
+    },
+    specialAbilities: "None.",
+    forcePoints: 1,
+    characterPoints: 8,
+    move: "10",
+    equipment: "Imperial Army uniform, comlink, datapad, hold-out blaster (3D+2).",
+    capsule: "An ambitious young officer who graduated with honors from Raithal Academy just before the New Republic reclaimed it, Dauren has spent his career perpetually one step ahead of the advancing Alliance — advanced comms training at Corulag before it fell, field postings under commanders including Thrawn and the resurrected Emperor. After years of instability he secured a comfortable transfer to Carida, where he hoped to spend time cultivating political patrons in Furgan's command structure. He came to Furgan's attention sooner than planned: when Carida's star began to collapse, Dauren was tasked with locating Kyp Durron's brother Zeth — now a stormtrooper — hoping to use him as a ticket off the doomed world. In his panic he injured Zeth, and was killed by the stormtrooper in retaliation.",
+    source: "WEG40114 The Jedi Academy Sourcebook p.84"
+  },
+
+  {
+    name: "Trooper 2112 / Zeth Durron (14 ABY)",
+    species: "Human",
+    system: "Carida",
+    location: "Carida — Imperial Military Academy",
+    affiliations: ["Galactic Empire", "Stormtrooper Corps"],
+    role: "Imperial Stormtrooper / Kyp Durron's Brother",
+    type: "Imperial Stormtrooper",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { "blaster": "5D", "blaster artillery": "4D", "dodge": "4D+2", "grenade": "3D+2", "melee combat": "4D", "melee parry": "4D", "vehicle blasters": "4D+1" } },
+      KNOWLEDGE: { base: "2D", skills: { "intimidation": "3D", "survival": "5D", "tactics": "3D+1" } },
+      MECHANICAL: { base: "2D+2", skills: { "repulsorlift operation": "4D", "walker operation": "4D" } },
+      PERCEPTION: { base: "2D", skills: { "command": "3D+2", "hide": "3D", "investigation": "2D+1", "search": "3D", "sneak": "4D+1" } },
+      STRENGTH: { base: "2D", skills: { "brawling": "4D", "climbing/jumping": "3D+1", "lifting": "3D+2", "stamina": "3D" } },
+      TECHNICAL: { base: "2D", skills: { "armor repair": "2D+2", "blaster repair": "2D+1", "demolitions": "2D+2", "first aid": "3D", "security": "4D", "walker repair": "2D+2" } }
+    },
+    specialAbilities: "None.",
+    forcePoints: 1,
+    characterPoints: 6,
+    move: "10",
+    equipment: "Stormtrooper armor (-2D physical, -1D energy, -1D to Dexterity and related skills), blaster rifle (5D), blaster pistol (4D).",
+    capsule: "Kyp Durron's older brother, raised with him on the colony world of Deyer. A bright, athletic boy with plans to study civil engineering, Zeth was separated from his family when the Empire arrested the household for sedition — his parents and Kyp were sent to the spice mines of Kessel, while Zeth was deemed 'salvageable.' Over a year of brutal political re-education followed by stormtrooper training at Carida, during which more than half his cohort died, ground away his old self until only survival instinct remained. He enlisted as Trooper 2112 and spent years in endless training cycles. When Kyp flew the Sun Crusher past Carida and gestured to him, it was the first time in years he thought of something beyond his duty. He attempted to escape with Kyp but was stunned by Lieutenant Dauren; he managed to shoot Dauren before collapsing. Kyp grabbed him with the tractor beam, but the sun exploded before he could pull him aboard, and Zeth died with Carida. He later appeared before Kyp in the Temple of Exar Kun on Yavin 4 to thank him for setting him free.",
+    source: "WEG40114 The Jedi Academy Sourcebook p.86"
+  },
+
+  {
+    name: "Admiral Daala (14 ABY)",
+    species: "Human",
+    system: "Maw Cluster",
+    location: "Maw Installation — Command Deck",
+    affiliations: ["Galactic Empire", "Imperial Navy"],
+    role: "Imperial Navy Admiral / Maw Installation Commander",
+    type: "Imperial Navy Officer",
+    stats: {
+      DEXTERITY: { base: "2D+1", skills: { "blaster": "5D", "blaster: blaster pistol": "6D+2", "blaster artillery": "4D", "brawling parry": "7D", "dodge": "6D", "grenade": "4D+1", "melee combat": "5D+2", "melee parry": "5D", "missile weapons": "4D+1" } },
+      KNOWLEDGE: { base: "3D+1", skills: { "alien species": "4D+2", "bureaucracy": "5D", "bureaucracy: Imperial Navy": "8D+2", "bureaucracy: Maw Installation": "10D", "business": "6D+2", "cultures": "6D", "intimidation": "8D+2", "languages": "7D", "law enforcement: Imperial law": "11D", "planetary systems": "6D+2", "survival": "5D", "tactics": "7D", "tactics: capital ships": "7D+2", "tactics: fleets": "8D+1", "tactics: ground assault tactics": "7D+1", "tactics: starfighters": "8D+2", "value": "8D", "willpower": "7D+2" } },
+      MECHANICAL: { base: "3D+2", skills: { "astrogation": "6D", "capital ship gunnery": "6D+2", "capital ship piloting": "6D+2", "capital ship piloting: Imperial Star Destroyer": "9D", "capital ship shields": "7D", "communications": "7D+1", "repulsorlift operation": "4D+2", "sensors": "6D", "space transports": "5D+1", "starfighter piloting": "4D", "starship gunnery": "4D+2", "starship shields": "4D+1", "walker operation": "4D" } },
+      PERCEPTION: { base: "3D+1", skills: { "bargain": "8D", "command": "6D+2", "command: Imperial Navy officers": "11D", "command: Maw fleet personnel": "8D+2", "con": "9D", "hide": "7D+2", "investigation": "8D", "persuasion": "8D", "search": "8D+2", "sneak": "7D" } },
+      STRENGTH: { base: "2D+1", skills: { "brawling": "8D", "climbing/jumping": "6D+2", "lifting": "5D", "stamina": "7D" } },
+      TECHNICAL: { base: "3D", skills: { "computer programming/repair": "10D+2", "demolitions": "5D", "droid programming": "7D", "first aid": "5D", "security": "8D" } }
+    },
+    specialAbilities: "None.",
+    forcePoints: 3,
+    darkSidePoints: 19,
+    characterPoints: 26,
+    move: "10",
+    equipment: "Comlink, datapad.",
+    capsule: "A brilliantly gifted tactician who overcame systematic gender discrimination in the Imperial Navy only through the patronage of Moff Tarkin, who recognized her talent after she anonymously proposed radical strategies through a false computer identity. Tarkin hid her from Imperial leadership — both to protect her and to keep her for himself — ultimately assigning her four Star Destroyers and command of the Maw Installation. She spent over a decade in isolation drilling her forces to peak readiness. When news of the Empire's defeat reached her she launched an aggressive campaign against the New Republic, destroying Calamarian orbital cities and targeting Coruscant, but suffered repeated setbacks: Han and Kyp escaped with the Sun Crusher and destroyed the Hydra; Ackbar recognized Tarkin's classic feint at Calamari and cost her the Manticore; Kyp detonated the nebula sheltering her remaining fleet and vaporized the Basilisk. Down to one ship, she returns to the Maw resolved to defend the Installation to the death, downloading Sivron's research before destroying the facility and fleeing to seek allies among the Imperial warlords.",
+    source: "WEG40114 The Jedi Academy Sourcebook p.88"
+  },
+
+  {
+    name: "Commander Kratas (14 ABY)",
+    species: "Human",
+    system: "Maw Cluster",
+    location: "Maw Installation — ISD Gorgon",
+    affiliations: ["Galactic Empire", "Imperial Navy"],
+    role: "Captain of the ISD Gorgon / Daala's Advisor",
+    type: "Imperial Navy Officer",
+    stats: {
+      DEXTERITY: { base: "2D+2", skills: { "blaster": "5D+2", "dodge": "5D", "grenade": "4D+1", "melee combat": "5D", "melee parry": "4D+2", "vehicle blasters": "4D" } },
+      KNOWLEDGE: { base: "3D", skills: { "alien species": "5D", "bureaucracy": "4D", "bureaucracy: Imperial Navy": "6D+1", "bureaucracy: Maw Installation": "6D+2", "business": "4D+2", "cultures": "5D", "languages": "5D", "law enforcement: Imperial law": "6D", "planetary systems": "7D", "survival": "4D", "tactics": "5D+2", "tactics: capital ships": "7D", "tactics: ground assault tactics": "5D+1" } },
+      MECHANICAL: { base: "3D+2", skills: { "astrogation": "5D", "capital ship gunnery": "7D+2", "capital ship piloting": "6D", "capital ship piloting: Imperial Star Destroyer": "7D+2", "capital ship shields": "6D", "communications": "7D", "repulsorlift operation": "5D", "sensors": "5D", "space transports": "5D+1", "starship shields": "5D", "swoop operation": "5D", "walker operation": "4D" } },
+      PERCEPTION: { base: "3D+1", skills: { "bargain": "6D", "command": "6D+2", "command: Gorgon officers": "8D+2", "con": "5D+1", "gambling": "5D", "investigation": "7D", "persuasion": "7D+1", "search": "6D", "sneak": "6D" } },
+      STRENGTH: { base: "2D+1", skills: { "brawling": "5D", "climbing/jumping": "6D", "lifting": "6D", "stamina": "6D" } },
+      TECHNICAL: { base: "3D", skills: { "capital ship repair": "5D", "capital ship weapon repair": "5D", "computer programming/repair": "6D", "demolitions": "6D", "droid programming": "6D", "first aid": "4D", "security": "7D+1" } }
+    },
+    specialAbilities: "None.",
+    forcePoints: 1,
+    darkSidePoints: 3,
+    characterPoints: 12,
+    move: "10",
+    equipment: "Comlink, datapad.",
+    capsule: "Born on Derilyn in the Elrood sector with nothing ahead of him but a life in the ore mines, Kratas won a SAGEducation scholarship to Calamar University on Esseles, where he excelled in history and politics before earning a place in officer training at Carida. He came to Tarkin's attention through his command ability and was selected as one of the guardians of Maw Installation. Though he and Daala initially clashed badly due to incompatible command styles, a decade of isolation forged a working partnership — she relies on him as her primary advisor and counselor. A short man with dark hair, wide watery eyes under heavy brows, and a jutting chin, Kratas is independent-minded but follows orders to the letter.",
+    source: "WEG40114 The Jedi Academy Sourcebook p.91"
+  },
+
+  {
+    name: "Captain Sten Thanas (14 ABY)",
+    species: "Human",
+    system: "Maw Cluster",
+    location: "Maw Installation — ISD Hydra",
+    affiliations: ["Galactic Empire", "Imperial Navy"],
+    role: "Captain of the ISD Hydra",
+    type: "Imperial Navy Officer",
+    stats: {
+      DEXTERITY: { base: "2D+2", skills: { "blaster": "5D", "blaster: blaster pistol": "7D+1", "dodge": "4D+1", "grenade": "4D", "melee combat": "5D+1", "melee parry": "4D", "running": "5D" } },
+      KNOWLEDGE: { base: "3D", skills: { "alien species": "4D", "bureaucracy": "5D", "bureaucracy: Imperial Navy": "6D", "bureaucracy: Maw Installation": "7D", "cultures": "6D", "languages": "5D+2", "law enforcement: Imperial law": "6D+1", "planetary systems": "5D+2", "survival": "4D+1", "tactics": "5D", "tactics: capital ships": "6D" } },
+      MECHANICAL: { base: "3D+2", skills: { "astrogation": "5D", "capital ship gunnery": "5D+2", "capital ship piloting": "5D", "capital ship piloting: Imperial Star Destroyer": "6D+1", "capital ship shields": "5D", "communications": "5D+2", "sensors": "5D", "space transports": "4D", "starship shields": "4D" } },
+      PERCEPTION: { base: "3D+1", skills: { "bargain": "4D", "command": "4D+2", "command: Hydra officers": "5D+2", "con": "5D+2", "investigation": "6D", "persuasion": "6D+1", "search": "5D", "sneak": "6D+1" } },
+      STRENGTH: { base: "2D+1", skills: { "brawling": "4D+2", "stamina": "5D" } },
+      TECHNICAL: { base: "3D", skills: { "capital ship repair": "5D", "capital ship weapon repair": "5D", "computer programming/repair": "5D", "demolitions": "4D+1", "droid programming": "5D+2", "first aid": "4D+1", "security": "5D" } }
+    },
+    specialAbilities: "None.",
+    forcePoints: 1,
+    darkSidePoints: 1,
+    characterPoints: 16,
+    move: "10",
+    equipment: "Comlink, datapad, hold-out blaster (3D+1).",
+    capsule: "Skipper of the Star Destroyer Hydra, Thanas comes from a prominent Coruscant house with a long tradition of Old Republic and Imperial officers. He served under Tarkin in the Outer Rim's Seswenna sector before volunteering for Maw Installation, where he rose from first mate to captain after the Hydra's previous commander died in a turbolift malfunction. Relatively young for a Star Destroyer captain, he is still consolidating his crew's confidence but trusts Daala's leadership completely. Tall and handsome with ash-blonde hair and blue eyes, his promising career is cut short when escaping Rebels ram the Hydra with the Sun Crusher, sending it drifting into a black hole.",
+    source: "WEG40114 The Jedi Academy Sourcebook p.93"
+  },
+
+  {
+    name: "Captain Brusc (14 ABY)",
+    species: "Human",
+    system: "Maw Cluster",
+    location: "Maw Installation — ISD Manticore",
+    affiliations: ["Galactic Empire", "Imperial Navy"],
+    role: "Captain of the ISD Manticore",
+    type: "Imperial Navy Officer",
+    stats: {
+      DEXTERITY: { base: "2D+2", skills: { "blaster": "4D", "blaster: blaster pistol": "6D", "dodge": "6D", "grenade": "4D", "missile weapons": "4D" } },
+      KNOWLEDGE: { base: "3D", skills: { "bureaucracy": "6D", "bureaucracy: Imperial Navy": "7D+1", "bureaucracy: Maw Installation": "7D", "intimidation": "5D", "languages": "4D", "law enforcement: Imperial law": "7D+1", "planetary systems": "5D", "survival": "5D", "tactics": "6D", "tactics: capital ships": "7D", "tactics: fleets": "5D+2", "willpower": "5D" } },
+      MECHANICAL: { base: "3D+2", skills: { "astrogation": "5D", "capital ship gunnery": "5D+2", "capital ship piloting": "5D+2", "capital ship piloting: Imperial Star Destroyer": "7D", "capital ship shields": "5D", "communications": "6D", "repulsorlift operation": "5D", "sensors": "5D+2", "space transports": "4D+2", "starship shields": "4D" } },
+      PERCEPTION: { base: "3D+1", skills: { "bargain": "5D", "command": "6D+2", "command: Manticore officers": "7D+2", "con": "6D", "investigation": "7D", "persuasion": "7D+1", "search": "5D+2" } },
+      STRENGTH: { base: "2D+1", skills: { "brawling": "6D", "stamina": "5D+2" } },
+      TECHNICAL: { base: "3D", skills: { "computer programming/repair": "6D", "demolitions": "4D", "droid programming": "6D+2", "first aid": "5D", "security": "7D" } }
+    },
+    specialAbilities: "None.",
+    forcePoints: 1,
+    darkSidePoints: 2,
+    characterPoints: 7,
+    move: "10",
+    equipment: "Comlink, datapad.",
+    capsule: "Commander of the Star Destroyer Manticore, Brusc is a tough and demanding leader capable of driving his crew to impressive performance — but his deep insecurity makes him a vainglorious and insufferable superior. His officers endure frequent tirades and bouts of depression with no hope of transfer in the closed world of Maw Installation. A sallow-faced man with thinning blond hair and a weak chin, Brusc goes down with the Manticore when Admiral Daala's strike on the Calamari shipyards fails and Admiral Ackbar's counter-attack destroys his ship with all hands.",
+    source: "WEG40114 The Jedi Academy Sourcebook p.95"
+  },
+
+  {
+    name: "Captain Mullinore (14 ABY)",
+    species: "Human",
+    system: "Maw Cluster",
+    location: "Maw Installation — ISD Basilisk",
+    affiliations: ["Galactic Empire", "Imperial Navy"],
+    role: "Captain of the ISD Basilisk",
+    type: "Imperial Navy Officer",
+    stats: {
+      DEXTERITY: { base: "2D+2", skills: { "blaster": "6D+1", "blaster artillery": "4D", "dodge": "5D", "grenade": "4D+2", "missile weapons": "4D" } },
+      KNOWLEDGE: { base: "3D", skills: { "bureaucracy": "6D", "bureaucracy: Imperial Navy": "8D+1", "bureaucracy: Maw Installation": "5D", "languages": "4D", "law enforcement: Imperial law": "7D", "planetary systems": "6D", "survival": "4D+2", "tactics": "6D+2", "tactics: capital ships": "7D+1", "tactics: fleets": "5D", "tactics: starfighters": "4D+2", "willpower": "5D+1" } },
+      MECHANICAL: { base: "3D+2", skills: { "astrogation": "6D+1", "capital ship gunnery": "7D+2", "capital ship piloting": "5D", "capital ship piloting: Imperial Star Destroyer": "8D", "capital ship shields": "7D", "communications": "6D+2", "sensors": "7D+2", "space transports": "5D+2", "starship shields": "4D+2" } },
+      PERCEPTION: { base: "3D+1", skills: { "bargain": "6D", "command": "7D", "command: Basilisk officers": "10D+2", "con": "7D", "investigation": "6D+2", "persuasion": "7D", "search": "6D+2" } },
+      STRENGTH: { base: "2D+1", skills: { "brawling": "6D+1", "stamina": "5D" } },
+      TECHNICAL: { base: "3D", skills: { "computer programming/repair": "5D+1", "demolitions": "5D", "droid programming": "5D+2", "first aid": "4D+1", "security": "7D+2" } }
+    },
+    specialAbilities: "None.",
+    forcePoints: 1,
+    darkSidePoints: 1,
+    characterPoints: 22,
+    move: "10",
+    equipment: "Comlink, datapad.",
+    capsule: "Captain of the Star Destroyer Basilisk and the longest-serving of Daala's four captains, Mullinore was a classmate of Daala's at Carida — one of the few who never slighted her for being female. She remembered that when assembling her Maw officers and offered him his own command; he accepted immediately. A native of Taanab, he is formal, proper, brave, and absolutely loyal to Daala, having built a quiet mutual friendship with her over the years second only to Kratas in her trust. He volunteers to command a skeleton crew on a suicide ramming run against Coruscant aboard the stripped-down Basilisk, but the mission never reaches its target — Kyp Durron's Sun Crusher detonates the nebula sheltering Daala's fleet, and the Basilisk is vaporized before it can get underway.",
+    source: "WEG40114 The Jedi Academy Sourcebook p.97"
+  },
+
+  {
+    name: "General Odosk (14 ABY)",
+    species: "Human",
+    system: "Maw Cluster",
+    location: "Maw Installation — Imperial Army Command",
+    affiliations: ["Galactic Empire", "Imperial Army"],
+    role: "Commanding General, Maw Installation Ground Forces",
+    type: "Imperial Army Officer",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { "blaster": "3D+2", "blaster: repeating blaster": "6D", "blaster artillery": "4D+2", "blaster artillery: anti-infantry": "7D", "brawling parry": "5D+2", "dodge": "4D+2", "grenade": "5D", "vehicle blasters": "5D" } },
+      KNOWLEDGE: { base: "3D+1", skills: { "bureaucracy": "4D", "bureaucracy: Imperial Army": "7D+2", "intimidation": "5D", "law enforcement": "4D+1", "law enforcement: Imperial law": "6D+2", "streetwise": "5D", "survival": "7D", "tactics": "5D", "tactics: ground assault": "5D", "tactics: sieges": "6D", "value": "4D+2", "willpower": "5D" } },
+      MECHANICAL: { base: "3D+2", skills: { "ground vehicle operation": "4D", "hover vehicle operation": "5D", "repulsorlift operation": "4D+2", "sensors": "6D", "walker operation": "4D+2", "walker operation: AT-AT": "5D", "walker operation: AT-ST": "5D+2" } },
+      PERCEPTION: { base: "3D", skills: { "bargain": "5D", "command": "5D+2", "command: Maw troops": "8D", "con": "4D", "investigation": "4D+2", "persuasion": "5D+1", "search": "6D" } },
+      STRENGTH: { base: "3D", skills: { "brawling": "5D+2", "climbing/jumping": "4D", "stamina": "5D" } },
+      TECHNICAL: { base: "3D", skills: { "armor repair": "4D", "blaster repair": "4D+1", "demolitions": "3D+2", "first aid": "4D", "ground vehicle repair": "4D+2", "repulsorlift repair": "4D+1", "security": "7D+1", "walker repair": "4D" } }
+    },
+    specialAbilities: "None.",
+    forcePoints: 2,
+    darkSidePoints: 3,
+    characterPoints: 23,
+    move: "10",
+    equipment: "Comlink, datapad, blaster rifle (5D).",
+    capsule: "The senior Imperial Army officer attached to Daala's Maw fleet, Odosk is a grizzled veteran of hundreds of campaigns who was on the verge of retirement when Tarkin and Daala recruited him with an offer of promotion to general and command of a secret installation's ground forces. He accepted to postpone settling with his youngest daughter's family, expecting a quiet end to his career. Instead he found himself locked away for over a decade with no news of the outside galaxy — and little certainty his daughter is still alive. Now well past retirement age and stooping slightly, his hair gone snowy-white above the prominent sideburns fashionable among Imperial officers a decade ago, he keeps going through sheer force of will.",
+    source: "WEG40114 The Jedi Academy Sourcebook p.99"
+  },
+
+  {
+    name: "Tol Sivron (14 ABY)",
+    species: "Twi'lek",
+    system: "Maw Cluster",
+    location: "Maw Installation — Director's Office",
+    affiliations: ["Galactic Empire"],
+    role: "Director of Maw Installation",
+    type: "Director of Maw Installation",
+    stats: {
+      DEXTERITY: { base: "2D+1", skills: { "blaster": "4D", "brawling parry": "3D+2", "dodge": "6D" } },
+      KNOWLEDGE: { base: "4D", skills: { "alien species": "7D+1", "bureaucracy": "9D", "bureaucracy: Empire": "10D", "bureaucracy: Maw Installation": "13D+1", "business": "5D+2", "intimidation": "6D", "scholar: defense technologies": "7D+2", "scholar: Imperial science community": "6D", "streetwise": "5D", "survival": "6D+2", "value": "6D", "willpower": "7D" } },
+      MECHANICAL: { base: "2D", skills: { "communications": "4D+2", "repulsorlift operation": "4D", "sensors": "5D+1" } },
+      PERCEPTION: { base: "4D+2", skills: { "bargain": "7D", "command": "5D", "command: Maw Installation staff": "8D", "con": "7D+1", "forgery": "5D", "hide": "5D+2", "investigation": "6D", "persuasion": "10D+1", "search": "5D", "sneak": "5D+1" } },
+      STRENGTH: { base: "2D", skills: { "brawling": "4D", "stamina": "5D" } },
+      TECHNICAL: { base: "3D", skills: { "battle station repair": "5D+2", "(A) capital ship engineering": "7D", "capital ship repair": "5D+1", "(A) capital ship weapon engineering": "4D+2", "capital ship weapon repair": "3D+2", "computer programming/repair": "7D+2", "droid programming": "4D", "security": "8D+2" } }
+    },
+    specialAbilities: "Head-tails: Twi'leks can use their head-tails to communicate secretly with each other, even in a room full of others. The complex movement of the tails constitutes a 'secret' language all Twi'leks are fluent in.",
+    forcePoints: 1,
+    darkSidePoints: 4,
+    characterPoints: 14,
+    move: "10",
+    equipment: "Datapad, lab tunic.",
+    capsule: "The pasty-faced Twi'lek Director of Maw Installation and its most reviled figure — a bureaucrat masquerading as a scientist who stifles creativity with forms, feasibility studies, and progress reports he never reads, and puts his name on every paper produced by researchers more talented than himself. Born into a head-clan on Ryloth, he was exiled to the sunlit desert hemisphere by custom when a clan elder died; he killed his three companions to improve his own survival odds. Wandering the desert, he encountered a young Commander Tarkin establishing a refueling base, made himself useful, and proved an able manager as Tarkin rose through the ranks. Tarkin appointed him to direct Maw Installation, where he has spent over a decade generating paperwork and resenting everyone around him. When the New Republic invades the Maw, he evacuates in the Prototype Death Star and destroys Kessel's moon before retreating. Ignoring his last military advisor's counsel, he pursues the Sun Crusher into the black holes of the Maw and is destroyed when the Death Star crosses the event horizon.",
+    source: "WEG40114 The Jedi Academy Sourcebook p.71"
+  },
+
+  {
+    name: "Doxin (14 ABY)",
+    species: "Human",
+    system: "Maw Cluster",
+    location: "Maw Installation — HECIL Division",
+    affiliations: ["Galactic Empire"],
+    role: "Director, High-Energy Concepts and Implementations Labs (HECIL)",
+    type: "Maw Scientist",
+    stats: {
+      DEXTERITY: { base: "1D", skills: { "brawling parry": "3D", "dodge": "3D+1" } },
+      KNOWLEDGE: { base: "4D", skills: { "alien species": "5D", "bureaucracy": "6D+1", "bureaucracy: Maw Installation": "9D+2", "business": "6D", "cultures": "5D+1", "languages": "6D", "scholar: defense technologies": "5D+2", "scholar: Imperial science community": "4D+2", "streetwise": "5D", "value": "6D+2", "willpower": "5D" } },
+      MECHANICAL: { base: "4D", skills: { "capital ship gunnery": "4D+2", "capital ship shields": "5D", "communications": "4D+2", "repulsorlift operation": "5D", "sensors": "7D" } },
+      PERCEPTION: { base: "2D", skills: { "bargain": "6D", "command: research staff": "8D+2", "con": "5D", "hide": "3D+2", "persuasion": "7D+2", "search": "4D", "sneak": "4D" } },
+      STRENGTH: { base: "1D+2", skills: {} },
+      TECHNICAL: { base: "4D", skills: { "(A) battle station engineering": "8D", "battle station repair": "6D", "(A) battle station weapon engineering": "13D", "battle station weapon repair": "8D", "(A) capital ship weapon engineering": "9D", "capital ship weapon repair": "7D+1", "computer programming/repair": "7D", "droid programming": "5D+2", "security": "6D", "(A) starship weapon engineering": "12D", "starship weapon repair": "7D+2" } }
+    },
+    specialAbilities: "None.",
+    forcePoints: 1,
+    darkSidePoints: 1,
+    characterPoints: 7,
+    move: "8",
+    equipment: "Datapad, lab tunic.",
+    capsule: "Director of HECIL — the High-Energy Concepts and Implementations Labs Division — and one of the Installation's most formidably skilled scientists, Doxin was among Bevel Lemelisk's prize students and followed his mentor into the Death Star project with enthusiasm. He spent years developing and refining the Death Star superlaser focusing system, then cannibalized his beloved prototype lens from Lab Module A to power the MCPS project when a new application presented itself. He is currently pushing the MCPS to completion and scheming to woo Sivron for resources to build a proper custom lens he believes will unlock the weapon's full potential. Wider than he is tall, with a shaved head, wire-thin dark eyebrows, and thick lips. He dies when Sivron's incompetent piloting drives the Prototype Death Star beyond a black hole's event horizon.",
+    source: "WEG40114 The Jedi Academy Sourcebook p.72"
+  },
+
+  {
+    name: "Golanda (14 ABY)",
+    species: "Human",
+    system: "Maw Cluster",
+    location: "Maw Installation — Ordnance Research Division",
+    affiliations: ["Galactic Empire"],
+    role: "Director, Ordnance Research and Development",
+    type: "Maw Scientist",
+    stats: {
+      DEXTERITY: { base: "2D+1", skills: { "blaster artillery": "6D", "dodge": "6D", "missile weapons": "6D+1", "vehicle blasters": "3D+2" } },
+      KNOWLEDGE: { base: "4D", skills: { "alien species": "5D", "bureaucracy": "5D+1", "bureaucracy: Maw Installation": "7D+2", "business": "5D", "cultures": "7D", "languages": "4D+2", "planetary systems": "5D" } },
+      MECHANICAL: { base: "2D+2", skills: { "capital ship gunnery": "4D", "communications": "4D", "repulsorlift operation": "5D+1", "starship gunnery": "6D" } },
+      PERCEPTION: { base: "2D+2", skills: { "bargain": "4D", "command: research staff": "6D+2", "gambling": "5D+1", "hide": "3D+2", "persuasion": "6D", "search": "4D", "sneak": "4D" } },
+      STRENGTH: { base: "2D+1", skills: { "brawling": "4D+2", "stamina": "5D", "swimming": "3D" } },
+      TECHNICAL: { base: "4D", skills: { "(A) artillery engineering": "12D+2", "(A) battle station weapon engineering": "5D", "battle station weapon repair": "4D+2", "(A) capital ship weapon engineering": "7D", "capital ship weapon repair": "5D+2", "computer programming/repair": "6D", "droid programming": "5D+2", "droid repair": "5D", "(A) starship weapon engineering": "7D", "starship weapon repair": "5D" } }
+    },
+    specialAbilities: "None.",
+    forcePoints: 1,
+    characterPoints: 6,
+    move: "10",
+    equipment: "Datapad, lab tunic.",
+    capsule: "Director of Ordnance Research and Development, responsible for the torpedoes and targeting systems that deliver the Sun Crusher's payload. Daughter of a wealthy industrialist, she was groomed at elite scientific conclaves before joining a weapons team at the Imperial Ordnance Research Facility on Shumogi, where she rose to run the labs within a decade. Sivron coerced her into Maw service by bribing her director and engineering a tax audit to destroy her alternatives. She has spent eleven years seething with resentment — the only Maw director who maintains meaningful social contact with Daala's military personnel, playing sabacc regularly with the Hydra's officers. Currently field-testing a new ion torpedo and developing an experimental cluster-resonance shell project; she makes constant pointed observations about the folly of conducting artillery research inside a black hole cluster where gravity fluctuations render all data worthless, to no effect. Tall and hawkish, with an angular face shaped vaguely like a Star Destroyer. Dies aboard the Prototype Death Star when Sivron pilots it into a black hole.",
+    source: "WEG40114 The Jedi Academy Sourcebook p.74"
+  },
+
+  {
+    name: "Yemm (14 ABY)",
+    species: "Devaronian",
+    system: "Maw Cluster",
+    location: "Maw Installation — Administration Division",
+    affiliations: ["Galactic Empire"],
+    role: "Director of Administration and Personal Resources",
+    type: "Devaronian Director of Administration",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "archaic guns": "4D+2", "blaster": "4D", "dodge": "5D+1", "running": "4D+2" } },
+      KNOWLEDGE: { base: "4D", skills: { "alien species": "6D+2", "bureaucracy": "10D+2", "bureaucracy: Maw Installation": "7D", "business": "8D", "business: business law": "6D+2", "cultures": "6D", "languages": "5D+2", "law enforcement: Imperial law": "6D", "planetary systems": "5D", "streetwise": "5D+2", "value": "5D" } },
+      MECHANICAL: { base: "2D+1", skills: { "astrogation": "4D", "repulsorlift operation": "5D", "sensors": "4D+2", "space transports": "5D", "starship shields": "5D+1" } },
+      PERCEPTION: { base: "3D", skills: { "bargain": "8D+1", "con": "9D", "investigation": "6D", "persuasion": "10D+2", "search": "4D", "sneak": "5D" } },
+      STRENGTH: { base: "3D", skills: {} },
+      TECHNICAL: { base: "2D+2", skills: { "computer programming/repair": "6D", "droid programming": "4D+2", "first aid": "5D", "security": "8D" } }
+    },
+    specialAbilities: "None listed.",
+    forcePoints: 1,
+    characterPoints: 12,
+    move: "10",
+    equipment: "Datapad, comlink.",
+    capsule: "One of the few non-humans to obtain a SAGEducation grant for Core study, Yemm earned business administration and law degrees at the Dansuun Priory on Rhinnal before climbing through megacorporations in the Colonies and CSA on pure social talent — he has a preternatural ability to say the right thing at the right time and charm even committed xenophobes into liking him. That same talent backfired when he impressed Grand Moff Tarkin at a Seswenna sector diplomatic function, and months later found himself invited to direct administration for a classified research project. He anticipated two or three years in the Maw before leveraging the contacts into a Coruscant posting; he has spent over a decade trapped in total isolation watching twenty years of connections wither. His Devaronian wanderlust has driven him to relocate his department offices 22 times in eleven years. In compensation he has appointed himself buffer between Sivron and the scientists, keeping the director entertained and off their backs — a service for which the entire Installation is permanently in his debt. Dies with the rest of the Death Star prototype crew.",
+    source: "WEG40114 The Jedi Academy Sourcebook p.75"
+  },
+
+  {
+    name: "Qwi Xux (14 ABY)",
+    species: "Omwati",
+    system: "Maw Cluster",
+    location: "Maw Installation — Sun Crusher Project Lab",
+    affiliations: ["Galactic Empire"],
+    role: "Sun Crusher Project Director",
+    type: "Near-Human Sun Crusher Project Director",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "dodge": "4D", "running": "5D" } },
+      KNOWLEDGE: { base: "4D", skills: { "alien species": "5D+2", "bureaucracy": "5D+2", "business": "5D+2", "cultures": "6D", "languages": "5D+2" } },
+      MECHANICAL: { base: "2D", skills: { "communications": "4D", "musical keyboard operation": "7D+1", "sensors": "5D", "space transports": "4D", "starship gunnery": "4D+1", "starship piloting": "3D+2", "starship shields": "4D" } },
+      PERCEPTION: { base: "2D", skills: { "command: Sun Crusher team": "6D", "hide": "4D+2", "persuasion": "5D", "search: electronic": "7D+2" } },
+      STRENGTH: { base: "2D", skills: { "climbing/jumping": "4D" } },
+      TECHNICAL: { base: "5D", skills: { "(A) battle station engineering": "9D", "battle station repair": "7D+2", "(A) capital ship engineering": "11D", "capital ship repair": "5D", "(A) capital ship weapon engineering": "6D+2", "capital ship weapon repair": "6D", "computer programming/repair": "8D+1", "droid programming": "8D", "droid repair": "6D", "security": "9D+1", "(A) starfighter engineering": "12D+2", "starfighter repair": "7D+1", "(A) starship weapon engineering": "11D", "starship weapon repair": "6D+2" } }
+    },
+    specialAbilities: "Enhanced Learning Capability: Omwati children, if properly trained, can absorb and process vast amounts of information. Omwati who were so trained may have a Technical attribute as high as 5D. Musical Interface: Omwati find it much easier to input data via musical chords rather than words and phrases; Qwi uses a special music keyboard to interface with computers. This character is Force-sensitive.",
+    forcePoints: 1,
+    darkSidePoints: 2,
+    characterPoints: 12,
+    move: "10",
+    equipment: "Datapad, lab tunic, musical keyboard.",
+    capsule: "Director of the Sun Crusher project and arguably the most brilliant scientist in the Maw, Qwi is a near-human Omwati recruited as a child by Moff Tarkin after he discovered that Omwati children could retain and process vast quantities of information. Of ten children placed in a grueling training program — with their home cities destroyed from orbit if they failed — only Qwi survived, by eliminating every distraction and suppressing all compassion. She worked as Lemelisk's primary assistant on the Death Star weapons system before taking over the Sun Crusher project. Utterly naive about the consequences of her work, she believed the Death Star was a mining tool and the World Devastators were clean automated factories. When Han Solo reveals the truth she is outraged at Daala's deception and defects to the New Republic. She comes to rely on Wedge Antilles as her bodyguard and companion. On Ithor, Kyp Durron uses Sith powers to drain her mind of all Sun Crusher knowledge — the purge is broad and destroys many other memories as well, though her basic scientific knowledge remains. She has since devoted herself to replacing the lost knowledge, and has no intention of recovering what she knew about the Sun Crusher. A willowy blue-tinted near-human with fine white hair, wide deep-blue eyes, and a voice like birdsong.",
+    source: "WEG40114 The Jedi Academy Sourcebook p.76"
+  },
+
+  {
+    name: "Wermyn (14 ABY)",
+    species: "Human",
+    system: "Maw Cluster",
+    location: "Maw Installation — Plant Operations",
+    affiliations: ["Galactic Empire"],
+    role: "Director of Plant Operations",
+    type: "Plant Supervisor",
+    stats: {
+      DEXTERITY: { base: "2D+1", skills: { "dodge": "4D", "running": "3D" } },
+      KNOWLEDGE: { base: "2D+2", skills: { "alien species": "3D", "bureaucracy": "4D", "bureaucracy: Maw Installation": "6D+2", "business": "3D", "cultures": "3D+2", "planetary systems": "5D", "streetwise": "6D", "value": "8D" } },
+      MECHANICAL: { base: "1D", skills: { "astrogation": "5D", "communications": "6D", "repulsorlift operation": "5D", "rocket pack operation": "5D", "sensors": "7D", "space transports": "6D", "starship shields": "6D+1" } },
+      PERCEPTION: { base: "2D+2", skills: { "bargain": "5D", "command: work crews": "8D", "con": "7D+2", "gambling": "5D", "investigation": "6D", "persuasion": "4D+2", "search": "6D" } },
+      STRENGTH: { base: "2D+1", skills: { "brawling": "5D", "climbing/jumping": "5D", "lifting": "6D", "stamina": "7D" } },
+      TECHNICAL: { base: "4D", skills: { "battle station repair": "6D", "computer programming/repair": "7D", "droid programming": "5D+2", "droid repair": "6D+1", "first aid": "5D", "repulsorlift repair": "7D", "security": "7D" } }
+    },
+    specialAbilities: "None.",
+    forcePoints: 1,
+    darkSidePoints: 1,
+    characterPoints: 8,
+    move: "10",
+    equipment: "Datapad, tool belt, comlink.",
+    capsule: "Director of Plant Operations at Maw Installation, a hands-on supervisor who can be found climbing over water treatment piping, floating outside the Hub in a vacc suit patching girders, or running life support safety tests. Lost his right arm two years ago when an experimental beam projector exploded during a zero-G test (the same accident that killed PCDS director Tabbot); he chose to go without a prosthetic, taking along a humanoid droid when solo work requires two hands. His purplish-green skin — a result of permanent dye and micro-tattooing applied in a coming-of-age ceremony on his homeworld of Aquella — causes many to mistake him for a near-human. He is charged with sabotaging Maw Installation during the Imperial evacuation, succeeds, but is abandoned by Sivron and forced to surrender to New Republic forces to escape the doomed complex.",
+    source: "WEG40114 The Jedi Academy Sourcebook p.77"
+  },
+
+  {
+    name: "Captain Fredja (14 ABY)",
+    species: "Human",
+    system: "Maw Cluster",
+    location: "Maw Installation — Imperial Garrison",
+    affiliations: ["Galactic Empire", "Stormtrooper Corps"],
+    role: "Garrison Commander, Maw Installation",
+    type: "Stormtrooper Garrison Commander",
+    stats: {
+      DEXTERITY: { base: "2D+2", skills: { "blaster": "6D", "blaster artillery": "5D+1", "brawling parry": "5D", "dodge": "6D", "grenade": "5D", "missile weapons": "5D+1", "vehicle blasters": "4D" } },
+      KNOWLEDGE: { base: "3D", skills: { "bureaucracy: Maw Installation": "5D+2", "intimidation": "4D", "law enforcement: Imperial law": "5D+1", "planetary systems": "5D+2", "survival": "5D", "tactics: ground assault": "7D", "tactics: Maw Installation defense": "9D", "willpower": "7D+2" } },
+      MECHANICAL: { base: "3D+2", skills: { "battle station piloting: Death Star": "5D+1", "capital ship gunnery: superlaser": "5D", "communications": "5D+2", "powersuit operation: spacetrooper armor": "7D", "repulsorlift operation": "6D", "sensors": "5D+2", "space transports": "6D", "starship gunnery": "5D+2", "starship gunnery: proton torpedoes": "6D" } },
+      PERCEPTION: { base: "3D+1", skills: { "bargain": "4D", "command: stormtroopers": "8D+1", "hide": "6D", "investigation": "7D+1", "persuasion": "6D+2", "search": "7D", "sneak": "6D+1" } },
+      STRENGTH: { base: "2D+1", skills: { "brawling": "5D", "climbing/jumping": "5D+1", "lifting": "5D+2", "stamina": "5D" } },
+      TECHNICAL: { base: "3D", skills: { "armor repair": "4D+2", "blaster repair": "4D", "computer programming/repair": "5D", "demolitions": "6D", "droid programming": "4D+2", "first aid": "5D", "powersuit repair": "5D+1", "repulsorlift repair": "4D", "security": "7D+2" } }
+    },
+    specialAbilities: "None.",
+    forcePoints: 1,
+    darkSidePoints: 2,
+    characterPoints: 15,
+    move: "10",
+    equipment: "Stormtrooper armor (-2D physical, -1D energy, -1D to Dexterity and related skills), blaster rifle (5D), blaster pistol (4D).",
+    capsule: "Stormtrooper garrison commander at Maw Installation, caught between two superiors — officially reporting to Admiral Daala, but spending most of his time dealing with Tol Sivron, who habitually treats him as a corporal rather than an elite officer. He has learned that the only reliable way to rein in Sivron is to quote the director's own regulations back at him. When Daala departs with the fleet, Fredja becomes the senior military officer on the Installation and uses that authority to destroy the main computer core when New Republic forces arrive. Once aboard the Prototype Death Star he loses command authority and must defer to Sivron — he does his best to offer reasonable advice as Kyp Durron taunts Sivron into pursuing the Sun Crusher beyond the event horizon.",
+    source: "WEG40114 The Jedi Academy Sourcebook p.78"
+  },
+
+  {
+    name: "Grodon Lakky (14 ABY)",
+    species: "Human",
+    system: "Maw Cluster",
+    location: "Maw Installation — Involuntary Labor Division",
+    affiliations: ["Galactic Empire"],
+    role: "Wookiee Slave Overseer",
+    type: "Wookiee Keeper",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "4D+2", "brawling parry": "6D+2", "dodge": "5D", "melee combat": "6D", "melee parry": "6D+1", "power-lash": "7D", "thrown weapons": "5D" } },
+      KNOWLEDGE: { base: "2D", skills: { "alien species": "4D", "bureaucracy": "3D", "intimidation": "8D", "willpower": "5D+2" } },
+      MECHANICAL: { base: "2D", skills: { "repulsorlift operation": "5D" } },
+      PERCEPTION: { base: "2D", skills: { "bargain": "4D+1", "command: Wookiee slaves": "6D", "con": "4D+2", "forgery": "3D+1", "gambling": "5D", "persuasion": "3D+1", "search": "6D" } },
+      STRENGTH: { base: "2D+2", skills: { "brawling": "8D", "climbing/jumping": "4D+1", "lifting": "6D", "stamina": "4D+2" } },
+      TECHNICAL: { base: "3D", skills: { "droid programming": "5D", "power-lash repair": "4D", "repulsorlift repair": "4D+2", "security": "6D", "space transports repair": "5D", "starfighter repair": "4D+2" } }
+    },
+    specialAbilities: "None.",
+    darkSidePoints: 8,
+    characterPoints: 6,
+    move: "10",
+    equipment: "Power-lash (STR+2D physical or STR+2D stun damage, depending on setting).",
+    capsule: "The brutal and sadistic overseer of Maw Installation's Wookiee slave labor pool — designated 'Involuntary Labor' in the base records. A fat, repulsive man with a face like pale wet clay poorly shaped into human features. He has spent over a decade systematically breaking Wookiees and takes genuine pride in having produced the most broken, pitiful work gang in the Installation's history. He is universally despised; even personnel who support the enslavement of alien species regard him as a monster. When New Republic forces free the Wookiees, the slave Nawruun goes berserk and slays Lakky on the spot.",
+    source: "WEG40114 The Jedi Academy Sourcebook p.79"
   }
 ];

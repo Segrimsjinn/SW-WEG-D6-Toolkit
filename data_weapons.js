@@ -3300,6 +3300,18 @@ const WEAPONS_DATA = [
   "source": "WEG40092 Imperial Sourcebook p.87"
  },
  {
+  "name": "Metal-Crystal Phase Shifter (MCPS) — Quarter-Scale Prototype",
+  "category": "Starship Weapons",
+  "skill": "MCPS operation",
+  "cost": "Not for sale (Imperial superweapon prototype)",
+  "availability": "4, X",
+  "damage": "5D (capital scale; bypasses shields)",
+  "range": "3-30/50/300",
+  "ammo": "Power generator",
+  "game_notes": "Scale: Capital. Crew: 12, skeleton: 8/+10. Body: 3D (starfighter scale). Fire Rate: 1/5. Fire Control: 2D. Blast Radius: 300 meters. The MCPS field alters the crystalline structure of metals, causing them to break down into fine powder. Damage cannot be blocked by shields. Because the MCPS is a field rather than a beam, every ship within the 300-meter-wide field is equally affected. This quarter-scale prototype (located at Maw Installation Lab Module A) only affects approximately one percent of the target's surface area, but leaves pinhole structural failures across the entire hull — sufficient to destroy most ships. The dish focusing lens from the old Death Star laser-focusing tests is used to project the field; a custom-designed lens would produce a full-powered MCPS field. Project headed by Doxin.",
+  "source": "WEG40114 The Jedi Academy Sourcebook p.68"
+ },
+ {
   "name": "Bryn & Gweith Leveler 1",
   "category": "Artillery",
   "skill": "Missile weapons: concussion missile launcher",
