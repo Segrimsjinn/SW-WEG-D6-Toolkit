@@ -15679,5 +15679,302 @@ const NOTABLE_NPCS = [
     equipment: "Power-lash (STR+2D physical or STR+2D stun damage, depending on setting).",
     capsule: "The brutal and sadistic overseer of Maw Installation's Wookiee slave labor pool — designated 'Involuntary Labor' in the base records. A fat, repulsive man with a face like pale wet clay poorly shaped into human features. He has spent over a decade systematically breaking Wookiees and takes genuine pride in having produced the most broken, pitiful work gang in the Installation's history. He is universally despised; even personnel who support the enslavement of alien species regard him as a monster. When New Republic forces free the Wookiees, the slave Nawruun goes berserk and slays Lakky on the spot.",
     source: "WEG40114 The Jedi Academy Sourcebook p.79"
+  },
+
+  {
+    name: "Nawruun (14 ABY)",
+    species: "Wookiee",
+    system: "Maw Cluster",
+    location: "Maw Installation — Wookiee Labor Pool",
+    affiliations: ["Neutral"],
+    role: "Enslaved Wookiee Mechanic / Elder of Nysshyyyk Clan",
+    type: "Enslaved Wookiee Mechanic",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "bowcaster": "4D", "brawling parry": "4D+1", "dodge": "4D", "melee combat": "5D", "melee parry": "4D+2", "thrown weapons": "4D" } },
+      KNOWLEDGE: { base: "2D+2", skills: { "alien species": "4D+1", "languages": "5D", "planetary systems": "3D+2", "survival": "5D" } },
+      MECHANICAL: { base: "2D", skills: { "sensors": "4D", "space transports": "6D" } },
+      PERCEPTION: { base: "2D+1", skills: { "hide": "4D", "search": "4D+2", "sneak": "3D+1" } },
+      STRENGTH: { base: "3D", skills: { "brawling": "5D", "climbing/jumping": "4D+2", "lifting": "3D+2" } },
+      TECHNICAL: { base: "4D", skills: { "battle station repair": "6D", "bowcaster repair": "5D", "capital ship repair": "5D+2", "capital ship repair: Gamma-class assault shuttle": "7D", "computer programming/repair": "5D+1", "droid programming": "6D", "droid repair": "5D", "repulsorlift repair": "5D+2", "space transports repair": "6D", "starfighter repair": "6D", "walker repair": "4D+2" } }
+    },
+    specialAbilities: "Berserker Rage: +2D to Strength or brawling while in berserker rage (see Star Wars: The Roleplaying Game 2nd Ed. p.137). Climbing Claws: +2D to climbing rolls. Weakened by Captivity: Nawruun's Dexterity and Strength attribute and skill scores have been reduced by years of malnutrition, physical abuse, and hard labor — they no longer reflect his capabilities as the warrior he once was.",
+    forcePoints: 1,
+    darkSidePoints: 1,
+    characterPoints: 6,
+    move: "10",
+    equipment: "Tool belt.",
+    capsule: "The oldest surviving Wookiee of the Nysshyyyk clan in the Maw — a clan once renowned as some of the finest clockmakers on Kashyyyk, and hit especially hard by Imperial slave raids due to their technical aptitude. Over 100 clan members were shipped to Maw Installation during construction; twelve chose death over service under Grodon Lakky, and more than fifty more died doing zero-G assembly work on the Prototype Death Star's girder framework. The survivors are broken, stooped, and matted — a shadow of the warriors they were. Nawruun was brought to the Maw over a decade ago as a strong warrior; what remains is gray-furred and slightly deformed from years of hard labor and malnutrition, barely recognizable as the man he was. His natural optimism had been all but extinguished until Chewbacca's arrival. When the New Republic occupation force frees the Wookiees, the tiny ember of defiance becomes a raging fire — Nawruun takes Lakky's own power-lash and uses it to kill his former tormentor.",
+    source: "WEG40114 The Jedi Academy Sourcebook p.80"
+  },
+
+  {
+    name: "Mara Jade (14 ABY)",
+    species: "Human",
+    system: "Coruscant",
+    location: "Coruscant — Smugglers' Alliance Office",
+    affiliations: ["The Fringe", "Smugglers' Alliance"],
+    role: "Smugglers' Alliance Representative",
+    type: "Smugglers' Alliance Representative",
+    stats: {
+      DEXTERITY: { base: "3D+2", skills: { "blaster": "9D+1", "blaster: holdout blaster": "11D", "brawling parry": "7D+2", "dodge": "9D", "lightsaber": "4D+2", "melee combat": "8D+1", "melee parry": "7D+2", "missile weapons": "6D+2", "pick pocket": "8D+2", "running": "6D+2", "thrown weapons": "6D+2" } },
+      KNOWLEDGE: { base: "2D+2", skills: { "alien species": "8D+2", "bureaucracy": "7D+2", "bureaucracy: New Republic": "5D", "business": "7D+2", "business: Smugglers' Alliance": "6D+1", "intimidation": "7D+2", "languages": "8D+2", "planetary systems": "5D+2", "streetwise": "6D+2", "streetwise: Talon Karrde's organization": "7D+2", "survival": "7D", "value": "5D+2", "willpower": "7D" } },
+      MECHANICAL: { base: "2D+2", skills: { "astrogation": "8D+2", "beast riding": "5D+2", "communications": "7D+1", "ground vehicle operation": "4D+2", "repulsorlift operation": "6D", "sensors": "5D+2", "space transports": "10D", "starfighter piloting": "10D", "starship gunnery": "9D+2", "starship shields": "8D+1", "swoop operation": "7D+2" } },
+      PERCEPTION: { base: "3D+1", skills: { "bargain": "6D", "command": "8D", "con": "6D+2", "gambling": "4D+2", "hide": "8D+1", "investigation": "5D+2", "persuasion": "6D+2", "search": "7D+2", "sneak": "8D+1" } },
+      STRENGTH: { base: "3D+2", skills: { "brawling": "8D+2", "climbing/jumping": "7D+2", "lifting": "5D+2", "stamina": "8D+2", "swimming": "6D+2" } },
+      TECHNICAL: { base: "3D", skills: { "blaster repair": "6D", "computer programming/repair": "8D", "demolitions": "6D+2", "droid programming": "1D", "droid repair": "3D+2", "first aid": "5D", "ground vehicle repair": "6D", "lightsaber repair": "3D+2", "repulsorlift repair": "5D", "security": "9D", "space transports repair": "6D+1", "starship weapon repair": "5D+1" } }
+    },
+    specialAbilities: "Force Skills: Control 3D, Sense 3D, Alter 2D+1. Control: Absorb/dissipate energy, accelerate healing, concentration, control pain, emptiness, enhance attribute, hibernation trance, remain conscious, resist stun. Sense: Combat sense, danger sense, life detection, life sense, magnify senses, receptive telepathy, sense Force. Alter: Injure/kill, telekinesis. Control and Sense: Projective telepathy, lightsaber combat. Control and Alter: Inflict pain. Control, Sense, and Alter: Telekinetic kill. This character is Force-sensitive.",
+    forcePoints: 5,
+    darkSidePoints: 1,
+    characterPoints: 22,
+    move: "10",
+    equipment: "Hold-out blaster (3D), comlink, lightsaber (5D).",
+    capsule: "Former Emperor's Hand, now serving as the Smugglers' Alliance representative — a role she hoped would let her use her skills as a negotiator and businesswoman rather than a troubleshooter. It hasn't quite worked out that way. She travels to Coruscant to warn the New Republic through Han Solo that Admiral Daala is recruiting fringe spies and saboteurs, attends Luke's Jedi academy briefly before Kyp steals her ship and she grows disenchanted, and later helps broker SA control of glitterstim distribution out of Kessel with Lando Calrissian. She accompanies Han and Lando aboard the Falcon when the Prototype Death Star appears in the Kessel system, and proposes planting limpet mines on its power core. The mission fails but the Falcon escapes. Once a hardened, angry lone wolf still shadowed by the dark side, she is gradually softening — though a slightly manipulative edge remains when people annoy her.",
+    source: "WEG40114 The Jedi Academy Sourcebook p.82"
+  },
+
+  {
+    name: "Ghent (14 ABY)",
+    species: "Human",
+    system: "Coruscant",
+    location: "Coruscant — Smugglers' Alliance Office",
+    affiliations: ["The Fringe", "Smugglers' Alliance"],
+    role: "Slicer",
+    type: "Slicer",
+    stats: {
+      DEXTERITY: { base: "2D+2", skills: { "blaster": "3D", "dodge": "4D+2" } },
+      KNOWLEDGE: { base: "3D+1", skills: { "alien species": "5D+1", "bureaucracy": "4D+1", "languages": "5D+1", "planetary systems": "5D+1", "value": "7D+2" } },
+      MECHANICAL: { base: "4D", skills: { "repulsorlift operation": "5D", "starship shields": "6D" } },
+      PERCEPTION: { base: "2D", skills: { "bargain": "4D+1", "command": "4D", "con": "4D", "gambling": "4D", "hide": "4D", "sneak": "5D" } },
+      STRENGTH: { base: "2D", skills: { "climbing/jumping": "3D+1", "stamina": "4D", "swimming": "3D" } },
+      TECHNICAL: { base: "4D", skills: { "computer programming/repair": "10D", "droid programming": "8D+1", "droid repair": "8D", "encryption": "8D", "repulsorlift repair": "4D+1", "security": "10D+1" } }
+    },
+    forcePoints: 0,
+    characterPoints: 7,
+    move: "10",
+    equipment: "Datapad (code-breaking programs), hold-out blaster (3D).",
+    capsule: "One of Talon Karrde's ace slicers — possibly one of the best in the fringe. Freelances for Smugglers' Alliance members, slicing databases, cracking codes, and setting up secure systems, though he takes greater pleasure breaking into other slicers' systems than defending his own. Knows virtually everything about computers but has almost no social skills and tends to say exactly what he thinks without filtering. Helps Mara Jade and Lando Calrissian breach Doole's fortress on Kessel when the amphibian seals himself inside.",
+    source: "WEG40114 The Jedi Academy Sourcebook p.82"
+  },
+
+  {
+    name: "T'nun Bdu (14 ABY)",
+    species: "Sullustan",
+    system: "Sullust",
+    location: "Sullust",
+    affiliations: ["The Fringe"],
+    role: "Trader / Corvette Captain",
+    type: "Sullustan Trader",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "4D", "blaster: hold-out blaster": "5D", "dodge": "5D+2" } },
+      KNOWLEDGE: { base: "2D+2", skills: { "alien species": "5D", "bureaucracy": "4D+2", "business": "7D", "cultures": "4D+2", "languages": "3D+2", "planetary systems": "5D", "streetwise": "6D+2", "value": "5D" } },
+      MECHANICAL: { base: "3D+1", skills: { "astrogation": "4D", "capital ship piloting: Corellian corvette": "4D", "capital ship shields: Corellian corvette": "4D+1", "communications": "5D", "repulsorlift operation": "4D", "sensors": "5D", "space transports": "5D", "starship shields": "5D" } },
+      PERCEPTION: { base: "2D+2", skills: { "bargain": "6D+2", "command: crew": "4D+1", "con": "5D", "persuasion": "6D+2" } },
+      STRENGTH: { base: "2D+1", skills: { "stamina": "4D" } },
+      TECHNICAL: { base: "3D", skills: { "capital ship repair: Corellian corvette": "3D+2", "computer programming/repair": "5D", "droid programming": "4D+2", "first aid": "4D", "repulsorlift repair": "4D+1", "security": "5D+2", "space transports repair": "6D" } }
+    },
+    specialAbilities: "Enhanced Senses: +2D to Perception or search checks involving hearing or vision in low-light conditions. Location Sense: Never gets lost in places previously visited (automatic, no roll required); +1D bonus to astrogation when jumping to a previously visited system.",
+    forcePoints: 1,
+    characterPoints: 5,
+    move: "10",
+    equipment: "Comlink, datapad, hold-out blaster (3D).",
+    capsule: "A dapper Sullustan merchant who clawed his way from crewing his uncle's ship to captaining a battered Corellian corvette through years of low-margin runs and ruthless frugality. Now established with a quality crew and regular cargo routes, he had just agreed to settle on Sullust and let his first mate handle the runs — but took one final job hauling New Republic cargo to Dantooine to afford traditional suitor fees without touching his savings. Intercepted by Admiral Daala's fleet en route, his ship was boarded and searched, his cargo confiscated, his computer files duplicated for star charts and political intelligence. Daala then allowed him to transmit a message to the New Republic before personally destroying his ship — a calculated act of intimidation directed at the Republic, not him.",
+    source: "WEG40114 The Jedi Academy Sourcebook p.83"
+  },
+
+  {
+    name: "CBX-9 (14 ABY)",
+    species: "Droid (Hybrid Protocol — Merendata head / Cybot body)",
+    system: "Sullust",
+    location: "Sullust — T'nun Bdu's Corellian Corvette",
+    affiliations: ["The Fringe"],
+    role: "Protocol Droid / Business Interface",
+    type: "Hybrid Human-Cyborg Relations Droid",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { "dodge": "3D+2" } },
+      KNOWLEDGE: { base: "3D", skills: { "alien species": "5D", "business": "6D+2", "cultures": "6D", "languages": "10D" } },
+      MECHANICAL: { base: "2D", skills: { "repulsorlift operation": "5D", "space transports": "4D+1", "starship shields": "4D" } },
+      PERCEPTION: { base: "2D", skills: { "bargain": "7D", "con": "6D" } },
+      STRENGTH: { base: "2D", skills: {} },
+      TECHNICAL: { base: "3D", skills: { "first aid": "4D" } }
+    },
+    specialAbilities: "Equipped With: Humanoid body (two arms, two legs, head); two visual and two audial sensors (human range); Vocabulator speech/sound system capable of reproducing virtually any sound heard or programmed; AA-1 VerboBrain; TranLang III Communications module with over seven million languages. Hybrid Incompatibility: Head (Merendata) and body (Cybot) use incompatible systems wired together — CBX-9 moves with an awkward ratcheting gait but is more sturdy and agile than a standard protocol droid.",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: "9",
+    equipment: "Not for sale.",
+    capsule: "An aged, platinum-chrome protocol droid with a female persona and voice — a hybrid of a Merendata head and Cybot body whose incompatible systems produce a ratcheting, jerky gait but also unexpected durability and agility. Serves as T'nun Bdu's voice in dealings with humans, since the Sullustan understands Basic but cannot speak it. The exact nature of their partnership is unclear — CBX-9 clearly has a say in business decisions, and she cares for her captain in whatever way a droid is capable of loyalty and affection.",
+    source: "WEG40114 The Jedi Academy Sourcebook p.84"
+  },
+
+  {
+    name: "Moruth Doole (14 ABY)",
+    species: "Rybet",
+    system: "Kessel",
+    location: "Kessel — Imperial Correction Facility",
+    affiliations: ["Criminal Underworld"],
+    role: "Kessel Overlord",
+    type: "Rybet Kessel Overlord",
+    stats: {
+      DEXTERITY: { base: "4D", skills: { "blaster": "6D+1", "brawling parry": "5D", "dodge": "7D", "running": "5D+1" } },
+      KNOWLEDGE: { base: "2D+1", skills: { "alien species": "4D", "bureaucracy": "5D", "bureaucracy: Kessel": "8D", "business: spice mining": "10D", "intimidation": "4D", "languages": "4D+2", "law enforcement: Kessel": "6D+2", "planetary systems": "5D", "streetwise": "7D", "value": "6D+2" } },
+      MECHANICAL: { base: "3D+1", skills: { "astrogation": "4D", "communications": "5D", "hover vehicle operation": "4D", "repulsorlift operation": "4D+1", "sensors": "5D", "space transports": "3D+2", "starship shields": "3D+2" } },
+      PERCEPTION: { base: "3D+2", skills: { "bargain": "6D", "command: Doole's organization": "11D+1", "con": "6D+2", "forgery": "5D+2", "gambling": "5D", "hide": "6D", "investigation": "5D", "persuasion": "8D", "search": "4D+2", "sneak": "5D" } },
+      STRENGTH: { base: "2D", skills: { "brawling": "4D", "climbing/jumping": "5D", "swimming": "6D" } },
+      TECHNICAL: { base: "2D+2", skills: { "computer programming/repair": "6D", "droid programming": "4D", "first aid": "3D", "security": "7D+1" } }
+    },
+    forcePoints: 1,
+    darkSidePoints: 3,
+    characterPoints: 12,
+    move: "10",
+    equipment: "Datapad, comlink, mechanical eye (infrared vision; does not always function properly), hold-out blaster (3D).",
+    capsule: "A careful, calculating Rybet who rose from a minor bureaucratic post assigning prison work details to de facto ruler of the entire Kessel system — exploiting his position to build an illegal spice-smuggling network, blackmailing guards, setting up rivals to be arrested and killed, and finally triggering a prison revolt that destroyed both the Imperial garrison and Jabba the Hutt's enforcer team in one stroke. He has spent the decade since stockpiling glitterstim and building a defense fleet with the goal of raising prices once his planetary shield is online. He enjoys the fear of others, keeps imprisoned females of his own species in a private wing, and has his former warden preserved alive in carbonite as a trophy. One of his eyes was destroyed by Jabba's assassins; he now wears a mechanical focusing device strapped over his remaining eye. His schemes unravel when Han Solo and Chewbacca arrive — after Daala's fleet destroys most of his navy, his underlings flee with every remaining ship, and he seals himself in his fortress until a rebellion of his own offspring forces him into the mine tunnels, where he is devoured by spice spiders.",
+    source: "WEG40114 The Jedi Academy Sourcebook p.90"
+  },
+
+  {
+    name: "Skynxnex (14 ABY)",
+    species: "Human",
+    system: "Kessel",
+    location: "Kessel — Imperial Correction Facility",
+    affiliations: ["Criminal Underworld"],
+    role: "Doole's Lieutenant",
+    type: "Doole's Lieutenant",
+    stats: {
+      DEXTERITY: { base: "3D+1", skills: { "blaster": "4D", "blaster: double blaster": "6D+1", "brawling parry": "5D+2", "dodge": "6D", "pick pockets": "4D", "vehicle blasters": "4D+2" } },
+      KNOWLEDGE: { base: "4D", skills: { "bureaucracy: Kessel": "7D+2", "business: spice mining": "5D+1", "intimidation": "9D", "languages": "5D", "law enforcement: Kessel": "6D+2", "streetwise": "5D", "survival": "4D+2" } },
+      MECHANICAL: { base: "2D+2", skills: { "communications": "4D", "ground vehicle operation": "4D+2", "hover vehicle operation": "4D", "repulsorlift operation": "5D+2", "sensors": "4D", "space transports": "4D+2" } },
+      PERCEPTION: { base: "4D", skills: { "bargain": "5D", "command: Doole's organization": "8D", "hide": "5D", "investigation": "7D", "persuasion": "5D+1", "search": "6D", "sneak": "5D" } },
+      STRENGTH: { base: "2D", skills: { "brawling": "5D", "climbing/jumping": "3D+1", "lifting": "2D+2" } },
+      TECHNICAL: { base: "2D", skills: { "computer programming/repair": "5D", "demolitions": "3D+2", "droid programming": "3D", "repulsorlift repair": "4D", "security": "6D+1" } }
+    },
+    forcePoints: 0,
+    darkSidePoints: 2,
+    characterPoints: 5,
+    move: "10",
+    equipment: "Double blaster (6D+1 damage, +3D difficulty to aim), comlink, stun cuffs.",
+    capsule: "A skeletal man who favors loose-fitting military-style clothing and wears armbands from the old Imperial prison. Started as a prisoner sentenced to the spice mines for theft, joined Doole's fledgling network, and rose to become Doole's primary go-between with smugglers, cementing the relationship by killing Jabba's assassins before they could finish off the Rybet. Less cautious than his boss and more prone to snap decisions — if he had been permitted to kill Han Solo and Chewbacca on arrival rather than sending them into the mines, Doole might still control Kessel. He meets his end in the spice tunnels while pursuing Solo.",
+    source: "WEG40114 The Jedi Academy Sourcebook p.91"
+  },
+
+  {
+    name: "Boss Roke (14 ABY)",
+    species: "Human",
+    system: "Kessel",
+    location: "Kessel — Spice Mines",
+    affiliations: ["Criminal Underworld"],
+    role: "Spice Mine Overseer",
+    type: "Kessel Mines Overseer",
+    stats: {
+      DEXTERITY: { base: "3D+2", skills: { "blaster": "4D", "brawling parry": "6D", "dodge": "7D+1", "running": "4D", "thrown weapons": "4D+2" } },
+      KNOWLEDGE: { base: "2D+1", skills: { "alien species": "4D", "bureaucracy: Kessel": "5D", "intimidation": "6D+2", "languages": "4D", "law enforcement": "3D+2", "survival": "4D" } },
+      MECHANICAL: { base: "3D", skills: { "ground vehicle operation": "4D", "hover vehicle operation": "4D", "repulsorlift operation": "5D+1" } },
+      PERCEPTION: { base: "2D+1", skills: { "bargain": "4D", "command: mine guards": "5D", "gambling": "3D+2", "hide": "4D", "persuasion": "3D", "search": "4D", "sneak": "4D+1" } },
+      STRENGTH: { base: "4D", skills: { "brawling": "7D", "climbing/jumping": "5D+1", "lifting": "6D", "stamina": "6D" } },
+      TECHNICAL: { base: "2D+2", skills: { "computer programming/repair": "4D", "first aid": "3D+1", "security": "5D" } }
+    },
+    forcePoints: 0,
+    darkSidePoints: 1,
+    characterPoints: 7,
+    move: "10",
+    equipment: "Comlink, datapad, hold-out blaster (3D).",
+    capsule: "A burly man with a lumpy face, bristly black stubble, and arms that look as if the muscles were attached at the wrong places. Greedy, sadistic, and contemptible — overworks prisoners to inflate his quota and deliberately provokes them hoping to trigger attacks he can brutally suppress. Constantly complains to Doole about being understaffed while ignoring warnings that teams are disappearing in the tunnels. He personally leads an investigation team into the new tunnels where disappearances have been thickest — accompanied by Han Solo, Chewbacca, and Kyp Durron — and is killed by a spice spider.",
+    source: "WEG40114 The Jedi Academy Sourcebook p.91"
+  },
+
+  {
+    name: "Lando Calrissian (14 ABY)",
+    species: "Human",
+    system: "Kessel",
+    location: "Kessel",
+    affiliations: ["The Fringe", "New Republic"],
+    role: "Gambler / Entrepreneur",
+    type: "Gambler",
+    stats: {
+      DEXTERITY: { base: "3D+2", skills: { "blaster": "9D", "blaster: hold-out blaster": "8D", "brawling parry": "6D+2", "dodge": "7D+2", "grenade": "5D", "melee combat": "5D+1", "melee parry": "5D+2", "thrown weapons": "4D", "thrown weapons: knives": "6D" } },
+      KNOWLEDGE: { base: "3D", skills: { "alien species": "5D+1", "bureaucracy": "8D", "bureaucracy: Imperial Navy procedures": "9D+1", "business": "8D+1", "business: mining": "12D", "business administration": "8D+1", "cultures": "7D+1", "languages": "6D", "planetary systems": "5D+2", "streetwise": "9D", "survival": "6D+2", "survival: urban": "8D", "tactics: capital ships": "5D", "tactics: starfighters": "6D", "value": "7D", "willpower": "6D+1" } },
+      MECHANICAL: { base: "2D+1", skills: { "archaic starship piloting": "5D+1", "astrogation": "7D", "communications": "6D", "ground vehicle operation": "5D+1", "hover vehicle operation": "5D+1", "repulsorlift operation": "5D+2", "sensors": "5D+2", "space transports": "9D", "starfighter piloting": "9D", "starship gunnery": "8D", "starship shields": "8D+1", "swoop operation": "5D+1" } },
+      PERCEPTION: { base: "4D", skills: { "bargain": "9D", "bargain: minerals": "10D+2", "bargain: tibanna gas": "11D+2", "command": "8D+2", "con": "10D+1", "forgery": "7D", "gambling": "10D+2", "hide": "7D+2", "persuasion": "7D+2", "search": "5D", "sneak": "7D+2" } },
+      STRENGTH: { base: "2D+2", skills: { "brawling": "6D+2", "climbing/jumping": "5D+2", "lifting": "4D+2", "stamina": "6D+2", "swimming": "4D+2" } },
+      TECHNICAL: { base: "2D+2", skills: { "computer programming/repair": "5D+2", "demolitions": "4D", "droid programming": "4D+1", "droid repair": "4D+1", "first aid": "4D+1", "repulsorlift repair": "5D+2", "security": "7D+1", "space transports repair": "8D", "starship weapon repair": "6D+2" } }
+    },
+    forcePoints: 2,
+    characterPoints: 18,
+    move: "10",
+    equipment: "Comlink, hold-out blaster (3D+1 damage), sabacc card deck.",
+    capsule: "A natural optimist and gifted entrepreneur — possibly the galaxy's finest sabacc player — who has had his wealth and livelihood taken from him by the Empire on more than one occasion. Despite the losses, he retook his general's commission during the revived Emperor's last campaigns and maintains close ties with New Republic leadership. Arrives on Coruscant short of funds after losing his mining colony on Nkllon. Agrees to run an errand for Leia tracking a potential Jedi candidate named Tymmo on Umgul — the blob-racing world — and turns a simple manhunt into a million-credit payday by arranging the suspect's return to the Duchess of Dargul in lieu of execution. Wins the Millennium Falcon from Han in a gambling competition, then gives it back as a grand gesture intended to impress Mara Jade — immediately regretting it when he finds himself begging rides. Later poses as a potential investor in Doole's operation while helping Luke locate Han on Kessel, and becomes obsessed with acquiring and upgrading the planet using the Duchess's reward money, promising the Smugglers' Alliance exclusive glitterstim distribution rights. His newly acquired garrison moon is destroyed by the Maw scientists shortly after he takes possession.",
+    source: "WEG40114 The Jedi Academy Sourcebook p.93"
+  },
+
+  {
+    name: "Slish Fondine (14 ABY)",
+    species: "Human",
+    system: "Umgul",
+    location: "Umgul — Fondine Blob Stadium",
+    affiliations: ["The Fringe"],
+    role: "Blob Stadium Owner",
+    type: "Blob Stadium Owner",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "brawling parry": "4D", "dodge": "3D+2", "running": "4D" } },
+      KNOWLEDGE: { base: "3D+2", skills: { "alien species": "6D", "bureaucracy": "7D+1", "business: blob racing": "8D+1", "cultures": "5D+2", "streetwise: Umgul": "8D", "value": "6D+1" } },
+      MECHANICAL: { base: "2D", skills: { "beast riding": "3D", "ground vehicle operation": "4D", "repulsorlift operation": "4D+2" } },
+      PERCEPTION: { base: "3D", skills: { "bargain": "6D", "command": "4D+2", "gambling": "6D", "persuasion": "7D", "search": "5D+1" } },
+      STRENGTH: { base: "2D+2", skills: { "brawling": "6D", "climbing/jumping": "4D+2", "lifting": "4D", "stamina": "3D+2" } },
+      TECHNICAL: { base: "2D", skills: { "computer programming/repair": "4D", "first aid": "3D", "repulsorlift repair": "4D" } }
+    },
+    forcePoints: 0,
+    characterPoints: 8,
+    move: "10",
+    equipment: "Datapad, comlink.",
+    capsule: "A hirsute and bulky entrepreneur who built Umgul City's largest blob racing stadium out of a collapsed sinkhole, taking advantage of the new topography and cheap property values. His round-the-clock races and innovative blobstacle courses have made the stadium a massive success — his course designs are routinely copied by rivals and many have become classics of the blobstacle racing repertoire. When Lando Calrissian tracks down Tymmo (the Duchess of Dargul's consort) in Fondine's stables, Fondine agrees to waive the traditional death-penalty sentence for cheating in exchange for Lando splitting the million-credit reward. The grateful Duchess subsequently offers to fund a subsidiary blobstacle course named in her honor, and Fondine has begun planning an even grander second stadium.",
+    source: "WEG40114 The Jedi Academy Sourcebook p.94"
+  },
+
+  {
+    name: "Duchess Mistal (14 ABY)",
+    species: "Human (Dargullan)",
+    system: "Dargul",
+    location: "Dargul",
+    affiliations: ["Neutral"],
+    role: "Duchess of Dargul",
+    type: "Duchess of Dargul",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { "blaster": "4D+1", "dodge": "5D", "melee combat": "4D", "melee parry": "4D", "running": "4D+1" } },
+      KNOWLEDGE: { base: "2D", skills: { "alien species": "4D+2", "cultures": "5D", "languages": "4D+2", "planetary systems": "5D", "willpower": "6D+2" } },
+      MECHANICAL: { base: "2D", skills: { "astrogation": "3D+1", "beast riding": "3D+2", "repulsorlift operation": "4D", "sensors": "4D", "space transports": "3D+1" } },
+      PERCEPTION: { base: "2D", skills: { "command": "4D", "gambling": "4D+1", "persuasion": "5D" } },
+      STRENGTH: { base: "2D", skills: { "climbing/jumping": "4D", "swimming": "3D+2" } },
+      TECHNICAL: { base: "2D", skills: { "computer programming/repair": "4D", "first aid": "3D", "security": "3D" } }
+    },
+    forcePoints: 0,
+    characterPoints: 6,
+    move: "10",
+    equipment: "Comlink, datapad, ornamental robe.",
+    capsule: "Duchess of Dargul — beautiful, wealthy, and possessed of a single-minded intensity that borders on madness. Her childhood pets all died of enthusiastic overattention. When she reached noble marrying age and no Dargullan suitor stepped forward, she advertised across the galaxy for a consort; millions applied for a life of total opulence. A young man named Dack won by rigging the computer sorter — and then ran away rather than face her smothering devotion. She posts a one-million-credit reward for his return, which Lando Calrissian accidentally collects on Umgul. So grateful to have Dack restored that she gives Lando the full reward anyway and offers to fund a new blobstacle course for Slish Fondine named in her honor.",
+    source: "WEG40114 The Jedi Academy Sourcebook p.94"
+  },
+
+  {
+    name: "Dack / Tymmo (14 ABY)",
+    species: "Human",
+    system: "Dargul",
+    location: "Dargul — Palace Dargul",
+    affiliations: ["The Fringe"],
+    role: "Consort / Con Artist",
+    type: "Consort",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "5D", "brawling parry": "4D+1", "dodge": "4D+2", "pick pocket": "6D+2", "running": "5D" } },
+      KNOWLEDGE: { base: "2D", skills: { "alien species": "3D+1", "business": "4D", "cultures": "4D+2", "languages": "4D", "planetary systems": "2D+2", "streetwise": "5D", "value": "4D+2" } },
+      MECHANICAL: { base: "3D", skills: { "astrogation": "4D", "beast riding": "3D+2", "communications": "4D+1", "hover vehicle operation": "3D+2", "repulsorlift operation": "5D+2", "sensors": "4D", "space transports": "4D+2", "starship gunnery": "4D", "starship shields": "3D+2", "swoop operation": "4D+2" } },
+      PERCEPTION: { base: "4D", skills: { "bargain": "4D+2", "con": "6D+2", "forgery": "7D", "gambling": "6D+2", "hide": "5D", "persuasion": "7D+1", "search": "5D", "sneak": "5D+2" } },
+      STRENGTH: { base: "2D", skills: { "brawling": "3D+1", "climbing/jumping": "5D", "swimming": "4D" } },
+      TECHNICAL: { base: "4D", skills: { "computer programming/repair": "8D+1", "demolitions": "5D", "droid programming": "7D", "droid repair": "4D+2", "encryption": "6D+1", "security": "7D" } }
+    },
+    forcePoints: 0,
+    characterPoints: 4,
+    move: "10",
+    equipment: "Comlink, datapad, hold-out blaster (3D).",
+    capsule: "A gifted young slicer and con artist who views the galaxy as easy pickings, acquiring credits and property through charm and datanet tapping while always stopping short of excess. Hacked into the Palace Dargul central computer to rig the selection algorithm and win the Duchess Mistal's consort competition — then discovered too late what he had actually won, fleeing after a few months of smothering devotion. Hid on Umgul under the alias 'Tymmo,' devising an implant micro-motivator that triggered a frantic flight response in blob racers; he bet on the implanted blobs, destroyed the device remotely after each race, and quietly amassed a fortune without tipping off the racing authorities — until Artoo Deetoo flagged anomalous win patterns from Coruscant. Lando Calrissian corners him in Fondine's stables. Now back at the Duchess's side, a victim of his own machinations.",
+    source: "WEG40114 The Jedi Academy Sourcebook p.95"
   }
 ];
