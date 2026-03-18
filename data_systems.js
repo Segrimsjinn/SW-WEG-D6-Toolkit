@@ -463,6 +463,7 @@ const SYSTEMS_DATA = [
   { "name": "Bakkah", "grid": "P-6", "region": "Outer Rim Territories", "col": 14, "row": 6, "quadrant": "NE", "hours": 5.8 },
   { "name": "Baklek", "grid": "N-12", "region": "Inner Rim", "col": 12, "row": 12, "quadrant": "E", "hours": 1.3 },
   { "name": "Bakura", "grid": "G-16", "region": "Wild Space", "col": 5, "row": 16, "quadrant": "SW", "hours": 74.7 },
+  { "name": "Bakura - Salis D'aar", "grid": "G-16", "region": "Wild Space", "col": 5, "row": 16, "quadrant": "SW", "hours": 74.7 },
   { "name": "Bal'demnic", "grid": "R-7", "region": "Outer Rim Territories", "col": 16, "row": 7, "quadrant": "NE", "hours": 3.0 },
   { "name": "Balagash", "grid": "O-9", "region": "Expansion Region", "col": 13, "row": 9, "quadrant": "E", "hours": 3.5 },
   { "name": "Balaidas", "grid": "L-8", "region": "Colonies", "col": 10, "row": 8, "quadrant": "C", "hours": 3.0 },

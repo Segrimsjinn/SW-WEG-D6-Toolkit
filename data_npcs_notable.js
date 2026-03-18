@@ -7829,6 +7829,1104 @@ const NOTABLE_NPCS = [
     capsule: "Originally a security officer, Moridon was transferred to research — initially feeling betrayed, but discovering a natural ability with communication systems. Within two years he became head researcher and transferred to Udrin Cara, a secret Imperial facility. An explosion left him with a limp, and after 11 months of recovery the Empire discharged him, offering only civilian oversight of a HoloNet system on Endor. When the Rebels arrived, most military personnel left, leaving Moridon as the highest-ranking individual in command of the outpost. With the Imperial defeat and electromagnetic disturbance blanketing the area, Moridon sees his chance to regain the Empire's favor — if he can just get a message to the fleet.",
     source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.90"
   },
+  // ── THE TRUCE AT BAKURA (WEG40085) ──
+  {
+    name: "Luke Skywalker (4.1 ABY)",
+    species: "Human",
+    system: "Bakura",
+    location: "Bakura — Alliance Task Force",
+    affiliations: ["Rebel Alliance"],
+    role: "Jedi Knight / Commander",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { blaster: "6D+2", "brawling parry": "5D+2", dodge: "7D+1", lightsaber: "8D+1", "melee combat": "4D", "melee parry": "9D" } },
+      KNOWLEDGE: { base: "2D", skills: { "alien species": "4D", bureaucracy: "5D+1", streetwise: "6D", survival: "6D", value: "4D" } },
+      MECHANICAL: { base: "4D", skills: { astrogation: "6D", "beast riding": "4D+2", "beast riding: tauntaun": "6D+1", "repulsorlift operation": "8D", "repulsorlift operation: airspeeder": "8D", sensors: "4D+1", "starfighter piloting": "7D", "starfighter piloting: X-wing": "9D+2", "starship gunnery": "7D+1", "starship shields": "7D" } },
+      PERCEPTION: { base: "2D+1", skills: { bargain: "3D", command: "6D", hide: "5D", search: "5D", sneak: "5D" } },
+      STRENGTH: { base: "3D", skills: { brawling: "5D+2", "climbing/jumping": "6D+1", lifting: "4D", stamina: "6D" } },
+      TECHNICAL: { base: "3D", skills: { "computer programming/repair": "5D", "droid programming": "6D", "droid repair": "6D", "first aid": "4D+2", "lightsaber repair": "7D+1", "repulsorlift repair": "7D+1", security: "4D+1", "starfighter repair": "5D+2" } }
+    },
+    specialAbilities: "Force Skills: Control 10D, Sense 8D, Alter 7D. Force Powers — Control: absorb/dissipate energy, accelerate healing, concentration, control pain, detoxify poison, emptiness, enhance attribute, hibernation trance, reduce injury, remain conscious, resist stun. Sense: combat sense, danger sense, instinctive astrogation, life detection, life sense, magnify senses, receptive telepathy, sense Force. Alter: injure/kill, telekinesis. Control & Sense: farseeing, lightsaber combat, projective telepathy. Control & Alter: control another's pain, inflict pain. Control, Sense & Alter: affect mind. This character is Force-sensitive.\nWounded: Die codes are temporarily reduced by -1D throughout the events at Bakura due to injuries suffered during his battle with Emperor Palpatine (skeletal calcification causing muscular micro-seizures, per 2-1B's medical report).",
+    forcePoints: 12,
+    darkSidePoints: 2,
+    characterPoints: 16,
+    move: 10,
+    equipment: "Lightsaber (5D), blaster pistol (4D), comlink",
+    capsule: "Luke Skywalker is a changed man after his confrontation with Vader and the Emperor. The once reckless farm boy has grown into a talented Jedi and fierce warrior, though he still struggles to overcome his reputation for going it alone — a tendency Bakura begins to temper. Despite severe injuries from Palpatine's Force lightning (a sudden skeletal calcification diagnosed by 2-1B), Luke insisted on leading the Alliance task force to Bakura. There he encountered Dev Sibwarra, a young human enslaved by the Ssi-ruuk through entechment, and was deeply moved by his death — sensing the boy's spirit heal even as his body failed. Luke also discovered he could contact the trapped life energies within Ssi-ruuvi machinery through the Force, eventually 'convincing' systems aboard the cruiser Shriwirr to cooperate and seizing control of the vessel. He formed a brief but meaningful bond with Bakuran Senator Gaeriel Captison, though differing beliefs kept them apart. 'She was a remarkable woman, with hidden gifts that I doubt she is even aware of.'",
+    source: "WEG40085 The Truce at Bakura p.28"
+  },
+  {
+    name: "Princess Leia Organa (4.1 ABY)",
+    species: "Human",
+    system: "Bakura",
+    location: "Bakura — Alliance Task Force",
+    affiliations: ["Rebel Alliance"],
+    role: "Senator / Alliance Leader",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { blaster: "7D+2", "blaster artillery": "3D+2", "brawling parry": "4D", dodge: "7D", grenade: "4D", "melee combat": "5D", "melee parry": "4D", "vehicle blasters": "4D" } },
+      KNOWLEDGE: { base: "4D", skills: { "alien species": "7D", bureaucracy: "9D+1", cultures: "9D+1", languages: "7D", "planetary systems": "9D", streetwise: "6D", survival: "8D", value: "6D+1", willpower: "6D+1" } },
+      MECHANICAL: { base: "2D+2", skills: { astrogation: "4D", "beast riding": "3D+2", "repulsorlift operation": "4D+2", "starfighter piloting": "5D", "starship gunnery": "4D", "starship shields": "5D" } },
+      PERCEPTION: { base: "3D+1", skills: { bargain: "6D", command: "10D+1", con: "5D+1", gambling: "4D", hide: "6D", persuasion: "7D", "persuasion: debate": "8D+2", search: "6D", sneak: "6D" } },
+      STRENGTH: { base: "3D", skills: { brawling: "4D+1", "climbing/jumping": "4D+1", stamina: "6D", swimming: "5D" } },
+      TECHNICAL: { base: "2D", skills: { "computer programming/repair": "4D+2", "droid programming": "4D", "droid repair": "4D", "first aid": "6D", security: "4D+1", "starfighter repair": "3D+2" } }
+    },
+    specialAbilities: "This character is Force-sensitive.",
+    forcePoints: 5,
+    characterPoints: 18,
+    move: 10,
+    equipment: "Blaster pistol (4D), comlink, datapad, elegant clothing, utilitarian clothing",
+    capsule: "Leia Organa was instrumental in brokering the truce between the Alliance and the Imperial Bakuran government against the Ssi-ruuk threat. Her diplomatic efforts laid the groundwork for the Bakuran underground uprising that ultimately toppled Governor Nereus' regime — even after her imprisonment at Nereus' private retreat and subsequent escape. Despite recent victories, Leia is given to sudden bursts of anger and preoccupation; Solo will only say she is having 'family problems.' Through it all she has cautiously begun a romantic relationship with Han Solo, and her effectiveness as a leader remains undiminished.",
+    source: "WEG40085 The Truce at Bakura p.29"
+  },
+  {
+    name: "Han Solo (4.1 ABY)",
+    species: "Human",
+    system: "Bakura",
+    location: "Bakura — Alliance Task Force",
+    affiliations: ["Rebel Alliance"],
+    role: "General / smuggler",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D+1", skills: { blaster: "7D+2", "blaster: heavy blaster pistol": "10D", "blaster: blaster rifle": "5D+1", "blaster artillery": "6D+1", "brawling parry": "7D+1", dodge: "8D", grenade: "5D+1", "melee combat": "6D+1", "melee parry": "5D", "missile weapons": "4D+2", "pick pocket": "4D+1", running: "3D+2", "vehicle blasters": "6D+1" } },
+      KNOWLEDGE: { base: "2D", skills: { "alien species": "6D+2", bureaucracy: "5D", business: "6D", "business: smugglers": "7D", cultures: "5D+1", intimidation: "6D+2", languages: "5D+2", "law enforcement": "5D", "planetary systems": "7D+2", streetwise: "7D+2", "streetwise: Jabba the Hutt's organization": "9D+2", survival: "7D+2", value: "5D", willpower: "4D+1" } },
+      MECHANICAL: { base: "3D+2", skills: { astrogation: "8D", "beast riding": "5D+2", "beast riding: tauntaun": "6D", "capital ship gunnery": "5D+1", "capital ship piloting": "7D", "capital ship shields": "4D+1", communications: "5D", "ground vehicle operation": "4D+2", "repulsorlift operation": "7D+1", sensors: "4D+2", "space transports": "7D", "space transports: YT-1300 transports": "11D+1", "starfighter piloting": "6D", "starship gunnery": "9D", "starship shields": "6D+2", "swoop operation": "6D+2" } },
+      PERCEPTION: { base: "3D", skills: { bargain: "8D", command: "6D", con: "8D", forgery: "5D", "forgery: ship IDs": "7D", gambling: "8D", hide: "8D", persuasion: "5D", search: "5D+2", sneak: "4D+2" } },
+      STRENGTH: { base: "3D", skills: { brawling: "7D+2", "climbing/jumping": "6D", lifting: "5D+1", stamina: "7D", swimming: "4D+2" } },
+      TECHNICAL: { base: "2D+2", skills: { "blaster repair": "4D+2", "computer programming/repair": "7D", demolitions: "6D+2", "droid programming": "5D+1", "droid repair": "5D+1", "ground vehicle repair": "3D", "repulsorlift repair": "7D", security: "7D", "space transports repair": "6D", "space transports repair: YT-1300 transports": "9D", "starship weapon repair": "4D" } }
+    },
+    specialAbilities: "",
+    forcePoints: 2,
+    characterPoints: 24,
+    move: 10,
+    equipment: "Illegally modified BlasTech DL-44 heavy blaster pistol (5D+1), hold-out blaster (hidden in wrist holster, 3D), vibroknife (STR+3D), boot knife (STR+2), comlink",
+    capsule: "In the span of days Han helped topple Jabba's empire, joined the Alliance as a General, saw the second Death Star destroyed, and repelled a Ssi-ruuvi invasion — somewhere in between realizing how much he cares for a certain Alderaanian Princess. He remains resolutely reckless: he steadfastly opposed the Imperial truce at Bakura ('Flamin' Imperials could never be trusted'), and staged a characteristically ill-planned one-man assault on Governor Nereus' retreat to rescue the captive Leia — who insists she was well into her own escape plan when he 'blundered in again.' His suspicion of the Imperials proved correct when Nereus ordered his ships to fire on Alliance vessels after the Ssi-ruuk were defeated.",
+    source: "WEG40085 The Truce at Bakura p.31"
+  },
+  {
+    name: "Chewbacca (4.1 ABY)",
+    species: "Wookiee",
+    system: "Bakura",
+    location: "Bakura — Alliance Task Force",
+    affiliations: ["Rebel Alliance"],
+    role: "Co-pilot / mechanic",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "2D+2", skills: { blaster: "6D+2", bowcaster: "9D", "brawling parry": "7D+2", dodge: "6D+1", grenade: "5D+1", "melee combat": "8D", "melee parry": "8D", "vehicle blasters": "6D+1" } },
+      KNOWLEDGE: { base: "2D", skills: { "alien species": "7D", bureaucracy: "4D", business: "4D+2", cultures: "3D+1", intimidation: "8D+2", languages: "6D", "planetary systems": "7D+2", streetwise: "7D", survival: "7D", value: "7D+2" } },
+      MECHANICAL: { base: "3D", skills: { astrogation: "8D+1", "beast riding": "4D", communications: "4D+2", "repulsorlift operation": "7D+1", sensors: "6D", "space transports": "6D+2", "space transports: YT-1300 transports": "8D", "starship gunnery": "8D", "starship shields": "6D+1" } },
+      PERCEPTION: { base: "2D", skills: { bargain: "5D", command: "5D", gambling: "5D", hide: "3D+2", search: "3D", sneak: "3D+2" } },
+      STRENGTH: { base: "5D", skills: { brawling: "10D", "climbing/jumping": "7D+2", lifting: "10D", stamina: "10D", swimming: "7D" } },
+      TECHNICAL: { base: "3D+1", skills: { "blaster repair": "5D+1", "bowcaster repair": "5D+2", "computer programming/repair": "8D", demolitions: "6D", "droid programming": "8D", "droid repair": "7D+2", "first aid": "5D+1", "repulsorlift repair": "6D+1", security: "7D", "space transports repair": "8D", "space transports repair: YT-1300 transports": "10D+2" } }
+    },
+    specialAbilities: "Berserker Rage: +2D to Strength when brawling in berserker rage.\nClimbing Claws: +2D to climbing.",
+    forcePoints: 3,
+    characterPoints: 17,
+    move: 13,
+    equipment: "Bowcaster (4D), ammo bandolier, droid tool kit, starship tool kit, waist pouch",
+    capsule: "Chewbacca's contributions at Bakura extended beyond combat. In a system made suspicious of all aliens by the Ssi-ruuvi invasion, Chewie and the other non-human Alliance personnel demonstrated their willingness to fight and die for Bakura — helping dispel that distrust and convincing the Bakurans to ally with the Rebellion. His most striking gesture was volunteering to ferry messages between the Bakuran humans and the Ssi-ruuk, fully aware the Ssi-ruuk could have subjected him to entechment just as easily as any human.",
+    source: "WEG40085 The Truce at Bakura p.32"
+  },
+  {
+    name: "R2-D2 (Artoo-Detoo) (4.1 ABY)",
+    species: "Droid (R2 Astromech)",
+    system: "Bakura",
+    location: "Bakura — Alliance Task Force",
+    affiliations: ["Rebel Alliance"],
+    role: "Astromech droid",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { dodge: "4D", "electroshock prod": "4D+2" } },
+      KNOWLEDGE: { base: "2D", skills: { "planetary systems": "9D", survival: "6D+2", value: "6D+2" } },
+      MECHANICAL: { base: "4D", skills: { astrogation: "11D", communications: "6D+1", sensors: "7D+1", "starfighter piloting": "6D", "starfighter piloting: X-wing": "8D+2", "starship gunnery": "4D+1", "starship shields": "4D+1" } },
+      PERCEPTION: { base: "3D", skills: { command: "3D+1", con: "3D+2", gambling: "6D", search: "3D+1", sneak: "4D+2" } },
+      STRENGTH: { base: "3D", skills: { lifting: "4D", swimming: "3D+1" } },
+      TECHNICAL: { base: "4D", skills: { "computer programming/repair": "8D+2", "droid programming": "5D+1", "droid repair": "7D", "machinery repair": "5D+2", "repulsorlift repair": "4D", security: "6D", "starfighter repair": "6D+1", "starfighter repair: X-wing": "7D+2", "space transports repair": "5D+2", "space transports: YT-1300": "7D+1" } }
+    },
+    specialAbilities: "Equipped With: Three wheeled legs (one retractable); retractable heavy grasper arm (+1D to lifting); retractable fine work grasper arm; extendable 0.3m video sensor (360° rotation); small electric arc welder (3D, 0.3m range); small circular saw (4D, 0.3m range); video display screen; holographic projector/recorder (1m range); fire extinguisher; small internal cargo area (20cm × 8cm); high-pitch acoustic signaller; long-range sensing array with radar, Geiger counter, life-form sensors, infrared and EM field receptors (+3D to search up to 100m); broad-band antenna receiver; computer link-up jack; compressed air launcher (lightsaber or flares).",
+    forcePoints: 2,
+    characterPoints: 20,
+    move: 5,
+    equipment: "Built-in systems (see Equipped With)",
+    capsule: "At Bakura, Artoo proved that astromech droids could replicate Ssi-ruuvi speech — a key breakthrough in translating an utterly alien language. He also aided the Bakuran resistance's 'circuitry guerrillas,' slicing through Imperial security networks and misdirecting Imperial troops into small groups that resistance operatives could pick off. Commander Skywalker has said there are few humans as brave as Artoo. Size: 0.96m tall.",
+    source: "WEG40085 The Truce at Bakura p.33"
+  },
+  {
+    name: "C-3PO (See-Threepio) (4.1 ABY)",
+    species: "Droid (Protocol)",
+    system: "Bakura",
+    location: "Bakura — Alliance Task Force",
+    affiliations: ["Rebel Alliance"],
+    role: "Protocol droid / translator",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { dodge: "5D" } },
+      KNOWLEDGE: { base: "5D+2", skills: { "alien species": "7D+1", bureaucracy: "8D+2", cultures: "8D", languages: "12D+1", "planetary systems": "6D", survival: "5D+2", value: "5D+2" } },
+      MECHANICAL: { base: "3D", skills: { "repulsorlift operation": "4D" } },
+      PERCEPTION: { base: "3D+1", skills: { bargain: "6D", con: "5D", hide: "4D+1", sneak: "4D+1" } },
+      STRENGTH: { base: "2D", skills: {} },
+      TECHNICAL: { base: "3D", skills: { "first aid": "4D" } }
+    },
+    specialAbilities: "Equipped With: Humanoid body (2 arms, 2 legs, head); two visual and two auditory sensors (human range); broad-band antenna receiver; AA-1 Verbo-brain; TranLang III Communications Module with over six million languages; Vocabulator speech/sound system capable of exact voice impersonation and an extraordinarily wide range of sound effects.",
+    forcePoints: 1,
+    characterPoints: 17,
+    move: 8,
+    equipment: "Built-in systems (see Equipped With)",
+    capsule: "Threepio was the first to detect the Ssi-ruuvi command signal to their drone ships — the first indication the Ssi-ruuk used drone fighters rather than piloted craft. He was less successful fully interpreting the Ssi-ruuvi language, a failure he is uncharacteristically reticent about. Han Solo suspects he is 'still steamed' about Chewbacca shooting him — an incident caused by Solo disguising Threepio in captured stormtrooper armor to sneak him past local law enforcement. The disguise was too convincing. Size: 1.67m tall.",
+    source: "WEG40085 The Truce at Bakura p.33"
+  },
+  {
+    name: "Wedge Antilles (4.1 ABY)",
+    species: "Human",
+    system: "Bakura",
+    location: "Bakura — Rogue Squadron",
+    affiliations: ["Rebel Alliance"],
+    role: "Starfighter commander / Rogue Leader",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { blaster: "5D", "brawling parry": "3D+1", dodge: "5D+2", "melee combat": "3D+1", "vehicle blasters": "3D+2" } },
+      KNOWLEDGE: { base: "2D", skills: { "alien species": "4D+1", bureaucracy: "5D+2", cultures: "2D+2", languages: "3D", "planetary systems": "4D+2", survival: "2D+1" } },
+      MECHANICAL: { base: "4D", skills: { astrogation: "6D+2", "space transports": "5D+2", "starfighter piloting: X-wing": "6D", "starship gunnery": "5D+2", "starship shields": "5D" } },
+      PERCEPTION: { base: "3D", skills: { bargain: "4D", command: "4D+2", gambling: "4D+1", hide: "3D+1" } },
+      STRENGTH: { base: "3D+2", skills: { stamina: "4D+2" } },
+      TECHNICAL: { base: "3D", skills: { "computer programming/repair": "5D+1", "repulsorlift repair": "3D+2", "space transports repair": "5D", "starfighter repair": "4D+1", "starfighter repair: X-wing": "5D" } }
+    },
+    specialAbilities: "",
+    forcePoints: 1,
+    characterPoints: 8,
+    move: 10,
+    equipment: "Blaster pistol (4D), sealed flight suit, comlink, starfighter tool kit",
+    capsule: "One of the few Alliance pilots to have survived engagements with both Death Stars, Wedge leads Rogue Squadron at Bakura — racking up kills against both Imperial and Ssi-ruuvi vessels. He discovered the archaic Imperial message drone from Bakura, accidentally activated its self-destruct, and then shoved his hand into the mechanism to hold it shut long enough for nearby ships to evacuate — a feat of nerve that Skywalker later had to rescue him from. Recently promoted to Commander, he refuses to correct anyone who calls him Captain. 'I'm a pilot, not an officer. My place is behind the controls of an X-wing.'",
+    source: "WEG40085 The Truce at Bakura p.34"
+  },
+  {
+    name: "Mon Mothma (4.1 ABY)",
+    species: "Human",
+    system: "Bakura",
+    location: "Bakura — Alliance High Command",
+    affiliations: ["Rebel Alliance"],
+    role: "Supreme Commander / Alliance leader",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { blaster: "3D+2", dodge: "5D", "melee parry": "3D+1" } },
+      KNOWLEDGE: { base: "4D", skills: { "alien species": "8D+2", bureaucracy: "10D+1", cultures: "10D+1", intimidation: "5D", languages: "8D", "planetary systems": "8D", survival: "7D", value: "5D+2", willpower: "6D+1" } },
+      MECHANICAL: { base: "3D", skills: { astrogation: "5D", "beast riding": "3D+2", communications: "3D+1", "repulsorlift operation": "4D+1", "space transports": "4D", "starfighter piloting": "4D" } },
+      PERCEPTION: { base: "4D", skills: { bargain: "10D", command: "10D", con: "8D+1", gambling: "6D", hide: "6D+2", persuasion: "6D+1", "persuasion: debate": "8D+2", "persuasion: oration": "9D", search: "7D", sneak: "4D+2" } },
+      STRENGTH: { base: "2D", skills: { stamina: "6D", swimming: "4D+1" } },
+      TECHNICAL: { base: "2D", skills: { "computer programming/repair": "5D", "droid programming": "4D", "droid repair": "4D", "first aid": "6D", security: "5D", "starfighter repair": "2D+1" } }
+    },
+    specialAbilities: "",
+    forcePoints: 2,
+    characterPoints: 20,
+    move: 10,
+    equipment: "",
+    capsule: "Mon Mothma surrendered her Imperial Senate seat long ago to lead the Rebellion as a fugitive. She united groups joined only by hatred of the Empire and distrust of each other, made the hard decisions, and watched stoically as her soldiers died. With Palpatine dead, she now turns toward building a New Republic — a government dedicated to peace and freedom. In many ways, her work has only just begun.",
+    source: "WEG40085 The Truce at Bakura p.34"
+  },
+  {
+    name: "Admiral Ackbar (4.1 ABY)",
+    species: "Mon Calamari",
+    system: "Bakura",
+    location: "Bakura — Alliance Fleet",
+    affiliations: ["Rebel Alliance"],
+    role: "Fleet Admiral",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { blaster: "5D+1", "blaster artillery": "4D+1", dodge: "4D", "melee combat": "5D+1" } },
+      KNOWLEDGE: { base: "3D", skills: { "alien species": "7D", bureaucracy: "7D+1", "planetary systems": "5D+1", survival: "4D", "survival: ocean/undersea": "6D", "tactics: capital ships": "7D", "tactics: fleets": "6D", "tactics: starfighters": "5D+1", willpower: "4D+1" } },
+      MECHANICAL: { base: "3D+1", skills: { astrogation: "6D", "capital ship piloting": "5D+2", "capital ship piloting: Mon Calamari battle cruiser": "6D+1", "capital ship shields": "4D+1", sensors: "5D+1", "space transports": "4D+2", "starfighter piloting": "4D+2" } },
+      PERCEPTION: { base: "2D+1", skills: { bargain: "4D", command: "8D", "command: Mon Calamari crewmembers": "10D" } },
+      STRENGTH: { base: "3D", skills: { stamina: "4D+1" } },
+      TECHNICAL: { base: "3D+1", skills: { "capital ship repair": "5D+1", "computer programming/repair": "4D+1", security: "4D+2" } }
+    },
+    specialAbilities: "Moist Environment: +1D to all Dexterity, Perception, and Strength checks in moist environments.\nDry Environment: -1D to all Dexterity, Perception, and Strength checks in dry environments.\nAquatic: Can breathe air and water; can withstand extreme pressures found in ocean depths.",
+    forcePoints: 1,
+    characterPoints: 12,
+    move: 10,
+    equipment: "Comlink, datapad",
+    capsule: "Once a slave of the Empire, Ackbar now commands the Alliance fleet — and has been fighting exhaustion ever since Endor. The Alliance lost heavily at the Battle of Endor, and Ackbar has been in a frantic race to repair and rearm before the inevitable Imperial counterattack. He has been showing signs of severe fatigue and ill-tempered testiness, and has begun delegating mundane reorganization tasks to subordinates. He managed to have the fleet ready when Bakura called, and has since pressed Alliance leadership to develop contingency plans for dealing with the Ssi-ruuk — arguing, unusually, that negotiation may be possible.",
+    source: "WEG40085 The Truce at Bakura p.35"
+  },
+  {
+    name: "Crix Madine (4.1 ABY)",
+    species: "Human",
+    system: "Bakura",
+    location: "Bakura — Alliance High Command",
+    affiliations: ["Rebel Alliance"],
+    role: "General / ground forces commander",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "2D+2", skills: { blaster: "5D", "blaster artillery": "4D", "blaster artillery: anti-infantry": "6D+2", "blaster artillery: anti-vehicle": "6D", dodge: "4D+2", grenade: "4D", "melee combat": "3D", "melee combat: force pike": "4D+1", "melee parry": "3D" } },
+      KNOWLEDGE: { base: "3D", skills: { bureaucracy: "4D", "military history": "7D+2", "planetary systems": "5D+2", streetwise: "4D", survival: "4D", "tactics: ground assault": "6D+2", "tactics: squads": "9D+2", willpower: "5D" } },
+      MECHANICAL: { base: "3D+2", skills: { "beast riding": "4D", "beast riding: Cracian thumper": "5D", "capital ship gunnery": "4D", "ground vehicle operation": "4D+2", "powersuit operation": "5D", "repulsorlift operation": "4D", "starship gunnery": "4D" } },
+      PERCEPTION: { base: "3D+1", skills: { bargain: "4D", command: "7D", search: "4D", sneak: "4D", "sneak: forest": "5D" } },
+      STRENGTH: { base: "2D+1", skills: { brawling: "3D+2", stamina: "4D" } },
+      TECHNICAL: { base: "3D", skills: { demolitions: "4D", "first aid": "4D+2", security: "5D" } }
+    },
+    specialAbilities: "",
+    forcePoints: 2,
+    characterPoints: 9,
+    move: 10,
+    equipment: "Blaster pistol (4D), comlink, datapad",
+    capsule: "Former founder and commander of the Imperial Storm Commandos, Madine defected to the Alliance roughly three years ago. Friends like General Rieekan helped smooth his transition despite his Imperial history. He has since improved the quality of Alliance ground forces and shared invaluable knowledge of Imperial protocols and procedures. At Bakura his role was advisory, but his post-battle analysis of the Ssi-ruuk has been exceptional — he has already drafted a contingency plan for striking the Ssi-ruuvi capital if war resumes.",
+    source: "WEG40085 The Truce at Bakura p.38"
+  },
+  {
+    name: "Captain Tessa Manchisco",
+    species: "Human (Virgillian)",
+    system: "Bakura",
+    location: "Bakura — Flurry (Virgillian Free Alignment Starfleet)",
+    affiliations: ["Rebel Alliance"],
+    role: "Starship captain / fleet commander",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "archaic guns: Virgillian wheel lock": "6D+1", blaster: "5D", dodge: "5D", "melee combat": "4D", "melee parry": "4D+2" } },
+      KNOWLEDGE: { base: "2D", skills: { "planetary systems": "5D", "planetary systems: Outer Rim Territories": "6D", "tactics: capital ships": "5D+2", "tactics: starfighters": "5D+2" } },
+      MECHANICAL: { base: "4D", skills: { astrogation: "6D", "capital ship gunnery": "4D+1", "capital ship piloting": "5D", "capital ship shields": "4D+2", sensors: "5D", "starfighter piloting": "6D", "starship gunnery": "5D" } },
+      PERCEPTION: { base: "3D", skills: { command: "5D", "command: Flurry crew": "6D+2", "command: Virgillian Alignment forces": "6D" } },
+      STRENGTH: { base: "3D", skills: { brawling: "4D", stamina: "5D" } },
+      TECHNICAL: { base: "3D", skills: { "capital ship repair": "4D", "capital ship repair: Flurry": "6D" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 5,
+    move: 10,
+    equipment: "Heavy blaster pistol (5D), comlink, datapad, Virgillian Free Alignment crewer's uniform",
+    capsule: "Manchisco grew up on Virginia 7, a tiny colony world in the middle of the brutal Virgillian Civil War between the Free Alignment and the Imperial-backed Aristocracy. She watched Imperial forces execute her parents — both resistance leaders — and fled into hiding. Rising through the Alignment ranks as a pilot and tactician, her unorthodox tactics frustrated Imperial patrols and helped win battles fought with clubs, flintlocks, and captured blasters. When the Alliance volunteered support and Imperial forces eventually withdrew, the Alignment captured advanced weapons and capital ships. In gratitude, the Alignment lent its tiny fleet to the Alliance; Manchisco insisted on leading it herself. Her promising career ended at Bakura when the Flurry was destroyed in an Imperial attack. KIA.",
+    source: "WEG40085 The Truce at Bakura p.38-39"
+  },
+  {
+    name: "Monnda Tebbo",
+    species: "Duro",
+    system: "Bakura",
+    location: "Bakura — Flurry (Virgillian Free Alignment Starfleet)",
+    affiliations: ["Rebel Alliance"],
+    role: "Chief Navigator",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { blaster: "3D+2", dodge: "4D+2", "melee combat": "3D+2", "melee parry": "3D+2" } },
+      KNOWLEDGE: { base: "2D+1", skills: { languages: "3D+2", willpower: "4D" } },
+      MECHANICAL: { base: "3D+2", skills: { "archaic starship piloting": "5D+2", astrogation: "6D+2", "capital ship gunnery": "5D+2", "capital ship piloting": "5D+2", "capital ship shields": "5D+2", sensors: "6D", "space transports": "5D+2" } },
+      PERCEPTION: { base: "2D+1", skills: {} },
+      STRENGTH: { base: "2D+2", skills: { brawling: "4D+2" } },
+      TECHNICAL: { base: "3D", skills: { "computer programming/repair": "5D", "capital starship repair": "6D" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 6,
+    move: 10,
+    equipment: "BlasTech DL-6H heavy blaster pistol (5D), comlink, Virgillian Free Alignment crewer's uniform",
+    capsule: "One of the few non-humans to fight in the Virgillian Civil War, Tebbo earned honorary Virgillian citizenship and a commission in both the Alliance and Alignment militaries. A former spice smuggler aboard the Ill Wind, he survived a catastrophic crash on Uogo'Cor by using the ship's shields as an improvised airbrake — then ambushed the stormtroopers searching for survivors and helped disable an Imperial Customs cruiser from the inside. Assigned to the Flurry as navigator, he trained the Virgillian crew in navigation and space combat. Field-commissioned to Captain but always preferred the title Chief Navigator. KIA — killed when the Flurry was destroyed at Bakura.",
+    source: "WEG40085 The Truce at Bakura p.40"
+  },
+  {
+    name: "Rannd Delckis",
+    species: "Human (Virgillian)",
+    system: "Bakura",
+    location: "Bakura — Flurry (Virgillian Free Alignment Starfleet)",
+    affiliations: ["Rebel Alliance"],
+    role: "Communications officer",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { blaster: "5D+2", "brawling parry": "4D+1", dodge: "4D+2", running: "5D+2" } },
+      KNOWLEDGE: { base: "3D", skills: { "alien species": "5D+2", languages: "6D" } },
+      MECHANICAL: { base: "3D", skills: { communications: "6D+2", sensors: "5D+1" } },
+      PERCEPTION: { base: "2D+2", skills: { command: "4D", investigation: "5D" } },
+      STRENGTH: { base: "2D", skills: { brawling: "3D+2" } },
+      TECHNICAL: { base: "2D+1", skills: { "computer programming/repair: communications systems": "7D+2" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 7,
+    move: 10,
+    equipment: "BlasTech DL-18 blaster pistol (4D), comlink, datapad, Virgillian Free Alignment crewer's uniform",
+    capsule: "Born to Aristocracy parents and a graduate of the Imperial Academy, Delckis was commissioned as an Ensign aboard the Victory-class Star Destroyer Stormwind during the Virgillian conflict. His first landing mission shattered his Imperial convictions: he witnessed Captain Jarroth order stormtroopers to use 'the Burning' on a camp of civilian refugees — women, children, and wounded — killing several and gaining nothing. He defected to the Alignment immediately after, facing hostility and skepticism before earning the respect of Captain Manchisco. His Imperial training made him expert at operating and confusing Imperial sensors and HoloNet systems. Awarded two commendations for communications proficiency. KIA — killed when the Flurry was destroyed at Bakura.",
+    source: "WEG40085 The Truce at Bakura p.40-41"
+  },
+  {
+    name: "Gayla Riemann",
+    species: "Human",
+    system: "Bakura",
+    location: "Bakura — Rogue Squadron / Bakuran Defense Force",
+    affiliations: ["Rebel Alliance"],
+    role: "X-wing pilot / artist",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { blaster: "5D+1", "brawling parry": "3D+2", dodge: "5D" } },
+      KNOWLEDGE: { base: "2D", skills: { "artist: holo-sculpting": "8D", "artist: painting": "7D", intimidation: "4D", "planetary systems": "4D+2", value: "3D", willpower: "4D" } },
+      MECHANICAL: { base: "4D", skills: { astrogation: "6D", sensors: "4D+2", "space transports": "5D", "starfighter piloting": "6D+2", "starship gunnery": "5D+2" } },
+      PERCEPTION: { base: "3D", skills: { command: "4D+2", con: "4D+2", persuasion: "5D" } },
+      STRENGTH: { base: "3D", skills: { brawling: "4D", stamina: "5D" } },
+      TECHNICAL: { base: "3D", skills: { "starfighter repair": "5D+2" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 8,
+    move: 10,
+    equipment: "BlasTech DL-18 blaster pistol (4D), comlink, rebel pilot's uniform, vacuum suit, flight helmet, X-wing starfighter",
+    capsule: "An artist of interplanetary renown since childhood, Riemann left Core World elite circles and returned home to Aldraig IV to find it consumed by the Imperial war machine — AT-AT factories, TIE assembly plants, and the near-extinction of a rare native bird species she had fought to protect as a child. A peaceful protest landed her in prison; forced to paint Imperial propaganda and 'study' a Sienar TIE plant, she used her access to memorize the facility's floor plan and smuggle it to the underground. The resulting sabotage destroyed the power core, but exposed her — she was evacuated and joined the Alliance. Starting as a supply pilot, she quickly rose to X-wing Lieutenant and survived both Endor and Bakura. Post-Bakura she was reassigned to train pilots for the Bakuran defense force. Still paints in her spare time — currently a private series of portraits of fellow pilots.",
+    source: "WEG40085 The Truce at Bakura p.41-42"
+  },
+  {
+    name: "Ty Matthews",
+    species: "Human",
+    system: "Bakura",
+    location: "Bakura — Home One (Alliance Fleet)",
+    affiliations: ["Rebel Alliance"],
+    role: "Tactical aide / technician",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { blaster: "5D", dodge: "4D+2", running: "5D" } },
+      KNOWLEDGE: { base: "4D", skills: { bureaucracy: "6D+2", "planetary systems": "5D", value: "5D+2" } },
+      MECHANICAL: { base: "3D", skills: {} },
+      PERCEPTION: { base: "3D+2", skills: { command: "4D", investigation: "5D" } },
+      STRENGTH: { base: "2D+1", skills: { brawling: "3D+2" } },
+      TECHNICAL: { base: "3D", skills: { "computer programming/repair": "7D", "droid programming": "5D", "droid repair": "3D+1" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 9,
+    move: 10,
+    equipment: "Sporting blaster (3D+2), comlink, datapad, Rebel Lieutenant's uniform",
+    capsule: "Matthews joined the Alliance on his fifteenth birthday, following in his father Colonel Tev Matthews' footsteps. The Colonel had been running covert supply routes through the Corporate Sector when Imperial Intelligence caught up with him — he got Ty out on a smuggling vessel before being captured and dying under interrogation, officially of 'acute cardiopulmonary viral trauma.' Adopted by his father's old unit, Ty discovered a talent for circuitry and computer systems. He rose to Lieutenant and serves as chief tactical aide in Ackbar's war room aboard Home One, responsible for storage and display of combat data. Considered one of the most efficient tactical aides in the fleet. 'My father died to get me here. I can only honor his memory by serving to the best of my abilities.'",
+    source: "WEG40085 The Truce at Bakura p.44"
+  },
+  {
+    name: "Governor Wilek Nereus",
+    species: "Human",
+    system: "Bakura",
+    location: "Bakura — Imperial Governor's Palace",
+    affiliations: ["Galactic Empire"],
+    role: "Imperial Governor",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { blaster: "5D", dodge: "5D", "melee combat": "4D", "melee parry": "5D" } },
+      KNOWLEDGE: { base: "4D", skills: { "alien species": "5D", bureaucracy: "6D", "bureaucracy: Empire": "7D+1", "bureaucracy: Bakuran government": "8D+2", intimidation: "6D+2", "planetary systems": "6D", "scholar: alien dentition": "7D", "scholar: parasitology": "9D", tactics: "5D", value: "6D" } },
+      MECHANICAL: { base: "2D+1", skills: {} },
+      PERCEPTION: { base: "3D+2", skills: { bargain: "6D+2", command: "8D+1", con: "7D+1" } },
+      STRENGTH: { base: "2D+2", skills: {} },
+      TECHNICAL: { base: "2D+1", skills: { "computer programming/repair": "3D+2", "first aid": "4D", security: "5D" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 17,
+    move: 10,
+    equipment: "Imperial Munitions KK-5 blaster pistol (4D), comlink, datapad, rank code cylinders, custom-tailored Imperial uniform",
+    capsule: "Nereus was assigned to Bakura by bureaucratic error — he had angled for the Governorship of Gyosha, the pleasant Core resort world he grew up near, and spent years filing protests over the posting. Convinced a superior had intentionally sidelined him, he resolved to make himself impossible to ignore. He maintained order through murder, blackmail, and violent purges of dissent — even disabling the prominent activist Eppie Belden. An expert parasitologist who collected the teeth of sentient predatory species, he worked on Imperial 'special projects' including the pacification of Dentaal. At Bakura he secretly conspired with the Ssi-ruuk to hand Luke Skywalker over to them in exchange for a ceasefire — a deal he planned to void by poisoning Luke with a lethal parasite. When the Rebellion toppled his regime, rather than surrender, he drew his sidearm and shot at Luke and Leia. Skywalker deflected the bolts back with his lightsaber. KIA.",
+    source: "WEG40085 The Truce at Bakura p.47"
+  },
+  {
+    name: "Nereus' Protectorate",
+    species: "Human",
+    system: "Bakura",
+    location: "Bakura — Imperial Governor's Palace",
+    affiliations: ["Galactic Empire"],
+    role: "Elite bodyguard / stormtrooper",
+    type: "Generic NPC",
+    stats: {
+      DEXTERITY: { base: "2D+2", skills: { blaster: "5D+2", "blaster: blaster rifle": "7D", "brawling parry": "4D+2", dodge: "5D", "melee combat": "4D+1", "melee parry": "5D" } },
+      KNOWLEDGE: { base: "2D", skills: { intimidation: "5D+2", "law enforcement": "4D", streetwise: "4D", "tactics: squads": "4D" } },
+      MECHANICAL: { base: "2D", skills: {} },
+      PERCEPTION: { base: "3D+1", skills: { investigation: "4D+1", search: "5D" } },
+      STRENGTH: { base: "2D", skills: { brawling: "4D+2" } },
+      TECHNICAL: { base: "2D", skills: { security: "3D+2" } }
+    },
+    specialAbilities: "Enhanced Perception: Trained by the Skine Bounty Hunter College to read body language for signs of imminent attack. Gain +1D bonus to initiative rolls (added to Perception). If the target is known to be hostile, bonus increases to +2D.",
+    forcePoints: 0,
+    characterPoints: 3,
+    move: 10,
+    equipment: "Stormtrooper armor (+2D physical/+1D energy/-1D DEX), blaster rifle (5D), blaster pistol (4D), vibro-shiv (STR+2, Easy difficulty)",
+    capsule: "116 stormtroopers from Nereus' garrison trained by the Skine Bounty Hunter College as an elite bodyguard unit. Duties encompassed standard security as well as close-protection work; at least two were on Nereus at all times. Trained in marksmanship, observation, body-language reading, and security protocols. Mockingly called 'Targets' in the barracks. Most were captured during the Bakura Incident; two remain unaccounted for.",
+    source: "WEG40085 The Truce at Bakura p.47"
+  },
+  {
+    name: "Nereus' Navy Trooper Escort",
+    species: "Human",
+    system: "Bakura",
+    location: "Bakura — Imperial Governor's Palace",
+    affiliations: ["Galactic Empire", "Imperial Navy"],
+    role: "Navy escort trooper",
+    type: "Generic NPC",
+    stats: {
+      DEXTERITY: { base: "2D+1", skills: { blaster: "4D+1", "blaster: blaster rifle": "5D+2", "brawling parry": "3D+1", dodge: "4D+1", grenade: "3D+1", "melee combat": "4D", "melee parry": "4D", running: "3D+2" } },
+      KNOWLEDGE: { base: "1D+1", skills: { intimidation: "3D+1", streetwise: "2D+1" } },
+      MECHANICAL: { base: "1D+2", skills: { "repulsorlift operation": "2D+2", "capital ship shields": "2D+2" } },
+      PERCEPTION: { base: "3D", skills: { command: "4D", search: "4D" } },
+      STRENGTH: { base: "2D+2", skills: { brawling: "4D+2", stamina: "3D+2" } },
+      TECHNICAL: { base: "1D", skills: { security: "2D" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 2,
+    move: 10,
+    equipment: "Blaster helmet (+1D physical/+1 energy), blaster pistol (4D), comlink",
+    capsule: "Specially selected Navy troopers assigned as personal escorts for Governor Nereus at public appearances and governmental functions such as Bakuran Senate meetings. Distinct from the Protectorate stormtroopers, who operated in the background watching for threats — these Navy escorts accompanied Nereus directly.",
+    source: "WEG40085 The Truce at Bakura p.47"
+  },
+  {
+    name: "Commander Pter Thanas",
+    species: "Human",
+    system: "Bakura",
+    location: "Bakura — Dominant (Imperial Carrack-class Cruiser)",
+    affiliations: ["Galactic Empire"],
+    role: "Imperial commander / Bakuran Defense Militia commander",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "2D+2", skills: { blaster: "5D+2", dodge: "5D", "melee combat": "4D+2", "melee combat: Talz knife fighting": "5D+2" } },
+      KNOWLEDGE: { base: "3D", skills: { "bureaucracy: Imperial fleet": "5D", intimidation: "6D", "tactics: capital ships": "5D+2", "tactics: starfighters": "5D+1", "tactics: ground assault": "5D", willpower: "5D" } },
+      MECHANICAL: { base: "3D+2", skills: { astrogation: "4D", "capital ship shields": "4D+2", "capital ship gunnery": "5D", "capital ship piloting": "5D+2" } },
+      PERCEPTION: { base: "3D+1", skills: { command: "5D", "command: Dominant crew": "7D" } },
+      STRENGTH: { base: "2D+1", skills: { brawling: "4D" } },
+      TECHNICAL: { base: "3D", skills: { "capital ship repair": "5D", security: "4D" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 7,
+    move: 10,
+    equipment: "Imperial Munitions heavy blaster pistol (5D), Alzoc-pearl-handled pocketknife (STR+1, Very Easy difficulty), comlink",
+    capsule: "A rising tactical theorist whose career was derailed by conscience. While overseeing slave Talz miners on Alzoc III, Thanas increased their food rations to improve efficiency — and three Talz saved his life during an inspection. When a replacement colonel cut the rations and ordered the Talz village destroyed, Thanas ignored the order. He was reassigned to Bakura as punishment. At Bakura he ably held off the Ssi-ruuvi fleet for days, then — on Nereus' orders — fired on Alliance ships after the Ssi-ruuk were defeated, destroying the Flurry. The honor of the Rebels in the aftermath so moved him that he defected. Now commands the Bakuran Defense Militia from his former flagship, the Carrack-class cruiser Dominant, which was surrendered to the Bakuran government. Carries a pearl-handled knife from Alzoc III.",
+    source: "WEG40085 The Truce at Bakura p.49"
+  },
+  {
+    name: "Captain Conn Doruggan",
+    species: "Human (Alderaanian)",
+    system: "Bakura",
+    location: "Bakura — Bakur Complex (Imperial Security)",
+    affiliations: ["Galactic Empire"],
+    role: "Imperial security captain",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D+1", skills: { "archaic guns": "4D+1", "blaster: blaster pistol": "6D", "blaster artillery: anti-infantry": "4D+2", dodge: "5D+2", grenade: "4D+2", "melee combat": "5D+1", "melee parry": "5D", "running: long distance": "5D+2", "vehicle blasters": "4D+2", wegsphere: "6D+2" } },
+      KNOWLEDGE: { base: "2D", skills: { "alien species": "4D", "bureaucracy: Imperial military": "6D", "cultures: Alderaan": "5D", "law enforcement: the Empire": "6D+2", "planetary systems: Bakura system": "6D", streetwise: "4D" } },
+      MECHANICAL: { base: "3D", skills: { astrogation: "4D+1", "beast riding": "4D", "ground vehicle operation": "4D", "hover vehicle operation": "5D", "repulsorlift operation": "5D+1", "space transports": "3D+1", "walker operation: AT-PT": "3D+2" } },
+      PERCEPTION: { base: "3D", skills: { "command: Imperial security forces": "6D", "investigation: Salis D'aar": "6D", search: "5D", sneak: "5D" } },
+      STRENGTH: { base: "3D+2", skills: { "brawling: martial arts": "5D+2", stamina: "4D" } },
+      TECHNICAL: { base: "3D", skills: { "computer programming/repair": "4D+2", security: "6D+2" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 5,
+    move: 10,
+    equipment: "Imperial Munitions heavy blaster pistol (5D), comlink, datapad, Imperial uniform, Imperial ID",
+    capsule: "An Alderaanian who blames the Rebellion — not the Empire — for his homeworld's destruction. He was at Raithal Military Academy when the Death Star fired; to him, Leia's refusal to cooperate caused the deaths of his family and friends. A champion wegsphere player and specialist in counterinsurgency and security, he served under Nereus on Hakartha station and Berea before Bakura, where he oversaw security of the Bakur Complex and helped arrest the activist Eppie Belden. Faultlessly polite with an 'oily' charm — Solo's read on him during the Bakura Incident was that he was sizing up the Heroes of Yavin for an ambush and only stood down when they got their weapons back too quickly.",
+    source: "WEG40085 The Truce at Bakura p.51"
+  },
+  {
+    name: "Captain Dren Jamer",
+    species: "Human",
+    system: "Bakura",
+    location: "Bakura — Dominant (Imperial Carrack-class Cruiser)",
+    affiliations: ["Galactic Empire"],
+    role: "Imperial Navy captain / second-in-command",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { blaster: "4D", dodge: "3D+2", "vehicle blasters": "3D" } },
+      KNOWLEDGE: { base: "4D+1", skills: { bureaucracy: "4D+2", "tactics: capital ships": "4D+2", "tactics: starfighters": "4D+2", value: "4D+2" } },
+      MECHANICAL: { base: "2D+2", skills: { astrogation: "3D+2", "capital ship gunnery": "4D", "capital ship shields": "3D+2", "capital ship piloting: Carrack cruisers": "3D+2", sensors: "6D" } },
+      PERCEPTION: { base: "2D+1", skills: { "command: Imperial troops": "4D" } },
+      STRENGTH: { base: "3D", skills: {} },
+      TECHNICAL: { base: "3D+2", skills: { "computer programming/repair": "5D+2" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 6,
+    move: 9,
+    equipment: "Blaster pistol (4D), Imperial uniform, Imperial ID",
+    capsule: "A soft-spoken, unambitious officer whose career of long mediocrity is punctuated by rare moments of excellence — most notably detecting a pirate vessel hiding in the EM interference of Jjannex II's polar region, saving the Stormclaw from a sneak attack. His true aptitude is science and exploration; Thanas assigned him to survey the Bakura system and design its outer defense network, which the Ssi-ruuk promptly dismantled. When Thanas defected, Jamer refused the offer to join — ironically pledging loyalty to an Empire that would have happily lost him. Move 9.",
+    source: "WEG40085 The Truce at Bakura p.54"
+  },
+  {
+    name: "Captain Grell Panib",
+    species: "Human",
+    system: "Bakura",
+    location: "Bakura — Imperial Garrison / Bakuran Defense Force",
+    affiliations: ["Galactic Empire"],
+    role: "Imperial military aide / unarmed combat champion",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { blaster: "4D", dodge: "4D", "brawling parry": "6D" } },
+      KNOWLEDGE: { base: "3D", skills: { "bureaucracy: Imperial military": "5D", "intimidation: bullying": "5D+2", streetwise: "5D" } },
+      MECHANICAL: { base: "3D", skills: { "beast riding": "5D", "repulsorlift operation": "4D+2" } },
+      PERCEPTION: { base: "2D", skills: { con: "4D", gambling: "4D" } },
+      STRENGTH: { base: "4D", skills: { brawling: "7D+2", lifting: "5D", stamina: "4D+2" } },
+      TECHNICAL: { base: "3D", skills: { "computer programming/repair": "4D" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 4,
+    move: 10,
+    equipment: "Blaster pistol (4D), Imperial uniform, Imperial ID, datapad",
+    capsule: "A product of the rough mining colony Heffrin, Panib was conscripted after too many street brawls and proved a natural combat asset — brutal, hard-hitting, and chronically unable to stop punching superior officers. Transferred to Bakura after one lum-inspired brawl too many, he came under Commander Thanas' mentorship. Thanas won Panib's loyalty and redirected his aggression into unarmed combat tournaments; Panib is currently the reigning Bakuran planetary unarmed combat champion. When Thanas defected after the Bakura Incident, Panib followed without hesitation and is now helping restructure the Bakuran Defense Force.",
+    source: "WEG40085 The Truce at Bakura p.54"
+  },
+  {
+    name: "Medical Supervisor Sena Pakkallo",
+    species: "Human",
+    system: "Bakura",
+    location: "Bakura — Imperial Medical Staff / Alliance Fleet",
+    affiliations: ["Galactic Empire"],
+    role: "Imperial medical supervisor",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { blaster: "2D+1", dodge: "2D+1" } },
+      KNOWLEDGE: { base: "3D+1", skills: { "alien species": "4D", "bureaucracy: the Empire": "6D" } },
+      MECHANICAL: { base: "2D", skills: { "(A) bacta tank operation": "4D" } },
+      PERCEPTION: { base: "3D", skills: { "command: Imperial Navy medical personnel": "6D+1", "(A) injury/ailment diagnostics": "4D+1" } },
+      STRENGTH: { base: "3D+2", skills: {} },
+      TECHNICAL: { base: "4D", skills: { "computer programming/repair": "5D+1", "first aid": "7D+2", "(A) medicine": "6D+2" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 14,
+    move: 10,
+    equipment: "Imperial uniform, medisensor, 2 medpacs, Imperial ID, datapad (with current Imperial Naval Medical Update), recording rod",
+    capsule: "Three decades of service to the Imperial military on a succession of miserable postings — OrulShai III (parasitic infections), Reuss VIII (hygiene instruction to the Rust Rats), Mimban (mining outpost doctor under Captain-Supervisor Grammel). Nereus specifically requested her for Bakura, having known her on OrulShai III as a young man. Her disillusionment with the Empire reached a breaking point when she was ordered to tend to political prisoner Gawyn Arden during Nereus' 'questioning' sessions — Arden died regardless. She spent months quietly smuggling medical supplies to the Bakuran underground before defecting to the Alliance the moment they arrived. Described by colleagues as 'crusty.'",
+    source: "WEG40085 The Truce at Bakura p.55"
+  },
+  {
+    name: "Medical Officer Grenvil Taadus",
+    species: "Human",
+    system: "Bakura",
+    location: "Bakura — Imperial Medical Staff / Medical Frigate Mercy",
+    affiliations: ["Galactic Empire"],
+    role: "Imperial combat surgeon",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { blaster: "3D+1", dodge: "3D" } },
+      KNOWLEDGE: { base: "3D", skills: { "alien species": "5D" } },
+      MECHANICAL: { base: "3D", skills: { "(A) bacta tank operation": "2D+2" } },
+      PERCEPTION: { base: "3D", skills: { command: "4D", "gambling: sabacc": "4D" } },
+      STRENGTH: { base: "3D", skills: {} },
+      TECHNICAL: { base: "3D", skills: { "first aid": "6D", "(A) medicine: combat surgery": "4D+2" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 4,
+    move: 10,
+    equipment: "Blaster pistol (4D), medisensor, medpac, Imperial uniform",
+    capsule: "Conscripted in his teens, Taadus discovered an aptitude for emergency medicine and rose to combat surgeon. He accompanied Commander Thanas to the Millennium Falcon after the Imperial surrender, treating Dev Sibwarra for severe burns and claw wounds — he could only ease the boy's pain before he died. A friend and assistant to Pakkallo, he quietly helped her smuggle medical supplies to the Bakuran underground and defected alongside her. Now transferred to the medical frigate Mercy in Ackbar's fleet. Prefers to be called Corpsman. Loses at sabacc regularly.",
+    source: "WEG40085 The Truce at Bakura p.55"
+  },
+  {
+    name: "Imperial Security Officer (typical)",
+    species: "Human",
+    system: "Bakura",
+    location: "Bakura — Imperial Garrison / Undercover",
+    affiliations: ["Galactic Empire"],
+    role: "Imperial Intelligence security agent",
+    type: "Generic NPC",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { blaster: "5D", "blaster artillery": "4D+2", "brawling parry": "5D", dodge: "6D", grenade: "4D+1", "melee combat": "5D", "melee parry": "5D", "thrown weapons": "5D", "vehicle blasters": "4D+1" } },
+      KNOWLEDGE: { base: "3D", skills: { "alien species": "4D", bureaucracy: "5D", "bureaucracy: Imperial military": "7D", cultures: "4D", "law enforcement": "5D", "planetary systems": "6D", streetwise: "5D", survival: "5D+2" } },
+      MECHANICAL: { base: "3D", skills: { astrogation: "4D+2", "beast riding": "5D", "capital ship gunnery": "5D", "capital ship piloting": "5D", "capital ship shields": "5D", communications: "6D+2", "ground vehicle operation": "4D+2", "hover vehicle operation": "4D", "repulsorlift operation": "6D+2", "space transports": "6D", "starfighter piloting": "5D", "swoop operation": "4D+1", "walker operation": "5D+2" } },
+      PERCEPTION: { base: "3D", skills: { bargain: "3D+2", command: "5D", con: "6D", forgery: "5D", hide: "6D+2", persuasion: "6D+2", search: "7D", sneak: "5D+2" } },
+      STRENGTH: { base: "3D", skills: { brawling: "5D", "climbing/jumping": "5D", lifting: "5D", stamina: "5D+1", swimming: "4D" } },
+      TECHNICAL: { base: "3D", skills: { "computer programming/repair": "6D", "first aid": "6D+1", "repulsorlift repair": "5D", security: "5D+2", "walker repair": "4D" } }
+    },
+    specialAbilities: "Several skills (planetary systems, survival, stamina, first aid, security) artificially enhanced by specialized training and mnemiotic drugs. Receive additional specialized training for their assigned post. Authorized to destroy their own ship with all hands to prevent capture. If captured, trained to resist interrogation — many choose suicide over disclosure.",
+    forcePoints: 0,
+    characterPoints: 3,
+    move: 10,
+    equipment: "Heavy blaster pistol (5D), encrypted comlink, appropriate uniform, ID and cover story for assignment",
+    capsule: "Imperial Intelligence security agents police the Imperial ranks from within — both openly (wearing Intelligence grays, feared and noticed) and undercover (embedded among crews, unknown even to those they bunk beside). Their mission: identify disloyalty, report or eliminate threats, and prevent Imperial assets from falling to the Rebels. An Imperial security officer attempted to detonate the Dominant's engines before Commander Thanas could surrender — Thanas killed him first. At least some security agents likely remain embedded among Bakuran Imperial defectors.",
+    source: "WEG40085 The Truce at Bakura p.56"
+  },
+  {
+    name: "Imperial Army Trooper (Bakura Garrison)",
+    species: "Human",
+    system: "Bakura",
+    location: "Bakura — Imperial Garrison Base",
+    affiliations: ["Galactic Empire", "Imperial Army"],
+    role: "Army garrison trooper",
+    type: "Generic NPC",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { blaster: "4D+1", dodge: "4D+1", grenade: "3D+2", "vehicle blasters": "3D+2" } },
+      KNOWLEDGE: { base: "1D+1", skills: { survival: "2D+1" } },
+      MECHANICAL: { base: "1D+1", skills: { "repulsorlift operation": "2D+1" } },
+      PERCEPTION: { base: "2D", skills: {} },
+      STRENGTH: { base: "3D+1", skills: { brawling: "4D+1" } },
+      TECHNICAL: { base: "1D", skills: {} }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 1,
+    move: 10,
+    equipment: "Blaster rifle (5D), field armor and helmet (+1D physical/+2 energy), grenades (5D), helmet comlink, survival gear, utility belt with supplies",
+    capsule: "2,000 Imperial Army troopers stationed at the Bakura garrison base just south of Salis D'aar, tasked with maintaining order and suppressing Bakuran resistance. Supported by 800 stormtroopers and 350 Navy troops under Commander Thanas.",
+    source: "WEG40085 The Truce at Bakura p.60"
+  },
+  {
+    name: "Imperial Stormtrooper (Bakura Garrison)",
+    species: "Human",
+    system: "Bakura",
+    location: "Bakura — Imperial Garrison Base",
+    affiliations: ["Galactic Empire", "Stormtrooper Corps"],
+    role: "Garrison stormtrooper",
+    type: "Generic NPC",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { blaster: "4D", "brawling parry": "4D", dodge: "4D" } },
+      KNOWLEDGE: { base: "2D", skills: {} },
+      MECHANICAL: { base: "2D", skills: {} },
+      PERCEPTION: { base: "2D", skills: {} },
+      STRENGTH: { base: "2D", skills: { brawling: "3D" } },
+      TECHNICAL: { base: "2D", skills: {} }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 1,
+    move: 10,
+    equipment: "Stormtrooper armor (+2D physical/+1D energy/-1D DEX), blaster rifle (5D), blaster pistol (4D)",
+    capsule: "800 stormtroopers stationed at the Bakura garrison base, providing the garrison's primary combat strength alongside 2,000 Army troopers and 350 Navy support troops.",
+    source: "WEG40085 The Truce at Bakura p.60"
+  },
+  {
+    name: "Imperial Navy Trooper (Bakura Garrison)",
+    species: "Human",
+    system: "Bakura",
+    location: "Bakura — Imperial Garrison Base",
+    affiliations: ["Galactic Empire", "Imperial Navy"],
+    role: "Navy garrison trooper",
+    type: "Generic NPC",
+    stats: {
+      DEXTERITY: { base: "2D+1", skills: { blaster: "3D+1", "blaster: blaster rifle": "4D+2", "brawling parry": "3D+1", dodge: "3D+1", grenade: "3D+1", "melee combat": "3D+1", "melee parry": "3D+1", running: "3D+2" } },
+      KNOWLEDGE: { base: "1D+1", skills: { intimidation: "2D+1", streetwise: "2D+1" } },
+      MECHANICAL: { base: "1D+2", skills: { "repulsorlift operation": "2D+2", "capital ship shields": "2D+2" } },
+      PERCEPTION: { base: "3D", skills: { command: "4D", search: "4D" } },
+      STRENGTH: { base: "2D+2", skills: { brawling: "4D+2", stamina: "3D+2" } },
+      TECHNICAL: { base: "1D", skills: { security: "2D" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 1,
+    move: 10,
+    equipment: "Blaster helmet (+1D physical/+1 energy), blaster pistol (4D), comlink",
+    capsule: "150 Navy troopers under Commander Thanas' direct command at the Bakura garrison, providing perimeter support. Nereus' personal Navy Escort guards were drawn from this pool. Same stat block as Nereus' Navy Escort Troopers (p.47).",
+    source: "WEG40085 The Truce at Bakura p.60"
+  },
+  {
+    name: "Senator Gaeriel Captison",
+    species: "Human (Bakuran)",
+    system: "Bakura",
+    location: "Bakura — Bakuran Senate, Salis D'aar",
+    affiliations: ["Neutral"],
+    role: "Junior Senator / Bakuran government",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "2D+2", skills: { blaster: "3D+2", dodge: "3D+2" } },
+      KNOWLEDGE: { base: "3D+2", skills: { bureaucracy: "4D+2", "bureaucracy: the Empire": "6D", "bureaucracy: Bakuran government": "7D+2", business: "5D", value: "5D", willpower: "6D" } },
+      MECHANICAL: { base: "2D+2", skills: { "repulsorlift operation": "4D" } },
+      PERCEPTION: { base: "3D+2", skills: { bargain: "6D", con: "4D", investigation: "4D+1", persuasion: "4D", "persuasion: debate": "6D+2", "persuasion: oration": "6D" } },
+      STRENGTH: { base: "2D+2", skills: { brawling: "4D", stamina: "4D" } },
+      TECHNICAL: { base: "2D+2", skills: { "computer programming/repair": "4D" } }
+    },
+    specialAbilities: "Force Depth: Gaeriel has a uniquely resonant 'presence' in the Force. Any Force user familiar with her receives a +1D bonus when attempting to locate or identify her through the Force.",
+    forcePoints: 1,
+    characterPoints: 13,
+    move: 10,
+    equipment: "Elegant clothing, datapad",
+    capsule: "Daughter of the late Senator Doi Captison, Gaeriel excelled at the Bakur Senatorial Academy before completing post-graduate work on Coruscant — where she witnessed top students who refused Imperial positions simply disappear. She deliberately underperformed to get home safely. Returning to Bakura, she had been a Senator barely a month when the Ssi-ruuk attacked. Governor Nereus had been grooming her for his personal staff, a situation she found deeply uncomfortable and could not refuse without cost. She participated in the Alliance-Imperial truce negotiations during the Bakura Incident and declined an offer to leave with the Alliance, preferring to stay and improve Bakuran lives from within. She and Luke Skywalker formed a genuine bond but parted amicably — their conflicting beliefs (she follows the Cosmic Balance) and his growing Force powers made a deeper relationship impractical. Luke noted she has 'hidden gifts she is probably not even aware of.' Distinctive for her one gray eye and one green eye, which she wears as a symbol of the Cosmic Balance.",
+    source: "WEG40085 The Truce at Bakura p.70"
+  },
+  {
+    name: "Prime Minister Yeorg Captison",
+    species: "Human (Bakuran)",
+    system: "Bakura",
+    location: "Bakura — Bakuran Senate, Salis D'aar",
+    affiliations: ["Neutral"],
+    role: "Prime Minister of Bakura",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "2D+1", skills: { blaster: "4D+1", dodge: "3D+1" } },
+      KNOWLEDGE: { base: "4D", skills: { "alien species": "4D+1", bureaucracy: "5D", "bureaucracy: Bakuran government": "9D+2", value: "5D", willpower: "7D+2" } },
+      MECHANICAL: { base: "2D", skills: { "repulsorlift operation": "5D" } },
+      PERCEPTION: { base: "3D+1", skills: { bargain: "6D+1", command: "5D", con: "5D+2", persuasion: "6D+2", "persuasion: debate": "9D", "persuasion: oration": "8D+1" } },
+      STRENGTH: { base: "2D+1", skills: { stamina: "5D" } },
+      TECHNICAL: { base: "2D", skills: {} }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 13,
+    move: 10,
+    equipment: "Elegant clothing, Bakuran computer pad, hold-out blaster (3D)",
+    capsule: "Gaeriel Captison's uncle, Prime Minister of Bakura for eight years after three decades in the Senate. Originally selected by his parents to live as a Cosmic Balance ascetic so his brother Doi could prosper — he refused the bowl, left the faith, put himself through university on his own, and won a Senate seat over his father's objections. He and his wife Tiree have been happily married for over 25 years. Under Imperial rule he worked carefully to protect Bakurans while avoiding open defiance; he was privately outspoken about Imperial taxation and the practice of conscripting young Bakurans who were never seen again. After the Imperial defeat he pledged Alliance support once the Bakura region stabilized. Deeply popular — many Bakurans who distrust the Alliance will back the Rebellion simply because he has endorsed it.",
+    source: "WEG40085 The Truce at Bakura p.73"
+  },
+  {
+    name: "Senator Orn Belden",
+    species: "Human (Bakuran)",
+    system: "Bakura",
+    location: "Bakura — Bakuran Senate, Salis D'aar",
+    affiliations: ["Neutral"],
+    role: "Senior Senator / Rebel sympathizer",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { dodge: "3D+2" } },
+      KNOWLEDGE: { base: "4D", skills: { bureaucracy: "4D+1", "bureaucracy: Bakuran government": "8D", business: "6D", intimidation: "6D", streetwise: "5D", value: "5D+1", willpower: "5D" } },
+      MECHANICAL: { base: "3D+2", skills: {} },
+      PERCEPTION: { base: "3D+1", skills: { bargain: "6D+2", "command: Bakurans": "6D", con: "6D+1", hide: "6D", persuasion: "5D+1" } },
+      STRENGTH: { base: "2D", skills: { stamina: "3D+1" } },
+      TECHNICAL: { base: "3D", skills: { "computer programming/repair": "3D+1" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 11,
+    move: 8,
+    equipment: "Disruption bubble generator, datapad",
+    capsule: "Senior Senator with a century of service, Orn Belden was one of Bakura's most popular and contentious politicians. Under Imperial rule he openly supported the Rebellion, drawing Governor Nereus' persistent ire. Nereus bled him financially through tax manipulation rather than risk moving against such a public figure directly. His son Roviden was killed in one of Nereus' early purges; his wife Eppie was deliberately infected with a brain-damaging parasite as leverage to silence her underground activities — leaving the once-active woman nearly catatonic. Belden's district controlled the vital repulsorlift factory, giving him economic leverage Nereus could not ignore. During the Bakura Incident he was arrested for aiding Leia Organa's outreach to the Bakuran government. He died under interrogation of a 'cerebral hemorrhage.' KIA.",
+    source: "WEG40085 The Truce at Bakura p.75"
+  },
+  {
+    name: "Eppie Belden",
+    species: "Human (Bakuran)",
+    system: "Bakura",
+    location: "Bakura — Bakuran Underground / Salis D'aar",
+    affiliations: ["Neutral"],
+    role: "Bakuran resistance operative / 'circuitry commando'",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "2D+1", skills: { blaster: "4D", dodge: "3D+1" } },
+      KNOWLEDGE: { base: "4D", skills: { "bureaucracy: Bakuran government": "6D+2", business: "6D", intimidation: "5D", streetwise: "6D", value: "5D+1", willpower: "5D" } },
+      MECHANICAL: { base: "2D+2", skills: { "beast riding": "3D+1", "repulsorlift operation": "3D+1" } },
+      PERCEPTION: { base: "3D+1", skills: { bargain: "5D+1", con: "6D", forgery: "5D", persuasion: "4D+2" } },
+      STRENGTH: { base: "2D+1", skills: { stamina: "3D" } },
+      TECHNICAL: { base: "3D+1", skills: { "computer programming/repair": "7D+2", security: "5D+1" } }
+    },
+    specialAbilities: "Force Skills: Control 1D (accelerate healing only). This character is Force-sensitive. Note: Control skill and Force sensitivity awakened through healing meditations taught by Luke Skywalker during the Bakura Incident.",
+    forcePoints: 0,
+    characterPoints: 8,
+    move: 8,
+    equipment: "Bakuran portable computer probe (+1D to computer programming/repair and related checks on Bakuran computer networks)",
+    capsule: "Wife of Senator Orn Belden and a key operative in the Bakuran underground at age 132. As a 'circuitry commando' she used her extraordinary computer and electronics expertise to support resistance operations — modestly dismissing it as just 'turning the blasted things on and telling them what I want.' Caught by Nereus committing an unspecified crime, her husband allowed Nereus to infect her with a brain-damaging parasite rather than see her executed, leaving her nearly catatonic. During the Bakura Incident she aided the resistance's 'circuitry guerrillas' in slicing Imperial security networks (assisted by R2-D2). Luke Skywalker taught her healing meditations that began restoring her mind; she is expected to make a full recovery. Her bony hands can still work a terminal like a woman half her age.",
+    source: "WEG40085 The Truce at Bakura p.77"
+  },
+  {
+    name: "Clis Prithann",
+    species: "Human (Bakuran)",
+    system: "Bakura",
+    location: "Bakura — Belden Household, Salis D'aar",
+    affiliations: ["Neutral"],
+    role: "Caregiver / medic",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { dodge: "3D" } },
+      KNOWLEDGE: { base: "2D", skills: {} },
+      MECHANICAL: { base: "2D", skills: { "repulsorlift operation": "4D+2" } },
+      PERCEPTION: { base: "2D", skills: {} },
+      STRENGTH: { base: "2D", skills: { brawling: "3D+1", stamina: "3D" } },
+      TECHNICAL: { base: "2D", skills: { "first aid": "4D+1" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 3,
+    move: 8,
+    equipment: "Medpac, datapad (with Eppie Belden's current medical records)",
+    capsule: "Longtime friend of the Captison and Belden families, Clis served as Eppie Belden's medical aide throughout her years of forced incapacitation. Trained by Imperial medical staff but prefers natural Bakuran plant remedies over synthetic treatments — believing in inherent purity in nature and corruption in technology. Soft-spoken, somewhat superstitious, and virtually never carries weapons, though she took up a blaster during the final stages of the Bakuran uprising when asked by the Captisons. Remains by Eppie's side while she recovers her faculties following Luke's healing meditations. No loyalty to either the Alliance or Empire — her devotion is entirely to Madam Belden.",
+    source: "WEG40085 The Truce at Bakura p.79"
+  },
+  {
+    name: "Senator Rennt Govia",
+    species: "Human (Bakuran)",
+    system: "Bakura",
+    location: "Bakura — Bakuran Senate, Salis D'aar",
+    affiliations: ["Galactic Empire"],
+    role: "Pro-Imperial Bakuran Senator",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { dodge: "3D+2" } },
+      KNOWLEDGE: { base: "3D+2", skills: { bureaucracy: "5D+1", "bureaucracy: the Empire": "5D+2", "bureaucracy: Bakuran government": "6D" } },
+      MECHANICAL: { base: "2D+1", skills: { "repulsorlift operation": "3D+2" } },
+      PERCEPTION: { base: "3D", skills: { bargain: "4D", con: "6D", "persuasion: debate": "7D" } },
+      STRENGTH: { base: "2D", skills: {} },
+      TECHNICAL: { base: "3D", skills: {} }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 4,
+    move: 10,
+    equipment: "Hold-out blaster (3D), datapad",
+    capsule: "One of Bakura's few staunchly pro-Imperial senators, Govia is a wealthy snob who considers himself a 'High Human Culture' Core Worlder despite being Bakura-born. His great-grandparents were Bakur Corporation financiers; he attended the Corulag University of Economics and never let anyone forget it. He worked tirelessly to undermine Prime Minister Captison in hopes of being appointed Nereus' chosen successor. Despite being almost universally despised, his keen memory and reflexive contrarianism make him a useful foil in Senate debates — he reliably pokes holes in every new proposal, inadvertently helping strengthen Alliance-leaning legislation. Thanas warns he may have ties to off-world Imperial supporters and could potentially summon a warship. His position under the new pro-Alliance government is precarious.",
+    source: "WEG40085 The Truce at Bakura p.80"
+  },
+  {
+    name: "Defense Minister Blaine Harris",
+    species: "Human (Bakuran)",
+    system: "Bakura",
+    location: "Bakura — Bakuran Senate, Salis D'aar",
+    affiliations: ["Neutral"],
+    role: "Bakuran Defense Minister / retired Imperial Navy officer",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "2D+2", skills: { blaster: "5D", dodge: "3D+2" } },
+      KNOWLEDGE: { base: "2D", skills: { streetwise: "5D+2", "tactics: capital ships": "6D", "tactics: planetary defenses": "5D+2" } },
+      MECHANICAL: { base: "2D", skills: { "repulsorlift operation": "4D+1" } },
+      PERCEPTION: { base: "2D", skills: { command: "4D" } },
+      STRENGTH: { base: "2D", skills: {} },
+      TECHNICAL: { base: "2D", skills: {} }
+    },
+    specialAbilities: "Leg Injury: DEX, dodge, STR, and Move are already reduced due to an old leg injury. Harris refuses cybernetic replacement.",
+    forcePoints: 0,
+    characterPoints: 4,
+    move: 8,
+    equipment: "Datapad (containing defense plans), comlink, namana wood cane",
+    capsule: "Retired Imperial Navy officer who settled on Bakura a decade ago after a leg injury ended his service. Serves as civilian Defense Minister — nominally overseeing the Bakuran military but in practice a knowledgeable figurehead the Imperial Navy consulted when convenient. During the Ssi-ruuvi attack he was sidelined as the Imperial Navy ran the battle. With Imperial withdrawal his expertise in planetary defense and capital ship tactics becomes a genuine asset to the new Bakuran Defense Militia. Walks with a pronounced limp, uses a namana wood cane, and refuses cybernetic treatment on principle. 'I was told the planet was quite lovely. Since meeting the Ssi-ruuk, I'm inclined to disagree.'",
+    source: "WEG40085 The Truce at Bakura p.80"
+  },
+  {
+    name: "Dev Sibwarra",
+    species: "Human",
+    system: "Bakura",
+    location: "Bakura — Ssi-ruuvi Cruiser Shriwirr",
+    affiliations: ["Neutral"],
+    role: "Ssi-ruuvi Collaborator (brainwashed slave)",
+    type: "Force-sensitive Human",
+    stats: {
+      DEXTERITY: {
+        base: "3D+1",
+        skills: {
+          "blaster: ion beamer": "4D",
+          "brawling parry": "3D+1",
+          "dodge": "5D"
+        }
+      },
+      KNOWLEDGE: {
+        base: "2D+1",
+        skills: {
+          "alien species": "2D+2",
+          "alien species: Ssi-ruuk": "7D",
+          "cultures: human": "3D",
+          "cultures: Ssi-ruuvi": "7D+1",
+          "languages: Ssi-ruuvi": "6D+1",
+          "value: Ssi-ruuvi entechment technology": "7D+2",
+          "willpower": "3D+1"
+        }
+      },
+      MECHANICAL: {
+        base: "2D",
+        skills: {}
+      },
+      PERCEPTION: {
+        base: "2D+2",
+        skills: {
+          "bargain": "4D+1",
+          "con": "5D",
+          "sneak": "4D"
+        }
+      },
+      STRENGTH: {
+        base: "2D+2",
+        skills: {
+          "brawling": "3D",
+          "stamina": "4D"
+        }
+      },
+      TECHNICAL: {
+        base: "2D",
+        skills: {
+          "computer programming/repair: Ssi-ruuvi systems": "5D+1",
+          "machinery repair: entechment apparatus": "6D"
+        }
+      }
+    },
+    forceSkills: {
+      control: "1D",
+      sense: "4D",
+      alter: "1D"
+    },
+    forcePowers: {
+      control: ["concentration", "control pain", "remain conscious"],
+      sense: ["life detection", "life sense", "life web: humans", "receptive telepathy", "sense Force"],
+      controlAndSense: ["projective telepathy"],
+      controlAndAlter: ["control another's pain"],
+      controlSenseAndAlter: ["affect mind"]
+    },
+    specialAbilities: "Brainwashed: Raised from infancy by the Ssi-ruuk as their human intermediary and translator, Dev's will was systematically broken through conditioning and emotional manipulation. He genuinely believes the Ssi-ruuk are gods and that entechment is a gift. Luke Skywalker's use of affect mind during their first meeting began loosening this conditioning, and subsequent contact freed him. This character is Force-sensitive.",
+    forcePoints: 3,
+    darkSidePoints: 4,
+    characterPoints: 12,
+    move: 10,
+    equipment: "Robes, ion paddle beamer (4D+2 stun/entechment; can entech target on a hit; must make Moderate willpower roll to fire on a human), Ssi-ruuvi portable computer",
+    capsule: "Captured as an infant when the Ssi-ruuk destroyed his family's scout ship, Dev Sibwarra was raised aboard a Ssi-ruuvi battle cruiser as their human liaison — the only being who could communicate between the fleet and captured humans. Conditioned to revere the Ssi-ruuk as divine, he served willingly as an entecher's assistant, helping to life-entech prisoners whose life energy would power Ssi-ruuvi battle droids. During the Battle of Bakura he encountered Luke Skywalker, whose Force presence began to crack his conditioning. In the final confrontation aboard the Shriwirr he turned against his masters, allowing the human prisoners to escape before the ship was destroyed. KIA — died aboard the Shriwirr.",
+    source: "WEG40085 The Truce at Bakura p.94"
+  },
+  {
+    name: "Elder Sh'tk'ith (\"Bluescale\")",
+    species: "Ssi-ruu",
+    system: "Bakura",
+    location: "Bakura — Ssi-ruuvi Cruiser Shriwirr",
+    affiliations: ["Neutral", "Ssi-ruuvi Imperium"],
+    role: "Ssi-ruuvi Elder; Voice of the Shreeftut",
+    type: "Ssi-ruuvi Elder",
+    stats: {
+      DEXTERITY: {
+        base: "2D+2",
+        skills: {
+          "blaster: ion beamer": "3D+2",
+          "brawling parry": "3D+2",
+          "dodge": "5D"
+        }
+      },
+      KNOWLEDGE: {
+        base: "3D",
+        skills: {
+          "alien species: humans": "4D+2",
+          "(A) brainwashing": "5D+2",
+          "bureaucracy: Ssi-ruuvi Elders' Council": "9D",
+          "cultures: Ssi-ruuvi culture": "9D+1",
+          "intimidation": "6D",
+          "intimidation: interrogation": "9D+2",
+          "value": "6D"
+        }
+      },
+      MECHANICAL: {
+        base: "2D+2",
+        skills: {}
+      },
+      PERCEPTION: {
+        base: "3D+1",
+        skills: {
+          "bargain": "4D+1",
+          "command: Ssi-ruuvi forces": "6D+2",
+          "persuasion": "6D+2",
+          "search": "5D+2"
+        }
+      },
+      STRENGTH: {
+        base: "4D+1",
+        skills: {
+          "brawling": "5D"
+        }
+      },
+      TECHNICAL: {
+        base: "2D",
+        skills: {}
+      }
+    },
+    specialAbilities: "Enhanced Sense (Smell): Ssi-ruuk have highly developed olfactory senses and receive +1D to scent-based search rolls; can often detect if humans are lying by scent alone — described by Admiral Ivpikkis as able to 'smell deception in vacuum.' Poor Vision: -1D penalty for actions involving vision at ranges greater than 50 meters. Natural Body Armor: Thick hide and scales provide +2D against physical attacks and +1D against energy attacks. Tail: A Ssi-ruu's tail does STR+1D damage. Claws: A Ssi-ruu's claws do STR+2D damage. Force Blindness: Ssi-ruuk are incapable of sensing or using the Force, but may possess and use Force Points and Character Points. Hypnotic Ability: If Bluescale can maintain eye contact for more than 2 rounds, he gains +1D to all (A) brainwashing rolls.",
+    forcePoints: 2,
+    darkSidePoints: 6,
+    characterPoints: 14,
+    move: 11,
+    equipment: "Ion paddle beamer (4D+2 Special), portable computer, Ssi-ruuvi brainwashing solution ((A) brainwashing 5D or +1D to existing (A) brainwashing rolls)",
+    capsule: "The eldest Ssi-ruu in the task force dispatched to Bakura, Sh'tk'ith was a blue-caste Elder distinguished by unusually bright scale coloration — hence his honorific nickname 'Bluescale.' Blue-caste Ssi-ruuk are taller and narrower-faced than other castes, with longer tails. Politically one of the most powerful figures in the Ssi-ruuvi Imperium, Bluescale served as the personal voice of the Shreeftut (the ruling religious leader) to the invasion fleet, and may have been the hidden power behind the Ssi-ruuvi throne altogether. His primary mission was to oversee the invasion of human space; secondary was maintaining control over Dev Sibwarra through drugs, abuse, and periodic hypnotic 'renewals.' Bluescale was killed by Dev Sibwarra aboard the Shriwirr when Dev turned against his masters. Some analysts speculate his death has destabilized Ssi-ruuvi ruling politics, though this remains unconfirmed. KIA — killed by Dev Sibwarra aboard the Shriwirr.",
+    source: "WEG40085 The Truce at Bakura p.98"
+  },
+  {
+    name: "Master Firwirrung",
+    species: "Ssi-ruu",
+    system: "Bakura",
+    location: "Bakura — Ssi-ruuvi Cruiser Shriwirr",
+    affiliations: ["Neutral", "Ssi-ruuvi Imperium"],
+    role: "Ssi-ruuvi Entechment Master",
+    type: "Ssi-ruuvi Entechment Specialist",
+    stats: {
+      DEXTERITY: {
+        base: "2D",
+        skills: {
+          "blaster: ion beamer": "5D",
+          "brawling parry": "4D+2",
+          "dodge": "5D"
+        }
+      },
+      KNOWLEDGE: {
+        base: "3D",
+        skills: {
+          "alien species: humans": "4D",
+          "cultures: Ssi-ruuvi culture": "6D"
+        }
+      },
+      MECHANICAL: {
+        base: "3D+2",
+        skills: {}
+      },
+      PERCEPTION: {
+        base: "2D",
+        skills: {}
+      },
+      STRENGTH: {
+        base: "3D+2",
+        skills: {
+          "brawling": "5D"
+        }
+      },
+      TECHNICAL: {
+        base: "3D+2",
+        skills: {
+          "capital starship repair": "5D",
+          "capital starship weapon repair": "5D",
+          "computer programming/repair": "7D",
+          "(A) machinery engineering: entechment gear": "8D+2",
+          "machinery repair: entechment gear": "11D"
+        }
+      }
+    },
+    specialAbilities: "Enhanced Sense (Smell): Ssi-ruuk have highly developed olfactory senses and receive +1D to scent-based search rolls; can often detect if humans are lying. Poor Vision: -1D penalty for actions involving vision at ranges greater than 50 meters. Natural Body Armor: Thick hide and scales provide +2D against physical attacks and +1D against energy attacks. Tail: A Ssi-ruu's tail does STR+1D damage. Claws: A Ssi-ruu's claws do STR+2D damage. Force Blindness: Ssi-ruuk are incapable of sensing or using the Force, but may possess and use Force Points and Character Points.",
+    characterPoints: 8,
+    move: 11,
+    equipment: "Shoulder pouch, ion paddle beamer (4D+2 Special), tool kit, Ssi-ruuvi computer pad",
+    capsule: "A reddish-brown Ssi-ruu of unusually low clan prestige, Firwirrung nonetheless rose to the position of entechment master aboard the Shriwirr through sheer engineering brilliance. In the five years since beginning military service he made vast improvements to entechment technology, and during the Battle of Bakura designed, built, and tested a device allowing a Force-sensitive to remotely 'pull' life energy from humans at distance — a task that would take most Ssi-ruuvi engineers months or years — in a matter of hours. He treated Dev Sibwarra as a companion or pet, housing him in his own quarters, though he subjected Dev to torture and cruelty freely. Resented by peers and superiors alike as 'overly ambitious,' he survived largely due to Elder Sh'tk'ith's protection. Admiral Ivpikkis reportedly found him deeply distasteful. KIA — killed by Dev Sibwarra in the final moments of the Battle of Bakura.",
+    source: "WEG40085 The Truce at Bakura p.99"
+  },
+  {
+    name: "Admiral Ivpikkis",
+    species: "Ssi-ruu",
+    system: "Bakura",
+    location: "Bakura — Ssi-ruuvi Cruiser Shriwirr",
+    affiliations: ["Neutral", "Ssi-ruuvi Imperium"],
+    role: "Military Commander, Ssi-ruuvi Task Force",
+    type: "Ssi-ruuvi Admiral",
+    stats: {
+      DEXTERITY: {
+        base: "2D+2",
+        skills: {
+          "blaster: ion beamer": "4D+2",
+          "dodge": "5D+2"
+        }
+      },
+      KNOWLEDGE: {
+        base: "3D+2",
+        skills: {
+          "bureaucracy: Ssi-ruu fleet": "6D",
+          "intimidation": "5D",
+          "tactics: capital ships": "8D",
+          "tactics: fleets": "6D+1",
+          "tactics: ground assault": "6D",
+          "tactics: starfighters": "6D"
+        }
+      },
+      MECHANICAL: {
+        base: "2D+1",
+        skills: {
+          "astrogation": "5D+2",
+          "capital ship gunnery": "6D",
+          "capital ship piloting": "6D"
+        }
+      },
+      PERCEPTION: {
+        base: "2D+1",
+        skills: {
+          "command: Ssi-ruuvi forces": "9D+2"
+        }
+      },
+      STRENGTH: {
+        base: "5D",
+        skills: {
+          "brawling": "6D",
+          "brawling: tail": "7D+2",
+          "lifting": "7D"
+        }
+      },
+      TECHNICAL: {
+        base: "2D",
+        skills: {}
+      }
+    },
+    specialAbilities: "Enhanced Sense (Smell): Ssi-ruuk have highly developed olfactory senses and receive +1D to scent-based search rolls; can often detect if humans are lying. Poor Vision: -1D penalty for actions involving vision at ranges greater than 50 meters. Natural Body Armor: Thick hide and scales provide +2D against physical attacks and +1D against energy attacks. Tail: A Ssi-ruu's tail does STR+1D damage. Claws: A Ssi-ruu's claws do STR+2D damage. Force Blindness: Ssi-ruuk are incapable of sensing or using the Force, but may possess and use Force Points and Character Points.",
+    characterPoints: 7,
+    move: 13,
+    equipment: "Ion paddle beamer (4D+2 Special), Ssi-ruuvi datapad, comlink",
+    capsule: "Technically the highest-ranking military officer in the Ssi-ruuvi task force at Bakura, Ivpikkis nonetheless deferred to Elder Sh'tk'ith in most matters. A red-scaled Ssi-ruu standing nearly 2.3 meters tall with exceptionally powerful forelimbs, he is one of the few Ssi-ruuk at Bakura with genuine combat experience — gained scouting new worlds for energy sources early in a half-century military career. A quiet, brooding creature of few words who spoke only to issue orders, Ivpikkis was reportedly not eager for the expansionist campaign but carried out his orders with single-minded duty. A skilled analytical combatant who draws out enemies with diversionary tactics before exploiting weaknesses. Survival status unknown — he evacuated the Shriwirr in a lifeboat; Luke Skywalker believes he survived and is reorganizing his fleet for another push into Alliance and Imperial space.",
+    source: "WEG40085 The Truce at Bakura p.100"
+  },
   // ── GALAXY GUIDE 6 — Chapter 12: People and Ships of the Cluster (WEG40095) ──
   {
     name: "Babel Torsch",

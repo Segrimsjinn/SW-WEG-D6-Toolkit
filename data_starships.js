@@ -30006,6 +30006,64 @@ const STARSHIP_DATA = {
      "damage": "3D"
     }
    ]
+  },
+  {
+   "rank": 8,
+   "name": "The Flurry",
+   "craft": "Modified SoroSuub Quasar Fire-class Cruiser-Carrier",
+   "type": "Modified Bulk Cruiser (Flagship)",
+   "affiliation": "Rebel Alliance",
+   "era": "Rebellion",
+   "source": "WEG40085 The Truce at Bakura p.111",
+   "price_new": "",
+   "price_used": "",
+   "scale": "Capital",
+   "length": "350 meters",
+   "crew": "96",
+   "gunners": "14",
+   "passengers": "140 (starfighter technicians), 85 (troops)",
+   "starfighter_complement": "Up to 48 starfighters (carried 27 to Bakura)",
+   "support_craft": "",
+   "ground_vehicles": "",
+   "troop_capacity": "85",
+   "cargo": "4,000 metric tons (or starfighter hangar)",
+   "consumables": "1 year",
+   "hyperdrive": "x2",
+   "hyperdrive_backup": "x12",
+   "nav_computer": "Yes",
+   "maneuverability": "1D",
+   "space": "5",
+   "atmosphere": "",
+   "hull": "3D+2",
+   "shields": "1D+2",
+   "of_note": "Flagship of the Virgillian fleet, commanded by Captain Tessa Manchisco. Received additional Virgillian upgrades over sister ships, including a captured HoloNet transceiver and superior sensors/shields/weapons. Equipped with experimental Battle Analysis Computer (BAC) designed by General Jan Dodonna for the Bakura relief mission. Carried Rogue Squadron under Commander Wedge Antilles. Destroyed by Imperial warship Dominant at Bakura — all hands lost (KIA). Skeleton 14/+10.",
+   "sensors_passive": "40/1D+2",
+   "sensors_scan": "80/2D+2",
+   "sensors_search": "120/3D",
+   "sensors_focus": "5/4D",
+   "weapons": [
+    {
+     "name": "2 Heavy Turbolasers",
+     "fire_arc": "Left/front/right",
+     "crew": "4",
+     "skill": "Capital Ship Gunnery",
+     "fire_control": "2D",
+     "space_range": "1-5/10/17",
+     "atmo_range": "",
+     "damage": "4D"
+    },
+    {
+     "name": "2 Tractor Beam Projectors",
+     "fire_arc": "1 left, 1 right",
+     "crew": "3",
+     "scale": "Starfighter",
+     "skill": "Starship Gunnery",
+     "fire_control": "2D",
+     "space_range": "1-5/15/30",
+     "atmo_range": "",
+     "damage": "4D"
+    }
+   ]
   }
  ],
  "Capital Transports & Support": [
