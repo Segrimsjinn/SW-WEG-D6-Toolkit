@@ -4315,6 +4315,38 @@ const STARSHIP_DATA = {
    "sensors_search": "100/3D",
    "sensors_focus": "4/4D",
    "weapons": []
+  },
+  {
+   "name": "Med Runner",
+   "craft": "SoroSuub Sprint-class Rescue Craft",
+   "type": "Fast-response emergency ship",
+   "affiliation": "Rebel Alliance",
+   "era": "Rebellion",
+   "source": "WEG40085 The Truce at Bakura p.116",
+   "price_new": "",
+   "price_used": "",
+   "scale": "Starfighter",
+   "length": "30 meters",
+   "skill": "Space transports: Sprint rescue craft",
+   "crew": "3",
+   "crew_skill": "Astrogation 4D+2, sensors 6D, space transports 5D, starship shields 4D+2, first aid 6D+1",
+   "passengers": "5 (medics), 40 (patients)",
+   "cargo": "2 metric tons",
+   "consumables": "1 month",
+   "hyperdrive": "x1",
+   "hyperdrive_backup": "x12",
+   "nav_computer": "Yes",
+   "maneuverability": "2D+1",
+   "space": "9",
+   "atmosphere": "400; 1,150 kmh",
+   "hull": "3D+1",
+   "shields": "2D",
+   "of_note": "No weapons. Life-Form Indicators: sophisticated life-form sensors grant +1D+2 bonus to sensors rolls when in focus mode searching for life-forms only — designed to locate survivors in starship wreckage. Interior has several small medical bays (40-patient capacity) and emergency trauma suites that can stabilize vacuum-exposure or critical injuries. Sound baffles and inertial dampeners reduced to make room for medical bays — extremely loud and bumpy ride (pilots nicknamed 'howlrunners'). Similar in appearance to a Telgorn Gamma-class assault shuttle but unarmed and faster. Skeleton 1/+10.",
+   "sensors_passive": "40/1D",
+   "sensors_scan": "80/1D+2",
+   "sensors_search": "130/2D",
+   "sensors_focus": "6/3D",
+   "weapons": []
   }
  ],
  "Yachts": [
@@ -10793,6 +10825,121 @@ const STARSHIP_DATA = {
      "space_range": "1/3/7",
      "atmo_range": "50-100/300/700",
      "damage": "10D"
+    }
+   ]
+  },
+  {
+   "name": "Ssi-ruuvi Picket Ship",
+   "craft": "Ssi-ruuvi Fw'Sen-class Picket Ship",
+   "type": "Picket ship",
+   "affiliation": "Neutral",
+   "era": "Rebellion",
+   "source": "WEG40085 The Truce at Bakura p.125",
+   "price_new": "",
+   "price_used": "",
+   "scale": "Starfighter",
+   "length": "45 meters",
+   "skill": "Space transports: Fw'Sen",
+   "crew": "3 (P'w'ecks)",
+   "gunners": "10",
+   "passengers": "",
+   "cargo": "",
+   "consumables": "3 months",
+   "hyperdrive": "x2",
+   "nav_computer": "Limited to 4 jumps",
+   "maneuverability": "2D+1",
+   "space": "5",
+   "atmosphere": "295; 850 kmh",
+   "hull": "2D+2",
+   "shields": "3D+1",
+   "of_note": "Skeleton 2/+10. Crew Skill: Space transports: Fw'Sen 4D+2, starship gunnery 4D, starship shields 3D+2. Manned solely by P'w'ecks who primarily man the weapons; drive systems remotely controlled from a Ssi-ruuvi command ship. P'w'eck crew equipped with remotely-activated neural inhibitors. Deployed in groups of 3+ to surround and disable enemy craft with ion cannons; Wurrif cruiser then tractor beams in captured targets for entechment. Corridors sized for P'w'ecks (who can compress to half height) — too cramped for humans. Reactor shielding insufficient for human crew (not a concern when P'w'ecks are enteched promptly). 20 at Bakura: 5 lost pre-battle, 8 lost in final battle, 4 captured (being refitted for Bakuran defense), 3 retreated with Ssi-ruuvi fleet.",
+   "sensors_passive": "40/1D",
+   "sensors_scan": "80/1D+2",
+   "sensors_search": "130/2D",
+   "sensors_focus": "4/3D",
+   "weapons": [
+    {
+     "name": "6 Ion Cannons (may be fire-linked in groups)",
+     "fire_arc": "Turret",
+     "crew": "1",
+     "skill": "Starship Gunnery",
+     "fire_control": "2D+2",
+     "space_range": "1-5/10/15",
+     "atmo_range": "100-500/1/1.5 km",
+     "damage": "4D (2–3 linked: 5D; 4–5 linked: 6D; all 6: 7D)"
+    },
+    {
+     "name": "2 Laser Cannons (fire-linked)",
+     "fire_arc": "Front",
+     "crew": "1",
+     "skill": "Starship Gunnery",
+     "fire_control": "1D",
+     "space_range": "1-5/10/15",
+     "atmo_range": "100-500/1/1.5 km",
+     "damage": "4D"
+    },
+    {
+     "name": "2 Turbolasers",
+     "fire_arc": "Turret",
+     "scale": "Capital",
+     "crew": "1",
+     "skill": "Capital Ship Gunnery",
+     "fire_control": "1D",
+     "space_range": "1-5/10/15",
+     "atmo_range": "100-500/1/1.5 km",
+     "damage": "2D+1"
+    }
+   ]
+  },
+  {
+   "name": "Ssi-ruuvi Planetary Lander",
+   "craft": "Ssi-ruuvi D'kee-class Planetary Lander",
+   "type": "Planetary lander",
+   "affiliation": "Neutral",
+   "era": "Rebellion",
+   "source": "WEG40085 The Truce at Bakura p.126",
+   "price_new": "",
+   "price_used": "",
+   "scale": "Starfighter",
+   "length": "70 meters",
+   "skill": "Space transports: D'kee Lander",
+   "crew": "4",
+   "gunners": "8",
+   "passengers": "10 (P'w'eck collectors)",
+   "cargo": "10,000 humans in confinement pens",
+   "consumables": "1 day",
+   "hyperdrive": "None",
+   "nav_computer": "No (can be remote-piloted from Sh'ner base ship)",
+   "maneuverability": "1D",
+   "space": "3",
+   "atmosphere": "260; 750 kmh",
+   "hull": "1D+1",
+   "shields": "3D (upon landing/atmospheric entry), 2D (upon return — heat discharge depletes supplemental battery)",
+   "of_note": "Skeleton 2/+10. Crew Skill: Sensors 3D+2, space transports 5D, starship gunnery 3D+2, starship shields 3D+1. All crew equipped with remotely-activated neural inhibitors controlled from Sh'ner base ship. Carries 100 paralysis canisters — each covers 9 sq km, paralyzes all within for up to 8 hours (voluntary nerve function disabled, victim remains fully conscious). Deployed at 3km altitude over population centers. 10 P'w'eck collector barges for gathering immobile victims. Can hold 10,000 prisoners stacked in confinement pens (oxygen pumped in; no other amenities). Heat-conducting filaments divert atmospheric entry heat to rear exhaust, with a small portion powering a supplemental shield battery; filaments glow brightly during night landings. Normally carried 12 per Sh'ner carrier.",
+   "sensors_passive": "10/0D",
+   "sensors_scan": "20/1D",
+   "sensors_search": "30/1D+2",
+   "sensors_focus": "1/2D+2",
+   "weapons": [
+    {
+     "name": "6 Light Ion Cannons",
+     "fire_arc": "3 front, 1 left, 1 right, 1 back",
+     "crew": "1",
+     "skill": "Starship Gunnery",
+     "fire_control": "1D",
+     "space_range": "1-5/10/17",
+     "atmo_range": "100-500/1/1.7 km",
+     "damage": "3D"
+    },
+    {
+     "name": "2 Laser Cannons",
+     "fire_arc": "Turret",
+     "crew": "1",
+     "skill": "Starship Gunnery",
+     "fire_control": "2D",
+     "space_range": "1-3/12/25",
+     "atmo_range": "100-300/1.2/2.5 km",
+     "damage": "4D"
     }
    ]
   }
@@ -20392,6 +20539,47 @@ const STARSHIP_DATA = {
      "damage": "5D"
     }
    ]
+  },
+  {
+   "name": "Ssi-ruuvi Battle Droid",
+   "craft": "Ssi-ruuvi Swarm-class Battle Droid",
+   "type": "Alien drone fighter",
+   "affiliation": "Neutral",
+   "era": "Rebellion",
+   "source": "WEG40085 The Truce at Bakura p.122",
+   "price_new": "",
+   "price_used": "",
+   "scale": "Starfighter",
+   "length": "2 meters",
+   "skill": "Special — see notes",
+   "crew": "None (drone; controlled by enteched life forces)",
+   "passengers": "",
+   "cargo": "",
+   "consumables": "",
+   "hyperdrive": "None",
+   "nav_computer": "No",
+   "maneuverability": "4D+2",
+   "space": "10",
+   "atmosphere": "415; 1,200 kmh",
+   "hull": "1D",
+   "shields": "1D+2",
+   "of_note": "Drone fighter piloted by two enteched sentient life forces (typically P'w'ecks or humans): one controls shields/energy containment, the other handles drives/comms/sensors/weapons. When controlled by Ssi-ruuvi cruisers: starfighter piloting 4D, starship gunnery 3D+1, starship shields 3D+2. When acting semi-independently: starfighter piloting 5D, starship gunnery 4D+1, starship shields 4D+2. Weapon Damage: single cannon 3D; 2–3 fire-linked 4D; all 4 fire-linked 5D (auto-linked). Energy Absorption: when hit by laser or turbolaser (not ion cannons, tractor beams, missiles, or torpedoes) and shields makes a Moderate roll, gains +1D to shields, weapons, or boost to Space 11/Atmo 435; 1,250 kmh for one round; disabled if heavily damaged or worse. Sensor Tracking: radioactive exhaust grants enemy sensors +2D when tracking battle droids. Pyramidal hull with independently rotating thrusters on each facing for unpredictable course changes. Sensor clusters around each thruster plus antennas on each corner. Micro-filament grid on hull surfaces for energy absorption. Size (2m to a side) makes them very difficult targets.",
+   "sensors_passive": "20/2D",
+   "sensors_scan": "40/2D+2",
+   "sensors_search": "60/3D",
+   "sensors_focus": "3/4D",
+   "weapons": [
+    {
+     "name": "4 Laser Cannons (may be fire-linked: 2–3 cannons for 4D, all 4 for 5D)",
+     "fire_arc": "Turret (each cannon independently rotatable)",
+     "crew": "0 (drone)",
+     "skill": "Starship Gunnery",
+     "fire_control": "2D",
+     "space_range": "1-3/12/25",
+     "atmo_range": "100-300/1.2/2.5 km",
+     "damage": "3D (single), 4D (2–3 linked), 5D (all 4 linked)"
+    }
+   ]
   }
  ],
  "Capital Corvettes": [
@@ -21780,6 +21968,69 @@ const STARSHIP_DATA = {
      "fire_control": "3D",
      "space_range": "2-12/30/60",
      "atmo_range": "100-1.2/3/6 km",
+     "damage": "9D"
+    }
+   ]
+  },
+  {
+   "name": "Imperial Gunship (Bakura Garrison)",
+   "craft": "Imperial Gunship",
+   "type": "System Defense Gunship",
+   "affiliation": "Galactic Empire",
+   "era": "Rebellion",
+   "source": "WEG40085 The Truce at Bakura p.117",
+   "price_new": "",
+   "price_used": "",
+   "scale": "Capital",
+   "length": "",
+   "skill": "Capital ship piloting",
+   "crew": "",
+   "crew_skill": "Capital ship gunnery 4D, capital ship piloting 4D, capital ship shields 3D+2",
+   "passengers": "",
+   "cargo": "",
+   "consumables": "",
+   "hyperdrive": "",
+   "nav_computer": "",
+   "maneuverability": "2D+1",
+   "space": "7",
+   "atmosphere": "350; 1,000 kmh",
+   "hull": "4D+2",
+   "shields": "2D+1",
+   "of_note": "Bakura garrison complement. Four gunships were lost during the Ssi-ruuvi siege, along with nearly 60 TIE fighters.",
+   "sensors_passive": "",
+   "sensors_scan": "",
+   "sensors_search": "",
+   "sensors_focus": "",
+   "weapons": [
+    {
+     "name": "8 Double Turbolaser Cannons",
+     "fire_arc": "Turret",
+     "crew": "",
+     "skill": "Capital Ship Gunnery",
+     "fire_control": "3D",
+     "space_range": "",
+     "atmo_range": "",
+     "damage": "4D+2"
+    },
+    {
+     "name": "6 Quad Laser Cannons",
+     "fire_arc": "Turret",
+     "scale": "Starfighter",
+     "crew": "",
+     "skill": "Starship Gunnery",
+     "fire_control": "3D",
+     "space_range": "",
+     "atmo_range": "",
+     "damage": "5D"
+    },
+    {
+     "name": "4 Concussion Missile Tubes",
+     "fire_arc": "Turret",
+     "crew": "",
+     "skill": "Capital Ship Gunnery",
+     "fire_control": "3D",
+     "space_range": "",
+     "atmo_range": "",
      "damage": "9D"
     }
    ]
@@ -24242,6 +24493,69 @@ const STARSHIP_DATA = {
      "damage": "9D"
     }
    ]
+  },
+  {
+   "name": "Ssi-ruuvi Light Cruiser",
+   "craft": "Ssi-ruuvi Wurrif-class Light Cruiser",
+   "type": "Ssi-ruuvi light cruiser",
+   "affiliation": "Neutral",
+   "era": "Rebellion",
+   "source": "WEG40085 The Truce at Bakura p.122",
+   "price_new": "",
+   "price_used": "",
+   "scale": "Capital",
+   "length": "400 meters",
+   "skill": "Capital ship piloting: Wurrif cruiser",
+   "crew": "200 (Ssi-ruuk), 1,500 (P'w'ecks)",
+   "gunners": "156",
+   "passengers": "",
+   "starfighter_complement": "~200 battle droids",
+   "cargo": "2,000 metric tons",
+   "consumables": "3 months",
+   "hyperdrive": "x1",
+   "nav_computer": "Limited to 3 jumps",
+   "maneuverability": "2D+2",
+   "space": "6",
+   "atmosphere": "",
+   "hull": "3D",
+   "shields": "1D+2",
+   "of_note": "Skeleton 100 (Ssi-ruuk), 700 (P'w'ecks)/+10. Crew Skill: Astrogation 4D, capital ship gunnery 4D+2, capital ship piloting 4D+2, capital ship shields 4D, sensors 3D+1. Oblong egg-shaped hull with weapon emplacements dotting the surface. Typically deployed with 3+ Fw'Sen-class picket ships as escort; pickets surround and disable targets with ion cannons, then the Wurrif tractor beams captured craft into landing bays for entechment. Fleet of 4 at Bakura — 1 destroyed during the Bakura Incident, 3 retreated.",
+   "sensors_passive": "35/1D",
+   "sensors_scan": "60/1D+1",
+   "sensors_search": "100/2D",
+   "sensors_focus": "3/2D+1",
+   "weapons": [
+    {
+     "name": "6 Heavy Turbolaser Cannons",
+     "fire_arc": "3 front, 3 back",
+     "crew": "2",
+     "skill": "Capital Ship Gunnery",
+     "fire_control": "1D",
+     "space_range": "3-15/35/75",
+     "atmo_range": "3-15/35/75 km",
+     "damage": "4D"
+    },
+    {
+     "name": "24 Ion Cannons",
+     "fire_arc": "6 front, 6 right, 6 left, 6 back",
+     "crew": "3",
+     "skill": "Capital Ship Gunnery",
+     "fire_control": "4D",
+     "space_range": "1-5/15/30",
+     "atmo_range": "2-10/30/60 km",
+     "damage": "5D"
+    },
+    {
+     "name": "12 Tractor Beam Projectors",
+     "fire_arc": "6 front, 3 left, 3 right",
+     "crew": "6",
+     "skill": "Capital Ship Gunnery",
+     "fire_control": "2D",
+     "space_range": "1-5/15/30",
+     "atmo_range": "",
+     "damage": "4D"
+    }
+   ]
   }
  ],
  "Capital Cruisers & SDs": [
@@ -25261,6 +25575,61 @@ const STARSHIP_DATA = {
      "fire_control": "2D",
      "space_range": "1-5/15/30",
      "atmo_range": "2-10/30/60 km",
+     "damage": "4D"
+    }
+   ]
+  },
+  {
+   "rank": 37,
+   "name": "The Dominant",
+   "craft": "Damorian Manufacturing Carrack-class Light Cruiser",
+   "type": "Light Cruiser (Named Vessel)",
+   "affiliation": "Galactic Empire / Bakuran Defense Militia",
+   "era": "Rebellion",
+   "source": "WEG40085 The Truce at Bakura p.117",
+   "price_new": "",
+   "price_used": "",
+   "scale": "Capital",
+   "length": "350 meters",
+   "skill": "Capital ship piloting: Carrack",
+   "crew": "1,007",
+   "gunners": "90",
+   "passengers": "142 (troops)",
+   "starfighter_complement": "4 TIE/rc recon fighters",
+   "cargo": "3,500 metric tons",
+   "consumables": "1 year",
+   "hyperdrive": "x1",
+   "hyperdrive_backup": "x12",
+   "nav_computer": "Yes",
+   "maneuverability": "2D",
+   "space": "8",
+   "atmosphere": "",
+   "hull": "5D",
+   "shields": "2D+2",
+   "of_note": "Skeleton 500/+10. Crew Skill: Astrogation 3D+2, capital ship gunnery 4D+2, capital ship piloting 4D+1, capital ship shields 4D, sensors 4D+1. Notably lacks tractor beam projectors (standard on most Carracks). Modular construction with compartmentalized life-support and layered bulkheads — can survive attacks that would cripple larger ships; damaged sections auto-seal. Exposed power generators are a known vulnerability (exploited by Han Solo in combat). Originally assigned to Dulfilvian system (guarding Filve trading ports); later reassigned to Bakura under Commander Pter Thanas. Led the joint Alliance-Imperial defense against the Ssi-ruuk; destroyed the Flurry after Ssi-ruuvi retreat on Thanas' orders. Surrendered to Rebel Alliance by Thanas, who then defected; now serves the Bakuran Defense Militia.",
+   "sensors_passive": "30/0D",
+   "sensors_scan": "50/1D",
+   "sensors_search": "100/2D",
+   "sensors_focus": "4/3D",
+   "weapons": [
+    {
+     "name": "10 Heavy Turbolasers",
+     "fire_arc": "2 front, 3 right, 3 left, 2 back",
+     "crew": "3",
+     "skill": "Capital Ship Gunnery",
+     "fire_control": "1D",
+     "space_range": "3-15/35/75",
+     "atmo_range": "3-15/35/75 km",
+     "damage": "7D"
+    },
+    {
+     "name": "20 Laser Cannons",
+     "fire_arc": "5 front, 5 right, 5 left, 5 back",
+     "crew": "3",
+     "skill": "Capital Ship Gunnery",
+     "fire_control": "2D",
+     "space_range": "1-5/15/30",
+     "atmo_range": "1-5/15/30 km",
      "damage": "4D"
     }
    ]
@@ -28982,6 +29351,80 @@ const STARSHIP_DATA = {
      "damage": "5D"
     }
    ]
+  },
+  {
+   "name": "The Shriwirr",
+   "craft": "Ssi-ruuvi Shree-class Cruiser",
+   "type": "Ssi-ruuvi heavy battle cruiser",
+   "affiliation": "Neutral",
+   "era": "Rebellion",
+   "source": "WEG40085 The Truce at Bakura p.121",
+   "price_new": "",
+   "price_used": "",
+   "scale": "Capital",
+   "length": "900 meters",
+   "skill": "Capital ship piloting: Shree cruiser",
+   "crew": "800 (Ssi-ruuk), 5,000 (P'w'ecks)",
+   "gunners": "234",
+   "passengers": "350 (P'w'eck troops)",
+   "starfighter_complement": "500 battle droids",
+   "cargo": "5,000 metric tons",
+   "consumables": "1 year",
+   "hyperdrive": "x1",
+   "hyperdrive_backup": "x15",
+   "nav_computer": "Yes",
+   "maneuverability": "2D",
+   "space": "6",
+   "atmosphere": "",
+   "hull": "5D+1",
+   "shields": "3D+1",
+   "of_note": "Skeleton 400 (Ssi-ruuk), 2,000 (P'w'ecks)/+10. Crew Skill: Astrogation 3D+1, capital ship gunnery 5D+2, capital ship piloting 4D, capital ship shields 4D, sensors 5D. Named vessel — flagship of Admiral Ivpikkis at Bakura. Blistered ovoid hull. Main entechment center occupies nearly an entire deck. 5-meter corridor ceilings; stun traps throughout to prevent P'w'eck sabotage. Captured by Luke Skywalker and Dev Sibwarra — Luke severed connection between deck-18 engineering and bridge; Ssi-ruuk evacuated rather than fight a Force user away from consecrated ground. Rebel Alliance captured the vessel and renamed it Sibwarra in honor of Dev Sibwarra; techs nicknamed it 'the Flutie.'",
+   "sensors_passive": "30/0D",
+   "sensors_scan": "50/1D",
+   "sensors_search": "100/2D",
+   "sensors_focus": "4/3D",
+   "weapons": [
+    {
+     "name": "24 Heavy Turbolasers",
+     "fire_arc": "6 front, 6 left, 6 right, 6 back",
+     "crew": "3",
+     "skill": "Capital Ship Gunnery",
+     "fire_control": "1D",
+     "space_range": "3-15/35/75",
+     "atmo_range": "3-15/35/75 km",
+     "damage": "4D"
+    },
+    {
+     "name": "24 Ion Cannons",
+     "fire_arc": "4 turret, 10 front/left/back, 10 front/right/back",
+     "crew": "3",
+     "skill": "Capital Ship Gunnery",
+     "fire_control": "4D",
+     "space_range": "1-5/15/30",
+     "atmo_range": "2-10/30/60 km",
+     "damage": "5D"
+    },
+    {
+     "name": "12 Concussion Missile Launchers",
+     "fire_arc": "5 front, 3 right, 3 left, 1 back",
+     "crew": "4",
+     "skill": "Capital Ship Gunnery",
+     "fire_control": "3D",
+     "space_range": "2-12/30/60",
+     "atmo_range": "6-30/70/150 km",
+     "damage": "5D"
+    },
+    {
+     "name": "12 Tractor Beam Projectors",
+     "fire_arc": "6 front, 3 left, 3 right",
+     "crew": "6",
+     "skill": "Capital Ship Gunnery",
+     "fire_control": "2D",
+     "space_range": "1-5/15/30",
+     "atmo_range": "",
+     "damage": "4D"
+    }
+   ]
   }
  ],
  "Capital Super Ships": [
@@ -30058,6 +30501,60 @@ const STARSHIP_DATA = {
      "crew": "3",
      "scale": "Starfighter",
      "skill": "Starship Gunnery",
+     "fire_control": "2D",
+     "space_range": "1-5/15/30",
+     "atmo_range": "",
+     "damage": "4D"
+    }
+   ]
+  },
+  {
+   "name": "Ssi-ruuvi Planetary Assault Carrier",
+   "craft": "Ssi-ruuvi Sh'ner-class Carrier",
+   "type": "Planetary assault carrier",
+   "affiliation": "Neutral",
+   "era": "Rebellion",
+   "source": "WEG40085 The Truce at Bakura p.125",
+   "price_new": "",
+   "price_used": "",
+   "scale": "Capital",
+   "length": "750 meters",
+   "skill": "Capital ship piloting: Sh'ner",
+   "crew": "60 (Ssi-ruuk), 500 (P'w'ecks)",
+   "gunners": "30",
+   "passengers": "",
+   "starfighter_complement": "12 D'kee-class planetary landers (6 primary bays × 2 each)",
+   "support_craft": "10 P'w'eck collector barges (carried within D'kee landers)",
+   "cargo": "5,000 metric tons",
+   "consumables": "1 month",
+   "hyperdrive": "x2",
+   "nav_computer": "Yes",
+   "maneuverability": "1D+2",
+   "space": "3",
+   "atmosphere": "",
+   "hull": "2D",
+   "shields": "2D+2",
+   "of_note": "Skeleton 30 (Ssi-ruuk), 250 (P'w'ecks)/+10. Crew Skill: Astrogation 4D, capital ship gunnery 3D+2, capital ship piloting 4D+1, capital ship shields 3D+2, sensors 4D+1. Slow and unwieldy — relies on Wurrif cruisers, battle droids, and Fw'Sen pickets for protection. Held in reserve until planet's defenses are neutralized, then moves in to deploy D'kee landers. 6 primary launch bays (2 D'kee each) with high-volume conveyors for thousands of prisoners. 12 secondary bays for captured enemy vessels, equipped with stun traps, micro tractor beams, heavy gravity conductive nets, and paralysis gas flooding. Dozen entechment labs with giant energy batteries. Extensive internal stun-trap/conductive-net network for P'w'eck control. 1 at Bakura — stayed in outer system; retreated with Ssi-ruuvi fleet after Shriwirr was captured.",
+   "sensors_passive": "30/0D",
+   "sensors_scan": "50/1D",
+   "sensors_search": "100/2D",
+   "sensors_focus": "4/3D",
+   "weapons": [
+    {
+     "name": "6 Ion Cannons",
+     "fire_arc": "3 front/left/back, 3 front/right/back",
+     "crew": "3",
+     "skill": "Capital Ship Gunnery",
+     "fire_control": "4D",
+     "space_range": "1-5/15/30",
+     "atmo_range": "2-10/30/60 km",
+     "damage": "5D"
+    },
+    {
+     "name": "2 Tractor Beam Projectors",
+     "fire_arc": "1 front/left/back, 1 front/right/back",
+     "crew": "6",
+     "skill": "Capital Ship Gunnery",
      "fire_control": "2D",
      "space_range": "1-5/15/30",
      "atmo_range": "",
@@ -31213,6 +31710,59 @@ const STARSHIP_DATA = {
      "fire_control": "2D+2",
      "space_range": "1-5/15/30",
      "atmo_range": "2-10/30/60 km",
+     "damage": "4D"
+    }
+   ]
+  },
+  {
+   "name": "Ssi-ruuvi Manufacturing Ship",
+   "craft": "Ssi-ruuvi Lwhekk-class Manufacturing Ship",
+   "type": "Manufacturing ship",
+   "affiliation": "Neutral",
+   "era": "Rebellion",
+   "source": "WEG40085 The Truce at Bakura p.123",
+   "price_new": "",
+   "price_used": "",
+   "scale": "Capital",
+   "length": "624 meters",
+   "skill": "Capital ship piloting: Lwhekk manufacturing ship",
+   "crew": "300 (Ssi-ruuk), 1,000 (P'w'ecks)",
+   "gunners": "126",
+   "passengers": "7,500 (P'w'eck manufacturing workers)",
+   "cargo": "30,000 metric tons",
+   "consumables": "3 months",
+   "hyperdrive": "x2",
+   "hyperdrive_backup": "x16",
+   "nav_computer": "Yes",
+   "maneuverability": "1D",
+   "space": "3",
+   "atmosphere": "",
+   "hull": "3D",
+   "shields": "2D",
+   "of_note": "Skeleton 150 (Ssi-ruuk), 500 (P'w'ecks)/+10. Crew Skill: Astrogation 4D+1, capital ship gunnery 3D, capital ship piloting 4D, capital ship shields 3D+2, sensors 4D. Named Cr'ee'ei ('Maker Ship'). Large ovoid hull with numerous tractor beam projectors for pulling debris and raw materials into hangar bays; can also receive ore freighters and launch battle droids. Interior factories produce battle droids, laser cannons, ion cannons, droids, hand weapons, and other goods. Stores up to 2,000 battle droids. P'w'ecks use hand scanners, fusion cutters, and portable repulsor packs in refinement bays; unsalvageable debris disintegrated or jettisoned. Non-combat role: remains far from battle lines until fleet secures mining worlds with precious metals. Poorly shielded and sluggish — easy target if forced into combat.",
+   "sensors_passive": "15/1D",
+   "sensors_scan": "45/1D+1",
+   "sensors_search": "90/2D",
+   "sensors_focus": "3/2D+1",
+   "weapons": [
+    {
+     "name": "3 Turbolaser Batteries",
+     "fire_arc": "1 front, 2 turret",
+     "crew": "2",
+     "skill": "Capital Ship Gunnery",
+     "fire_control": "3D",
+     "space_range": "3-15/35/75",
+     "atmo_range": "6-30/70/150 km",
+     "damage": "4D"
+    },
+    {
+     "name": "20 Tractor Beam Projectors",
+     "fire_arc": "10 front/left/back, 10 front/right/back",
+     "crew": "6",
+     "skill": "Capital Ship Gunnery",
+     "fire_control": "2D",
+     "space_range": "1-5/15/30",
+     "atmo_range": "",
      "damage": "4D"
     }
    ]
@@ -33004,6 +33554,48 @@ const STARSHIP_DATA = {
      "space_range": "1-2/10/20",
      "atmo_range": "50-100/250/400 meters",
      "damage": "4D"
+    }
+   ]
+  },
+  {
+   "name": "Bakura Imperial Repair Station",
+   "craft": "Imperial Orbital Repair Station",
+   "type": "Orbital repair and resupply facility",
+   "affiliation": "Galactic Empire",
+   "era": "Rebellion",
+   "source": "WEG40085 The Truce at Bakura p.117",
+   "price_new": "",
+   "price_used": "",
+   "scale": "Capital",
+   "length": "",
+   "skill": "Capital ship piloting",
+   "crew": "",
+   "crew_skill": "Capital ship gunnery 3D+2",
+   "passengers": "",
+   "cargo": "",
+   "consumables": "",
+   "hyperdrive": "None",
+   "nav_computer": "No",
+   "maneuverability": "0D",
+   "space": "0",
+   "atmosphere": "",
+   "hull": "5D",
+   "shields": "3D",
+   "of_note": "Bakura system Imperial orbital facility. Repair docks for up to 3 capital ships under 200 meters in length, plus a single starfighter dock accommodating 30 fighters simultaneously.",
+   "sensors_passive": "",
+   "sensors_scan": "",
+   "sensors_search": "",
+   "sensors_focus": "",
+   "weapons": [
+    {
+     "name": "8 Turbolasers",
+     "fire_arc": "Turret",
+     "crew": "",
+     "skill": "Capital Ship Gunnery",
+     "fire_control": "1D",
+     "space_range": "",
+     "atmo_range": "",
+     "damage": "5D"
     }
    ]
   }

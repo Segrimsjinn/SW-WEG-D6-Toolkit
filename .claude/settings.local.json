@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -o '.\\\\{0,200\\\\}Port Haven.\\\\{0,200\\\\}' \"c:/Users/styhl/.vscode/SW-WEG-D6-Toolkit/data_systems.js\")",
+      "Bash(grep -o '.\\\\{0,50\\\\}Port Haven - Starport.\\\\{0,200\\\\}' \"c:/Users/styhl/.vscode/SW-WEG-D6-Toolkit/data_systems.js\")",
+      "Bash(ls \"c:/Users/styhl/.vscode/SW-WEG-D6-Toolkit\"/*.js \"c:/Users/styhl/.vscode/SW-WEG-D6-Toolkit\"/*.html \"c:/Users/styhl/.vscode/SW-WEG-D6-Toolkit\"/*.json)",
+      "Bash(wc -l c:/Users/styhl/.vscode/SW-WEG-D6-Toolkit/data_*.js c:/Users/styhl/.vscode/SW-WEG-D6-Toolkit/index.html)",
+      "Bash(wc -c c:/Users/styhl/.vscode/SW-WEG-D6-Toolkit/data_*.js c:/Users/styhl/.vscode/SW-WEG-D6-Toolkit/index.html)",
+      "Bash(powershell.exe -ExecutionPolicy Bypass -File \"c:/Users/styhl/.vscode/SW-WEG-D6-Toolkit/reformat.ps1\")",
+      "Bash(xxd)"
+    ]
+  }
+}

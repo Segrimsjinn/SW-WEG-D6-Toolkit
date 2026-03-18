@@ -2222,5 +2222,77 @@ const EQUIPMENT_DATA = [
   "availability": "2",
   "game_notes": "Single-use hyperspace delivery pod for the AS-M12 message droid. Craft: Arakyd Seeker Transport. Scale: Starfighter. Length: 2m. Crew: None (fully automated droid brain; astrogation 4D, space transports 4D). Passengers: 1 message droid. Consumables: 1 month. Hyperdrive x1 (limited to 1 jump). Space 6. Atmosphere 330/950 kmh. Hull 1D+2. Sensors — Passive 20/1D, Scan 40/2D, Search 60/3D, Focus 3/4D. Pod and droid are retrievable and reusable after modest refitting.",
   "source": "WEG40122 Shadows of the Empire p.108"
+ },
+ {
+  "name": "Cybot Galactica A9G Archive Droid",
+  "category": "Droids",
+  "cost": "8,000",
+  "availability": "2",
+  "game_notes": "Data storage and retrieval droid. Height: 1.7m. Move: 9. DEX 2D, KNO 2D (bureaucracy: library science 4D, bureaucracy: Alliance information storage 12D), MEC 1D, PER 1D, STR 1D+2, TEC 2D (computer programming/repair 5D). Equipped: Kraren XI Superprocessor (rapid data collation), Cybot Galactica Data-Sifter software (+1D to all computer programming/repair rolls involving data searches), humanoid body (head, two arms, two legs). Suited for single-task operations and small to mid-size library systems; prone to glitches in large Core World university systems. Rebel Alliance uses several throughout the fleet for military data retrieval, including the war room on the Headquarters Frigate. Can tap into the Alliance data network for instant access to documents, encyclopedias, intelligence reports, and galactic news networks.",
+  "source": "WEG40085 The Truce at Bakura p.134"
+ },
+ {
+  "name": "Arakyd \"Stiletto\" Imperial Security Droid",
+  "category": "Droids",
+  "cost": "7,500 (black market only)",
+  "availability": "X",
+  "game_notes": "Security/detention droid. Height: 1m. Move: 5 (low-power repulsor field — extremely quiet but slower than a typical droid; most humans can outrun it). DEX 2D (blaster: stun bolt 5D+2, dodge 4D), KNO 1D, MEC 1D, PER 2D (search 5D), STR 2D, TEC 1D. Equipped: cylindrical body; 2 light blaster cannons (range 0-10/20/40, 4D stun); reflective plate armor (+2D to Strength to resist damage); NeuroSaav sensor suite (+1D to search); NeuroSaav biorecognition package (+2D to search if bio-scan readings of target are in database; max range 40 meters — data typically extracted from prisoner physicals). Outdated model, out of production for ~20 years. Used at the Imperial garrison base south of Salis D'aar, Bakura. Not widely known on Bakura due to locals' profound dislike of droids.",
+  "source": "WEG40085 The Truce at Bakura p.135"
+ },
+ {
+  "name": "Industrial Automaton \"Elegance\" Message Drone",
+  "category": "Droids",
+  "cost": "250,000 (new; no longer manufactured or readily available), 50,000 (to replenish fuel)",
+  "availability": "4",
+  "game_notes": "Automated message drone. Scale: Starfighter. Length: 9m. Crew: None (droid brain; astrogation 5D). Cargo: 15 kg. Consumables: 3 weeks. Hyperdrive x1/3 — limited to 1 jump before refueling; hyperdrive destroyed after 5 jumps total. Nav computer limited to 1 jump. Space 5. Hull 1D. Sensors — Passive 100/2D, Scan 200/3D, Search 300/4D, Focus 10/5D. Equipped: Self-destruct mechanism (600 meter blast radius, space range <1, 9D damage); anti-tampering safeguards (if proper Imperial recognition codes not received within 4–10 minutes of sensor contact — timing customizable — self-destruct activates with 1-minute completion cycle). Launched like a torpedo from starships or ground launchers; enters hyperspace to target coordinates, then homes in on target world or activates short-range beacon. No longer in fashion due to HoloNet's lower cost; retained by remote governors for emergencies. Governor Nereus used one to deliver his Ssi-ruuvi distress call to Endor.",
+  "source": "WEG40085 The Truce at Bakura p.135"
+ },
+ {
+  "name": "Ssi-ruuvi Security Droid",
+  "category": "Droids",
+  "cost": "Not available outside Ssi-ruuvi space",
+  "availability": "X",
+  "game_notes": "Ssi-ruuvi security and prisoner-control droid. Height: 0.8m. Move: 8. DEX 3D (blaster: stun bolt 5D, dodge 5D+2), KNO 1D, MEC 1D, PER 1D+1 (search 6D), STR 2D, TEC 1D. Equipped: sensor suite (+1D to all search rolls); stun bolt projector (6D stun, range 0-3/10/15); armored chassis (+2D physical, +1D energy); three wheeled legs (one retractable). Spherical body, smaller than an R2 unit; metallic green with hexagonal power conduits clustered near the stun projector. Originally designed to keep P'w'ecks in line; also used to guard human entechment prisoners. Powered by enteched life energy — Force users can sense or communicate with the trapped life essence, and can fool or pacify the droid long enough to deactivate it. Vulnerable to stun bolts reflected back by a lightsaber, which cause the unit to short-circuit and shut down.",
+  "source": "WEG40085 The Truce at Bakura p.136"
+ },
+ {
+  "name": "Dodonna's Battle Analysis Computer (BAC)",
+  "category": "Computers",
+  "cost": "Not available for sale",
+  "availability": "Unique",
+  "game_notes": "Custom prototype built from processing cores of several droids; exact specs classified. Skill: Tactics: fleets 5D, tactics: starfighters 5D. Displays course, distance, shield strength, firepower, damage, speed, and condition for all combatants in the battle area. A battlefield commander may defer to the BAC's recommendations (use BAC's skill for tactics rolls) or use the Combined Actions rules. Can be patched into a standard computer monitor, hologram projector, or R2 unit holoprojector for a 3D overview. Designed by General Jan Dodonna; prototype first tested by Commander Skywalker at Bakura. Intended for installation aboard Alliance battle cruisers once software is refined — battlefield testing revealed flaws causing confusing or contradictory responses under rapidly changing conditions.",
+  "source": "WEG40085 The Truce at Bakura p.137"
+ },
+ {
+  "name": "Alliance MasterNav Software Module Gamma",
+  "category": "Computers",
+  "cost": "Not available for sale",
+  "availability": "4, X",
+  "game_notes": "Specialized navigational database. Skill: Astrogation. Can be patched into a starship's navigation systems with an Easy astrogation roll, granting +1D to astrogation rolls for one month. If data is older than 1 standard month, imposes -1D penalty to astrogation rolls instead. A roll of 1 on the Wild Die while using MasterNav indicates a catastrophic navigational error (roll on the Astrogation Mishap Table, SW2E p.111). Required for Alliance pinpoint military hyperspace jumps close to planetary gravity wells. All pilots required by Alliance regulation to perform sensor sweeps and download updated data; distributed to fleet as update packets.",
+  "source": "WEG40085 The Truce at Bakura p.137"
+ },
+ {
+  "name": "Bakuran Disruption Bubble Generator",
+  "category": "Security",
+  "cost": "150,000 (Bakuran black market), 2,500–5,000 (elsewhere)",
+  "availability": "4, F, R or X",
+  "game_notes": "Anti-surveillance device. ~1.5 kg; fits in a pocket. Blocks all sound from a 2-meter diameter sphere for up to 2 hours per micro-power cell. Sensor stealth 4D — if a sensor operator actively searches the area, make an opposed roll; if the operator wins, they detect that an anti-surveillance device is in operation (but not necessarily its location). Bubble is difficult to detect passively; can be masked by external noise sources. Bakuran originals are extremely old and fragile: Strength 1D to resist damage if dropped, shot, or roughly handled — even light damage destroys the unit permanently. Originally developed by Bakuran politicians to protect against eavesdropping during political infighting; hidden successfully from Governor Nereus. Could be scratch-built from off-the-shelf components but none on Bakura dare openly manufacture them.",
+  "source": "WEG40085 The Truce at Bakura p.138"
+ },
+ {
+  "name": "BioTech RFX/K Medisensor",
+  "category": "Medical",
+  "cost": "5,000",
+  "availability": "2",
+  "game_notes": "Portable medical diagnostic relay. Skill: First aid. Scans targets up to 3 meters away; comlinks data to a full medical computer for remote diagnosis. Grants +2D to first aid, medicine, and related skill checks (requires access to its paired medical computer; useless without it). Memory holds up to 5 scans plus basic software utilities; stores data for up to 3 species. Must be calibrated before use for each species: Easy to Heroic first aid roll depending on the medic's knowledge of the species. Alternatively, parameters can be called up from a medical computer (usually Easy computer programming/repair roll, but takes several minutes). Military version: 2km broadcast range, signal scrambler available. Civilian version: <300m range.",
+  "source": "WEG40085 The Truce at Bakura p.138"
+ },
+ {
+  "name": "Master Coder Chip",
+  "category": "Security",
+  "cost": "1,000–340,000 (dependent on quality and utility)",
+  "availability": "4, X",
+  "game_notes": "Illegal security override device. Skill: Security. Any electronic chip with sufficient memory can be erased and imprinted with security codes to override voice, retinal, and palmprint circuits. Grants +1D to +4D bonus to security rolls involving electronic systems (code locks, palm scanners, retinal scanners, etc.); bonus depends on sophistication of target system. A failed security roll or a '1' on the Wild Die means the chip has been detected, triggering an alarm. Must be imprinted by a 1st–4th degree droid or specially programmed computer. Most security systems include anti-counterfeit safeguards against droid-imprinted chips — but Bakura (a world where droids were essentially banned) had none, allowing C-3PO to freely counterfeit military and government security codes for Han Solo. Possession is illegal in Imperial space; immediate execution if caught. Favored by smugglers and pirates operating in low-tech systems.",
+  "source": "WEG40085 The Truce at Bakura p.139"
  }
 ];
