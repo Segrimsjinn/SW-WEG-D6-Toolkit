@@ -4274,7 +4274,7 @@ function searchGalaxy(query) {
 
   container.innerHTML = matches.map(s => {
     const sLow = s.name.toLowerCase();
-    const findPlanet = typeof PLANETS_DATA !== 'undefined' && PLANETS_DATA.filter(p => p.name.toLowerCase() === sLow || p.system.toLowerCase() === sLow || sLow.startsWith(p.name.toLowerCase() + ' -') || (p.aliases && p.aliases.some(a => a.toLowerCase() === sLow))).sort((a, b) => b.name.length - a.name.length)[0];
+    const findPlanet = typeof PLANETS_DATA !== 'undefined' && PLANETS_DATA.filter(p => p.name.toLowerCase() === sLow || p.system.toLowerCase() === sLow || sLow.startsWith(p.name.toLowerCase() + ' -') || (p.aliases && p.aliases.some(a => a.toLowerCase() === sLow))).sort((a, b) => { const aEx = a.name.toLowerCase() === sLow ? 0 : 1; const bEx = b.name.toLowerCase() === sLow ? 0 : 1; return aEx !== bEx ? aEx - bEx : a.name.length - b.name.length; })[0];
     const hasPlanet = !!findPlanet;
     const planetKey = findPlanet ? findPlanet.name : s.name;
     return `<div class="system-card${hasPlanet ? ' has-planet' : ''}"${hasPlanet ? ` onclick="showPlanetDetail('${planetKey.replace(/'/g,"\\'")}')" style="cursor:pointer"` : ''}>
