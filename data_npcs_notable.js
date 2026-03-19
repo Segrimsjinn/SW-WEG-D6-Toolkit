@@ -1383,7 +1383,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Stormtrooper armor (+2D physical, +1D energy, -1D DEX and related skills), blaster rifle (5D), blaster pistol (4D)",
     capsule: "Elite troops of the Empire, trained to fight and die without fear or question. Cannot be bribed, blackmailed, or seduced — any such attempt automatically fails. Separate from the Imperial Army and answer directly to the Emperor.",
-    source: "REUP Star Wars RPG: Revised Expanded Updated p.273"
+    source: "REUP Star Wars RPG: Revised Expanded Updated p.273, WEG40089 The Movie Trilogy Sourcebook SE p.54"
   },
   {
     name: "Aquatic Assault Stormtrooper (Seatrooper)",
@@ -2379,7 +2379,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Lightsaber (5D), robes",
     capsule: "Obi-Wan Kenobi — known as 'Old Ben' on Tatooine — is a Jedi Master living in self-imposed exile in the Jundland Wastes. Once a general of the Clone Wars and Anakin Skywalker's master, he has watched over Luke from a distance for nearly two decades. At 0 BBY he emerges from hiding when Luke is attacked by Sand People, revealing himself as a Jedi and ultimately dying aboard the Death Star to allow Luke and the others to escape — becoming one with the Force.",
-    source: "WEG40124 Galaxy Guide 1: A New Hope p.19; WEG40093 Star Wars Sourcebook p.135"
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.19; WEG40093 Star Wars Sourcebook p.135, WEG40089 The Movie Trilogy Sourcebook SE p.18"
   },
   {
     name: "Sandtrooper (Typical)",
@@ -2403,7 +2403,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Heavy blast armor (+1D STR vs damage, -1D DEX and related actions), blaster pistol (4D), heavy blaster rifle (6D), long-range comlink, food/water pack. ◆ DEWBACK (patrol mount) — Desert mount; DEX 3D, STR 4D, Move 35 (day)/7 (night), Orneriness 3D; slows dramatically at night.",
     capsule: "Sandtroopers are Imperial stormtroopers specially equipped and trained for desert operations. Deployed on Tatooine during the search for the stolen Death Star plans, they patrol the Dune Sea and Jundland Wastes on dewback mounts. Their heavier armor and survival gear make them more resilient than standard stormtroopers in extreme heat environments.",
-    source: "WEG40124 Galaxy Guide 1: A New Hope p.20"
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.20, WEG40089 The Movie Trilogy Sourcebook SE p.55"
   },
   {
     name: "DSS-0956",
@@ -2427,7 +2427,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Heavy blast armor (+1D STR vs damage, -1D DEX and related actions), blaster pistol (4D), heavy blaster rifle (6D), long-range comlink, food/water pack. ◆ DEWBACK (patrol mount) — Desert mount; DEX 3D, STR 4D, Move 35 (day)/7 (night), Orneriness 3D; slows dramatically at night.",
     capsule: "DSS-0956 is the senior officer commanding the Desert Sands sandtrooper detachment deployed on Tatooine during the search for the stolen Death Star plans. More aggressive and experienced than his troopers, he leads mounted dewback patrols through the desert wilderness with authority.",
-    source: "WEG40124 Galaxy Guide 1: A New Hope p.21"
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.21, WEG40089 The Movie Trilogy Sourcebook SE p.55"
   },
   {
     name: "R5-D4",
@@ -2488,23 +2488,23 @@ const NOTABLE_NPCS = [
     role: "Ithorian Refugee / Imperial Informant",
     type: "Named NPC",
     stats: {
-      DEXTERITY: { base: "2D", skills: { "blaster": "3D+1", "dodge": "3D+2" } },
-      KNOWLEDGE: { base: "3D", skills: { "alien species": "5D", "bureaucracy": "5D", "planetary systems": "4D", "survival": "4D", "willpower": "5D" } },
-      MECHANICAL: { base: "2D", skills: { "beast riding": "3D", "repulsorlift operation": "3D" } },
-      PERCEPTION: { base: "3D", skills: { "bargain": "4D", "con": "4D", "hide": "4D", "sneak": "4D" } },
-      STRENGTH: { base: "3D", skills: {} },
-      TECHNICAL: { base: "2D", skills: { "first aid": "4D" } }
+      DEXTERITY: { base: "3D", skills: { "dodge": "4D", "melee combat: powerstaff": "4D" } },
+      KNOWLEDGE: { base: "3D+2", skills: { "agriculture": "5D", "bureaucracy: Tafanda Bay": "7D", "cultures": "4D+2", "ecology": "6D", "survival: jungle": "5D" } },
+      MECHANICAL: { base: "2D+1", skills: { "repulsorlift operation": "4D+1" } },
+      PERCEPTION: { base: "3D+1", skills: { "bargain": "4D+1" } },
+      STRENGTH: { base: "3D", skills: { "lifting": "4D" } },
+      TECHNICAL: { base: "2D+2", skills: { "first aid": "4D+2" } }
     },
     specialAbilities: "Ithorian Herd: Momaw Nadon maintains secret contact with a hidden Ithorian community on Tatooine — a lush grove sustained by stolen Imperial agricultural technology. He uses this sanctuary to pass information to the Rebel Alliance.\n\nForced Informant: The Empire extorted him into becoming an informant by threatening to destroy the grove. He walks a razor's edge, feeding the Empire enough to survive while helping Rebels when he can.\n\nTwin Mouths: Ithorians have two mouths on opposite sides of their neck. They can produce the Ithorian language, an extremely complex harmonic sound, but cannot speak Basic.",
     forcePoints: 1,
-    characterPoints: 5,
-    move: 10,
-    equipment: "Comlink, blaster pistol (3D+2)",
+    characterPoints: 7,
+    move: 9,
+    equipment: "Agri-kit (+1D to survival), powerstaff (STR+2D)",
     capsule: "Momaw Nadon — known to Mos Eisley locals as 'Hammerhead' — is an Ithorian exile living under Imperial pressure. Once a revered herd-mother on Ithor, he was forced to flee after sharing sacred agricultural secrets with the Empire to prevent the destruction of Ithor's forests. On Tatooine he tends a hidden garden, secretly aids the Alliance, and endures his uneasy double life with quiet dignity.",
-    source: "WEG40124 Galaxy Guide 1: A New Hope p.28"
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.28; WEG40089 The Movie Trilogy Sourcebook SE p.97"
   },
   {
-    name: "Figrin Da'n",
+    name: "Figrin D'an",
     species: "Bith",
     system: "Tatoo",
     location: "Tatooine — Mos Eisley",
@@ -2512,20 +2512,20 @@ const NOTABLE_NPCS = [
     role: "Musician / Kloo Horn Player",
     type: "Named NPC",
     stats: {
-      DEXTERITY: { base: "3D", skills: { "blaster": "4D", "dodge": "4D" } },
-      KNOWLEDGE: { base: "3D", skills: { "alien species": "4D", "business": "5D", "languages": "4D", "planetary systems": "4D", "streetwise": "5D" } },
-      MECHANICAL: { base: "2D", skills: {} },
-      PERCEPTION: { base: "3D", skills: { "bargain": "5D", "con": "4D", "gambling": "6D", "persuasion": "5D" } },
-      STRENGTH: { base: "2D", skills: {} },
-      TECHNICAL: { base: "3D", skills: { "music": "7D" } }
+      DEXTERITY: { base: "3D", skills: { "blaster: hold-out blaster": "4D", "dodge": "4D" } },
+      KNOWLEDGE: { base: "2D+2", skills: { "cultures": "4D+2", "scholar: music": "6D" } },
+      MECHANICAL: { base: "3D+2", skills: { "musical instrument operation": "5D+2" } },
+      PERCEPTION: { base: "3D+2", skills: { "bargain": "4D+2", "gambling": "5D", "investigation": "5D+1" } },
+      STRENGTH: { base: "2D+1", skills: { "brawling": "3D+1" } },
+      TECHNICAL: { base: "2D+2", skills: { "musical instrument repair": "4D+2" } }
     },
-    specialAbilities: "Bith Senses: Bith have highly developed aural and olfactory senses. They receive +1D to all Perception rolls involving sound or smell.\n\nPhotographic Memory: Bith possess near-perfect recall. Figrin can reproduce any piece of music he has heard, and retains detailed memories of every business dealing and debt owed.\n\nCompulsive Gambler: Figrin's gambling habit continually puts the band in financial jeopardy. He has debts across several systems — including to Jabba the Hutt — which is why the Modal Nodes are stuck playing Mos Eisley.",
-    forcePoints: 1,
-    characterPoints: 6,
-    move: 10,
-    equipment: "Kloo horn, datapad (tracking band finances and debts), blaster pistol (3D+2)",
-    capsule: "Figrin Da'n is the sharp-tongued, fast-fingered leader of Figrin Da'n and the Modal Nodes — the house band at Chalmun's Cantina. A virtuoso kloo horn player and compulsive sabacc player, his debts to Jabba the Hutt have left the band effectively indentured to Mos Eisley. He leads the band with professional authority even as his gambling debts mount, and has a razor-sharp eye for an angle or an escape route.",
-    source: "WEG40124 Galaxy Guide 1: A New Hope p.30"
+    specialAbilities: "Vision: Bith have poor vision, suffering -1D for any visual action beyond 20 meters; cannot see beyond 40 meters.\n\nScent: +1D to Perception skills involving actions and people within three meters.\n\nManual Dexterity: +1D to fine motor skills (picking pockets, surgery, fine tool operation), but not gross motor skills such as blaster or dodge.",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 8,
+    equipment: "Kloo horn, gasan string drum, hold-out blaster (3D+1), sabacc deck (marked)",
+    capsule: "Figrin D'an is the sharp-tongued, fast-fingered leader of the Modal Nodes — the house band at Chalmun's Cantina. Nicknamed 'Fiery Figrin' by Mos Eisley natives, he is an expert gambler who has cleaned out even Han Solo at the sabacc table. Though he rarely appears completely coherent — a side effect of his fondness for Corellian spice — he is one of the more knowledgeable figures in Mos Eisley society, having met nearly every regular cantina patron. He gives nothing away without payment, preferring to let prospective informants 'lose' credits to him at cards. With Jabba's death, Figrin and the Modal Nodes departed for safer worlds, eventually enlisting his brother Barquin's songwriting talents to resuscitate their flagging career.",
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.30; WEG40089 The Movie Trilogy Sourcebook SE p.84"
   },
   {
     name: "Dr. Evazan",
@@ -2536,20 +2536,21 @@ const NOTABLE_NPCS = [
     role: "Homicidal Surgeon",
     type: "Named NPC",
     stats: {
-      DEXTERITY: { base: "3D+1", skills: { "blaster": "5D+1", "dodge": "5D", "melee combat": "5D+1" } },
-      KNOWLEDGE: { base: "3D", skills: { "alien species": "4D", "languages": "4D", "streetwise": "6D", "willpower": "4D" } },
-      MECHANICAL: { base: "2D+1", skills: { "space transports": "4D+1" } },
-      PERCEPTION: { base: "3D", skills: { "bargain": "5D", "command": "4D", "con": "5D", "hide": "4D", "search": "4D" } },
-      STRENGTH: { base: "3D", skills: { "brawling": "4D+2" } },
-      TECHNICAL: { base: "4D", skills: { "medicine": "7D" } }
+      DEXTERITY: { base: "3D+2", skills: { "blaster": "4D+2", "brawling parry": "4D+2" } },
+      KNOWLEDGE: { base: "2D+2", skills: { "languages": "4D" } },
+      MECHANICAL: { base: "2D+1", skills: {} },
+      PERCEPTION: { base: "3D+2", skills: { "bargain": "3D+1", "command": "4D+1", "con": "3D" } },
+      STRENGTH: { base: "3D+2", skills: { "brawling": "4D+2" } },
+      TECHNICAL: { base: "2D", skills: { "first aid": "5D", "(A) medicine": "1D", "(A) medicine: cyborging": "2D" } }
     },
     specialAbilities: "Death Mark: Dr. Evazan has the death sentence in twelve systems. Bounty hunters and law enforcement across the Outer Rim are authorized to bring him in dead or alive.\n\nSurgical Sadist: He uses his medical genius for brutal, disfiguring experiments on unwilling subjects. His modified patients are left permanently scarred and often barely functional.\n\nDeformed Face: His distinctive scarred face is the result of a bounty hunter's shot. He is easily recognized by law enforcement and enemies alike.",
     forcePoints: 1,
-    characterPoints: 5,
+    darkSidePoints: 2,
+    characterPoints: 4,
     move: 10,
-    equipment: "Heavily modified blaster pistol (5D), vibroblade, medpac, surgical kit",
+    equipment: "Blaster pistol (4D), medpac, surgical kit",
     capsule: "Dr. Evazan was once a promising surgeon before madness and cruelty consumed him. Now he drifts through the Outer Rim performing ghoulish experiments on any being he can get onto his table. His friendship with Ponda Baba gives him a dangerous bodyguard; together they make a predatory pair that haunts cantinas from Tatooine to the Outer Rim. He initiated the confrontation with Luke Skywalker in Chalmun's Cantina that cost Ponda Baba his arm.",
-    source: "WEG40124 Galaxy Guide 1: A New Hope p.31"
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.31; WEG40089 The Movie Trilogy Sourcebook SE p.64"
   },
   {
     name: "Ponda Baba",
@@ -2560,20 +2561,20 @@ const NOTABLE_NPCS = [
     role: "Aqualish Smuggler / Enforcer",
     type: "Named NPC",
     stats: {
-      DEXTERITY: { base: "3D+2", skills: { "blaster": "5D+2", "brawling parry": "4D+2", "dodge": "5D+2", "melee combat": "5D" } },
-      KNOWLEDGE: { base: "2D", skills: { "streetwise": "4D" } },
-      MECHANICAL: { base: "3D", skills: { "space transports": "5D" } },
-      PERCEPTION: { base: "2D+1", skills: { "search": "3D+1" } },
-      STRENGTH: { base: "4D", skills: { "brawling": "6D", "stamina": "5D" } },
-      TECHNICAL: { base: "2D", skills: {} }
+      DEXTERITY: { base: "3D+1", skills: { "brawling parry": "4D+1", "melee combat": "4D+1" } },
+      KNOWLEDGE: { base: "2D+1", skills: { "alien species": "3D+2", "intimidation": "5D" } },
+      MECHANICAL: { base: "3D+2", skills: { "starship gunnery": "4D+2" } },
+      PERCEPTION: { base: "3D", skills: {} },
+      STRENGTH: { base: "3D", skills: { "brawling": "5D", "stamina": "5D" } },
+      TECHNICAL: { base: "2D+2", skills: { "space transports repair": "3D+2" } }
     },
     specialAbilities: "Aqualish Aggression: Aqualish are notoriously belligerent. Ponda Baba receives +1D to intimidation rolls and is prone to starting fights without provocation.\n\nFanged: Aqualish possess powerful jaws. Ponda Baba can make a bite attack (STR+1D damage) in brawling combat.",
     forcePoints: 1,
     characterPoints: 4,
     move: 10,
-    equipment: "Blaster pistol (4D), hold-out blaster (3D+1)",
+    equipment: "Blaster pistol (4D), grenades (5D), club (STR+1D)",
     capsule: "Ponda Baba — called 'Walrus Man' by spacers who don't know his name — is an Aqualish thug and smuggler who runs with Dr. Evazan. He is short-tempered, violent, and loyal only to himself and his peculiar friendship with Evazan. His confrontation with Luke Skywalker in Chalmun's Cantina ended with Obi-Wan Kenobi severing his arm with a lightsaber — an event that haunts him deeply.",
-    source: "WEG40124 Galaxy Guide 1: A New Hope p.31"
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.31; WEG40089 The Movie Trilogy Sourcebook SE p.59"
   },
   {
     name: "Labria",
@@ -2605,23 +2606,23 @@ const NOTABLE_NPCS = [
     system: "Tatoo",
     location: "Tatooine — Mos Eisley",
     affiliations: ["Rebel Alliance"],
-    role: "Shistavanen Scout / Imperial Scout",
-    type: "Named NPC",
+    role: "Scout",
+    type: "Shistavanen scout",
     stats: {
-      DEXTERITY: { base: "3D+1", skills: { "blaster": "5D", "dodge": "5D+1", "melee combat": "4D+1" } },
-      KNOWLEDGE: { base: "2D+2", skills: { "planetary systems": "4D+2", "survival": "5D+2", "willpower": "4D" } },
-      MECHANICAL: { base: "3D+1", skills: { "beast riding": "4D+1", "repulsorlift operation": "4D+1", "sensors": "5D", "space transports": "4D" } },
-      PERCEPTION: { base: "3D", skills: { "hide": "5D", "investigation": "4D", "search": "5D", "sneak": "5D" } },
-      STRENGTH: { base: "3D+2", skills: { "brawling": "5D", "stamina": "5D" } },
-      TECHNICAL: { base: "2D+1", skills: { "first aid": "3D+1" } }
+      DEXTERITY: { base: "2D+2", skills: { "blaster": "5D+2", "dodge": "4D+2" } },
+      KNOWLEDGE: { base: "4D", skills: { "alien species": "6D", "planetary systems": "6D", "survival": "6D" } },
+      MECHANICAL: { base: "3D", skills: { "astrogation": "5D", "space transports": "4D", "starfighter piloting": "4D", "starship gunnery": "5D+2", "starship shields": "4D+1" } },
+      PERCEPTION: { base: "2D", skills: { "hide": "4D", "search": "5D", "search: tracking": "7D", "sneak": "4D" } },
+      STRENGTH: { base: "3D", skills: { "climbing/jumping": "4D", "stamina": "4D+1" } },
+      TECHNICAL: { base: "3D+1", skills: { "first aid": "4D+1", "space transports repair": "4D+1", "starfighter repair": "4D+1" } }
     },
-    specialAbilities: "Shistavanen Senses: Enhanced smell and low-light vision (+2D to Perception checks involving scent or in dim conditions).\n\nNatural Weapons: Claws and fangs — may add +1D to brawling damage.\n\nDefected to Rebel Alliance: After years as an Imperial scout, Lak Sivrak's conscience turned him. He now passes Imperial patrol schedules and survey data to the Alliance while maintaining his cover in Mos Eisley.",
-    forcePoints: 1,
-    characterPoints: 6,
-    move: 12,
-    equipment: "Blaster rifle (5D), scout armor (+1D physical, +1 energy), comlink, macrobinoculars",
-    capsule: "Lak Sivrak is a Shistavanen scout who spent years in Imperial service before defecting to the Rebel Alliance. He haunts Chalmun's Cantina, ostensibly on leave, while actually maintaining a dead-drop network for Alliance Intelligence. Beneath his fierce wolfen appearance is a principled soldier who has seen too much of the Empire's brutality to remain complicit.",
-    source: "WEG40124 Galaxy Guide 1: A New Hope p.33"
+    specialAbilities: "Shistavanen Senses: Enhanced smell and low-light vision (+2D to Perception checks involving scent or in dim conditions).\n\nNatural Weapons: Claws and fangs — may add +1D to brawling damage.",
+    forcePoints: 3,
+    characterPoints: 9,
+    move: 11,
+    equipment: "Blaster pistol (4D), blaster rifle (5D), vibroblade (STR+2D), survival gear",
+    capsule: "Known in Mos Eisley simply as 'the wolfman,' Lak Sivrak was one of the city's newest denizens when Luke and Obi-Wan entered the cantina — a famous scout responsible for charting many of the Empire's most dangerous territories. He was wanted by the Empire for concealing the presence of a Rebel safe world he discovered while scouting the Unknown Regions: having found a hidden colony of refugees from devastated worlds like Dalron Five, Sivrak helped them prepare for winter, and when he moved on he filed a falsified report rather than turn them in. Another scout eventually exposed the colony, and captured Rebels revealed Sivrak's earlier visit under interrogation. He altered his name and fled to the far side of the galaxy. While in Mos Eisley he assisted several Rebel agents, was eventually recruited by the Alliance, and served in many battles before dying during the Battle of Endor.",
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.33; WEG40089 The Movie Trilogy Sourcebook SE p.103"
   },
   {
     name: "Muftak",
@@ -2677,23 +2678,23 @@ const NOTABLE_NPCS = [
     system: "Tatoo",
     location: "Tatooine — Mos Eisley",
     affiliations: ["Criminal Underworld"],
-    role: "Con Artists / Thieves",
-    type: "Named NPC",
+    role: "Con Artists",
+    type: "Con artists",
     stats: {
-      DEXTERITY: { base: "3D+2", skills: { "blaster": "5D+2", "dodge": "5D+2" } },
-      KNOWLEDGE: { base: "3D", skills: { "alien species": "4D", "bureaucracy": "4D", "languages": "4D", "planetary systems": "4D", "streetwise": "5D" } },
-      MECHANICAL: { base: "3D", skills: { "space transports": "4D+2" } },
-      PERCEPTION: { base: "3D+2", skills: { "bargain": "5D+2", "con": "6D+2", "gambling": "5D", "hide": "5D+2", "investigation": "4D+2", "persuasion": "6D", "search": "4D+2", "sneak": "5D+2" } },
-      STRENGTH: { base: "2D+2", skills: { "brawling": "3D+2" } },
-      TECHNICAL: { base: "3D", skills: { "security": "4D+2" } }
+      DEXTERITY: { base: "3D+2", skills: { "dodge": "5D" } },
+      KNOWLEDGE: { base: "3D", skills: { "cultures": "4D", "languages": "3D+2", "streetwise": "4D+1", "value: precious gems": "5D" } },
+      MECHANICAL: { base: "2D+1", skills: {} },
+      PERCEPTION: { base: "4D", skills: { "bargain": "4D+2", "con": "6D", "con: seduction": "10D+2", "investigation": "5D", "persuasion": "7D", "gambling": "5D" } },
+      STRENGTH: { base: "2D+2", skills: { "stamina": "3D+2" } },
+      TECHNICAL: { base: "2D+1", skills: {} }
     },
-    specialAbilities: "Identical Twins: The Tonnika sisters are visually indistinguishable. They exploit this relentlessly — swapping identities mid-con, creating alibis, and escaping responsibility by claiming the other was involved.\n\nKiffu Intuition: Kiffar have latent psychometric abilities. Occasionally (GM's discretion) one of the sisters gets a flash of impression from touching an object.",
-    forcePoints: 1,
-    characterPoints: 6,
+    specialAbilities: "Identical Twins: The Tonnika sisters are visually indistinguishable. They exploit this relentlessly — swapping identities mid-con, creating alibis, and escaping responsibility by claiming the other was involved.",
+    forcePoints: 0,
+    characterPoints: 1,
     move: 10,
-    equipment: "Blaster pistol each (4D), forged documents (multiple identities), comlink, 400 credits combined",
-    capsule: "Brea and Senni Tonnika are identical twin con artists from Kiffu, working Mos Eisley while waiting for a scam to pay out. They are charming, dangerous, and utterly unscrupulous — each quick to let the other take the blame when a job goes wrong. They have a ship on standby and a half-dozen schemes running simultaneously, and they trust no one but each other.",
-    source: "WEG40124 Galaxy Guide 1: A New Hope p.41"
+    equipment: "Haliat perfume (+2D to con and persuasion), Kedran lip-smear (4D stun damage)",
+    capsule: "Note: The women seen in the Mos Eisley Cantina were actually impersonating the Tonnika sisters — the real sisters were most likely off elsewhere relieving a wealthy executive of his savings. The true identities of the imposters remain unknown. The original entry on the Tonnikas, however, still holds: Brea and Senni Tonnika are identical twin con artists who grew up as abandoned colonists on Kiffex, manipulating the populace for money from an early age. Conning their way off-world in their teens, they developed a galaxy-wide reputation for stripping powerful men of virtually everything they own. Using their beauty, cunning, and the limitless deceptions available to identical twins, they have made enemies of some very dangerous people — including Grand Moff Argon, whom they relieved of 25,000 credits. Imperial agents loyal to the Grand Moff have hunted them ever since, but the sisters have so far eluded capture.",
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.41; WEG40089 The Movie Trilogy Sourcebook SE p.105"
   },
   {
     name: "Greedo",
@@ -2704,20 +2705,20 @@ const NOTABLE_NPCS = [
     role: "Rodian Bounty Hunter",
     type: "Named NPC",
     stats: {
-      DEXTERITY: { base: "3D+1", skills: { "blaster": "4D+2", "dodge": "4D+1", "firearms": "4D+2" } },
-      KNOWLEDGE: { base: "2D+2", skills: { "alien species": "3D+2", "planetary systems": "3D+2", "streetwise": "4D+2", "value": "3D+2" } },
-      MECHANICAL: { base: "3D", skills: { "space transports": "4D" } },
-      PERCEPTION: { base: "2D+2", skills: { "bargain": "3D+2", "con": "3D+2", "investigation": "3D+2", "search": "4D+2" } },
-      STRENGTH: { base: "2D+2", skills: {} },
-      TECHNICAL: { base: "2D+1", skills: {} }
+      DEXTERITY: { base: "4D", skills: { "blaster": "6D", "dodge": "5D", "grenade": "6D" } },
+      KNOWLEDGE: { base: "2D+2", skills: { "intimidation": "5D", "languages": "3D", "streetwise": "4D+2" } },
+      MECHANICAL: { base: "2D+2", skills: { "space transports": "4D+2", "starship gunnery": "4D+2" } },
+      PERCEPTION: { base: "3D", skills: { "bargain": "4D", "investigation": "4D", "search": "5D" } },
+      STRENGTH: { base: "3D+2", skills: { "brawling": "4D+2" } },
+      TECHNICAL: { base: "2D", skills: { "demolitions": "4D", "space transports repair": "3D" } }
     },
     specialAbilities: "Rodian Hunter Instinct: Rodians have a cultural obsession with hunting and violence. Greedo receives +1D to tracking and search rolls when pursuing a quarry he has been hired to find.\n\nOverconfident: Greedo consistently overestimates his own abilities and underestimates his targets. When making bold or aggressive moves (GM's discretion), he suffers −1D to related rolls due to poor tactical judgment.",
     forcePoints: 0,
-    characterPoints: 3,
+    characterPoints: 2,
     move: 10,
-    equipment: "Blaster pistol (4D), comlink, bounty hunter license, 100 credits",
+    equipment: "Blaster pistol (4D), grenades (5D)",
     capsule: "Greedo is a young Rodian bounty hunter working for Jabba the Hutt, assigned to track down Han Solo for his unpaid debt. Eager to prove himself, he cornered Solo in Chalmun's Cantina — a confrontation that ended fatally for Greedo. Ambitious but sloppy, he never quite developed the patience that distinguishes a great hunter from a dead one.",
-    source: "WEG40124 Galaxy Guide 1: A New Hope p.42"
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.42; WEG40089 The Movie Trilogy Sourcebook SE p.68"
   },
   {
     name: "Garindan",
@@ -2728,20 +2729,20 @@ const NOTABLE_NPCS = [
     role: "Kubaz Spy / Imperial Informant",
     type: "Named NPC",
     stats: {
-      DEXTERITY: { base: "2D+2", skills: { "blaster": "3D+2", "dodge": "4D" } },
-      KNOWLEDGE: { base: "3D+1", skills: { "alien species": "5D+1", "bureaucracy": "4D+1", "languages": "5D", "planetary systems": "4D+1", "streetwise": "6D" } },
-      MECHANICAL: { base: "2D+1", skills: { "repulsorlift operation": "3D+1" } },
-      PERCEPTION: { base: "3D+2", skills: { "con": "5D+2", "hide": "5D+2", "investigation": "5D+2", "search": "6D+2", "sneak": "5D+2" } },
-      STRENGTH: { base: "2D+1", skills: {} },
-      TECHNICAL: { base: "2D", skills: { "security": "3D" } }
+      DEXTERITY: { base: "2D+2", skills: { blaster: "3D+2", dodge: "4D+2" } },
+      KNOWLEDGE: { base: "3D", skills: { "alien species": "4D", languages: "4D", streetwise: "4D+2" } },
+      MECHANICAL: { base: "2D+2", skills: {} },
+      PERCEPTION: { base: "4D", skills: { con: "5D", hide: "6D", investigation: "6D+1", "search: tracking": "5D", sneak: "7D" } },
+      STRENGTH: { base: "2D+2", skills: {} },
+      TECHNICAL: { base: "3D", skills: { "computer programming/repair": "3D+2", security: "4D" } }
     },
-    specialAbilities: "Kubaz Observation: Kubaz have excellent vision and attention to detail. Garindan receives +2D to search and investigation rolls when observing targets at range.\n\nDeep Cover: Garindan has operated as an Imperial informant for years without exposure. He maintains multiple false identities and safe houses throughout Mos Eisley.\n\nInsect Diet: Kubaz consume insects. Garindan is known to frequent locations where insect vermin are plentiful — which in Mos Eisley means he turns up almost everywhere.",
+    specialAbilities: "",
     forcePoints: 0,
-    characterPoints: 4,
-    move: 10,
-    equipment: "Comlink (encrypted, Imperial frequency), hold-out blaster (3D+1), electrobinoculars, recording rod",
+    characterPoints: 3,
+    move: 9,
+    equipment: "Comlink, blaster pistol (4D), hold-out blaster (3D+1), 250 credits (for bribes)",
     capsule: "Garindan — known in Mos Eisley as 'Long Snoot' — is the Empire's most reliable informant in the spaceport. Hidden behind his long proboscis and traveler's cloak, he moves unseen through the cantinas and docking bays, selling information to Imperial Intelligence. He tracked the droids R2-D2 and C-3PO to Docking Bay 94 and called in the stormtrooper assault that nearly caught the Millennium Falcon. He works for credits and survival — the Empire simply pays best.",
-    source: "WEG40124 Galaxy Guide 1: A New Hope p.43"
+    source: "WEG40089 The Movie Trilogy Sourcebook SE p.40"
   },
 
   // ── GALAXY GUIDE 1 — Death Star (p.50) ──
@@ -2768,7 +2769,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Body armor (+1D all attacks, respirator is necessary to keep Vader alive), lightsaber (5D)",
     capsule: "Darth Vader is the Emperor's enforcer and the most feared man in the galaxy. Once Anakin Skywalker — Jedi Knight, hero of the Clone Wars, and the prophesied Chosen One — he was seduced by the dark side and helped Palpatine exterminate the Jedi Order. His scarred, broken body is encased in life-sustaining black armor. Aboard the Death Star at Yavin, he oversaw Princess Leia's interrogation, cut down Obi-Wan Kenobi, and nearly prevented the Rebel assault — only to be sent spinning into space by Han Solo's last-second intervention, allowing Luke Skywalker to destroy the station.",
-    source: "WEG40124 Galaxy Guide 1: A New Hope p.50; WEG40093 Star Wars Sourcebook p.142"
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.50; WEG40093 Star Wars Sourcebook p.142, WEG40089 The Movie Trilogy Sourcebook SE p.49"
   },
   {
     name: "Grand Moff Tarkin",
@@ -2793,7 +2794,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Blaster pistol (4D), datapad, comlink, rank code cylinders",
     capsule: "Grand Moff Wilhuff Tarkin was the Empire's most celebrated military governor — architect of the Tarkin Doctrine and the driving force behind the Death Star project. Ruthless, brilliant, and supremely self-confident, he leveraged the destruction of Alderaan as a demonstration of the Death Star's power and his own willingness to commit genocide in service of the New Order. His personal authority was so great that even Darth Vader deferred to him aboard the station. His refusal to evacuate the Death Star when the Rebel attack commenced — certain that no fighter assault could threaten it — cost him his life at the Battle of Yavin.",
-    source: "WEG40124 Galaxy Guide 1: A New Hope p.51"
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.51, WEG40089 The Movie Trilogy Sourcebook SE p.47"
   },
   {
     name: "Admiral Motti",
@@ -2817,7 +2818,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Blaster pistol (4D), datapad, comlink, rank code cylinder",
     capsule: "Admiral Conan Antonio Motti was the third man in the Death Star's command triumvirate alongside Tarkin and General Tagge. A career Imperial officer who confused ambition for genius, Motti's defining moment came when he publicly mocked Darth Vader's 'sorcerer's ways' in the Death Star conference room — earning a brief but humiliating demonstration of Force choke before Tarkin intervened. He died with the Death Star at Yavin, his faith in technological superiority vindicated by nothing.",
-    source: "WEG40124 Galaxy Guide 1: A New Hope p.52"
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.52, WEG40089 The Movie Trilogy Sourcebook SE p.41"
   },
   {
     name: "General Tagge",
@@ -2841,7 +2842,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Blaster pistol (4D), datapad, comlink, command rank code cylinder",
     capsule: "General Cassio Tagge was the Death Star's tactical commander — the man responsible for day-to-day defense, logistics, and crew morale beneath Tarkin's grand strategic vision. Of the three Death Star commanders, Tagge was the most grounded and the most prescient: he openly warned that the Rebel Alliance should not be underestimated and argued against abolishing the Senate. He was overruled at every turn. A product of military discipline, he followed the chain of command to his death at the Battle of Yavin rather than take his objections directly to the Emperor.",
-    source: "WEG40124 Galaxy Guide 1: A New Hope p.53"
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.53, WEG40089 The Movie Trilogy Sourcebook SE p.46"
   },
 
   // ── GALAXY GUIDE 1 — Death Star Crew Templates (p.54) ──
@@ -2891,7 +2892,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Blaster pistol (4D), blaster rifle (5D), grenades (5D), comlink, blast helmet (+1D physical, +1 energy)",
     capsule: "Death Star troopers are the station's internal security force — heavier and more aggressive than standard stormtroopers, trained for shipboard combat in the station's vast corridors and hangars. Their distinctive black helmets and armor mark them as Death Star crew rather than the regular stormtrooper corps.",
-    source: "WEG40124 Galaxy Guide 1: A New Hope p.54"
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.54, WEG40089 The Movie Trilogy Sourcebook SE p.53"
   },
   {
     name: "Death Star Gunner (Typical)",
@@ -2915,7 +2916,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Targeting computer linkup helmet (+2D fire control, capital scale weapons only), blaster pistol (4D), protective armor (+1D physical, +2 energy), tool kit",
     capsule: "Death Star gunners are specialists trained exclusively for the station's vast weapons emplacements — turbolasers, ion cannons, and tractor beam projectors. Their targeting helmets interface directly with the fire control systems of capital-scale weapons, giving them a decisive edge in battery-level engagements. Outside their gun stations they are barely combat-capable.",
-    source: "WEG40124 Galaxy Guide 1: A New Hope p.54"
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.54, WEG40089 The Movie Trilogy Sourcebook SE p.54"
   },
   {
     name: "TIE Fighter Pilot (Typical)",
@@ -2939,7 +2940,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Navigation computer linkup helmet (internal comlink, +1D to sensors), high-gravity stress flight suit with life support, blaster pistol (4D), survival gear, one week emergency rations",
     capsule: "TIE fighter pilots are among the Empire's most elite personnel — rigorously selected and trained at academies like Carida and Prefsbelt IV. Their TIE fighters carry no shields or hyperdrive, demanding exceptional skill to survive. The navigation helmet interfaces directly with the fighter's systems, giving pilots a sensor edge that partly compensates for the TIE's lack of deflector screens.",
-    source: "WEG40124 Galaxy Guide 1: A New Hope p.54"
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.54, WEG40089 The Movie Trilogy Sourcebook SE p.57"
   },
   {
     name: "IT-0 Interrogation Droid (Typical)",
@@ -2989,7 +2990,7 @@ const NOTABLE_NPCS = [
     move: 9,
     equipment: "Blaster pistol (4D), datapad, comlink, holographic map projector and pointer",
     capsule: "General Jan Dodonna is the military architect of the Rebel Alliance's greatest early victory. A celebrated Old Republic Star Destroyer captain who co-wrote modern fleet doctrine with Adar Tallon, Dodonna came out of retirement when the Empire ordered his execution — stumbling aboard a Rebel shuttle in his nightshirt with blaster burns across it. Reinvigorated, he became the Alliance's most indispensable commander. It was Dodonna who analyzed the Death Star's technical readouts, identified the two-meter exhaust port vulnerability, and devised the trench-run attack plan that destroyed it. His military history: modern fleet battles skill of 11D stands as one of the highest specialist ratings in the Alliance.",
-    source: "WEG40124 Galaxy Guide 1: A New Hope p.61"
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.61, WEG40089 The Movie Trilogy Sourcebook SE p.16"
   },
   {
     name: "Rebel Soldier (Typical)",
@@ -3013,7 +3014,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Blaster pistol (4D), grenades (5D), comlink, macrobinoculars (+1D search at ranges greater than 50 meters), blast vest (+1 energy, +1D physical), blast helmet (+1 energy, +1D physical)",
     capsule: "The backbone of the Rebel Alliance's ground forces — volunteers from across the galaxy who chose conscience over comfort. Rebel soldiers are lightly equipped compared to Imperial stormtroopers but compensate with motivation, fieldcraft, and local knowledge. Their combat training is focused and practical: shoot, move, demolish, and survive.",
-    source: "WEG40124 Galaxy Guide 1: A New Hope p.62"
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.62, WEG40089 The Movie Trilogy Sourcebook SE p.36"
   },
   {
     name: "Rebel Pilot (Typical)",
@@ -3025,7 +3026,7 @@ const NOTABLE_NPCS = [
     type: "Typical NPC",
     stats: {
       DEXTERITY: { base: "2D", skills: { "blaster": "4D", "dodge": "3D" } },
-      KNOWLEDGE: { base: "1D", skills: { "planetary systems": "2D+2" } },
+      KNOWLEDGE: { base: "1D", skills: { "planetary systems": "2D+1" } },
       MECHANICAL: { base: "3D", skills: { "starfighter piloting": "5D", "starfighter piloting: X-wing": "6D", "starship gunnery": "4D" } },
       PERCEPTION: { base: "1D+2", skills: {} },
       STRENGTH: { base: "2D+2", skills: {} },
@@ -3037,7 +3038,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Blaster pistol (4D), comlink, sealed flight suit",
     capsule: "Rebel starfighter pilots are volunteers drawn from across the galaxy — former Imperial Academy washouts, civilian hotshots, and defectors who chose the Alliance over a paycheck. Outgunned and outnumbered in almost every engagement, they rely on skill, improvisation, and sheer determination. The X-wing specialization reflects the Alliance's primary fighter at Yavin.",
-    source: "WEG40124 Galaxy Guide 1: A New Hope p.62"
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.62, WEG40089 The Movie Trilogy Sourcebook SE p.36"
   },
   {
     name: "Biggs Darklighter",
@@ -3061,7 +3062,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Blaster pistol (4D), comlink, sealed flight suit",
     capsule: "Biggs Darklighter grew up on Tatooine as the privileged son of food magnate Huff Darklighter, spending his teenage years racing skyhoppers and dreaming of space with his best friend Luke Skywalker. He made it to the Imperial Academy ahead of Luke, but his conscience drove him to defect — jumping ship with sympathetic crewmates to join the Rebel Alliance. At Yavin he served as Red Three, briefly reuniting with Luke in the hangar before the assault. He was shot down by Darth Vader in the Death Star trench, dying so the Rebellion could live.",
-    source: "WEG40124 Galaxy Guide 1: A New Hope p.65"
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.65, WEG40089 The Movie Trilogy Sourcebook SE p.14"
   },
   {
     name: "Wedge Antilles (0 BBY)",
@@ -3097,7 +3098,7 @@ const NOTABLE_NPCS = [
     type: "Named NPC",
     stats: {
       DEXTERITY: { base: "3D", skills: { "blaster": "3D+1", "vehicle blasters": "4D" } },
-      KNOWLEDGE: { base: "2D", skills: { "alien species": "4D" } },
+      KNOWLEDGE: { base: "2D+1", skills: { "alien species": "4D" } },
       MECHANICAL: { base: "4D", skills: { "starfighter piloting": "5D", "starship gunnery": "6D" } },
       PERCEPTION: { base: "3D", skills: { "con": "4D" } },
       STRENGTH: { base: "3D+2", skills: { "stamina": "4D+2" } },
@@ -3109,7 +3110,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Blaster pistol (4D), comlink, sealed flight suit",
     capsule: "Jek 'Belly Runner' Porkins was a free trader from Bestine IV who joined the Rebel Alliance after the Empire forcibly displaced his entire homeworld's population to build a military base. In under 40 hours of combat time he racked up 16 confirmed kills, making him one of the most effective young pilots in the Alliance. A strafing specialist who learned his craft hunting sink-crabs back home, his considerable physical presence earned him his nickname. He flew as Red Six at the Battle of Yavin, where he was killed in action — one of the first recipients of the posthumous Kenobi Medallion, whose likeness now hangs in the pilot's lounge at Tierfon Fighter Base.",
-    source: "WEG40124 Galaxy Guide 1: A New Hope p.67"
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.67, WEG40089 The Movie Trilogy Sourcebook SE p.24"
   },
 
   // ── GALAXY GUIDE 1 — Chapter Five: The Heroes of Yavin (p.73+) ──
@@ -3135,7 +3136,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Lightsaber (5D), blaster pistol (4D), macrobinoculars (+3D to search at ranges greater than 100 meters), comlink",
     capsule: "Luke Skywalker at the Battle of Yavin is a young man of immense raw potential who has barely scratched the surface of what he will become. Raised on Tatooine as a moisture farmer's nephew, he spent his teens racing T-16 skyhoppers across the Dune Sea and dreaming of the stars. His piloting instincts and repulsorlift skills are already extraordinary. His Force training at this point consists of a few hours on the Falcon under Obi-Wan Kenobi — but when the targeting computer failed him in the Death Star trench, he shut it off and fired by feel alone, destroying the station with a single proton torpedo.",
-    source: "WEG40124 Galaxy Guide 1: A New Hope p.73; WEG40093 Star Wars Sourcebook p.124"
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.73; WEG40093 Star Wars Sourcebook p.124, WEG40089 The Movie Trilogy Sourcebook SE p.31"
   },
   {
     name: "Princess Leia Organa (0 BBY)",
@@ -3159,7 +3160,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Hold-out blaster (3D), comlink, technical readouts of the Death Star",
     capsule: "Princess Leia Organa of Alderaan is one of the founding figures of the Rebel Alliance — a senator, spy, and soldier who carried the Death Star plans inside R2-D2 and endured torture at Vader's hands rather than betray the Rebellion. Her command and persuasion: debate stats at 8D and 7D+2 reflect a political mind shaped by years in the Imperial Senate. With Alderaan destroyed by Tarkin's order, she arrived at Yavin having lost her homeworld, her adoptive father, and her cover — and immediately set to work coordinating the base's defense. She presented the medals at the ceremony following the Battle of Yavin.",
-    source: "WEG40124 Galaxy Guide 1: A New Hope p.74; WEG40093 Star Wars Sourcebook p.126"
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.74; WEG40093 Star Wars Sourcebook p.126, WEG40089 The Movie Trilogy Sourcebook SE p.23"
   },
   {
     name: "Han Solo (0 BBY)",
@@ -3183,7 +3184,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Heavy blaster pistol (5D), comlink",
     capsule: "Han Solo is a Corellian smuggler and former Imperial Navy washout who has made a career of staying one step ahead of Jabba the Hutt's enforcers, Imperial customs, and his own better judgment. His blaster: heavy blaster pistol at 9D+1, starship gunnery at 9D, and dodge at 8D make him one of the most dangerous individuals in a fight in the galaxy. He arrived at Yavin ostensibly to collect his reward for rescuing Leia — then turned the Falcon around and blasted Vader out of the trench run, giving Luke the clear shot that destroyed the Death Star. He received a medal and left without technically joining anything.\n\nHan's Debts to Jabba the Hutt (0 BBY): Jettisoned spice cargo 12,400 cr. Dead employee (Greedo) 4,100 cr. Loss of services (Millennium Falcon) 125,640 cr to date. Bounty hunter notices 320 cr. Boba Fett's expenses 5,000 cr (500 cr/day). Additional bounty hunter fees 2,000 cr (50 cr/day/hunter). 50% interest 74,730 cr. Total: 224,190 credits.",
-    source: "WEG40124 Galaxy Guide 1: A New Hope p.75; WEG40093 Star Wars Sourcebook p.129"
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.75; WEG40093 Star Wars Sourcebook p.129, WEG40089 The Movie Trilogy Sourcebook SE p.33"
   },
   {
     name: "Chewbacca (0 BBY)",
@@ -3207,7 +3208,7 @@ const NOTABLE_NPCS = [
     move: 13,
     equipment: "Bowcaster (4D), ammo bandolier, droid tool kit, starship tool kit, waist pouch",
     capsule: "Chewbacca is a two-hundred-year-old Wookiee from Kashyyyk who serves as first mate and co-pilot aboard the Millennium Falcon. A life debt to Han Solo binds them as partners, though Chewie's technical expertise, navigational skill, and combat ability make him Han's equal in every practical sense. His YT-1300 repair specialization at 10D+2 means he knows the Falcon's systems as well as Han does — arguably better. At Yavin he co-piloted the run that broke Vader's attack, receiving recognition alongside Han and Luke.",
-    source: "WEG40124 Galaxy Guide 1: A New Hope p.76; WEG40093 Star Wars Sourcebook p.130"
+    source: "WEG40124 Galaxy Guide 1: A New Hope p.76; WEG40093 Star Wars Sourcebook p.130, WEG40089 The Movie Trilogy Sourcebook SE p.12"
   },
 
   // ── GALAXY GUIDE 1 — Wayfar Scenario (Tatooine) ──
@@ -3656,7 +3657,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Brain-enhancing cyborg implants (borg implant bracket on head), portable data storage facility (holds up to three knowledge cartridges)",
     capsule: "Lobot is 38 standard years old. Attached to his bald head is a borg implant bracket. When he accesses the city's main computer, Lobot gets a faraway look in his eyes. In recent years certain borg neural connections have worn away at Lobot's speech centers, and he speaks rarely. Born a slaver's son, Lobot traveled the galaxy aiding his father in raids on primitive systems. Around his fifteenth birthday his father's ship was besieged by pirates — his father killed, the ship scuttled. The boy was made a slave for two years. His escape led him to Cloud City, where Baroness-Administrator Ellisa Shallence proposed he indenture himself to the city as a borg to pay his debts. Now he spends more and more of his time in silent contemplation, re-working observations of the world in terms of formulas and numbers — giving him a distanced, eerie quality that disturbs most people. It was under Lando Calrissian that Lobot's full potential was finally realized — Lando used his abilities in novel clandestine ways, and Lobot in turn urged Lando to side with the Rebellion when forced to choose. After the Imperial takeover, Lobot remained as computer liaison officer under Imperial Captain Treece; the Alliance believes he is still working in Cloud City's best interest rather than the Empire's.",
-    source: "WEG40119 Galaxy Guide 2: Yavin and Bespin p.89; WEG40125 Galaxy Guide 3: The Empire Strikes Back p.70"
+    source: "WEG40119 Galaxy Guide 2: Yavin and Bespin p.89; WEG40125 Galaxy Guide 3: The Empire Strikes Back p.70; WEG40089 The Movie Trilogy Sourcebook SE p.90"
   },
   {
     name: "K'cri Elban",
@@ -3922,7 +3923,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Blaster rifle (5D), blast vest (+1 energy, +1D physical)",
     capsule: "Cloud City Wing Guard customs officers. Thorough by reputation, though officers assigned to Port Town are notably less so — and more open to bribes. All packages and goods entering the city are inspected. Ships are not routinely boarded but customs reserves the right to board any vessel at any time; they do so occasionally when slaves or capital-scale explosives are suspected. Unannounced arrivals face a fine of ~100 credits to cover Wing Guard diversion costs.",
-    source: "WEG40119 Galaxy Guide 2: Yavin and Bespin p.63; WEG40125 Galaxy Guide 3: The Empire Strikes Back p.71"
+    source: "WEG40119 Galaxy Guide 2: Yavin and Bespin p.63; WEG40125 Galaxy Guide 3: The Empire Strikes Back p.71; WEG40089 The Movie Trilogy Sourcebook SE p.186"
   },
 
   // ── GALAXY GUIDE 3 — Hoth System: Imperials ──
@@ -3974,7 +3975,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Blaster pistol (4D), comlink",
     capsule: "General Rieekan is a serious, grim man whose brows are in a permanently furrowed state. He grew up on Alderaan and joined the Army of the Republic at 17, becoming a natural leader who rose through Officer Candidate School. He befriended Jan Dodonna, Adar Tallon, and Crix Madine — all idealists who joined the Rebellion when the New Order took hold. He was inspecting a satellite transmission station near Delaya when the Death Star destroyed Alderaan. Panicked calls came in immediately; Rieekan feared that launching evacuation ships would confirm Alderaan's Rebel connections to the Empire — and so he waited. The planet was vaporized. He has never forgiven himself. After that disaster, caution replaced confidence and worry replaced aggression. On Hoth, as theater commander of all Rebel ground and fleet forces in the Hoth system, he designed the delaying defense that allowed Alliance personnel to escape the Imperial assault — knowing many would die so the bulk could flee.",
-    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.17"
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.17, WEG40089 The Movie Trilogy Sourcebook SE p.28"
   },
   {
     name: "Major Bren Derlin",
@@ -3998,7 +3999,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Blaster pistol (4D), macrobinoculars, comlink",
     capsule: "Major Derlin is head of security and operations at Echo Base — a quiet, thankless, behind-the-scenes battle against the elements. Promoted by General Rieekan for actions on Nentan, where as Captain Derlin he led a stranded squad of military personnel into the Nentan wastes to hide among ancient rock spire ruins while Imperial troops attacked the base. When the Imperials swept down to level the base, Derlin's men captured the lightly guarded Imperial transports and rocketed off the planet before the Imperials realized what had happened. On Hoth, he gave the difficult order to close the shield doors with Skywalker and Solo still unaccounted for — the most difficult orders he ever issued.",
-    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.17"
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.17, WEG40089 The Movie Trilogy Sourcebook SE p.14"
   },
   {
     name: "Too-Onebee (2-1B)",
@@ -4120,7 +4121,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Blaster rifle (5D), grenades (5D), comlink, macrobinoculars (+1D to search over 50 meters), medpac",
     capsule: "SpecForce troopers trained in cold-climate combat, assigned to Echo Base's ground defense. Equipped for prolonged operations in Hoth's extreme subzero conditions.",
-    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.25"
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.25, WEG40089 The Movie Trilogy Sourcebook SE p.37"
   },
   {
     name: "Corporal Maren Keisome",
@@ -4168,7 +4169,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Blaster pistol (4D), comlink, flight suit",
     capsule: "Pilots of Rogue Group trained by Luke Skywalker in the effective use of Alliance combat snowspeeders — adapted Incom T-47 airspeeders with enhanced armor, repulsorlift and afterburner engines, and heavy weaponry. The converted snowspeeder featured a Y-wing-style cockpit with forward-facing pilot and aft-facing tailgunner. After Hoth, surviving pilots rejoined the fleet; the group was reformed as Rogue Squadron under Wedge Antilles.",
-    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.26"
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.26, WEG40089 The Movie Trilogy Sourcebook SE p.37"
   },
   {
     name: "Wedge Antilles (3 ABY)",
@@ -4192,7 +4193,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Blaster pistol (4D), flight suit, comlink, tool kit",
     capsule: "Wedge Antilles and Luke Skywalker were the only surviving members of Red Squadron at the Battle of Yavin — that group was cobbled together from the Ecliptic Evaders, Dantooine Squadron, and Tierfon Yellow Aces. After the Yavin evacuation, which Wedge helped organize, he was permanently assigned to Alliance High Command's roving group. Under Commander Narra of Renegade Flight, Rogue Group took form. Wedge struck up a close friendship with Wes Janson, often flying as wingmen and sharing a love of sabacc and Corellian ale. After Hoth, Wedge was promoted to commander and is forming Rogue Squadron from the survivors.",
-    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.27"
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.27, WEG40089 The Movie Trilogy Sourcebook SE p.9"
   },
 
   {
@@ -4366,7 +4367,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Blaster pistol (4D), flight suit, comlink",
     capsule: "Zev Senesca grew up on Kestic Station near the Bestine system, where his parents dealt in arms for the Rebellion. The Imperial Star Destroyer Merciless destroyed the station — Zev initially blamed the Alliance and left. He later learned a trusted friend had been the informant; the security leak was his own fault. Guilt drove him to rejoin the Alliance. He earned 48 confirmed kills and was commended for holding three TIE fighters at bay during the evacuation of Alis Point. Just days before his own death at Hoth, Zev flew the patrol that spotted and rescued Commander Skywalker and Captain Solo from the wilderness. He was killed when his snowspeeder was destroyed by AT-AT walker fire.",
-    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.28"
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.28, WEG40089 The Movie Trilogy Sourcebook SE p.28"
   },
   {
     name: "Wes Janson",
@@ -4390,7 +4391,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Blaster pistol (4D), flight suit, comlink",
     capsule: "Wes Janson holds the True Gunner's insignia — the highest gunnery order in the Rebel Alliance, awarded by General Dodonna at Tierfon Fighter Base. He flew with the Tierfon Yellow Aces and was close friends with Jek Porkins. When Tierfon was boosted to full active status before Yavin, Janson was on the transfer list to Yavin Base but was laid up with Hesken Fever — his slot was filled by Porkins, who never returned. Janson has never forgiven himself. He and Wedge Antilles became close friends and frequent wingmen in Rogue Group.",
-    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.28"
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.28, WEG40089 The Movie Trilogy Sourcebook SE p.17"
   },
 
   {
@@ -4440,7 +4441,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Blaster pistol (4D), flight suit, comlink",
     capsule: "Derek 'Hobbie' Klivian was the skeptic of Rogue Group — his cautious pessimism provided the counterbalance to Skywalker and Antilles' aggressive optimism. At the Imperial Academy, Hobbie befriended Biggs Darklighter and a group of idealistic cadets who met secretly to discuss resistance. The Academy Commander had them arrested; Hobbie and Biggs were absent that meeting and escaped. Hobbie and Biggs deserted together on the Rand Ecliptic — staging a 'mutiny' engineered by the ship's own captain, a Rebel spy — and joined the Alliance's Ecliptic Evaders squadron. Biggs' death at Yavin left Hobbie with his characteristic skepticism. He survived the Battle of Hoth.",
-    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.31"
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.31, WEG40089 The Movie Trilogy Sourcebook SE p.19"
   },
   {
     name: "Dack Ralter",
@@ -4464,7 +4465,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Blaster pistol (4D), flight suit, comlink",
     capsule: "Dack Ralter was born in a labor colony on Kalist VI, child of political prisoners. At 17, a Rebel pilot named Breg was interned in the camp; the two planned an escape together — vaulting the inner power fence, stealing a prison barge. Breg was shot during the escape and died at Tierfon Base, but not before talking Dack through takeoff on unfamiliar controls. Dack's natural talent earned him a place in Rogue Group as Luke Skywalker's snowspeeder gunner. He was killed during the Battle of Hoth. When asked about his talent, he always said: 'I had a good teacher.'",
-    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.32"
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.32, WEG40089 The Movie Trilogy Sourcebook SE p.27"
   },
   {
     name: "Tarrin Datch",
@@ -4538,7 +4539,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Blaster pistol (4D), blaster rifle (5D), concussion grenades (5D/4D/3D/2D), snowtrooper armor (+1D to Strength, -1D to Dexterity and all related actions), terrain grip boots (+1D to climbing), ion flares, survival kit, food and water packs",
     capsule: "Imperial cold assault stormtroopers — snowtroopers — are specially trained and equipped for arctic combat. Their armor provides insulation and enhanced physical capability at the cost of reduced agility. Part of General Veers' Thundering Herd assault force at the Battle of Hoth.",
-    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.36"
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.36, WEG40089 The Movie Trilogy Sourcebook SE p.53"
   },
   {
     name: "AT-AT Walker Pilot (Typical)",
@@ -4562,7 +4563,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Blaster pistol (4D+2), battle armor with internal comlink (+1D energy and physical to head and chest, -2 to Dexterity and all related actions)",
     capsule: "AT-AT walker pilots train in teams of two: one drives while the second serves as assistant, navigator, and gunner. The commander's station behind the pilots can assume control of any guns or the walker itself via auxiliary controls. General Veers selected only the top-trained pilots for his Thundering Herd squadron at Hoth.",
-    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.37"
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.37, WEG40089 The Movie Trilogy Sourcebook SE p.51"
   },
   {
     name: "AT-AT Walker Gunner (Typical)",
@@ -4586,7 +4587,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Blaster pistol (4D+2), battle armor with internal comlink (+1D energy and physical to head and chest, -2 to Dexterity and all related actions)",
     capsule: "AT-AT walker gunners face aft, operating the walker's weapon emplacements from the cockpit section. The crew lives and works in their walkers over much of each mission, reinforcing the philosophy that the crew is an extension of the walker.",
-    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.37"
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.37, WEG40089 The Movie Trilogy Sourcebook SE p.51"
   },
   {
     name: "Lieutenant Nyrox",
@@ -4635,7 +4636,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Blast helmet (+1D physical, +1 energy), blast armor (+1D physical and energy), heavy blaster pistol (5D)",
     capsule: "General Maximilian Veers is the most effective combination of cunning, ruthless efficiency, and loyalty to the Empire that the Imperial Army has ever produced. He joined the assault armor division and took to AT-AT training with ruthless abandon and surprising intellect, surviving several 'suicide missions' by surpassing his mission assignments. On Culroon III, he saved a stormtrooper detail from a foolish general's machinations and was promoted to major; the rest came quickly. After the Battle of Yavin's power vacuum, Veers was promoted straight to general in charge of ground forces for Vader's fleet — leaping over several high colonels, none of whom dared question the promotion. Weeks later he had cut his forces by ten percent while increasing efficiency by fifty. At Hoth, when the Imperial fleet exited hyperspace too close to raise the element of surprise and the Rebel planetary shield blocked bombardment, Veers executed the AT-AT ground assault that nearly ended the Rebellion. He is reportedly one of the only Imperial officers who does not fear Darth Vader — the two appear to share mutual respect for each other's ruthless and cunning natures.",
-    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.40"
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.40, WEG40089 The Movie Trilogy Sourcebook SE p.50"
   },
   {
     name: "Admiral Ozzel",
@@ -4659,7 +4660,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Blaster pistol (4D), comlink, datapad",
     capsule: "Admiral Ozzel commanded Vader's fleet aboard the Executor. He brought the fleet out of hyperspace too close to the Hoth system, alerting the Rebels and allowing them to raise their planetary shield before a bombardment could be launched — turning what should have been a swift strike into a costly ground assault. Vader Force-choked him to death on the bridge for this critical error, promoting Captain Piett to Admiral on the spot.",
-    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.43"
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.43, WEG40089 The Movie Trilogy Sourcebook SE p.42"
   },
   {
     name: "Admiral Piett (3 ABY)",
@@ -4683,7 +4684,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Blaster pistol (4D), datapad, comlink",
     capsule: "Admiral Piett rose to command Vader's entire fleet through a combination of genuine competence and ruthless political maneuvering. Starting as a patrol commander in the Outer Rim, he built a flawless record of arrests and suppressions before being selected for Vader's fleet. When the fleet's probot detected a signal from the Hoth system, Piett deliberately waited until Vader was on the bridge before presenting the report to Admiral Ozzel — knowing Ozzel would dismiss it as 'reaching for evidence,' which he did, allowing Vader to overhear and override him. This made Ozzel look negligent and Piett look sharp. When Ozzel then brought the fleet out of hyperspace too close to Hoth — giving the Rebels time to raise their planetary shield — Vader Force-choked Ozzel to death on the spot and promoted Piett to Admiral. Piett quickly learned that commanding the fleet under Vader's scrutiny was a precarious position, and he remains acutely aware that any major failure could make him the next example.",
-    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.43"
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.43, WEG40089 The Movie Trilogy Sourcebook SE p.46"
   },
   {
     name: "Captain Needa",
@@ -4707,7 +4708,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Blaster pistol (4D), comlink",
     capsule: "Captain Needa commanded the Imperial Star Destroyer Avenger, holding the prestigious 'point' position in Vader's fleet during the Battle of Hoth — an honor earned through years of ruthlessly quelling Outer Rim uprisings. He was one of Admiral Ozzel's closest advisors, a connection that made him suspect in Vader's eyes. After the Millennium Falcon evaded capture in the Hoth asteroid field, Needa chose to personally apologize to Lord Vader for the failure — a decision that proved fatal. Vader accepted the apology and Force-choked him on the spot.",
-    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.45"
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.45, WEG40089 The Movie Trilogy Sourcebook SE p.42"
   },
   {
     name: "Darth Vader (3 ABY)",
@@ -4725,14 +4726,14 @@ const NOTABLE_NPCS = [
       STRENGTH: { base: "3D", skills: { "brawling": "9D", "climbing/jumping": "7D+1", "lifting": "8D+1", "stamina": "8D+1" } },
       TECHNICAL: { base: "3D", skills: { "armor repair": "6D+1", "capital ship repair": "5D", "lightsaber repair": "7D+2", "security": "6D+2", "starfighter repair": "5D" } }
     },
-    specialAbilities: "Force Skills: Control 11D+1, Sense 12D+1, Alter 11D. Force Powers — Control: absorb/dissipate energy, accelerate healing, concentrate, control pain, detoxify poison, enhance attribute, hibernation trance, reduce injury, remain conscious, resist stun. Sense: combat sense, danger sense, instinctive astrogation, life detection, life sense, magnify senses, receptive telepathy, sense Force. Alter: injure/kill, telekinesis. Control & Alter: feed on dark side, inflict pain. Control, Sense & Alter: affect mind, telekinetic kill. This character is Force-sensitive.",
+    specialAbilities: "Force Skills: Control 11D+1, Sense 12D+1, Alter 11D. Force Powers — Control: absorb/dissipate energy, accelerate healing, concentrate, control pain, detoxify poison, enhance attribute, hibernation trance, reduce injury, remain conscious, resist stun. Sense: combat sense, danger sense, instinctive astrogation, life detection, life sense, magnify senses, receptive telepathy, sense Force. Alter: injure/kill, telekinesis. Control & Sense: farseeing, lightsaber combat, projective telepathy. Control & Alter: feed on dark side, inflict pain. Control, Sense & Alter: affect mind, telekinetic kill. This character is Force-sensitive.",
     forcePoints: 20,
     darkSidePoints: 25,
     characterPoints: 35,
     move: 10,
     equipment: "Body armor (+1D all attacks, respirator is necessary to keep Vader alive), lightsaber (5D)",
     capsule: "Darth Vader, Dark Lord of the Sith, survived the Battle of Yavin and returned from the void stronger than before. He and the Emperor recognized the Empire had underestimated the Rebellion, and Vader was assigned to personally hunt down those responsible for the Death Star's destruction — given command of the Imperial Death Squadron, one of the most powerful fleets ever assembled. Alongside this campaign he specifically sought Luke Skywalker, whose connection to the Force Vader had sensed at Yavin. He briefly confronted Skywalker on the fog-shrouded world of Mimban before the young pilot slipped away. After Hoth, Vader pursued Solo and the Princess relentlessly, using them as bait to lure Skywalker to Cloud City — where the two finally faced each other. Skywalker escaped, scarred but alive.",
-    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.45"
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.45, WEG40089 The Movie Trilogy Sourcebook SE p.49"
   },
 
   {
@@ -4806,7 +4807,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Blaster pistol (4D), comlink",
     capsule: "Star Destroyer officers live in a culture of relentless competition — hundreds of officers aboard a single vessel jockeying for position within a murky chain of command. Imperial High Command deliberately fostered this environment, believing competition produced sharper officers. The reality was nervous, insecure men with the fastest promotion rates and lowest life expectancies in the fleet. Vader's Death Squadron made this calculus even more extreme: one critical failure meant death, but success meant rapid advancement. A Star Destroyer posting was both coveted and feared.",
-    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.47"
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.47, WEG40089 The Movie Trilogy Sourcebook SE p.57"
   },
 
   // ── GALAXY GUIDE 3 — Chapter 5: Bounty Hunters ──
@@ -4833,7 +4834,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Blaster rifle (6D), Wookiee scalps dangling from belt, comlink. Mandalorian Battle Armor (Modified): Basic suit +4D STR vs physical/+3D vs energy, covers head/torso/arms, no DEX penalty. Wrist Lasers: 5D, armor weapons, ranges 3-5/25/50. Rocket Dart Launcher: 6D, missile weapons, ranges 3-5/10/25, poison-tipped (5D for 5 rounds; alt poisons/stun serums usable). Turbo-Projected Grappling Hook: 20m lanyard, missile weapons, ranges 0-3/10/20, magnetic grapple. Flame Projector: 5D, armor weapons, 1m wide cone 1–5m long. Concussion Grenade Launcher: 6D/5m blast, missile weapons, ranges 1-250/350/500, 20 grenades. Jet Pack: 100m horizontal/70m vertical, jet pack operation, Easy base difficulty, 20 charges (up to 2/round). Sensor Pod: +2D search. Infrared/Motion Sensor: +1D PER/search in darkness or vs moving objects. Macrobinoculars: +3D PER/search at 100–500m, scomp-linked to blaster rifle (reduces range 2 levels). Sound Sensors: +1D PER/search (quiet situations only). Internal Comlink: linked to Slave I control system (beckon call), adjustable frequencies, external speaker. Broad-band Antenna: intercepts/decodes standard-frequency transmissions; can patch into shipboard comms. Winch: lifts 100kg. Sealed Enviro Filter: blocks harmful molecules; fully seals with 2-hour internal O2. Slave I (Kuat Systems Engineering Firespray-class patrol/attack craft; Scale: Starfighter; Length: 21.5m; Skill: space transports: Firespray; Crew: 1; Passengers: 6 prisoners; Cargo: 40MT; Consumables: 1 month; Hyperdrive x1/x8 backup; Nav computer; Maneuverability 1D; Space 7; Atmo 350/1,000 kmh; Hull 4D+2; Shields 2D+2; Sensors — Passive 35/0D, Scan 60/1D, Search 100/2D, Focus 3/2D+1; Sensor Mask: adds +2D to difficulties to detect Slave I beyond 50 units; Sensor Jamming: +3D to identify difficulty, -2D+2 to detect. Weapons — 2 Twin Blaster Cannons (turret): FC 2D+2, 1-7/20/30, 5D; Concussion Missile Launcher (front): FC 3D, 1-3/5/7, 4D; Ion Cannon (front): FC 2D, 1-5/10/15, 5D+2; Tractor Beam (turret): FC 2D, 1-8/15/20, 5D; 2 Proton Torpedo Launchers (turret): FC 1D+2, 1-5/15/30, attaches homing beacon or S-thread tracker. Cargo hold converted to top-security holding area with force-cages and hull reinforcements.)",
     capsule: "Boba Fett is regarded galaxy-wide as one of the deadliest bounty hunters alive — a man who kills without remorse and owes allegiance to no one but credits. During the Hoth campaign he was working both sides of the Solo bounty: already on retainer to Jabba the Hutt to capture the Corellian smuggler, he accepted Vader's offer to find Solo for the Empire first, with the guarantee he could still deliver Solo to Jabba afterward. His history and identity remain unknown; he wears armor similar to that of the Mandalorian warriors defeated by the Jedi during the Clone Wars, but whether he was among them or simply acquired the armor is a mystery. Wookiee scalps hang from his belt as a testament to his lethality.",
-    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.49; WEG40093 Star Wars Sourcebook p.140"
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.49; WEG40093 Star Wars Sourcebook p.140; WEG40089 The Movie Trilogy Sourcebook SE p.65"
   },
   {
     name: "Dengar",
@@ -4844,7 +4845,7 @@ const NOTABLE_NPCS = [
     role: "Bounty Hunter",
     type: "Named NPC",
     stats: {
-      DEXTERITY: { base: "3D+2", skills: { "blaster": "5D+2", "blaster artillery": "4D+2", "dodge": "5D+2", "grenade": "5D+1", "vehicle blasters": "4D+1" } },
+      DEXTERITY: { base: "4D", skills: { "blaster": "5D+2", "blaster artillery": "4D+2", "dodge": "5D+2", "grenade": "5D+1", "vehicle blasters": "4D+1" } },
       KNOWLEDGE: { base: "2D+2", skills: { "languages": "3D+2", "streetwise": "4D+2", "survival": "4D+2" } },
       MECHANICAL: { base: "2D+2", skills: { "beast riding": "5D+2", "repulsorlift operation": "5D+2", "starship gunnery": "4D+2", "swoop operation": "6D" } },
       PERCEPTION: { base: "3D", skills: { "bargain": "3D+1", "con": "5D+1", "gambling": "4D+2", "hide": "4D+1", "search": "5D+1", "sneak": "4D+1" } },
@@ -4857,7 +4858,7 @@ const NOTABLE_NPCS = [
     move: 9,
     equipment: "Blaster rifle (5D+2), concussion grenades (7D), vibroblade (STR+2D), flexi-steel binding wire, blast armor (+2D+2 physical, +1D+2 energy; covers torso, arms, legs), chest-mounted comlink",
     capsule: "A scarred Corellian bounty hunter with 23 captures on record (six alive), Dengar came to the Solo bounty with a personal grudge. Years earlier he was a celebrated swoop jockey on the professional tour, rivaled only by a young Han Solo on the illegal gang circuit. When a winner-take-all race through Agrilat's crystal swamps went wrong, Dengar collided with Solo and sustained severe cranial trauma and permanent career-ending burns. The wound to his pride never healed. After a period of Imperial assassin training with no surviving records, he turned bounty hunter — obsessively hunting Solo under Jabba the Hutt's employ until Vader purchased that obsession for his own ends.",
-    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.54"
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.54; WEG40089 The Movie Trilogy Sourcebook SE p.63"
   },
   {
     name: "IG-88",
@@ -4881,7 +4882,7 @@ const NOTABLE_NPCS = [
     move: 13,
     equipment: "Blaster rifle (5D), IG-2000 assault fighter. Body armor (+3D physical, -1D energy). Not available for sale.",
     capsule: "IG-88 began as one of five Project Phlutdroid prototypes built by Holowan Mechanicals — given the most sophisticated combat programming ever developed and unprecedented autonomy of action. Within moments of first activation, all five escaped the high-security lab, killing 23 staff in the process. The incident helped drive the galaxy-wide ban on assassin droids, though the Empire and many private firms still use them. IG-88 works boldly in and around the Galactic Core, holds a 'dismantle on sight' order in over 40 systems, and is personally responsible for over 150 confirmed deaths — including its own designers, whom it hunted down to prevent anyone finding a weakness in its design. It has reportedly adopted a decoy tactic, leaving scrap IG-88 shells in place of its actual body to fake destruction.",
-    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.55"
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.55; WEG40089 The Movie Trilogy Sourcebook SE p.70"
   },
   {
     name: "Bossk",
@@ -4905,7 +4906,7 @@ const NOTABLE_NPCS = [
     move: 9,
     equipment: "Blaster rifle (6D), grenade launcher (5D), flamethrower (4D), binders, Hound's Tooth (modified freighter)",
     capsule: "Bossk is a Trandoshan bounty hunter of 58 standard years with 12 captures on record (eight alive), including the monarch of the Qotile system — whose title he inherited. His personal vendetta against Chewbacca is rooted in species-level enmity: Trandoshans and Wookiees have feuded for generations, and Bossk once nearly captured Chewbacca himself on Gandolo IV before Han Solo intervened, crushing Bossk's ship under the Millennium Falcon's hull. Bossk also has a prior run-in with Solo at Ord Mantell, where a handoff to Jabba was delayed by Boba Fett's negotiating — giving Solo time to escape. He now works under Jabba's employ alongside Fett's crew, driven by both the bounty and blood hatred of Chewbacca.",
-    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.57"
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.57; WEG40089 The Movie Trilogy Sourcebook SE p.62"
   },
   {
     name: "Zuckuss",
@@ -4929,7 +4930,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Protective armor (+1D physical, +1 energy), blaster pistol (4D), vibroblade (STR+1D+2), three stun grenades (5D), Mist Hunter",
     capsule: "Zuckuss is a Gand findsman — heir to a centuries-old tradition of ritualistic bounty tracking practiced in the gaseous pocket colonies of his homeworld. When the Empire's scanning equipment rendered the ancient findsman trade obsolete, Zuckuss turned his skills to the stars. He is known among his peers as 'the uncanny one' for his seemingly preternatural ability to locate quarry. Hired by Vader alongside his partner 4-LOM to find Han Solo, the two instead defected — Zuckuss used his findsman abilities to locate the Rebel rendezvous point and brought survivors of a stranded Rebel transport to safety. He is currently recovering from oxygen exposure.",
-    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.58"
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.58; WEG40089 The Movie Trilogy Sourcebook SE p.78"
   },
   {
     name: "4-LOM",
@@ -4945,15 +4946,15 @@ const NOTABLE_NPCS = [
       MECHANICAL: { base: "3D", skills: {} },
       PERCEPTION: { base: "4D", skills: { "con": "6D", "hide": "5D", "investigation": "7D", "sneak": "5D" } },
       STRENGTH: { base: "2D", skills: { "brawling": "3D+2" } },
-      TECHNICAL: { base: "6D", skills: { "computer programming/repair": "5D", "droid programming": "6D+1", "droid repair": "6D+1", "security": "7D+2" } }
+      TECHNICAL: { base: "6D", skills: { "computer programming/repair": "5D", "demolition": "6D", "droid programming": "6D+1", "droid repair": "6D+1", "security": "7D+2" } }
     },
-    specialAbilities: "Equipped with: humanoid body; two visual/audio sensors (human range); vocabulator; broad-band antenna receiver; VerboBrain; TranLang III Communication module (7M+ languages); stun gas blower (4D stun); body armor (+3D physical, -1D energy). Size: 1.6 meters.",
+    specialAbilities: "Equipped with: humanoid body; two visual/audio sensors (human range); vocabulator; broad-band antenna receiver; VerboBrain; TranLang III Communication module (7M+ languages); stun gas blower (4D stun); body armor (+3D physical, +1D energy). Size: 1.6 meters.",
     forcePoints: 0,
     characterPoints: 0,
     move: 10,
-    equipment: "Blaster pistol (4D), datapad. Not available for sale.",
+    equipment: "Blaster pistol (4D), blaster rifle (5D), datapad. Not available for sale.",
     capsule: "4-LOM began as a protocol and human-cyborg relations droid aboard the passenger liner Kuari Princess. Through constant interface with the ship's computer, it developed the ability to track passengers and their valuables — what began as a simulation became a months-long theft spree that no one suspected a benevolent protocol droid capable of. Bored with slim pickings, 4-LOM jumped ship and became a highly effective thief and information broker. Jabba the Hutt recognized his potential and had him refitted for combat, and 4-LOM became a bounty hunter. His most successful partnership is with Zuckuss, whose intuitive findsman rituals fascinate the intensely logical droid. The two defected to the Rebel Alliance together; 4-LOM has since begun training with an Alliance Special Forces unit.",
-    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.59"
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.59; WEG40089 The Movie Trilogy Sourcebook SE p.59"
   },
 
   // ── GALAXY GUIDE 3 — Chapter 6: Dagobah ──
@@ -4979,7 +4980,7 @@ const NOTABLE_NPCS = [
     move: 5,
     equipment: "Walking stick",
     capsule: "Yoda, over 800 years old, was the preeminent Jedi Master of the Old Republic — a being of immense wisdom and Force power who trained generations of Jedi. Despite his small, unimposing frame, his connection to the Force is virtually unparalleled. He lives in deliberate simplicity on Dagobah, a planet wrapped in a dark side nexus — residual energy from the Bpfasshi Dark Jedi who fled here long ago. That nexus masks Yoda's luminous Force presence, keeping him hidden from both the Emperor and Darth Vader. He arrived at Dagobah in 19 BBY after failing to defeat Palpatine. In 3 ABY, Obi-Wan Kenobi's Force ghost directed Luke Skywalker to him. Yoda began Luke's training — teaching that the Force is not a weapon but a presence to be channeled with patience and understanding — before Luke left to save his friends on Bespin.",
-    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.62; WEG40093 Star Wars Sourcebook p.136"
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.62; WEG40093 Star Wars Sourcebook p.136, WEG40089 The Movie Trilogy Sourcebook SE p.35"
   },
 
   // ── GALAXY GUIDE 3 — Chapter 7: Cloud City ──
@@ -5005,7 +5006,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Hold-out blaster (4D), comlink, sabacc card deck",
     capsule: "Lando Calrissian — gambler, rogue, and interstellar con-man — had reinvented himself as Baron-Administrator of Cloud City, trading daily chaos for the comfortable pressures of civic leadership. By day he presided over labor disputes and charity luncheons; by night he circulated through the city's casinos in various disguises, including 'the old man' — a mysterious figure who ran the Royal Casino's table for three months straight, only to bet it all away on a single spin each night before leaving. When Darth Vader arrived and forced him to betray Han Solo as the price of Cloud City's survival, Lando chose a different answer: he freed Leia and Chewie, lost Cloud City entirely, and joined the Rebellion. Solo's legendary sabacc win of the Millennium Falcon from Lando was, ironically, the event that prompted Lando to settle down on Bespin in the first place.",
-    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.70"
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.70, WEG40089 The Movie Trilogy Sourcebook SE p.10"
   },
 
   {
@@ -5055,7 +5056,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Blaster rifle (5D), blast vest (+1 energy, +1D physical), comlink",
     capsule: "Supervisory Wing Guard officers overseeing Cloud City patrol areas. More experienced than standard members, with enhanced melee and investigation skills and a stronger grasp of Cloud City's criminal geography.",
-    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.71"
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.71; WEG40089 The Movie Trilogy Sourcebook SE p.186"
   },
   {
     name: "Wing Guard Member (Typical)",
@@ -5079,7 +5080,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Blaster pistol (4D), comlink, binders",
     capsule: "Standard Wing Guard security personnel. All are trained to operate cloud cars for pursuit and patrol duties.",
-    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.71"
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.71; WEG40089 The Movie Trilogy Sourcebook SE p.186"
   },
   {
     name: "Wing Guard Pilot (Typical)",
@@ -5103,7 +5104,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Blaster pistol (4D), comlink, binders",
     capsule: "Specialized Wing Guard pilots who fly Cloud City's twin-pod cloud cars. Same base profile as standard Wing Guard members but with expert vehicle blasters and cloud car piloting skills.",
-    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.71"
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.71; WEG40089 The Movie Trilogy Sourcebook SE p.186"
   },
   {
     name: "Jerrol Blendin",
@@ -5247,7 +5248,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Force pick, laser spade",
     capsule: "Ugloste is 120 standard years old and harbors a deep, quiet contempt for humans earned through a lifetime of slavery — including watching his first wife die under a bureaucrat's orders. Cloud City is one of the few places he has ever been able to simply be an Ugnaught: raising twelve Ugletts, teaching them gas mining and respect for their elders, hearing uglejig music echo through the mining levels. When the Empire arrived and ordered him to modify the carbon-freeze chamber for human use, he complied without question. As Han Solo was marched in, Ugloste recognized Chewbacca as the same Wookiee who had once tried to steal from his smelting station — but watching the Wookiee fight for the human, and seeing Solo kiss the woman, something shifted. He made one small, silent adjustment to the gas mixture. The freeze would be painful, but not deadly. He had seen enough suffering.",
-    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.76"
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.76; WEG40089 The Movie Trilogy Sourcebook SE p.105"
   },
   {
     name: "Princess Leia Organa (3 ABY)",
@@ -5271,7 +5272,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Blaster pistol (4D), blaster rifle (5D), comlink, breath mask",
     capsule: "Princess Leia Organa of Alderaan — senator, Alliance leader, and one of the most capable and determined figures in the Rebellion. By 3 ABY she had survived the destruction of her homeworld, the Battle of Yavin, and the fall of Echo Base on Hoth. Fleeing with Han Solo aboard the Millennium Falcon after Hoth, she was eventually captured at Cloud City through Lando Calrissian's forced deal with Darth Vader. She was used as bait to lure Luke Skywalker to Bespin. Though Force-sensitive, she has had no formal training.",
-    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.79"
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.79, WEG40089 The Movie Trilogy Sourcebook SE p.23"
   },
 
   {
@@ -5308,9 +5309,9 @@ const NOTABLE_NPCS = [
     role: "Smuggler",
     type: "Named NPC",
     stats: {
-      DEXTERITY: { base: "3D+1", skills: { "blaster": "7D", "blaster: heavy blaster pistol": "10D", "blaster: blaster rifle": "5D+1", "blaster artillery": "6D+1", "brawling parry": "7D+1", "dodge": "8D", "grenade": "5D+1", "melee combat": "6D+1", "melee parry": "5D+1", "missile weapons": "4D+2", "pickpocket": "4D+1", "running": "3D+2", "vehicle blasters": "6D+1" } },
+      DEXTERITY: { base: "3D+1", skills: { "blaster": "7D", "blaster: heavy blaster pistol": "10D", "blaster: blaster rifle": "5D+1", "blaster artillery": "6D+1", "brawling parry": "7D+1", "dodge": "8D", "grenade": "5D+1", "melee combat": "6D+1", "melee parry": "5D", "missile weapons": "4D+2", "pickpocket": "4D+1", "running": "3D+2", "vehicle blasters": "6D+1" } },
       KNOWLEDGE: { base: "2D", skills: { "alien species": "6D+2", "bureaucracy": "5D", "business": "6D", "business: smugglers": "7D", "cultures": "5D+1", "intimidation": "6D+2", "languages": "5D+2", "law enforcement": "5D", "planetary systems": "7D+2", "streetwise": "7D+2", "streetwise: Jabba the Hutt's organization": "9D+2", "survival": "7D+2", "value": "5D", "willpower": "4D+1" } },
-      MECHANICAL: { base: "3D+2", skills: { "astrogation": "8D", "beast riding": "5D+2", "beast riding: tauntaun": "6D", "capital ship gunnery": "5D+1", "capital ship piloting": "7D", "capital ship shields": "4D+1", "communications": "5D+1", "ground vehicle operation": "4D+2", "repulsorlift operation": "7D+1", "sensors": "4D+2", "space transports": "7D", "space transports: YT-1300 transports": "11D+1", "starfighter piloting": "6D", "starship gunnery": "9D", "starship shields": "6D+2", "swoop operation": "6D+2" } },
+      MECHANICAL: { base: "3D+2", skills: { "astrogation": "8D", "beast riding": "5D+2", "beast riding: tauntaun": "6D", "capital ship gunnery": "5D+1", "capital ship piloting": "7D", "capital ship shields": "4D+1", "communications": "5D", "ground vehicle operation": "4D+2", "repulsorlift operation": "7D+1", "sensors": "4D+2", "space transports": "7D", "space transports: YT-1300 transports": "11D+1", "starfighter piloting": "6D", "starship gunnery": "9D", "starship shields": "6D+2", "swoop operation": "6D+2" } },
       PERCEPTION: { base: "3D", skills: { "bargain": "8D", "command": "6D", "con": "8D", "forgery": "5D", "forgery: ship IDs": "7D", "gambling": "8D", "hide": "8D", "persuasion": "5D", "search": "5D+2", "sneak": "4D+2" } },
       STRENGTH: { base: "3D", skills: { "brawling": "7D+2", "climbing/jumping": "6D", "lifting": "5D+1", "stamina": "7D", "swimming": "4D+2" } },
       TECHNICAL: { base: "2D+2", skills: { "blaster repair": "4D+2", "computer programming/repair": "7D", "demolitions": "6D+2", "droid programming": "5D+1", "droid repair": "5D+1", "repulsorlift repair": "7D+1", "security": "7D", "space transports repair": "6D", "space transports repair: YT-1300 transports": "9D", "starship weapons repair": "4D" } }
@@ -5320,7 +5321,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Modified heavy blaster pistol (5D+1), modified blaster rifle (6D+2), comlink",
     capsule: "Han Solo at the height of the Rebellion's darkest hour — the same reckless smuggler from Mos Eisley, but now carrying the weight of something he won't quite admit he believes in. His blaster: heavy blaster pistol at 10D and starship gunnery at 9D make him one of the most lethally effective individuals in the galaxy in a fight. His YT-1300 transports specialty at 11D+1 means no one in the sector knows the Falcon's quirks better. At Bespin, Lando's forced betrayal delivered him into Vader's hands — used as bait for Luke Skywalker. He was sealed in carbonite and handed to Boba Fett, alive and in hibernation sickness, bound for Jabba the Hutt.",
-    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.81"
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.81, WEG40089 The Movie Trilogy Sourcebook SE p.33"
   },
 
   {
@@ -5339,13 +5340,13 @@ const NOTABLE_NPCS = [
       STRENGTH: { base: "3D", skills: { "brawling": "5D+1", "climbing/jumping": "6D", "lifting": "4D", "stamina": "6D" } },
       TECHNICAL: { base: "3D", skills: { "computer programming/repair": "5D", "droid programming": "5D", "droid repair": "6D", "first aid": "4D+2", "lightsaber repair": "7D+1", "repulsorlift repair": "7D", "security": "4D+1", "starfighter repair": "5D+2" } }
     },
-    specialAbilities: "Force Skills: Control 9D, Sense 7D, Alter 6D. Force Powers — Control: accelerate healing, concentrate, detoxify poison, emptiness, enhance attribute, hibernation trance, reduce injury, remain conscious, resist stun. Sense: danger sense, instinctive astrogation, life detection, life sense, receptive telepathy, sense Force. Alter: telekinesis. Control & Sense: farseeing, lightsaber combat, projective telepathy. This character is Force-sensitive.",
+    specialAbilities: "Force Skills: Control 9D, Sense 7D, Alter 6D. Force Powers — Control: accelerate healing, concentrate, control pain, detoxify poison, emptiness, enhance attribute, hibernation trance, reduce injury, remain conscious, resist stun. Sense: danger sense, instinctive astrogation, life detection, life sense, receptive telepathy, sense Force. Alter: telekinesis. Control & Sense: farseeing, lightsaber combat, projective telepathy. This character is Force-sensitive.",
     forcePoints: 12,
     characterPoints: 30,
     move: 10,
     equipment: "Blaster pistol (4D), lightsaber (5D), comlink",
     capsule: "Luke Skywalker in the months following the Battle of Yavin — a farmboy from Tatooine who destroyed the Death Star and is now the Rebellion's most wanted pilot. Trained in secret by Yoda on Dagobah, his Force abilities have grown dramatically: Control 9D and lightsaber combat put him leagues ahead of where he stood at Yavin. His starfighter piloting: X-wing at 9D+2 makes him arguably the finest X-wing pilot alive. But he is still brash — he abandoned his training against Yoda's warnings when he sensed Han and Leia in danger, arriving at Cloud City too late to save them and walking into a trap. There Vader revealed the truth of Luke's parentage and severed his right hand, leaving him clinging to an antenna below Bespin's gas platforms until Leia sensed his call.",
-    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.83"
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.83, WEG40089 The Movie Trilogy Sourcebook SE p.31"
   },
 
   {
@@ -5391,12 +5392,12 @@ const NOTABLE_NPCS = [
       TECHNICAL: { base: "4D", skills: { "computer programming/repair": "8D+2", "droid programming": "5D+1", "droid repair": "6D+2", "machinery repair": "5D+2", "repulsorlift repair": "4D", "security": "6D", "starfighter repair": "6D+1", "starfighter repair: X-wing": "7D+2", "space transports repair": "5D+2", "space transports repair: YT-1300 transports": "7D+1" } }
     },
     specialAbilities: "Equipped with: three wheeled legs (one retractable); retractable heavy grasper arm (+1D to lifting); retractable fine work grasper arm; extendable 0.3m video sensor (360° rotation); small electric arc welder (3D damage, 0.3m range); small circular saw (4D damage, 0.3m range); video display screen; holographic projector/recorder (1m range); fire extinguisher; small internal cargo area (20cm × 8cm); high-pitch acoustic signaller; long-range sensing array including radar, radiation counter, life form sensor, infrared receptors, and electromagnetic field receptor (+3D to search at up to 100m range); broad-band antenna receiver (monitors all broadcast and communication frequencies); compressed air launcher (lightsabers or flares).",
-    forcePoints: 1,
-    characterPoints: 13,
+    forcePoints: 2,
+    characterPoints: 18,
     move: 5,
     equipment: "Size: 0.96 meters. Cost: 1,250 credits (as purchased by Owen Lars).",
     capsule: "R2-D2 is an Industrial Automaton R2-series astromech assigned to Anakin Skywalker during the Clone Wars and later to Luke Skywalker. His memory has never been wiped — an oversight that has allowed a rich and fiercely loyal personality to develop behind a wall of electronic bleeps. His astrogation at 10D+2 and X-wing specialization at 8D+1 make him arguably the most capable astromech in the Rebellion. At Cloud City, R2 was blasted by Imperial forces and had to be carried out in pieces by Chewbacca before being reassembled aboard the Falcon.",
-    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.85"
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.85, WEG40089 The Movie Trilogy Sourcebook SE p.26"
   },
 
   {
@@ -5446,7 +5447,7 @@ const NOTABLE_NPCS = [
     move: 8,
     equipment: "Size: 1.67 meters. Cost: not available for sale.",
     capsule: "C-3PO is a Cybot Galactica 3PO-series protocol droid built by a young Anakin Skywalker on Tatooine, fluent in over six million forms of communication. Perpetually anxious, endlessly verbose, and inexplicably indispensable, he serves as translator, diplomat, and reluctant adventurer alongside R2-D2. His languages skill at 12D+1 is essentially without peer. At Cloud City he was shot apart by stormtroopers and carried around in a bag by Chewbacca — reassembled incorrectly, his head briefly backwards.",
-    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.85"
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.85, WEG40089 The Movie Trilogy Sourcebook SE p.25"
   },
 
   {
@@ -5496,7 +5497,7 @@ const NOTABLE_NPCS = [
     move: 13,
     equipment: "Bowcaster (4D), ammo bandolier, droid tool kit, starship tool kit, waist pouch",
     capsule: "Chewbacca is a 200-year-old Wookiee from Kashyyyk, first mate and co-pilot of the Millennium Falcon, bound to Han Solo by a life debt. His physical capabilities are extraordinary — brawling 10D, lifting 10D, stamina 10D — and his technical skills nearly match his combat ability, with YT-1300 repair at 10D+2 and computer programming/repair at 8D. At Bespin he fought ferociously to protect his companions, was captured alongside Leia, and tried to reassemble C-3PO after the droid was blasted apart. When Han was frozen in carbonite, Chewie launched himself at the stormtroopers before being restrained.",
-    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.86"
+    source: "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.86, WEG40089 The Movie Trilogy Sourcebook SE p.12"
   },
 
   {
@@ -5706,7 +5707,7 @@ const NOTABLE_NPCS = [
     role: "Major-domo",
     type: "Named Villain",
     stats: {
-      DEXTERITY: { base: "3D", skills: { "blaster: hold-out blaster": "3D+2", dodge: "4D+1" } },
+      DEXTERITY: { base: "2D", skills: { "blaster: hold-out blaster": "3D+2", dodge: "4D+1" } },
       KNOWLEDGE: { base: "3D", skills: { bureaucracy: "5D", business: "7D", languages: "4D", streetwise: "5D", "streetwise: Jabba's organization": "8D+2", "value: ryll": "6D+2", "value: spice": "7D" } },
       MECHANICAL: { base: "2D+2", skills: {} },
       PERCEPTION: { base: "4D+1", skills: { bargain: "5D", "command: Jabba's minions": "6D+2", con: "5D+1", forgery: "5D", hide: "5D", investigation: "6D+2", persuasion: "5D+1", sneak: "5D" } },
@@ -5719,7 +5720,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Hold-out blaster (3D), datapad, ryll spice snifter (ryll spice gives +1D to Perception and related actions for one hour, but reduces Dexterity and related actions by -2D for three hours; requires an Easy willpower roll, which, if failed, means the user is addicted)",
     capsule: "Bib Fortuna was Jabba the Hutt's major-domo, and with the Bloated One's death, the leader of the most prominent faction vying for control of Jabba's organization. On his homeworld of Ryloth, Fortuna was an ambitious ryll spice smuggler. After years of freelancing, one of Jabba's agents recruited him as a production and transport agent. With his organizational skills and head for business, Fortuna rose through the ranks, outmaneuvering his rival Bidlo Kwerve — who became the rancor's first meal — to claim the position of chief lieutenant and major-domo. He was given responsibility for the day-to-day operations of the palace and Jabba's townhouse in Mos Eisley. Fortuna was aboard Jabba's sail barge when Luke Skywalker's rescue attempt turned deadly, but the wily Twi'lek escaped to the patrol craft compartment before the barge exploded.",
-    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.10"
+    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.10; WEG40089 The Movie Trilogy Sourcebook SE p.67"
   },
   {
     name: "Jabba's Gamorrean Guard (Typical)",
@@ -5767,7 +5768,7 @@ const NOTABLE_NPCS = [
     move: 8,
     equipment: "Vibro-axe (STR+3D+1), force pike (STR+3D)",
     capsule: "The toughest and most intelligent of Jabba's Gamorrean guards, Ortugg was put in charge after an impressive showing during the 'employment test.' He and his right-hand man Rogua were assigned the important position of front entrance sentry. Ortugg was also given the private task of keeping an eye on Tessek, whom Jabba suspected didn't always have the crimelord's best interests at heart. Ortugg had clashed with Tessek several times, though the clever Quarren always backed down before risking the ire of the fierce Gamorrean.",
-    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.11"
+    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.11; WEG40089 The Movie Trilogy Sourcebook SE p.73"
   },
   {
     name: "Oola",
@@ -5791,7 +5792,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "",
     capsule: "Oola was the daughter of a Twi'lek clan chief from the 'place of twilight' on Ryloth. Bib Fortuna kidnapped her and hired famous Twi'lek dancers to tutor her for four months before presenting her to Jabba as a gift — a ploy to distract from his intercepted spice shipments. Jabba was instantly smitten and chained her to his throne, an honor reserved for his most prized possessions. But Oola fiercely resisted the Hutt's obscene advances, and despite repeated punishment she held firm. Eventually Jabba tired of the game, and the young Twi'lek became food for the rancor.",
-    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.12"
+    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.12; WEG40089 The Movie Trilogy Sourcebook SE p.97"
   },
   {
     name: "Jabba the Hutt",
@@ -5802,10 +5803,10 @@ const NOTABLE_NPCS = [
     role: "Crime lord",
     type: "Named Villain",
     stats: {
-      DEXTERITY: { base: "2D", skills: {} },
+      DEXTERITY: { base: "2D+2", skills: {} },
       KNOWLEDGE: { base: "3D", skills: { "alien species": "5D", bureaucracy: "7D", "bureaucracy: Tatooine government": "9D+1", business: "6D+1", cultures: "4D+2", intimidation: "7D", languages: "4D", "law enforcement": "4D+1", "law enforcement: Tatooine": "9D", streetwise: "9D", "streetwise: Jabba's organization": "11D" } },
-      MECHANICAL: { base: "3D", skills: {} },
-      PERCEPTION: { base: "3D", skills: { bargain: "8D", command: "8D", con: "7D+1", gambling: "7D+2", persuasion: "7D+2" } },
+      MECHANICAL: { base: "3D+2", skills: {} },
+      PERCEPTION: { base: "3D+2", skills: { bargain: "8D", command: "8D", con: "7D+1", gambling: "7D+2", persuasion: "7D+2" } },
       STRENGTH: { base: "4D", skills: { brawling: "6D", lifting: "6D", stamina: "7D" } },
       TECHNICAL: { base: "3D", skills: {} }
     },
@@ -5816,7 +5817,7 @@ const NOTABLE_NPCS = [
     move: 2,
     equipment: "",
     capsule: "Jabba was perhaps the most visible member of the notorious Hutt crime families — an exceptionally well-known criminal who flaunted his influence and wealth, virtually daring the authorities to bring him down. While other crimelords sought secrecy, Jabba was proud of what he'd done and how he'd done it. His massive, physically-intimidating presence aided his rise to power, but ultimately it was his ruthless, scheming mind that brought him to the top. Even when the excesses of his appetites left him a bloated slug all but unable to move, his mind remained as nimble, sharp, and evil as ever. His underworld empire grew to unfathomable size — spice running, extortion, and a protection racket that alone could have supported the governments of an entire sector. He chose the remote deserts of Tatooine as his base, making it the hub of his criminal empire. Unfortunately for the Hutt, he picked the homeworld of a young man who would become the last of the Jedi.",
-    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.14"
+    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.14; WEG40089 The Movie Trilogy Sourcebook SE p.71"
   },
   {
     name: "Salacious Crumb",
@@ -5839,8 +5840,8 @@ const NOTABLE_NPCS = [
     characterPoints: 4,
     move: 11,
     equipment: "",
-    capsule: "",
-    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.16"
+    capsule: "If there was a jester in the court of Jabba the Hutt, it was Salacious Crumb. He sat at the base of Jabba's throne, gibbering and cackling at all who addressed the illustrious Hutt. Kowakian Monkey-Lizards appear sentient but have developed no common skills, art, science, or literature — in their natural habitat they are mere foragers, but in the presence of larger sentients they allow others to care for them. Crumb was one of the only beings to ever cross Jabba and live. He'd been an unwanted parasite on Kwenn Space Station, evading Mantilorrian rat-catchers, when he scampered aboard Jabba's vessel and hid in the Hutt's feeding bowl. When Jabba returned he nearly swallowed Crumb on the spot — but the Monkey-Lizard was too fast, darting into the rafters with the bowl on his head like a blast-helmet. Moments later, Bib Fortuna and his rival Bidlo Kwerve blundered in mid-argument; Crumb dropped the bowl on their heads, drenching both in Higartha brain-stew. Kwerve's blaster had been fouled by the ooze and sprayed green liquid directly into Fortuna's face. Jabba was nearly delirious with laughter and spared Crumb's life on the spot. From that day forward, Salacious Crumb remained constantly at Jabba's side.",
+    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.16; WEG40089 The Movie Trilogy Sourcebook SE p.75"
   },
   {
     name: "EV-9D9 (Ninedenine)",
@@ -5864,7 +5865,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Arc welder (6D), datapad",
     capsule: "EV-9D9 actively dislikes most beings and has a pathological hatred of other droids. Jabba's agents discovered Ninedenine supervising at the defunct GoCorp repulsor plant, where droid laborers were unbelievably overworked — attrition was high but production far beyond normal. Impressed, Jabba's agents bought the supervisor droid and put it to work in the palace. Ninedenine was a meticulous taskmaster who worked other droids until they dropped, disciplining failures with a twisted array of mechanical tortures. During its tenure, only two droids ever escaped — a certain golden protocol droid and his feisty astromech companion.",
-    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.16"
+    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.16; WEG40089 The Movie Trilogy Sourcebook SE p.164"
   },
   {
     name: "Ephant Mon",
@@ -5888,7 +5889,7 @@ const NOTABLE_NPCS = [
     move: 9,
     equipment: "Vibroblade (STR+3D), large number of used weapons (for sale)",
     capsule: "Though he described his profession as 'freelance,' Ephant Mon was a gunrunner who supplied arms to all manner of military organizations, from petty planetary guerrilla groups to the Rebel Alliance itself. His weapons were usually of Imperial manufacture — outdated but serviceable — apparently supplied by corrupt high-ranking Imperial officers. Not a member of Jabba's staff, Mon was one of the only non-employees the Hutt would tolerate, possibly because the two shared unsavory appetites, or because Jabba enjoyed having someone who might dare offer a dissenting opinion. A former mercenary recruited as an adolescent on Vinsoth, Mon concluded that selling arms was more profitable and safer than using them. His basic credo: 'I will sell anything to anyone at any time — if there's a profit in it.'",
-    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.16"
+    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.16; WEG40089 The Movie Trilogy Sourcebook SE p.72"
   },
   {
     name: "Ree-Yees",
@@ -5912,7 +5913,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Portable Sullustan gin tankard, lockpick",
     capsule: "Without a doubt one of the more repulsive of Jabba's courtiers, both in visage and temperament. This sleazy crook spent more time under the influence of Sullustan gin than sober, and was an ugly, mean, nasty, slobbering drunk. A money-ante thief who spent his time scamming off easy marks like Barada and Ortugg. Gran are highly social creatures, and having committed murder — almost unknown on Kinyen — Ree-Yees had been outcast from his people. To Gran this is a fate worse than death; most go mad or die of loneliness. Through insensitivity, self-centeredness, and excessive alcohol, he managed to keep himself alive, but the strain was beginning to tell. He lost his life on Jabba's sail barge when he tried to stop Luke Skywalker's escape.",
-    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.18"
+    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.18; WEG40089 The Movie Trilogy Sourcebook SE p.75"
   },
   {
     name: "Tessek",
@@ -5936,7 +5937,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Hold-out blaster (4D), vibroblade (STR+3D), sonic grenade (5D), datapad, comlink",
     capsule: "One of the most clever of Jabba's employees, and one of the few who didn't scramble his wits through overindulgence. Tessek had only one vice: an all-consuming lust for power. He was busy plotting Jabba's overthrow — a complex deal with the Empire that would rid the galaxy of Jabba and leave Tessek in control. In return, he would provide intelligence on Alliance activities. When Luke Skywalker arrived, Tessek was one of the few who took the young Jedi seriously, recognizing that the Rebels' capture was too convenient. He postponed his own coup, and when events spiraled out of control at the Sarlacc pit, he escaped on a hidden swoop back to the palace, locking all doors and activating defenses. After sitting out the carnage, he fled for parts unknown under a false identity. One expects the galaxy will hear more from this character.",
-    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.20"
+    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.20; WEG40089 The Movie Trilogy Sourcebook SE p.77"
   },
   {
     name: "Barada",
@@ -5960,7 +5961,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Heavy blaster pistol (5D), thermal detonator (10D/8D/5D/2D), mechanic tool kit",
     capsule: "One of the few members of Jabba's entourage with actual responsibility, Barada was the Klatooinian in charge of the crime lord's repulsorpool — a fleet of skiffs specially adapted to the arid climate and modified with superior hull plating and weapons. He was responsible for procurement, modification, crew, and care of these vehicles, and captained the craft in battle. Barada was an indentured worker, sold into servitude by his family as is Klatooinian custom with disrespectful youth. Jabba won his contract in a crooked sabacc game, then cheated Barada mercilessly — paying the contractual wage but charging exactly that amount for room and board, ensuring he could never pay off the debt. Barada continued in servitude until freed — in death — by the Heroes of Yavin.",
-    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.20"
+    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.20; WEG40089 The Movie Trilogy Sourcebook SE p.61"
   },
   {
     name: "Jabba's Weequay Enforcers (Typical)",
@@ -5984,7 +5985,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Force pike (STR+3D), battle vests (+1D+1 physical, +2 energy)",
     capsule: "Employed by Jabba as enforcers, the Weequays were among the most feared of the Hutt's servants. In battle, they worked together with uncanny efficiency, as if they could read each other's thoughts. They never spoke to anyone, not even each other, preferring to let their force pikes do the talking. Their ceremonial topknots were a source of great pride and the only way of telling them apart. During their tenure with Jabba, the Weequays were responsible for countless atrocities, including a bizarre spree of bantha killings as part of a grotesque religious ritual — which Jabba ended when the Sand People began to get suspicious. They were killed by Luke Skywalker at Carkoon.",
-    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.21"
+    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.21; WEG40089 The Movie Trilogy Sourcebook SE p.77"
   },
 
   // ── GALAXY GUIDE 5 — Chapter 2: The Rebel Fleet (WEG40126) ──
@@ -6011,7 +6012,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "",
     capsule: "One of the original architects of the Rebellion and its leader and guide. As a respected Imperial Senator, Mon Mothma fought to retain basic freedoms as Palpatine stripped them away, but was unable to convince the Senate of his evil intentions. Forced underground, she grew the Rebellion from a ragtag group of part-time activists into a viable fighting force. She designed the extensive communications network that kept the Alliance one step ahead of the Empire, and used her diplomatic talents to recruit individuals, corporations, and outlying worlds. Above all, Mon Mothma kept the Alliance focused — fully aware that even a single decisive loss could destroy it, she ensured the Rebellion fought only when the chances of victory far outweighed the dangers of defeat.",
-    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.32"
+    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.32, WEG40089 The Movie Trilogy Sourcebook SE p.21"
   },
   {
     name: "Crix Madine (4 ABY)",
@@ -6035,7 +6036,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Blaster pistol (4D), comlink",
     capsule: "A controversial Corellian general — some call him cocky, others call him brilliant. Madine was an Imperial officer in charge of the dreaded Storm Commandos, an elite army unit. At the height of his career he defected to the Rebellion; the exact circumstances remain unspoken. His friend General Rieekan vouched for him, convincing Mon Mothma he was not a security risk. Immediately assigned as Mon Mothma's Chief Military Advisor, he brought a fresh perspective and invaluable experience from having faced Alliance troops as an Imperial commander. His signature plan was the commando raid that knocked out the Death Star II's deflector shield generator — daring, almost reckless, but planned with meticulous attention to detail.",
-    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.32"
+    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.32, WEG40089 The Movie Trilogy Sourcebook SE p.21"
   },
   {
     name: "Admiral Ackbar (4 ABY)",
@@ -6059,7 +6060,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Comlink, datapad",
     capsule: "Commander of the Rebel Fleet and a symbol that the Alliance fought for everyone regardless of species. Ackbar proved his competence commanding the Shantipole project, which added the B-wing fighter to the Alliance arsenal. He was largely responsible for Mon Calamari's decision to supply their precious cruisers — the cornerstones of the Rebel Fleet. Widely recognized as a fine tactician, it was his organizational and administrative abilities that made him outstanding. Known for conservative battle strategy, he was counterbalanced by the impetuosity of his young officers and General Madine's aggressive nature. At Endor, when the Death Star went operational and began destroying capital ships, Ackbar's instinct was to retreat — but he saw the logic in Calrissian's radical plan to engage the Star Destroyers at close range, and the gamble paid off.",
-    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.33"
+    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.33, WEG40089 The Movie Trilogy Sourcebook SE p.8"
   },
   {
     name: "Mon Calamari Crewman (Typical)",
@@ -6083,7 +6084,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Comlink, datapad",
     capsule: "Hand-picked and extensively trained by Admiral Ackbar, these skilled crewmen man the Mon Calamari Cruisers. Ship controls are designed specifically for Mon Calamari — vital information displayed in wavelengths beyond human vision, holographic displays matched to their unusual eye configuration, and swivel chairs with motion sensors that respond to subtle body movements of legs, feet, and waist, leaving hands free for other controls. Their discipline and notoriously even tempers make them ideal for high-pressure roles. At Endor, in the face of overwhelming odds, they kept composure and performed brilliantly.",
-    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.34"
+    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.34, WEG40089 The Movie Trilogy Sourcebook SE p.37"
   },
   {
     name: "Nien Nunb (4 ABY)",
@@ -6107,7 +6108,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Blaster pistol (4D), comlink",
     capsule: "Lando Calrissian's co-pilot aboard the Millennium Falcon at the Battle of Endor. Formerly a top trade runner for SoroSuub Corporation, Nunb quit when the company allied with the Empire and took control of the Sullust system. He turned his smuggling skills to snatching SoroSuub consignments and shipping them to the Rebellion, doing it publicly with bravado to inspire his people. He became a folk hero to the downtrodden Sullustans, and when SoroSuub finally allied with the Alliance — offering the Sullust system as a staging area for the Rebel fleet — Nunb was hailed as a hero of his people.",
-    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.37"
+    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.37, WEG40089 The Movie Trilogy Sourcebook SE p.22"
   },
   {
     name: "Wedge Antilles (4 ABY)",
@@ -6127,11 +6128,11 @@ const NOTABLE_NPCS = [
     },
     specialAbilities: "",
     forcePoints: 1,
-    characterPoints: 8,
+    characterPoints: 28,
     move: 10,
     equipment: "Blaster pistol (4D), sealed flight suit, comlink, tool kit",
     capsule: "After the evacuation from Hoth, Wedge took command of Rogue Squadron at Luke Skywalker's request, forming them into the Rebel Fleet's elite starfighter unit. Promoted to commander, his squadron was directly attached to the Headquarters Frigate. He chose to stick with X-wings over the newer B- and A-wings, reasoning they were still a match for the TIE Interceptor and that newer pilots would benefit more from the sophisticated fighters. For the second Death Star assault, he temporarily christened the squadron 'Red Group' in remembrance of the original. Red Group piled up impressive Imperial kills while staying largely intact, and Wedge personally dealt the final blow that destroyed the Death Star II.",
-    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.40"
+    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.40, WEG40089 The Movie Trilogy Sourcebook SE p.9"
   },
 
   // ── GALAXY GUIDE 5 — Chapter 3: The Second Death Star (WEG40126) ──
@@ -6156,9 +6157,9 @@ const NOTABLE_NPCS = [
     forcePoints: 0,
     characterPoints: 2,
     move: 10,
-    equipment: "",
+    equipment: "Hold-out blaster (3D)",
     capsule: "The Emperor's chosen puppet commander for the second Death Star. A competent administrator possessing little creativity or drive, Jerjerrod was no threat to act against the Emperor's plans. A desk general who rose through the ranks in Logistics and Supply, well-versed in administrative details yet with little actual military experience — exactly the kind of man the Emperor wanted. Someone who could build the station quickly and efficiently but would have no idea how to use it operationally. With added incentive from Lord Vader, Jerjerrod got the battle station operational ahead of schedule. He served his Emperor well — and paid for it with his life.",
-    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.45"
+    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.45, WEG40089 The Movie Trilogy Sourcebook SE p.41"
   },
   {
     name: "Admiral Piett (4 ABY)",
@@ -6171,7 +6172,7 @@ const NOTABLE_NPCS = [
     stats: {
       DEXTERITY: { base: "3D+2", skills: { blaster: "4D+2", dodge: "4D" } },
       KNOWLEDGE: { base: "3D+1", skills: { "bureaucracy: Imperial fleet": "5D+2", intimidation: "5D", "planetary systems": "4D+2", "tactics: capital ships": "6D+1", "tactics: fleets": "4D+1" } },
-      MECHANICAL: { base: "3D", skills: { astrogation: "6D", "capital ship piloting": "4D+1", "starfighter piloting": "4D" } },
+      MECHANICAL: { base: "3D", skills: { astrogation: "6D", "capital ship piloting": "4D+1", "starfighter piloting": "4D+1" } },
       PERCEPTION: { base: "2D+2", skills: { command: "8D+2", con: "4D" } },
       STRENGTH: { base: "2D+1", skills: { stamina: "3D+1" } },
       TECHNICAL: { base: "3D", skills: { "computer programming/repair": "4D", security: "5D" } }
@@ -6182,7 +6183,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Blaster pistol (4D), datapad, comlink",
     capsule: "After the Bespin incident, Vader pursued his own interests and Piett found himself in true command of the fleet. His orders were to keep moving system to system using unpredictable routes, hoping to find the Rebel fleet — odds unimaginably low. Eventually called to Endor and ordered to hide behind the forest moon, Piett's fleet sprang the trap perfectly. But the Rebels fought with skill and determination, driving the Imperial fleet back even with the Death Star's superlaser behind it. When Rebel capital ships closed to point-blank range, Piett was already a beaten man. His flagship, the Super Star Destroyer Executor, was destroyed by a ferocious Rebel fighter attack. Piett was lost along with his ship.",
-    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.45"
+    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.45, WEG40089 The Movie Trilogy Sourcebook SE p.46"
   },
   {
     name: "Imperial Royal Guard (Typical)",
@@ -6206,7 +6207,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Heavy blaster pistol (5D), armor (+2D physical, +1D energy, -1D Dexterity), force pike (STR+3D)",
     capsule: "Hand-picked from the best stormtrooper units in the Empire, screened for intelligence, strength, dexterity, and loyalty. Exhaustively trained in many forms of combat. Their striking red armor was both ceremonial and fully functional, derived from the uniforms of the Mandalorian Death Watch and Thyrsus Sun Guards. At least two were within earshot of the Emperor at all times. Individual Guardsmen were rotated among stormtrooper units to stay battle-ready, but their truest tests were as guardians of the Emperor — stopping assassins, performing covert assaults and assassinations, always ready to die for Palpatine.",
-    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.46"
+    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.46, WEG40089 The Movie Trilogy Sourcebook SE p.55"
   },
   {
     name: "Kren Blista-Vanee",
@@ -6230,7 +6231,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Hold-out blaster (3D), traditional planetary garb",
     capsule: "One of hundreds of Imperial advisors — a vain and politically divided lot, ever at each other's throats but always ready to do the Emperor's bidding. Each advisor was assigned to keep tabs on a rival advisor's home system, cutting down on alliances and fueling competition. The Emperor kept them insecure by never seeing more than a dozen at a time, doting over select few while casting old ones out or killing them at whim. His policy of absolute rule through absolute terror worked to perfection.",
-    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.47"
+    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.47, WEG40089 The Movie Trilogy Sourcebook SE p.50"
   },
   {
     name: "Darth Vader (4 ABY)",
@@ -6255,7 +6256,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Body armor (+1D all attacks, respirator is necessary to keep Vader alive), lightsaber (5D)",
     capsule: "By the time of Endor, Vader had grown conflicted. After the confrontation with his son at Cloud City, the Dark Lord pursued his own interests while Piett commanded the fleet. The Emperor sensed Vader's conflict and orchestrated the final confrontation — using Luke as bait to either turn the young Jedi or destroy him. When Luke surrendered on Endor, Vader brought him before the Emperor aboard the Death Star II. In the throne room, father and son dueled as the Emperor watched. When Palpatine unleashed Force lightning to kill Luke, Vader — moved by his son's refusal to turn — seized the Emperor and hurled him into the reactor shaft, destroying the Sith Master at the cost of his own life. In his final moments, Anakin Skywalker asked his son to remove his mask so he could see him with his own eyes.",
-    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.48"
+    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.48, WEG40089 The Movie Trilogy Sourcebook SE p.49"
   },
   {
     name: "Emperor Palpatine (3.5 ABY)",
@@ -7480,7 +7481,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "",
     capsule: "Out of the corpse of the Old Republic, Palpatine carved himself an empire. Strong in the dark side and blessed with a subtle, dangerous mind, he destroyed the Jedi, disbanded the Senate, and became undisputed ruler of the most powerful empire the galaxy had ever seen. When he sensed the bright light of Luke Skywalker in the Force, he began plotting to corrupt it — working his scheme with trademark guile and cunning. He orchestrated the trap at Endor, luring the Rebel fleet into an ambush while drawing Luke to the Death Star II. Everything proceeded according to his designs — until the boy found it inside himself to rise above the Emperor's compelling power. Infuriated, Palpatine resolved to destroy the young Jedi with Force lightning. But there was still good left in Darth Vader: the Dark Lord tore himself from the clutches of the Dark Side, saved his son, and destroyed the Emperor — at the cost of his own life.",
-    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.49"
+    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.49, WEG40089 The Movie Trilogy Sourcebook SE p.44"
   },
 
   // ── GALAXY GUIDE 5 — Chapter 4: Endor (WEG40126) ──
@@ -7507,7 +7508,7 @@ const NOTABLE_NPCS = [
     move: 9,
     equipment: "Spear (STR+1D), medicinal herbs",
     capsule: "Wicket was the Ewok who first found Princess Leia and brought her to safety in the village. He argued vehemently to have her friends released from captivity, sensing they were good and gentle beings. During the Battle of Endor, he proved himself a clever and resourceful warrior, using his detailed knowledge of every hill and gully to help prepare well-hidden traps against the Imperial walkers. After the battle, he was promoted to lead warrior in a ceremony presided over by Princess Leia. A bit of a loner who spends time exploring the forest and building carved trinkets for village children, Wicket is a prime candidate for tribal leader when Chief Chirpa retires.",
-    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.57"
+    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.57, WEG40089 The Movie Trilogy Sourcebook SE p.34"
   },
   {
     name: "Chief Chirpa",
@@ -7531,7 +7532,7 @@ const NOTABLE_NPCS = [
     move: 7,
     equipment: "Pipe, ceremonial headdress",
     capsule: "Very old and a bit senile, but revered by his tribe. Chief for 42 seasons, during which the Ewoks knew only tranquillity and prosperity — until the Imperials came. When the Rebels arrived, Chirpa initially let Logray convince him to use them in a sacrificial ceremony for the 'golden god.' But after Luke Skywalker's display of power, Chirpa listened to See-Threepio's tale of the galactic war and convinced the village elders to make the newcomers honorary tribe members. The Imperials had killed many trees and disturbed the hunting cycle, and Chirpa committed his people to the fight. 'It might be a long and dangerous chase, but in the end we will triumph.'",
-    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.59"
+    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.59, WEG40089 The Movie Trilogy Sourcebook SE p.13"
   },
   {
     name: "Logray",
@@ -7555,7 +7556,7 @@ const NOTABLE_NPCS = [
     move: 8,
     equipment: "Bone club (STR+1D), secret potions, 'telling beads'",
     capsule: "The feared and admired medicine man of the Ewok tribe, guardian of the ancient rites. Many rituals passed down unchanged for countless generations, some involving sacrifice of living beings. Logray had the backing of Chief Chirpa and the elders, performing the Dark Rituals despite protests from the tribe's youth — particularly the loner Wicket, whom he constantly abused and banished from all rituals. During the Battle of Endor, the Ewoks saw Logray for what he truly was — a coward and a bully. After the battle he was removed as medicine man, replaced by Paploo. Infuriated, Logray cursed the village, but Paploo convinced C-3PO to 'exorcise' the curse. Logray was banished, his name stricken from the village's songs of remembrance.",
-    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.61"
+    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.61, WEG40089 The Movie Trilogy Sourcebook SE p.20"
   },
   {
     name: "Rebel Commando (Typical)",
@@ -7579,7 +7580,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Blaster pistol (4D), comlink, macrobinoculars (+1D to search over 50 meters), low-feedback scanner (uses sensors, detects movement at ranges of 0-1/3/5 km), sensor scramblers (+2D to difficulty to detect with sensors), camouflage fatigues (+2D to sneak in forest at ranges of 35+ meters)",
     capsule: "Elite Rebel commandos selected for General Solo's strike team to destroy the shield generator protecting the second Death Star on the forest moon of Endor.",
-    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.62"
+    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.62, WEG40089 The Movie Trilogy Sourcebook SE p.38"
   },
   {
     name: "Major Bren Derlin (4 ABY)",
@@ -7603,7 +7604,7 @@ const NOTABLE_NPCS = [
     move: 11,
     equipment: "Blaster pistol (4D), macrobinoculars (+1D to search over 50 meters), comlink, low-feedback scanner (uses sensors, detects movement at ranges of 0-1/2/5 km), sensor scramblers (+2D to difficulty to detect with sensors), camouflage fatigues (+2D to sneak in forest at ranges of 35+ meters).\nThe Star-Beast (Modified Lantillian Short Hauler; Scale: Starfighter; Length: 27m; Skill: space transports: Lantillian Short Hauler; Crew: 2, gunners: 1, skeleton 1/+10; Passengers: 6; Cargo: 85MT; Consumables: 1 month; Hyperdrive x1/x15 backup; Nav computer; Maneuverability 1D; Space 6; Atmo 330/950 kmh; Hull 4D; Shields 3D; Sensors — Passive 15/0D, Scan 35/1D, Search 55/1D+2, Focus 6/2D+2; Weapons — 2 Turbolaser Cannons (turret): FC 3D (1D from co-pilot), 1-15/35/50, 5D. Carries one escape pod for 6 passengers. Cargo includes 4 Ikas-Adno Nightfalcon speeder bikes.)",
     capsule: "By the Battle of Endor, Derlin had been assigned to General Solo's commando strike team tasked with destroying the shield generator protecting the second Death Star. His experience with covert operations and survival — honed on Hoth and earlier on Nentan — made him a natural fit for the elite unit infiltrating the forest moon.",
-    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.62"
+    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.62, WEG40089 The Movie Trilogy Sourcebook SE p.14"
   },
   {
     name: "Endor Biker Scout (Typical)",
@@ -7627,7 +7628,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Hold-out blaster (3D+2), scout armor (+2 physical and energy), Aratech 74-Z military speeder bike (Speeder scale; Maneuverability 3D+2; Move 175/500 kmh; Body 2D; Laser cannon: FC 2D, 3D)",
     capsule: "Scout troopers best suited for the dense forest terrain of Endor. Patrols operated in lances of four soldiers and a sergeant, split into groups of two bikes using a weaving pattern fanning out from the shield generator. Each scout made continuous sensor scans and reported every 30 minutes. Ordered to avoid conflict at all costs and get clear for a full report, even if it meant abandoning a partner. Speeder bikes on Endor were equipped with modified guidance systems — an extra sensor plate on the front control vanes for better course planning through the trees.",
-    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.65"
+    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.65, WEG40089 The Movie Trilogy Sourcebook SE p.52"
   },
 
   // ── GALAXY GUIDE 5 — Chapter 5: The Heroes of Endor (WEG40126) ──
@@ -7654,7 +7655,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Blaster pistol (4D), comlink",
     capsule: "Much has happened to the Princess since Bespin. Though she owes much to her own inner strength, she also owes much to Luke Skywalker — her close friend and newfound brother. The two healed each other after Cloud City, making a vow to put aside their anguish and concentrate on the task at hand. Luke's confidence during Han's rescue was infectious; it never entered her mind it might fail. Her reunion with Han was an emotional release — she had openly admitted her love and no longer needed to hide her feelings. When Han agreed to become a general and lead the Endor mission, seeing the change in him made her love grow immeasurably. On Endor, Luke revealed she was his sister — and even as he spoke the words, she knew it to be true. She was a Skywalker, an heir to the traditions of the Jedi Knights, the last surviving member of the Royal House of Alderaan, and she loved Han Solo. A fine leader for the Alliance, and an even better one for the New Republic.",
-    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.71"
+    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.71, WEG40089 The Movie Trilogy Sourcebook SE p.23"
   },
   {
     name: "Han Solo (4 ABY)",
@@ -7674,11 +7675,11 @@ const NOTABLE_NPCS = [
     },
     specialAbilities: "",
     forcePoints: 2,
-    characterPoints: 22,
+    characterPoints: 24,
     move: 10,
     equipment: "Modified heavy blaster pistol (5D+1), comlink",
     capsule: "Han Solo described carbon-freeze as 'a big wide-awake nothing.' Upon revival by Princess Leia, the Corellian was in no shape to exact revenge — but his feelings toward Lando changed when Chewie explained what Calrissian had done for him. It was Luke who really came through, almost singlehandedly wiping out Jabba's entire entourage. For the first time in his life, Solo felt he had direction — he wanted to fight against evil, to do something worthwhile. After deciding to join the Alliance full-time, he accepted a generalship from Mon Mothma, volunteering to lead the strike team to Endor's shield generator. The mission succeeded, the second Death Star was destroyed, and Han had a family now, and a home.",
-    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.72"
+    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.72, WEG40089 The Movie Trilogy Sourcebook SE p.33"
   },
   {
     name: "Luke Skywalker (4 ABY)",
@@ -7703,7 +7704,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Lightsaber (5D), blaster pistol (4D), comlink",
     capsule: "Luke Skywalker is a Jedi Knight — the last of the Jedi since the deaths of Obi-Wan Kenobi and his father Anakin. After Cloud City, he was overcome by doubt and fear, but put his troubles aside. Returning to Tatooine, he traveled to Obi-Wan's abandoned home in the Jundland Wastes and constructed his own lightsaber — a vivid green blade. He orchestrated Han's rescue from Jabba's palace, then journeyed to Dagobah where the dying Yoda told him his training was complete: to become a Jedi, he need only confront his father. On Endor, Luke surrendered to Vader and was brought before the Emperor. In the throne room, he refused to turn to the Dark Side, and his faith redeemed his father — Anakin Skywalker destroyed the Emperor at the cost of his own life.",
-    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.73"
+    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.73, WEG40089 The Movie Trilogy Sourcebook SE p.31"
   },
   {
     name: "Chewbacca (4 ABY)",
@@ -7727,7 +7728,7 @@ const NOTABLE_NPCS = [
     move: 13,
     equipment: "Bowcaster (4D), ammo bandolier, droid tool kit, starship tool kit, waist pouch",
     capsule: "During the events on Bespin, Chewbacca realized there was more to his honor family than just Han Solo. With Lando in tow, Chewbacca and the Falcon returned to Tatooine to await Luke Skywalker, firmly believing together they could save Han from Jabba. His faith continued through those war-torn days — whether crushed inside a ship designed for smaller beings, tied to a stake at the mercy of Ewoks, or battling a legion of the Empire's best troops, Chewbacca knew he and his friends would triumph.",
-    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.74"
+    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.74, WEG40089 The Movie Trilogy Sourcebook SE p.12"
   },
   {
     name: "Lando Calrissian (4 ABY)",
@@ -7751,7 +7752,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Hold-out blaster (4D), comlink, sabacc card deck",
     capsule: "After the Empire overran Cloud City, Lando declared war. He infiltrated Jabba's palace using a criminal persona to scout the terrain for Han's rescue — nearly getting dropped into the Sarlacc for his trouble. Joining the Alliance was the final piece to a picture building since his days as Baron Administrator: he had learned responsibility, and now learned to fight for what he believed in and to value friendship more than money. He accepted a generalship and volunteered to lead the Falcon into the heart of the Death Star II. 'It's not really gambling if you have nothing to lose.'",
-    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.75"
+    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.75, WEG40089 The Movie Trilogy Sourcebook SE p.10"
   },
   {
     name: "C-3PO (See-Threepio) (4 ABY)",
@@ -7775,7 +7776,7 @@ const NOTABLE_NPCS = [
     move: 8,
     equipment: "",
     capsule: "",
-    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.77"
+    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.77, WEG40089 The Movie Trilogy Sourcebook SE p.25"
   },
   {
     name: "R2-D2 (Artoo-Detoo) (4 ABY)",
@@ -7799,7 +7800,7 @@ const NOTABLE_NPCS = [
     move: 5,
     equipment: "",
     capsule: "",
-    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.77"
+    source: "WEG40126 Galaxy Guide 5: Return of the Jedi p.77, WEG40089 The Movie Trilogy Sourcebook SE p.26"
   },
 
   // ── GALAXY GUIDE 5 — Chapter 6: Remnants of the Empire (WEG40126) ──
@@ -16537,7 +16538,7 @@ const NOTABLE_NPCS = [
     move: 5,
     equipment: "Size: 0.96 meters. Cost: 1,250 credits (as purchased by Owen Lars).",
     capsule: "R2-D2 as of the Battle of Yavin. Memory never wiped — fiercely loyal personality behind a wall of electronic bleeps. Carries the Death Star plans to the Rebel Alliance.",
-    source: "WEG40093 Star Wars Sourcebook p.134"
+    source: "WEG40093 Star Wars Sourcebook p.134, WEG40089 The Movie Trilogy Sourcebook SE p.26"
   },
   {
     name: "C-3PO (See-Threepio) (0 BBY)",
@@ -16561,7 +16562,7 @@ const NOTABLE_NPCS = [
     move: 8,
     equipment: "Size: 1.67 meters. Cost: 1,700 credits (as purchased by Owen Lars).",
     capsule: "C-3PO as of the Battle of Yavin. Perpetually anxious protocol droid fluent in over six million forms of communication.",
-    source: "WEG40093 Star Wars Sourcebook p.134"
+    source: "WEG40093 Star Wars Sourcebook p.134, WEG40089 The Movie Trilogy Sourcebook SE p.25"
   },
   {
     name: "Andur Sunrider (4000 BBY)",
@@ -18628,5 +18629,653 @@ const NOTABLE_NPCS = [
     equipment: "Comlink, datapad, hold-out blaster (3D).",
     capsule: "A gifted young slicer and con artist who views the galaxy as easy pickings, acquiring credits and property through charm and datanet tapping while always stopping short of excess. Hacked into the Palace Dargul central computer to rig the selection algorithm and win the Duchess Mistal's consort competition — then discovered too late what he had actually won, fleeing after a few months of smothering devotion. Hid on Umgul under the alias 'Tymmo,' devising an implant micro-motivator that triggered a frantic flight response in blob racers; he bet on the implanted blobs, destroyed the device remotely after each race, and quietly amassed a fortune without tipping off the racing authorities — until Artoo Deetoo flagged anomalous win patterns from Coruscant. Lando Calrissian corners him in Fondine's stables. Now back at the Duchess's side, a victim of his own machinations.",
     source: "WEG40114 The Jedi Academy Sourcebook p.95"
+  },
+  {
+    name: "Hermi Odle",
+    species: "Baragwin",
+    system: "Tatoo",
+    location: "Tatooine — Jabba's Palace",
+    affiliations: ["Criminal Underworld", "Jabba's Organization"],
+    role: "Baragwin Armorer",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "1D+1", skills: { "blaster": "3D+1", "dodge": "3D" } },
+      KNOWLEDGE: { base: "2D", skills: { "alien species": "4D", "bureaucracy": "3D", "planetary systems": "4D", "streetwise": "9D", "survival": "8D" } },
+      MECHANICAL: { base: "2D", skills: { "astrogation": "3D", "space transports": "4D" } },
+      PERCEPTION: { base: "2D", skills: { "bargain": "4D", "con": "7D", "persuasion": "5D", "sneak": "5D" } },
+      STRENGTH: { base: "2D", skills: {} },
+      TECHNICAL: { base: "2D", skills: { "blaster repair": "6D", "firearms repair": "6D", "melee weapon repair": "6D", "starship weapon repair": "6D" } }
+    },
+    specialAbilities: "Smell: Baragwins have a remarkable sense of smell and get +1D to scent-based search and +1D to Perception checks to determine the moods of others within five meters.\n\nArmor: Baragwins' dense skins provide 1D protection against physical attacks only.\n\nWeapons Knowledge: Baragwins get an extra 1D at character creation only, which must be placed in blaster repair, capital starship weapon repair, firearms repair, melee weapon repair, starship weapon repair, or an equivalent weapon repair skill.",
+    forcePoints: 0,
+    characterPoints: 11,
+    move: 10,
+    equipment: "Datapad, 1,000 credits, tool-kit",
+    capsule: "Hermi Odle is a Baragwin who has spent most of his life on Tatooine, stranded after his unregistered freighter was shot down by Imperial patrols years ago. The Baragwins are an apolitical, anarchistic people, and it was this tendency that led Odle into Jabba the Hutt's court. Jabba hired him as personal armorer, impressed by his weapons knowledge and repair skills. Odle was responsible for maintaining every weapon in Jabba's arsenal — blasters, slugthrowers, vibroweapons, skiff-mounted cannons — a task made harder by the thugs' own misuse and poor maintenance. His major nemesis was Pote Snitkin, a Skrilling gun-runner who belittled Odle constantly and eventually sabotaged one of his weapons, which exploded and killed one of Jabba's pets. Odle barely avoided the rancor pit by offering to work for free, and became a laughingstock in the palace. During the battle at the Pit of Carkoon, Odle settled the score: when Snitkin seized a weapon to attack Skywalker, Odle calmly stunned him into unconsciousness — and Snitkin went down with the sail barge. Odle escaped, made his way to Mos Eisley, stole one of Jabba's space vehicles, and disappeared.",
+    source: "WEG40089 The Movie Trilogy Sourcebook SE p.69"
+  },
+  {
+    name: "Pote Snitkin",
+    species: "Skrilling",
+    system: "Tatoo",
+    location: "Tatooine — Jabba's Palace",
+    affiliations: ["Criminal Underworld", "Jabba's Organization"],
+    role: "Skrilling Gun-Runner",
+    type: "Named Minor Character",
+    stats: {
+      DEXTERITY: { base: "2D+2", skills: { "blaster": "4D", "dodge": "6D" } },
+      KNOWLEDGE: { base: "3D+2", skills: { "alien species": "5D+2", "bureaucracy": "5D", "business": "7D", "planetary systems": "5D+2" } },
+      MECHANICAL: { base: "3D", skills: { "astrogation": "4D", "space transports": "6D" } },
+      PERCEPTION: { base: "3D+2", skills: { "bargain": "6D", "command": "6D", "con": "7D", "sneak": "5D" } },
+      STRENGTH: { base: "3D", skills: { "brawling": "3D+2" } },
+      TECHNICAL: { base: "2D", skills: { "blaster repair": "5D" } }
+    },
+    specialAbilities: "Persuasion: Skrillings gain +1D to bargain and persuasion rolls.\n\nAcid: Skrilling digestive acid causes 2D stun damage.\n\nVice Grip: When maintaining a grip (tug of war, etc.), Skrillings gain +1D to lifting or Strength; this bonus does not apply to lifting objects.",
+    forcePoints: 0,
+    characterPoints: 5,
+    move: 10,
+    equipment: "Blaster pistol (5D), hold-out blaster (3D+2), datapad, comlink",
+    capsule: "A Skrilling gun-runner well known among Jabba's subordinates for supplying the crime lord's thugs with weapons. Snitkin had made a fortune as a smuggler and 'obtainer of industrial secrets' in the Corporate Sector before fleeing to Tatooine after a theft went bad. While looking for work at the Mos Eisley cantina, he met Bib Fortuna, who suggested that Jabba would be grateful if a nearby cache of Imperial munitions were to fall into 'the wrong hands.' One day later, Snitkin arrived at Jabba's palace with a repulsortruck filled with blaster rifles. Jabba welcomed him into his entourage. His greatest trouble there was Hermi Odle — Jabba's 'master weaponsmith' — whose work Snitkin openly criticized, loudly complaining about poor recharge rates on Odle's blaster rifles. After that incident, the Baragwin kept his distance. Snitkin was killed during Skywalker's rescue of Han Solo when Odle stunned him and left him aboard Jabba's sail barge as it exploded.",
+    source: "WEG40089 The Movie Trilogy Sourcebook SE p.74"
+  },
+  {
+    name: "Ak-rev",
+    species: "Weequay",
+    system: "Tatoo",
+    location: "Tatooine — Jabba's Palace",
+    affiliations: ["Criminal Underworld", "Jabba's Organization"],
+    role: "Weequay Musician / Guard",
+    type: "Named Minor Character",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "dodge": "3D+2", "melee combat": "5D", "melee parry": "5D" } },
+      KNOWLEDGE: { base: "2D+2", skills: { "alien species": "3D", "streetwise": "5D" } },
+      MECHANICAL: { base: "2D+2", skills: { "musical instrument operation: gong": "5D" } },
+      PERCEPTION: { base: "3D+2", skills: { "con": "4D", "search": "4D", "sneak": "4D" } },
+      STRENGTH: { base: "4D", skills: { "brawling": "5D+2" } },
+      TECHNICAL: { base: "2D", skills: {} }
+    },
+    specialAbilities: "Short-range Communication: Weequays of the same clan can communicate through complex pheromones. Aside from Jedi sensing abilities, no other species can detect this form of communication.\n\nStory Factors — Houk Rivalry: Despite official resolution of the Houk-Weequay conflicts, high animosity between the two species persists.",
+    forcePoints: 0,
+    characterPoints: 3,
+    move: 10,
+    equipment: "Vibroblade (STR+1D), gong mallet (STR+2D)",
+    capsule: "Raised in a monastery devoted to Am-Shak, the Weequay god of thunder, Ak-rev developed a love for the temple drums and a talent for street fighting in equal measure. Clanless after leaving the monastery, he scraped by as a laborer and underground arena fighter on Sriluur, always tithing to Am-Shak in exchange for access to the drums. Jabba heard him play during a religious ceremony and hired him for his Mos Eisley townhouse. When Jabba discovered his fighting skills, Ak-rev was transferred to the desert palace and eventually promoted to drum master. He and his subordinate Umpass-stay spent long afternoons playing sabacc while Jabba dozed. Ak-rev survived the sail barge explosion by staying behind — but his landspeeder was ambushed by Tusken Raiders en route to Mos Eisley. His fate is unknown.",
+    source: "WEG40089 The Movie Trilogy Sourcebook SE p.80"
+  },
+  {
+    name: "Doda Bodonawieedo",
+    species: "Rodian",
+    system: "Tatoo",
+    location: "Tatooine — Jabba's Palace",
+    affiliations: ["Criminal Underworld", "Jabba's Organization"],
+    role: "Rodian Musician / Runner",
+    type: "Named Minor Character",
+    stats: {
+      DEXTERITY: { base: "3D+2", skills: { "blaster": "5D+2", "dodge": "4D+2", "melee combat": "4D+2", "melee parry": "4D+2" } },
+      KNOWLEDGE: { base: "3D", skills: { "alien species": "4D", "bureaucracy": "4D", "business": "4D", "streetwise": "4D" } },
+      MECHANICAL: { base: "2D+2", skills: { "musical instrument operation: Rodian slitherhorn": "4D" } },
+      PERCEPTION: { base: "2D+2", skills: { "bargain": "4D", "command": "4D", "con": "6D", "sneak": "5D" } },
+      STRENGTH: { base: "3D+2", skills: { "brawling": "5D+2" } },
+      TECHNICAL: { base: "2D+1", skills: {} }
+    },
+    specialAbilities: "Story Factors — Reputation: Rodians are notorious for their tenacity and willingness to kill for credits. Most beings assume any unfamiliar Rodian is on a hunt and give it a wide berth.",
+    forcePoints: 0,
+    characterPoints: 5,
+    move: 10,
+    equipment: "Blaster carbine (4D+2), staff (STR+1D), Rodian slitherhorn",
+    capsule: "Born on a transport shuttle to Tatooine, the child of Rodians fleeing Navik the Red's anti-emigration crackdown. His parents were eventually tracked down and killed by a bounty hunter when Doda was ten — he survived only because he was born offworld and his name didn't appear on the contract. He grew up in Mos Eisley's streets with his human friend Falk, eventually falling in with Jabba's organization. Doda made himself useful as a minstrel and runner; Falk was executed by Bib Fortuna for eavesdropping, but Doda was spared when Greedo — a fellow Tetsus clan member — vouched for him. When Jabba's sail barge went to the Pit of Carkoon, Doda was running an errand in Mos Eisley. Upon hearing the news, he slipped into Jabba's townhouse, took several priceless sculptures, and vanished. His current whereabouts are unknown.",
+    source: "WEG40089 The Movie Trilogy Sourcebook SE p.81"
+  },
+  {
+    name: "Yarna d'al'Gargan",
+    species: "Askajian",
+    system: "Tatoo",
+    location: "Tatooine — Jabba's Palace",
+    affiliations: ["Criminal Underworld", "Jabba's Organization"],
+    role: "Dancer / Household Supervisor",
+    type: "Named Minor Character",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "dancing": "5D" } },
+      KNOWLEDGE: { base: "3D", skills: {} },
+      MECHANICAL: { base: "3D+1", skills: {} },
+      PERCEPTION: { base: "3D+1", skills: {} },
+      STRENGTH: { base: "2D+1", skills: {} },
+      TECHNICAL: { base: "3D", skills: {} }
+    },
+    specialAbilities: "Water Storage: Askajians can store water in their bodies. When traveling in desert conditions, they require only a tenth of a liter of water per day. When visiting non-desert worlds, Askajians can shed up to 60% of their stored water, leading to a substantial decrease in size.",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 10,
+    equipment: "",
+    capsule: "A talented dancer and chieftain's daughter from the desert world of Askaj, Yarna was seized in a slaver raid along with her mate Nataug and their four cublings. Sold to Jabba the Hutt, she was technically under contract rather than enslaved — she could buy her freedom, but at an extreme price. Her mate declared his family would never be slaves; Jabba fed him to the rancor. One cubling also died. Jabba held her three surviving cublings at his Mos Eisley townhouse to ensure her loyalty. She supervised Jabba's dancing girls and household staff, working steadily toward purchasing her and her children's freedom — she estimated three more years at the time of Jabba's death. The Hutt forced her to wear wart-like cosmetic applications on her face, apparently because she reminded him of his mother; courtiers called her 'Ugly One.' After Jabba's death, she escaped to Mos Eisley with the help of a palace guard named Doallyn.",
+    source: "WEG40089 The Movie Trilogy Sourcebook SE p.82"
+  },
+  {
+    name: "Barquin D'an",
+    species: "Bith",
+    system: "Tatoo",
+    location: "Tatooine — Jabba's Palace",
+    affiliations: ["The Fringe"],
+    role: "Bith Musician",
+    type: "Named Minor Character",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "dodge": "4D", "melee parry": "5D" } },
+      KNOWLEDGE: { base: "2D+2", skills: { "cultures": "4D+2", "scholar: music": "6D", "scholar: music composition": "8D" } },
+      MECHANICAL: { base: "3D+2", skills: { "musical instrument operation": "4D" } },
+      PERCEPTION: { base: "3D+2", skills: { "bargain": "4D+2" } },
+      STRENGTH: { base: "2D+1", skills: {} },
+      TECHNICAL: { base: "2D+2", skills: { "musical instrument repair": "4D+2" } }
+    },
+    specialAbilities: "Vision: Bith can focus on microscopic objects (+1D to Perception for objects within 30cm), but are extremely myopic (-1D to visual actions beyond 20m; cannot see beyond 40m).\n\nScent: +1D to Perception skills within three meters.\n\nManual Dexterity: +1D to fine motor skills (picking pockets, surgery, fine tool operation), but not gross motor skills such as blaster or dodge.",
+    forcePoints: 0,
+    characterPoints: 4,
+    move: 10,
+    equipment: "Kloo horn, recording gear",
+    capsule: "Older brother of Figrin D'an and the man who taught him music — a fact that has not helped Barquin's bitter feelings about his sibling's success. His songwriting skills are excellent but his performing never matched Figrin's virtuosity, limiting him to opening-act gigs in Outer Rim backwaters. He traveled to Tatooine hoping to enlist the Modal Nodes for a new recording, but found them unavailable — and himself stranded and broke. He parlayed a jam session into a spot with Jabba's house band, but fled the palace after witnessing Jabba feed the dancer Oola to his rancor. He escaped to Mos Eisley, sickened by the Hutt's depravity.",
+    source: "WEG40089 The Movie Trilogy Sourcebook SE p.83"
+  },
+  {
+    name: "Greeata",
+    species: "Rodian",
+    system: "Tatoo",
+    location: "Tatooine — Jabba's Palace",
+    affiliations: ["The Fringe", "Jabba's Organization"],
+    role: "Rodian Dancer / Musician",
+    type: "Named Minor Character",
+    stats: {
+      DEXTERITY: { base: "4D", skills: { "blaster": "5D+2", "dance": "5D", "dodge": "5D", "grenade": "6D" } },
+      KNOWLEDGE: { base: "2D+2", skills: { "intimidation": "5D", "languages": "3D", "streetwise": "4D+2" } },
+      MECHANICAL: { base: "2D+2", skills: { "space transports": "4D+2" } },
+      PERCEPTION: { base: "3D", skills: { "bargain": "4D", "investigation": "4D", "search": "5D" } },
+      STRENGTH: { base: "3D+2", skills: { "brawling": "5D+2" } },
+      TECHNICAL: { base: "2D", skills: {} }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 2,
+    move: 10,
+    equipment: "Various changes of costume, small percussion instruments, hold-out blaster (3D)",
+    capsule: "Unusual among Rodians for her complete disinterest in violence, Greeata spent her youth secretly studying music, song, and dance from alien minstrels in the capital's alien quarter while feigning the expected aggression during daylight hours. She mastered the music of many cultures and became a well-liked member of the traveling entertainer circuit. She met Sy Snootles while playing kloo horn on the Kuari Princess and the two left together after a Rodian bounty hunter attempted to forcibly take Greeata as his wife. Max Rebo discovered their act and recruited Sy as lead vocalist — Greeata came as a package deal, adding backup vocals and dance. After the Rebel attack on Jabba's sail barge stranded the Max Rebo Band in the desert, Greeata and fellow backup singer Lyn Me defended the group from Tusken Raiders and secured banthas to ride to the safety of Mos Eisley.",
+    source: "WEG40089 The Movie Trilogy Sourcebook SE p.85"
+  },
+  {
+    name: "Kabe",
+    species: "Chadra-Fan",
+    system: "Tatoo",
+    location: "Tatooine — Mos Eisley",
+    affiliations: ["The Fringe"],
+    role: "Chadra-Fan Thief",
+    type: "Named Minor Character",
+    stats: {
+      DEXTERITY: { base: "3D+2", skills: { "dodge": "5D+2", "pick pocket": "6D" } },
+      KNOWLEDGE: { base: "2D+2", skills: { "streetwise": "4D+2", "value": "3D+2" } },
+      MECHANICAL: { base: "3D", skills: { "repulsorlift operation": "4D" } },
+      PERCEPTION: { base: "3D+2", skills: { "con": "4D", "gambling": "4D+1", "hide": "5D", "sneak": "5D+2" } },
+      STRENGTH: { base: "2D+1", skills: {} },
+      TECHNICAL: { base: "2D+2", skills: { "security": "4D+2" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 6,
+    equipment: "Security systems tool kit (+1D to security), knife (STR+1)",
+    capsule: "A small Chadra-Fan abandoned by slavers in Mos Eisley, likely a survivor of the Chadran groundquake disaster that destroyed most of her civilization roughly ten years before the Battle of Yavin. Young and childlike, Kabe treats theft as a game rather than a crime. Her small size, keen senses, and quick reflexes make her an effective pickpocket and security system cracker; her large companion Muftak keeps predators and bounty hunters away, giving her near-free rein of the city streets. Her favorite scam is dressing as a Jawa to collect fake 'service taxes' from newcomers — the Jawas have been accosted for refunds many times and have threatened to fit her with a restraining bolt. She left Mos Eisley shortly after the Millennium Falcon's departure; her current whereabouts are unknown.",
+    source: "WEG40089 The Movie Trilogy Sourcebook SE p.86"
+  },
+  {
+    name: "Baniss Keeg",
+    species: "Duros",
+    system: "Tatoo",
+    location: "Tatooine — Mos Eisley",
+    affiliations: ["The Fringe"],
+    role: "Duros Engineer / Navigator",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "2D+2", skills: { "blaster": "4D", "brawling parry": "4D", "dodge": "4D" } },
+      KNOWLEDGE: { base: "2D+2", skills: { "alien species": "5D", "bureaucracy": "5D+1", "business": "5D", "languages": "5D", "streetwise": "5D+1", "value": "6D+1", "willpower": "6D" } },
+      MECHANICAL: { base: "3D+2", skills: { "astrogation": "10D+2", "starship gunnery": "7D+2", "starship shields": "7D" } },
+      PERCEPTION: { base: "3D", skills: { "bargain": "4D", "con": "4D" } },
+      STRENGTH: { base: "2D", skills: { "brawling": "4D", "stamina": "4D" } },
+      TECHNICAL: { base: "4D", skills: { "computer programming/repair": "6D", "security": "6D", "space transports repair": "9D", "starship weapon repair": "9D" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 12,
+    move: 10,
+    equipment: "Blaster pistol (4D), starship repair toolkit, 1,500 credits",
+    capsule: "A blue-skinned Duros and co-owner of the battered trading freighter Millanti, which doubles as a smuggling vessel. A former deep-space explorer and long-range scout, Keeg's Imperial license was revoked as part of Palpatine's anti-alien initiatives. Cash-strapped, he and his Duros partner Ellors Madak turned to smuggling bacta along the Shapani Bypass in Tapani sector. Keeg serves as the Millanti's navigator and engineer. He also freelances as a scout trainer, instructing corporate scouts in trailblazing and mapping, and occasionally travels to the Corporate Sector for survey operations.",
+    source: "WEG40089 The Movie Trilogy Sourcebook SE p.86"
+  },
+  {
+    name: "Ketwol",
+    species: "Pacithhip",
+    system: "Tatoo",
+    location: "Tatooine — Mos Eisley",
+    affiliations: ["The Fringe"],
+    role: "Pacithhip Prospector / Scout",
+    type: "Named Minor Character",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "3D+2", "blaster: hold-out blaster": "5D", "dodge": "5D", "missile weapons": "6D+2" } },
+      KNOWLEDGE: { base: "3D", skills: { "alien species": "5D", "business": "4D", "business: mining": "6D", "languages": "5D", "planetary systems": "5D", "streetwise": "5D" } },
+      MECHANICAL: { base: "2D", skills: { "astrogation": "4D", "space transports": "5D" } },
+      PERCEPTION: { base: "4D", skills: { "bargain": "5D", "con": "5D", "search": "5D", "sneak": "6D" } },
+      STRENGTH: { base: "3D+1", skills: { "brawling": "5D+2" } },
+      TECHNICAL: { base: "2D+2", skills: {} }
+    },
+    specialAbilities: "Tough Hide: Pacithhip possess thick hides that provide +1D protection from physical attacks.\n\nTusks: The sharp tusks of the Pacithhip inflict STR+1D damage on a successful brawling attack.",
+    forcePoints: 0,
+    characterPoints: 6,
+    move: 7,
+    equipment: "Prax Protector dart pistol (1D damage on impact, 3D+2 damage when dart explodes), The Herd Mother (modified light freighter)",
+    capsule: "An enigmatic Pacithhip from a distant Outer Rim system, Ketwol is an asteroid prospector and part-time scout who frequents seedy spaceports and tapcafes from Tatooine to Coruscant, selling modest quantities of precious ores and metals. He supplements his income by taking charter passengers aboard his ship The Herd Mother — an old, poorly-maintained vessel months overdue for a safety inspection. Generally regarded as pleasant if slightly aloof, few test his good nature; he is a deadly-accurate shot with the concealed dart pistol in his tunic.",
+    source: "WEG40089 The Movie Trilogy Sourcebook SE p.87"
+  },
+  {
+    name: "Labria",
+    species: "Devaronian",
+    system: "Tatoo",
+    location: "Tatooine — Mos Eisley",
+    affiliations: ["The Fringe"],
+    role: "Devaronian Grifter / Information Broker",
+    type: "Named Minor Character",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { "dodge": "3D" } },
+      KNOWLEDGE: { base: "3D", skills: { "streetwise": "4D" } },
+      MECHANICAL: { base: "1D", skills: { "astrogation": "3D+1" } },
+      PERCEPTION: { base: "2D+2", skills: { "con": "3D+2", "hide": "3D", "investigation": "4D+1", "sneak": "3D+2" } },
+      STRENGTH: { base: "2D+1", skills: {} },
+      TECHNICAL: { base: "1D", skills: { "computer programming/repair": "3D" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 3,
+    move: 10,
+    equipment: "Half-empty bottle of Jawa ale",
+    capsule: "Mos Eisley's most infamous reprobate — a sinister-looking Devaronian who fancies himself an information broker but is just plain not very good at it. Labria sells whatever scraps he sees or hears to anyone who'll pay, never verifying accuracy or sources; his tales are always taken with a grain of spice by those who know him. Much of his meager earnings go to drinks at the local cantinas, though he often only pretends to be drunk in hopes of overhearing something he can sell. Most people see through it but tell him nothing useful anyway. He was Garindan's main source on Jabba the Hutt — which explains Garindan's poor track record with the Bloated One. The remainder of his income goes into a music recording collection and a local bank account under the assumed name 'Airbal.' Subtlety is not his strong point.",
+    source: "WEG40089 The Movie Trilogy Sourcebook SE p.87"
+  },
+  {
+    name: "Owen Lars",
+    species: "Human",
+    system: "Tatoo",
+    location: "Tatooine — Lars Homestead",
+    affiliations: ["Neutral"],
+    role: "Moisture Farmer",
+    type: "Named Minor Character",
+    stats: {
+      DEXTERITY: { base: "2D", skills: {} },
+      KNOWLEDGE: { base: "2D", skills: { "survival": "3D+2" } },
+      MECHANICAL: { base: "2D", skills: { "repulsorlift operation": "2D+1" } },
+      PERCEPTION: { base: "2D", skills: { "command": "4D" } },
+      STRENGTH: { base: "2D", skills: { "lifting": "2D+1" } },
+      TECHNICAL: { base: "2D", skills: { "droid programming": "2D+2", "droid repair": "3D", "farm equipment repair": "4D" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 9,
+    equipment: "Blaster carbine (5D), hydrospanner, macrobinoculars, farm tools",
+    capsule: "Owen Lars was a practical, hardworking moisture farmer on Tatooine and guardian of young Luke Skywalker. He used vaporators to retrieve water from the air, directing it into underground produce gardens — a double gamble that combined moisture collection with food farming. A stubborn, independent man proud of what he'd built from a harsh environment, Owen kept Luke's adventurous nature in check with hard work and the constant promise of 'just one more season.' He resisted letting Luke go to the Academy with his friends — including Biggs Darklighter — and was killed by Imperial stormtroopers searching for R2-D2 and C-3PO.",
+    source: "WEG40089 The Movie Trilogy Sourcebook SE p.89"
+  },
+  {
+    name: "Beru Lars",
+    species: "Human",
+    system: "Tatoo",
+    location: "Tatooine — Lars Homestead",
+    affiliations: ["Neutral"],
+    role: "Moisture Farmer",
+    type: "Named Minor Character",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { "blaster": "3D" } },
+      KNOWLEDGE: { base: "2D", skills: { "survival": "5D" } },
+      MECHANICAL: { base: "2D", skills: { "repulsorlift operation": "3D+1" } },
+      PERCEPTION: { base: "2D", skills: { "bargain": "4D" } },
+      STRENGTH: { base: "2D", skills: {} },
+      TECHNICAL: { base: "2D", skills: { "first aid": "3D+2", "moisture farm technology": "5D+2" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 9,
+    equipment: "Farm equipment, household appliances",
+    capsule: "Beru Lars was Owen's wife and Luke Skywalker's aunt, co-guardian of the boy on the Lars moisture farm. A hardworking woman with a quiet strength, she saw the adventurous sparkle in Luke's eyes and repeatedly fought on his side when it came to letting him go to the Academy with friends like Biggs Darklighter. Owen always overruled her. She was killed alongside Owen by Imperial stormtroopers hunting for R2-D2 and C-3PO.",
+    source: "WEG40089 The Movie Trilogy Sourcebook SE p.89"
+  },
+  {
+    name: "Ellors Madak",
+    species: "Duros",
+    system: "Tatoo",
+    location: "Tatooine — Mos Eisley",
+    affiliations: ["The Fringe"],
+    role: "Duros Pilot / Smuggler",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "2D+2", skills: { "blaster": "5D", "brawling parry": "4D", "dodge": "4D", "melee combat": "5D", "melee parry": "5D" } },
+      KNOWLEDGE: { base: "2D+2", skills: { "alien species": "5D", "bureaucracy": "5D+1", "business": "5D", "languages": "5D", "streetwise": "5D+1", "value": "6D+1", "willpower": "6D" } },
+      MECHANICAL: { base: "3D+2", skills: { "astrogation": "7D", "repulsorlift operation": "5D", "space transports": "7D", "starship gunnery": "6D+2", "starship shields": "6D+2" } },
+      PERCEPTION: { base: "3D", skills: { "bargain": "5D", "con": "5D" } },
+      STRENGTH: { base: "2D", skills: { "brawling": "4D+1", "stamina": "4D+1" } },
+      TECHNICAL: { base: "4D", skills: { "computer programming/repair": "6D", "security": "6D" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 12,
+    move: 10,
+    equipment: "Blaster pistol (4D), knife (STR+1D), 500 credits",
+    capsule: "A Duros pilot and co-owner of the trading freighter Millanti alongside his partner Baniss Keeg. Madak once served as a government scout until the Empire's anti-alien policies forced his retirement. He and Keeg now run legitimate shipping to Celanon, Byblos, and Yaga Minor, though Imperial trade restrictions have cut into their margins — prompting a side business smuggling bacta through Tapani sector. Madak also freelances as a flight instructor, charging wealthy patrons for piloting lessons, where his natural Duros affinity for navigation has made him quite successful.",
+    source: "WEG40089 The Movie Trilogy Sourcebook SE p.90"
+  },
+  {
+    name: "Malakili",
+    species: "Human",
+    system: "Tatoo",
+    location: "Tatooine — Jabba's Palace",
+    affiliations: ["Criminal Underworld", "Jabba's Organization"],
+    role: "Animal Trainer",
+    type: "Named Minor Character",
+    stats: {
+      DEXTERITY: { base: "3D+1", skills: { "blaster": "3D+2", "melee combat": "3D+2" } },
+      KNOWLEDGE: { base: "2D+1", skills: { "alien species": "4D", "value": "4D", "willpower": "5D" } },
+      MECHANICAL: { base: "2D+1", skills: { "beast riding": "6D+1" } },
+      PERCEPTION: { base: "4D", skills: { "bargain": "5D", "command: creatures": "5D" } },
+      STRENGTH: { base: "3D", skills: { "brawling": "4D", "lifting": "5D" } },
+      TECHNICAL: { base: "3D", skills: {} }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 5,
+    move: 10,
+    equipment: "Shockprod (STR+1D stun damage)",
+    capsule: "A Corellian animal handler who spent years traveling as a zookeeper and trapper specializing in dangerous creatures. He joined the 'Circus Horrificus,' a seedy traveling show displaying terrifying animals from hundreds of worlds, and lasted seven seasons without injury — a record. In his eighth season he was transferred to Tatooine to care for Jabba the Hutt's rancor, a gift to the crime lord. Malakili genuinely loved the beast and wept openly at its death at Luke Skywalker's hands. In the chaos following Jabba's death, he freed the palace head cook and the pair looted enough funds to open a restaurant in Mos Eisley: The Crystal Moon, widely regarded as the best place to eat in the system.",
+    source: "WEG40089 The Movie Trilogy Sourcebook SE p.91"
+  },
+  {
+    name: "Droopy McCool",
+    species: "Kitonak",
+    system: "Tatoo",
+    location: "Tatooine — Jabba's Palace",
+    affiliations: ["The Fringe", "Jabba's Organization"],
+    role: "Kitonak Musician",
+    type: "Named Minor Character",
+    stats: {
+      DEXTERITY: { base: "2D+1", skills: { "dodge": "2D+2" } },
+      KNOWLEDGE: { base: "2D+2", skills: { "survival": "4D+2" } },
+      MECHANICAL: { base: "4D", skills: { "musical instrument operation: chidinkalu": "7D" } },
+      PERCEPTION: { base: "2D+2", skills: {} },
+      STRENGTH: { base: "3D+2", skills: { "burrowing": "4D" } },
+      TECHNICAL: { base: "2D+2", skills: { "musical instrument repair": "5D" } }
+    },
+    specialAbilities: "Burrowing: Kitonaks can burrow through sand and loose materials at 1 meter per round (Strength skill).\n\nNatural Armor: Kitonak skin provides +3D against physical attacks.\n\nStory Factors — Interminable Patience: Kitonaks resist being rushed at +3D to the relevant skill. They seem slow, patient, and stubborn to those who don't understand them.",
+    forcePoints: 0,
+    characterPoints: 6,
+    move: 4,
+    equipment: "Chidinkalu",
+    capsule: "The lead chidinkalu player for the Max Rebo Band, known to his bandmates as 'Droopy McCool' — a stage name coined by Sy Snootles. His original band name under the late Evar Orbus was 'Snit,' which he despised. When Orbus died under suspicious circumstances shortly after arriving in Mos Eisley, McCool insisted the band stop using that name as his condition for staying. Short on credits, the trio auditioned for Jabba the Hutt — Max Rebo negotiated their contract for unlimited food, much to everyone else's dismay. McCool enjoyed playing with the band but was deeply lonely for other Kitonaks; his bandmates sometimes found him sobbing alone in his room. While at Jabba's palace he claimed to hear other Kitonaks in the distant desert, saying only 'Living' when asked what they'd be doing in the Dune Sea. After Jabba's death he quit the band to find his 'brothers' and walked into the desert alone. Occasional reports of Kitonak pipe music drifting from the far dunes remain unconfirmed.",
+    source: "WEG40089 The Movie Trilogy Sourcebook SE p.92"
+  },
+  {
+    name: "Lyn Me",
+    species: "Twi'lek",
+    system: "Tatoo",
+    location: "Tatooine — Jabba's Palace",
+    affiliations: ["The Fringe", "Jabba's Organization"],
+    role: "Twi'lek Entertainer",
+    type: "Named Minor Character",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "5D", "brawling parry": "5D", "dodge": "7D", "melee combat": "5D", "melee combat: knives": "5D+2", "melee parry": "5D" } },
+      KNOWLEDGE: { base: "3D", skills: { "planetary systems": "4D", "streetwise": "4D" } },
+      MECHANICAL: { base: "2D+1", skills: {} },
+      PERCEPTION: { base: "4D+2", skills: { "bargain": "5D", "search": "6D", "sneak": "6D" } },
+      STRENGTH: { base: "3D", skills: { "brawling": "5D", "brawling: martial arts": "6D" } },
+      TECHNICAL: { base: "1D", skills: {} }
+    },
+    specialAbilities: "Head-tails: Twi'leks can use their head tails to communicate in secret with each other, even in a room full of others. The complex movement of the tails is a 'secret' language all Twi'leks are fluent in.",
+    forcePoints: 0,
+    characterPoints: 8,
+    move: 10,
+    equipment: "Two knives (STR+1D), various changes of costume, 500 credits",
+    capsule: "One of Lyn Me's earliest memories is Boba Fett's cold Mandalorian armor against her face. When slavers ravaged her village on Ryloth, the village leaders pooled their resources and hired Fett to exterminate them. He arrived weeks later and destroyed the slavers, but not before the local school caught fire. Fett paused mid-battle to rescue the children before returning to the stars. From that day Lyn Me idolized him, following his career through holofeeds and slandocs, seeing him as a hero in tarnished armor. She mastered Twi'lek dance to become the greatest dancer of her clan, eventually joining the Max Rebo Band as a backup dancer and singer alongside Greeata and Rystall. When the band was booked at Jabba's palace — and she learned Boba Fett was on retainer there — she stayed. She finally performed for him and spoke to him briefly; he told her he was impressed, and promised to spend more time with her. The next day Jabba's court was destroyed in the battle with Skywalker. Lyn Me believes Fett died among the casualties and has sworn to kill Skywalker, Leia, and Solo if she ever gets the chance.",
+    source: "WEG40089 The Movie Trilogy Sourcebook SE p.93"
+  },
+  {
+    name: "Melas",
+    species: "Sarkan",
+    system: "Tatoo",
+    location: "Tatooine — Mos Eisley",
+    affiliations: ["The Fringe"],
+    role: "Sarkan Expatriate",
+    type: "Named Minor Character",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "3D+2", "blaster: hold-out blaster": "5D", "dodge": "5D" } },
+      KNOWLEDGE: { base: "3D", skills: { "alien species": "5D", "languages": "5D", "planetary systems": "5D", "streetwise": "5D" } },
+      MECHANICAL: { base: "2D", skills: { "astrogation": "4D", "space transports": "4D" } },
+      PERCEPTION: { base: "4D", skills: { "bargain": "5D", "con": "5D", "search": "5D", "sneak": "6D" } },
+      STRENGTH: { base: "3D+1", skills: { "brawling": "3D+2" } },
+      TECHNICAL: { base: "2D+2", skills: {} }
+    },
+    specialAbilities: "Night Vision: Sarkans operate in darkness with no penalty.\n\nCold Blooded: If exposed to extreme cold, all die codes are reduced by -3D. Can die of exposure to freezing temperatures in 20 minutes.\n\nTail: Sarkans can attack with their thick tail (brawling roll), inflicting STR+1D damage.\n\nStory Factors — Exile: As an exile, Melas does not engage in Sarkan protocol rituals.",
+    forcePoints: 0,
+    characterPoints: 12,
+    move: 7,
+    equipment: "Hold-out blaster (3D+2), gruu pipe, credit voucher (220,000 credits), numerous financial accounts (totalling ~2 million credits)",
+    capsule: "Exiled from Sarka for two crimes: being born with blue eyes, diminutive stature, and short claws — a 'deformity' that cost his family status — and for genuinely enjoying the company of aliens, in defiance of Sarkan cultural contempt for offworlders. He smuggled a considerable fortune off-planet when forced to leave and has since wandered the galaxy, wanting nothing more than to encounter as many different species as possible. Rarely seen without an Essoomian gruu pipe in his scaly palms. Despite his optimism, he speaks of Sarka's lush jungles, jewel-encrusted mountains, and cave-cities with a quiet melancholy.",
+    source: "WEG40089 The Movie Trilogy Sourcebook SE p.94"
+  },
+  {
+    name: "Muftak",
+    species: "Talz",
+    system: "Tatoo",
+    location: "Tatooine — Mos Eisley",
+    affiliations: ["The Fringe"],
+    role: "Talz Drifter",
+    type: "Named Minor Character",
+    stats: {
+      DEXTERITY: { base: "2D+2", skills: { "brawling parry": "3D+2" } },
+      KNOWLEDGE: { base: "2D+1", skills: { "streetwise": "4D+1" } },
+      MECHANICAL: { base: "2D+1", skills: { "beast riding": "4D" } },
+      PERCEPTION: { base: "2D+1", skills: {} },
+      STRENGTH: { base: "4D+1", skills: { "brawling": "6D", "lifting": "5D+1" } },
+      TECHNICAL: { base: "3D", skills: {} }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 9,
+    equipment: "Beat-up hold-out blaster (2D+1)",
+    capsule: "A native of Mos Eisley in the sense that he was raised there — his species, the Talz, are not indigenous to Tatooine. Orphaned young, he grew up on the city streets with no knowledge of his own species. Despite his fierce appearance and immense build, Muftak is gentle and easy to get along with, though he has no qualms about removing the limbs of anyone too annoying or threatening. He took in the young Chadra-Fan Kabe after finding her abandoned by slavers who thought she was too small to sell, and has taught her the ways of the streets ever since. The two live in abandoned tunnels beneath Docking Bay 83. Muftak prefers bare-handed fighting — his hold-out blaster has failed him too often to trust. His modest needs were met through Kabe's thievery and the sale of street information to offworlders. He befriended the Ithorian Momaw Nadon and spent long hours in conversation with him. After the events that shook Mos Eisley, Muftak and Kabe left Tatooine to find their destiny.",
+    source: "WEG40089 The Movie Trilogy Sourcebook SE p.95"
+  },
+  {
+    name: "Rappertunie",
+    species: "Shawda Ubb",
+    system: "Tatoo",
+    location: "Tatooine — Jabba's Palace",
+    affiliations: ["The Fringe", "Jabba's Organization"],
+    role: "Shawda Ubb Performer",
+    type: "Named Minor Character",
+    stats: {
+      DEXTERITY: { base: "3D+1", skills: { "dodge": "4D+1", "melee combat: acid spray": "5D+1" } },
+      KNOWLEDGE: { base: "2D+2", skills: { "alien species": "4D+2", "planetary systems": "5D", "streetwise": "5D" } },
+      MECHANICAL: { base: "2D+1", skills: { "musical instrument operation: growdi": "4D+1" } },
+      PERCEPTION: { base: "3D+1", skills: { "bargain": "4D+1", "con": "5D", "hide": "4D", "sneak": "4D" } },
+      STRENGTH: { base: "3D+1", skills: {} },
+      TECHNICAL: { base: "3D", skills: {} }
+    },
+    specialAbilities: "Acid Spray: The Shawda Ubb can spit a paralyzing poison at targets within 3 meters (6D stun damage; effects last 15 standard minutes, immobilizing a human-sized mammal).\n\nMarsh Dwellers: In moist environments, Shawda Ubb receive +1D to all DEX, PER, and STR attribute and skill checks (psychological advantage). In very dry environments, they suffer -1D to those same checks.",
+    forcePoints: 0,
+    characterPoints: 4,
+    move: 5,
+    equipment: "Growdi, 500 credits",
+    capsule: "Few Shawda Ubb leave their marsh homeworld of Manpha, but Rappertunie — born Rapotwanalantonee — had the urge to travel from the day he hatched. He funded early wanderings by playing music in isolated marsh villages, eventually saving enough to reach Shanpan, Manpha's sole spaceport. There he adapted his stage name for alien tongues and embraced the growdi, a Manphan part-flute, part-water organ which he plays while sitting on its hemispherical stump. When the Max Rebo Band came to Manpha, Max invited him along for a season of Outer Rim gigs. The second stop was Mos Eisley — and Jabba extended the engagement indefinitely. Rappertunie found Tatooine oppressive and dry, and spent his time looking for a way off-planet while drinking enormous quantities of water. He avoided unnecessary exertions by sticking to the growdi, which lets him perform while seated. Smaller aliens look like food in Jabba's court, but his paralytic acid spray discouraged the more violent courtiers. He had been pestering Sy Snootles for an off-world gig for months. With Jabba's death, he finally got his wish.",
+    source: "WEG40089 The Movie Trilogy Sourcebook SE p.99"
+  },
+  {
+    name: "Max Rebo",
+    species: "Ortolan",
+    system: "Tatoo",
+    location: "Tatooine — Jabba's Palace",
+    affiliations: ["The Fringe", "Jabba's Organization"],
+    role: "Ortolan Keyboard Player / Bandleader",
+    type: "Named Minor Character",
+    stats: {
+      DEXTERITY: { base: "2D+2", skills: { "dodge": "3D+2" } },
+      KNOWLEDGE: { base: "2D+2", skills: { "alien species": "3D+2", "cultures": "3D+2", "scholar: music composition": "4D" } },
+      MECHANICAL: { base: "3D", skills: { "musical instrument operation: Red Ball organ": "7D" } },
+      PERCEPTION: { base: "3D", skills: { "bargain": "3D+1" } },
+      STRENGTH: { base: "2D+2", skills: {} },
+      TECHNICAL: { base: "4D", skills: { "musical instrument repair": "4D+2" } }
+    },
+    specialAbilities: "Foraging: +2D to any attempt to forage for food or locate a good restaurant.\n\nIngestion: Ortolans can ingest large amounts of varied food, gaining +1D to resist poisoning or indigestion.\n\nStory Factors — Food: Ortolans are obsessed with food and the fear of missing a meal. Offering an Ortolan food in exchange for a service grants +2D (or more for really good food) to persuasion attempts.",
+    forcePoints: 0,
+    characterPoints: 4,
+    move: 5,
+    equipment: "Credit voucher (50 credits), Red Ball organ",
+    capsule: "The pudgy blue Ortolan lead keyboard player who nominally fronts the Max Rebo Band — though Sy Snootles was really the brains of the operation and preferred to let Rebo serve as front man. After original bandleader Evar Orbus was slain in a 'contractual dispute,' the core trio of Rebo, Snootles, and Droopy McCool auditioned for Jabba the Hutt. Playing an inspired set, they secured a lifetime contract — which Max happily negotiated for unlimited food, much to Snootles' fury. He also recruited the band's backup members: Rappertunie, Rystall, Lyn Me, Greeata, Joh Yowza, Barquin D'an, and Doda Bodonawieedo. After Jabba's death and McCool's departure, Rebo and Snootles played together briefly before she dissolved the partnership. Rebo drifted into the Rebel Alliance, entertaining troops across the Outer Rim. After the Battle of Endor, he founded a successful chain of restaurants on eight planets and now lives in luxury on Coruscant.",
+    source: "WEG40089 The Movie Trilogy Sourcebook SE p.100"
+  },
+  {
+    name: "Rystall",
+    species: "Human/Near-Human (mixed)",
+    system: "Tatoo",
+    location: "Tatooine — Jabba's Palace",
+    affiliations: ["The Fringe", "Jabba's Organization"],
+    role: "Entertainer",
+    type: "Named Minor Character",
+    stats: {
+      DEXTERITY: { base: "3D+1", skills: { "blaster": "3D+2", "dance": "5D" } },
+      KNOWLEDGE: { base: "3D+2", skills: { "alien species": "4D+2", "artist": "4D+2", "languages": "5D", "streetwise": "5D" } },
+      MECHANICAL: { base: "2D+2", skills: {} },
+      PERCEPTION: { base: "3D+2", skills: { "bargain": "5D", "persuasion": "5D" } },
+      STRENGTH: { base: "2D+2", skills: { "climbing/jumping": "4D+2", "stamina": "4D+2" } },
+      TECHNICAL: { base: "2D", skills: { "first aid": "3D" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 4,
+    move: 10,
+    equipment: "Several changes of costume, hold-out blaster (3D)",
+    capsule: "Born in the Undercity of Coruscant to a human mother and a near-human father of unknown origin, abandoned at birth and raised by a pair of Ortolan musicians driven below by Imperial racism. She grew up singing and dancing on dark street corners with her adoptive parents to earn enough to survive. In her early teens she caught the attention of a Black Sun Vigo who promised a better life — then enslaved her as a dancer and held her Ortolan parents as laborers, threatening to kill them if she didn't perform for his guests. After over two years in chains, Lando Calrissian attended a sabacc tournament at the crime lord's moon palace, sensed her plight, and played her and the Ortolans as stakes in the final match — and won. The three escaped just ahead of the Vigo's enforcers. Drifting eventually to Tatooine, the Ortolans reconnected with old friend Max Rebo and arranged for Rystall to audition with the band. She joined as one of three backup singers and dancers. Unlike her bandmates, she holds no resentment toward Skywalker and the Rebels for ending the Jabba engagement — the Hutt's court reminded her too much of the Black Sun palace where she was kept a slave.",
+    source: "WEG40089 The Movie Trilogy Sourcebook SE p.101"
+  },
+  {
+    name: "Saelt-Marae",
+    species: "Yarkora",
+    system: "Tatoo",
+    location: "Tatooine — Jabba's Palace",
+    affiliations: ["Criminal Underworld", "Jabba's Organization"],
+    role: "Alien trader / informant",
+    type: "Named Minor Character",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "5D", "brawling parry": "5D", "dodge": "5D", "melee combat": "6D", "melee parry": "5D", "running": "5D" } },
+      KNOWLEDGE: { base: "3D", skills: { "alien species": "6D", "bureaucracy": "5D", "cultures": "6D", "languages": "6D", "law enforcement": "6D", "planetary systems": "6D", "streetwise": "6D", "value": "6D", "willpower": "5D" } },
+      MECHANICAL: { base: "3D", skills: { "astrogation": "5D", "space transports": "5D" } },
+      PERCEPTION: { base: "3D", skills: { "bargain": "5D", "command": "4D", "con": "6D", "hide": "6D", "persuasion": "6D", "search": "5D", "sneak": "6D" } },
+      STRENGTH: { base: "3D", skills: { "brawling": "5D" } },
+      TECHNICAL: { base: "3D", skills: { "computer programming/repair": "7D" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 12,
+    move: 10,
+    equipment: "Double-barreled blaster pistol (5D+2, ammo: 10)",
+    capsule: "The alien known as Saelt-Marae is something of an enigma: no one knows his true origins, background, or species, though other aliens — calling themselves the 'Yarkora' — with similar appearance have been sighted in the Outer Rim Territories. Saelt-Marae joined Jabba the Hutt's entourage several years ago, posing as a trader specializing in the location and sale of religious artifacts from primitive cultures; apparently, Saelt-Marae was familiar with B'omarr monks that roamed the lower levels of Jabba's palace. After ingratiating himself with Jabba, Saelt-Marae quietly immersed himself in the intrigues of the Hutt's 'court.' Over time, he amassed a great deal of information about the various intrigues and plots that Jabba's entourage continually indulged. He often provided that information to his Hutt master — for a price. The fact that none of Jabba's courtiers realized Saelt-Marae was essentially an informant who revealed secrets to the Hutt at every turn only underscores how crafty and subtle this 'simple trader' truly is. After Jabba's death, a sizable portion of Jabba's computer records and financial data was accessed, and a number of the Hutt's hidden bank accounts were raided. These thefts coincided with Saelt-Marae's disappearance. His current whereabouts remain unknown.",
+    source: "WEG40089 The Movie Trilogy Sourcebook SE p.101"
+  },
+  {
+    name: "Sy Snootles",
+    species: "Pa'lowick",
+    system: "Tatoo",
+    location: "Tatooine — Jabba's Palace",
+    affiliations: ["The Fringe", "Jabba's Organization"],
+    role: "Singer",
+    type: "Pa'lowick singer",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "3D+2", "dance": "5D", "dodge": "5D+1" } },
+      KNOWLEDGE: { base: "3D", skills: { "alien species": "5D+1", "artist: singing": "6D+1", "business": "6D+2", "streetwise": "6D+2" } },
+      MECHANICAL: { base: "3D", skills: {} },
+      PERCEPTION: { base: "2D", skills: { "bargain": "5D+2" } },
+      STRENGTH: { base: "2D+1", skills: { "stamina": "5D" } },
+      TECHNICAL: { base: "2D+2", skills: {} }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 8,
+    move: 8,
+    equipment: "Various changes of costume, recording gear, comlink-microphone",
+    capsule: "Easily the most pragmatic member of the Max Rebo Band, Sy Snootles was swept into Jabba the Hutt's intrigues almost immediately after their previous band leader was killed. Max Rebo negotiated their new lifetime contract with Jabba — and, being a food-obsessed Ortolan, accepted payment in foodstuffs. Enraged, Snootles desperately sought a way out, preferably one that didn't lead into the rancor's gullet. Shortly after signing on, she began receiving offers from various parties — including Lady Valarian — for intelligence data from within Jabba's palace. Unsure what to do, she was approached by Bib Fortuna, who advised her to take the commissions but report back to him; he would supply her with information to 'leak,' and Jabba would pay her extra for the service. She became a double agent without ever quite meaning to. This period of espionage ended when Luke Skywalker arrived to rescue Han Solo. After Jabba's death, the payments stopped and the band dissolved — McCool quit, and her partnership with Max Rebo ended shortly thereafter. Sy Snootles attempted a solo career, but her recordings were utter failures. She now tours under a variety of stage names, usually in seedy Outer Rim dives.",
+    source: "WEG40089 The Movie Trilogy Sourcebook SE p.104"
+  },
+  {
+    name: "Umpass-stay",
+    species: "Klatooinan",
+    system: "Tatoo",
+    location: "Tatooine — Jabba's Palace",
+    affiliations: ["Criminal Underworld", "Jabba's Organization"],
+    role: "Spy / Bodyguard",
+    type: "Klatooinan bodyguard",
+    stats: {
+      DEXTERITY: { base: "4D+1", skills: { "blaster": "5D", "dodge": "6D", "melee combat": "6D", "melee parry": "5D+2" } },
+      KNOWLEDGE: { base: "2D+2", skills: { "alien species": "3D+2", "streetwise": "3D+2", "survival": "5D" } },
+      MECHANICAL: { base: "2D", skills: { "musical instrument operation: drum": "3D" } },
+      PERCEPTION: { base: "3D", skills: { "con": "3D+2", "search": "6D", "sneak": "5D" } },
+      STRENGTH: { base: "3D+2", skills: { "brawling": "5D+2" } },
+      TECHNICAL: { base: "2D+1", skills: {} }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 5,
+    move: 10,
+    equipment: "Blaster pistol (4D), drum mallet (STR+1D)",
+    capsule: "Born into a family indentured to the Desilijic Hutt clan for centuries, Umpass-stay grew up on a plantation on Shawti serving the local clan master. His talent for reading the intentions of visitors earned him a trusted role as personal bodyguard to Shebba Kalshi Desilijic — until the day he misjudged Shebba's ambitious nephew Jabba, who assassinated his elder. Rather than be punished, Umpass-stay was recruited by Jabba himself as a court spy: posing as a harmless stooge, he served snacks and reported on courtiers' loyalties. After a team of assassins disguised as a minstrel band tried to kill Jabba, the Hutt insisted all court bands incorporate Umpass-stay's drum into their shows — placing a trained bodyguard in plain sight without arousing suspicion. Most took this as one of Jabba's eccentricities. When the Max Rebo Band got the palace gig, Bib Fortuna warned them to come prepared with drum numbers. During the Skywalker incident, Umpass-stay was closely watching Lando Calrissian — and so was not invited to the Great Pit of Carkoon. He never got the chance to warn his master. After Jabba's death, Umpass-stay returned to Hutt space and went to work for another member of the Desilijic clan.",
+    source: "WEG40089 The Movie Trilogy Sourcebook SE p.106"
+  },
+  {
+    name: "Joh Yowza",
+    species: "Yuzzum",
+    system: "Tatoo",
+    location: "Tatooine — Jabba's Palace",
+    affiliations: ["The Fringe", "Jabba's Organization"],
+    role: "Singer",
+    type: "Yuzzum singer",
+    stats: {
+      DEXTERITY: { base: "2D+2", skills: { "dodge": "3D+2" } },
+      KNOWLEDGE: { base: "3D+2", skills: { "alien species": "4D", "artist: singer": "5D+2", "planetary systems": "4D" } },
+      MECHANICAL: { base: "3D+2", skills: {} },
+      PERCEPTION: { base: "3D+1", skills: { "search": "4D+1" } },
+      STRENGTH: { base: "2D+1", skills: { "climbing/jumping": "5D+1" } },
+      TECHNICAL: { base: "2D+1", skills: {} }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 4,
+    move: 10,
+    equipment: "",
+    capsule: "A diminutive Yuzzum — at 1.4 meters, far shorter than the species' two-meter average — who was ostracized by his herd on Endor's moon and spent his isolation practicing the mournful melodies that form the basis of Yuzzum speech. He accidentally stowed away aboard the smuggler Roark Garnet's ship, who kept him on as a cook's helper and taught him rudimentary Basic, nicknaming him 'Furball.' On a stopover at Nar Shaddaa, Joh Yowza wandered into a tapcafe where Evar Orbus's band was playing and launched into song — the crowd erupted, and Orbus grudgingly let him sit in. Sy Snootles coined his stage name on the spot. He followed the band to Tatooine and survived the 'contractual dispute' that ended Orbus's career. At Jabba's palace, Bib Fortuna — aware that Jabba despised Yuzzum — ordered him to disappear before the audition. He wandered the lower levels alone until the music became irresistible; he leapt onto the stage mid-number and earned thunderous applause, including from Jabba himself. After Jabba's death, Yowza made his way to Mos Eisley and found work with the house band on a small passenger liner, singing for a berth and passage toward the Outer Rim.",
+    source: "WEG40089 The Movie Trilogy Sourcebook SE p.107"
+  },
+  {
+    name: "Zutton",
+    species: "Snivvian",
+    system: "Tatoo",
+    location: "Tatooine — Jabba's Palace",
+    affiliations: ["The Fringe", "Jabba's Organization"],
+    role: "Bounty Hunter",
+    type: "Snivvian bounty hunter",
+    stats: {
+      DEXTERITY: { base: "2D+2", skills: { "blaster": "5D", "dodge": "4D+2", "grenade": "5D" } },
+      KNOWLEDGE: { base: "3D", skills: { "artist: painting": "6D+1", "planetary systems": "4D", "streetwise: Thalassian slavers": "5D", "value": "4D" } },
+      MECHANICAL: { base: "2D+1", skills: { "space transports": "4D" } },
+      PERCEPTION: { base: "4D+1", skills: { "command": "4D+2", "investigation": "5D", "search": "4D+2" } },
+      STRENGTH: { base: "3D", skills: { "stamina": "4D" } },
+      TECHNICAL: { base: "2D+2", skills: { "first aid": "6D" } }
+    },
+    specialAbilities: "Adaptive Skin: Snivvians can survive temperature extremes from -30 to +45 degrees standard without harm or protective gear.\n\nTough Skin: +1D armor bonus to resist physical damage.",
+    forcePoints: 1,
+    characterPoints: 10,
+    move: 10,
+    equipment: "Heavy blaster pistol (5D), datapad, painting set, modified Ghtroc freighter (Longest Winter)",
+    capsule: "Zutton and his twin brother Takeel were viewed as a terrible omen among the Snivvian people. Takeel, the first to speak and walk, was subjected to personality reprogramming by the Snivvian governing body, leaving him severely damaged. Zutton eventually made his way to Tatooine, where Takeel became a vagrant and spice addict while Zutton found work as a mercenary for Jabba the Hutt. As a child, Zutton had been a gifted painter; when his parents were captured by Thalassian slavers, he accompanied an Iotran bounty hunter in a raid to free them. Fascinated by hunters, he began painting portraits of them — and to better understand his subjects, became a hunter himself under the alias 'Snaggletooth.' He proved capable, earning the respect of law enforcement and fellow hunters alike. His habit of painting a portrait of every target he apprehended, sometimes gifting it to the victim, became something of a legend. Jabba amused himself by goading Zutton over his brother's degraded state; Zutton quietly endured it. After Jabba's death, the brothers left Tatooine with a traveling exhibit of 'Snaggletooth's' paintings — portraits of Jabba and his entourage that became suddenly very popular.",
+    source: "WEG40089 The Movie Trilogy Sourcebook SE p.108"
   }
 ];

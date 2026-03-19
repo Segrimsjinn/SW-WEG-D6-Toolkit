@@ -417,7 +417,7 @@ const CREATURES_DATA = [
   "size": "800m to 10km",
   "orneriness": "",
   "special": "Electrolocomotion. Electrolocation: 2km scan. Walker Scale.",
-  "source": "WEG40119 Galaxy Guide 2: Yavin and Bespin p.53–54"
+  "source": "WEG40119 Galaxy Guide 2: Yavin and Bespin p.53–54; WEG40089 The Movie Trilogy Sourcebook SE p.174"
  },
  {
   "name": "Bergruutfa",
@@ -2937,7 +2937,7 @@ const CREATURES_DATA = [
   "size": "4m tall",
   "orneriness": "",
   "special": "Bite: STR+1D. Eight Legs: 2 actions no penalty, 3rd = -1D etc.",
-  "source": "Galaxy Guide 3 (page 63)"
+  "source": "WEG40125 Galaxy Guide 3: The Empire Strikes Back p.63; WEG40089 The Movie Trilogy Sourcebook SE p.176"
  },
  {
   "name": "Kouhun",
@@ -6298,5 +6298,19 @@ const CREATURES_DATA = [
   "orneriness": "1D",
   "special": "Sneak 2D. Bluffing Teeth: enormous frontal bluffing teeth act as intimidation 4D, rolled against target's willpower or Perception; teeth are not actually used to gnaw primary food (tall woody rocket grass stalks) — the temporomandibular joint does not open widely enough. Also possesses 'chisel teeth' set deeper in the dental arch for actual chewing. Hollow pseudo-incisors serve no feeding function beyond frightening predators.",
   "source": "WEG40085 The Truce at Bakura p.107"
+ },
+ {
+  "name": "Scurrier",
+  "type": "Scavenger",
+  "planet": "Tatooine",
+  "habitat": "Wastes, urban alleys",
+  "dex": "3D",
+  "per": "2D+2",
+  "str": "2D+1",
+  "move": "15",
+  "size": "1.2m long",
+  "orneriness": "2D",
+  "special": "Running 4D. Sneak 3D+2. Climbing/jumping 3D+2. Bite: STR damage. Horns (males only): STR+1D. Manipulation: forepaws can manipulate small objects and pick apart machinery as if with repair skills at 4D.",
+  "source": "WEG40089 The Movie Trilogy Sourcebook SE p.179"
  }
 ];

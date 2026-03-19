@@ -2189,7 +2189,7 @@ const EQUIPMENT_DATA = [
   "cost": "1,000",
   "availability": "1",
   "game_notes": "Light-duty labor droid. Height: 1.6m. Move: 6. DEX 1D, KNO 1D, MEC 1D, PER 1D (search 2D), STR 1D (lifting 2D), TEC 1D. Equipped: humanoid body (two arms, two legs, head, torso), one visual ocular (human-range vision), two audial receivers. Story Factors — Basic Programming: programmed only for menial tasks; out of place in specialized settings (starship engineering bays, medical suites, battlefields); can be upgraded with improved programming and attachments at additional cost. Restricted Vocabulary: basic unit can only reply 'affirmative' or 'negative' regardless of question or situation encountered.",
-  "source": "WEG40122 Shadows of the Empire p.102"
+  "source": "WEG40122 Shadows of the Empire p.102; WEG40089 The Movie Trilogy Sourcebook SE p.163"
  },
  {
   "name": "Modified ASP-19 Lightsaber Training Droid (Mark IX)",
@@ -2294,5 +2294,21 @@ const EQUIPMENT_DATA = [
   "availability": "4, X",
   "game_notes": "Illegal security override device. Skill: Security. Any electronic chip with sufficient memory can be erased and imprinted with security codes to override voice, retinal, and palmprint circuits. Grants +1D to +4D bonus to security rolls involving electronic systems (code locks, palm scanners, retinal scanners, etc.); bonus depends on sophistication of target system. A failed security roll or a '1' on the Wild Die means the chip has been detected, triggering an alarm. Must be imprinted by a 1st–4th degree droid or specially programmed computer. Most security systems include anti-counterfeit safeguards against droid-imprinted chips — but Bakura (a world where droids were essentially banned) had none, allowing C-3PO to freely counterfeit military and government security codes for Han Solo. Possession is illegal in Imperial space; immediate execution if caught. Favored by smugglers and pirates operating in low-tech systems.",
   "source": "WEG40085 The Truce at Bakura p.139"
+ },
+ {
+  "name": "FX-7 Medical Assistant Droid",
+  "category": "Droids",
+  "cost": "3,500 (used only)",
+  "availability": "2",
+  "game_notes": "Height: 1.7m. Move: 0 (stationary). DEX 0D, KNO 2D (alien species 4D), MEC 1D ((A) bacta tank operation 4D), PER 2D ((A) injury/ailment diagnostics 4D), STR 1D, TEC 2D (first aid 4D, (A) medicine 5D). Equipped: medical computer scomp link (interfacing with an adequate medical computer or surgeon droid adds +2D to all medical skills), medical diagnostic computer and sensor, analytical computer and sensors, 20 light manipulator arms, one main manipulator, surgical attachments, hypodermic injectors (4D stun), medicine dispensers. No longer manufactured; available used only.",
+  "source": "WEG40089 The Movie Trilogy Sourcebook SE p.165"
+ },
+ {
+  "name": "IM4-099 Imperial Mark IV Patrol Droid",
+  "category": "Droids",
+  "cost": "Not for sale",
+  "availability": "Imperial use only",
+  "game_notes": "Height: 0.3m diameter. Move: 15. DEX 3D (dodge 4D), KNO 1D (law enforcement: Imperial legal codes 5D), MEC 2D, PER 4D (search 5D), STR 1D, TEC 1D. Equipped: holorecording macrobinoculars (+1D search; records within 50m line of sight), broad-band comlink (coded to Imperial alert frequencies), hover package (10m flight ceiling). The Mos Eisley garrison's unit (IM4-099) is nicknamed 'Face' by the local militia. Its comm-signal monitoring protocols have caused considerable friction with the Imperial garrison — the Prefect's comm repeaters boost signals into the illegally-prohibited range, causing Face to alarm on the ASP droids installing them.",
+  "source": "WEG40089 The Movie Trilogy Sourcebook SE p.164"
  }
 ];

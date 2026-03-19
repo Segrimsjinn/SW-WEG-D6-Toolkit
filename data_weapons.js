@@ -428,8 +428,8 @@ const WEAPONS_DATA = [
   "damage": "6D",
   "range": "3-30/120/350",
   "ammo": "30",
-  "game_notes": "Pistol grip (one-hand, no penalty). Scomp-link to helmet (+1D blaster, cumulative). Night-scope (-1 level at night with 1 round aim). Motion sensor (+1D search).",
-  "source": "Star Wars Trilogy Sourcebook SE (page 152)"
+  "game_notes": "Pistol grip (one-hand, no penalty). Scomp-link to helmet (+1D blaster, cumulative). Night-scope (-1 level at night with 1 round aim). Motion sensor (+1D search). After Han Solo's capture, Fett modified the rifle: Range 3-30/140/400, Damage 5D+2.",
+  "source": "WEG40089 The Movie Trilogy Sourcebook SE p.152"
  },
  {
   "name": "Espo Riot Gun",
@@ -1293,7 +1293,7 @@ const WEAPONS_DATA = [
   "range": "3-7/25/50",
   "ammo": "25",
   "game_notes": "Night-scope (-1 level difficulty at night, 1 round aim). Motion sensor (+1D search). Modified front sight (+2 initiative on draw round). Palm-tingler warns low power.",
-  "source": "Star Wars Trilogy Sourcebook SE (page 153)"
+  "source": "WEG40089 The Movie Trilogy Sourcebook SE p.153"
  },
  {
   "name": "Merr-Sonn \"Power\" 5",
