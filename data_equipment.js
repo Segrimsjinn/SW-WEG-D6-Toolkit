@@ -2184,12 +2184,20 @@ const EQUIPMENT_DATA = [
   "source": "WEG40114 The Jedi Academy Sourcebook p.143"
  },
  {
+  "name": "MSE-6 \"Mouse\" Droid",
+  "category": "Droids",
+  "cost": "2,000",
+  "availability": "3, R",
+  "game_notes": "Height: 0.3m. Move: 5 (treads). DEX 2D, KNO 1D, MEC 1D, PER 1D, STR 1D, TEC 1D. Equipped: electro-photoreceptor, auditory sensors, holocam, treads, retractable heavy manipulator (+2D lifting), retractable fine manipulator (+1D lifting), one skill matrix pre-programmed with a single skill at 3D (owner's choice: bureaucracy, sensors, hide, search, armor repair, blaster repair, capital ship repair, capital ship weapon repair, computer programming/repair, droid programming, droid repair, security, or starfighter repair). Small dedicated maintenance droid used for single-system maintenance, message delivery, cleaning, and scouting damaged areas. Almost exclusively Imperial use — the Empire bought nearly the entire production run at a steep discount for use on Star Destroyers and installations.",
+  "source": "REUP Star Wars RPG: Revised Expanded Updated p.381"
+ },
+ {
   "name": "Industrial Automaton ASP-7 Labor Droid",
   "category": "Droids",
-  "cost": "1,000",
-  "availability": "1",
-  "game_notes": "Light-duty labor droid. Height: 1.6m. Move: 6. DEX 1D, KNO 1D, MEC 1D, PER 1D (search 2D), STR 1D (lifting 2D), TEC 1D. Equipped: humanoid body (two arms, two legs, head, torso), one visual ocular (human-range vision), two audial receivers. Story Factors — Basic Programming: programmed only for menial tasks; out of place in specialized settings (starship engineering bays, medical suites, battlefields); can be upgraded with improved programming and attachments at additional cost. Restricted Vocabulary: basic unit can only reply 'affirmative' or 'negative' regardless of question or situation encountered.",
-  "source": "WEG40122 Shadows of the Empire p.102; WEG40089 The Movie Trilogy Sourcebook SE p.163"
+  "cost": "1,000 (new); 300–3,000 (used/modified)",
+  "availability": "2, F",
+  "game_notes": "Light-duty labor droid. Height: 1.6m. Move: 6. DEX 1D, KNO 1D, MEC 1D, PER 1D (search 2D), STR 1D (lifting 2D), TEC 1D. Equipped: humanoid body (two arms, two legs, head, torso), one visual ocular (human-range vision), two audial receivers. Story Factors — Basic Programming: programmed only for menial tasks; out of place in specialized settings (starship engineering bays, medical suites, battlefields); can be upgraded with improved programming and attachments at additional cost. Restricted Vocabulary: basic unit can only reply 'affirmative' or 'negative' regardless of question or situation encountered. Many owners modify ASPs heavily rather than replace them.",
+  "source": "WEG40122 Shadows of the Empire p.102; WEG40089 The Movie Trilogy Sourcebook SE p.163; REUP Star Wars RPG: Revised Expanded Updated p.381"
  },
  {
   "name": "Modified ASP-19 Lightsaber Training Droid (Mark IX)",
@@ -2294,6 +2302,158 @@ const EQUIPMENT_DATA = [
   "availability": "4, X",
   "game_notes": "Illegal security override device. Skill: Security. Any electronic chip with sufficient memory can be erased and imprinted with security codes to override voice, retinal, and palmprint circuits. Grants +1D to +4D bonus to security rolls involving electronic systems (code locks, palm scanners, retinal scanners, etc.); bonus depends on sophistication of target system. A failed security roll or a '1' on the Wild Die means the chip has been detected, triggering an alarm. Must be imprinted by a 1st–4th degree droid or specially programmed computer. Most security systems include anti-counterfeit safeguards against droid-imprinted chips — but Bakura (a world where droids were essentially banned) had none, allowing C-3PO to freely counterfeit military and government security codes for Han Solo. Possession is illegal in Imperial space; immediate execution if caught. Favored by smugglers and pirates operating in low-tech systems.",
   "source": "WEG40085 The Truce at Bakura p.139"
+ },
+ {
+  "name": "DRK-1 \"Dark Eye\" Probe Droid",
+  "category": "Droids",
+  "cost": "Not for sale",
+  "availability": "4, X",
+  "game_notes": "Height: 0.2m. Move: 16. DEX 3D (blaster 4D, dodge 5D), KNO 3D (scholar: Jedi lore 6D, survival 7D), MEC 1D, PER 3D (hide 7D, search 10D, sneak 6D), STR 1D, TEC 1D. Equipped: anti-scan shell (+1D+1 to hide), comlink, improved sensor package (+2 to search), infrared vision (30m), laser cannon (5D, 3-30/100/300), low-light vision (2× human range), motion sensors (+2 search vs moving targets), recording unit (5 min), self-destruct system, sonic sensors (+2 search via sound), stun blaster (4D stun, 3-10/30/120), poison dart needler (3-10/30/60; paralytic — target makes Difficult STR check or paralyzed 1D×40 minutes, 10 shots), telescopic vision, holoprojector, grenade launcher with 6 frag grenades. Developed by Arakyd Industries for Darth Maul.",
+  "source": "REUP Star Wars RPG: Revised Expanded Updated p.379"
+ },
+ {
+  "name": "IG-100 MagnaGuard",
+  "category": "Droids",
+  "cost": "19,000",
+  "availability": "4, X",
+  "game_notes": "Height: 1.95m. Move: 13. DEX 5D (blaster 7D, brawling parry 6D+2, dodge 7D, melee combat 9D, melee parry 8D+2, missile weapons 7D), KNO 2D, MEC 2D, PER 3D (search 6D, search: tracking 8D, sneak 4D), STR 4D+2 (brawling 6D, climbing/jumping 6D, lifting 5D+1), TEC 1D+2 (computer programming/repair 3D, droid programming 3D, droid repair 3D). Equipped: humanoid body, body armor (+1D vs damage), long-range sensor (+2D search 50-750m), motion sensor (+2D search vs moving objects up to 400m). Equipment: electrostaff (STR+2D, deflects lightsaber). Custom-built to General Grievous's specifications.",
+  "source": "REUP Star Wars RPG: Revised Expanded Updated p.379"
+ },
+ {
+  "name": "T-Series Tactical Droid",
+  "category": "Droids",
+  "cost": "14,000",
+  "availability": "4, X",
+  "game_notes": "Height: 1.8m. Move: 10. DEX 2D (blaster 2D+1, vehicle blasters 2D+1), KNO 3D (tactics 4D+1), MEC 3D (capital ship piloting 3D+2, capital ship shields 3D+2), PER 3D (command 3D+1, search 4D+2), STR 2D (brawling 2D+1), TEC 2D (computer programming/repair 3D+1). Equipped: humanoid body, internal comlink, synchronized fire circuits (+2D to command remotely linked droids), durasteel plating (+2D physical, +1D energy), vocabulator. Equipment: electrobinoculars, blaster carbine (5D, 3-20/60/210). Combat-analysis software; commands override 00M-Series battle droid commanders, causing command conflicts — Confederacy leaders avoid pairing T-Series with 00M-Series droids.",
+  "source": "REUP Star Wars RPG: Revised Expanded Updated p.379"
+ },
+ {
+  "name": "Viper Series Probe Droid",
+  "category": "Droids",
+  "cost": "18,500",
+  "availability": "3, X",
+  "game_notes": "Height: 1.6m. Move: 14 (repulsorlift). DEX 3D (blaster 4D), KNO 2D+2 (planetary systems 4D), MEC 3D (sensors 6D), PER 3D (search 4D, search: tracking 7D+1), STR 4D, TEC 2D+1. Equipped: long-range sensor (+1D search 200m–5km), movement sensor (+2D search vs moving objects up to 100m), atmosphere sensor (determines atmosphere class within 30 min), blaster cannon (4D+2), self-destruct mechanism, repulsor generator, retractable manipulator arms, retractable sensor/sample-gathering arms. Optional sublight delivery system +5,000 cr; hyperspace-capable version +15,000 cr. Self-destructs if it takes significant damage to prevent capture.",
+  "source": "REUP Star Wars RPG: Revised Expanded Updated p.380"
+ },
+ {
+  "name": "8D Smelter Droid",
+  "category": "Droids",
+  "cost": "7,200",
+  "availability": "2, F",
+  "game_notes": "Height: 1.65m. Move: 7. DEX 1D, KNO 1D, MEC 2D (machinery operation 4D), PER 2D, STR 4D (stamina 6D), TEC 1D. Equipped: humanoid body, vocabulator, heat-resistant chassis (durasteel molecularly bonded with kevlex; +1D vs physical and energy damage, melting point 4,000°C — allows operation in smelting environments that would destroy standard droids), protected photoreceptors (-1D to search, but includes infrared vision). Made by Roche for the major smelting companies.",
+  "source": "REUP Star Wars RPG: Revised Expanded Updated p.380"
+ },
+ {
+  "name": "Dwarf Spider Droid",
+  "category": "Droids",
+  "cost": "3,500",
+  "availability": "3, X",
+  "game_notes": "Height: 1.6m. Move: 10 / 4 (burrowing). DEX 3D (blaster artillery: blaster cannon 4D), KNO 1D, MEC 1D, PER 2D (search 3D), STR 3D+1 (climbing 4D+1), TEC 1D. Equipped: blaster cannon (9D), light armor (+2 STR vs damage), comlink, digging claws, locked access (internal shutdown switch), magnetic feet, restraining bolt, improved sensor package (+2 to all search rolls), infrared vision (30m in darkness), self-destruct system. Originally designed by the Commerce Guild to root out illegal mining operations within its borders. Cannot be played as a droid hero.",
+  "source": "REUP Star Wars RPG: Revised Expanded Updated p.378"
+ },
+ {
+  "name": "LM-432 Crab Droid",
+  "category": "Droids",
+  "cost": "20,000",
+  "availability": "3, X",
+  "game_notes": "Height: 1.49m (scout); up to 6m (assault). Move: 9. DEX 3D (blasters 4D+1), KNO 1D, MEC 1D, PER 1D (search 3D), STR 3D (climbing/jumping 5D), TEC 1D. Equipped: twin blasters (6D), water/mud jet sprayer, armorplast shielding (+1D vs damage), six legs (two tipped with heavy duranium stabilizers, granting +3D to climbing/jumping). Nicknamed 'muckrakers' by clone troopers. Used as advance scouts and trailblazers in harsh/swampy terrain; vacuum system can clear a path for following battle droids. Weak spot atop central body exposes vital systems. Cannot be played as a droid hero.",
+  "source": "REUP Star Wars RPG: Revised Expanded Updated p.378"
+ },
+ {
+  "name": "B1 Series Battle Droid",
+  "category": "Droids",
+  "cost": "1,800",
+  "availability": "3, X",
+  "game_notes": "Height: 1.8m. Move: 10. DEX 1D (blaster: blaster rifle 3D), KNO 1D, MEC 1D, PER 1D, STR 2D (brawling 3D), TEC 1D. Equipped: integrated comlink, remote receiver (5,000km range), body armor (+1D STR vs all damage), vocabulator (can replicate organic speech). Equipment: blaster carbine (5D, 3-30/100/300). Drone controlled by a Central Control Computer operating thousands of battle droids simultaneously; control signal nearly impossible to jam (Heroic communications roll required). Deactivates if it loses contact with remote processor.",
+  "source": "REUP Star Wars RPG: Revised Expanded Updated p.376"
+ },
+ {
+  "name": "B2 Series Super Battle Droid",
+  "category": "Droids",
+  "cost": "3,300",
+  "availability": "3, X",
+  "game_notes": "Height: 1.8m. Move: 10. DEX 2D (blaster 3D, blaster: blaster rifle 4D, dodge 3D, melee combat 3D, vehicle blasters 3D), KNO 1D, MEC 1D, PER 1D, STR 2D (brawling 3D), TEC 1D. Equipped: mounted blaster rifle (5D, 3-30/100/300), remote receiver (5,000km range) with local backup processor, light armor (+1D STR vs damage), vocabulator. Backup internal processor stores last orders and continues acting on them if the central control computer goes offline — does not deactivate on signal loss.",
+  "source": "REUP Star Wars RPG: Revised Expanded Updated p.377"
+ },
+ {
+  "name": "Droideka Destroyer Droid",
+  "category": "Droids",
+  "cost": "21,000",
+  "availability": "3, X",
+  "game_notes": "Height: 1.5m. Move: 4 (walking), 25 (wheel mode). DEX 3D (blaster: heavy repeating blaster 8D+2), KNO 1D, MEC 1D, PER 1D (search 3D+2), STR 3D (brawling 7D+1), TEC 1D. Equipped: two mounted heavy repeating blasters (8D, 3-75/200/500), body armor (+1D STR vs all damage), defensive shields (+3D STR vs damage), remote processor (500km range). Microrepulsor-assisted wheel mode allows it to fold into a wheel shape and roll at high speed; more ponderous when unfolded for combat. Cannot be played as a droid hero.",
+  "source": "REUP Star Wars RPG: Revised Expanded Updated p.377"
+ },
+ {
+  "name": "CZ Secretary Droid",
+  "category": "Droids",
+  "cost": "8,280",
+  "availability": "2, F",
+  "game_notes": "Height: 1.7m. Move: 10. DEX 1D+1, KNO 2D (business 5D, languages 5D), MEC 1D, PER 2D (con 3D+1, persuasion 3D+2), STR 1D, TEC 2D (computer programming/repair 4D+2). Equipped: humanoid body, locked access (shutdown switch secured or internally located), multinode communications link, internalized datapad, TransLang I Communications module (500,000+ languages). Acts as a switchboard, receiving and routing audio comlink signals, text/data messages, and HoloNet holographics simultaneously. Owner can prioritize incoming communications so only urgent messages pass through during the work day.",
+  "source": "REUP Star Wars RPG: Revised Expanded Updated p.376"
+ },
+ {
+  "name": "EV Series Supervisor Droid",
+  "category": "Droids",
+  "cost": "11,380",
+  "availability": "2, F",
+  "game_notes": "Height: 1.8m. Move: 7. DEX 1D, KNO 3D (intimidation: droids 4D, languages 4D, value: droids 5D), MEC 1D, PER 2D (command: droids 5D), STR 1D, TEC 3D (computer programming/repair 4D, droid programming 5D, droid repair 4D+1). Equipped: humanoid body, high-frequency binary comlink, broad-band broadcast antenna/receiver, two visual and audio sensors (human range), vocabulator. Equipment: arc welder (6D), datapad. Note: MerenData accidentally installed torture-droid motivators in the original production run; these flawed models proved more 'effective' at droid management through sadistic methods. A massive recall replaced most motivators, but some customers (crime lords, etc.) specifically sought out unrecalled units.",
+  "source": "REUP Star Wars RPG: Revised Expanded Updated p.376"
+ },
+ {
+  "name": "2-1B Surgical Droid",
+  "category": "Droids",
+  "cost": "4,300",
+  "availability": "2, R",
+  "game_notes": "Height: 1.5m. Move: 4. DEX 1D, KNO 2D (alien species 5D), MEC 2D ((A) bacta tank operation 5D), PER 3D ((A) injury/ailment diagnosis 6D), STR 1D, TEC 3D (first aid 6D, (A) medicine 9D). Equipped: computer interface tether (5m; when connected to medical mainframe adds +2D to all medical skills), medical diagnostic computer, analytical computer, surgical attachments, hypodermic injectors (4D stun), medicine dispensers. Programmed with the 'physician's code' — cannot refuse medical aid to any being (unless ordered by authorized operator) and cannot deliberately harm an organic creature except as defined by life-saving guidelines; will not engage in combat. Successor to the FX-6; preceded by FX-7 in the medical droid lineage.",
+  "source": "REUP Star Wars RPG: Revised Expanded Updated p.372"
+ },
+ {
+  "name": "WED 15 Treadwell Droid",
+  "category": "Droids",
+  "cost": "3,000",
+  "availability": "2, F",
+  "game_notes": "Height: 1.6m. Move: 8 (dual-tread). DEX 2D, KNO 1D (languages: droid languages 4D), MEC 1D, PER 3D (search 3D+1), STR 1D, TEC 2D (computer programming/repair 4D+2, machinery repair 6D, repulsorlift repair 4D, space transports repair 4D+1, starfighter repair 5D+1). Equipped: video sensor, dual-tread locomotion, fine manipulator arms (+1D to repair skills), extensible video microbinoculars (+2D search for microscale work), various tools, Cybot acoustic signaler (droid languages). Simple rolling-platform design with viewer stalk and 4+ tool arms — often mistaken for a tool rack. Arms swap quickly; many owners keep a stockpile of specialty arms. Not particularly bright, but obedient, single-minded, and reliable. Popular on fringe worlds. Fragile — requires regular maintenance and low-hazard environments.",
+  "source": "REUP Star Wars RPG: Revised Expanded Updated p.375"
+ },
+ {
+  "name": "3PO Protocol Droid",
+  "category": "Droids",
+  "cost": "3,000",
+  "availability": "2, F",
+  "game_notes": "Height: 1.7m. Move: 8. DEX 1D, KNO 3D (cultures 6D, languages 10D), MEC 1D, PER 1D, STR 1D, TEC 1D. Equipped: humanoid body (two arms, two legs, head), two visual and audio sensors (human range), vocabulator speech/sound system (can reproduce virtually any sound heard or programmed), AA-1 VerboBrain, TransLang III Communications module (7+ million languages). Factory-installed restraining bolt mount. Programmed for passive behavior — never attacks under any circumstances. Shutdown switch located at back of neck. Comes in a wide variety of colors.",
+  "source": "REUP Star Wars RPG: Revised Expanded Updated p.375"
+ },
+ {
+  "name": "R4 Agromech Droid",
+  "category": "Droids",
+  "cost": "2,500",
+  "availability": "2, F",
+  "game_notes": "Height: 1m. Move: 8. DEX 2D, KNO 2D (languages 3D), MEC 3D (repulsorlift operation 4D), PER 2D (search 3D), STR 2D, TEC 3D (computer programming/repair 4D+2, droid repair 4D, repulsorlift repair 5D, security 4D). Equipped: three wheeled legs (one retractable), internal comlink, photoreceptor with infrared vision (30m in darkness), internal storage (8kg capacity or upgrades), 4 tool mounts, acoustic signaler. Based on R2 design with cost-saving measures for casual/fringe users — taller and sturdier, with fewer miniaturized parts that spread internal components farther apart, reducing computing power but increasing stability and damage resistance. Unsuitable as a starfighter astromech without modification. Popular with repair crews; can monitor crops, medical equipment, and nearly any sensor type. Spare parts and common modification instructions are widely available.",
+  "source": "REUP Star Wars RPG: Revised Expanded Updated p.374"
+ },
+ {
+  "name": "R2 Astromech Droid",
+  "category": "Droids",
+  "cost": "4,500",
+  "availability": "2, F",
+  "game_notes": "Height: 1m. Move: 5. DEX 1D, KNO 1D, MEC 2D (astrogation 5D, starfighter piloting 3D, space transports 3D), PER 1D, STR 1D, TEC 2D (computer programming/repair 4D, starfighter repair 5D). Note: astromech droids acting as co-pilot may attempt starship repair while in flight. Equipped: three wheeled legs (center retractable), retractable heavy grasping arm (lifting 2D), retractable fine work grasper arm, extendable 0.3m video sensor (360° rotation), electric arc welder (1D–5D, 0.3m range), circular saw (4D, 0.3m range), video display screen, holographic projector/recorder, fire extinguisher, internal cargo area (20cm × 8cm), assorted small tools. IA's most successful diagnostic/repair series — compact enough to fit starfighter astromech sockets, with an overwhelming array of tools tucked behind access panels. Tool appendages can be swapped for specialty arms. Because R2s are quick-witted and often insightful, many owners are reluctant to wipe their memories, resulting in headstrong, independent units.",
+  "source": "REUP Star Wars RPG: Revised Expanded Updated p.374"
+ },
+ {
+  "name": "IT-0 Interrogator Droid",
+  "category": "Droids",
+  "cost": "10,000",
+  "availability": "4, X",
+  "game_notes": "Height: 1m. Move: 3 (repulsorlift). DEX 1D (dodge 3D, melee combat 3D, melee combat: interrogation tools 4D+1), KNO 3D (alien species 4D, humanoid biology 5D, intimidation 6D, intimidation: interrogation 7D), MEC 2D (sensors 3D), PER 4D (investigation 5D, search 5D), STR 3D, TEC 2D (first aid 5D, (A) medicine 5D, security 4D). Equipped: repulsorlift engine, visual/sound sensor package, vocabulator, laser scalpel (2D), hypodermic injectors (4D stun), power shears (5D), grasping claw (+1D lifting). Imperial manufacture only; distributed to ISB, senior Moffs, military intelligence, CompForce, and Inquisition. Designed to bring subjects to the brink of physical damage without permanent harm — carries medical supplies to patch victims between sessions.",
+  "source": "REUP Star Wars RPG: Revised Expanded Updated p.373"
+ },
+ {
+  "name": "FX-6 Medical Droid",
+  "category": "Droids",
+  "cost": "4,300",
+  "availability": "2, R",
+  "game_notes": "Height: 1.83m. Move: 4 (mobility caster trio). DEX 1D, KNO 1D (alien species 3D), MEC 1D ((A) bacta tank operation 3D+1), PER 2D ((A) injury/ailment diagnostics 3D+2), STR 1D, TEC 2D (first aid 3D+1, (A) medicine 4D). Equipped: medical computer scomp link (+1D to all medical skills when interfaced with an adequate medical computer or surgeon droid), readout screen (no vocoder — communicates via readout panel only), medical diagnostic computer and sensor, analytical computer and sensors, 14 light manipulator arms, 6 main manipulator arms, surgical attachments, hypodermic injectors (4D stun), medicine dispensers. Clone Wars-era field medical droid; common after the war due to large production runs and battlefield salvage. Predecessor to the FX-7.",
+  "source": "REUP Star Wars RPG: Revised Expanded Updated p.373"
  },
  {
   "name": "FX-7 Medical Assistant Droid",
