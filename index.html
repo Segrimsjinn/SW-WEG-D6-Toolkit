@@ -1061,7 +1061,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
         <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
         <input type="text" id="galaxySearch" class="search-input" placeholder="Search systems, sectors, regions...">
       </div>
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;padding:0 4px;flex-wrap:wrap"><span id="galaxyCount" style="font-size:13px;color:var(--text-dim)"></span><button id="sysgenBtn" onclick="generateWildSpaceSystem()" style="font-size:12px;color:var(--cyan);background:none;border:1px solid var(--cyan);border-radius:var(--radius);padding:2px 10px;cursor:pointer;font-family:inherit;white-space:nowrap">...or Generate a Wild Space System</button></div>
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;padding:0 4px;flex-wrap:wrap"><span id="galaxyCount" style="font-size:13px;color:var(--text-dim)"></span><button id="sysgenBtn" onclick="generateWildSpaceSystem()" style="font-size:12px;color:var(--cyan);background:none;border:1px solid var(--cyan);border-radius:var(--radius);padding:2px 10px;cursor:pointer;font-family:inherit;white-space:nowrap">...or Generate a Wild Space System</button><select id="detailsDropdown" onchange="if(this.value){showPlanetDetail(this.value);this.value=''}" onfocus="populateDetailsDropdown()" style="font-size:12px;color:var(--gold);background:var(--bg);border:1px solid var(--gold-dim);border-radius:var(--radius);padding:2px 10px;cursor:pointer;font-family:inherit"><option value="">🌍 System Details List</option></select></div>
       <div id="sysgenResult" class="search-results" style="display:none"></div>
       <div id="galaxyResults" class="search-results"></div>
       <div style="padding:16px 0">
@@ -4405,6 +4405,20 @@ function generateStarType() {
     if (r <= 0) return types[i];
   }
   return types[1];
+}
+
+let _detailsPopulated = false;
+function populateDetailsDropdown() {
+  if (_detailsPopulated) return;
+  _detailsPopulated = true;
+  const sel = document.getElementById('detailsDropdown');
+  if (!sel || typeof PLANETS_DATA === 'undefined') return;
+  [...PLANETS_DATA].sort((a, b) => a.name.localeCompare(b.name)).forEach(p => {
+    const opt = document.createElement('option');
+    opt.value = p.name;
+    opt.textContent = p.name;
+    sel.appendChild(opt);
+  });
 }
 
 function generateWildSpaceSystem() {
