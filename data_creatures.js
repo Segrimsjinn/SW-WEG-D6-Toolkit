@@ -6312,5 +6312,19 @@ const CREATURES_DATA = [
   "orneriness": "2D",
   "special": "Running 4D. Sneak 3D+2. Climbing/jumping 3D+2. Bite: STR damage. Horns (males only): STR+1D. Manipulation: forepaws can manipulate small objects and pick apart machinery as if with repair skills at 4D.",
   "source": "WEG40089 The Movie Trilogy Sourcebook SE p.179"
+ },
+ {
+  "name": "Nek Cyborrean Battle Dog",
+  "type": "Trained Attack Animal",
+  "planet": "Cyborrea",
+  "habitat": "Various (genetically/cybernetically engineered)",
+  "dex": "2D",
+  "per": "3D",
+  "str": "2D+2",
+  "move": "12",
+  "size": "0.9-1.3 meters long",
+  "orneriness": "",
+  "special": "Brawling 4D+2. Body Armor: +2D to STR. Teeth: STR+2D+1. Claws: STR+1D. Neks are very aggressive creatures used by many scavengers, including those on Coruscant. They are the product of genetic and cybernetic engineering from the heavy-grav planet Cyborrea. Given computer and bionic treatments to enhance combat skills, they are fearless in combat. They leap onto prey and bite deeply with multiple rows of razor-sharp teeth, then rake cyborg claws along the victim's body.",
+  "source": "WEG40071 Dark Empire Sourcebook p.60"
  }
 ];
