@@ -6326,5 +6326,19 @@ const CREATURES_DATA = [
   "orneriness": "",
   "special": "Brawling 4D+2. Body Armor: +2D to STR. Teeth: STR+2D+1. Claws: STR+1D. Neks are very aggressive creatures used by many scavengers, including those on Coruscant. They are the product of genetic and cybernetic engineering from the heavy-grav planet Cyborrea. Given computer and bionic treatments to enhance combat skills, they are fearless in combat. They leap onto prey and bite deeply with multiple rows of razor-sharp teeth, then rake cyborg claws along the victim's body.",
   "source": "WEG40071 Dark Empire Sourcebook p.60"
+ },
+ {
+  "name": "Tumnor",
+  "type": "Vicious Winged Predator",
+  "planet": "Pinnacle Moon (Da Soocha V)",
+  "habitat": "Pinnacle spires",
+  "dex": "3D+2",
+  "per": "4D",
+  "str": "4D",
+  "move": "10 (walking), 25 (flying)",
+  "size": "5-meter wingspan",
+  "orneriness": "",
+  "special": "Search 5D+1. Teeth: STR+2D damage. Claws: STR+1D damage.",
+  "source": "WEG40071 Dark Empire Sourcebook p.87"
  }
 ];
