@@ -6340,5 +6340,61 @@ const CREATURES_DATA = [
   "orneriness": "",
   "special": "Search 5D+1. Teeth: STR+2D damage. Claws: STR+1D damage.",
   "source": "WEG40071 Dark Empire Sourcebook p.87"
+ },
+ {
+  "name": "Bloodsniffer",
+  "type": "Predator",
+  "planet": "Kamar",
+  "habitat": "Desert/Mountains",
+  "dex": "3D",
+  "per": "2D",
+  "str": "3D",
+  "move": "16",
+  "size": "1-2.1 meters long",
+  "orneriness": "",
+  "special": "Blood Drain: must consume own weight in blood every two days to survive. Claws: STR+2 damage. Thorny Spur: tackles or claws victim then attaches tongue's spur — STR+1D damage; if wound or better, hits a major vein/artery (Difficult first aid or Moderate with medpac to stop bleeding to death). Lives in small packs of 3-8 adults plus pups. Extremely territorial.",
+  "source": "WEG40042 Han Solo and the Corporate Sector Sourcebook p.141"
+ },
+ {
+  "name": "Dravian Hound (Nashtah)",
+  "type": "Domesticated Predator",
+  "planet": "Dra III",
+  "habitat": "Mountains",
+  "dex": "2D+2",
+  "per": "2D+2",
+  "str": "4D+1",
+  "move": "15",
+  "size": "1.1m tall, 1.5m long",
+  "orneriness": "",
+  "special": "Search: tracking venom 7D. Brawling 7D. Stamina 10D+2. Armor: +1D. Claws: STR+2D. Teeth: STR+1D+2. Barbed Tail: STR+1D, marks prey with tracking venom. Tracking Venom: once marked by tailbarb venom or saliva, can track victim unerringly for one month. Six-legged with diamond-hard claws and teeth for digging prey out of basalt. Three sets of jagged teeth. Attack in packs. Used as guard beasts by crimelords but as likely to attack owners as defend them.",
+  "source": "WEG40042 Han Solo and the Corporate Sector Sourcebook p.142"
+ },
+ {
+  "name": "Howlrunner",
+  "type": "Pack Hunter",
+  "planet": "Kamar",
+  "habitat": "Mountains/Scrublands",
+  "dex": "2D+1",
+  "per": "1D+1",
+  "str": "3D",
+  "move": "11",
+  "size": "1.1 meters long",
+  "orneriness": "",
+  "special": "Search: tracking 5D. Brawling 4D. Bite: STR+1D. Pack animals that work cooperatively to track and kill larger herd creatures. Heads have an unnerving resemblance to a Human skull. Named for their terrifying howling while tracking prey. Not very fast but tirelessly follow wounded prey until it collapses. The Incom Corporation named their I-7 prototype snubfighter after this beast.",
+  "source": "WEG40042 Han Solo and the Corporate Sector Sourcebook p.142"
+ },
+ {
+  "name": "Ball Creature of Duroon (Bouncebeast)",
+  "type": "Timid Herbivore",
+  "planet": "Duroon",
+  "habitat": "Various",
+  "dex": "2D+1",
+  "per": "2D",
+  "str": "1D+2",
+  "move": "5 (bounce), 2 (rolling)",
+  "size": "0.3-0.5 meters diameter",
+  "orneriness": "",
+  "special": "Danger Sense: famed ability to detect danger; sometimes used as guard animals by Duroon's insurgent tribes. Pseudopod Skin: no limbs or sensory organs — muscles form and extrude limbs as needed (mouths, eyestalks, etc.). Attack: never intentionally attacks, but accidental hits cause STR+1D from springing force. Smooth spheres with widely varying coloration (green, blue, yellow, fluorescent). Bright colors are a survival mechanism — predators focus on the most colorful individuals while the rest of the herd bounces away. Reproduce very quickly. Mascot of the Bonadan Bouncebeasts gravball team.",
+  "source": "WEG40042 Han Solo and the Corporate Sector Sourcebook p.140"
  }
 ];

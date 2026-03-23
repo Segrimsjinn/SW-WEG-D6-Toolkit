@@ -434,14 +434,14 @@ const WEAPONS_DATA = [
  {
   "name": "Espo Riot Gun",
   "category": "Blaster Rifles",
-  "skill": "Blaster: blaster rifle",
+  "skill": "Blaster: riot gun",
   "cost": "1,500",
   "availability": "2, R",
   "damage": "5D+1",
   "range": "3-30/100/300",
   "ammo": "300",
   "game_notes": "Constant-fire: 5 blasts/shot, 6 shots/round. Once hit established, following shots vs adjacent targets -1 difficulty.",
-  "source": "Gundark's Fantastic Technology (page 32)"
+  "source": "WEG40042 Han Solo and the Corporate Sector Sourcebook p.117; Gundark's Fantastic Technology (page 32)"
  },
  {
   "name": "Exotac Arms Predator",
@@ -645,7 +645,7 @@ const WEAPONS_DATA = [
   "range": "2-4/8/10",
   "ammo": "30",
   "game_notes": "Fire Rate 4. Damage varies by loaded toxin \u2014 stun or normal.",
-  "source": "Gundark's Fantastic Technology (page 17)"
+  "source": "WEG40042 Han Solo and the Corporate Sector Sourcebook p.118; Gundark's Fantastic Technology (page 17)"
  },
  {
   "name": "Prax Stealth Palm Shooter",
@@ -735,13 +735,13 @@ const WEAPONS_DATA = [
   "name": "Disruptor Pistol (Standard)",
   "category": "Disruptor Blasters",
   "skill": "Blaster: disruptor",
-  "cost": "3,000",
+  "cost": "3,000 (power packs: 50)",
   "availability": "4, X",
   "damage": "6D+2",
   "range": "0-3/5/7",
   "ammo": "5",
   "game_notes": "",
-  "source": "Gundark's Fantastic Technology (pages 26-27)"
+  "source": "WEG40042 Han Solo and the Corporate Sector Sourcebook p.118; Gundark's Fantastic Technology (pages 26-27)"
  },
  {
   "name": "Merr-Sonn MSD-32 Disruptor",
@@ -1160,8 +1160,8 @@ const WEAPONS_DATA = [
   "damage": "6D/5D/3D (STR of glop)",
   "range": "3-7/30/60",
   "ammo": "",
-  "game_notes": "Blast Radius: 0-1/3/5. Opposed STR to break free. No actual damage \u2014 restraint only.",
-  "source": "Gundark's Fantastic Technology (page 42)"
+  "game_notes": "Blast Radius: 0-1/3/5. Opposed STR to break free. No actual damage \u2014 restraint only. Impact or timed (up to 15s delay).",
+  "source": "WEG40042 Han Solo and the Corporate Sector Sourcebook p.119; Gundark's Fantastic Technology (page 42)"
  },
  {
   "name": "Ion Grenade",
@@ -1197,7 +1197,7 @@ const WEAPONS_DATA = [
   "range": "3-7/20/40",
   "ammo": "",
   "game_notes": "3m smoke radius. +2 to shooter difficulty.",
-  "source": "Rules of Engagement (page 69)"
+  "source": "WEG40042 Han Solo and the Corporate Sector Sourcebook p.119; Rules of Engagement (page 69)"
  },
  {
   "name": "Thermal Detonator",
@@ -1592,8 +1592,20 @@ const WEAPONS_DATA = [
   "damage": "6D/5D/4D or stun 5D/4D/3D",
   "range": "0-3/10/20",
   "ammo": "20",
-  "game_notes": "Damage by range. Cone widens with range. Fire Rate 2.",
-  "source": "Gundark's Fantastic Technology (page 24)"
+  "game_notes": "Damage by range. Cone: 0.5m at short, 1.5m at medium, 3m at long. Fire Rate 2.",
+  "source": "WEG40042 Han Solo and the Corporate Sector Sourcebook p.119; Gundark's Fantastic Technology (page 24)"
+ },
+ {
+  "name": "Sound Rifle",
+  "category": "Misc Blasters",
+  "skill": "Blaster: sound rifle",
+  "cost": "Not for sale",
+  "availability": "",
+  "damage": "6D/5D/4D or stun 5D/4D/3D",
+  "range": "0-5/15/30",
+  "ammo": "60",
+  "game_notes": "Damage by range. Cone: 0.5m at short, 1.5m at medium, 3m at long. Fire Rate 2. SonoMax 100 model.",
+  "source": "WEG40042 Han Solo and the Corporate Sector Sourcebook p.119"
  },
  {
   "name": "Wrist Lasers",
@@ -1676,8 +1688,8 @@ const WEAPONS_DATA = [
   "damage": "6D/5D/3D (anti-pers) or 5D/4D/3D (Speeder, anti-veh)",
   "range": "5-25/100/250",
   "ammo": "6",
-  "game_notes": "Blast Radius: 1/3/5.",
-  "source": "Gundark's Fantastic Technology (page 18)"
+  "game_notes": "Blast Radius: 1/3/5. Variable range settings — firer determines detonation distance. Anti-personnel canister 100 credits, anti-vehicle canister 200 credits.",
+  "source": "WEG40042 Han Solo and the Corporate Sector Sourcebook p.118; Gundark's Fantastic Technology (page 18)"
  },
  {
   "name": "Mini-Missile Launcher",
@@ -2901,7 +2913,19 @@ const WEAPONS_DATA = [
   "range": "",
   "ammo": "3hr power",
   "game_notes": "Easy difficulty.",
-  "source": "Gundark's Fantastic Technology (pages 11-12)"
+  "source": "WEG40042 Han Solo and the Corporate Sector Sourcebook p.116; Gundark's Fantastic Technology (pages 11-12)"
+ },
+ {
+  "name": "Drearian Actiwl Riot Shield",
+  "category": "Stun Melee",
+  "skill": "Melee parry",
+  "cost": "500",
+  "availability": "2, R",
+  "damage": "STR+2 + 4D stun",
+  "range": "",
+  "ammo": "1hr stun charge",
+  "game_notes": "Easy difficulty. 1m layered metal and one-way mirrored transparisteel shield. Successful melee parry blocks incoming attacks on one facing (shield STR 4D). Firing notch adds one difficulty level to blaster shots but provides shield protection. As melee weapon: STR+2 damage plus 4D stun.",
+  "source": "WEG40042 Han Solo and the Corporate Sector Sourcebook p.116"
  },
  {
   "name": "Stun Cloak",
@@ -3334,5 +3358,53 @@ const WEAPONS_DATA = [
   "ammo": "50 charges (power packs: 40 credits)",
   "game_notes": "Moderate difficulty. Standard melee weapon of Coruscant Guards. Delivers lethal or stun charge on contact; crackles with energy when striking. Balanced with weighted ends — effective even when power pack is fully drained. Weight: 10kg. Can be separated into 3 pieces for backpack carry.",
   "source": "WEG40122 Shadows of the Empire p.113"
+ },
+ {
+  "name": "BlasTech StarSlasher Blaster Carbine",
+  "category": "Blaster Carbines",
+  "skill": "Blaster: blaster carbine",
+  "cost": "900",
+  "availability": "2, X (in the Authority)",
+  "damage": "5D",
+  "range": "3-25/50/250",
+  "ammo": "100",
+  "game_notes": "At long range, increase difficulty by +5. Older, shorter and less accurate than blaster rifles but notoriously reliable — known to last years with minimal maintenance. Optional scope (reduces long range to medium), shoulder-sling, bipod (+1D when aiming more than one round), folding bayonet (STR+1D+2).",
+  "source": "WEG40042 Han Solo and the Corporate Sector Sourcebook p.118"
+ },
+ {
+  "name": "Vehicle Flamer",
+  "category": "Flame Projectors",
+  "skill": "Flamethrower",
+  "cost": "2,000",
+  "availability": "4, X",
+  "damage": "5D+2 (4D for 10 rounds)",
+  "range": "3-7/10/20",
+  "ammo": "50",
+  "game_notes": "Speeder scale. Fire Rate 1/2. First round 5D+2, then 4D for next ten rounds unless extinguished. Vehicle-mounted flame projector.",
+  "source": "WEG40042 Han Solo and the Corporate Sector Sourcebook p.118"
+ },
+ {
+  "name": "Espo Grenade Mortar",
+  "category": "Artillery",
+  "skill": "Blaster artillery",
+  "cost": "3,500",
+  "availability": "2, F/R/X",
+  "damage": "Varies by grenade type",
+  "range": "25-100/500/1km",
+  "ammo": "100",
+  "game_notes": "Fire Rate 5. FC 1D. Body 4D. Highly mobile artillery piece with small repulsorlift unit at base (no movement, but easier to push/drag). Fires any type of grenade — grenade retains all standard characteristics aside from mortar range.",
+  "source": "WEG40042 Han Solo and the Corporate Sector Sourcebook p.119"
+ },
+ {
+  "name": "BlasTech F-Web Heavy Repeating Blaster",
+  "category": "Repeating Blasters",
+  "skill": "Blaster: repeating blaster",
+  "cost": "5,500",
+  "availability": "2, F/R/X",
+  "damage": "8D",
+  "range": "3-75/200/500",
+  "ammo": "Power generator only",
+  "game_notes": "Crew: 3. Fire Rate 1. Defensive energy shield running off the power generator provides 6D character-scale protection.",
+  "source": "WEG40042 Han Solo and the Corporate Sector Sourcebook p.120"
  }
 ];

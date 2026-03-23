@@ -1578,10 +1578,10 @@ const EQUIPMENT_DATA = [
  {
   "name": "Snooper Goggles",
   "category": "Sensors",
-  "cost": "800",
+  "cost": "300",
   "availability": "2",
-  "game_notes": "Combined IR/low-light/magnification goggles. +2D to search in low-light/darkness. Effective range 200m.",
-  "source": ""
+  "game_notes": "Combined IR/low-light/magnification goggles. +2D to search in low-light/darkness. Models without photoreducing sensors are susceptible to sudden flashes of light (wearer can be blinded). Newer models incorporate photoreducing sensors for rapidly changing light levels.",
+  "source": "WEG40042 Han Solo and the Corporate Sector Sourcebook p.121"
  },
  {
   "name": "Gungan Portable Shield Generator",
@@ -2486,5 +2486,93 @@ const EQUIPMENT_DATA = [
   "availability": "Imperial use only",
   "game_notes": "Type: Arakyd Hunter-Killer Probot. Scale: Capital. Size: 150m tall. Space: 3. Atmosphere: 105; 300 kmh. Hull: 4D. Shields: 1D. DEX 3D (dodge 5D), KNO 2D+2 (bureaucracy 3D, law enforcement: Imperial customs procedures 6D), MEC 3D (starship gunnery 5D, starship shields 5D), PER 4D (search 7D), STR 2D, TEC 2D+2. Sensors: Passive 40/2D, Scan 80/2D+2, Search 100/3D+1, Focus 5/4D+2. Equipped: 4 heavy grasping extensors (+2D lifting), 4 fine work grasping extensors, advanced sensor array with penetrating hullscanners and graphiscan recognition codes (11,000+ registries, cross-references forgeries), internal secure chamber (30x30x10m — holds a light freighter). Weapons: 2 Quad Blaster Cannons (fire-linked, turret, 1-5/10/17, 4D+1), 2 Ion Cannons (turret, 1-3/7/36, 8D), 1 Tractor Beam Projector (front, 1-5/15/30, 5D). Groups can coordinate with up to a dozen others, typically slaved to an Imperial Customs Frigate or Patrol Vessel.",
   "source": "WEG40071 Dark Empire Sourcebook p.133"
+ },
+ {
+  "name": "BlasTech Plasma Cut Boarding Device",
+  "category": "Starship Accessories",
+  "cost": "4,750",
+  "availability": "X",
+  "game_notes": "Scale: Starfighter. Skill: Starship gunnery. Crew: 2. Mounted on a ship's airlock system with controls just inside the main airlock. The extendable plasma torch (FC 0D, range 4m, damage 8D) slowly cuts through a ship's hull. Roll target ship's hull -2D; if the torch scores a 'lightly damaged' result, it has breached the hull. Once breached, the torch requires a full minute to cut a 1m wide by 2m high hole. The extendable boarding tube attaches to the hull and forms an airtight seal in 30 seconds. Restricted technology — normally used by military smuggling interdiction ships. Illegally obtained torches are often used by pirates and shipjackers.",
+  "source": "WEG40042 Han Solo and the Corporate Sector Sourcebook p.101"
+ },
+ {
+  "name": "BlasTech Sniffer Weapon Detector",
+  "category": "Security Equipment",
+  "cost": "5,600",
+  "availability": "2, R (restricted to governments)",
+  "game_notes": "Portable hand-held weapon scanner. Search 5D to detect hidden energy weapons, or adds +2D to operator's search: weapon detector skill (must have at least 1D in the specialization). Difficulty depends on camouflage: simply in a pack = Easy; drained of blaster gas, power packs removed, cleaned of residue, disassembled and parts spread among luggage = Very Difficult. Scanner is a small cube with scanning panel on one side and output screen on the other showing outlines and energy readings. A skilled operator is necessary for best effectiveness to interpret data.",
+  "source": "WEG40042 Han Solo and the Corporate Sector Sourcebook p.116"
+ },
+ {
+  "name": "TaggeCo. Biodegradable Binders",
+  "category": "Security Equipment",
+  "cost": "75",
+  "availability": "2, R",
+  "game_notes": "High-strength polymer binders with a one-way clasp that seals once linked. Once applied, character must make opposed Strength roll to break free (binders have STR 6D). Binders deteriorate in 36 hours. Application of a special harmless molecular solvent degrades them sooner.",
+  "source": "WEG40042 Han Solo and the Corporate Sector Sourcebook p.117"
+ },
+ {
+  "name": "Quickdraw Holster",
+  "category": "Weapon Accessories",
+  "cost": "Varies",
+  "availability": "",
+  "game_notes": "Custom-made by an expert to fit a specific weapon. Molded around the weapon's shape with no bumps or details to slow the draw. Adds +1 to +2D or more to blaster skill when quickdrawing. Price varies by quality and customization. QUICKDRAW RULES: Character uses blaster skill or specialization with an appropriate weapon (blaster pistol, hold-out blaster, heavy blaster pistol). Character may not do anything else in the round, including dodge — quickdrawing characters are easy marks for anyone else. Character splits blaster skill dice between speed draw dice and accuracy dice. Both characters roll speed draw dice — highest fires first. The first shooter then rolls accuracy dice to hit. Actions are NOT simultaneous: the second character may only fire back if not injured. A character stunned by a quickdraw shot loses -3D off all following shots that round. A character wounded or worse cannot return fire. Multiple shots suffer multi-action penalties to both speed draw and accuracy dice. Against dodging opponents: roll speed draw vs target's dodge — if speed draw is higher, shoot at normal range difficulty only (dodge doesn't add); if dodge is higher, dodge roll adds to range difficulty.",
+  "source": "WEG40042 Han Solo and the Corporate Sector Sourcebook p.121"
+ },
+ {
+  "name": "Serv-O-Droid DC5-1 Freight Droid",
+  "category": "Droids",
+  "cost": "4,500",
+  "availability": "",
+  "game_notes": "Height: 2.8m. Move: 6. DEX 2D, KNO 1D, MEC 1D, PER 1D, STR 4D (lifting 10D), TEC 1D (security 4D). Equipped: four extendible manipulators, one pair heavy caterpillar treads, one pair lifting claws, cranial turret with audio/video sensor, remote directional transponder, armored chassis (+1D), laser scanner. Cargo Code Database: laser scanner identifies each cargo module's identity band and correlates it to where it should be off-loaded; can also recode an identity band for new cargoes.",
+  "source": "WEG40042 Han Solo and the Corporate Sector Sourcebook p.126"
+ },
+ {
+  "name": "CSA Harvester Droid CD-2",
+  "category": "Droids",
+  "cost": "45,000",
+  "availability": "",
+  "game_notes": "Height: 15m. Scale: Speeder. Move: 14; 40 kmh. DEX 1D, KNO 1D, MEC 1D (harvesting machinery operation 3D), PER 2D, STR 4D, TEC 1D. Equipped: remote interface control mechanism, tractor treads, limited optical perception suite (observes grain condition only), harvester blades (7D speeder scale damage). Simple processors with limited program parameters and emergency safety shutdowns.",
+  "source": "WEG40042 Han Solo and the Corporate Sector Sourcebook p.126"
+ },
+ {
+  "name": "Cybot Galactica BigHaul Robo-Hauler",
+  "category": "Droids",
+  "cost": "1,500",
+  "availability": "",
+  "game_notes": "Length: 1.6m. Move: 5. DEX 1D, KNO 1D, MEC 1D, PER 1D, STR 4D (lifting 5D), TEC 1D. Equipped: remote programming receiver, one pair tractor treads, four grapple arms for cargo, cargo bed (2 ton capacity). More of an automated cargo hauling device than an actual droid — limited-function droid brain attached to an industrial vehicle. Takes simple orders and monitors operating condition; notifies central processor or organic managers of abnormalities. Can be rigged for remote control.",
+  "source": "WEG40042 Han Solo and the Corporate Sector Sourcebook p.127"
+ },
+ {
+  "name": "Cybot Galactica Sartorifex Robo-Valet",
+  "category": "Droids",
+  "cost": "5,600",
+  "availability": "",
+  "game_notes": "Height: 1.5m. Move: 3. DEX 1D, KNO 3D (alien species: native garbs and fabrics 6D, cultures 5D, cultures: fashion 7D), MEC 1D, PER 2D (fashion trends 4D), STR 1D, TEC 1D. Equipped: internal VibroSound dry cleaning device, internal steam press, rethreading/reweaving micro manipulators, one pair photoreceptors (Human range), galactic fashion database. Programmed to maintain and store the master's clothing and gear — cleaning, pressing, mending, and selection of clothing. Industrial models serve hotels with high volume cleaning, pressing, folding and minor mending.",
+  "source": "WEG40042 Han Solo and the Corporate Sector Sourcebook p.129"
+ },
+ {
+  "name": "Cybot Galactica MixRMastR Robo-Bartender",
+  "category": "Droids",
+  "cost": "1,000",
+  "availability": "",
+  "game_notes": "Height: 0.5m. Move: 12. DEX 1D, KNO 4D (alien species: favorite drinks 6D, drink mixology 7D), MEC 1D, PER 2D, STR 1D, TEC 1D. Equipped: chemical/liquor drum siphons, photoreceptor/audio receiver (Human range), two fine manipulator arms, retractable drink/credit tray, repulsorlift unit (optional). Stationary versions plug into tubing from source liquors; remote versions hover above crowded barroom floors. Technically-inclined slicers can easily reprogram the systems — leading to deleted bar tabs and toxic cocktails.",
+  "source": "WEG40042 Han Solo and the Corporate Sector Sourcebook p.129"
+ },
+ {
+  "name": "Go Corp/Utilitech Metrocab Robo-Hack",
+  "category": "Droids",
+  "cost": "15,000",
+  "availability": "",
+  "game_notes": "Length: 6m. Scale: Speeder. Move: 105; 300 kmh. DEX 1D, KNO 1D (streetwise: local shortcuts 6D), MEC 1D (repulsorlift operation: landspeeder 6D), PER 1D (con 5D), STR 3D, TEC 1D. Equipped: armor plating (+4D exterior and droid brain/credit compartment), internal passenger compartment (seats 3), heavy suspension repulsorlift motors, internal streetmap/database with uplink to local communication and transportation network, credit operation box, vocabulator panel. Central Learning Chip allows the droid to learn from past experiences. Some are programmed to produce maximum revenue rather than provide customer service — known to ride extra kilometers to defraud visitors. Self-defense: doors auto-lock in case of robbery or non-payment, delivering the individual to the nearest law enforcement.",
+  "source": "WEG40042 Han Solo and the Corporate Sector Sourcebook p.130"
+ },
+ {
+  "name": "Arakyd Mark X Executioner Gladiator Droid",
+  "category": "Droids",
+  "cost": "35,000",
+  "availability": "",
+  "game_notes": "Height: 2.4m. Move: 11. DEX 2D (archaic guns 4D, blaster 5D, brawling parry 6D, dodge 5D, energy weapons 3D+2, flamethrower 5D, melee combat 6D+1, missile weapons 5D+2), KNO 1D (alien species: anatomy 4D, intimidation 6D), MEC 1D, PER 1D, STR 4D (brawling 7D), TEC 1D. Tread locomotion. Armor plating (+3D all areas except underside and retractable arms). Retractable arm weapons: flechette canister (6D, 5m blast, 0-5/10/15), neuronic whip (STR+3D), flame projector (5D, 0-3/5/10), vibro-saw blades (STR+2D, continuous damage), blaster rifle (5D+2, 0-5/20/50), missile launcher (6D, 0-5/15/30), force pike (STR+2D), sonic cannon (4D+2, 0-2/5/10), spiked club (STR+1D), vibro-axe (STR+2D+1). Can be equipped with control overrides for owner operation — incidents of rogue droids killing their masters have occurred.",
+  "source": "WEG40042 Han Solo and the Corporate Sector Sourcebook p.131"
  }
 ];
