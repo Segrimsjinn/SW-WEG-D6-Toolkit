@@ -19854,7 +19854,7 @@ const NOTABLE_NPCS = [
     forcePoints: 1,
     characterPoints: 10,
     move: 10,
-    equipment: "Blaster pistol (4D+2), comlink, tools",
+    equipment: "Blaster pistol (4D+2), comlink, tools, Starlight Intruder",
     capsule: "Salla liked understanding the way things worked, but there was something about going around in a cleansuit with a portacomp she just didn't like. She ended up as a tech on a corporate transport, then saved enough for a real loan — not from a Hutt — to get a ship. She drifted from regular merchant shipping to the smuggling trade, where she met Shug, Lando, and Han. Han had an easy-going style she found attractive, and they could talk the same techno-jargon. They shared a friendly rivalry that became something more, but when her hyperdrive failed and her ship made reversion on a collision course with a neutron star, Han saved her but she was shaken enough to want to retire. Han was still too free in his ways, and by the time she got his goodbye holomessage, he was light years away. Now she spends most of her time working in Shug's garage, pouring everything into the Starlight Intruder — a highly modified freighter licensed for Deep Core hauling. Some say her single-mindedness is her way of getting back at Solo for leaving her. Seeing Han again, married and a father, really disturbed her — she had half-forgotten those feelings, and then he showed up to make her remember everything all over again.",
     source: "WEG40071 Dark Empire Sourcebook p.48"
   },
@@ -19999,7 +19999,7 @@ const NOTABLE_NPCS = [
     darkSidePoints: 7,
     characterPoints: 26,
     move: 10,
-    equipment: "Modified Mandalorian battle armor (+4D physical, +3D energy, covers head/torso/arms, no DEX penalty; wrist lasers 5D, armor weapons skill 3-5/25/50; rocket dart launcher 6D + poison 5D for 5 rounds, missile weapons skill 3-5/25/50; turbo projected grappling hook 20m lanyard; flame projector 5D 1-5m cone; concussion grenade launcher 6D 5m blast radius, 20 grenades; jet pack Move 100m horizontal/70m vertical, 20 charges; sensor pod +2D search; infrared/motion sensor +1D PER; macrobinoculars +3D search 100-500m scomp-linked to rifle; sound sensor +1D PER in quiet; internal comlink; broad-band antenna; winch 100kg; sealed enviro filter 2hr oxygen), blaster rifle (6D), comlink, Wookiee scalps, Slave I",
+    equipment: "Modified Mandalorian battle armor (+4D physical, +3D energy, covers head/torso/arms, no DEX penalty; wrist lasers 5D, armor weapons skill 3-5/25/50; rocket dart launcher 6D + poison 5D for 5 rounds, missile weapons skill 3-5/25/50; turbo projected grappling hook 20m lanyard; flame projector 5D 1-5m cone; concussion grenade launcher 6D 5m blast radius, 20 grenades; jet pack Move 100m horizontal/70m vertical, 20 charges; sensor pod +2D search; infrared/motion sensor +1D PER; macrobinoculars +3D search 100-500m scomp-linked to rifle; sound sensor +1D PER in quiet; internal comlink; broad-band antenna; winch 100kg; sealed enviro filter 2hr oxygen), blaster rifle (6D), comlink, Wookiee scalps, Slave II",
     capsule: "Little is known of Boba Fett's armor, save that it is probably the most lethal set of personal battle armor in the galaxy. Based on the armor of Mandalorian warriors, Fett has taken advantage of very expensive miniaturization technology, combining devastating firepower and excellent protection with no hindrance to movement. Fett survived the Sarlacc pit at Carkoon — while other victims tried the obvious way out through the opening, he made his own exit. Dengar found him near the lip of a crevasse, blistered and covered with knotted fibrous material, still clutching a flare gun. The Sarlacc's sucker marks dotted his body, attached to arteries and veins for blood exchange — the creature fed its blood into victims, slowly breaking down their proteins while keeping them alive as a constant food source. After a month-long coma, Fett recovered on solid food and immediately returned to obliterate the Sarlacc with three kilotons of ordnance. Now it's payback time.",
     source: "WEG40071 Dark Empire Sourcebook p.54"
   },
@@ -20222,5 +20222,29 @@ const NOTABLE_NPCS = [
     equipment: "Battle armor (+2D physical, +1D energy, -1D DEX and related skills), forceaxe (STR+3D+2)",
     capsule: "These mute titans are the subject of endless talk among the court; their origin is unknown. While obviously inhuman, their intricately wrapped bodies and draping garments are something out of a forgotten legend. The Sentinels are clones, mutated by Dark Side Adepts as part of their training. During the growth cycle, chemicals suppress higher brain functions while the Adepts form a mental link. If successful, the Sentinels become automatons — living statues dependent on the Adept's will for purpose or movement. If unsuccessful, the living monstrosities are disposed of. The first Sentinels appeared without explanation at the scene of a battle where Jedi had been captured, bearing authentic datachips and assuming control over a particular prisoner. They formed a praetorian guard for Ashka Boda as he journeyed to Coruscant and his doom.",
     source: "WEG40071 Dark Empire Sourcebook p.71"
+  },
+  {
+    name: "ZZ-4Z (ZeeZee)",
+    species: "Droid",
+    system: "Nal Hutta",
+    location: "Nar Shaddaa — Han Solo's garret",
+    affiliations: ["Neutral"],
+    role: "Han Solo's housekeeping droid",
+    type: "JV-Z1/D Housekeeping Droid",
+    stats: {
+      DEXTERITY: { base: "1D", skills: {} },
+      KNOWLEDGE: { base: "2D", skills: { "accounting": "7D", "bureaucracy": "6D", "cultures": "5D+2" } },
+      MECHANICAL: { base: "1D", skills: { "household appliance operation": "8D" } },
+      PERCEPTION: { base: "2D", skills: { "search": "5D" } },
+      STRENGTH: { base: "1D", skills: { "cleaning": "7D", "lifting": "5D" } },
+      TECHNICAL: { base: "3D", skills: {} }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 8,
+    equipment: "Humanoid body (two arms, two legs), internal database, infrared lintscope, vocabulator",
+    capsule: "ZZ-4Z is a very old housekeeping droid, one of the last of the Serv-O-Droid JV-Z1 series. Originally programmed as private secretary for the Dean of the Spacers Academy, he served over 17 Deans and could affectionately rattle off the peculiar quirks and habits of each one. Released from service by Dean Horace Wyrmyr, ZeeZee was befriended by Mako Spince, who used the droid's access to steal antimatter control codes from the physics lab for his infamous prank. After Spince's expulsion, Mako droidnapped ZeeZee as a final gesture, but eventually lost him in a sabacc game to Han Solo. Solo's first orders on managing his Nar Shaddaa garret were 'I dunno, just leave it all... just like this.' ZeeZee has dutifully maintained it exactly that way ever since. When Han made his fast exit from Nar Shaddaa, ZeeZee was all but forgotten, left waiting patiently — even as Boba Fett came by regularly to check on things. Leia has commented that it couldn't hurt to have a droid around the house, and besides, he and Threepio would probably hit it off.",
+    source: "WEG40071 Dark Empire Sourcebook p.131"
   }
 ];

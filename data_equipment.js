@@ -2470,5 +2470,21 @@ const EQUIPMENT_DATA = [
   "availability": "Imperial use only",
   "game_notes": "Height: 0.3m diameter. Move: 15. DEX 3D (dodge 4D), KNO 1D (law enforcement: Imperial legal codes 5D), MEC 2D, PER 4D (search 5D), STR 1D, TEC 1D. Equipped: holorecording macrobinoculars (+1D search; records within 50m line of sight), broad-band comlink (coded to Imperial alert frequencies), hover package (10m flight ceiling). The Mos Eisley garrison's unit (IM4-099) is nicknamed 'Face' by the local militia. Its comm-signal monitoring protocols have caused considerable friction with the Imperial garrison — the Prefect's comm repeaters boost signals into the illegally-prohibited range, causing Face to alarm on the ASP droids installing them.",
   "source": "WEG40089 The Movie Trilogy Sourcebook SE p.164"
+ },
+ {
+  "name": "DefenStar 5000 Planetary Shield Relay System",
+  "category": "Planetary Defense",
+  "cost": "500,000 per shield",
+  "availability": "X",
+  "game_notes": "Model: Hibomehrt-Wyrrgex DefenStar 5000. Scale: Death Star. Skill: Planetary shields. Crew: 150 (skeleton 50/+15, crew skill: planetary shields 6D). Fire Control: 3D. Each shield protects a 100 square kilometer area with 6D Death Star-scale protection. Anything hitting the shield suffers 6D damage; energy bolts make opposed damage rolls — if the shield roll is higher the bolt is snuffed, if the bolt's roll is higher, for every 6 points exceeding the shield roll, 1D of damage passes through. If the shield system is damaged, 5D of backup shields can be brought online with a Moderate planetary shields roll. Each shield requires its own power generator. PLANETARY NOTES: A typical habitable planet has a structural rating of 10D-20D (Death Star scale). Alderaan had no shields and was utterly vaporized. A shielded planet overcome by a superlaser may 'merely' have its entire surface burned off or split into several pieces.",
+  "source": "WEG40071 Dark Empire Sourcebook p.130"
+ },
+ {
+  "name": "Hunter-Killer Probot",
+  "category": "Droids",
+  "cost": "Not for sale",
+  "availability": "Imperial use only",
+  "game_notes": "Type: Arakyd Hunter-Killer Probot. Scale: Capital. Size: 150m tall. Space: 3. Atmosphere: 105; 300 kmh. Hull: 4D. Shields: 1D. DEX 3D (dodge 5D), KNO 2D+2 (bureaucracy 3D, law enforcement: Imperial customs procedures 6D), MEC 3D (starship gunnery 5D, starship shields 5D), PER 4D (search 7D), STR 2D, TEC 2D+2. Sensors: Passive 40/2D, Scan 80/2D+2, Search 100/3D+1, Focus 5/4D+2. Equipped: 4 heavy grasping extensors (+2D lifting), 4 fine work grasping extensors, advanced sensor array with penetrating hullscanners and graphiscan recognition codes (11,000+ registries, cross-references forgeries), internal secure chamber (30x30x10m — holds a light freighter). Weapons: 2 Quad Blaster Cannons (fire-linked, turret, 1-5/10/17, 4D+1), 2 Ion Cannons (turret, 1-3/7/36, 8D), 1 Tractor Beam Projector (front, 1-5/15/30, 5D). Groups can coordinate with up to a dozen others, typically slaved to an Imperial Customs Frigate or Patrol Vessel.",
+  "source": "WEG40071 Dark Empire Sourcebook p.133"
  }
 ];

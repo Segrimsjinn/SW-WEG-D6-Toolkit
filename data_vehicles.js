@@ -396,7 +396,26 @@ const VEHICLES_DATA = [
   "shields": "",
   "weapons": "2 Medium Blaster Cannons (front, FC 2D, 50-400/900/2km, 5D). Light Turbolaser (turret, FC 1D+2, 50-300/500/1km, 4D+1).",
   "game_notes": "5-day consumables.",
-  "source": "Dark Empire Sourcebook (pages 123-124)"
+  "source": "WEG40071 Dark Empire Sourcebook pp.123-124"
+ },
+ {
+  "name": "XR-85 Tank Droid",
+  "category": "Ground Vehicles",
+  "scale": "Walker",
+  "length": "32m",
+  "skill": "Ground vehicle operation",
+  "crew": "Droid brain",
+  "passengers": "",
+  "cargo": "",
+  "cover": "",
+  "cost": "56,000",
+  "maneuverability": "1D+1",
+  "move": "25; 70 kmh",
+  "body": "6D",
+  "shields": "",
+  "weapons": "Heavy Particle Cannon (turret, FC 2D, 50-600/2/5km, 6D). 2 Light Turbolasers (front, FC 1D, 5-300/600/1km, 4D+1). 4 Twin Heavy Repeating Blasters (2 front + 2 back, speeder scale, FC 2D, 50-400/900/2km, 5D). Golan Arms DF.9 (back, speeder scale, FC 1D, 20-500/800/1.2km, 4D).",
+  "game_notes": "Droid Brain: DEX 2D (vehicle blasters 6D), KNO 1D (urban warfare 2D), MEC 2D (ground vehicle operation 6D), PER 2D (search 6D), STR 1D, TEC 1D.",
+  "source": "WEG40071 Dark Empire Sourcebook p.125"
  },
  {
   "name": "Amphibion",
@@ -415,7 +434,7 @@ const VEHICLES_DATA = [
   "shields": "",
   "weapons": "Atgar 1.4 FD P-Tower (optional turret, FC 1D, 10-200/350/500, 2D+2).",
   "game_notes": "Modified aquatic combat speeder.",
-  "source": "Dark Empire Sourcebook (page 126)"
+  "source": "WEG40071 Dark Empire Sourcebook p.126"
  },
  {
   "name": "Espo Hovervan",
@@ -472,7 +491,7 @@ const VEHICLES_DATA = [
   "shields": "",
   "weapons": "2 Medium Blaster Cannons (front/left + front/right, FC 1D+1, 50-350/1/1.5km, 4D). 2 Light Blaster Cannons (front + back, FC 1D, 50-300/500/1km, 2D). 2 Concussion Torpedo Launchers (fire-linked, front, FC 1D, 10-500/1/2km, 3D).",
   "game_notes": "Attack hydrofoil.",
-  "source": "Dark Empire Sourcebook (pages 126-127)"
+  "source": "WEG40071 Dark Empire Sourcebook pp.126-127"
  },
  {
   "name": "Boghopper",
@@ -833,7 +852,45 @@ const VEHICLES_DATA = [
   "shields": "",
   "weapons": "Double Blaster Cannon (fire-linked, front, FC 1D, 50-400/1/2km, 5D+1).",
   "game_notes": "Up to 50km (51-100km = -1D maneuverability).",
-  "source": "Dark Empire Sourcebook (pages 121-122)"
+  "source": "WEG40071 Dark Empire Sourcebook pp.121-122"
+ },
+ {
+  "name": "Guardian-class Patrol Ship XL-5",
+  "category": "Military Airspeeders",
+  "scale": "Speeder",
+  "length": "10m",
+  "skill": "Repulsorlift operation: XL-5 Guardian",
+  "crew": "2",
+  "passengers": "12 (prisoners)",
+  "cargo": "150 metric tons",
+  "cover": "Full",
+  "cost": "80,000",
+  "maneuverability": "1D",
+  "move": "280; 800 kmh",
+  "body": "3D",
+  "shields": "3D",
+  "weapons": "Two Blaster Cannon (fire-link optional, 1 left/front + 1 right/front, pilot + co-pilot, FC 1D or 1D+2 fire-linked, 50-400/900/3km, 4D or 5D+1 fire-linked).",
+  "game_notes": "Altitude: ground level to 100km. Sensors: Passive 4km/1D, Scan 8km/2D, Search 20km/3D, Focus 500m/4D. Orbital and upper atmospheric patrol vessel used on Byss.",
+  "source": "WEG40071 Dark Empire Sourcebook p.112"
+ },
+ {
+  "name": "Storm Skimmer Patrol Sled",
+  "category": "Military Airspeeders",
+  "scale": "Speeder",
+  "length": "4.6m",
+  "skill": "Repulsorlift operation: storm skimmer",
+  "crew": "2",
+  "passengers": "",
+  "cargo": "100kg",
+  "cover": "1/2",
+  "cost": "22,500",
+  "maneuverability": "2D+1",
+  "move": "150; 430 kmh",
+  "body": "1D+2",
+  "shields": "",
+  "weapons": "2 Heavy Repeating Blasters (1 front [pilot] + 1 left/front/right [co-pilot, may turn to one facing per round], FC 1D, 3-75/200/500m, 5D+1).",
+  "game_notes": "Altitude: ground level to 10km (11-15km = -1D maneuverability).",
+  "source": "WEG40071 Dark Empire Sourcebook p.123"
  },
  {
   "name": "Chariot Command Speeder",
@@ -1232,7 +1289,7 @@ const VEHICLES_DATA = [
   "shields": "",
   "weapons": "",
   "game_notes": "Up to 30m altitude.",
-  "source": "Dark Empire Sourcebook (pages 125-126)"
+  "source": "WEG40071 Dark Empire Sourcebook pp.125-126"
  },
  {
   "name": "Personnel Skiff",
