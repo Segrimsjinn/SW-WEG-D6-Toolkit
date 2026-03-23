@@ -4511,7 +4511,7 @@ function generateWildSpaceSystem() {
   const html = `<div class="card" style="border:1px solid var(--cyan);margin-bottom:12px">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
       <div style="color:var(--cyan);font-size:16px;font-weight:700;letter-spacing:1px">WILD SPACE SYSTEM</div>
-      <button onclick="generateWildSpaceSystem()" style="font-size:11px;color:var(--gold);background:none;border:1px solid var(--gold);border-radius:var(--radius);padding:2px 8px;cursor:pointer;font-family:inherit">Re-roll</button>
+      <div style="display:flex;gap:6px"><button onclick="generateWildSpaceSystem()" style="font-size:11px;color:var(--gold);background:none;border:1px solid var(--gold);border-radius:var(--radius);padding:2px 8px;cursor:pointer;font-family:inherit">Re-roll</button><button onclick="document.getElementById('sysgenResult').style.display='none'" style="font-size:11px;color:var(--red);background:none;border:1px solid var(--red);border-radius:var(--radius);padding:2px 8px;cursor:pointer;font-family:inherit">✕</button></div>
     </div>
     <div style="display:grid;gap:0;margin-bottom:14px">
       ${field('Star Type', star.temp ? star.value + ' — ' + star.color + ' (' + star.temp + 'K)' : star.value + ' — ' + star.color + (star.desc ? '. ' + star.desc : ''))}
