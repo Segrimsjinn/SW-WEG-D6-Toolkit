@@ -46,8 +46,8 @@ The entire app. Contains all CSS (minified, inline `<style>`), all HTML tab pane
   aliases: ["alternate name", ...],  // optional — triggers lookup match
   source,    // "WEGxxxxx Book Title p.##"
   summary,   // paragraph narrative
-  locations, // key locations as a single descriptive string
-  ofNote     // GM-facing notes, docking fees, hazards, notable NPCs callout
+  locations, // key locations — each location as "Name (description)." separated by a space; the renderer splits on "). " to create paragraph breaks
+  ofNote     // GM-facing notes — use " | " (pipe with spaces) to separate sections; the renderer converts pipes to paragraph breaks. Prefix era-specific notes with the year: "10 ABY (Source): text" or "4000 BBY (Era): text"
 }
 ```
 
@@ -81,6 +81,8 @@ The entire app. Contains all CSS (minified, inline `<style>`), all HTML tab pane
 - **All other data files are NOT alphabetically sorted** — entries are grouped by sourcebook order. New entries should be **appended to the end** of the array (or after the last entry of the same category for `data_weapons.js`, `data_equipment.js`, `data_vehicles.js`). Do not try to insert alphabetically.
 - All other data files use readable, indented formatting.
 - Source citations follow the format `"WEG##### Book Title p.##"`.
+- **Planet `locations` formatting**: Each location entry follows the pattern `"Name (description)."` — the renderer automatically splits on `"). "` to create separate paragraphs for each location on the detail card.
+- **Planet `ofNote` formatting**: Use ` | ` (pipe with spaces) to separate sections. The renderer converts pipes to `<br><br>` paragraph breaks. Prefix era-specific notes with the year and source era in parentheses: `"10 ABY (Dark Empire): text | 14 ABY STATUS: text"`. When a planet has data from multiple eras, each era gets its own pipe-separated section with the year prefix so GMs can quickly identify what applies to their campaign timeline.
 - Planet `aliases` array enables alternate-name lookups without duplicating entries.
 - When adding a new starport/station/city, add it to: `data_systems.js` (for galaxy map search, using `"Planet - City"` naming — no sub-location entries), `data_planets.js` (for detail card, with all buildings/points of interest in `locations`/`ofNote` fields), `data_npcs_notable.js` (for any named NPCs), and `data_creatures.js` if the location has notable creatures.
 - **Multi-era NPCs**: Characters who appear across multiple sourcebooks with improved stats get one entry per era. Use BBY/ABY in the `name` field: `"Luke Skywalker (0 BBY)"`, `"Luke Skywalker (3 ABY)"`, etc. Searching by first name returns all versions. The `source` field confirms which book each stat block came from.
