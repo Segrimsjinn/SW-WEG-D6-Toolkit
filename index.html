@@ -4322,11 +4322,11 @@ function showPlanetDetail(name) {
     </div>
     ${p.locations ? `<div style="margin-bottom:12px">
       <div style="color:var(--gold);font-size:12px;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">Key Locations</div>
-      <div style="color:var(--text-secondary);line-height:1.7">${linkifyNpcNames(p.locations, p.system)}</div>
+      <div style="color:var(--text-secondary);line-height:1.7">${linkifyNpcNames(p.locations.replace(/\)\.\s+/g, ').<br><br>'), p.system)}</div>
     </div>` : ''}
     ${p.ofNote ? `<div style="margin-bottom:12px">
       <div style="color:var(--gold);font-size:12px;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">Of Note</div>
-      <div style="color:var(--text-secondary);line-height:1.7">${linkifyNpcNames(p.ofNote, p.system)}</div>
+      <div style="color:var(--text-secondary);line-height:1.7">${linkifyNpcNames(p.ofNote.replace(/\s*\|\s*/g, '<br><br>').replace(/\n\n+/g, '<br><br>'), p.system)}</div>
     </div>` : ''}
     <div style="color:var(--text-dim);font-size:11px;font-style:italic;margin-top:8px">Source: ${p.source}</div>
   `;
