@@ -3486,5 +3486,45 @@ const EQUIPMENT_DATA = [
   "availability": "",
   "game_notes": "Height: 2.4m. Move: 11. DEX 2D (archaic guns 4D, blaster 5D, brawling parry 6D, dodge 5D, energy weapons 3D+2, flamethrower 5D, melee combat 6D+1, missile weapons 5D+2), KNO 1D (alien species: anatomy 4D, intimidation 6D), MEC 1D, PER 1D, STR 4D (brawling 7D), TEC 1D. Tread locomotion. Armor plating (+3D all areas except underside and retractable arms). Retractable arm weapons: flechette canister (6D, 5m blast, 0-5/10/15), neuronic whip (STR+3D), flame projector (5D, 0-3/5/10), vibro-saw blades (STR+2D, continuous damage), blaster rifle (5D+2, 0-5/20/50), missile launcher (6D, 0-5/15/30), force pike (STR+2D), sonic cannon (4D+2, 0-2/5/10), spiked club (STR+1D), vibro-axe (STR+2D+1). Can be equipped with control overrides for owner operation — incidents of rogue droids killing their masters have occurred.",
   "source": "WEG40042 Han Solo and the Corporate Sector Sourcebook p.131"
+ },
+ {
+  "name": "BlasTech Blaster Repair Kit",
+  "category": "Tool Kits",
+  "cost": "500",
+  "availability": "2",
+  "game_notes": "Skill: Blaster repair. Deluxe kit containing: pulse adaptor module tester, collimator beam focuser, prismatic crystal aligner, static pulse adaptor modules, energy converter valve (Heter-Valve), multiple gas valve nozzles, power pack recharger, universal power pack, power pack cables, spare gas container, spare trigger cable and variable pressure adjustor.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.79"
+ },
+ {
+  "name": "BlasTech Ramtek Portable Clip Recharger",
+  "category": "Weapon Accessories",
+  "cost": "750",
+  "availability": "4, F or R",
+  "game_notes": "Thin metal box with 6 slots and adaptors for common power pack types. Charges clips in 2 minutes (red indicator when full). 30 clips per charge, then needs 3 hours recharging from a power generator. Also manufactured as CapTech Stealthpak and Power Products Ultrapaq.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.79"
+ },
+ {
+  "name": "CapTech Blaster Target Board",
+  "category": "Weapon Accessories",
+  "cost": "450 (+50 sighting coupling)",
+  "availability": "2",
+  "game_notes": "2.5m x 2.5m flexible sheet with targeting computer (scomp-linked). Projects variable targets (number, size, speed). User sets blaster to stun with mounted sighting coupling. GM may allow regular target practice to reduce blaster skill advancement cost.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.79"
+ },
+ {
+  "name": "Novaless Ultrasonic Sighting System",
+  "category": "Weapon Accessories",
+  "cost": "800",
+  "availability": "2",
+  "game_notes": "Skill: Blaster. Sonic targeting scope using paired ultrasonic beam emitters at different frequencies. Data analyzer constructs 3D 'sound pattern' unaffected by light or heat levels. Adds +1D+2 to blaster rolls when aiming for one round (stacks with normal aiming bonus). Max effective range 50m.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.79"
+ },
+ {
+  "name": "Zemphyr Passive Defender PD-0943 Dampener Aerosol",
+  "category": "Personal Defense",
+  "cost": "600",
+  "availability": "3, F or R",
+  "game_notes": "Skill: Missile weapons. Hand-held canister (10cm x 4cm) spraying courenth and ves gas mixture that disperses blaster bolts on contact. 3 charges per canister. Each charge produces visible cloud covering 1 cubic meter — any blaster bolt entering cloud loses -1D damage. Cloud lasts 1 minute (heavy winds/precipitation may disperse). Additional charges in same area have no added benefit.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.80"
  }
 ];
