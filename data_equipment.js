@@ -3176,6 +3176,126 @@ const EQUIPMENT_DATA = [
   "source": "WEG40025 Galladinium's Fantastic Technology p.49"
  },
  {
+  "name": "Corgorlath Master-Grav 1000 Grav Boots",
+  "category": "Recreation",
+  "cost": "550 (pair)",
+  "availability": "2",
+  "game_notes": "Repulsorlift field boots allowing rapid maneuvering along planes 45-180 degrees opposite normal gravity. Move up to 20m per turn, max altitude 150m. Relatively quiet. Maneuvers use powersuit operation skill with varying difficulties.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.50"
+ },
+ {
+  "name": "Lakan DHS-2 Holomatic Dejarik Set",
+  "category": "Recreation",
+  "cost": "1,500 (100 per additional grandmaster module)",
+  "availability": "2",
+  "game_notes": "Skill: Scholar: dejarik (Knowledge). Holographic dejarik system housed in circular table-sized mount. 10 types of playing pieces in static and live-action modes. AI based on Lakan engine (2nd place at Galactic Core Interzonals). Replicate playing styles of 50+ grandmasters. Pieces range 5-30cm height. Passive mode records moves instantly; live-action mode shows animated piece movement and combat. The classic holographic board game — as seen aboard the Millennium Falcon.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.51"
+ },
+ {
+  "name": "Plescinia CS-Mark 10 Imperial Combat Simulator",
+  "category": "Recreation",
+  "cost": "350",
+  "availability": "2",
+  "game_notes": "Skill: Tactics. Holographic combat simulator from the 'Great Battles of the Empire' series. 12 stock historical simulations plus scenario editor for custom historical or hypothetical engagements. Play against opponent or computer. Micro-manage individual units or direct entire assault groups — fighters, repulsor tanks, walkers and elite troops. Remote access links for multiple players. Easy computer programming/repair to install. Tactics rolls vary by scenario difficulty.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.51"
+ },
+ {
+  "name": "Dendratis Bio-Cocoon",
+  "category": "Hunting & Trapping",
+  "cost": "2,000",
+  "availability": "3",
+  "game_notes": "Biological containment system — 1.5 sq meter foldable cloth with dormant microorganisms. Remote-activated: organisms swarm over victim, leeching bio-electrical energy to form a cocoon. Victim makes brawling parry to avoid: Moderate (up to 150kg), Easy (151-300kg), Very Easy (301-450kg), no effect over 450kg. Failure: -1D DEX penalty and 1D stun damage immediately. Each subsequent turn: brawling parry difficulty increases one level, DEX penalty increases -1D, stun damage increases +1D. Fully cocooned when DEX penalty matches/exceeds character's DEX or stun knocks them out. Favorite of big-game hunters for live capture.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.53"
+ },
+ {
+  "name": "CEC Copycat Pod",
+  "category": "Starship Accessories",
+  "cost": "10,000 (plus permit fees)",
+  "availability": "3, F or R",
+  "game_notes": "Skill: Sensors. Full spectrum ECM device disguised as standard probe/launcher. Ties into ship's sublight drive and navigation, analyzes transponder signature and flight dynamics. When launched, mimics parent vessel's characteristics to lure pursuers. Works with starfighters and small transports (cargo 100 metric tons or less). Max Space speed 6. To distinguish from real ship: Difficult sensors on passive/scan, Moderate on search, Easy on focus. Failed roll = both ships appear real.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.53"
+ },
+ {
+  "name": "Gandorthral Oxidizer",
+  "category": "Survival Gear",
+  "cost": "350",
+  "availability": "2",
+  "game_notes": "Molecular oxygen extractor resembling a re-breather with waist-mounted filtration unit connected to standard breather mask. Extracts oxygen from methane, ammonia and other gas atmospheres using miniaturized ram-jet filtration. Up to 4 hours on full power pack charge (1 hour recharge). Used by scouts and planetary prospectors. Requires local atmospheric pressure not too great.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.54"
+ },
+ {
+  "name": "Borallis LSW-983 Laser Welder",
+  "category": "Tool Kits",
+  "cost": "50",
+  "availability": "1",
+  "game_notes": "Skill: Various repair skills. Two independently directed laser emitters for increased efficiency. Variable surface contact from 0.2-20cm diameter welds. Built-in power cell for portability plus standard adaptor hookup for direct power system access.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.54"
+ },
+ {
+  "name": "Idellian ILF-5000 Lifeform Scanner",
+  "category": "Sensors",
+  "cost": "3,500",
+  "availability": "2",
+  "game_notes": "Skill: Sensors. Range: 500m/1km/1.5km. Pre-programmed to distinguish among thousands of common animal lifeforms. Provides number of lifeforms, rate and direction of movement, body temperature, mass and respiration rates. Informs user if body function parameters match database lifeforms. Alien species or beast riding roll may identify specific lifeform (GM discretion).",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.55"
+ },
+ {
+  "name": "Lardanis MFCR-200 Micro Fusion Reactor",
+  "category": "Survival Gear",
+  "cost": "750",
+  "availability": "1",
+  "game_notes": "Backpack-sized medium fusion power generator. Supplies power equivalent to most medium generators. For powering perimeter shields, equipment and other field devices in the wilderness.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.55"
+ },
+ {
+  "name": "Borallis PCW-876 Fusion Cutter",
+  "category": "Tool Kits",
+  "cost": "75",
+  "availability": "1",
+  "game_notes": "Skill: Various repair skills. Variable beam fusion cutter shearing through most metals, plastics and ceramics up to 25cm thick in seconds. Difficulty depends on project. Accidental beam exposure causes 3D-6D variable damage.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.55"
+ },
+ {
+  "name": "Zone Control Repulsorlift Grappling Gun",
+  "category": "Survival Gear",
+  "cost": "1,200 (gun), 1,000 (wrist)",
+  "availability": "2",
+  "game_notes": "Skill: Firearms. Scale: Character. Combines traditional grappling gun with repulsorlift generators. Mode 1: fires grapple normally. Mode 2: thumb joystick controls ascent rate and direction (30 second repulsorlift charge). Automatic winch for ascent. Gun version: oversized blaster shape, standard blaster pack (10 launches), 200m molecularly-reinforced line, winch 20m/sec, supports 200kg, optional harness recommended. Wrist version: forearm mount with snap-up handle, hold-out blaster pack (5 launches), 100m line, 10m/sec ascent, supports 150kg, nearly concealable. 1st place winner in reader submissions.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.55"
+ },
+ {
+  "name": "Fegegrish Squib Battering Ram",
+  "category": "Tool Kits",
+  "cost": "3,500",
+  "availability": "3",
+  "game_notes": "Shoulder-mounted structural weakener. Large square plate clamped against target obstruction. Alternating energy pulsations batter away at molecular level until obstruction gives way. 6D damage against body of wall or door. Also useful for after-hours 'withdrawals' from locked financial institutions.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.57"
+ },
+ {
+  "name": "Vercanne FOE-2000 Oxygen Extractor",
+  "category": "Survival Gear",
+  "cost": "350",
+  "availability": "2",
+  "game_notes": "Meter-long probe extracting oxygen molecules from sub-surface water deposits or water vapor trapped in rock formations. Modulated wave pulses separate water and oxygen from surrounding rock, drawing it to surface into storage tank. Functions in vacuum and weightless conditions. Useful in desert and other environments.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.57"
+ },
+ {
+  "name": "Vectac Versatex Survival Suit",
+  "category": "Survival Gear",
+  "cost": "900 (+150 armor plates)",
+  "availability": "2",
+  "game_notes": "All-purpose all-terrain suit of micro-capillaried Versatex fabric. Handles temperature extremes (-30°C to 100°C), moisture and pressure. Waterproof and tear resistant, recycles wearer's moisture in dry environments. Backpack heating/cooling/air filter unit with belt controls. Camouflage system: belt color sensor reads desired color, tinted dyes injected into micro-capillaries — color change takes ~2 minutes (+1D sneak). 5 base dye colors (5 credits each) blendable for custom colors. Helmet: open-faced or sealed, built-in comlink, breath mask and glowlamp. Optional strap-on armor plates for torso/legs/arms (+1D physical, +2 energy, retains color-changing capability).",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.57"
+ },
+ {
+  "name": "Cybersoft Neural Control Collar",
+  "category": "Hunting & Trapping",
+  "cost": "600 (collar + basic computer), 300 (collar only), 1,000 (multi-collar computer)",
+  "availability": "2, R",
+  "game_notes": "Animal control device overriding voluntary muscles via nervous system attack (7D stun, resisted by target's Strength). Must be fitted around the neck. Two parts: armored collar with lock (6-digit combination, simple power cell) and control computer (wrist-mounted bracelet, central computer, or droid modification). Computer has keypad and 400-word instruction memory. Central computer controls up to 50 collars; remote range 5km. Collar moved out of range forces wearer to return and inflicts 6D pain damage. Droids and lifeforms without central nervous system are immune. Outlawed on many planets, especially Core Worlds.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.58"
+ },
+ {
   "name": "Arakyd Mark X Executioner Gladiator Droid",
   "category": "Droids",
   "cost": "35,000",

@@ -2516,7 +2516,7 @@ const STARSHIP_DATA = {
    "type": "Asteroid propulsion unit",
    "affiliation": "General",
    "era": "Old Republic",
-   "source": "Galladinium's Fantastic Technology (pp.57-58)",
+   "source": "WEG40025 Galladinium's Fantastic Technology pp.57-58",
    "price_new": "12500",
    "price_used": "",
    "scale": "Starfighter",
