@@ -3406,5 +3406,89 @@ const WEAPONS_DATA = [
   "ammo": "Power generator only",
   "game_notes": "Crew: 3. Fire Rate 1. Defensive energy shield running off the power generator provides 6D character-scale protection.",
   "source": "WEG40042 Han Solo and the Corporate Sector Sourcebook p.120"
+ },
+ {
+  "name": "Sessian Concussion Stick Model 1-79",
+  "category": "Grenades",
+  "skill": "Melee combat / thrown weapons",
+  "cost": "200 per pair",
+  "availability": "3, F/R/X",
+  "damage": "5D/4D/2D (stun)",
+  "range": "Blast radius: 0-1/2/4",
+  "ammo": "",
+  "game_notes": "Chemical explosive — strike against solid object to mix two agents. Detonates 15 seconds after activation. Disguised as small cylindrical data probes. Inert until activated, undetected by all but the most sophisticated probes.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.68"
+ },
+ {
+  "name": "Sabrashi FSI-200 Fear Stick",
+  "category": "Stun Melee",
+  "skill": "Melee weapon: knife",
+  "cost": "600 (50 refills)",
+  "availability": "4, F",
+  "damage": "2D stun (system shock)",
+  "range": "",
+  "ammo": "2",
+  "game_notes": "Moderate difficulty. Disguised as writing stylus. Non-metallic, no power source — readily concealable. Injects fast-acting neural-toxin targeting fear/flight responses. One round after injection: Difficult stamina or willpower to avoid severe panic attack and immediate flight. Panic continues until Heroic stamina/willpower roll or 1 hour elapses. Non-lethal.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.68"
+ },
+ {
+  "name": "Jengardin Double-Bladed Vibroblade",
+  "category": "Vibroblades",
+  "skill": "Melee weapon: vibroblade",
+  "cost": "6,000 (25 power cells, 75 holster sheath)",
+  "availability": "4, F/R/X",
+  "damage": "STR+4D+1 (max 8D)",
+  "range": "",
+  "ammo": "",
+  "game_notes": "Difficult difficulty. Two-handed weapon requiring full concentration. Single-handed use increases difficulty by two levels. Any action other than attack or parry increases all difficulty by two additional levels. If attack misses by 10+, user inflicts damage on self. Authorized version of the famed Jengardin Millennial Warrior weapon — its appearance alone often stops altercations.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.69"
+ },
+ {
+  "name": "Xana MSW-9 Molecular Stiletto",
+  "category": "Knives",
+  "skill": "Melee combat",
+  "cost": "400",
+  "availability": "4, R or X",
+  "damage": "STR+2D",
+  "range": "",
+  "ammo": "",
+  "game_notes": "Moderate difficulty. Disguised as a datapad stylus. Control stud releases 30cm mono-molecular blade as sharp as a vibroblade. Particularly nasty surprise for anyone assuming the victim is unarmed.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.69"
+ },
+ {
+  "name": "Palandrix Power Cane",
+  "category": "Stun Melee",
+  "skill": "Melee combat: power cane",
+  "cost": "400",
+  "availability": "3, F/R/X",
+  "damage": "1D-5D variable (power point) / STR+1D (stiletto)",
+  "range": "",
+  "ammo": "",
+  "game_notes": "Easy difficulty (stiletto blade), Moderate difficulty (power point). 90cm cane of spun plastoids with hardwood coating. 30cm concealed spring-activated stiletto blade in lower half. Ornamental gemstone top disguises power point with 5 settings (activated by tapping control stud at base — subsequent taps increase discharge level). Power point damage is not STR-based.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.69"
+ },
+ {
+  "name": "Rodian Cryogen Whip",
+  "category": "Melee Weapons",
+  "skill": "Melee combat",
+  "cost": "350",
+  "availability": "3, F/R/X",
+  "damage": "STR+1D + 4D stun (extreme cold)",
+  "range": "",
+  "ammo": "",
+  "game_notes": "Moderate difficulty. Coiled whip with flexible metal panels circulating super-cooled chemicals. Tip strike causes near-explosive cryogenic reaction with loud crack. After 2nd and subsequent strikes: Moderate stamina or -1D DEX and related skills (cumulative) from system shock.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.70"
+ },
+ {
+  "name": "Togorian Yil Tribe Scimitar",
+  "category": "Melee Weapons",
+  "skill": "Melee combat: Togorian Scimitar",
+  "cost": "8,500",
+  "availability": "4, F or R",
+  "damage": "STR+2D + 4D stun (electrical)",
+  "range": "",
+  "ammo": "",
+  "game_notes": "Moderate difficulty. Meter-long crystalline blade — latticed structure conducts electrical energy. Custom work of art forged by Togorian tribal hunters of the Yil clan. Each tribe's scimitars have unique design elements with personal touches. Not metallic or vibro-powered.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.70"
  }
 ];

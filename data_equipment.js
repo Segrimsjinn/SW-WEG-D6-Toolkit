@@ -3296,6 +3296,190 @@ const EQUIPMENT_DATA = [
   "source": "WEG40025 Galladinium's Fantastic Technology p.58"
  },
  {
+  "name": "Veredictas Bith Computer Retinal Lock",
+  "category": "Security Equipment",
+  "cost": "1,200",
+  "availability": "3",
+  "game_notes": "Skill: Computer programming/repair. Retinal scanning system providing authorized file access only to pre-scanned retinal patterns. Disguises scans as colorful mathematical pattern startup display using wafer-thin scanner mimicking the monitor. Does not deny system access — only locks specific coded files. Transmits intruder's retinal pattern to authorities. Easy computer programming/repair to install. Only a retinal falsification system bypasses security.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.59"
+ },
+ {
+  "name": "Dalabar SDS-632 Surveillance Detector",
+  "category": "Security Equipment",
+  "cost": "450 (+175 for NI-632 noise inhibitor)",
+  "availability": "2",
+  "game_notes": "Skill: Sensors. Palm-sized surveillance scanner sweeping 30 cubic meters in under 60 seconds. Scans 5D sensors skill. Detects monitoring carrier waves in infrared, microwave and localized subspace bands. Also scans for motion tracking signal emissions. Adjustable filters for upper electromagnetic spectrum. Optional NI-632 noise inhibitor blankets 10m diameter area with sonic disturbances matching detected sensor frequencies. Note: Imperial Intelligence sensors may operate outside calibrated parameters — no guarantee against Imperial devices.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.59"
+ },
+ {
+  "name": "Servenidain Data Bio-Encryptor",
+  "category": "Security Equipment",
+  "cost": "25,000",
+  "availability": "3, R",
+  "game_notes": "Skill: Computer programming/repair. Palm-sized chip encoding system — data written to micro-chip encased in jell-like capsule that is physically ingested. Chemical coating prevents digestion; time-released reactant triggers regurgitation (settable 20-200 hours). Stores up to 3 full data chips. Easy computer programming/repair to download/encrypt or upload at destination. Heroic sensors roll to detect ingested capsule. Can be used on unsuspecting couriers by disguising as medicine or hiding in food — courier honestly passes lie detection. Used by couriers throughout the Empire.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.60"
+ },
+ {
+  "name": "Kystallio Eye in the Sky RMD-20",
+  "category": "Security Equipment",
+  "cost": "800",
+  "availability": "2",
+  "game_notes": "Skill: Sensors. Portable free-flight monitor sphere (30cm diameter) with micro-repulsorlift nodes. Easy sensors for initial activation; free flight is automatic. 20+ programmable flight patterns or auto-heel mode following subject at up to 100m. Max altitude 200m, max range 10km, 5 hours flight per charge. Audio and visual sensor feeds to host computer or datapad within 100m radius. Move: 45; 130 kmh. Dozen+ modulated frequencies available.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.60"
+ },
+ {
+  "name": "Vreshann Gotal Electromagnetic Scanner",
+  "category": "Sensors",
+  "cost": "2,500",
+  "availability": "3",
+  "game_notes": "Skill: Sensors. Detects electromagnetic radiation from central nervous systems and other sources. Moderate sensors to detect emissions within 100m radius. Difficult sensors to detect lifeforms behind walls or blocking materials. Returns visual outline approximations — provides number of persons, approximate size and mass. Useful for mining rescue and security.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.61"
+ },
+ {
+  "name": "Dalesepp HPD-100 Heat Pod",
+  "category": "Security Equipment",
+  "cost": "70",
+  "availability": "3, F",
+  "game_notes": "Skill: Thrown weapons. Grenade-sized heat generator deployable manually or via grenade launcher. Emits ever-widening zone of light and heat blanketing up to 20m radius for 15 minutes. Increases difficulty of heat-based sensors or tracking by two levels (varies by type, distance, other factors). Operator slips under cover of the more powerful generators.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.61"
+ },
+ {
+  "name": "Crozo At-cyb Husher Mike",
+  "category": "Communications",
+  "cost": "3,000 (mike + receiver, implantation surgery extra)",
+  "availability": "3",
+  "game_notes": "Vocal communications implant amplifying vocal cord vibrations and converting to electrical impulses. Short-range transponders visible on either side of neck transmit on preset frequency to monitored receiver. Allows virtually silent, unobservable communication in crowded environments. 1km effective range. One-way voice transmission only — does not cover reception.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.61"
+ },
+ {
+  "name": "Varge Corp. PS-xqt9s Pocket Scrambler",
+  "category": "Security Equipment",
+  "cost": "800",
+  "availability": "4, F or R",
+  "game_notes": "Skill: Security. Attaches to any standard comms device. Modulates frequencies with scrambling signals — requires matching PS-xqt9s and correct encryption code to decode. 5+ million possible codes. Easy communications for normal use. Without matching device and code: Very Difficult to Heroic communications to decrypt.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.62"
+ },
+ {
+  "name": "Culcanis Tagger",
+  "category": "Security Equipment",
+  "cost": "250",
+  "availability": "3, F",
+  "game_notes": "Remote surveillance tracking device disguised as a datapad stylus. Fires a 5mm transponder dart up to 5m via pressurized gas (silent). Attached transponder sends intermittent high-frequency signal (~every 5 minutes) to receiver up to 1.2km away. Hard for unauthorized receivers to detect due to intermittent broadcast. 40 standard hours of operation.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.62"
+ },
+ {
+  "name": "Aratech R82 Jump Boots",
+  "category": "Survival Gear",
+  "cost": "150 (25 fuel)",
+  "availability": "2",
+  "game_notes": "Combination repulsor and rocket unit lighter than standard rocket packs. Allows boosted jumps or simple gliding. Thin strong cables drawn to knee attach to pants/leggings for support. Control cables reach user's hands. Repulsorlift engine: 1 hour before power pack replacement, 35m flight ceiling, Move 18. Rocket jets: 5 blasts of fuel, up to 35m vertical or 50m horizontal per blast.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.62"
+ },
+ {
+  "name": "zZip PSG-8487 View Masker",
+  "category": "Security Equipment",
+  "cost": "2,500 (50 power cells, 100 sensor alarm module)",
+  "availability": "3, F/R/X",
+  "game_notes": "Voice code activated portable distortion field (1m diameter). Makes visual or audio scans virtually impossible — waves of color and visual static obscure activity inside the field.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.63"
+ },
+ {
+  "name": "Ulkop SVC-700 Voice Scrambler",
+  "category": "Security Equipment",
+  "cost": "600",
+  "availability": "3",
+  "game_notes": "Disguised as ornamental jewelry. Low-frequency distortion field modulates and breaks up voice patterns through distortion layers. Conversation unrecognizable at more than 3m range. Normal speech within close proximity unaffected.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.63"
+ },
+ {
+  "name": "Falkenharn Mark V14 Repulsorlift Baggage Cart",
+  "category": "General Equipment",
+  "cost": "250 (+50 infrared guide stick)",
+  "availability": "2",
+  "game_notes": "Collapsible repulsor carrier supporting up to 500kg. Extended: 1.75m long, 80cm wide, 65cm tall. Adjustable flotation height up to 1.8m. Hinged left/right sections fold for storage. Manual steering handle or optional infrared guide stick (10m hands-off range). 100 standard hours continuous lift per charge. Three miniaturized repulsor inducers with inertia dampeners for near-frictionless motion.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.64"
+ },
+ {
+  "name": "Saladar PED-21 Distress Beacon",
+  "category": "Survival Gear",
+  "cost": "200",
+  "availability": "2",
+  "game_notes": "Portable emergency distress beacon. Two long-life micro-power cells (10+ year shelf life). Transmits personal transponder codes on all major subspace frequencies up to 5 light-years range. Automatic on activation. Moderate communications roll to calibrate for non-standard bandwidths (Imperial military, government-restricted, Alliance frequencies).",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.64"
+ },
+ {
+  "name": "Valerenn Emergency Inflation Shelter",
+  "category": "Survival Gear",
+  "cost": "500",
+  "availability": "2",
+  "game_notes": "Skill: Survival. Pre-activation: flat 1m square, 25cm thick cube. Inflates to 2.5m diameter hemispherical shelter housing humanoids up to 2.25m. Fully oxygenated and temperature-controlled. Solar energy filaments in highly reflective fabric charge batteries for up to 10 hours continuous use. Zippered entryway. Very Easy survival to activate.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.65"
+ },
+ {
+  "name": "Dardrennis EMS-500 Energy Capacitor",
+  "category": "Survival Gear",
+  "cost": "1,500",
+  "availability": "2",
+  "game_notes": "Skill: Survival. Meter-long tube with collector plates for obtaining energy from sources and transferring to other devices. Max capacity: power one landspeeder for 3 hours, or one blaster pistol for 100 shots, or one comlink for 15 hours. Easy Technical for normal operation (difficulty varies by energy type/amount). Collection time: 1 hour from large generator to 6 days from low-power blaster packs for full charge.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.65"
+ },
+ {
+  "name": "SuriTech Ezl Food Analyzer",
+  "category": "Survival Gear",
+  "cost": "250 (+50 additional data chips, +100 customized chips)",
+  "availability": "2",
+  "game_notes": "Skill: Survival. Personal food analyzer — place sample in receptacle, sensors compare to pre-loaded digestive needs. Readout within seconds. Base model identifies 5,000+ food and drink selections. Up to 5 additional data chips for specific planetary environments or cuisines. Customized datachips available for food allergies and specific component warnings. Very Easy survival for normal operation.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.65"
+ },
+ {
+  "name": "Bank of the Core GCC-1000 Currency Converter",
+  "category": "General Equipment",
+  "cost": "300 (+50 additional sector modules)",
+  "availability": "2",
+  "game_notes": "Skill: Business. Pocket-sized currency conversion computer. Seconds to calculate exchange rates. Interface adaptor clips for tie-in to BOC customer computer net at thousands of offices (free exchange rate uploads). Base unit covers Core, Inner Rim and Colonies sectors. Additional sector modules available. Reinforced shielded alloy construction resists radiation storms. Easy business for normal operation.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.66"
+ },
+ {
+  "name": "Givin Emergency Vacuum Seal EVS BBS-909",
+  "category": "Starship Accessories",
+  "cost": "750 (up to 50cm), 1,000 (51-100cm)",
+  "availability": "3",
+  "game_notes": "Emergency hull breach seal — circular disk slapped against interior hull. Micro-molecular grip-locks hold in place, then electrical current stimulates Givin micro-organisms that multiply in vacuum to form extremely durable biological seal within seconds. Neutralizing current prevents uncontrolled growth. Application: Moderate Strength (fight atmosphere pull) + Moderate Dexterity (reach controls while resisting pull). Sizes from 10cm to 1m diameter.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.66"
+ },
+ {
+  "name": "Salasetti Heat Induction Staff",
+  "category": "Survival Gear",
+  "cost": "300",
+  "availability": "2",
+  "game_notes": "Skill: Survival. Meter-long staff using multiple low-intensity heating lasers to excite molecules of any material touched. Outer surface remains intact while internally excited atoms generate heat over several hours. By-product of Rodian weapon technology. Power cells last up to 40 hours continuous use. Easy survival for normal operation. Accidental contact with heating point: 3D damage. Ideal for arctic worlds or thin atmosphere conditions.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.66"
+ },
+ {
+  "name": "Celextrian SNDF-12 Navigation/Direction Finder",
+  "category": "Survival Gear",
+  "cost": "850",
+  "availability": "2",
+  "game_notes": "Skill: Survival. Triangulates orbital satellite communications to pinpoint location within 20m. Works in inclement weather, day or night (requires planet with standard location protocol satellites). Pre-program surface area maps. Easy survival for normal operation. Moderate survival to use local broadcast networks instead of orbital satellites.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.67"
+ },
+ {
+  "name": "Cirenian SW-95 Portable Message Transceiver",
+  "category": "Communications",
+  "cost": "400",
+  "availability": "2",
+  "game_notes": "Skill: Communications. Extended range hand-held transceiver using modulated broadcast relays to piggyback on traditional mass media signals. Receivable by host comm stations over 2,000km range. Performance previously available only in vehicle-sized units. Range dependent on local conditions — inadequate outlets or extreme weather can hamper or eliminate capability.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.67"
+ },
+ {
+  "name": "Pretormin WPR-60 Water Purifier",
+  "category": "Survival Gear",
+  "cost": "100",
+  "availability": "1",
+  "game_notes": "Skill: Survival. Fill external canister with water — microbiological filtering, heating and radiation elements eliminate 99%+ harmful bacteria, viruses and contaminants. Average filtration 5 minutes (varies by source). Solar rechargeable. Very Easy survival for normal use. Unit notifies when cleansing is complete.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.67"
+ },
+ {
   "name": "Arakyd Mark X Executioner Gladiator Droid",
   "category": "Droids",
   "cost": "35,000",
