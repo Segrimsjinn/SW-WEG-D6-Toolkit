@@ -8726,7 +8726,7 @@ const STARSHIP_DATA = {
    "type": "Sublight Passenger Shuttle",
    "affiliation": "General",
    "era": "Rebellion",
-   "source": "Galladinium's Fantastic Technology (pages 17-18)",
+   "source": "WEG40025 Galladinium's Fantastic Technology pp.17-18",
    "price_new": "225000",
    "price_used": "100000",
    "scale": "Starfighter",

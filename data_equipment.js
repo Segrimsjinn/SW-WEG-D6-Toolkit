@@ -864,12 +864,12 @@ const EQUIPMENT_DATA = [
   "source": "WEG40114 The Jedi Academy Sourcebook p.140"
  },
  {
-  "name": "Hush-About Jet Pack",
+  "name": "Hush-About Jet Pack AJP-400",
   "category": "Jet Packs",
-  "cost": "1,000",
-  "availability": "3",
-  "game_notes": "Silent jet pack. Move 100m horizontal, 70m vertical. +2D to sneak while using. 10 charges.",
-  "source": ""
+  "cost": "1,800 (150 power pack recharge/coolant refill, 150 portable carrying case)",
+  "availability": "3, F or R",
+  "game_notes": "Model: Arakyd Aerodynes Inc. Hush-About AJP-400. Skill: Jet pack operation. Lifts up to 300kg total. Moves vertically 200m per charge, horizontally up to 500m per charge. 10 charges, can run on continuous charge-feed. Produces very little noise — any attempt to locate using auditory pickups requires search roll at +10 difficulty penalty.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.12"
  },
  {
   "name": "Z-6 Jet Pack",
@@ -2566,6 +2566,166 @@ const EQUIPMENT_DATA = [
   "availability": "",
   "game_notes": "Length: 6m. Scale: Speeder. Move: 105; 300 kmh. DEX 1D, KNO 1D (streetwise: local shortcuts 6D), MEC 1D (repulsorlift operation: landspeeder 6D), PER 1D (con 5D), STR 3D, TEC 1D. Equipped: armor plating (+4D exterior and droid brain/credit compartment), internal passenger compartment (seats 3), heavy suspension repulsorlift motors, internal streetmap/database with uplink to local communication and transportation network, credit operation box, vocabulator panel. Central Learning Chip allows the droid to learn from past experiences. Some are programmed to produce maximum revenue rather than provide customer service — known to ride extra kilometers to defraud visitors. Self-defense: doors auto-lock in case of robbery or non-payment, delivering the individual to the nearest law enforcement.",
   "source": "WEG40042 Han Solo and the Corporate Sector Sourcebook p.130"
+ },
+ {
+  "name": "Bith Vehicle Voice Lock (BiWoL) RVR-325",
+  "category": "Security Equipment",
+  "cost": "650",
+  "availability": "3",
+  "game_notes": "Model: Casillis Electronic Defenses BiWoL RVR-325. Skill: Streetwise. Easy communications roll to encode or change pattern. Auto-activates within 10m by owner voice command (owner can alter tone to fail under duress). Failed circumvention disables vehicle power until secondary ID system verifies owner. Secondary ID can be customized: datakeys, datachips, specific switch sequences, computer sub-routines, or retinal/fingerprint/genetic scans. Forging requires a voice replication unit with sound adjustment, 3+ hours of work, and Moderate communications + Moderate forgery rolls. Computer holds up to 1 minute of recorded voice data.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.13"
+ },
+ {
+  "name": "Kolocast Live Organism Comfort Conveyor",
+  "category": "Survival Gear",
+  "cost": "300 (25kg), 500 (60kg), 800 (100kg)",
+  "availability": "2",
+  "game_notes": "Model: Kolocast Consumer Goods T-P-C4. Animal transport and containment system. Three sizes: small (up to 25kg), medium (up to 60kg), large (up to 100kg). Special orders for larger needs. Internal bio-scanner monitors vital life functions. Micro-repulsor chips cushion animal in soothing pulsating waves. Heating/cooling, bio-system controls and food/water systems included. Safety monitors watch companion's condition throughout journey.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.14"
+ },
+ {
+  "name": "Vewas PVC-800 Personal Vehicle Coordinator",
+  "category": "Vehicle Accessories",
+  "cost": "1,200",
+  "availability": "",
+  "game_notes": "Model: Vewas Data Controllers PVC-800. Limited to vehicles under 10m long and under 10 metric tons. Projects data readouts on windshield — speed, course, angle of inclination with coded visual and aural warnings. Adds +1D to vehicle operation skill under normal situations. In emergencies, if programmed by owner, PVC automatically makes evasive maneuvers (+2D to operation roll to avoid collision — but prevents unsafe maneuvers).",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.15"
+ },
+ {
+  "name": "Bespin Motors Remote DVI Activator",
+  "category": "Vehicle Accessories",
+  "cost": "500 (speeders), 2,500 (starfighter scale starships)",
+  "availability": "2",
+  "game_notes": "Hand-held remote activation controller. Range 2km. Instructs vehicle's droid brain to begin normal ignition and pre-flight safety checks. Pre-flight takes 20 seconds (some speeders) to 5+ minutes (some starships). User must still pilot manually.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.18"
+ },
+ {
+  "name": "Go Corp CD-12a Autopilot Droid Brain",
+  "category": "Droids",
+  "cost": "5,000 (repulsorlift), 10,000 (starfighter-scale)",
+  "availability": "4, R",
+  "game_notes": "Autopilot droid brain with wrist-mounted activator (5km range). DEX 0D, KNO 1D, MEC 1D (one of: repulsorlift operation 4D, space transports 4D, or starfighter piloting 4D), PER 1D, STR 0D, TEC 1D (repulsorlift repair 2D). When activated, takes control of vehicle and uses sensors, guidance and drive systems to fly to the wrist activator's homing signal. Some pilots have illegally modified CD-12s to have combat skills.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.18"
+ },
+ {
+  "name": "GST System Diagnostic Filter",
+  "category": "Starship Accessories",
+  "cost": "3,500",
+  "availability": "2",
+  "game_notes": "Model: GST System Diagnostic Filter. Starship computer translator — large datapad with separate droid brain processing unit and two computer adaptors. Adds +1D+1 to computer programming/repair for shipboard computer diagnostics. Adds +2 to space transports repair for system malfunctions not totally computer-related (hyperdrives, sublight drives, etc.). If roll failed by more than 10, the ship computer detects an intrusion, shuts down, and must be completely re-booted (Easy computer programming/repair, but takes at least 15 minutes).",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.18"
+ },
+ {
+  "name": "AccuTronics MK 8001 Attendant Droid",
+  "category": "Droids",
+  "cost": "3,000",
+  "availability": "",
+  "game_notes": "Height: 1.6m. Move: 7. DEX 2D (running 2D+1), KNO 2D+2 (alien species 3D, cultures 3D, languages 3D+1), MEC 1D+1 (communications 4D, ground vehicle operation 2D+1, hover vehicle operation 2D, repulsorlift operation 2D+2, sensors 2D), PER 1D+1 ((A) injury/ailment diagnostics 2D), STR 1D+1, TEC 2D (first aid 6D). Equipped: humanoid body, two visual/auditory sensor recorders (Human range), vocabulator, AA-1 Verbobrain. Medical Database: 50,000 common illnesses and diseases with search/retrieval for advanced first aid in crisis situations. Medical SupportLink: maintains direct comlink to nearest medical facility with two-way data transmission via planetary communication grids.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.20"
+ },
+ {
+  "name": "Cybot Galactica Guardian Droid",
+  "category": "Droids",
+  "cost": "4,000 (new), 2,000 (used)",
+  "availability": "",
+  "game_notes": "Height: 1.5m. Move: 13. DEX 2D (blaster 4D, brawling parry 2D+1, dodge 3D+2, melee combat 4D, melee parry 4D, running 4D), KNO 1D (alien species 2D, intimidation 4D), MEC 3D (communications 2D, sensors 4D), PER 2D (search 3D), STR 3D (brawling 4D), TEC 1D. Four legs. Hinged grasping jaw with retractable blade incisors (STR+2). Retractable blaster (3D, 0-3/10/20). Two visual/auditory sensor recorders (Human range). Loyalty Imprint: absolute obedience to master and designated family members. Reacts to potential threats to defend against attackers unless countermanded by designated family member.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.19"
+ },
+ {
+  "name": "Caldrahlsen C4LR Litigation Droid",
+  "category": "Droids",
+  "cost": "3,000-10,000 (up to 3 litigation modules at 2,000 each)",
+  "availability": "",
+  "game_notes": "Height: 1.6m. Move: 8. DEX 1D, KNO 2D (bureaucracy: Imperial administration 5D+2, bureaucracy: courtroom procedures 5D+2, cultures 4D+1, intimidation 4D+2, law enforcement 6D, scholar: Imperial law 6D+2), MEC 1D, PER 2D (bargain 3D, persuasion 5D+1), STR 1D, TEC 1D. Equipped: humanoid body, two visual/auditory sensor recorders (Human range), holographic projector/recorder, vocabulator, AX-02 Verbobrain, litigation module (Imperial legal precedents and case histories; specializations include civil arrest/prosecution, commercial law, taxation law, military jurisprudence; 1 base module installed, up to 4 additional). Perfect Memory: permanent record of all courtroom proceedings, can replay conversations verbatim and provide hardcopy. Honesty: programming prevents lying, exaggerating or misrepresenting facts. Accepted as accredited members of the Imperial justice system.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.21"
+ },
+ {
+  "name": "Cybot Galactica 434-FPC Personal Chef Droid",
+  "category": "Droids",
+  "cost": "4,000",
+  "availability": "",
+  "game_notes": "Height: 1.4m. Move: 6. DEX 1D, KNO 2D (culinary arts 6D+2, cultures 3D, cultures: galactic cuisines 5D, cultures: food preparation 5D, home economics 4D+2, languages 2D+1, value: foodstuffs 2D+2), MEC 1D, PER 2D, STR 1D, TEC 1D. Equipped: humanoid body, two visual/auditory sensor recorders (Human range), vocabulator, various cooking attachments (replaceable, left arm), AA-1 Verbobrain, TranLang I Communications module, food preparation database (17,000+ recipes), food sample analyzer. Also serves as mobile food taste-tester, shopping servant and host's assistant.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.22"
+ },
+ {
+  "name": "Opti-Prime XA-540 Personal Secretary Droid",
+  "category": "Droids",
+  "cost": "2,500",
+  "availability": "",
+  "game_notes": "Height: 1.6m. Move: 8. DEX 1D, KNO 2D+1 (bureaucracy 4D, business 4D), MEC 1D, PER 1D+2 (bargain 2D+2), STR 1D, TEC 1D (computer programming/repair 3D+2). Equipped: humanoid body, two visual/auditory sensor recorders (Human range), vocabulator, TranLang I Communications module, business administration database. Loyalty Inhibitor: hard-wired programming prevents disclosing business-sensitive information to unauthorized personnel — reprogramming attempts cause circuitry overload and burnout. Handles correspondence, stock portfolio management, budgetary analysis, employee relations, and makes a good cup of chaffir.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.23"
+ },
+ {
+  "name": "Veril Line Systems V5-T Transport Droid",
+  "category": "Droids",
+  "cost": "2,500 (tread), 4,500 (repulsorlift)",
+  "availability": "",
+  "game_notes": "Height: 2.2m. Move: 35 (tread), 50 (repulsorlift). DEX 1D, KNO 1D, MEC 1D, PER 1D, STR 4D, TEC 1D. Retractable lifting arm (lifting 4D, up to 500kg). Carries up to 2 metric tons. Fifth-degree unit — follows basic commands, can be preprogrammed with transport routes. Advanced models have remote computer link for traffic data and orders via com signals.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.23"
+ },
+ {
+  "name": "Cybot Galactica M4 Message Droid",
+  "category": "Droids",
+  "cost": "2,000 (civilian), 4,000 (military)",
+  "availability": "",
+  "game_notes": "Height: 0.3m. Move: 30. DEX 1D (dodge 5D), KNO 1D, MEC 1D, PER 1D, STR 1D, TEC 1D. Equipped: holographic projector/recorder (up to 5 minutes), repulsorlift drive unit (4m flight ceiling). Can carry datatapes and programs. Military version adds: body armor (+2D physical, +1D energy), internal sporting blaster (3D+1 stun, 0-5/10/20). For situations where open-air broadcasts might be intercepted.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.24"
+ },
+ {
+  "name": "Industrial Automation TTS-15 Tutor Droid",
+  "category": "Droids",
+  "cost": "500 (initial lease), 1,000/year (service contract with inspection and program upgrades)",
+  "availability": "",
+  "game_notes": "Height: 1.5m. Move: 7. DEX 1D, KNO 3D (alien species 4D+1, cultures 4D+1, economics 4D+2, languages 4D+2, planetary systems 4D+1, scholar: applied educational theory 5D+2, scholar: galactic history 4D, scholar: various 3D+2), MEC 1D, PER 2D, STR 1D, TEC 1D (computer programming/repair 2D). Equipped: humanoid body, two visual/auditory sensor recorders (Human range), vocabulator, AA-1 Verbobrain, TranLang II Communications module. Education Pack: pre-programmed with up to 3 subject areas (galactic history, sciences, languages, literature, cultures, mathematics, etc.). Competence levels selected prior to shipment.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.24"
+ },
+ {
+  "name": "Kalibac Industries NR-5 Maintenance Droid",
+  "category": "Droids",
+  "cost": "2,200",
+  "availability": "",
+  "game_notes": "Height: 0.7m. Move: 3. DEX 1D (dodge 1D+2), KNO 1D, MEC 1D, PER 1D, STR 1D, TEC 1D (computer programming/repair 4D, security 2D, space transports repair 3D). Equipped: visual photoreceptors (Human range, infrared, ultraviolet), Kalibac Mechro-II brain, wide-band radio receptor, retractable heavy grasper arm (+1D lifting), retractable fine manipulator arm, 2 treaded legs. Budget competitor to the R2 Astromech — lacks astrogation and piloting but substantially cheaper.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.25"
+ },
+ {
+  "name": "Rseikharhl LE-VO Law Enforcement Droid",
+  "category": "Droids",
+  "cost": "9,000",
+  "availability": "2, R or F",
+  "game_notes": "Height: 2.4m. Move: 8/12. DEX 3D (blaster 5D, dodge 3D+2), KNO 2D+2 (alien species 3D, bureaucracy 3D, intimidation 4D, law enforcement 6D, streetwise 4D), MEC 2D (repulsorlift operation 3D), PER 1D (con 2D+2, command 3D+2, investigation 4D+2, persuasion 2D, search 3D), STR 3D, TEC 1D. Equipped: two auto-balance legs, swivel torso, body armor (+2D physical and energy all locations). Equipment: blaster rifle (5D, normally set on stun). Will not fire on an opponent unless absolutely necessary, insisting on peaceful surrender first. Developed by the Rseikharhl species as a criminal deterrent — exceptional service record with zero fatalities.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.25"
+ },
+ {
+  "name": "Ulqib MacroTronics Droid Customization Kit",
+  "category": "Tool Kits",
+  "cost": "400 (additional costs for specific attachments)",
+  "availability": "",
+  "game_notes": "Skills: Droid programming, droid repair. Kit includes: droid datapad neural pathway linkage, memory modulator (skill/attachment software programming), memory wipe module (erases all non-hardwired memory), replacement actuators and micro-servos, additional software node (+2D to one skill if droid's skill is less than 2D over attribute), broadband antenna receiver, movement sensor (search +2D over PER for moving objects within 100m if search is less than 2D over PER), repulsorlift motor (Move 13 for droids under 100kg, requires repulsorlift repair to install), internal computer interface socket, two photoreceptors (above Human range), two audio receptors (Human range), vocabulator panel, database retrieval system, remote programming receiver. Most hardware additions require corresponding software programming. Additional tools and parts may be needed — GM determines difficulty and time.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.25"
+ },
+ {
+  "name": "Mk-11 Droid Diagnostic",
+  "category": "Tool Kits",
+  "cost": "200",
+  "availability": "",
+  "game_notes": "Model: Interstellar Droid Monitoring Inc. Mk-11. Skills: Droid programming, droid repair. Very Easy droid programming roll for standard systems check and readout (takes 30 minutes). Contains parameters for over 500 droid models. Diagnostic-assisted repair adds +1D to droid repair for maintenance only — does not apply to major repairs or modifications.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.26"
+ },
+ {
+  "name": "AccuTronics CL-3 Droid Command Link",
+  "category": "Communications",
+  "cost": "850",
+  "availability": "",
+  "game_notes": "Remote droid command link with 1km range. Incorporates standard comlink features plus direct audio/video feed from linked droid's sensors. Side controls switch between droid visual senses (normal, infrared, ultraviolet if available). Can display droid communications as text — popular with R2 series and other high-density electronic language droids. Installation: Moderate droid repair + Easy droid programming, 2 hours. Originally for droids in hostile conditions; also used in military surveillance operations.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.26"
+ },
+ {
+  "name": "Industrial Automaton R-Series Voice Box Adaptor",
+  "category": "Droid Accessories",
+  "cost": "250 (language programs 25-100 each)",
+  "availability": "",
+  "game_notes": "Attaches to R1-R5 series astromech droids. Reprograms droid with chosen language (Basic, Bocce, Rodian, Wookiee, etc.). Adjustable pitch, intonation and speech patterns. Installation: Moderate droid repair, 15 min. Removal: Easy droid repair, 15 min (failed roll = 3D stun to droid + one random skill eliminated). Can cause operation problems (on mishap, skill attempt fails or -2D penalty). Can only fit in specially refitted droid couplings on X-wings/Y-wings, or must be mounted externally (e.g. on droid's head). If damaged or ripped off: 3D stun damage to droid.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.27"
  },
  {
   "name": "Arakyd Mark X Executioner Gladiator Droid",
