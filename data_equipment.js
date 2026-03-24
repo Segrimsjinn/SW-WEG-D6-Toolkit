@@ -2728,6 +2728,454 @@ const EQUIPMENT_DATA = [
   "source": "WEG40025 Galladinium's Fantastic Technology p.27"
  },
  {
+  "name": "Aqualish Bio-Light Panel ABP-980",
+  "category": "General Equipment",
+  "cost": "250",
+  "availability": "2",
+  "game_notes": "Model: Ferisoliq Imports Ltd. ABP-980. 1m tall by 2m long rectangular tank with photo-chemical reactive plankton in controlled liquid environment. Plankton emit light in ever-changing fluid patterns when exposed to common gases (carbon dioxide, nitrogen, hydrogen). Recessed stud controls gas filters along frame edge to control light output. Both functional lighting and decorative art piece.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.28"
+ },
+ {
+  "name": "Veretrex Bith Hiding Cube SCT-1000",
+  "category": "Security Equipment",
+  "cost": "3,000",
+  "availability": "4",
+  "game_notes": "75cm cube security container. Advanced prism with fiber optic relays that carry light across each face — when recessed into a wall, appears as continuous wall surface. Does not work in the open (creates a 'fuzzy' effect that draws attention). Moderate Perception roll to notice something about the wall. External magna-locks require Very Difficult security to pick. Outer surface STR 4D to resist damage.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.28"
+ },
+ {
+  "name": "CoreDataFiles CFC-100 Corporate Watcher",
+  "category": "General Equipment",
+  "cost": "12,500 (10,000/year service fee for weekly data upgrades)",
+  "availability": "2",
+  "game_notes": "Skill: Business. Financial tracking computer covering 10,000+ business conglomerates including Galaxy 500, Surnack's Sentinel 100, and Tradoc Core Index. AI routines find gems of information in huge datastreams. Includes Bank of the Core Investment Division service contract for weekly updates. HoloNet access provides continuous updates. Easy business roll to retrieve company operations info. Moderate+ for hypothetical 'what-if' scenarios and long-term trend analysis. No specialized computer skills to install.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.28"
+ },
+ {
+  "name": "MicroData Pocket Secretary",
+  "category": "General Equipment",
+  "cost": "150",
+  "availability": "1",
+  "game_notes": "Voice-activated hands-free datapad. Two pieces: standard datapad with internal audio coding chip, and a comlink-sized device (hand-held or attached to headset/necklace). Speak a code-phrase to begin recording; sensor relays spoken messages to datapad which translates to computer data. Can review data later with queries. Also used for covert recording of conversations.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.29"
+ },
+ {
+  "name": "Ealewon DCD-4800 Cryptographic Coder",
+  "category": "Security Equipment",
+  "cost": "1,200",
+  "availability": "3",
+  "game_notes": "Skill: Computer programming/repair. Hand-held computer data encryptor. Easy computer programming/repair to secure selected data files with encryption. Attempting to access encrypted files without authorization requires Difficult computer programming/repair. Mark individual files for password access while maintaining open systems. Hides sensitive materials even from sophisticated search operations.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.29"
+ },
+ {
+  "name": "Farendress Defel Heat Reducer HR-1200",
+  "category": "General Equipment",
+  "cost": "500",
+  "availability": "2",
+  "game_notes": "Heat reducer and energy generator using power plates with Defel micro-organism cultures that thrive on ultraviolet radiation. The one-celled creatures absorb local heat sources and generate electricity stored in battery cells. Ideal for desert climates or UV-rich environments. Produces enough energy to power several datapads or other small appliances.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.29"
+ },
+ {
+  "name": "Valkrex Dispersal Canister",
+  "category": "General Equipment",
+  "cost": "400",
+  "availability": "2",
+  "game_notes": "Portable personal waste disintegrator. Round cylinder 1m tall by 40cm diameter. Disintegrates waste elements in a contained fusion reaction, producing harnessable electricity stored in 6 removable rechargeable power packs for datapads, comlinks and other appliances. For home, office or shipboard use.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.30"
+ },
+ {
+  "name": "Synergentics Rapid Recipe Food Manager",
+  "category": "General Equipment",
+  "cost": "250",
+  "availability": "2",
+  "game_notes": "Skill: Culinary arts (Knowledge). Fully automated food preparation system replicating thousands of recipes. Built-in ingredient equivalency module suggests alternate foodstuffs for rare ingredients. Automated menu planner advises quantities for any number of diners. Very Easy culinary arts to locate a recipe. Moderate+ to incorporate a new recipe from scratch.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.30"
+ },
+ {
+  "name": "zZip Refresher Booth",
+  "category": "General Equipment",
+  "cost": "2,500",
+  "availability": "2",
+  "game_notes": "Fully automated self-contained ultrasonic shower system. Incorporates minute amounts of specially-formulated bacta to promote cellular repair and muscular stimulation. Low-frequency heat induction coils provide warm drying cycle. Complete cycle takes 10 minutes.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.30"
+ },
+ {
+  "name": "Gafladen Repulsor Lounge Floater 432GLM",
+  "category": "General Equipment",
+  "cost": "350",
+  "availability": "2",
+  "game_notes": "Adjustable repulsor fields from 1 to 30cm hovering height with micro-inducers for relaxing massage. Perfect for relaxation after a tough day.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.31"
+ },
+ {
+  "name": "Quarlitech Grav Mill GRGC-800",
+  "category": "General Equipment",
+  "cost": "700",
+  "availability": "2",
+  "game_notes": "Gravity treadmill for exercise and gravity acclimation. Dedicated training for an extended period (days to weeks depending on severity of gravity change) can help eliminate penalties due to higher or lower gravity worlds.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.31"
+ },
+ {
+  "name": "Locris Magna Lock MLC-50",
+  "category": "Security Equipment",
+  "cost": "150",
+  "availability": "2",
+  "game_notes": "Skill: Security. Surface locking mechanism using micro magnetic fields to almost molecularly bond two items in place. Very Easy security roll to activate. Adds +2D to object's Strength to resist damage. Use on entrance panels, viewport windows, speeder accessports, and other entry points. Can only be removed from the inside.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.31"
+ },
+ {
+  "name": "Novaplex Monofilament Screen Guards",
+  "category": "Security Equipment",
+  "cost": "450 (1 pair 80cm strips)",
+  "availability": "4, F/R/X",
+  "game_notes": "Anti-intrusion device. Place strips above or below intrusion points; when activated, extends hundreds of needle-sharp monofilament fiber strands vertically up to 2m. Practically invisible even with night-enhanced vision. Very Difficult search to detect. Contact causes 6D damage (9D if subject moving rapidly). Illegal in many systems.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.31"
+ },
+ {
+  "name": "ChandrilTech PX-7 Heat Sensor",
+  "category": "Sensors",
+  "cost": "250",
+  "availability": "4",
+  "game_notes": "Skill: Sensors. Hand-held heat sensor scanning 100m radius. Visual display shows relative heat intensity by brightness and distance to sources.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.32"
+ },
+ {
+  "name": "zZip Deluxe Sun Room",
+  "category": "General Equipment",
+  "cost": "22,500",
+  "availability": "3",
+  "game_notes": "Artificial environment booth, 20 square meters by 3m tall. Custom configured to approximate natural lighting conditions on any number of worlds — specific radiation, light and temperature levels set by owner. Ideal for deep-space travelers needing natural light exposure.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.32"
+ },
+ {
+  "name": "MerenData Universal Computer Interface",
+  "category": "General Equipment",
+  "cost": "2,500 (100/year software upgrades)",
+  "availability": "1",
+  "game_notes": "Skill: Computer programming/repair. Interface card that examines unfamiliar computer systems to determine operating procedures and interprets commands. Computer programming/repair roll required (difficulty varies by how much the system differs from standard). Success adds +1D to all subsequent computer programming/repair rolls on that system. Does not override security programming or permit unauthorized access. Provides easy data transference between otherwise incompatible system architectures.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.32"
+ },
+ {
+  "name": "Udrane Universal Power Adaptor",
+  "category": "General Equipment",
+  "cost": "100",
+  "availability": "2",
+  "game_notes": "Modulates incoming current to match any device's power needs with variable input adaptors. Very Easy Technical roll to make proper adjustments. Not 100% universal but covers the vast majority of galactic power standards.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.33"
+ },
+ {
+  "name": "Tramora VDV-100 Holo Communicator",
+  "category": "Communications",
+  "cost": "800",
+  "availability": "2",
+  "game_notes": "Holographic communications display with two-way message transmit/receive. Holographic relays (requires compatible local comms network). Security features: block specific holo signals, identify incoming signal source. Interphase module for downloading and visual recording of incoming messages to compatible computer systems. Default image processor can create a virtual image to replace owner's actual features.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.33"
+ },
+ {
+  "name": "Agrierd InstaMist Generator",
+  "category": "General Equipment",
+  "cost": "15 (dispenser), 10 (mist cartridge)",
+  "availability": "2",
+  "game_notes": "High-pressure cartridge device. Fire extinguishing mist turns to smothering foam. Water mist cartridges used by moisture farmers to extract water from rock veins. Can also generate fog for cover/escape (acts as thick smoke per standard smoke rules).",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.33"
+ },
+ {
+  "name": "Farbreini Coruscant Cascader BPEA-1A",
+  "category": "Luxury Goods",
+  "cost": "5,000",
+  "availability": "4",
+  "game_notes": "Electronic molecular excitation net incorporated into any piece of clothing. Produces dazzling matrix of custom-designed light shapes that highlight the figure. Controlled low-power 'static lightning' show of ever-changing hues responding to the slightest movement. Perfectly safe — touching it produces only a slight tingle.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.34"
+ },
+ {
+  "name": "Menendahl Cybernetic Nexus Ring",
+  "category": "Cybernetics",
+  "cost": "5,000",
+  "availability": "4, R",
+  "game_notes": "Cyborg power interface disguised as a signet ring. Opens to extend a chemically-coated monofilament fiber (1m length) with standard energy jack connector for interfacing with local power sources. Energy converter adjusts flow to boost prosthetic performance. Store 1 hour of energy for +1D STR or DEX bonus to prosthetic for 10 minutes (max 15 min stored / 1.5 hr charge). Complication while boosted = 4D stun from energy feedback. Using more than once per week requires Moderate willpower roll per additional use — failure means psychological addiction (need daily boost or -1D STR; while boosted, full STR + 1D bonus).",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.34"
+ },
+ {
+  "name": "Palladia Dissuasion Field Belt DFB-200",
+  "category": "Personal Defense",
+  "cost": "700",
+  "availability": "3",
+  "game_notes": "Stylish belt generating low-energy 360-degree force field 3cm from wearer's body. Any significant kinetic pressure triggers 1D-4D stun damage (set by wearer, from mild shock to non-lethal blast). Power pack: 3 hours at setting 1, 45 minutes at setting 4. Rechargeable with standard power systems.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.35"
+ },
+ {
+  "name": "Gorondin Holo Chronometer Model 7643",
+  "category": "Luxury Goods",
+  "cost": "300 (standard), 50 (additional imagery chips), 500+ (deluxe)",
+  "availability": "2",
+  "game_notes": "Wrist-worn holographic chronometer accurate to 1 second per standard year. Dozen+ built-in holographic displays for time (standard or 30 local timekeeping standards), temperature and vital info. Deluxe models allow personalized holographic messages up to 15cm tall, recorded on standard holographic recorders and downloaded via computer cable.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.35"
+ },
+ {
+  "name": "zZip Personal Transponder Ring",
+  "category": "Sensors",
+  "cost": "100-500 (varies by setting design)",
+  "availability": "2",
+  "game_notes": "Decorative ring with miniature signal tracker. Each pair uniquely coded to its own frequency. Very Easy sensors roll to locate transponder signal within 200m radius. Available in various precious and semi-precious stone settings.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.36"
+ },
+ {
+  "name": "Raflkind Radiation Deflection Pin",
+  "category": "Personal Defense",
+  "cost": "250-500",
+  "availability": "2",
+  "game_notes": "Personal ornamentation energy deflector available as rings, broaches and scarabs. Generates particle field screening out low-level radiation. Adds +1D to survival rolls concerning low-level radiation. Does not apply to high-energy radiation but warning alarm sounds if levels exceed specified amounts. Miniature power cell replaced after 50 hours continuous use.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.36"
+ },
+ {
+  "name": "Consolidated Learning Systems Emotion Suppressant ES23",
+  "category": "Personal Defense",
+  "cost": "750",
+  "availability": "3",
+  "game_notes": "Disguised as lapel ornamentations. Generates continuous variable frequency soothing waves (frequency varies by species). Detects signs of anxiety and increases intensity to maintain calm. Must be worn 24-30 hours for calibration to wearer's life function rhythms. Adds +2D to willpower rolls to resist emotional impulses. Could conceivably help resist torture (no effect on Force abilities). Uses micro-power cells.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.36"
+ },
+ {
+  "name": "Traxes Ultrawave Sight Enhancer",
+  "category": "Cybernetics",
+  "cost": "12,500 (excludes implantation surgery)",
+  "availability": "4",
+  "game_notes": "Metallic headband with ultrasonic wave motion sensory system feeding input directly into user's brain. 'Paints' a 3D sonic graph of surroundings — crystal clear black-and-white image. Easy sensors roll to calibrate after implantation. Very Easy Perception roll periodically for normal use. 50m operating range, works in all conditions except severe electrical disturbances.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.37"
+ },
+ {
+  "name": "Saldalith Veridicator 200",
+  "category": "Sensors",
+  "cost": "4,000",
+  "availability": "4, R",
+  "game_notes": "Skill: Sensors: personal sensors. Disguised as arm band with Falasian liquid crystal inset. Subtle lie detector detecting minute physiological changes from stress. Easy sensors roll for normal use. 5m range within 60-degree arc. Acts as Perception check 4D+2 to detect falsehoods. Target aware of scans can make willpower roll to control biorhythms and disguise lies. Pulsating pressure nodes on underside signal changes. Illegal to use without consent in some systems; not admissible in Imperial courts.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.37"
+ },
+ {
+  "name": "Fabreth Anti-Shock Blanket",
+  "category": "Medical Equipment",
+  "cost": "250 (20-40 to replenish medicines)",
+  "availability": "2",
+  "game_notes": "Skill: First aid. Emergency blanket administering fast-acting medicines to any portion of a patient's body. Medicine dispersal controlled by medical computer or datapad linked to blanket's computer relay. Use medpac rules but reduce difficulties by one level. Single use before medicines must be replenished.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.38"
+ },
+ {
+  "name": "Nilar Field Cauterizer",
+  "category": "Medical Equipment",
+  "cost": "200 (50 when sold to Rebel Alliance)",
+  "availability": "3",
+  "game_notes": "Pen-like device (16cm) emitting small low-frequency laser that cauterizes and disinfects bleeding wounds. Effective against cuts, scrapes, abrasions, minor lacerations and minor slug-thrower wounds. Ineffective for internal injuries. Heals minor wounds, removing stun damage due to bleeding only (GM discretion). Nilar Med/Tech secretly sells to the Rebel Alliance at reduced price.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.38"
+ },
+ {
+  "name": "Chiewab ECM-598 Customized Medical Backpack",
+  "category": "Medical Equipment",
+  "cost": "600",
+  "availability": "2",
+  "game_notes": "Skill: First aid. Advanced medical kit with computer-assisted diagnostics. All components Easy first aid unless noted. Contents: Hand-Held Diagnostic Scanner (Easy first aid or Moderate sensors — vital signs, injury specifics, recommended procedures). Medicines (anesthetics, blood pressure, respiration, pulse regulation for common species). Emergency Procedures Database (Easy computer programming/repair — quick reference treatment procedures). Filtration Mask (oxygen supply, connectable to other atmospheric compound bottles). Heat Closure Packs (pressurized sealant bandages, cauterize/sterilize wounds up to 10cm). Laser Scalpel (Difficult first aid). Medicine Dispenser (Moderate first aid, loadable with various medicines). Portable Repulsor-Stretcher (collapsible, supports up to 150kg). Pressure Cuffs (5-30cm diameter inflatable chambers). Sterile Heating Cloth (1.6m x 0.75m). 2 Universal Plasma Fluid Sacks (Moderate first aid, IV plasma stabilization).",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.39"
+ },
+ {
+  "name": "Synthtech MDS-50 Medical Diagnostic Scanner",
+  "category": "Medical Equipment",
+  "cost": "75",
+  "availability": "1",
+  "game_notes": "Skill: First aid. Hand-held personal medical scanner operable over wide range of species norms. Select diagnostic mode or punch in specific parameters. Easy first aid for basic overall physical condition readouts. Moderate first aid to scan for specific ailments. Identifies current physical abnormalities and suggests probable causes but does not recommend treatment. Difficulties adjusted for unusual or hard-to-detect conditions.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.39"
+ },
+ {
+  "name": "Hadrassi Plasma Protein Replicator PFG-700",
+  "category": "Medical Equipment",
+  "cost": "5,500",
+  "availability": "3",
+  "game_notes": "Skill: First aid. Emergency blood synthesizer using proteins from local organic materials to synthesize stabilizing plasma serums. Requires genetic sample (skin, hair or blood) from patient. Difficult first aid roll to prepare tissue/blood sample and match with local organics for synthesis. Produces up to 2 liters of blood substitute per hour. Not a long-term substitute for actual blood type.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.39"
+ },
+ {
+  "name": "Praxen Portable Survival Pod PSP-278",
+  "category": "Medical Equipment",
+  "cost": "13,500",
+  "availability": "3",
+  "game_notes": "Skills: First aid, computer programming/repair. 2m long cylinder with swing-open central tube. Computer-guided step-by-step activation for novice users. Incapacitated/Wounded patient: Easy computer programming/repair + Moderate first aid. Mortally Wounded patient: Moderate computer programming/repair + Difficult first aid. Successful activation stabilizes patient (will not worsen) as long as power generator supplies the pod.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.40"
+ },
+ {
+  "name": "Athakam II Med Unit",
+  "category": "Medical Equipment",
+  "cost": "3,000",
+  "availability": "2",
+  "game_notes": "Computerized medical cot (2.5m x 1m x 1m) with articulated limbs and display/input panel. Self-contained unit providing care when medpac is insufficient and medical droid/surgeon unavailable. First aid 5D, medicine 1D. Diagnoses patient condition in 1 minute using either skill. Successful diagnosis triggers appropriate treatments (medicines, antibiotics, anti-viral, anti-toxin). Failed diagnosis displays 'Diagnosis Indeterminable' with likely problems and statistical probability. A 2-1B or other medical droid interfacing with the unit receives +2D to first aid and +1D to medicine.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.40"
+ },
+ {
+  "name": "Xarnin Replar Splint GRS-600",
+  "category": "Medical Equipment",
+  "cost": "200",
+  "availability": "2",
+  "game_notes": "Skill: First aid. Creates miniature suspension field to immobilize and relieve pressure on damaged bone. Limited movement possible once activated. Easy first aid for normal placement. Moderate for multiple or compound fractures.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.40"
+ },
+ {
+  "name": "Sluissi Gravitic Pressure Bandage SGB-543",
+  "category": "Medical Equipment",
+  "cost": "750",
+  "availability": "2",
+  "game_notes": "Skill: First aid. Hollow metal cylinder with inflatable cloth lining. Connected to medical datapad, applies micro-repulsor fields of differing strengths to compress damaged arteries without affecting surrounding tissues. Prevents internal bleeding complications. Easy first aid for proper placement. Wounded patients act as unwounded; Incapacitated patients act as Wounded. Injury remains but patient can move. Patient can be moved carefully once in place.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.40"
+ },
+ {
+  "name": "SyntheCure Spray Plasto-Cast",
+  "category": "Medical Equipment",
+  "cost": "35",
+  "availability": "1",
+  "game_notes": "Skill: First aid. One-handed pistol-spray applying fine chemical mist that instantly solidifies. Additional applications increase pressure for chemical pressure bandage or tourniquet. Safe and non-toxic, removable with reactant chemical washes (included). Easy first aid for proper application (Moderate survival may substitute in emergencies). Adds +2 to character's next healing roll. Covers 50cm x 20cm area. Single use, cannot be refilled. Adjustable emission tip controls spray width.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.41"
+ },
+ {
+  "name": "Ulqib BX-333 BioRecorder",
+  "category": "Luxury Goods",
+  "cost": "5,000 (50 per holocube)",
+  "availability": "3",
+  "game_notes": "Personal recording system using a matrix of sensors to capture feelings and emotions by recording user's respiration, brain waves and bio-functions alongside holographic recording. Captures not just words but the feelings and intentions behind them. Playback conveys the emotional state of the recorder to the viewer.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.42"
+ },
+ {
+  "name": "Kamperdine CSC-5000 Body Glove",
+  "category": "Luxury Goods",
+  "cost": "700",
+  "availability": "3",
+  "game_notes": "Climate-controlled body glove fitting like a second skin. Network of tiny feedback sensors keeps user comfortable in any condition. Climate controls and reactant reservoirs in ornamental waistband. Pre-set variables for seasonal change and atmospheric density. Upper torso to foot coverage. Adds +1 to survival or stamina rolls in harsh environmental conditions.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.42"
+ },
+ {
+  "name": "Meredex Bubble Cloak EMS-90",
+  "category": "Survival Gear",
+  "cost": "800",
+  "availability": "2",
+  "game_notes": "Emergency shelter cloak that rapidly inflates into 2m diameter cocoon with self-sealing entrance flap and 2 hours of atmosphere. Easy Dexterity roll for removal and inflation within 30 seconds. Puncture and heat resistant, opaque bubble has STR 1D+2 to resist damage and atmosphere loss.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.42"
+ },
+ {
+  "name": "MerenData Credit Chip Bio-Encoder",
+  "category": "Security Equipment",
+  "cost": "2,500",
+  "availability": "3, R or X",
+  "game_notes": "Biological credit chip encryption. Uses owner's genetic sample to replicate a culture of organisms coating the credit chip surface. Neutral-reactive to owner's genetic code. Unauthorized handlers trigger immediate response: discoloration and 4D stun damage. Easy first aid roll to properly encode genetic sample.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.43"
+ },
+ {
+  "name": "Seselin Cyduct E-23 Chemical Booster",
+  "category": "Medical Equipment",
+  "cost": "1,250",
+  "availability": "3, F/R/X",
+  "game_notes": "Skill: First aid. Interdermal injection system worn on waist/shoulder strap. Micro-sonic vibration injectors deliver chemicals through skin without pain or marks. Configurable for time-released or continuous feed. Holds up to 10 doses. Easy first aid for first-time setup. Available serums (prescription only): DiMatolin (100/dose, 1hr, negates DEX penalties in high gravity up to 1.4G). Elisinandrox (250/dose, 10hr, +1D+1 STR/stamina vs radiation sickness). Greshollpolyforim (150/dose, 3hr, negates STR penalties in high gravity up to 2G). Haladreshin (200/dose, 8hr, +1D PER and related skills, neurological stimulant). Requilisant (200/dose, 6hr, negates DEX penalties in low/zero gravity).",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.43"
+ },
+ {
+  "name": "MerenData IPI-1000 Electronic ID Display",
+  "category": "General Equipment",
+  "cost": "450",
+  "availability": "2, possibly F",
+  "game_notes": "Skill: Security. Holographically scans and stores documents up to 30cm x 20cm (up to 12 documents). Data coded under 10 security levels with personal access codes. Displays holos of documents on request while originals remain locked away. Recognized by all major Imperial agencies and banking institutions. Easy security roll to scan documents. Only certified government officials may perform scans. Imperial agencies have standard code override for accessing secured data. Storage of improperly registered or altered materials subject to fine and/or criminal investigation.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.44"
+ },
+ {
+  "name": "Alliwon Vennoc-x Chronometer with Hidden Compartment",
+  "category": "General Equipment",
+  "cost": "50 (wrist), 65 (belt version)",
+  "availability": "1",
+  "game_notes": "Chronometer with hidden compartment released by pressing chrono-programming controls in specified order. Wrist version: 4cm x 4cm compartment. Belt version: 8cm x 6cm x 3cm deep. Can hide credits, identification, datachips, vials or anything that fits.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.44"
+ },
+ {
+  "name": "Iyranis Gravity Belt",
+  "category": "Survival Gear",
+  "cost": "500",
+  "availability": "3",
+  "game_notes": "Skill: Repulsorlift operation. Waist belt that activates gravity pulses in emergency free-fall situations, slowing velocity for a gentle landing. Other items can be normally attached to the belt.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.44"
+ },
+ {
+  "name": "Arantha OTM-900 Orbital Transmission Monitor",
+  "category": "Communications",
+  "cost": "550",
+  "availability": "2",
+  "game_notes": "Skill: Communications. Subspace receiver with instantaneous reception up to 15 light-years. Easy to Very Difficult communications roll to find specific frequencies (planetary customs fairly easy; Imperial military channels carefully hidden). Decrypting scrambled codes or translating languages requires separate skills.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.45"
+ },
+ {
+  "name": "Willienk RTDS-1000 Remote Text Data Scanner",
+  "category": "General Equipment",
+  "cost": "750",
+  "availability": "2",
+  "game_notes": "Skill: Communications. Scans hard copy documents and transmits via unit interface cable through standard comlink or comm system to remote host computer at any distance. Single or multiple file storage/retrieval, multiple copies and downloadings. Automatic data verification ensures integrity. Very Easy communications to scan; Easy communications to transmit.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.45"
+ },
+ {
+  "name": "Mahled Servo Slippers",
+  "category": "Survival Gear",
+  "cost": "2,500 per pair (foot/leg or hand/arm)",
+  "availability": "3",
+  "game_notes": "Repulsorlift assisted leg and arm braces using muscle stimulators, repulsor compensators and movement servos. On high gravity worlds: foot/leg braces alone negate Movement penalties and cut Dexterity penalties by 2 pips. Hand/arm braces alone cut Dexterity penalties by 2 pips. Both pairs together completely negate all Dexterity penalties. Also helps impaired individuals with motor skills.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.45"
+ },
+ {
+  "name": "Paradour Signature Scent Synthesizer",
+  "category": "Luxury Goods",
+  "cost": "1,500 (150 refills)",
+  "availability": "3",
+  "game_notes": "Computerized fragrance synthesizer and replicator. Replicates any desired fragrance custom-tailored to mood and tastes. Thousands of stock fragrances, mix and match ingredients. Stores up to 1 million custom creations. Some fragrances may contain pheromonal additives inducing strong effects — 'victims' may suffer willpower penalties to resist infatuation or effects of command, con, persuasion and similar skills. Characters with chemistry background may concoct substances with various physiological or psychological effects.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.46"
+ },
+ {
+  "name": "Paretaine Sound Bubble SNS-600",
+  "category": "General Equipment",
+  "cost": "300",
+  "availability": "3",
+  "game_notes": "Skill: Sensors. Easy sensors roll for normal operation. Passive mode: 360-degree field out to 5m — sounds outside the radius are absorbed, only sounds within the bubble are heard. Active mode: 60-degree arc out to 10m — dampens sound waves, preventing any aural vibrations from being sensed by live or automated detectors.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.46"
+ },
+ {
+  "name": "MicroThrust Clockwatcher Wrist Chronometer",
+  "category": "General Equipment",
+  "cost": "50 (+10 thermo sensor, +10 gravity sensor, +30 atmosphere sensor, +50 comlink, +50 droid linkup)",
+  "availability": "1",
+  "game_notes": "Maintains Standard Galactic time plus up to 50 local timekeeping methods/zones. Alarm, stopwatch and countdown functions. Water-sealed to 20m depth. Options: thermo sensor (temperature), gravity sensor (local gravity vs standard), atmosphere sensor (complete analysis, scans for lethal gas concentrations), comlink (2km range), droid linkup (requires comlink, constant communication with one droid via audio or viewscreen display).",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.46"
+ },
+ {
+  "name": "Consolidated Learning Synoptic Teacher",
+  "category": "General Equipment",
+  "cost": "10,500 (200-1,000 per information module)",
+  "availability": "3",
+  "game_notes": "Subconscious teaching system transferring data directly to brain at subconscious level. Painless 15-30 minute procedure. Easy to Very Difficult Perception roll to absorb material (varies by technical/cultural sophistication). Success grants +1D to +3D in a skill or specialization if character's skill is below 5D (including attribute). User may benefit from each module only once. GM adjusts costs, difficulties, bonuses and limits as desired. WARNING: Also used as a subconscious brainwashing tool by Imperial Intelligence and other organizations to plant post-hypnotic suggestions without knowledge or consent.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.47"
+ },
+ {
+  "name": "Consolidated Learning Systems Transliterator",
+  "category": "Communications",
+  "cost": "1,200 (includes 500 common languages, +500 per additional 500-language module)",
+  "availability": "3",
+  "game_notes": "Skill: Communications. Language interpretation unit designed for social situations — translates slang phrases in context with suggested diplomatic or devastating replies at the press of a button. Easy communications roll to select up to 20 languages to track. Effective to 10m range, focuses on nearest sounds first. Phrase translations display until manually cleared or after preset delay up to 15 seconds. Database contains 500 common languages and dialects.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.47"
+ },
+ {
+  "name": "Sarno Home Spheroids Simulator",
+  "category": "Recreation",
+  "cost": "500",
+  "availability": "2",
+  "game_notes": "Holographic spheroids simulator — officially sanctioned by the Interstellar Professional Spheroids Association. Features: customized image selection, game storage and replay, black hole options, 2/3+ player versions and automated computer opponents. Maneuvers use thrown weapons skill; GM sets target difficulties or uses opposed rolls.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.48"
+ },
+ {
+  "name": "Wethrenn Declination Holographic Game",
+  "category": "Recreation",
+  "cost": "3,500",
+  "availability": "3",
+  "game_notes": "Mental holographic game — maneuver a TIE fighter through a holographic asteroid field using thought-controlled headset controllers while eluding opponent's vessel from the opposite side. Up to 8 players, computer opponents, and adjustable difficulty (Very Easy to Heroic+). Characters use starfighter piloting and starship gunnery or Perception. Combat uses opposed skill rolls with terrain modifiers.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.49"
+ },
+ {
   "name": "Arakyd Mark X Executioner Gladiator Droid",
   "category": "Droids",
   "cost": "35,000",
