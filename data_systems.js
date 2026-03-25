@@ -5545,6 +5545,7 @@ const SYSTEMS_DATA = [
   { "name": "Stalimur", "grid": "S-6", "region": "Outer Rim Territories", "col": 17, "row": 6, "quadrant": "NE", "hours": 5.5 },
   { "name": "Stalsinek", "grid": "O-9", "region": "Inner Rim", "col": 13, "row": 9, "quadrant": "E", "hours": 3.5 },
   { "name": "StarForge Nebula", "grid": "M-17", "region": "Mid Rim", "col": 11, "row": 17, "quadrant": "S", "hours": 1.7 },
+  { "name": "StarForge Nebula - StarForge Station", "grid": "M-17", "region": "Mid Rim", "col": 11, "row": 17, "quadrant": "S", "hours": 1.7 },
   { "name": "StarStation 12", "grid": "O-20", "region": "Wild Space", "col": 13, "row": 20, "quadrant": "SE", "hours": 64.0 },
   { "name": "Starlag", "grid": "O-15", "region": "Mid Rim", "col": 13, "row": 15, "quadrant": "SE", "hours": 3.0 },
   { "name": "Starlyte Station", "grid": "M-17", "region": "Mid Rim", "col": 11, "row": 17, "quadrant": "S", "hours": 1.7 },
