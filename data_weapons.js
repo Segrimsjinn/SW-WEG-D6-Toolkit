@@ -4342,5 +4342,71 @@ const WEAPONS_DATA = [
   "ammo": "100",
   "game_notes": "Body 1D. Magnetic coil accelerator firing miniature alloy projectiles. Virtually soundless. Extremely long effective range. Fragile — if jarred, dropped or banged significantly, roll damage against weapon's body (1D).",
   "source": "WEG40025 Galladinium's Fantastic Technology p.91"
+ },
+ {
+  "name": "BlasTech DL-16 Blaster Pistol",
+  "category": "Blaster Pistols",
+  "damage": "4D",
+  "range": "3-10/30/120",
+  "ammo": "100",
+  "cost": "",
+  "availability": "",
+  "game_notes": "Standard sidearm issued to officers aboard the Far Orbit.",
+  "source": "WEG40029 The Far Orbit Project p.18"
+ },
+ {
+  "name": "Stormtrooper Two Blaster Carbine",
+  "category": "Blaster Carbines",
+  "damage": "5D",
+  "range": "3-25/50/250",
+  "ammo": "100",
+  "cost": "",
+  "availability": "",
+  "game_notes": "+5 to difficulties at long range.",
+  "source": "WEG40029 The Far Orbit Project p.18"
+ },
+ {
+  "name": "BlasTech Light Repeating Blaster",
+  "category": "Repeating Blasters",
+  "damage": "5D+1",
+  "range": "3-30/100/300",
+  "ammo": "300",
+  "cost": "1,500",
+  "availability": "2, R",
+  "game_notes": "On constant fire mode fires a burst of 6 blasts per shot. Once a hit is established, all following shots against nearby (1 meter) targets are one difficulty lower.",
+  "source": "WEG40029 The Far Orbit Project p.18"
+ },
+ {
+  "name": "Fragmentation Grenade",
+  "category": "Grenades",
+  "damage": "5D/4D/3D/2D",
+  "range": "3-7/20/40",
+  "ammo": "",
+  "cost": "",
+  "availability": "",
+  "game_notes": "Blast radius: 0-2/4/6/10.",
+  "source": "WEG40029 The Far Orbit Project p.18"
+ },
+ {
+  "name": "Merr-Sonn Stun Grenade",
+  "category": "Grenades",
+  "damage": "6D/5D/3D (stun)",
+  "range": "0-8/16/25",
+  "ammo": "",
+  "cost": "",
+  "availability": "",
+  "game_notes": "Blast radius: 0-2/20/40. Multi-target stun grenade originally designed for riot control. Can be reused but only holds one charge at a time.",
+  "source": "WEG40029 The Far Orbit Project p.18"
+ },
+ {
+  "name": "Gatrellis Plasticene Thermite Gel",
+  "category": "Explosives",
+  "damage": "20D per kg; 2D per 100g",
+  "range": "",
+  "ammo": "",
+  "cost": "1,000 per kg",
+  "availability": "2, X",
+  "game_notes": "Used to burn through hulls. Can be shaped, molded, or stretched. A full kilo covers up to 20 square centimeters. Burns for 3 rounds. Ignited by remote relay.",
+  "source": "WEG40029 The Far Orbit Project p.18"
  }
 ];
