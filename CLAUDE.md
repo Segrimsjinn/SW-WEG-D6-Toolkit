@@ -79,6 +79,7 @@ The entire app. Contains all CSS (minified, inline `<style>`), all HTML tab pane
 
 - `data_systems.js` is multi-line (one entry per line). Entries must remain **alphabetically sorted by name**. The file is large (~6,800 lines) but the Edit tool can handle it for targeted changes.
 - **All other data files are NOT alphabetically sorted** — entries are grouped by sourcebook order. New entries should be **appended to the end** of the array (or after the last entry of the same category for `data_weapons.js`, `data_equipment.js`, `data_vehicles.js`). Do not try to insert alphabetically.
+- **Context-efficient editing for large files**: Data files are large (`data_starships.js` ~34K lines, `data_npcs_notable.js` ~21K lines). To conserve context window: use `tail` to check the last few lines of a file before appending, use `Grep` to find specific entries by name rather than reading large sections, and use `Read` with tight `offset`/`limit` only when editing existing entries. Avoid reading more than ~20 lines at a time from these files.
 - All other data files use readable, indented formatting.
 - Source citations follow the format `"WEG##### Book Title p.##"`.
 - **Planet `locations` formatting**: Each location entry follows the pattern `"Name (description)."` — the renderer automatically splits on `"). "` to create separate paragraphs for each location on the detail card.
