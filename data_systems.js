@@ -4655,6 +4655,8 @@ const SYSTEMS_DATA = [
   { "name": "Plympto", "grid": "M-11", "region": "Core Worlds", "col": 11, "row": 11, "quadrant": "C", "hours": 5.7 },
   { "name": "Po'yin", "grid": "S-7", "region": "Outer Rim Territories", "col": 17, "row": 7, "quadrant": "NE", "hours": 3.7 },
   { "name": "Poderis", "grid": "M-8", "region": "Inner Rim", "col": 11, "row": 8, "quadrant": "C", "hours": 5.5 },
+  { "name": "Pochi", "grid": "T-4", "region": "Wild Space", "col": 18, "row": 4, "quadrant": "NE", "hours": 100.5 },
+  { "name": "Pochi - Vindru", "grid": "T-4", "region": "Wild Space", "col": 18, "row": 4, "quadrant": "NE", "hours": 100.5 },
   { "name": "Polaar", "grid": "L-16", "region": "Mid Rim", "col": 10, "row": 16, "quadrant": "S", "hours": 6.3 },
   { "name": "Polanis", "grid": "M-11", "region": "Core Worlds", "col": 11, "row": 11, "quadrant": "C", "hours": 5.7 },
   { "name": "Polis Massa", "grid": "K-20", "region": "Outer Rim Territories", "col": 9, "row": 20, "quadrant": "S", "hours": 0.5 },
