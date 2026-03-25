@@ -34256,6 +34256,37 @@ const STARSHIP_DATA = {
      "damage": "6D"
     }
    ]
+  },
+  {
+   "rank": 47,
+   "name": "SAEI Sun Jammer 2000",
+   "craft": "Modified SAEI Sun Skipper 2000 Sun Jammer",
+   "type": "Sun Jammer",
+   "affiliation": "General",
+   "era": "Rebellion",
+   "source": "WEG40025 Galladinium's Fantastic Technology p.90",
+   "price_new": "250000",
+   "price_used": "150000",
+   "scale": "Starfighter",
+   "length": "1,000m wide (solar collector), 450m long (command pylon)",
+   "crew": "2",
+   "gunners": "",
+   "passengers": "1",
+   "cargo": "300 kilograms",
+   "consumables": "1 week",
+   "hyperdrive": "",
+   "nav_computer": "",
+   "maneuverability": "+1",
+   "space": "2",
+   "atmosphere": "",
+   "hull": "1D (command pylon), 0D (solar collector)",
+   "shields": "",
+   "of_note": "Solar wind-driven craft — no engines or hyperdrive. Used for racing and recreation. Featured at the annual Chandrilan Cometary Games.",
+   "sensors_passive": "35/0D",
+   "sensors_scan": "",
+   "sensors_search": "",
+   "sensors_focus": "",
+   "weapons": []
   }
  ]
 };

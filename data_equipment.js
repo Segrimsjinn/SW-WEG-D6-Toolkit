@@ -3526,5 +3526,53 @@ const EQUIPMENT_DATA = [
   "availability": "3, F or R",
   "game_notes": "Skill: Missile weapons. Hand-held canister (10cm x 4cm) spraying courenth and ves gas mixture that disperses blaster bolts on contact. 3 charges per canister. Each charge produces visible cloud covering 1 cubic meter — any blaster bolt entering cloud loses -1D damage. Cloud lasts 1 minute (heavy winds/precipitation may disperse). Additional charges in same area have no added benefit.",
   "source": "WEG40025 Galladinium's Fantastic Technology p.80"
+ },
+ {
+  "name": "Kirgalis Abyssin Grafting Patch",
+  "category": "Medical Equipment",
+  "cost": "5,000",
+  "availability": "3",
+  "game_notes": "Skill: First aid or medicine. Regenerative cells from Abyssin biochemical extracts. Difficult first aid or Easy medicine to apply. Newly formed skin cells grow in/around wound area like bacta immersion. Healing times: Wounded 2D hours, Incapacitated 8D hours, Mortally Wounded 2D days. Single use. Lifeforms with natural regenerative abilities have high resistance to effects.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.85"
+ },
+ {
+  "name": "MerenData Duros Bio-Comp 1000",
+  "category": "General Equipment",
+  "cost": "35,000",
+  "availability": "4",
+  "game_notes": "Skill: Computer programming/repair. High-performance personal computer integrating biological elements. Microscopic lifeforms in fluid culture react to electrical impulses for mass data storage. Photosynthetic biological entities provide power — virtually independent of external power sources. Hybrid organic compounds in liquid-display unit for 2D and holographic imaging. Bio-chemical fiber stores encoded instructions via modified protein combinations. Larger than average personal computer but maintenance-free.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.87"
+ },
+ {
+  "name": "Traxes Implant Communicator",
+  "category": "Cybernetics",
+  "cost": "12,500 (operation costs and license vary)",
+  "availability": "4, F/R/X",
+  "game_notes": "Implanted transmitter (~10mm diameter) for sub-vocalized transmission. Mastoid process receivers intercept broadcasts perceived as 'voices in head.' Sub-vocalized sentences broadcast by 'thinking aloud.' Supports EM carrier waves, digital microwave, and coded ultrawave linkages for automatic business datafeeds. 1km max broadcast range. Remains in place for several standard years without maintenance.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.88"
+ },
+ {
+  "name": "Mon Calamari Aquatic Computer ACCA-1dx000",
+  "category": "General Equipment",
+  "cost": "8,000",
+  "availability": "4",
+  "game_notes": "Skill: Computer programming/repair. Designed for liquid environments using rare Calamari sea minerals for self-generated electrical power — no external power source needed. Non-corrosive native elements for circuitry. Organic microorganism display works up to 200m depth. Calamari crystalline data receptors. Internal battery allows 10 hours use out of water. Advanced AI modules add +1D to computer programming/repair rolls. Also prized as art/collectible.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.88"
+ },
+ {
+  "name": "Golan Personal Combat Threat Analyzer",
+  "category": "Security Equipment",
+  "cost": "4,500",
+  "availability": "4",
+  "game_notes": "Provides +1D bonus to tactics or search rolls in specific combat situations. Identifies attacker locations, determines number and types of weapons in use, evaluates situation and suggests where next attack will come from. Results given as percentage probability of attack type, origin and predicted future action. GM can use to give hints without divulging all facts.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.88"
+ },
+ {
+  "name": "Tranthebar Racing Harness TRHA-300",
+  "category": "Recreation",
+  "cost": "12,500 (tranthebar, training and registration fees separate)",
+  "availability": "4, F",
+  "game_notes": "Skill: Beast riding: tranthebar. Cybernetic avian symbiotic control harness — series of external cyber-attachments linking minds of rider and tranthebar mountain ripper, sharing emotions and thoughts. Adds +2D to beast riding: tranthebar. Four-week training program required for amateur certification. Physical and mental exams recommended before purchase.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.91"
  }
 ];

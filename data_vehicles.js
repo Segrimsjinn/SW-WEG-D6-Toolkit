@@ -1273,6 +1273,25 @@ const VEHICLES_DATA = [
   "source": "WEG40025 Galladinium's Fantastic Technology p.57"
  },
  {
+  "name": "Columi Mental Hoverpod",
+  "category": "Hover Vehicles",
+  "scale": "Character",
+  "length": "3m",
+  "skill": "Hover vehicle operation",
+  "crew": "1",
+  "passengers": "",
+  "cargo": "50kg",
+  "cover": "1/2",
+  "cost": "15,000",
+  "maneuverability": "1D",
+  "move": "30; 120 kmh",
+  "body": "1D",
+  "shields": "",
+  "weapons": "",
+  "game_notes": "Altitude: ground level to 3m. Floating metal chair encasing lower body, directed by mental commands. Currently compatible with Humans, Hutts, Duros, Sullustans and Bith. Difficult stamina check every 30 minutes — failure means 1D hours of nausea/side effects before use can resume. Powered by standard fusion generator.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.86"
+ },
+ {
   "name": "TaggeCo. SCS-19 Sentinel",
   "category": "Military Airspeeders",
   "scale": "Speeder",

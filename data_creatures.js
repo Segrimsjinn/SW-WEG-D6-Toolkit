@@ -6396,5 +6396,19 @@ const CREATURES_DATA = [
   "orneriness": "",
   "special": "Danger Sense: famed ability to detect danger; sometimes used as guard animals by Duroon's insurgent tribes. Pseudopod Skin: no limbs or sensory organs — muscles form and extrude limbs as needed (mouths, eyestalks, etc.). Attack: never intentionally attacks, but accidental hits cause STR+1D from springing force. Smooth spheres with widely varying coloration (green, blue, yellow, fluorescent). Bright colors are a survival mechanism — predators focus on the most colorful individuals while the rest of the herd bounces away. Reproduce very quickly. Mascot of the Bonadan Bouncebeasts gravball team.",
   "source": "WEG40042 Han Solo and the Corporate Sector Sourcebook p.140"
+ },
+ {
+  "name": "Tranthebar Mountain Ripper",
+  "type": "Avian Predator",
+  "planet": "Tranthellix",
+  "habitat": "Mountains",
+  "dex": "3D",
+  "per": "1D+2",
+  "str": "2D+1",
+  "move": "40 (flying), 70 (diving)",
+  "size": "2.2-2.8m tall, up to 5m wingspan",
+  "orneriness": "5D",
+  "special": "Search 6D. Sneak 5D. Stamina 4D. Beak: STR+1D+2. Talons: STR+2D. Vision: spots 10cm objects at 200m. Silent Movement: glides on mountain thermals. Speed: dives approaching 200 kmh. Solitary predators, intelligent and cunning. Never completely domesticated — even raised from hatchlings, they eventually revert to wild form. Used in tranthebar racing on Tranthellix (strict export regulations).",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.91"
  }
 ];

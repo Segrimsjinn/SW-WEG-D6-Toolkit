@@ -105,6 +105,10 @@ const ARMOR_DATA = {
     {
       "name": "Ubese Raider Armor",
       "desc": "Model: Stock Ubese Raider Armor\nType: Battle armor\nCost: 1,000\nAvailability: 3\nGame Notes:\nBasic Suit: +2D to Strength for physical attacks, +1D for energy attacks. Covers torso and head only. No Dexterity penalties.\nSealed Enviro-Filter: Filter system maintains Type II atmospheres within helmet, and filters out harmful molecules and odors.\nFlash Guard Visor: Nullifies all stun damage from visual sources (for instance, flash canisters or grenades)."
+    },
+    {
+      "name": "Barabel Microbe Armor",
+      "desc": "Model: Creshaldyne Industries Barabel Microbe Armor\nType: Biological blast vest\nCost: 30,000\nAvailability: 4\nGame Notes: Vest initially gives +1D to resist damage from blaster attacks to front and back torso. With each subsequent hit by a blaster bolt, the vest goes up by one pip (+1D, +1D+1, +1D+2, +2D, etc.) up to a maximum of +3D. The vest drops by one pip for every three minutes the vest is not hit by a blast. If a blast penetrates enough to wound the user, the vest is destroyed. WARNING: Microbes are susceptible to cold — exposure below 0°C for 15 minutes destroys the vest.\nSource: WEG40025 Galladinium's Fantastic Technology p.85"
     }
   ],
   "Enviro Suit": [

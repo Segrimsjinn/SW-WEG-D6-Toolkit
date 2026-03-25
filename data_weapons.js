@@ -4294,5 +4294,41 @@ const WEAPONS_DATA = [
   "ammo": "",
   "game_notes": "",
   "source": "WEG40025 Galladinium's Fantastic Technology p.84"
+ },
+ {
+  "name": "Chestrashi Void Spear",
+  "category": "Melee Weapons",
+  "skill": "Thrown weapons: spear",
+  "cost": "5,000",
+  "availability": "4, F/R/X",
+  "damage": "STR+1D + biological",
+  "range": "",
+  "ammo": "5 (biological injections)",
+  "game_notes": "Moderate difficulty. 2m hollow metal spear. On stun or worse: victim makes Difficult stamina every 5 minutes to resist biological assault — failed roll = 6D damage from microbes attacking bone and nervous system. Counteracted by high electromagnetic fields or injection of radioactive trace elements into bloodstream.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.86"
+ },
+ {
+  "name": "Repulsor Rodian Throwing-Razor",
+  "category": "Thrown Weapons",
+  "skill": "Thrown weapons: Rodian throwing-razor",
+  "cost": "3,000 (pair)",
+  "availability": "4, F/R/X",
+  "damage": "STR+1D+2 + bleeding",
+  "range": "25-50/150/300",
+  "ammo": "",
+  "game_notes": "Serrated blade with micro-repulsorlift motor enhancing range and curve. Homing beacon coded to owner's genetic pattern for auto-retrieval (belt/tunic transponder). Can only be used by owner. After initial attack: Difficult stamina for 3 minutes or 3D additional damage from blood loss.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.89"
+ },
+ {
+  "name": "Squib Tensor Rifle",
+  "category": "Misc Blasters",
+  "skill": "Tensor weapons: rifle",
+  "cost": "15,000",
+  "availability": "4, F/R/X",
+  "damage": "3D (first hit), escalating (+1D per subsequent hit within 30 seconds)",
+  "range": "25-75/150/250",
+  "ammo": "50 (replaceable power generator)",
+  "game_notes": "Compressed tractor beam waves cause cell disruption. Invisible beam but extremely loud. Escalating damage: 3D first hit, 4D second, 5D third, etc. within 30 seconds on same target. Double normal multi-action penalties (2 actions = -2D, 3 = -4D, 4 = -6D).",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.89"
  }
 ];
