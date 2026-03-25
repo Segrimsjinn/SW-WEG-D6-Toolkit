@@ -3574,5 +3574,53 @@ const EQUIPMENT_DATA = [
   "availability": "4, F",
   "game_notes": "Skill: Beast riding: tranthebar. Cybernetic avian symbiotic control harness — series of external cyber-attachments linking minds of rider and tranthebar mountain ripper, sharing emotions and thoughts. Adds +2D to beast riding: tranthebar. Four-week training program required for amateur certification. Physical and mental exams recommended before purchase.",
   "source": "WEG40025 Galladinium's Fantastic Technology p.91"
+ },
+ {
+  "name": "Simcronics MagnaForce Security Shield",
+  "category": "Personal Defense",
+  "cost": "25,000 (pair), 2,500 (custom power cells)",
+  "availability": "4, F/R/X",
+  "game_notes": "Skill: Melee parry. Wrist-worn defensive force field generator (sold in pairs). Easy melee parry to activate — generates 50cm diameter round shield. Use melee parry vs attacker's blaster roll: if higher, shield blocks (bolt must then roll vs shield's 4D defensive field to penetrate). If lower, shield wasn't placed in time. Power cell lasts 2 minutes before draining. Character scale equivalent of starship shields.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.92"
+ },
+ {
+  "name": "HD 5-D Hyperdrive Booster",
+  "category": "Starship Accessories",
+  "cost": "16,500+",
+  "availability": "4, X",
+  "game_notes": "Skill: Space transports repair. Forces more energy through hyperdrive to increase speed. Only for freighters with 100 metric ton cargo capacity or less. One booster per engine, permanently configured once activated. Successful install reduces hyperdrive multiplier: x10+ becomes x4, x9-x6 becomes x3, x5-x3 becomes x2, x2 becomes x1, x1 becomes x0.5. Failed install = catastrophic mishap immediately or next hyperdrive use. HD 5-D has limited use — roll a die each activation; if number rolled is less than times compressor has been used, entire hyperdrive shuts down (Very Difficult repair to restore). Further hyperdrive modifications after install double all mishap modifiers. +2 mishap modifier per Galaxy Guide 6 rules.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.93"
+ },
+ {
+  "name": "KDY N-CRAB Nav Computer Bypass",
+  "category": "Starship Accessories",
+  "cost": "Not available for sale",
+  "availability": "4, X",
+  "game_notes": "Skill: Astrogation. Prototype navigation computer bypass allowing mid-hyperspace route changes without exiting hyperspace. Three astrogation rolls required: 1) Duplicate original course (one difficulty level lower than original). 2) Chart new course from upcoming point to new destination (Very Easy to Heroic). 3) Feed new course through N-CRAB into nav computer (one level lower than roll 2). Failing rolls 1-2: N-CRAB won't function. Failing roll 3: hyperspace mishap. Programming takes 1/10 of new route travel time. WARNING: Interferes with nav computer — requires Moderate astrogation or computer programming/repair to 'clean.' Without cleaning: 2nd use = all difficulties +1 level, 3rd = +2 levels, continuing to Heroic+10/+20/+30.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.93"
+ },
+ {
+  "name": "Illicit Electronics SB-20 Slicer Droid",
+  "category": "Droids",
+  "cost": "12,000",
+  "availability": "4, X",
+  "game_notes": "Height: 1m. Move: 5. DEX 1D, KNO 1D, MEC 1D (communications 5D), PER 1D (forgery 4D), STR 1D, TEC 1D (computer programming/repair 7D, security 5D). Modified R-series shell (appears as ordinary R1/R2 unit). Equipped: three wheeled legs (one retractable), heavy grasper arm (lifting 2D), fine work grasper arm, 0.3m video sensor (360°), arc welder (1D-5D, 0.3m), circular saw (4D, 0.3m), video display, holographic projector/recorder, fire extinguisher, internal cargo area (20x8cm), CodeRifter encryption equipment, Securityviolator programming. Illegal throughout the Empire — Imperial Intelligence has acquired some for its own use.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.94"
+ },
+ {
+  "name": "Arakyd RLG Guardian Droid System",
+  "category": "Droids",
+  "cost": "3,000 (new), 1,000 (used), 300 (remote unit)",
+  "availability": "3, F/R/X",
+  "game_notes": "Height: 15cm. Move: 10. Two-droid system — one active on repulsorlift, one recharging in waist pouch. DEX 2D (blaster 4D), KNO 1D (tactics 2D), MEC 1D (sensors 3D), PER 2D (search 4D), STR 1D, TEC 1D. Internal blaster pistol (4D, 0-5/15/25). FullSpec sensors (passive 25/0D, scan 35/1D, search 40/1D+2, focus 3/2D+2). Self-destruct (8D 0-2m, 6D 3-4m, 4D 5-6m, 2D 7-9m) — activates if master injured. 12 hours operation per charge, swap every 10 hours, 2 hour recharge. Recharging unit needs weekly 12-hour recharge from generator. Optional remote unit (+300 credits) for 500m control with audio/visual feed. Popular with crimelords as last line of defense.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.95"
+ },
+ {
+  "name": "Illicit Electronics Flesh Camouflage System",
+  "category": "Security Equipment",
+  "cost": "11,000 (computer), 500 (retinal contacts, non-reusable), 500 (SecCard), 250 (flesh kit, non-reusable)",
+  "availability": "4, X",
+  "game_notes": "Skill: Computer programming/repair. Advanced disguise system producing retinal contacts, chemical SecCards (10 image sheets, no electronics), and flesh disguises (face/hands/feet replicas with voice modifier). Requires target's retina, fingerprint and genetic scan data. Computer programming/repair roll determines quality: Very Easy = unusable. Easy = +2 to security/con. Moderate = +1D. Difficult = +1D+2. Very Difficult = +2D. Heroic = +3D. Bonuses apply to retinal scans (security), card scans (security), and impersonation (con) respectively.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.95"
  }
 ];

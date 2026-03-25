@@ -4330,5 +4330,17 @@ const WEAPONS_DATA = [
   "ammo": "50 (replaceable power generator)",
   "game_notes": "Compressed tractor beam waves cause cell disruption. Invisible beam but extremely loud. Escalating damage: 3D first hit, 4D second, 5D third, etc. within 30 seconds on same target. Double normal multi-action penalties (2 actions = -2D, 3 = -4D, 4 = -6D).",
   "source": "WEG40025 Galladinium's Fantastic Technology p.89"
+ },
+ {
+  "name": "Verpine Shatter Gun",
+  "category": "Slugthrowers",
+  "skill": "Firearms: Verpine shatter gun",
+  "cost": "30,000 (1,000 ammo)",
+  "availability": "4, F/R/X",
+  "damage": "6D",
+  "range": "50-400/900/1.5km",
+  "ammo": "100",
+  "game_notes": "Body 1D. Magnetic coil accelerator firing miniature alloy projectiles. Virtually soundless. Extremely long effective range. Fragile — if jarred, dropped or banged significantly, roll damage against weapon's body (1D).",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.91"
  }
 ];
