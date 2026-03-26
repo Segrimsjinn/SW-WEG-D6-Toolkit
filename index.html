@@ -1815,6 +1815,12 @@ color:var(--text-dim);min-width:35px;text-align:right;
       <div class="card">
         <div class="card-title">⟐ Asteroid Run</div>
         <p style="font-size:11px;color:var(--text-dim);margin-bottom:8px">Navigate the Alderaan asteroid field! Reach an exit square before the salvagers catch you. Based on the WEG40128 Graveyard of Alderaan board game.</p>
+        <div id="arSetup" style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+          <span style="font-family:'Exo 2',monospace;font-size:10px;color:var(--gold);letter-spacing:0.5px">REBEL HULL:</span>
+          <button style="width:28px;height:28px;background:var(--bg2);color:var(--cyan);border:1px solid var(--card-border);border-radius:4px;font-size:16px;cursor:pointer;font-family:'Exo 2',monospace" onclick="AR.adjustHull(-1)">−</button>
+          <span id="arHullVal" style="font-family:'Exo 2',monospace;font-size:16px;color:var(--cyan);min-width:30px;text-align:center">6D</span>
+          <button style="width:28px;height:28px;background:var(--bg2);color:var(--cyan);border:1px solid var(--card-border);border-radius:4px;font-size:16px;cursor:pointer;font-family:'Exo 2',monospace" onclick="AR.adjustHull(1)">+</button>
+        </div>
         <div id="arGameArea" style="display:none">
           <div class="ar-status">
             <span><span class="label">ROUND </span><span class="val" id="arRound">0</span></span>
@@ -1828,7 +1834,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
         </div>
         <button id="arStartBtn" class="btn btn-primary btn-full" style="margin-top:10px" onclick="AR.startGame()">LAUNCH ASTEROID RUN</button>
         <button id="arNextBtn" class="btn btn-primary btn-full" style="margin-top:6px;display:none" onclick="AR.nextPhase()">NEXT PHASE</button>
-        <button id="arNewBtn" class="btn btn-full" style="margin-top:6px;display:none;border:1px solid var(--card-border);color:var(--text-dim);background:var(--bg2)" onclick="AR.startGame()">NEW GAME</button>
+        <button id="arNewBtn" class="btn btn-full" style="margin-top:6px;display:none;border:1px solid var(--card-border);color:var(--text-dim);background:var(--bg2)" onclick="AR.newGame()">NEW GAME</button>
       </div>
       <div class="card" style="cursor:pointer" onclick="this.querySelector('.ar-rules-body').style.display=this.querySelector('.ar-rules-body').style.display==='none'?'block':'none'">
         <div class="card-title">⟐ Rules Reference <span style="font-size:9px;color:var(--text-dim)">(tap to expand)</span></div>
@@ -7192,6 +7198,22 @@ const AR = {
   START_REBEL: {r:0, c:5}, START_SALV: {r:0, c:0},
   EXITS: [{r:12,c:2},{r:12,c:5},{r:12,c:8}],
 
+  startHull: 6,
+
+  adjustHull(delta) {
+    this.startHull = Math.max(1, Math.min(10, this.startHull + delta));
+    document.getElementById('arHullVal').textContent = this.startHull + 'D';
+  },
+
+  newGame() {
+    document.getElementById('arGameArea').style.display = 'none';
+    document.getElementById('arSetup').style.display = 'flex';
+    document.getElementById('arStartBtn').style.display = '';
+    document.getElementById('arNextBtn').style.display = 'none';
+    document.getElementById('arNewBtn').style.display = 'none';
+    document.getElementById('arHullVal').textContent = this.startHull + 'D';
+  },
+
   roll(n) { let t=0; for(let i=0;i<n;i++) t+=Math.floor(Math.random()*6)+1; return t; },
 
   moveTable(r) {
@@ -7205,9 +7227,10 @@ const AR = {
   startGame() {
     this.board = []; this.pieces = []; this.round = 1; this.phase = 0; this.gameOver = false;
     this.waitingChoice = false;
-    this.rebel = {r:0, c:5, hp:6, shields:2, alive:true, label:'REBEL'};
+    this.rebel = {r:0, c:5, hp:this.startHull, shields:2, alive:true, label:'REBEL'};
     this.salv = {r:0, c:0, hp:6, shields:2, alive:true, label:'SALVAGER'};
     document.getElementById('arGameArea').style.display = 'block';
+    document.getElementById('arSetup').style.display = 'none';
     document.getElementById('arStartBtn').style.display = 'none';
     document.getElementById('arNextBtn').style.display = '';
     document.getElementById('arNewBtn').style.display = '';
