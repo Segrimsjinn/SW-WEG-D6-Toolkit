@@ -36306,6 +36306,86 @@ const STARSHIP_DATA = {
      "damage": "4D"
     }
    ]
+  },
+  {
+   "rank": 12,
+   "name": "Scent of Fear",
+   "craft": "Modified Taloron Prey Chaser",
+   "type": "Modified Bounty Hunter Ship",
+   "affiliation": "Criminal Underworld",
+   "scale": "Starfighter",
+   "length": "40 meters",
+   "skill": "Space Transports: Taloron Prey Chaser",
+   "crew": "1",
+   "passengers": "25",
+   "cargo": "30 metric tons",
+   "consumables": "4 months",
+   "cost": "Not available for sale",
+   "hyperdrive": "x1",
+   "hyperdrive_backup": "x15",
+   "nav_computer": "Yes",
+   "maneuverability": "2D",
+   "space": "8",
+   "atmosphere": "365; 1,050 kmh",
+   "hull": "5D",
+   "shields": "4D",
+   "of_note": "Crutag the Taloron Hunter's ship. Modified for better shields, maneuverability, and speed at the cost of weapon power, but with improved targeting accuracy. Crutag prefers to run with shields down to make targets overconfident.",
+   "sensors_passive": "35/0D",
+   "sensors_scan": "60/1D",
+   "sensors_search": "100/2D",
+   "sensors_focus": "3/2D+1",
+   "weapons": [
+    {
+     "name": "2 Laser Cannons (fire separately)",
+     "fire_arc": "Turret",
+     "crew": "1",
+     "skill": "Starship Gunnery",
+     "fire_control": "3D",
+     "space_range": "1-3/12/25",
+     "atmo_range": "100-300/1.2/2.5 km",
+     "damage": "4D"
+    }
+   ]
+  },
+  {
+   "rank": 12,
+   "name": "Trallus' Rustbucket",
+   "craft": "Modified Ghtroc Freighter",
+   "type": "Dilapidated Light Freighter",
+   "affiliation": "Civilian",
+   "scale": "Starfighter",
+   "length": "35 meters",
+   "skill": "Space Transports: Ghtroc Freighter",
+   "crew": "1-2 (can coordinate)",
+   "passengers": "6",
+   "cargo": "100 metric tons",
+   "consumables": "3 weeks",
+   "cost": "15,000 (used)",
+   "hyperdrive": "x1",
+   "hyperdrive_backup": "x18",
+   "nav_computer": "Yes",
+   "maneuverability": "",
+   "space": "4",
+   "atmosphere": "480; 800 kmh",
+   "hull": "2D",
+   "shields": "",
+   "of_note": "Aptly named — numerous dings and dents, eroded hull plates from repeated trips through gas clouds. Dozens of systems require immediate attention. Stolen by the player characters from Kwenn Space Station.",
+   "sensors_passive": "10/0D",
+   "sensors_scan": "25/1D",
+   "sensors_search": "40/2D",
+   "sensors_focus": "2/3D",
+   "weapons": [
+    {
+     "name": "2 Laser Cannons (fire separately)",
+     "fire_arc": "Turret",
+     "crew": "1",
+     "skill": "Starship Gunnery",
+     "fire_control": "2D",
+     "space_range": "1-3/12/25",
+     "atmo_range": "100-300/1.2/2.5 km",
+     "damage": "4D"
+    }
+   ]
   }
  ]
 };

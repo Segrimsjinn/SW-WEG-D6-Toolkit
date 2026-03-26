@@ -6434,5 +6434,32 @@ const PLANETS_DATA = [
     summary: "Bazaar is an Ithorian herd ship that travels the spaceways like a caravan, bringing unusual merchandise from one end of the galaxy to the other. Built to mimic the Ithorian home world's tropical environment, the ship contains indoor jungles with artificial storms, wildlife, and vast expanses of lush vegetation. The upper level contains merchant villages with markets, inns, cantinas, and holotheaters. The middle level houses massive hangars with soft grass floors and a modern ship repair facility. The lower level contains the sacred Dome of the Mother Jungle — a plastisteel bubble with a floating island of real Ithorian jungle tended by priests — plus repulsorlift engines, hyperdrive, life support, and storage, all restricted to crew.",
     locations: "Isttu Village (a merchant village built around Isttu Lake, a wide branch of the Great Mother River; the only break in the jungle illusion is the dome above looking out into space and turbolift banks jutting from the floor). Jungle Cantina (the best cantina on Bazaar with a massive central bar staffed by three bartenders, up to six waitresses, and a four-man band mixing Ithorian classics with popular galactic tunes — a prime spot for rumors and gossip). Inn on Isttu Lake (comfortable accommodations at 25 credits per night). Jungle Cafe (moderately-priced meals for travelers on a budget). Kel Tag Courts (three courts available by reservation for the Ithorian sport). HoloTheaters (three theaters showing the latest holovid movies from the Galactic Core). Isttu Galactic Bank (provides secure vaults, Imperial Galactic Bank credit transfers, and planetary money exchange). Merchant Council Building (two-story heart of the village housing the merchantate's offices, merchant council chambers, and peacekeeper station — the herd ship's computers can be accessed here with a Moderate computer programming/repair roll). Medical Center (full-service facility with the latest medical droids, bacta tanks, and emergency care supervised by Dr. Heltiss; doctors have medicine 4D-7D; medpac healing 150-700 credits, bacta tank healing 75-300 credits plus time). Great Mother River Hotel (five-star intergalactic establishment at 100+ credits per night, with full accommodations, entertainment, and health spa). Great Mother River Restaurant (high-priced galactic cuisine with 200-credit wines and strolling minstrels, connected to the hotel via a skywalk). Ithorian Craft Shop (craft master Jerru demonstrates ancient plant-forming techniques and sells high art wares — an Alliance sympathizer). Exotic Items Shop (strange, beautiful, and expensive curios from across the galaxy — the Ithorian shopkeeper has a working lightsaber from a student of the late Jedi Master Darrin Arkanian in his private collection, available for 250-400 credits). Data Books (galactic best-sellers and unbanned classics on memory chips, run by Visfuu). Poliss's Droid Shop (new and used droids, computers, droid services — run by Poliss, a tall spotted Ithorian and Alliance contact who mistakes visitors for Princess Leia's group). Weapon Shop (personal melee and ranged weapons; shopkeeper Equet recruits mercenaries for the Minos Cluster). Gossit's General Store (well-stocked supplies for space travelers, slightly expensive, everything except weapons, armor, or space suits). Imperial Recruitment Center (run by Enger Mowen, a fat human who planted a false rumor about recruiting for the Alliance — actually collecting names for the ISB). Village Healer (Ithorian healer with first aid 3D and medpacs; wounded 75 credits, incapacitated 150 credits, mortally wounded 250 credits).",
     ofNote: "The number of guests is strictly regulated by the Ithorians to protect the environment — visits typically last two days to two weeks. Powerful scanners check arriving ships for hidden cargo and undeclared weapons, though some contraband does slip past lax observers. The Ithorians have taken no official stance in the galactic civil war but many secretly support the Rebel Alliance. Imperial agents, bounty hunters, salvagers, mercenaries, pirates and smugglers all come and go freely as long as they don't disturb other guests."
+  },
+  {
+    name: "Trinta",
+    system: "Trinta",
+    star: "",
+    grid: "L-6",
+    region: "Outer Rim Territories",
+    type: "Terrestrial",
+    temperature: "Hot",
+    atmosphere: "Type I (breathable, oppressive)",
+    hydrosphere: "Saturated",
+    gravity: "Low (climbing/jumping and lifting +1D)",
+    terrain: "Swamp, wooded islands, mudbanks, polar ice caps",
+    lengthOfDay: "",
+    lengthOfYear: "",
+    sapientSpecies: "None (one resident: Halagad Ventor)",
+    starport: "None",
+    population: "1",
+    function: "Wilderness, dark side nexus",
+    government: "None",
+    techLevel: "None",
+    majorExports: "None",
+    majorImports: "None",
+    source: "WEG40128 Classic Adventures Vol 2 p.70",
+    summary: "Trinta is an extremely inhospitable swamp world in the Outer Rim Territories, named by the Ithorians after the realm of demons in their mythology. Ninety percent of the world is fetid swamp dotted with wooded islands and mudbanks, with polar ice caps covering the remainder. The atmosphere is breathable but oppressive — thick with moisture and clinging like a solid substance. A dark side nexus encompasses the entire planet, home to the insane Jedi Knight Halagad Ventor who uses the nexus to project dreamscapes and illusory creatures from the depths of his tortured mind.",
+    locations: "",
+    ofNote: "The planet contains a dark side nexus similar to the one on Dagobah. Force-users feel uneasy on this world. Halagad Ventor, a Jedi Knight whose mind was probed by Darth Vader, fled here and succumbed to the dark side. He uses the nexus to project dreamscapes — illusory realities populated by dreambeasts that cause mental trauma damage rather than physical harm. The planet was dismissed as worthless by an Old Republic survey team, and all past colonization attempts have been dismal failures. | SURVIVAL: Swamp water is drinkable if boiled or chemically treated. Edible fungi grow on trees (Moderate survival roll to identify). Rain lasts about four hours followed by 1-3 hours of steaming. Leeches (2D per water crossing) are a constant hazard. | WILDLIFE: Monsails (predatory fish), skinwings (avian reptiles), marsh lizards, morrils (docile tree marsupials), water snakes, gallazes (herbivore herds)."
   }
 ];
