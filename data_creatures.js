@@ -6410,5 +6410,61 @@ const CREATURES_DATA = [
   "orneriness": "5D",
   "special": "Search 6D. Sneak 5D. Stamina 4D. Beak: STR+1D+2. Talons: STR+2D. Vision: spots 10cm objects at 200m. Silent Movement: glides on mountain thermals. Speed: dives approaching 200 kmh. Solitary predators, intelligent and cunning. Never completely domesticated — even raised from hatchlings, they eventually revert to wild form. Used in tranthebar racing on Tranthellix (strict export regulations).",
   "source": "WEG40025 Galladinium's Fantastic Technology p.91"
+ },
+ {
+  "name": "Sid'Han (Mudcrawler)",
+  "type": "Predator",
+  "planet": "Seikosha",
+  "habitat": "Mudflats and jungle",
+  "dex": "4D",
+  "per": "2D (sneak 8D)",
+  "str": "6D+1",
+  "move": "12",
+  "size": "Up to 10 meters long",
+  "orneriness": "18D",
+  "special": "Teeth (4D damage). Tail (6D+1 damage; on any attack which incapacitates, mortally wounds, or kills, the victim is entangled and cannot escape without an opposed Strength roll). Burrows into soft mud and senses victims by vibrations from footsteps. Ground water collects in their concave dorsal areas, making them appear as large puddles. Ambush predators that emit a terrifying high-pitched shriek. They never run from combat.",
+  "source": "WEG40083 Classic Adventures p.56"
+ },
+ {
+  "name": "Kichicolia",
+  "type": "Herbivore",
+  "planet": "Najarka",
+  "habitat": "Sub-tropical rainforest",
+  "dex": "4D (dodge 6D)",
+  "per": "3D (hide 4D, sneak 4D+1)",
+  "str": "1D (climbing/jumping 3D)",
+  "move": "12",
+  "size": "0.2-0.5 meters tall",
+  "orneriness": "",
+  "special": "Teeth (STR+1D damage). Half-meter tall primates with prehensile fingers and toes, long thick fur — white with black markings around joints, mouths, and eyes. Distinctive long white-furred tail. Loud trilling squawk call. Live in small packs and are harmless herbivores; may attack if cornered but more likely to retreat.",
+  "source": "WEG40083 Classic Adventures p.67"
+ },
+ {
+  "name": "Tree Viper",
+  "type": "Predator",
+  "planet": "Najarka",
+  "habitat": "Sub-tropical rainforest",
+  "dex": "2D",
+  "per": "2D",
+  "str": "3D (brawling 4D, climbing/jumping 4D+2)",
+  "move": "11",
+  "size": "2.5-3 meters long",
+  "orneriness": "",
+  "special": "Fangs (STR damage plus venom). Constriction (STR+1D damage each round; subtract 2D from victim's Dexterity until successful opposed Strength roll to break free). Venom (bitten characters must make Moderate stamina roll or be paralyzed; paralyzed characters cease breathing in 10 rounds and suffer irreversible brain damage in 8 minutes unless countered by general antitoxin from standard medpacs). Hunt in groups of 2-6, accustomed to bringing down prey much larger than themselves. Bold and fearless predators.",
+  "source": "WEG40083 Classic Adventures p.68"
+ },
+ {
+  "name": "Najarkan Wilderbeast",
+  "type": "Predator",
+  "planet": "Najarka",
+  "habitat": "Sub-tropical rainforest",
+  "dex": "2D",
+  "per": "1D",
+  "str": "8D",
+  "move": "14",
+  "size": "Up to 30 meters long",
+  "orneriness": "7D",
+  "special": "Bite (STR damage). Armor (+2D to Strength to resist damage). Huge mouth over two meters in diameter. Large dull red eyes are low-resolution photoreceptors adapted to detect the black and white patterns of its natural prey, the kichicolia.",
+  "source": "WEG40083 Classic Adventures p.78"
  }
 ];
