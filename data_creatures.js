@@ -6466,5 +6466,19 @@ const CREATURES_DATA = [
   "orneriness": "7D",
   "special": "Bite (STR damage). Armor (+2D to Strength to resist damage). Huge mouth over two meters in diameter. Large dull red eyes are low-resolution photoreceptors adapted to detect the black and white patterns of its natural prey, the kichicolia.",
   "source": "WEG40083 Classic Adventures p.78"
+ },
+ {
+  "name": "Space Slug (Small)",
+  "type": "Predator",
+  "planet": "Alderaan (Asteroid 7785)",
+  "habitat": "Asteroids, vacuum",
+  "dex": "2D",
+  "per": "1D",
+  "str": "6D",
+  "move": "6",
+  "size": "",
+  "orneriness": "",
+  "special": "Can survive in vacuum with no penalties. Teeth do STR+1D damage. Found nesting in the ruined steam baths of the Alderaanian Royal Palace.",
+  "source": "WEG40128 Classic Adventures Vol 2 p.40"
  }
 ];
