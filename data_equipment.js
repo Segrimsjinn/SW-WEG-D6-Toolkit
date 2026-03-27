@@ -3646,5 +3646,21 @@ const EQUIPMENT_DATA = [
   "availability": "2",
   "game_notes": "Height: 1.6m. Move: 8. DEX 3D, KNO 1D, MEC 2D (communications 4D, sailed nautical vessel operation 4D), PER 1D (command 4D — tutorial only), STR 1D, TEC 2D (first aid 3D+1, sailed nautical vessel repair 4D). Humanoid torso with two legs and arms, emergency inflatable flotation bag, comlink, two visual/auditory sensors (Human range), vocabulator, AA-1 Verbobrain. Inertia compensators add 1D to Dexterity when maintaining footing on a swaying deck. Waterproof hard-impact plastic shell (deep blue). Speaks in a deep, confident voice. Programmed for steadfast calm in sea storms but less effective in violent combat situations.",
   "source": "WEG40129 Adventure Journal 1 p.63"
+ },
+ {
+  "name": "Arakyd 6G2 Explorer Droid",
+  "category": "Droids",
+  "cost": "",
+  "availability": "",
+  "game_notes": "Move: 10 (swimming). DEX 1D, KNO 1D, PER 1D (search 4D), STR 1D, TEC 1D. Long-range sensor (+2D to search for moving objects). Designed for exploration and survey work; these units on Alluuvia have been refitted for underwater use.",
+  "source": "WEG40132 Operation: Elrood p.45"
+ },
+ {
+  "name": "Line Master Tube-Launched Grapple (TLG)",
+  "category": "Tools",
+  "cost": "800",
+  "availability": "2, R",
+  "game_notes": "Skill: Missile weapons, Easy difficulty to fire on target. Portable one-shot grappling device — hollow cylinder 40cm long, 10cm diameter resembling a lightsaber hilt. Features pop-up targeting sight, retractable hand grip with braking controls for controlled descents, 100 meters of ultra-light micro-woven synthecord, small motorized winch (Move: 2, pulls full load at 25 meters/minute), and hook for harness cable. Grapple head is a flat flexible disk coated with strong bonding agent that instantly bonds on impact. Line supports up to 200 kg.",
+  "source": "WEG40132 Operation: Elrood p.85"
  }
 ];

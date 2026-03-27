@@ -4419,5 +4419,38 @@ const WEAPONS_DATA = [
   "availability": "Restricted to Imperial personnel",
   "game_notes": "Fire rate: Spear 1/3, Blaster 1. Skill: Blaster rifle. A long metal pipe which shoots a small spear through the water, with a small blaster slung under the spear barrel that shoots a concentrated blue beam. Above stats do not reflect usual underwater damage and skill penalties. Additional spears can be carried in a quiver.",
   "source": "WEG40129 Adventure Journal 1 p.62"
+ },
+ {
+  "name": "Neegad 7 Tranquilizer Pistol",
+  "category": "Firearms",
+  "damage": "8D stun",
+  "range": "1-3/15/30",
+  "ammo": "1",
+  "cost": "500",
+  "availability": "F, R or X",
+  "game_notes": "Skill: Firearms: dart pistol. Used by hunters and veterinarians to sedate frightened and injured animals. Needle-like darts are thin enough to slide past animal scales but cannot pierce blast helmets or thick protective armor. Stun duration varies by damage roll vs target's Strength: 0-3 over = 1D minutes, 4-8 over = 1Dx5 minutes, 9-12 over = 2Dx10 minutes, 13-15 over = 3Dx15 minutes, 16+ over = 1Dx2 hours.",
+  "source": "WEG40132 Operation: Elrood p.59"
+ },
+ {
+  "name": "SoroSuub CS-12 Stun Master",
+  "category": "Melee Weapons",
+  "damage": "4D+2 stun",
+  "range": "",
+  "ammo": "5",
+  "cost": "575 (power cells 15)",
+  "availability": "2, R",
+  "game_notes": "Skill: Melee combat: contact stunner. Very Easy difficulty. Hand-held contact stunner — small cylinder 15cm long, 5cm diameter. Delivers virtually silent electronic stun charge via 13 contact studs. Easy to conceal (+2D to hide against weapon detectors, +1D against physical searches). Consumer grade body strength 1D; military version (1,000 credits) has body strength 3D.",
+  "source": "WEG40132 Operation: Elrood p.85"
+ },
+ {
+  "name": "Portable Plasma Cutter",
+  "category": "Melee Weapons",
+  "damage": "7D",
+  "range": "",
+  "ammo": "4 min internal, 1 hr with canister",
+  "cost": "150 (gas canister 20)",
+  "availability": "1",
+  "game_notes": "Skill: Melee combat, Moderate difficulty to hit as weapon. Hand-held device slightly larger than a hold-out blaster. Adjustable focusing device for depth and intensity. Cuts through blast shielding and durasteel — takes 1 round per 1D of body strength to cut a 2x1 meter hole. Blast goggles required; anyone within 2 meters without eye protection must make Moderate Perception roll or be blinded for 3 minutes (attacker gets +1D to hit blinded targets).",
+  "source": "WEG40132 Operation: Elrood p.85"
  }
 ];
