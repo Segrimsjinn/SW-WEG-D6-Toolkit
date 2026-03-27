@@ -37006,6 +37006,135 @@ const STARSHIP_DATA = {
     }
    ],
    "source": "WEG40132 Operation: Elrood p.65"
+  },
+  {
+   "rank": 99999,
+   "name": "Kuari Princess",
+   "craft": "Mon Calamari MC80 Star Cruiser",
+   "type": "Luxury Liner",
+   "scale": "Capital",
+   "length": "500 meters",
+   "skill": "Capital Ship Piloting: Mon Cal Cruiser",
+   "crew": "840",
+   "crew_skill": "Astrogation 6D+1, capital ship gunnery 4D+1, capital ship piloting 6D+2, capital ship shields 4D, sensors 5D",
+   "passengers": "3,500",
+   "cargo_capacity": "5,000 metric tons",
+   "consumables": "1 year",
+   "cost": "",
+   "hyperdrive_multiplier": "x2",
+   "hyperdrive_backup": "x9",
+   "nav_computer": "Yes",
+   "maneuverability": "1D",
+   "space_speed": "5",
+   "atmosphere_speed": "",
+   "hull": "5D",
+   "shields": "2D",
+   "of_note": "One of the masterpieces of Mon Calamari design, built before the Mon Calamari joined the Alliance. Much of the technology used in MC80 Star Cruiser construction was developed during the Princess's design. Crew of 840 includes 500 droids — stewards, engineers, recreation directors, band members, and wallball pros. Commanded by Captain Stenn Glidrick, ex-Imperial Navy pilot, with 10 staff officers. Has a 60-man security force enforcing Imperial regulations against carrying weaponry aboard.",
+   "sensors": {
+    "passive": "30/1D",
+    "scan": "50/2D",
+    "search": "100/3D",
+    "focus": "3/3D"
+   },
+   "weapons": [
+    {
+     "name": "10 Turbolaser Batteries (fire separately)",
+     "fire_arc": "Turret",
+     "crew": "1 to 3",
+     "skill": "Capital Ship Gunnery",
+     "fire_control": "2D",
+     "space_range": "3-15/35/75",
+     "atmo_range": "",
+     "damage": "3D"
+    }
+   ],
+   "source": "WEG40133 Classic Adventures Vol 3 p.13"
+  },
+  {
+   "rank": 99999,
+   "name": "Zebra Starfighter",
+   "craft": "Zebra Starfighter",
+   "type": "Starfighter",
+   "scale": "Starfighter",
+   "length": "12.3 meters",
+   "skill": "Starfighter Piloting: Zebra",
+   "crew": "1",
+   "crew_skill": "Starfighter piloting 5D, starship gunnery 5D+2",
+   "passengers": "0",
+   "cargo_capacity": "65 kilograms",
+   "consumables": "1 day",
+   "cost": "",
+   "hyperdrive_multiplier": "",
+   "hyperdrive_backup": "",
+   "nav_computer": "",
+   "maneuverability": "2D",
+   "space_speed": "7",
+   "atmosphere_speed": "350; 1,000 kmh",
+   "hull": "2D",
+   "shields": "1D",
+   "of_note": "Pirate starfighter used by the Riders of the Maelstrom.",
+   "sensors": {
+    "passive": "15/0D",
+    "scan": "25/1D+1",
+    "search": "45/2D",
+    "focus": "3/2D+2"
+   },
+   "weapons": [
+    {
+     "name": "2 Laser Cannons (fire-linked)",
+     "fire_arc": "Front",
+     "crew": "1",
+     "skill": "Starship Gunnery",
+     "fire_control": "1D",
+     "space_range": "1-5/10/17",
+     "atmo_range": "100-500/1/1.7 km",
+     "damage": "5D"
+    }
+   ],
+   "source": "WEG40133 Classic Adventures Vol 3 p.30"
+  },
+  {
+   "rank": 99999,
+   "name": "Alabak's Gold",
+   "craft": "Modified Mon Calamari Wander-class Jump Freighter",
+   "type": "Modified Light Freighter",
+   "scale": "Starfighter",
+   "length": "30 meters",
+   "skill": "Space Transports",
+   "crew": "1, gunners: 2",
+   "crew_skill": "",
+   "passengers": "6",
+   "cargo_capacity": "75 metric tons",
+   "consumables": "1 month",
+   "cost": "",
+   "hyperdrive_multiplier": "x2",
+   "hyperdrive_backup": "x12",
+   "nav_computer": "Yes",
+   "maneuverability": "1D",
+   "space_speed": "6",
+   "atmosphere_speed": "330; 950 kmh",
+   "hull": "5D",
+   "shields": "2D",
+   "of_note": "Converted Mon Calamari freighter, slightly smaller than the Millennium Falcon. Used by Rebel operatives during the search for Adar Tallon on Tatooine.",
+   "sensors": {
+    "passive": "15/0D",
+    "scan": "30/1D",
+    "search": "50/3D",
+    "focus": "2/4D"
+   },
+   "weapons": [
+    {
+     "name": "2 Double Laser Cannons (fire separately)",
+     "fire_arc": "Turret",
+     "crew": "1",
+     "skill": "Starship Gunnery",
+     "fire_control": "3D",
+     "space_range": "1-3/12/25",
+     "atmo_range": "100-300/1.2/2.5 km",
+     "damage": "4D"
+    }
+   ],
+   "source": "WEG40133 Classic Adventures Vol 3 p.92"
   }
  ]
 };

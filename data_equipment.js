@@ -3662,5 +3662,13 @@ const EQUIPMENT_DATA = [
   "availability": "2, R",
   "game_notes": "Skill: Missile weapons, Easy difficulty to fire on target. Portable one-shot grappling device — hollow cylinder 40cm long, 10cm diameter resembling a lightsaber hilt. Features pop-up targeting sight, retractable hand grip with braking controls for controlled descents, 100 meters of ultra-light micro-woven synthecord, small motorized winch (Move: 2, pulls full load at 25 meters/minute), and hook for harness cable. Grapple head is a flat flexible disk coated with strong bonding agent that instantly bonds on impact. Line supports up to 200 kg.",
   "source": "WEG40132 Operation: Elrood p.85"
+ },
+ {
+  "name": "Quarren Industrial Q-4 Borer Droid",
+  "category": "Droids",
+  "cost": "",
+  "availability": "",
+  "game_notes": "Height: 0.7m, diameter 0.2m. Move: 10. DEX 1D (blaster: drilling laser 1D+2), KNO 1D, MEC 2D (repulsorlift operation 2D+1), PER 2D (search: metals/ores 2D+1), STR 1D, TEC 1D. Repulsorlift engine. Heavy-duty drilling laser (0.5m range, 6D damage, -1D penalty against moving targets). Sensor apparatus (+1D to search for ores/metals). Minimal auditory/visual sensors (-1D to visual/auditory search rolls).",
+  "source": "WEG40133 Classic Adventures Vol 3 p.74"
  }
 ];
