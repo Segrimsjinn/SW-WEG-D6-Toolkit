@@ -6634,5 +6634,47 @@ const CREATURES_DATA = [
   "orneriness": "",
   "special": "Teeth (STR+1D damage). Claws (STR+1D+1 damage). Dark side corrupted — body and eyes glow red. When incapacitated, its intestines burst out as a dreambeast (DEX 6D, PER 1D, STR 4D) that attempts to strangle the nearest character: 1D damage first round, +1D per round attached. Intestines can be pulled off with opposed Strength roll. Intestine damage is mental (dreambeast) damage. Once intestines are defeated they fade away and the gorgand is seen to be still intact.",
   "source": "WEG40128 Classic Adventures Vol 2 p.114"
+ },
+ {
+  "name": "Morodin",
+  "type": "Herbivore (sentient)",
+  "planet": "Varonat",
+  "habitat": "Jungle, plains",
+  "dex": "2D+2",
+  "per": "3D",
+  "str": "4D+1",
+  "move": "12/15",
+  "size": "15 meters long",
+  "orneriness": "",
+  "special": "Attribute Dice: 14D. Average: DEX 2D+2, KNO 3D, MEC 0D+2, PER 3D, STR 4D+1, TEC 0D+1. Biochemical Agriculture: Extensive knowledge of Varonat's plant life — by digesting certain plants and spreading nutrient slime over others, they produce new strains of plant food. Nutrient Slime: Secreted from a gland in their underbellies, changes in nutrient value depending on diet and encourages growth and mutation in plant life. Maze-running is their means of fertilizing areas — the patterns track which combinations were applied. Sentient species — not native to Varonat. They established an agricultural colony 1,000 years before the Old Republic, transforming immense plains into the Great Jungle. Giant herbivores with six stubby legs, spoon-billed snouts, and flat teeth. Mottled yellow coloring. Deep rumbling growl.",
+  "source": "WEG40129 Adventure Journal 1 p.21"
+ },
+ {
+  "name": "Camray Eel",
+  "type": "Sea predator",
+  "planet": "Spira",
+  "habitat": "Ocean (Shinkai Abyss trench, 75-150m depth)",
+  "dex": "4D",
+  "per": "2D",
+  "str": "3D",
+  "move": "16",
+  "size": "4-5 meters long",
+  "orneriness": "4D",
+  "special": "Coils: 5D constriction damage. Teeth: STR+2D damage. Camouflage: +2D to sneak when moving close to seabed. Swimming 6D, sneak 4D+2. Long snake-like marine predator haunting the Shinkai Abyss trench. Huge gaping mouth with fearsome teeth, lithe muscular body that can seize and crush prey. A loner that drifts among scored trench walls hunting sliverfish. Seldom rises above 75m depth, sleeps in sandy silt on the trench floor at 150m. Fearless and aggressive — investigates and attacks suited divers. Popular trophy among upper-class game hunters. Dead specimens have an incredibly potent smell requiring sealed storage tanks.",
+  "source": "WEG40129 Adventure Journal 1 p.65"
+ },
+ {
+  "name": "Galub Sea Slug",
+  "type": "Sea parasite",
+  "planet": "Spira",
+  "habitat": "Ocean",
+  "dex": "2D",
+  "per": "2D",
+  "str": "3D",
+  "move": "8",
+  "size": "2 meters long",
+  "orneriness": "",
+  "special": "Adhesion: Can adhere to solid surfaces using powerful suction. Large grub-white sea parasite that attaches to larger sea animals to suck blood. Incredibly stupid — sometimes mistakes boat hulls for potential hosts, slowing vessels considerably. Spears have little effect; must be blasted off. Mishap when shooting risks putting a hole through the hull.",
+  "source": "WEG40129 Adventure Journal 1 p.66"
  }
 ];

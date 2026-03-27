@@ -16840,5 +16840,73 @@ const RACES_DATA = {
     "StoryFactor": [
       "Sense of Ownership: Zexx never permit others to borrow any item under any circumstances and hoard possessions compulsively even when they serve no practical purpose. They react violently to any perceived theft or unauthorized use of their property. Appearance: Massive gray-scaled humanoids standing 1.8 to 2.5 meters with pointed heads bearing long curved tusks sharp and strong enough to cut through living tissue. Bear a strong resemblance to Esoomians and may be distantly related."
     ]
+  },
+  "Krish": {
+    "Dex": [
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D"
+    ],
+    "Kno": [
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D"
+    ],
+    "Mec": [
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2"
+    ],
+    "Per": [
+      "1D",
+      "1D+1",
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D"
+    ],
+    "Str": [
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2"
+    ],
+    "Tec": [
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2"
+    ],
+    "Move": [
+      "8",
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "Gender": [
+      "M",
+      "F",
+      "M",
+      "M",
+      "F"
+    ],
+    "StoryFactor": [
+      "Unreliable: Krish are not terribly reliable. They are easily distracted by entertainment and sport, and often forget minor details about the job at hand. Appearance: 1.5-2 meters tall with sharp, pointed teeth. They take pride in sports and games — everything is a puzzle to a Krish. Somewhat mechanically inclined, possibly a result of their puzzle-solving nature. Known for smiling pointy-toothed grins at anything which slightly amuses them."
+    ]
   }
 };

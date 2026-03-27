@@ -3622,5 +3622,29 @@ const EQUIPMENT_DATA = [
   "availability": "4, X",
   "game_notes": "Skill: Computer programming/repair. Advanced disguise system producing retinal contacts, chemical SecCards (10 image sheets, no electronics), and flesh disguises (face/hands/feet replicas with voice modifier). Requires target's retina, fingerprint and genetic scan data. Computer programming/repair roll determines quality: Very Easy = unusable. Easy = +2 to security/con. Moderate = +1D. Difficult = +1D+2. Very Difficult = +2D. Heroic = +3D. Bonuses apply to retinal scans (security), card scans (security), and impersonation (con) respectively.",
   "source": "WEG40025 Galladinium's Fantastic Technology p.95"
+ },
+ {
+  "name": "SeaScape Aquasuit (Hardshell)",
+  "category": "Survival Gear",
+  "cost": "400",
+  "availability": "1 (coastal), 2 (elsewhere)",
+  "game_notes": "Skill: Swimming. Heavy diving suit providing internal atmosphere with 6 hours of air. Reinforced ribbing adds +2 pips to Strength for damage resistance only. Allows dives to 200 meters. Flippers and onboard propulsion unit add 2D to swimming skill with underwater Move rate of 12. Dexterity codes only reduced on land. Helmet comlink with 2km range. Swimming rolls not needed for basic underwater movement.",
+  "source": "WEG40129 Adventure Journal 1 p.62"
+ },
+ {
+  "name": "Haileycraft MaxMode Flotation Lifter",
+  "category": "Survival Gear",
+  "cost": "1,000",
+  "availability": "3 (coastal), 4 (elsewhere)",
+  "game_notes": "Skill: Repulsorlift operation. Underwater mechanical device for lifting light loads to the surface. Two large air canisters mounted on a frame with a sling. Water let in to sink, expelled to raise. About 1 meter long, can be dismantled to fit in a small boat hull. Can handle supply crates plus three divers on straps, plus the driver sitting atop. No motor — goes up and down only, must be manually maneuvered.",
+  "source": "WEG40129 Adventure Journal 1 p.62"
+ },
+ {
+  "name": "WBY-102 FirstMate Sailing Droid",
+  "category": "Droids",
+  "cost": "3,000",
+  "availability": "2",
+  "game_notes": "Height: 1.6m. Move: 8. DEX 3D, KNO 1D, MEC 2D (communications 4D, sailed nautical vessel operation 4D), PER 1D (command 4D — tutorial only), STR 1D, TEC 2D (first aid 3D+1, sailed nautical vessel repair 4D). Humanoid torso with two legs and arms, emergency inflatable flotation bag, comlink, two visual/auditory sensors (Human range), vocabulator, AA-1 Verbobrain. Inertia compensators add 1D to Dexterity when maintaining footing on a swaying deck. Waterproof hard-impact plastic shell (deep blue). Speaks in a deep, confident voice. Programmed for steadfast calm in sea storms but less effective in violent combat situations.",
+  "source": "WEG40129 Adventure Journal 1 p.63"
  }
 ];

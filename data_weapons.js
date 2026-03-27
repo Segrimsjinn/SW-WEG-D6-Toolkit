@@ -4408,5 +4408,16 @@ const WEAPONS_DATA = [
   "availability": "2, X",
   "game_notes": "Used to burn through hulls. Can be shaped, molded, or stretched. A full kilo covers up to 20 square centimeters. Burns for 3 rounds. Ignited by remote relay.",
   "source": "WEG40029 The Far Orbit Project p.18"
+ },
+ {
+  "name": "BlasTech Firearc49 Blaster Speargun",
+  "category": "Ranged",
+  "damage": "Spear: 4D/2D/1D (by range); Blaster: 5D/4D/3D+1 (by range)",
+  "range": "Spear: 3-7/25/50; Blaster: 3-20/30/45",
+  "ammo": "Spear: 3 (1 loaded, 2 side-mounted); Blaster: 50",
+  "cost": "300",
+  "availability": "Restricted to Imperial personnel",
+  "game_notes": "Fire rate: Spear 1/3, Blaster 1. Skill: Blaster rifle. A long metal pipe which shoots a small spear through the water, with a small blaster slung under the spear barrel that shoots a concentrated blue beam. Above stats do not reflect usual underwater damage and skill penalties. Additional spears can be carried in a quiver.",
+  "source": "WEG40129 Adventure Journal 1 p.62"
  }
 ];
