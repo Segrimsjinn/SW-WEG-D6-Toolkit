@@ -360,6 +360,7 @@ const SYSTEMS_DATA = [
   { "name": "Arzid", "grid": "T-9", "region": "Outer Rim Territories", "col": 18, "row": 9, "quadrant": "E", "hours": 4.7 },
   { "name": "Asamin", "grid": "M-7", "region": "Mid Rim", "col": 11, "row": 7, "quadrant": "N", "hours": 4.0 },
   { "name": "Asation", "grid": "K-3", "region": "Outer Rim Territories", "col": 9, "row": 3, "quadrant": "N", "hours": 18.7 },
+  { "name": "Asation - Satikan", "grid": "K-3", "region": "Outer Rim Territories", "col": 9, "row": 3, "quadrant": "N", "hours": 18.7 },
   { "name": "Ash Moon 1", "grid": "T-7", "region": "Outer Rim Territories", "col": 18, "row": 7, "quadrant": "NE", "hours": 7.3 },
   { "name": "Ashas Ree", "grid": "R-5", "region": "Outer Rim Territories", "col": 16, "row": 5, "quadrant": "NE", "hours": 5.8 },
   { "name": "Ashas Rine", "grid": "R-5", "region": "Outer Rim Territories", "col": 16, "row": 5, "quadrant": "NE", "hours": 5.8 },

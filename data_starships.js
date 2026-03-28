@@ -37501,6 +37501,52 @@ const STARSHIP_DATA = {
    },
    "weapons": [],
    "source": "WEG40137 Instant Adventures"
+  },
+  {
+   "rank": 23,
+   "name": "Rokak'k Baran",
+   "craft": "Gree Starship Artifact",
+   "type": "Unique Transportation Habitat",
+   "affiliation": "Gree Enclave",
+   "era": "All Eras",
+   "source": "WEG40138 Classic Adventures Vol 4",
+   "price_new": "",
+   "price_used": "",
+   "scale": "Capital",
+   "length": "5,000 meters",
+   "skill": "Device operation: Rokak'k Baran",
+   "crew": "5,000",
+   "crew_skill": "See Master Rokak'k",
+   "passengers": "10,000",
+   "cargo_capacity": "250,000 metric tons",
+   "consumables": "6 months",
+   "cost": "",
+   "hyperdrive_multiplier": "x3",
+   "hyperdrive_backup": "",
+   "nav_computer": "",
+   "maneuverability": "",
+   "space": "5",
+   "atmosphere": "",
+   "hull": "8D",
+   "shields": "4D",
+   "sensors": {
+    "passive": "100/2D",
+    "scan": "200/2D+2",
+    "search": "400/3D",
+    "focus": "10/3D+2"
+   },
+   "weapons": [
+    {
+     "name": "Varat'k Snarap",
+     "fire_arc": "Turret",
+     "crew": "1",
+     "skill": "Device operation: Varat'k Snarap",
+     "fire_control": "4D",
+     "space_range": "3-15/40/75",
+     "atmosphere_range": "",
+     "damage": "10D"
+    }
+   ]
   }
  ]
 };

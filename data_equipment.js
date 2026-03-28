@@ -3678,5 +3678,23 @@ const EQUIPMENT_DATA = [
   "availability": "2",
   "game_notes": "Skill: Computer programming/repair. Virtually impossible to get lost while linked to an orbiting data source (ship sensors or weather satellite). Relays accurate position, local weather, moving objects, and navigational hazards. Link requires Moderate computer programming/repair roll once per hour to maintain. Unlinked mode extrapolates position with marginal accuracy (Difficult roll for accurate data). Roughly datapad-sized with backlit hinged display, adjustable brightness, and navigational bearing indicator showing direction and speed.",
   "source": "WEG40137 Instant Adventures"
+ },
+ {
+  "name": "Rebel Alliance Treaty Recording System",
+  "category": "Sensors and Communications",
+  "type": "Holorecorder",
+  "cost": "Not available for sale",
+  "availability": "4, X",
+  "game_notes": "Skill: Holorecorder operation: Rebel Alliance Treaty Recording System. Main image lens has fixed focus with only one focal length (depth of visual field 1.1 to 3 meters), making it unusable for long-range surveillance. Images processed through RTZ security filters and recorded on a WORM chip so data cannot be modified. Mounted on gyroscopically stabilized tripod. Only available to Rebel Alliance diplomatic teams.",
+  "source": "WEG40138 Classic Adventures Vol 4"
+ },
+ {
+  "name": "Blastrod",
+  "category": "Weapons",
+  "type": "Gree ranged weapon",
+  "cost": "Not available for sale",
+  "availability": "4, X",
+  "game_notes": "Damage: 4D. A Gree weapon operated using device operation skill rather than blaster skill. Like all Gree technology, it emits musical notes when used and must be 'played' to operate properly. Designed for manipulation by the suckers coating the underside of Gree tentacles.",
+  "source": "WEG40138 Classic Adventures Vol 4"
  }
 ];
