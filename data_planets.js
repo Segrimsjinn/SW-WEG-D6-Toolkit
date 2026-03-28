@@ -7028,5 +7028,32 @@ const PLANETS_DATA = [
     summary: "Licha In is one of the worlds of the Gree Enclave, visited by the Rokak'k Baran only once per year for a single day. Little is known about this isolated world. Ruins of hypergates exist on Licha In, remnants of the ancient gate network that once connected the Gree worlds.",
     locations: "",
     ofNote: "HYPERGATES: Ruins of ancient hypergates exist on Licha In, along with those on Malanose. These remnants of the once-vast gate network are kept as a closely held secret. | ROKAK'K BARAN: The Baran visits Licha In for only one day per year, making it the most isolated of the accessible Gree worlds."
+  },
+  {
+    name: "Kaal",
+    system: "Kaal",
+    star: "",
+    grid: "K-17",
+    region: "Mid Rim",
+    type: "Water world",
+    temperature: "Tropical",
+    atmosphere: "Type I (breathable)",
+    hydrosphere: "Saturated",
+    gravity: "Standard",
+    terrain: "Oceans, archipelagos",
+    lengthOfDay: "36 standard hours",
+    lengthOfYear: "210 local days",
+    sapientSpecies: "Humans, various aliens",
+    starport: "Standard",
+    population: "4.5 million",
+    function: "Aquaculture, entertainment",
+    government: "Criminal organization",
+    techLevel: "Space",
+    majorExports: "Foodstuffs",
+    majorImports: "Luxury items, high technology",
+    source: "WEG40138 Classic Adventures Vol 4",
+    summary: "Kaal was an Imperial resort world in the Mid-Rim until Imperial troops withdrew after their loss at Endor. While here, the Empire did not exploit Kaal's rich ocean life to its full potential, harvesting only what it needed for the planet and allowing the seas to teem with fish, plankton and other possible food sources. When the Empire left, Tirgee Benyalle, the crimelord who ran Kaal's many casinos and entertainment industries, stepped in to run the aquacultural industry. Using capital from her casinos, she purchased several immense repulsorlift harvesters — huge floating factories which ply the oceans, scooping up food from the sea, separating, preserving and packaging it for sale.",
+    locations: "Kaal Starport (Located on a string of islands forming the resort city. Casinos, high-class hotels and other entertainment establishments abound, attracting the galaxy's wealthy classes and underworld elements). Grand Imperial Casino and Hotel (The premier establishment in Kaal's resort city, featuring luxury suites, high-stakes sabacc tables, Trin sticks tables, and numerous other games of chance. Docking bays are located nearby). Unis Islands (A string of islands to the northwest of the starport, formerly home to a more rural resort retreat until tidal waves caused by the Emperor's yacht crashing into the ocean destroyed most of the resort buildings. Now uninhabited, with ruined resort buildings and jungle-dwelling predators).",
+    ofNote: "AQUACULTURE INDUSTRY: Benyalle operates 10 immense repulsorlift harvester factories that hover over Kaal's endless seas, scooping up food from the waters. Only three are currently operating at half capacity due to distribution problems. At full capacity, the industry could generate food for several worlds and still not significantly impact Kaal's ocean life for 100 years. Standard price is 1,800 credits per ton of food shipped. | EMPEROR'S YACHT: Shortly before the Empire withdrew its forces from Kaal (~4 ABY), natives saw a 'shooting star' flash in the sky. This was actually the personal yacht of Emperor Palpatine, piloted by the dark Jedi Jeng Droga, who crashed into the ocean after being driven mad by his master's death at Endor. The resulting impact with the ocean caused tidal waves which destroyed much of the resort city and island settlements throughout the hemisphere. The yacht, as large as a Corellian corvette, reportedly contained an operational cloaking device. | POST-ENDOR NEGOTIATIONS (~6 ABY): After the New Republic's Provisional Council sent teams to negotiate food deals with agricultural worlds, Kaal became the site of tense negotiations between the New Republic, Admiral Kermen representing Imperial remnants, Moff Prentioch seeking to expand his Mid-Rim empire, and Talon Karrde (operating under the alias Syndic Pandis Hart of the Sif-Uwana Council) who was secretly searching for the Emperor's yacht and its cloaking device."
   }
 ];
