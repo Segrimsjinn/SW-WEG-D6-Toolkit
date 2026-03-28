@@ -3442,5 +3442,53 @@ const VEHICLES_DATA = [
   "weapons": "",
   "game_notes": "Repulsor-limo used for formal occasions and transporting VIPs.",
   "source": "WEG40137 Instant Adventures"
+},
+{
+  "name": "Nen-Carvon R-19 Combat Paraglider",
+  "category": "Repulsorcraft",
+  "scale": "Character",
+  "length": "4.5 meters",
+  "skill": "Repulsorlift operation",
+  "crew": "1",
+  "passengers": "0",
+  "cargo_capacity": "80 kilograms",
+  "cover": "",
+  "cost": "Not available for sale",
+  "maneuverability": "3D",
+  "move": "90; 260 kmh",
+  "body": "2D",
+  "altitude_range": "Ground level-5,000 meters",
+  "weapons": "",
+  "game_notes": "Used almost exclusively by Rebel SpecForce troops. Modified from civilian form with reflec body panels that absorb low-powered sensors, making the paraglider appear substantially smaller (sensor detection attempts are one difficulty level higher). Mounting brackets for equipment storage. Augmented repulsorlift package for heavier loads and improved handling.",
+  "source": "WEG40137 Instant Adventures"
+},
+{
+  "name": "Rebel Alliance Combat Sandspeeder",
+  "category": "Airspeeders",
+  "scale": "Speeder",
+  "length": "5.5 meters",
+  "skill": "Repulsorlift operation",
+  "crew": "1",
+  "passengers": "1 (can coordinate)",
+  "cargo_capacity": "10 kilograms",
+  "cover": "Full",
+  "cost": "50,000 (used only, black market)",
+  "maneuverability": "3D",
+  "move": "350; 1,000 kmh",
+  "body": "3D",
+  "altitude_range": "Ground level-250 meters",
+  "weapons": [
+    {
+      "name": "Twin Laser Cannons",
+      "fire_arc": "Front",
+      "fire_linked": true,
+      "skill": "Vehicle blasters",
+      "fire_control": "2D",
+      "range": "50-300/800/1.5 km",
+      "damage": "4D+2"
+    }
+  ],
+  "game_notes": "Modified civilian airspeeder used exclusively by Rebel Alliance forces. Available only on the black market.",
+  "source": "WEG40137 Instant Adventures"
 }
 ];

@@ -3670,5 +3670,13 @@ const EQUIPMENT_DATA = [
   "availability": "",
   "game_notes": "Height: 0.7m, diameter 0.2m. Move: 10. DEX 1D (blaster: drilling laser 1D+2), KNO 1D, MEC 2D (repulsorlift operation 2D+1), PER 2D (search: metals/ores 2D+1), STR 1D, TEC 1D. Repulsorlift engine. Heavy-duty drilling laser (0.5m range, 6D damage, -1D penalty against moving targets). Sensor apparatus (+1D to search for ores/metals). Minimal auditory/visual sensors (-1D to visual/auditory search rolls).",
   "source": "WEG40133 Classic Adventures Vol 3 p.74"
+ },
+ {
+  "name": "SoroSuub Tracker GPS Module (Automap)",
+  "category": "Tools",
+  "cost": "2,000",
+  "availability": "2",
+  "game_notes": "Skill: Computer programming/repair. Virtually impossible to get lost while linked to an orbiting data source (ship sensors or weather satellite). Relays accurate position, local weather, moving objects, and navigational hazards. Link requires Moderate computer programming/repair roll once per hour to maintain. Unlinked mode extrapolates position with marginal accuracy (Difficult roll for accurate data). Roughly datapad-sized with backlit hinged display, adjustable brightness, and navigational bearing indicator showing direction and speed.",
+  "source": "WEG40137 Instant Adventures"
  }
 ];
