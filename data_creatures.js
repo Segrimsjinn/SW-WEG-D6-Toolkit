@@ -6844,5 +6844,47 @@ const CREATURES_DATA = [
   "orneriness": "2D",
   "special": "Hardy Constitution: Can go weeks without food or water and quickly adapt to new environments. Horns (STR+1D damage). Stamina 8D.",
   "source": "WEG40133 Classic Adventures Vol 3 p.113"
+ },
+ {
+  "name": "B'aerlak Beast",
+  "type": "Herd Beast",
+  "planet": "Various (jungle worlds)",
+  "habitat": "Jungle",
+  "dex": "2D",
+  "per": "2D",
+  "str": "6D",
+  "move": "30 kph",
+  "size": "",
+  "orneriness": "2D",
+  "special": "Running 7D. Search 6D. Brawling 8D. Jumping 7D. Slither: Can move very quickly, up to 30 kph. Tough Hide: +2D physical, +1D energy.",
+  "source": "WEG40137 Instant Adventures"
+ },
+ {
+  "name": "Trunk Ripper",
+  "type": "Herbivore (Insectivore)",
+  "planet": "Various (jungle worlds)",
+  "habitat": "Jungle, arboreal",
+  "dex": "3D",
+  "per": "2D",
+  "str": "3D+2",
+  "move": "8, 12 (climbing)",
+  "size": "2 meters long",
+  "orneriness": "",
+  "special": "Claws (STR+2 damage). Body Spines (+2 protection vs physical; anyone falling against spines takes STR damage). Climbing/jumping 6D. Arboreal mammals that rend tree bark to feed on insects. Prehensile tail for maneuvering in branches. Somewhat slothful on the ground.",
+  "source": "WEG40137 Instant Adventures"
+ },
+ {
+  "name": "Zobberan Hound",
+  "type": "Guard Beast",
+  "planet": "Various",
+  "habitat": "Estates, domesticated",
+  "dex": "4D",
+  "per": "2D",
+  "str": "4D",
+  "move": "",
+  "size": "3 meters long",
+  "orneriness": "",
+  "special": "Running 7D. Search 5D. Sneak 6D. Brawling 6D. Jumping 5D. Armored Hide (+2D vs physical, +1D vs energy). Teeth (STR+2D damage). Large, vicious-looking beasts that are extremely loyal and obedient once trained. Not very bright but merciless and deathly silent.",
+  "source": "WEG40137 Instant Adventures"
  }
 ];

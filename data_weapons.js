@@ -4452,5 +4452,16 @@ const WEAPONS_DATA = [
   "availability": "1",
   "game_notes": "Skill: Melee combat, Moderate difficulty to hit as weapon. Hand-held device slightly larger than a hold-out blaster. Adjustable focusing device for depth and intensity. Cuts through blast shielding and durasteel — takes 1 round per 1D of body strength to cut a 2x1 meter hole. Blast goggles required; anyone within 2 meters without eye protection must make Moderate Perception roll or be blinded for 3 minutes (attacker gets +1D to hit blinded targets).",
   "source": "WEG40132 Operation: Elrood p.85"
+ },
+ {
+  "name": "Thermal Mine",
+  "category": "Explosives",
+  "damage": "10D/8D/5D/2D",
+  "range": "0-2/4/6/10 (blast radius)",
+  "ammo": "",
+  "cost": "",
+  "availability": "",
+  "game_notes": "Scale: Speeder. Skill: Demolitions. Anti-structure mine — small matte-black case with digital timer. Blast radius: 0-2/4/6/10 meters with corresponding damage falloff.",
+  "source": "WEG40137 Instant Adventures"
  }
 ];

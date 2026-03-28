@@ -3423,5 +3423,24 @@ const VEHICLES_DATA = [
   "weapons": "",
   "game_notes": "Sport speeder popular on Tatooine. Fast and maneuverable for a civilian vehicle.",
   "source": "WEG40133 Classic Adventures Vol 3 p.101"
+},
+{
+  "name": "Mobquet Corona Luxury Speeder",
+  "category": "Landspeeders",
+  "scale": "Speeder",
+  "length": "",
+  "skill": "Repulsorlift operation: luxury speeder",
+  "crew": "1",
+  "passengers": "",
+  "cargo_capacity": "",
+  "cover": "Full",
+  "cost": "",
+  "maneuverability": "1D",
+  "move": "80; 230 kmh",
+  "body": "3D",
+  "altitude_range": "5 meters",
+  "weapons": "",
+  "game_notes": "Repulsor-limo used for formal occasions and transporting VIPs.",
+  "source": "WEG40137 Instant Adventures"
 }
 ];
