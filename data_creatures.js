@@ -6970,5 +6970,19 @@ const CREATURES_DATA = [
   "orneriness": "1D",
   "special": "Walker scale. Camouflage: Carry abundant living vegetation on their backs — if next to a plateau they are indistinguishable from the surface until they fly away. Armored head (+3D physical, +2D energy), STR+1D ramming damage. Large dorsoventrally flattened animals with chambered gas-filled wings running the length of their limbless bodies. Soil and vegetation accumulate on their backs as they grow, giving the appearance of flying islands from above. Spend days grazing on airborne pollen and insects, drinking from cliffside waterfalls. Powerful creatures able to carry many tons. Make excellent riding beasts — loyal and affectionate. Immune to tamack spores. In old age, decades of soil accumulation prevent them from climbing high enough to graze, and they slowly starve. Dodge 4D, search 5D.",
   "source": "WEG40151 No Disintegrations"
+ },
+ {
+  "name": "Ravenbeast",
+  "type": "Predator",
+  "planet": "Seregar",
+  "habitat": "Jungle canopy",
+  "dex": "4D",
+  "per": "4D",
+  "str": "6D",
+  "move": "15",
+  "size": "Large bipedal",
+  "orneriness": "3D",
+  "special": "Claws (STR+1D+2). Poison: affects any victim stunned or worse by claw attack, causes 5D stun damage for 1D rounds. Enormous bipedal beast with violet fur, horns, large clear fangs, and curving claws. Attacks from treetops by surprise. Flees if wounded, or attacks until it drops one character and drags them off. A complete set of claws and fangs is worth 1,000 credits. Brawling parry 5D+2, search 6D, sneak 6D, brawling 8D.",
+  "source": "WEG40151 No Disintegrations"
  }
 ];

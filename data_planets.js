@@ -7244,5 +7244,32 @@ const PLANETS_DATA = [
     summary: "Le Yer is a beautifully manicured coastal resort town on Abregado-rae. The vegetation is vibrant and the pace of life is slow — people are given to mid-afternoon naps and leisurely walks along the old boardwalk. At the center of town is a very large plaza with vendors and plenty of benches scattered about beautiful gardens. People calmly wander around town, relaxed and apparently unarmed. Beneath the tranquil surface, however, Le Yer is controlled by Provincial Governor A'jidre Skrigatov, a Devaronian crime lord who engineered the assassination of the previous governor and got himself elected to the position. His criminal empire runs the town and the police force.",
     locations: "Triple Nova Casino (A loud, gaudy gambling establishment run by Friizt, one of Skrigatov's associates; serves as a contact point for those doing business with the Governor. Guarded by a dozen Devaronian bouncers with concealed blaster carbines — DEX 3D+1, blaster 4D+2, dodge 5D, melee combat 4D+1, KNO 3D, STR 3D+2, brawling 4D+1; blaster carbines 5D). Brinaloy N'Vaari's Apartment (Residence of the Governor's fiancee, the granddaughter of the previous Provincial Governor). Le Yer Plaza (Central town square with vendors, benches, and beautiful gardens). Le Yer Boardwalk (Old seaside promenade popular for leisurely walks).",
     ofNote: "SKRIGATOV'S REGIME: A'jidre Skrigatov has ruled Le Yer's underworld for many years. Five years ago he engineered the assassination of Provincial Governor N'Vaari and got himself elected. He rapidly expanded his underworld operations until he controlled the town and the police force. He manages his criminal empire by favors and coercion. Le Yer Police Officer stats: All stats 2D except brawling parry 4D, melee combat 3D, melee parry 3D, brawling 4D. Move: 10. Stun baton (5D stun or STR+1D), stun blaster (0-5/10/20, 4D stun), comlink, padded vest (+1D physical, +1 energy). | MALKOI'S CHALLENGE: A Rodian gangster named Malkoi and his trigger-happy cronies settled in Le Yer a couple of years ago, causing tension behind the scenes while his puppet candidate runs against Skrigatov in upcoming local elections. Malkoi's Rodian Thugs: DEX 3D+2, blaster 5D, dodge 5D, melee combat 4D+1, KNO 2D+2, PER 3D+1, STR 3D+2, brawling 4D+1. Move: 10. Blaster pistol (4D). | BRINALOY N'VAARI: Skrigatov's fiancee, a 26-year-old Devaronian woman and granddaughter of the previous Governor. Brinaloy N'Vaari has gone into hiding due to threats from Malkoi's gang, disguising herself as a Twi'lek performer on Phyrstal Island. Her closest friend is Chelah Voh, and her attendant droid MK221 (Emmy-Kaye) was left at Bascko's Droid Repair. The rival bounty hunter Raije, a crazed ZeHethbra, has also been contracted to find her."
+  },
+  {
+    name: "Seregar - Storrd Township",
+    system: "Seregar",
+    star: "",
+    grid: "U-9",
+    region: "Outer Rim Territories",
+    type: "Terrestrial",
+    temperature: "Temperate",
+    atmosphere: "Type I (breathable)",
+    hydrosphere: "Moderate",
+    gravity: "Standard",
+    terrain: "Jungle",
+    lengthOfDay: "",
+    lengthOfYear: "",
+    sapientSpecies: "Humans, various aliens",
+    starport: "Landing field",
+    population: "",
+    function: "Former mining world, smuggling haven",
+    government: "None (lawless)",
+    techLevel: "Space (near landing field)",
+    majorExports: "None (formerly littrium, tolium)",
+    majorImports: "",
+    source: "WEG40151 No Disintegrations p.36",
+    summary: "Seen from space, Seregar appears to be a serene world covered with blue seas and turquoise land masses. The vast jungle is a tangled maze of green and blue vegetation spread across the surface. Used to be big mining territory before the littrium and tolium ran out, but now the place is mostly a ghost town with abandoned mining stations overgrown with jungle. With nothing in the way of local laws but plenty of abandoned equipment and facilities, Seregar has become a convenient stop for smugglers. Storrd Township is the only settlement, a small community in a large clearing that once was a small city but now has many boarded up and vacant buildings. The area near the landing field shows signs of repair and growth.",
+    locations: "CrossWind Saloon (Large two-story wooden building run by Daralla Errine, the center of activity for the growing smuggling trade. Features a long bar, sabacc tables, private rooms on a balcony, and four Klatooinan bouncers. A large sign reads: 'Patrons drawing guns will be shot on sight. Patrons starting fights will be forcibly ejected.'). Cather Taan's Gun Shop (Small stucco-walled building with no windows, packed with an amazing variety of weapons at 20% mark-up. Run by Cather Taan, a stocky weapons dealer and repairman with blaster repair 7D). Callamvor Hotel (Near the landing strip, frequented by Tern Ashandrik and his associates). Storrd Township Landing Field (Run by Ordrin Masst and his two sons Burdek and Nofft who handle repairs. Landing fees: 100 credits/week plus 25 credits each additional week).",
+    ofNote: "LAWLESS FRONTIER: There is no law on Seregar but the locals are well-armed and capable of taking care of themselves. The center of town is dominated by the CrossWind Saloon and Cather Taan's Gun Shop. Daralla Errine maintains order in the CrossWind with Klatooinan bouncers and armed enforcers. | THE MARAUDERS: A local swoop gang loyal to Tern Ashandrik. DEX 3D, blaster 4D+1, brawling parry 5D, KNO 2D+1, MEC 3D+2, swoop operation 5D, PER 3D, STR 3D+1, brawling 4D+2. Move: 10. Heavy blaster pistol (5D), Skybird swoop (speeder-scale, maneuverability 4D, move 210; 600 kmh, body strength 1D). | ASHANDRIK'S HIDEOUT (Seregar Turnabout): The criminal Tern Ashandrik has holed up in the abandoned Trigdale Metallurgy refinery in the jungle west of Storrd Township with his ship, the Arbalest (a modified MRX-BR Pacifier). His gang includes Lliandri (a Twi'lek bounty hunter secretly working with him), Rodian gunmen (DEX 3D+2, blaster 5D, dodge 4D+1, grenade 4D, PER 3D+1, STR 3D+2; blaster carbine 5D, blast vest), Human gunmen (DEX 3D+1, blaster 5D, dodge 5D, melee combat 4D+2, STR 4D; blaster rifle 5D+1, vibroblade STR+3D, blast vest), and Whiphid warriors (DEX 3D+1, melee combat 5D+2, melee parry 5D, STR 4D+2, brawling 5D+1; vibro-axes STR+3D+1). The gambler Tendler Vek and Rebel saboteur Zurric Que'stiil are also present in Storrd Township."
   }
 ];

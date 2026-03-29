@@ -5278,6 +5278,7 @@ const SYSTEMS_DATA = [
   { "name": "Serat", "grid": "L-18", "region": "Mid Rim", "col": 10, "row": 18, "quadrant": "S", "hours": 1.3 },
   { "name": "Sereeda", "grid": "T-7", "region": "Outer Rim Territories", "col": 18, "row": 7, "quadrant": "NE", "hours": 7.3 },
   { "name": "Seregar", "grid": "U-9", "region": "Outer Rim Territories", "col": 19, "row": 9, "quadrant": "E", "hours": 75.6 },
+  { "name": "Seregar - Storrd Township", "grid": "U-9", "region": "Outer Rim Territories", "col": 19, "row": 9, "quadrant": "E", "hours": 75.6 },
   { "name": "Serelia", "grid": "J-16", "region": "Mid Rim", "col": 8, "row": 16, "quadrant": "S", "hours": 5.0 },
   { "name": "Serenity", "grid": "J-16", "region": "Mid Rim", "col": 8, "row": 16, "quadrant": "S", "hours": 5.0 },
   { "name": "Serenno", "grid": "P-5", "region": "Outer Rim Territories", "col": 14, "row": 5, "quadrant": "NE", "hours": 5.5 },
