@@ -6956,5 +6956,19 @@ const CREATURES_DATA = [
   "orneriness": "",
   "special": "Walker scale. Foreclaws (STR+2D damage). Last surviving specimen — the largest insect on Karra. The Karrans can induce it to hibernate in a cave at the base of a plateau, awakening only when called. Mantis-like in appearance with a head resembling a giant Arconan, it walks on four rear legs holding head and slender thorax upright while the thick abdomen remains horizontal. Strikes with long spear-like foreclaws.",
   "source": "WEG40138 Classic Adventures Vol 4"
+ },
+ {
+  "name": "Rormaroo",
+  "type": "Gentle grazer",
+  "planet": "Pallaxides",
+  "habitat": "Highland plateaus, canyons",
+  "dex": "3D",
+  "per": "3D",
+  "str": "2D-8D",
+  "move": "18",
+  "size": "200-300 meters long (adults)",
+  "orneriness": "1D",
+  "special": "Walker scale. Camouflage: Carry abundant living vegetation on their backs — if next to a plateau they are indistinguishable from the surface until they fly away. Armored head (+3D physical, +2D energy), STR+1D ramming damage. Large dorsoventrally flattened animals with chambered gas-filled wings running the length of their limbless bodies. Soil and vegetation accumulate on their backs as they grow, giving the appearance of flying islands from above. Spend days grazing on airborne pollen and insects, drinking from cliffside waterfalls. Powerful creatures able to carry many tons. Make excellent riding beasts — loyal and affectionate. Immune to tamack spores. In old age, decades of soil accumulation prevent them from climbing high enough to graze, and they slowly starve. Dodge 4D, search 5D.",
+  "source": "WEG40151 No Disintegrations"
  }
 ];

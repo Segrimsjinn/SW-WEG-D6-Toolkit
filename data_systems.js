@@ -29,6 +29,7 @@ const SYSTEMS_DATA = [
   { "name": "Abraxin", "grid": "S-6", "region": "Outer Rim Territories", "col": 17, "row": 6, "quadrant": "NE", "hours": 5.5 },
   { "name": "Abregado", "grid": "K-13", "region": "Core Worlds", "col": 9, "row": 13, "quadrant": "C", "hours": 5.0 },
   { "name": "Abregado-rae", "grid": "K-13", "region": "Core Worlds", "col": 9, "row": 13, "quadrant": "C", "hours": 5.0 },
+  { "name": "Abregado-rae - Le Yer", "grid": "K-13", "region": "Core Worlds", "col": 9, "row": 13, "quadrant": "C", "hours": 5.0 },
   { "name": "Abridon", "grid": "J-18", "region": "Outer Rim Territories", "col": 8, "row": 18, "quadrant": "S", "hours": 3.8 },
   { "name": "Abrihom", "grid": "J-19", "region": "Outer Rim Territories", "col": 8, "row": 19, "quadrant": "S", "hours": 5.5 },
   { "name": "Abrion Major", "grid": "S-15", "region": "Outer Rim Territories", "col": 17, "row": 15, "quadrant": "SE", "hours": 3.2 },
