@@ -3336,6 +3336,18 @@ const WEAPONS_DATA = [
   "source": "WEG40114 The Jedi Academy Sourcebook p.68"
  },
  {
+  "name": "GenaTech Zeta One Heavy Ion Cannon",
+  "category": "Starship Weapons",
+  "skill": "Capital ship gunnery: heavy ion cannon",
+  "cost": "Not available for sale",
+  "availability": "4, X",
+  "damage": "7D",
+  "range": "1-5/15/35 (space)",
+  "ammo": "Power generator (1 shot per 50 standard hours)",
+  "game_notes": "Scale: Capital. Crew: 2. Fire Control: 1D. Atmosphere Range: 2-10/30/75 km. Experimental heavy ion cannon developed by an Imperial faction in Corva Sector. Has the potential to completely ionize a ship on the first successful strike. There is a 2 in 6 chance per use that it will backfire and ionize all systems of the ship that carries it. Requires a large amount of energy to fire and can only be used once per 50 standard hour period. Leaves nano-scopic fields of highly ionized particles that telegraph the presence of a vessel bearing this weapon.",
+  "source": "WEG40138 Classic Adventures Vol 4 p.48"
+ },
+ {
   "name": "Bryn & Gweith Leveler 1",
   "category": "Artillery",
   "skill": "Missile weapons: concussion missile launcher",
