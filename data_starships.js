@@ -37547,6 +37547,47 @@ const STARSHIP_DATA = {
      "damage": "10D"
     }
    ]
+  },
+  {
+   "rank": 12,
+   "name": "Arnette Superluminal Rapid Passenger Shuttle",
+   "craft": "DuroTech Arnette-class Superluminal",
+   "type": "Modified Rapid Passenger Shuttle",
+   "affiliation": "General",
+   "era": "Rebellion",
+   "source": "WEG40151 No Disintegrations p.87",
+   "price_new": "200,000",
+   "price_used": "100,000",
+   "scale": "Starfighter",
+   "length": "27 meters",
+   "crew": "2, skeleton: 1/+10, gunners: 1",
+   "passengers": "6",
+   "cargo_capacity": "20 metric tons",
+   "consumables": "1 month",
+   "hyperdrive_multiplier": "x1",
+   "hyperdrive_backup": "x10",
+   "nav_computer": "Yes",
+   "maneuverability": "2D",
+   "space_speed": "7",
+   "atmosphere_speed": "350; 1,000 kmh",
+   "hull": "2D",
+   "shields": "4D",
+   "sensors_passive": "25/1D",
+   "sensors_scan": "50/2D",
+   "sensors_search": "75/3D",
+   "sensors_focus": "3/4D",
+   "weapons": [
+    {
+     "name": "Double Laser Cannon",
+     "fire_arc": "Turret",
+     "crew": "1 (can be fired from cockpit at fire control 0D)",
+     "skill": "Starship Gunnery",
+     "fire_control": "2D",
+     "space_range": "1-3/12/25",
+     "atmo_range": "100-300/1.2/2.5 km",
+     "damage": "5D"
+    }
+   ]
   }
  ]
 };

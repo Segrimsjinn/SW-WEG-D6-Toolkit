@@ -6984,5 +6984,33 @@ const CREATURES_DATA = [
   "orneriness": "3D",
   "special": "Claws (STR+1D+2). Poison: affects any victim stunned or worse by claw attack, causes 5D stun damage for 1D rounds. Enormous bipedal beast with violet fur, horns, large clear fangs, and curving claws. Attacks from treetops by surprise. Flees if wounded, or attacks until it drops one character and drags them off. A complete set of claws and fangs is worth 1,000 credits. Brawling parry 5D+2, search 6D, sneak 6D, brawling 8D.",
   "source": "WEG40151 No Disintegrations"
+ },
+ {
+  "name": "Redbeast",
+  "type": "Omnivorous scavenger/hunter",
+  "planet": "Reaper's World",
+  "habitat": "Urban lowest levels, tundra",
+  "dex": "2D",
+  "per": "2D",
+  "str": "2D",
+  "move": "18",
+  "size": "1 meter tall, 2 meters long, 1.5 meter tail",
+  "orneriness": "2D",
+  "special": "Bite (STR+1D). Travel in packs of 2-12. Sinuous quadrupeds with thick coarse gray fur with black spots and crimson eyes. Remarkably enduring and adaptive — more resistant to poison and extreme cold than humans. Strong jaws and chisel-like teeth can gnaw through anything short of durasteel given enough time. Can be frightened off by fire, blaster shots, or explosions. Search 4D, sneak 3D, brawling 3D, climbing/jumping 4D, stamina 6D.",
+  "source": "WEG40151 No Disintegrations"
+ },
+ {
+  "name": "Neph",
+  "type": "Docile flying beast",
+  "planet": "Dalos IV",
+  "habitat": "Atmosphere, jungle",
+  "dex": "1D-2D",
+  "per": "2D",
+  "str": "3D-5D",
+  "move": "2 (walking), 14 (flying)",
+  "size": "2-8 meters thick, 6-24 meters long, 12-48 meter wingspan",
+  "orneriness": "1D",
+  "special": "Speeder scale. Tail-lash (STR damage). Huge docile flying beasts that keep aloft by generating hydrogen from water vapor and storing it in internal sacs; vent gas to drop in altitude. Maneuver via flat rubbery wings and long rudder-like tail. Feed on insects and pollen permeating Dalos IV's atmosphere. Juveniles make perfect one-person riding mounts (Very Easy beast riding, Easy during trophy chase games). Mature creatures carry up to 20 people in strapped gondolas. Used in the popular trophy chase sport.",
+  "source": "WEG40151 No Disintegrations"
  }
 ];

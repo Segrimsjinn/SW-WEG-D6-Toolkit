@@ -1045,6 +1045,7 @@ const SYSTEMS_DATA = [
   { "name": "Chateuse", "grid": "K-19", "region": "Outer Rim Territories", "col": 9, "row": 19, "quadrant": "S", "hours": 0.7 },
   { "name": "Chaykin", "grid": "O-14", "region": "Expansion Region", "col": 13, "row": 14, "quadrant": "E", "hours": 1.3 },
   { "name": "Chazwa", "grid": "N-8", "region": "Inner Rim", "col": 12, "row": 8, "quadrant": "E", "hours": 3.0 },
+  { "name": "Chazwa - Iritsa", "grid": "N-8", "region": "Inner Rim", "col": 12, "row": 8, "quadrant": "E", "hours": 3.0 },
   { "name": "Cheedoa", "grid": "M-12", "region": "Colonies", "col": 11, "row": 12, "quadrant": "C", "hours": 2.2 },
   { "name": "Cheelit", "grid": "I-16", "region": "Mid Rim", "col": 7, "row": 16, "quadrant": "SW", "hours": 6.0 },
   { "name": "Cheeyoom Matee", "grid": "K-9", "region": "Core Worlds", "col": 9, "row": 9, "quadrant": "C", "hours": 3.7 },
