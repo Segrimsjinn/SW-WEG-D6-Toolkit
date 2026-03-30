@@ -5049,6 +5049,7 @@ const SYSTEMS_DATA = [
   { "name": "Ro Mira", "grid": "P-8", "region": "Mid Rim", "col": 14, "row": 8, "quadrant": "E", "hours": 3.8 },
   { "name": "Ro-Loo Triangle", "grid": "P-16", "region": "Mid Rim", "col": 14, "row": 16, "quadrant": "SE", "hours": 4.5 },
   { "name": "Rocantor", "grid": "L-15", "region": "Expansion Region", "col": 10, "row": 15, "quadrant": "S", "hours": 2.2 },
+  { "name": "Roche", "grid": "K-12", "region": "Mid Rim", "col": 9, "row": 12, "quadrant": "S", "hours": 1.8 },
   { "name": "Rocedila", "grid": "R-6", "region": "Outer Rim Territories", "col": 16, "row": 6, "quadrant": "NE", "hours": 1.5 },
   { "name": "Rocrin", "grid": "M-20", "region": "Outer Rim Territories", "col": 11, "row": 20, "quadrant": "S", "hours": 14.7 },
   { "name": "Rocun Cluster", "grid": "S-14", "region": "Outer Rim Territories", "col": 17, "row": 14, "quadrant": "E", "hours": 6.7 },

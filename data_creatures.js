@@ -7012,5 +7012,19 @@ const CREATURES_DATA = [
   "orneriness": "1D",
   "special": "Speeder scale. Tail-lash (STR damage). Huge docile flying beasts that keep aloft by generating hydrogen from water vapor and storing it in internal sacs; vent gas to drop in altitude. Maneuver via flat rubbery wings and long rudder-like tail. Feed on insects and pollen permeating Dalos IV's atmosphere. Juveniles make perfect one-person riding mounts (Very Easy beast riding, Easy during trophy chase games). Mature creatures carry up to 20 people in strapped gondolas. Used in the popular trophy chase sport.",
   "source": "WEG40151 No Disintegrations"
+ },
+ {
+  "name": "Trompa",
+  "type": "Fierce Predator",
+  "planet": "Questal",
+  "habitat": "Temperate",
+  "dex": "2D",
+  "per": "2D",
+  "str": "5D",
+  "move": "12",
+  "size": "2.5-2.9 meters tall",
+  "orneriness": "3D",
+  "special": "Teeth (STR damage). Claws (STR+2 damage). Distant cousin to the arctic wampa of Hoth, adapted to temperate climates. Adults stand almost three meters tall with arms hanging to the knees and six-inch claws. Grotesque face with simian and reptilian features. In its natural environment, the trompa has no predators and is sovereign over all it surveys. Can move very quietly and strike with speed that belies its size — death is usually instantaneous. Highly developed senses react to the Hurlothrumbic Generator's fear waves, becoming extremely agitated. Can be trained with an electric prod, but remains dangerous if provoked.",
+  "source": "WEG40165 Classic Adventures Vol 5"
  }
 ];
