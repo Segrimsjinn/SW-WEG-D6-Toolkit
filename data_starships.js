@@ -4738,6 +4738,58 @@ const STARSHIP_DATA = {
      "damage": "5D"
     }
    ]
+  },
+  {
+   "rank": 20,
+   "name": "Daunted Gypsy",
+   "craft": "SoroSuub Jermaguim Modified Light Freighter",
+   "type": "Modified light freighter",
+   "affiliation": "New Republic",
+   "era": "New Republic",
+   "source": "WEG40060 Twin Stars of Kira p.84",
+   "price_new": "",
+   "price_used": "",
+   "scale": "Starfighter",
+   "length": "25 meters",
+   "crew": "2",
+   "gunners": "2",
+   "passengers": "8",
+   "cargo": "85 metric tons",
+   "consumables": "2 months",
+   "hyperdrive": "x1 (x12 Bkup)",
+   "nav_computer": "Yes",
+   "maneuverability": "2D",
+   "space": "6",
+   "atmosphere": "330; 950 kmh",
+   "hull": "4D+2",
+   "shields": "2D",
+   "of_note": "New Republic-provided tramp freighter used for covert missions. Three double laser cannons fire separately (1 front, 2 turret).",
+   "sensors_passive": "",
+   "sensors_scan": "",
+   "sensors_search": "",
+   "sensors_focus": "",
+   "weapons": [
+    {
+     "name": "Double Laser Cannon",
+     "fire_arc": "Front",
+     "crew": "1",
+     "skill": "Starship Gunnery",
+     "fire_control": "1D+2",
+     "space_range": "1-3/12/25",
+     "atmo_range": "100-300m/1.2km/2.5km",
+     "damage": "4D"
+    },
+    {
+     "name": "2 Double Laser Cannons",
+     "fire_arc": "Turret",
+     "crew": "1",
+     "skill": "Starship Gunnery",
+     "fire_control": "1D+2",
+     "space_range": "1-3/12/25",
+     "atmo_range": "100-300m/1.2km/2.5km",
+     "damage": "4D"
+    }
+   ]
   }
  ],
  "Yachts": [

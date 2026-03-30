@@ -7649,5 +7649,32 @@ const PLANETS_DATA = [
     summary: "Plagen is a normal-sized planet orbiting a blue star in the Pax system. Its beautiful sky and lush yellow flora on the plateaus give the place a calm, peaceful look — in stark contrast to its native inhabitants, the Chikarri, who are hyperactive and short-tempered. Being a center of trade on the Enarc Run, it is almost always bustling with activity, with millions of tons of goods traded each day. The Chikarri were bribed into selling trade rights to the Klatooinian Trade Guild centuries ago with a shipload of precious gems. A second shipload was lost in the Karbonni asteroid belt and its cargo ship, the Fool's Gold, became the subject of a massive treasure hunt.",
     locations: "TreeLeaf (Capital city of the Celdas plateau and largest city on Plagen. A modern city with fusion-formed roadbeds, holo-displays, and a large spaceport bustling with ships of all sizes and types. Contains outlets and warehouses for all leading trading companies. Boyd's Be-There-In-A-Minute Delivery Service operates from a run-down shack in the shipping sector with an adjacent hangar).",
     ofNote: "CHIKARRI: Furry, short, squirrel-like sapient beings. Hyperactive and short-tempered, very fond of shiny objects such as jewels and trinkets. Typical Chikarri cities are built in the trees on the plateaus, with small walkways connecting spherical buildings. They speak Basic with a pronounced lisp due to their oversized front teeth. Chikarri space law holds that a dead ship belongs to whoever finds it. | KARBONNI ASTEROID BELT: All that remains of the third planet in the Pax system. Full of metallic ores that make sensor detection nearly impossible, and the random movement of asteroids makes it too dangerous for mining. The lost cargo ship Fool's Gold, carrying billions of credits worth of gems intended for the Chikarri, has been stranded here for centuries. | FOOL'S GOLD: A massive cargo ship roughly one kilometer in length, built solely for shipping priceless cargoes with the best inertial damping equipment available. Forced out of hyperspace by an asteroid collision centuries ago, its control room was shattered and the ship was left stranded with mummified crew still at their posts. Its power is now failing."
+  },
+  {
+    name: "Seltos",
+    system: "Seltos",
+    star: "",
+    grid: "N-16",
+    region: "Mid Rim",
+    type: "Terrestrial",
+    temperature: "Temperate",
+    atmosphere: "Type I (Breathable)",
+    hydrosphere: "Moderate",
+    gravity: "Standard",
+    terrain: "Forest, mountains",
+    lengthOfDay: "20 Standard Hours",
+    lengthOfYear: "459 Local Days",
+    sapientSpecies: "Humans",
+    starport: "Standard",
+    population: "4 million",
+    function: "Food Production, Lumber, Mining",
+    government: "Republic (pro-New Republic)",
+    techLevel: "Space",
+    majorExports: "Foodstuffs, lumber, precious ores",
+    majorImports: "High technology",
+    source: "WEG40060 Twin Stars of Kira p.75",
+    summary: "Seltos is a low-population forest planet that received only minor attention from Imperial forces in the past. The majority of the population is Human, primarily Corellians and Kuarians, with some alien groups who have settled here. The primary industry is food production, with lumbering and precious ore mining providing nearly a third of the planet's income. Many forest areas are wild preserves or privately owned, supporting a small tourism economy. The planet's climate is warm and pleasant, and the people have personalities to match. Seltos was one of the first worlds to secede from the Empire after the Battle of Endor, routing the Imperial garrison of about 300 troops into the forests and placing the Imperial governor in a stockade.",
+    locations: "Somin City (Capital city, home to a third of the planet's four million residents. Freedom Hall is the nine-story main government building housing all planetary bureaucratic offices including the Magister of Trade on the fifth floor. The Star Hotel is a ten-story building where New Republic diplomats are housed in penthouse suites. Hovering condominium complexes on repulsor pads float ten meters above ground with open-air turbolifts). Hidden Imperial Base (A cave system west of Somin City, approximately 300 meters deep, containing a natural cavern 50 meters across. Houses about 50 Imperial Army troops and 12 biker scouts with speeder bikes, portable ion cannons, E-Web repeating blasters, temporary barracks, and a full communications suite with atmosphere/orbit sensors and subspace radio).",
+    ofNote: "POST-ENDOR REVOLUTION: Two months after the Battle of Endor, several factions on Seltos drove out the Imperial garrison of roughly 300 troops, forcing them into the forests and mountains. The Imperial governor was placed in a stockade awaiting trial. A pro-New Republic republican government was formed and Mon Mothma sent diplomats to advise on taxation and armament. | IMPERIAL CONSPIRACY: The Magister of Trade Sinya Deboora is an Imperial spy meeting secretly with Lieutenant Hensworth at the hidden Imperial base. Hensworth has promised her the planetary governorship when the Empire retakes control. A Victory-class Star Destroyer has been dispatched to supervise the subjugation. | DEFENSES: The planet's own forces include the Seltos Planetary Soldiers. The New Republic gifted six Y-wing fighters to the new government. The Lazerian spacefleet and Seltos' location on the Enarc Run provide some regional security."
   }
 ];

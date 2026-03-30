@@ -30516,5 +30516,29 @@ const NOTABLE_NPCS = [
     equipment: "Hold-out blaster (3D damage), comlink, datapad, Imperial uniform",
     capsule: "Governor Bursthed is the Imperial governor of Ruten in the Cerenia system. Widely known to be corrupt and evil, but also an efficient bureaucrat. After the military arm of the Empire subdued resistance on Ruten, he moved in and has been governing the planet for several months. Power hungry and ambitious, he considers the assignment beneath him but knows he must do an effective job to earn promotion. He takes his frustrations out on the populace and is not popular except with his sycophantic court. His only hobby is collecting exotic animals from across the galaxy for his private menagerie, hosting frequent pet shows where his pet always wins first prize. The land given as prizes generally belongs to unfortunate farmers accused of treason and evicted, and many animal tricks involve violence against convicted 'Rebel leaders.'",
     source: "WEG40060 Twin Stars of Kira p.72"
+  },
+  {
+    name: "Wertram Farege",
+    species: "Human",
+    system: "Brevost",
+    location: "Brevost",
+    affiliations: ["Criminal Underworld"],
+    role: "Outlaw / Iskallon Agent",
+    type: "Minor NPC",
+    stats: {
+      DEXTERITY: { base: "4D", skills: {} },
+      KNOWLEDGE: { base: "3D", skills: {} },
+      MECHANICAL: { base: "2D+2", skills: {} },
+      PERCEPTION: { base: "2D", skills: { "bargain": "4D", "con": "5D" } },
+      STRENGTH: { base: "3D+1", skills: {} },
+      TECHNICAL: { base: "3D", skills: {} }
+    },
+    specialAbilities: "",
+    forcePoints: "0",
+    characterPoints: "5",
+    move: "10",
+    equipment: "Blaster pistol (4D damage), hold-out blaster (3D+2 damage), 1,000 credits, flashy bright clothing",
+    capsule: "Wertram Farege is a small, lithe, and wily-looking character, usually preoccupied with whether his brown hair is straight and how his clothing looks. He struts around with much bravado but is a coward at heart, interested only in making money. He has made a deal with the Iskalloni — a race of techno-organic cyborgs — to lure smugglers and their ships into Iskallon space where they can be captured and sold. In return, the Iskalloni promise him a commission on every ship. He approaches targets on Brevost, staging fake muggings to earn their trust, then sabotages their ships during the hyperspace journey to Iskadrell. However, he discovers too late that the Iskalloni intend to enslave and cybernetically convert him as well.",
+    source: "WEG40060 Twin Stars of Kira p.88"
   }
 ];
