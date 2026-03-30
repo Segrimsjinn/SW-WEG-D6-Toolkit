@@ -1,5 +1,5 @@
 const STARSHIP_DATA = {
- "Space Transports": [
+ "Stock Space Transports": [
   {
    "rank": 20,
    "name": "1A-Telak Light Freighter",
@@ -981,58 +981,6 @@ const STARSHIP_DATA = {
      "space_range": "1-3/12/25",
      "atmo_range": "100-300/1.2/2.5 km",
      "damage": "4D"
-    }
-   ]
-  },
-  {
-   "rank": 86,
-   "name": "Shroud Freighter/Fighter (Luke's Ship)",
-   "craft": "Modified Ghtroc Industries Class 720 Freighter",
-   "type": "Modified light freighter",
-   "affiliation": "New Republic",
-   "era": "New Republic",
-   "source": "WEG40131 The Thrawn Trilogy Sourcebook p.230",
-   "price_new": "143,500 (98,500 freighter + 45,000 modifications)",
-   "price_used": "",
-   "scale": "Starfighter",
-   "length": "38 meters",
-   "crew": "1 (1 can coordinate)",
-   "gunners": "1",
-   "passengers": "",
-   "cargo": "X-wing and 15 kg",
-   "consumables": "1 week",
-   "hyperdrive": "x2",
-   "nav_computer": "Yes",
-   "maneuverability": "1D",
-   "space": "3",
-   "atmosphere": "260; 750 kmh",
-   "hull": "2D+2",
-   "shields": "1D",
-   "of_note": "x15 backup. 1 astromech droid (R2-D2). Modified cargo bay stores one X-wing and can release it in flight. Shroud Package: repulsor shunt distributes metallic particle cloud adding +1D to sensor check difficulty and +3D to tractor beam attempt difficulty within or through the cloud.",
-   "sensors_passive": "15/0D",
-   "sensors_scan": "30/1D",
-   "sensors_search": "50/3D",
-   "sensors_focus": "2/4D",
-   "weapons": [
-    {
-     "name": "Double Laser Cannon",
-     "fire_arc": "Turret",
-     "crew": "1",
-     "skill": "Starship gunnery",
-     "fire_control": "1D+1",
-     "space_range": "1-3/12/25",
-     "atmo_range": "100-300/1.2/2.5 km",
-     "damage": "4D"
-    },
-    {
-     "name": "Proton Torpedo Launcher",
-     "fire_arc": "Rear",
-     "crew": "",
-     "skill": "Starship gunnery",
-     "fire_control": "1D",
-     "space_range": "1/3/7",
-     "atmo_range": "50-100/300/700",
-     "damage": "7D"
     }
    ]
   },
@@ -3483,69 +3431,6 @@ const STARSHIP_DATA = {
   },
   {
    "rank": 47,
-   "name": "Slave II",
-   "craft": "MandalMotors Pursuer Enforcement Ship",
-   "type": "Modified Systems Patrol Vehicle",
-   "affiliation": "The Fringe",
-   "era": "New Republic",
-   "source": "WEG40071 Dark Empire Sourcebook p.104",
-   "price_new": "Not for sale (Boba Fett)",
-   "price_used": "",
-   "scale": "Starfighter",
-   "length": "30.1 meters",
-   "crew": "1",
-   "gunners": "",
-   "passengers": "2, 5 (prison cells)",
-   "cargo": "35 metric tons",
-   "consumables": "5 weeks",
-   "hyperdrive": "x1",
-   "hyperdrive_backup": "x16",
-   "nav_computer": "Yes",
-   "maneuverability": "1D",
-   "space": "7",
-   "atmosphere": "350; 1,000 kmh",
-   "hull": "5D",
-   "shields": "1D",
-   "of_note": "Boba Fett's backup ship, used while Slave I was in Alliance hands. Based on a Mandalorian police ship design — less armed than Slave I but faster and more maneuverable. Fett uses it to keep a low profile while taking advantage of his presumed death. Cost: 225,000 credits.",
-   "sensors_passive": "35/1D+1",
-   "sensors_scan": "55/2D+1",
-   "sensors_search": "80/3D+1",
-   "sensors_focus": "3/4D+1",
-   "weapons": [
-    {
-     "name": "Twin Blaster Cannon (fire-linked)",
-     "fire_arc": "Front",
-     "crew": "1",
-     "skill": "Starship gunnery",
-     "fire_control": "2D",
-     "space_range": "1-5/10/17",
-     "atmo_range": "100-500/1/1.7 km",
-     "damage": "5D"
-    },
-    {
-     "name": "1 Ion Cannon",
-     "fire_arc": "Turret",
-     "crew": "1",
-     "skill": "Starship gunnery",
-     "fire_control": "2D",
-     "space_range": "1-3/7/36",
-     "atmo_range": "50-100/200/500",
-     "damage": "8D"
-    },
-    {
-     "name": "1 Proton Torpedo Launcher",
-     "fire_arc": "Back",
-     "crew": "1",
-     "skill": "Starship gunnery",
-     "fire_control": "3D+2",
-     "space_range": "1/3/7",
-     "atmo_range": "50-100/300/700",
-     "damage": "7D"
-    }
-   ]
-  },
-  {
-   "rank": 47,
    "name": "Hyperspace Marauder",
    "craft": "TransGalMeg Xiytiar-class Transport",
    "type": "Modified large transport",
@@ -3575,49 +3460,6 @@ const STARSHIP_DATA = {
    "sensors_search": "40/3D",
    "sensors_focus": "2/3D",
    "weapons": []
-  },
-  {
-   "rank": 47,
-   "name": "Starlight Intruder",
-   "craft": "Custom Mobquet Medium Cargo Hauler",
-   "type": "Modified medium transport",
-   "affiliation": "The Fringe",
-   "era": "New Republic",
-   "source": "WEG40071 Dark Empire Sourcebook p.103",
-   "price_new": "Not for sale (Salla Zend)",
-   "price_used": "",
-   "scale": "Starfighter",
-   "length": "79.3 meters",
-   "crew": "2",
-   "gunners": "2",
-   "passengers": "8",
-   "cargo": "700 metric tons",
-   "consumables": "2 months",
-   "hyperdrive": "x0.75",
-   "hyperdrive_backup": "x11",
-   "nav_computer": "Yes",
-   "maneuverability": "1D",
-   "space": "6",
-   "atmosphere": "330; 950 kmh",
-   "hull": "8D",
-   "shields": "4D+1",
-   "of_note": "Skeleton 1/+10. Licensed Deep Core Hauler — one of the regular freighters to carry material to Byss. Salla Zend and Shug Ninx's ship, a perpetual work-in-progress aimed at becoming the fastest ship in the galaxy.",
-   "sensors_passive": "30/1D",
-   "sensors_scan": "80/2D",
-   "sensors_search": "120/3D",
-   "sensors_focus": "4/4D",
-   "weapons": [
-    {
-     "name": "2 Medium Turbolasers",
-     "fire_arc": "Turret",
-     "crew": "1",
-     "skill": "Starship gunnery",
-     "fire_control": "2D",
-     "space_range": "1-3/12/25",
-     "atmo_range": "100-300/1.2/2.5 km",
-     "damage": "5D"
-    }
-   ]
   },
   {
    "rank": 47,
@@ -4695,6 +4537,166 @@ const STARSHIP_DATA = {
    "sensors_search": "130/2D",
    "sensors_focus": "6/3D",
    "weapons": []
+  }
+ ],
+ "Named Modified Space Transports": [
+  {
+   "rank": 86,
+   "name": "Shroud Freighter/Fighter (Luke's Ship)",
+   "craft": "Modified Ghtroc Industries Class 720 Freighter",
+   "type": "Modified light freighter",
+   "affiliation": "New Republic",
+   "era": "New Republic",
+   "source": "WEG40131 The Thrawn Trilogy Sourcebook p.230",
+   "price_new": "143,500 (98,500 freighter + 45,000 modifications)",
+   "price_used": "",
+   "scale": "Starfighter",
+   "length": "38 meters",
+   "crew": "1 (1 can coordinate)",
+   "gunners": "1",
+   "passengers": "",
+   "cargo": "X-wing and 15 kg",
+   "consumables": "1 week",
+   "hyperdrive": "x2",
+   "nav_computer": "Yes",
+   "maneuverability": "1D",
+   "space": "3",
+   "atmosphere": "260; 750 kmh",
+   "hull": "2D+2",
+   "shields": "1D",
+   "of_note": "x15 backup. 1 astromech droid (R2-D2). Modified cargo bay stores one X-wing and can release it in flight. Shroud Package: repulsor shunt distributes metallic particle cloud adding +1D to sensor check difficulty and +3D to tractor beam attempt difficulty within or through the cloud.",
+   "sensors_passive": "15/0D",
+   "sensors_scan": "30/1D",
+   "sensors_search": "50/3D",
+   "sensors_focus": "2/4D",
+   "weapons": [
+    {
+     "name": "Double Laser Cannon",
+     "fire_arc": "Turret",
+     "crew": "1",
+     "skill": "Starship gunnery",
+     "fire_control": "1D+1",
+     "space_range": "1-3/12/25",
+     "atmo_range": "100-300/1.2/2.5 km",
+     "damage": "4D"
+    },
+    {
+     "name": "Proton Torpedo Launcher",
+     "fire_arc": "Rear",
+     "crew": "",
+     "skill": "Starship gunnery",
+     "fire_control": "1D",
+     "space_range": "1/3/7",
+     "atmo_range": "50-100/300/700",
+     "damage": "7D"
+    }
+   ]
+  },
+  {
+   "rank": 47,
+   "name": "Slave II",
+   "craft": "MandalMotors Pursuer Enforcement Ship",
+   "type": "Modified Systems Patrol Vehicle",
+   "affiliation": "The Fringe",
+   "era": "New Republic",
+   "source": "WEG40071 Dark Empire Sourcebook p.104",
+   "price_new": "Boba Fett",
+   "price_used": "",
+   "scale": "Starfighter",
+   "length": "30.1 meters",
+   "crew": "1",
+   "gunners": "",
+   "passengers": "2, 5 (prison cells)",
+   "cargo": "35 metric tons",
+   "consumables": "5 weeks",
+   "hyperdrive": "x1",
+   "hyperdrive_backup": "x16",
+   "nav_computer": "Yes",
+   "maneuverability": "1D",
+   "space": "7",
+   "atmosphere": "350; 1,000 kmh",
+   "hull": "5D",
+   "shields": "1D",
+   "of_note": "Boba Fett's backup ship, used while Slave I was in Alliance hands. Based on a Mandalorian police ship design — less armed than Slave I but faster and more maneuverable. Fett uses it to keep a low profile while taking advantage of his presumed death. Cost: 225,000 credits.",
+   "sensors_passive": "35/1D+1",
+   "sensors_scan": "55/2D+1",
+   "sensors_search": "80/3D+1",
+   "sensors_focus": "3/4D+1",
+   "weapons": [
+    {
+     "name": "Twin Blaster Cannon (fire-linked)",
+     "fire_arc": "Front",
+     "crew": "1",
+     "skill": "Starship gunnery",
+     "fire_control": "2D",
+     "space_range": "1-5/10/17",
+     "atmo_range": "100-500/1/1.7 km",
+     "damage": "5D"
+    },
+    {
+     "name": "1 Ion Cannon",
+     "fire_arc": "Turret",
+     "crew": "1",
+     "skill": "Starship gunnery",
+     "fire_control": "2D",
+     "space_range": "1-3/7/36",
+     "atmo_range": "50-100/200/500",
+     "damage": "8D"
+    },
+    {
+     "name": "1 Proton Torpedo Launcher",
+     "fire_arc": "Back",
+     "crew": "1",
+     "skill": "Starship gunnery",
+     "fire_control": "3D+2",
+     "space_range": "1/3/7",
+     "atmo_range": "50-100/300/700",
+     "damage": "7D"
+    }
+   ]
+  },
+  {
+   "rank": 47,
+   "name": "Starlight Intruder",
+   "craft": "Custom Mobquet Medium Cargo Hauler",
+   "type": "Modified medium transport",
+   "affiliation": "The Fringe",
+   "era": "New Republic",
+   "source": "WEG40071 Dark Empire Sourcebook p.103",
+   "price_new": "Salla Zend",
+   "price_used": "",
+   "scale": "Starfighter",
+   "length": "79.3 meters",
+   "crew": "2",
+   "gunners": "2",
+   "passengers": "8",
+   "cargo": "700 metric tons",
+   "consumables": "2 months",
+   "hyperdrive": "x0.75",
+   "hyperdrive_backup": "x11",
+   "nav_computer": "Yes",
+   "maneuverability": "1D",
+   "space": "6",
+   "atmosphere": "330; 950 kmh",
+   "hull": "8D",
+   "shields": "4D+1",
+   "of_note": "Skeleton 1/+10. Licensed Deep Core Hauler — one of the regular freighters to carry material to Byss. Salla Zend and Shug Ninx's ship, a perpetual work-in-progress aimed at becoming the fastest ship in the galaxy.",
+   "sensors_passive": "30/1D",
+   "sensors_scan": "80/2D",
+   "sensors_search": "120/3D",
+   "sensors_focus": "4/4D",
+   "weapons": [
+    {
+     "name": "2 Medium Turbolasers",
+     "fire_arc": "Turret",
+     "crew": "1",
+     "skill": "Starship gunnery",
+     "fire_control": "2D",
+     "space_range": "1-3/12/25",
+     "atmo_range": "100-300/1.2/2.5 km",
+     "damage": "5D"
+    }
+   ]
   },
   {
    "rank": 20,
@@ -4704,7 +4706,7 @@ const STARSHIP_DATA = {
    "affiliation": "General",
    "era": "",
    "source": "WEG40060 Twin Stars of Kira p.11",
-   "price_new": "",
+   "price_new": "Pirates",
    "price_used": "",
    "scale": "Starfighter",
    "length": "",
@@ -4747,7 +4749,7 @@ const STARSHIP_DATA = {
    "affiliation": "New Republic",
    "era": "New Republic",
    "source": "WEG40060 Twin Stars of Kira p.84",
-   "price_new": "",
+   "price_new": "New Republic",
    "price_used": "",
    "scale": "Starfighter",
    "length": "25 meters",
@@ -4790,9 +4792,368 @@ const STARSHIP_DATA = {
      "damage": "4D"
     }
    ]
+  },
+  {
+   "rank": 1,
+   "name": "Wild Karrde",
+   "craft": "Modified Corellian Action VI Transport",
+   "type": "Modified medium bulk freighter",
+   "affiliation": "The Fringe",
+   "era": "New Republic",
+   "source": "WEG40131 The Thrawn Trilogy Sourcebook p.228",
+   "price_new": "Talon Karrde",
+   "price_used": "",
+   "scale": "Capital",
+   "length": "125 meters",
+   "crew": "28",
+   "gunners": "",
+   "passengers": "",
+   "cargo": "50,000 metric tons",
+   "consumables": "6 months",
+   "hyperdrive": "x1",
+   "nav_computer": "Yes",
+   "maneuverability": "2D",
+   "space": "6",
+   "atmosphere": "330; 950 kmh",
+   "hull": "4D",
+   "shields": "3D",
+   "of_note": "Talon Karrde's personal ship. x10 backup. Sensor mask adds 4D+2 to difficulty to detect ship with sensors.",
+   "sensors_passive": "40/2D",
+   "sensors_scan": "80/2D+2",
+   "sensors_search": "75/3D",
+   "sensors_focus": "4/3D+1",
+   "weapons": [
+    {
+     "name": "3 Turbolasers (fire separately)",
+     "fire_arc": "Turret",
+     "crew": "",
+     "skill": "Starship gunnery",
+     "fire_control": "2D",
+     "space_range": "3-15/35/75",
+     "atmo_range": "300-1.5/3.5/7.5 km",
+     "damage": "5D"
+    }
+   ]
+  },
+  {
+   "rank": 20,
+   "name": "Outrider",
+   "craft": "Modified Corellian YT-2400 Transport",
+   "type": "Modified Light Freighter",
+   "affiliation": "The Fringe",
+   "era": "Rebellion",
+   "source": "WEG40122 Shadows of the Empire p.119",
+   "price_new": "Dash Rendar",
+   "price_used": "",
+   "scale": "Starfighter",
+   "length": "21 meters",
+   "crew": "2, gunners: 2, skeleton: 1/+10",
+   "gunners": "",
+   "passengers": "4",
+   "cargo": "75 metric tons",
+   "consumables": "2 months",
+   "hyperdrive": "x0.75",
+   "hyperdrive_backup": "x10",
+   "nav_computer": "Yes",
+   "maneuverability": "2D",
+   "space": "8",
+   "atmosphere": "365; 1,050 kmh",
+   "hull": "5D",
+   "shields": "3D+2",
+   "of_note": "Dash Rendar's heavily modified YT-2400. Sensor stealth suite adds +1D+2 to difficulty of detecting the ship beyond 50 space units. Skill: space transports: YT-2400 transports.",
+   "sensors_passive": "30/1D",
+   "sensors_scan": "60/2D",
+   "sensors_search": "75/3D",
+   "sensors_focus": "4/4D",
+   "weapons": [
+    {
+     "name": "2 Heavy Double Laser Cannons",
+     "fire_arc": "Turret",
+     "crew": "1",
+     "skill": "Starship gunnery",
+     "fire_control": "2D (0D if fired from cockpit)",
+     "space_range": "1-10/20/30",
+     "atmo_range": "100m-1/2/3 km",
+     "damage": "6D"
+    },
+    {
+     "name": "2 Concussion Missile Tubes",
+     "fire_arc": "Front",
+     "crew": "1",
+     "skill": "Missile weapons",
+     "fire_control": "3D",
+     "space_range": "1/3/7",
+     "atmo_range": "50-100/300/700 meters",
+     "damage": "9D"
+    }
+   ]
+  },
+  {
+   "rank": 20,
+   "name": "Slave I",
+   "craft": "Kuat Systems Engineering Firespray-class Patrol/Attack Craft",
+   "type": "Modified Patrol/Attack Craft",
+   "affiliation": "The Fringe",
+   "era": "Rebellion",
+   "source": "WEG40089 The Movie Trilogy Sourcebook SE p.109",
+   "price_new": "Boba Fett",
+   "price_used": "",
+   "scale": "Starfighter",
+   "length": "21.5 meters",
+   "crew": "1",
+   "gunners": "",
+   "passengers": "6 (prisoners)",
+   "cargo": "40 metric tons",
+   "consumables": "1 month",
+   "hyperdrive": "x1",
+   "hyperdrive_backup": "x8",
+   "nav_computer": "Yes",
+   "maneuverability": "1D",
+   "space": "7",
+   "atmosphere": "350; 1,000 kmh",
+   "hull": "4D+2",
+   "shields": "2D+2",
+   "of_note": "Boba Fett's heavily modified Firespray-31. Sensor Mask: adds +2D to difficulties to detect Slave I beyond 50 space units. Sensor Jamming: when activated, adds +3D to difficulty to identify Slave I, but -2D+2 to difficulty to detect it. Cargo hold converted to top-security prisoner holding area with force-cages and hull reinforcements. Proton torpedo launchers fire dummy torpedoes that deliver homing beacons (15-20 ly range) or S-thread trackers (HoloNet-range) rather than explosive warheads. Skill: space transports: Firespray.",
+   "sensors_passive": "35/0D",
+   "sensors_scan": "60/1D",
+   "sensors_search": "100/2D",
+   "sensors_focus": "3/2D+1",
+   "weapons": [
+    {
+     "name": "2 Twin-Mounted Blaster Cannons",
+     "fire_arc": "Turret",
+     "crew": "1",
+     "skill": "Starship gunnery",
+     "fire_control": "2D+2",
+     "space_range": "1-7/20/30",
+     "atmo_range": "100-700/2/3 km",
+     "damage": "5D"
+    },
+    {
+     "name": "Concussion Missile Tube Launcher",
+     "fire_arc": "Front",
+     "crew": "1",
+     "skill": "Starship gunnery",
+     "fire_control": "3D",
+     "space_range": "1-3/5/7",
+     "atmo_range": "100-300/500/700 meters",
+     "damage": "4D"
+    },
+    {
+     "name": "Ion Cannon",
+     "fire_arc": "Front",
+     "crew": "1",
+     "skill": "Starship gunnery",
+     "fire_control": "2D",
+     "space_range": "1-5/10/15",
+     "atmo_range": "100-500/1/1.5 km",
+     "damage": "5D+2"
+    },
+    {
+     "name": "Tractor Beam Projector",
+     "fire_arc": "Turret",
+     "crew": "1",
+     "skill": "Starship gunnery",
+     "fire_control": "2D",
+     "space_range": "1-8/15/20",
+     "atmo_range": "100-800/1.5/2 km",
+     "damage": "5D"
+    },
+    {
+     "name": "2 Proton Torpedo Launchers",
+     "fire_arc": "Turret",
+     "crew": "1",
+     "skill": "Starship gunnery",
+     "fire_control": "1D+2",
+     "space_range": "1-5/15/30",
+     "atmo_range": "100-500/1.5/3 km",
+     "damage": "None — attaches homing beacon or S-thread tracker"
+    }
+   ]
+  },
+  {
+   "rank": 19,
+   "name": "Miv'rah Firestorm (Tembon's Freighter)",
+   "craft": "SoroSuub Nestt-class Light Freighter",
+   "type": "Modified Light Freighter",
+   "affiliation": "The Fringe",
+   "era": "New Republic",
+   "source": "WEG40062 Wanted by Cracken p.35",
+   "price_new": "Tembon",
+   "price_used": "",
+   "scale": "Starfighter",
+   "length": "29 meters",
+   "crew": "1 (co-pilot optional)",
+   "gunners": "",
+   "passengers": "4",
+   "cargo": "110 metric tons",
+   "consumables": "2 weeks",
+   "hyperdrive": "x1",
+   "nav_computer": "Yes",
+   "maneuverability": "1D+2",
+   "space": "6",
+   "atmosphere": "",
+   "hull": "3D+2",
+   "shields": "2D",
+   "of_note": "x9 backup. Highly modified — concealed quad laser cannons retract beneath hull plating. Interior life support rearranged to create smuggling compartments below and above decks. SoroSuub Nepton power core reworked with half a dozen Koensayr TLB power converters. Must shunt 30% energy to power converters near customs ships to mask true power output — feedback blows at least one converter each time. Requires constant maintenance. Skill: space transports: Nestt-class light freighter.",
+   "sensors_passive": "15/1D",
+   "sensors_scan": "25/2D",
+   "sensors_search": "50/2D+2",
+   "sensors_focus": "4/4D",
+   "weapons": [
+    {
+     "name": "2 Quad Laser Cannons (concealed)",
+     "fire_arc": "Turret",
+     "crew": "1",
+     "skill": "Starship Gunnery",
+     "fire_control": "2D",
+     "space_range": "1-3/15/30",
+     "atmo_range": "",
+     "damage": "4D+2"
+    }
+   ]
+  },
+  {
+   "rank": 19,
+   "name": "Star's Nova Transport",
+   "craft": "Corellian YT-1300 Transport",
+   "type": "Modified Light Freighter",
+   "affiliation": "The Fringe",
+   "era": "New Republic",
+   "source": "WEG40062 Wanted by Cracken p.68",
+   "price_new": "Star's Nova",
+   "price_used": "",
+   "scale": "Starfighter",
+   "length": "26.7 meters",
+   "crew": "2",
+   "gunners": "",
+   "passengers": "15",
+   "cargo": "100 metric tons",
+   "consumables": "2 months",
+   "hyperdrive": "x1",
+   "hyperdrive_backup": "x8",
+   "nav_computer": "Yes",
+   "maneuverability": "1D+2",
+   "space": "6",
+   "atmosphere": "480; 800 kmh",
+   "hull": "5D",
+   "shields": "2D",
+   "of_note": "Skill: space transports: YT-1300 transports. Used by Qell Tepine's Star's Nova mercenary army.",
+   "sensors_passive": "10/1D",
+   "sensors_scan": "25/1D",
+   "sensors_search": "40/2D",
+   "sensors_focus": "2/3D",
+   "weapons": [
+    {
+     "name": "Light Laser Cannon",
+     "fire_arc": "Front",
+     "crew": "1",
+     "skill": "Starship Gunnery",
+     "fire_control": "2D",
+     "space_range": "1-3/12/25",
+     "atmo_range": "100-300/1.2/2.5 km",
+     "damage": "4D"
+    },
+    {
+     "name": "Quad Laser Cannon",
+     "fire_arc": "Turret",
+     "crew": "1",
+     "skill": "Starship Gunnery",
+     "fire_control": "3D",
+     "space_range": "1-3/12/25",
+     "atmo_range": "100-300/1.2/2.5 km",
+     "damage": "5D"
+    }
+   ]
+  },
+  {
+   "rank": 12,
+   "name": "Lucan's Nightmare",
+   "craft": "Arden Industries Model 47 Spitrolighter",
+   "type": "Modified Light Freighter",
+   "affiliation": "New Republic",
+   "era": "",
+   "source": "",
+   "price_new": "Lucan Trollak",
+   "price_used": "",
+   "scale": "Starfighter",
+   "length": "30 meters",
+   "crew": "2, gunners: 2, skeleton: 1/+5",
+   "gunners": "",
+   "passengers": "6",
+   "cargo": "100 metric tons",
+   "consumables": "2 months",
+   "hyperdrive": "x2",
+   "hyperdrive_backup": "x7",
+   "nav_computer": "Yes",
+   "maneuverability": "1D",
+   "space": "6",
+   "atmosphere": "330; 950 kmh",
+   "hull": "4D",
+   "shields": "2D",
+   "of_note": "Captain Trask Lucan's personal freighter, currently impounded in the government docking bays on Glova. Cost: 155,000 credits (used). Skill: space transports.",
+   "sensors_passive": "10/0D",
+   "sensors_scan": "25/1D",
+   "sensors_search": "40/2D",
+   "sensors_focus": "2/3D",
+   "weapons": [
+    {
+     "name": "2 Laser Cannons",
+     "fire_arc": "Turret",
+     "crew": "1",
+     "skill": "Starship Gunnery",
+     "fire_control": "2D",
+     "space_range": "1-3/12/25",
+     "atmo_range": "100-300/1.2/2.5 km",
+     "damage": "4D"
+    }
+   ]
+  },
+  {
+   "rank": 99999,
+   "name": "Alabak's Gold",
+   "craft": "Modified Mon Calamari Wander-class Jump Freighter",
+   "type": "Modified Light Freighter",
+   "affiliation": "Rebel Alliance",
+   "era": "Rebellion",
+   "source": "WEG40133 Classic Adventures Vol 3 p.92",
+   "price_new": "Alabak",
+   "price_used": "",
+   "scale": "Starfighter",
+   "length": "30 meters",
+   "crew": "1, gunners: 2",
+   "gunners": "",
+   "passengers": "6",
+   "cargo": "75 metric tons",
+   "consumables": "1 month",
+   "hyperdrive": "x2",
+   "hyperdrive_backup": "x12",
+   "nav_computer": "Yes",
+   "maneuverability": "1D",
+   "space": "6",
+   "atmosphere": "330; 950 kmh",
+   "hull": "5D",
+   "shields": "2D",
+   "of_note": "Converted Mon Calamari freighter, slightly smaller than the Millennium Falcon. Used by Rebel operatives during the search for Adar Tallon on Tatooine. Skill: space transports.",
+   "sensors_passive": "15/0D",
+   "sensors_scan": "30/1D",
+   "sensors_search": "50/3D",
+   "sensors_focus": "2/4D",
+   "weapons": [
+    {
+     "name": "2 Double Laser Cannons (fire separately)",
+     "fire_arc": "Turret",
+     "crew": "1",
+     "skill": "Starship Gunnery",
+     "fire_control": "3D",
+     "space_range": "1-3/12/25",
+     "atmo_range": "100-300/1.2/2.5 km",
+     "damage": "4D"
+    }
+   ]
   }
  ],
- "Yachts": [
+ "Stock Yachts": [
   {
    "rank": 11,
    "name": "1550-LEX Space Yacht",
@@ -5417,7 +5778,8 @@ const STARSHIP_DATA = {
    "weapons": []
   }
  ],
- "Scout Ships": [
+ "Named Modified Yachts": [],
+ "Stock Scout Ships": [
   {
    "rank": 4,
    "name": "A-24 Sleuth Scout Vessel",
@@ -6205,7 +6567,8 @@ const STARSHIP_DATA = {
    ]
   }
  ],
- "Bulk Freighters": [
+ "Named Modified Scout Ships": [],
+ "Stock Bulk Freighters": [
   {
    "rank": 27,
    "name": "Action IV Bulk Freighter",
@@ -6298,48 +6661,6 @@ const STARSHIP_DATA = {
    "sensors_search": "40/1D+1",
    "sensors_focus": "1/2D",
    "weapons": []
-  },
-  {
-   "rank": 1,
-   "name": "Wild Karrde",
-   "craft": "Modified Corellian Action VI Transport",
-   "type": "Modified medium bulk freighter",
-   "affiliation": "The Fringe",
-   "era": "New Republic",
-   "source": "WEG40131 The Thrawn Trilogy Sourcebook p.228",
-   "price_new": "",
-   "price_used": "",
-   "scale": "Capital",
-   "length": "125 meters",
-   "crew": "28",
-   "gunners": "",
-   "passengers": "",
-   "cargo": "50,000 metric tons",
-   "consumables": "6 months",
-   "hyperdrive": "x1",
-   "nav_computer": "Yes",
-   "maneuverability": "2D",
-   "space": "6",
-   "atmosphere": "330; 950 kmh",
-   "hull": "4D",
-   "shields": "3D",
-   "of_note": "Talon Karrde's personal ship. x10 backup. Sensor mask adds 4D+2 to difficulty to detect ship with sensors.",
-   "sensors_passive": "40/2D",
-   "sensors_scan": "80/2D+2",
-   "sensors_search": "75/3D",
-   "sensors_focus": "4/3D+1",
-   "weapons": [
-    {
-     "name": "3 Turbolasers (fire separately)",
-     "fire_arc": "Turret",
-     "crew": "",
-     "skill": "Starship gunnery",
-     "fire_control": "2D",
-     "space_range": "3-15/35/75",
-     "atmo_range": "300-1.5/3.5/7.5 km",
-     "damage": "5D"
-    }
-   ]
   },
   {
    "rank": 2,
@@ -7280,7 +7601,8 @@ const STARSHIP_DATA = {
    ]
   }
  ],
- "Shuttles": [
+ "Named Modified Bulk Freighters": [],
+ "Stock Shuttles": [
   {
    "rank": 9,
    "name": "Aegis Combat Shuttle",
@@ -9190,7 +9512,8 @@ const STARSHIP_DATA = {
    "weapons": []
   }
  ],
- "Military Transports": [
+ "Named Modified Shuttles": [],
+ "Stock Military Transports": [
   {
    "rank": 20,
    "name": "344 Light Cruiser",
@@ -11387,7 +11710,8 @@ const STARSHIP_DATA = {
    ]
   }
  ],
- "Alphabet Fighters": [
+ "Named Modified Military Transports": [],
+ "Stock Alphabet Fighters": [
   {
    "rank": 10,
    "name": "A-wing",
@@ -12229,7 +12553,8 @@ const STARSHIP_DATA = {
    ]
   }
  ],
- "X-wing Series": [
+ "Named Modified Alphabet Fighters": [],
+ "Stock X-wing Series": [
   {
    "rank": 14,
    "name": "T-65A X-wing",
@@ -13011,7 +13336,8 @@ const STARSHIP_DATA = {
    ]
   }
  ],
- "Y-wing Series": [
+ "Named Modified X-wing Series": [],
+ "Stock Y-wing Series": [
   {
    "rank": 5,
    "name": "BTL-P1 Y-wing Prototype",
@@ -13874,7 +14200,8 @@ const STARSHIP_DATA = {
    "weapons": []
   }
  ],
- "TIE Class": [
+ "Named Modified Y-wing Series": [],
+ "Stock TIE Class": [
   {
    "rank": 19,
    "name": "TIE Advanced x1",
@@ -15440,7 +15767,8 @@ const STARSHIP_DATA = {
    ]
   }
  ],
- "Uglies": [
+ "Named Modified TIE Class": [],
+ "Stock Uglies": [
   {
    "rank": "",
    "name": "Tri Fighter / Clutch Ugly",
@@ -15682,7 +16010,8 @@ const STARSHIP_DATA = {
    ]
   }
  ],
- "Space Superiority Fighters": [
+ "Named Modified Uglies": [],
+ "Stock Space Superiority Fighters": [
   {
    "rank": 86,
    "name": "A-9 Vigilance Interceptor",
@@ -21025,7 +21354,8 @@ const STARSHIP_DATA = {
    ]
   }
  ],
- "Capital Corvettes": [
+ "Named Modified Space Superiority Fighters": [],
+ "Stock Capital Corvettes": [
   {
    "rank": 7,
    "name": "Adz-class Patrol Destroyer",
@@ -22479,7 +22809,8 @@ const STARSHIP_DATA = {
    ]
   }
  ],
- "Capital Frigates": [
+ "Named Modified Capital Corvettes": [],
+ "Stock Capital Frigates": [
   {
    "rank": 2,
    "name": "Abolisher Cruiser",
@@ -25001,7 +25332,8 @@ const STARSHIP_DATA = {
    ]
   }
  ],
- "Capital Cruisers & SDs": [
+ "Named Modified Capital Frigates": [],
+ "Stock Capital Cruisers & SDs": [
   {
    "rank": 31,
    "name": "Aing-Tii Sanhedrim Ship",
@@ -29870,7 +30202,8 @@ const STARSHIP_DATA = {
    ]
   }
  ],
- "Capital Super Ships": [
+ "Named Modified Capital Cruisers & SDs": [],
+ "Stock Capital Super Ships": [
   {
    "rank": 1,
    "name": "Eclipse-class Super Star Destroyer",
@@ -30444,7 +30777,8 @@ const STARSHIP_DATA = {
    ]
   }
  ],
- "Capital Carriers": [
+ "Named Modified Capital Super Ships": [],
+ "Stock Capital Carriers": [
   {
    "rank": 6,
    "name": "Corellian Auxiliary Carrier",
@@ -31006,7 +31340,8 @@ const STARSHIP_DATA = {
    ]
   }
  ],
- "Capital Transports & Support": [
+ "Named Modified Capital Carriers": [],
+ "Stock Capital Transports & Support": [
   {
    "rank": 6,
    "name": "Acclamator II-class Assault Ship",
@@ -32278,7 +32613,8 @@ const STARSHIP_DATA = {
    ]
   }
  ],
- "Capital Freighters & Liners": [
+ "Named Modified Capital Transports & Support": [],
+ "Stock Capital Freighters & Liners": [
   {
    "rank": 10,
    "name": "AA-9 Starfreighter",
@@ -33147,7 +33483,8 @@ const STARSHIP_DATA = {
    ]
   }
  ],
- "Battle Stations": [
+ "Named Modified Capital Freighters & Liners": [],
+ "Stock Battle Stations": [
   {
    "rank": 1,
    "name": "Death Star I",
@@ -33796,55 +34133,6 @@ const STARSHIP_DATA = {
    ]
   },
   {
-   "name": "Outrider",
-   "craft": "Modified Corellian YT-2400 Transport",
-   "type": "Modified Light Freighter",
-   "scale": "Starfighter",
-   "length": "21 meters",
-   "skill": "Space transports: YT-2400 transports",
-   "crew": "2, gunners: 2, skeleton: 1/+10",
-   "crew_skill": "",
-   "passengers": "4",
-   "cargo": "75 metric tons",
-   "consumables": "2 months",
-   "cost": "Not for sale (Dash Rendar)",
-   "hyperdrive": "x0.75",
-   "hyperdrive_backup": "x10",
-   "nav_computer": "Yes",
-   "maneuverability": "2D",
-   "space": "8",
-   "atmosphere": "365; 1,050 kmh",
-   "hull": "5D",
-   "shields": "3D+2",
-   "sensors": "Passive 30/1D, Scan 60/2D, Search 75/3D, Focus 4/4D",
-   "affiliation": "The Fringe",
-   "era": "Rebellion",
-   "game_notes": "Dash Rendar's heavily modified YT-2400. Sensor stealth suite adds +1D+2 to difficulty of detecting the ship beyond 50 space units.",
-   "source": "WEG40122 Shadows of the Empire p.119",
-   "weapons": [
-    {
-     "name": "2 Heavy Double Laser Cannons",
-     "fire_arc": "Turret",
-     "crew": "1",
-     "skill": "Starship gunnery",
-     "fire_control": "2D (0D if fired from cockpit)",
-     "space_range": "1-10/20/30",
-     "atmo_range": "100m-1/2/3 km",
-     "damage": "6D"
-    },
-    {
-     "name": "2 Concussion Missile Tubes",
-     "fire_arc": "Front",
-     "crew": "1",
-     "skill": "Missile weapons",
-     "fire_control": "3D",
-     "space_range": "1/3/7",
-     "atmo_range": "50-100/300/700 meters",
-     "damage": "9D"
-    }
-   ]
-  },
-  {
    "name": "Stinger",
    "craft": "Modified Surronian Conqueror Assault Ship",
    "type": "Modified Assault Ship",
@@ -34106,85 +34394,6 @@ const STARSHIP_DATA = {
      "space_range": "",
      "atmo_range": "",
      "damage": "5D"
-    }
-   ]
-  },
-  {
-   "name": "Slave I",
-   "craft": "Kuat Systems Engineering Firespray-class Patrol/Attack Craft",
-   "type": "Modified Patrol/Attack Craft",
-   "scale": "Starfighter",
-   "length": "21.5 meters",
-   "skill": "Space transports: Firespray",
-   "crew": "1",
-   "crew_skill": "See Boba Fett",
-   "passengers": "6 (prisoners)",
-   "cargo": "40 metric tons",
-   "consumables": "1 month",
-   "cost": "Not for sale (Boba Fett)",
-   "hyperdrive": "x1",
-   "hyperdrive_backup": "x8",
-   "nav_computer": "Yes",
-   "maneuverability": "1D",
-   "space": "7",
-   "atmosphere": "350; 1,000 kmh",
-   "hull": "4D+2",
-   "shields": "2D+2",
-   "sensors": "Passive 35/0D, Scan 60/1D, Search 100/2D, Focus 3/2D+1",
-   "affiliation": "The Fringe",
-   "era": "Rebellion",
-   "game_notes": "Boba Fett's heavily modified Firespray-31. Sensor Mask: adds +2D to difficulties to detect Slave I beyond 50 space units. Sensor Jamming: when activated, adds +3D to difficulty to identify Slave I, but -2D+2 to difficulty to detect it. Cargo hold converted to top-security prisoner holding area with force-cages and hull reinforcements. Proton torpedo launchers fire dummy torpedoes that deliver homing beacons (15-20 ly range) or S-thread trackers (HoloNet-range) rather than explosive warheads.",
-   "source": "WEG40089 The Movie Trilogy Sourcebook SE p.109",
-   "weapons": [
-    {
-     "name": "2 Twin-Mounted Blaster Cannons",
-     "fire_arc": "Turret",
-     "crew": "1",
-     "skill": "Starship gunnery",
-     "fire_control": "2D+2",
-     "space_range": "1-7/20/30",
-     "atmo_range": "100-700/2/3 km",
-     "damage": "5D"
-    },
-    {
-     "name": "Concussion Missile Tube Launcher",
-     "fire_arc": "Front",
-     "crew": "1",
-     "skill": "Starship gunnery",
-     "fire_control": "3D",
-     "space_range": "1-3/5/7",
-     "atmo_range": "100-300/500/700 meters",
-     "damage": "4D"
-    },
-    {
-     "name": "Ion Cannon",
-     "fire_arc": "Front",
-     "crew": "1",
-     "skill": "Starship gunnery",
-     "fire_control": "2D",
-     "space_range": "1-5/10/15",
-     "atmo_range": "100-500/1/1.5 km",
-     "damage": "5D+2"
-    },
-    {
-     "name": "Tractor Beam Projector",
-     "fire_arc": "Turret",
-     "crew": "1",
-     "skill": "Starship gunnery",
-     "fire_control": "2D",
-     "space_range": "1-8/15/20",
-     "atmo_range": "100-800/1.5/2 km",
-     "damage": "5D"
-    },
-    {
-     "name": "2 Proton Torpedo Launchers",
-     "fire_arc": "Turret",
-     "crew": "1",
-     "skill": "Starship gunnery",
-     "fire_control": "1D+2",
-     "space_range": "1-5/15/30",
-     "atmo_range": "100-500/1.5/3 km",
-     "damage": "None — attaches homing beacon or S-thread tracker"
     }
    ]
   },
@@ -35653,52 +35862,6 @@ const STARSHIP_DATA = {
    ]
   },
   {
-   "rank": 19,
-   "name": "Miv'rah Firestorm (Tembon's Freighter)",
-   "craft": "SoroSuub Nestt-class Light Freighter",
-   "type": "Modified Light Freighter",
-   "affiliation": "Fringe",
-   "era": "New Republic",
-   "source": "WEG40062 Wanted by Cracken p.35",
-   "price_new": "",
-   "price_used": "",
-   "scale": "Starfighter",
-   "length": "29 meters",
-   "crew": "1 (co-pilot optional)",
-   "gunners": "",
-   "passengers": "4",
-   "starfighter_complement": "",
-   "support_craft": "",
-   "ground_vehicles": "",
-   "troop_capacity": "",
-   "cargo": "110 metric tons",
-   "consumables": "2 weeks",
-   "hyperdrive": "x1",
-   "nav_computer": "Yes",
-   "maneuverability": "1D+2",
-   "space": "6",
-   "atmosphere": "",
-   "hull": "3D+2",
-   "shields": "2D",
-   "of_note": "x9 backup. Highly modified — concealed quad laser cannons retract beneath hull plating. Interior life support rearranged to create smuggling compartments below and above decks. SoroSuub Nepton power core reworked with half a dozen Koensayr TLB power converters. Must shunt 30% energy to power converters near customs ships to mask true power output — feedback blows at least one converter each time. Requires constant maintenance. Skill: space transports: Nestt-class light freighter.",
-   "sensors_passive": "15/1D",
-   "sensors_scan": "25/2D",
-   "sensors_search": "50/2D+2",
-   "sensors_focus": "4/4D",
-   "weapons": [
-    {
-     "name": "2 Quad Laser Cannons (concealed)",
-     "fire_arc": "Turret",
-     "crew": "1",
-     "skill": "Starship Gunnery",
-     "fire_control": "2D",
-     "space_range": "1-3/15/30",
-     "atmo_range": "",
-     "damage": "4D+2"
-    }
-   ]
-  },
-  {
    "rank": 17,
    "name": "Woern's Assault Shuttle",
    "craft": "Modified Telgorn Corp Gamma-class Assault Shuttle",
@@ -35862,64 +36025,6 @@ const STARSHIP_DATA = {
    ]
   },
   {
-   "rank": 19,
-   "name": "Star's Nova Transport",
-   "craft": "Corellian YT-1300 Transport",
-   "type": "Modified Light Freighter",
-   "affiliation": "Fringe",
-   "era": "New Republic",
-   "source": "WEG40062 Wanted by Cracken p.68",
-   "price_new": "",
-   "price_used": "",
-   "scale": "Starfighter",
-   "length": "26.7 meters",
-   "crew": "2",
-   "crew_skill": "Varies",
-   "gunners": "",
-   "passengers": "15",
-   "starfighter_complement": "",
-   "support_craft": "",
-   "ground_vehicles": "",
-   "troop_capacity": "",
-   "cargo": "100 metric tons",
-   "consumables": "2 months",
-   "hyperdrive": "x1",
-   "hyperdrive_backup": "x8",
-   "nav_computer": "Yes",
-   "maneuverability": "1D+2",
-   "space": "6",
-   "atmosphere": "480; 800 kmh",
-   "hull": "5D",
-   "shields": "2D",
-   "of_note": "Skill: space transports: YT-1300 transports. Used by Qell Tepine's Star's Nova mercenary army.",
-   "sensors_passive": "10/1D",
-   "sensors_scan": "25/1D",
-   "sensors_search": "40/2D",
-   "sensors_focus": "2/3D",
-   "weapons": [
-    {
-     "name": "Light Laser Cannon",
-     "fire_arc": "Front",
-     "crew": "1",
-     "skill": "Starship Gunnery",
-     "fire_control": "2D",
-     "space_range": "1-3/12/25",
-     "atmo_range": "100-300/1.2/2.5 km",
-     "damage": "4D"
-    },
-    {
-     "name": "Quad Laser Cannon",
-     "fire_arc": "Turret",
-     "crew": "1",
-     "skill": "Starship Gunnery",
-     "fire_control": "3D",
-     "space_range": "1-3/12/25",
-     "atmo_range": "100-300/1.2/2.5 km",
-     "damage": "5D"
-    }
-   ]
-  },
-  {
    "rank": 20,
    "name": "Incom A-24 Sleuth",
    "craft": "Incom A-24 Sleuth",
@@ -35959,46 +36064,6 @@ const STARSHIP_DATA = {
      "space_range": "1-3/12/25",
      "atmo_range": "100-300/1.2/2.5 km",
      "damage": "5D"
-    }
-   ]
-  },
-  {
-   "rank": 12,
-   "name": "Lucan's Nightmare",
-   "craft": "Arden Industries Model 47 Spitrolighter",
-   "type": "Modified Light Freighter",
-   "affiliation": "New Republic",
-   "scale": "Starfighter",
-   "length": "30 meters",
-   "skill": "Space Transports",
-   "crew": "2, gunners: 2, skeleton: 1/+5",
-   "passengers": "6",
-   "cargo": "100 metric tons",
-   "consumables": "2 months",
-   "cost": "155,000 (used)",
-   "hyperdrive": "x2",
-   "hyperdrive_backup": "x7",
-   "nav_computer": "Yes",
-   "maneuverability": "1D",
-   "space": "6",
-   "atmosphere": "330; 950 kmh",
-   "hull": "4D",
-   "shields": "2D",
-   "of_note": "Captain Trask Lucan's personal freighter, currently impounded in the government docking bays on Glova.",
-   "sensors_passive": "10/0D",
-   "sensors_scan": "25/1D",
-   "sensors_search": "40/2D",
-   "sensors_focus": "2/3D",
-   "weapons": [
-    {
-     "name": "2 Laser Cannons",
-     "fire_arc": "Turret",
-     "crew": "1",
-     "skill": "Starship Gunnery",
-     "fire_control": "2D",
-     "space_range": "1-3/12/25",
-     "atmo_range": "100-300/1.2/2.5 km",
-     "damage": "4D"
     }
    ]
   },
@@ -37190,49 +37255,6 @@ const STARSHIP_DATA = {
   },
   {
    "rank": 99999,
-   "name": "Alabak's Gold",
-   "craft": "Modified Mon Calamari Wander-class Jump Freighter",
-   "type": "Modified Light Freighter",
-   "scale": "Starfighter",
-   "length": "30 meters",
-   "skill": "Space Transports",
-   "crew": "1, gunners: 2",
-   "crew_skill": "",
-   "passengers": "6",
-   "cargo_capacity": "75 metric tons",
-   "consumables": "1 month",
-   "cost": "",
-   "hyperdrive_multiplier": "x2",
-   "hyperdrive_backup": "x12",
-   "nav_computer": "Yes",
-   "maneuverability": "1D",
-   "space_speed": "6",
-   "atmosphere_speed": "330; 950 kmh",
-   "hull": "5D",
-   "shields": "2D",
-   "of_note": "Converted Mon Calamari freighter, slightly smaller than the Millennium Falcon. Used by Rebel operatives during the search for Adar Tallon on Tatooine.",
-   "sensors": {
-    "passive": "15/0D",
-    "scan": "30/1D",
-    "search": "50/3D",
-    "focus": "2/4D"
-   },
-   "weapons": [
-    {
-     "name": "2 Double Laser Cannons (fire separately)",
-     "fire_arc": "Turret",
-     "crew": "1",
-     "skill": "Starship Gunnery",
-     "fire_control": "3D",
-     "space_range": "1-3/12/25",
-     "atmo_range": "100-300/1.2/2.5 km",
-     "damage": "4D"
-    }
-   ],
-   "source": "WEG40133 Classic Adventures Vol 3 p.92"
-  },
-  {
-   "rank": 99999,
    "name": "Voxen Tass",
    "craft": "Shang Lines Bulk Hauler",
    "type": "Bulk Hauler",
@@ -37732,5 +37754,6 @@ const STARSHIP_DATA = {
    ],
    "source": "WEG40060 Twin Stars of Kira p.58"
   }
- ]
+ ],
+ "Named Modified Battle Stations": []
 };

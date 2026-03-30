@@ -2522,7 +2522,7 @@ function initShipLookup() {
 }
 
 const RANK_METHODS = {
-  'Bulk Freighters': {
+  'Stock Bulk Freighters': {
     lines: [
       ['Utility 40%', 'Cargo (18%), Hyperdrive (8%), Sensors (8%), Consumables (6%)'],
       ['Survivability 25%', 'Hull (15%), Shields (10%)'],
@@ -2532,7 +2532,7 @@ const RANK_METHODS = {
     ],
     note: ''
   },
-  'Shuttles': {
+  'Stock Shuttles': {
     lines: [
       ['Speed 25%', 'Maneuverability (15%), Space (10%)'],
       ['Survivability 25%', 'Hull (15%), Shields (10%)'],
@@ -2542,7 +2542,7 @@ const RANK_METHODS = {
     ],
     note: 'Dual-speed ships ranked by drop speed. Passengers weighted in Utility (shuttles exist to move people).'
   },
-  'Military Transports': {
+  'Stock Military Transports': {
     lines: [
       ['Combat 35%', 'Damage (14%), Fire Control (11%), Weapon Count (10%)'],
       ['Survivability 25%', 'Hull (15%), Shields (10%)'],
@@ -2552,7 +2552,7 @@ const RANK_METHODS = {
     ],
     note: 'Combat-heavy weights — these are warships first, transports second.'
   },
-  'Alphabet Fighters': {
+  'Stock Alphabet Fighters': {
     lines: [
       ['Speed 30%', 'Maneuverability (18%), Space (12%)'],
       ['Combat 30%', 'Damage (12%), Fire Control (10%), Weapon Count (8%)'],
@@ -2562,7 +2562,7 @@ const RANK_METHODS = {
     ],
     note: 'Of_Note bonuses/penalties for jammers, stealth, gyro vulnerability, reliability issues, etc.'
   },
-  'X-wing Series': {
+  'Stock X-wing Series': {
     lines: [
       ['Speed 30%', 'Maneuverability (18%), Space (12%)'],
       ['Combat 30%', 'Damage (12%), Fire Control (10%), Weapon Count (8%)'],
@@ -2572,7 +2572,7 @@ const RANK_METHODS = {
     ],
     note: 'Ranked within the X-wing family. Of_Note bonuses for stealth, shadow bombs.'
   },
-  'Y-wing Series': {
+  'Stock Y-wing Series': {
     lines: [
       ['Speed 30%', 'Maneuverability (18%), Space (12%)'],
       ['Combat 30%', 'Damage (12%), Fire Control (10%), Weapon Count (8%)'],
@@ -2582,7 +2582,7 @@ const RANK_METHODS = {
     ],
     note: 'Ranked within the Y-wing family. Support variants (tanker, early warning) rank lower.'
   },
-  'TIE Class': {
+  'Stock TIE Class': {
     lines: [
       ['Speed 30%', 'Maneuverability (18%), Space (12%)'],
       ['Combat 30%', 'Damage (12%), Fire Control (10%), Weapon Count (8%)'],
@@ -2592,13 +2592,13 @@ const RANK_METHODS = {
     ],
     note: 'Ranked within the TIE family. Unarmed Beltrunners penalized. Stealth/tractor bonuses applied.'
   },
-  'Uglies': {
+  'Stock Uglies': {
     lines: [
       ['Unranked', 'Kitbash/patchwork ships — too diverse to rank meaningfully'],
     ],
     note: 'Of_Note flags only. No ranking applied.'
   },
-  'Space Superiority Fighters': {
+  'Stock Space Superiority Fighters': {
     lines: [
       ['Speed 30%', 'Maneuverability (18%), Space (12%)'],
       ['Combat 30%', 'Damage (12%), Fire Control (10%), Weapon Count (8%)'],
@@ -2608,7 +2608,7 @@ const RANK_METHODS = {
     ],
     note: '105 fighters ranked as single group. Of_Note bonuses for stealth, capital weapons, tractor beams, boarding, etc.'
   },
-  'Capital Corvettes': {
+  'Stock Capital Corvettes': {
     lines: [
       ['Speed 25%', 'Space (15%), Maneuverability (10%)'],
       ['Combat 25%', 'Damage (10%), Fire Control (8%), Weapon Count (7%)'],
@@ -2618,7 +2618,7 @@ const RANK_METHODS = {
     ],
     note: 'Speed weighted for interception role. No-hyperdrive ships penalized heavily on HD weight.'
   },
-  'Capital Frigates': {
+  'Stock Capital Frigates': {
     lines: [
       ['Combat 30%', 'Damage (12%), Fire Control (10%), Weapon Count (8%)'],
       ['Survivability 25%', 'Hull (13%), Shields (12%)'],
@@ -2628,7 +2628,7 @@ const RANK_METHODS = {
     ],
     note: 'Escort/line ships — combat weighted highest. Of_Note bonuses for gravity wells, stealth, shield boosters.'
   },
-  'Capital Cruisers & SDs': {
+  'Stock Capital Cruisers & SDs': {
     lines: [
       ['Combat 30%', 'Damage (12%), Fire Control (10%), Weapon Count (8%)'],
       ['Survivability 28%', 'Hull (15%), Shields (13%)'],
@@ -2639,7 +2639,7 @@ const RANK_METHODS = {
     ],
     note: '68 warships ranked together. Maneuverability weighted over speed. Troops and fighter complement factor into Force Projection.'
   },
-  'Capital Super Ships': {
+  'Stock Capital Super Ships': {
     lines: [
       ['Survivability 28%', 'Hull (15%), Shields (13%)'],
       ['Combat 25%', 'Damage (10%), Fire Control (8%), Weapon Count (7%)'],
@@ -2651,7 +2651,7 @@ const RANK_METHODS = {
     ],
     note: '7 super capital ships. Super weapon bonus for superlasers (scaled by output/day), gravity wells, pulsemass generators.'
   },
-  'Capital Carriers': {
+  'Stock Capital Carriers': {
     lines: [
       ['Fighters 30%', 'Starfighter complement is the primary mission'],
       ['Survivability 25%', 'Hull (13%), Shields (12%)'],
@@ -2662,7 +2662,7 @@ const RANK_METHODS = {
     ],
     note: '8 dedicated carriers. Fighter complement weighted at 30% — these ships exist to deliver fighters.'
   },
-  'Capital Transports & Support': {
+  'Stock Capital Transports & Support': {
     lines: [
       ['Utility 35%', 'Cargo (12%), Troops (10%), Hyperdrive (7%), Consumables (6%)'],
       ['Survivability 25%', 'Hull (13%), Shields (12%)'],
@@ -2672,7 +2672,7 @@ const RANK_METHODS = {
     ],
     note: '22 transports and support vessels. Utility weighted highest — these ships exist to move troops, cargo, and provide support.'
   },
-  'Capital Freighters & Liners': {
+  'Stock Capital Freighters & Liners': {
     lines: [
       ['Cargo 25%', 'Raw cargo capacity is king'],
       ['Survivability 20%', 'Hull (10%), Shields (10%)'],
@@ -2779,8 +2779,8 @@ function sortShips(mode) {
 
 function formatPrice(pNew, pUsed) {
   const parts = [];
-  if (pNew) parts.push(Number(pNew).toLocaleString() + ' (new)');
-  if (pUsed) parts.push(Number(pUsed).toLocaleString() + ' (used)');
+  if (pNew) { const n = Number(pNew); parts.push(isNaN(n) ? pNew : n.toLocaleString() + ' (new)'); }
+  if (pUsed) { const n = Number(pUsed); parts.push(isNaN(n) ? pUsed : n.toLocaleString() + ' (used)'); }
   return parts.join('; ') || 'Not available';
 }
 
@@ -4954,8 +4954,8 @@ function exportShipPDF() {
     statLine('Cargo Capacity', s.cargo);
     statLine('Consumables', s.consumables);
     let price = '';
-    if (s.price_new) price += s.price_new + ' (new)';
-    if (s.price_used) price += (price ? ', ' : '') + s.price_used + ' (used)';
+    if (s.price_new) { const n = Number(s.price_new); price += isNaN(n) ? s.price_new : s.price_new + ' (new)'; }
+    if (s.price_used) { const n = Number(s.price_used); price += (price ? ', ' : '') + (isNaN(n) ? s.price_used : s.price_used + ' (used)'); }
     if (price) statLine('Cost', price);
     statLine('Hyperdrive', s.hyperdrive);
     statLine('Nav Computer', s.nav_computer);
