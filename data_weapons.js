@@ -4475,5 +4475,29 @@ const WEAPONS_DATA = [
   "availability": "",
   "game_notes": "Scale: Speeder. Skill: Demolitions. Anti-structure mine — small matte-black case with digital timer. Blast radius: 0-2/4/6/10 meters with corresponding damage falloff.",
   "source": "WEG40137 Instant Adventures"
+ },
+ {
+  "name": "Arachnia EMRG-50 Rail Gun",
+  "category": "Rail Guns",
+  "skill": "Rail gun",
+  "cost": "10,000",
+  "availability": "3, X",
+  "damage": "5D",
+  "range": "3-100/101-1000/1001-2000/2001-4000",
+  "ammo": "4",
+  "game_notes": "Type: Electromagnetic rail gun. Character must have Strength of 5D to hold gun due to recoil.",
+  "source": "WEG40060 Twin Stars of Kira p.64"
+ },
+ {
+  "name": "BlasTech CSPL-12 Projectile Launcher",
+  "category": "Missile Weapons",
+  "skill": "Missile weapons",
+  "cost": "",
+  "availability": "",
+  "damage": "Variable by canister",
+  "range": "5-50/51-100/101-250",
+  "ammo": "1 (disposable)",
+  "game_notes": "Type: Personal projectile launcher, disposable. Nicknamed the 'Casper.' Fires specialized canisters — Dye Smoke: marks terrain; T-238 Smoke: marks and obscures area; CryoBan: 1D incapacitating cold; Plank Gas: 2D corrosive; Spore/B: 4D stun biological agent; Fex-M3: 5D nerve gas.",
+  "source": "WEG40060 Twin Stars of Kira p.65"
  }
 ];

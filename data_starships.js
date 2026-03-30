@@ -37631,6 +37631,54 @@ const STARSHIP_DATA = {
      "damage": "5D"
     }
    ]
+  },
+  {
+   "rank": 99999,
+   "name": "KT 1A-Telak",
+   "craft": "KT 1A-Telak",
+   "type": "Modified Light Freighter",
+   "scale": "Starfighter",
+   "length": "19 meters",
+   "skill": "Space Transports",
+   "crew": "2",
+   "crew_skill": "",
+   "passengers": "6",
+   "cargo_capacity": "500 kilograms",
+   "consumables": "1 month",
+   "cost": "",
+   "hyperdrive_multiplier": "x1",
+   "hyperdrive_backup": "",
+   "nav_computer": "Yes",
+   "maneuverability": "4D",
+   "space_speed": "6",
+   "atmosphere_speed": "",
+   "hull": "3D",
+   "shields": "2D",
+   "of_note": "Custom pirate design built by Telak's Terrors technicians on Seltaya. Named after their leader Kird Telak in a massive display of ego stroking. The base has 18 of these craft.",
+   "sensors": {},
+   "weapons": [
+    {
+     "name": "Dual Laser Cannons (fire-linked)",
+     "fire_arc": "Turret",
+     "crew": "1",
+     "skill": "Starship Gunnery",
+     "fire_control": "1D",
+     "space_range": "1-3/15/30",
+     "atmo_range": "",
+     "damage": "6D"
+    },
+    {
+     "name": "Concussion Missiles",
+     "fire_arc": "Front",
+     "crew": "1",
+     "skill": "Starship Gunnery",
+     "fire_control": "1D",
+     "space_range": "1-3/6/10",
+     "atmo_range": "",
+     "damage": "7D"
+    }
+   ],
+   "source": "WEG40060 Twin Stars of Kira p.58"
   }
  ]
 };

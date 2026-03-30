@@ -7026,5 +7026,61 @@ const CREATURES_DATA = [
   "orneriness": "3D",
   "special": "Teeth (STR damage). Claws (STR+2 damage). Distant cousin to the arctic wampa of Hoth, adapted to temperate climates. Adults stand almost three meters tall with arms hanging to the knees and six-inch claws. Grotesque face with simian and reptilian features. In its natural environment, the trompa has no predators and is sovereign over all it surveys. Can move very quietly and strike with speed that belies its size — death is usually instantaneous. Highly developed senses react to the Hurlothrumbic Generator's fear waves, becoming extremely agitated. Can be trained with an electric prod, but remains dangerous if provoked.",
   "source": "WEG40165 Classic Adventures Vol 5"
- }
+ },
+  {
+    name: "Slug-Rat",
+    type: "Scavenger",
+    planet: "Ruten",
+    habitat: "Urban",
+    dex: "4D",
+    per: "3D",
+    str: "2D",
+    move: "9",
+    size: "0.5-1.0 meters long",
+    orneriness: "3D",
+    special: "Bite (3D damage). Will attack anybody nearby and flee at the first opportunity if agitated. Considered vermin.",
+    source: "WEG40060 Twin Stars of Kira p.69"
+  },
+  {
+    name: "Bear Spider",
+    type: "Predator",
+    planet: "",
+    habitat: "Caves, Forests",
+    dex: "3D",
+    per: "2D",
+    str: "4D",
+    move: "14",
+    size: "1.5 meters",
+    orneriness: "2D",
+    special: "Fangs and claws (STR+1D damage). Can weave sticky snares and webs of 3D Strength. Nocturnal predator that lives in caves and weaves webs in surrounding area. Moderate Perception roll to spot webs. Unlikely to attack Humans unless cave is entered or feeding is interrupted.",
+    source: "WEG40060 Twin Stars of Kira p.71"
+  },
+  {
+    name: "Glittering Mynock",
+    type: "Parasite",
+    planet: "",
+    habitat: "Space, Various",
+    dex: "3D",
+    per: "1D",
+    str: "1D",
+    move: "15 (flying)",
+    size: "1.0 meter long",
+    orneriness: "1D",
+    special: "Power drain: Will mindlessly suck on any nearby power source until drained. When feeding on a power source, becomes entirely docile and emits a rainbow of colored light from its wings — the more power, the brighter the display. Can absorb small energy amounts through its hide (stun bolts are merely a snack, but blaster bolts would kill it). Slightly less revolting than standard mynocks.",
+    source: "WEG40060 Twin Stars of Kira p.72"
+  },
+  {
+    name: "Quexius Bird",
+    type: "Herbivore",
+    planet: "Endor",
+    habitat: "Forest",
+    dex: "3D",
+    per: "2D",
+    str: "1D",
+    move: "30 (flying)",
+    size: "0.5 meters",
+    orneriness: "3D",
+    special: "Hooked beak (STR+1D damage), normally used for digging roots. Multicolored bright green and red plumage. Beats wings like a hummingbird. Surprisingly aggressive — will peck at nearby beings for no reason and antagonize predators many times its size. Endangered species due to suicidal aggression.",
+    source: "WEG40060 Twin Stars of Kira p.71"
+  }
 ];

@@ -7622,5 +7622,32 @@ const PLANETS_DATA = [
     summary: "Ropagi II is a world of pacifistic philosophers and intellectuals. The Ropagu consider violence distasteful and themselves too civilized for such acts — hiring off-world mercenaries for all security needs. They are excellent computer builders, technicians, and programmers, making the planet the go-to destination for updating nav computers or adding droid programming. Two continents — Forethought (home to visionaries focused on the planet's future) and Afterthought (home to scholars studying the past) — make up the landmass. The planet's terrain is amazingly flat, with the highest point not exceeding 20 meters. The Empire rarely intervenes directly but considers Ropagi II its possession. The Ropagu remain undecided in the galactic conflict, servicing both Imperial and New Republic forces.",
     locations: "Ropaga (Capital city on the continent of Forethought). Off-Worlders' Quarter (An island off the main continent of Forethought where all mercenaries and off-world employees are required to live. Contains the stellar-class starport — the only point of entry for all visitors. Security Chief Leesa One-Eye maintains order with hired mercenary forces. Importation of firearms is absolutely forbidden — anyone caught smuggling weapons anywhere on the planet is imprisoned for 2D years). Great Library (Located on the continent of Forethought despite being the source of all historical knowledge — a source of intellectual snobbery between the two continental populations). Arena of the Mind (Center of intellectual debate and philosophical competition). Torvane (City on the eastern continent of Forethought). Ebyl (City on the western coast of Forethought). Balarik (City on the southern coast of Forethought). Kaloder (City on the eastern continent of Afterthought). Tev (City on the northern coast of Afterthought).",
     ofNote: "ROPAGU: Humanoid species averaging 1.8 meters, delicate frame, wispy dark hair, pink eyes, pale white skin. Men often sport beards or moustaches as badges of honor. Move with catlike grace and speak in deliberate, measured tones. Pacifistic — they realized long ago they had no talent for fighting and elevated this into an ideal. They insist on knowing every fact before making decisions, causing deadlocks lasting weeks or months. Cherish peace, intelligence, and discussion above all. Four thousand years ago the Kalduu prevented 45 warring Ropagu nations from destroying the planet. +3D bonus skill dice distributed among Knowledge, Perception, and Technical. Triple skill point cost for combat skills above 2D. | MERCENARY MARKET: One of the best in the galaxy. The Ropagu pay handsomely in credits or services (computer/droid repair) for freighter escort, starport security, and Off-Worlders' Quarter security. | PIRATE BASE: Telak's Terrors maintain a secret underground base on Seltaya, the outermost planet. They never attack ships within the Ropagi system but use proximity to trade routes to raid across the galaxy. | KALDUU: A second sentient species on Ropagi II. Four thousand years ago they subtly intervened to prevent the Ropagu from destroying themselves in civil war. | FORCE TRAINING: The tranquility of Ropagi II is ideal for anyone wishing to teach a pupil about the Force."
+  },
+  {
+    name: "Plagen",
+    system: "Pax",
+    star: "",
+    grid: "N-16",
+    region: "Expansion Region",
+    type: "Terrestrial",
+    temperature: "Temperate",
+    atmosphere: "Type I (Breathable)",
+    hydrosphere: "Moderate",
+    gravity: "Standard",
+    terrain: "High plateaus with lakes, parched plains",
+    lengthOfDay: "",
+    lengthOfYear: "",
+    sapientSpecies: "Chikarri (N)",
+    starport: "Standard",
+    population: "",
+    function: "Trade",
+    government: "",
+    techLevel: "Space",
+    majorExports: "",
+    majorImports: "",
+    source: "WEG40060 Twin Stars of Kira p.59",
+    summary: "Plagen is a normal-sized planet orbiting a blue star in the Pax system. Its beautiful sky and lush yellow flora on the plateaus give the place a calm, peaceful look — in stark contrast to its native inhabitants, the Chikarri, who are hyperactive and short-tempered. Being a center of trade on the Enarc Run, it is almost always bustling with activity, with millions of tons of goods traded each day. The Chikarri were bribed into selling trade rights to the Klatooinian Trade Guild centuries ago with a shipload of precious gems. A second shipload was lost in the Karbonni asteroid belt and its cargo ship, the Fool's Gold, became the subject of a massive treasure hunt.",
+    locations: "TreeLeaf (Capital city of the Celdas plateau and largest city on Plagen. A modern city with fusion-formed roadbeds, holo-displays, and a large spaceport bustling with ships of all sizes and types. Contains outlets and warehouses for all leading trading companies. Boyd's Be-There-In-A-Minute Delivery Service operates from a run-down shack in the shipping sector with an adjacent hangar).",
+    ofNote: "CHIKARRI: Furry, short, squirrel-like sapient beings. Hyperactive and short-tempered, very fond of shiny objects such as jewels and trinkets. Typical Chikarri cities are built in the trees on the plateaus, with small walkways connecting spherical buildings. They speak Basic with a pronounced lisp due to their oversized front teeth. Chikarri space law holds that a dead ship belongs to whoever finds it. | KARBONNI ASTEROID BELT: All that remains of the third planet in the Pax system. Full of metallic ores that make sensor detection nearly impossible, and the random movement of asteroids makes it too dangerous for mining. The lost cargo ship Fool's Gold, carrying billions of credits worth of gems intended for the Chikarri, has been stranded here for centuries. | FOOL'S GOLD: A massive cargo ship roughly one kilometer in length, built solely for shipping priceless cargoes with the best inertial damping equipment available. Forced out of hyperspace by an asteroid collision centuries ago, its control room was shattered and the ship was left stranded with mummified crew still at their posts. Its power is now failing."
   }
 ];
