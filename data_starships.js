@@ -4695,6 +4695,49 @@ const STARSHIP_DATA = {
    "sensors_search": "130/2D",
    "sensors_focus": "6/3D",
    "weapons": []
+  },
+  {
+   "rank": 20,
+   "name": "The Liberator",
+   "craft": "Modified Light Freighter",
+   "type": "Modified Light Freighter",
+   "affiliation": "General",
+   "era": "",
+   "source": "WEG40060 Twin Stars of Kira p.11",
+   "price_new": "",
+   "price_used": "",
+   "scale": "Starfighter",
+   "length": "",
+   "crew": "4",
+   "gunners": "",
+   "passengers": "4",
+   "cargo": "100 metric tons",
+   "consumables": "4 months",
+   "hyperdrive": "x2",
+   "hyperdrive_backup": "x10",
+   "nav_computer": "Yes",
+   "maneuverability": "2D+2",
+   "space": "4",
+   "atmosphere": "280; 800 kmh",
+   "hull": "2D",
+   "shields": "2D",
+   "of_note": "",
+   "sensors_passive": "",
+   "sensors_scan": "",
+   "sensors_search": "",
+   "sensors_focus": "",
+   "weapons": [
+    {
+     "name": "Heavy Laser Cannon",
+     "fire_arc": "Turret",
+     "crew": "",
+     "skill": "Starship Gunnery",
+     "fire_control": "2D",
+     "space_range": "1-3/12/25",
+     "atmo_range": "100-300/1.2/2.5 km",
+     "damage": "5D"
+    }
+   ]
   }
  ],
  "Yachts": [

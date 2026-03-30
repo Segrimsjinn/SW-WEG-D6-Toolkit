@@ -3490,5 +3490,24 @@ const VEHICLES_DATA = [
   ],
   "game_notes": "Modified civilian airspeeder used exclusively by Rebel Alliance forces. Available only on the black market.",
   "source": "WEG40137 Instant Adventures"
+},
+{
+  "name": "Modified Trast A-A6z Speeder Truck",
+  "category": "Cargo Landspeeders",
+  "scale": "Walker",
+  "length": "",
+  "skill": "Repulsorlift operation: speeder truck",
+  "crew": "2-3",
+  "passengers": "0",
+  "cargo": "25,000 kg",
+  "cover": "Full",
+  "cost": "",
+  "maneuverability": "1D",
+  "move": "70; 200 kmh",
+  "body": "2D+1",
+  "shields": "",
+  "weapons": "",
+  "game_notes": "Flight ceiling: 3 meters. Cargo temperature readout on dashboard. Fitted with refrigeration units to stabilize nova crystals. Area illumination banks fitted to hull. As cargo temperature rises above 30°C, it becomes increasingly unstable and may explode from the slightest jar.",
+  "source": "WEG40060 Twin Stars of Kira p.44"
 }
 ];
