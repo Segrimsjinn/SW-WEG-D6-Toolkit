@@ -5151,6 +5151,50 @@ const STARSHIP_DATA = {
      "damage": "4D"
     }
    ]
+  },
+  {
+   "rank": 99999,
+   "name": "Concealer-class Prison Ship",
+   "craft": "Sienar Fleet Systems Concealer-class Prison Ship",
+   "type": "Prison transport ship",
+   "affiliation": "Empire",
+   "era": "Rebellion",
+   "source": "WEG40077 Flashpoint! Brak Sector p.78",
+   "price_new": "",
+   "price_used": "",
+   "scale": "Starfighter",
+   "length": "50 meters",
+   "crew": "3",
+   "gunners": "4",
+   "crew_skill": "Astrogation 3D, sensors 3D, space transports 4D, starship gunnery 4D, starship shields 4D",
+   "passengers": "15 (guards), 60 (prisoners)",
+   "cargo": "25 metric tons",
+   "consumables": "2 months",
+   "hyperdrive": "x2",
+   "hyperdrive_backup": "x15",
+   "nav_computer": "Yes",
+   "maneuverability": "1D",
+   "space": "3",
+   "atmosphere": "260; 750 kmh",
+   "hull": "4D+2",
+   "shields": "3D",
+   "of_note": "",
+   "sensors_passive": "20/0D",
+   "sensors_scan": "40/1D",
+   "sensors_search": "75/2D",
+   "sensors_focus": "3/2D+2",
+   "weapons": [
+    {
+     "name": "6 Laser Turrets",
+     "fire_arc": "Turret",
+     "crew": "1",
+     "skill": "Starship Gunnery",
+     "fire_control": "2D",
+     "space_range": "1-3/12/25",
+     "atmo_range": "",
+     "damage": "4D"
+    }
+   ]
   }
  ],
  "Stock Yachts": [
@@ -22805,6 +22849,50 @@ const STARSHIP_DATA = {
      "space_range": "",
      "atmo_range": "",
      "damage": "9D"
+    }
+   ]
+  },
+  {
+   "rank": 99999,
+   "name": "Aramand System Cruiser III",
+   "craft": "Aramand System Cruiser III",
+   "type": "Light defensive ship",
+   "affiliation": "Aramandi",
+   "era": "Rebellion",
+   "source": "WEG40077 Flashpoint! Brak Sector p.64",
+   "price_new": "",
+   "price_used": "",
+   "scale": "Capital",
+   "length": "140 meters",
+   "crew": "15",
+   "gunners": "4",
+   "crew_skill": "",
+   "passengers": "10 (troops)",
+   "cargo": "250 metric tons",
+   "consumables": "1 month",
+   "hyperdrive": "x1",
+   "hyperdrive_backup": "x15",
+   "nav_computer": "Limited to Aramand Cluster systems",
+   "maneuverability": "2D",
+   "space": "6",
+   "atmosphere": "330; 950 kmh",
+   "hull": "3D",
+   "shields": "2D+1",
+   "of_note": "Standard ship of the Taler forces. Built in the Aramand system using technology from Republic/Empire contact. Nav computer limited to Aramand Cluster destinations only. High-maintenance hyperdrive for quick response time. Skeleton 7/+5.",
+   "sensors_passive": "30/1D",
+   "sensors_scan": "60/1D+1",
+   "sensors_search": "100/1D+2",
+   "sensors_focus": "3/2D+2",
+   "weapons": [
+    {
+     "name": "4 Laser Cannons",
+     "fire_arc": "Turret",
+     "crew": "1",
+     "skill": "Capital Ship Gunnery",
+     "fire_control": "1D+2",
+     "space_range": "3-15/35/75",
+     "atmo_range": "",
+     "damage": "3D+1"
     }
    ]
   }
