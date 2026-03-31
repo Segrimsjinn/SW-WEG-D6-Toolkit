@@ -3741,5 +3741,322 @@ const EQUIPMENT_DATA = [
   "availability": "",
   "game_notes": "Height: 1.5m. Move: 12/13. DEX 2D, KNO 3D (planetary systems 4D+2, scholar: mineral resources 5D), MEC 3D (astrogation 5D, communications 6D, sensors 6D, space transports 5D), PER 3D (investigation 6D, search 6D), STR 2D, TEC 2D. Multi-purpose appendages, repulsorlift engine (5m ceiling), investigation/analytical computer, planetary sensor array (passive 10/0D, scan 100/1D, search 500/2D, focus 10/3D), recording devices, broad-band transceiver, mineral sampler, beam drill (3D, 5m range, lower 180-degree arc). Uses standard probot hyperdrive pod for transport. Scans for mineral concentrations from orbit, lands for detailed sampling and analysis.",
   "source": "WEG40077 Flashpoint! Brak Sector p.26"
+ },
+
+ {
+  "name": "Starscream-9 Ion Drive",
+  "category": "Ship Equipment",
+  "type": "Sienar Fleet Systems Starscream-9 Ion Drive",
+  "cost": "500,000 (plus installation)",
+  "availability": "X",
+  "game_notes": "Military ion engine, originally designed for starfighters. Space: 12 (atmosphere 450; 1,300 kmh). Weight: 24 metric tons. Possession is a class one infraction in Imperial space. Double all difficulties for modifying this drive and double all modifiers when rolling for mishaps. Available on the black market only.",
+  "source": "WEG40063 Galaxy Guide 6: Tramp Freighters p.38"
+ },
+ {
+  "name": "Boshaa-C'hi Ion Drive",
+  "category": "Ship Equipment",
+  "type": "Kuat Drive Yards Boshaa-C'hi Ion Drive",
+  "cost": "100,000 (plus installation)",
+  "availability": "X",
+  "game_notes": "Older model military ion engine, originally designed for starfighters. Space: 10. Weight: 18 metric tons. Possession is a class one infraction in Imperial space. Double all difficulties for modifying this drive and double all modifiers when rolling for mishaps. Available on the black market only.",
+  "source": "WEG40063 Galaxy Guide 6: Tramp Freighters p.38"
+ },
+ {
+  "name": "Corellian Evader-GT Ion Drive",
+  "category": "Ship Equipment",
+  "type": "Corellian Evader-GT Ion Drive",
+  "cost": "50,000 (plus installation, 5,000 Imperial permit)",
+  "availability": "F",
+  "game_notes": "Scaled-down version of a military ion drive. Space: 8. Weight: 16 metric tons. Requires a 5,000 credit Imperial permit to legally possess. Double all difficulties for modifying this drive and double all modifiers when rolling for mishaps beyond a +1 modification.",
+  "source": "WEG40063 Galaxy Guide 6: Tramp Freighters p.38"
+ },
+ {
+  "name": "Incom Starslinger Ion Drive",
+  "category": "Ship Equipment",
+  "type": "Incom Starslinger Ion Drive",
+  "cost": "20,000 (plus installation, 500 Imperial permit)",
+  "availability": "F",
+  "game_notes": "Commercial propulsion system. Space: 6. Weight: 12 metric tons. Requires a 500 credit Imperial permit. Double all difficulties for modifying this drive and double all modifiers when rolling for mishaps beyond a +1 modification.",
+  "source": "WEG40063 Galaxy Guide 6: Tramp Freighters p.39"
+ },
+ {
+  "name": "SoroSuub Boav Ion Drive",
+  "category": "Ship Equipment",
+  "type": "SoroSuub Boav Ion Drive",
+  "cost": "10,000 (plus installation)",
+  "availability": "2",
+  "game_notes": "Simple, economical ion drive unit. Space: 4. Weight: 10 metric tons. Mostly compatible with other SoroSuub hardware. Technicians installing a Boav unit face an increase of one difficulty level in their space transports repair roll for non-SoroSuub ships.",
+  "source": "WEG40063 Galaxy Guide 6: Tramp Freighters p.39"
+ },
+ {
+  "name": "Custom x1/2 Hyperdrive",
+  "category": "Ship Equipment",
+  "cost": "50,000–90,000 (plus 15,000 installation)",
+  "availability": "X",
+  "game_notes": "Not commercially available — must be custom built and extremely prone to failure. Weight: 20 metric tons. Some stolen models available on the black market. Very illegal. Finding a willing mechanic is a challenge in itself. Cost varies by parts quality, base hyperdrive cost, and quality of work.",
+  "source": "WEG40063 Galaxy Guide 6: Tramp Freighters p.39"
+ },
+ {
+  "name": "SoroSuub Griffyn-XTG Hyperdrive (x1)",
+  "category": "Ship Equipment",
+  "type": "SoroSuub Griffyn-XTG Lightspeed Unit",
+  "cost": "15,000 (plus installation, 5,000 Imperial permit)",
+  "availability": "F",
+  "game_notes": "Commercial x1 hyperdrive. Weight: 18 metric tons. Generally used aboard SoroSuub vessels — non-SoroSuub vessels suffer an increase of one difficulty level during installation. Operating at this speed without proper documentation and permit is punishable under Imperial law with stiff fines and possible license suspension.",
+  "source": "WEG40063 Galaxy Guide 6: Tramp Freighters p.39"
+ },
+ {
+  "name": "Corellian Avatar-10 Hyperdrive (x2)",
+  "category": "Ship Equipment",
+  "type": "Corellian Avatar-10",
+  "cost": "10,000 (plus installation)",
+  "availability": "2",
+  "game_notes": "Commercial x2 hyperdrive. Weight: 15 metric tons. An attempt at a universal hyperdrive system compatible with any type of craft. Space transports repair rolls to install an Avatar-10 receive a +1D bonus. The most common speed hyperdrive found aboard tramp freighters — reliable, cheap, and fast enough.",
+  "source": "WEG40063 Galaxy Guide 6: Tramp Freighters p.39"
+ },
+ {
+  "name": "Incom Horizon-Hopper Hyperdrive (x3)",
+  "category": "Ship Equipment",
+  "type": "Incom Horizon-Hopper Light Stardrive",
+  "cost": "7,000 (plus installation)",
+  "availability": "2",
+  "game_notes": "Commercial x3 hyperdrive. Weight: 12 metric tons. Any ship relying on a x3 or slower hyperdrive for main propulsion risks great delays in shipping routes.",
+  "source": "WEG40063 Galaxy Guide 6: Tramp Freighters p.39"
+ },
+ {
+  "name": "Rendili StarDrive ATX-5 Hyperdrive (x4)",
+  "category": "Ship Equipment",
+  "type": "Rendili StarDrive ATX-5",
+  "cost": "4,000 (plus installation)",
+  "availability": "1",
+  "game_notes": "Commercial x4 hyperdrive. Weight: 10 metric tons. Generally used as a backup rather than a main drive at this class.",
+  "source": "WEG40063 Galaxy Guide 6: Tramp Freighters p.39"
+ },
+ {
+  "name": "SFS Lifesaver 1000 Hyperdrive (x5)",
+  "category": "Ship Equipment",
+  "type": "Sienar Fleet Systems Lifesaver 1000 Reserve Hyperdrive",
+  "cost": "2,500 (plus installation)",
+  "availability": "1",
+  "game_notes": "Commercial backup x5 hyperdrive. Weight: 8 metric tons. Only recommended as a backup hyperdrive and must be overhauled after each use.",
+  "source": "WEG40063 Galaxy Guide 6: Tramp Freighters p.39"
+ },
+ {
+  "name": "Ship Shields (1D)",
+  "category": "Ship Equipment",
+  "cost": "4,000",
+  "availability": "",
+  "game_notes": "Combined particle and ray/energy shields, equally effective against lasers and missiles. Shield code: 1D. Weight: 6 metric tons. Shields are almost impossible to improve beyond their initial strength.",
+  "source": "WEG40063 Galaxy Guide 6: Tramp Freighters p.40"
+ },
+ {
+  "name": "Ship Shields (2D)",
+  "category": "Ship Equipment",
+  "cost": "10,000",
+  "availability": "",
+  "game_notes": "Combined particle and ray/energy shields, equally effective against lasers and missiles. Shield code: 2D. Weight: 8 metric tons. Shields are almost impossible to improve beyond their initial strength.",
+  "source": "WEG40063 Galaxy Guide 6: Tramp Freighters p.40"
+ },
+ {
+  "name": "Ship Shields (3D)",
+  "category": "Ship Equipment",
+  "cost": "20,000",
+  "availability": "",
+  "game_notes": "Combined particle and ray/energy shields, equally effective against lasers and missiles. Shield code: 3D. Weight: 10 metric tons. Shields are almost impossible to improve beyond their initial strength.",
+  "source": "WEG40063 Galaxy Guide 6: Tramp Freighters p.40"
+ },
+ {
+  "name": "Taim & Bak Kd-3 Light Blaster Cannon",
+  "category": "Ship Equipment",
+  "cost": "1,000 (plus 30% Imperial permit fee)",
+  "availability": "",
+  "game_notes": "Fire Control: 1D. Damage: 1D. Weight: 1 metric ton. Relatively weak blaster, usually mounted on lightly armed vessels. Requires Imperial permit (opposed con or bureaucracy roll vs damage code).",
+  "source": "WEG40063 Galaxy Guide 6: Tramp Freighters p.40"
+ },
+ {
+  "name": "Kuat Vonak Light Laser Cannon",
+  "category": "Ship Equipment",
+  "cost": "1,500 (plus 30% Imperial permit fee)",
+  "availability": "",
+  "game_notes": "Fire Control: 2D. Damage: 2D. Weight: 2 metric tons. Stronger version of the blaster cannon. Requires Imperial permit.",
+  "source": "WEG40063 Galaxy Guide 6: Tramp Freighters p.40"
+ },
+ {
+  "name": "Arakyd Tomral Heavy Laser Cannon",
+  "category": "Ship Equipment",
+  "cost": "3,000 (plus 30% Imperial permit fee)",
+  "availability": "",
+  "game_notes": "Fire Control: 2D. Damage: 5D. Weight: 4 metric tons. Heavy laser cannon. Requires Imperial permit.",
+  "source": "WEG40063 Galaxy Guide 6: Tramp Freighters p.40"
+ },
+ {
+  "name": "Incom W-34t Turbolaser",
+  "category": "Ship Equipment",
+  "cost": "9,000 (illegal)",
+  "availability": "",
+  "game_notes": "Fire Control: 3D. Damage: 7D. Weight: 5 metric tons. Heavy ship-mounted laser, usually only on larger ships. Can only fire every other combat round (jury-rigged to freighter). Illegal to mount on a private vessel.",
+  "source": "WEG40063 Galaxy Guide 6: Tramp Freighters p.40"
+ },
+ {
+  "name": "Comar f-2 Light Ion Cannon",
+  "category": "Ship Equipment",
+  "cost": "1,000 (plus 30% Imperial permit fee)",
+  "availability": "",
+  "game_notes": "Fire Control: 1D. Damage: 2D (ionization). Weight: 0.5 metric tons. Temporarily disables enemy electronics instead of destroying the vessel. Requires Imperial permit.",
+  "source": "WEG40063 Galaxy Guide 6: Tramp Freighters p.40"
+ },
+ {
+  "name": "Comar f-4 Medium Ion Cannon",
+  "category": "Ship Equipment",
+  "cost": "1,500 (plus 30% Imperial permit fee)",
+  "availability": "",
+  "game_notes": "Fire Control: 2D. Damage: 3D (ionization). Weight: 1 metric ton. Temporarily disables enemy electronics. Requires Imperial permit.",
+  "source": "WEG40063 Galaxy Guide 6: Tramp Freighters p.40"
+ },
+ {
+  "name": "Comar f-9 Heavy Ion Cannon",
+  "category": "Ship Equipment",
+  "cost": "3,000 (plus 30% Imperial permit fee)",
+  "availability": "",
+  "game_notes": "Fire Control: 4D. Damage: 4D (ionization). Weight: 2 metric tons. Temporarily disables enemy electronics. Requires Imperial permit.",
+  "source": "WEG40063 Galaxy Guide 6: Tramp Freighters p.40"
+ },
+ {
+  "name": "Arakyd Hi-fex Proton Torpedo Launcher",
+  "category": "Ship Equipment",
+  "cost": "2,500 (plus 30% Imperial permit fee)",
+  "availability": "",
+  "game_notes": "Fire Control: 2D. Damage: 9D. Weight: 2 metric tons. Includes 12-torpedo rack. Replacement torpedoes: 800 credits each. Proton-scattering energy warhead. Torpedoes have no appreciable weight. Requires Imperial permit.",
+  "source": "WEG40063 Galaxy Guide 6: Tramp Freighters p.40"
+ },
+ {
+  "name": "Arakyd Morne-3 Concussion Missile Launcher",
+  "category": "Ship Equipment",
+  "cost": "3,500 (plus 30% Imperial permit fee)",
+  "availability": "",
+  "game_notes": "Fire Control: 1D. Damage: 8D. Weight: 3 metric tons. Includes 10-missile rack. Replacement missiles: 500 credits each. Armor-piercing warhead with compact energy pack detonating on impact. Missiles have no appreciable weight. Requires Imperial permit.",
+  "source": "WEG40063 Galaxy Guide 6: Tramp Freighters p.40"
+ },
+ {
+  "name": "Weapon Link Computer",
+  "category": "Ship Equipment",
+  "cost": "100 per weapon",
+  "availability": "",
+  "game_notes": "Computer linkage to fire up to 3 identical weapons at same target simultaneously. Linking 2 weapons adds +1D damage, linking 3 adds +2D damage. Weapons must have identical damage codes. Considered a +1 modification on mishap charts.",
+  "source": "WEG40063 Galaxy Guide 6: Tramp Freighters p.40"
+ },
+ {
+  "name": "Electro-Photo Receptors (EPRs)",
+  "category": "Ship Equipment",
+  "cost": "300",
+  "availability": "",
+  "game_notes": "Ship sensor system. No appreciable weight. See The Star Wars Sourcebook, Second Edition for details.",
+  "source": "WEG40063 Galaxy Guide 6: Tramp Freighters p.41"
+ },
+ {
+  "name": "Full Spectrum Transceivers (FSTs)",
+  "category": "Ship Equipment",
+  "cost": "500",
+  "availability": "",
+  "game_notes": "Ship sensor system. No appreciable weight. See The Star Wars Sourcebook, Second Edition for details.",
+  "source": "WEG40063 Galaxy Guide 6: Tramp Freighters p.41"
+ },
+ {
+  "name": "Dedicated Energy Receptors (DERs)",
+  "category": "Ship Equipment",
+  "cost": "600",
+  "availability": "",
+  "game_notes": "Ship sensor system. No appreciable weight. See The Star Wars Sourcebook, Second Edition for details.",
+  "source": "WEG40063 Galaxy Guide 6: Tramp Freighters p.41"
+ },
+ {
+  "name": "Life-Form Indicators (LFIs)",
+  "category": "Ship Equipment",
+  "cost": "800",
+  "availability": "",
+  "game_notes": "Ship sensor system. No appreciable weight. See The Star Wars Sourcebook, Second Edition for details.",
+  "source": "WEG40063 Galaxy Guide 6: Tramp Freighters p.41"
+ },
+ {
+  "name": "Fabritech NightBlind 472 Sensor Jammer",
+  "category": "Ship Equipment",
+  "type": "Fabritech NightBlind 472",
+  "cost": "4,000 (plus installation)",
+  "availability": "X",
+  "game_notes": "Sensor jamming device. Weight: 1 metric ton. Floods area with static that blinds all sensors. +1D to difficulty to identify ship, but -2D to detect (easier to detect the jamming source). Broadcasts the general location of the jamming ship.",
+  "source": "WEG40063 Galaxy Guide 6: Tramp Freighters p.41"
+ },
+ {
+  "name": "Corellian Trickster Sensor Decoys",
+  "category": "Ship Equipment",
+  "type": "Corellian Trickster Decoys",
+  "cost": "2,000 (plus installation)",
+  "availability": "F",
+  "game_notes": "Starship countermeasures system. Weight: 2 metric tons. Sends out electromagnetic and holo signals identical to the ship. Ejected with a pre-programmed course, max sublight speed 5. +2D to difficulty to determine which sensor reading is the ship and which is the decoy. Single-use (engines burn out after use). Easily detectable but effective at distance. Requires Imperial certification.",
+  "source": "WEG40063 Galaxy Guide 6: Tramp Freighters p.41"
+ },
+ {
+  "name": "Solid Fuel Converter",
+  "category": "Ship Equipment",
+  "cost": "8,000",
+  "availability": "",
+  "game_notes": "Converts virtually any matter into fuel cell power. Weight: 5 metric tons. Ship can refuel on bulky low-energy materials (oxygen, water, plastics, cellulose/wood, waste) or heavy metals and other high-energy materials. Halves restocking fees at starports, but the captain must personally arrange fuel supplies elsewhere.",
+  "source": "WEG40063 Galaxy Guide 6: Tramp Freighters p.41"
+ },
+ {
+  "name": "Atmospheric Scoops",
+  "category": "Ship Equipment",
+  "cost": "15,000",
+  "availability": "",
+  "game_notes": "Allows ships to dip into a planet's atmosphere or seas to collect natural resources for recharging power cells. Weight: 15 metric tons. Popular with scout ships.",
+  "source": "WEG40063 Galaxy Guide 6: Tramp Freighters p.42"
+ },
+ {
+  "name": "Solar Converters",
+  "category": "Ship Equipment",
+  "cost": "12,000",
+  "availability": "",
+  "game_notes": "Huge molecule-thick solar-absorbent sails. Weight: 10 metric tons. Recharges ship's systems in about 15 days in-system, 60 days out-system to fully recharge power cells.",
+  "source": "WEG40063 Galaxy Guide 6: Tramp Freighters p.42"
+ },
+ {
+  "name": "Tractor Beam",
+  "category": "Ship Equipment",
+  "cost": "8,000",
+  "availability": "",
+  "game_notes": "Beam capable of pulling a smaller vessel closer to the freighter (if the freighter is smaller, it is drawn toward the other ship instead). Fire Control: 2D. Damage: 2D. Weight: 15 metric tons.",
+  "source": "WEG40063 Galaxy Guide 6: Tramp Freighters p.42"
+ },
+ {
+  "name": "Secret Cargo Compartment (Concealed)",
+  "category": "Ship Equipment",
+  "cost": "200 per ton of cargo hidden",
+  "availability": "",
+  "game_notes": "Requires a Difficult Perception roll to locate visually, but a scanner detects it immediately. Takes 5 tons of cargo capacity per 1 ton of hidden cargo space. Up to 3 people can fit per ton of space. If more than 20% of cargo space is secret compartments, customs officials will become suspicious.",
+  "source": "WEG40063 Galaxy Guide 6: Tramp Freighters p.42"
+ },
+ {
+  "name": "Secret Cargo Compartment (Hidden)",
+  "category": "Ship Equipment",
+  "cost": "400 per ton of cargo hidden",
+  "availability": "",
+  "game_notes": "Requires a Very Difficult Perception roll to locate visually; scanner finds it on a Moderate Perception roll. Takes 5 tons of cargo capacity per 1 ton of hidden cargo space. Up to 3 people can fit per ton of space.",
+  "source": "WEG40063 Galaxy Guide 6: Tramp Freighters p.42"
+ },
+ {
+  "name": "Secret Cargo Compartment (Scanner Resistant)",
+  "category": "Ship Equipment",
+  "cost": "1,000 per ton of cargo hidden",
+  "availability": "",
+  "game_notes": "Requires a Very Difficult Perception roll to locate visually; does not show up on scanners at all. Takes 5 tons of cargo capacity per 1 ton of hidden cargo space. Up to 3 people can fit per ton of space.",
+  "source": "WEG40063 Galaxy Guide 6: Tramp Freighters p.42"
+ },
+ {
+  "name": "Automatic Cargo Jettisoning System",
+  "category": "Ship Equipment",
+  "cost": "500",
+  "availability": "",
+  "game_notes": "Jettisons any portion of cargo from either secret compartments or main bay. Can be triggered by remote or by timer. Weight: negligible.",
+  "source": "WEG40063 Galaxy Guide 6: Tramp Freighters p.42"
  }
 ];
