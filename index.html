@@ -1286,6 +1286,24 @@ color:var(--text-dim);min-width:35px;text-align:right;
         </div>
       </div>
 
+      <!-- SHIP EQUIPMENT LOOKUP -->
+      <div class="card" style="margin-top:8px">
+        <div class="card-title" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer" onclick="toggleShipEquipPanel()">
+          <span>⟐ Ship Equipment <span id="shipEquipCountBadge" style="color:var(--text-dim);font-weight:400;font-size:10px;letter-spacing:1px"></span></span>
+          <span id="shipEquipToggleIcon" style="font-size:14px;color:var(--text-dim);transition:transform .2s">▼</span>
+        </div>
+        <div id="shipEquipPanel" style="display:none">
+          <input type="text" id="shipEquipSearch" placeholder="Search drives, weapons, shields, sensors..." oninput="filterShipEquip()"
+            style="width:100%;padding:10px 12px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:13px;font-family:inherit;margin-bottom:8px">
+          <div style="display:flex;gap:6px;margin-bottom:10px">
+            <button class="btn btn-primary" onclick="randomShipEquip()" style="flex:1;padding:10px 8px;font-size:10px;letter-spacing:1.5px">⟐ RANDOM</button>
+            <button class="btn btn-primary" onclick="document.getElementById('shipEquipSearch').value='';filterShipEquip()" style="padding:10px 12px;font-size:10px;letter-spacing:1.5px;background:var(--bg3);color:var(--text-dim);border:1px solid var(--card-border)">CLEAR</button>
+          </div>
+          <div id="shipEquipList" style="max-height:300px;overflow-y:auto;margin-bottom:8px"></div>
+          <div id="shipEquipDetail" style="display:none"></div>
+        </div>
+      </div>
+
       <!-- SHIP BUILDER -->
       <div class="card" style="margin-top:8px">
         <div class="card-title" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer" onclick="toggleShipBuilder()">
@@ -6742,6 +6760,83 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('equipCountBadge').textContent = '(' + EQUIPMENT_DATA.length + ')';
   }
 });
+
+// ============================================================
+// SHIP EQUIPMENT LOOKUP (Ships tab — filtered to Ship Equipment only)
+// ============================================================
+let shipEquipPanelOpen = false;
+let shipEquipFiltered = [];
+let shipEquipInited = false;
+
+function toggleShipEquipPanel() {
+  shipEquipPanelOpen = !shipEquipPanelOpen;
+  document.getElementById('shipEquipPanel').style.display = shipEquipPanelOpen ? 'block' : 'none';
+  document.getElementById('shipEquipToggleIcon').textContent = shipEquipPanelOpen ? '▲' : '▼';
+  if (shipEquipPanelOpen && !shipEquipInited) { shipEquipInited = true; filterShipEquip(); }
+}
+
+function getShipEquipData() {
+  if (typeof EQUIPMENT_DATA === 'undefined') return [];
+  return EQUIPMENT_DATA.filter(e => e.category === 'Ship Equipment');
+}
+
+function filterShipEquip() {
+  const data = getShipEquipData();
+  const q = (document.getElementById('shipEquipSearch').value || '').toLowerCase();
+  shipEquipFiltered = q ? data.filter(e => [e.name, e.game_notes, e.cost, e.source, e.type || ''].join(' ').toLowerCase().includes(q)) : data;
+  document.getElementById('shipEquipCountBadge').textContent = '(' + data.length + ')';
+  renderShipEquipList();
+}
+
+function renderShipEquipList() {
+  const el = document.getElementById('shipEquipList');
+  if (!shipEquipFiltered.length) { el.innerHTML = '<div style="text-align:center;color:var(--text-dim);font-size:12px;padding:16px">No ship equipment found.</div>'; return; }
+  let html = '<div style="font-size:10px;color:var(--text-dim);margin-bottom:6px;font-family:\'Exo 2\',monospace;letter-spacing:1px">' + shipEquipFiltered.length + ' ITEMS</div>';
+  shipEquipFiltered.forEach((e, i) => {
+    const costShort = (e.cost || '—').length > 20 ? (e.cost || '—').substring(0, 18) + '…' : (e.cost || '—');
+    html += '<div onclick="showShipEquipItem(' + i + ')" style="display:flex;align-items:center;justify-content:space-between;padding:8px 10px;margin-bottom:2px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);cursor:pointer;transition:border-color .15s" onmouseover="this.style.borderColor=\'var(--gold-dim)\'" onmouseout="this.style.borderColor=\'var(--card-border)\'">'
+      + '<div style="flex:1;min-width:0"><div style="font-size:13px;color:var(--gold);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">' + e.name + '</div>'
+      + '<div style="font-size:10px;color:var(--text-dim)">' + (e.type || 'Ship Equipment') + '</div></div>'
+      + '<div style="flex-shrink:0;margin-left:8px"><span style="font-size:10px;color:var(--green);font-family:\'IBM Plex Mono\',monospace">' + costShort + '</span></div></div>';
+  });
+  el.innerHTML = html;
+}
+
+function showShipEquipItem(idx) {
+  const e = shipEquipFiltered[idx];
+  if (!e) return;
+  const el = document.getElementById('shipEquipDetail');
+  el.style.display = 'block';
+  let infoHtml = '<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:10px">';
+  infoHtml += '<div style="background:var(--bg);border:1px solid var(--card-border);border-radius:var(--radius-sm);padding:6px 8px"><div style="font-family:\'Exo 2\',monospace;font-size:8px;color:var(--text-dim);letter-spacing:1px;margin-bottom:2px">COST</div><div style="font-family:\'IBM Plex Mono\',monospace;font-size:12px;color:var(--green)">' + (e.cost || '—') + '</div></div>';
+  infoHtml += '<div style="background:var(--bg);border:1px solid var(--card-border);border-radius:var(--radius-sm);padding:6px 8px"><div style="font-family:\'Exo 2\',monospace;font-size:8px;color:var(--text-dim);letter-spacing:1px;margin-bottom:2px">AVAILABILITY</div><div style="font-family:\'IBM Plex Mono\',monospace;font-size:12px;color:var(--cyan)">' + (e.availability || '—') + '</div></div>';
+  infoHtml += '</div>';
+  let notesHtml = '';
+  if (e.game_notes) {
+    const parts = e.game_notes.split(/\.\s+/).filter(Boolean);
+    notesHtml = '<div style="margin-bottom:10px"><div style="font-family:\'Exo 2\',monospace;font-size:9px;color:var(--text-dim);letter-spacing:1px;margin-bottom:6px">GAME NOTES</div>';
+    parts.forEach(p => { const cleaned = p.replace(/\.$/, '').trim(); const ci = cleaned.indexOf(':'); if (ci > 0 && ci < 40) { notesHtml += '<div style="font-size:12px;line-height:1.5;margin-bottom:4px"><span style="color:var(--cyan);font-weight:600">' + cleaned.substring(0, ci) + ':</span> <span style="color:var(--text)">' + cleaned.substring(ci + 1).trim() + '</span></div>'; } else { notesHtml += '<div style="font-size:12px;line-height:1.5;margin-bottom:4px;color:var(--text)">' + cleaned + '.</div>'; } });
+    notesHtml += '</div>';
+  }
+  let sourceHtml = e.source ? '<div style="font-size:10px;color:var(--text-dim);border-top:1px solid var(--card-border);padding-top:8px;margin-top:4px"><span style="color:var(--text-dark)">SOURCE:</span> ' + e.source + '</div>' : '';
+  el.innerHTML = '<div style="background:var(--bg);border:1px solid var(--gold-dim);border-radius:var(--radius);padding:12px;position:relative">'
+    + '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px"><div>'
+    + '<div style="font-family:\'Exo 2\',monospace;font-size:14px;color:var(--gold);font-weight:700;letter-spacing:1px">' + e.name + '</div>'
+    + '<div style="font-size:11px;color:var(--text-dim);margin-top:2px">' + (e.type || 'Ship Equipment') + '</div></div>'
+    + '<button onclick="document.getElementById(\'shipEquipDetail\').style.display=\'none\'" style="background:none;border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text-dim);cursor:pointer;padding:4px 8px;font-size:11px">✕</button></div>'
+    + infoHtml + notesHtml + sourceHtml + '</div>';
+  el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function randomShipEquip() {
+  const data = getShipEquipData();
+  if (!data.length) return;
+  if (!shipEquipPanelOpen) toggleShipEquipPanel();
+  document.getElementById('shipEquipSearch').value = '';
+  shipEquipFiltered = data;
+  renderShipEquipList();
+  showShipEquipItem(Math.floor(Math.random() * shipEquipFiltered.length));
+}
 </script>
 
 <script>
