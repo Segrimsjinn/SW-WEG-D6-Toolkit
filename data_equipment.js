@@ -2489,7 +2489,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "BlasTech Plasma Cut Boarding Device",
-  "category": "Starship Accessories",
+  "category": "Ship Equipment",
   "cost": "4,750",
   "availability": "X",
   "game_notes": "Scale: Starfighter. Skill: Starship gunnery. Crew: 2. Mounted on a ship's airlock system with controls just inside the main airlock. The extendable plasma torch (FC 0D, range 4m, damage 8D) slowly cuts through a ship's hull. Roll target ship's hull -2D; if the torch scores a 'lightly damaged' result, it has breached the hull. Once breached, the torch requires a full minute to cut a 1m wide by 2m high hole. The extendable boarding tube attaches to the hull and forms an airtight seal in 30 seconds. Restricted technology — normally used by military smuggling interdiction ships. Illegally obtained torches are often used by pirates and shipjackers.",
@@ -2609,7 +2609,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "GST System Diagnostic Filter",
-  "category": "Starship Accessories",
+  "category": "Ship Equipment",
   "cost": "3,500",
   "availability": "2",
   "game_notes": "Model: GST System Diagnostic Filter. Starship computer translator — large datapad with separate droid brain processing unit and two computer adaptors. Adds +1D+1 to computer programming/repair for shipboard computer diagnostics. Adds +2 to space transports repair for system malfunctions not totally computer-related (hyperdrives, sublight drives, etc.). If roll failed by more than 10, the ship computer detects an intrusion, shuts down, and must be completely re-booted (Easy computer programming/repair, but takes at least 15 minutes).",
@@ -3209,7 +3209,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "CEC Copycat Pod",
-  "category": "Starship Accessories",
+  "category": "Ship Equipment",
   "cost": "10,000 (plus permit fees)",
   "availability": "3, F or R",
   "game_notes": "Skill: Sensors. Full spectrum ECM device disguised as standard probe/launcher. Ties into ship's sublight drive and navigation, analyzes transponder signature and flight dynamics. When launched, mimics parent vessel's characteristics to lure pursuers. Works with starfighters and small transports (cargo 100 metric tons or less). Max Space speed 6. To distinguish from real ship: Difficult sensors on passive/scan, Moderate on search, Easy on focus. Failed roll = both ships appear real.",
@@ -3441,7 +3441,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Givin Emergency Vacuum Seal EVS BBS-909",
-  "category": "Starship Accessories",
+  "category": "Ship Equipment",
   "cost": "750 (up to 50cm), 1,000 (51-100cm)",
   "availability": "3",
   "game_notes": "Emergency hull breach seal — circular disk slapped against interior hull. Micro-molecular grip-locks hold in place, then electrical current stimulates Givin micro-organisms that multiply in vacuum to form extremely durable biological seal within seconds. Neutralizing current prevents uncontrolled growth. Application: Moderate Strength (fight atmosphere pull) + Moderate Dexterity (reach controls while resisting pull). Sizes from 10cm to 1m diameter.",
@@ -3585,7 +3585,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "HD 5-D Hyperdrive Booster",
-  "category": "Starship Accessories",
+  "category": "Ship Equipment",
   "cost": "16,500+",
   "availability": "4, X",
   "game_notes": "Skill: Space transports repair. Forces more energy through hyperdrive to increase speed. Only for freighters with 100 metric ton cargo capacity or less. One booster per engine, permanently configured once activated. Successful install reduces hyperdrive multiplier: x10+ becomes x4, x9-x6 becomes x3, x5-x3 becomes x2, x2 becomes x1, x1 becomes x0.5. Failed install = catastrophic mishap immediately or next hyperdrive use. HD 5-D has limited use — roll a die each activation; if number rolled is less than times compressor has been used, entire hyperdrive shuts down (Very Difficult repair to restore). Further hyperdrive modifications after install double all mishap modifiers. +2 mishap modifier per Galaxy Guide 6 rules.",
@@ -3593,7 +3593,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "KDY N-CRAB Nav Computer Bypass",
-  "category": "Starship Accessories",
+  "category": "Ship Equipment",
   "cost": "Not available for sale",
   "availability": "4, X",
   "game_notes": "Skill: Astrogation. Prototype navigation computer bypass allowing mid-hyperspace route changes without exiting hyperspace. Three astrogation rolls required: 1) Duplicate original course (one difficulty level lower than original). 2) Chart new course from upcoming point to new destination (Very Easy to Heroic). 3) Feed new course through N-CRAB into nav computer (one level lower than roll 2). Failing rolls 1-2: N-CRAB won't function. Failing roll 3: hyperspace mishap. Programming takes 1/10 of new route travel time. WARNING: Interferes with nav computer — requires Moderate astrogation or computer programming/repair to 'clean.' Without cleaning: 2nd use = all difficulties +1 level, 3rd = +2 levels, continuing to Heroic+10/+20/+30.",
