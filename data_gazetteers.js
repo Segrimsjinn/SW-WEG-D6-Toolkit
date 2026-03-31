@@ -176,7 +176,7 @@ const GAZETTEER_DATA = {
       { system: "Opiteihr", fromGrids: null },        // default (southwest)
       { system: "Krann", fromGrids: ["O-14","O-15","P-14","P-15"] },  // east
       { system: "Kalinda", fromGrids: ["O-16","O-17","P-16","P-17","N-17"] },  // southeast
-      { system: "Lahopa", fromGrids: ["M-15","L-15","L-16","M-17","L-17"] }   // west/inner rim
+      { system: "Lahopa", fromGrids: ["L-9","L-10","L-11","L-12","L-13","L-14","L-15","L-16","L-17","M-9","M-10","M-11","M-12","M-13","M-14","M-15","M-17","N-9","N-10","N-11","N-12","N-13","N-14"] }   // west/north/inner rim
     ],
     surcharge: 0,
     systems: ["Arrgaw","Brevost","Cerenia","Kalinda","Kira","Krann","Lahopa","Lazerian","Nigel","Opiteihr","Pax","Roldalna","Ropagi","Seltos"],
