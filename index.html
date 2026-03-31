@@ -3181,6 +3181,7 @@ function engage() {
   const oGaz = findGazetteer(origin.name);
   const dGaz = findGazetteer(dest.name);
   let gazUsed = null, gazHoursBase = 0, gazGateway = null, gazSurcharge = 0;
+  let gazUsed2 = null, gazHoursBase2 = 0, gazGateway2 = null, gazSurcharge2 = 0;
   let gatewayGrids = new Set();  // grids that are gateways for path tile marking
 
   if (oGaz && dGaz && oGaz === dGaz) {
@@ -3190,6 +3191,24 @@ function engage() {
       gazUsed = oGaz;
       gazHoursBase = gt;
       gazSurcharge = GAZETTEER_DATA[oGaz].surcharge || 0;
+    }
+  } else if (oGaz && dGaz && oGaz !== dGaz) {
+    // Both in different gazetteers — origin sector → gateway → grid → gateway → dest sector
+    const oGw = pickGateway(oGaz, dest.grid);
+    const dGw = pickGateway(dGaz, origin.grid);
+    if (oGw && dGw) {
+      const oGt = getGazetteerTime(oGaz, origin.name, oGw);
+      const dGt = getGazetteerTime(dGaz, dGw, dest.name);
+      if (oGt !== null && dGt !== null) {
+        gazUsed = oGaz; gazGateway = oGw; gazHoursBase = oGt;
+        gazSurcharge = GAZETTEER_DATA[oGaz].surcharge || 0;
+        gazUsed2 = dGaz; gazGateway2 = dGw; gazHoursBase2 = dGt;
+        gazSurcharge2 = GAZETTEER_DATA[dGaz].surcharge || 0;
+        const oGwSys = findSystem(oGw);
+        const dGwSys = findSystem(dGw);
+        if (oGwSys) gatewayGrids.add(oGwSys.grid);
+        if (dGwSys) gatewayGrids.add(dGwSys.grid);
+      }
     }
   } else if (oGaz && !dGaz) {
     // Origin in gazetteer, dest outside — route from origin to gateway, then grid to dest
@@ -3226,6 +3245,10 @@ function engage() {
     // Both endpoints in same gazetteer — pure gazetteer time
     displayBase = gazHoursBase + gazSurcharge;
     totalHours = displayBase * hd;
+  } else if (gazUsed2) {
+    // Both in different gazetteers — origin sector + grid + dest sector
+    displayBase = totalBase + gazHoursBase + gazSurcharge + gazHoursBase2 + gazSurcharge2;
+    totalHours = displayBase * hd;
   } else if (gazUsed && gazGateway) {
     // One endpoint in gazetteer — grid time to/from gateway + gazetteer time within sector
     displayBase = totalBase + gazHoursBase + gazSurcharge;
@@ -3248,11 +3271,19 @@ function engage() {
       if (gwSys) { gatewayGrids.add(gwSys.grid); gatewayNames[gwSys.grid] = gw.system; }
     }
   }
+  if (gazUsed2) {
+    const gaz2 = GAZETTEER_DATA[gazUsed2];
+    for (const gw of gaz2.gateways) {
+      const gwSys = findSystem(gw.system);
+      if (gwSys) { gatewayGrids.add(gwSys.grid); gatewayNames[gwSys.grid] = gw.system; }
+    }
+  }
 
   // Display results
   document.getElementById('travelResult').style.display = 'block';
   let routeLabel = routeMode === 'smuggler' ? "Smuggler's Route (Straight Line)" : 'Trade Route (Optimal Path)';
   if (gazUsed && !gazGateway) routeLabel = 'Sector Gazetteer Route (' + gazUsed + ')';
+  else if (gazUsed2) routeLabel += ' + Gazetteers (' + gazUsed + ' → ' + gazUsed2 + ')';
   else if (gazUsed && gazGateway) routeLabel += ' + Sector Gazetteer (' + gazUsed + ')';
   document.getElementById('routeLabel').textContent = routeLabel;
   document.getElementById('resOGrid').textContent = origin.grid;
@@ -3269,10 +3300,14 @@ function engage() {
   const gazRow = document.getElementById('resGazetteerRow');
   if (gazUsed) {
     gazRow.style.display = '';
-    let gazText = gazUsed + ' — ' + GAZETTEER_DATA[gazUsed].source;
-    if (gazGateway) gazText += ' (via ' + gazGateway + ')';
-    if (gazSurcharge > 0) gazText += ' (+' + gazSurcharge + 'h approach)';
-    if (gazHoursBase > 0) gazText += ' [' + gazHoursBase + 'h sector]';
+    let gazText = gazUsed + ' (via ' + (gazGateway || 'direct') + ')';
+    if (gazSurcharge > 0) gazText += ' +' + gazSurcharge + 'h approach';
+    gazText += ' [' + gazHoursBase + 'h]';
+    if (gazUsed2) {
+      gazText += '  ⟶  ' + gazUsed2 + ' (via ' + gazGateway2 + ')';
+      if (gazSurcharge2 > 0) gazText += ' +' + gazSurcharge2 + 'h approach';
+      gazText += ' [' + gazHoursBase2 + 'h]';
+    }
     document.getElementById('resGazetteer').textContent = gazText;
   } else {
     gazRow.style.display = 'none';
@@ -3311,11 +3346,23 @@ function engage() {
       phtml += `<div class="${cls}"><span>${prefix}${p.grid}${gwLabel}</span><span class="path-hrs ${hcls}">${p.hours}h</span></div>`;
     }
     if (gazUsed && gazGateway) {
-      // Append the gazetteer segment after grid path
-      if (gazSurcharge > 0) {
-        phtml += `<div class="path-tile gateway" style="font-style:italic"><span>🏰 Hyperspace approach to ${gazUsed}</span><span class="path-hrs" style="color:#4caf50">+${gazSurcharge}h</span></div>`;
+      let prePhtml = '', postPhtml = '';
+      if (gazUsed2) {
+        // Dual gazetteer: origin sector before grid, dest sector after grid
+        if (gazSurcharge > 0) prePhtml += `<div class="path-tile gateway" style="font-style:italic"><span>🏰 Departing ${gazUsed}</span><span class="path-hrs" style="color:#4caf50">+${gazSurcharge}h</span></div>`;
+        prePhtml += `<div class="path-tile gateway" style="font-style:italic"><span>🏰 ${gazUsed} (${origin.name} → ${gazGateway})</span><span class="path-hrs" style="color:#4caf50">+${gazHoursBase}h</span></div>`;
+        if (gazSurcharge2 > 0) postPhtml += `<div class="path-tile gateway" style="font-style:italic"><span>🏰 Approaching ${gazUsed2}</span><span class="path-hrs" style="color:#4caf50">+${gazSurcharge2}h</span></div>`;
+        postPhtml += `<div class="path-tile gateway" style="font-style:italic"><span>🏰 ${gazUsed2} (${gazGateway2} → ${dest.name})</span><span class="path-hrs" style="color:#4caf50">+${gazHoursBase2}h</span></div>`;
+      } else if (oGaz) {
+        // Origin only in gazetteer — prepend sector segment
+        if (gazSurcharge > 0) prePhtml += `<div class="path-tile gateway" style="font-style:italic"><span>🏰 Departing ${gazUsed}</span><span class="path-hrs" style="color:#4caf50">+${gazSurcharge}h</span></div>`;
+        prePhtml += `<div class="path-tile gateway" style="font-style:italic"><span>🏰 ${gazUsed} (${origin.name} → ${gazGateway})</span><span class="path-hrs" style="color:#4caf50">+${gazHoursBase}h</span></div>`;
+      } else {
+        // Dest only in gazetteer — append sector segment
+        if (gazSurcharge > 0) postPhtml += `<div class="path-tile gateway" style="font-style:italic"><span>🏰 Approaching ${gazUsed}</span><span class="path-hrs" style="color:#4caf50">+${gazSurcharge}h</span></div>`;
+        postPhtml += `<div class="path-tile gateway" style="font-style:italic"><span>🏰 ${gazUsed} (${gazGateway} → ${dest.name})</span><span class="path-hrs" style="color:#4caf50">+${gazHoursBase}h</span></div>`;
       }
-      phtml += `<div class="path-tile gateway" style="font-style:italic"><span>🏰 ${gazUsed} sector route (${gazGateway} → ${dGaz ? dest.name : origin.name})</span><span class="path-hrs" style="color:#4caf50">+${gazHoursBase}h</span></div>`;
+      phtml = prePhtml + phtml + postPhtml;
     }
   }
   document.getElementById('pathOutput').innerHTML = phtml;
