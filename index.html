@@ -1328,7 +1328,18 @@ color:var(--text-dim);min-width:35px;text-align:right;
 
     <!-- TAB 5: GM TOOLS -->
     <div id="tab-gm" class="tab-panel">
-      <div class="card">
+      <div id="gm-top" style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:8px;font-size:9px;font-family:'Exo 2',monospace;letter-spacing:0.5px">
+        <a href="#gm-dice" style="color:var(--gold);text-decoration:none;padding:3px 8px;border:1px solid var(--card-border);border-radius:4px">Dice</a>
+        <a href="#gm-combat" style="color:var(--gold);text-decoration:none;padding:3px 8px;border:1px solid var(--card-border);border-radius:4px">Combat</a>
+        <a href="#gm-combatref" style="color:var(--gold);text-decoration:none;padding:3px 8px;border:1px solid var(--card-border);border-radius:4px">Combat Ref</a>
+        <a href="#gm-chase" style="color:var(--gold);text-decoration:none;padding:3px 8px;border:1px solid var(--card-border);border-radius:4px">Chase</a>
+        <a href="#gm-cp" style="color:var(--gold);text-decoration:none;padding:3px 8px;border:1px solid var(--card-border);border-radius:4px">CP & FP</a>
+        <a href="#gm-advance" style="color:var(--gold);text-decoration:none;padding:3px 8px;border:1px solid var(--card-border);border-radius:4px">Advancement</a>
+        <a href="#gm-force" style="color:var(--gold);text-decoration:none;padding:3px 8px;border:1px solid var(--card-border);border-radius:4px">Force Powers</a>
+        <a href="#gm-freighter" style="color:var(--gold);text-decoration:none;padding:3px 8px;border:1px solid var(--card-border);border-radius:4px">Freighter</a>
+        <a href="#gm-gazetteers" style="color:var(--gold);text-decoration:none;padding:3px 8px;border:1px solid var(--card-border);border-radius:4px">Gazetteers</a>
+      </div>
+      <div class="card" id="gm-dice">
         <div class="card-title">⟐ D6 Dice Roller</div>
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;flex-wrap:wrap">
           <div style="display:flex;align-items:center;gap:6px">
@@ -1386,8 +1397,8 @@ color:var(--text-dim);min-width:35px;text-align:right;
         </div>
       </div>
 
-      <div class="card">
-        <div class="card-title">⟐ Combat Tracker</div>
+      <div class="card" id="gm-combat">
+        <div class="card-title" style="display:flex;justify-content:space-between;align-items:center">⟐ Combat Tracker<a href="#gm-top" style="font-size:9px;color:var(--text-dim);text-decoration:none">↑ Top</a></div>
         <!-- Initiative Header -->
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;flex-wrap:wrap;gap:8px">
           <div style="display:flex;align-items:center;gap:8px">
@@ -1425,8 +1436,8 @@ color:var(--text-dim);min-width:35px;text-align:right;
         </div>
       </div>
 
-      <div class="card">
-        <div class="card-title">⟐ Combat Quick Reference</div>
+      <div class="card" id="gm-combatref">
+        <div class="card-title" style="display:flex;justify-content:space-between;align-items:center">⟐ Combat Quick Reference<a href="#gm-top" style="font-size:9px;color:var(--text-dim);text-decoration:none">↑ Top</a></div>
         <div style="display:flex;gap:10px;flex-wrap:wrap">
           <!-- Col 1: Difficulty + Range -->
           <div style="flex:1;min-width:140px">
@@ -1472,8 +1483,8 @@ color:var(--text-dim);min-width:35px;text-align:right;
         </div>
       </div>
 
-      <div class="card">
-        <div class="card-title">⟐ Chase & Movement Reference</div>
+      <div class="card" id="gm-chase">
+        <div class="card-title" style="display:flex;justify-content:space-between;align-items:center">⟐ Chase & Movement Reference<a href="#gm-top" style="font-size:9px;color:var(--text-dim);text-decoration:none">↑ Top</a></div>
         <div style="display:flex;gap:10px;flex-wrap:wrap">
           <!-- Col 1: Speed Levels -->
           <div style="flex:1;min-width:140px">
@@ -1543,8 +1554,8 @@ color:var(--text-dim);min-width:35px;text-align:right;
         </div>
       </div>
 
-      <div class="card">
-        <div class="card-title">⟐ Character Points & Force Points (In-Scene)</div>
+      <div class="card" id="gm-cp">
+        <div class="card-title" style="display:flex;justify-content:space-between;align-items:center">⟐ Character Points & Force Points (In-Scene)<a href="#gm-top" style="font-size:9px;color:var(--text-dim);text-decoration:none">↑ Top</a></div>
         <div style="display:flex;gap:12px;margin-bottom:10px;flex-wrap:wrap">
           <div style="flex:1;min-width:200px">
             <div style="font-family:'Exo 2',monospace;font-size:8px;color:var(--gold);letter-spacing:1px;margin-bottom:4px">CHARACTER POINTS (CP)</div>
@@ -1589,8 +1600,8 @@ color:var(--text-dim);min-width:35px;text-align:right;
         </div>
       </div>
 
-      <div class="card">
-        <div class="card-title">⟐ Character Advancement (Between Adventures)</div>
+      <div class="card" id="gm-advance">
+        <div class="card-title" style="display:flex;justify-content:space-between;align-items:center">⟐ Character Advancement (Between Adventures)<a href="#gm-top" style="font-size:9px;color:var(--text-dim);text-decoration:none">↑ Top</a></div>
         <div style="display:flex;gap:12px;margin-bottom:10px;flex-wrap:wrap">
           <div style="flex:1;min-width:220px">
             <div style="font-family:'Exo 2',monospace;font-size:8px;color:var(--gold);letter-spacing:1px;margin-bottom:4px">SKILL IMPROVEMENT (1 pip per adventure)</div>
@@ -1648,8 +1659,8 @@ color:var(--text-dim);min-width:35px;text-align:right;
         </div>
       </div>
 
-      <div class="card">
-        <div class="card-title">⟐ Force Powers Reference</div>
+      <div class="card" id="gm-force">
+        <div class="card-title" style="display:flex;justify-content:space-between;align-items:center">⟐ Force Powers Reference<a href="#gm-top" style="font-size:9px;color:var(--text-dim);text-decoration:none">↑ Top</a></div>
         <div style="display:flex;gap:12px;margin-bottom:12px;flex-wrap:wrap">
           <div style="flex:1;min-width:140px">
             <div style="font-family:'Exo 2',monospace;font-size:8px;color:var(--gold);letter-spacing:1px;margin-bottom:4px">RELATIONSHIP</div>
@@ -1696,8 +1707,8 @@ color:var(--text-dim);min-width:35px;text-align:right;
         <div id="forcePowerResults" style="max-height:300px;overflow-y:auto"></div>
       </div>
 
-      <div class="card">
-        <div class="card-title">⟐ Freighter Captain's Guide</div>
+      <div class="card" id="gm-freighter">
+        <div class="card-title" style="display:flex;justify-content:space-between;align-items:center">⟐ Freighter Captain's Guide<a href="#gm-top" style="font-size:9px;color:var(--text-dim);text-decoration:none">↑ Top</a></div>
         <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px">
           <!-- Col 1: Finding a Customer + Delivery Fees -->
           <div style="flex:1;min-width:155px">
@@ -1811,6 +1822,12 @@ color:var(--text-dim);min-width:35px;text-align:right;
           </table>
         </div>
         <div style="font-size:8px;color:var(--text-dim);margin-top:4px;font-style:italic"><span style="color:var(--gold)">S</span> = Supply (buy here) · <span style="color:var(--cyan)">D</span> = Demand (sell here) · Levels: <span style="color:var(--red)">VL/L</span> <span style="color:var(--gold)">M</span> <span style="color:var(--cyan)">H/VH</span> · <em>—</em> = no exportable supply</div>
+      </div>
+
+      <div class="card" id="gm-gazetteers">
+        <div class="card-title" style="display:flex;justify-content:space-between;align-items:center">⟐ Local Gazetteer Times<a href="#gm-top" style="font-size:9px;color:var(--text-dim);text-decoration:none">↑ Top</a></div>
+        <div style="font-size:10px;color:var(--text-dim);margin-bottom:12px">Sector-specific hyperspace travel times from WEG sourcebooks. All times in hours at x1 hyperdrive multiplier. These override grid-based calculations in the astrogation calculator when both systems are in the same gazetteer.</div>
+        <div id="gazetteerTables"></div>
       </div>
     </div>
 
@@ -6633,6 +6650,64 @@ function clearVehFilters() {
 
 document.addEventListener('DOMContentLoaded', function() {
   if (typeof VEHICLES_DATA !== 'undefined') document.getElementById('vehCountBadge').textContent = '(' + VEHICLES_DATA.length + ')';
+});
+
+// Gazetteer tables
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof GAZETTEER_DATA === 'undefined') return;
+  const container = document.getElementById('gazetteerTables');
+  if (!container) return;
+  let html = '';
+  for (const [name, gaz] of Object.entries(GAZETTEER_DATA)) {
+    const systems = gaz.systems.slice().sort();
+    const hasMatrix = !!gaz.times;
+    html += '<div style="margin-bottom:20px">';
+    html += '<div style="font-family:\'Exo 2\',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:4px">' + name.toUpperCase() + '</div>';
+    html += '<div style="font-size:9px;color:var(--text-dark);margin-bottom:6px">' + gaz.source + (gaz.grid ? ' · Grid ' + gaz.grid : '') + '</div>';
+    if (hasMatrix) {
+      // Full matrix table
+      html += '<div style="overflow-x:auto"><table style="font-size:8px;border-collapse:collapse;width:100%">';
+      html += '<tr><th style="padding:2px 4px;border-bottom:1px solid var(--card-border)"></th>';
+      for (const s of systems) {
+        const abbr = s.length > 5 ? s.substring(0,4) + '.' : s;
+        html += '<th style="padding:2px 3px;border-bottom:1px solid var(--card-border);color:var(--gold);font-weight:400;writing-mode:vertical-lr;text-orientation:mixed;height:50px">' + abbr + '</th>';
+      }
+      html += '</tr>';
+      for (let i = 0; i < systems.length; i++) {
+        html += '<tr>';
+        html += '<td style="padding:2px 4px;border-bottom:1px solid rgba(255,255,255,.04);color:var(--text-dim);white-space:nowrap">' + systems[i] + '</td>';
+        for (let j = 0; j < systems.length; j++) {
+          if (i === j) {
+            html += '<td style="padding:2px 3px;border-bottom:1px solid rgba(255,255,255,.04);text-align:center;color:var(--text-dark)">—</td>';
+          } else {
+            const t = gazetteerLookup(gaz.times, systems[i], systems[j]);
+            const color = t !== null ? (t <= 10 ? '#66bb6a' : t <= 30 ? 'var(--gold)' : 'var(--text-dim)') : 'var(--text-dark)';
+            html += '<td style="padding:2px 3px;border-bottom:1px solid rgba(255,255,255,.04);text-align:center;color:' + color + '">' + (t !== null ? t : '—') + '</td>';
+          }
+        }
+        html += '</tr>';
+      }
+      html += '</table></div>';
+    } else if (gaz.routes) {
+      // Route-based — show as connection list
+      html += '<div style="font-size:9px;color:var(--text-dim);line-height:1.8">';
+      for (const [key, hrs] of Object.entries(gaz.routes)) {
+        const [a, b] = key.split('|');
+        const d = hrs >= 24 ? Math.floor(hrs/24) + 'd ' + (hrs%24) + 'h' : hrs + 'h';
+        html += '<div style="display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.04);padding:1px 0"><span>' + a + ' ↔ ' + b + '</span><span style="color:var(--gold)">' + d + '</span></div>';
+      }
+      html += '</div>';
+    }
+    // Gateway info
+    if (gaz.gateways) {
+      html += '<div style="font-size:8px;color:var(--text-dark);margin-top:4px;font-style:italic">Gateways: ';
+      html += gaz.gateways.map(g => '<span style="color:#4caf50">' + g.system + '</span>' + (g.fromGrids ? '' : ' (default)')).join(' · ');
+      if (gaz.surcharge > 0) html += ' · +' + gaz.surcharge + 'h approach surcharge';
+      html += '</div>';
+    }
+    html += '</div>';
+  }
+  container.innerHTML = html;
 });
 </script>
 
