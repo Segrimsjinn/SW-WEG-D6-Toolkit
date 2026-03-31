@@ -460,6 +460,9 @@ font-size:14px;border-bottom:1px solid rgba(255,255,255,.03);
 .path-tile.malfunction{
 background:rgba(255,0,0,.08);border-left:3px solid var(--red);
 }
+.path-tile.gateway{
+background:rgba(0,180,0,.08);border-left:3px solid #4caf50;
+}
 .path-hrs{font-family:'Eras Demi ITC','Era Demi','Rajdhani',sans-serif}
 .hrs-fast{color:#66bb6a}
 .hrs-med{color:#4fc3f7}
@@ -1058,6 +1061,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
             <div class="result-box"><div class="result-label">BASE HOURS</div><div id="resBaseHrs" class="result-value"></div></div>
             <div class="result-box"><div class="result-label">TOTAL HOURS</div><div id="resTotalHrs" class="result-value highlight"></div></div>
             <div class="result-box wide"><div class="result-label">⚠ MALFUNCTION POINT</div><div id="resMalfunction" class="result-value" style="color:var(--red)"></div></div>
+            <div id="resGazetteerRow" class="result-box wide" style="display:none"><div class="result-label">🏰 SECTOR GAZETTEER</div><div id="resGazetteer" class="result-value" style="color:#4caf50"></div></div>
           </div>
         </div>
 
@@ -2025,6 +2029,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
 <script src="data_planets.js"></script>
 <script src="data_npcs_notable.js"></script>
 <script src="data_sysgen.js"></script>
+<script src="data_gazetteers.js"></script>
 
 <script>
 // ============================================================
@@ -3172,40 +3177,151 @@ function engage() {
     return { ...p, grid: key, hours: hrs };
   });
 
-  const totalHours = totalBase * hd;
+  // Gazetteer override check
+  const oGaz = findGazetteer(origin.name);
+  const dGaz = findGazetteer(dest.name);
+  let gazUsed = null, gazHoursBase = 0, gazGateway = null, gazSurcharge = 0;
+  let gatewayGrids = new Set();  // grids that are gateways for path tile marking
+
+  if (oGaz && dGaz && oGaz === dGaz) {
+    // Both in same gazetteer — use gazetteer time directly
+    const gt = getGazetteerTime(oGaz, origin.name, dest.name);
+    if (gt !== null) {
+      gazUsed = oGaz;
+      gazHoursBase = gt;
+      gazSurcharge = GAZETTEER_DATA[oGaz].surcharge || 0;
+    }
+  } else if (oGaz && !dGaz) {
+    // Origin in gazetteer, dest outside — route from origin to gateway, then grid to dest
+    const gw = pickGateway(oGaz, dest.grid);
+    if (gw) {
+      const gt = getGazetteerTime(oGaz, origin.name, gw);
+      if (gt !== null) {
+        gazUsed = oGaz;
+        gazGateway = gw;
+        gazHoursBase = gt;
+        gazSurcharge = GAZETTEER_DATA[oGaz].surcharge || 0;
+        const gwSys = findSystem(gw);
+        if (gwSys) gatewayGrids.add(gwSys.grid);
+      }
+    }
+  } else if (dGaz && !oGaz) {
+    // Dest in gazetteer, origin outside — grid to gateway, then gazetteer to dest
+    const gw = pickGateway(dGaz, origin.grid);
+    if (gw) {
+      const gt = getGazetteerTime(dGaz, gw, dest.name);
+      if (gt !== null) {
+        gazUsed = dGaz;
+        gazGateway = gw;
+        gazHoursBase = gt;
+        gazSurcharge = GAZETTEER_DATA[dGaz].surcharge || 0;
+        const gwSys = findSystem(gw);
+        if (gwSys) gatewayGrids.add(gwSys.grid);
+      }
+    }
+  }
+
+  let totalHours, displayBase;
+  if (gazUsed && !gazGateway) {
+    // Both endpoints in same gazetteer — pure gazetteer time
+    displayBase = gazHoursBase + gazSurcharge;
+    totalHours = displayBase * hd;
+  } else if (gazUsed && gazGateway) {
+    // One endpoint in gazetteer — grid time to/from gateway + gazetteer time within sector
+    displayBase = totalBase + gazHoursBase + gazSurcharge;
+    totalHours = displayBase * hd;
+  } else {
+    displayBase = totalBase;
+    totalHours = totalBase * hd;
+  }
+
   const days = Math.floor(totalHours / 24);
   const hrs = totalHours - days * 24;
   const malfIdx = Math.floor(Math.random() * pathData.length);
 
+  // Mark all gateway system grids in the path and build grid→name map
+  const gatewayNames = {};  // grid → system name
+  if (gazUsed) {
+    const gaz = GAZETTEER_DATA[gazUsed];
+    for (const gw of gaz.gateways) {
+      const gwSys = findSystem(gw.system);
+      if (gwSys) { gatewayGrids.add(gwSys.grid); gatewayNames[gwSys.grid] = gw.system; }
+    }
+  }
+
   // Display results
   document.getElementById('travelResult').style.display = 'block';
-  document.getElementById('routeLabel').textContent = routeMode === 'smuggler' ? "Smuggler's Route (Straight Line)" : 'Trade Route (Optimal Path)';
+  let routeLabel = routeMode === 'smuggler' ? "Smuggler's Route (Straight Line)" : 'Trade Route (Optimal Path)';
+  if (gazUsed && !gazGateway) routeLabel = 'Sector Gazetteer Route (' + gazUsed + ')';
+  else if (gazUsed && gazGateway) routeLabel += ' + Sector Gazetteer (' + gazUsed + ')';
+  document.getElementById('routeLabel').textContent = routeLabel;
   document.getElementById('resOGrid').textContent = origin.grid;
   document.getElementById('resDGrid').textContent = dest.grid;
   document.getElementById('resORegion').textContent = origin.region;
   document.getElementById('resDRegion').textContent = dest.region;
   document.getElementById('resTiles').textContent = pathData.length;
-  document.getElementById('resBaseHrs').textContent = totalBase.toFixed(1) + 'h';
+  document.getElementById('resBaseHrs').textContent = displayBase.toFixed(1) + 'h';
   document.getElementById('resTotalHrs').textContent = totalHours.toFixed(1) + 'h';
   document.getElementById('resTime').textContent = days + 'd ' + hrs.toFixed(1) + 'h';
   document.getElementById('resMalfunction').textContent = pathData[malfIdx].grid;
 
+  // Gazetteer info row
+  const gazRow = document.getElementById('resGazetteerRow');
+  if (gazUsed) {
+    gazRow.style.display = '';
+    let gazText = gazUsed + ' — ' + GAZETTEER_DATA[gazUsed].source;
+    if (gazGateway) gazText += ' (via ' + gazGateway + ')';
+    if (gazSurcharge > 0) gazText += ' (+' + gazSurcharge + 'h approach)';
+    if (gazHoursBase > 0) gazText += ' [' + gazHoursBase + 'h sector]';
+    document.getElementById('resGazetteer').textContent = gazText;
+  } else {
+    gazRow.style.display = 'none';
+  }
+
   // Path list
   let phtml = '';
-  for (let i = 0; i < pathData.length; i++) {
-    const p = pathData[i];
-    const cls = i === malfIdx ? 'path-tile malfunction' : 'path-tile';
-    let hcls = 'hrs-crawl';
-    if (p.hours <= 1) hcls = 'hrs-fast';
-    else if (p.hours <= 2) hcls = 'hrs-med';
-    else if (p.hours <= 4) hcls = 'hrs-slow';
-    else if (p.hours <= 8) hcls = 'hrs-vslow';
-    phtml += `<div class="${cls}"><span>${i === malfIdx ? '⚠ ' : ''}${p.grid}</span><span class="path-hrs ${hcls}">${p.hours}h</span></div>`;
+  if (gazUsed && !gazGateway) {
+    // Pure gazetteer route — show sector path instead of grid tiles
+    const oLink = `onclick="switchTab('galaxy');document.getElementById('galaxySearch').value='${origin.name.replace(/'/g,"\\'")}';searchGalaxy('${origin.name.replace(/'/g,"\\'")}')"`;
+    const dLink = `onclick="switchTab('galaxy');document.getElementById('galaxySearch').value='${dest.name.replace(/'/g,"\\'")}';searchGalaxy('${dest.name.replace(/'/g,"\\'")}')"`;
+    phtml += `<div class="path-tile gateway" style="cursor:pointer" ${oLink}><span>🏰 ${origin.name} (${origin.grid})</span><span class="path-hrs hrs-fast">ORIGIN</span></div>`;
+    if (gazSurcharge > 0) {
+      phtml += `<div class="path-tile" style="color:var(--text-dim);font-style:italic"><span>⟐ Hyperspace approach to sector</span><span class="path-hrs" style="color:#4caf50">${gazSurcharge}h</span></div>`;
+    }
+    phtml += `<div class="path-tile" style="color:var(--text-dim);font-style:italic"><span>⟐ ${gazUsed} sector route</span><span class="path-hrs" style="color:#4caf50">${gazHoursBase}h</span></div>`;
+    phtml += `<div class="path-tile gateway" style="cursor:pointer" ${dLink}><span>🏰 ${dest.name} (${dest.grid})</span><span class="path-hrs hrs-fast">DEST</span></div>`;
+  } else {
+    for (let i = 0; i < pathData.length; i++) {
+      const p = pathData[i];
+      const isGateway = gatewayGrids.has(p.grid);
+      let cls = 'path-tile';
+      if (i === malfIdx) cls += ' malfunction';
+      if (isGateway) cls += ' gateway';
+      let hcls = 'hrs-crawl';
+      if (p.hours <= 1) hcls = 'hrs-fast';
+      else if (p.hours <= 2) hcls = 'hrs-med';
+      else if (p.hours <= 4) hcls = 'hrs-slow';
+      else if (p.hours <= 8) hcls = 'hrs-vslow';
+      let prefix = '';
+      if (i === malfIdx) prefix = '⚠ ';
+      if (isGateway) prefix = '🏰 ';
+      if (i === malfIdx && isGateway) prefix = '⚠🏰 ';
+      const gwName = isGateway ? gatewayNames[p.grid] : null;
+      const gwLabel = gwName ? ` <span style="color:#4caf50;font-size:11px;cursor:pointer" onclick="switchTab('galaxy');document.getElementById('galaxySearch').value='${gwName.replace(/'/g,"\\'")}';searchGalaxy('${gwName.replace(/'/g,"\\'")}')">${gwName}</span>` : '';
+      phtml += `<div class="${cls}"><span>${prefix}${p.grid}${gwLabel}</span><span class="path-hrs ${hcls}">${p.hours}h</span></div>`;
+    }
+    if (gazUsed && gazGateway) {
+      // Append the gazetteer segment after grid path
+      if (gazSurcharge > 0) {
+        phtml += `<div class="path-tile gateway" style="font-style:italic"><span>🏰 Hyperspace approach to ${gazUsed}</span><span class="path-hrs" style="color:#4caf50">+${gazSurcharge}h</span></div>`;
+      }
+      phtml += `<div class="path-tile gateway" style="font-style:italic"><span>🏰 ${gazUsed} sector route (${gazGateway} → ${dGaz ? dest.name : origin.name})</span><span class="path-hrs" style="color:#4caf50">+${gazHoursBase}h</span></div>`;
+    }
   }
   document.getElementById('pathOutput').innerHTML = phtml;
 
   // Draw map
-  drawMap(pathData, origin, dest, malfIdx);
+  drawMap(pathData, origin, dest, malfIdx, gatewayGrids);
   document.getElementById('tab-travel').scrollTop = 0;
 }
 
@@ -4174,7 +4290,7 @@ function initMapZoom(containerId, zoomId) {
   });
 }
 
-function drawMap(pathData, origin, dest, malfIdx) {
+function drawMap(pathData, origin, dest, malfIdx, gatewayGrids) {
   const canvas = document.getElementById('mapCanvas');
   const mapImg = document.getElementById('mapImage');
   const dpr = window.devicePixelRatio || 1;
@@ -4260,6 +4376,26 @@ function drawMap(pathData, origin, dest, malfIdx) {
   ctx.strokeStyle = '#ff4444';
   ctx.lineWidth = 2;
   ctx.beginPath(); ctx.arc(mp.x, mp.y, 8, 0, Math.PI * 2); ctx.stroke();
+
+  // Gateway markers (green diamond)
+  if (gatewayGrids && gatewayGrids.size > 0) {
+    for (let i = 0; i < pathData.length; i++) {
+      if (gatewayGrids.has(pathData[i].grid)) {
+        const gp = gridToPixel(pathData[i].col, pathData[i].row);
+        ctx.strokeStyle = '#4caf50';
+        ctx.fillStyle = 'rgba(76,175,80,.3)';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(gp.x, gp.y - 9);
+        ctx.lineTo(gp.x + 9, gp.y);
+        ctx.lineTo(gp.x, gp.y + 9);
+        ctx.lineTo(gp.x - 9, gp.y);
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
+      }
+    }
+  }
 
   // Labels
   ctx.shadowColor = 'rgba(0,0,0,.8)';
