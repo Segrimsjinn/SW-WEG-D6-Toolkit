@@ -97,9 +97,9 @@ const GAZETTEER_DATA = {
     grid: "L-9",
     // Gateway routing: Corulag (west/Deep Core), Brentaal (north/center), Raltiir (east)
     gateways: [
-      { system: "Raltiir", fromGrids: null },        // default (east)
-      { system: "Corulag", fromGrids: ["K-9","K-8","K-10","J-9","J-8","J-10","I-9","I-8","I-10","H-9","H-8","H-10","G-9","G-8","G-10","F-9","F-8","F-10","E-9","E-8","E-10"] },
-      { system: "Brentaal", fromGrids: ["L-8","L-7","L-6","K-7","K-6","M-8","M-7"] }
+      { system: "Corulag", fromGrids: null },        // default (west/Deep Core/same grid)
+      { system: "Raltiir", fromGrids: ["M-9","M-10","N-9","N-10","O-9","O-10","M-8","N-8"] },  // east
+      { system: "Brentaal", fromGrids: ["L-8","L-7","L-6","K-7","K-6","M-7"] }  // north
     ],
     surcharge: 0,
     systems: ["Brentaal","Chandrila","Corulag","Esseles","Raltiir","Rhinnal"],
