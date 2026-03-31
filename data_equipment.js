@@ -4058,5 +4058,30 @@ const EQUIPMENT_DATA = [
   "availability": "",
   "game_notes": "Jettisons any portion of cargo from either secret compartments or main bay. Can be triggered by remote or by timer. Weight: negligible.",
   "source": "WEG40063 Galaxy Guide 6: Tramp Freighters p.42"
+ },
+
+ {
+  "name": "Conner Net (Type I Restraining Net)",
+  "category": "Ship Equipment",
+  "cost": "5,000 per canister",
+  "availability": "3, R",
+  "game_notes": "Starfighter scale. Skill: Starship gunnery. Damage: 10D. Range: 5-25/50/100 (starfighter scale). Ammo: 1 per canister. Difficult starship gunnery roll to activate. Net is 50 meters in diameter. All ships touched by the net suffer +5D penalty to any electrical system (drives, weapons, sensors, ship-integrated communications). Any unprotected person touching a charged net suffers 10D damage every round of contact.",
+  "source": "WEG40131 The Thrawn Trilogy Sourcebook p.192"
+ },
+ {
+  "name": "Metal-Crystal Phase Shifter (MCPS) — Quarter-Scale Prototype",
+  "category": "Ship Equipment",
+  "cost": "Not for sale (Imperial superweapon prototype)",
+  "availability": "4, X",
+  "game_notes": "Scale: Capital. Skill: MCPS operation. Damage: 5D capital scale (bypasses shields). Range: 3-30/50/300. Fire Rate: 1/5. Crew: 12, skeleton 8/+10. Body: 3D (starfighter scale). Fire Control: 2D. Blast Radius: 300m. The MCPS field alters the crystalline structure of metals, causing them to break down into fine powder. Cannot be blocked by shields. Every ship within the 300m field is equally affected. This quarter-scale prototype (Maw Installation Lab Module A) affects ~1% of target surface area but leaves pinhole structural failures across the entire hull — sufficient to destroy most ships. Uses old Death Star laser-focusing lens; a custom lens would produce full-powered field. Project headed by Doxin.",
+  "source": "WEG40114 The Jedi Academy Sourcebook p.68"
+ },
+ {
+  "name": "GenaTech Zeta One Heavy Ion Cannon",
+  "category": "Ship Equipment",
+  "cost": "Not available for sale",
+  "availability": "4, X",
+  "game_notes": "Scale: Capital. Skill: Capital ship gunnery: heavy ion cannon. Damage: 7D. Range: 1-5/15/35 (space), 2-10/30/75 km (atmosphere). Crew: 2. Fire Control: 1D. Ammo: Power generator (1 shot per 50 standard hours). Experimental heavy ion cannon developed by an Imperial faction in Corva Sector. Potential to completely ionize a ship on the first successful strike. 2 in 6 chance per use of backfiring and ionizing all systems of the carrying ship. Leaves nano-scopic fields of highly ionized particles that telegraph the presence of a vessel bearing this weapon.",
+  "source": "WEG40138 Classic Adventures Vol 4 p.48"
  }
 ];

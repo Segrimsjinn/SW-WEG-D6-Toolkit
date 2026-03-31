@@ -3288,18 +3288,6 @@ const WEAPONS_DATA = [
   "source": "Arms and Equipment Guide (page 30)"
  },
  {
-  "name": "Conner Net (Type I Restraining Net)",
-  "category": "Starship Weapons",
-  "skill": "Starship gunnery",
-  "cost": "5,000 per canister",
-  "availability": "3, R",
-  "damage": "10D",
-  "range": "5-25/50/100 (starfighter scale)",
-  "ammo": "1 per canister",
-  "game_notes": "Starfighter scale. Difficult starship gunnery roll to activate. Net is 50 meters in diameter. All ships touched by the net suffer +5D penalty to any electrical system (drives, weapons, sensors, ship-integrated communications). Any unprotected person touching a charged net suffers 10D damage every round of contact.",
-  "source": "WEG40131 The Thrawn Trilogy Sourcebook p.192"
- },
- {
   "name": "CoMar G-003 Tri-Tracker",
   "category": "Artillery",
   "skill": "Blaster artillery: CoMar G-003",
@@ -3322,30 +3310,6 @@ const WEAPONS_DATA = [
   "ammo": "40 (power generator)",
   "game_notes": "Crew: 7. FC 3D. Body 3D. Fire Rate 1/10. 100m blast radius. Perhaps the largest land-based ion cannon ever built. Designed for line-of-sight bombardment against cities, bridges, dams, structures, and stationary low-orbit targets. Now obsolete but still used on frontier and less advanced worlds. Takes 6-12 hours to set up or disassemble. Requires forward observer for accurate medium/long-range fire. No longer in production — spare parts increasingly scarce. Enormous power drain. Energy discharge causes unusual atmospheric effects and can create ionization hazards for friendly troops.",
   "source": "WEG40092 Imperial Sourcebook p.87"
- },
- {
-  "name": "Metal-Crystal Phase Shifter (MCPS) — Quarter-Scale Prototype",
-  "category": "Starship Weapons",
-  "skill": "MCPS operation",
-  "cost": "Not for sale (Imperial superweapon prototype)",
-  "availability": "4, X",
-  "damage": "5D (capital scale; bypasses shields)",
-  "range": "3-30/50/300",
-  "ammo": "Power generator",
-  "game_notes": "Scale: Capital. Crew: 12, skeleton: 8/+10. Body: 3D (starfighter scale). Fire Rate: 1/5. Fire Control: 2D. Blast Radius: 300 meters. The MCPS field alters the crystalline structure of metals, causing them to break down into fine powder. Damage cannot be blocked by shields. Because the MCPS is a field rather than a beam, every ship within the 300-meter-wide field is equally affected. This quarter-scale prototype (located at Maw Installation Lab Module A) only affects approximately one percent of the target's surface area, but leaves pinhole structural failures across the entire hull — sufficient to destroy most ships. The dish focusing lens from the old Death Star laser-focusing tests is used to project the field; a custom-designed lens would produce a full-powered MCPS field. Project headed by Doxin.",
-  "source": "WEG40114 The Jedi Academy Sourcebook p.68"
- },
- {
-  "name": "GenaTech Zeta One Heavy Ion Cannon",
-  "category": "Starship Weapons",
-  "skill": "Capital ship gunnery: heavy ion cannon",
-  "cost": "Not available for sale",
-  "availability": "4, X",
-  "damage": "7D",
-  "range": "1-5/15/35 (space)",
-  "ammo": "Power generator (1 shot per 50 standard hours)",
-  "game_notes": "Scale: Capital. Crew: 2. Fire Control: 1D. Atmosphere Range: 2-10/30/75 km. Experimental heavy ion cannon developed by an Imperial faction in Corva Sector. Has the potential to completely ionize a ship on the first successful strike. There is a 2 in 6 chance per use that it will backfire and ionize all systems of the ship that carries it. Requires a large amount of energy to fire and can only be used once per 50 standard hour period. Leaves nano-scopic fields of highly ionized particles that telegraph the presence of a vessel bearing this weapon.",
-  "source": "WEG40138 Classic Adventures Vol 4 p.48"
  },
  {
   "name": "Bryn & Gweith Leveler 1",
