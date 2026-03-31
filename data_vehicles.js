@@ -3604,5 +3604,24 @@ const VEHICLES_DATA = [
   "weapons": "",
   "game_notes": "Altitude range: 100-250 km. Atmospheric mining craft. Flying tank with air scoops and filters. Released from transport ships in upper atmosphere, descends to areas of richest gas concentrations. Built to withstand high pressure and storms of gas giants.",
   "source": "WEG40077 Flashpoint! Brak Sector p.29"
+},
+{
+  "name": "Eib Model-D Cloudskiff",
+  "category": "Airspeeders",
+  "scale": "Speeder",
+  "length": "18 meters",
+  "skill": "Repulsorlift operation: Eib Model-D",
+  "crew": "1 (1 can coordinate)",
+  "passengers": "10",
+  "cargo": "100 metric tons",
+  "cover": "Full",
+  "cost": "150,000",
+  "maneuverability": "1D",
+  "move": "18; 50 kmh",
+  "body": "2D",
+  "shields": "",
+  "weapons": "",
+  "game_notes": "High altitude cargo skiff designed for gas giant atmospheres. Enclosed pressurized pilot and passenger section. Sacrifices speed for incredible altitude capability. Originally designed by Sullustan inventor Huegu Eib for Tyed Kant. Altitude range: Tyed Kant's zone of habitability.",
+  "source": "WEG40066 Supernova p.40"
 }
 ];

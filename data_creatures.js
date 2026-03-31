@@ -7082,5 +7082,19 @@ const CREATURES_DATA = [
     orneriness: "3D",
     special: "Hooked beak (STR+1D damage), normally used for digging roots. Multicolored bright green and red plumage. Beats wings like a hummingbird. Surprisingly aggressive — will peck at nearby beings for no reason and antagonize predators many times its size. Endangered species due to suicidal aggression.",
     source: "WEG40060 Twin Stars of Kira p.71"
+  },
+  {
+    name: "Lagoin",
+    type: "Herbivore",
+    planet: "Tyed Kant",
+    habitat: "Atmospheric (gas giant upper clouds)",
+    dex: "2D",
+    per: "1D+2",
+    str: "1D-12D (varies by size)",
+    move: "20",
+    size: "Centimeters to 60 meters",
+    orneriness: "1D",
+    special: "Tentacles: One per meter of length, do Strength damage. Semi-intelligent floating gelatinous ovoids with a single mobile eye and conical filter-mouth. Paddle-like tentacles used for propulsion, stability, and defense. Docile unless injured or confused, then attempt to grasp and crush smaller foes.",
+    source: "WEG40066 Supernova p.37"
   }
 ];

@@ -30928,5 +30928,101 @@ const NOTABLE_NPCS = [
     equipment: "Blaster pistol (4D damage), comlink, 2 medpacs, Ghtroc freighter Star Trader",
     capsule: "Lirisa Casti is a black-haired, attractive young woman whose hot-shot, show-off piloting got her fired from her job as an LMC shuttle pilot. She recently acquired a basic Ghtroc freighter, the Star Trader, which she is restoring from the inside out. She plans to use it for cargo transportation and as cover for Rebel activity. Extremely confident in her piloting skills, which she can't help bragging about. Something of a show-off, which often leads to foolish decisions and dangerous maneuvers.",
     source: "WEG40077 Flashpoint! Brak Sector p.74"
+  },
+  {
+    name: "Captain Wallace Fisk",
+    species: "Human",
+    system: "Demophon",
+    location: "Demophon — Selkren, ISB Office",
+    affiliations: ["Galactic Empire", "ISB Agents"],
+    role: "ISB Investigations Agent",
+    type: "Minor NPC",
+    stats: {
+      DEXTERITY: { base: "3D+1", skills: { "blaster": "5D", "blaster: blaster pistol": "6D+1", "dodge": "6D+2", "grenade": "4D", "melee combat": "4D+2", "melee parry": "4D+1" } },
+      KNOWLEDGE: { base: "2D+1", skills: { "bureaucracy": "4D+1", "intimidation": "4D", "streetwise": "4D" } },
+      MECHANICAL: { base: "2D+2", skills: { "space transports": "3D+2", "starship gunnery": "3D+2", "starship shields": "3D+1" } },
+      PERCEPTION: { base: "4D", skills: { "command": "6D", "search": "5D+2" } },
+      STRENGTH: { base: "3D+2", skills: { "brawling": "4D+2" } },
+      TECHNICAL: { base: "2D", skills: { "computer programming/repair": "4D", "first aid": "4D", "security": "3D+2" } }
+    },
+    specialAbilities: "",
+    forcePoints: "1",
+    characterPoints: "4",
+    move: "10",
+    equipment: "Blaster pistol (4D damage), knife (STR+2 damage), protective vest (+1D physical/+1 energy), command cylinder, datapad",
+    capsule: "Wallace Fisk is a very charismatic ISB Investigations Agent assigned to Demophon. A motivated personality who always knows what his superiors want, he was assigned here because of his understanding of the technology being produced. Of medium build with strong facial features and a cleft chin, known for being the last to break eye contact. Generally likable but has staunch views about the sanctity of law and punishment — raised on a harsh colony by strict parents, he takes personal pleasure in dealing with criminals effectively. Currently polishing his record as he prepares for his next assignment, hoping to lead a sector Investigations office.",
+    source: "WEG40066 Supernova p.8"
+  },
+  {
+    name: "Thadius Black",
+    species: "Human",
+    system: "Demophon",
+    location: "Demophon — Selkren",
+    affiliations: ["Neutral"],
+    role: "Industrialist / Humanitarian",
+    type: "Minor NPC",
+    stats: {
+      DEXTERITY: { base: "2D+2", skills: { "blaster": "4D+1", "dodge": "4D+2", "melee combat": "3D", "melee parry": "3D" } },
+      KNOWLEDGE: { base: "3D", skills: { "bureaucracy": "5D+1", "survival": "3D+2" } },
+      MECHANICAL: { base: "3D+2", skills: { "repulsorlift operation": "5D", "starship gunnery": "5D" } },
+      PERCEPTION: { base: "3D+1", skills: { "bargain": "4D", "command": "5D", "hide": "4D", "search": "5D", "sneak": "4D" } },
+      STRENGTH: { base: "2D+1", skills: { "brawling": "4D+1" } },
+      TECHNICAL: { base: "3D", skills: { "computer programming/repair": "4D", "first aid": "3D", "security": "4D" } }
+    },
+    specialAbilities: "",
+    forcePoints: "1",
+    characterPoints: "4",
+    move: "10",
+    equipment: "Glow rod, modified heavy blaster pistol (+1 to hit, 5D damage), comlink, blackjack (STR+1 damage), protective vest (+1D physical/+1 energy)",
+    capsule: "Thadius Black is a late middle-aged industrialist who has been in the droid components business on Demophon since his youth, working his way to the top. Above all else a compassionate man, he felt compelled to act when he saw political prisoners being mistreated by the Empire. He uses the money from his business to fund an operation smuggling political prisoners off the doomed planet, willing to sacrifice his fortune, reputation, and life to undo this wrong. His team includes associates Daria Kellner, Joren Hunt, and the Sullustan Vemuss, with his wife Kymber and father Perth running a refugee base on Mowgle.",
+    source: "WEG40066 Supernova p.9"
+  },
+  {
+    name: "Mazzoney",
+    species: "Unknown Alien",
+    system: "Demophon",
+    location: "Demophon — Selkren, Mazzoney's Cantina",
+    affiliations: ["Neutral"],
+    role: "Bartender / Information Broker",
+    type: "Minor NPC",
+    stats: {
+      DEXTERITY: { base: "3D+2", skills: { "blaster": "4D+2", "dodge": "4D", "melee combat": "4D+2", "melee parry": "4D+2" } },
+      KNOWLEDGE: { base: "3D", skills: { "languages": "5D", "streetwise": "6D", "survival": "4D+1" } },
+      MECHANICAL: { base: "1D+1", skills: {} },
+      PERCEPTION: { base: "3D+1", skills: { "bargain": "4D", "con": "4D", "gambling": "4D+1" } },
+      STRENGTH: { base: "5D+1", skills: { "brawling": "7D", "lifting": "7D", "stamina": "7D" } },
+      TECHNICAL: { base: "2D", skills: {} }
+    },
+    specialAbilities: "Four arms: Can make two brawling attacks per round without the -1D multi-action penalty. Subsequent actions incur normal penalties.",
+    forcePoints: "0",
+    characterPoints: "2",
+    move: "12",
+    equipment: "2 blaster pistols (4D+2 damage each), mace (STR+1D+2 damage), 1,000 credits, comlink",
+    capsule: "Mazzoney is a large, dark-skinned and very muscular four-armed humanoid alien of unknown origin. Small sharp fangs protrude from his lower lip. His head is capped with an orange/yellow mohawk, the rest crew-length, with a heavily scarred forehead. His filthy, torn white shirt completes the look. He runs Mazzoney's cantina in Selkren — a den of decadence where any pleasure can be purchased and information is the second most valuable commodity. He employs Gamorrean bouncers and can summon ISB agents if needed. He enjoys grabbing opponents with two arms and head-butting them into submission.",
+    source: "WEG40066 Supernova p.16"
+  },
+  {
+    name: "Faerz Waleth",
+    species: "Human",
+    system: "Kantel",
+    location: "Kantel — Tyed Kant, Nebula Consumables Sprawl #41",
+    affiliations: ["Neutral"],
+    role: "Corporate Manager",
+    type: "Minor NPC",
+    stats: {
+      DEXTERITY: { base: "2D", skills: {} },
+      KNOWLEDGE: { base: "4D", skills: { "bureaucracy": "4D+2", "business": "5D", "value": "5D" } },
+      MECHANICAL: { base: "3D", skills: {} },
+      PERCEPTION: { base: "3D+1", skills: { "bargain": "4D+1", "command": "4D", "investigation": "4D+1" } },
+      STRENGTH: { base: "2D", skills: {} },
+      TECHNICAL: { base: "2D", skills: {} }
+    },
+    specialAbilities: "",
+    forcePoints: "1",
+    characterPoints: "6",
+    move: "10",
+    equipment: "Company uniform, corporate ID, comlink",
+    capsule: "Faerz Waleth is a middle-aged, honest businessman who believes in playing by the rules whenever possible. He manages Nebula Consumables' ranch sprawl #41 on Tyed Kant. Quick to anger but will listen to reason in adverse circumstances. A trusted ally and friend of the late Rebel operative Sehn Baroule of Premier Provisions, though he does not know about Baroule's Alliance connections — he thinks Baroule was guilty of nothing more than normal industrial espionage.",
+    source: "WEG40066 Supernova p.39"
   }
 ];
