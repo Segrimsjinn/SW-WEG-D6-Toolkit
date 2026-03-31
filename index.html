@@ -1829,51 +1829,74 @@ color:var(--text-dim);min-width:35px;text-align:right;
 
       <div class="card" id="gm-shipmods">
         <div class="card-title" style="display:flex;justify-content:space-between;align-items:center">⟐ Ship Modifications<a href="#gm-top" style="font-size:9px;color:var(--text-dim);text-decoration:none">↑ Top</a></div>
-        <div style="font-size:9px;color:var(--text-dim);font-style:italic;margin-bottom:8px">All costs are % of ship's original retail price (except Weapons: % of weapon cost). Repair bay rental: ~100 cr/day. Labor: 20–50% of mod cost. Used parts: half price but may be unreliable.</div>
+        <div style="font-size:9px;color:var(--text-dim);font-style:italic;margin-bottom:8px">All costs are % of original retail price (Weapons/Shields/Range: % of weapon cost). One pip or one Move/Space level at a time. Max +1D+2 or +4 Space. One mod roll per month of game time. Repair bay rental: ~100 cr/day. Labor: 2–3x cost if hiring out. Used parts: half price but may be unreliable.</div>
         <div style="display:flex;gap:10px;flex-wrap:wrap">
           <div style="flex:1;min-width:155px">
-            <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin-bottom:3px">SUBLIGHT DRIVES</div>
+            <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin-bottom:3px">SUBLIGHT DRIVES (SPACE)</div>
             <div style="font-size:10px;color:var(--text-dim);line-height:1.9">
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Space +1</span><span>Moderate · +10% · <span style="color:var(--gold)">+1</span></span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Space +2</span><span>Difficult · +15% · <span style="color:var(--gold)">+1</span></span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Space +3</span><span>V.Difficult · +25% · <span style="color:var(--red)">+2</span></span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Space +4 <span style="font-size:7px;color:var(--text-dim)">(max)</span></span><span>Heroic · +35% · <span style="color:var(--red)">+3</span></span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Space +1</span><span>Moderate · 10% · <span style="color:var(--gold)">+1</span></span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Space +2</span><span>Difficult · 15% · <span style="color:var(--gold)">+1</span></span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Space +3</span><span>V.Difficult · 20% · <span style="color:var(--red)">+2</span></span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Space +4 <span style="font-size:7px;color:var(--text-dim)">(max)</span></span><span>Heroic · 25% · <span style="color:var(--red)">+3</span></span></div>
+            </div>
+            <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin:8px 0 3px">VEHICLE MOVE</div>
+            <div style="font-size:10px;color:var(--text-dim);line-height:1.9">
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Move +5</span><span>Moderate · 10% · <span style="color:var(--gold)">+1</span></span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Move +10</span><span>Difficult · 15% · <span style="color:var(--gold)">+1</span></span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Move +15</span><span>V.Difficult · 20% · <span style="color:var(--red)">+2</span></span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Move +20 <span style="font-size:7px;color:var(--text-dim)">(max)</span></span><span>Heroic · 25% · <span style="color:var(--red)">+3</span></span></div>
             </div>
             <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin:8px 0 3px">MANEUVERABILITY</div>
             <div style="font-size:10px;color:var(--text-dim);line-height:1.9">
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>+1</span><span>Easy · +5% · <span style="color:var(--gold)">+1</span></span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>+2</span><span>Moderate · +10% · <span style="color:var(--gold)">+1</span></span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>+1D</span><span>Difficult · +15% · <span style="color:var(--gold)">+1</span></span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>+1D+1</span><span>V.Difficult · +20% · <span style="color:var(--red)">+2</span></span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>+1D+2 <span style="font-size:7px;color:var(--text-dim)">(max)</span></span><span>Heroic · +25% · <span style="color:var(--red)">+3</span></span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>+1</span><span>Easy · 5% · <span style="color:var(--gold)">+1</span></span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>+2</span><span>Moderate · 10% · <span style="color:var(--gold)">+1</span></span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>+1D</span><span>Difficult · 15% · <span style="color:var(--gold)">+1</span></span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>+1D+1</span><span>V.Difficult · 20% · <span style="color:var(--red)">+2</span></span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>+1D+2 <span style="font-size:7px;color:var(--text-dim)">(max)</span></span><span>Heroic · 25% · <span style="color:var(--red)">+3</span></span></div>
             </div>
           </div>
           <div style="flex:1;min-width:155px">
             <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin-bottom:3px">HYPERDRIVE</div>
             <div style="font-size:10px;color:var(--text-dim);line-height:1.9">
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>x4 → x3+</span><span>Easy · +10% · <span style="color:var(--gold)">+1</span></span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>x3 → x2</span><span>Moderate · +15% · <span style="color:var(--gold)">+1</span></span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>x2 → x1</span><span>V.Difficult · +25% · <span style="color:var(--red)">+2</span></span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>x1 → x1/2 <span style="font-size:7px;color:var(--text-dim)">(max)</span></span><span>Heroic · +35% · <span style="color:var(--red)">+3</span></span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>x4 → x3+</span><span>Easy · 10% · <span style="color:var(--gold)">+1</span></span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>x3 → x2</span><span>Moderate · 15% · <span style="color:var(--gold)">+1</span></span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>x2 → x1</span><span>V.Difficult · 25% · <span style="color:var(--red)">+2</span></span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>x1 → x1/2 <span style="font-size:7px;color:var(--text-dim)">(max)</span></span><span>Heroic · 35% · <span style="color:var(--red)">+3</span></span></div>
             </div>
             <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin:8px 0 3px">HULL</div>
             <div style="font-size:10px;color:var(--text-dim);line-height:1.9">
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>+1</span><span>Moderate · +10% · <span style="color:var(--gold)">+1</span></span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>+2</span><span>Difficult · +15% · <span style="color:var(--gold)">+1</span></span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>+1D</span><span>V.Difficult · +20% · <span style="color:var(--red)">+2</span></span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>+1D+1 <span style="font-size:7px;color:var(--text-dim)">(max)</span></span><span>Heroic · +25% · <span style="color:var(--red)">+3</span></span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>+1</span><span>Moderate · 10% · <span style="color:var(--gold)">+1</span></span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>+2</span><span>Difficult · 15% · <span style="color:var(--gold)">+1</span></span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>+1D</span><span>V.Difficult · 20% · <span style="color:var(--red)">+2</span></span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>+1D+1 <span style="font-size:7px;color:var(--text-dim)">(max)</span></span><span>Heroic · 25% · <span style="color:var(--red)">+3</span></span></div>
             </div>
-            <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin:8px 0 3px">WEAPONRY <span style="color:var(--text-dim);font-weight:normal">(% of weapon cost)</span></div>
+            <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin:8px 0 3px">SHIELDS <span style="color:var(--text-dim);font-weight:normal">(% of ship cost)</span></div>
             <div style="font-size:10px;color:var(--text-dim);line-height:1.9">
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Dmg +1</span><span>Easy · 15% · <span style="color:var(--gold)">+1</span></span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Dmg +2</span><span>Moderate · 25% · <span style="color:var(--gold)">+1</span></span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Dmg +1D</span><span>Difficult · 30% · <span style="color:var(--red)">+2</span></span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Dmg +1D+1</span><span>V.Difficult · 35% · <span style="color:var(--red)">+2</span></span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Dmg +1D+2</span><span>Heroic · 50% · <span style="color:var(--red)">+3</span></span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>+1</span><span>Easy · 15% · <span style="color:var(--gold)">+1</span></span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>+2</span><span>Moderate · 25% · <span style="color:var(--gold)">+1</span></span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>+1D</span><span>Difficult · 30% · <span style="color:var(--gold)">+1</span></span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>+1D+1</span><span>V.Difficult · 35% · <span style="color:var(--red)">+2</span></span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>+1D+2 <span style="font-size:7px;color:var(--text-dim)">(max)</span></span><span>Heroic · 50% · <span style="color:var(--red)">+3</span></span></div>
             </div>
           </div>
           <div style="flex:1;min-width:155px">
-            <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin-bottom:3px">INSTALLATION TIME</div>
+            <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin-bottom:3px">WEAPON DAMAGE <span style="color:var(--text-dim);font-weight:normal">(% of weapon cost)</span></div>
+            <div style="font-size:10px;color:var(--text-dim);line-height:1.9">
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Dmg +1</span><span>Easy · 15% · <span style="color:var(--gold)">+1</span></span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Dmg +2</span><span>Moderate · 25% · <span style="color:var(--gold)">+1</span></span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Dmg +1D</span><span>Difficult · 30% · <span style="color:var(--gold)">+1</span></span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Dmg +1D+1</span><span>V.Difficult · 35% · <span style="color:var(--red)">+2</span></span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Dmg +1D+2 <span style="font-size:7px;color:var(--text-dim)">(max)</span></span><span>Heroic · 50% · <span style="color:var(--red)">+3</span></span></div>
+            </div>
+            <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin:8px 0 3px">WEAPON RANGE <span style="color:var(--text-dim);font-weight:normal">(% of weapon cost)</span></div>
+            <div style="font-size:10px;color:var(--text-dim);line-height:1.9">
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Range +5%</span><span>Easy · 5% · <span style="color:var(--gold)">+1</span></span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Range +10%</span><span>Moderate · 10% · <span style="color:var(--gold)">+1</span></span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Range +15%</span><span>Difficult · 15% · <span style="color:var(--gold)">+1</span></span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Range +20%</span><span>V.Difficult · 20% · <span style="color:var(--red)">+2</span></span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Range +25% <span style="font-size:7px;color:var(--text-dim)">(max)</span></span><span>Heroic · 25% · <span style="color:var(--red)">+3</span></span></div>
+            </div>
+            <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin:8px 0 3px">INSTALLATION TIME</div>
             <div style="font-size:10px;color:var(--text-dim);line-height:1.9">
               <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Very Easy</span><span>1 hour</span></div>
               <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Easy</span><span>6 hours</span></div>
@@ -1883,25 +1906,33 @@ color:var(--text-dim);min-width:35px;text-align:right;
               <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Heroic</span><span>1 month</span></div>
             </div>
             <div style="font-size:8px;color:var(--text-dim);margin-top:6px;font-style:italic">Time can be halved by paying double cost (overtime/bribes).</div>
-            <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin:8px 0 3px">MISHAP SEVERITY</div>
-            <div style="font-size:9px;color:var(--text-dim);font-style:italic;margin-bottom:3px">Roll 1D + mishap modifier when wild die = 1 &amp; GM chooses complication</div>
+          </div>
+          <div style="flex:1;min-width:155px">
+            <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin-bottom:3px">REPAIR ROLL MODIFIERS</div>
             <div style="font-size:10px;color:var(--text-dim);line-height:1.9">
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>1–2</span><span style="color:var(--gold)">Minor</span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>3–5</span><span style="color:var(--cyan)">Moderate</span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>6+</span><span style="color:var(--red)">Catastrophic</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Built/modified it</span><span style="color:var(--cyan)">+7 to roll</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Has item designs</span><span style="color:var(--cyan)">+5 to roll</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Common, all parts</span><span>No modifier</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Seen but not used</span><span style="color:var(--gold)">+5 to diff</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Never seen / some parts</span><span style="color:var(--gold)">+10 to diff</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Makeshift tools</span><span style="color:var(--red)">+15 to diff</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>No parts available</span><span style="color:var(--red)">+20 to diff</span></div>
             </div>
-            <div style="font-size:8px;color:var(--text-dim);margin-top:6px;font-style:italic">Roll of "1" always counts as minor. Modifier shown as colored number in each table above.</div>
             <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin:8px 0 3px">KEY RULES</div>
             <div style="font-size:9px;color:var(--text-dim);line-height:1.7">
+              <div style="margin-bottom:3px">• One pip / one level at a time (1D → 1D+1 → 1D+2 → 2D)</div>
+              <div style="margin-bottom:3px">• Max improvement: +1D+2 pips or +4 Space/+20 Move</div>
+              <div style="margin-bottom:3px">• One new mod roll per month of game time</div>
               <div style="margin-bottom:3px">• Modified systems take no extra cargo space</div>
               <div style="margin-bottom:3px">• Replacement systems have weight (subtract from cargo)</div>
               <div style="margin-bottom:3px">• Used parts: half price, may be unreliable</div>
               <div style="margin-bottom:3px">• Selling used parts: max 25% of new price (5% if damaged)</div>
+              <div style="margin-bottom:3px">• Armor &amp; equipment use weapon mod tables</div>
               <div>• Modifications void all manufacturer warranties</div>
             </div>
           </div>
         </div>
-        <div style="font-size:8px;color:var(--text-dim);margin-top:6px;font-style:italic">Source: WEG40063 Galaxy Guide 6: Tramp Freighters Ch.8 — designed for light freighters only, not starfighters or capital ships.</div>
+        <div style="font-size:8px;color:var(--text-dim);margin-top:6px;font-style:italic">Sources: REUP (Revised Expanded Updated) &amp; WEG40063 Galaxy Guide 6: Tramp Freighters Ch.8</div>
       </div>
 
       <div class="card" id="gm-repairs">
@@ -1962,12 +1993,41 @@ color:var(--text-dim);min-width:35px;text-align:right;
             <div style="font-size:8px;color:var(--text-dim);margin-top:4px;font-style:italic">Includes: fluids, oxygen, life support gases, food proteins, waste removal, decontam, landing-gear stress check, air filters, grav disks, heat shields, ion engine and hyperdrive service. Done within 1 planetary day. Decline before landing to avoid charge.</div>
           </div>
         </div>
-        <div style="font-size:8px;color:var(--text-dim);margin-top:6px;font-style:italic">Source: WEG40063 Galaxy Guide 6: Tramp Freighters Ch.8</div>
+        <div style="font-size:8px;color:var(--text-dim);margin-top:6px;font-style:italic">Sources: REUP (Revised Expanded Updated) &amp; WEG40063 Galaxy Guide 6: Tramp Freighters Ch.8</div>
       </div>
 
       <div class="card" id="gm-mishaps">
         <div class="card-title" style="display:flex;justify-content:space-between;align-items:center">⟐ Modified Starship Mishap Tables<a href="#gm-top" style="font-size:9px;color:var(--text-dim);text-decoration:none">↑ Top</a></div>
-        <div style="font-size:9px;color:var(--text-dim);font-style:italic;margin-bottom:8px">Roll 1D when a modified system's wild die = 1 and GM chooses a complication. Add mishap modifier from the modification table. 1–2 = Minor, 3–5 = Moderate, 6+ = Catastrophic. Then roll 1D on the appropriate table below.</div>
+        <div style="font-size:9px;color:var(--text-dim);font-style:italic;margin-bottom:8px">When wild die = 1 on a modified system, roll 1D + mishap modifier. <b style="color:var(--gold)">1–2</b> Minor · <b style="color:var(--cyan)">3–5</b> Moderate · <b style="color:var(--red)">6+</b> Catastrophic. Use <span style="color:var(--cyan)">REUP Quick Tables</span> for fast resolution or the <span style="color:var(--gold)">Tramp Freighters Detailed Tables</span> for specific results (roll 1D).</div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px">
+          <div style="flex:1;min-width:180px">
+            <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--cyan);letter-spacing:1px;margin-bottom:3px">REUP WEAPON MISHAP (1D)</div>
+            <div style="font-size:9px;color:var(--text-dim);line-height:1.6">
+              <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>1–3</b> Weapon is fine</div>
+              <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>4</b> Weapon stops working — slam it or re-calibrate (1 action)</div>
+              <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>5</b> <span style="color:var(--red)">Weapon broken, cannot be repaired</span></div>
+              <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>6</b> <span style="color:var(--red)">Weapon explodes — damage = modification bonus</span></div>
+            </div>
+          </div>
+          <div style="flex:1;min-width:180px">
+            <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--cyan);letter-spacing:1px;margin-bottom:3px">REUP VEHICLE MISHAP (1D)</div>
+            <div style="font-size:9px;color:var(--text-dim);line-height:1.6">
+              <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>1–3</b> Vehicle is fine</div>
+              <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>4</b> Temp power loss (maintains speed/heading this rnd) — kick a panel to fix (1 action)</div>
+              <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>5</b> Vehicle bucks / sparks — Easy skill roll to stay in control, Easy repair to fix</div>
+              <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>6</b> <span style="color:var(--red)">All power shuts down — Moderate skill for safe landing or crash</span></div>
+            </div>
+          </div>
+          <div style="flex:1;min-width:180px">
+            <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--cyan);letter-spacing:1px;margin-bottom:3px">REUP NON-LETHAL MISHAP (1D)</div>
+            <div style="font-size:9px;color:var(--text-dim);line-height:1.6">
+              <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>1–4</b> Item is fine</div>
+              <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>5</b> Item stops working — slam it to fix (1 action)</div>
+              <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>6</b> <span style="color:var(--red)">Item broken, cannot be repaired</span></div>
+            </div>
+            <div style="font-size:8px;color:var(--text-dim);margin-top:6px;font-style:italic">Non-lethal = jetpacks, datapads, sensors, comlinks, etc.</div>
+          </div>
+        </div>
         <div style="display:flex;gap:10px;flex-wrap:wrap">
           <div style="flex:1;min-width:200px">
             <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin-bottom:3px">SUBLIGHT DRIVE MISHAPS</div>
@@ -2118,7 +2178,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
             </div>
           </div>
         </div>
-        <div style="font-size:8px;color:var(--text-dim);margin-top:6px;font-style:italic">Source: WEG40063 Galaxy Guide 6: Tramp Freighters Ch.8. All mishap tables use 1D rolls. "rnds" = combat rounds. "fix" = space transports repair (or starship weapon repair for weapons).</div>
+        <div style="font-size:8px;color:var(--text-dim);margin-top:6px;font-style:italic">Sources: REUP (Revised Expanded Updated) quick tables &amp; WEG40063 Galaxy Guide 6: Tramp Freighters Ch.8 detailed tables. All use 1D rolls. "rnds" = combat rounds. "fix" = space transports repair (or starship weapon repair for weapons).</div>
       </div>
 
       <div class="card" id="gm-gazetteers">
