@@ -3349,16 +3349,16 @@ function engage() {
       let prePhtml = '', postPhtml = '';
       if (gazUsed2) {
         // Dual gazetteer: origin sector before grid, dest sector after grid
-        if (gazSurcharge > 0) prePhtml += `<div class="path-tile gateway" style="font-style:italic"><span>🏰 Departing ${gazUsed}</span><span class="path-hrs" style="color:#4caf50">+${gazSurcharge}h</span></div>`;
         prePhtml += `<div class="path-tile gateway" style="font-style:italic"><span>🏰 ${gazUsed} (${origin.name} → ${gazGateway})</span><span class="path-hrs" style="color:#4caf50">+${gazHoursBase}h</span></div>`;
+        if (gazSurcharge > 0) prePhtml += `<div class="path-tile gateway" style="font-style:italic"><span>🏰 Departing ${gazUsed}</span><span class="path-hrs" style="color:#4caf50">+${gazSurcharge}h</span></div>`;
         if (gazSurcharge2 > 0) postPhtml += `<div class="path-tile gateway" style="font-style:italic"><span>🏰 Approaching ${gazUsed2}</span><span class="path-hrs" style="color:#4caf50">+${gazSurcharge2}h</span></div>`;
         postPhtml += `<div class="path-tile gateway" style="font-style:italic"><span>🏰 ${gazUsed2} (${gazGateway2} → ${dest.name})</span><span class="path-hrs" style="color:#4caf50">+${gazHoursBase2}h</span></div>`;
       } else if (oGaz) {
-        // Origin only in gazetteer — prepend sector segment
-        if (gazSurcharge > 0) prePhtml += `<div class="path-tile gateway" style="font-style:italic"><span>🏰 Departing ${gazUsed}</span><span class="path-hrs" style="color:#4caf50">+${gazSurcharge}h</span></div>`;
+        // Origin only in gazetteer — prepend: sector route first, then surcharge
         prePhtml += `<div class="path-tile gateway" style="font-style:italic"><span>🏰 ${gazUsed} (${origin.name} → ${gazGateway})</span><span class="path-hrs" style="color:#4caf50">+${gazHoursBase}h</span></div>`;
+        if (gazSurcharge > 0) prePhtml += `<div class="path-tile gateway" style="font-style:italic"><span>🏰 Departing ${gazUsed}</span><span class="path-hrs" style="color:#4caf50">+${gazSurcharge}h</span></div>`;
       } else {
-        // Dest only in gazetteer — append sector segment
+        // Dest only in gazetteer — append: surcharge first, then sector route
         if (gazSurcharge > 0) postPhtml += `<div class="path-tile gateway" style="font-style:italic"><span>🏰 Approaching ${gazUsed}</span><span class="path-hrs" style="color:#4caf50">+${gazSurcharge}h</span></div>`;
         postPhtml += `<div class="path-tile gateway" style="font-style:italic"><span>🏰 ${gazUsed} (${gazGateway} → ${dest.name})</span><span class="path-hrs" style="color:#4caf50">+${gazHoursBase}h</span></div>`;
       }
