@@ -3696,5 +3696,50 @@ const EQUIPMENT_DATA = [
   "availability": "4, X",
   "game_notes": "Damage: 4D. A Gree weapon operated using device operation skill rather than blaster skill. Like all Gree technology, it emits musical notes when used and must be 'played' to operate properly. Designed for manipulation by the suckers coating the underside of Gree tentacles.",
   "source": "WEG40138 Classic Adventures Vol 4"
+ },
+ {
+  "name": "MicroThrust Holo Ore Scanner FR9",
+  "category": "Sensors",
+  "type": "Semi-portable ore scanner",
+  "cost": "5,000",
+  "availability": "3",
+  "game_notes": "Requires sensors or mining skill roll. Roughly a 1-meter cube with controls and holographic projector on upper side. Accurately locates veins and pockets of metal and mineral ores, displaying findings as a 3D hologram. Search range: 1km/1D, Focus range: 500m/2D. Various factors can decrease range and accuracy. Often used by planners to map richest veins in limited operations or when mining crystals.",
+  "source": "WEG40077 Flashpoint! Brak Sector p.25"
+ },
+ {
+  "name": "MineSystems Emergency Life Support Unit",
+  "category": "Survival",
+  "type": "Emergency life support system",
+  "cost": "3,000",
+  "availability": "2",
+  "game_notes": "Portable emergency life support for underground mining. Rectangular box 2m x 1m x 1.5m. Activated by pressing large buttons on each side, or automatically if sensors detect dangerous air quality drop. Provides oxygen for 10 people for 30 hours (10 masks). Contains emergency supplies, two medpacs, and automatic distress beacon. Standard backup system in Lish XI mining stations.",
+  "source": "WEG40077 Flashpoint! Brak Sector p.25"
+ },
+ {
+  "name": "GLD-M General Labor Mining Droid",
+  "category": "Droids",
+  "type": "Modified Industrial Automaton GLD-M General Labor Droid/Mining",
+  "cost": "4,000 (comes with 2 modules, additional modules 500 each)",
+  "availability": "",
+  "game_notes": "Height: 2m. Move: 8/9. DEX 2D, KNO 1D, MEC 2D (mining 3D), PER 2D (search 3D), STR 4D (lifting 6D), TEC 2D. Humanoid body with visual/infrared/audio sensors, vocabulator, reinforced frame for heavy lifting, RapidProgram module system for quick reprogramming. Can be programmed for anything from aiding scouts to piloting skiffs to debris clearance.",
+  "source": "WEG40077 Flashpoint! Brak Sector p.25"
+ },
+ {
+  "name": "MEMD-2 Multi-Environment Mining Droid",
+  "category": "Droids",
+  "type": "Industrial Automaton Multi-Environment Mining Droid MEMD-2",
+  "cost": "20,000",
+  "availability": "",
+  "game_notes": "Size: 20m long, 8m tall. Move: 4/6. DEX 1D, KNO 2D, MEC 3D (mining 5D), PER 1D+2 (search 3D), STR 3D (lifting 5D), TEC 1D. Two all-terrain tracks, 2 high-intensity beam drills, 1 high-power cutting laser, 4 heavy lifting arms, 1 repulsorlift conveyor, visual/audio/infrared/night vision sensors, metal and mineral sensors, DataLink transceiver. LMC's most common mining droid, a mobile self-contained mining unit. Operated in fleets directed from recon speeders or mining stations. 72-90 hours between recharges.",
+  "source": "WEG40077 Flashpoint! Brak Sector p.26"
+ },
+ {
+  "name": "Arakyd Resource Probe Droid",
+  "category": "Droids",
+  "type": "Arakyd Resource Probe Droid",
+  "cost": "10,000",
+  "availability": "",
+  "game_notes": "Height: 1.5m. Move: 12/13. DEX 2D, KNO 3D (planetary systems 4D+2, scholar: mineral resources 5D), MEC 3D (astrogation 5D, communications 6D, sensors 6D, space transports 5D), PER 3D (investigation 6D, search 6D), STR 2D, TEC 2D. Multi-purpose appendages, repulsorlift engine (5m ceiling), investigation/analytical computer, planetary sensor array (passive 10/0D, scan 100/1D, search 500/2D, focus 10/3D), recording devices, broad-band transceiver, mineral sampler, beam drill (3D, 5m range, lower 180-degree arc). Uses standard probot hyperdrive pod for transport. Scans for mineral concentrations from orbit, lands for detailed sampling and analysis.",
+  "source": "WEG40077 Flashpoint! Brak Sector p.26"
  }
 ];
