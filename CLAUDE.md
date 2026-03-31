@@ -35,6 +35,7 @@ The entire app. Contains all CSS (minified, inline `<style>`), all HTML tab pane
 | `data_weapons.js` | — | — | Weapon entries |
 | `data_vehicles.js` | — | — | Vehicle entries |
 | `data_sysgen.js` | `SYSGEN_DATA` | Object of table arrays | GG8 random system generation tables (planet type, terrain, atmosphere, etc.) |
+| `data_gazetteers.js` | `GAZETTEER_DATA` | Object of sector objects | Sector-specific hyperspace travel time overrides (see below) |
 
 ### PLANETS_DATA Entry Shape
 ```js
@@ -66,6 +67,48 @@ The entire app. Contains all CSS (minified, inline `<style>`), all HTML tab pane
   source   // "WEGxxxxx Book Title p.##"
 }
 ```
+
+### GAZETTEER_DATA Structure
+```js
+{
+  "Sector Name": {
+    source,          // "WEG##### Book Title"
+    grid,            // galaxy map grid (e.g. "O-14") or null for multi-grid corridors
+    gateways: [      // entry points for external traffic routing into sector
+      { system: "Name", fromGrids: null },         // default gateway (null = fallback)
+      { system: "Name", fromGrids: ["M-14","N-14"] }  // specific grid origins
+    ],
+    surcharge,       // extra hours added to reach sector (e.g. 120 for Minos Cluster's 5-day approach)
+    systems: [...],  // array of system names in this gazetteer
+    times: {         // full symmetric matrix — all pairs, alphabetical "A|B" keys, hours at x1
+      "SystemA|SystemB": hours, ...
+    }
+  }
+}
+```
+
+**Current gazetteers (5):**
+- **Brak Sector** (WEG40077) — 23 systems, full matrix from book table, grid O-14. Gateways: Enet (default), Latoma (from M/N-14), Genesia (from N-15).
+- **Ringali Shell** (WEG40029) — 6 systems, full matrix from book table, grid L-9. Gateways: Corulag (default/west/Deep Core), Brentaal (north), Raltiir (east).
+- **Elrood Sector** (WEG40132) — 15 systems, pre-computed from route map, grid M-20. Gateway: Coyn.
+- **Minos Cluster** (WEG40063) — 10 systems, full matrix from book table, grid M-20. Gateway: Travnin. +120h surcharge (5 days to reach cluster).
+- **Kira Run** (WEG40060) — 14 systems, pre-computed from route map, multi-grid corridor. Gateways: Opiteihr (default/SW), Krann (east), Kalinda (SE), Lahopa (west/north).
+
+**Adding a new gazetteer:**
+1. If the sourcebook has a **full distance table** (matrix), transcribe it directly into `times` with alphabetical `"A|B"` keys.
+2. If the sourcebook has a **route map** (star chart with travel times on connections), list all direct connections, then compute all-pairs shortest paths (Dijkstra) to build the full `times` matrix. Every pair of connected systems must have an entry.
+3. Determine **gateway systems** — the entry points where external traffic enters the sector. Set `fromGrids: null` for the default gateway. Add specific grid lists for directional entries.
+4. Set `surcharge` to 0 unless the sector requires extra travel time to reach (like Minos Cluster's 5-day approach).
+5. All systems in the gazetteer must also exist in `data_systems.js`.
+6. The gazetteer tables are displayed on the DICE tab in the "Local Gazetteer Times" card, auto-rendered from `GAZETTEER_DATA`.
+7. Save the raw source data (book tables or route maps) to a memory file for reference.
+
+**How the astrogation override works (in `engage()` in index.html):**
+- If both origin and destination are in the **same gazetteer**: use gazetteer time directly (no grid path).
+- If only one endpoint is in a gazetteer: compute grid path to/from the appropriate gateway, then add gazetteer time for the sector leg.
+- If both are in **different gazetteers**: origin sector time + grid path between gateways + dest sector time (+ any surcharges).
+- Gateway systems are marked with green 🏰 icons in the Route Path display and green diamonds on the map.
+- Gateway system names in the path are clickable links to the Galaxy tab for planet detail.
 
 ## Key Cross-File Relationships
 
