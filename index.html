@@ -452,7 +452,7 @@ padding:10px;border:1px solid var(--card-border);
 .result-box.wide{grid-column:1/-1}
 
 /* PATH DISPLAY */
-.path-list{max-height:300px;overflow-y:auto}
+.path-list{}
 .path-tile{
 display:flex;justify-content:space-between;padding:6px 10px;
 font-size:14px;border-bottom:1px solid rgba(255,255,255,.03);
@@ -1066,6 +1066,11 @@ color:var(--text-dim);min-width:35px;text-align:right;
         </div>
 
         <div class="card fade-in">
+          <div class="card-title">⟐ Route Path</div>
+          <div id="pathOutput" class="path-list"></div>
+        </div>
+
+        <div class="card fade-in">
           <div class="card-title">⟐ Route Map</div>
           <div style="padding:16px 0">
           <div class="map-container" id="travelMapContainer">
@@ -1075,11 +1080,6 @@ color:var(--text-dim);min-width:35px;text-align:right;
             </div>
           </div>
           </div>
-        </div>
-
-        <div class="card fade-in">
-          <div class="card-title">⟐ Route Path</div>
-          <div id="pathOutput" class="path-list"></div>
         </div>
       </div>
     </div>
