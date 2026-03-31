@@ -114,8 +114,8 @@ const GAZETTEER_DATA = {
 
   // ----------------------------------------------------------
   // ELROOD SECTOR — WEG40132 Operation: Elrood
-  // Route-based, 16 systems, grid M-20 (Outer Rim)
-  // Pre-computed shortest paths via Dijkstra on route graph
+  // Full matrix, 15 systems, grid M-20 (Outer Rim)
+  // Pre-computed shortest paths from route graph
   // ----------------------------------------------------------
   "Elrood Sector": {
     source: "WEG40132 Operation: Elrood",
@@ -124,14 +124,33 @@ const GAZETTEER_DATA = {
       { system: "Coyn", fromGrids: null }            // all traffic
     ],
     surcharge: 0,
-    systems: ["Almaran","Berea","Bodrin","Coyn","Dega","Derilyn","Elrood","Halbara","Kidron","Korad","Kuras","Lanthrym","Merisee","Osirrag","Tifnyl","Torina"],
-    // Route graph — direct connections only; lookup function computes shortest paths
-    routes: {
-      "Halbara|Elrood":6,"Elrood|Kidron":3,"Kidron|Bodrin":4,"Bodrin|Coyn":2,
-      "Coyn|Korad":1,"Korad|Merisee":1,"Merisee|Torina":3,"Torina|Derilyn":4,
-      "Torina|Almaran":3,
-      "Tifnyl|Derilyn":5,"Lanthrym|Merisee":3,"Lanthrym|Korad":4,"Lanthrym|Coyn":3,"Lanthrym|Bodrin":5,
-      "Berea|Derilyn":4,"Kidron|Dega":5,"Dega|Osirrag":2
+    systems: ["Almaran","Berea","Bodrin","Coyn","Dega","Derilyn","Elrood","Halbara","Kidron","Korad","Lanthrym","Merisee","Osirrag","Tifnyl","Torina"],
+    times: {
+      "Almaran|Berea":11,"Almaran|Bodrin":10,"Almaran|Coyn":8,"Almaran|Dega":19,"Almaran|Derilyn":7,
+      "Almaran|Elrood":17,"Almaran|Halbara":23,"Almaran|Kidron":14,"Almaran|Korad":7,"Almaran|Lanthrym":9,
+      "Almaran|Merisee":6,"Almaran|Osirrag":21,"Almaran|Tifnyl":12,"Almaran|Torina":3,
+      "Berea|Bodrin":15,"Berea|Coyn":13,"Berea|Dega":24,"Berea|Derilyn":4,"Berea|Elrood":22,
+      "Berea|Halbara":28,"Berea|Kidron":19,"Berea|Korad":12,"Berea|Lanthrym":14,"Berea|Merisee":11,
+      "Berea|Osirrag":26,"Berea|Tifnyl":9,"Berea|Torina":8,
+      "Bodrin|Coyn":2,"Bodrin|Dega":9,"Bodrin|Derilyn":11,"Bodrin|Elrood":7,"Bodrin|Halbara":13,
+      "Bodrin|Kidron":4,"Bodrin|Korad":3,"Bodrin|Lanthrym":5,"Bodrin|Merisee":4,"Bodrin|Osirrag":11,
+      "Bodrin|Tifnyl":16,"Bodrin|Torina":7,
+      "Coyn|Dega":11,"Coyn|Derilyn":9,"Coyn|Elrood":9,"Coyn|Halbara":15,"Coyn|Kidron":6,
+      "Coyn|Korad":1,"Coyn|Lanthrym":3,"Coyn|Merisee":2,"Coyn|Osirrag":13,"Coyn|Tifnyl":14,"Coyn|Torina":5,
+      "Dega|Derilyn":20,"Dega|Elrood":8,"Dega|Halbara":14,"Dega|Kidron":5,"Dega|Korad":12,
+      "Dega|Lanthrym":14,"Dega|Merisee":13,"Dega|Osirrag":2,"Dega|Tifnyl":25,"Dega|Torina":16,
+      "Derilyn|Elrood":18,"Derilyn|Halbara":24,"Derilyn|Kidron":15,"Derilyn|Korad":8,"Derilyn|Lanthrym":10,
+      "Derilyn|Merisee":7,"Derilyn|Osirrag":22,"Derilyn|Tifnyl":5,"Derilyn|Torina":4,
+      "Elrood|Halbara":6,"Elrood|Kidron":3,"Elrood|Korad":10,"Elrood|Lanthrym":12,"Elrood|Merisee":11,
+      "Elrood|Osirrag":10,"Elrood|Tifnyl":23,"Elrood|Torina":14,
+      "Halbara|Kidron":9,"Halbara|Korad":16,"Halbara|Lanthrym":18,"Halbara|Merisee":17,
+      "Halbara|Osirrag":16,"Halbara|Tifnyl":29,"Halbara|Torina":20,
+      "Kidron|Korad":7,"Kidron|Lanthrym":9,"Kidron|Merisee":8,"Kidron|Osirrag":7,"Kidron|Tifnyl":20,"Kidron|Torina":11,
+      "Korad|Lanthrym":3,"Korad|Merisee":1,"Korad|Osirrag":14,"Korad|Tifnyl":13,"Korad|Torina":4,
+      "Lanthrym|Merisee":3,"Lanthrym|Osirrag":16,"Lanthrym|Tifnyl":15,"Lanthrym|Torina":6,
+      "Merisee|Osirrag":15,"Merisee|Tifnyl":12,"Merisee|Torina":3,
+      "Osirrag|Tifnyl":27,"Osirrag|Torina":18,
+      "Tifnyl|Torina":9
     }
   },
 
@@ -167,7 +186,8 @@ const GAZETTEER_DATA = {
 
   // ----------------------------------------------------------
   // KIRA RUN — WEG40060 Twin Stars of Kira
-  // Route-based, 14 systems, spans N-15/N-16/O-15/O-16/M-16
+  // Full matrix, 14 systems, spans N-15/N-16/O-15/O-16/M-16
+  // Pre-computed shortest paths from route graph
   // ----------------------------------------------------------
   "Kira Run": {
     source: "WEG40060 Twin Stars of Kira",
@@ -180,12 +200,31 @@ const GAZETTEER_DATA = {
     ],
     surcharge: 0,
     systems: ["Arrgaw","Brevost","Cerenia","Kalinda","Kira","Krann","Lahopa","Lazerian","Nigel","Opiteihr","Pax","Roldalna","Ropagi","Seltos"],
-    // Route graph — direct connections only
-    routes: {
-      "Krann|Brevost":135,"Brevost|Cerenia":19,"Cerenia|Lazerian":52,"Lazerian|Arrgaw":23,"Arrgaw|Lahopa":77,
-      "Lazerian|Kira":2,"Kira|Ropagi":2,
-      "Opiteihr|Pax":67,"Pax|Ropagi":59,"Ropagi|Roldalna":39,"Roldalna|Nigel":6,"Nigel|Kalinda":228,
-      "Roldalna|Seltos":51
+    times: {
+      "Arrgaw|Brevost":94,"Arrgaw|Cerenia":75,"Arrgaw|Kalinda":300,"Arrgaw|Kira":25,"Arrgaw|Krann":229,
+      "Arrgaw|Lahopa":77,"Arrgaw|Lazerian":23,"Arrgaw|Nigel":72,"Arrgaw|Opiteihr":153,"Arrgaw|Pax":86,
+      "Arrgaw|Roldalna":66,"Arrgaw|Ropagi":27,"Arrgaw|Seltos":117,
+      "Brevost|Cerenia":19,"Brevost|Kalinda":348,"Brevost|Kira":73,"Brevost|Krann":135,"Brevost|Lahopa":171,
+      "Brevost|Lazerian":71,"Brevost|Nigel":120,"Brevost|Opiteihr":201,"Brevost|Pax":134,
+      "Brevost|Roldalna":114,"Brevost|Ropagi":75,"Brevost|Seltos":165,
+      "Cerenia|Kalinda":329,"Cerenia|Kira":54,"Cerenia|Krann":154,"Cerenia|Lahopa":152,"Cerenia|Lazerian":52,
+      "Cerenia|Nigel":101,"Cerenia|Opiteihr":182,"Cerenia|Pax":115,"Cerenia|Roldalna":95,
+      "Cerenia|Ropagi":56,"Cerenia|Seltos":146,
+      "Kalinda|Kira":275,"Kalinda|Krann":483,"Kalinda|Lahopa":377,"Kalinda|Lazerian":277,"Kalinda|Nigel":228,
+      "Kalinda|Opiteihr":399,"Kalinda|Pax":332,"Kalinda|Roldalna":234,"Kalinda|Ropagi":273,"Kalinda|Seltos":285,
+      "Kira|Krann":208,"Kira|Lahopa":102,"Kira|Lazerian":2,"Kira|Nigel":47,"Kira|Opiteihr":128,
+      "Kira|Pax":61,"Kira|Roldalna":41,"Kira|Ropagi":2,"Kira|Seltos":92,
+      "Krann|Lahopa":306,"Krann|Lazerian":206,"Krann|Nigel":255,"Krann|Opiteihr":336,"Krann|Pax":269,
+      "Krann|Roldalna":249,"Krann|Ropagi":210,"Krann|Seltos":300,
+      "Lahopa|Lazerian":100,"Lahopa|Nigel":149,"Lahopa|Opiteihr":230,"Lahopa|Pax":163,
+      "Lahopa|Roldalna":143,"Lahopa|Ropagi":104,"Lahopa|Seltos":194,
+      "Lazerian|Nigel":49,"Lazerian|Opiteihr":130,"Lazerian|Pax":63,"Lazerian|Roldalna":43,
+      "Lazerian|Ropagi":4,"Lazerian|Seltos":94,
+      "Nigel|Opiteihr":171,"Nigel|Pax":104,"Nigel|Roldalna":6,"Nigel|Ropagi":45,"Nigel|Seltos":57,
+      "Opiteihr|Pax":67,"Opiteihr|Roldalna":165,"Opiteihr|Ropagi":126,"Opiteihr|Seltos":216,
+      "Pax|Roldalna":98,"Pax|Ropagi":59,"Pax|Seltos":149,
+      "Roldalna|Ropagi":39,"Roldalna|Seltos":51,
+      "Ropagi|Seltos":90
     }
   }
 
@@ -200,43 +239,6 @@ function gazetteerLookup(times, a, b) {
   return times[a + '|' + b] || times[b + '|' + a] || null;
 }
 
-// For route-based gazetteers, compute shortest path using Dijkstra
-function gazetteerRouteDijkstra(routes, systems, from, to) {
-  const dist = {}, prev = {};
-  systems.forEach(s => dist[s] = Infinity);
-  dist[from] = 0;
-  const unvisited = new Set(systems);
-
-  while (unvisited.size > 0) {
-    let current = null, minDist = Infinity;
-    for (const s of unvisited) {
-      if (dist[s] < minDist) { minDist = dist[s]; current = s; }
-    }
-    if (!current || current === to) break;
-    unvisited.delete(current);
-
-    // Find neighbors
-    for (const key of Object.keys(routes)) {
-      const [a, b] = key.split('|');
-      let neighbor = null, cost = routes[key];
-      if (a === current) neighbor = b;
-      else if (b === current) neighbor = a;
-      if (neighbor && unvisited.has(neighbor)) {
-        const nd = dist[current] + cost;
-        if (nd < dist[neighbor]) { dist[neighbor] = nd; prev[neighbor] = current; }
-      }
-    }
-  }
-
-  if (dist[to] === Infinity) return null;
-
-  // Reconstruct path
-  const path = [];
-  let c = to;
-  while (c) { path.unshift(c); c = prev[c]; }
-  return { hours: dist[to], path: path };
-}
-
 // Find which gazetteer a system belongs to (returns sector name or null)
 function findGazetteer(systemName) {
   for (const [name, gaz] of Object.entries(GAZETTEER_DATA)) {
@@ -248,13 +250,8 @@ function findGazetteer(systemName) {
 // Get travel time between two systems in same gazetteer
 function getGazetteerTime(sectorName, from, to) {
   const gaz = GAZETTEER_DATA[sectorName];
-  if (!gaz) return null;
-  if (gaz.times) return gazetteerLookup(gaz.times, from, to);
-  if (gaz.routes) {
-    const result = gazetteerRouteDijkstra(gaz.routes, gaz.systems, from, to);
-    return result ? result.hours : null;
-  }
-  return null;
+  if (!gaz || !gaz.times) return null;
+  return gazetteerLookup(gaz.times, from, to);
 }
 
 // Determine which gateway to use based on the external system's grid
