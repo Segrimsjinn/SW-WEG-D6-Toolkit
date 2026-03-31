@@ -31145,5 +31145,53 @@ const NOTABLE_NPCS = [
     equipment: "",
     capsule: "Zoam Urshant is a research programmer at Tumleh Navigation in D'larah, working on the experimental NGW (Near Gravity Well) Hyperdrive Jump Program that would allow hyperspace jumps near gravity wells. A tall, lithe, distractingly attractive redhead who is eight months pregnant. She copied the classified NGW program data intending to trade it to the G'uotr Network for passage off Demophon, but lost her nerve at the last minute. She still carries the data disk, and the D'larah City Patrol has been monitoring her since the download. She feels tremendous guilt about almost selling out.",
     source: "WEG40066 Supernova p.64"
+  },
+  {
+    name: "Colonel Erlick Frodar",
+    species: "Human",
+    system: "Demophon",
+    location: "Demophon — Orflon, Asteroid Base",
+    affiliations: ["Rebel Alliance"],
+    role: "Base Commander",
+    type: "Minor NPC",
+    stats: {
+      DEXTERITY: { base: "2D+2", skills: { "blaster": "4D", "dodge": "3D+2", "vehicle blasters": "5D" } },
+      KNOWLEDGE: { base: "3D", skills: { "planetary systems": "5D" } },
+      MECHANICAL: { base: "3D+2", skills: { "astrogation": "5D", "sensors": "4D", "space transports": "6D", "starship gunnery": "5D", "starship shields": "4D" } },
+      PERCEPTION: { base: "3D+1", skills: { "command": "5D" } },
+      STRENGTH: { base: "2D+1", skills: { "stamina": "4D" } },
+      TECHNICAL: { base: "3D", skills: { "space transports repair": "5D" } }
+    },
+    specialAbilities: "",
+    forcePoints: "1",
+    characterPoints: "7",
+    move: "10",
+    equipment: "Alliance colonel's uniform, heavy blaster pistol (5D damage)",
+    capsule: "Large and heavy-set, Colonel Frodar cuts a commanding figure. A Demophon native, he served in both the Imperial and Alliance Navies before commanding the Alliance Army's Asteroid Base on Orflon. As a young Academy graduate he flew the shuttle Hard Liner dropping stormtrooper strike teams, but left after witnessing elite forces slaughter amateurs too many times. He became a free trader with the Corellian freighter Flat Liner, went bankrupt competing with bulk freighters, turned to smuggling, and ended up transporting Alliance operatives who offered him a formal commission. His knowledge of the Demophon sector made him invaluable, and he was given command of the only permanent Rebel base near Demophon.",
+    source: "WEG40066 Supernova p.70"
+  },
+  {
+    name: "Dr. Soron Hegerty",
+    species: "Human",
+    system: "Demophon",
+    location: "Demophon — Jatee",
+    affiliations: ["Rebel Alliance"],
+    role: "Biologist / ISIB Agent",
+    type: "Minor NPC",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { "vehicle blasters": "5D" } },
+      KNOWLEDGE: { base: "4D", skills: { "alien species": "6D", "languages": "5D", "planetary systems": "5D", "survival": "6D", "xenobiology (A)": "9D+1" } },
+      MECHANICAL: { base: "2D", skills: { "powersuit operation": "5D", "sensors": "4D", "space transports": "3D" } },
+      PERCEPTION: { base: "3D", skills: { "command": "4D", "hide": "4D", "sneak": "5D" } },
+      STRENGTH: { base: "3D", skills: {} },
+      TECHNICAL: { base: "4D", skills: { "armor repair": "5D", "demolitions": "5D", "droid programming": "6D", "first aid": "5D" } }
+    },
+    specialAbilities: "Ssither Telepathy Familiarity: Range modifiers for Ssither telepathy are halved when communicating with Dr. Hegerty.",
+    forcePoints: "2",
+    characterPoints: "11",
+    move: "10",
+    equipment: "Sporting blaster (3D+1 damage), Imperial Species Identification Bureau uniform",
+    capsule: "Soron Hegerty's body balances fitness and femininity while her face shows constant concern. Raised as an Old Republic Army brat, she devoted her life to spreading the galaxy's privileges to sapients everywhere. When the Empire's intolerance toward other species became clear, she began cooperating with the Rebel Alliance. Discovering the Ssither on Jatee, she realized revealing their location would doom them to Imperial genetics experiments. She faked her own death, stole the mine's repair vessel, and has been living with and protecting the Ssither ever since, leading raids against the automated Imperial mining facility.",
+    source: "WEG40066 Supernova p.76"
   }
 ];

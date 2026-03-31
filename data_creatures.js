@@ -7096,5 +7096,19 @@ const CREATURES_DATA = [
     orneriness: "1D",
     special: "Tentacles: One per meter of length, do Strength damage. Semi-intelligent floating gelatinous ovoids with a single mobile eye and conical filter-mouth. Paddle-like tentacles used for propulsion, stability, and defense. Docile unless injured or confused, then attempt to grasp and crush smaller foes.",
     source: "WEG40066 Supernova p.37"
+  },
+  {
+    name: "Ssither",
+    type: "Sapient",
+    planet: "Jatee",
+    habitat: "Underground Caverns",
+    dex: "2D-4D",
+    per: "2D+1-4D+1",
+    str: "3D-5D",
+    move: "10-12",
+    size: "1.75-2.5 meters tall",
+    orneriness: "2D",
+    special: "Telepathy: Can selectively broadcast and receive thoughts and emotions using Ssither Telepathy skill. Cannot read minds — telepathy must be actively used. Difficulty is Moderate plus doubled normal Force proximity/relationship modifiers. Non-Ssither receive +15 modifier unless they have Ssither Telepathy Familiarity. Hairless reptilian beings with serpentine lower bodies, heavily muscled upper torsos, and large gold iris-less eyes. Hunter/gatherers at stone age technology level.",
+    source: "WEG40066 Supernova p.77"
   }
 ];
