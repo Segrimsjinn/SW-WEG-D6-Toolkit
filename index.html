@@ -3319,12 +3319,12 @@ function engage() {
     // Pure gazetteer route — show sector path instead of grid tiles
     const oLink = `onclick="switchTab('galaxy');document.getElementById('galaxySearch').value='${origin.name.replace(/'/g,"\\'")}';searchGalaxy('${origin.name.replace(/'/g,"\\'")}')"`;
     const dLink = `onclick="switchTab('galaxy');document.getElementById('galaxySearch').value='${dest.name.replace(/'/g,"\\'")}';searchGalaxy('${dest.name.replace(/'/g,"\\'")}')"`;
-    phtml += `<div class="path-tile gateway" style="cursor:pointer" ${oLink}><span>🏰 ${origin.name} (${origin.grid})</span><span class="path-hrs hrs-fast">ORIGIN</span></div>`;
+    phtml += `<div class="path-tile" style="cursor:pointer;color:#4caf50" ${oLink}><span>⟐ ${origin.name} (${origin.grid})</span><span class="path-hrs hrs-fast">ORIGIN</span></div>`;
     if (gazSurcharge > 0) {
       phtml += `<div class="path-tile" style="color:var(--text-dim);font-style:italic"><span>⟐ Hyperspace approach to sector</span><span class="path-hrs" style="color:#4caf50">${gazSurcharge}h</span></div>`;
     }
     phtml += `<div class="path-tile" style="color:var(--text-dim);font-style:italic"><span>⟐ ${gazUsed} sector route</span><span class="path-hrs" style="color:#4caf50">${gazHoursBase}h</span></div>`;
-    phtml += `<div class="path-tile gateway" style="cursor:pointer" ${dLink}><span>🏰 ${dest.name} (${dest.grid})</span><span class="path-hrs hrs-fast">DEST</span></div>`;
+    phtml += `<div class="path-tile" style="cursor:pointer;color:#4caf50" ${dLink}><span>⟐ ${dest.name} (${dest.grid})</span><span class="path-hrs hrs-fast">DEST</span></div>`;
   } else {
     for (let i = 0; i < pathData.length; i++) {
       const p = pathData[i];
