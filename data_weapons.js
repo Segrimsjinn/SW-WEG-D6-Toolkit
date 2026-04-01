@@ -3216,6 +3216,18 @@ const WEAPONS_DATA = [
   "source": "Gundark's Fantastic Technology (pages 13-14)"
  },
  {
+  "name": "Imperial Munitions Vibrodagger",
+  "category": "Vibro-Weapons",
+  "skill": "Melee combat: vibrodagger",
+  "cost": "N/A",
+  "availability": "4, X",
+  "damage": "STR+4D (max 7D)",
+  "range": "",
+  "ammo": "",
+  "game_notes": "Moderate difficulty. 15cm blade, easily concealed. Prototype. Possession by anyone not authorized by Imperial Intelligence Bureau of Operations is a capital offense.",
+  "source": "WEG40080 Creatures of the Galaxy p.58"
+ },
+ {
   "name": "Tehk'la Blade",
   "category": "Vibro-Weapons",
   "skill": "Melee combat",

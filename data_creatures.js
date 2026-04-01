@@ -15,17 +15,17 @@ const CREATURES_DATA = [
  },
  {
   "name": "Adar",
-  "type": "Adaptive Carnivore",
+  "type": "Adaptive carnivore",
   "planet": "Omiddelon III",
-  "habitat": "Forest",
+  "habitat": "Forest, jungle, swamp, urban",
   "dex": "2D",
   "per": "2D",
   "str": "4D",
-  "move": "13/15/22",
-  "size": "2.5 meters long",
+  "move": "13 (running), 15 (leaping), 22 (flying, 5 min/hr)",
+  "size": "Up to 2.5 meters long",
   "orneriness": "",
-  "special": "Claws: STR+3D. Wings: flight. Leaping Attack: STR+3D. Adaptive: can eat anything.",
-  "source": "Creatures of the Galaxy (pages 4-5)"
+  "special": "Search: tracking 3D+2. Brawling 6D, climbing/jumping 6D, flight 6D+2. Claws: STR+2D damage. Leaping Attack: STR+3D damage. Wings: flight. Adaptive: can metabolize virtually any food source. Hunts in packs of 4-36. Creature scale.",
+  "source": "WEG40080 Creatures of the Galaxy p.4"
  },
  {
   "name": "Aduban Behemoth",
@@ -129,15 +129,15 @@ const CREATURES_DATA = [
   "name": "Altagak",
   "type": "Solitary carnivore",
   "planet": "Altora",
-  "habitat": "Plains",
+  "habitat": "Savannah, plains",
   "dex": "4D+2",
   "per": "3D",
   "str": "4D",
-  "move": "8/28 (sprint)",
+  "move": "8 (walking), 28 (attack sprint)",
   "size": "1.8-2.2 meters long",
   "orneriness": "",
-  "special": "Claws: STR+2. Silent Movement: +1D sneak. Speed: sprint for 8 rounds. Threatening Display. Tail: STR+1. Teeth: STR+1D. Tusks: STR+2D.",
-  "source": "Creatures of the Galaxy (pages 5-6)"
+  "special": "Running 6D. Sneak 5D (+1D when stalking prey). Claws: STR+2 damage. Tusks: STR+2D damage (head butt charge). Teeth: STR+1D damage. Tail: STR+1 damage. Speed: attack sprint for up to 8 rounds (80+ km/hr). Threatening Display: expands spinal mane to appear larger.",
+  "source": "WEG40080 Creatures of the Galaxy p.5"
  },
  {
   "name": "Andoan Mineral-Fish",
@@ -150,8 +150,8 @@ const CREATURES_DATA = [
   "move": "8",
   "size": "1 meter long",
   "orneriness": "",
-  "special": "Tail: STR+2D. Fins: STR+1. Shell: +1D STR to resist. Mineral Sense: detects minerals/metals.",
-  "source": "Creatures of the Galaxy (pages 6-7)"
+  "special": "Tail: STR+2D damage. Fins: STR+1 damage. Shell: +1D STR to resist damage. Mineral Sense: can sense large concentrations of minerals and metals. Creature scale.",
+  "source": "WEG40080 Creatures of the Galaxy p.6"
  },
  {
   "name": "Apilid Worm",
@@ -235,7 +235,7 @@ const CREATURES_DATA = [
   "size": "1-1.5 meters long",
   "orneriness": "",
   "special": "Bite: STR+1D. Poison: +3D stun damage (12hr recovery). Coil: Moderate STR to wrap, Difficult STR to disengage.",
-  "source": "Creatures of the Galaxy (pages 8-10)"
+  "source": "WEG40080 Creatures of the Galaxy p.8"
  },
  {
   "name": "Avril",
@@ -277,7 +277,7 @@ const CREATURES_DATA = [
   "size": "2 centimeters",
   "orneriness": "",
   "special": "Mating Song: Easy PER or -1D all actions (Difficult willpower negates). Hunger: eat anything, 1D damage/round contact.",
-  "source": "Creatures of the Galaxy (pages 11-12)"
+  "source": "WEG40080 Creatures of the Galaxy p.11"
  },
  {
   "name": "Bandigo",
@@ -332,8 +332,8 @@ const CREATURES_DATA = [
   "move": "10",
   "size": "4 meters long",
   "orneriness": "",
-  "special": "Corrosive Spittle: 3D/turn until washed. Innate Navigational Sense: astrogation 6D.",
-  "source": "Creatures of the Galaxy (pages 12-14)"
+  "special": "Corrosive Spittle: 3D damage/turn until washed away, eats through armor. Innate Navigational Sense: astrogation 6D. Creature scale. Move is meters/round, not Space units.",
+  "source": "WEG40080 Creatures of the Galaxy p.14"
  },
  {
   "name": "Battle Hydra",
@@ -421,17 +421,17 @@ const CREATURES_DATA = [
  },
  {
   "name": "Bergruutfa",
-  "type": "Domestic riding beast",
+  "type": "Domesticated riding beast",
   "planet": "",
   "habitat": "Plains",
   "dex": "1D",
   "per": "1D+2",
   "str": "6D",
-  "move": "15 (42 km/h)",
-  "size": "7m at shoulder",
+  "move": "15",
+  "size": "Up to 7 meters tall",
   "orneriness": "1D",
-  "special": "Armored Head: +2D resist. Armored Body: +1D resist. Head Butt: STR+1D (knockback). Drool: DEX roll to avoid slipping.",
-  "source": "Creatures of the Galaxy (pages 14-15)"
+  "special": "Search 3D+1. Brawling: head butt 7D, lifting 9D. Armored Head: +2D energy/physical to resist damage. Armored Body: +1D energy/physical to resist damage. Head Butt: STR+1D damage, target thrown 1 meter per 2 result points. Drool: Easy DEX or fall in puddle. Creature scale.",
+  "source": "WEG40080 Creatures of the Galaxy p.15"
  },
  {
   "name": "Binarian Carnivorous Plant",
@@ -584,8 +584,8 @@ const CREATURES_DATA = [
   "move": "30 (flying)/4 (walking)",
   "size": "30cm wingspan",
   "orneriness": "",
-  "special": "Venom: 10+ bites = VE STR or -1D cumulative. Disease: Moderate STR or wounded after 5-15 hours.",
-  "source": "Creatures of the Galaxy (pages 15-16)"
+  "special": "Venom: <10 bites harmless. Every 10th bite requires Very Easy STR or -1D cumulative penalty on all actions; if penalty exceeds STR, character falls asleep. Cured by medpac or 6-10 hours sleep. Disease: Moderate STR or become wounded after 6-15 hours onset; Easy medicine to cure.",
+  "source": "WEG40080 Creatures of the Galaxy p.16"
  },
  {
   "name": "Bogey",
@@ -669,7 +669,7 @@ const CREATURES_DATA = [
   "size": "0.2-0.5m long",
   "orneriness": "",
   "special": "Bite: STR+2. Claws: STR+1. Armored Hide: +2 vs physical. Digging.",
-  "source": "Creatures of the Galaxy (pages 16-17)"
+  "source": "WEG40080 Creatures of the Galaxy p.17"
  },
  {
   "name": "Bordok (Greater)",
@@ -865,7 +865,7 @@ const CREATURES_DATA = [
   "size": "1-1.5m at shoulder",
   "orneriness": "",
   "special": "Snout: STR+1D or dig. Hooves: STR+1D.",
-  "source": "Creatures of the Galaxy (pages 18-19)"
+  "source": "WEG40080 Creatures of the Galaxy p.19"
  },
  {
   "name": "Chiilak",
@@ -878,8 +878,8 @@ const CREATURES_DATA = [
   "move": "9/18 (swimming)",
   "size": "2.2m tall",
   "orneriness": "",
-  "special": "Claws: STR+1D. Stamina: hold breath 20 min, swim for hours.",
-  "source": "Creatures of the Galaxy (pages 19-20)"
+  "special": "Dodge 4D, brawling parry 6D. Search 4D, tracking 4D. Brawling 5D, climbing/jumping 5D, swimming 6D. Claws: STR+1D damage. Stamina: hold breath 20 min, swim for hours. Creature scale.",
+  "source": "WEG40080 Creatures of the Galaxy p.20"
  },
  {
   "name": "Chiru (Sand Wasp)",
@@ -1182,12 +1182,12 @@ const CREATURES_DATA = [
   "habitat": "Swamp",
   "dex": "2D",
   "per": "2D",
-  "str": "1D+1",
-  "move": "15/10 (swimming)",
-  "size": "2.5m at shoulder",
+  "str": "1D+2",
+  "move": "15 (running), 10 (swimming)",
+  "size": "2.5 meters tall at the shoulder",
   "orneriness": "",
-  "special": "Reflective Plumage: +2D survival vs UV/climate.",
-  "source": "Creatures of the Galaxy (page 21)"
+  "special": "Reflective Plumage and Hood: shiny membranes reflect UV rays. Off-worlders can add +2D to survival rolls to withstand Wyndigal 2 climate.",
+  "source": "WEG40080 Creatures of the Galaxy p.21"
  },
  {
   "name": "Crown of Silk",
@@ -1256,8 +1256,8 @@ const CREATURES_DATA = [
   "move": "8",
   "size": "1.5-2m tall",
   "orneriness": "",
-  "special": "Claws: STR+1D. Climbing: +1D. Stealth: +1 difficulty level to spot in trees. Senses: +1D+2 search/tracking/PER.",
-  "source": "Creatures of the Galaxy (pages 22-23)"
+  "special": "Brawling 4D, climbing/jumping 4D. Claws: STR+1D damage. Climbing: +1D to climbing rolls. Stealth: PER rolls to spot are one difficulty higher in trees/bushes. Senses: +1D+2 to search, search: tracking, and PER rolls. Larger goblins have STR 3D+1.",
+  "source": "WEG40080 Creatures of the Galaxy p.23"
  },
  {
   "name": "Dark Wolf",
@@ -1438,8 +1438,8 @@ const CREATURES_DATA = [
   "move": "12",
   "size": "1.6-2.0m at shoulder",
   "orneriness": "",
-  "special": "Enhanced Speed: berserker state Move 28. Infrared Vision. Poisoned Fangs: Moderate stamina or incapacitated (+1 difficulty per bite).",
-  "source": "Creatures of the Galaxy (pages 23-24)"
+  "special": "Dodge 5D, running 6D. Sneak 5D. Brawling 5D, climbing/jumping 5D. Enhanced Speed: after ingesting Relkass sentinel plant, berserker state for several hours, Move increases to 28. Infrared Vision: no penalties in darkness. Poisoned Fangs: paralytic poison, Moderate stamina or immediate incapacitation, +1 difficulty level per successive bite. Creature scale.",
+  "source": "WEG40080 Creatures of the Galaxy p.24"
  },
  {
   "name": "Dragonsnake",
@@ -1691,7 +1691,7 @@ const CREATURES_DATA = [
   "size": "25cm across",
   "orneriness": "",
   "special": "Camouflage: +2D hide. Screech: scare predators.",
-  "source": "Creatures of the Galaxy (page 25)"
+  "source": "WEG40080 Creatures of the Galaxy p.25"
  },
  {
   "name": "Firaxan Shark",
@@ -1872,8 +1872,8 @@ const CREATURES_DATA = [
   "move": "13",
   "size": "3.5m tall, 5m long",
   "orneriness": "",
-  "special": "Beak: STR+1D, digging 5D, +1D resist. Temperature Sensitivity: above 5\u00b0C = -1D STR/-3 Move (1hr), -2D STR/-10 Move (1 day), hibernation (1 week+).",
-  "source": "Creatures of the Galaxy (pages 26-28)"
+  "special": "Sneak 3D+1. Climbing/jumping 4D+2. Beak: STR+1D damage, digging 5D, +1D to physical/energy to resist damage. Temperature Sensitivity: above 5°C for 1hr: -1D STR, -3 Move; after 1 day: -2D STR, -10 Move; after 1 week: hibernation until cold returns. Creature scale.",
+  "source": "WEG40080 Creatures of the Galaxy p.28"
  },
  {
   "name": "Garagon",
@@ -1967,11 +1967,11 @@ const CREATURES_DATA = [
   "dex": "1D",
   "per": "2D",
   "str": "7D",
-  "move": "15 (swim)/8",
-  "size": "6m long",
+  "move": "15 (swimming), 8 (walking)",
+  "size": "6 meters long",
   "orneriness": "",
-  "special": "Teeth: STR+2D. Claws: STR+2D.",
-  "source": "Core Rulebook (page 223)"
+  "special": "Teeth: STR+2D damage. Claws: STR+1D damage.",
+  "source": "WEG40080 Creatures of the Galaxy p.29"
  },
  {
   "name": "Giant Tauntaun",
@@ -2023,11 +2023,11 @@ const CREATURES_DATA = [
   "dex": "1D",
   "per": "1D",
   "str": "1D",
-  "move": "10/14 (burrow)",
-  "size": "1m long",
+  "move": "10 (ground), 14 (burrowing)",
+  "size": "Up to 1 meter long",
   "orneriness": "",
-  "special": "Grappling Attack: opposed brawling vs STR. Pulls to mouth.",
-  "source": "Creatures of the Galaxy (pages 29-30)"
+  "special": "Sneak 4D. Brawling: grappling 3D, digging 4D. Grappling Attack: wraps body around target, opposed brawling: grappling vs brawling or STR to pull to mouth. Creature scale.",
+  "source": "WEG40080 Creatures of the Galaxy p.30"
  },
  {
   "name": "Glittering Mynock",
@@ -2111,7 +2111,7 @@ const CREATURES_DATA = [
   "size": "1m long",
   "orneriness": "",
   "special": "Bite: STR+2.",
-  "source": "Creatures of the Galaxy (pages 30-31)"
+  "source": "WEG40080 Creatures of the Galaxy p.31"
  },
  {
   "name": "Gorryl",
@@ -2138,8 +2138,8 @@ const CREATURES_DATA = [
   "move": "12",
   "size": "2.5m tall",
   "orneriness": "",
-  "special": "Claws: STR+1D. Leaping Attack: +2D to hit, STR+3D, 10m leap. Eyesight: +2D PER sight tasks.",
-  "source": "Creatures of the Galaxy (pages 31-32)"
+  "special": "Melee combat 4D. Brawling 6D+1. Claws: STR+1D damage. Leaping Attack: up to 10m leap, +2D to melee combat or brawling, STR+3D damage. Eyesight: +2D bonus on all PER tasks involving sight. Creature scale.",
+  "source": "WEG40080 Creatures of the Galaxy p.32"
  },
  {
   "name": "Granite Slug",
@@ -2177,11 +2177,11 @@ const CREATURES_DATA = [
   "dex": "1D+1",
   "per": "2D",
   "str": "1D+2",
-  "move": "8/10 (climbing)",
-  "size": "1-1.3m tall",
+  "move": "8 (walking), 10 (climbing in tree limbs)",
+  "size": "1-1.3 meters tall, up to 2-meter wingspan",
   "orneriness": "",
-  "special": "Sonic Motion Detection: +1D+2 search. Sonic Stun: 4D stun in 45\u00b0 arc, 5m. Claws: STR+2. Tail: STR+1.",
-  "source": "Creatures of the Galaxy (pages 32-33)"
+  "special": "Search 5D. Climbing/jumping 5D+2. Sonic Motion Detection: nearly blind, tracks prey via ultrasonic echolocation (reflected in PER/search). Sonic Stun: 45° forward arc, 4D stun damage, range 5 meters. Claws: foot and wing hook claws STR+2 damage. Tail: STR+1 damage. Creature scale.",
+  "source": "WEG40080 Creatures of the Galaxy p.33"
  },
  {
   "name": "Greater Krayt Dragon",
@@ -2362,8 +2362,8 @@ const CREATURES_DATA = [
   "move": "150",
   "size": "2m long",
   "orneriness": "",
-  "special": "Repulsorlift Sense: drawn to repulsorlifts within 2km. Teeth: STR+2.",
-  "source": "Creatures of the Galaxy (pages 34-35)"
+  "special": "Flight 4D. Repulsorlift Sense: all helas within 2km radius drawn to repulsorlift generators. Teeth: STR+2 damage. Creature scale.",
+  "source": "WEG40080 Creatures of the Galaxy p.35"
  },
  {
   "name": "Heliost",
@@ -2387,11 +2387,11 @@ const CREATURES_DATA = [
   "dex": "3D+2",
   "per": "2D",
   "str": "3D+1",
-  "move": "9/12 (water)",
-  "size": "40-50cm tall",
+  "move": "9 (land), 12 (water)",
+  "size": "40-50 centimeters tall",
   "orneriness": "",
-  "special": "(Minimal combat \u2014 omnivore)",
-  "source": "Creatures of the Galaxy (page 35)"
+  "special": "Climbing/jumping 5D+1, swimming 5D+1. Non-aggressive — no recorded attacks on sapients, flees at unusual sounds or sudden movement.",
+  "source": "WEG40080 Creatures of the Galaxy p.35"
  },
  {
   "name": "High Hound",
@@ -2419,7 +2419,7 @@ const CREATURES_DATA = [
   "size": "1.3m long",
   "orneriness": "",
   "special": "Shell: +1D energy, +2D physical. Claws: STR+1D. Poison: 2D+2 (claws) or 1D+2 (shell). Water Sacs.",
-  "source": "Creatures of the Galaxy (page 36)"
+  "source": "WEG40080 Creatures of the Galaxy p.36"
  },
  {
   "name": "Hoska",
@@ -2474,8 +2474,8 @@ const CREATURES_DATA = [
   "move": "12",
   "size": "2m at shoulder",
   "orneriness": "2D",
-  "special": "Trunk: STR+1D (grab/push/crush). Armor: +2D physical and energy. Bite: STR+1D+1. Claws: STR+2. Concealment: +2D sneak.",
-  "source": "Creatures of the Galaxy (pages 36-38)"
+  "special": "Lifting 5D. Trunk: STR+1D damage, can grab/push/crush. Armor: +2D to resist physical and energy attacks. Bite: STR+1D+1 damage. Claws: STR+2 damage. Concealment: +2D to sneak when hiding (coloration and clinging debris). Creature scale.",
+  "source": "WEG40080 Creatures of the Galaxy p.38"
  },
  {
   "name": "Iagoin",
@@ -2530,8 +2530,8 @@ const CREATURES_DATA = [
   "move": "8",
   "size": "2m long (5m with tentacles)",
   "orneriness": "",
-  "special": "Entangling: Difficult hit = -2D DEX, opposed STR (+6) to break free. Armor: +2D head/body. Leg Claws: STR+1D.",
-  "source": "Creatures of the Galaxy (pages 39-40)"
+  "special": "Brawling 5D. Entangling: Difficult brawling hit snares with tentacles, -2D DEX and immobilized; opposed STR roll, must succeed by 6+ to break free. Armor: head/body +2D to resist damage. Leg Claws: STR+1D damage.",
+  "source": "WEG40080 Creatures of the Galaxy p.39"
  },
  {
   "name": "Ice Modrol",
@@ -2712,8 +2712,8 @@ const CREATURES_DATA = [
   "move": "1",
   "size": "2cm long",
   "orneriness": "",
-  "special": "(Harmless)",
-  "source": "Creatures of the Galaxy (pages 40-41)"
+  "special": "Harmless. Produces masrizeen, basis for antidote to lethal JurrinexG and Jurr-5 hive viruses. Found only in Harvest Bay, Cols. Cannot be transplanted or synthesized.",
+  "source": "WEG40080 Creatures of the Galaxy p.41"
  },
  {
   "name": "Kalan",
@@ -2801,7 +2801,7 @@ const CREATURES_DATA = [
  },
  {
   "name": "Keejin (Cave Crawler)",
-  "type": "Cave omnivore",
+  "type": "Cave-dwelling omnivore",
   "planet": "",
   "habitat": "Subterranean",
   "dex": "3D",
@@ -2810,8 +2810,8 @@ const CREATURES_DATA = [
   "move": "5",
   "size": "1-2m long",
   "orneriness": "",
-  "special": "Camouflage: +2 difficulty levels to spot in caves. Clinging: barbed claws on walls/ceilings.",
-  "source": "Creatures of the Galaxy (pages 42-43)"
+  "special": "Camouflage: increase visual PER rolls by two difficulty levels to spot in caves. Clinging: barbed claws allow movement on vertical surfaces and ceilings. Creature scale.",
+  "source": "WEG40080 Creatures of the Galaxy p.43"
  },
  {
   "name": "Keffi",
@@ -3101,11 +3101,11 @@ const CREATURES_DATA = [
   "dex": "4D+2",
   "per": "4D+1",
   "str": "3D",
-  "move": "6 (burrow)/9/12 (jumping)",
-  "size": "0.4-0.8m tall",
+  "move": "6 (burrowing), 9 (walking), 12 (jumping)",
+  "size": "0.4-0.8 meters tall",
   "orneriness": "",
-  "special": "Claws: STR+2. Springing: high dodge via leaps. Tool-Making: Difficult PER to fashion rudimentary tools.",
-  "source": "Creatures of the Galaxy (pages 43-44)"
+  "special": "Dodge 6D. Hide 5D, search 5D+1. Digging 5D, climbing/jumping 5D. Claws: STR+2 damage. Springing: powerful hind legs for long leaps (reflected in dodge). Tool-Making: Difficult PER to fashion rudimentary tools from nearby materials. Creature scale.",
+  "source": "WEG40080 Creatures of the Galaxy p.44"
  },
  {
   "name": "Llwelkyn",
@@ -3213,11 +3213,11 @@ const CREATURES_DATA = [
   "dex": "4D+1",
   "per": "3D+2",
   "str": "3D+2",
-  "move": "6/12 (swimming)",
-  "size": "30-45cm diameter",
+  "move": "6 (land), 12 (swimming)",
+  "size": "30-45 cm diameter, tentacles to 80 cm",
   "orneriness": "",
-  "special": "Bioluminescence: navigation + defense. Luminescence Control: bright flash to scare predators, or play dead. Tentacles: +1D climbing.",
-  "source": "Creatures of the Galaxy (pages 44-46)"
+  "special": "Climbing 4D+2, swimming 6D. Bioluminescence: phosphorescent light aids navigation in murky waters. Luminescence Control: bright burst (red to white) to scare predators, or change to dull black and play dead. Tentacles: sift through mud/silt, catch small game with suckers, +1D to climbing/jumping on land. Creature scale.",
+  "source": "WEG40080 Creatures of the Galaxy p.46"
  },
  {
   "name": "Lylek",
@@ -3269,11 +3269,11 @@ const CREATURES_DATA = [
   "dex": "2D+1",
   "per": "2D+1",
   "str": "1D+1",
-  "move": "9/14 (through sand)",
-  "size": "58cm long",
+  "move": "9 (above ground), 14 (through sand)",
+  "size": "58 centimeters long when fully extended",
   "orneriness": "",
-  "special": "Armor: +1D+1 physical and energy. Claws: STR+2. Odors: VD stamina to close within 3-4m.",
-  "source": "Creatures of the Galaxy (page 47)"
+  "special": "Sneak 4D+1. Stamina 5D. Armor: +1D+1 vs all physical and energy attacks. Claws: STR+2 damage. Odors: defensive gland secretes foul oil, Very Difficult stamina to close within 3-4 meters.",
+  "source": "WEG40080 Creatures of the Galaxy p.47"
  },
  {
   "name": "Maligator",
@@ -3440,8 +3440,8 @@ const CREATURES_DATA = [
   "move": "3 (space)",
   "size": "20m+ long",
   "orneriness": "",
-  "special": "Saw teeth: STR+2D. Armor: +2D physical and energy. Starfighter Scale.",
-  "source": "Creatures of the Galaxy (pages 47-48)"
+  "special": "Brawling 5D. Saw Teeth: vibrate at high speed, STR+2D damage. Armor: +2D vs physical/energy. Starfighter scale. Brawling = attack skill vs starships, STR (with armor) = hull code, DEX = maneuverability.",
+  "source": "WEG40080 Creatures of the Galaxy p.48"
  },
  {
   "name": "Modrol",
@@ -3767,7 +3767,7 @@ const CREATURES_DATA = [
  },
  {
   "name": "Nyantolo",
-  "type": "Carapaced aquatic animal",
+  "type": "Carapaced aquatic mammal",
   "planet": "Wyndigal 2",
   "habitat": "Aquatic",
   "dex": "2D",
@@ -3777,7 +3777,7 @@ const CREATURES_DATA = [
   "size": "2.5-3m long",
   "orneriness": "",
   "special": "Concealment: Difficult PER to spot when inactive. Bite: STR+3D. Song: moaning whistle attracts mates, disconcerts others.",
-  "source": "Creatures of the Galaxy (pages 48-49)"
+  "source": "WEG40080 Creatures of the Galaxy p.49"
  },
  {
   "name": "Oasis Children",
@@ -3815,11 +3815,11 @@ const CREATURES_DATA = [
   "dex": "3D",
   "per": "2D",
   "str": "1D+1",
-  "move": "10/14 (swimming)",
-  "size": "1m long, 2.3m tall (extended)",
+  "move": "10 (running), 14 (swimming)",
+  "size": "1 meter long, 2.3 meters tall (neck fully extended)",
   "orneriness": "",
-  "special": "Constricting Attack: STR+1D+2. Claws: STR+1D, +1D climbing.",
-  "source": "Creatures of the Galaxy (pages 49-50)"
+  "special": "Brawling parry 4D, dodge 3D+2. Search 3D, sneak 4D. Brawling 3D+2, climbing/jumping 3D+1, swimming 4D+2. Constricting Attack: neck constriction, STR+1D+2 damage. Claws: STR+1D damage, +1D to climbing. Creature scale.",
+  "source": "WEG40080 Creatures of the Galaxy p.50"
  },
  {
   "name": "Opee Sea Killer",
@@ -3844,10 +3844,10 @@ const CREATURES_DATA = [
   "per": "2D",
   "str": "4D",
   "move": "6",
-  "size": "2.5m tall",
+  "size": "2.5 meters tall",
   "orneriness": "",
-  "special": "Claws: STR+3D. Frenzy: +2D damage vs humanoids. Tracking: pursues escaped prey for 2 weeks.",
-  "source": "Creatures of the Galaxy (pages 50-51)"
+  "special": "Search: tracking 5D. Claws: STR+3D damage. Frenzy: sight of humanoid/large creature adds +2D to damage. Tracking: pursues escaped prey for up to 2 standard weeks. Creature scale.",
+  "source": "WEG40080 Creatures of the Galaxy p.51"
  },
  {
   "name": "Peko Peko",
@@ -3949,7 +3949,7 @@ const CREATURES_DATA = [
  },
  {
   "name": "Preying Makthier",
-  "type": "Cave carnivore",
+  "type": "Cave-dwelling carnivore",
   "planet": "Makthierse",
   "habitat": "Cave/Subterranean",
   "dex": "3D+1",
@@ -3958,8 +3958,8 @@ const CREATURES_DATA = [
   "move": "10 (flying)",
   "size": "1.2-1.7m long, 2m wingspan",
   "orneriness": "",
-  "special": "Sonic Motion Detection: +1D+2 search. Constriction: +1D lifting, 1D/round, -2D DEX (VD STR to escape). Paralyzing Stinger: 2D + 4D stun for 5 rounds.",
-  "source": "Creatures of the Galaxy (page 52)"
+  "special": "Search 4D, sneak 4D+2. Lifting 5D+1. Sonic Motion Detection: blind in normal light, echolocation for 3D tracking, +1D+2 to all search rolls. Constriction: tail wraps victim, +1D lifting, 1D damage/round, -2D DEX penalty, Very Difficult STR to escape. Paralyzing Stinger: 2D damage (barb) + 4D stun damage for 5 successive rounds. Hunts in groups of 10+. Creature scale.",
+  "source": "WEG40080 Creatures of the Galaxy p.52"
  },
  {
   "name": "Purbole",
@@ -3997,11 +3997,11 @@ const CREATURES_DATA = [
   "dex": "2D+1",
   "per": "2D",
   "str": "2D+1",
-  "move": "8/14 (charging)",
-  "size": "1.2m long, 1m at shoulder",
+  "move": "8 (walking), 14 (charging)",
+  "size": "1.2 meters long, 1 meter tall at the shoulder",
   "orneriness": "",
-  "special": "Claws: STR+1. Territorial (heightened in mating season). Quills: 3D close (0-4m), 2D medium/long (5-8/12m). Restricted Vision: single eye, +1D dodge beyond 5m. Teeth: STR+2.",
-  "source": "Creatures of the Galaxy (pages 53-55)"
+  "special": "Running 5D+1. Search 5D, sneak 4D. Brawling 6D+1. Claws: STR+1 damage. Teeth: STR+2 damage. Quills: 3D damage close (0-4m), 2D damage medium/long (5-8/12m). Restricted Vision: single eye, targets beyond 5m get +1D dodge vs quills. Territorial: violent reaction to intruders, heightened in mating season. Creature scale.",
+  "source": "WEG40080 Creatures of the Galaxy p.55"
  },
  {
   "name": "Quamin",
@@ -4015,7 +4015,7 @@ const CREATURES_DATA = [
   "size": "1.7m wingspan, 2m long",
   "orneriness": "",
   "special": "Flight: +1D sneak approaching. Razor Tail Whip: STR+1D+2 (slow healing cuts). Sensing: smell-based, no penalty in smoke/darkness/weather.",
-  "source": "Creatures of the Galaxy (pages 55-56)"
+  "source": "WEG40080 Creatures of the Galaxy p.56"
  },
  {
   "name": "Quicker",
@@ -4039,11 +4039,11 @@ const CREATURES_DATA = [
   "dex": "4D",
   "per": "3D",
   "str": "1D",
-  "move": "7/12 (climbing/trees)",
-  "size": "0.5m tall",
+  "move": "7 (running), 12 (climbing or swinging in trees)",
+  "size": "0.5 meters tall",
   "orneriness": "",
-  "special": "Climbing: +2D sneak and climbing.",
-  "source": "Creatures of the Galaxy (pages 56-57)"
+  "special": "Climbing: +2D to sneaking and climbing rolls.",
+  "source": "WEG40080 Creatures of the Galaxy p.57"
  },
  {
   "name": "Quosit",
@@ -4082,10 +4082,10 @@ const CREATURES_DATA = [
   "per": "1D",
   "str": "2D+2",
   "move": "5",
-  "size": "8m long",
+  "size": "Up to 8 meters long, up to 5 cm diameter",
   "orneriness": "",
-  "special": "Electricity Sense: +3D PER for electrical currents. Electrocution: 5D+2 on contact. Space Survival.",
-  "source": "Creatures of the Galaxy (pages 57-58)"
+  "special": "Electricity Sense: +3D PER for all tasks involving perception of electricity. Electrocution: 5D+2 damage on physical contact. Space Survival: unharmed by cold or vacuum, survives in deep space indefinitely. Creature scale.",
+  "source": "WEG40080 Creatures of the Galaxy p.58"
  },
  {
   "name": "Rakghoul",
@@ -4151,11 +4151,11 @@ const CREATURES_DATA = [
   "dex": "3D",
   "per": "3D",
   "str": "3D",
-  "move": "10/12 (leaping)",
-  "size": "1.5-2m long, 0.8m tall",
+  "move": "10 (running), 12 (leaping)",
+  "size": "1.5-2 meters long, 0.8 meters tall at the shoulder",
   "orneriness": "",
-  "special": "Senses: +2D PER (smell/hearing). Horns: STR+1D. Stealth: +2D tracking/hide/sneak.",
-  "source": "Creatures of the Galaxy (pages 58-60)"
+  "special": "Senses: +2D PER for smell and hearing. Horns: STR+1D gore. Stealth: +2D to tracking, hiding, and sneaking. Creature scale.",
+  "source": "WEG40080 Creatures of the Galaxy p.60"
  },
  {
   "name": "Rawwk",
@@ -4202,7 +4202,7 @@ const CREATURES_DATA = [
  {
   "name": "Red Miont",
   "type": "Dangerous fish",
-  "planet": "Harvest Bay",
+  "planet": "Cols",
   "habitat": "Aquatic",
   "dex": "1D",
   "per": "2D",
@@ -4210,8 +4210,8 @@ const CREATURES_DATA = [
   "move": "8",
   "size": "",
   "orneriness": "",
-  "special": "Bite: STR+2.",
-  "source": "Creatures of the Galaxy (pages 41-42)"
+  "special": "Bite: STR+2 damage.",
+  "source": "WEG40080 Creatures of the Galaxy p.42"
  },
  {
   "name": "Reek",
@@ -5713,31 +5713,31 @@ const CREATURES_DATA = [
  },
  {
   "name": "Worrt",
-  "type": "Voracious predator",
+  "type": "Voracious insipient predator",
   "planet": "Tatooine",
-  "habitat": "Desert, Jabba's Palace",
-  "dex": "2D",
+  "habitat": "Desert wilderness",
+  "dex": "1D",
   "per": "3D",
-  "str": "3D+2",
-  "move": "5",
-  "size": "1.5m long",
+  "str": "1D",
+  "move": "3",
+  "size": "0.5-1.5 meters tall",
   "orneriness": "",
-  "special": "Tongue: 3m range, STR+1D, pulls to mouth. Bite: STR+2D. Camouflage: +2D hide in sand. Patience: waits motionless for hours.",
-  "source": ""
+  "special": "Tongue Attack: Brawling 4D, 1D damage. Attacks anything its size or smaller that moves.",
+  "source": "WEG40080 Creatures of the Galaxy p.92"
  },
  {
-  "name": "Wrix",
-  "type": "Feline predator",
+  "name": "Wrix (Common)",
+  "type": "Mountain-dwelling carnivore",
   "planet": "Various",
-  "habitat": "Forest/Plains",
-  "dex": "3D+2",
-  "per": "3D",
-  "str": "3D+1",
-  "move": "16",
-  "size": "1.2m long",
+  "habitat": "Mountains, settlements fringe",
+  "dex": "1D",
+  "per": "2D",
+  "str": "3D",
+  "move": "13",
+  "size": "Up to 2.5 meters long",
   "orneriness": "",
-  "special": "Claws: STR+1D. Bite: STR+2. Keen Hearing: +1D PER sounds. Stealthy: +1D+2 sneak.",
-  "source": "Creatures of the Galaxy (pages 69-70)"
+  "special": "Brawling parry 4D. Search 3D, sneak 3D+2. Brawling 5D, climbing/jumping 4D+1. Claws: STR+1D damage. Howl: intimidation 5D, terrifies many creatures. Very territorial, hunts in packs vs larger predators. Attacks on sapients always at night. Sub-species: Corellian wrix (larger ears, more ferocious), Tanthior wrix (3.5m, faster, reddish-brown). Creature scale.",
+  "source": "WEG40080 Creatures of the Galaxy p.90"
  },
  {
   "name": "Wulam",
@@ -7110,5 +7110,411 @@ const CREATURES_DATA = [
     orneriness: "2D",
     special: "Telepathy: Can selectively broadcast and receive thoughts and emotions using Ssither Telepathy skill. Cannot read minds — telepathy must be actively used. Difficulty is Moderate plus doubled normal Force proximity/relationship modifiers. Non-Ssither receive +15 modifier unless they have Ssither Telepathy Familiarity. Hairless reptilian beings with serpentine lower bodies, heavily muscled upper torsos, and large gold iris-less eyes. Hunter/gatherers at stone age technology level.",
     source: "WEG40066 Supernova p.77"
+  },
+  {
+   "name": "Arqet",
+   "type": "Mountain carnivore",
+   "planet": "Pellastrallas",
+   "habitat": "Mountains",
+   "dex": "3D+2",
+   "per": "3D",
+   "str": "3D",
+   "move": "9 (walking), 12 (charging)",
+   "size": "1.8-2.4 meters long, up to 2 meters tall",
+   "orneriness": "",
+   "special": "Sneak 5D. Armor: dorsal/spinal plates +2D vs physical and energy attacks. Camouflage: skin varies hue with solar radiation, blends with rocky surroundings (included in sneak). Claws: STR+2 damage. Horns: STR+2D damage. Teeth: STR+1D damage. Feigned Immobility: extremely patient, remains motionless to lure prey to point blank range. Creature scale.",
+   "source": "WEG40080 Creatures of the Galaxy p.8"
+  },
+  {
+   "name": "Yo'uqiol",
+   "type": "Carnivorous mobile plant",
+   "planet": "Ooo-sek",
+   "habitat": "Swamp, jungle",
+   "dex": "0D",
+   "per": "1D",
+   "str": "1D",
+   "move": "2",
+   "size": "Normally up to 30 cm across (up to 5 meters in deep jungle)",
+   "orneriness": "",
+   "special": "Brawling 3D. Poison Tendrils: 5D damage. Digestive Acid: 4D+2 damage. Detects temperature changes, motion, and sound. Regrows within weeks unless completely destroyed. Dormant spores survive 7-8 years. Used by Empire as perimeter 'land mines.' Creature scale.",
+   "source": "WEG40080 Creatures of the Galaxy p.93"
+  },
+  {
+   "name": "Zuxu (Ganlihk)",
+   "type": "Aquatic carnivore",
+   "planet": "Ganlihk",
+   "habitat": "Lakes, rivers",
+   "dex": "3D+2",
+   "per": "2D+1",
+   "str": "2D",
+   "move": "18 (swimming), 3 (walking)",
+   "size": "Up to 1.1 meters long",
+   "orneriness": "",
+   "special": "Sneak 3D+1. Swimming 4D. Teeth: STR+3D damage. Protective oil keeps skin moist for up to 3 hours on land. Padded front flippers for land locomotion. Normally solitary but bands together when food is scarce. Creature scale.",
+   "source": "WEG40080 Creatures of the Galaxy p.93"
+  },
+  {
+   "name": "Yeomet",
+   "type": "Urban pest",
+   "planet": "Various (artificial/urban worlds)",
+   "habitat": "Space stations, starships, urbanized planets",
+   "dex": "4D",
+   "per": "2D",
+   "str": "1D+1",
+   "move": "8",
+   "size": "60 centimeters tall",
+   "orneriness": "",
+   "special": "Teeth: STR+2D damage. Claws: STR+1D damage. Disease Transmission: Moderate stamina/STR or become wounded after 2D hours. Can eat almost anything organic and inorganic (requires EM radiation for full digestive enzyme). Chews through power cables and data wires. Herds of up to 30. Flees when confronted, fights only when cornered. Creature scale.",
+   "source": "WEG40080 Creatures of the Galaxy p.92"
+  },
+  {
+   "name": "Winged Xendrite",
+   "type": "Repto-avian insectivore",
+   "planet": "Xend",
+   "habitat": "Forest, urban",
+   "dex": "3D",
+   "per": "4D",
+   "str": "1D",
+   "move": "30 (flying), 2 (crawling)",
+   "size": "40 cm long, 80 cm wingspan",
+   "orneriness": "",
+   "special": "Eyesight: +2D PER for sight tasks. Sticky tongue catches insects with 98% accuracy. Found throughout the galaxy as pest control imports, often causing overpopulation problems. Creature scale.",
+   "source": "WEG40080 Creatures of the Galaxy p.89"
+  },
+  {
+   "name": "Voroos",
+   "type": "Stationary predator",
+   "planet": "Various",
+   "habitat": "Bogs, marshland, desert, arctic",
+   "dex": "4D",
+   "per": "2D",
+   "str": "4D/6D/8D (depending on size)",
+   "move": "0",
+   "size": "1-10 meters in diameter",
+   "orneriness": "",
+   "special": "Camouflage: mimics hills/geological features, Difficult PER to notice before initial attack. Tongue: STR+1D damage, on hit opposed brawling parry vs DEX to avoid grapple; grasped targets pulled into mouth next round (opposed STR to resist). Teeth: half STR damage, extracting from mouth causes additional 3D damage. Creature scale.",
+   "source": "WEG40080 Creatures of the Galaxy p.87"
+  },
+  {
+   "name": "Tymp",
+   "type": "Nocturnal forager",
+   "planet": "Serat",
+   "habitat": "Forest, urban",
+   "dex": "3D",
+   "per": "1D",
+   "str": "1D+1",
+   "move": "10",
+   "size": "0.7 meters (plus 0.7-meter tail)",
+   "orneriness": "",
+   "special": "Night Vision: +2D PER in low light. Tusks: STR+1D damage. Climbing: +2D climbing when using prehensile tail under extreme stress. Urban subspecies is more aggressive and can digest roti grain. Creature scale.",
+   "source": "WEG40080 Creatures of the Galaxy p.86"
+  },
+  {
+   "name": "Two-Headed Tortuce",
+   "type": "Amphibian herbivore",
+   "planet": "Canastra IV",
+   "habitat": "Coastal, aquatic",
+   "dex": "2D+1",
+   "per": "3D+2",
+   "str": "2D+2",
+   "move": "4 (walking), 8 (swimming)",
+   "size": "0.8-1.0 meters long",
+   "orneriness": "",
+   "special": "Sneak 5D+1. Brawling 3D, swimming 4D. Armor: shell +1D to resist all physical/energy. Dual Brained: two attacks at no penalty; 3rd+ actions suffer normal multi-action penalties. Heightened Smell: +1D search. Jaws: STR+1D damage. Lifespan ~100 years. Creature scale.",
+   "source": "WEG40080 Creatures of the Galaxy p.85"
+  },
+  {
+   "name": "Troos Armored Crebik",
+   "type": "Arboreal arthropod",
+   "planet": "Troos",
+   "habitat": "Sub-arctic forest, arboreal",
+   "dex": "2D",
+   "per": "2D+2",
+   "str": "3D",
+   "move": "6",
+   "size": "1 meter long",
+   "orneriness": "",
+   "special": "Falling Attack: 6D+2 damage, Very Difficult PER to avoid surprise. Pincers: STR+2D damage. Mandibles: STR+2 damage. Thick keratin armor shell. Vulnerable to bahl fly infestation through shell cracks. Creature scale.",
+   "source": "WEG40080 Creatures of the Galaxy p.84"
+  },
+  {
+   "name": "Tresher (Tinallis)",
+   "type": "Avian cliff dweller",
+   "planet": "Tinallis",
+   "habitat": "Coastal cliffs",
+   "dex": "3D+2",
+   "per": "4D",
+   "str": "5D+2",
+   "move": "6 (walking), 18 (flight), 55 (diving attack)",
+   "size": "1.8-2.4 meters tall, up to 3.5-meter wingspan",
+   "orneriness": "",
+   "special": "Dodge 7D. Search 6D. Acute Vision: +2D visual search. Bite: STR+2 damage. Talons: STR+2 damage. Tail: STR+1 damage (bony-ridged tailswipe). Diving Attack: Move 55 (160 km/h), +1D attack damage. Extremely territorial, mates for life. Protected species. Creature scale.",
+   "source": "WEG40080 Creatures of the Galaxy p.82"
+  },
+  {
+   "name": "Thanu",
+   "type": "Carnivorous volcano dweller",
+   "planet": "Kamur",
+   "habitat": "Volcanic slopes",
+   "dex": "3D",
+   "per": "1D+2",
+   "str": "2D",
+   "move": "4",
+   "size": "1.1 meters tall",
+   "orneriness": "",
+   "special": "Heat Immunity: +1D STR to resist blaster damage, can traverse any solid surface regardless of temperature. Tentacles: STR damage, on hit Moderate DEX or entangled; each round opposed STR to avoid being pulled into mouth; escape requires STR 10+ points higher than thanu. Teeth: STR+2D damage, also requires STR 10+ higher to escape mouth. Moves by rolling on spherical stone feet. Hunts in packs. Creature scale.",
+   "source": "WEG40080 Creatures of the Galaxy p.81"
+  },
+  {
+   "name": "Tentacle Bird of Pelemax",
+   "type": "Flightless jungle avian",
+   "planet": "Pelemax",
+   "habitat": "Jungle",
+   "dex": "3D",
+   "per": "2D",
+   "str": "3D",
+   "move": "16 (running), 10 (climbing/tree movement)",
+   "size": "1.6-2.5 meters tall, up to 3 meters long, tentacles to 3 meters",
+   "orneriness": "2D (native Pelemaxians), 3D (non-native riders)",
+   "special": "Running 4D. Intimidation: war cry 6D. Hide 4D. Climbing/jumping 4D, stamina 5D. Beak: STR+2 damage. Talons: STR+1D damage. Tentacles: +1D climbing/jumping/running. War Cry: intimidation succeed by 5+ = target stunned for 2 rounds. Water Storage: can go up to 1 standard month without water. Used as mounts and beasts of burden. Creature scale.",
+   "source": "WEG40080 Creatures of the Galaxy p.80"
+  },
+  {
+   "name": "Telkadis Hiding Tree Spider",
+   "type": "Predatory arachnid",
+   "planet": "Telkadis",
+   "habitat": "Forest (taku trees)",
+   "dex": "2D+2",
+   "per": "2D+1",
+   "str": "3D+1",
+   "move": "12",
+   "size": "60-80 centimeters in diameter",
+   "orneriness": "",
+   "special": "Hide 3D+2, search 4D, sneak 3D. Digging: tree burrowing 5D+1. Silent Movement: +1D+2 to all sneak. Sense: heat detection, +1D search within 20 meters. Camouflage: +3D sneak when burrowed in bark. Poison: bite does 3D damage, Very Difficult stamina or temporary paralysis (up to 1 hour). Colonies attack if host tree threatened. Creature scale.",
+   "source": "WEG40080 Creatures of the Galaxy p.79"
+  },
+  {
+   "name": "Tedellian Besiioth",
+   "type": "High-gravity hunter",
+   "planet": "Tedel",
+   "habitat": "Plains",
+   "dex": "1D+2",
+   "per": "2D",
+   "str": "4D+2",
+   "move": "12 (high gravity), 18 (standard gravity)",
+   "size": "Up to 2 meters long",
+   "orneriness": "",
+   "special": "Search 4D+2. Brawling 6D+2, climbing/jumping 5D+2. Visual Tracking: spots prey from kilometers away in open terrain, infrared vision. Intimidating Gaze: intimidation 7D; succeed by 10+ = target incapable of action for 1 round. Claws: STR+1D damage. Bite: STR+1D damage. 7 subspecies including 'stalker besiioth' with enhanced smell. Often used as guard beasts with neural inhibitor/controllers. Creature scale.",
+   "source": "WEG40080 Creatures of the Galaxy p.78"
+  },
+  {
+   "name": "Tantla",
+   "type": "Forest scavenger",
+   "planet": "Ealor",
+   "habitat": "Forest, desert, arctic",
+   "dex": "4D+2",
+   "per": "2D+2",
+   "str": "2D+2",
+   "move": "12",
+   "size": "1-1.3 meters tall, up to 3 meters long",
+   "orneriness": "",
+   "special": "Running 6D+2. Hide 4D, sneak 4D+2. Claws: STR+1 damage. Tail: STR+2 damage (barbed). Teeth: STR+1 damage. Grapple Tongue: 1m+ sucker-tipped tongue, Difficult STR to break free or -1D DEX. Extremely Protective: adults defending young get +2D STR for causing and resisting damage. Restricted Vision: -1D search vs stationary targets. Packs of 10-12. Creature scale.",
+   "source": "WEG40080 Creatures of the Galaxy p.77"
+  },
+  {
+   "name": "Svaper",
+   "type": "Underwater voracious threat",
+   "planet": "Rodia",
+   "habitat": "Aquatic",
+   "dex": "4D",
+   "per": "2D",
+   "str": "2D",
+   "move": "20 (swimming)",
+   "size": "2-3 meters long (captive adults up to 6 meters)",
+   "orneriness": "",
+   "special": "Bite: STR+3D damage. Spines: STR+3D+2 damage, remain lodged until target spends a turn removing. Tough Skin: +2D to resist damage (gills unprotected but Very Difficult to hit). Wraps around prey to secure while feeding. Illegal to own in most systems. Creature scale.",
+   "source": "WEG40080 Creatures of the Galaxy p.76"
+  },
+  {
+   "name": "Stalker Lizard (Dantooine)",
+   "type": "Plains hunter",
+   "planet": "Dantooine",
+   "habitat": "Plains",
+   "dex": "1D",
+   "per": "2D",
+   "str": "3D",
+   "move": "40 (sprint), 13 (normal)",
+   "size": "Up to 3.5 meters long",
+   "orneriness": "",
+   "special": "Search 3D+2, sneak 5D. Brawling 4D. Constriction Attack: STR+2D+2 damage. Solitary hunter, relies on surprise. Hunts nettars at dawn/dusk, covers up to 50km per night tracking prey. Creature scale.",
+   "source": "WEG40080 Creatures of the Galaxy p.74"
+  },
+  {
+   "name": "Stiltwalker",
+   "type": "Amphibious insectivore",
+   "planet": "Various (swamp worlds)",
+   "habitat": "Swamp, shallow water",
+   "dex": "3D",
+   "per": "1D",
+   "str": "1D+1",
+   "move": "3",
+   "size": "15 centimeters tall",
+   "orneriness": "",
+   "special": "Eyesight: +2D PER for all tasks involving sight. Force Sense: when a character uses the Force nearby, 2D stiltwalkers per die of control skill appear within 5 rounds and chirp loudly for up to 10 minutes. Males cannot swim, chase insects on long legs. Females are aquatic bottom-dwellers with tentacles. Males can be trained as guardian creatures (early warning). Creature scale.",
+   "source": "WEG40080 Creatures of the Galaxy p.75"
+  },
+  {
+   "name": "Spor Crawler",
+   "type": "Poisonous insect",
+   "planet": "Nar Bo Sholla",
+   "habitat": "Various (sand, dirt, urban hiding spots)",
+   "dex": "0D+2",
+   "per": "0D+2",
+   "str": "0D+2",
+   "move": "1",
+   "size": "8 centimeters long",
+   "orneriness": "",
+   "special": "Poison: 5D damage (rolled every 5 min for 1 hour). Difficult stamina or -3D penalty to all actions for 6 hours. Moderate first aid with medpac neutralizes poison but not pain. Burrowing: digs in soft materials. Camouflage: Difficult search/PER to spot before attack; characters familiar with Nar Bo Sholla may make Easy survival to reduce search difficulty by 2 levels. Flounders on smooth surfaces. Easily killed if stepped on. Hives of 5-50. Prized by assassins.",
+   "source": "WEG40080 Creatures of the Galaxy p.73"
+  },
+  {
+   "name": "Somago (Choker)",
+   "type": "Modified annelidian carnivore/scavenger",
+   "planet": "Tenek",
+   "habitat": "Forest, arboreal",
+   "dex": "4D",
+   "per": "2D",
+   "str": "3D+1",
+   "move": "4",
+   "size": "50 centimeters long",
+   "orneriness": "",
+   "special": "Choking Attack: if strikes head, 3D damage per round until killed or removed. Hooks: STR+1D damage. Forms: flat sheet (catches small herbivores), saddle (long-necked prey), tapestry (flying creatures), helmet (humanoids, rarest — 35cm diameter tube). Creature scale.",
+   "source": "WEG40080 Creatures of the Galaxy p.71"
+  },
+  {
+   "name": "Slork",
+   "type": "Disgusting scavenger",
+   "planet": "Kidron",
+   "habitat": "Marshland",
+   "dex": "1D",
+   "per": "3D",
+   "str": "4D",
+   "move": "3",
+   "size": "1-1.5 meters tall",
+   "orneriness": "",
+   "special": "Grubbers: STR+1D damage. Stench: nauseates organic beings within 10m, Difficult stamina or incapacitated; breathers reduce to Moderate. Blubber: +1D to resist damage; snout shots bypass blubber but +1 difficulty level to hit. Nearly blind, relies on smell via trunk; damaged snout = effectively blind. Creature scale.",
+   "source": "WEG40080 Creatures of the Galaxy p.71"
+  },
+  {
+   "name": "Slimy Nonakara",
+   "type": "Amphibious omnivore",
+   "planet": "Various",
+   "habitat": "Lakes, swamps",
+   "dex": "2D+2",
+   "per": "1D+1",
+   "str": "2D",
+   "move": "10 (swimming), 2 (crawling)",
+   "size": "20 cm to 4 meters long (varies by body of water)",
+   "orneriness": "",
+   "special": "Slime: Easy STR or 1D damage per round of contact. Teeth: STR+1D damage. Larval Implantation: 1 in 6 chance in nonakara-inhabited water; larva burrows into muscles, -1D STR after 4-16 hours, additional -1D STR every 10 days; STR 0 = death. Removal: Moderate medicine with surgical facilities. Recovery: 12-20 days rest in total care. Creature scale.",
+   "source": "WEG40080 Creatures of the Galaxy p.69"
+  },
+  {
+   "name": "Sliideptra",
+   "type": "Arboreal invertebrate carnivore",
+   "planet": "Tel IV",
+   "habitat": "Rain forest, arboreal",
+   "dex": "1D",
+   "per": "3D",
+   "str": "1D",
+   "move": "2 (up to 7 meters from tree limb)",
+   "size": "40 centimeters long",
+   "orneriness": "",
+   "special": "Wide Angle Vision: +2D PER for sight tasks. Poison Spray: 7D damage, once per 50 hours. Fail STR by 15+ = death. Fail by 1-14 = -1D penalty to DEX/MEC/STR/TEC (neural damage); penalty increases -1D per 5 hours untreated; when DEX penalty equals DEX, total paralysis. Medpac cures (Very Difficult first aid) but poison lingers — Easy STR roll every 20 hours for 1 week or relapse. Eliminate poison: Moderate medicine or Easy Ho'Din herbal medicines. Contact causes permanent bald scar tissue on exposed skin. Flesh is also poisonous if consumed. Creature scale.",
+   "source": "WEG40080 Creatures of the Galaxy p.68"
+  },
+  {
+   "name": "Slar",
+   "type": "Leaping hunter",
+   "planet": "Port Evokk",
+   "habitat": "Jungle, rain forest",
+   "dex": "2D",
+   "per": "2D",
+   "str": "3D",
+   "move": "8 (walking), 15 (leaping horizontally), 40 (leaping vertically)",
+   "size": "1.4 meters tall, 3 meters long (with tail)",
+   "orneriness": "",
+   "special": "Brawling parry 7D, dodge 3D. Brawling 4D, climbing/jumping 6D, lifting 5D. Leaping: up to 15m vertical or 40m horizontal (Moderate difficulty). Tail: wrap around tree limb for anchor, +1D brawling parry/brawling/lifting but cannot dodge or move more than 2m. Claws: STR+1D damage, on hit opposed brawling vs brawling parry to pin victim. Razor Quills: STR+2D damage. Creature scale.",
+   "source": "WEG40080 Creatures of the Galaxy p.69"
+  },
+  {
+   "name": "Skeeg",
+   "type": "Predatory mollusk",
+   "planet": "Vendara",
+   "habitat": "Swamp, rain forest",
+   "dex": "1D+2",
+   "per": "1D",
+   "str": "2D+1",
+   "move": "0.5",
+   "size": "17 centimeters long",
+   "orneriness": "",
+   "special": "Stingers: 1D+1 damage plus poison. Poison: Easy STR or -1D penalty on all STR actions (excluding resist damage); cured by 4 hours rest or medpac. Scent: within 1 meter, Moderate PER — those who notice become drowsy, -1D DEX while nearby and 4-14 rounds after leaving. Creature scale.",
+   "source": "WEG40080 Creatures of the Galaxy p.66"
+  },
+  {
+   "name": "Shredder Bat",
+   "type": "Flying predator",
+   "planet": "Atrisia",
+   "habitat": "Mountains, plains, forest, jungle",
+   "dex": "1D+2",
+   "per": "5D",
+   "str": "2D+2",
+   "move": "18 (flying)",
+   "size": "Up to 1 meter long, up to 1 meter wingspan",
+   "orneriness": "",
+   "special": "Search: tracking 7D, sneak 6D+2. Brawling 3D+2, flight 4D. Hearing: detects prey up to 15km, no eyes, composite hearing-based image of surroundings (reflected in PER skills). Fangs: STR+1D damage, dive-bombing attack STR+2D+2 damage. Hunts in packs of 20+, swarms of hundreds reported. Found on 1,000+ worlds. Creature scale.",
+   "source": "WEG40080 Creatures of the Galaxy p.65"
+  },
+  {
+   "name": "Sensor Star",
+   "type": "Marsh creature",
+   "planet": "F'tral",
+   "habitat": "Marsh, swampland",
+   "dex": "0D",
+   "per": "0D",
+   "str": "0D+2",
+   "move": "2",
+   "size": "Up to 25 centimeters across",
+   "orneriness": "",
+   "special": "Search 1D+2. Subsonic Communication: detectable by sensors at up to 350 meters. Sensitive Receptors: detects wide array of EM communication, useful as guard creatures. Creature scale.",
+   "source": "WEG40080 Creatures of the Galaxy p.64"
+  },
+  {
+   "name": "Selligore",
+   "type": "Aquatic grazing mammal",
+   "planet": "Corsin",
+   "habitat": "Coastal, shallow aquatic",
+   "dex": "1D",
+   "per": "2D",
+   "str": "4D",
+   "move": "13 (swimming), 4 (walking)",
+   "size": "Up to 20 meters long, up to 4 meters tall",
+   "orneriness": "2D",
+   "special": "Swimming 6D. Harmless herbivore — feeds on fish, plankton, and plants. Incredible stamina, survives hours between breaths. Can survive briefly on land but dehydrates quickly. Creature scale.",
+   "source": "WEG40080 Creatures of the Galaxy p.63"
+  },
+  {
+   "name": "Sanl j'ek",
+   "type": "Communal forest herbivore",
+   "planet": "Dancreti",
+   "habitat": "Tropical swamp jungle",
+   "dex": "4D",
+   "per": "6D",
+   "str": "1D",
+   "move": "12 (walking), 40 (frenzy)",
+   "size": "0.2-0.3 meters tall",
+   "orneriness": "",
+   "special": "Dodge 5D. Hide 7D, search 8D, sneak 7D. Climbing/jumping 4D. Claws: STR+2 damage. Birth Pouch: females carry young in rib cage pouch, +1D protection for infant vs physical/energy. Communal Loyalty: if any member attacked, entire community frenzies with +2D to all physical attacks and Move 40; use combined action bonuses at +3 levels. Enhanced Auditory Sense: detect heartbeats of pride members at 25-30km, -2D to search for own community, +2D to hide/sneak vs other creatures, +3D PER for initiative. Silent Movement: +1D sneak if making only one move per round. Creature scale.",
+   "source": "WEG40080 Creatures of the Galaxy p.62"
   }
 ];
