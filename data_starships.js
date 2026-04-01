@@ -5985,9 +5985,136 @@ const STARSHIP_DATA = {
    "sensors_search": "40/2D",
    "sensors_focus": "2/3D",
    "weapons": []
+  },
+  {
+   "rank": 50,
+   "name": "Luudrian Star (Tru'eb Cholakk's Ship)",
+   "craft": "Ghtroc Industries Class 720 Freighter",
+   "type": "Modified light freighter",
+   "affiliation": "The Fringe",
+   "era": "Rebellion",
+   "source": "WEG40084 Cracken's Rebel Operatives p.62",
+   "price_new": "",
+   "price_used": "Not available for sale",
+   "scale": "Starfighter",
+   "length": "35 meters",
+   "crew": "1",
+   "gunners": "",
+   "passengers": "10",
+   "cargo": "135 metric tons",
+   "consumables": "2 Mths",
+   "hyperdrive": "x2",
+   "nav_computer": "Yes",
+   "maneuverability": "1D",
+   "space": "3",
+   "atmosphere": "260; 750 kmh",
+   "hull": "3D+2",
+   "shields": "2D",
+   "of_note": "x15 backup. Crew Skill: See Tru'eb Cholakk. Upgraded shields and added mass drive cannons — cannons drain so much energy from the main power core that only one may fire each round.",
+   "sensors_passive": "15/0D",
+   "sensors_scan": "30/1D",
+   "sensors_search": "50/3D",
+   "sensors_focus": "2/4D",
+   "weapons": [
+    {
+     "name": "2 Mass Drive Cannons (fire-linked, one fires per round)",
+     "fire_arc": "Front",
+     "crew": "",
+     "skill": "Starship gunnery",
+     "fire_control": "2D",
+     "space_range": "1-2/8/15",
+     "atmo_range": "100-200/800/1.5 km",
+     "damage": "5D"
+    }
+   ]
+  },
+  {
+   "rank": 50,
+   "name": "Sapphire's Gem (Sapphire's Ship)",
+   "craft": "Hyrotii Cresent-class Transport",
+   "type": "Modified light freighter",
+   "affiliation": "Rebel Alliance",
+   "era": "Rebellion",
+   "source": "WEG40084 Cracken's Rebel Operatives p.64",
+   "price_new": "",
+   "price_used": "Not for sale",
+   "scale": "Starfighter",
+   "length": "30 meters",
+   "crew": "1",
+   "gunners": "",
+   "passengers": "4",
+   "cargo": "50 metric tons",
+   "consumables": "2 Mths",
+   "hyperdrive": "x1",
+   "nav_computer": "Yes",
+   "maneuverability": "2D",
+   "space": "9",
+   "atmosphere": "400; 1,150 kmh",
+   "hull": "4D",
+   "shields": "1D",
+   "of_note": "x10 backup. Skill: Space transports: Cresent. Crew Skill: See Sapphire. Sensors Countermeasures: +3D to difficulty to detect Sapphire's Gem. All systems custom shielded to prevent power emanations — most information collected through passive sensors. Geared toward speed and stealth with incredible sensor baffling equipment.",
+   "sensors_passive": "5/1D",
+   "sensors_scan": "10/2D",
+   "sensors_search": "20/3D",
+   "sensors_focus": "2/4D",
+   "weapons": [
+    {
+     "name": "2 Concussion Missile Launchers (fire-linked)",
+     "fire_arc": "Front",
+     "crew": "",
+     "skill": "Starship gunnery",
+     "fire_control": "3D",
+     "space_range": "1/3/7",
+     "atmo_range": "50-100/300/700",
+     "damage": "8D"
+    }
+   ]
   }
  ],
- "Named Modified Yachts": [],
+ "Named Modified Yachts": [
+  {
+   "rank": 50,
+   "name": "Siren III (Leger DeMain's Ship)",
+   "craft": "Modified Aavman Extravagance Model 11-S Space Yacht",
+   "type": "Converted space yacht",
+   "affiliation": "Rebel Alliance",
+   "era": "Rebellion",
+   "source": "WEG40084 Cracken's Rebel Operatives p.70",
+   "price_new": "",
+   "price_used": "250,000 (as modified)",
+   "scale": "Starfighter",
+   "length": "44 meters",
+   "crew": "2, gunners: 2, skeleton: 1/+10",
+   "gunners": "2",
+   "passengers": "24",
+   "cargo": "40 metric tons",
+   "consumables": "1 Mth",
+   "hyperdrive": "x2",
+   "nav_computer": "Yes",
+   "maneuverability": "1D",
+   "space": "4",
+   "atmosphere": "280; 800 kmh",
+   "hull": "4D",
+   "shields": "1D",
+   "of_note": "x10 backup. Skill: Space transports: Aavman Extravagance 11-S. Crew Skill: Astrogation 4D, space transports 4D, sensors 3D, starship gunnery 4D, starship shields 3D. Bow redesigned into a stage with orchestra pit — front end opens up for performances. Stage and backstage area can separate from the rest of the craft and move independently on a repulsorlift field. Secret compartments and passages throughout for smuggling. Center stern engine is a concealed mock-up (false energy signature projector) — hidden switch ejects compartment contents into adjoining engine ion drives for quick incineration, or out into space. Also carries Leger's Mini-Shuttle (starfighter scale, passengers 2, consumables 2 days, hyperdrive x6, nav computer limited to two jumps, maneuverability 1D, space 3, atmosphere 260; 750 kmh, hull 2D) — disguised as one of the escape pods.",
+   "sensors_passive": "15/0D",
+   "sensors_scan": "30/1D",
+   "sensors_search": "50/3D",
+   "sensors_focus": "2/4D",
+   "weapons": [
+    {
+     "name": "2 Laser Cannons (concealed)",
+     "fire_arc": "1 front/left, 1 front/right",
+     "crew": "1",
+     "skill": "Starship gunnery",
+     "fire_control": "1D",
+     "space_range": "1-3/12/25",
+     "atmo_range": "100-300/1.2/2.5 km",
+     "damage": "4D"
+    }
+   ]
+  }
+ ],
  "Stock Scout Ships": [
   {
    "rank": 4,
@@ -7810,7 +7937,36 @@ const STARSHIP_DATA = {
    ]
   }
  ],
- "Named Modified Bulk Freighters": [],
+ "Named Modified Bulk Freighters": [
+  {
+   "name": "The Cygnante",
+   "craft": "Sienar Ships Mark I Bulk Transport Ship",
+   "type": "Modified Bulk Transport",
+   "scale": "Starfighter",
+   "length": "50 meters",
+   "skill": "Space transports: Mark I",
+   "crew": "4, gunners: 3, skeleton: 2/+10",
+   "passengers": "20",
+   "cargo_capacity": "40,000 metric tons",
+   "consumables": "5 months",
+   "cost": "Not available for sale",
+   "hyperdrive_multiplier": "x1",
+   "hyperdrive_backup": "x20",
+   "nav_computer": "Yes",
+   "maneuverability": "1D",
+   "space": "3",
+   "atmosphere": "260; 750 kmh",
+   "hull": "6D+1",
+   "shields": "2D+1",
+   "sensors": { "passive": "20/0D", "scan": "50/1D", "search": "80/2D", "focus": "4/4D" },
+   "weapons": [
+    { "name": "2 Double Lasers", "fire_arc": "1 front, 1 back", "crew": "1", "skill": "Starship gunnery", "fire_control": "2D", "space_range": "1-3/5/10", "atmosphere_range": "2-6/10/20 km", "damage": "5D" },
+    { "name": "1 Laser Cannon", "fire_arc": "Turret (may only be moved to one facing per round)", "crew": "1", "skill": "Starship gunnery", "fire_control": "2D", "space_range": "1-3/5/10", "atmosphere_range": "2-6/10/20 km", "damage": "2D+2" }
+   ],
+   "capsule": "The Shield's highly modified bulk freighter, reinforced to be battle-worthy and serve as a home base for extended periods without resupply. The Cygnante has five false transponders that can give false ship identification codes to nosy Imperial patrol cruisers.",
+   "source": "WEG40084 Cracken's Rebel Operatives p.21"
+  }
+ ],
  "Stock Shuttles": [
   {
    "rank": 9,
@@ -23105,7 +23261,80 @@ const STARSHIP_DATA = {
    ]
   }
  ],
- "Named Modified Capital Corvettes": [],
+ "Named Modified Capital Corvettes": [
+  {
+   "rank": 50,
+   "name": "Retribution (Evram Darkmere's Ship)",
+   "craft": "Customized Daupherm DiscriMass Attack Cruiser",
+   "type": "System attack cruiser",
+   "affiliation": "The Fringe",
+   "era": "Rebellion",
+   "source": "WEG40084 Cracken's Rebel Operatives p.86",
+   "price_new": "",
+   "price_used": "Not available for sale",
+   "scale": "Capital",
+   "length": "85 meters",
+   "crew": "150, gunners: 51, skeleton: 75/+10",
+   "gunners": "51",
+   "passengers": "60 (troops)",
+   "cargo": "7,800 metric tons",
+   "consumables": "2 Wks",
+   "hyperdrive": "x3",
+   "nav_computer": "Yes",
+   "maneuverability": "1D",
+   "space": "5",
+   "atmosphere": "",
+   "hull": "4D+2",
+   "shields": "1D+2",
+   "of_note": "x20 backup. Skill: Capital ship piloting: Discril cruiser. Crew Skill: Astrogation 3D+1, capital ship gunnery 3D+2, capital ship piloting 4D, capital ship shields 4D, sensors 3D. Stolen Daupherm Systems Fleet cruiser still in distinctive fleet colors. Original outdated power core retained — no match for most Imperial ships. Upgraded shields and weaponry added over the years. Migrates sectors every few months with no permanent base.",
+   "sensors_passive": "30/0D",
+   "sensors_scan": "60/1D+2",
+   "sensors_search": "90/2D",
+   "sensors_focus": "3/3D",
+   "weapons": [
+    {
+     "name": "6 Turbolaser Cannons",
+     "fire_arc": "2 front, 2 left, 2 right",
+     "crew": "4",
+     "skill": "Capital ship gunnery",
+     "fire_control": "1D+1",
+     "space_range": "3-15/35/75",
+     "atmo_range": "6-30/70/150 km",
+     "damage": "4D+1"
+    },
+    {
+     "name": "4 Tri-Partide Beamers",
+     "fire_arc": "Front",
+     "crew": "2",
+     "skill": "Capital ship gunnery",
+     "fire_control": "2D+1",
+     "space_range": "1-10/25/50",
+     "atmo_range": "2-20/50/100 km",
+     "damage": "3D"
+    },
+    {
+     "name": "Tractor Beam",
+     "fire_arc": "Front",
+     "crew": "7",
+     "skill": "Capital ship gunnery",
+     "fire_control": "1D+2",
+     "space_range": "1-4/12/24",
+     "atmo_range": "2-8/24/48 km",
+     "damage": "4D"
+    },
+    {
+     "name": "2 Trilaser Cannons",
+     "fire_arc": "Front",
+     "crew": "6",
+     "skill": "Starship gunnery (starfighter scale)",
+     "fire_control": "2D",
+     "space_range": "1-3/12/25",
+     "atmo_range": "100-300/1.2/2.5 km",
+     "damage": "5D"
+    }
+   ]
+  }
+ ],
  "Stock Capital Frigates": [
   {
    "rank": 2,
@@ -33963,7 +34192,70 @@ const STARSHIP_DATA = {
    ]
   }
  ],
- "Named Modified Capital Freighters & Liners": [],
+ "Named Modified Capital Freighters & Liners": [
+  {
+   "rank": 50,
+   "name": "Cal Ambre (Retter Lewis's Gambling Resort)",
+   "craft": "Kumauri Cal-class Battleship",
+   "type": "Modified Cal-class Battleship (Luxury Gambling Resort)",
+   "affiliation": "The Fringe",
+   "era": "Rebellion",
+   "source": "WEG40084 Cracken's Rebel Operatives p.83",
+   "price_new": "",
+   "price_used": "Not available for sale",
+   "scale": "Capital",
+   "length": "3,000 meters",
+   "crew": "2,150, gunners: 46, skeleton: 245/+5",
+   "gunners": "46",
+   "passengers": "9,000",
+   "cargo": "20,000 metric tons",
+   "consumables": "3 Mths",
+   "hyperdrive": "x6",
+   "nav_computer": "Yes",
+   "maneuverability": "",
+   "space": "1",
+   "atmosphere": "",
+   "hull": "2D+2",
+   "shields": "3D",
+   "of_note": "x15 backup. Skill: Archaic starship piloting: Cal-class. Crew Skill: Archaic starship piloting 3D+2, capital ship gunnery 3D, capital ship gunnery: mass driver 5D, capital ship shields 4D, sensors 4D. Antique Cal-class warship overhauled into a unique luxury gambling resort in permanent orbit in the Bramior system at the edge of a large asteroid field. Nearby is Rove, a large barren rogue moon. The main draw is Bombarde — a game where a mass driver fires an asteroid at the moon with randomly generated coordinates and bets are placed on which section will be hit. Numerous levels dedicated to cabins, malls, dance halls, theaters, and parks. Large hangar for smaller vessels, numerous skiffs and ferries. Most original weapons removed save for three. An Imperial frigate stays within the system for security, arriving within 15 minutes of an alert. Sample Guard: All stats 2D except Dexterity 3D, blaster 3D+1, brawling 3D. Move: 10. Blaster pistol (4D).",
+   "sensors_passive": "30/1D",
+   "sensors_scan": "50/2D",
+   "sensors_search": "80/2D+1",
+   "sensors_focus": "4/3D",
+   "weapons": [
+    {
+     "name": "Mass Driver",
+     "fire_arc": "Front",
+     "crew": "10",
+     "skill": "Capital ship gunnery: mass driver",
+     "fire_control": "1D",
+     "space_range": "2-15/45/90",
+     "atmo_range": "",
+     "damage": "8D"
+    },
+    {
+     "name": "2 Turbolaser Cannons",
+     "fire_arc": "1 front, 1 back",
+     "crew": "3",
+     "skill": "Capital ship gunnery",
+     "fire_control": "3D",
+     "space_range": "3-5/7/10",
+     "atmo_range": "200-500/1/1.5 km",
+     "damage": "4D"
+    },
+    {
+     "name": "6 Tractor Beam Projectors",
+     "fire_arc": "2 front, 1 left, 1 right, 2 back",
+     "crew": "5",
+     "skill": "Capital ship gunnery",
+     "fire_control": "3D",
+     "space_range": "1-10/15/25",
+     "atmo_range": "2-10/30/60 km",
+     "damage": "4D"
+    }
+   ]
+  }
+ ],
  "Stock Battle Stations": [
   {
    "rank": 1,

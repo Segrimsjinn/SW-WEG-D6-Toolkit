@@ -4083,5 +4083,14 @@ const EQUIPMENT_DATA = [
   "availability": "4, X",
   "game_notes": "Scale: Capital. Skill: Capital ship gunnery: heavy ion cannon. Damage: 7D. Range: 1-5/15/35 (space), 2-10/30/75 km (atmosphere). Crew: 2. Fire Control: 1D. Ammo: Power generator (1 shot per 50 standard hours). Experimental heavy ion cannon developed by an Imperial faction in Corva Sector. Potential to completely ionize a ship on the first successful strike. 2 in 6 chance per use of backfiring and ionizing all systems of the carrying ship. Leaves nano-scopic fields of highly ionized particles that telegraph the presence of a vessel bearing this weapon.",
   "source": "WEG40138 Classic Adventures Vol 4 p.48"
+ },
+ {
+  "name": "zZip Personality Series ChaumScanner 5",
+  "category": "Security",
+  "type": "Customized Poison Detector",
+  "cost": "6,540",
+  "availability": "3, F",
+  "game_notes": "The food scanner has a 4D search to detect any chemical or biological toxins. If specially programmed with the owner's unique biochemistry (allergies and the like), its skill goes to 7D. Produces a distinctive rhythmic vibration (detectable only by the wearer) when it detects a toxic substance. The wearer may make a Moderate cultures roll to seem inconspicuous when rejecting poisoned food or drink. Standard model availability 3, F; luxury version 4, R. Rivoche Tarkin's brooch version has a miniaturized holorecorder built in — she activates it by touching the brooch when flirting. 80 minutes recording capacity.",
+  "source": "WEG40084 Cracken's Rebel Operatives p.34"
  }
 ];
