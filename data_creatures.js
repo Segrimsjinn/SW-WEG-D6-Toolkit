@@ -3385,7 +3385,7 @@ const CREATURES_DATA = [
   "size": "30m long avg",
   "orneriness": "",
   "special": "Lunge Attack: STR+2D.",
-  "source": "Platt's Starport Guide (page 74)"
+  "source": "WEG40107 Platt's Starport Guide p.74"
  },
  {
   "name": "Massiff",
@@ -3455,7 +3455,7 @@ const CREATURES_DATA = [
   "size": "5m tall",
   "orneriness": "",
   "special": "Claws: STR+2D. Camouflage: +1D sneak in jungle.",
-  "source": "Platt's Starport Guide (page 34)"
+  "source": "WEG40107 Platt's Starport Guide p.34"
  },
  {
   "name": "Mole Serpent",

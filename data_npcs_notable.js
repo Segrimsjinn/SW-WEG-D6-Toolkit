@@ -1,7 +1,7 @@
 // Notable NPCs Database — Sourcebook characters with full stat blocks
 // Used by GM tab Notable NPC Lookup
 const NOTABLE_NPCS = [
-  // ── GELGELAR FREE PORT (WEG40217 Platt's Starport Guide p.56–78) ──
+  // ── GELGELAR FREE PORT (WEG40107 Platt's Starport Guide p.56–78) ──
   {
     name: "Loro Eels",
     species: "Sullustan",
@@ -24,7 +24,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Blaster pistol (4D), comlink, datapad",
     capsule: "Loro Eels is Gelgelar Free Port's unofficial mayor. He and his extensive family run the starport and maintain a minimal peace in town. Eels is rarely seen in public, as he is wanted by the SoroSuub Corporation for smuggling, spacejacking, and other assorted crimes. He provides forged starship and pilot documents and other illegal services, all for a price. Eels's family runs several businesses in town, including the Nofre Repair Bay and Gelgelar Outfitters. The local population respects Eels, since he always acts in their best interests. He makes sure spacers' credits find their way into local business coffers, but also intervenes if spacers are cheated or overcharged. Some say Eels lives in a warren of watertight passages beneath the starport and part of the town. He entrusts his family members to carry out his judgments and maintain peace and economic fairness. A friendly Sullustan once you earn his trust, he tends to reflect the manner in which someone approaches him. Also a good sabacc player.",
-    source: "WEG40217 Platt's Starport Guide p.62"
+    source: "WEG40107 Platt's Starport Guide p.62"
   },
   {
     name: "Nofre Eels",
@@ -48,7 +48,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Blaster pistol (4D), comlink, datapad, protective goggles, tool kit",
     capsule: "Nofre Eels is the sister of Gelgelar Free Port's unofficial administrator, Loro Eels. She is a short Sullustan who wears a greasy work suit with the contents of a tool kit strapped to her utility belt. Nofre is friendly and drives her mechanics hard but rewards them well. She is fond of talking to starship captains about the intricacies of repair and is always interested in where they've come from. Her talkative manner is one way she collects information for her brother — she's quick to report any mention or signs of slaves and is always interested in news from other systems. Nofre keeps a database on her office computer of starships, including captains, repairs done on Gelgelar, modifications, weapons, and anything else of interest. This database helps her diagnose problems on ships which use the repair bay frequently. She offers discounts to regular customers.",
-    source: "WEG40217 Platt's Starport Guide p.68"
+    source: "WEG40107 Platt's Starport Guide p.68"
   },
   {
     name: "Qulo Eels",
@@ -72,7 +72,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Datapad",
     capsule: "Qulo Eels runs Gelgelar Outfitters and purchases all goods for his establishment. While he drives a hard bargain when purchasing goods from freighter captains, he tries to make all parties think they've made a good deal. He is concerned about Gelgelar's economic climate and knows if he charges too much, he'll drain credits from the local population. Qulo always has at least 10,000 credits on hand when making deals. If he's not in his office at the back of the store, he's out greeting starship captains of recently landed ships, seeing if they wish to sell him their cargo.",
-    source: "WEG40217 Platt's Starport Guide p.70"
+    source: "WEG40107 Platt's Starport Guide p.70"
   },
   {
     name: "Slerog Fenn",
@@ -96,7 +96,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Credit pouch, datapad, heavy blaster pistol (5D)",
     capsule: "Slerog Fenn is a greedy Rodian who runs Fenn's Landing, a group of docking platforms away from the main starport facilities run by Loro Eels. He dresses in a greasy flight suit and always keeps his blaster handy. Fenn personally collects docking fees accompanied by two thugs. He can be rude and offensive, making patrons feel he's doing them a favor. Despite his lagging business, Fenn believes he is Loro Eels's chief competition. He hates the Sullustan and has foolishly vowed to drive Eels's operation into swamp mire. While his threats are often meaningless, Fenn is still a trigger-happy Rodian with a very short temper.",
-    source: "WEG40217 Platt's Starport Guide p.63"
+    source: "WEG40107 Platt's Starport Guide p.63"
   },
   {
     name: "Thulls",
@@ -120,7 +120,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Blaster rifle (5D), grungy towel",
     capsule: "Thulls the Ithorian has had a constant cold since arriving on Gelgelar several years ago, mistaking it for a humid tropical planet instead of a cold wet one. He quietly notes who visits the bar, who they talk to, and picks up bits of conversation. If properly motivated with a handful of credits, he'll answer questions about what's going on in town. He's aware of what ships are in port, what cargoes they carry, and where they're headed. He keeps a blaster rifle under the bar for rowdy spacers. He gives swamp farmers drink discounts as regular customers, but raises prices when pilgrims or brash spacers walk in.",
-    source: "WEG40217 Platt's Starport Guide p.71"
+    source: "WEG40107 Platt's Starport Guide p.71"
   },
   {
     name: "Brack",
@@ -144,7 +144,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Datapad, pocket computer",
     capsule: "Brack is an oily little womp rat who always peers up his long snout at the farmers and freighter captains who do business with him. He buys vohis mold from farmers for 100 credits per ton and tries to sell it to freighter captains for 200 credits per ton (will bargain down to 150 if warehouses are full). While he rarely cheats on deals, he always maximizes his profits. If stuck with a sour deal, Brack whines about it around town hoping to bruise the spacer's reputation and arouse Loro Eels's attention.",
-    source: "WEG40217 Platt's Starport Guide p.65"
+    source: "WEG40107 Platt's Starport Guide p.65"
   },
   {
     name: "Vleen Argoe",
@@ -168,7 +168,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Mini-flamer, pack of hand-rolled cigarras",
     capsule: "Vleen runs the Shvash Gas Cooperative and barely manages to get by on the few credits she makes buying and selling shvash gas. She's an awful businesswoman, fond of sitting around her office all day smoking hand-rolled cigarras and setting small items on fire. She isn't terribly good at bargaining. If her tanks get too full, she burns a little off rather than turn away harvesters. She is fascinated by fire and sometimes distracted by the small flame from her mini-flamer when lighting a cigarra.",
-    source: "WEG40217 Platt's Starport Guide p.66"
+    source: "WEG40107 Platt's Starport Guide p.66"
   },
   {
     name: "Varrik",
@@ -192,7 +192,7 @@ const NOTABLE_NPCS = [
     move: 9,
     equipment: "Datapad, hold-out blaster (3D), toolkit",
     capsule: "Varrik is an old, burned-out Human mechanic retained by Slerog Fenn at Fenn's Landing. His repair services are usually double the normal cost, and replacement parts are rarely available — captains often wait up to 10 days for new parts to arrive.",
-    source: "WEG40217 Platt's Starport Guide p.63"
+    source: "WEG40107 Platt's Starport Guide p.63"
   },
   {
     name: "Red Threxa",
@@ -216,7 +216,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Heavy blaster pistol (5D), reinforced credit box with 3,000 credits",
     capsule: "Red Threxa is a shifty lizard-like Suiraon who turned several prefab housing units he stole into Gelgelar's only motel. One of the boarding house's appeals is that it's one of the few dry buildings with a huge heating unit in the common room — the roof doesn't leak and patrons stay warm and dry. Rooms are sparse but at 15 credits a night, it's better than a starship bunk. Red keeps an eye on who comes and goes but cares little for their affairs. He keeps the heat generator pumped up high, creating a humid, foggy atmosphere. Red can be found behind his registration desk basking in the heat, keeping a watchful eye on his credit box. Some say he has no room — he just sleeps behind his desk.",
-    source: "WEG40217 Platt's Starport Guide p.72"
+    source: "WEG40107 Platt's Starport Guide p.72"
   },
   {
     name: "Wise Man of Kooroo",
@@ -240,7 +240,7 @@ const NOTABLE_NPCS = [
     move: 8,
     equipment: "Cane, pipe",
     capsule: "The Wise Man of Kooroo has long since forgotten his name. His original name was Glovan Thule; some believe he was an apprenticed Jedi Knight. For reasons unknown, he fled to Gelgelar to live out his life in a damp shrine. He is now a doddering old man who sits on a pile of tattered animal skins, leaning on his cane and smoking a pipe. He doles out advice and philosophical sayings to visiting pilgrims who believe him to be a shaman of a long-forgotten faith. He depends on the goodness of visitors for food — in times of few pilgrims, Thulls the Ithorian brings him food from the Slippery Gelgelar Eel.",
-    source: "WEG40217 Platt's Starport Guide p.73"
+    source: "WEG40107 Platt's Starport Guide p.73"
   },
 
   // ── GELGELAR FREE PORT — Generic NPC Templates ──
@@ -266,7 +266,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Heavy blaster pistol (5D)",
     capsule: "Fenn's security goons do a good job of protecting ships — they usually shoot anything that comes near them, including ships' crews. Their security duties often include breaking into ships while crews are in town, grabbing small items like a few credits or a hydrospanner. Luckily they're not smart enough to rummage through ships' computers.",
-    source: "WEG40217 Platt's Starport Guide p.63"
+    source: "WEG40107 Platt's Starport Guide p.63"
   },
   {
     name: "Sullustan Mechanics",
@@ -290,7 +290,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Blaster pistol (4D), datapad, protective goggles, tool kit",
     capsule: "Nofre's mechanics are hard-working and dedicated to pleasing customers. At least six are working in the hangar bay at any time of day. All carry blaster pistols since Slerog Fenn's thugs occasionally break into the bay seeking spare parts or to sabotage repairs.",
-    source: "WEG40217 Platt's Starport Guide p.68"
+    source: "WEG40107 Platt's Starport Guide p.68"
   },
   {
     name: "Gelgelar Outfitters Clerks",
@@ -314,10 +314,10 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Datapad",
     capsule: "The store clerks haggle over the price of every item — it gives them an opportunity to offer better deals and make customers feel they're getting a bargain. They are helpful in leading customers through the maze of bins and shelves. Customers left alone can take an hour to find items and sometimes get lost. Merchandise is marked up 10–25% to allow for haggling.",
-    source: "WEG40217 Platt's Starport Guide p.69"
+    source: "WEG40107 Platt's Starport Guide p.69"
   },
 
-  // ── KUAT PASSENGER PORT (WEG40217 Platt's Starport Guide p.38–56) ──
+  // ── KUAT PASSENGER PORT (WEG40107 Platt's Starport Guide p.38–56) ──
   {
     name: "Sergeant Reggis Thine",
     species: "Human",
@@ -340,7 +340,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Blaster pistol (4D), security uniform, comlink",
     capsule: "Sergeant Reggis Thine is a Kuat Passenger Port security officer who is helpful to free-traders navigating the station's complex clearance requirements.",
-    source: "WEG40217 Platt's Starport Guide p.38"
+    source: "WEG40107 Platt's Starport Guide p.38"
   },
   {
     name: "Benni",
@@ -364,7 +364,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Pack tracker gear",
     capsule: "Benni works the Kuat Passenger Port docking areas as a pack tracker and information broker. He charges 3 credits for hauling luggage and 25 to 50 credits for useful information about port operations, security patterns, and other travelers.",
-    source: "WEG40217 Platt's Starport Guide p.38"
+    source: "WEG40107 Platt's Starport Guide p.38"
   },
   {
     name: "Captain Dorai",
@@ -388,7 +388,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Comlink, datapad",
     capsule: "Captain Dorai is a Duros transport pilot who lives in a staff apartment in Kuat Central Plaza. He trades information about KDY stardock operations for galactic news from visiting spacers.",
-    source: "WEG40217 Platt's Starport Guide p.38"
+    source: "WEG40107 Platt's Starport Guide p.38"
   },
   {
     name: "Benja Da'aapp",
@@ -412,7 +412,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Vacation holos (extensive collection), Core Worlds travel clearance documents",
     capsule: "Benja Da'aapp is one of two Gruvian tourists (along with Olaal) who frequent the Kuat Passenger Port. They are intensely friendly and have legitimate Core Worlds clearance, making them potentially useful for obtaining transit permits. However, any companion must endure hours of vacation holos.",
-    source: "WEG40217 Platt's Starport Guide p.38"
+    source: "WEG40107 Platt's Starport Guide p.38"
   },
   {
     name: "Olaal Da'aapp",
@@ -436,10 +436,10 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Vacation holos (extensive collection), Core Worlds travel clearance documents",
     capsule: "Olaal Da'aapp is one of two Gruvian tourists (along with Benja) who frequent the Kuat Passenger Port. They are intensely friendly and have legitimate Core Worlds clearance, making them potentially useful for obtaining transit permits. However, any companion must endure hours of vacation holos.",
-    source: "WEG40217 Platt's Starport Guide p.38"
+    source: "WEG40107 Platt's Starport Guide p.38"
   },
 
-  // ── PLATT OKEEFE (WEG40217 Platt's Starport Guide p.6) ──
+  // ── PLATT OKEEFE (WEG40107 Platt's Starport Guide p.6) ──
   {
     name: "Platt Okeefe",
     species: "Human",
@@ -462,10 +462,10 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Comlink, datapad, heavy blaster pistol (5D). Often accompanied by co-pilots including the Twi'lek gunrunner Tru'eb Cholakk and a Sullustan from the Suuliem family. ◆ LAST CHANCE — Modified CEC YT-1300 Transport. Scale: Starfighter. Length: 27m. Crew: 1–2 (can coordinate), Gunners: 2. Passengers: 6. Cargo: 100 metric tons. Consumables: 2 months. Hyperdrive: x1 (Backup: x10). Nav Computer: Yes. Maneuverability: 2D. Space: 4. Atmosphere: 480; 800 kmh. Hull: 4D+2. Shields: 2D. Sensors — Passive: 10/0D, Scan: 25/1D, Search: 40/2D, Focus: 2/3D. Weapons: 2 Quad Laser Cannons (turret, Fire Control 2D, Space Range 1-3/12/25, Atmo 100-300/1.2/2.5 km, Damage 6D), Concussion Missile Tube (front, Fire Control 2D, Space Range 1/3/7, Atmo 50-100/300/700, Damage 9D). The crew lounge is fancifully decorated with collectibles from her journeys, not all lawfully acquired.",
     capsule: "Platt Okeefe considers herself a legendary entrepreneur who has been causing trouble for the Empire, running legal and not-so-legal cargoes, and getting into trouble throughout the galaxy for several years. She always loved space travel — growing up on Brentaal, she spent her afternoons at the starport watching freighters. On her twelfth birthday she ran away and signed on as a cabin steward aboard a Sullustan starliner. She later joined a tramp freighter crew plying the Anarid Cluster and has since gone through different ships like clothing goes through styles. During her extensive travels she has recorded everything she could about the spacefaring life and cultivated a network of contacts so her information on systems and starports is accurate. Her most remarkable features are her silvery white hair streaming down her back (often tied with a silver and red striped sash) and her bright outfit — white blouse with red pants, boots, and vest. Her heavy blaster is always at her side. She enjoys stunning unsuspecting spacer jocks with her girlish smile. Platt is easygoing and has great concern for her fellow smugglers, offering help whenever it won't jeopardize her own affairs.",
-    source: "WEG40217 Platt's Starport Guide p.6"
+    source: "WEG40107 Platt's Starport Guide p.6"
   },
 
-  // ── PORT HAVEN (WEG40217 Platt's Starport Guide p.20–35) ──
+  // ── PORT HAVEN (WEG40107 Platt's Starport Guide p.20–35) ──
   {
     name: "Hallomar",
     species: "Human",
@@ -488,7 +488,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Ammo bandolier, animal hide clothing, large knife (STR+1D+2), leather satchel, needle-shell rifle (5D+2), pipe, wood axe (STR+2D)",
     capsule: "Few smugglers who visit Port Haven know of Hallomar's true origins. Some say he was an outlaw who came to escape some unknown crime, while others believe he's the last survivor from the group of colonists who tried to settle the planet. Whatever his origins, Hallomar is a rugged survivor who carves his simple life from the jungles of Port Haven. He stands just over two meters tall, sporting a long unkempt brown beard and a nest of shaggy hair, wearing piles of animal skin clothing over the vestiges of a tattered tunic. This rugged mountain of a man is the impromptu governor of Port Haven. He seldom talks and when he does, he has a deep voice punctuated by grunts and huffs. He cares little for visitors as long as they don't raise trouble. He spends half his time hunting immense jungle beasts with his ancient oversized needle-shell rifle, and the rest butchering prey, curing skins, and smoking meat in his curing tent. Evenings are spent brooding in a dark corner of Haven's Water, drinking frothy ale and smoking his hand-carved pipe. He rarely gives away more than 10 skins at a time (worth 50–200 credits each depending on market). His smoked meat strips are tasty if you like chewing on something with the consistency of spacer's gloves — sold as novelty for 10–50 credits, or up to 100 credits to specialty restaurants.",
-    source: "WEG40217 Platt's Starport Guide p.30"
+    source: "WEG40107 Platt's Starport Guide p.30"
   },
   {
     name: "Mister Mxil",
@@ -512,10 +512,10 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Apron, worn tunic",
     capsule: "A refugee from his homeworld of Calamari, Mister Mxil is the host of all visitors to Haven's Water, the only tavern in Port Haven. He was formerly a chief steward aboard the Mon Calamari starliner Kuari Princess, responsible for all meals, bars, and culinary satisfaction of passengers. When he ran into trouble speaking out about the Empire enslaving his homeworld, he quickly became an Imperial fugitive and found sanctuary in Port Haven. After fixing up one of the larger structures and learning the ways of the jungle with Hallomar's help, he opened Haven's Water to visiting spacers. He serves natural drinks brewed, distilled, and steeped from jungle ingredients — ale from beans and bark, liquor from fruits, tea from dried herbs, leaves, and flower petals. He cooks spicy stew and tasty roasts served with jungle fruits, tubers, and vegetables, using meat supplied by Hallomar. All food and drink is offered as a gift of hospitality. Occasionally he gifts skins of Haven water from a nearby jungle spring, worth up to 40 credits. A red-and-green-dappled Mon Calamari in a tattered service tunic and apron, he lives on a hammock in the back room among hanging herbs and leaves.",
-    source: "WEG40217 Platt's Starport Guide p.32"
+    source: "WEG40107 Platt's Starport Guide p.32"
   },
 
-  // ── OMZE'S INCREDIBLE TRAVELING STARPORT (WEG40217 Platt's Starport Guide p.80–96) ──
+  // ── OMZE'S INCREDIBLE TRAVELING STARPORT (WEG40107 Platt's Starport Guide p.80–96) ──
   {
     name: "Omze",
     species: "Sludir",
@@ -539,7 +539,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Blaster pistol (4D), comlink, datapad, flashy clothes. ◆ OMZE'S INCREDIBLE TRAVELING STARPORT — Modified Rendili StarDrive Neutron Star Bulk Cruiser. Scale: Capital. Length: 600m. Crew: 1,000 (gunners 30, skeleton 600/+10). Passengers: 300. Cargo: 1,000 metric tons. Consumables: 1 year. Hyperdrive: x2 (Backup: x12). Nav Computer: Yes. Maneuverability: 1D. Space: 4. Hull: 5D. Shields: 2D. Sensors — Passive: 40/1D, Scan: 80/2D, Search: 125/3D, Focus: 5/3D+2. Weapons: 30 Quad Laser Cannons (10 front, 10 left, 10 right; Crew 2, Scale Starfighter, Fire Control 2D, Space Range 1-5/10/17, Damage 4D). Three main docking bays (4 light freighters each), external docking gantries, belly docking couplers (2 medium transports or 1 bulk freighter).",
     capsule: "Omze'kehr Kahr, known as the eccentric Omze, is the flamboyant Sludir who runs Omze's Incredible Traveling Starport. He is rarely seen, hiding on the bridge of his immense bulk cruiser, overseeing starport traffic and operations. He was once one of the more famous alien gladiators on Loovria, rising through the ranks to win his freedom. Through unknown means he amassed a large sum of credits invested in refitting the old bulk cruiser Allanthia. Few know how he got his money — some speculate he works for Jabba the Hutt or another crime boss. Omze has a particular dislike for Humans — Sludir are still considered a slave species, and Omze carries hatred from Loovria, especially of gambling types who bet on gladiator matches. His dislike is fueled by the death of his brother Quintik Kahr (Big Quince), supposedly killed by a Human named Oakie during a slave escape. He instructs staff to hike prices up to double for Human spacers. He stays well-dressed for a Sludir, keeps a ring in each of his four nostril lobes, and maintains a closely trimmed beard on his long undersnout.",
-    source: "WEG40217 Platt's Starport Guide p.86"
+    source: "WEG40107 Platt's Starport Guide p.86"
   },
   {
     name: "Ne'Chak",
@@ -564,7 +564,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Blast vest (+1D physical, +1 energy, torso only), headset comlink, heavy blaster pistol (5D), 2 knives (STR+1D), mercenary unit uniform",
     capsule: "Ne'Chak is the mercenary captain for Omze's Rodian security guards. No-nonsense and stoic, the Rodian leader doesn't tolerate ill-mannered spacers and troublemakers, and is blatantly biased against Humans. In any dispute involving a Human, he always sides against them. Ne'Chak commands his fellow Rodian security mercenaries with cold precision, and they obey him without question. While most often found at Omze's side in the cruiser's command center, he sometimes wanders the ship's corridors himself. He always involves himself in any major dispute between visitors — at least any not already violently quelled by his mercenaries.",
-    source: "WEG40217 Platt's Starport Guide p.87"
+    source: "WEG40107 Platt's Starport Guide p.87"
   },
   {
     name: "Golben",
@@ -588,7 +588,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Comlink, 2 heavy blaster pistols (5D), hydrospanner, tool belt, work coveralls",
     capsule: "Golben is an old and ornery Jillsarian who supervises Omze's repair bay. His four brawny arms only enhance his ominous appearance, standing just over two meters tall. He stalks around the repair bay discussing repairs, modifications and prices with spacers and overseeing his technicians' work. Few know his past — some speculate he worked the swoop racing pits of Caprioril, then supported a swoop gang in the Outer Rim. Others claim he was chief technician supporting Ne'Chak's Rodian mercenary company before they joined Omze. Golben never speaks of his past, preferring to save his gruff voice for bargaining over spare parts. For important customers or those paying enough for custom modifications, he performs the work himself, using his four arms for delicate repairs. He keeps Omze appraised of all modifications made to specific starships — Omze reportedly keeps records that could be sold to bounty hunters or Imperials.",
-    source: "WEG40217 Platt's Starport Guide p.89"
+    source: "WEG40107 Platt's Starport Guide p.89"
   },
   {
     name: "Con'varra",
@@ -613,7 +613,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Datapad, hold-out blaster (3D)",
     capsule: "Con'varra is an outcast from his home city on Ryloth, given into slavery as part of his city's tribute to the slaver Big Quince, Omze's now-deceased brother. When Omze began his Incredible Traveling Starport, Quince gave Con'varra to his brother as a good-luck present. Freeing Con'varra, Omze paid handsomely for him to be trained by the finest slicers and forgery experts. He now offers forged identification documents, captain's accredited licenses, starship operating licenses, weapons load-out certificates, and restricted goods transfer permits. Typical forged documents cost 2,500–5,000 credits and take up to five days. He uses an immense computer to correlate forgeries with existing BoSS information but cannot alter BoSS databanks. He does not alter transponder codes. A suspicious old Twi'lek with graying features and wrinkled face, his hands hover endlessly over computer terminals. He owes Omze his freedom and maintains unfailing loyalty — sometimes deliberately ensuring forgeries aren't as perfect as they should be at Omze's whim.",
-    source: "WEG40217 Platt's Starport Guide p.90"
+    source: "WEG40107 Platt's Starport Guide p.90"
   },
   {
     name: "Futor",
@@ -638,7 +638,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Datapad, hold-out blaster (3D), shaded goggles",
     capsule: "Futor was formerly a computer controller for SoroSuub Corporation on Sullust. He lost his job and fled his homeworld (with a price on his head) after infiltrating secret corporate datafiles, stealing important data and selling it to the highest bidder. Omze hired Futor for a one-time job infiltrating Sienar Fleet Systems' databanks at Byblos, then retained him as his personal infochant — the eyes and ears of the Incredible Traveling Starport. He offers information on commerce stats, stock quotes, Imperial shipping courses, bounty listings, and more, charging 200–2,000 credits per tidbit depending on the source. He places listening devices throughout the starport — in General Quarters suites, docking bay maintenance ports, and the Starboard Broadside Club — recording conversations that might prove valuable. A bit shorter than most Sullustans with squinty eyes from hours of peering into datascreens, he often wears shaded goggles propped above his eyes when not in use.",
-    source: "WEG40217 Platt's Starport Guide p.91"
+    source: "WEG40107 Platt's Starport Guide p.91"
   },
   {
     name: "Broadside",
@@ -663,7 +663,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Light repeating blaster (6D), long metal pipe (STR+1D)",
     capsule: "Broadside is the overweight yet no less formidable Wookiee bartender of the Starboard Broadside Club. He looms over the bar serving drinks and making sure visitors keep their hands off the Twi'lek serving girls. Few know where Omze found Broadside, though some say they fought together in the gladiator arenas of Loovria. It is rumored that when Omze won his freedom, he used part of his winnings to purchase Broadside's freedom as well. He retains most of his hairy paunch behind an off-white apron. His fur was once brown but is now streaked with patches of blue-gray, a sign of advancing age. Several areas of his arms and back are visibly void of fur — signs of scars from his gladiator days. He is known for leaping over the bar and pummelling combatants into submission with his metal pipe.",
-    source: "WEG40217 Platt's Starport Guide p.93"
+    source: "WEG40107 Platt's Starport Guide p.93"
   },
   {
     name: "Brobius",
@@ -687,7 +687,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Steward's uniform",
     capsule: "Brobius is a quiet Bith who serves as Omze's steward, renting out luxury passenger cabins in General Quarters at 75 credits per night. The former crew quarters have been expanded and renovated into luxury suites with comfortable furniture, in-room dining (50 credits per meal), treasures from around the galaxy on the walls, and large viewports. The cabins are sound-proofed. However, Human spacers should beware — some have reportedly disappeared from their suites, possibly kidnapped by Ne'Chak's Rodians via secret passages between cabin and deck bulkheads.",
-    source: "WEG40217 Platt's Starport Guide p.90"
+    source: "WEG40107 Platt's Starport Guide p.90"
   },
   {
     name: "Lady Felsing",
@@ -711,7 +711,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Comlink, datapad, fancy clothing, hold-out blaster (3D)",
     capsule: "Lady Felsing is not truly Wroonian nobility, although she is a typical blue-skinned, blue-haired Wroonian. She's a con-woman and high-stakes trickster who poses as a concerned noble matron to manipulate spacers into helping her penetrate the off-limits areas of Omze's Incredible Traveling Starport so she can skim treasures from Omze's cargo vaults. She plays the role of concerned mother looking to rescue her imprisoned smuggler son for all it's worth, offering to fund expenses and a 5,000-credit reward per character. In reality she skimps on expenses and is using the crew as cover. She is an excellent shot with a blaster and knows her way around a starship.",
-    source: "WEG40217 Platt's Starport Guide p.95"
+    source: "WEG40107 Platt's Starport Guide p.95"
   },
 
   // ── OMZE'S — Generic NPC Templates ──
@@ -737,7 +737,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Blast vest (+1D physical, +1 energy, torso only), comlink, heavy blaster pistol (5D)",
     capsule: "The Rodian security mercenaries police the cruiser's passages and docking bays under Ne'Chak's command. They prevent brawls, keep visitors from secure areas, and collect docking fees. They keep an especially open eye for Human spacers — if Omze fosters a dislike of Humans, these Rodians have a blatant hatred. They are not above picking fights with suspicious Humans and have been known to throw them out of every establishment aboard. The penalty for breaking rules is immediate expulsion. They have no qualms about blasting first and picking up pieces later.",
-    source: "WEG40217 Platt's Starport Guide p.87"
+    source: "WEG40107 Platt's Starport Guide p.87"
   },
   {
     name: "Omze's Technicians",
@@ -761,10 +761,10 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Starship repair tools (+1D to repair rolls), work coveralls",
     capsule: "Omze keeps several excellent outlaw technicians on staff, most recruited from swoop gangs and pirate crews. They are professional and efficient despite their backgrounds. Repairs and modifications cost 150–200% of regular prices but the work is far more durable and malfunctions far less than work at most starports. The repair bay stocks everything from hyperdrive motivators to quad laser cannons to brand new (and illegal) sensor systems.",
-    source: "WEG40217 Platt's Starport Guide p.88"
+    source: "WEG40107 Platt's Starport Guide p.88"
   },
 
-  // ── BYBLOS STARPORT TOWER 214 (WEG40217 Platt's Starport Guide p.98–116) ──
+  // ── BYBLOS STARPORT TOWER 214 (WEG40107 Platt's Starport Guide p.98–116) ──
   {
     name: "Lieutenant Vadid Shenvehr",
     species: "Human",
@@ -787,7 +787,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Blaster pistol (4D), datapad, headset comlink",
     capsule: "Lieutenant Shenvehr is hangar controller of docking hangar 217-11. He oversees all operations within his hangar, even when he isn't supposed to be on duty. He's often on the deck in his off hours, helping supervise cargo and maintenance crews and inspecting conditions himself. Shenvehr is a serious and tall man with thinning hair and tan skin, businesslike at all times, precise with orders to both starship captains and hangar crew. He speaks his mind when others disobey hangar rules and endanger lives. He knows Imperial flight regulations and Byblos traffic regulations inside and out and is a fully qualified starship pilot. Impartial to the conflict between the Empire and the Rebel Alliance, he puts his life into his job — making sure operations run as smoothly as possible.",
-    source: "WEG40217 Platt's Starport Guide p.106"
+    source: "WEG40107 Platt's Starport Guide p.106"
   },
   {
     name: "Lieutenant Selnia Gergeroe",
@@ -811,7 +811,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Blaster pistol (4D), datapad, headset comlink",
     capsule: "Lieutenant Gergeroe was formerly a captain's assistant aboard a Star Destroyer patrolling the Outer Rim but transferred to Byblos as an Imperial Customs officer because she and her commander did not get along. A conservative beauty even in an Imperial officer's uniform, she carries herself strictly and stoically. Tired of being taken for granted as a female officer, she doesn't overcompensate by being tougher than her male counterparts but makes sure she does a thorough and professional job. She sees the Empire as establishing order and enforces that order fairly and reasonably. Her customs guards respect her for her good nature, businesslike attitude, and calm manner around spacers.",
-    source: "WEG40217 Platt's Starport Guide p.110"
+    source: "WEG40107 Platt's Starport Guide p.110"
   },
   {
     name: "Doctor Reina Solov",
@@ -835,7 +835,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Datapad, vocorecorder",
     capsule: "Doctor Reina Solov is an associate professor of galactic archaeology at the University of Byblos, specializing in ancient cultures, their structures, and treasures. Well-versed in legends of the past and stories of lost civilizations. During breaks she hires free-traders to take her to archaeological sites around the galaxy. Her current research centers on the secretive Fellowship of Kooroo and its attachment to certain ancient sites. A regal woman of middle age who carries herself as a professional, she is friendly with those who respect her theories and are knowledgeable about her field.",
-    source: "WEG40217 Platt's Starport Guide p.115"
+    source: "WEG40107 Platt's Starport Guide p.115"
   },
 
   // ── BYBLOS — Generic NPC Templates ──
@@ -861,7 +861,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Blaster pistol (4D), blast helmet (+1D physical, +1 energy), blast vest (+1D physical, +1 energy, torso only), headset comlink in helmet",
     capsule: "Imperial Customs guards patrol the docking hangars of Byblos Starport Tower 214 under the command of customs officers like Lieutenant Gergeroe. Teams of 4 to 8 guards (sometimes replaced by stormtroopers) visit each docked ship to inspect documentation, cargo manifests, and weapons load-outs. They spot-check cargo being loaded and unloaded throughout the hangar.",
-    source: "WEG40217 Platt's Starport Guide p.110"
+    source: "WEG40107 Platt's Starport Guide p.110"
   },
   {
     name: "Byblos Hangar Personnel",
@@ -885,10 +885,10 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Belt with several tools, comlink, datapad, tan technician uniform",
     capsule: "Hangar personnel handle all ground operations within Byblos Starport Tower 214's docking bays — from load controllers and refueling technicians to maintenance foremen. They coordinate cargo loading/unloading, supply replenishment, and ship repairs through the hangar control office.",
-    source: "WEG40217 Platt's Starport Guide p.105"
+    source: "WEG40107 Platt's Starport Guide p.105"
   },
 
-  // ── DARKNON STATION (WEG40217 Platt's Starport Guide p.118–134) ──
+  // ── DARKNON STATION (WEG40107 Platt's Starport Guide p.118–134) ──
   {
     name: "Rexis Lovech",
     species: "Human",
@@ -911,7 +911,7 @@ const NOTABLE_NPCS = [
     move: 9,
     equipment: "Ancient threadbare uniform, blaster pistol (4D), datapad, headset comlink",
     capsule: "Rexis Lovech is the somewhat crazed yet competent starport controller of Darknon Station. A generally harmless old man, he dodders about Darknon Control believing he is keeping the station's traffic pattern running smoothly despite the obvious 'absence of most of the base crew today.' He is ancient, dressed in a threadbare uniform of some long-lost government, hiding his frazzled hair beneath a controller's cap. His hands are never still — always fidgeting with his headset comlink, entering figures on his datapad, or twiddling console controls. Despite his delusions, he is somehow able to tell real ships from imaginary ones and can competently guide vessels through landing and departure. He is fiercely protective of Darknon Control and warns all visitors away by shouting about disrupting business and waving his blaster. He threatens fines, security, and the brig — but is essentially harmless. It's doubtful he's replaced the power pack in his blaster in years. His two 'station colleagues' are Sergeant Nethius (his 'security force') and Olev Madak ('base maintenance chief'). All others are pests interfering with his very important work.",
-    source: "WEG40217 Platt's Starport Guide p.120"
+    source: "WEG40107 Platt's Starport Guide p.120"
   },
   {
     name: "Sergeant Nethius",
@@ -936,7 +936,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Blast helmet (+1D physical, +1 energy), blast vest (+1D physical, +1 energy, torso only), comlink, heavy blaster pistol (5D), hold-out blaster (3D), knife (STR+1D)",
     capsule: "Sergeant Nethius appears to be a young, cheerful soldier assigned to a backwater post — full of curiosity about the galaxy and helpfulness toward visiting spacers. In truth he is a trained Imperial soldier and secret operative sent to Darknon Station to monitor spacer traffic and alert Imperial officials to any suspicious activity. His customs computer in the station's old customs office is directly linked to Darknon Control's communications and sensor equipment, allowing him to monitor incoming and outgoing ships, eavesdrop on system communications, and transmit coded reports to the Empire. His primary mission is protecting the secret Imperial research station hidden deep in the Itani Nebula. Through casual, friendly conversation with spacers he probes for their true intentions, assesses whether they should be watched, and warns the research station of any possible Rebel activity. He rarely reveals anything about his past, simply stating he was 'assigned to this post.' He lives in the former customs offices at one end of the plaza — neat, sparse quarters with a cot, a locker, and the still-functional customs computer.",
-    source: "WEG40217 Platt's Starport Guide p.125"
+    source: "WEG40107 Platt's Starport Guide p.125"
   },
   {
     name: "Olev Madak",
@@ -960,7 +960,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Dirty worksuit, hydrospanner, tool belt",
     capsule: "Olev Madak was once a free-trader much like those passing through Darknon Station today. After fleeing bounty hunters pursuing him for debts owed to a crimelord, and after a particularly close call with several Imperial cruisers, Olev limped back to Darknon Station. His ship barely made it into the dilapidated repair bay before it began falling apart in the station's artificial gravity. Since that day he has eked out a meager living repairing spacers' starships and keeping Darknon Station somewhat operational. He charges 50 credits an hour for his time, not including inflated charges for rare replacement parts. He can often be found scurrying about the station — disappearing into abandoned sections, maintenance ducts, and control stations with his trusty tool belt and hydrospanner. He prefers ships be moved to his personal repair bay rather than working in the other docking bays, as he cannot always guarantee the atmospheric and magnetic field systems in those bays will hold. Olev has little time for socializing; he asks only what he needs to know to fix a ship. He will pay around 500 credits per crate of used spare parts from visiting spacers. He also maintains Darknon Control's sensors and communications equipment and monitors the station's power generator and life support.",
-    source: "WEG40217 Platt's Starport Guide p.127"
+    source: "WEG40107 Platt's Starport Guide p.127"
   },
   {
     name: "Gulek Lohn",
@@ -985,7 +985,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Hold-out blaster (3D)",
     capsule: "Gulek Lohn is the seedy proprietor of the Stormview Lounge, Darknon Station's only eating establishment. A grumpy, grizzled Rodian, he serves bland food and watered-down drinks at inflated prices (15–20 credits for a meal, 3–5 credits for drinks) and dares disgruntled patrons to find better elsewhere — which they cannot. His suspicious appearance is enhanced by odd 'eyelids' that keep his bulbous eyes perpetually half-covered, as if he's ready to doze off. Most of the lounge's transparisteel viewports are deliberately sealed with metal plates — Gulek arranged this so patrons are forced to sit at one of only two booths with nebula views. The ceiling acoustics above those booths are designed to project conversations directly to the bar where Gulek works, allowing him to eavesdrop on supposedly private discussions. He tracks who spacers are and where they're heading, selling information to bounty hunters willing to pay small sums. His credit box never holds more than 250–400 credits at any given time. He will pay up to 100 credits per spacer for food and beverages brought to him, though he haggles bitterly over the price.",
-    source: "WEG40217 Platt's Starport Guide p.129"
+    source: "WEG40107 Platt's Starport Guide p.129"
   },
   {
     name: "T'nadar Nadar",
@@ -1009,10 +1009,10 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Datapad, hold-out blaster (3D)",
     capsule: "T'nadar Nadar runs the Galaxy Shop — the dusty remnant of what was once Darknon's tourist novelty store. The Chadra-Fan has filled it with an extraordinary clutter of items traded, bought, or stolen from spacers passing through over the years: small vials of Gruvian Tovash, muss-hide covered furniture, fire lamps from Vundaria, ancient tools, and countless other oddities from across the galaxy. He gladly bargains on any item, accepting both credits and interesting trades, and will work out deals for spacers who need ready capital but have goods to pawn. He rarely has large amounts of credits on hand. Nadar is perhaps best known for a rumor that persists to this day: he once briefly possessed an actual lightsaber, which he intended to auction to the highest bidder — but it vanished mysteriously after only three days, stolen right from beneath his snout. He insists the story is true and bristles at any suggestion it was a fabrication for attention.",
-    source: "WEG40217 Platt's Starport Guide p.128"
+    source: "WEG40107 Platt's Starport Guide p.128"
   },
 
-  // ── KALA'UUN, RYLOTH (WEG40217 Platt's Starport Guide p.136–154) ──
+  // ── KALA'UUN, RYLOTH (WEG40107 Platt's Starport Guide p.136–154) ──
   {
     name: "Koh'shak",
     species: "Twi'lek",
@@ -1036,7 +1036,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Datapad, fine robes, 2 Sevari flashpistols (4D+2)",
     capsule: "Koh'shak is the officious Starport Master for Kala'uun and one of the city's five head-clan members — the member responsible for overseeing starport services. Ungainly and portly for a middle-aged Twi'lek, he can most often be found doddering around the parked starships or slumped asleep near his office door. His robes are perpetually wrinkled, saved from disgrace only by his head-clan amulet, a red and silver sash restraining his wide girth, and the two Sevari flashpistols shoved into that sash — a gift he claims came from a spice lord of Sevarcos. Koh'shak is pompous and obstinate during ship inspections, complaining about every violation and levying seemingly outrageous taxes on cargo. The fact is that Kala'uun charges no import taxes whatsoever; Koh'shak invented them for personal enrichment, though most proceeds go into his clan's coffers. He drops all charges in exchange for personal gifts, which are exempt from clan claims. Koh'shak's actual authority extends only to the main starport level — beyond that, he is little more than the city's ambassador to visiting spacers, and his head-clan peers treat him as an inferior. He uses a corps of young Twi'lek runners as messengers, cargo informants, and personal spies.",
-    source: "WEG40217 Platt's Starport Guide p.144"
+    source: "WEG40107 Platt's Starport Guide p.144"
   },
   {
     name: "Mal'aa",
@@ -1060,7 +1060,7 @@ const NOTABLE_NPCS = [
     move: 10,
     equipment: "Apron",
     capsule: "Mal'aa is the gregarious Twi'lek hostess of Mal'aa's Kitchens, the one eatery available to spacers on Kala'uun's restricted starport level. Her establishment — a cave complex behind a cantina facade across the Procession from the Starport Master's seat — serves as the social heart of the starport. Spacers conduct deals over long metal tables, sleep on scush-fungus bags spread across the main room floor at night, and negotiate with Mal'aa for preserved pots of rycrit stew to carry on the next leg of their journey. A decent meal costs about 5 credits: rycrit stew, a mug of fermented fungus ale, munch-fungus bread, and raw munch-fungus in warm broth; second helpings are 1 credit. Unlike the deeply suspicious Twi'leks of the upper city, Mal'aa and her corps of young serving maids are openly hospitable — their business depends on outside traffic. Her reputation for generosity and good food is widely known among the free-traders who frequent Kala'uun.",
-    source: "WEG40217 Platt's Starport Guide p.153"
+    source: "WEG40107 Platt's Starport Guide p.153"
   },
 
   // ── ESSOWYN / SAURTON SYSTEM (WEG40100 The Planets Collection p.46) ──
