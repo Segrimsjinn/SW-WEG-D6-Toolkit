@@ -2312,6 +2312,8 @@ const SYSTEMS_DATA = [
   { "name": "Gorno", "grid": "R-17", "region": "Outer Rim Territories", "col": 16, "row": 17, "quadrant": "SE", "hours": 2.2 },
   { "name": "Gorobei", "grid": "M-8", "region": "Inner Rim", "col": 11, "row": 8, "quadrant": "C", "hours": 5.5 },
   { "name": "Goroth", "grid": "R-16", "region": "Mid Rim", "col": 16, "row": 16, "quadrant": "SE", "hours": 3.0 },
+  { "name": "Goroth - A'Lenba", "grid": "R-16", "region": "Mid Rim", "col": 16, "row": 16, "quadrant": "SE", "hours": 3.0 },
+  { "name": "Goroth - Graith", "grid": "R-16", "region": "Mid Rim", "col": 16, "row": 16, "quadrant": "SE", "hours": 3.0 },
   { "name": "Gorse", "grid": "O-10", "region": "Inner Rim", "col": 13, "row": 10, "quadrant": "E", "hours": 3.3 },
   { "name": "Gorsh", "grid": "O-3", "region": "Wild Space", "col": 13, "row": 3, "quadrant": "NE", "hours": 48.0 },
   { "name": "Gortus", "grid": "N-4", "region": "Outer Rim Territories", "col": 12, "row": 4, "quadrant": "NE", "hours": 6.0 },

@@ -4475,5 +4475,53 @@ const WEAPONS_DATA = [
   "ammo": "1 (disposable)",
   "game_notes": "Type: Personal projectile launcher, disposable. Nicknamed the 'Casper.' Fires specialized canisters — Dye Smoke: marks terrain; T-238 Smoke: marks and obscures area; CryoBan: 1D incapacitating cold; Plank Gas: 2D corrosive; Spore/B: 4D stun biological agent; Fex-M3: 5D nerve gas.",
   "source": "WEG40060 Twin Stars of Kira p.65"
+ },
+ {
+  "name": "Jakan Arms 222 Blaster Cannon",
+  "category": "Artillery",
+  "skill": "Blaster artillery: anti-vehicle",
+  "cost": "12,500 (7,500 used)",
+  "availability": "2, R or X",
+  "damage": "3D+1 (Speeder scale)",
+  "range": "100-750/3/12km",
+  "ammo": "Unlimited (power generator)",
+  "game_notes": "Crew: 4 (skeleton 2/+10). FC 2D. Body 2D+2. Fire Rate 1/2. Cover: Full. Medium anti-vehicle laser cannon. Used on Goroth Prime at power generators and hyperbaride extraction facilities for air defense.",
+  "source": "WEG40098 Goroth Slave of the Empire p.71"
+ },
+ {
+  "name": "Jer'N 'Hammer' Slug-Thrower",
+  "category": "Slugthrowers",
+  "skill": "Firearms: pistol",
+  "cost": "250 (ammo: 1 per slug)",
+  "availability": "3, X",
+  "damage": "4D+1",
+  "range": "2-8/20/40",
+  "ammo": "8",
+  "game_notes": "Medium slug-thrower produced by j'ber Jer'N on Goroth Prime (now illegal). Extreme recoil requires a Moderate Strength roll after firing; failure adds +1D penalty to additional shots that round or next round. If the user waits a full round, no penalty. Caseless rounds act as armor-piercing bullets. Brutal-looking weapon with a distinctive spring-loaded magazine protruding from the top of the frame. Semi-automatic, blowback design.",
+  "source": "WEG40098 Goroth Slave of the Empire p.83"
+ },
+ {
+  "name": "Jer'N 'Lightning Gun'",
+  "category": "Blaster Carbines",
+  "skill": "Blaster: blaster carbine",
+  "cost": "875 (power packs: 35)",
+  "availability": "3, X",
+  "damage": "5D+2",
+  "range": "3-25/50/75",
+  "ammo": "6",
+  "game_notes": "Specialized energy weapon produced by j'ber Jer'N on Goroth Prime (now illegal). Fires discrete 'packets' of charged particles and antiparticles kept apart by 'shepherd' packets of coherent light. On striking a target, the particles annihilate each other delivering a lethal energy blast. Bolt appears as an elongated actinic blue-white beam with a distinctive thunder-crack sound. Cannot be set on stun.",
+  "source": "WEG40098 Goroth Slave of the Empire p.83"
+ },
+ {
+  "name": "Jer'N Microwave Stunner",
+  "category": "Hold-out Blasters",
+  "skill": "Blaster: hold-out blaster",
+  "cost": "175 (power packs: 25)",
+  "availability": "3, X",
+  "damage": "4D (stun only)",
+  "range": "3-5/10/20",
+  "ammo": "10",
+  "game_notes": "Specialized stun-only energy weapon produced by j'ber Jer'N on Goroth Prime (now illegal). Looks and handles like a standard hold-out blaster. Fires an invisible coherent bolt of microwave energy tuned to interfere with neural processes. Makes a distinctive 'thrum' sound as loud as a blaster report. Characters wearing armor (blast vest or better) may use the armor's physical protection value to resist damage instead of energy.",
+  "source": "WEG40098 Goroth Slave of the Empire p.83"
  }
 ];

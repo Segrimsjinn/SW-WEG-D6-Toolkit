@@ -4092,5 +4092,21 @@ const EQUIPMENT_DATA = [
   "availability": "3, F",
   "game_notes": "The food scanner has a 4D search to detect any chemical or biological toxins. If specially programmed with the owner's unique biochemistry (allergies and the like), its skill goes to 7D. Produces a distinctive rhythmic vibration (detectable only by the wearer) when it detects a toxic substance. The wearer may make a Moderate cultures roll to seem inconspicuous when rejecting poisoned food or drink. Standard model availability 3, F; luxury version 4, R. Rivoche Tarkin's brooch version has a miniaturized holorecorder built in — she activates it by touching the brooch when flirting. 80 minutes recording capacity.",
   "source": "WEG40084 Cracken's Rebel Operatives p.34"
+ },
+ {
+  "name": "Rim Securities K7 'Black Dagger' Security Droid",
+  "category": "Droids",
+  "cost": "Not for sale",
+  "availability": "4, X",
+  "game_notes": "Height: 1.7m. Move: 12. DEX 3D+2 (blaster 8D, dodge 7D, running 5D), KNO 1D, MEC 1D, PER 3D (search 4D), STR (not listed), TEC 1D. Two auto-balance legs, two arms. Body armor: +2D energy and physical to all locations. Internal blaster rifle (5D, 5-30/100/200). Used by the Empire on Goroth Prime to patrol starport facilities — modified to resist Goroth's radiation flux. A dozen patrol the Graith starport; 3-4 at A'Lenba.",
+  "source": "WEG40098 Goroth Slave of the Empire p.65"
+ },
+ {
+  "name": "Karflo AR-2B Utility Droid",
+  "category": "Droids",
+  "cost": "2,250",
+  "availability": "2",
+  "game_notes": "Fifth-degree droid. Height: 1.7m. Move: 7. DEX 1D, KNO 1D, MEC 1D, PER 1D, STR 1D (lifting 3D), TEC 1D. Humanoid body, two visual/audial sensors (Human range), vocabulator (300-word vocabulary, harsh buzzing voice), C3-DD NeuroNet brain. Designed specifically for Goroth Prime — pre-shielded against radiation flux. Built for menial labor (home, office, industrial). Exceptionally literal-minded — incapable of abstract thought or hypothetical situations. Produced on-planet by Karflo Corporation; significantly cheaper than retrofitting standard droids but still more expensive than using 'client-workers.'",
+  "source": "WEG40098 Goroth Slave of the Empire p.84"
  }
 ];

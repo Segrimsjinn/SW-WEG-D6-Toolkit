@@ -7516,5 +7516,33 @@ const CREATURES_DATA = [
    "orneriness": "",
    "special": "Dodge 5D. Hide 7D, search 8D, sneak 7D. Climbing/jumping 4D. Claws: STR+2 damage. Birth Pouch: females carry young in rib cage pouch, +1D protection for infant vs physical/energy. Communal Loyalty: if any member attacked, entire community frenzies with +2D to all physical attacks and Move 40; use combined action bonuses at +3 levels. Enhanced Auditory Sense: detect heartbeats of pride members at 25-30km, -2D to search for own community, +2D to hide/sneak vs other creatures, +3D PER for initiative. Silent Movement: +1D sneak if making only one move per round. Creature scale.",
    "source": "WEG40080 Creatures of the Galaxy p.62"
+  },
+  {
+   "name": "M'ven (Swooper)",
+   "type": "Herbivore",
+   "planet": "Goroth",
+   "habitat": "All terrains except polar regions",
+   "dex": "2D",
+   "per": "3D+1",
+   "str": "1D",
+   "move": "18 (flying), 6 (walking)",
+   "size": "0.25 meters long, 0.6 meter wingspan",
+   "orneriness": "",
+   "special": "Dodge 6D. Small avian with coarse black feathers and blood-red chest patch. Forms raucous flocks of up to 50 individuals. Highly territorial — swoops at intruders screaming loudly but never physically attacks. Both Gorothites and Imperials use m'ven rookeries as natural intrusion alarms that cannot be jammed; screams audible over 1 km. Feeds on a single common moss species. First-order heterotroph.",
+   "source": "WEG40098 Goroth Slave of the Empire p.91"
+  },
+  {
+   "name": "Highglide",
+   "type": "Scavenger",
+   "planet": "Goroth",
+   "habitat": "Mountains, lowlands",
+   "dex": "1D",
+   "per": "4D",
+   "str": "2D",
+   "move": "16 (flying), 8 (walking)",
+   "size": "0.8 meters long, 1.8 meter wingspan",
+   "orneriness": "",
+   "special": "Dodge 4D. Search 5D, sneak 5D. Silent Movement: +1D+2 to sneak when diving. Claws: STR+1 damage (two talon attacks when diving, normal multi-action penalties). Beak: STR+1 damage (bite only, not when stooping). Solitary high-flying avian scavenger, brilliant emerald-green with faint metallic blue highlights. Roosts in mountains, ranges far over lowlands spotting carrion with exceptional eyesight. Can drive most predators away from kills. Highly protective of nests — attacks anything approaching. Second-order heterotroph.",
+   "source": "WEG40098 Goroth Slave of the Empire p.91"
   }
 ];
