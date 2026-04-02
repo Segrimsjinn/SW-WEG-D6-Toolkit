@@ -3870,5 +3870,43 @@ const VEHICLES_DATA = [
   "weapons": "Two Power Harpoons (1 front, 1 back, missile weapons, FC 1D, 25-50/100/200, 3D each).",
   "game_notes": "Modified cargo skiff used as a jer'usk 'harvesting platform' in Goroth's oceans. Pre-modified for Goroth's radiation flux (-2D unskilled penalty). Heavily modified with reinforced hull for ocean operations. In the Ulan Bight where harvesting has occurred, jer'uskae have become hypersensitive and attack surface vehicles on sight. Four jer'uskae once cooperated to smash a TaggeCo harvesting skiff. Altitude range: ground level-20 meters.",
   "source": "WEG40098 Goroth Slave of the Empire p.94"
+},
+{
+  "name": "Tykannin Turbines 3-2-XR Repulsorlift Sled",
+  "category": "Speeder Bikes",
+  "scale": "Speeder",
+  "length": "4.3 meters",
+  "skill": "Repulsorlift operation: speeder bike",
+  "crew": "1",
+  "passengers": "0",
+  "cargo": "5 kilograms",
+  "cover": "1/4",
+  "cost": "5,950 (3,250 used)",
+  "maneuverability": "1D+1",
+  "move": "280; 800 kmh",
+  "body": "2D",
+  "shields": "",
+  "weapons": "Light Blaster Cannon (front, FC 2D, 25-50/100/150, 2D+1).",
+  "game_notes": "Imperial patrol vehicle used on Deysum III. Altitude range: ground level-3 meters.",
+  "source": "WEG40108 Classic Campaigns p.63"
+},
+{
+  "name": "RepulsorCorp Urban Assault Speeder",
+  "category": "Landspeeders",
+  "scale": "Speeder",
+  "length": "13.6 meters",
+  "skill": "Repulsorlift operation: heavy speeder",
+  "crew": "2, gunner: 1",
+  "passengers": "15 (troops)",
+  "cargo": "500 kilograms",
+  "cover": "Full",
+  "cost": "Not for sale",
+  "maneuverability": "1D",
+  "move": "35; 100 kmh",
+  "body": "2D",
+  "shields": "",
+  "weapons": "Laser Cannon (turret, FC 1D+2, 25-75/150/300, 2D).",
+  "game_notes": "Imperial urban troop transport. Carries up to 15 soldiers in a fully enclosed compartment. Slow but well-protected for city operations. Altitude range: ground level-2 meters.",
+  "source": "WEG40108 Classic Campaigns p.88"
 }
 ];

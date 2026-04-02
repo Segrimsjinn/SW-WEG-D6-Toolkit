@@ -3678,6 +3678,7 @@ const SYSTEMS_DATA = [
   { "name": "Masposhani", "grid": "Q-9", "region": "Mid Rim", "col": 15, "row": 9, "quadrant": "E", "hours": 3.3 },
   { "name": "Massiff Nebula", "grid": "K-9", "region": "Core Worlds", "col": 9, "row": 9, "quadrant": "C", "hours": 3.7 },
   { "name": "Massoss", "grid": "G-8", "region": "Unknown Regions", "col": 5, "row": 8, "quadrant": "W", "hours": 103.1 },
+  { "name": "Masterhome", "grid": "K-9", "region": "Colonies", "col": 9, "row": 9, "quadrant": "C", "hours": 3.7 },
   { "name": "Masterra", "grid": "Q-14", "region": "Mid Rim", "col": 15, "row": 14, "quadrant": "E", "hours": 4.3 },
   { "name": "Matabre", "grid": "Q-7", "region": "Mid Rim", "col": 15, "row": 7, "quadrant": "NE", "hours": 4.8 },
   { "name": "Matacorn", "grid": "P-15", "region": "Mid Rim", "col": 14, "row": 15, "quadrant": "SE", "hours": 1.5 },

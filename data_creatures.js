@@ -1565,7 +1565,7 @@ const CREATURES_DATA = [
   "size": "3m tall",
   "orneriness": "6D",
   "special": "Bite: STR+4D. Armor: +4D vs physical and energy.",
-  "source": "Classic Campaigns (page 38)"
+  "source": "WEG40108 Classic Campaigns p.38"
  },
  {
   "name": "Edan Tiger",
@@ -7544,5 +7544,19 @@ const CREATURES_DATA = [
    "orneriness": "",
    "special": "Dodge 4D. Search 5D, sneak 5D. Silent Movement: +1D+2 to sneak when diving. Claws: STR+1 damage (two talon attacks when diving, normal multi-action penalties). Beak: STR+1 damage (bite only, not when stooping). Solitary high-flying avian scavenger, brilliant emerald-green with faint metallic blue highlights. Roosts in mountains, ranges far over lowlands spotting carrion with exceptional eyesight. Can drive most predators away from kills. Highly protective of nests — attacks anything approaching. Second-order heterotroph.",
    "source": "WEG40098 Goroth Slave of the Empire p.91"
+  },
+  {
+   "name": "Likka",
+   "type": "Riding Beast",
+   "planet": "Masterhome",
+   "habitat": "Forests, plains",
+   "dex": "2D",
+   "per": "2D",
+   "str": "4D",
+   "move": "12",
+   "size": "1.5 meters tall at the shoulder, 3 meters long",
+   "orneriness": "3D",
+   "special": "Brawling: bite 5D. Bite: STR+1 damage. Long-legged crocodilians, greenish-brown with brilliant yellow eyes. Ill-tempered riding beasts of the Anointed People, controlled by reins attached to the likka's eyelids. Creature scale.",
+   "source": "WEG40108 Classic Campaigns p.40"
   }
 ];
