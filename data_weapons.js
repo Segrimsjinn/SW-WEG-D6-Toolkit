@@ -4523,5 +4523,17 @@ const WEAPONS_DATA = [
   "ammo": "10",
   "game_notes": "Specialized stun-only energy weapon produced by j'ber Jer'N on Goroth Prime (now illegal). Looks and handles like a standard hold-out blaster. Fires an invisible coherent bolt of microwave energy tuned to interfere with neural processes. Makes a distinctive 'thrum' sound as loud as a blaster report. Characters wearing armor (blast vest or better) may use the armor's physical protection value to resist damage instead of energy.",
   "source": "WEG40098 Goroth Slave of the Empire p.83"
+ },
+ {
+  "name": "Bitthaevrian Dematoil",
+  "category": "Melee Weapons",
+  "skill": "Melee combat: dematoil",
+  "cost": "Not for sale",
+  "availability": "4, X",
+  "damage": "STR+1D to STR+3D (varies by warrior's victories)",
+  "range": "Melee",
+  "ammo": "",
+  "game_notes": "Difficulty: Moderate to Difficult. Body: 3D to 5D+1. Custom-designed morningstar — the ultimate symbol of a Bitthaevrian warrior's ability. Spikes are quills taken from warriors the wielder has defeated in personal combat. The greater the warrior, the more quills, and the more damage. Damage is dependent upon the greatness of the warrior and how many personal victories they have achieved.",
+  "source": "WEG40109 Alliance Intelligence Reports p.48"
  }
 ];

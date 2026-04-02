@@ -7558,5 +7558,19 @@ const CREATURES_DATA = [
    "orneriness": "3D",
    "special": "Brawling: bite 5D. Bite: STR+1 damage. Long-legged crocodilians, greenish-brown with brilliant yellow eyes. Ill-tempered riding beasts of the Anointed People, controlled by reins attached to the likka's eyelids. Creature scale.",
    "source": "WEG40108 Classic Campaigns p.40"
+  },
+  {
+   "name": "Staplarint",
+   "type": "Omnivore (riding beast)",
+   "planet": "Brosi",
+   "habitat": "Forests",
+   "dex": "3D+2",
+   "per": "2D",
+   "str": "5D",
+   "move": "12",
+   "size": "1.5 meters at shoulder, 2.5 meters long",
+   "orneriness": "2D+2",
+   "special": "Running: long distance 4D+2. Bite: STR+1D damage. Originally introduced to Brosi by Republic settlers as beasts of burden. Escaped into the wilderness centuries ago when repulsorlift transports replaced them. Not domesticated for centuries, but the Brosin Underground has begun breaking them in as mounts with surprisingly successful results. Creature scale.",
+   "source": "WEG40109 Alliance Intelligence Reports p.12"
   }
 ];
