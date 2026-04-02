@@ -7572,5 +7572,19 @@ const CREATURES_DATA = [
    "orneriness": "2D+2",
    "special": "Running: long distance 4D+2. Bite: STR+1D damage. Originally introduced to Brosi by Republic settlers as beasts of burden. Escaped into the wilderness centuries ago when repulsorlift transports replaced them. Not domesticated for centuries, but the Brosin Underground has begun breaking them in as mounts with surprisingly successful results. Creature scale.",
    "source": "WEG40109 Alliance Intelligence Reports p.12"
+  },
+  {
+   "name": "Mosgoth",
+   "type": "Aerial Reptilian Mount",
+   "planet": "Togoria",
+   "habitat": "Mountains, plains",
+   "dex": "4D",
+   "per": "3D",
+   "str": "4D",
+   "move": "7 (walking), 28 (flying)",
+   "size": "12-17.5 meters long",
+   "orneriness": "3D",
+   "special": "Search 5D. Brawling 5D. Claws: STR+2 damage. Teeth: STR+1D damage. Tail: STR damage (weapon on ground, rudder in flight). Night Vision: organic sonar allows navigation in complete darkness with no penalty. Four-winged flying reptiles from Togoria. Togorians and mosgoths evolved a symbiotic relationship — ancient Togorians defended nests from predators, mosgoths built nests closer to camps. Used as mounts and beasts of burden. Can carry ~300 kg in flight, max 2 riders due to wing placement. Will fight alongside their Togorian companion. Speeder scale.",
+   "source": "WEG40109 Alliance Intelligence Reports p.74"
   }
 ];

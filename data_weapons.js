@@ -4535,5 +4535,41 @@ const WEAPONS_DATA = [
   "ammo": "",
   "game_notes": "Difficulty: Moderate to Difficult. Body: 3D to 5D+1. Custom-designed morningstar — the ultimate symbol of a Bitthaevrian warrior's ability. Spikes are quills taken from warriors the wielder has defeated in personal combat. The greater the warrior, the more quills, and the more damage. Damage is dependent upon the greatness of the warrior and how many personal victories they have achieved.",
   "source": "WEG40109 Alliance Intelligence Reports p.48"
+ },
+ {
+  "name": "Togorian Scimitar (Sc'rath)",
+  "category": "Melee Weapons",
+  "skill": "Melee combat: sc'rath",
+  "cost": "Not for sale",
+  "availability": "4, R",
+  "damage": "STR+2D+2",
+  "range": "Melee",
+  "ammo": "",
+  "game_notes": "Difficulty: Moderate. Individually-forged by Togorian smiths and master smiths. Each clan's weapons have distinctive qualities and markings. Usually a meter or more in length. Command substantial prices on the galactic market.",
+  "source": "WEG40109 Alliance Intelligence Reports p.74"
+ },
+ {
+  "name": "Ka'hren Rantok",
+  "category": "Melee Weapons",
+  "skill": "Melee combat: rantok",
+  "cost": "Not for sale",
+  "availability": "4",
+  "damage": "STR+1D+1 (one-handed), STR+2D+1 (two-handed)",
+  "range": "Melee",
+  "ammo": "",
+  "game_notes": "Difficulty: Difficult. When used two-handed, reduce difficulty one level but no parries possible. Thick straight blade ~1.2m attached to ~0.3m wooden hilt. Large crossguards thrust upward on each side. Small quillions on the flat side catch enemy blades. Ancient Ka'hren sword of the extinct Unfyr warriors, used for both military and ceremonial purposes.",
+  "source": "WEG40109 Alliance Intelligence Reports p.76"
+ },
+ {
+  "name": "Soknar (Cene Gilvent's Custom Blade)",
+  "category": "Melee Weapons",
+  "skill": "Melee combat: Soknar",
+  "cost": "Not for sale",
+  "availability": "Unique",
+  "damage": "STR+2D+1",
+  "range": "Melee",
+  "ammo": "",
+  "game_notes": "Difficulty: Moderate. Custom weapon crafted by Togorian master smith Mlatar Thon Gra for Cene Gilvent. Combines elements of the Somreth tri-blade of the Drevun Six, the Barnax 'Twenchok' foil, and the Coynite sat'skar. Gilvent receives +2D to melee combat when wielding this weapon due to her specialized training.",
+  "source": "WEG40109 Alliance Intelligence Reports p.78"
  }
 ];
