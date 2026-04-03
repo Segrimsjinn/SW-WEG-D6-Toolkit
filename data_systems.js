@@ -5584,6 +5584,7 @@ const SYSTEMS_DATA = [
   { "name": "Starport Borgo", "grid": "M-6", "region": "Outer Rim Territories", "col": 11, "row": 6, "quadrant": "N", "hours": 4.0 },
   { "name": "Starswarm Cluster", "grid": "L-10", "region": "Deep Core", "col": 10, "row": 10, "quadrant": "C", "hours": 9.3 },
   { "name": "Stassia", "grid": "L-10", "region": "Deep Core", "col": 10, "row": 10, "quadrant": "C", "hours": 9.3 },
+  { "name": "Station 3", "grid": "S-8", "region": "Outer Rim Territories", "col": 17, "row": 8, "quadrant": "E", "hours": 2.7 },
   { "name": "Station 88", "grid": "J-7", "region": "Mid Rim", "col": 8, "row": 7, "quadrant": "N", "hours": 5.3 },
   { "name": "Station Zeta", "grid": "K-14", "region": "Inner Rim", "col": 9, "row": 14, "quadrant": "C", "hours": 7.2 },
   { "name": "Steelious", "grid": "K-13", "region": "Core Worlds", "col": 9, "row": 13, "quadrant": "C", "hours": 5.0 },
