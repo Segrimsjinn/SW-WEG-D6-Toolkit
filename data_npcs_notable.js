@@ -38516,6 +38516,232 @@ const NOTABLE_NPCS = [
     equipment: "Blaster (4D), knife (STR+1D), vac-suit",
     capsule: "Nim Abek's varied band of over 100 pirates at his shadowport station. Unscrupulous scum who know life is good under Abek's care and are loyal — at least until someone convinces them they can make their lives even better.",
     source: "WEG40136 Secrets of the Sisar Run p.57"
+  },
+
+  {
+    name: "Gyran (3.5 ABY)",
+    species: "Human",
+    system: "Sedri",
+    location: "Sedri — Bounty Hunter Operations",
+    affiliations: ["Criminal Underworld", "Black Sun"],
+    role: "Bounty Hunter / Team Leader",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "4D", skills: { "blaster": "8D", "blaster artillery": "5D+1", "brawling parry": "5D", "dodge": "7D", "melee combat: vibroblade": "6D+1", "melee parry": "5D", "thrown weapons": "6D+2" } },
+      KNOWLEDGE: { base: "2D+2", skills: { "alien species": "4D", "intimidation": "4D", "streetwise": "5D+2", "value": "4D", "willpower": "4D+1" } },
+      MECHANICAL: { base: "2D+2", skills: { "astrogation": "4D", "beast riding": "4D+1", "communications": "4D", "repulsorlift operation": "5D+2", "sensors": "4D", "space transports": "5D+1", "starfighter piloting": "5D", "starship gunnery": "5D" } },
+      PERCEPTION: { base: "3D", skills: { "command": "5D", "hide": "3D+2", "search": "5D", "sneak": "5D" } },
+      STRENGTH: { base: "3D+2", skills: { "brawling": "4D", "stamina": "4D+1", "swimming": "4D" } },
+      TECHNICAL: { base: "2D", skills: { "armor repair": "3D", "blaster repair": "3D+1", "demolitions": "4D", "first aid": "3D", "security": "4D+2" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 7,
+    move: 10,
+    equipment: "2 fragmentation grenades (5D), blaster pistol (4D), wetsuit, breather mask",
+    capsule: "Once a royal bodyguard to one of the spice lords of Sevarcos until Xizor 'purchased' his service during a business trip. Relished the opportunity to visit other worlds. While on Coruscant, frequently took long trips into the undercity inviting violence, developing a mild agoraphobia — hates open places or wide-open planets. Finds Sedri's vast oceans daunting but is more comfortable fighting in caves. Leads a team of bounty hunters dispatched by Xizor through Guri to recover the Barani datacard. Flies the Arc Razor.",
+    source: "WEG40136 Secrets of the Sisar Run p.73-74"
+  },
+
+  {
+    name: "ERYX-4 (3.5 ABY)",
+    species: "Droid",
+    system: "Sedri",
+    location: "Sedri — Bounty Hunter Operations",
+    affiliations: ["Criminal Underworld", "Black Sun"],
+    role: "Assassin Droid",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D+1", skills: { "blaster": "7D", "dodge": "5D+1", "missile weapons": "5D+1" } },
+      KNOWLEDGE: { base: "1D", skills: { "survival": "5D" } },
+      MECHANICAL: { base: "2D", skills: { "astrogation": "4D+2", "communications": "5D+1", "sensors": "6D" } },
+      PERCEPTION: { base: "3D", skills: { "search": "5D+2", "sneak": "5D" } },
+      STRENGTH: { base: "2D", skills: {} },
+      TECHNICAL: { base: "1D", skills: { "blaster repair": "5D+2", "demolitions": "5D+2", "security": "6D" } }
+    },
+    specialAbilities: "Equipped With: Laser cannon (6D damage, 3-30/50/120), grenade launcher (5D damage, 3-10/25/100, ammo: 4), repulsorlift motion system (no movement penalties for underwater movement), sensor system interface (+1D to sensor modes).",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 10,
+    equipment: "Laser cannon (6D), grenade launcher (5D, 4 rounds), holobug surveillance system",
+    capsule: "A chromed assassin droid on Gyran's bounty hunter team, dispatched by Prince Xizor to recover the Barani datacard. Capable of interfacing with ship sensor systems and deploying spider-shaped holobug surveillance devices. Has downloaded extensive personality profiles and performance records on Limna Yith. Floats via repulsorlift system, suffering no underwater movement penalties.",
+    source: "WEG40136 Secrets of the Sisar Run p.74"
+  },
+
+  {
+    name: "Ket Maliss (3.5 ABY)",
+    species: "Dashade",
+    system: "Sedri",
+    location: "Sedri — Bounty Hunter Operations",
+    affiliations: ["Criminal Underworld", "Black Sun"],
+    role: "Shadow Killer / Assassin",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "5D", skills: { "blaster": "7D+1", "dodge: energy weapons": "6D+2", "grenade": "5D+1", "melee combat": "6D", "melee parry": "5D+2" } },
+      KNOWLEDGE: { base: "2D+1", skills: { "alien species": "5D+1", "languages": "4D+2", "streetwise: Black Sun": "6D+2", "survival": "5D+2" } },
+      MECHANICAL: { base: "2D+1", skills: { "astrogation": "5D+1", "beast riding": "4D", "space transports": "6D+1", "starship gunnery": "6D+1", "starship shields": "4D+2" } },
+      PERCEPTION: { base: "3D", skills: { "command": "5D+2", "investigation": "6D+2", "search": "6D+2", "sneak": "6D+2" } },
+      STRENGTH: { base: "4D", skills: { "brawling": "6D+2", "climbing/jumping": "5D+2" } },
+      TECHNICAL: { base: "1D+1", skills: { "armor repair": "4D", "blaster repair": "5D" } }
+    },
+    specialAbilities: "Heat Dissipation: Dashade can dissipate body heat, making them difficult to detect with sensors. Add +2D difficulty to any sensor attempt to locate.",
+    forcePoints: 4,
+    darkSidePoints: 6,
+    characterPoints: 16,
+    move: 10,
+    equipment: "Blaster rifle (5D), wetsuit, breather mask",
+    capsule: "A rare species of killer from the supernova-cooked world of Urkupp. The Dashade died out during the Sith War 4,000 years ago when the Cron Drift explosion shattered their world. One of Xizor's ancestors took his remaining 38 Dashade enforcers and had them cryogenically frozen. Once each century or so, a new one is released into the servitude of the Falleen royal family. Maliss is Xizor's last Dashade, activated and serving his master well for decades. Previously hired by Sprax to neutralize the Disac pirates, which he accomplished in short order. Now dispatched with Gyran's team to recover the Barani datacard on Sedri.",
+    source: "WEG40136 Secrets of the Sisar Run p.74"
+  },
+
+  {
+    name: "Mors Odrion (3.5 ABY)",
+    species: "Human",
+    system: "Sedri",
+    location: "Sedri — Fitsay",
+    affiliations: ["Rebel Alliance"],
+    role: "Diplomat / Alliance Liaison",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D", skills: {} },
+      KNOWLEDGE: { base: "4D", skills: { "alien species": "6D", "bureaucracy": "6D+1", "cultures": "5D", "languages": "6D", "planetary systems": "4D+2", "value": "6D+2" } },
+      MECHANICAL: { base: "3D", skills: { "repulsorlift operation": "5D" } },
+      PERCEPTION: { base: "4D", skills: { "command": "5D", "search": "4D+2" } },
+      STRENGTH: { base: "2D", skills: { "swimming": "5D+2" } },
+      TECHNICAL: { base: "2D", skills: { "computer programming/repair": "4D+1" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 10,
+    equipment: "Datapad, wetsuit",
+    capsule: "Alliance dignitary who was involved in the Golden Sun conflict and now serves as Sedri's off-world diplomat, advising the High Priests on galactic affairs. Watches for Imperial activity and evaluates business proposals for commerce on the waterworld. Concerned about cultural and ecological contamination as Sedri slowly opens its borders to outsiders.",
+    source: "WEG40136 Secrets of the Sisar Run p.72"
+  },
+
+  {
+    name: "Pek (3.5 ABY)",
+    species: "Sedrian",
+    system: "Sedri",
+    location: "Sedri — Fitsay",
+    affiliations: ["Neutral"],
+    role: "High Priest",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D+2", skills: { "melee combat": "5D", "missile weapons": "4D+2", "sun gun": "4D+2" } },
+      KNOWLEDGE: { base: "2D+1", skills: { "alien species": "4D", "bureaucracy": "5D", "cultures": "4D+1", "survival: sea": "4D+1", "value": "5D" } },
+      MECHANICAL: { base: "2D+2", skills: {} },
+      PERCEPTION: { base: "3D", skills: { "command": "6D+2", "persuasion": "4D+1", "search": "4D+2" } },
+      STRENGTH: { base: "3D", skills: { "brawling": "5D", "stamina": "5D+1", "swimming": "6D" } },
+      TECHNICAL: { base: "2D+1", skills: { "first aid": "3D+1" } }
+    },
+    specialAbilities: "Force Powers: Sense 2D.",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 20,
+    equipment: "Spear (STR+1D+1), crown, staff",
+    capsule: "Massive Sedrian High Priest who wears a large golden crown and carries a coral-tipped staff. In his younger days was rash and quick to act, but now that his wife Fala is pregnant with their first child, has slowed down. Overwhelmed by the new off-world activity that has come to Sedri and is trying to get through it one day at a time.",
+    source: "WEG40136 Secrets of the Sisar Run p.72-73"
+  },
+
+  {
+    name: "Fala (3.5 ABY)",
+    species: "Sedrian",
+    system: "Sedri",
+    location: "Sedri — Fitsay",
+    affiliations: ["Neutral"],
+    role: "High Priestess",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D+2", skills: { "melee combat": "6D+2", "sun gun": "5D" } },
+      KNOWLEDGE: { base: "3D+1", skills: { "cultures": "5D", "survival: sea": "5D+1" } },
+      MECHANICAL: { base: "1D", skills: {} },
+      PERCEPTION: { base: "4D", skills: { "command": "5D+2" } },
+      STRENGTH: { base: "3D", skills: { "swimming": "7D" } },
+      TECHNICAL: { base: "1D", skills: { "first aid": "1D" } }
+    },
+    specialAbilities: "Force Powers: Control 1D, Sense 1D+2.",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 20,
+    equipment: "",
+    capsule: "Lithe Sedrian High Priestess who wears a golden circlet. Once a renegade herself, she has spearheaded attempts to bring the dissidents back into Sedrian society. The renegades respect her but she fears they believe she is being 'brainwashed' by her husband Pek. Currently pregnant with their first child.",
+    source: "WEG40136 Secrets of the Sisar Run p.72-73"
+  },
+
+  {
+    name: "Sedrian Warrior Monk (3.5 ABY)",
+    species: "Sedrian",
+    system: "Sedri",
+    location: "Sedri — Fitsay",
+    affiliations: ["Neutral"],
+    role: "Warrior Monk / Guard",
+    type: "Generic Template",
+    stats: {
+      DEXTERITY: { base: "2D+1", skills: { "missile weapons: spear gun": "3D+2", "sun gun": "4D+1" } },
+      KNOWLEDGE: { base: "1D+2", skills: {} },
+      MECHANICAL: { base: "1D+1", skills: {} },
+      PERCEPTION: { base: "1D+2", skills: { "command": "3D+2", "search": "3D" } },
+      STRENGTH: { base: "3D+2", skills: { "swimming": "6D" } },
+      TECHNICAL: { base: "1D+1", skills: {} }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 18,
+    equipment: "Spear gun (3D+2)",
+    capsule: "A fraternity of warrior monks that protects the Sedrians, led by the Bishop of War. Religious warriors who guard Fitsay and respond to threats against Sedrian communities.",
+    source: "WEG40136 Secrets of the Sisar Run p.72"
+  },
+
+  {
+    name: "Xizor's Bounty Hunter (3.5 ABY)",
+    species: "Various",
+    system: "Sedri",
+    location: "Sedri — Bounty Hunter Operations",
+    affiliations: ["Criminal Underworld", "Black Sun"],
+    role: "Bounty Hunter",
+    type: "Generic Template",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { "blaster": "4D+2", "dodge": "4D+1", "grenade": "4D", "melee combat": "4D+2", "melee parry": "3D+1" } },
+      KNOWLEDGE: { base: "2D", skills: { "streetwise": "3D", "survival": "2D+2" } },
+      MECHANICAL: { base: "2D", skills: {} },
+      PERCEPTION: { base: "2D", skills: { "investigation": "3D+1", "sneak": "3D+2" } },
+      STRENGTH: { base: "2D", skills: { "brawling": "3D+2" } },
+      TECHNICAL: { base: "2D", skills: {} }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 10,
+    equipment: "Blast vest (+1D physical, +1 energy), heavy blaster pistol (5D), grenade (5D), wetsuit, breather mask",
+    capsule: "Bounty hunters on Gyran's team, dispatched by Prince Xizor through Guri to recover the Barani datacard on Sedri.",
+    source: "WEG40136 Secrets of the Sisar Run p.75"
+  },
+
+  {
+    name: "Aquatic Assault Stormtrooper (3.5 ABY)",
+    species: "Human",
+    system: "Sedri",
+    location: "Sedri — Ion Storm Strike Force",
+    affiliations: ["Galactic Empire"],
+    role: "Seatrooper",
+    type: "Generic Template",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { "blaster": "4D", "brawling parry": "4D" } },
+      KNOWLEDGE: { base: "2D", skills: {} },
+      MECHANICAL: { base: "3D", skills: { "repulsorlift operation": "3D+2" } },
+      PERCEPTION: { base: "2D", skills: {} },
+      STRENGTH: { base: "2D+2", skills: { "brawling": "3D+2", "swimming": "4D+2" } },
+      TECHNICAL: { base: "2D", skills: {} }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 10,
+    equipment: "Blaster speargun (blaster: 5D, 0-10/50/100 air, 0-5/25/35 underwater; spear: 3D, 0-5/15/25 underwater), concussion grenades (5D/4D/3D/2D), seatrooper armor (+1D physical and energy, increases swimming by +2D)",
+    capsule: "Commander Surlev's aquatic assault stormtroopers from the Ion Storm, outfitted with specialized seatrooper armor and waveskimmers for the Sedri operation to recover the Barani datacard.",
+    source: "WEG40136 Secrets of the Sisar Run p.76"
   }
 // --- END OF NOTABLE_NPCS ---
 ];

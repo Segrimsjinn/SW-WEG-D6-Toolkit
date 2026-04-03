@@ -8248,6 +8248,34 @@ const PLANETS_DATA = [
     summary: "The only life-sustaining planet in the Novor system, which hosts the blasted remains of what were once the first 17 planets orbiting the red giant Novor Major. Novor 23 is a busy world with large metropolitan centers. The native Ry'coz have worked with human and alien populations to establish a bustling economy and vibrant culture.",
     locations: "Luj City (Capital of Novor 23 and one of the key financial centers in the Tharin sector). Jatayus Outbound Local Offices (Corporate offices for Sprax's Sisar Run shipping front). Vos'yr Valley (Picturesque valley where one of Sprax's villa retreats is nestled).",
     ofNote: "NOVOR SYSTEM: The first 17 planets were ripped apart when Novor Major expanded into a red giant millennia ago. Sixteen planets — Novor 18 through Novor 33 — survived remarkably intact. Novor 23 is the only one capable of sustaining life. The Novor Asteroid Field consists of the blasted remains of the destroyed inner planets."
+  },
+
+  {
+    name: "Sedri",
+    system: "Sedri",
+    star: "Sedri",
+    grid: "S-8",
+    region: "Outer Rim Territories",
+    type: "Shallow Water-World",
+    temperature: "Temperate",
+    atmosphere: "Type I (Breathable)",
+    hydrosphere: "Saturated",
+    gravity: "Standard",
+    terrain: "Shallow oceans, coral reefs",
+    lengthOfDay: "18 standard hours",
+    lengthOfYear: "286 local days",
+    sapientSpecies: "Sedrians (native), Golden Sun (native)",
+    starport: "None",
+    population: "Less than 10,000",
+    function: "Homeworld",
+    government: "Theocracy",
+    techLevel: "Special (technology provided by Golden Sun)",
+    majorExports: "Water",
+    majorImports: "Mid tech, high tech",
+    source: "WEG40136 Secrets of the Sisar Run p.67",
+    summary: "A waterworld of shallow oceans located off the Sisar Run, home to the seal-like Sedrians. For centuries, the Force-sensitive coral colony called Golden Sun created a natural gravity well that prevented navicomputers from registering Sedri as anything but a large sun, keeping the planet hidden. An Imperial scout ship discovered Sedri by navigational accident and established an aquatic garrison. Rebel agents from nearby Delta Base stopped the Imperials from harvesting the intelligent coral. The Sedrians released Golden Sun from imprisonment, spreading its glow planet-wide and lessening the gravitic effect. The Empire lost interest and abandoned its garrison.",
+    locations: "Fitsay (Main Sedrian village centered around an immense split shell dome housing a Mon Calamari turbine power station. Interconnected stone buildings fill the watery depths, with magnetic containment field projectors creating dry-house interiors for off-world visitors). Abandoned Imperial Garrison (A five-level aquatic garrison now covered in barnacles and sea-moss, with its flotation collar eroding. The structure rocks and sways as its tractor beam anchors have broken down — within a year it will sink to the ocean bottom. Leaking coolant and deadly pollution). Renegade Camp (Dissident Sedrian encampment set against a rocky outcropping carved with natural caves, northwest of Fitsay).",
+    ofNote: "SEDRIAN SPECIES: Attribute Dice 10D. DEX 1D/3D+1, KNO 1D/3D, MEC 1D/3D, PER 1D+1/3D+1, STR 2D/4D, TEC 1D/3D. Move: 15/20 (swimming underwater). Size: 3m long, 1m tall (torso). Large powerfully-built beings with humanoid upper bodies and tapered finned flukes. Fully amphibious with lungs and gills. Three-webbed fingers and a thumb. Smooth fur from brown to golden yellow. Graceful in water, awkward on land. Story Factor: Separation Anxiety — Sedrians away from Sedri become agitated and unpredictable due to separation from Golden Sun, cured only by returning to Sedri. | GOLDEN SUN: A Force-sensitive collection of coral-dwelling polyps. For centuries the High Priest kept it contained in a Great Shell Dome. The dissident leader Karak believed it should be shared. After Rebel intervention, the Sedrians released the intelligent coral, spreading its golden glow planet-wide. | CURRENT POLITICS: The High Priests Pek and Fala are carefully opening borders to off-world commerce, advised by Alliance diplomat Mors Odrion. Renegade dissidents (Karak's old followers) believe the Priests are stagnating Sedri's growth. A Vaathkree repulsor company has been greenlighted for a hydro-vehicles construction project with full Sedrian ownership. | ECONOMY: Sedri's endless oceans offer water — an extremely prized commodity on Sriluur. Hauling water requires special tanks and purification, so few spacers have made the investment yet."
   }
 // --- END OF PLANETS_DATA ---
 ];
