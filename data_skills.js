@@ -3048,4 +3048,5 @@
                  "Young Jedi",
                  "Young Senator"
              ]
+// --- END OF SKILLS_DATA ---
 };

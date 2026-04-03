@@ -738,4 +738,5 @@
     "tools_blank":  0.4,
     "melee_blank":  0.38,
     "saber_blank":  0.5
+// --- END OF NPC_DATA ---
 };

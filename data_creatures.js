@@ -7684,5 +7684,20 @@ const CREATURES_DATA = [
    "orneriness": "",
    "special": "Search: Tracking 4D, Sneak 4D+2, Brawling 5D, Climbing/Jumping 4D+1. Claws: STR+1D+1 damage, +1D to climbing. Leap Attack: +1D brawling and +1D damage on initial leaping attack. Fur: withstands freezing without shelter; +1D sneak in snowy areas. Distantly related to krakjya but lacks its strength. Prolific litters of 8-9 kittens. Lives in prides of 6-10 adults, hunts in packs of 3-4. Near-extermination of krakjyas has allowed them to spread into lowland valleys. Healthy fear of civilization but will attack lone individuals in wilderness.",
    "source": "WEG40134 Shadows of the Empire Planet Guide p.62"
+  },
+  {
+   "name": "Nashtah",
+   "type": "Predator",
+   "planet": "Various",
+   "habitat": "Various",
+   "dex": "4D",
+   "per": "3D",
+   "str": "5D",
+   "move": "12 (running), 15 (leaping)",
+   "size": "1.3 meters",
+   "orneriness": "",
+   "special": "Search 4D, Brawling 6D, Climbing/Jumping 6D+2. Claws: STR+1D damage. Vicious predators sometimes kept as pets or guard animals. Klirun, a nashtah belonging to Tunroth Hunter Shotarr Kass, once savagely mauled an assailant who attempted to ambush Vigo Sprax.",
+   "source": "WEG40136 Secrets of the Sisar Run p.5"
   }
+// --- END OF CREATURES_DATA ---
 ];

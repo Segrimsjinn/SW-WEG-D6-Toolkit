@@ -181,4 +181,5 @@ const SYSGEN_DATA = {
       { value: "Nova", color: "Varies", desc: "Exploding star giving off intense light, gas, and radiation. Area is extremely dangerous. Dead worlds may hold remnant civilizations or artifacts." }
     ]
   }
+// --- END OF SYSGEN_DATA ---
 };

@@ -16909,4 +16909,5 @@ const RACES_DATA = {
       "Unreliable: Krish are not terribly reliable. They are easily distracted by entertainment and sport, and often forget minor details about the job at hand. Appearance: 1.5-2 meters tall with sharp, pointed teeth. They take pride in sports and games — everything is a puzzle to a Krish. Somewhat mechanically inclined, possibly a result of their puzzle-solving nature. Known for smiling pointy-toothed grins at anything which slightly amuses them."
     ]
   }
+// --- END OF RACES_DATA ---
 };

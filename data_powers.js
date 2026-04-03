@@ -75,4 +75,5 @@
   { "name": "74. Transfer Life", "category": "Control+Sense+Alter", "prereq": "DS 1,2,6,7,8,11,14,15,17,23,24,26,29,30,38,39,40,43,44,47,51,53,56,57,59,62,64", "darkSide": false },
   { "name": "75. Force Scream", "category": "Special", "prereq": "", "darkSide": true },
   { "name": "76. Lifemerge", "category": "Special", "prereq": "", "darkSide": false }
+// --- END OF POWERS_DATA ---
 ];

@@ -181,4 +181,5 @@ const RACE_IMAGES = {
   'Zabrak': 'image169.jpg',
   'Zexx': 'image170.jpg',
   'Tasari': 'image171.jpg',
+// --- END OF RACE_IMAGES ---
 };

@@ -4695,4 +4695,5 @@ const EQUIPMENT_DATA = [
   "game_notes": "Starfighter-scale automated hyperspace pod for message droids. Length: 2m. Crew: None (droid brain with Astrogation 4D, Space Transports 4D). Passengers: 1 message droid. Consumables: 1 month. Hyperdrive x1. Nav computer limited to 1 jump. Space: 6. Atmosphere: 330; 950 km/h. Hull: 1D+2. Sensors — Passive: 20/1D, Scan: 40/2D, Search: 60/3D, Focus: 3/4D. No weapons. Susceptible to spacejacking — Alliance has captured several. Often modified by criminals to haul small cargo instead of message droids.",
   "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.44"
  }
+// --- END OF EQUIPMENT_DATA ---
 ];

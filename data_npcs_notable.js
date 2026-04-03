@@ -6603,8 +6603,8 @@ const NOTABLE_NPCS = [
     characterPoints: 11,
     move: 9,
     equipment: "Comlink, datapad, hold-out blaster (3D)",
-    capsule: "Recruited into Black Sun as a young Nalroni heir from Celanon, Sprax was apprenticed to a Brentaal merchant house before joining Xizor Transport Systems as a cover for his Vigo induction. His criminal empire revolves around the theft and misrouting of shipments — using bribed executives, shipjackers, and crooked starport officials — and he also quietly supplies both the Empire and Rebel Alliance with weapons and starship parts on Xizor's orders, hedging Black Sun's bets on the war's outcome.",
-    source: "WEG40122 Shadows of the Empire p.43"
+    capsule: "Recruited into Black Sun as a young Nalroni heir from Celanon, Sprax was groomed to head the Jatayus Trading Consortium before being recruited by Xizor. Apprenticed to a prominent Brentaal merchant guildmaster, then served as a division supervisor at XTS before 'retiring' to become a Vigo. Now oversees all smuggling and shipping along the Sisar Run, bringing in billions of credits annually. Maintains an extensive network of 'resource specialists' focused on ship parts acquisition and distribution. Operates through multiple fronts: Jatayus Outbound (Sisar-only shipping with freelancer smuggling cover), To-Sharr Uuta Shipworks (co-venture with Vigo Durga the Hutt for mutual espionage), Subscape Communications (deep-space comsat subscriber service doubling as a tracking network), and XTS for inter-Run shipments. A passionate collector of rare and ancient starships, his favorite is one of seven Shadow Keepers ever built. Often dyes his graying fur brown-gold and maintains an extensive Brentaal-style wardrobe of long-tailed jackets over long tunics.",
+    source: "WEG40122 Shadows of the Empire p.43, WEG40136 Secrets of the Sisar Run p.4"
   },
 
   {
@@ -37660,5 +37660,337 @@ const NOTABLE_NPCS = [
     equipment: "Blaster pistol (4D, kept under bar), pair of vibro throwing knives (STR+1D)",
     capsule: "Well-past-his-prime Bothan proprietor of The Jaded Jawa bar in Tal'cara Starport. Dark fur braided with several beads, left eye scarred from an old wound giving him a constant squint. Breaks even on drinks if lucky — real business is information sold to civilians, criminals, Rebels, or Imperials. Protocol: order an Antakarian Fire Dancer to ask a question; Dakkar replies with a price on a datapad used as a coaster. Ragnook Spring Water means he doesn't have the info. To sell information: ask for Spring Water and flash a datapad with the topic — Dakkar names a drink whose price (x100) is his offer.",
     source: "WEG40134 Shadows of the Empire Planet Guide p.80"
+  },
+
+  {
+    name: "Kisquar (3.5 ABY)",
+    species: "Mrissi",
+    system: "Sisar Run",
+    location: "Sisar Run — Sprax's Operations",
+    affiliations: ["Criminal Underworld", "Black Sun"],
+    role: "First Officer / Head of Sisar Run Operations",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "1D", skills: { "blaster": "3D+1", "dodge": "4D+1" } },
+      KNOWLEDGE: { base: "4D+1", skills: { "business": "5D+1", "business: Black Sun": "6D+1", "streetwise": "5D", "streetwise: Sisar Run": "7D+2", "value": "6D+1", "value: starships": "7D+1" } },
+      MECHANICAL: { base: "2D", skills: { "astrogation": "3D+2", "space transports": "5D", "starship gunnery": "4D", "starship shields": "4D+2" } },
+      PERCEPTION: { base: "2D+2", skills: { "bargain": "5D+2", "command": "5D+2", "con": "5D", "investigation": "5D+2", "persuasion": "6D" } },
+      STRENGTH: { base: "1D+1", skills: { "brawling": "3D+1" } },
+      TECHNICAL: { base: "1D+2", skills: { "security": "4D+2", "space transports repair": "3D+2" } }
+    },
+    specialAbilities: "Teaching Ability: Can advance all specializations of the scholar skill at half the normal Character Point cost.",
+    forcePoints: 1,
+    darkSidePoints: 1,
+    characterPoints: 12,
+    move: 6,
+    equipment: "Blaster pistol (4D), comlink, datapad, security ID",
+    capsule: "Sprax's first officer and head of Sisar Run operations. A slight, red-and-black-plumed, vaguely avian Mrissi male who tends to day-to-day smuggling and shipping matters, including overseeing the stealing and salvaging of starship parts for resale to Rebel operatives and Imperial-sanctioned agents alike. Brought extensive contacts from his prior career as a hijacker, pirate, smuggler, and shipping coordinator. An able information broker who developed an incredibly intricate and untraceable intelligence network with Sprax's best slicers and spy masters. Demands respect from his crew of about a dozen infochants and crack pilots. Often sent to personally recruit prospects for special jobs involving the Rebellion or bounty hunting.",
+    source: "WEG40136 Secrets of the Sisar Run p.5"
+  },
+
+  {
+    name: "Shotarr \"The Strap\" Kass (3.5 ABY)",
+    species: "Tunroth",
+    system: "Sisar Run",
+    location: "Sisar Run — Sprax's Personal Guard",
+    affiliations: ["Criminal Underworld", "Black Sun"],
+    role: "Personal Guard / Aspiring Hunter",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "4D", skills: { "blaster": "5D", "brawling parry": "6D", "dodge": "5D+2", "grenade": "4D+2", "melee combat": "5D", "melee combat: kiltar stave": "7D", "melee parry": "5D" } },
+      KNOWLEDGE: { base: "2D+2", skills: { "alien species": "3D", "alien species: Wookiees": "5D+2", "business": "3D", "cultures: Wookiee": "5D+2", "intimidation": "5D+2", "languages": "4D", "languages: Wookiee": "6D", "streetwise": "4D", "survival": "4D" } },
+      MECHANICAL: { base: "2D+2", skills: { "beast handling: nashtah": "5D", "beast riding": "3D+2" } },
+      PERCEPTION: { base: "3D", skills: { "hide": "5D", "investigation": "3D+2", "search": "5D+1", "sneak": "5D" } },
+      STRENGTH: { base: "3D+2", skills: { "brawling": "7D", "climbing/jumping": "4D", "stamina": "4D+2" } },
+      TECHNICAL: { base: "2D", skills: { "droid repair": "3D", "first aid": "3D" } }
+    },
+    specialAbilities: "Quarry Sense: Tunroth receive +1D to search when tracking an individual they are familiar with.",
+    forcePoints: 2,
+    darkSidePoints: 1,
+    characterPoints: 9,
+    move: 10,
+    equipment: "Blaster rifle (5D), datapad, gaderffii (STR+1D), kiltar stave (STR+2D+1, Moderate difficulty)",
+    capsule: "An aspiring Tunroth Hunter and Sprax's personal guard. Born on Jiroch-Reslia, left without family or home following the Reslian Purge. Chose to preserve Tunroth culture by training as a Hunter. Nicknamed 'Strap' by Sprax for his preference for leather jerkins. Very well educated with particular interest in Wookiee culture and history, speaks Wookiee fluently. Deeply troubled when superiors hire freelancers for jobs he feels should be his — particularly resents Ket Maliss, Xizor's shadow killer hired to eliminate the Disac pirates. Has dark-yellow skin with longer-than-average chin horns. Keeps a pet nashtah named Klirun that once mauled an assailant who ambushed Sprax.",
+    source: "WEG40136 Secrets of the Sisar Run p.5-6"
+  },
+
+  {
+    name: "Puln (3.5 ABY)",
+    species: "Near-Human",
+    system: "Sisar Run",
+    location: "Sisar Run — Triple Agent for Xizor",
+    affiliations: ["Criminal Underworld", "Black Sun"],
+    role: "Triple Agent / Spy",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "5D", "brawling parry": "4D+2", "dodge": "6D", "grenade": "5D", "melee combat": "5D", "melee parry": "4D" } },
+      KNOWLEDGE: { base: "2D+1", skills: { "alien species": "3D+1", "intimidation": "4D+1", "languages": "4D+1", "law enforcement": "3D+1", "streetwise": "5D+1", "survival": "4D+1", "willpower": "3D+1" } },
+      MECHANICAL: { base: "2D", skills: { "beast riding": "3D", "communications": "5D+1", "repulsorlift operation": "3D+2", "sensors": "5D" } },
+      PERCEPTION: { base: "4D+1", skills: { "command": "5D", "con": "6D", "forgery": "5D+1", "hide": "5D+1", "sneak": "4D+2", "search": "5D" } },
+      STRENGTH: { base: "3D+2", skills: { "brawling": "6D+2", "climbing/jumping": "4D+2", "lifting": "4D+2", "stamina": "5D+2" } },
+      TECHNICAL: { base: "2D+2", skills: { "computer programming/repair": "5D+2", "security": "4D+2" } }
+    },
+    specialAbilities: "",
+    forcePoints: 1,
+    darkSidePoints: 1,
+    characterPoints: 7,
+    move: 11,
+    equipment: "Club (STR+2), comlink",
+    capsule: "A masterful triple agent within Black Sun's layered hierarchy. Sprax believes Puln is one of his best spies, fronting as a low-level thug under Vigo Green. Green believes Puln is a quiet but effective guard and hired killer. In truth, Puln is Prince Xizor's hand-picked operative whose real job is to observe Vigo activities and monitor what intelligence Sprax receives. Currently assigned to uncover why Green has been skimming Black Sun revenue. Works with seven other spies posing as disreputable henchmen, including a former Imperial operative. A stocky, brown-skinned near-human male in thin shirt and baggy pants, carrying a nasty-looking metal club everywhere. Actually rather fond of the Nalroni Vigo he is spying on.",
+    source: "WEG40136 Secrets of the Sisar Run p.6-7"
+  },
+
+  {
+    name: "Mai Biron (3.5 ABY)",
+    species: "Shistavanen",
+    system: "Sisar Run",
+    location: "Sisar Run — Smuggling Operations",
+    affiliations: ["Criminal Underworld", "Black Sun"],
+    role: "Smuggler / Ambassador to Smuggling Community",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "2D+2", skills: { "blaster": "4D+2", "blaster: blaster rifle": "5D+2", "brawling parry": "4D+2", "dodge": "4D+2", "grenade": "3D+2", "melee combat": "4D+2", "melee parry": "4D+2" } },
+      KNOWLEDGE: { base: "4D", skills: { "alien species": "4D+2", "cultures": "5D", "intimidation": "4D+2", "languages": "5D+1", "planetary systems": "5D", "survival": "6D+2" } },
+      MECHANICAL: { base: "3D+1", skills: { "astrogation": "6D+1", "beast riding": "4D+1", "communications": "4D+1", "repulsorlift operation": "4D+1", "space transports": "6D+1", "starship gunnery": "6D", "starship shields": "6D" } },
+      PERCEPTION: { base: "2D", skills: { "hide": "4D+1", "search": "5D", "search: tracking": "6D", "sneak": "4D+2" } },
+      STRENGTH: { base: "3D", skills: { "brawling": "5D", "climbing/jumping": "4D", "climbing/jumping: climbing": "5D", "stamina": "7D" } },
+      TECHNICAL: { base: "3D", skills: { "first aid": "4D+2", "space transports repair": "5D+2" } }
+    },
+    specialAbilities: "",
+    forcePoints: 1,
+    characterPoints: 12,
+    move: 11,
+    equipment: "Blaster rifle (5D), comlink, medpac, survival kit",
+    capsule: "Sprax's best and favorite smuggler, an older Shistavanen male and elder statesman in smuggling circles. Born on the third planet of the Uvena system from a long line of distinguished scouts and leaders. Once a premier pilot and tracker for the Old Republic scout service, turned to smuggling with the same drive after Imperial restrictions ended his scouting career. Considered Sprax's ambassador to the smuggling community with more clout than any of the Vigo's other operatives. Also serves as Black Sun's representative among the Shistavanen, using his popularity with Uvena officials to protect their interests during political instability. A graying Shistavanen male in khaki clothing, missing his left ear with chipped teeth. Flies the Eyeshine, a heavily modified Barloz-class freighter named for a female Defel he once romanced.",
+    source: "WEG40136 Secrets of the Sisar Run p.8-9"
+  },
+
+  {
+    name: "Kalend Thora (3.5 ABY)",
+    species: "Duro",
+    system: "Sisar Run",
+    location: "Sisar Run — Smuggling Operations",
+    affiliations: ["Criminal Underworld", "Black Sun"],
+    role: "Smuggler / Blockade Runner",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "4D", "dodge": "4D+2" } },
+      KNOWLEDGE: { base: "2D+2", skills: { "cultures": "3D+2", "planetary systems": "4D+2", "value: starships": "4D+2" } },
+      MECHANICAL: { base: "4D+1", skills: { "astrogation": "5D+1", "sensors": "4D+2", "space transports": "5D+1", "space transports: D9 Runner": "6D+1", "starship gunnery": "5D+2", "starship shields": "5D" } },
+      PERCEPTION: { base: "3D", skills: { "command": "4D", "con": "6D", "search": "4D" } },
+      STRENGTH: { base: "2D+2", skills: { "brawling": "3D+2", "stamina": "4D" } },
+      TECHNICAL: { base: "2D+1", skills: { "first aid": "3D+1", "space transports repair": "4D+1" } }
+    },
+    specialAbilities: "",
+    forcePoints: 1,
+    darkSidePoints: 1,
+    characterPoints: 6,
+    move: 11,
+    equipment: "Blaster pistol (4D), headset comlink, medpac, Rebel A-wing pilot flight suit, tool kit",
+    capsule: "A seasoned Duro pilot and former weapons smuggler for Kintan gunrunners who now works for Mai Biron handling Sprax's most important shipments. Previously spent most of her time in Corellian space, renowned for eluding capture — though Sprax pays Imperial forces not to try too hard. Part of her work entails carrying regular shipments to Prince Xizor's supply freighters. Recently reassigned to the Sisar Run now that pirate activity has dropped. Has extensive knowledge of efficient smuggling routes and is owed favors by prominent port officials galaxy-wide. A blue-skinned Duro female with a greenish tinge around her neck and shoulders, wears a Rebel A-wing pilot flight suit, and has a long scar across her head. Flies the Starknife, a modified KDY D9 Runner.",
+    source: "WEG40136 Secrets of the Sisar Run p.10"
+  },
+
+  {
+    name: "Tasin (3.5 ABY)",
+    species: "Nalroni",
+    system: "Novor",
+    location: "Novor 23 — Jatayus Trading Consortium",
+    affiliations: ["Criminal Underworld", "Black Sun"],
+    role: "Head of Jatayus Trading Consortium",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "2D+2", skills: { "dodge": "3D+2" } },
+      KNOWLEDGE: { base: "3D+1", skills: { "bureaucracy": "4D+1", "bureaucracy: Celanon City": "5D+1", "business": "5D+1", "cultures": "4D", "planetary systems": "5D", "streetwise": "4D+1", "streetwise: Celanon City": "4D+1" } },
+      MECHANICAL: { base: "3D+1", skills: { "repulsorlift operation": "4D" } },
+      PERCEPTION: { base: "3D+2", skills: { "bargain": "6D+2", "command": "5D+2", "con": "5D+2", "forgery": "4D+1", "persuasion": "4D+1" } },
+      STRENGTH: { base: "2D+1", skills: {} },
+      TECHNICAL: { base: "2D+2", skills: { "computer programming/repair": "3D+2", "droid programming": "4D+2", "droid repair": "4D+2", "first aid": "3D+2", "repulsorlift repair": "4D+2", "security": "4D+2" } }
+    },
+    specialAbilities: "",
+    forcePoints: 1,
+    darkSidePoints: 1,
+    characterPoints: 6,
+    move: 11,
+    equipment: "Blaster pistol (4D), comlink, datapad, security ID, 200 credits",
+    capsule: "Head of the Jatayus Trading Consortium after Sprax left for XTS. Has arranged an extremely profitable business relationship between JTC, Jatayus Outbound, and XTS. Legitimately, Jatayus Outbound's fleet consists almost entirely of XTS couriers and freighters at preferential rates. Criminally, provides credit laundering, corporate investment cover, and support of the Gricul Yards on Sriluur for Black Sun. Maintains close relations with Sprax in both business and social concerns — extremely close friends who enjoy each other's counsel during visits to his villa on Novor 23. Sleek, sly and sexy, a dark-furred Nalroni female with dark green eyes who dresses professionally and seldom smiles.",
+    source: "WEG40136 Secrets of the Sisar Run p.11"
+  },
+
+  {
+    name: "Nim Abek (3.5 ABY)",
+    species: "Nikto",
+    system: "Sisar Run",
+    location: "Sisar Run — Shadowport near Ac'fren Spur",
+    affiliations: ["Criminal Underworld", "Black Sun"],
+    role: "Pirate Captain / Shipjacker",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "4D", skills: { "blaster": "6D", "dodge": "5D", "running": "5D" } },
+      KNOWLEDGE: { base: "3D", skills: { "bureaucracy: Black Sun": "6D", "business: Black Sun": "7D", "intimidation": "6D", "law enforcement": "6D", "streetwise": "6D", "survival: desert": "7D", "willpower": "6D" } },
+      MECHANICAL: { base: "2D+2", skills: { "astrogation": "5D", "communications": "4D", "repulsorlift operation": "4D", "sensors": "4D", "space transports": "5D", "starship gunnery": "5D" } },
+      PERCEPTION: { base: "2D", skills: { "bargain": "6D", "command": "5D", "con": "5D", "gambling": "5D", "investigation": "6D", "persuasion": "5D", "sneak": "5D" } },
+      STRENGTH: { base: "3D+1", skills: { "brawling": "4D", "stamina": "5D" } },
+      TECHNICAL: { base: "3D", skills: { "security": "6D" } }
+    },
+    specialAbilities: "Vision: Nikto have a natural eye-shielding of transparent keratin-like substance. No adverse effects from sandstorms or similar conditions, vision does not blur underwater. Kajain'sa'Nikto Stamina: Red Nikto receive +1D bonus to survival: desert and stamina rolls.",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 10,
+    equipment: "Blaster pistol (4D), blast vest (+1 energy, +1D physical)",
+    capsule: "A red Nikto pirate in Sprax's employ who commands over 100 pirates, shipjackers, and mercenaries operating a combination chop-shop/shadowport near where the Sisar Run splits to the Ac'fren Spur. The shadowport exists on no maps and is reached only by invitation. Began as a shipjacker — when he stole a ship from Sprax's personal fleet in a fast, flawless operation, the Vigo had him captured then offered employment instead. A loud braggart with good reason. Sprax does not trust Abek but finds his operation extremely valuable. Has several treacherous schemes brewing.",
+    source: "WEG40136 Secrets of the Sisar Run p.12"
+  },
+
+  {
+    name: "Ujin Voli (3.5 ABY)",
+    species: "Gotal",
+    system: "Sisar Run",
+    location: "Sisar Run — Antar Band Operations",
+    affiliations: ["Criminal Underworld"],
+    role: "Crime Lord / Head of Antar Band",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D+2", skills: { "blaster": "4D+2", "brawling parry": "4D+2", "dodge": "5D+2", "melee combat": "4D" } },
+      KNOWLEDGE: { base: "2D+1", skills: { "alien species": "3D+1", "bureaucracy": "4D+1", "bureaucracy: Antar Band": "5D+1", "business": "4D+1", "intimidation": "4D+1", "streetwise": "4D+1", "streetwise: Antar Band": "5D+1", "value": "4D+1" } },
+      MECHANICAL: { base: "3D", skills: { "communications": "3D+2" } },
+      PERCEPTION: { base: "3D+1", skills: { "bargain": "4D+1", "command": "4D+1", "command: Antar Band": "5D+1", "con": "5D+1", "investigation": "4D+1", "search": "4D+1" } },
+      STRENGTH: { base: "3D+2", skills: { "brawling": "4D", "stamina": "4D+2" } },
+      TECHNICAL: { base: "2D", skills: { "computer programming/repair": "3D", "security": "5D" } }
+    },
+    specialAbilities: "Energy Sensitivity: +3D to search in open areas within 10 km, +1D to search within 1 urban km. Mood Detection: Moderate Perception roll grants bonus to all Perception skills for opposed rolls for the rest of the encounter. Fast Initiative: +1D to Initiative against non-Gotal opponents.",
+    forcePoints: 1,
+    darkSidePoints: 2,
+    characterPoints: 13,
+    move: 10,
+    equipment: "Blaster carbine (5D), grenade (5D), security case, vibroblade (STR+1D), 400 credits",
+    capsule: "Head of the Antar Band, one of the most serious threats to Sprax's interests along the Sisar Run. A career criminal who has worked with slaving rings, smuggling circles, and spice cartels, now leading a gang of smugglers, thieves, and scavs. Ruthless, spiteful, and a good leader determined to either carve out his own space or cause the Vigo's undoing — often hires freelance terrorists to harass Sprax's craft. Survives by maintaining the company of very skilled assassins including Zirlig and Ar'wa Nonshik. An aging Gotal male with fuzzy headcones, deeply creased brow, and a mostly lifeless right eye from a Black Sun encounter.",
+    source: "WEG40136 Secrets of the Sisar Run p.13"
+  },
+
+  {
+    name: "Zirlig (3.5 ABY)",
+    species: "Ishi Tib",
+    system: "Sisar Run",
+    location: "Sisar Run — Antar Band",
+    affiliations: ["Criminal Underworld"],
+    role: "Assassin",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "2D+1", skills: { "blaster": "5D+1", "dodge": "4D+1", "grenade": "4D+1" } },
+      KNOWLEDGE: { base: "3D+1", skills: { "alien species": "4D+1", "law enforcement": "4D", "streetwise": "5D+1", "streetwise: Antar Band": "6D+1" } },
+      MECHANICAL: { base: "2D+2", skills: { "astrogation": "3D+2", "space transports": "3D+2", "starship gunnery": "3D+2", "starship shields": "3D+2" } },
+      PERCEPTION: { base: "3D+2", skills: { "con": "4D+2", "hide": "5D+2", "investigation": "4D+2", "search": "5D+2", "sneak": "6D+2" } },
+      STRENGTH: { base: "3D", skills: { "brawling": "4D", "swimming": "6D" } },
+      TECHNICAL: { base: "3D", skills: { "armor repair": "3D+1", "computer programming/repair": "4D", "demolitions": "4D+2", "security": "5D" } }
+    },
+    specialAbilities: "Beak: STR+2D damage. Immersion: Must fully immerse in brine solution after 30 hours out of water. Failure results in 1D cumulative damage per hour past 30.",
+    forcePoints: 1,
+    characterPoints: 2,
+    move: 10,
+    equipment: "Blast vest (+1D physical, +1 energy), blaster rifle (5D), comlink, medpac, palm blaster (2D), tangle gun (4D)",
+    capsule: "A perfectionist with Ishi Tib tendencies towards attention to detail and meticulous planning, Zirlig is a calculating assassin whose painstaking approach has resulted in a perfect record. Has worked for Ujin Voli for over two decades with no inclination to leave. Deep down hopes to be ordered to assassinate Sprax — a challenge worthy of his skills. A green amphibious biped with rough, leathery skin who sports a worn blast vest. A traditionalist who prefers the long-range blaster shot to messier methods.",
+    source: "WEG40136 Secrets of the Sisar Run p.14"
+  },
+
+  {
+    name: "Ar'wa Nonshik (3.5 ABY)",
+    species: "Aramandi",
+    system: "Sisar Run",
+    location: "Sisar Run — Antar Band",
+    affiliations: ["Criminal Underworld"],
+    role: "Mercenary",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D+1", skills: { "blaster": "5D+1", "dodge": "4D+1" } },
+      KNOWLEDGE: { base: "2D+2", skills: { "streetwise": "4D+2" } },
+      MECHANICAL: { base: "2D", skills: { "beast riding": "3D+1" } },
+      PERCEPTION: { base: "3D", skills: { "sneak": "4D" } },
+      STRENGTH: { base: "3D+1", skills: { "brawling": "4D+1", "climbing/jumping": "4D+1", "stamina": "4D+1" } },
+      TECHNICAL: { base: "2D+2", skills: { "first aid": "3D+2" } }
+    },
+    specialAbilities: "Heavy Gravity: When on a planet with lighter gravity than homeworld, receives +1D to Dexterity and Strength related skills (not against damage) and +2 to Move. Breath Masks: Must wear special breath masks off homeworld or in non-Aramandi starships adding trace vital gasses. Without mask, becomes very ill after six hours and dies in two days.",
+    forcePoints: 0,
+    characterPoints: 4,
+    move: 8,
+    equipment: "Blaster rifle (5D), comlink, grenade (5D), knife (STR+1D), survival kit",
+    capsule: "A gun-for-hire from the Cirra akia (clan) of Aramandi and long-time friend of Ujin Voli. Originally served as a guard for a low-level bureaucrat on his homeworld Aram — never quite sure what his employer did. After a few years, a Gotal paid a visit to the employer, who was soon found dead, and the Gotal hired the Aramandi as a freelance operative. Has been a close friend and employee of Ujin Voli ever since. Short, four-eyed, and four-armed. Those from the Cirra clan tend to be aggressive, capable combatants — Ar'wa is no exception. Loyal to Ujin but not necessarily to others in the Gotal's employ.",
+    source: "WEG40136 Secrets of the Sisar Run p.14"
+  },
+
+  {
+    name: "Antar Band Smuggler (3.5 ABY)",
+    species: "Various",
+    system: "Sisar Run",
+    location: "Sisar Run — Antar Band",
+    affiliations: ["Criminal Underworld"],
+    role: "Smuggler",
+    type: "Generic Template",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { "blaster": "3D+2", "dodge": "3D+2" } },
+      KNOWLEDGE: { base: "2D", skills: { "planetary systems": "2D+2", "streetwise": "3D+2" } },
+      MECHANICAL: { base: "2D", skills: { "astrogation": "3D+2", "space transports": "4D+2", "starship gunnery": "4D", "starship shields": "3D+2" } },
+      PERCEPTION: { base: "2D", skills: {} },
+      STRENGTH: { base: "2D", skills: {} },
+      TECHNICAL: { base: "2D", skills: { "space transports repair": "4D" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 10,
+    equipment: "Heavy blaster pistol (5D), comlink, 50 credits",
+    capsule: "Members of Ujin Voli's Antar Band, recruited from defunct criminal groups or former law-enforcement officials. Many have enemies galaxy-wide, occasionally derailing missions through chance encounters with old foes.",
+    source: "WEG40136 Secrets of the Sisar Run p.14"
+  },
+
+  {
+    name: "Antar Band Thief (3.5 ABY)",
+    species: "Various",
+    system: "Sisar Run",
+    location: "Sisar Run — Antar Band",
+    affiliations: ["Criminal Underworld"],
+    role: "Thief",
+    type: "Generic Template",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { "dodge": "4D", "pick pocket": "5D" } },
+      KNOWLEDGE: { base: "2D", skills: {} },
+      MECHANICAL: { base: "2D", skills: {} },
+      PERCEPTION: { base: "2D", skills: { "hide": "4D", "search": "4D", "sneak": "4D+2" } },
+      STRENGTH: { base: "2D", skills: {} },
+      TECHNICAL: { base: "2D", skills: { "security": "5D" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 11,
+    equipment: "Blaster pistol (4D), datapad",
+    capsule: "Skilled pickpockets and infiltrators working for Ujin Voli's Antar Band along the Sisar Run.",
+    source: "WEG40136 Secrets of the Sisar Run p.14"
+  },
+
+  {
+    name: "Antar Band Scav (3.5 ABY)",
+    species: "Various",
+    system: "Sisar Run",
+    location: "Sisar Run — Antar Band",
+    affiliations: ["Criminal Underworld"],
+    role: "Scavenger / Technician",
+    type: "Generic Template",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { "dodge": "3D" } },
+      KNOWLEDGE: { base: "2D", skills: { "value": "3D+2" } },
+      MECHANICAL: { base: "2D", skills: {} },
+      PERCEPTION: { base: "2D", skills: {} },
+      STRENGTH: { base: "2D", skills: {} },
+      TECHNICAL: { base: "2D", skills: { "computer programming/repair": "3D+2", "repulsorlift repair": "4D", "security": "4D", "space transports repair": "4D+1" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 11,
+    equipment: "Blaster pistol (4D), comlink, tool kit",
+    capsule: "Scavengers and technicians working for Ujin Voli's Antar Band, specializing in salvage and repair along the Sisar Run.",
+    source: "WEG40136 Secrets of the Sisar Run p.14"
   }
+// --- END OF NOTABLE_NPCS ---
 ];

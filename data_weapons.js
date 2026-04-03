@@ -4944,4 +4944,5 @@ const WEAPONS_DATA = [
   "game_notes": "Difficulty: Moderate. Custom weapon crafted by Togorian master smith Mlatar Thon Gra for Cene Gilvent. Combines elements of the Somreth tri-blade of the Drevun Six, the Barnax 'Twenchok' foil, and the Coynite sat'skar. Gilvent receives +2D to melee combat when wielding this weapon due to her specialized training.",
   "source": "WEG40109 Alliance Intelligence Reports p.78"
  }
+// --- END OF WEAPONS_DATA ---
 ];

@@ -6111,6 +6111,106 @@ const STARSHIP_DATA = {
      "damage": "8D"
     }
    ]
+  },
+  {
+   "rank": 50,
+   "name": "Eyeshine (Mai Biron's Ship)",
+   "craft": "Modified Corellian Engineering Corporation Barloz-class Heavy Freighter",
+   "scale": "Starfighter",
+   "length": "41 meters",
+   "skill": "Space Transports: Barloz Freighter",
+   "crew": 1,
+   "crew_skill": "See Mai Biron",
+   "passengers": 5,
+   "cargo_capacity": "80 metric tons",
+   "consumables": "6 months",
+   "cost": "Not available for sale",
+   "hyperdrive_multiplier": "x1",
+   "hyperdrive_backup": "x8",
+   "nav_computer": "Yes",
+   "maneuverability": "1D+2",
+   "space": 6,
+   "atmosphere": "330; 950 kmh",
+   "hull": "5D",
+   "shields": "3D",
+   "sensors_passive": "40/1D",
+   "sensors_scan": "80/1D+2",
+   "sensors_search": "100/2D+2",
+   "sensors_focus": "4/3D+1",
+   "weapons": [
+    {
+     "name": "Quad Laser Cannon",
+     "fire_arc": "Turret",
+     "crew": "1 (from cockpit)",
+     "skill": "Starship Gunnery",
+     "fire_control": "3D",
+     "space_range": "1-5/10/17",
+     "atmo_range": "100-500/1/1.7 km",
+     "damage": "5D"
+    },
+    {
+     "name": "2 Ion Cannons",
+     "fire_arc": "Turret",
+     "crew": "1 (from cockpit)",
+     "scale": "Capital",
+     "skill": "Capital Ship Gunnery",
+     "fire_control": "2D+2",
+     "space_range": "1-10/25/30",
+     "damage": "3D"
+    }
+   ],
+   "capsule": "Mai Biron's heavily modified Barloz-class heavy freighter, the perfect example of what happens to a simple scouting ship when its owner turns to smuggling. Consumables intended for long scouting expeditions mean the Eyeshine seldom needs refueling. Added armor plating, improved shields, advanced sensors, and top-notch weapons provide the tools for a long smuggling career. An X10-D droid brain helps maintain and operate the ship effectively. Named for a female Defel that Mai once romanced in his younger days.",
+   "source": "WEG40136 Secrets of the Sisar Run p.9-10"
+  },
+  {
+   "rank": 50,
+   "name": "Starknife (Kalend Thora's Ship)",
+   "craft": "Modified Kuat Drive Yards D9 Runner Light Freighter",
+   "scale": "Starfighter",
+   "length": "23 meters",
+   "skill": "Space Transports: D9 Runner",
+   "crew": 1,
+   "crew_skill": "See Kalend Thora",
+   "gunners": 2,
+   "passengers": 4,
+   "cargo_capacity": "75 metric tons",
+   "consumables": "2 months",
+   "cost": "Not available for sale",
+   "hyperdrive_multiplier": "x1",
+   "hyperdrive_backup": "x16",
+   "nav_computer": "Yes",
+   "space": 4,
+   "atmosphere": "280; 800 kmh",
+   "hull": "3D+2",
+   "shields": "3D+2",
+   "sensors_passive": "15/0D",
+   "sensors_scan": "30/1D",
+   "sensors_search": "50/3D",
+   "sensors_focus": "2/4D",
+   "weapons": [
+    {
+     "name": "Double Laser Cannon",
+     "fire_arc": "Turret",
+     "crew": 1,
+     "skill": "Starship Gunnery",
+     "fire_control": "1D+1 (fired from cockpit)",
+     "space_range": "1-3/12/25",
+     "atmo_range": "100-300/1.2/2.5 km",
+     "damage": "4D"
+    },
+    {
+     "name": "Proton Torpedo Launcher",
+     "fire_arc": "Back",
+     "crew": 1,
+     "skill": "Starship Gunnery",
+     "fire_control": "1D",
+     "space_range": "1/3/7",
+     "atmo_range": "50-100/300/700",
+     "damage": "7D"
+    }
+   ],
+   "capsule": "A KDY D9 Runner, one of the first freighter designs produced by Kuat Drive Yards after the Empire rose to power. An effective, inexpensive model eventually replaced by the faster, more heavily armed D11. Kalend Thora acquired the Starknife after its original owner, a fellow Black Sun operative, was ambushed and assassinated by an unknown party — the death is still under investigation nearly two years later. Kalend finds the Starknife's modest appearance an asset: hijackers and Imperial officials eye flashier craft, not an average freighter with modest specs.",
+   "source": "WEG40136 Secrets of the Sisar Run p.10-11"
   }
  ],
  "Named Modified Yachts": [
@@ -39315,4 +39415,5 @@ const STARSHIP_DATA = {
    "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.14"
   }
  ]
+// --- END OF STARSHIP_DATA ---
 };

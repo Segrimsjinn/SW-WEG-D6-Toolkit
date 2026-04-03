@@ -911,4 +911,5 @@ const FORCE_POWERS_DATA = [
   "effect": "Does not need to be learned \u2014 any Jedi with 9D+ total in Force skills can attempt it at the moment of death. The Jedi calms mind and body (Difficult control), then reaches out tracing the Force (Difficult sense). On success, the spirit exits the body and becomes one with the Force; the body fades into nothingness. The Jedi can make visitations to close friends equal to their Force Points at death. Duration of each visitation = combined sense + alter + control roll in minutes. At GM discretion, only Force-sensitive characters may witness visitations. After death, the Jedi cannot influence the material world beyond visitations.",
   "source": "D6 Holocron"
  }
+// --- END OF FORCE_POWERS_DATA ---
 ];

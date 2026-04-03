@@ -4025,4 +4025,5 @@ const VEHICLES_DATA = [
   "game_notes": "Professional-class sling racer. Weighs mere 200 kg, built from advanced ultralight metal alloys and ceramics. Each repulsorlift drive unit individually throttled — pro racers can have up to six small units. Pilot adjusts each wing separately to catch cross currents. Emergency maneuvering jets installed but using them in competition disqualifies the racer. Very little protection — equipped with ejection seat. Pro races can have over 100 entries with heavy wagering.",
   "source": "WEG40134 Shadows of the Empire Planet Guide p.57"
 }
+// --- END OF VEHICLES_DATA ---
 ];
