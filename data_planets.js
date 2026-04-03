@@ -8276,6 +8276,33 @@ const PLANETS_DATA = [
     summary: "A waterworld of shallow oceans located off the Sisar Run, home to the seal-like Sedrians. For centuries, the Force-sensitive coral colony called Golden Sun created a natural gravity well that prevented navicomputers from registering Sedri as anything but a large sun, keeping the planet hidden. An Imperial scout ship discovered Sedri by navigational accident and established an aquatic garrison. Rebel agents from nearby Delta Base stopped the Imperials from harvesting the intelligent coral. The Sedrians released Golden Sun from imprisonment, spreading its glow planet-wide and lessening the gravitic effect. The Empire lost interest and abandoned its garrison.",
     locations: "Fitsay (Main Sedrian village centered around an immense split shell dome housing a Mon Calamari turbine power station. Interconnected stone buildings fill the watery depths, with magnetic containment field projectors creating dry-house interiors for off-world visitors). Abandoned Imperial Garrison (A five-level aquatic garrison now covered in barnacles and sea-moss, with its flotation collar eroding. The structure rocks and sways as its tractor beam anchors have broken down — within a year it will sink to the ocean bottom. Leaking coolant and deadly pollution). Renegade Camp (Dissident Sedrian encampment set against a rocky outcropping carved with natural caves, northwest of Fitsay).",
     ofNote: "SEDRIAN SPECIES: Attribute Dice 10D. DEX 1D/3D+1, KNO 1D/3D, MEC 1D/3D, PER 1D+1/3D+1, STR 2D/4D, TEC 1D/3D. Move: 15/20 (swimming underwater). Size: 3m long, 1m tall (torso). Large powerfully-built beings with humanoid upper bodies and tapered finned flukes. Fully amphibious with lungs and gills. Three-webbed fingers and a thumb. Smooth fur from brown to golden yellow. Graceful in water, awkward on land. Story Factor: Separation Anxiety — Sedrians away from Sedri become agitated and unpredictable due to separation from Golden Sun, cured only by returning to Sedri. | GOLDEN SUN: A Force-sensitive collection of coral-dwelling polyps. For centuries the High Priest kept it contained in a Great Shell Dome. The dissident leader Karak believed it should be shared. After Rebel intervention, the Sedrians released the intelligent coral, spreading its golden glow planet-wide. | CURRENT POLITICS: The High Priests Pek and Fala are carefully opening borders to off-world commerce, advised by Alliance diplomat Mors Odrion. Renegade dissidents (Karak's old followers) believe the Priests are stagnating Sedri's growth. A Vaathkree repulsor company has been greenlighted for a hydro-vehicles construction project with full Sedrian ownership. | ECONOMY: Sedri's endless oceans offer water — an extremely prized commodity on Sriluur. Hauling water requires special tanks and purification, so few spacers have made the investment yet."
+  },
+  {
+    name: "Ques",
+    system: "Ques",
+    star: "",
+    grid: "S-8",
+    region: "Hutt Space",
+    type: "",
+    temperature: "",
+    atmosphere: "",
+    hydrosphere: "",
+    gravity: "",
+    terrain: "",
+    lengthOfDay: "",
+    lengthOfYear: "",
+    sapientSpecies: "",
+    starport: "",
+    population: "",
+    function: "Gateway to Si'klaata Cluster",
+    government: "",
+    techLevel: "",
+    majorExports: "",
+    majorImports: "",
+    source: "WEG40136 Secrets of the Sisar Run p.19, p.26",
+    summary: "The closest navigable system to the Si'klaata Cluster, a Hutt-controlled region claimed millennia ago during the height of Hutt expansion. The Hutts maintain tight control of the Cluster, allowing very few ships in or out. Restricted-access hyperspace routes (shown as dashed lines on Sisar Run nav charts) connect Ques to the Cluster interior. A route from Ques also leads east toward Varl.",
+    locations: "",
+    ofNote: "SI'KLAATA CLUSTER ACCESS: The Si'klaata Cluster contains Vodran (homeworld of the Vodrans), Kintan (homeworld of the Nikto), Klatooine (homeworld of the Klatooinans), Vontor (site of the Third Battle of Vontor between Xim the Despot and Hutt forces), and Tas-La. The Hutts only allow in scientists whose findings support their somewhat questionable version of Xim's defeat. Despite thousands of requests from archaeological schools across the galaxy, access remains severely restricted. Ques is the nearest navigable point for non-Hutt traffic."
   }
 // --- END OF PLANETS_DATA ---
 ];
