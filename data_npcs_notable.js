@@ -38768,6 +38768,130 @@ const NOTABLE_NPCS = [
     equipment: "Blaster pistol (4D), blaster rifle (5D), double-edged vibroblade (STR+3D+2)",
     capsule: "One of the most dangerous Kerestian mercenaries in the galaxy, born in the blood of her planet's downfall. Survived in Kerest's savage wastes by murder and treachery, methods that have served her well in the intergalactic mercenary trade. Responsible for the bombing of the Alaspin casino that buried the Kassandre crime family leaders along with several hundred patrons, and led a ruthless attack on a spice freighter whose crew's remains were dropped piecemeal over Meirm City spaceport as a lesson. Hired by Iotran enforcer Bel Att to raid the Yen-2 mining colony, she discovered the Barani list of Black Sun operatives and killed Att to seize it. Tall and muscular with a wiry leanness that speaks of prowess won in battle. Wears bounty hunter armor and prefers her custom double-edged vibroblade for close combat. Cares nothing for personal honor — will achieve her ends by any means necessary.",
     source: "WEG40136 Secrets of the Sisar Run p.61"
+  },
+  {
+    name: "Augwynne (8 ABY)",
+    species: "Human",
+    system: "Dathomir",
+    location: "Dathomir — Singing Mountain Clan",
+    affiliations: ["Neutral"],
+    role: "Clan Mother of Singing Mountain",
+    type: "Clan Mother of Signing Mountain Clan",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { "Blaster": "4D", "Melee combat": "5D" } },
+      KNOWLEDGE: { base: "3D+2", skills: { "Willpower": "8D", "Singing Mountain Clan lore": "10D" } },
+      MECHANICAL: { base: "2D", skills: { "Beast riding": "4D+1" } },
+      PERCEPTION: { base: "4D", skills: { "Bargain": "7D+1", "Command: Singing Mountain Clan": "10D+2", "Command: rancors": "7D+2", "Con": "4D+1", "Persuasion": "6D+2" } },
+      STRENGTH: { base: "2D", skills: { "Brawling": "3D", "Stamina": "2D+2" } },
+      TECHNICAL: { base: "2D", skills: { "Wuffa tanning": "4D+2" } }
+    },
+    specialAbilities: "Force-sensitive. Allyan Magic: Absorb/dissipate energy 6D, accelerate healing 9D, force of will 8D, accelerate another's healing 7D+2, control pain 6D+2, Force shield 5D, projective telepathy 8D+1, receptive telepathy 8D, telekinesis 5D+2, telekinetic kill 3D, telekinetic storm 4D+2, translation 7D, transfer Force 6D. Note: Some attributes and skills have been lowered to reflect aging and lack of use.",
+    forcePoints: 15,
+    characterPoints: 6,
+    move: 8,
+    equipment: "Helm, exotic robes, deed to Dathomir",
+    capsule: "Augwynne is the elderly Clan Mother of Singing Mountain, Dathomir's most prominent Witch clan. Her life has been filled with tragedy — losing all three daughters in different ways. Kara'Teel, her youngest, died protecting her. Baruka, the eldest, was seduced by dark spells and exiled. Her greatest loss was Gethzerion, her favorite daughter, who sought total control of Singing Mountain and tried to kill Augwynne — thwarted only by Kara'Teel's sacrifice. A shrewd, calculating politician of the highest order, Augwynne maneuvered Han Solo into a tenuous bargain: Singing Mountain Clan would protect Solo and help repair the Millennium Falcon, and in return Solo gave up all rights to Dathomir to the Witch clans. Now a thoughtful — some say tired — old woman who has found cause for joy with Gethzerion's death and Baruka's return. With her granddaughter Teneniel departing for Hapan space, Augwynne has vowed to join the New Republic as soon as she can deal with opposition from the other Witch clans.",
+    source: "WEG40139 Cracken's Threat Dossier p.26"
+  }
+  ,{
+    name: "Baritha (8 ABY)",
+    species: "Human",
+    system: "Dathomir",
+    location: "Dathomir — Nightsister Clan",
+    affiliations: ["Criminal Underworld"],
+    role: "Nightsister Lieutenant",
+    type: "Nightsister",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "Bows": "8D+1", "Brawling parry": "7D", "Dodge": "8D+1", "Melee combat": "5D+1", "Melee parry": "4D", "Running": "3D+1" } },
+      KNOWLEDGE: { base: "3D+1", skills: { "Scholar: Shadow magic incantations": "5D+1", "Survival": "6D", "Willpower": "7D" } },
+      MECHANICAL: { base: "2D+1", skills: {} },
+      PERCEPTION: { base: "3D+2", skills: { "Bargain": "7D+2", "Command": "5D", "Command: Imperial troops": "5D+1", "Command: Nightsisters": "8D", "Intimidation": "6D+1", "Search": "6D+2" } },
+      STRENGTH: { base: "3D+2", skills: { "Brawling": "4D+1", "Climbing/jumping": "5D+1" } },
+      TECHNICAL: { base: "2D", skills: {} }
+    },
+    specialAbilities: "Force-sensitive. Shadow Magic: Absorb/dissipate energy 3D+2, battle meditation 3D+2, concentration 3D, force of will 2D, projected fighting 5D+2, telekinesis 4D+1, Spell of Comfort 4D, Spell of Discovery 3D+1, Spell of Lightning 3D, Spell of Mimicry 4D+2, Spell of Power 3D+1, Spell of Protection 4D. These are only some of the spells Baritha demonstrated — it is believed she knew many more.",
+    forcePoints: 2,
+    darkSidePoints: 10,
+    characterPoints: 10,
+    move: 10,
+    equipment: "Dark robe",
+    capsule: "Baritha was outcast from the Singing Mountain clan with Gethzerion after the pair planned — and attempted — an assassination on Clan Mother Augwynne. After traveling with Gethzerion for several months, the two met with a small group of former clan sisters who wanted nothing more than to take the lives of their two close friends. Together, Baritha and Gethzerion dispatched their assailants, granting one of them life in return for eternal servitude. Thus began the Nightsister Clan. Baritha served as Gethzerion's right hand until the Battle of Singing Mountain, where she disappeared in battle. She is presumed dead though no body was ever found. NRI Captain Baden Lathe believes it premature to accept that Baritha or any of the Nightsisters are dead, and suggests dispatching a team to Dathomir to conduct a thorough search.",
+    source: "WEG40139 Cracken's Threat Dossier p.27"
+  }
+  ,{
+    name: "Ta'a Chume (8 ABY)",
+    species: "Hapan",
+    system: "Hapes",
+    location: "Hapes — Fountain Palace",
+    affiliations: ["Neutral"],
+    role: "Queen Mother of the Hapan Empire",
+    type: "Queen Mother of the Hapan Empire",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { "Blaster": "5D", "Dodge": "8D+1", "Running": "5D+1" } },
+      KNOWLEDGE: { base: "4D", skills: { "Alien species": "5D+1", "Bureaucracy": "10D", "Bureaucracy: Hapan Empire": "15D", "Business": "12D", "Business: Hapan corporations": "12D+2", "Cultures": "6D", "Cultures: Hapans": "15D", "Intimidation": "9D", "Languages": "9D", "Planetary systems": "6D+2", "Planetary systems: Hapan Cluster": "15D+2", "Survival": "6D+2", "Value": "10D", "Willpower": "10D" } },
+      MECHANICAL: { base: "3D", skills: { "Beast riding": "6D+1", "Space transports": "5D", "Starship gunnery": "4D+2" } },
+      PERCEPTION: { base: "3D+2", skills: { "Bargain": "10D", "Command": "10D", "Command: Hapan troops": "15D", "Con": "9D", "Persuasion": "9D+1", "Seduction": "10D" } },
+      STRENGTH: { base: "3D+1", skills: { "Brawling": "4D+1", "Stamina": "8D", "Swimming": "5D+1" } },
+      TECHNICAL: { base: "3D", skills: { "Security": "10D" } }
+    },
+    specialAbilities: "Attractiveness: +1D bonus to any bargain, con, command, or persuasion rolls made against a non-Hapan human of the opposite sex. Vision: All low-light conditions are treated as complete darkness, adding +4D to the difficulty for all ranged attacks.",
+    forcePoints: 3,
+    darkSidePoints: 3,
+    characterPoints: 20,
+    move: 10,
+    equipment: "",
+    capsule: "Ta'a Chume is the latest in a long line of rulers who have controlled the Hapan Cluster for four thousand years. She has ruled the matriarchal society for more decades than her appearance would seem to indicate, carefully manipulating the Force-woven fabric around her to withstand virtually any assault. The thorn in her side was her failure to produce female offspring, instead giving birth to two sons — Kalen and Isolder. Kalen, who had the right to choose and wed the next Ta'a Chume, was a pathetic fool in her eyes; she arranged for her own son's assassination. When her youngest son Isolder fell in love with the Lady Ellian, Ta'a Chume orchestrated Ellian's murder as well. She secretly plotted the assassination of Princess Leia Organa from her enormous ship Star Home when the New Republic sought Hapan assistance against Warlord Zsinj. When Isolder chose to wed Dathomir Witch Teneniel Djo instead, Ta'a Chume still did not approve. It was not until Isolder and Luke Skywalker discovered that she was responsible for the attempts on Leia's life, and the deaths of Isolder's brother and first love, that the Queen Mother reluctantly accepted Djo into the Hapan dynasty.",
+    source: "WEG40139 Cracken's Threat Dossier p.28-29"
+  }
+  ,{
+    name: "Teneniel Djo (8 ABY)",
+    species: "Human",
+    system: "Hapes",
+    location: "Hapes — Fountain Palace",
+    affiliations: ["Neutral"],
+    role: "Chume'la of the Hapan Consortium",
+    type: "Chume'la of the Hapan Consortium",
+    stats: {
+      DEXTERITY: { base: "3D+2", skills: { "Blaster": "6D+2", "Brawling parry": "5D", "Melee combat": "6D", "Melee combat: sword": "7D+1", "Melee parry": "4D", "Running": "8D+2" } },
+      KNOWLEDGE: { base: "2D+1", skills: { "Singing Mountain Clan lore": "4D", "Survival: desert": "6D+1", "Willpower": "6D+1" } },
+      MECHANICAL: { base: "2D", skills: { "Astrogation": "3D+1", "Beast riding": "6D", "Beast training": "4D+1" } },
+      PERCEPTION: { base: "4D", skills: { "Bargain": "4D+1", "Command": "5D+2", "Command: rancors": "7D+1", "Command: Singing Mountain Clan": "6D+2", "Con": "6D", "Hide": "7D+1", "Search": "5D", "Search: tracking": "7D+2", "Sneak": "6D" } },
+      STRENGTH: { base: "3D+2", skills: { "Brawling": "4D+2", "Climbing/jumping": "8D", "Lifting": "4D+1", "Stamina": "5D+1" } },
+      TECHNICAL: { base: "2D+1", skills: { "Armor repair": "3D+1", "First aid": "3D+2", "Primitive construction": "3D" } }
+    },
+    specialAbilities: "Force-sensitive. Allyan Magic: Battle meditation 2D+2, environmental attunment 3D+2, force of will 3D+1, Spell of Assistance 3D+2, Spell of Awareness 3D, Spell of Comfort 4D, Spell of Creature Understanding 3D, Spell of Discovery 6D, Spell of Interpretation 3D, Spell of Open Mind 4D, Spell of Thought-Touch 4D, telekinesis 5D+1, tempest 6D.",
+    forcePoints: 5,
+    darkSidePoints: 1,
+    characterPoints: 23,
+    move: 12,
+    equipment: "Helm, exotic robes",
+    capsule: "Teneniel Djo is the granddaughter of Augwynne, Clan Mother of Singing Mountain and provisional ruler of Dathomir. She is also the Chume'la — wife of Prince Isolder and the future Queen Mother of the Hapan Empire. Strong in the ways of the Force, Teneniel uses her gifts for the benefit of all living beings. Next to Mon Mothma, she is probably the most powerful woman in the galaxy. Large copper-colored eyes, long reddish-brown hair, and an athletic build. During her exile in the wilderness — punishment for casting the Spell of Storm on two Initiate-sisters toying with Shadow Magic — she spent years exploring Dathomir's forests and the Imperial prison ruins. She discovered the old 'Jai' (Jedi) wreck in the tar pits where she encountered and captured Han Solo and Prince Isolder. She kept the male Witch (Luke Skywalker) as her slave and settled for the handsome Prince. Since Han's deal with Augwynne legally made Teneniel Dathomir's owner, she convinced Ta'a Chume to accept the marriage by threatening to publicly confess all the Queen Mother's crimes and execute her. After witnessing what Teneniel did to her four bodyguards, Ta'a Chume conceded. NRI recommends covert scrutiny of Teneniel and the Dathomir Witches, as their Force power levels pose a significant threat if corrupted.",
+    source: "WEG40139 Cracken's Threat Dossier p.29-30"
+  }
+  ,{
+    name: "Gethzerion (8 ABY)",
+    species: "Human",
+    system: "Dathomir",
+    location: "Dathomir — Nightsister Clan",
+    affiliations: ["Criminal Underworld"],
+    role: "Queen of the Nightsisters",
+    type: "Queen of the Nightsisters",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "Blaster": "5D+1", "Bows": "6D+1", "Dodge": "5D+1", "Grenade": "3D+1", "Melee combat": "4D+1", "Melee parry": "7D", "Running": "5D+1", "Thrown weapons": "5D", "Thrown weapons: knives": "7D+2" } },
+      KNOWLEDGE: { base: "3D+1", skills: { "Scholar: Shadow magic incantations": "7D+1", "Survival": "5D", "Survival: mountains": "8D+1", "Survival: plains": "6D+2", "Willpower": "8D" } },
+      MECHANICAL: { base: "2D", skills: { "Repulsorlift operation": "3D+2", "Repulsorlift operation: landspeeder": "4D+2" } },
+      PERCEPTION: { base: "4D", skills: { "Bargain": "5D+2", "Command": "7D", "Command: Imperial troops": "7D+1", "Command: Nightsisters": "9D+1", "Con": "7D", "Intimidation": "7D+2" } },
+      STRENGTH: { base: "3D+2", skills: { "Climbing/jumping": "7D+2", "Stamina": "6D+2" } },
+      TECHNICAL: { base: "2D", skills: {} }
+    },
+    specialAbilities: "Force-sensitive. Shadow Magic: Absorb/dissipate energy 6D, force of will 8D+1, projected fighting 8D, Seeking Spell 7D, Spell of Awareness 6D+2, Spell of Comfort 4D+2, Spell of Discovery 6D+1, Spell of Interpretation 4D, Spell of Lightning 6D, Spell of Mimicry 7D+1, Spell of Open Mind 6D, Spell of Power, Spell of Thought-Touch 7D+1, telekinesis 8D+2. These are only some of the spells Gethzerion demonstrated — it is believed she knew many more.",
+    forcePoints: 10,
+    darkSidePoints: 21,
+    characterPoints: 1,
+    move: 10,
+    equipment: "Dark robe",
+    capsule: "Gethzerion was the second child born to Augwynne, Clan Mother of Singing Mountain, and by far the most powerful of three sisters — she could even cast some spells silently, something only her mother and Clan Protector Tannith could do. Her fatal flaw was pride. When she cheated to lose a draw of lots for war chief to her sister Kara'Teel, she coveted her mother's position. After Baruka refused to challenge Augwynne, Gethzerion and her friend Baritha planned Augwynne's assassination in detail — a telekinetic tug to send boulders crashing down on the Clan Mother. But it was Kara'Teel, not Augwynne, who paid the price, sacrificing her life to push her mother from the boulder's path. Exiled forever from Singing Mountain, Gethzerion and Baritha wandered Dathomir until ambushed by three outcast Witches — they dispatched two and spared the third in exchange for eternal loyalty, founding the Nightsister Clan. As Gethzerion's fame grew, so did defections — even the powerful Ocheron and Augwynne's own eldest daughter Baruka joined. The Imperial prison fell before their might. But Gethzerion refused to account for the 'weaker' Allyan ways, and though she thought she had killed Luke Skywalker, he returned stronger than ever. Gethzerion managed to escape Dathomir's orbit but was killed when Warlord Zsinj's forces destroyed her ship.",
+    source: "WEG40139 Cracken's Threat Dossier p.31-32"
   }
 // --- END OF NOTABLE_NPCS ---
 ];
