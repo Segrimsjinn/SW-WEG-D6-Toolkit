@@ -38291,6 +38291,231 @@ const NOTABLE_NPCS = [
     equipment: "Blaster pistol (4D), vibroblade (STR+2D), vac-suit",
     capsule: "Remnants of the Disac pirates, once the most feared pirate group along the Sisar Run until Ket Maliss neutralized their leadership on Sprax's orders. Now a disorganized band of cutthroats rallied by Morturr Heth (posing as Az-Iban) for opportunistic raids.",
     source: "WEG40136 Secrets of the Sisar Run p.37"
+  },
+
+  {
+    name: "Kutuab the Hutt (3.5 ABY)",
+    species: "Hutt",
+    system: "Sriluur",
+    location: "Sriluur — Desert Stronghold near Meirm City",
+    affiliations: ["Criminal Underworld"],
+    role: "Crime Lord",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "2D", skills: {} },
+      KNOWLEDGE: { base: "3D", skills: { "alien species": "4D+1", "bureaucracy": "5D", "business": "5D", "intimidation": "5D+1", "law enforcement": "5D+2", "streetwise": "6D+2" } },
+      MECHANICAL: { base: "3D", skills: {} },
+      PERCEPTION: { base: "3D", skills: { "bargain": "5D+2", "command": "6D", "con": "6D+2", "gambling": "6D+1", "persuasion": "5D+2" } },
+      STRENGTH: { base: "4D", skills: {} },
+      TECHNICAL: { base: "3D", skills: {} }
+    },
+    specialAbilities: "Force Resistance: Hutts roll double their Perception to resist Force-based mind manipulation attacks.",
+    forcePoints: 1,
+    characterPoints: 5,
+    move: 2,
+    equipment: "Hover-sled (Move 6)",
+    capsule: "A gristly green Hutt crime lord on Sriluur who emulates his superior Jabba the Hutt. Somewhat sleek for a Hutt, keeps himself well oiled to cool off in the Sriluur heat. Speaks only Huttese through a bright red protocol droid translator. His palace lies several hundred kilometers from Meirm City, a flat bunker beneath the sand. Feared locally, but he himself fears Vigo Sprax and would not cross him. Sells arms to both Weequay and Houk youth gangs through his gunrunner Ivar. Attempted to double-cross Limna Yith when she tried to sell him the Barani list, intending to return it to Sprax — the betrayal backfired when Yith escaped with the list intact.",
+    source: "WEG40136 Secrets of the Sisar Run p.52-53"
+  },
+
+  {
+    name: "Ivar (3.5 ABY)",
+    species: "Tammuz-an",
+    system: "Sriluur",
+    location: "Sriluur — Meirm City",
+    affiliations: ["Criminal Underworld"],
+    role: "Gunrunner / Arms Dealer",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "2D", skills: {} },
+      KNOWLEDGE: { base: "2D", skills: { "streetwise": "4D+2", "streetwise: Kutuab the Hutt's organization": "6D", "value: weapons": "5D+1" } },
+      MECHANICAL: { base: "2D", skills: { "repulsorlift operation": "4D+1" } },
+      PERCEPTION: { base: "2D", skills: { "bargain": "5D" } },
+      STRENGTH: { base: "2D", skills: {} },
+      TECHNICAL: { base: "2D", skills: {} }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 10,
+    equipment: "Desert survival gear, blaster (4D)",
+    capsule: "A displaced native of Tammuz-an who fled his world decades ago, now one of Kutuab the Hutt's principal weapons salesmen. Secretly equips the local Houk and Weequay youth gangs to keep simmering tension between the two active groups — after all, war is good for business. Operates out of a run-down survivalist shop in Meirm City that sells desert gear and miniature vaporators, all covered with a layer of dusty grime. Can arrange an audience with Kutuab for those hunting Limna Yith.",
+    source: "WEG40136 Secrets of the Sisar Run p.51"
+  },
+
+  {
+    name: "Blalock (3.5 ABY)",
+    species: "Near-Human",
+    system: "Sisar Run",
+    location: "Sisar Run — Abek's Station",
+    affiliations: ["Criminal Underworld", "Black Sun"],
+    role: "Security Chief",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "4D", skills: { "blaster": "6D", "dodge": "6D", "grenade": "5D", "melee combat": "6D", "melee parry": "5D", "running": "4D" } },
+      KNOWLEDGE: { base: "2D", skills: { "bureaucracy: Black Sun": "3D", "intimidation": "5D", "law enforcement": "5D", "streetwise": "6D", "value": "3D" } },
+      MECHANICAL: { base: "3D", skills: { "astrogation": "5D", "beast riding": "3D", "communications": "3D", "repulsorlift operation": "5D", "sensors": "3D", "space transports": "5D" } },
+      PERCEPTION: { base: "3D", skills: { "command": "5D", "investigation": "6D", "persuasion": "5D", "sneak": "5D" } },
+      STRENGTH: { base: "3D", skills: { "brawling": "3D" } },
+      TECHNICAL: { base: "3D", skills: { "security": "7D" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 10,
+    equipment: "Blaster rifle (5D), tool kit, electrobinoculars",
+    capsule: "In charge of Nim Abek's security at the shadowport station. A ruthless and efficient holdover from Abek's shipjacking days and the perfect complement to Abek's boisterous and ambitious ways. A blocky humanoid with leathery, bluish skin and a bald pate.",
+    source: "WEG40136 Secrets of the Sisar Run p.56-57"
+  },
+
+  {
+    name: "Beruga (3.5 ABY)",
+    species: "Wookiee",
+    system: "Sisar Run",
+    location: "Sisar Run — Abek's Station",
+    affiliations: ["Criminal Underworld", "Black Sun"],
+    role: "Pilot / Shipjacker",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { "blaster": "3D", "bowcaster": "5D", "dodge": "3D" } },
+      KNOWLEDGE: { base: "1D", skills: { "intimidation": "5D", "streetwise": "3D" } },
+      MECHANICAL: { base: "2D", skills: { "astrogation": "5D", "beast riding": "3D", "communications": "3D", "repulsorlift operation": "5D", "sensors": "3D", "space transports": "6D", "starfighter piloting": "5D", "starship shields": "5D" } },
+      PERCEPTION: { base: "1D", skills: {} },
+      STRENGTH: { base: "3D+1", skills: { "brawling": "5D" } },
+      TECHNICAL: { base: "1D+2", skills: { "space transports repair": "5D+2", "starfighter repair": "6D" } }
+    },
+    specialAbilities: "Berserker Rage: +2D Strength bonus when brawling while enraged, -2D to non-Strength skills. Climbing Claws: +2D to climbing.",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 11,
+    equipment: "Bowcaster (4D), blaster rifle (5D), tool kit",
+    capsule: "Abek's best pilot, a Wookiee he inadvertently freed from slavers. Now life-debted to Abek and serves as his top shipjacker, specializing in disabling target ships with pinpoint attacks on their engines. A real hot-shot who doesn't mind bragging about it. A thin Wookiee with patchy black and brown fur. Top ace on the station's kill chart with 14 kills. Her quarters are filled with starfighter models and holovids on tactics and dogfighting, including a poster of famed tactician Adar Tallon.",
+    source: "WEG40136 Secrets of the Sisar Run p.57"
+  },
+
+  {
+    name: "Puchek (3.5 ABY)",
+    species: "Rodian",
+    system: "Sisar Run",
+    location: "Sisar Run — Abek's Station",
+    affiliations: ["Criminal Underworld", "Black Sun"],
+    role: "Informant / Lackey",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "5D", "brawling parry": "4D", "dodge": "5D", "melee combat": "4D" } },
+      KNOWLEDGE: { base: "1D+2", skills: { "intimidation": "4D", "streetwise": "5D", "value": "4D", "willpower": "4D" } },
+      MECHANICAL: { base: "1D+2", skills: { "astrogation": "3D", "repulsorlift operation": "3D", "sensors": "3D", "space transports": "3D", "starfighter piloting": "3D", "starship shields": "3D" } },
+      PERCEPTION: { base: "2D", skills: { "bargain": "3D", "con": "5D", "gambling": "5D", "hide": "5D", "search": "5D", "sneak": "5D" } },
+      STRENGTH: { base: "2D+2", skills: { "brawling": "4D", "climbing/jumping": "3D" } },
+      TECHNICAL: { base: "1D", skills: { "security": "3D" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 10,
+    equipment: "Blaster pistol (4D+1), comlink, blast vest (+1D physical, +1 energy)",
+    capsule: "A Rodian lackey working for Nim Abek at the shadowport station. Acts as an informant and go-between, willing to sell information to visitors for credits — then immediately reports them to Abek. Leads unwitting visitors into traps on Abek's orders.",
+    source: "WEG40136 Secrets of the Sisar Run p.60"
+  },
+
+  {
+    name: "Sriluur Weequay Punk (3.5 ABY)",
+    species: "Weequay",
+    system: "Sriluur",
+    location: "Sriluur — Meirm City",
+    affiliations: ["Criminal Underworld"],
+    role: "Street Gang Member",
+    type: "Generic Template",
+    stats: {
+      DEXTERITY: { base: "2D+2", skills: { "blaster": "4D+1", "brawling parry": "4D+2", "melee combat": "5D", "melee parry": "4D" } },
+      KNOWLEDGE: { base: "1D+2", skills: { "streetwise": "3D" } },
+      MECHANICAL: { base: "1D+2", skills: { "repulsorlift operation": "3D+1" } },
+      PERCEPTION: { base: "2D", skills: {} },
+      STRENGTH: { base: "2D+2", skills: { "brawling": "4D+2" } },
+      TECHNICAL: { base: "2D", skills: { "security": "4D" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 10,
+    equipment: "Blaster (4D), vibroblade (STR+3D), grenade (5D)",
+    capsule: "Weequay youth gang members in Meirm City who rumble with Houk youth gangs across the 'front line' speeder thoroughfare. Armed by Kutuab the Hutt's gunrunner Ivar.",
+    source: "WEG40136 Secrets of the Sisar Run p.51"
+  },
+
+  {
+    name: "Sriluur Houk Punk (3.5 ABY)",
+    species: "Houk",
+    system: "Sriluur",
+    location: "Sriluur — Meirm City",
+    affiliations: ["Criminal Underworld"],
+    role: "Street Gang Member",
+    type: "Generic Template",
+    stats: {
+      DEXTERITY: { base: "1D", skills: { "blaster": "4D", "brawling parry": "5D", "melee combat": "3D", "melee parry": "3D" } },
+      KNOWLEDGE: { base: "1D+1", skills: { "intimidation": "4D", "streetwise": "3D" } },
+      MECHANICAL: { base: "2D", skills: { "beast riding": "4D", "repulsorlift operation": "3D" } },
+      PERCEPTION: { base: "2D", skills: {} },
+      STRENGTH: { base: "4D+1", skills: { "brawling": "5D" } },
+      TECHNICAL: { base: "1D+2", skills: {} }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 8,
+    equipment: "Blaster (4D), vibroblade (STR+3D)",
+    capsule: "Houk youth gang members in Meirm City who clash with Weequay street gangs. Armed by Kutuab the Hutt's gunrunner Ivar.",
+    source: "WEG40136 Secrets of the Sisar Run p.51"
+  },
+
+  {
+    name: "Yith's Mercenary (3.5 ABY)",
+    species: "Various",
+    system: "Sriluur",
+    location: "Sriluur — Lesser Cueva Expanse",
+    affiliations: ["Criminal Underworld"],
+    role: "Mercenary / Killer",
+    type: "Generic Template",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { "blaster": "6D", "blaster artillery": "5D", "brawling parry": "5D", "dodge": "3D", "melee combat": "5D", "thrown weapons": "4D", "vehicle blasters": "6D" } },
+      KNOWLEDGE: { base: "2D", skills: { "intimidation": "3D", "streetwise": "3D" } },
+      MECHANICAL: { base: "2D", skills: { "astrogation": "3D", "repulsorlift operation": "3D", "space transports": "3D", "starfighter piloting": "4D", "starship gunnery": "4D", "starship shields": "4D", "swoop operation": "3D" } },
+      PERCEPTION: { base: "2D", skills: { "bargain": "3D", "command": "4D", "gambling": "3D", "investigation": "4D", "search": "4D", "sneak": "3D" } },
+      STRENGTH: { base: "2D", skills: { "brawling": "5D", "stamina": "5D" } },
+      TECHNICAL: { base: "2D", skills: { "demolitions": "5D", "first aid": "3D" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 10,
+    equipment: "Blaster pistol (4D), heavy blaster pistol (5D), vibroblade (STR+2D), vac-suit",
+    capsule: "Professional hunters and killers hired by Limna Yith for the Yen-2 mining colony raid. Loyal to hard credit rather than Yith personally — will not fight to the death and will scatter when outmatched.",
+    source: "WEG40136 Secrets of the Sisar Run p.54"
+  },
+
+  {
+    name: "Abek's Pirate (3.5 ABY)",
+    species: "Various",
+    system: "Sisar Run",
+    location: "Sisar Run — Abek's Station",
+    affiliations: ["Criminal Underworld", "Black Sun"],
+    role: "Pirate / Shipjacker",
+    type: "Generic Template",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { "blaster": "3D", "dodge": "3D" } },
+      KNOWLEDGE: { base: "2D", skills: { "bureaucracy": "3D", "intimidation": "3D", "streetwise": "3D" } },
+      MECHANICAL: { base: "2D", skills: { "astrogation": "3D", "sensors": "3D", "space transports": "3D", "starfighter piloting": "3D", "starship gunnery": "3D", "starship shields": "3D" } },
+      PERCEPTION: { base: "2D", skills: { "bargain": "3D", "con": "3D", "gambling": "3D", "sneak": "3D" } },
+      STRENGTH: { base: "2D", skills: { "brawling": "3D" } },
+      TECHNICAL: { base: "2D", skills: { "security: starship systems": "3D" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 10,
+    equipment: "Blaster (4D), knife (STR+1D), vac-suit",
+    capsule: "Nim Abek's varied band of over 100 pirates at his shadowport station. Unscrupulous scum who know life is good under Abek's care and are loyal — at least until someone convinces them they can make their lives even better.",
+    source: "WEG40136 Secrets of the Sisar Run p.57"
   }
 // --- END OF NOTABLE_NPCS ---
 ];
