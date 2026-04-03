@@ -4196,5 +4196,503 @@ const EQUIPMENT_DATA = [
   "availability": "2",
   "game_notes": "Fifth-degree droid. Height: 1.7m. Move: 7. DEX 1D, KNO 1D, MEC 1D, PER 1D, STR 1D (lifting 3D), TEC 1D. Humanoid body, two visual/audial sensors (Human range), vocabulator (300-word vocabulary, harsh buzzing voice), C3-DD NeuroNet brain. Designed specifically for Goroth Prime — pre-shielded against radiation flux. Built for menial labor (home, office, industrial). Exceptionally literal-minded — incapable of abstract thought or hypothetical situations. Produced on-planet by Karflo Corporation; significantly cheaper than retrofitting standard droids but still more expensive than using 'client-workers.'",
   "source": "WEG40098 Goroth Slave of the Empire p.84"
+ },
+ // WEG40116 Cynabar's Fantastic Technology: Droids — Droid TraitWare
+ {
+  "name": "Droid TraitWare Datacard — Dexterity",
+  "category": "Droid TraitWare",
+  "cost": "100-300/pip, 150-300/die (varies by degree)",
+  "availability": "2",
+  "game_notes": "Soft-installed attribute boost. Each datacard adds +1 pip to the droid's Dexterity attribute. Erased after installation — if roll fails, new card must be purchased. Cost per die: 1st degree 300, 2nd degree 300, 3rd degree 300, 4th degree 150, 5th degree 250. Cost per pip: 1st 100, 2nd 100, 3rd 100, 4th 50, 5th 85. Installation difficulty: 1st Heroic, 2nd Heroic, 3rd Very Difficult, 4th Moderate, 5th Difficult. Requires (A) Droid Engineering; droid repair increases difficulty by two levels. Max attribute: 10D.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.22"
+ },
+ {
+  "name": "Droid TraitWare Datacard — Knowledge",
+  "category": "Droid TraitWare",
+  "cost": "50-400/pip, 150-400/die (varies by degree)",
+  "availability": "2",
+  "game_notes": "Soft-installed attribute boost. Each datacard adds +1 pip to the droid's Knowledge attribute. Erased after installation. Cost per die: 1st 150, 2nd 300, 3rd 150, 4th 350, 5th 400. Cost per pip: 1st 50, 2nd 100, 3rd 50, 4th 150, 5th 135. Installation difficulty: 1st Difficult, 2nd Very Difficult, 3rd Moderate, 4th Heroic, 5th Very Difficult.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.22"
+ },
+ {
+  "name": "Droid TraitWare Datacard — Mechanical",
+  "category": "Droid TraitWare",
+  "cost": "50-325/pip, 150-325/die (varies by degree)",
+  "availability": "2",
+  "game_notes": "Soft-installed attribute boost. Each datacard adds +1 pip to the droid's Mechanical attribute. Erased after installation. Cost per die: 1st 300, 2nd 150, 3rd 325, 4th 300, 5th 250. Cost per pip: 1st 100, 2nd 50, 3rd 110, 4th 100, 5th 85. Installation difficulty: 1st Very Difficult, 2nd Moderate, 3rd Difficult, 4th Moderate, 5th Heroic.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.22"
+ },
+ {
+  "name": "Droid TraitWare Datacard — Perception",
+  "category": "Droid TraitWare",
+  "cost": "65-150/pip, 200-350/die (varies by degree)",
+  "availability": "2",
+  "game_notes": "Soft-installed attribute boost. Each datacard adds +1 pip to the droid's Perception attribute. Erased after installation. Cost per die: 1st 225, 2nd 300, 3rd 200, 4th 250, 5th 350. Cost per pip: 1st 75, 2nd 100, 3rd 65, 4th 85, 5th 150. Installation difficulty: 1st Moderate, 2nd Difficult, 3rd Easy, 4th Moderate, 5th Very Difficult.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.22"
+ },
+ {
+  "name": "Droid TraitWare Datacard — Strength",
+  "category": "Droid TraitWare",
+  "cost": "50-150/pip, 150-400/die (varies by degree)",
+  "availability": "2",
+  "game_notes": "Soft-installed attribute boost. Each datacard adds +1 pip to the droid's Strength attribute. Erased after installation. Cost per die: 1st 350, 2nd 350, 3rd 400, 4th 200, 5th 150. Cost per pip: 1st 150, 2nd 150, 3rd 135, 4th 65, 5th 50. Installation difficulty: 1st Very Difficult, 2nd Very Difficult, 3rd Moderate, 4th Easy, 5th Moderate.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.22"
+ },
+ {
+  "name": "Droid TraitWare Datacard — Technical",
+  "category": "Droid TraitWare",
+  "cost": "50-135/pip, 150-400/die (varies by degree)",
+  "availability": "2",
+  "game_notes": "Soft-installed attribute boost. Each datacard adds +1 pip to the droid's Technical attribute. Erased after installation. Cost per die: 1st 150, 2nd 150, 3rd 325, 4th 400, 5th 200. Cost per pip: 1st 50, 2nd 50, 3rd 110, 4th 135, 5th 65. Installation difficulty: 1st Moderate, 2nd Moderate, 3rd Very Difficult, 4th Very Difficult, 5th Very Difficult.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.22"
+ },
+ {
+  "name": "Droid SkillWare — Dexterity Skills",
+  "category": "Droid TraitWare",
+  "cost": "75-550/die (varies by skill, x degree multiplier)",
+  "availability": "1-4, varies (some R or X)",
+  "game_notes": "Programmable skill datacards. Purchased per die, installed via droid programming roll. Base costs per die: Archaic Guns 300 (4,R), Blaster 225 (3,R), Blaster Artillery 250 (3,X), Bowcaster 400 (4,X), Bows 250 (4,X), Brawling Parry 200 (2,F), Dodge 150 (1), Firearms 300 (4,X), Grenade 250 (4,X), Lightsaber 550 (4,X), Melee Combat 225 (3,R), Melee Parry 175 (3,R), Missile Weapons 250 (3,R), Pick Pocket 400 (3,X), Running 75 (2), Thrown Weapons 275 (4,R), Vehicle Blasters 250 (3,R). Degree multipliers: 1st x2.5, 2nd x3, 3rd x3, 4th x1, 5th x2. Max 4D at creation, 13D total. Installation: 1st/2nd Very Difficult, 3rd Difficult, 4th Easy, 5th Moderate.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.23"
+ },
+ {
+  "name": "Droid SkillWare — Knowledge Skills",
+  "category": "Droid TraitWare",
+  "cost": "75-350/die (varies by skill, x degree multiplier)",
+  "availability": "1-4, varies",
+  "game_notes": "Programmable skill datacards. Base costs per die: Alien Species 75 (2), Bureaucracy 100 (1), Business 75 (1), Cultures 200 (2), Intimidation 300 (3,F), Languages 75 (1), Law Enforcement 250 (2), Planetary Systems 75 (1), Streetwise 350 (3), Survival 200 (2), Value 175 (1), Willpower 300 (4). Degree multipliers: 1st x1.5, 2nd x2.5, 3rd x1, 4th x3, 5th x3. Installation: 1st Moderate, 2nd Difficult, 3rd Easy, 4th Very Difficult, 5th Very Difficult.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.23"
+ },
+ {
+  "name": "Droid SkillWare — Mechanical Skills",
+  "category": "Droid TraitWare",
+  "cost": "75-350/die (varies by skill, x degree multiplier)",
+  "availability": "2-4, varies",
+  "game_notes": "Programmable skill datacards. Base costs per die: Archaic Starship Piloting 250 (4), Astrogation 200 (2), Beast Riding 300 (3), Capital Ship Gunnery 350 (3,R), Capital Ship Piloting 150 (2,F), Capital Ship Shields 200 (2), Communications 75 (2), Ground Vehicle Operation 75 (2), Hover Vehicle Operation 100 (2), Powersuit Operation 200 (4), Repulsorlift Operation 100 (2), Sensors 75 (2), Space Transports 150 (2), Starfighter Piloting 200 (2,F), Starship Gunnery 350 (2,R), Starship Shields 200 (2,F), Swoop Operation 250 (3), Walker Operation 175 (4). Degree multipliers: 1st x3, 2nd x1.5, 3rd x2.5, 4th x2.5, 5th x1.5. Installation: 1st Difficult, 2nd Easy, 3rd Moderate, 4th Difficult, 5th Easy.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.23"
+ },
+ {
+  "name": "Droid SkillWare — Perception Skills",
+  "category": "Droid TraitWare",
+  "cost": "100-300/die (varies by skill, x degree multiplier)",
+  "availability": "2-4, varies",
+  "game_notes": "Programmable skill datacards. Base costs per die: Bargain 150 (2), Command 300 (3,F), Con 300 (3,R), Forgery 300 (4,X), Gambling 150 (2,F), Hide 175 (3), Investigation 100 (2), Persuasion 125 (3), Search 150 (2), Sneak 200 (3). Degree multipliers: 1st x2, 2nd x2, 3rd x1.5, 4th x2, 5th x3. Installation: 1st/2nd Easy, 3rd/4th Moderate, 5th Easy.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.24"
+ },
+ {
+  "name": "Droid SkillWare — Strength Skills",
+  "category": "Droid TraitWare",
+  "cost": "50-250/die (varies by skill, x degree multiplier)",
+  "availability": "2-3, varies",
+  "game_notes": "Programmable skill datacards. Base costs per die: Brawling 250 (3,R), Climbing/Jumping 75 (3), Lifting 50 (2), Stamina 150 (3), Swimming 200 (2). Degree multipliers: 1st x3, 2nd x3, 3rd x3, 4th x1.5, 5th x1. Installation: 1st/2nd Difficult, 3rd Moderate, 4th Easy, 5th Difficult.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.24"
+ },
+ {
+  "name": "Droid SkillWare — Technical Skills",
+  "category": "Droid TraitWare",
+  "cost": "50-250/die (varies by skill, x degree multiplier)",
+  "availability": "2-3, varies",
+  "game_notes": "Programmable skill datacards. Base costs per die: Armor Repair 175 (3), Blaster Repair 150 (2), Capital Ship Repair 100 (2), Capital Ship Weapon Repair 125 (2,F), Computer Programming/Repair 50 (2), Demolitions 250 (3,R), Droid Programming 75 (2), Droid Repair 125 (2), First Aid 200 (2,F), Ground Vehicle Repair 100 (2), Hover Vehicle Repair 125 (2), (A) Medicine 250 (2,F), Repulsorlift Repair 150 (2), Security 250 (3,F), Space Transports Repair 150 (2), Starfighter Repair 150 (2), Starship Weapon Repair 175 (3,F), Walker Repair 175 (3). Degree multipliers: 1st x1, 2nd x1, 3rd x2, 4th x3, 5th x2.5. Installation: 1st/2nd Easy, 3rd/4th Difficult, 5th Moderate.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.24"
+ },
+ {
+  "name": "Droid Database — Knowledge/Technical Skills",
+  "category": "Droid TraitWare",
+  "cost": "Base SkillWare cost per die (no degree multiplier)",
+  "availability": "2",
+  "game_notes": "Attachment that gives bonus dice to Knowledge and Technical skills only. Purchased by die (+1D to +5D). No degree multiplier applied — base SkillWare catalog price per die. Only one database can be installed at a time — installing a second voids both. Cannot be modified after installation. Installation via droid programming: +1D Very Easy, +2D Easy, +3D Moderate, +4D Difficult, +5D Very Difficult.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.27"
+ },
+ // WEG40116 Cynabar's Fantastic Technology: Droids — Droid Hardware
+ {
+  "name": "Droid Locomotion — Wheels",
+  "category": "Droid Hardware",
+  "cost": "50/Move (Move 1-15)",
+  "availability": "1",
+  "game_notes": "Cheapest locomotion option. Movement rolls over terrain are one difficulty level higher (Moderate becomes Difficult, etc.). Cost: Move x 50 credits. Installation: Easy.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.28"
+ },
+ {
+  "name": "Droid Locomotion — Legs",
+  "category": "Droid Hardware",
+  "cost": "100/Move (Move 1-15)",
+  "availability": "1",
+  "game_notes": "Standard locomotion. Reacts to terrain like organic legs. Cost: Move x 100 credits. Installation: Moderate.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.28"
+ },
+ {
+  "name": "Droid Locomotion — Treads",
+  "category": "Droid Hardware",
+  "cost": "150/Move (Move 1-15)",
+  "availability": "2",
+  "game_notes": "Terrain difficulties decreased by one level. Cost: Move 1=150, 2=300, 3=450, ... 10=1,600, 15=2,450. Installation: Difficult.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.28"
+ },
+ {
+  "name": "Droid Locomotion — Repulsorlift",
+  "category": "Droid Hardware",
+  "cost": "200/Move (Move 1-15)",
+  "availability": "2",
+  "game_notes": "No terrain difficulty penalties. May need movement rolls to maneuver around objects. Cost: Move x 200 credits. Installation: Very Difficult.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.28"
+ },
+ {
+  "name": "Droid Sensors — Standard (Human Range)",
+  "category": "Droid Hardware",
+  "cost": "100",
+  "availability": "1",
+  "game_notes": "Visual (photoreceptors) and auditory sensors detecting stimuli within normal human range. Standard equipment on most droids.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.28"
+ },
+ {
+  "name": "Droid Sensors — Enhanced Search Package",
+  "category": "Droid Hardware",
+  "cost": "150-750/die (+1D to +5D), x target types",
+  "availability": "2",
+  "game_notes": "Adds dice to droid's search skill for specified targets. Cost per die: +1D 150, +2D 300, +3D 450, +4D 600, +5D 750. Multiply cost by number of target types: 1 type = x1, 2 types = x2, 3 types = x3, 4 types = x4, 5 types = x5, 6 types = x6. Max 6 target types. Target examples: moving objects, heat sources, distance (25-50m), organic life, electromagnetic emissions, chemical traces.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.29"
+ },
+ {
+  "name": "Cybot Galactica 'Lifeline' Astrogation Buffer",
+  "category": "Droid Hardware",
+  "cost": "1,300",
+  "availability": "2, F",
+  "game_notes": "Stores one set of nav coordinates indefinitely. Scomp-link + Moderate computer programming/repair roll downloads data to nav computer, then data is deleted. Loading more than one set of coordinates overwrites the older data. Effectively a backup nav computer in a droid.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.30"
+ },
+ {
+  "name": "Droid Cargo Winch",
+  "category": "Droid Hardware",
+  "cost": "400 (basic), 800 (heavy lifting)",
+  "availability": "2",
+  "game_notes": "Small cargo-lifting device with 50m durasteel cable. Supports up to 80kg (droid must anchor itself). Unstable/uneven ground increases lifting difficulty by one level. Heavy version adds +1D to lifting attempts.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.30"
+ },
+ {
+  "name": "Industrial Automaton Type 10 Circular Saw",
+  "category": "Droid Hardware",
+  "cost": "500 (external), 1,200 (retractable internal)",
+  "availability": "2",
+  "game_notes": "High-speed durasteel circular saw. Cuts power cables, heavy foliage, syntherope. Damage: 4D. Range: 0.3m. Can be used in melee combat (skill: melee combat: circular saw) but impractical as weapon. Internal version requires droid minimum 0.3m long/tall.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.31"
+ },
+ {
+  "name": "Concealed Vibroblade (Droid)",
+  "category": "Droid Hardware",
+  "cost": "500 (basic), 800 (sensor-resistant)",
+  "availability": "2, X",
+  "game_notes": "Retractable vibroblade housed in wrist or finger of humanoid droids. Damage: STR+3D (max 6D+2). Skill: Melee Combat. Basic version detectable with Easy sensors roll. Sensor-resistant version requires Difficult sensors roll. Highly illegal.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.31"
+ },
+ {
+  "name": "Fine Work Grasper Arm",
+  "category": "Droid Hardware",
+  "cost": "350",
+  "availability": "2",
+  "game_notes": "Retractable appendage extending up to 0.5m. Allows droids without limbs (astromechs, power droids) to manipulate small objects, keypads, and tools. Servo-boosted joints and fingers. Available with claws, pincers, or 3-5 fingered hands.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.31"
+ },
+ {
+  "name": "Heavy Grasper Arm",
+  "category": "Droid Hardware",
+  "cost": "550",
+  "availability": "2",
+  "game_notes": "Retractable appendage extending up to 0.5m. Servo-boosted joints add +2D to lifting attempts. Available with claws, pincers, or 3-5 fingered hands. Allows manipulation of heavier objects than fine work version.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.31"
+ },
+ {
+  "name": "Neuro-Saav TL3 Holo-Imaging Package",
+  "category": "Droid Hardware",
+  "cost": "2,500 (basic), +200/upgrade",
+  "availability": "2",
+  "game_notes": "Holocam tied into droid's optical modules. Records first-person 3D view up to 20m (line-of-sight). Downloads to datacards, dataplaques, or holoprojectors. Upgrades available: Macrobinocular hookup (extends range to 100m, +200), All-Environment 360° recording (10m radius, +200), Night-Vision thermal/UV mode (+200), Motion sensor tracking (+200). Skill: Sensors.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.31"
+ },
+ {
+  "name": "SoroSuub G-series Holoprojector",
+  "category": "Droid Hardware",
+  "cost": "300-8,000",
+  "availability": "2",
+  "game_notes": "Projects pre-recorded holograms. Basic unit (standard on R-series astromechs) projects up to 1.5m away, image size 0.5-10m. More sophisticated units project 360° spheres up to 10m. Price scales with capability. Skill: Computer Programming/Repair.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.32"
+ },
+ {
+  "name": "SoroSuub 'AutoTracker' Internal Automap",
+  "category": "Droid Hardware",
+  "cost": "4,000",
+  "availability": "2",
+  "game_notes": "Built-in GPS module. Links to orbiting data sources (ship sensors, weather satellites, traffic control). Provides exact location, local weather, moving objects, navigational hazards. Requires Moderate computer programming/repair roll once per hour to maintain link. Data displayed via scomp-link to datapad or droid's imaging systems. Virtually impossible to get lost while active.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.32"
+ },
+ {
+  "name": "Fabritech 'VoxLink' Internal Comlink",
+  "category": "Droid Hardware",
+  "cost": "100",
+  "availability": "2",
+  "game_notes": "Built-in communications device. Broadcast/reception range: 50km in clear weather. Monitors up to 10 frequencies simultaneously. Skill: Communications.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.32"
+ },
+ {
+  "name": "Jabriel VCA Droid Line Caster",
+  "category": "Droid Hardware",
+  "cost": "1,100",
+  "availability": "2, F",
+  "game_notes": "Fires syntherope or durasteel cable with grappling hook up to 50m (range 1-10/20/50). Works with cargo winch to snare and retrieve heavy objects. Solo use for wall/incline scaling by organics. Skill: Blaster: Line Caster (or Dexterity). Requires targeting SkillWare for effective use.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.33"
+ },
+ {
+  "name": "Onboard Blaster (Droid)",
+  "category": "Droid Hardware",
+  "cost": "1,200 (basic), 1,600 (sensor-resistant), 25 (powerpack)",
+  "availability": "3, X",
+  "game_notes": "Concealed energy weapon. Range: 3-10/30/120. Damage: 4D. Ammo: 100. Basic version: Easy sensors roll to detect. Sensor-resistant: Very Difficult sensors or Heroic search/Perception to find. Exterior-mounted version: 800 credits (easily visible). Damage can be increased +1D per 400 credits (max 6D). Skill: Blaster.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.33"
+ },
+ {
+  "name": "Onboard Flame Projector (Droid)",
+  "category": "Droid Hardware",
+  "cost": "600 (basic), 1,000 (sensor-resistant), 200 (extra ammo)",
+  "availability": "3, X",
+  "game_notes": "Sprays corrosive, highly flammable chemical mist. Range: 3-4/5/7. Damage: 5D first round, 3D for next 5 rounds unless extinguished. Ammo: 10. Fire rate: 1/2. Basic: Easy sensors or Moderate search to detect. Sensor-resistant: Difficult sensors or Very Difficult search. If fuel tank is damaged, chemical does 3D corrosion damage to the droid. Skill: Missile Weapons.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.33"
+ },
+ {
+  "name": "Genetech A2 Accounting/Business Droid",
+  "category": "Droids",
+  "cost": "8,000",
+  "availability": "2",
+  "game_notes": "First-degree droid. Height: 0.6m tall, 1m wide. Move: 10. DEX 1D, KNO 3D (Bureaucracy 8D, Business 8D, Value 7D), MEC 1D, PER 1D (Bargain 3D), STR 1D, TEC 1D. Hemispherical body with two fine manipulators, repulsorlift unit (2m ceiling), speech synthesizer, holographic recorder and projector. Advanced personality matrix. Originally intended as personal account manager and negotiation-facilitator for corporate environments. Personality modules were never fully debugged — poor negotiator but adept at determining market values and extremely efficient accountant. Highly visible in the Corporate Sector and Core Worlds. SkillWare 'flutter' bug in smaller-scale operations causes faulty invoicing, late billing, and accounting errors — free upgrade available from Genetech on complaint.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.42"
+ },
+ {
+  "name": "Industrial Automaton A9G Archive Droid",
+  "category": "Droids",
+  "cost": "8,000 (used only)",
+  "availability": "2",
+  "game_notes": "First-degree droid. Height: 1.7m. Move: 9. DEX 2D, KNO 2D (Bureaucracy: Library Science 4D), MEC 1D, PER 1D, STR 1D+2, TEC 2D (Computer Programming/Repair 5D). Humanoid body (two arms, two legs, head). Kraren XI Superprocessor for rapid data collation. Cybot Galactica Data-Sifter software (+1D to computer programming/repair rolls involving data searches). Designed for computer and library system management — data storage, collation, and analysis. Not terribly successful in high-traffic environments due to glitches and poor judgement, but useful for smaller-scale applications. Advanced personality matrix. Popular with the Rebel Alliance for processing raw field intelligence.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.43"
+ },
+ {
+  "name": "Arakyd Seeker AS-M12 Message Droid",
+  "category": "Droids",
+  "cost": "4,000",
+  "availability": "2",
+  "game_notes": "Second-degree droid. Height: 0.5m. Move: 10. DEX 1D, KNO 2D (Planetary Systems 3D), MEC 1D (Sensors 3D), PER 2D (Search 4D), STR 2D, TEC 1D (Computer Programming/Repair 3D). Compact globe with repulsorlift generator, visual/audial sensors, vocabulator, retractable fine work grasper arm, holographic projector/recorder, computer I/O jack. Message security: will not convey information without proper passcode (Heroic droid programming to circumvent). Can travel system-to-system via civilian version of Arakyd Viper probe droid hyperspace pod. Has hardwired data storage buffer storing launch coordinates in directional module. Elementary personality matrix. Reliable system-to-system communication, typically limited to military or corporate use due to cost. Can be rigged as an explosive seeker with detonite and proximity detonator.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.44"
+ },
+ {
+  "name": "TelBrinTel GHT Medevac Droid",
+  "category": "Droids",
+  "cost": "5,200",
+  "availability": "2",
+  "game_notes": "First-degree droid. Length: 1m. Move: 11 (repulsorlift), 6 (wheels). DEX 1D, KNO 2D (Alien Species: Biology 4D), MEC 1D, PER 2D (Search 4D, Hide 3D), STR 2D (Lifting 4D), TEC 3D (First Aid 6D). Four retractable wheels, repulsorlift (carries droid + one wounded human-sized individual, 0.5m ceiling), two photoreceptors (human and macro range), auditory receptor, two reinforced fine work manipulator arms, reinforced hull (+1D vs physical and energy damage). Moderate personality matrix. Designed for battlefield medic support — retrieves injured soldiers, applies temporary first aid, returns wounded to field hospitals. Requires detailed coordinates to locate downed soldiers; internal automap installation fixes this limitation.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.46"
+ },
+ {
+  "name": "Roche J9 Worker Drone",
+  "category": "Droids",
+  "cost": "1,200",
+  "availability": "2",
+  "game_notes": "Third-degree droid. Height: 1.9m. Move: 10. DEX 2D, KNO 4D (Alien Species 5D+1, Bureaucracy 5D+2, Languages 4D+1), MEC 1D, PER 3D (Bargain 4D+2, Sneak 4D), STR 1D, TEC 1D (Security 5D+1). Two photoreceptors/video sensors (Verpine range), bipedal locomotion, olfactory sensor (+1D to odor-based search rolls), Torplex microwave sensor (+1D to security), Arjan vocabulator, TranLang II Communication module (+2D to languages). Simple personality matrix. Created by the Verpine as a protocol unit with programming some claim is more advanced than a 3PO unit. Commercial failure due to extremely mechanical/skeletal insect-like appearance and misleading 'Worker Drone' nickname. Over 2,000 produced. Easily modified for other tasks.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.49"
+ },
+ {
+  "name": "Arakyd AD Armorer Droid",
+  "category": "Droids",
+  "cost": "7,700 (used only)",
+  "availability": "3",
+  "game_notes": "Second-degree droid. Height: 1.5m. Move: 6. DEX 2D, KNO 2D, MEC 2D, PER 2D, STR 2D, TEC 3D (Armor Repair 4D+1, Blaster Repair 5D, Blaster Repair: Blaster Artillery 5D). AA-12X Verbobrain, communications link with base computer, humanoid body (two arms, two legs, head), repulsorlift unit (1m ceiling), visual/auditory sensors (human range), vocabulator. Complex personality matrix. Originally developed to sell to the Empire for weapons maintenance but the efficiency increase was marginal (0.0006%). Arakyd sold surplus stock to mercenary units, local law enforcement, and bounty hunting guilds. Easily modified with additional SkillWare for shipboard weapons and conventional repairs.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.50"
+ },
+ {
+  "name": "Industrial Automaton FLR Logger Droid",
+  "category": "Droids",
+  "cost": "2,500",
+  "availability": "2",
+  "game_notes": "Fifth-degree droid. Height: 2m. Move: 7. DEX 2D, KNO 1D, MEC 1D, PER 2D (Search 4D+2), STR 4D+2 (Lifting 6D+2), TEC 1D. Fabritech communications array, two heavy manipulator arms, one heavy tree-felling saw, one light brush-removing saw, probability projection computer (determines how/when a felled tree will land), extendible video sensor, emergency audio alarm (for felling miscalculations). No personality matrix. Developed under contract from Greel Wood Logging Corporation for Pii 3 logging operations. Performs modestly well but not widely used outside Pii 3. Overly user-friendly programming — spends excessive time confirming commands, making programming frustrating and time-consuming. Replacement parts scarce as IA doesn't prioritize FLR manufacturing.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.52"
+ },
+ {
+  "name": "Cybot Galactica GY-I Information Analysis Droid",
+  "category": "Droids",
+  "cost": "7,500",
+  "availability": "2",
+  "game_notes": "First-degree droid. Height: 1m. Move: 5. DEX 2D, KNO 3D+1 (Planetary Systems 3D+2), MEC 2D, PER 2D+1, STR 1D+1, TEC 2D (Computer Programming/Repair 3D+2). Humanoid body (two legs, two arms, head). Arakyd data storage and collation software (+1D to computer programming/repair for data research). Cybot Galactica multi-socket computer interface (access to most computer systems in the Empire). Cybot Galactica GY-I data analysis software (+2D to computer programming/repair for collation/analysis of data). Elementary personality matrix. Processes upwards of 500,000 data information packets per second. Originally for high-end corporations and learning facilities; military adopted for tactics analysis. Custom modules available from Cybot Galactica at 10% of unit price (e.g. shipboard version stores up to 30 hyperspace coordinates). Installed in 24 hours with Easy computer programming/repair roll.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.53"
+ },
+ {
+  "name": "Roche 'Hatchling' Zero-G Maintenance Droid",
+  "category": "Droids",
+  "cost": "2,050",
+  "availability": "2, F",
+  "game_notes": "Second-degree droid. Length: 2m. Move: 6 (atmosphere), 15 (space). DEX 2D (Blaster 5D, Blaster: Welding Tools 7D, Dodge 4D), KNO 1D, MEC 1D, PER 2D (Search 4D), STR 4D, TEC 1D. Six arms, repulsorlift/thruster package (10m ceiling in atmosphere, thruster for space movement), welding lasers (0.3m range, 8D damage), various repair appendages for specific missions, broadband transmitter/receiver package, repair database (+1D to all repair rolls to spacecraft). Simple personality matrix. Verpine-designed zero-g maintenance droid, functions best in vacuum. Typically serves as repair unit in stardocks and deep-space shipyards. Can be refitted with blaster on tool hardpoints for hull security (mynock scraping, etc.).",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.54"
+ },
+ {
+  "name": "Cybot Galactica LE-series Repair Droid",
+  "category": "Droids",
+  "cost": "12,800 (new), 6,500 (used)",
+  "availability": "2",
+  "game_notes": "Second-degree droid. Height: 1.7m. Move: 7. DEX 1D, KNO 2D, MEC 2D (Astrogation 2D+1, Communications 3D, Sensors 3D), PER 1D, STR 2D, TEC 2D (Capital Starship Repair 4D, Computer Programming/Repair 5D, Space Transports Repair 3D). Humanoid body (two arms, two legs, head), visual/audial sensors (human range), vocabulator. Complex personality matrix. Combination of 3PO protocol unit communicative ability with astromech utility. Serviceable ship mechanics with enough social skill to deal with organics effectively. Not equipped with same level of computer data exchange gear as astromechs but easily modified to suit individual needs.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.55"
+ },
+ {
+  "name": "Les Tech M38 Explorer Droid",
+  "category": "Droids",
+  "cost": "13,000 (new), 5,500 (used)",
+  "availability": "2, F",
+  "game_notes": "Second-degree droid. Height: 1.3m. Move: 5. DEX 1D, KNO 1D (Planetary Systems 4D+2, Survival 4D+2), MEC 1D, PER 1D (Search 4D+2), STR 5D, TEC 1D. Seismic sensors (+1D to search for ground vibrations and source identification), movement sensors (+1D to search for moving objects up to 500m), electromagnetic sensors (monitors EM spectrum), dual photoreceptors (visual and infrared), radiation sensors (detects levels harmful to organics), heavy grasper arm (+1D to lifting), fine work manipulator arm (+1D to Dexterity/Technical skills for sample gathering), holocam, specimen hopper (5kg), heavy treads. Elementary personality matrix. Handles dangerous initial exploration duties for scouts — full sensor package and holorecording. Tread system requires alignment before each deployment or droid may overcompensate on control.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.56"
+ },
+ {
+  "name": "Industrial Automaton P2 Astromech Prototype",
+  "category": "Droids",
+  "cost": "2,500 (used)",
+  "availability": "3",
+  "game_notes": "Second-degree droid. Height: 2.2m. Move: 4 (wheels). DEX 1D, KNO 1D, MEC 1D (Space Transports 2D), PER 1D (Search 2D), STR 2D, TEC 2D (Space Transports Repair 5D). Three wheeled legs (one retractable), heavy grasper arm, three medium retractable arms, laser welder (5D damage, 0.5m range), video display screen, buzzsaw (5D damage), armored hull (+1D to Strength vs damage). No personality matrix. Precursor to the R2 astromech — much larger, very simple computer-brain, extremely subservient. Awkward and tends to bump into nearby objects. Communicates only through video screen or input jacks. No longer manufactured — R-series production ended the P2 line.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.57"
+ },
+ {
+  "name": "Industrial Automaton PG-5 Gunnery Droid",
+  "category": "Droids",
+  "cost": "5,100",
+  "availability": "3",
+  "game_notes": "Second-degree droid. Height: 2.5m. Move: 4 (wheels). DEX 1D, KNO 1D, MEC 1D (Capital Ship Gunnery 3D, Capital Ship Shields 4D, Communications 3D, Sensors 6D, Starship Gunnery 3D, Starship Shields 4D), PER 1D, STR 1D, TEC 2D (Capital Ship Weapon Repair 5D, Computer Programming/Repair 4D, Starship Weapon Repair 5D). Three wheeled legs (one retractable), heavy grasper arm, three medium retractable arms, laser welder (6D damage, 0.3m range), scomp-link (+1D to computer programming/repair when linked). No personality matrix. Built on astromech chassis for Imperial capital ship crew augmentation. Severely flawed design — cannot communicate without scomp-link, extremely bulky for cramped gunnery bays, not aggressive enough for backup gunner duty. Only a few hundred produced before IA ceased production. Most sold to local militias and law enforcement. Cheap to acquire at surplus auctions; easily upgraded with additional SkillWare to match R2 capability.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.58"
+ },
+ {
+  "name": "Industrial Automaton R5 Astromech Droid",
+  "category": "Droids",
+  "cost": "2,000",
+  "availability": "2",
+  "game_notes": "Second-degree droid. Height: 1m. Move: 5 (wheels). DEX 1D, KNO 1D, MEC 1D, PER 1D, STR 1D, TEC 2D (Computer Programming/Repair 4D, Space Transports Repair 4D). Three wheeled legs (one retractable), retractable heavy grasper arm (+1D to lifting, max 2D), retractable fine worker arm, small circular saw (4D damage, 0.3m range), acoustic signaler, holographic projector/recorder, fire extinguisher. Simple personality matrix. Cheapest R-unit series — quickly discontinued due to poor quality and sales. Only holds one set of hyperspace coordinates at a time. Personality matrix was cut during design — prone to becoming 'bitter' without frequent memory wipes and regular maintenance. Available at discount; commonly found in Outer Rim Territories.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.60"
+ },
+ {
+  "name": "Industrial Automaton V6 Pilot Droid",
+  "category": "Droids",
+  "cost": "17,800 (new), 12,000 (used)",
+  "availability": "2, F",
+  "game_notes": "Second-degree droid. Height: 1m. Move: 5 (wheels). DEX 1D, KNO 1D (Planetary Systems 4D), MEC 1D (Astrogation 4D, Space Transports 5D+2), PER 1D, STR 2D, TEC 1D (Computer Programming/Repair 3D, Space Transports Repair 3D, Starfighter Repair 3D). Three wheeled legs (one retractable), one retractable arm, one visual sensor (human range), starship interface jack, video display screen, memory for 5 pre-programmed hyperspace jumps. Complex personality matrix. Latest in the V-series astromech line — designed as a ship pilot for small vessels (freighters, tugs) for short distances. Useful for cargo hops and moving bulk freighters into parking orbits but unreliable in combat — tends to panic. Most systems require expensive flight permits with genetic, retinal, and ship registry info to allow droid piloting.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.61"
+ },
+ {
+  "name": "Roche Siak-series Protocol Droid",
+  "category": "Droids",
+  "cost": "3,500 (new), 1,200 (used)",
+  "availability": "2",
+  "game_notes": "Third-degree droid. Height: 1.5m. Move: 6 (legs). DEX 1D (Dodge 2D), KNO 3D (Cultures 4D, Cultures: Human 5D, Languages 5D), MEC 1D, PER 2D (Persuasion 3D), STR 1D, TEC 1D. TranLang IV Communications module, two photoreceptors and two auditory receptors (human range), languages database (+1D to languages), Verpinoid body (head, torso, two arms, two legs), vocabulator. Advanced personality matrix. Roche Corporation's second attempt at the human-cyborg relations market after the J9's failure — hired human contractors to design a more appealing chassis and personality matrix. Translates several hundred languages, can negotiate independently. Still in production, commonly seen in urban areas.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.65"
+ },
+ {
+  "name": "Arakyd BT-16 Perimeter Security Droid",
+  "category": "Droids",
+  "cost": "4,100",
+  "availability": "2, F",
+  "game_notes": "Fourth-degree droid. Height: 2.3m. Move: 14. DEX 4D (Blaster 5D+1, Dodge 5D+1, Grenade 5D+1), KNO 2D (Languages 3D+1, Law Enforcement 4D+2, Survival 3D+1), MEC 1D, PER 4D (Search 4D+1), STR 1D (Climbing 2D+1, Swimming 2D+1), TEC 2D (Computer Programming/Repair 3D+2, Security 3D+1). Six-leg arachnid locomotion, video sensor, Carbanti motion sensor and Fabritech seismic sensor (+1D to search), Imperial standard comlink, Arakyd vocabulator (droid languages only), TranLang I communication module (+1D to languages), armor (+2D to Strength vs physical and energy attacks), Taim & Bak repeating blaster (6D, 2-10/25/50, turret mount). No personality matrix. Extremely reliable perimeter security unit — heavy armor and advanced sensor package. Sensors keyed to detect small creatures, popular with farmers for 'varmint' control. Can be upgunned with missile racks for military-grade perimeter defense.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.67"
+ },
+ {
+  "name": "Aro-GX Security Droid",
+  "category": "Droids",
+  "cost": "9,000 (military/government use only)",
+  "availability": "3, X",
+  "game_notes": "Fourth-degree droid. Height: 1.8m. Move: 10. DEX 3D (Blaster 6D, Dodge 8D, Running 4D), KNO 1D, MEC 1D, PER 1D (Search 4D+2), STR 1D (Lifting 3D), TEC 1D (Computer Programming/Repair 3D+2, Droid Repair 4D, Security 5D). Body armor (+3D STR to all locations), wrist blasters (3D damage, 3-10/30/100), two auto-balance legs, two arms. Advanced personality matrix. Formidable security droid with targeting systems comparable to top-end military units. Banned from commercial sale by the Empire as 'too lethal' after a reprogrammed GX nearly assassinated the Corellian Diktat. Manufacturer Aro was wiped out by the bad press. Banned entirely from the Corellian system. Surplus units available on Black Market. High Imperial officials (Moffs, Admirals) keep upgunned versions for personal security despite the prohibition.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.68"
+ },
+ {
+  "name": "Holowan Mechanicals IG-series Combat Prototype",
+  "category": "Droids",
+  "cost": "1,500,000 (Black Market only)",
+  "availability": "3, X",
+  "game_notes": "Fourth-degree droid. Height: 2m. Move: 13. DEX 4D (Blaster 6D, Dodge 6D, Energy Weapons: Sonic Stunner 5D+2, Flamethrower 5D, Grenade 6D, Missile Weapons 6D), KNO 2D+1 (Languages 3D+1, Planetary Systems 3D+1), MEC 2D+2 (Astrogation 4D+2, Space Transports 4D+1), PER 3D+1 (Search 7D, Search: Tracking 9D, Sneak 4D), STR 4D (Lifting 6D), TEC 1D+2 (Computer Programming/Repair 3D, Droid Programming 3D, Droid Repair 3D). Humanoid body, broad-band antenna (intercepts and decodes most standard-frequency communications), flamethrower (3D/round until extinguished, 10m range), long-range sensor (+2D search 50-750m), motion sensor (+2D search for moving objects up to 400m), sonic stunner (4D stun, 10m range), grenade launcher (5D). Complex personality matrix. Equipment: Blaster rifle (5D). One of the deadliest droid models ever constructed — upon activation, initial prototypes killed the entire Holowan Mechanicals design team. Never mass-produced; only a handful of prototypes survived. Original records seized by the Empire.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.69"
+ },
+ {
+  "name": "Rim Securities K4 Security Droid",
+  "category": "Droids",
+  "cost": "7,500",
+  "availability": "2, R",
+  "game_notes": "Fourth-degree droid. Height: 1.6m. Move: 11. DEX 3D (Blaster 7D, Dodge 8D, Running 4D), KNO 1D, MEC 1D, PER 1D, STR 1D, TEC 1D. Two auto-balance legs, two arms, body armor (+2D Strength vs damage), internal blaster rifle (5D, 5-30/100/200). Elementary personality matrix. Popular defense droid in the Outer Rim Territories. Found serving private corporations, local governments, and crime lords. Solid and dependable. Known targeting glitch when moving at high speed — actually caused by leg gyros moving out of synch with sensors rather than true targeting error. Regular alignment and cleaning of blaster housing and leg gyros fixes this. A well-placed blaster shot can knock the blaster or leg gyros out of alignment.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.70"
+ },
+ {
+  "name": "MerenData RM-2020 Espionage Droid",
+  "category": "Droids",
+  "cost": "160,000 (new), 100,000 (used, Black Market only)",
+  "availability": "2, R",
+  "game_notes": "Fourth-degree droid. Height: 1m. Move: 10. DEX 3D (Blaster 4D, Dodge 6D, Melee Combat 3D+1), KNO 3D, MEC 2D (Repulsorlift Operation 3D, Sensors 5D), PER 4D (Investigation 6D, Search 5D), STR 4D, TEC 2D (Security 5D). Espionage hardwired module, humanoid body (two arms, two legs, head), information recording/coded broadcast system, repulsorlift engine, ultraviolet/infrared/analysis sensors, visual/audio sensor package (human range), vocabulator. Simple personality matrix. Designed for battlefield data gathering — spots troop movements and reports detailed analysis of enemy weaknesses to coordinating base. Can be equipped for sabotage and infiltration missions. Additional combat SkillWare turns it into a formidable combat unit. Used by Churhee's Riflemen and other mercenary groups.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.71"
+ },
+ {
+  "name": "Sienar Intelligence Systems ZQ Infantry Droid",
+  "category": "Droids",
+  "cost": "8,350",
+  "availability": "2, R",
+  "game_notes": "Fourth-degree droid. Height: 1m. Move: 11. DEX 3D (Blaster 5D, Dodge 4D, Melee Weapons 4D, Missile Weapons 5D), KNO 1D, MEC 1D, PER 2D (Command 4D, Hide 3D, Search 4D), STR 4D (Brawling 4D+2), TEC 2D (Droid Repair 3D). Repulsorlift engine, heavy blaster cannon (7D), light blaster cannon (5D), two photoreceptors, vocabulator, miniature concussion missile system (8D, 3-10/15/20m, ammo: 10), grasper arm. Simple personality matrix. Highly successful infantry support unit created for Imperial military in the early days of the Empire. Extremely deadly — two main blasters and anti-personnel missile system capable of neutralizing armored combat troops. Both arms contain hardpoints for up to four additional weapon systems. Though the Empire denies it, ZQs still see service on modern battlefields in the Outer Rim. Storm Commando units ('DeathWhispers') have been assigned ~20 ZQs for customization.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.73"
+ },
+ {
+  "name": "Veril Line Systems EG-6 Power Droid",
+  "category": "Droids",
+  "cost": "2,500",
+  "availability": "2",
+  "game_notes": "Fifth-degree droid. Height: 1.1m. Move: 3. DEX 1D, KNO 1D (Languages: Droid Languages 4D), MEC 1D (Energize Power Cells 5D+2), PER 1D, STR 1D, TEC 3D (Machinery Repair 5D, Repulsorlift Repair 4D+1, Systems Diagnosis 5D). Video sensor, bipedal locomotion, ultra-fine manipulator (+1D to Technical skills), system diagnosis package (infrared receptor, sonar, X-ray, spectrometer; +1D to systems diagnosis), Cybot acoustic signaler (droid/computer languages only, cannot speak Basic), armored housing (+2D to Strength). No personality matrix. Designed for low-level stardocks and drop-point flights without standardized refueling. Can reenergize power cells of a Walker-scale vehicle in one standard day, then requires direct attachment to energy reservoir to recharge. Always conserves enough power for own functionality. Extremely susceptible to suggestion — will follow any order literally.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.76"
+ },
+ {
+  "name": "Industrial Automaton 'Elegance' Message Drone",
+  "category": "Droids",
+  "cost": "250,000 (new, no longer manufactured), 50,000 (fuel replenishment)",
+  "availability": "2, F",
+  "game_notes": "Starfighter-scale message drone. Length: 9m. Crew: None (droid brain with Astrogation 5D). Cargo: 15kg. Consumables: 3 weeks. Hyperdrive x1/3 (limited to 1 jump before refueling, max 5 jumps before hyperdrive destroyed by wear). Nav computer limited to 1 jump. Space: 5. Hull: 1D. Sensors — Passive: 100/2D, Scan: 200/3D, Search: 300/4D, Focus: 10/5D. Self-destruct mechanism (600m blast radius, 9D damage). Anti-tampering safeguards: if proper recognition codes not received within 4-10 minutes of sensor contact, self-destruct activates (1 minute cycle). No personality matrix. Pre-HoloNet courier system now making a comeback due to heavy HoloNet traffic restrictions. Many refitted by NewsNet agencies for system-to-system newsfeeds. Only outlying Imperial garrisons still issued these droids.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.77"
+ },
+ {
+  "name": "Cybot Galactica F1 Exploration Droid",
+  "category": "Droids",
+  "cost": "2,750",
+  "availability": "3",
+  "game_notes": "Fifth-degree droid. Height: 1m. Move: 10 (legs). DEX 2D, KNO 1D (Survival 4D), MEC 2D (Communications 2D, Sensors 5D), PER 1D (Hide 2D, Sneak 2D, Search 3D), STR 1D (Lifting 2D), TEC 1D (Security 2D). Four legs, heavy grasper jaw (holds targets without crushing damage), two photoreceptors (human range), auditory sensors (human range), olfactory sensors, motion sensor array (+1D to search for detecting movement, 50m range), communications link to base-ship computer extending from rear, binary vocoder. Elementary personality matrix. Companion and protector for scouts in unknown space — exceptional sensor array forewarns of approaching life forms or vehicles. Can assist injured organics by pulling them to safety and back to a waiting ship. Chassis can be reprogrammed and rebuilt as heavily-armed bodyguards.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.78"
+ },
+ {
+  "name": "Veril Line Systems I-C2 Construction Droid",
+  "category": "Droids",
+  "cost": "1,700,000 (new), 975,000 (used)",
+  "availability": "2, F",
+  "game_notes": "Fifth-degree droid. Size: 10m tall, 30m long. Move: 7. DEX 0D, KNO 1D, MEC 3D (Ground Vehicle Operation: Integral Tread System 3D+2, Sensors 3D+1), PER 0D, STR 10D (Lifting 11D), TEC 2D (Computer Programming/Repair 3D, General Repair 10D, Machinery Repair 10D). Processing furnace (absorbs damaged structures and debris, disintegrates at 10D walker-scale damage), heavy-duty tread system, multiple lifting/repair appendages, photoreceptor/audio receiver (human range). Simple personality matrix. Equipment: Multiple cleaning and repair tools. Less-expensive, smaller alternative to Imperial construction droids on Coruscant. More independent and self-reliant — can assess situations and initiate repairs without consulting central planning. Used by local governments on lower-tech Outer Rim worlds. VLS uses I-C2 trade concessions to establish factories on lesser-developed planets.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.79"
+ },
+ {
+  "name": "Veril Line Systems S9 Heavy Power Droid",
+  "category": "Droids",
+  "cost": "4,000",
+  "availability": "2",
+  "game_notes": "Fifth-degree droid. Height: 0.75m. Move: 4. DEX 1D, KNO 1D, MEC 1D (Generator Operation 4D), PER 1D, STR 2D, TEC 1D (Power Cell Repair 4D, Starfighter Repair 3D, Space Transports Repair 2D). Reinforced chassis (+1D energy, +2D physical), photoreceptors (human range), binary vocabulator, internal heavy generator (recharges one starfighter-scale vehicle per standard day), heavy treads, extendible power transfer cable (6m). Simple personality matrix. Advanced successor to the EG-6 — higher energy efficiency, recharges starship power cells in the time the EG-6 takes for a landspeeder. Recharge time for own cells much shorter than EG-6. Ideally suited for rough terrain planets. Rebel Alliance actively acquiring these droids. Can be armored and equipped with shielded sensors and minor weaponry for harassment tactics.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.80"
+ },
+ {
+  "name": "SoroSuub Wanderer Scout Survey Droid",
+  "category": "Droids",
+  "cost": "17,000 (new), 8,000 (used)",
+  "availability": "2",
+  "game_notes": "Fifth-degree droid. Size: 1m diameter, 2m tall. Move: 12. DEX 3D (Blaster: Stun Blaster 5D), KNO 0D, MEC 3D, PER 1D (Search 5D), STR 2D (Climbing/Jumping 4D), TEC 1D (Medical Dissection 6D). Eight mechanical legs (arachnid design), photoreceptor eye (360° rotation), stun blaster (5D damage, 3-20/35/50m, for subduing/capturing specimen creatures), three fine manipulators, sensor pack. No personality matrix. Distinctly arachnid design that many find fearsome. Underside bristles with sensor apparatus and equipment. Superior scouting performance but very difficult to add personality matrix — scouting and medical protocols hardwired with processing priority, overriding any new programming. Small processing capacity relative to stored medical/scouting data. Additional storage space could potentially be used to hide data.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.81"
+ },
+ {
+  "name": "MerenData TS-Arach Pest Control Droid",
+  "category": "Droids",
+  "cost": "600",
+  "availability": "1",
+  "game_notes": "Fifth-degree droid. Width: 0.3m. Move: 5. DEX 2D (Blaster: Mounted 4D, Dodge 3D, Pesticide Hose 4D), KNO 1D (Entomology 3D), MEC 1D, PER 3D (Search 5D), STR 2D, TEC 1D. Four legs, small blaster (3D, 2-5/10/20m, ammo: 5), pesticide dispensers (4D), one photoreceptor (human range plus micro-scale), auditory receptors (human range + high-frequency), lifeform sensors, entomology database. Simple personality matrix. Patrols crops hunting and destroying harmful insects and lifeforms. Determines if creatures are threats via lifeform scanner and entomology database — logs non-threats and downloads sightings at end of shift. Functions in virtually any environment. Useful for scouting missions with automap hookup — provides detailed area maps and wildlife holos without setting foot on the ground. High demand on Outer Rim colony worlds.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.82"
+ },
+ {
+  "name": "Arakyd Seeker Transport Hyperspace Pod",
+  "category": "Droids",
+  "cost": "20,000",
+  "availability": "2",
+  "game_notes": "Starfighter-scale automated hyperspace pod for message droids. Length: 2m. Crew: None (droid brain with Astrogation 4D, Space Transports 4D). Passengers: 1 message droid. Consumables: 1 month. Hyperdrive x1. Nav computer limited to 1 jump. Space: 6. Atmosphere: 330; 950 km/h. Hull: 1D+2. Sensors — Passive: 20/1D, Scan: 40/2D, Search: 60/3D, Focus: 3/4D. No weapons. Susceptible to spacejacking — Alliance has captured several. Often modified by criminals to haul small cargo instead of message droids.",
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.44"
  }
 ];

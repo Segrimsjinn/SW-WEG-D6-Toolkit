@@ -39264,5 +39264,55 @@ const STARSHIP_DATA = {
    "weapons": []
   }
  ],
- "Named Modified Battle Stations": []
+ "Named Modified Battle Stations": [
+  {
+   "name": "Kligson's Moon (Droid World)",
+   "type": "Mobile Space Platform",
+   "scale": "Capital",
+   "length": "800 meters",
+   "skill": "Capital Ship Piloting",
+   "crew": "1,000 (droids), gunners: 20, skeleton: 20/+15",
+   "crew_skill": "Astrogation 9D, Capital Ship Gunnery 7D, Capital Ship Piloting 5D+2, Capital Ship Shields 6D, Sensors 7D",
+   "passengers": "2,000",
+   "cargo_capacity": "5,000 metric tons",
+   "consumables": "2 years",
+   "cost": "Not available for sale",
+   "hyperdrive_multiplier": "x4",
+   "hyperdrive_backup": "x10",
+   "nav_computer": "Yes",
+   "maneuverability": "1D",
+   "space": 4,
+   "atmosphere": "",
+   "hull": "5D",
+   "shields": "2D",
+   "sensors_passive": "40/1D",
+   "sensors_scan": "80/2D",
+   "sensors_search": "125/3D",
+   "sensors_focus": "5/3D+2",
+   "weapons": [
+    {
+     "name": "30 Turbolaser Batteries",
+     "fire_arc": "7 front, 8 left, 8 right, 7 back",
+     "crew": 2,
+     "skill": "Capital Ship Gunnery",
+     "fire_control": "2D",
+     "space_range": "3-15/35/75",
+     "atmosphere_range": "6-30/70/150 km",
+     "damage": "9D"
+    },
+    {
+     "name": "5 Tractor Beam Projectors",
+     "fire_arc": "1 front, 2 left, 2 right",
+     "crew": 3,
+     "skill": "Capital Ship Gunnery",
+     "fire_control": "2D",
+     "space_range": "1-5/15/30",
+     "atmosphere_range": "1-5/15/30 km",
+     "damage": "4D"
+    }
+   ],
+   "capsule": "A unique mobile space platform built by the cyborg recluse Kligson from a variety of starship hulls, space station components, and capital ship engines. Populated exclusively by droids, Kligson refuses to allow any organic life aboard. While appearing ungainly, the platform is surprisingly strong with substantial shielding and weaponry. After an encounter with the Empire and Rebellion, Kligson moved his 'Droid World' and its current location is unknown.",
+   "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.14"
+  }
+ ]
 };
