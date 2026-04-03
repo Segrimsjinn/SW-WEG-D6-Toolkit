@@ -38141,6 +38141,156 @@ const NOTABLE_NPCS = [
     equipment: "Blaster (4D)",
     capsule: "Low-level thugs employed by Kalna the Hutt to harass merchants on Terman Station for protection payments.",
     source: "WEG40136 Secrets of the Sisar Run p.25"
+  },
+
+  {
+    name: "Nabrun Leids (3.5 ABY)",
+    species: "Morseerian",
+    system: "Sisar Run",
+    location: "Sisar Run — Smuggling Operations",
+    affiliations: ["The Fringe"],
+    role: "Smuggler-for-Hire",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D+1", skills: { "blaster": "5D+1", "dodge": "4D+1", "grenade": "4D" } },
+      KNOWLEDGE: { base: "3D+1", skills: { "alien species": "4D+2", "cultures": "5D", "survival": "5D+1", "value": "4D+2" } },
+      MECHANICAL: { base: "3D+2", skills: { "astrogation": "5D", "space transports: Ghtroc transport": "5D+1", "starship shields": "4D" } },
+      PERCEPTION: { base: "2D", skills: { "bargain": "4D+2", "con": "5D", "sneak": "4D" } },
+      STRENGTH: { base: "3D", skills: { "lifting": "5D" } },
+      TECHNICAL: { base: "2D+2", skills: { "security": "5D" } }
+    },
+    specialAbilities: "Four Arms: Morseerians have four arms. They can perform two actions per round with no penalty; a third action receives a -1D penalty, a fourth action a -2D penalty and so forth. Methane Breather: Morseerians require methane to breathe and cannot survive without it.",
+    forcePoints: 0,
+    characterPoints: 5,
+    move: 10,
+    equipment: "Flight suit, methane-breather, goggles, blaster pistol (4D)",
+    capsule: "A Morseerian smuggler-for-hire who specializes in runs from the Sisar Run to the Triellus trade route leading to Tatooine. Broke a contract with a Drackmarian warlord named Omogg and fled the Quelii sector, heading deep into the Outer Rim to escape bounty hunters. Has a crew of four including two Morseerians, a Gand, and a Chadra-Fan. Pilots the modified Ghtroc 720 freighter Scarlet Vertha, whose life-support provides a methane-only atmosphere.",
+    source: "WEG40136 Secrets of the Sisar Run p.31"
+  },
+
+  {
+    name: "Elis Helrot (3.5 ABY)",
+    species: "Givin",
+    system: "Sisar Run",
+    location: "Sisar Run — Smuggling Operations",
+    affiliations: ["The Fringe"],
+    role: "Smuggler / Slaver",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "2D+2", skills: { "blaster": "4D+2", "dodge": "3D+2" } },
+      KNOWLEDGE: { base: "3D", skills: { "alien species": "5D+2", "bureaucracy": "5D+1", "cultures": "4D", "planetary systems": "6D+1", "survival": "5D+1", "value": "5D+2" } },
+      MECHANICAL: { base: "3D+2", skills: { "astrogation": "7D", "space transports": "5D+2", "starship gunnery": "5D+2", "starship shields": "4D+1" } },
+      PERCEPTION: { base: "2D", skills: { "bargain": "5D+1", "con": "4D", "hide": "5D", "sneak": "4D" } },
+      STRENGTH: { base: "2D+2", skills: { "stamina": "5D" } },
+      TECHNICAL: { base: "4D", skills: { "computer programming/repair": "5D+1", "droid repair": "5D", "(A) space transports engineering": "3D", "space transports repair": "7D" } }
+    },
+    specialAbilities: "Mathematical Aptitudes: Givin receive +2D when using skills involving mathematics, including astrogation. Vacuum Protection: Built-in vacuum suit protects from vacuum or harsh elements; +2D to Strength or stamina when resisting such extremes. Easy roll to survive 24 hours in complete vacuum, difficulty increases by one every hour. Increased Consumption: Must eat approximately nine kilograms of food per 24 hours to remain healthy or lose vacuum protection.",
+    forcePoints: 0,
+    characterPoints: 5,
+    move: 10,
+    equipment: "Blaster pistol (4D), datapad",
+    capsule: "An unscrupulous Givin pilot known to make slaving runs to Kala'uun spaceport and Pavilion port. To Helrot's analytical mind, the bottom line is all that matters. Pilots the highly modified freighter Hinthra with a crew of two other Givin and a human male. During a Black Sun smuggling test, attempted to buy out other crews' cargo pods — a disloyal move that earned him harsh consequences from Mai Biron.",
+    source: "WEG40136 Secrets of the Sisar Run p.31-32"
+  },
+
+  {
+    name: "Kal'Falnl C'ndros (3.5 ABY)",
+    species: "Quor'sav",
+    system: "Sisar Run",
+    location: "Sisar Run — Freelance Trading",
+    affiliations: ["The Fringe"],
+    role: "Freelance Trader",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "2D+2", skills: { "blaster": "4D", "dodge": "5D", "running": "6D+2" } },
+      KNOWLEDGE: { base: "3D+1", skills: { "alien species": "5D+2", "planetary systems": "5D+2", "survival": "5D" } },
+      MECHANICAL: { base: "3D", skills: { "communications": "5D", "space transports: Gyrnsnor-3 transport": "6D+1", "starship shields": "4D" } },
+      PERCEPTION: { base: "2D", skills: { "bargain": "4D", "command": "5D+1", "search": "5D" } },
+      STRENGTH: { base: "4D", skills: { "brawling: kicking": "6D", "climbing/jumping: jumping": "5D+2", "stamina": "6D" } },
+      TECHNICAL: { base: "3D", skills: { "first aid": "5D+1" } }
+    },
+    specialAbilities: "Size: Due to immense height (3.5m), may not receive the same cover bonuses as normal characters and some characters may get bonuses to-hit. Kick: STR+2D damage. Beak: STR+2 damage, but -1D for any parries that round.",
+    forcePoints: 0,
+    characterPoints: 6,
+    move: 15,
+    equipment: "Blaster pistol (4D), medpac, survival kit with flares, syntherope and rations",
+    capsule: "A freelance spacer well-liked by her clients for her easy-going manner and genuine concern. An immense Quor'sav standing 3.5 meters tall, appearing as a stilt-legged long-necked avian. Tucked away in a protected chamber of her starship Shelltooth is a clutch of eggs that will hatch in one standard year — she is saving credits for her children and tries to keep them out of harm's way. Has protective instincts for friends she deems vulnerable, with particularly motherly feelings for Rycar Ryjerd, which irritates the Bimm trader to no end. The only solo operator among Mai Biron's recruits, she may team up with player characters during the Sisar Run smuggling test.",
+    source: "WEG40136 Secrets of the Sisar Run p.32"
+  },
+
+  {
+    name: "Rycar Ryjerd (3.5 ABY)",
+    species: "Bimm",
+    system: "Sisar Run",
+    location: "Sisar Run — Gun-Running Operations",
+    affiliations: ["The Fringe"],
+    role: "Gun-Runner / Smuggler",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "4D+2", "brawling parry": "5D+1", "dodge": "5D+1" } },
+      KNOWLEDGE: { base: "3D", skills: { "alien species": "5D+2", "languages: Jawa": "7D+1", "planetary systems": "5D", "streetwise: Jabba the Hutt's organization": "5D+1", "value: blaster": "6D" } },
+      MECHANICAL: { base: "3D+1", skills: { "astrogation": "5D+1", "space transports": "6D", "starship gunnery": "5D+1" } },
+      PERCEPTION: { base: "3D+2", skills: { "bargain": "6D", "con": "6D+2", "hide": "5D", "persuasion: comedy": "6D+1", "sneak": "6D" } },
+      STRENGTH: { base: "2D+1", skills: {} },
+      TECHNICAL: { base: "2D+2", skills: { "blaster repair": "5D+1", "security": "6D", "starship weapons repair": "5D+1" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 6,
+    move: 8,
+    equipment: "Blaster repair kit, blaster (4D), holster",
+    capsule: "A former partner of Nabrun Leids, now maintaining a friendly rivalry. A shrewd Bimm businessman and skilled negotiator whose expertise is gun-running, in the business for over two decades. Often smuggles supplies for Jabba the Hutt on a regular route between Nar Shaddaa and Tatooine. Quick with a story and even quicker with a punchline, telling jokes that would get the toughest Saurin chuckling. Flies the modified YT-1300 Tower with a crew of three other Bimms.",
+    source: "WEG40136 Secrets of the Sisar Run p.32"
+  },
+
+  {
+    name: "Az-Iban (3.5 ABY)",
+    species: "Human",
+    system: "Sisar Run",
+    location: "Sisar Run — Disac Pirate Remnant",
+    affiliations: ["Criminal Underworld"],
+    role: "Pirate / Identity Thief",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D+2", skills: { "blaster": "5D+2", "brawling parry": "5D+1", "dodge": "5D", "melee combat": "5D+1", "melee parry": "4D+2" } },
+      KNOWLEDGE: { base: "2D", skills: { "alien species": "4D+1", "languages: Bocce": "3D", "planetary systems": "4D+2", "streetwise": "5D", "value": "4D+1" } },
+      MECHANICAL: { base: "3D+2", skills: { "astrogation": "4D", "sensors": "5D", "space transports": "4D+1", "starship gunnery": "4D+2", "starship shields": "5D+1" } },
+      PERCEPTION: { base: "3D", skills: { "command": "4D", "con": "5D+2", "search": "6D", "sneak": "5D" } },
+      STRENGTH: { base: "2D+2", skills: { "brawling": "6D", "stamina": "5D+1" } },
+      TECHNICAL: { base: "3D", skills: { "demolitions": "5D+2", "security": "5D+1" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 5,
+    move: 10,
+    equipment: "Heavy blaster pistol (5D), blaster (4D), vibroblade (STR+2D), vac-suit",
+    capsule: "Actually Morturr Heth, a survivor from the Disac pirates. After Ket Maliss destroyed the Disac leadership, Morturr's crippled ship came across the real Az-Iban's vessel. The pirates overtook Az-Iban and assumed his identity. Because Az-Iban was always secretive about his routes, no one has noticed the change. Considered a cutthroat who is no stranger to violence. Flies the modified YT-2400 Rampaging Ranat with a crew of four other former pirates. During a Black Sun smuggling test, betrayed the other crews by attempting to destroy the Novolek Beacon comsat and signaling remaining Disac pirates to attack.",
+    source: "WEG40136 Secrets of the Sisar Run p.32"
+  },
+
+  {
+    name: "Disac Pirate (3.5 ABY)",
+    species: "Human",
+    system: "Sisar Run",
+    location: "Sisar Run — Disac Pirate Remnant",
+    affiliations: ["Criminal Underworld"],
+    role: "Pirate",
+    type: "Generic Template",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { "blaster": "5D", "brawling parry": "5D", "dodge": "5D" } },
+      KNOWLEDGE: { base: "1D", skills: {} },
+      MECHANICAL: { base: "2D", skills: { "repulsorlift operation": "4D+2", "space transports": "4D+2", "starship gunnery": "4D+2", "starship shields": "3D" } },
+      PERCEPTION: { base: "2D", skills: {} },
+      STRENGTH: { base: "2D", skills: { "brawling": "5D" } },
+      TECHNICAL: { base: "2D", skills: { "security": "4D" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 10,
+    equipment: "Blaster pistol (4D), vibroblade (STR+2D), vac-suit",
+    capsule: "Remnants of the Disac pirates, once the most feared pirate group along the Sisar Run until Ket Maliss neutralized their leadership on Sprax's orders. Now a disorganized band of cutthroats rallied by Morturr Heth (posing as Az-Iban) for opportunistic raids.",
+    source: "WEG40136 Secrets of the Sisar Run p.37"
   }
 // --- END OF NOTABLE_NPCS ---
 ];

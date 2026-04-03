@@ -6211,6 +6211,176 @@ const STARSHIP_DATA = {
    ],
    "capsule": "A KDY D9 Runner, one of the first freighter designs produced by Kuat Drive Yards after the Empire rose to power. An effective, inexpensive model eventually replaced by the faster, more heavily armed D11. Kalend Thora acquired the Starknife after its original owner, a fellow Black Sun operative, was ambushed and assassinated by an unknown party — the death is still under investigation nearly two years later. Kalend finds the Starknife's modest appearance an asset: hijackers and Imperial officials eye flashier craft, not an average freighter with modest specs.",
    "source": "WEG40136 Secrets of the Sisar Run p.10-11"
+  },
+  {
+   "rank": 50,
+   "name": "Scarlet Vertha (Nabrun Leids' Ship)",
+   "craft": "Modified Ghtroc Industries Class 720 Freighter",
+   "scale": "Starfighter",
+   "skill": "Space Transports: Ghtroc Transport",
+   "crew": 1,
+   "crew_skill": "See Nabrun Leids",
+   "passengers": "",
+   "cargo_capacity": "",
+   "consumables": "",
+   "cost": "Not available for sale",
+   "hyperdrive_multiplier": "x1",
+   "maneuverability": "1D",
+   "space": 4,
+   "atmosphere": "280; 800 kmh",
+   "hull": "4D+1",
+   "shields": "1D",
+   "weapons": [
+    {
+     "name": "Double Laser Cannon",
+     "fire_arc": "Turret",
+     "crew": 1,
+     "skill": "Starship Gunnery",
+     "fire_control": "1D+2",
+     "damage": "5D"
+    }
+   ],
+   "capsule": "Nabrun Leids' modified Ghtroc 720 freighter. The life-support system provides a methane-only atmosphere to accommodate the Morseerian crew.",
+   "source": "WEG40136 Secrets of the Sisar Run p.31"
+  },
+  {
+   "rank": 50,
+   "name": "Hinthra (Elis Helrot's Ship)",
+   "craft": "Modified Freighter",
+   "scale": "Starfighter",
+   "skill": "Space Transports",
+   "crew": 1,
+   "crew_skill": "See Elis Helrot",
+   "passengers": "",
+   "cargo_capacity": "",
+   "consumables": "",
+   "cost": "Not available for sale",
+   "hyperdrive_multiplier": "x1",
+   "maneuverability": "1D+2",
+   "space": 5,
+   "atmosphere": "295; 850 kmh",
+   "hull": "3D+2",
+   "shields": "2D",
+   "weapons": [
+    {
+     "name": "2 Double Blaster Cannons",
+     "fire_arc": "Turret",
+     "crew": 1,
+     "skill": "Starship Gunnery",
+     "fire_control": "3D+1",
+     "damage": "4D"
+    },
+    {
+     "name": "Turbolaser",
+     "fire_arc": "Front",
+     "crew": 1,
+     "skill": "Starship Gunnery",
+     "fire_control": "1D",
+     "damage": "6D"
+    }
+   ],
+   "capsule": "Elis Helrot's highly modified freighter, crewed by two other Givin and a human male. Used for slaving runs and smuggling operations along the Sisar Run.",
+   "source": "WEG40136 Secrets of the Sisar Run p.32"
+  },
+  {
+   "rank": 50,
+   "name": "Shelltooth (Kal'Falnl C'ndros' Ship)",
+   "craft": "Modified Corellispace Gyrnsnor-3 Freighter",
+   "scale": "Starfighter",
+   "skill": "Space Transports: Gyrnsnor-3 Transport",
+   "crew": 1,
+   "crew_skill": "See Kal'Falnl C'ndros",
+   "passengers": "",
+   "cargo_capacity": "",
+   "consumables": "",
+   "cost": "Not available for sale",
+   "maneuverability": "0D",
+   "space": 6,
+   "atmosphere": "330; 950 kmh",
+   "hull": "6D+2",
+   "shields": "2D",
+   "weapons": [
+    {
+     "name": "Heavy Blaster Cannon",
+     "fire_arc": "Turret",
+     "crew": 1,
+     "skill": "Starship Gunnery",
+     "fire_control": "2D+1",
+     "damage": "5D"
+    }
+   ],
+   "capsule": "Kal'Falnl C'ndros' modified Gyrnsnor-3 freighter. Contains a protected chamber housing a clutch of eggs that will hatch in one standard year. A tough, well-armored vessel despite modest weapons.",
+   "source": "WEG40136 Secrets of the Sisar Run p.32"
+  },
+  {
+   "rank": 50,
+   "name": "Tower (Rycar Ryjerd's Ship)",
+   "craft": "Modified Corellian YT-1300 Transport",
+   "scale": "Starfighter",
+   "skill": "Space Transports",
+   "crew": 1,
+   "crew_skill": "See Rycar Ryjerd",
+   "passengers": "",
+   "cargo_capacity": "",
+   "consumables": "",
+   "cost": "Not available for sale",
+   "hyperdrive_multiplier": "x1",
+   "maneuverability": "1D+1",
+   "space": 5,
+   "atmosphere": "295; 850 kmh",
+   "hull": "4D+2",
+   "shields": "1D",
+   "weapons": [
+    {
+     "name": "2 Ion Cannons",
+     "fire_arc": "Turret",
+     "crew": 1,
+     "skill": "Starship Gunnery",
+     "fire_control": "3D",
+     "damage": "4D"
+    },
+    {
+     "name": "2 Laser Cannons (fire-linked)",
+     "fire_arc": "Turret",
+     "crew": 1,
+     "skill": "Starship Gunnery",
+     "fire_control": "2D",
+     "damage": "5D"
+    }
+   ],
+   "capsule": "Rycar Ryjerd's modified YT-1300 transport, crewed by three other Bimms. Used primarily for gun-running between Nar Shaddaa and Tatooine.",
+   "source": "WEG40136 Secrets of the Sisar Run p.32"
+  },
+  {
+   "rank": 50,
+   "name": "Rampaging Ranat (Az-Iban's Ship)",
+   "craft": "Modified Corellian YT-2400 Freighter",
+   "scale": "Starfighter",
+   "skill": "Space Transports",
+   "crew": 1,
+   "crew_skill": "See Az-Iban",
+   "passengers": "",
+   "cargo_capacity": "",
+   "consumables": "",
+   "cost": "Not available for sale",
+   "hyperdrive_multiplier": "x1",
+   "maneuverability": "1D+1",
+   "space": 6,
+   "atmosphere": "330; 950 kmh",
+   "hull": "3D+2",
+   "shields": "1D",
+   "weapons": [
+    {
+     "name": "2 Double Laser Cannons",
+     "fire_arc": "Turret",
+     "crew": 1,
+     "skill": "Starship Gunnery",
+     "fire_control": "1D+2",
+     "damage": "5D"
+    }
+   ],
+   "capsule": "Az-Iban's modified YT-2400 freighter, actually crewed by former Disac pirates posing as legitimate smugglers. Used by Morturr Heth after he assumed Az-Iban's identity.",
+   "source": "WEG40136 Secrets of the Sisar Run p.32"
   }
  ],
  "Named Modified Yachts": [
