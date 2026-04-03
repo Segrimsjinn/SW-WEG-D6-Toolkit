@@ -37991,6 +37991,156 @@ const NOTABLE_NPCS = [
     equipment: "Blaster pistol (4D), comlink, tool kit",
     capsule: "Scavengers and technicians working for Ujin Voli's Antar Band, specializing in salvage and repair along the Sisar Run.",
     source: "WEG40136 Secrets of the Sisar Run p.14"
+  },
+
+  {
+    name: "Sisar Run Weequay Administrator (3.5 ABY)",
+    species: "Weequay",
+    system: "Sisar Run",
+    location: "Sisar Run — Patrol Routes",
+    affiliations: ["Criminal Underworld", "Black Sun"],
+    role: "Enforcer / Patrol Administrator",
+    type: "Generic Template",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { "blaster": "4D", "brawling parry": "4D", "melee combat: force pike": "4D" } },
+      KNOWLEDGE: { base: "2D", skills: { "law enforcement: Sisar Run": "4D", "planetary systems": "3D", "streetwise": "4D+2", "survival": "3D" } },
+      MECHANICAL: { base: "2D", skills: { "astrogation": "3D+2", "space transports": "4D", "starship gunnery": "4D" } },
+      PERCEPTION: { base: "2D", skills: { "command": "3D+2", "search": "3D+2" } },
+      STRENGTH: { base: "2D", skills: { "brawling": "4D" } },
+      TECHNICAL: { base: "2D", skills: { "space transports repair": "3D" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 10,
+    equipment: "Blaster pistol (4D), force pike (STR+2D)",
+    capsule: "Sprax's Weequay lieutenants patrol the Sisar Run in craft flying the flag of Jatayus Outbound or XTS, monitoring traffic and eliminating all hazards to trade. Not known for leniency.",
+    source: "WEG40136 Secrets of the Sisar Run p.18"
+  },
+
+  {
+    name: "Welinarro (3.5 ABY)",
+    species: "Rodian",
+    system: "Nwarcol",
+    location: "Nwarcol Point — Starfighter Contingent",
+    affiliations: ["Criminal Underworld", "Black Sun"],
+    role: "Starfighter Squadron Leader",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "4D", "blaster artillery": "4D", "dodge": "4D" } },
+      KNOWLEDGE: { base: "2D+1", skills: { "alien species": "3D+1", "planetary systems": "5D", "streetwise": "4D+1", "streetwise: Nwarcol Point": "5D", "survival": "3D+1" } },
+      MECHANICAL: { base: "3D+2", skills: { "astrogation": "4D+2", "sensors": "4D+2", "starfighter piloting": "5D", "starfighter piloting: Y-wing": "5D+2", "starship gunnery": "5D", "starship shields": "4D+2" } },
+      PERCEPTION: { base: "3D", skills: { "command": "5D", "hide": "3D+2", "sneak": "4D" } },
+      STRENGTH: { base: "3D", skills: { "brawling": "4D" } },
+      TECHNICAL: { base: "3D", skills: { "starfighter repair": "5D" } }
+    },
+    specialAbilities: "",
+    forcePoints: 1,
+    characterPoints: 3,
+    move: 10,
+    equipment: "Blaster pistol (4D), flight suit",
+    capsule: "Son of Grisserno, Rebel hero of the Battle of Denab. A former promising Rebel Y-wing pilot who left the Alliance to work for the criminal underworld, now leading Nwarcol Point's starfighter contingent of several dozen capable pilots. Has already achieved a 'killer' reputation throughout portions of the Run — his natural Rodian predatory instincts make him almost unstoppable behind the controls of his modified Gauntlet starfighter. A thin Rodian male missing several head spikes, with a short snout and darker skin than common for his people.",
+    source: "WEG40136 Secrets of the Sisar Run p.20"
+  },
+
+  {
+    name: "Gricul Yarder (3.5 ABY)",
+    species: "Various",
+    system: "Sriluur",
+    location: "Sriluur — Meirm City — Gricul Salvage Yards",
+    affiliations: ["Criminal Underworld", "Black Sun"],
+    role: "Technician / Mechanic",
+    type: "Generic Template",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { "blaster": "4D", "dodge": "4D" } },
+      KNOWLEDGE: { base: "2D", skills: {} },
+      MECHANICAL: { base: "2D", skills: {} },
+      PERCEPTION: { base: "2D", skills: { "con": "3D+2", "persuasion": "4D", "search": "4D+2" } },
+      STRENGTH: { base: "2D", skills: { "brawling": "3D" } },
+      TECHNICAL: { base: "2D", skills: { "repulsorlift repair": "5D", "space transports repair": "6D", "starfighter repair": "6D", "starship weapon repair": "5D" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 10,
+    equipment: "Blaster (4D), comlink, tool kit",
+    capsule: "Skilled underground techs at the Gricul Salvage Yards on Sriluur, overseen by five beings who answer directly to Kisquar. Can transform a hot freighter into a perfectly legitimate hauler with matching transponder codes. Just about every successful smuggler in the area has used the Yards at least once — and all end up owing Sprax a favor, though they seldom know it.",
+    source: "WEG40136 Secrets of the Sisar Run p.23"
+  },
+
+  {
+    name: "Kilon Tarlok (3.5 ABY)",
+    species: "Near-Human",
+    system: "Terman",
+    location: "Terman Station",
+    affiliations: ["Neutral"],
+    role: "Station Controller",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "2D", skills: {} },
+      KNOWLEDGE: { base: "2D+2", skills: { "bureaucracy": "3D+2", "bureaucracy: Terman Station": "4D+2", "streetwise": "3D+2" } },
+      MECHANICAL: { base: "2D+1", skills: { "communications": "3D+1" } },
+      PERCEPTION: { base: "3D", skills: { "bargain": "3D+2", "command": "4D", "con": "4D" } },
+      STRENGTH: { base: "2D", skills: {} },
+      TECHNICAL: { base: "3D", skills: { "security": "4D" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 2,
+    move: 9,
+    equipment: "Blaster pistol (4D), datapad, headset comlink, security ID",
+    capsule: "In command of Terman Station for several years before Sprax showed up. While the credits now go to Sprax, Tarlok remains nominally in control. Those who visit often wonder why he has stayed in charge; those in the know await his removal. A tall, aged near-human male with fair pink skin and bright-orange hair. His passive attitude and high-pitched voice have failed in all attempts to muster enthusiasm among staff or intimidate disruptive guests. Has no idea whom he works for or who pays his meager salary — suspects illicit sources but lacks the audacity to inquire.",
+    source: "WEG40136 Secrets of the Sisar Run p.24"
+  },
+
+  {
+    name: "Kalna (3.5 ABY)",
+    species: "Hutt",
+    system: "Terman",
+    location: "Terman Station",
+    affiliations: ["Criminal Underworld"],
+    role: "Small-time Entrepreneur / Protection Racketeer",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "1D", skills: {} },
+      KNOWLEDGE: { base: "3D+2", skills: { "business": "4D", "streetwise: Terman Station": "4D+2" } },
+      MECHANICAL: { base: "1D", skills: {} },
+      PERCEPTION: { base: "3D+2", skills: { "bargain": "4D", "command": "4D+2", "con": "4D+2", "gambling": "4D+2" } },
+      STRENGTH: { base: "3D", skills: {} },
+      TECHNICAL: { base: "2D", skills: {} }
+    },
+    specialAbilities: "Force Resistance: Hutts have an innate defense against Force-based mind manipulation and roll double their Perception dice to resist such attacks.",
+    forcePoints: 0,
+    characterPoints: 2,
+    move: 1,
+    equipment: "Comlink, datapad, Hutt floater",
+    capsule: "Once a promising young Hutt who thought he was on his way to the life of an affluent gangster. Unfortunately belonged to clan Ramesh, which had the audacity to assassinate a leader of the Black Bha'lir smuggler society. While Kalna waited for pickup, his clan was exterminated by the vengeful smugglers. With no other clan to back or protect him, he made the best of a bad situation and set up shop on Terman Station. Now runs a small protection service employing fewer than a dozen local thugs to harass on-station merchants for payment or goods. True to his Hutt heritage, has turned this situation into minor profit.",
+    source: "WEG40136 Secrets of the Sisar Run p.24-25"
+  },
+
+  {
+    name: "Kalna's Thug (3.5 ABY)",
+    species: "Various",
+    system: "Terman",
+    location: "Terman Station",
+    affiliations: ["Criminal Underworld"],
+    role: "Thug / Enforcer",
+    type: "Generic Template",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { "blaster": "2D+2" } },
+      KNOWLEDGE: { base: "2D", skills: { "intimidation": "3D" } },
+      MECHANICAL: { base: "2D", skills: {} },
+      PERCEPTION: { base: "2D", skills: {} },
+      STRENGTH: { base: "2D", skills: { "brawling": "3D" } },
+      TECHNICAL: { base: "2D", skills: {} }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 9,
+    equipment: "Blaster (4D)",
+    capsule: "Low-level thugs employed by Kalna the Hutt to harass merchants on Terman Station for protection payments.",
+    source: "WEG40136 Secrets of the Sisar Run p.25"
   }
 // --- END OF NOTABLE_NPCS ---
 ];

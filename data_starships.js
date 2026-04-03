@@ -21945,7 +21945,45 @@ const STARSHIP_DATA = {
    ]
   }
  ],
- "Named Modified Space Superiority Fighters": [],
+ "Named Modified Space Superiority Fighters": [
+  {
+   "rank": 50,
+   "name": "Welinarro's Modified Gauntlet Fighter",
+   "craft": "Modified Shobquix Yards Gauntlet Starfighter",
+   "scale": "Starfighter",
+   "skill": "Starfighter Piloting",
+   "crew": 1,
+   "crew_skill": "See Welinarro",
+   "cargo_capacity": "",
+   "consumables": "",
+   "cost": "Not available for sale",
+   "maneuverability": "2D",
+   "space": 6,
+   "atmosphere": "295; 850 kmh",
+   "hull": "4D",
+   "shields": "1D",
+   "weapons": [
+    {
+     "name": "2 Laser Cannons (fire-linked)",
+     "fire_arc": "Front",
+     "crew": "",
+     "skill": "Starship Gunnery",
+     "fire_control": "1D",
+     "damage": "5D"
+    },
+    {
+     "name": "Proton Torpedo Launcher",
+     "fire_arc": "Front",
+     "crew": "",
+     "skill": "Starship Gunnery",
+     "fire_control": "2D",
+     "damage": "8D"
+    }
+   ],
+   "capsule": "Welinarro's personal modified Gauntlet starfighter, used to lead Nwarcol Point's defense contingent of over 40 combat-worthy craft.",
+   "source": "WEG40136 Secrets of the Sisar Run p.20"
+  }
+ ],
  "Stock Capital Corvettes": [
   {
    "rank": 7,
