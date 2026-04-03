@@ -4102,6 +4102,86 @@ const EQUIPMENT_DATA = [
   "source": "WEG40098 Goroth Slave of the Empire p.65"
  },
  {
+  "name": "NeuroSaav 9954/1 Sensor Array",
+  "category": "Planetary Sensors",
+  "cost": "5,000",
+  "availability": "2, R",
+  "game_notes": "Installation-level sensor package. Crew: 3. Skill: Sensors. Central processing computer with 50+ sensor dishes. Includes powerful FST (full-spectrum transceiver) capable of picking up basic info from near-orbit, dedicated energy receptor (DER) for detecting energy use/fluctuation, and hyperwave signal interceptor (HSI). Range can be extended with Sensor Relay Satellites (2,000 credits each). Optional life-form indicator (LFI) available for 1,000 credits.",
+  "source": "WEG40111 Hideouts & Strongholds p.12"
+ },
+ {
+  "name": "IntelStar BlindSide Sensor Jammer",
+  "category": "Planetary Sensors",
+  "cost": "5,000 plus installation",
+  "availability": "2, X",
+  "game_notes": "Sensor jammer for hidden strongholds. Originally designed for ships. Opposed sensors contest between scanner and jammer operators. Limitation: anyone scanning will know they're being jammed.",
+  "source": "WEG40111 Hideouts & Strongholds p.12"
+ },
+ {
+  "name": "IntelStar Tranquillity System I Sensor Blind",
+  "category": "Planetary Sensors",
+  "cost": "400,000",
+  "availability": "4, X",
+  "game_notes": "Instead of blocking scans, the sensor blind analyzes the target and transmits an additional energy wave that causes equipment and energy use to appear as natural phenomena (thermal updrafts, solar winds, etc.). Opposed roll vs scanning sensors — if blind operator wins by 5+, scanner receives false reading. +1D bonus in densely populated areas. Cannot fool a crystal gravfield trap (CGT) sensor.",
+  "source": "WEG40111 Hideouts & Strongholds p.12"
+ },
+ {
+  "name": "NeuroSaav 3K40 Targeting System",
+  "category": "Planetary Defense",
+  "cost": "5,000 (system), 3,000 (upgrade to +2D)",
+  "availability": "2, R",
+  "game_notes": "Installation targeting computer. Handles up to 5 weapons of any scale simultaneously. Can assign separate targets for each weapon or link fire. Provides +1D bonus to gunner's skill. Upgrade available to raise bonus to +2D.",
+  "source": "WEG40111 Hideouts & Strongholds p.12"
+ },
+ {
+  "name": "MerrSonn Guardian-Class Shield Generator",
+  "category": "Planetary Defense",
+  "cost": "60,000",
+  "availability": "3, R",
+  "game_notes": "Capital scale. Crew: 2. Skill: Shields. Base shield generator including both particle and energy shields. Each unit provides 6D of protection for up to 4 fire arcs.",
+  "source": "WEG40111 Hideouts & Strongholds p.13"
+ },
+ {
+  "name": "Taptronics CovOps Mark III Surveillance Pod",
+  "category": "Planetary Sensors",
+  "cost": "8,000",
+  "availability": "2, R",
+  "game_notes": "Concealed surveillance pod camouflaged to match plants and landscape. Houses miniature holocams, motion/heat sensors, and high-gain microphones. Independently powered by small batteries (unaffected by main power sabotage). Adds +2D to sensors roll of the operator. In auto-function mode, treated as sensors 4D, automatically raising alert if unauthorized motion, heat, or sound detected.",
+  "source": "WEG40111 Hideouts & Strongholds p.60"
+ },
+ {
+  "name": "Arakyd Flight Bay Tractor Beam",
+  "category": "Planetary Defense",
+  "cost": "12,000",
+  "availability": "2",
+  "game_notes": "Starfighter scale. Crew: 1. Skill: Gunnery. FC 2D. Damage: 3D. Designed for flight bays — when hooked to an installation's computer, automates landing ships in cramped quarters. Also useful for preventing raiding ships from escaping, buying time for patrol ships to arrive.",
+  "source": "WEG40111 Hideouts & Strongholds p.13"
+ },
+ {
+  "name": "MerrWeapons WorldArmor 9 Planetary Shield (Encasing)",
+  "category": "Planetary Defense",
+  "cost": "12,000,000,000 (12 billion credits)",
+  "availability": "4, X",
+  "game_notes": "Death Star scale. Crew: 25. Skill: Planetary shields. Body 3D (capital scale). Shield: 3D. Range: 1/3/5 units. Difficulty: Easy (short range or half-planet), Moderate (full planet), Difficult (long range or orbiting station). Encasing shields are solid 'walls' of energy — either on or off. Block sensors, energy weapons, and damage ships passing through (roll shield dice vs hull). Can be cross-linked to cover entire planet. Friendly fire cannot penetrate except through permanently assigned fire gaps (Difficult to Heroic terrain for starfighters, Heroic+ for capital ships).",
+  "source": "WEG40111 Hideouts & Strongholds p.14"
+ },
+ {
+  "name": "WorldArmor 4 Defensive Shield",
+  "category": "Planetary Defense",
+  "cost": "80,000,000 (80 million credits)",
+  "availability": "4, X",
+  "game_notes": "Capital scale. Crew: 25. Skill: Planetary shields. Body 3D (capital scale). Shield: 5D (capital scale). Range: 1/3/5 units. Difficulty: Easy (short range or half-planet), Moderate (full planet), Difficult (long range or orbiting station). Used at Fortress Keremark with six overlapping generators providing layered protection strong enough to deflect orbital bombardments.",
+  "source": "WEG40111 Hideouts & Strongholds p.74"
+ },
+ {
+  "name": "DefenStar Nyalsan II Planetary Shield (Shutter)",
+  "category": "Planetary Defense",
+  "cost": "500,000,000 (500 million credits)",
+  "availability": "4, X",
+  "game_notes": "Capital scale. Crew: 18. Skill: Planetary shields. Body 3D. Shield: 10D. Range: 1/2/3 units. Difficulty: Easy (short range or half-planet), Moderate (full planet), Difficult (long range). Shutter shields are interlocking adjustable shields that can overlap for combined defense and open for friendly fire/launches. Flying through without a gap: Moderate to Heroic. Active blocking: operator's planetary shields skill (typically 4D-5D) vs starship dodge. More versatile than encasing shields but cannot project around orbiting objects. Relatively 'flat' in range.",
+  "source": "WEG40111 Hideouts & Strongholds p.14"
+ },
+ {
   "name": "Karflo AR-2B Utility Droid",
   "category": "Droids",
   "cost": "2,250",
