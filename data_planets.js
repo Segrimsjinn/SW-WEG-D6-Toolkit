@@ -8359,6 +8359,34 @@ const PLANETS_DATA = [
     summary: "Capital of the Hapan Consortium for over four millennia, Hapes is a planet that never sleeps. As the bureaucratic center for the entire Hapan Cluster, all 63 member worlds maintain embassies here. By law, all major financial and business transactions within the Hapes Consortium must be conducted on Hapes proper. Most major corporations have branch offices here, and the Hapes Transit Authority handles more than 2,000 starships a day. The cities are stately and impeccably clean as mandated by Hapan Consortium law, while outside the cities much of the wildlife remains undisturbed with hunting strictly regulated.",
     locations: "Ta'a Chume'Dan (Largest city on Hapes, center of government. The Ta'a Chume'Dan or 'Queen Mother's Residence' is a large mountain-like structure on which the space vessel Star Home rests while Ta'a Chume holds court — a testament to the greatness the Queen Mother represents).",
     ofNote: "HAPAN HUMANS: Attribute Dice 13D. DEX 2D/4D+2, KNO 2D/5D, MEC 2D/4D, PER 1D+1/3D+2, STR 2D/4D+2, TEC 2D/4D. Move: 10/12. Height: 1.5-2.1m. Special Abilities: Attractiveness — both male and female Hapans are extremely beautiful; males receive +1D bonus to bargain, con, command, or persuasion rolls against non-Hapan humans of the opposite sex. Language — Hapans are taught the Hapan language from birth; few speak Basic, and if they can, it is a second language. Vision — due to intensive light on their homeworld from abundant moons, Hapans have very poor night vision; treat all lesser darkness modifiers (poor light, moonlit) as complete darkness, adding +4D to the difficulty for all ranged attacks. | FISHING: Hapes has a thriving but strictly regulated fishing industry. | 8 ABY: Prince Isolder proposed marriage to Princess Leia Organa, presenting himself as the gift of the world of Hapes. After the Dathomir incident, Isolder chose Teneniel Djo as his bride instead. The New Republic delegation to the Hapan Cluster negotiated the Hapan Treaty and established an embassy on Hapes."
+  },
+
+  {
+    name: "Dathomir",
+    system: "Dathomir",
+    star: "Dathomir",
+    grid: "O-6",
+    region: "Outer Rim Territories",
+    type: "Terrestrial",
+    temperature: "Temperate",
+    atmosphere: "Type I (Breathable)",
+    hydrosphere: "Moderate",
+    gravity: "Slightly less than standard",
+    terrain: "Desert, forest, jungle, mountain",
+    lengthOfDay: "24 standard hours",
+    lengthOfYear: "491 local days",
+    sapientSpecies: "Humans (Witches of Dathomir), Rancor Mutants",
+    starport: "Limited Services (former Imperial Prison)",
+    population: "5,200",
+    function: "Homeworld (former Imperial Prison)",
+    government: "Tribal (New Republic allied)",
+    techLevel: "Stone, Space (Imperial Prison)",
+    majorExports: "None",
+    majorImports: "None",
+    source: "WEG40139 Cracken's Threat Dossier p.14-17",
+    summary: "A relatively small planet in the Quelii sector capable of supporting human life, with three moderately large continents ranging from jungles to deserts to snow-capped mountains. Life is abundant, from willowy-thin trees towering eighty meters high to giant wuffa worms burrowing beneath the surface and a unique breed of rancors. The planet has an extremely high level of 'life force' — human offworlders may detect a burning sensation in their sinuses. Home to the Force-using Witches of Dathomir, descendants of the exiled Jedi Allya, who organized into clans practicing 'Allyan Magic' through chanting, singing, dancing, and written words.",
+    locations: "Singing Mountain Clan Territory (Home of the clan that sheltered Han Solo, Leia Organa, and their companions during the Dathomir incident. Led by Clan Mother Augwynne). Imperial Prison (Former maximum-security facility for political prisoners too valuable to assassinate and too popular to imprison in known facilities. Bombed from orbit when the Emperor learned of the Nightsisters. Now in ruins). Dathomir Shipyards (Warlord Zsinj erected enormous spacedocks stretching over ten kilometers in length after discovering rich veins of neutronium, lommite, and zersium on Koratas, Dathomir's fourth moon. The Iron Fist underwent repairs here. Destroyed when the Hapan Royal Fleet attacked).",
+    ofNote: "HISTORY OF THE WITCHES: Long before the Old Republic fell, a Jedi known only as Allya was exiled to Dathomir, then an Imperial prison world. Using the Force, she tamed the rancors and rallied the prisoners under her rule. She taught her daughters to use the Force, creating a matriarchal society where males served as slaves and hunters. On her deathbed she left the Book of Law with the final entry: 'Never concede to evil.' After her death, daughters split into separate clans, each developing their own version of Allyan Magic. Generations of peace were disrupted when the Jedi training ship Chu'unthor crash-landed, introducing violence. Jedi came to rescue survivors, and eventually both sides returned to peace. | NIGHTSISTERS: A dark-side clan led by Gethzerion who sought to escape Dathomir. The Emperor bombed the prison and posted two Star Destroyers to ensure the Nightsisters remained trapped. | 8 ABY (Courtship of Princess Leia): Han Solo won Dathomir in a sabacc game from Warlord Omogg. Solo and companions crash-landed on the planet, were aided by the Singing Mountain clan, and ultimately destroyed Zsinj and the Iron Fist. Clan Mother Augwynne united the clans and petitioned for New Republic membership. | KORATAS MOON: Dathomir's fourth moon contains rich veins of neutronium, lommite, and zersium — the primary components of durasteel warship-grade armor. This discovery prompted Zsinj to move his shipbuilding facilities to Dathomir."
   }
 // --- END OF PLANETS_DATA ---
 ];
