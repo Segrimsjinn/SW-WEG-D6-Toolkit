@@ -36789,5 +36789,53 @@ const NOTABLE_NPCS = [
     equipment: "Blaster (2D, due to age and condition), datapads, complete 102-volume Journey of the Minds (annotated), dirty coveralls, two-year supply of consumables, various tools",
     capsule: "A Snivvian recluse and scholar who has spent the past two years living in two unused chambers deep in Eyar City's sewer system, contemplating and dissecting the 102-volume Journey of the Minds, an ancient Snivvian philosophical text. Learned to fool maintenance sensors and bribed workers to leave him alone. Extremely paranoid about visitors — fears they want to steal his research or make him leave. Meets intruders waving an old blaster and making ridiculous threats. Other times descends on visitors ranting about textual inconsistencies and begging for philosophical debate. If calmed, can reveal much about surrounding passages and the sewer system.",
     source: "WEG40111 Hideouts & Strongholds p.159"
+  },
+  {
+    name: "Commander Dalgeer",
+    species: "Sullustan",
+    system: "",
+    location: "Dalgeer's Rim Base, Mount Deldarca (volcano)",
+    affiliations: ["Rebel Alliance"],
+    role: "Rebel Outpost Commander",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "2D+2", skills: { "Blaster": "5D", "Dodge": "4D", "Brawling Parry": "4D+1", "Running": "4D" } },
+      KNOWLEDGE: { base: "2D+2", skills: { "Alien Species": "4D+2", "Languages": "4D", "Survival": "4D+2", "Tactics": "6D", "Willpower": "5D" } },
+      MECHANICAL: { base: "3D+2", skills: { "Communications": "5D", "Repulsorlift Operation": "4D", "Sensors": "4D+1" } },
+      PERCEPTION: { base: "3D+1", skills: { "Bargain": "4D+2", "Command": "6D", "Persuasion": "5D" } },
+      STRENGTH: { base: "2D+1", skills: { "Brawling": "5D+2" } },
+      TECHNICAL: { base: "3D+1", skills: { "Computer Programming/Repair": "4D+2", "Security": "5D" } }
+    },
+    specialAbilities: "Enhanced Senses: +2D to Perception and search in low light or hearing. Location Sense: Cannot get lost in previously visited places; +1D astrogation to previously visited systems.",
+    forcePoints: 0,
+    characterPoints: 10,
+    move: 11,
+    equipment: "Blaster (4D), comlink, datapad, breath mask, Rebel uniform",
+    capsule: "A former corporate security officer who joined the Alliance, unable to cope with his employer's allegiance to the Empire. Volunteered to command a volcanic base — Dalgeer's Rim on Mount Deldarca, an enormous 600km-wide volcano. The base uses geothermal power and volcanic emissions to mask sensor signatures. Serves as a staging facility, secondary fighter base, and training center for agents from every major Alliance branch. Despite his corporate security background, manages the constant chaos with ease. Highly energetic and outspoken, willing to give his opinion on anything. Tactics 6D, Command 6D.",
+    source: "WEG40111 Hideouts & Strongholds p.166"
+  },
+  {
+    name: "Karbo Jaxx (Nain Lup)",
+    species: "Rodian",
+    system: "",
+    location: "Outer Rim (various drop points, including Telega Lake)",
+    affiliations: ["The Fringe"],
+    role: "Arms Dealer / Gunrunner",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "3D+2", skills: { "Blaster": "5D", "Blaster Artillery": "4D+2", "Dodge": "5D", "Missile Weapons": "4D+2", "Vehicle Blasters": "4D+2" } },
+      KNOWLEDGE: { base: "3D", skills: { "Alien Species": "4D", "Business": "4D", "Cultures": "4D", "Languages": "4D", "Streetwise": "5D", "Value": "4D" } },
+      MECHANICAL: { base: "2D", skills: { "Repulsorlift Operation": "3D+1", "Space Transports": "4D+2", "Starship Gunnery": "3D+2" } },
+      PERCEPTION: { base: "3D+2", skills: { "Bargain": "5D+2", "Con": "5D", "Persuasion": "5D" } },
+      STRENGTH: { base: "3D+1", skills: { "Lifting": "4D+2" } },
+      TECHNICAL: { base: "2D+1", skills: { "Armor Repair": "3D+2", "Blaster Repair": "4D+2", "Starship Weapon Repair": "4D+1" } }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 15,
+    move: 10,
+    equipment: "Heavy blaster pistol (5D), hold-out blaster (3D), light repeating blaster (6D), thermal detonators (10D), grenades (5D), vibroblade (STR+3D), comlink, datapad, macrobinoculars, blast vest (+1 energy, +1D physical), blast helmet (+1 energy, +1D physical)",
+    capsule: "Rodian gunrunner and arms dealer who keeps Rebel agents armed with personal weapons and explosives. Real name is Nain Lup — uses 'Karbo' as a contact alias. As Lup, appears to be a respectable small-time arms merchant supplying legal weapons shops. As Karbo, he is tough, cunning and careful. Prefers drop points over face-to-face contact, using locations like the Telega Lake waterfall cave. Deposits goods in locked crates well in advance and never sticks around. No specific loyalty to the Rebels — primarily interested in wealth. But the Alliance is a most profitable and needy client. When dealing face to face, wears a full range of personal weapons and defensive gear. Vibroblade does STR+3D. 15 Character Points.",
+    source: "WEG40111 Hideouts & Strongholds p.172"
   }
 ];

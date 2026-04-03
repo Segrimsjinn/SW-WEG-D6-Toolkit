@@ -4741,6 +4741,18 @@ const WEAPONS_DATA = [
   "source": "WEG40111 Hideouts & Strongholds p.89"
  },
  {
+  "name": "MerrSonn TX-2020 Double Laser Cannon",
+  "category": "Artillery",
+  "skill": "Blaster artillery",
+  "cost": "12,000",
+  "availability": "R, X",
+  "damage": "6D (Starfighter scale)",
+  "range": "10-100/350/600m",
+  "ammo": "Unlimited (power generator)",
+  "game_notes": "Starfighter scale. Body 3D. Anti-vehicle laser emplacement. Often recessed into fortification walls with shield doors that must be opened to fire.",
+  "source": "WEG40111 Hideouts & Strongholds p.167"
+ },
+ {
   "name": "Czerka S-4 Underwater Torpedo Launcher",
   "category": "Artillery",
   "skill": "Missile weapons: Czerka S-4",

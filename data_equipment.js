@@ -4182,6 +4182,14 @@ const EQUIPMENT_DATA = [
   "source": "WEG40111 Hideouts & Strongholds p.14"
  },
  {
+  "name": "GH-5D2 Maintenance Droid",
+  "category": "Droids",
+  "cost": "",
+  "availability": "",
+  "game_notes": "Sewer/facility maintenance droid. Move: repulsorlift (50m flight ceiling). DEX 1D, KNO 1D, MEC 1D (repulsorlift operation 4D, sensors 4D), PER 2D+2 (search 6D), STR 2D, TEC 3D (droid repair 4D, sewer maintenance 5D). Two retractable manipulators. Repulsorlift engine. Audio and visual sensors.",
+  "source": "WEG40111 Hideouts & Strongholds p.159"
+ },
+ {
   "name": "Karflo AR-2B Utility Droid",
   "category": "Droids",
   "cost": "2,250",
