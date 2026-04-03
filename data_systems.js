@@ -3240,6 +3240,7 @@ const SYSTEMS_DATA = [
   { "name": "Kotab", "grid": "N-10", "region": "Inner Rim", "col": 12, "row": 10, "quadrant": "E", "hours": 4.2 },
   { "name": "Kothlis", "grid": "R-14", "region": "Mid Rim", "col": 16, "row": 14, "quadrant": "E", "hours": 3.3 },
   { "name": "Kothlis - Kothlis Shadowport", "grid": "R-14", "region": "Mid Rim", "col": 16, "row": 14, "quadrant": "E", "hours": 3.3 },
+  { "name": "Kothlis - Tal'cara", "grid": "R-14", "region": "Mid Rim", "col": 16, "row": 14, "quadrant": "E", "hours": 3.3 },
   { "name": "Kovor", "grid": "I-18", "region": "Outer Rim Territories", "col": 7, "row": 18, "quadrant": "SW", "hours": 21.3 },
   { "name": "Kowak", "grid": "S-16", "region": "Outer Rim Territories", "col": 17, "row": 16, "quadrant": "SE", "hours": 8.0 },
   { "name": "Kragis", "grid": "O-15", "region": "Expansion Region", "col": 13, "row": 15, "quadrant": "SE", "hours": 3.0 },
