@@ -232,8 +232,7 @@ const GAZETTEER_DATA = {
     source: "WEG40136 Secrets of the Sisar Run",
     grid: null,
     gateways: [
-      { system: "Sriluur", fromGrids: null },
-      { system: "Reibrin", fromGrids: ["R-7","R-8","S-7"] },
+      { system: "Reibrin", fromGrids: null },
       { system: "Novor", fromGrids: ["R-7","S-7"] },
       { system: "Nwarcol Point", fromGrids: ["S-7","T-7","T-8"] },
       { system: "Sespe", fromGrids: ["S-9","T-9","T-10"] },
