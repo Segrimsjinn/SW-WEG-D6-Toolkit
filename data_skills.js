@@ -74,7 +74,7 @@
                    {
                        "attr":  "Dex",
                        "name":  "Blaster",
-                       "jobs":  [
+                       "jobs":  ["SpaceOps Trooper", "SpecForce Scanner/Comm Operator", "SpecForce Driver/Pilot", "SpecForce Technician", "SpecForce Heavy Weapon Specialist", "SpecForce Infiltrator", "SpecForce Wilderness Fighter", "SpecForce Urban Combat Specialist", "SpecForce Pathfinder", 
                                     "Alliance Agitator",
                                     "Alliance Liaison",
                                     "Ex-Imperial Commando",
@@ -161,7 +161,7 @@
                    {
                        "attr":  "Dex",
                        "name":  "Blaster Artillery",
-                       "jobs":  [
+                       "jobs":  ["SpecForce Heavy Weapon Specialist", "SpecForce Wilderness Fighter", "SpecForce Pathfinder", 
                                     "Ordnance Procurer",
                                     "Arms Merchant",
                                     "CompForce Assault Trooper",
@@ -198,7 +198,7 @@
                    {
                        "attr":  "Dex",
                        "name":  "Brawling Parry",
-                       "jobs":  [
+                       "jobs":  ["SpaceOps Trooper", "SpecForce Infiltrator", 
                                     "Holovid Celebrity",
                                     "New Republic Intelligence Operative",
                                     "Rodian Dramatist",
@@ -239,7 +239,7 @@
                    {
                        "attr":  "Dex",
                        "name":  "Dodge",
-                       "jobs":  [
+                       "jobs":  ["SpaceOps Trooper", "SpecForce Scanner/Comm Operator", "SpecForce Technician", "SpecForce Infiltrator", "SpecForce Wilderness Fighter", "SpecForce Urban Combat Specialist", "SpecForce Pathfinder", 
                                     "Alliance Agitator",
                                     "Alliance Liaison",
                                     "Ex-Imperial Commando",
@@ -328,14 +328,14 @@
                    {
                        "attr":  "Dex",
                        "name":  "Firearm",
-                       "jobs":  [
+                       "jobs":  ["SpecForce Infiltrator", 
 
                                 ]
                    },
                    {
                        "attr":  "Dex",
                        "name":  "Grenade",
-                       "jobs":  [
+                       "jobs":  ["SpaceOps Trooper", "SpecForce Wilderness Fighter", "SpecForce Urban Combat Specialist", "SpecForce Pathfinder", 
                                     "Ex-Imperial Commando",
                                     "Rebel Saboteur",
                                     "Resistance Leader",
@@ -358,7 +358,7 @@
                    {
                        "attr":  "Dex",
                        "name":  "Heavy Weapons",
-                       "jobs":  [
+                       "jobs":  ["SpecForce Heavy Weapon Specialist", 
                                     "Loyal Retainer",
                                     "Mercenary",
                                     "Tough Native"
@@ -375,7 +375,7 @@
                    {
                        "attr":  "Dex",
                        "name":  "Melee Combat",
-                       "jobs":  [
+                       "jobs":  ["SpaceOps Trooper", "SpecForce Infiltrator", "SpecForce Wilderness Fighter", "SpecForce Urban Combat Specialist", 
                                     "Ex-Imperial Commando",
                                     "New Republic Security Force Agent",
                                     "New Republic Intelligence Operative",
@@ -423,7 +423,7 @@
                    {
                        "attr":  "Dex",
                        "name":  "Melee Parry",
-                       "jobs":  [
+                       "jobs":  ["SpecForce Infiltrator", "SpecForce Urban Combat Specialist", 
                                     "Ex-Imperial Commando",
                                     "New Republic Security Force Agent",
                                     "Rodian Pacifist",
@@ -463,7 +463,7 @@
                    {
                        "attr":  "Dex",
                        "name":  "Missile Weapon",
-                       "jobs":  [
+                       "jobs":  ["SpecForce Heavy Weapon Specialist", 
 
                                 ]
                    },
@@ -539,7 +539,7 @@
                    {
                        "attr":  "Dex",
                        "name":  "Vehicle Blasters",
-                       "jobs":  [
+                       "jobs":  ["SpecForce Driver/Pilot", "SpecForce Heavy Weapon Specialist", "SpecForce Wilderness Fighter", "SpecForce Pathfinder", 
                                     "New Republic Intelligence Operative",
                                     "Ordnance Procurer",
                                     "Speeder Racer",
@@ -562,7 +562,7 @@
                    {
                        "attr":  "Kno",
                        "name":  "Alien Species",
-                       "jobs":  [
+                       "jobs":  ["SpecForce Pathfinder", 
                                     "Alliance Agitator",
                                     "Holovid Celebrity",
                                     "Ithorian Storyteller",
@@ -954,7 +954,7 @@
                    {
                        "attr":  "Kno",
                        "name":  "Streetwise",
-                       "jobs":  [
+                       "jobs":  ["SpecForce Driver/Pilot", "SpecForce Infiltrator", "SpecForce Urban Combat Specialist", 
                                     "Alliance Agitator",
                                     "Alliance Liaison",
                                     "Ex-Imperial Commando",
@@ -1012,7 +1012,7 @@
                    {
                        "attr":  "Kno",
                        "name":  "Survival",
-                       "jobs":  [
+                       "jobs":  ["SpaceOps Trooper", "SpecForce Technician", "SpecForce Heavy Weapon Specialist", "SpecForce Infiltrator", "SpecForce Wilderness Fighter", "SpecForce Pathfinder", 
                                     "Alliance Agitator",
                                     "Ex-Imperial Commando",
                                     "Mon Calamari Medic",
@@ -1255,7 +1255,7 @@
                    {
                        "attr":  "Mec",
                        "name":  "Capital Ship Gunnery",
-                       "jobs":  [
+                       "jobs":  ["SpaceOps Trooper", "SpecForce Heavy Weapon Specialist", 
                                     "Arms Merchant",
                                     "Imperial Adjutant",
                                     "Pirate",
@@ -1280,7 +1280,7 @@
                    {
                        "attr":  "Mec",
                        "name":  "Communications",
-                       "jobs":  [
+                       "jobs":  ["SpecForce Scanner/Comm Operator", 
                                     "Alliance Agitator",
                                     "Rodian Pacifist",
                                     "Ground Assault Vehicle Commander",
@@ -1292,7 +1292,7 @@
                    {
                        "attr":  "Mec",
                        "name":  "Ground Vehicle Operation",
-                       "jobs":  [
+                       "jobs":  ["SpecForce Driver/Pilot", 
                                     "Rebel Saboteur",
                                     "Bimm Bard",
                                     "Court Fop",
@@ -1321,7 +1321,7 @@
                    {
                        "attr":  "Mec",
                        "name":  "Hover Vehicle Operation",
-                       "jobs":  [
+                       "jobs":  ["SpecForce Driver/Pilot", 
                                     "Ex-Imperial Commando",
                                     "Ordnance Procurer",
                                     "Rebel Saboteur",
@@ -1345,7 +1345,7 @@
                    {
                        "attr":  "Mec",
                        "name":  "Powersuit Operation",
-                       "jobs":  [
+                       "jobs":  ["SpaceOps Trooper", 
                                     "Flamboyant Entertainer",
                                     "CompForce Assault Trooper",
                                     "Space Rescue Corps Officer",
@@ -1363,7 +1363,7 @@
                    {
                        "attr":  "Mec",
                        "name":  "Repulsorlift Operation",
-                       "jobs":  [
+                       "jobs":  ["SpecForce Driver/Pilot", "SpecForce Technician", "SpecForce Heavy Weapon Specialist", "SpecForce Infiltrator", "SpecForce Wilderness Fighter", "SpecForce Urban Combat Specialist", "SpecForce Pathfinder", 
                                     "Alliance Agitator",
                                     "Alliance Liaison",
                                     "Ex-Imperial Commando",
@@ -1444,7 +1444,7 @@
                    {
                        "attr":  "Mec",
                        "name":  "Sensors",
-                       "jobs":  [
+                       "jobs":  ["SpecForce Scanner/Comm Operator", 
                                     "Mon Calamari Medic",
                                     "New Republic Security Force Agent",
                                     "New Republic Intelligence Operative",
@@ -1476,7 +1476,7 @@
                    {
                        "attr":  "Mec",
                        "name":  "Space Transports",
-                       "jobs":  [
+                       "jobs":  ["SpecForce Driver/Pilot", 
                                     "Alliance Agitator",
                                     "Mon Calamari Medic",
                                     "New Republic Security Force Agent",
@@ -1546,7 +1546,7 @@
                    {
                        "attr":  "Mec",
                        "name":  "Starship Gunnery",
-                       "jobs":  [
+                       "jobs":  ["SpaceOps Trooper", "SpecForce Heavy Weapon Specialist", 
                                     "New Republic Intelligence Operative",
                                     "Spoiled Debutante",
                                     "Wookiee Bounty Hunter",
@@ -1698,7 +1698,7 @@
                    {
                        "attr":  "Per",
                        "name":  "Command",
-                       "jobs":  [
+                       "jobs":  ["SpaceOps Trooper", "SpecForce Scanner/Comm Operator", "SpecForce Technician", "SpecForce Wilderness Fighter", "SpecForce Urban Combat Specialist", "SpecForce Pathfinder", 
                                     "Alliance Agitator",
                                     "Alliance Liaison",
                                     "Ex-Imperial Commando",
@@ -1751,7 +1751,7 @@
                    {
                        "attr":  "Per",
                        "name":  "Con",
-                       "jobs":  [
+                       "jobs":  ["SpecForce Infiltrator", 
                                     "Holovid Celebrity",
                                     "Ithorian Storyteller",
                                     "Mon Calamari Medic",
@@ -1862,7 +1862,7 @@
                    {
                        "attr":  "Per",
                        "name":  "Hide",
-                       "jobs":  [
+                       "jobs":  ["SpecForce Technician", "SpecForce Infiltrator", "SpecForce Wilderness Fighter", "SpecForce Urban Combat Specialist", "SpecForce Pathfinder", 
                                     "Alliance Agitator",
                                     "Ex-Imperial Commando",
                                     "Ithorian Storyteller",
@@ -2010,7 +2010,7 @@
                    {
                        "attr":  "Per",
                        "name":  "Search",
-                       "jobs":  [
+                       "jobs":  ["SpaceOps Trooper", "SpecForce Scanner/Comm Operator", "SpecForce Heavy Weapon Specialist", "SpecForce Infiltrator", "SpecForce Pathfinder", 
                                     "Alliance Liaison",
                                     "Ex-Imperial Commando",
                                     "Holovid Celebrity",
@@ -2071,7 +2071,7 @@
                    {
                        "attr":  "Per",
                        "name":  "Sneak",
-                       "jobs":  [
+                       "jobs":  ["SpecForce Technician", "SpecForce Infiltrator", "SpecForce Wilderness Fighter", "SpecForce Urban Combat Specialist", "SpecForce Pathfinder", 
                                     "Alliance Agitator",
                                     "Ex-Imperial Commando",
                                     "Holovid Celebrity",
@@ -2129,7 +2129,7 @@
                    {
                        "attr":  "Str",
                        "name":  "Brawling",
-                       "jobs":  [
+                       "jobs":  ["SpaceOps Trooper", "SpecForce Scanner/Comm Operator", "SpecForce Technician", "SpecForce Heavy Weapon Specialist", "SpecForce Infiltrator", "SpecForce Wilderness Fighter", "SpecForce Urban Combat Specialist", "SpecForce Pathfinder", 
                                     "Ex-Imperial Commando",
                                     "Holovid Celebrity",
                                     "Noble-In-Exile",
@@ -2203,7 +2203,7 @@
                    {
                        "attr":  "Str",
                        "name":  "Climbing/Jumping",
-                       "jobs":  [
+                       "jobs":  ["SpecForce Wilderness Fighter", "SpecForce Urban Combat Specialist", "SpecForce Pathfinder", 
                                     "Alliance Liaison",
                                     "Ex-Imperial Commando",
                                     "Ithorian Storyteller",
@@ -2270,7 +2270,7 @@
                    {
                        "attr":  "Str",
                        "name":  "Lifting",
-                       "jobs":  [
+                       "jobs":  ["SpecForce Technician", "SpecForce Heavy Weapon Specialist", 
                                     "Alliance Liaison",
                                     "Ex-Imperial Commando",
                                     "Mon Calamari Medic",
@@ -2311,7 +2311,7 @@
                    {
                        "attr":  "Str",
                        "name":  "Stamina",
-                       "jobs":  [
+                       "jobs":  ["SpaceOps Trooper", "SpecForce Scanner/Comm Operator", "SpecForce Technician", "SpecForce Heavy Weapon Specialist", "SpecForce Urban Combat Specialist", "SpecForce Pathfinder", 
                                     "Alliance Agitator",
                                     "Alliance Liaison",
                                     "Ex-Imperial Commando",
@@ -2453,7 +2453,7 @@
                    {
                        "attr":  "Tec",
                        "name":  "Armor Repair",
-                       "jobs":  [
+                       "jobs":  ["SpecForce Technician", 
                                     "New Republic Security Force Agent",
                                     "Ordnance Procurer",
                                     "Speeder Racer",
@@ -2470,7 +2470,7 @@
                    {
                        "attr":  "Tec",
                        "name":  "Blaster Repair",
-                       "jobs":  [
+                       "jobs":  ["SpecForce Technician", "SpecForce Heavy Weapon Specialist", 
                                     "New Republic Security Force Agent",
                                     "Ordnance Procurer",
                                     "Rodian Dramatist",
@@ -2497,7 +2497,7 @@
                    {
                        "attr":  "Tec",
                        "name":  "Capital Ship Repair",
-                       "jobs":  [
+                       "jobs":  ["SpaceOps Trooper", 
                                     "Privateer Captain",
                                     "Technician"
                                 ]
@@ -2520,7 +2520,7 @@
                    {
                        "attr":  "Tec",
                        "name":  "Computer Programming/Repair",
-                       "jobs":  [
+                       "jobs":  ["SpecForce Technician", 
                                     "Alliance Agitator",
                                     "Alliance Liaison",
                                     "Ex-Imperial Commando",
@@ -2587,7 +2587,7 @@
                    {
                        "attr":  "Tec",
                        "name":  "Demolitions",
-                       "jobs":  [
+                       "jobs":  ["SpecForce Technician", "SpecForce Heavy Weapon Specialist", "SpecForce Infiltrator", "SpecForce Wilderness Fighter", "SpecForce Urban Combat Specialist", "SpecForce Pathfinder", 
                                     "Ex-Imperial Commando",
                                     "New Republic Intelligence Operative",
                                     "Rebel Saboteur",
@@ -2613,7 +2613,7 @@
                    {
                        "attr":  "Tec",
                        "name":  "Droid Programming",
-                       "jobs":  [
+                       "jobs":  ["SpecForce Technician", 
                                     "Alliance Liaison",
                                     "Ex-Imperial Commando",
                                     "Holovid Celebrity",
@@ -2660,7 +2660,7 @@
                    {
                        "attr":  "Tec",
                        "name":  "Droid Repair",
-                       "jobs":  [
+                       "jobs":  ["SpecForce Technician", 
                                     "Alliance Liaison",
                                     "Ithorian Storyteller",
                                     "Mon Calamari Medic",
@@ -2698,7 +2698,7 @@
                    {
                        "attr":  "Tec",
                        "name":  "First Aid",
-                       "jobs":  [
+                       "jobs":  ["SpaceOps Trooper", "SpecForce Scanner/Comm Operator", "SpecForce Driver/Pilot", "SpecForce Technician", "SpecForce Heavy Weapon Specialist", "SpecForce Wilderness Fighter", "SpecForce Urban Combat Specialist", "SpecForce Pathfinder", 
                                     "Alliance Agitator",
                                     "Ex-Imperial Commando",
                                     "Holovid Celebrity",
@@ -2765,7 +2765,7 @@
                    {
                        "attr":  "Tec",
                        "name":  "Ground Vehicle Repair",
-                       "jobs":  [
+                       "jobs":  ["SpecForce Technician", 
                                     "Ordnance Procurer",
                                     "Galactic Big Game Hunter",
                                     "Jawa Trader",
@@ -2785,7 +2785,7 @@
                    {
                        "attr":  "Tec",
                        "name":  "Repulsorlift Repair",
-                       "jobs":  [
+                       "jobs":  ["SpecForce Driver/Pilot", "SpecForce Technician", 
                                     "Ex-Imperial Commando",
                                     "Holovid Celebrity",
                                     "Ithorian Storyteller",
@@ -2818,7 +2818,7 @@
                    {
                        "attr":  "Tec",
                        "name":  "Security",
-                       "jobs":  [
+                       "jobs":  ["SpaceOps Trooper", "SpecForce Infiltrator", 
                                     "Alliance Agitator",
                                     "Alliance Liaison",
                                     "Ex-Imperial Commando",
@@ -2867,7 +2867,7 @@
                    {
                        "attr":  "Tec",
                        "name":  "Space Transports Repair",
-                       "jobs":  [
+                       "jobs":  ["SpaceOps Trooper", "SpecForce Driver/Pilot", 
                                     "New Republic Intelligence Operative",
                                     "Rodian Pacifist",
                                     "Snivvian Artist",
@@ -2914,9 +2914,23 @@
                    {
                        "attr":  "Tec",
                        "name":  "Walker Repair",
-                       "jobs":  [
+                       "jobs":  ["SpecForce Technician", 
                                     "Ordnance Procurer",
                                     "Ground Assault Vehicle Commander",
+
+                                ]
+                   },
+                   {
+                       "attr":  "Tec",
+                       "name":  "Communications Repair",
+                       "jobs":  ["SpecForce Scanner/Comm Operator", 
+
+                                ]
+                   },
+                   {
+                       "attr":  "Tec",
+                       "name":  "Sensors Repair",
+                       "jobs":  ["SpecForce Scanner/Comm Operator", 
 
                                 ]
                    },
