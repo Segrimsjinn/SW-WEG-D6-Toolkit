@@ -8303,6 +8303,34 @@ const PLANETS_DATA = [
     summary: "The closest navigable system to the Si'klaata Cluster, a Hutt-controlled region claimed millennia ago during the height of Hutt expansion. The Hutts maintain tight control of the Cluster, allowing very few ships in or out. Restricted-access hyperspace routes (shown as dashed lines on Sisar Run nav charts) connect Ques to the Cluster interior. A route from Ques also leads east toward Varl.",
     locations: "",
     ofNote: "SI'KLAATA CLUSTER ACCESS: The Si'klaata Cluster contains Vodran (homeworld of the Vodrans), Kintan (homeworld of the Nikto), Klatooine (homeworld of the Klatooinans), Vontor (site of the Third Battle of Vontor between Xim the Despot and Hutt forces), and Tas-La. The Hutts only allow in scientists whose findings support their somewhat questionable version of Xim's defeat. Despite thousands of requests from archaeological schools across the galaxy, access remains severely restricted. Ques is the nearest navigable point for non-Hutt traffic."
+  },
+
+  {
+    name: "Sriluur - Ruul",
+    system: "Sriluur",
+    star: "Sriluur",
+    grid: "S-8",
+    region: "Outer Rim Territories",
+    type: "Moon",
+    temperature: "Temperate",
+    atmosphere: "Type I (Breathable, oxygen mix)",
+    hydrosphere: "Moderate",
+    gravity: "Light",
+    terrain: "Tropical gardens, volcanic regions (polar)",
+    lengthOfDay: "",
+    lengthOfYear: "",
+    sapientSpecies: "Weequay (native)",
+    starport: "Limited Services",
+    population: "Sparse",
+    function: "Private Estate / Agricultural",
+    government: "Family Estate (Bulq family)",
+    techLevel: "Space",
+    majorExports: "",
+    majorImports: "",
+    source: "*Homebrew — derived from Wookieepedia canon references",
+    summary: "A lush moon orbiting the harsh desert world of Sriluur, Ruul stands in striking contrast to its parent planet. Covered in tropical gardens and verdant growth, the moon belonged to the Bulq family and served as the birthworld and private estate of Sora Bulq. The moon is tectonically stable across most of its surface, with volcanic activity confined to the polar regions.",
+    locations: "Bulq Estate (The ancestral home of the Bulq family, set amid the moon's tropical gardens. Sora Bulq ran the estate until his death).",
+    ofNote: "22 BBY (Clone Wars): Sora Bulq invited several dissident Jedi to Ruul, ostensibly to discuss their opposition to Jedi involvement in the Clone Wars. In truth, Bulq had fallen to the dark side and now served Count Dooku. The meeting was a trap designed to turn the dissidents against the Jedi Order, but Mace Windu exposed his manipulations and the plot failed. | *HOMEBREW: The moon is tectonically stable except at the poles, which have volcanically active regions."
   }
 // --- END OF PLANETS_DATA ---
 ];

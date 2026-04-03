@@ -5569,6 +5569,7 @@ const SYSTEMS_DATA = [
   { "name": "Sriluur", "grid": "S-8", "region": "Outer Rim Territories", "col": 17, "row": 8, "quadrant": "E", "hours": 2.7 },
   { "name": "Sriluur - Dnalvec", "grid": "S-8", "region": "Outer Rim Territories", "col": 17, "row": 8, "quadrant": "E", "hours": 2.7 },
   { "name": "Sriluur - Meirm City", "grid": "S-8", "region": "Outer Rim Territories", "col": 17, "row": 8, "quadrant": "E", "hours": 2.7 },
+  { "name": "Sriluur - Ruul", "grid": "S-8", "region": "Outer Rim Territories", "col": 17, "row": 8, "quadrant": "E", "hours": 2.7 },
   { "name": "Sronk", "grid": "M-5", "region": "Outer Rim Territories", "col": 11, "row": 5, "quadrant": "N", "hours": 5.3 },
   { "name": "Ssi-ruuvi Cluster", "grid": "C-16", "region": "Unknown Regions", "col": 1, "row": 16, "quadrant": "SW", "hours": 128.0 },
   { "name": "Ssori", "grid": "S-13", "region": "Outer Rim Territories", "col": 17, "row": 13, "quadrant": "E", "hours": 5.7 },
