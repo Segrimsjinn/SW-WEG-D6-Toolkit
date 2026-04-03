@@ -8331,6 +8331,34 @@ const PLANETS_DATA = [
     summary: "A lush moon orbiting the harsh desert world of Sriluur, Ruul stands in striking contrast to its parent planet. Covered in tropical gardens and verdant growth, the moon belonged to the Bulq family and served as the birthworld and private estate of Sora Bulq. The moon is tectonically stable across most of its surface, with volcanic activity confined to the polar regions.",
     locations: "Bulq Estate (The ancestral home of the Bulq family, set amid the moon's tropical gardens. Sora Bulq ran the estate until his death).",
     ofNote: "22 BBY (Clone Wars): Sora Bulq invited several dissident Jedi to Ruul, ostensibly to discuss their opposition to Jedi involvement in the Clone Wars. In truth, Bulq had fallen to the dark side and now served Count Dooku. The meeting was a trap designed to turn the dissidents against the Jedi Order, but Mace Windu exposed his manipulations and the plot failed. | *HOMEBREW: The moon is tectonically stable except at the poles, which have volcanically active regions."
+  },
+
+  {
+    name: "Hapes",
+    system: "Hapes",
+    star: "Hapes",
+    grid: "O-9",
+    region: "Inner Rim",
+    type: "Terrestrial",
+    temperature: "Temperate",
+    atmosphere: "Type I (Breathable)",
+    hydrosphere: "Moderate",
+    gravity: "Standard",
+    terrain: "Mountains, lush forests",
+    lengthOfDay: "22 standard hours",
+    lengthOfYear: "240 local days",
+    sapientSpecies: "Humans: Hapans (native)",
+    starport: "Imperial Class",
+    population: "4 million",
+    function: "Government, Homeworld",
+    government: "Monarchy (Hapan Royal Family)",
+    techLevel: "Space",
+    majorExports: "None",
+    majorImports: "Luxury goods",
+    source: "WEG40139 Cracken's Threat Dossier p.11",
+    summary: "Capital of the Hapan Consortium for over four millennia, Hapes is a planet that never sleeps. As the bureaucratic center for the entire Hapan Cluster, all 63 member worlds maintain embassies here. By law, all major financial and business transactions within the Hapes Consortium must be conducted on Hapes proper. Most major corporations have branch offices here, and the Hapes Transit Authority handles more than 2,000 starships a day. The cities are stately and impeccably clean as mandated by Hapan Consortium law, while outside the cities much of the wildlife remains undisturbed with hunting strictly regulated.",
+    locations: "Ta'a Chume'Dan (Largest city on Hapes, center of government. The Ta'a Chume'Dan or 'Queen Mother's Residence' is a large mountain-like structure on which the space vessel Star Home rests while Ta'a Chume holds court — a testament to the greatness the Queen Mother represents).",
+    ofNote: "HAPAN HUMANS: Attribute Dice 13D. DEX 2D/4D+2, KNO 2D/5D, MEC 2D/4D, PER 1D+1/3D+2, STR 2D/4D+2, TEC 2D/4D. Move: 10/12. Height: 1.5-2.1m. Special Abilities: Attractiveness — both male and female Hapans are extremely beautiful; males receive +1D bonus to bargain, con, command, or persuasion rolls against non-Hapan humans of the opposite sex. Language — Hapans are taught the Hapan language from birth; few speak Basic, and if they can, it is a second language. Vision — due to intensive light on their homeworld from abundant moons, Hapans have very poor night vision; treat all lesser darkness modifiers (poor light, moonlit) as complete darkness, adding +4D to the difficulty for all ranged attacks. | FISHING: Hapes has a thriving but strictly regulated fishing industry. | 8 ABY: Prince Isolder proposed marriage to Princess Leia Organa, presenting himself as the gift of the world of Hapes. After the Dathomir incident, Isolder chose Teneniel Djo as his bride instead. The New Republic delegation to the Hapan Cluster negotiated the Hapan Treaty and established an embassy on Hapes."
   }
 // --- END OF PLANETS_DATA ---
 ];
