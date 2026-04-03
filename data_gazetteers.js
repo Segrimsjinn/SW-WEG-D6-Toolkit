@@ -241,16 +241,16 @@ const GAZETTEER_DATA = {
     ],
     surcharge: 0,
     systems: [
-      "Dies","Iotra","Ka'Dedus","Karnst","Lant","Novor","Nwarcol Point",
+      "Dles","Iotra","Ka'Dedus","Karnst","Lant","Novor","Nwarcol Point",
       "Pirek","Ques","Reibrin","Ruul","Sespe","Solacton","Sriluur",
       "Station 3","Sulorine","Talir","Terman","Tragrud","Vaath'kror","Verde"
     ],
     times: {
-      "Dies|Iotra":70,"Dies|Ka'Dedus":15,"Dies|Karnst":92,"Dies|Lant":6,
-      "Dies|Novor":31,"Dies|Nwarcol Point":16,"Dies|Pirek":90,"Dies|Ques":39,
-      "Dies|Reibrin":81,"Dies|Ruul":11,"Dies|Sespe":20,"Dies|Solacton":7,
-      "Dies|Sriluur":10,"Dies|Station 3":15,"Dies|Sulorine":115,"Dies|Talir":28,
-      "Dies|Terman":16,"Dies|Tragrud":21,"Dies|Vaath'kror":8,"Dies|Verde":18,
+      "Dles|Iotra":70,"Dles|Ka'Dedus":15,"Dles|Karnst":92,"Dles|Lant":6,
+      "Dles|Novor":31,"Dles|Nwarcol Point":16,"Dles|Pirek":90,"Dles|Ques":39,
+      "Dles|Reibrin":81,"Dles|Ruul":11,"Dles|Sespe":20,"Dles|Solacton":7,
+      "Dles|Sriluur":10,"Dles|Station 3":15,"Dles|Sulorine":115,"Dles|Talir":28,
+      "Dles|Terman":16,"Dles|Tragrud":21,"Dles|Vaath'kror":8,"Dles|Verde":18,
       "Iotra|Ka'Dedus":85,"Iotra|Karnst":22,"Iotra|Lant":64,"Iotra|Novor":101,
       "Iotra|Nwarcol Point":86,"Iotra|Pirek":20,"Iotra|Ques":109,"Iotra|Reibrin":48,
       "Iotra|Ruul":81,"Iotra|Sespe":90,"Iotra|Solacton":77,"Iotra|Sriluur":80,
