@@ -7103,6 +7103,10 @@ function clearVehFilters() {
 document.addEventListener('DOMContentLoaded', function() {
   if (typeof VEHICLES_DATA !== 'undefined') document.getElementById('vehCountBadge').textContent = '(' + VEHICLES_DATA.length + ')';
 });
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof NOTABLE_NPCS !== 'undefined') document.getElementById('notableNpcCountBadge').textContent = '(' + NOTABLE_NPCS.length + ')';
+  if (typeof PLANETS_DATA !== 'undefined') document.getElementById('detailsDropdownCount').textContent = '(' + PLANETS_DATA.length + ')';
+});
 
 // Gazetteer tables
 document.addEventListener('DOMContentLoaded', function() {
