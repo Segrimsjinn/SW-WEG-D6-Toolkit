@@ -4693,6 +4693,54 @@ const WEAPONS_DATA = [
   "source": "WEG40111 Hideouts & Strongholds p.75"
  },
  {
+  "name": "Bryn & Gweith CGL 55ci Concussion Grenade Launcher",
+  "category": "Artillery",
+  "skill": "Missile weapons: grenade launcher",
+  "cost": "8,000 (new), 5,000 (used)",
+  "availability": "R or X",
+  "damage": "6D/5D/4D/3D (Character scale)",
+  "range": "10-50/100/200",
+  "ammo": "25",
+  "game_notes": "Character scale. Crew: 1 (or automated fire). Body 4D. Fire Rate 1. FC 2D (-1D automated). Blast Radius: 0-2/5/9/12m. Mounted concussion grenade launcher for rapid deployment stations and base defense.",
+  "source": "WEG40111 Hideouts & Strongholds p.89"
+ },
+ {
+  "name": "Bryn & Gweith GML 321 Guided Missile Launcher",
+  "category": "Artillery",
+  "skill": "Missile weapons: anti-vehicle",
+  "cost": "8,000 (new), 5,000 (used)",
+  "availability": "R or X",
+  "damage": "6D (Speeder scale)",
+  "range": "50-200m/1/2km",
+  "ammo": "5",
+  "game_notes": "Speeder scale. Crew: 1 (or automated fire). Body 2D. Fire Rate 1/4. FC 4D (-2D without sensor data, -1D automated). Guided anti-vehicle missile launcher for base defense emplacements.",
+  "source": "WEG40111 Hideouts & Strongholds p.89"
+ },
+ {
+  "name": "BlasTech MICI Mounted Ion Cannon",
+  "category": "Artillery",
+  "skill": "Vehicle blasters: ion cannon",
+  "cost": "8,000 (new), 5,000 (used)",
+  "availability": "R or X",
+  "damage": "3D (Speeder scale, ionization)",
+  "range": "3-50/120/300",
+  "ammo": "Unlimited (power generator)",
+  "game_notes": "Speeder scale. Crew: 1 (or automated fire). Body 3D. FC 2D (-1D automated). Mounted ion cannon turret for base defense.",
+  "source": "WEG40111 Hideouts & Strongholds p.89"
+ },
+ {
+  "name": "BlasTech CVI Mounted Repeating Blaster",
+  "category": "Artillery",
+  "skill": "Vehicle blasters: repeating",
+  "cost": "8,000 (new), 5,000 (used)",
+  "availability": "R or X",
+  "damage": "6D (Character scale)",
+  "range": "3-50/120/300",
+  "ammo": "Unlimited (power generator)",
+  "game_notes": "Character scale. Crew: 1 (or automated fire). Body 4D. FC 2D (-1D automated). Mounted repeating blaster turret for base defense. All four rapid deployment station weapons can operate in automated fire mode with reduced fire control.",
+  "source": "WEG40111 Hideouts & Strongholds p.89"
+ },
+ {
   "name": "Czerka S-4 Underwater Torpedo Launcher",
   "category": "Artillery",
   "skill": "Missile weapons: Czerka S-4",
