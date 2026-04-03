@@ -7586,5 +7586,33 @@ const CREATURES_DATA = [
    "orneriness": "3D",
    "special": "Search 5D. Brawling 5D. Claws: STR+2 damage. Teeth: STR+1D damage. Tail: STR damage (weapon on ground, rudder in flight). Night Vision: organic sonar allows navigation in complete darkness with no penalty. Four-winged flying reptiles from Togoria. Togorians and mosgoths evolved a symbiotic relationship — ancient Togorians defended nests from predators, mosgoths built nests closer to camps. Used as mounts and beasts of burden. Can carry ~300 kg in flight, max 2 riders due to wing placement. Will fight alongside their Togorian companion. Speeder scale.",
    "source": "WEG40109 Alliance Intelligence Reports p.74"
+  },
+  {
+   "name": "Methnap",
+   "type": "Domesticated Cetacean",
+   "planet": "Chad",
+   "habitat": "Oceans",
+   "dex": "2D",
+   "per": "2D",
+   "str": "3D+2",
+   "move": "12",
+   "size": "12-15 meters",
+   "orneriness": "1D",
+   "special": "Sea-Singing: Long-range communication allowing reasonably complex exchanges of information; with extended exposure, riders can develop understanding of basic methnap concepts. Calm cousins of the tsaelke and cy'een of Chad's oceans. Graceful barrel-bodied cetaceans with long necks and small heads, brass-colored hide with unique mottled camouflage patterns of stripes, spots, and rings. Fish-grazers. Can bear up to 125 kg or a rider and 75 kg. Used as mounts by at least one Alliance sea commando unit.",
+   "source": "WEG40113 Rules of Engagement p.54"
+  },
+  {
+   "name": "Tuggle",
+   "type": "Domesticated Sledge Beast",
+   "planet": "Toola",
+   "habitat": "Arctic, tundra",
+   "dex": "2D",
+   "per": "1D",
+   "str": "2D",
+   "move": "12 (unhitched), 10 (hitched)",
+   "size": "0.5 meters tall, 1.5 meters long",
+   "orneriness": "2D",
+   "special": "Lifting: pulling 4D, stamina 4D. Bite: STR+2D damage. Lightly colored, long and wiry carnivores with short powerful legs and thick fur. Six hitched in tandem can pull two riders and up to 50 kg of baggage. Wild tuggles are pack hunters with considerable stamina, used to harry, drive, and pull down prey. Domestic tuggles can draw sleds all day with only a couple of rest breaks, for days on end if fed regularly. Popular with arctic Wilderness Fighters. Used to draw Whiphid sledges.",
+   "source": "WEG40113 Rules of Engagement p.55"
   }
 ];
