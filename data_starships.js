@@ -6381,6 +6381,37 @@ const STARSHIP_DATA = {
    ],
    "capsule": "Az-Iban's modified YT-2400 freighter, actually crewed by former Disac pirates posing as legitimate smugglers. Used by Morturr Heth after he assumed Az-Iban's identity.",
    "source": "WEG40136 Secrets of the Sisar Run p.32"
+  },
+  {
+   "rank": 50,
+   "name": "Hornclaw (Limna Yith's Stolen Ship)",
+   "craft": "Modified Corellian YT-1300 Freighter",
+   "scale": "Starfighter",
+   "skill": "Space Transports",
+   "crew": 1,
+   "crew_skill": "See Limna Yith",
+   "passengers": "",
+   "cargo_capacity": "",
+   "consumables": "",
+   "cost": "Not available for sale",
+   "hyperdrive_multiplier": "x1",
+   "maneuverability": "1D",
+   "space": 5,
+   "atmosphere": "295; 850 kmh",
+   "hull": "4D+1",
+   "shields": "1D+2",
+   "weapons": [
+    {
+     "name": "2 Double Laser Cannons (fire-linked)",
+     "fire_arc": "Turret",
+     "crew": 1,
+     "skill": "Starship Gunnery",
+     "fire_control": "2D",
+     "damage": "4D+2"
+    }
+   ],
+   "capsule": "A modified YT-1300 freighter stolen by Limna Yith from Nim Abek's shadowport after she killed the pilot sent to pick her up on Sriluur. Contains the nav computer coordinates to where Yith hid the Barani datacard on Sedri.",
+   "source": "WEG40136 Secrets of the Sisar Run p.62"
   }
  ],
  "Named Modified Yachts": [

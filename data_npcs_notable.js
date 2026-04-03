@@ -38742,6 +38742,32 @@ const NOTABLE_NPCS = [
     equipment: "Blaster speargun (blaster: 5D, 0-10/50/100 air, 0-5/25/35 underwater; spear: 3D, 0-5/15/25 underwater), concussion grenades (5D/4D/3D/2D), seatrooper armor (+1D physical and energy, increases swimming by +2D)",
     capsule: "Commander Surlev's aquatic assault stormtroopers from the Ion Storm, outfitted with specialized seatrooper armor and waveskimmers for the Sedri operation to recover the Barani datacard.",
     source: "WEG40136 Secrets of the Sisar Run p.76"
+  },
+
+  {
+    name: "Limna Yith (3.5 ABY)",
+    species: "Kerestian",
+    system: "Sisar Run",
+    location: "Sisar Run — Mercenary Operations",
+    affiliations: ["Criminal Underworld"],
+    role: "Assassin / Mercenary Leader",
+    type: "Named NPC",
+    stats: {
+      DEXTERITY: { base: "4D", skills: { "blaster": "6D+2", "brawling parry": "6D+2", "dodge: energy weapons": "6D+2", "grenade": "5D+2", "melee combat": "5D", "melee combat: vibroblade": "9D+1", "melee parry": "7D+1", "running": "5D+2", "thrown weapons": "5D+2" } },
+      KNOWLEDGE: { base: "2D", skills: { "alien species": "4D", "cultures": "4D+2", "intimidation": "6D+2", "languages": "5D", "law enforcement": "5D", "planetary systems": "4D+2", "planetary systems: Sisar Run": "6D", "streetwise": "5D", "streetwise: Black Sun": "5D+1", "streetwise: Kutuab's organization": "6D+2", "survival": "7D", "value": "4D+2", "willpower": "6D+1" } },
+      MECHANICAL: { base: "2D+1", skills: { "astrogation": "5D", "beast riding": "4D", "communications": "5D+2", "repulsorlift operation": "6D+2", "sensors": "4D+1", "space transports": "5D", "starfighter piloting": "4D+2", "starship gunnery": "4D+2", "starship shields": "4D+1", "swoop operation": "4D+2" } },
+      PERCEPTION: { base: "3D+1", skills: { "bargain": "4D+1", "command": "5D", "con": "4D+2", "forgery": "4D+2", "hide": "5D+2", "investigation": "5D+2", "search": "6D+2", "sneak": "6D+2" } },
+      STRENGTH: { base: "4D+1", skills: { "brawling": "6D+2", "climbing/jumping": "7D", "lifting": "5D+2", "swimming": "6D+2" } },
+      TECHNICAL: { base: "2D", skills: { "armor repair": "5D", "blaster repair": "6D+1", "computer programming/repair": "6D", "demolitions": "6D+1", "droid programming": "3D+2", "droid repair": "4D", "first aid": "5D+1", "first aid: Kerestians": "6D+1", "repulsorlift repair": "6D", "security": "6D+2", "space transports repair": "6D" } }
+    },
+    specialAbilities: "",
+    forcePoints: 2,
+    darkSidePoints: 4,
+    characterPoints: 12,
+    move: 11,
+    equipment: "Blaster pistol (4D), blaster rifle (5D), double-edged vibroblade (STR+3D+2)",
+    capsule: "One of the most dangerous Kerestian mercenaries in the galaxy, born in the blood of her planet's downfall. Survived in Kerest's savage wastes by murder and treachery, methods that have served her well in the intergalactic mercenary trade. Responsible for the bombing of the Alaspin casino that buried the Kassandre crime family leaders along with several hundred patrons, and led a ruthless attack on a spice freighter whose crew's remains were dropped piecemeal over Meirm City spaceport as a lesson. Hired by Iotran enforcer Bel Att to raid the Yen-2 mining colony, she discovered the Barani list of Black Sun operatives and killed Att to seize it. Tall and muscular with a wiry leanness that speaks of prowess won in battle. Wears bounty hunter armor and prefers her custom double-edged vibroblade for close combat. Cares nothing for personal honor — will achieve her ends by any means necessary.",
+    source: "WEG40136 Secrets of the Sisar Run p.61"
   }
 // --- END OF NOTABLE_NPCS ---
 ];
