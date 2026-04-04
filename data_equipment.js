@@ -4694,6 +4694,24 @@ const EQUIPMENT_DATA = [
   "availability": "2",
   "game_notes": "Starfighter-scale automated hyperspace pod for message droids. Length: 2m. Crew: None (droid brain with Astrogation 4D, Space Transports 4D). Passengers: 1 message droid. Consumables: 1 month. Hyperdrive x1. Nav computer limited to 1 jump. Space: 6. Atmosphere: 330; 950 km/h. Hull: 1D+2. Sensors — Passive: 20/1D, Scan: 40/2D, Search: 60/3D, Focus: 3/4D. No weapons. Susceptible to spacejacking — Alliance has captured several. Often modified by criminals to haul small cargo instead of message droids.",
   "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.44"
+ },
+ {
+  "name": "Imperial Orbital Nightcloak",
+  "category": "Ship Equipment",
+  "type": "Imperial DMR Orbital Nightcloak",
+  "cost": "Not available for sale",
+  "availability": "4",
+  "game_notes": "Scale: Starfighter. Satellite-based electromagnetic absorption network. Skill: Space transports: remote satellite piloting. Body: 3D. Range: Orbit to surface. Difficulty: Difficult. Blast Radius: 5 kilometers per satellite. Damage: N/A. Absorbs all electromagnetic radiation approaching a planet, remaining in relative stationary orbit on the planet's dayside, effectively swathing the planet in permanent night. An average temperate world can survive no more than four days without solar heat. Forces population to capitulate without destroying the planet — planet can be recovered, albeit in an ecologically crippled state. Vulnerable to anti-orbital attacks by turbolasers or starfighters. Network includes dummy satellites as partial countermeasure. DMR's final report recommends orbital bombardment escort force including TIE fighters and anti-starfighter ships to guard the system. Custom ordnance developed by Imperial Department of Military Research.",
+  "source": "WEG40139 Cracken's Threat Dossier p.54"
+ }
+,{
+  "category": "Ship Equipment",
+  "name": "Hyperwave Sustainer",
+  "type": "Bakuran Hyperwave Inertial Momentum Sustainer (HIMS)",
+  "cost": "Not available for sale",
+  "availability": "Unique",
+  "game_notes": "Anti-interdiction field hyperwave sustainer. Scale: Capital. Skill: Capital ship piloting. The Bakuran hyperwave sustainer allows a ship to pass through an interdiction field. During an 'interrupted jump' the pilot must make successful Very Difficult capital ship piloting rolls for each round the vessel is attempting to travel. The hyperdrive speed of the vessel is reduced to x12. Failure to make at least an Easy total on the required capital ship piloting checks results in a mishap; typically the ship is thrown off course or is damaged and must revert to sublight speeds (at the gamemaster's discretion). Uses a gravitic sensor for fast cut-off of the ship's normal hyperdrive, saving it from damage caused by entering an interdiction field. Simultaneously activates a static hyperspace bubble produced by a hyperspace coil designed to burn up and blow out in the presence of the interdiction field. The static hyperwave bubble cannot provide any thrust, but it can hold the ship in hyperspace while the ship's forward momentum carries it along. Still in preliminary experimental stages; the Corellian Incident marked the device's first battlefield test.",
+  "source": "WEG40139 Cracken's Threat Dossier p.135"
  }
 // --- END OF EQUIPMENT_DATA ---
 ];

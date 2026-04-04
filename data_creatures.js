@@ -7698,6 +7698,48 @@ const CREATURES_DATA = [
    "orneriness": "",
    "special": "Search 4D, Brawling 6D, Climbing/Jumping 6D+2. Claws: STR+1D damage. Vicious predators sometimes kept as pets or guard animals. Klirun, a nashtah belonging to Tunroth Hunter Shotarr Kass, once savagely mauled an assailant who attempted to ambush Vigo Sprax.",
    "source": "WEG40136 Secrets of the Sisar Run p.5"
+  },
+  {
+   "name": "Blue Desert People",
+   "type": "Plains Lizard",
+   "planet": "Dathomir",
+   "habitat": "Desert / Grasslands",
+   "dex": "4D",
+   "per": "2D+2",
+   "str": "4D+1",
+   "move": "30",
+   "size": "1.6-2.4 meters",
+   "orneriness": "3D",
+   "special": "Running 5D+1, Hide 3D, Sneak 4D+2. Vision: Excellent night vision, ignore all darkness penalties. Claws: STR+1D damage. Scale: Creature. Large reptilian herbivores that cross the Great Desert of Dathomir twice daily — hiding in shallow crags near the desert boundary during daytime, then racing 80 km across the desert at night to feed in fertile grasslands beyond. Light blue with lavender scales on head plates. Several rows of black spade-like teeth for rooting up plants. Deep skin-folds below mouth store water. Some xenobiologists argue they may be sentient, citing coordinated herd communication and possible verbal directions from perimeter beasts.",
+   "source": "WEG40139 Cracken's Threat Dossier p.50"
+  },
+  {
+   "name": "Dathomirian Rancor",
+   "type": "Evolved Predator",
+   "planet": "Dathomir",
+   "habitat": "Forests / Plains",
+   "dex": "4D/6D",
+   "per": "1D/2D+2",
+   "str": "5D/8D",
+   "move": "25/40",
+   "size": "8-10 meters",
+   "orneriness": "",
+   "special": "Attribute Dice: 14D. KNO 0D/1D, MEC 0D, TEC 0D/1D. Armor: +3D to STR to resist physical and energy damage. Claws: STR+3D damage. Teeth: STR+5D damage. Scale: Creature. Dexterity Skills — Melee weapons: clubs, trees (wield large objects as melee weapons, STR+1 Walker-scale damage). Thrown weapons: boulders, nets, trees (hurl objects 20-30/50/100 meters, 2D Walker-scale damage). Knowledge Skills — Symbolic writing (understand simple pictographic commands written by Witches of Dathomir; 4D+ means rancor can write as well). Story Factors — Evolved: have evolved over thousands of years on Dathomir; off-world rancors will likely not be identical. Domesticated: most Dathomirian rancors have been domesticated by human clans, treated as loved pets and friends. Organized into tribe-like 'herds' led by matriarchal Herd Mothers. Herds allied with Witch clans have grown strong and wise. Possess rudimentary 'racial memory' and abstract thought. Witch clans have taught rancors to make nets, spears, wear battle armor, and some to read/write simple pictographic language. Rancor 'mutants' near Witches have become increasingly intelligent.",
+   "source": "WEG40139 Cracken's Threat Dossier p.52"
+  },
+  {
+   "name": "Wuffa Worm",
+   "type": "Giant Worm",
+   "planet": "Dathomir",
+   "habitat": "Subterranean",
+   "dex": "1D",
+   "per": "1D",
+   "str": "4D+2/6D",
+   "move": "11",
+   "size": "100-250 meters",
+   "orneriness": "",
+   "special": "Search 2D+1. STR dependent on length. Strong Hide: hide of a dead wuffa makes incredibly strong rope (treat as STR 3D when resisting damage). Armor: +3D against physical attacks. Scale: Creature. Giant burrowing mineral-eaters living in inner recesses of planet's crust, surfacing only after severe flooding invades subterranean home. Distinct males and females (not asexual). Dathomirians hunt them by filling wuffa holes with fermented liquor smelling like a female wuffa's mating trail, luring males to the surface. Hides make excellent ropes and protective clothing; inner meat makes tasty stew. A large wuffa can feed an entire clan for two weeks.",
+   "source": "WEG40139 Cracken's Threat Dossier p.53"
   }
 // --- END OF CREATURES_DATA ---
 ];

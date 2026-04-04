@@ -39110,5 +39110,342 @@ const NOTABLE_NPCS = [
     capsule: "General Etahn A'baht is the Dornean commander of the New Republic Fifth Fleet and one of the few flag rank officers who did not serve with the Alliance. Dornea did not join the New Republic until after the second fall of the Empire. Nevertheless, the Dornean government spent years engaging the Empire in a protracted cold war. Dornean systems are remote enough and defended well enough to make invasion difficult, and the Imperial Navy never sent sufficient force to crush local defenses. When the Navy suddenly found itself pressed by Alliance forces, the Dornean Navy — only 80 vessels strong — launched an effective active campaign that wiped Imperial ships from Dornean skies. A'baht was the principal officer in these campaigns and was recruited into the New Republic Navy when Dornea joined. He was allowed to keep his title of General as a courtesy and took command of the new Fifth Fleet for practical reasons: he was more familiar than any Alliance officer with integrated fleet tactics. A skilled commander with years more experience than most flag officers. Dorneans live for up to three hundred years, and A'baht is only in his middle age. He commands from his flagship, the fleet carrier Intrepid.",
     source: "WEG40139 Cracken's Threat Dossier p.70-71"
   }
+  ,{
+    name: "Gaeriel Captison",
+    species: "Human",
+    system: "Bakura",
+    location: "Bakura — Prime Minister's Office",
+    affiliations: ["New Republic"],
+    role: "Prime Minister of Bakura",
+    type: "Named Ally",
+    stats: {
+      DEXTERITY: { base: "2D+2", skills: { "blaster": "3D+2", "dodge": "3D+2" } },
+      KNOWLEDGE: { base: "3D+2", skills: { "bureaucracy": "4D+2", "bureaucracy: Bakuran government": "7D+2", "business": "5D", "value": "5D", "willpower": "6D" } },
+      MECHANICAL: { base: "3D+2", skills: { "repulsorlift operation": "4D" } },
+      PERCEPTION: { base: "3D+2", skills: { "bargain": "6D", "command": "5D", "con": "4D+1", "investigation": "5D", "persuasion": "4D+1", "persuasion: debate": "6D+2", "persuasion: oration": "6D" } },
+      STRENGTH: { base: "2D+2", skills: { "brawling": "4D", "stamina": "4D" } },
+      TECHNICAL: { base: "2D+2", skills: { "computer programming/repair": "4D", "first aid": "5D" } }
+    },
+    specialAbilities: "Force Depth: Gaeriel has a uniquely resonant 'presence' in the Force. Any Force user who is familiar with her receives a +1D bonus when attempting to locate or identify her through the Force.",
+    forcePoints: 2,
+    characterPoints: 26,
+    move: 10,
+    equipment: "Datapad",
+    capsule: "Since the Bakuran Incident, Gaeriel Captison led an eventful life. She continued her political campaigns and held several important offices on her native world, eventually becoming Bakura's youngest Prime Minister. She married Pter Thanas, an ex-Imperial officer who played a key role in the initial campaign against the Ssi-ruuk. The couple had one daughter, Malinza. Pter Thanas died — a victim of Knowt's disease — and his passing prompted Captison's withdrawal from politics. Captison was slender and striking, with one gray eye and one green, and shoulder-length brown-blond hair. She was extremely intelligent and a cunning politician. Gaeriel Captison was killed during the Corellian Incident, along with Admiral Hortel Ossilege, when the cruiser Intruder exploded during the battle for Centerpoint Station.",
+    source: "WEG40139 Cracken's Threat Dossier p.105-106"
+  },
+  {
+    name: "Dracmus",
+    species: "Selonian",
+    system: "Corellia",
+    location: "Selonia — Hunchuzuc Den",
+    affiliations: ["Neutral"],
+    role: "Human interrelations specialist",
+    type: "Named Ally",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "dodge": "5D" } },
+      KNOWLEDGE: { base: "3D", skills: { "alien species: humans": "5D+1", "cultures": "5D", "intimidation": "6D" } },
+      MECHANICAL: { base: "3D", skills: {} },
+      PERCEPTION: { base: "3D", skills: {} },
+      STRENGTH: { base: "4D", skills: { "brawling": "7D", "stamina": "5D+2", "swimming": "6D" } },
+      TECHNICAL: { base: "2D", skills: {} }
+    },
+    specialAbilities: "Retractable Claws: Selonians receive a +1D bonus to climbing and brawling. Tail: Used to help steer and propel a Selonian through water, adds a +1D bonus to swimming skill. Can also be used as a club (STR+1D damage).",
+    forcePoints: 1,
+    characterPoints: 14,
+    move: 10,
+    equipment: "None",
+    capsule: "Little is known about the Selonian Dracmus, as is typical of any dossier on a Selonian. What is known is that Dracmus is a sterile female, so she has a job that takes her from the Den. She was chosen to work with humans and interrelate with them. She is supposed to make humans 'comfortable' around Selonians, letting them see only what the Den chooses to allow them to see. Unfortunately, Dracmus was still in training when her elder sibling died suddenly and she had to take over the job early. Even with partial training she feels she can deal with humans without too much trouble. Dracmus is the new Speaker for the Hunchuzuc Den, and one of the only Selonians the New Republic regularly communicates with about the planetary repulsor and Selonian affairs in general. Story Factors — Hive-mind: Selonians live in underground dens like social insects. Only sterile females leave the den to interact with the outside world. Agoraphobia: Selonians live mostly in underground dens. Only certain members leave to interact with other species. Most are not comfortable outside in the open, even fewer take up space travel.",
+    source: "WEG40139 Cracken's Threat Dossier p.106-107"
+  },
+  {
+    name: "Ebrihim",
+    species: "Drall",
+    system: "Corellia",
+    location: "Drall — Ebrihim's Residence",
+    affiliations: ["Neutral"],
+    role: "Scholar and tutor",
+    type: "Named Ally",
+    stats: {
+      DEXTERITY: { base: "2D", skills: {} },
+      KNOWLEDGE: { base: "4D+1", skills: { "alien species": "5D", "bureaucracy: Drall": "8D", "bureaucracy: Corellia": "5D", "bureaucracy: Selonia": "5D", "cultures: Corellians": "7D", "languages": "8D", "planetary systems: Corellia": "7D", "value": "6D", "willpower": "6D+1" } },
+      MECHANICAL: { base: "2D", skills: {} },
+      PERCEPTION: { base: "3D+2", skills: { "bargain": "4D+1", "con": "4D", "hide": "4D", "investigation": "6D" } },
+      STRENGTH: { base: "3D", skills: { "stamina": "5D" } },
+      TECHNICAL: { base: "3D", skills: {} }
+    },
+    specialAbilities: "None",
+    forcePoints: 1,
+    characterPoints: 11,
+    move: 8,
+    equipment: "Several datapads containing lesson plans",
+    capsule: "Ebrihim is a Drall scholar fascinated with the workings and dealings of humans. He has been studying their ways since he was a child. Now he feels ready to take on the ultimate challenge: as a scholar, he can become the tutor of human children, thereby giving him his final education on the way humans think and act. Human children would be far more trusting and free to answer the questions he has. Ebrihim is taller than most Drall and has deep gray fur with lighter streaks on his face and throat. While most humans would consider him serious and dignified, other Drall think him impulsive and irresponsible. While most male Drall would soon settle down to further extend the family, Ebrihim simply has no desire. He is far too busy seeking out more knowledge, much to the dismay of his Aunt Marcha and other relatives.",
+    source: "WEG40139 Cracken's Threat Dossier p.107"
+  }
+  ,{
+    name: "Mara Jade (18 ABY)",
+    species: "Human",
+    system: "Coruscant",
+    location: "Coruscant — Jade Trading",
+    affiliations: ["The Fringe"],
+    role: "Master Trader",
+    type: "Named Villain",
+    stats: {
+      DEXTERITY: { base: "3D+2", skills: { "blaster": "9D+1", "blaster: hold-out blaster": "10D+2", "brawling parry": "7D+2", "dodge": "8D+2", "lightsaber": "4D+2", "melee combat": "8D+1", "melee parry": "7D+2", "missile weapons": "6D+2", "pick pocket": "8D+2", "running": "6D+2", "thrown weapons": "6D+2" } },
+      KNOWLEDGE: { base: "2D+2", skills: { "alien species": "8D+2", "bureaucracy": "7D+2", "business": "8D", "intimidation": "7D+2", "languages": "8D+2", "planetary systems": "6D", "streetwise": "7D+1", "survival": "9D+1", "value": "8D", "willpower": "7D" } },
+      MECHANICAL: { base: "2D", skills: { "astrogation": "8D+2", "beast riding": "5D+2", "communications": "6D+2", "ground vehicle operation": "6D+2", "repulsorlift operation": "5D+2", "sensors": "5D+2", "space transports": "9D+2", "starfighter piloting": "9D+2", "starship gunnery": "9D+2", "starship shields": "8D", "swoop operation": "7D+2" } },
+      PERCEPTION: { base: "3D+2", skills: { "bargain": "8D", "command": "7D+1", "con": "6D+1", "forgery": "4D+2", "gambling": "4D+2", "hide": "8D+2", "investigation": "5D", "persuasion": "5D+1", "search": "7D+1", "sneak": "8D+1" } },
+      STRENGTH: { base: "3D", skills: { "brawling": "6D+2", "climbing/jumping": "7D+2", "lifting": "5D+2", "stamina": "8D+2", "swimming": "6D+2" } },
+      TECHNICAL: { base: "3D", skills: { "blaster repair": "6D", "computer programming/repair": "7D", "demolitions": "5D+2", "droid programming": "3D+2", "droid repair": "3D+2", "first aid": "5D", "ground vehicle repair": "6D", "repulsorlift repair": "5D", "security": "8D", "starship repair": "6D+1", "starship weapon repair": "5D+1" } }
+    },
+    specialAbilities: "Force Skills: Control 2D+2, Sense 3D, Alter 2D+1. This character is Force-sensitive.",
+    forcePoints: 4,
+    characterPoints: 29,
+    move: 10,
+    equipment: "Hold-out blaster (3D), comlink, slave-drive remote control, datapad",
+    capsule: "Mara Jade has played many roles throughout her life. She had been the Emperor's Hand in her youth, then worked as a smuggler and trader in Talon Karrde's organization and even trained in the Force under Jedi Master Luke Skywalker. But this striking woman chose her own path in the end and is now a Master Trader, with her own ship and crew. Jade's new business venture was the result of her partnership with Talon Karrde, who helped set up her small venture to provide her with valuable leadership experience. Karrde hoped that Mara would eventually take over his organization upon his eventual retirement. She was given Jade's Fire as a result. Jade handpicked her crew — Mon Calamari navigator Tralphka and human pilot Nesdin — from the many members of Karrde's organization. In the short time she has been on her own, she has built a highly profitable trading company. Yet despite her success, she feels unfulfilled. Her life — once filled with adventure and high risk — has changed to a more relaxed, business-like existence.",
+    source: "WEG40139 Cracken's Threat Dossier p.108-109"
+  }
+  ,{
+    name: "Lieutenant Belindi Kalenda",
+    species: "Human",
+    system: "Coruscant",
+    location: "Coruscant — NRI Operations Branch",
+    affiliations: ["New Republic"],
+    role: "NRI Intelligence agent",
+    type: "Named Ally",
+    stats: {
+      DEXTERITY: { base: "4D", skills: { "blaster": "6D", "blaster: hold-out blaster": "7D", "brawling parry": "6D+1", "dodge": "5D+2", "melee combat": "5D", "melee parry": "5D", "pick pocket": "5D" } },
+      KNOWLEDGE: { base: "2D+1", skills: { "bureaucracy": "5D+1", "cultures: Corellia": "6D", "intimidation": "5D", "streetwise": "7D+1", "survival": "9D+1", "value": "8D" } },
+      MECHANICAL: { base: "2D", skills: { "communications": "4D+2", "repulsorlift operation": "3D" } },
+      PERCEPTION: { base: "3D+2", skills: { "con": "4D+1", "forgery": "4D+2", "hide": "5D+2", "investigation": "5D", "persuasion": "4D+2", "search": "5D", "sneak": "6D" } },
+      STRENGTH: { base: "3D", skills: { "brawling": "5D+1", "climbing/jumping": "4D", "stamina": "6D", "swimming": "4D+1" } },
+      TECHNICAL: { base: "3D", skills: { "computer programming/repair": "7D", "blaster repair": "6D", "demolitions": "5D+2", "first aid": "4D", "security": "7D" } }
+    },
+    specialAbilities: "None",
+    forcePoints: 3,
+    characterPoints: 15,
+    move: 10,
+    equipment: "Hold-out blaster (3D), comlink",
+    capsule: "Belindi Kalenda is twenty-five years old with long black hair and dark skin. Her eyes are wide-spaced and glassy, almost milky — she almost seems cross-eyed. Many people have mistaken her for a blind woman; in fact, that is one of her favorite and most effective disguises. Her family comes from a backwater planet in the Outer Rim Territories. She grew up with her older brother Tindel on Coruscant before he was killed in a hovercar accident. Belindi was taken in by a military orphanage that trained children for service to the Empire. When she was eleven, the Emperor was killed and Coruscant was taken by the Rebellion. She chose to continue her military training and was one of the first to graduate from the New Republic Military Academy. Instead of working on the front, she decided to try her hand as an agent. Lt. Kalenda performed her mission during the Corellian Incident marvelously, acting with great courage and resourcefulness. She is to be promoted to Lieutenant Colonel and head up the Operations branch of NRI Special Threats.",
+    source: "WEG40139 Cracken's Threat Dossier p.109-110"
+  }
+  ,{
+    name: "Duchess Marcha of Mastigophorous",
+    species: "Drall",
+    system: "Corellia",
+    location: "Drall — Mastigophorous Estate",
+    affiliations: ["New Republic"],
+    role: "Governor-General of Corellians / Drall Duchess",
+    type: "Named Ally",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { "blaster": "3D", "blaster: blaster rifle": "3D+2" } },
+      KNOWLEDGE: { base: "4D", skills: { "alien species": "4D+2", "bureaucracy: Drall": "6D", "cultures": "4D+2", "languages": "5D", "planetary systems: Corellia": "6D", "survival": "5D", "willpower": "6D" } },
+      MECHANICAL: { base: "2D+1", skills: { "hovercar operation": "4D" } },
+      PERCEPTION: { base: "3D", skills: { "command": "5D" } },
+      STRENGTH: { base: "2D", skills: { "stamina": "4D" } },
+      TECHNICAL: { base: "2D+2", skills: { "first aid": "3D+1" } }
+    },
+    specialAbilities: "None",
+    forcePoints: 2,
+    characterPoints: 14,
+    move: 7,
+    equipment: "Blaster rifle (5D)",
+    capsule: "As the head of a very large family, Marcha keeps everything and everyone in order, whether they like it or not. She is the very epitome of level-headedness in Drall standards, unlike her nephew Ebrihim. She has brown fur covering her short, stout body and stands barely a meter tall. Though to human eyes she seems like a walking, breathing toy, her sharp voice and piercing eyes can earn respect from even the most unruly individual. When the previous matron of the Mastigophorous family died, there was no question as to which female would take her place. Marcha takes pride in her dwelling and its surrounding estates. Her garden parties are the most popular and her gardens are well known throughout the Drall community as the most exquisite artistry accomplished with plants. After the Corellian Incident, Duchess Marcha was chosen as Governor-General of Corellians — she is honest, hard-working, and has the ability to command the respect of any being around her, even humans.",
+    source: "WEG40139 Cracken's Threat Dossier p.110-111"
+  },
+  {
+    name: "Governor-General Micamberlecto",
+    species: "Frozian",
+    system: "Corellia",
+    location: "Corellia — Governor-General's Residence",
+    affiliations: ["New Republic"],
+    role: "Governor-General of Corellian Sector",
+    type: "Named Ally",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "dodge": "4D", "running": "5D" } },
+      KNOWLEDGE: { base: "3D+2", skills: { "bureaucracy": "8D", "bureaucracy: Corellia": "10D", "cultures": "5D", "cultures: Corellians": "8D", "languages": "6D+2", "languages: Drall": "10D", "languages: Selonian": "10D", "law enforcement": "6D", "planetary systems": "7D", "planetary systems: Corellia": "10D", "streetwise: Corellia": "8D" } },
+      MECHANICAL: { base: "3D+1", skills: { "astrogation": "5D", "ground vehicle operation": "6D+1", "hover vehicle operation": "6D", "repulsorlift operation": "5D", "space transports": "5D+1" } },
+      PERCEPTION: { base: "4D", skills: { "command": "5D+2", "investigation: Coronet City": "6D" } },
+      STRENGTH: { base: "2D", skills: { "climbing/jumping": "4D" } },
+      TECHNICAL: { base: "2D", skills: { "computer programming/repair": "3D+2" } }
+    },
+    specialAbilities: "None",
+    forcePoints: 2,
+    characterPoints: 13,
+    move: 11,
+    equipment: "Datapad",
+    capsule: "When Micamberlecto first accepted the office of Governor-General of the Corellia System, he felt a tinge of happiness that broke through his melancholy. He would be a symbol of dignity and pride for Frozians everywhere. Then he arrived in Corellia to take his place in the ex-Diktat's house and his depression deepened. In spite of his position as the head of government in Corellia, he still needed to fill the positions beneath him. When the Corellian people held their local elections, many ex-Imperial officers bid for the positions and won. Thus, Governor-General Micamberlecto was left to govern very little, while the Imperial factions of Corellia were able to influence the community and keep control from the Frozian. Without the strict oversight of the Old Republic and the Empire, Corellia no longer accepted the influence of outside forces — namely the New Republic and Micamberlecto. He asked the New Republic to help defuse certain problems within the Corellian Sector, notably the Human League problem. Unfortunately, his plan failed and the Human League Uprising unseated the hapless Frozian, who was murdered by Thracken Sal-Solo during the crisis.",
+    source: "WEG40139 Cracken's Threat Dossier p.111-112"
+  }
+  ,{
+    name: "Admiral Hortel Ossilege",
+    species: "Human",
+    system: "Bakura",
+    location: "Bakura — Bakuran Defense Fleet",
+    affiliations: ["New Republic"],
+    role: "Bakuran Admiral",
+    type: "Named Ally",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { "blaster": "4D", "dodge": "5D" } },
+      KNOWLEDGE: { base: "3D", skills: { "alien species": "6D", "bureaucracy": "6D", "cultures": "6D+2", "intimidation": "8D", "languages": "6D", "planetary systems": "7D", "survival": "5D", "tactics: capital ships": "9D", "tactics: fleets": "10D", "tactics: starfighters": "8D" } },
+      MECHANICAL: { base: "3D", skills: { "astrogation": "5D", "capital ship gunnery": "5D", "capital ship piloting": "5D+2", "capital ship shields": "5D", "starship gunnery": "4D", "starship shields": "4D" } },
+      PERCEPTION: { base: "4D", skills: { "bargain": "6D", "command": "7D", "command: Bakuran fleets": "8D" } },
+      STRENGTH: { base: "3D", skills: {} },
+      TECHNICAL: { base: "3D", skills: { "capital starship repair": "4D+2", "security": "5D" } }
+    },
+    specialAbilities: "None",
+    forcePoints: 5,
+    characterPoints: 26,
+    move: 9,
+    equipment: "Comlink, datapad, uniform",
+    capsule: "Admiral Ossilege was not a large man; indeed he seemed almost delicate in appearance. Completely bald, he had bushy black eyebrows and a thin goatee. At fifty-three years old, he stood straight and proud, making him look much taller than his actual height. Admiral Ossilege had a brilliant and cunning mind. He was pompous and arrogant — but was highly skilled at his duties. More than once, his impulsive tactics were viewed with doubt from those around him, but he always got the job done. Ossilege fell in battle during the Corellian Incident, sacrificing his life to help win the battle against the Sacorrian fleet. He died aboard the cruiser Intruder along with Gaeriel Captison.",
+    source: "WEG40139 Cracken's Threat Dossier p.112-113"
+  }
+  ,{
+    name: "Q9-X2",
+    species: "Industrial Automaton Q9 Astromech Droid",
+    system: "Corellia",
+    location: "Drall — Ebrihim's Residence",
+    affiliations: ["Neutral"],
+    role: "Astromech droid prototype",
+    type: "Named Ally",
+    stats: {
+      DEXTERITY: { base: "1D", skills: {} },
+      KNOWLEDGE: { base: "1D", skills: {} },
+      MECHANICAL: { base: "3D", skills: { "astrogation": "5D", "space transports": "3D", "starfighter repair": "3D" } },
+      PERCEPTION: { base: "2D", skills: { "search": "6D" } },
+      STRENGTH: { base: "1D", skills: {} },
+      TECHNICAL: { base: "2D", skills: { "computer programming/repair": "6D", "starfighter repair": "5D" } }
+    },
+    specialAbilities: "Molecular backtrack sniffer: tracks targets by pheromone trail, +1D to scent-based search: tracking rolls. Residual heat-trend directionalizer: reveals footprints or other similar heat sources that leave a trail (5 meter range, attempt must be made within 20 minutes of the trail being made), +1D to search: tracking rolls. Enhanced movement sensor: +2D to movement-based search checks. Enhanced audio sensor: +2D to sound-based search checks. Enhanced infrared sensors: +2D to heat-based search checks. Electromagnetic field receptors: +1D to EM-band search checks. Retractable heavy grasper arm: +1D to lifting. Small electric arc welder (1D-5D, 0.3 meter range). Small circular saw (4D damage, 0.3 meter range). Note: Q9 is constantly upgrading himself. It is believed he possesses more attachments and gear than indicated here.",
+    forcePoints: 0,
+    characterPoints: 5,
+    move: 6,
+    equipment: "Three wheeled legs (one retractable), repulsor units, vocoder unit (astromech voice box), broadband antenna receiver (5 km range), built-in comlink (1 km range), retractable fine work grasper arm, extendible 0.3 meter long video sensor (360 degree range), video display screen, holographic projector/recorder, flat-image photoimager (non-holographic single frame image, 50 meter range, 90 seconds), fire extinguisher, small (20 cm by 8 cm) internal cargo area, additional tools and equipment",
+    capsule: "The Q9 series is an experimental design, loosely based on the R7 chassis. While it is capable of functioning as a mere astromech droid, the Q9 droids were designed with more jobs in mind. Its skills at data access can be used by most diplomats and scholars, and it can learn from trial and error. Unlike most astromech droids, the Q9 series was designed with a fairly complex personality matrix to facilitate rapid learning. IA maintains that the Q9 series was a complete disaster — the personality matrix programming was faulty in most production models, and only a few hundred were made and sold. Q9-X2, one of the last Q9-series prototypes constructed by IA, is an exception to this. Q9 is owned by Ebrihim who has, at times, regretted his decision to buy the droid. The droid has a tendency to drive even a patient Drall mad with aggravation. Still, Q9 has proven to be invaluable in times of disaster. Q9 has modified himself far beyond original design specs; unlike most Q-series droids — which cease self-modification after a time — Q9 constantly improves his own design. Size: 1.3 meters tall. Move: 6 (wheels), 10 (repulsors), flight ceiling 3 meters.",
+    source: "WEG40139 Cracken's Threat Dossier p.113-114"
+  }
+  ,{
+    name: "Tendra Risant",
+    species: "Human",
+    system: "Sacorria",
+    location: "Sacorria — Risant Estate",
+    affiliations: ["New Republic"],
+    role: "Sacorrian functionary / NRI source",
+    type: "Named Ally",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "dodge": "3D+1", "running": "4D" } },
+      KNOWLEDGE: { base: "4D", skills: { "bureaucracy": "5D+2", "business": "6D+2", "cultures": "5D", "law enforcement": "4D+2", "streetwise: Sacorria": "5D+1", "value": "5D" } },
+      MECHANICAL: { base: "2D+1", skills: { "astrogation": "4D", "space transports": "4D" } },
+      PERCEPTION: { base: "2D+2", skills: { "bargain": "3D+2", "command": "4D", "forgery": "5D+2" } },
+      STRENGTH: { base: "3D", skills: { "climbing/jumping": "4D+1", "swimming": "3D+2" } },
+      TECHNICAL: { base: "3D", skills: { "computer programming/repair": "5D+1", "security": "4D+1" } }
+    },
+    specialAbilities: "None",
+    forcePoints: 1,
+    characterPoints: 15,
+    move: 10,
+    equipment: "Datapad",
+    capsule: "At thirty-two, Tendra had been on her homeworld of Sacorria long enough. Without her father's knowledge, she began looking for an off-world husband, apparently seeking stability and coziness. As a minor official for her government she was able to accumulate some money of her own, but her father ran a fairly large business which still managed to turn a profit in spite of the troubles occurring in the Corellian system. To assist her father, she frequently had to take over the paperwork while he went out to the factories. During the Corellian Incident, Tendra Risant sent valuable data back to the New Republic via an old-style radionics communications system. Codenamed 'Source T,' Risant was able to warn the New Republic of Triad ships massing near Saccorria. Lando Calrissian is still courting her and has set her up in her own apartments in Dometown.",
+    source: "WEG40139 Cracken's Threat Dossier p.115"
+  }
+  ,{
+    name: "Thracken Sal-Solo",
+    species: "Human",
+    system: "Corellia",
+    location: "Corellia — New Republic Detention",
+    affiliations: ["Criminal Underworld"],
+    role: "Human League leader",
+    type: "Named Villain",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { "blaster": "3D", "dodge": "4D" } },
+      KNOWLEDGE: { base: "4D", skills: { "alien species": "5D", "bureaucracy": "7D", "bureaucracy: Corellia": "10D", "cultures": "5D+2", "intimidation": "5D+2", "law enforcement: Corellia": "4D+2", "streetwise: Corellia": "5D+1" } },
+      MECHANICAL: { base: "2D", skills: { "astrogation": "3D+2", "repulsorlift operation": "3D+1", "space transports": "5D" } },
+      PERCEPTION: { base: "4D", skills: { "bargain": "5D", "command": "6D", "con": "8D", "forgery": "5D+1", "persuasion": "7D", "sneak": "5D" } },
+      STRENGTH: { base: "2D", skills: {} },
+      TECHNICAL: { base: "2D", skills: {} }
+    },
+    specialAbilities: "None",
+    forcePoints: 1,
+    darkSidePoints: 2,
+    characterPoints: 12,
+    move: 10,
+    equipment: "Hold-out blaster (3D+1)",
+    capsule: "Thracken Sal-Solo was a bitter man getting on in his years. His life had passed by with him always waiting — waiting for entry into the Imperial Academy, waiting for the woman of his dreams, waiting for the chance to become the Corellian Diktat. And each time he came close to winning his spot in life, Han Solo ripped his dreams out from underneath him — or so he apparently believed. If Han hadn't defected from the Imperial Navy, Thracken would have been accepted into the Academy. Han made such a name for himself that all the women Thracken met compared him to the younger Solo. Then Han helped the Rebellion win the war against the Empire and Thracken was no longer in the running for Diktat. Thracken hates non-humans and loathes the New Republic, but there is no way of calculating the enmity he feels for his cousin, Han Solo. For his actions during the Corellian Incident — including the murder of Governor-General Micamberlecto — the New Republic decided Thracken Sal-Solo will be placed in a cell to live out his days.",
+    source: "WEG40139 Cracken's Threat Dossier p.116-117"
+  }
+  ,{
+    name: "Salculd",
+    species: "Selonian",
+    system: "Corellia",
+    location: "Selonia — Selonian Den",
+    affiliations: ["Neutral"],
+    role: "Selonian pilot",
+    type: "Named Ally",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "dodge": "5D" } },
+      KNOWLEDGE: { base: "3D", skills: { "alien species: humans": "5D+1", "cultures": "5D", "intimidation": "6D" } },
+      MECHANICAL: { base: "3D", skills: { "archaic starship piloting: Selonian coneship": "3D+1" } },
+      PERCEPTION: { base: "2D", skills: {} },
+      STRENGTH: { base: "4D", skills: { "brawling": "5D+1", "stamina": "5D", "swimming": "5D" } },
+      TECHNICAL: { base: "3D", skills: {} }
+    },
+    specialAbilities: "Retractable Claws: Selonians receive a +1D bonus to climbing and brawling. Tail: Used to help steer and propel a Selonian through water, adds a +1D bonus to swimming skill. Can also be used as additional weapon as a club.",
+    forcePoints: 1,
+    characterPoints: 8,
+    move: 10,
+    equipment: "None",
+    capsule: "Unlike the rest of her sept, Salculd showed tendencies of not only minding large open spaces outside the tunnels of her home, but actually enjoying it. As she grew older, she began to take apart equipment and put it back together, then she was seen pleading for a ride in a hovercar. The Den had seen enough — Salculd began her training as one of the rare Selonian Pilots. Unfortunately, due to a lack of Selonian pilot trainers, Salculd's education has been spotty and most of her training was from a desperate ex-pilot who flew starfighters in the war against the Empire. She knows little about flying the actual Selonian coneship. She — and her craft — should be considered extremely hazardous if encountered; though she would not knowingly endanger another ship, she does not possess the skills or experience to avoid a crisis. Salculd is pepper-colored and very outgoing. Most of the rest of the Den tend to view her as unusual or eccentric. Story Factors — Hive-mind: Selonians live in underground dens like social insects. Only sterile females leave the den to interact with the outside world. Agoraphobia: Unlike most Selonians, Salculd does not have agoraphobia and is comfortable during space travel. Because of this, other Selonians look at her with a certain degree of wariness.",
+    source: "WEG40139 Cracken's Threat Dossier p.117-118"
+  }
+  ,{
+    name: "Jenica Sonsen",
+    species: "Human",
+    system: "Corellia",
+    location: "Centerpoint Station — Administration and Operations",
+    affiliations: ["Neutral"],
+    role: "Chief Operations Officer of Centerpoint Station",
+    type: "Named Ally",
+    stats: {
+      DEXTERITY: { base: "2D+1", skills: { "dodge": "3D+2" } },
+      KNOWLEDGE: { base: "4D", skills: { "bureaucracy: Centerpoint Station": "5D" } },
+      MECHANICAL: { base: "2D+2", skills: { "repulsorlift operation: turbovator car": "5D", "space station operations": "6D" } },
+      PERCEPTION: { base: "2D+1", skills: { "command": "4D" } },
+      STRENGTH: { base: "2D+2", skills: { "stamina": "3D" } },
+      TECHNICAL: { base: "4D", skills: { "computer programming/repair": "5D", "repulsorlift repair": "4D+2", "security": "5D+1" } }
+    },
+    specialAbilities: "None",
+    forcePoints: 1,
+    characterPoints: 11,
+    move: 10,
+    equipment: "Datapad, set of keycards",
+    capsule: "Jenica Sonsen is one of the few who was born on Centerpoint Station; in fact, she has only been off the station on two occasions. These excursions were to speak with the Federation of the Double Worlds. Sonsen is probably the youngest Chief Operations Officer ever in the modern history of Centerpoint.",
+    source: "WEG40139 Cracken's Threat Dossier p.118-119"
+  }
+  ,{
+    name: "Karia Ver Seryan",
+    species: "Human (Life-witch)",
+    system: "Leria Kersil",
+    location: "Leria Kersil — Ver Seryan Fortress",
+    affiliations: ["The Fringe"],
+    role: "Life-bearer",
+    type: "Named Villain",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "3D+2", "dodge": "4D", "running": "5D" } },
+      KNOWLEDGE: { base: "4D", skills: { "business": "5D", "cultures": "5D", "languages": "4D+2", "planetary systems": "4D+2", "survival": "7D", "value": "6D+1", "willpower": "5D+1" } },
+      MECHANICAL: { base: "2D+2", skills: { "astrogation": "4D", "communications": "4D", "repulsorlift operation": "5D", "space transports": "9D" } },
+      PERCEPTION: { base: "3D+1", skills: { "bargain": "6D", "command": "4D", "hide": "5D", "persuasion": "8D", "sneak": "4D+1" } },
+      STRENGTH: { base: "3D", skills: { "climbing/jumping": "4D+2", "stamina": "6D", "swimming": "4D" } },
+      TECHNICAL: { base: "2D", skills: { "computer programming/repair": "3D+2", "first aid": "6D", "security": "5D+1" } }
+    },
+    specialAbilities: "Life-witch: Life witches can sustain the infirm, the elderly and the dying through their peculiar gifts. While under a life-witch's 'Support,' characters can be considered healthy, and are immune to the effects of aging. Any wounds a Supported character incurs can be healed by the touch of the life-witch. However, after a relatively short period of time, the life-witch withdraws the Support, and the affected character dies instantly. The Support lasts for up to five years. Life-witches are not subject to aging, provided they remain bonded to a husband. An unbonded life-witch ages normally. Story Factors — Ritual: To successfully bond with a character a ceremony must be performed. The 'ceremony of the blood kiss' is very quick, simple and binding. The life-witch uses a ceremonial dagger to prick the finger of the intended husband. She then kisses the blood. The husband-to-be does the same to her finger. This bonds the life-witch's body chemistry to that of the husband; the process is irrevocable. Honorific: All life-witches come from Leria Kersil, and only occur infrequently among the populace. The honorific 'Ver' is given to all life-witches. In addition, a life-witch typically prefers the term 'life-bearer' over 'life-witch.'",
+    forcePoints: 13,
+    characterPoints: 30,
+    move: 10,
+    equipment: "Ceremonial needle dagger (STR+1D)",
+    capsule: "Karia Ver Seryan is 312 years old, though outwardly she looks more like 25. With eyes of a rich mauve and dark auburn hair, she knows she is irresistible to all men who see her. Add onto that her life-bearing powers and enormous bank account and she's a catch beyond most men's imagination. She has no regrets about her gift; she knows she can help men who are in pain and suffering live better, fuller lives, at least for a while. But many people do not understand. She built her fortress many years before after one attack nearly killed her. Now she never ventures beyond the confines of her home. Recently, she nearly succeeded in her goal of marrying for the fiftieth time when Lando Calrissian courted her. She had heard several stories from her last husband, Chantu Solk, about many of Captain Calrissian's escapades. But then, she decided he was a gambler and perhaps he was tired of the insecurity of that type of life. Much to her dismay, Lando Calrissian had not been informed of her gift as life-bearer and when he found out, he spurned her Support and left the system. Karia is put out by this; she needs to Support another or else she will sicken and eventually die.",
+    source: "WEG40139 Cracken's Threat Dossier p.118-119"
+  }
 // --- END OF NOTABLE_NPCS ---
 ];

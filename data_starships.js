@@ -3295,184 +3295,6 @@ const STARSHIP_DATA = {
   },
   {
    "rank": 47,
-   "name": "Millennium Falcon (2 BBY)",
-   "craft": "Corellian Engineering YT-1300",
-   "type": "Modified light freighter",
-   "affiliation": "The Fringe",
-   "era": "Rise of the Empire",
-   "source": "WEG40042 Han Solo and the Corporate Sector Sourcebook p.95",
-   "price_new": "Not for sale (Han Solo)",
-   "price_used": "",
-   "scale": "Starfighter",
-   "length": "26.7 meters",
-   "crew": "2",
-   "gunners": "2",
-   "passengers": "6",
-   "cargo": "100 metric tons",
-   "consumables": "2 months",
-   "hyperdrive": "x0.75",
-   "hyperdrive_backup": "x16",
-   "nav_computer": "Yes",
-   "maneuverability": "1D",
-   "space": "8",
-   "atmosphere": "365; 1,050 kmh",
-   "hull": "5D+2",
-   "shields": "2D+1",
-   "of_note": "Skeleton 1/+15. Early Corporate Sector era — less modified than later versions. Hyperdrive x3/4 (later upgraded to x1/2). Maneuverability 1D (later 2D). Hull 5D+2 (later 6D). Shields 2D+1 (later 3D). Won from Lando Calrissian in a sabacc game.",
-   "sensors_passive": "20/1D",
-   "sensors_scan": "40/1D+2",
-   "sensors_search": "45/2D",
-   "sensors_focus": "2/3D",
-   "weapons": [
-    {
-     "name": "2 Quad Laser Cannons",
-     "fire_arc": "Turret",
-     "crew": "1",
-     "skill": "Starship gunnery",
-     "fire_control": "3D",
-     "space_range": "1-3/12/25",
-     "atmo_range": "100-300/1.2/2.5 km",
-     "damage": "6D"
-    },
-    {
-     "name": "2 Concussion Missile Tubes (fire-linked)",
-     "fire_arc": "Front",
-     "crew": "",
-     "skill": "Missile weapons: concussion missiles",
-     "fire_control": "3D",
-     "space_range": "1/3/7",
-     "atmo_range": "50-100/300/700",
-     "damage": "9D"
-    }
-   ]
-  },
-  {
-   "rank": 47,
-   "name": "Millennium Falcon (9 ABY)",
-   "craft": "Modified Corellian YT-1300",
-   "type": "Modified light freighter",
-   "affiliation": "Rebel Alliance",
-   "era": "New Republic",
-   "source": "WEG40131 The Thrawn Trilogy Sourcebook p.226; WEG40122 Shadows of the Empire p.118",
-   "price_new": "Not for sale (Han Solo)",
-   "price_used": "",
-   "scale": "Starfighter",
-   "length": "26.7 meters",
-   "crew": "2",
-   "gunners": "",
-   "passengers": "6",
-   "cargo": "100 metric tons",
-   "consumables": "2 months",
-   "hyperdrive": "x0.5",
-   "nav_computer": "Yes",
-   "maneuverability": "2D",
-   "space": "8",
-   "atmosphere": "365; 1,050 kmh",
-   "hull": "6D",
-   "shields": "3D",
-   "of_note": "x10 backup. Han Solo and Chewbacca's ship. Retractable speeder-scale blaster cannon fired from cockpit. 3.5 ABY (SOTE): temporary ventral X-wing docking rig installed at Leia's suggestion — hull clips hold Luke's X-wing close to the hull; maneuverability reduced to 1D in atmosphere with X-wing attached; tractor beam projector added beneath cockpit to maneuver Luke's X-wing into the hull clips (too weak for combat use); passive sensors 30/1D at this time (WEG40122 Shadows of the Empire p.118).",
-   "sensors_passive": "50/1D",
-   "sensors_scan": "60/2D",
-   "sensors_search": "75/3D",
-   "sensors_focus": "4/4D",
-   "weapons": [
-    {
-     "name": "2 Quad Laser Cannons (fire separately)",
-     "fire_arc": "Turret",
-     "crew": "1",
-     "skill": "Starship gunnery",
-     "fire_control": "3D",
-     "space_range": "1-3/12/25",
-     "atmo_range": "100-300/1.2/2.5 km",
-     "damage": "6D"
-    },
-    {
-     "name": "2 Concussion Missile Tubes (fire-linked)",
-     "fire_arc": "Front",
-     "crew": "",
-     "skill": "Missile weapons: concussion missiles",
-     "fire_control": "3D",
-     "space_range": "1/3/7",
-     "atmo_range": "50-100/300/700",
-     "damage": "9D"
-    },
-    {
-     "name": "Retractable Blaster Cannon",
-     "fire_arc": "Turret",
-     "crew": "",
-     "skill": "Vehicle blasters (speeder scale, fired from cockpit)",
-     "fire_control": "4D",
-     "space_range": "",
-     "atmo_range": "1-50/100/250",
-     "damage": "3D+2"
-    }
-   ]
-  },
-  {
-   "rank": 47,
-   "name": "Millennium Falcon (10 ABY)",
-   "craft": "Corellian Engineering YT-1300",
-   "type": "Modified light freighter",
-   "affiliation": "Rebel Alliance",
-   "era": "New Republic",
-   "source": "WEG40071 Dark Empire Sourcebook p.101",
-   "price_new": "Not for sale (Han Solo)",
-   "price_used": "",
-   "scale": "Starfighter",
-   "length": "26.7 meters",
-   "crew": "2",
-   "gunners": "2",
-   "passengers": "6",
-   "cargo": "100 metric tons",
-   "consumables": "2 months",
-   "hyperdrive": "x0.5",
-   "hyperdrive_backup": "x10",
-   "nav_computer": "Yes",
-   "maneuverability": "2D",
-   "space": "9",
-   "atmosphere": "415; 1,200 kmh",
-   "hull": "6D",
-   "shields": "3D",
-   "of_note": "Skeleton 1/+15. Space 9 (up from 8 in 9 ABY). Atmosphere 415; 1,200 kmh (up from 365; 1,050 kmh). Sensors passive reduced to 30/1D (from 50/1D). Han Solo and Chewbacca's ship.",
-   "sensors_passive": "30/1D",
-   "sensors_scan": "60/2D",
-   "sensors_search": "75/3D",
-   "sensors_focus": "4/4D",
-   "weapons": [
-    {
-     "name": "2 Quad Laser Cannons",
-     "fire_arc": "Turret",
-     "crew": "1",
-     "skill": "Starship gunnery",
-     "fire_control": "",
-     "space_range": "1-3/12/25",
-     "atmo_range": "100-300/1.2/2.5 km",
-     "damage": "6D"
-    },
-    {
-     "name": "2 Concussion Missile Tubes (fire-linked)",
-     "fire_arc": "Front",
-     "crew": "",
-     "skill": "Missile weapons: concussion missiles",
-     "fire_control": "3D",
-     "space_range": "1/3/7",
-     "atmo_range": "50-100/300/700",
-     "damage": "9D"
-    },
-    {
-     "name": "1 Light Laser Cannon (retractable)",
-     "fire_arc": "Turret",
-     "crew": "",
-     "skill": "Vehicle blasters (speeder scale, fired from cockpit)",
-     "fire_control": "4D",
-     "space_range": "",
-     "atmo_range": "1-50/100/250",
-     "damage": "3D"
-    }
-   ]
-  },
-  {
-   "rank": 47,
    "name": "Hyperspace Marauder",
    "craft": "TransGalMeg Xiytiar-class Transport",
    "type": "Modified large transport",
@@ -4620,9 +4442,449 @@ const STARSHIP_DATA = {
      "damage": "4D"
     }
    ]
+  },
+  {
+   "name": "Ferret",
+   "craft": "Republic Engineering Corporation Reconnaissance Vessel",
+   "type": "Stealth spyship",
+   "era": "New Republic",
+   "affiliation": "New Republic",
+   "source": "WEG40139 Cracken's Threat Dossier p.83",
+   "scale": "Starfighter",
+   "length": "28 meters",
+   "skill": "Space transports",
+   "crew": "3",
+   "crew_skill": "Astrogation 5D, sensors 5D",
+   "cargo_capacity": "2 metric tons",
+   "consumables": "3 months",
+   "cost": "Not available for sale (890,000 credits for government sale)",
+   "hyperdrive_multiplier": "x1",
+   "hyperdrive_backup": "x8",
+   "nav_computer": "Yes",
+   "maneuverability": "2D",
+   "space": "10 (5 using baffled drive)",
+   "hull": "2D",
+   "sensors": {
+    "passive": "50/1D",
+    "scan": "100/3D",
+    "search": "200/4D",
+    "focus": "6/4D+2",
+    "stealth": "+5D sensor difficulties"
+   },
+   "weapons": [
+    {
+     "name": "2 Missile Launchers",
+     "fire_arc": "Front",
+     "skill": "Starship gunnery",
+     "fire_control": "3D",
+     "space_range": "1-2/8/15",
+     "atmo_range": "100-200/800/1.5 km",
+     "damage": "7D"
+    }
+   ],
+   "capsule": "A testament to modern stealth technology, Republic Engineering's ferrets are designed to quietly slip into patrolled space, look around and slip away. Ferrets are top-secret craft costing millions of credits each, with tiny crews serving in virtually non-existent quarters. These ships do not officially exist, and the crews are aware that no effort will be made to recover missing missions. Ferrets are designated strictly by randomly generated serial numbers, which are periodically changed to avoid leaving datatrails. Current-generation ferrets are coated with sensor-baffling materials and equipped with a Fabritech sensor mask developed in a New Republic black project. The ship is propelled by both twin ion engines and a supercooled chemical-thrust baffled drive with a one-hour time limit. Ferrets are pilotless craft, operated by highly dedicated droid brains. Each ferret is equipped with a small complement of missiles and a larger complement of sensor decoys."
+  },
+  {
+   "name": "Prowler",
+   "craft": "Republic Engineering Corporation Prowler-class Reconnaissance Vessel",
+   "type": "Long term spy ship",
+   "era": "New Republic",
+   "affiliation": "New Republic",
+   "source": "WEG40139 Cracken's Threat Dossier p.84",
+   "scale": "Starfighter",
+   "length": "48 meters",
+   "skill": "Space transports",
+   "crew": "6",
+   "crew_skill": "Astrogation 5D, starship piloting 4D, sensors 5D",
+   "cargo_capacity": "3 metric tons",
+   "consumables": "5 months",
+   "cost": "Not available for sale",
+   "hyperdrive_multiplier": "x1",
+   "hyperdrive_backup": "x10",
+   "nav_computer": "Yes",
+   "maneuverability": "1D",
+   "space": "5 (2 using baffled drive)",
+   "hull": "3D",
+   "sensors": {
+    "passive": "100/1D",
+    "scan": "125/2D",
+    "search": "150/3D",
+    "focus": "5/4D+2",
+    "stealth": "+3D"
+   },
+   "weapons": [
+    {
+     "name": "2 Missile Launchers",
+     "fire_arc": "Front",
+     "skill": "Starship gunnery",
+     "fire_control": "3D",
+     "space_range": "1-2/8/15",
+     "atmo_range": "100-200/800/1.5 km",
+     "damage": "7D"
+    }
+   ],
+   "capsule": "An expanded ferret body with less equipment stuffed in, a prowler is a long-term spyship used primarily to keep an eye on assets already known to be in a particular place. Prowlers are only slightly less stealthy than ferrets, about half as fast and have twice the crew. Prowlers are top-secret craft costing hundreds of thousands of credits less than ferrets, with very small crews serving in closely cramped quarters. Spy tours are fairly short, usually about three months, and hard wearing. Unlike ferrets, prowlers do officially exist, although all information is top secret. Prowlers are organically piloted, although a droid brain can take over for the long stretches of inactivity. Typical prowler spy missions involve a long stealthy patrol on the edges of enemy systems, with long-range passive scans peeking into Imperial-controlled systems. Additionally, prowlers are used as perimeter patrols for Defense taskforces on maneuvers."
+  },
+  {
+   "name": "Poranji Orbital Jumper",
+   "craft": "Poranji orbital jumper",
+   "type": "Personal air-space ship",
+   "era": "New Republic",
+   "affiliation": "Neutral",
+   "source": "WEG40139 Cracken's Threat Dossier p.86",
+   "scale": "Starfighter",
+   "length": "3 meters",
+   "skill": "Space transports",
+   "crew": "1",
+   "crew_skill": "Varies drastically",
+   "passengers": "3",
+   "cargo_capacity": "500 kilograms",
+   "consumables": "1 day",
+   "cost": "35,000 (new), 20,000 (used)",
+   "maneuverability": "1D",
+   "space": "2",
+   "atmosphere": "225; 650 kmh",
+   "hull": "2D",
+   "sensors": {
+    "passive": "10/0D",
+    "scan": "20/1D",
+    "search": "30/2D",
+    "focus": "2/2D+2"
+   },
+   "weapons": [],
+   "capsule": "A fairly common personal transport, Poranji's orbital jumper is used for intercontinental travel and to reach orbital space stations or skyhooks. Standard models rely on repulsor engines and only have limited ion engines for space maneuvering, and so lack the power to leave orbital space. Some models can be upgraded to reach nearby moons, but there are faster, cheaper and more efficient methods of intra-system travel. Orbital jumpers are a coveted status symbol among adolescents of many of the Core Worlds."
+  },
+  {
+   "name": "Astrogator Probe Ship",
+   "craft": "Astrographic probe ship",
+   "type": "Astrographic charting vessel",
+   "era": "New Republic",
+   "affiliation": "New Republic",
+   "source": "WEG40139 Cracken's Threat Dossier p.87",
+   "scale": "Starfighter",
+   "length": "35 meters",
+   "skill": "Space transports",
+   "crew": "3",
+   "crew_skill": "Varies; typically starship piloting 3D, sensors 4D+2",
+   "cargo_capacity": "1 metric ton",
+   "consumables": "1 week",
+   "cost": "60,000 (new)",
+   "hyperdrive_multiplier": "x2",
+   "hyperdrive_backup": "x15",
+   "nav_computer": "Yes",
+   "space": "10",
+   "atmosphere": "415; 1,200 kmh",
+   "hull": "3D",
+   "sensors": {
+    "passive": "50/1D",
+    "scan": "100/3D",
+    "search": "150/4D",
+    "focus": "5/4D+2"
+   },
+   "weapons": [],
+   "capsule": "One of the most common survey ships used by the Astrographic Survey Institute is the Astrogator-class Probe Ship, a planar, oval, single-deck vessel bristling with sensors, nicknamed 'Flatfish.' Flatfish are used primarily for high-speed system overflight charting missions. They very rarely land on any of the worlds they pass over — ground missions are left to scouts. Recently, the Astrolabe, a Flatfish on a survey mission over Doornik-1142, was shot down by a Yevethan ship, part of the prelude to the Black Fleet Crisis. The Yevethan government claims the ship was a spyship on a military scouting mission for the New Republic Defense Force, gathering pre-invasion intelligence."
+  },
+  {
+   "name": "Junker",
+   "craft": "Gallofree Yards Transport",
+   "type": "Modified medium transport",
+   "era": "New Republic",
+   "affiliation": "New Republic",
+   "source": "WEG40139 Cracken's Threat Dossier p.93",
+   "scale": "Starfighter",
+   "length": "90 meters",
+   "skill": "Space transports",
+   "crew": "6",
+   "crew_skill": "Varies, typically 3D-5D",
+   "passengers": "20 (specialists), 48 (droids)",
+   "cargo_capacity": "15,000 metric tons",
+   "consumables": "3 months",
+   "cost": "150,000 (used)",
+   "hyperdrive_multiplier": "x3",
+   "nav_computer": "Yes",
+   "space": "4",
+   "atmosphere": "280; 800 kmh",
+   "hull": "3D",
+   "shields": "1D",
+   "sensors": {
+    "passive": "10/0D",
+    "scan": "25/1D",
+    "search": "40/2D",
+    "focus": "2/3D"
+   },
+   "weapons": [
+    {
+     "name": "4 Laser Cannons",
+     "fire_arc": "Turret",
+     "skill": "Starship gunnery",
+     "fire_control": "2D",
+     "space_range": "1-3/12/25",
+     "atmo_range": "100-300/1.2/2.5 km",
+     "damage": "4D"
+    }
+   ],
+   "capsule": "Refitted for Operation Flotsam, 'junkers' are medium transports specially re-equipped and upgraded to scout and scavenge old space battle sites. Small teams of remote droid operators and intelligence analysts accompany each junker as they sift through battle zones for live weapons, memory cores and military paraphernalia. SM model scavenger droids do most of the physical retrieval and examination of recovered artifacts is performed by remote operators, assisted by DA model data analysis droids. Junker tours are usually tedious, long and punctuated by random threats from illegal scavengers, pirates and booby traps."
   }
  ],
  "Named Modified Space Transports": [
+  {
+   "rank": 47,
+   "name": "Millennium Falcon (2 BBY)",
+   "craft": "Corellian Engineering YT-1300",
+   "type": "Modified light freighter",
+   "affiliation": "The Fringe",
+   "era": "Rise of the Empire",
+   "source": "WEG40042 Han Solo and the Corporate Sector Sourcebook p.95",
+   "price_new": "Not for sale (Han Solo)",
+   "price_used": "",
+   "scale": "Starfighter",
+   "length": "26.7 meters",
+   "crew": "2",
+   "gunners": "2",
+   "passengers": "6",
+   "cargo": "100 metric tons",
+   "consumables": "2 months",
+   "hyperdrive": "x0.75",
+   "hyperdrive_backup": "x16",
+   "nav_computer": "Yes",
+   "maneuverability": "1D",
+   "space": "8",
+   "atmosphere": "365; 1,050 kmh",
+   "hull": "5D+2",
+   "shields": "2D+1",
+   "of_note": "Skeleton 1/+15. Early Corporate Sector era — less modified than later versions. Hyperdrive x3/4 (later upgraded to x1/2). Maneuverability 1D (later 2D). Hull 5D+2 (later 6D). Shields 2D+1 (later 3D). Won from Lando Calrissian in a sabacc game.",
+   "sensors_passive": "20/1D",
+   "sensors_scan": "40/1D+2",
+   "sensors_search": "45/2D",
+   "sensors_focus": "2/3D",
+   "weapons": [
+    {
+     "name": "2 Quad Laser Cannons",
+     "fire_arc": "Turret",
+     "crew": "1",
+     "skill": "Starship gunnery",
+     "fire_control": "3D",
+     "space_range": "1-3/12/25",
+     "atmo_range": "100-300/1.2/2.5 km",
+     "damage": "6D"
+    },
+    {
+     "name": "2 Concussion Missile Tubes (fire-linked)",
+     "fire_arc": "Front",
+     "crew": "",
+     "skill": "Missile weapons: concussion missiles",
+     "fire_control": "3D",
+     "space_range": "1/3/7",
+     "atmo_range": "50-100/300/700",
+     "damage": "9D"
+    }
+   ]
+  },
+  {
+   "rank": 47,
+   "name": "Millennium Falcon (9 ABY)",
+   "craft": "Modified Corellian YT-1300",
+   "type": "Modified light freighter",
+   "affiliation": "Rebel Alliance",
+   "era": "New Republic",
+   "source": "WEG40131 The Thrawn Trilogy Sourcebook p.226; WEG40122 Shadows of the Empire p.118",
+   "price_new": "Not for sale (Han Solo)",
+   "price_used": "",
+   "scale": "Starfighter",
+   "length": "26.7 meters",
+   "crew": "2",
+   "gunners": "",
+   "passengers": "6",
+   "cargo": "100 metric tons",
+   "consumables": "2 months",
+   "hyperdrive": "x0.5",
+   "nav_computer": "Yes",
+   "maneuverability": "2D",
+   "space": "8",
+   "atmosphere": "365; 1,050 kmh",
+   "hull": "6D",
+   "shields": "3D",
+   "of_note": "x10 backup. Han Solo and Chewbacca's ship. Retractable speeder-scale blaster cannon fired from cockpit. 3.5 ABY (SOTE): temporary ventral X-wing docking rig installed at Leia's suggestion — hull clips hold Luke's X-wing close to the hull; maneuverability reduced to 1D in atmosphere with X-wing attached; tractor beam projector added beneath cockpit to maneuver Luke's X-wing into the hull clips (too weak for combat use); passive sensors 30/1D at this time (WEG40122 Shadows of the Empire p.118).",
+   "sensors_passive": "50/1D",
+   "sensors_scan": "60/2D",
+   "sensors_search": "75/3D",
+   "sensors_focus": "4/4D",
+   "weapons": [
+    {
+     "name": "2 Quad Laser Cannons (fire separately)",
+     "fire_arc": "Turret",
+     "crew": "1",
+     "skill": "Starship gunnery",
+     "fire_control": "3D",
+     "space_range": "1-3/12/25",
+     "atmo_range": "100-300/1.2/2.5 km",
+     "damage": "6D"
+    },
+    {
+     "name": "2 Concussion Missile Tubes (fire-linked)",
+     "fire_arc": "Front",
+     "crew": "",
+     "skill": "Missile weapons: concussion missiles",
+     "fire_control": "3D",
+     "space_range": "1/3/7",
+     "atmo_range": "50-100/300/700",
+     "damage": "9D"
+    },
+    {
+     "name": "Retractable Blaster Cannon",
+     "fire_arc": "Turret",
+     "crew": "",
+     "skill": "Vehicle blasters (speeder scale, fired from cockpit)",
+     "fire_control": "4D",
+     "space_range": "",
+     "atmo_range": "1-50/100/250",
+     "damage": "3D+2"
+    }
+   ]
+  },
+  {
+   "rank": 47,
+   "name": "Millennium Falcon (10 ABY)",
+   "craft": "Corellian Engineering YT-1300",
+   "type": "Modified light freighter",
+   "affiliation": "Rebel Alliance",
+   "era": "New Republic",
+   "source": "WEG40071 Dark Empire Sourcebook p.101",
+   "price_new": "Not for sale (Han Solo)",
+   "price_used": "",
+   "scale": "Starfighter",
+   "length": "26.7 meters",
+   "crew": "2",
+   "gunners": "2",
+   "passengers": "6",
+   "cargo": "100 metric tons",
+   "consumables": "2 months",
+   "hyperdrive": "x0.5",
+   "hyperdrive_backup": "x10",
+   "nav_computer": "Yes",
+   "maneuverability": "2D",
+   "space": "9",
+   "atmosphere": "415; 1,200 kmh",
+   "hull": "6D",
+   "shields": "3D",
+   "of_note": "Skeleton 1/+15. Space 9 (up from 8 in 9 ABY). Atmosphere 415; 1,200 kmh (up from 365; 1,050 kmh). Sensors passive reduced to 30/1D (from 50/1D). Han Solo and Chewbacca's ship.",
+   "sensors_passive": "30/1D",
+   "sensors_scan": "60/2D",
+   "sensors_search": "75/3D",
+   "sensors_focus": "4/4D",
+   "weapons": [
+    {
+     "name": "2 Quad Laser Cannons",
+     "fire_arc": "Turret",
+     "crew": "1",
+     "skill": "Starship gunnery",
+     "fire_control": "",
+     "space_range": "1-3/12/25",
+     "atmo_range": "100-300/1.2/2.5 km",
+     "damage": "6D"
+    },
+    {
+     "name": "2 Concussion Missile Tubes (fire-linked)",
+     "fire_arc": "Front",
+     "crew": "",
+     "skill": "Missile weapons: concussion missiles",
+     "fire_control": "3D",
+     "space_range": "1/3/7",
+     "atmo_range": "50-100/300/700",
+     "damage": "9D"
+    },
+    {
+     "name": "1 Light Laser Cannon (retractable)",
+     "fire_arc": "Turret",
+     "crew": "",
+     "skill": "Vehicle blasters (speeder scale, fired from cockpit)",
+     "fire_control": "4D",
+     "space_range": "",
+     "atmo_range": "1-50/100/250",
+     "damage": "3D"
+    }
+   ]
+  },
+  {
+   "name": "Millennium Falcon (18 ABY)",
+   "craft": "Corellian Engineering YT-1300",
+   "type": "Modified light freighter",
+   "affiliation": "New Republic",
+   "era": "New Republic",
+   "source": "WEG40139 Cracken's Threat Dossier p.85-86",
+   "scale": "Starfighter",
+   "length": "26.7 meters",
+   "skill": "Space transports",
+   "crew": "2, gunners: 2, skeleton: 1/+15",
+   "crew_skill": "See Han Solo and Chewbacca",
+   "passengers": "6",
+   "cargo_capacity": "100 metric tons",
+   "consumables": "2 months",
+   "cost": "Not available for sale",
+   "hyperdrive_multiplier": "x1/2",
+   "hyperdrive_backup": "x10",
+   "nav_computer": "Yes",
+   "maneuverability": "2D",
+   "space": "11",
+   "atmosphere": "435; 1,300 kmh",
+   "hull": "6D",
+   "shields": "3D",
+   "sensors": {
+    "passive": "30/1D",
+    "scan": "60/2D",
+    "search": "75/3D",
+    "focus": "4/4D"
+   },
+   "weapons": [
+    {
+     "name": "2 Quad Laser Cannons",
+     "fire_arc": "Turret",
+     "skill": "Starship gunnery",
+     "fire_control": "3D",
+     "space_range": "1-3/12/25",
+     "atmo_range": "100-300/1.2/2.5 km",
+     "damage": "6D"
+    },
+    {
+     "name": "2 Concussion Missile Tubes (fire-linked)",
+     "fire_arc": "Front",
+     "skill": "Starship gunnery",
+     "fire_control": "3D",
+     "space_range": "1/3/7",
+     "atmo_range": "50-100/300/700",
+     "damage": "9D"
+    },
+    {
+     "name": "1 Light Laser Cannon (retractable)",
+     "fire_arc": "Turret",
+     "scale": "Speeder",
+     "skill": "Vehicle blasters",
+     "fire_control": "4D (fired from cockpit)",
+     "atmo_range": "1-50/100/250",
+     "damage": "3D"
+    },
+    {
+     "name": "1 Tractor Beam Projector",
+     "fire_arc": "Front",
+     "crew": "2",
+     "skill": "Capital ship gunnery",
+     "fire_control": "3D",
+     "space_range": "1-5/15/30",
+     "atmo_range": "2-10/30/60 km",
+     "damage": "4D"
+    },
+    {
+     "name": "1 Mine Layer (16 mines)",
+     "fire_arc": "Right",
+     "skill": "Starship gunnery",
+     "fire_control": "0D (can be detonated by remote or timer)",
+     "space_range": "1/3/7",
+     "atmo_range": "50-100/300/700",
+     "damage": "6D (each)"
+    }
+   ],
+   "capsule": "As of the end of the Black Fleet Crisis, the Millennium Falcon has received a complete overhaul and partial rebuild at yard 413, the 'brassyard.' The Falcon was rewired, retagged, recharged, recarpeted, and recushioned. Most deflector emitters and several twisted ribs were replaced. The hyperdrive motivator was swapped for a more efficient Series 401 and the commercial cargo tractor beam upgraded to military strength. The Falcon is currently operating under Class One military waiver. During the Black Fleet Crisis, Chewbacca further modified the Falcon with optical transducer panels for increased port and rear visibility, and a mine-laying pod and hull-cutting ring mounted in place of the starboard and port escape pods."
+  },
   {
    "rank": 86,
    "name": "Shroud Freighter/Fighter (Luke's Ship)",
@@ -12502,6 +12764,39 @@ const STARSHIP_DATA = {
      "damage": "3D"
     }
    ]
+  },
+  {
+   "name": "Hajen Fleet Tender",
+   "craft": "Republic Engineering Corporation Hajen-class Fleet Tender",
+   "type": "Resupply vessel",
+   "era": "New Republic",
+   "affiliation": "New Republic",
+   "source": "WEG40139 Cracken's Threat Dossier p.78",
+   "scale": "Capital",
+   "length": "375 meters",
+   "skill": "Capital ship piloting",
+   "crew": "6 (plus extensive droid complement), skeleton: 2/+15",
+   "crew_skill": "Varies",
+   "passengers": "6",
+   "cargo_capacity": "300,000 metric tons",
+   "consumables": "1 month",
+   "cost": "Not available for sale",
+   "hyperdrive_multiplier": "x1",
+   "hyperdrive_backup": "x10",
+   "nav_computer": "Yes",
+   "maneuverability": "1D",
+   "space": "7",
+   "atmosphere": "350; 1,000 kmh",
+   "hull": "5D",
+   "shields": "3D",
+   "sensors": {
+    "passive": "20/1D",
+    "scan": "60/2D",
+    "search": "100/3D",
+    "focus": "4/3D+2"
+   },
+   "weapons": [],
+   "capsule": "The Hajen-class Fleet Tender is the lifeline of the New Class ships. Hajens keep the Fifth Fleet supplied on station and extend their running time. With adequate resupply, the New Class ships can operate indefinitely. The fleet tender is not a repair vessel; a damaged ship is unlikely to survive long enough to be repaired. The Hajen is a resupply vessel constantly running back and forth from battlegroup to base to keep the ships well stocked — flying warehouses which extend the battlegroup's time-on-station — carrying the food, water, fuel, spare parts, blaster gas, and other supplies needed to keep a battlegroup functioning."
   }
  ],
  "Named Modified Military Transports": [],
@@ -14128,6 +14423,53 @@ const STARSHIP_DATA = {
      "damage": "11D"
     }
    ]
+  },
+  {
+   "name": "Reconnaissance X-wing",
+   "craft": "Incom T-65BR X-wing",
+   "type": "Reconnaissance starfighter",
+   "era": "New Republic",
+   "affiliation": "New Republic",
+   "source": "WEG40139 Cracken's Threat Dossier p.82",
+   "scale": "Starfighter",
+   "length": "12.5 meters",
+   "skill": "Starfighter piloting",
+   "crew": "1, 1 astromech droid (can coordinate)",
+   "crew_skill": "Starfighter piloting 4D+2, starship gunnery 4D+2, starship shields 3D, sensors 4D+2",
+   "cargo_capacity": "110 kilograms",
+   "consumables": "1 week",
+   "cost": "150,000 (new)",
+   "hyperdrive_multiplier": "x1",
+   "nav_computer": "Astromech droid stores 10 jumps",
+   "maneuverability": "3D",
+   "space": "8",
+   "atmosphere": "365; 1,050 kmh",
+   "hull": "4D",
+   "shields": "1D",
+   "sensors": {
+    "passive": "50/1D",
+    "scan": "75/2D",
+    "search": "100/3D",
+    "focus": "5/4D"
+   },
+   "weapons": [
+    {
+     "name": "4 Laser Cannons (fire-linked)",
+     "fire_arc": "Front",
+     "skill": "Starship gunnery",
+     "fire_control": "2D",
+     "space_range": "1-3/12/25",
+     "atmo_range": "100-300/1.2/2.5 km",
+     "damage": "6D"
+    },
+    {
+     "name": "Self Destruct",
+     "space_range": "1",
+     "atmo_range": "100",
+     "damage": "10D"
+    }
+   ],
+   "capsule": "The T-65BR X-wing reconnaissance starfighter was developed to replace the honored but aging Y-wing Longprobe, although the Longprobe flights are too valuable to simply discard and are themselves being upgraded for possible future use. The T-65BR is essentially the same old model, but with its proton torpedo launchers removed and replaced with high-gain long-range sensors, processors, and high-speed hypertransceivers allowing for real-time monitoring at vast interstellar distances. Most of the equipment is automated and the R2 unit is able to adequately operate the entire fighter, although a pilot is still considered essential for command decisions and problem solving. The pilot is charged with the final duty of preventing the recon X-wing from falling into the hands of an enemy. Should capture be imminent, the pilot activates the self-destruct switch, which wipes all computer and droid memory, destroys the R2 unit with a shaped charge, injects a fatal poison into the pilot, and then detonates a baradium charge sufficient to destroy the X-wing and any nearby small ship."
   }
  ],
  "Named Modified X-wing Series": [],
@@ -22294,6 +22636,45 @@ const STARSHIP_DATA = {
      "damage": "9D"
     }
    ]
+  },
+  {
+   "name": "Yevethan D-type Fighter",
+   "craft": "Yevethan \"D-type\" starfighter",
+   "type": "Space superiority starfighter",
+   "era": "New Republic",
+   "affiliation": "Neutral",
+   "source": "WEG40139 Cracken's Threat Dossier p.99",
+   "scale": "Starfighter",
+   "length": "12 meters",
+   "skill": "Starfighter piloting",
+   "crew": "1",
+   "crew_skill": "Starfighter piloting 5D, starship gunnery 4D+2",
+   "cargo_capacity": "50 kilograms",
+   "consumables": "1 day",
+   "cost": "Not available for sale",
+   "maneuverability": "3D+2",
+   "space": "12",
+   "atmosphere": "450; 1,300 kmh",
+   "hull": "4D",
+   "shields": "2D",
+   "sensors": {
+    "passive": "30/0D",
+    "scan": "50/1D",
+    "search": "80/2D",
+    "focus": "4/4D"
+   },
+   "weapons": [
+    {
+     "name": "3 Laser Cannons (fire-linked)",
+     "fire_arc": "Front",
+     "skill": "Starship gunnery",
+     "fire_control": "2D",
+     "space_range": "1-3/12/25",
+     "atmo_range": "100-300/1.2/2.5 km",
+     "damage": "6D"
+    }
+   ],
+   "capsule": "The triple delta-winged, fast and lethal Yevethan fighter, designated D-type, is an excellent example of engineering to native strengths. Yevethans are more physically tolerant of g-force than humans and have engineering techniques advanced enough to give them an edge in inertial dampening. Their fighters can thus accelerate faster and maneuver better credit for credit. New Republic technology is able to match this performance, but has rarely pushed to do so and only the A-wing is equipped with this level of engineering. The D-fighter is on average slightly faster, nimbler, tougher, and harder hitting than their New Republic opposites. The main advantage enjoyed by New Republic starfighters in the Black Fleet Crisis was superior numbers and considerably greater experience."
   }
  ],
  "Named Modified Space Superiority Fighters": [
@@ -26609,6 +26990,417 @@ const STARSHIP_DATA = {
     }
    ],
    "capsule": "Modeled after the highly successful Nebulon-B escort frigate, the Corona line frigate provides reconnaissance-in-force, close-line fire support, and anti-starfighter cover for cruisers and Star Destroyers. The Corona is designed to carry a starfighter squadron (36 starfighters), although not all frigates have a full complement and some are assigned short-range fighters only. Orders for the Corona have been modest but steady. Coronas currently in service in the Core Worlds include the Corona, Boldheart, Endor, and Shooting Star."
+  },
+  {
+   "name": "Agave Picket Ship",
+   "craft": "Republic Engineering Corporation Agave-class Picket Ship",
+   "type": "Tactical reconnaissance ship",
+   "era": "New Republic",
+   "affiliation": "New Republic",
+   "source": "WEG40139 Cracken's Threat Dossier p.76",
+   "scale": "Capital",
+   "length": "190 meters",
+   "skill": "Capital ship piloting",
+   "crew": "28, gunners: 8, skeleton: 10/+10",
+   "crew_skill": "Varies",
+   "passengers": "5",
+   "cargo_capacity": "500 metric tons",
+   "consumables": "3 months",
+   "cost": "Not available for sale",
+   "hyperdrive_multiplier": "x1",
+   "hyperdrive_backup": "x10",
+   "maneuverability": "3D",
+   "space": "8",
+   "atmosphere": "365; 1,050",
+   "hull": "3D",
+   "shields": "1D",
+   "sensors": {
+    "passive": "50/1D",
+    "scan": "100/2D",
+    "search": "150/4D",
+    "focus": "5/4D+2"
+   },
+   "weapons": [
+    {
+     "name": "2 Turbolaser Cannons",
+     "fire_arc": "Front",
+     "crew": "2",
+     "skill": "Capital ship gunnery",
+     "fire_control": "2D",
+     "space_range": "3-15/35/75",
+     "atmo_range": "6-30/70/150 km",
+     "damage": "5D"
+    },
+    {
+     "name": "4 Laser Cannons",
+     "fire_arc": "Turret",
+     "crew": "1",
+     "skill": "Starship gunnery",
+     "scale": "Starfighter",
+     "fire_control": "3D",
+     "space_range": "1-3/12/25",
+     "atmo_range": "200-600/24/50 km",
+     "damage": "5D"
+    }
+   ],
+   "capsule": "Agave-class pickets are tactical/operational reconnaissance ships for taskforce commanders. They have enough weapons to deal with a patrol, fair speed, Class One hyperdrives, powerful sensors, and a good stealth package. Agaves are sent ahead of a main battlegroup to scout quietly or in force. They are equipped with shotgun hypertransceivers for reporting back to the main group with minimum danger of detection. In the event of detection, they pull out as fast as possible and jump to safety. The Agave has a +2D bonus to sensor difficulties when enemies attempt to detect it."
+  },
+  {
+   "name": "Warrior Gunship",
+   "craft": "Republic Engineering Corporation Warrior-class Gunship",
+   "type": "Heavy assault ship",
+   "era": "New Republic",
+   "affiliation": "New Republic",
+   "source": "WEG40139 Cracken's Threat Dossier p.76-77",
+   "scale": "Capital",
+   "length": "190 meters",
+   "skill": "Capital ship piloting",
+   "crew": "44, gunners: 36, skeleton: 22/+10",
+   "crew_skill": "Varies",
+   "passengers": "10",
+   "cargo_capacity": "500 metric tons",
+   "consumables": "3 months",
+   "cost": "Not available for sale",
+   "hyperdrive_multiplier": "x1",
+   "hyperdrive_backup": "x10",
+   "maneuverability": "3D",
+   "space": "8",
+   "atmosphere": "365; 1,050",
+   "hull": "5D",
+   "shields": "3D",
+   "sensors": {
+    "passive": "40/1D",
+    "scan": "80/2D",
+    "search": "100/4D",
+    "focus": "4/4D+2"
+   },
+   "weapons": [
+    {
+     "name": "10 Turbolaser Cannons",
+     "fire_arc": "4 front, 3 left, 3 right",
+     "crew": "2",
+     "skill": "Capital ship gunnery",
+     "fire_control": "2D",
+     "space_range": "3-15/35/75",
+     "atmo_range": "6-30/70/150 km",
+     "damage": "6D"
+    },
+    {
+     "name": "8 Laser Cannons",
+     "fire_arc": "2 front, 3 left, 3 right",
+     "crew": "1",
+     "skill": "Starship gunnery",
+     "scale": "Starfighter",
+     "fire_control": "3D",
+     "space_range": "1-3/12/25",
+     "atmo_range": "200-600/24/50 km",
+     "damage": "5D"
+    },
+    {
+     "name": "4 Concussion Missile Tubes",
+     "fire_arc": "2 front, 2 back",
+     "crew": "2",
+     "skill": "Capital ship gunnery",
+     "fire_control": "3D",
+     "space_range": "2-12/30/60",
+     "atmo_range": "200-1.2/3/6 km",
+     "damage": "9D"
+    }
+   ],
+   "capsule": "Warrior-class gunships are small, dedicated ship destroyers with enough firepower built into their small frame to threaten a heavy cruiser, and a rack of concussion missiles with enough punch to cripple a Star Destroyer. These ships are used to punch holes in an enemy's formations by destroying main combat vessels. The Warrior is expected to contact the enemy ahead of the main force and is armed with enough anti-starfighter weaponry to brush off starfighter attacks, while armored beyond a typical starfighter's ability to inflict damage. Once a force of Warriors has penetrated an enemy's screening lines, it targets and destroys the main enemy cruisers, after which it withdraws into hyperspace."
+  },
+  {
+   "name": "Sacheen Escort",
+   "craft": "Republic Engineering Corporation Sacheen-class Escort",
+   "type": "Escort cruiser",
+   "era": "New Republic",
+   "affiliation": "New Republic",
+   "source": "WEG40139 Cracken's Threat Dossier p.77",
+   "scale": "Capital",
+   "length": "375 meters",
+   "skill": "Capital ship piloting",
+   "crew": "64, gunners: 46, skeleton: 22/+10",
+   "crew_skill": "Varies",
+   "passengers": "6",
+   "cargo_capacity": "4,000 metric tons",
+   "consumables": "5 months",
+   "cost": "Not available for sale",
+   "hyperdrive_multiplier": "x1",
+   "hyperdrive_backup": "x10",
+   "nav_computer": "Yes",
+   "maneuverability": "2D",
+   "space": "7",
+   "atmosphere": "350; 1,000 kmh",
+   "hull": "5D",
+   "shields": "3D",
+   "sensors": {
+    "passive": "40/1D",
+    "scan": "80/2D",
+    "search": "120/3D",
+    "focus": "6/4D"
+   },
+   "weapons": [
+    {
+     "name": "10 Heavy Turbolaser Cannons",
+     "fire_arc": "4 front, 3 left, 3 right",
+     "crew": "3",
+     "skill": "Capital ship gunnery",
+     "fire_control": "2D",
+     "space_range": "3-15/35/75",
+     "atmo_range": "6-30/70/150 km",
+     "damage": "7D"
+    },
+    {
+     "name": "8 Laser Cannons",
+     "fire_arc": "2 front, 3 left, 3 right",
+     "crew": "1",
+     "skill": "Starship gunnery",
+     "scale": "Starfighter",
+     "fire_control": "3D",
+     "space_range": "1-3/12/25",
+     "atmo_range": "200-600/24/50 km",
+     "damage": "5D"
+    },
+    {
+     "name": "8 Ion Cannons",
+     "fire_arc": "2 front, 2 left, 2 right, 2 back",
+     "crew": "1",
+     "skill": "Capital ship gunnery",
+     "fire_control": "2D",
+     "space_range": "1-10/25/50",
+     "atmo_range": "2-20/50/100 km",
+     "damage": "3D"
+    }
+   ],
+   "capsule": "The Sacheen-class light escorts are the smallest vessels in the New Class program capable of extended independent operations. They have enough heavy turbolasers to threaten a cruiser or destroy most smaller ships, anti-starfighter weapons, ion cannons for ship capture, and a hangar large enough to hold a squadron of short-range fighters, although many Sacheens — especially those assigned to group operations — have yet to be assigned their fighter complement. When operating with their battlegroup, Sacheens are typically assigned screening duty for the larger vessels, or escort duty for supply convoys of Hajen fleet tenders. The Sacheen also operates independently on patrol, usually with starfighter support."
+  },
+  {
+   "name": "Adz Patrol Destroyer",
+   "craft": "Imperial Adz-class Patrol Destroyer",
+   "type": "Border patrol craft",
+   "era": "Galactic Empire",
+   "affiliation": "Galactic Empire",
+   "source": "WEG40139 Cracken's Threat Dossier p.90",
+   "scale": "Capital",
+   "length": "150 meters",
+   "skill": "Capital ship piloting",
+   "crew": "24, gunners: 12, skeleton: 6/+10",
+   "crew_skill": "Typically astrogation 3D, capital ship gunnery 4D+1, capital ship piloting 3D+2, capital ship shields 3D, sensors 3D+1",
+   "passengers": "8 (troopers), 4 (brig)",
+   "cargo_capacity": "400 metric tons",
+   "consumables": "3 months",
+   "cost": "Not available for sale",
+   "hyperdrive_multiplier": "x2",
+   "hyperdrive_backup": "x12, limited to four jumps",
+   "nav_computer": "Yes",
+   "maneuverability": "2D",
+   "space": "7",
+   "atmosphere": "350; 1,000 kmh",
+   "hull": "3D+2",
+   "shields": "3D",
+   "sensors": {
+    "passive": "40/1D",
+    "scan": "80/2D",
+    "search": "120/2D+2",
+    "focus": "4/3D+2"
+   },
+   "weapons": [
+    {
+     "name": "3 Quad Laser Cannon Batteries",
+     "fire_arc": "Turret",
+     "crew": "2",
+     "skill": "Capital ship gunnery",
+     "fire_control": "3D",
+     "space_range": "3-15/35/75",
+     "atmo_range": "6-30/70/150 km",
+     "damage": "5D"
+    },
+    {
+     "name": "3 Ion Cannon Batteries",
+     "fire_arc": "Turret",
+     "crew": "2",
+     "skill": "Capital ship gunnery",
+     "fire_control": "3D",
+     "space_range": "1-10/25/50",
+     "atmo_range": "2-20/50/100 km",
+     "damage": "4D"
+    }
+   ],
+   "capsule": "A new class of deep-space patrol ships used by the Imperial Core, the Adz-class patrol destroyer packs a great deal of firepower into a small package with a small crew. The Adz incorporates recent advances in slave circuitry, allowing a crew of two to control a battery of weapons, saving crew and training, and concentrating fire on targets. Patrols used to enforce border sovereignty, seize smuggling ships and occasionally to probe into New Republic space. Any non-Imperial freighter can be classified as a smuggler, and non-Imperial ships wandering too close to the border is in danger of being seized as a prize, and the crew incarcerated as slave labor."
+  },
+  {
+   "name": "Imperial Patrol Frigate",
+   "craft": "Modified KDY Escort Frigate",
+   "type": "Deep space patrol vessel",
+   "era": "Galactic Empire",
+   "affiliation": "Galactic Empire",
+   "source": "WEG40139 Cracken's Threat Dossier p.91-92",
+   "scale": "Capital",
+   "length": "300 meters",
+   "skill": "Capital ship piloting: Nebulon-B",
+   "crew": "458, gunners: 56",
+   "crew_skill": "Astrogation 3D, capital ship gunnery 4D+1, capital ship piloting 3D+2, capital ship shields 3D, sensors 3D+1, starship gunnery 4D+1; Tow crew: astrogation 4D, towed array steering 4D, sensors 4D",
+   "passengers": "40",
+   "cargo_capacity": "6,000 metric tons",
+   "consumables": "2 years",
+   "cost": "Not for sale",
+   "hyperdrive_multiplier": "x2",
+   "hyperdrive_backup": "x12",
+   "nav_computer": "Yes",
+   "maneuverability": "1D",
+   "space": "4",
+   "atmosphere": "280; 800 kmh",
+   "hull": "3D+2",
+   "shields": "2D",
+   "sensors": {
+    "passive": "40/0D",
+    "scan": "75/1D",
+    "search": "150/3D",
+    "focus": "4/4D+2"
+   },
+   "weapons": [
+    {
+     "name": "9 Turbolaser Batteries",
+     "fire_arc": "3 front, 3 left, 3 right",
+     "crew": "1 (2), 2 (7)",
+     "skill": "Capital ship gunnery",
+     "fire_control": "3D",
+     "space_range": "3-15/35/75",
+     "atmo_range": "2-6/24/50 km",
+     "damage": "4D"
+    },
+    {
+     "name": "7 Laser Cannons",
+     "fire_arc": "3 front, 2 left, 2 right",
+     "crew": "1",
+     "skill": "Starship gunnery",
+     "scale": "Starfighter",
+     "fire_control": "2D",
+     "space_range": "1-3/12/25",
+     "atmo_range": "2-6/24/50 km",
+     "damage": "2D"
+    },
+    {
+     "name": "3 Ion Cannons",
+     "fire_arc": "Front",
+     "crew": "2",
+     "skill": "Capital ship gunnery",
+     "fire_control": "2D",
+     "space_range": "1-10/25/50",
+     "atmo_range": "2-20/50/100 km",
+     "damage": "3D"
+    },
+    {
+     "name": "3 Ion Cannons",
+     "fire_arc": "Front",
+     "crew": "1",
+     "skill": "Starship gunnery",
+     "scale": "Starfighter",
+     "fire_control": "3D",
+     "space_range": "1-3/7/36",
+     "atmo_range": "100-300/700/3.6 km",
+     "damage": "4D"
+    },
+    {
+     "name": "2 Tractor Beam Projectors",
+     "fire_arc": "Front",
+     "crew": "12",
+     "skill": "Capital ship gunnery",
+     "fire_control": "2D",
+     "space_range": "1-5/15/30",
+     "atmo_range": "2-10/30/60 km",
+     "damage": "4D"
+    },
+    {
+     "name": "Towed Sensor Array",
+     "crew": "3",
+     "notes": "3,000-meter sensor net with energy receptors, crystal gravfield traps, and hyperspace signal interceptors. Passive 100/1D, Scan 200/2D, Search 500/3D, Focus 10/4D+2. Frigate restricted to space 4 while tending array; must furl or abandon net to enter hyperspace. Can detect ships entering/exiting hyperspace and intercept hyperspace transmissions."
+    }
+   ],
+   "capsule": "The patrol frigate is an escort frigate modified to be a deep-space probe ship, often equipped with a 3,000-meter-long sensor net with dedicated energy receptors, crystal gravfield traps and hyperspace signal interceptors. Several Imperial-controlled sectors use such deep-space patrol vessels to keep watch over their border traffic and as the first line of sensor warning against invasion. The modified frigate has only about half the usual crew, has about one-third its decks mothballed, and has had its two rear-mounted laser cannons replaced with tow winches. The towed array is operated by a crew of three from a gondola trailing far behind the patrol frigate. The array is able to detect ships entering or exiting hyperspace, and can even pick up a ship passing through local hyperspace if the ship is massive enough. The sensor net can also be used to intercept hyperspace transmissions — even HoloNet communications."
+  },
+  {
+   "name": "Yevethan Thrustship",
+   "craft": "Yevethan Armadia-class Thrustship",
+   "type": "Combat cruiser",
+   "era": "New Republic",
+   "affiliation": "Neutral",
+   "source": "WEG40139 Cracken's Threat Dossier p.97-98",
+   "scale": "Capital",
+   "length": "240 meter diameter sphere",
+   "skill": "Capital ship piloting",
+   "crew": "6,810, gunners: 49",
+   "crew_skill": "Astrogation 4D, capital ship gunnery 4D+2, capital ship piloting 4D+1, capital ship shields 4D, sensors 4D",
+   "passengers": "1,600",
+   "cargo_capacity": "10,000 metric tons",
+   "consumables": "3 months",
+   "cost": "Not available for sale",
+   "hyperdrive_multiplier": "x2",
+   "hyperdrive_backup": "x8",
+   "nav_computer": "Yes",
+   "maneuverability": "2D",
+   "space": "6",
+   "atmosphere": "330; 950 kmh",
+   "hull": "6D",
+   "shields": "5D",
+   "sensors": {
+    "passive": "50/1D",
+    "scan": "100/3D",
+    "search": "200/4D",
+    "focus": "5/4D+2"
+   },
+   "weapons": [
+    {
+     "name": "8 Turbolaser Batteries",
+     "fire_arc": "Turret",
+     "crew": "3",
+     "skill": "Capital ship gunnery",
+     "fire_control": "2D",
+     "space_range": "3-15/35/75",
+     "atmo_range": "6-30/70/150 km",
+     "damage": "5D"
+    },
+    {
+     "name": "3 Proton Torpedo Launchers",
+     "fire_arc": "Front",
+     "crew": "3",
+     "skill": "Capital ship gunnery",
+     "fire_control": "2D",
+     "space_range": "2-12/30/60",
+     "atmo_range": "4-24/60/120 km",
+     "damage": "9D"
+    },
+    {
+     "name": "4 Gravity Bomb Launchers",
+     "fire_arc": "Front",
+     "crew": "4",
+     "skill": "Capital ship gunnery",
+     "fire_control": "4D",
+     "space_range": "2-12/30/60 (Move: 6 units per round)",
+     "atmo_range": "4-24/60/120 km (Move: 12 km per round)",
+     "damage": "7D"
+    },
+    {
+     "name": "4 Missile Launcher Batteries",
+     "fire_arc": "Front",
+     "crew": "3",
+     "skill": "Capital ship gunnery",
+     "fire_control": "2D",
+     "space_range": "2-12/30/60",
+     "atmo_range": "4-24/60/120 km",
+     "damage": "9D"
+    },
+    {
+     "name": "6 Ion Cannons",
+     "fire_arc": "Turret",
+     "crew": "3",
+     "skill": "Capital ship gunnery",
+     "fire_control": "2D",
+     "space_range": "1-10/25/50",
+     "damage": "5D"
+    }
+   ],
+   "capsule": "All known Yevethan thrustships are physically similar to each other, 240-meter diameter spheroids with chemical thrust pulse-lift engine cones protruding from one end. The Armadia-class thrustship, later code-named T-type and nicknamed 'Fat Man,' is the main combat cruiser of the Yevethan space force. The pulse-lift thrusters are used both for landing and realspace drive, and are not dampened — thrustships make a fantastic amount of noise in atmosphere. The Armadia has relatively few weapons for a main cruiser, but they are more varied than among New Republic designs and very powerful in combination. The gravity bombs are too slow to be effective against fighters and are vulnerable to counter-fire, but their side-steering maneuvering thrusters give them excellent fire control. Yevethan use of physical munitions takes advantage of matter weapons being unaffected by energy shields. Each Armadia carries a wing of 40 Yevethan fighters. Thrustship armor is very strong and their shielding is about one-third more powerful."
   }
  ],
  "Named Modified Capital Frigates": [],
@@ -31770,6 +32562,176 @@ const STARSHIP_DATA = {
     }
    ],
    "capsule": "The Republic-class Star Destroyer is Walex Blissex's follow-up design to his classic Victory-class Star Destroyer. It is smaller than his daughter's Imperial-class design, but retains Blissex's trademark efficiency. Two Republics can be produced for the cost of an Imperial, with about one-fifth the crew complement and 20 percent more firepower than the Imperial I model. Although still outmatched in terms of raw firepower by the Imperial II model and gargantuan Super Star Destroyer, the Republic can hold its own against any other Star Destroyer, heavy cruiser or host of smaller ships. In addition to its considerable combat outfitting, the Republic carries a full wing of long-range starfighters and is able to transport an average ground regiment."
+  },
+  {
+   "name": "Majestic Heavy Cruiser",
+   "craft": "Republic Engineering Corporation Majestic-class Heavy Cruiser",
+   "type": "Heavy capital combat cruiser",
+   "era": "New Republic",
+   "affiliation": "New Republic",
+   "source": "WEG40139 Cracken's Threat Dossier p.78-79",
+   "scale": "Capital",
+   "length": "700 meters",
+   "skill": "Capital ship piloting",
+   "crew": "4,050, gunners: 132, skeleton: 1,350/+10",
+   "crew_skill": "Varies",
+   "passengers": "640 (troops)",
+   "cargo_capacity": "12,000 metric tons",
+   "consumables": "5 months",
+   "cost": "Not available for sale",
+   "hyperdrive_multiplier": "x1",
+   "hyperdrive_backup": "x10",
+   "nav_computer": "Yes",
+   "maneuverability": "1D",
+   "space": "7",
+   "atmosphere": "350; 1,000 kmh",
+   "hull": "7D",
+   "shields": "3D",
+   "sensors": {
+    "passive": "50/1D",
+    "scan": "100/2D",
+    "search": "150/3D",
+    "focus": "5/3D+2"
+   },
+   "weapons": [
+    {
+     "name": "30 Heavy Turbolaser Cannons",
+     "fire_arc": "5 front, 10 left, 10 right, 5 back",
+     "crew": "2",
+     "skill": "Capital ship gunnery",
+     "fire_control": "2D",
+     "space_range": "3-15/35/75",
+     "atmo_range": "6-30/70/150 km",
+     "damage": "7D"
+    },
+    {
+     "name": "20 Laser Cannons",
+     "fire_arc": "5 front, 5 left, 5 right, 5 back",
+     "crew": "1",
+     "skill": "Starship gunnery",
+     "scale": "Starfighter",
+     "fire_control": "3D",
+     "space_range": "1-3/12/25",
+     "atmo_range": "200-600/24/50 km",
+     "damage": "5D"
+    },
+    {
+     "name": "20 Ion Cannons",
+     "fire_arc": "5 front, 5 left, 5 right, 5 back",
+     "crew": "1",
+     "skill": "Capital ship gunnery",
+     "fire_control": "3D",
+     "space_range": "1-10/25/50",
+     "atmo_range": "2-20/50/100 km",
+     "damage": "4D"
+    },
+    {
+     "name": "8 Concussion Missile Tubes",
+     "fire_arc": "3 front, 2 left, 2 right, 1 back",
+     "crew": "2",
+     "skill": "Capital ship gunnery",
+     "fire_control": "3D",
+     "space_range": "2-12/30/60",
+     "atmo_range": "200-1.2/3/6 km",
+     "damage": "9D",
+     "notes": "Smart missiles: 4D fire control once launched, move 17 space units per round for up to 10 rounds"
+    },
+    {
+     "name": "4 Tractor Beam Projectors",
+     "fire_arc": "1 front, 1 left, 1 right, 1 back",
+     "crew": "6",
+     "skill": "Capital ship gunnery",
+     "fire_control": "3D",
+     "space_range": "1-5/15/30",
+     "atmo_range": "2-10/30/60 km",
+     "damage": "4D"
+    }
+   ],
+   "capsule": "The Majestic-class heavy cruiser is armed for ship-to-ship battle, with heavy turbolasers, anti-fighter weapons, missile launchers, ion cannons, and tractor beams. This ship type is equipped with thick armor and shields, equal to the previous generation of Imperial Star Destroyers, intended to protect the cruiser as it approaches engagements and exchanges close-range fire. During the design's recent blooding in the Battle of ICL-905 and the Battle of N'zoth, the Majestic cruiser performed with honor. The Majestic's concussion missiles are typically 'smart' missiles, able to track targets with 4D fire control once launched, moving 17 space units per round for up to 10 rounds."
+  },
+  {
+   "name": "Defender Star Destroyer",
+   "craft": "Republic Engineering Corporation Defender-class Star Destroyer",
+   "type": "Star Destroyer",
+   "era": "New Republic",
+   "affiliation": "New Republic",
+   "source": "WEG40139 Cracken's Threat Dossier p.80",
+   "scale": "Capital",
+   "length": "1,040 meters",
+   "skill": "Capital ship piloting",
+   "crew": "6,795, gunners: 244, skeleton: 2,265/+10",
+   "crew_skill": "Varies",
+   "passengers": "1,600 (troops)",
+   "cargo_capacity": "15,000 metric tons",
+   "consumables": "5 months",
+   "cost": "Not available for sale",
+   "hyperdrive_multiplier": "x1",
+   "hyperdrive_backup": "x10",
+   "nav_computer": "Yes",
+   "maneuverability": "1D",
+   "space": "7",
+   "atmosphere": "350; 1,000 kmh",
+   "hull": "7D",
+   "shields": "5D",
+   "sensors": {
+    "passive": "50/1D",
+    "scan": "100/2D",
+    "search": "150/3D",
+    "focus": "5/3D+2"
+   },
+   "weapons": [
+    {
+     "name": "40 Heavy Turbolaser Batteries",
+     "fire_arc": "10 front, 10 left, 10 right, 10 back",
+     "crew": "2",
+     "skill": "Capital ship gunnery",
+     "fire_control": "2D",
+     "space_range": "3-15/35/75",
+     "atmo_range": "6-30/70/150 km",
+     "damage": "10D"
+    },
+    {
+     "name": "40 Heavy Turbolaser Cannons",
+     "fire_arc": "10 front, 10 left, 10 right, 10 back",
+     "crew": "2",
+     "skill": "Capital ship gunnery",
+     "fire_control": "2D",
+     "space_range": "3-15/35/75",
+     "atmo_range": "6-30/70/150 km",
+     "damage": "7D"
+    },
+    {
+     "name": "20 Ion Cannons",
+     "fire_arc": "5 front, 5 left, 5 right, 5 back",
+     "crew": "1",
+     "skill": "Capital ship gunnery",
+     "fire_control": "3D",
+     "space_range": "1-10/25/50",
+     "atmo_range": "2-20/50/100 km",
+     "damage": "4D"
+    },
+    {
+     "name": "8 Tractor Beam Projectors",
+     "fire_arc": "3 front, 2 left, 2 right, 1 back",
+     "crew": "6",
+     "skill": "Capital ship gunnery",
+     "fire_control": "3D",
+     "space_range": "1-5/15/30",
+     "atmo_range": "2-10/30/60 km",
+     "damage": "4D"
+    },
+    {
+     "name": "8 Concussion Missile Tubes",
+     "fire_arc": "Turret",
+     "crew": "2",
+     "skill": "Capital ship gunnery",
+     "fire_control": "3D",
+     "space_range": "2-12/30/60",
+     "atmo_range": "200-1.2/3/6 km",
+     "damage": "9D"
+    }
+   ],
+   "capsule": "The Defender-class Star Destroyer is the peak of modern Star Destroyer design. Occasionally called a 'pocket Star Destroyer,' it is only 65% as large as the classic Imperial Star Destroyer, but is a match for the Imperial II. A fully capable cruiser, the DSD has more shielding and armor than any known ship in the galaxy, combines the best features of its predecessors and is expected to defeat any one enemy Star Destroyer, or two heavy cruisers, or up to an entire line of lighter Imperial ships. In addition to its formidable close-combat capability, the DSD carries a wing of starfighters — often a mixed assault wing of short-range Defender starfighters for close support and K-wing bombers for precision strikes against enemy guns, shield generators, and engines. DSDs can also host a superiority starfighter wing of long-range E-wings, A-wings, or upgraded X-wings. There are currently only ten Defender Star Destroyers in service, although an additional DSD is projected to enter service every year."
   }
  ],
  "Named Modified Capital Cruisers & SDs": [
@@ -32464,6 +33426,45 @@ const STARSHIP_DATA = {
      "damage": "6D"
     }
    ]
+  },
+  {
+   "name": "Teljkon Vagabond",
+   "craft": "Qella Seedship",
+   "type": "Unique organic spacecraft",
+   "era": "New Republic",
+   "affiliation": "Neutral",
+   "source": "WEG40139 Cracken's Threat Dossier p.95-96",
+   "scale": "Capital",
+   "length": "1,500 meters",
+   "crew": "None",
+   "hyperdrive_multiplier": "x1",
+   "nav_computer": "Yes",
+   "maneuverability": "1D",
+   "space": "4 (projected minimum; the craft's speed is likely much higher)",
+   "hull": "5D",
+   "sensors": {
+    "passive": "Unknown",
+    "scan": "Unknown",
+    "search": "Unknown",
+    "focus": "Unknown"
+   },
+   "weapons": [
+    {
+     "name": "6 Scythe Weapons",
+     "fire_arc": "Turret",
+     "fire_control": "Unknown",
+     "space_range": "Unknown; maximum range is at least 34",
+     "damage": "10D or more"
+    },
+    {
+     "name": "EM Whip",
+     "fire_arc": "Turret",
+     "fire_control": "Unknown",
+     "space_range": "Unknown",
+     "damage": "10D or more"
+    }
+   ],
+   "capsule": "The Teljkon vagabond is a semi-intelligent organic spacecraft of Qella origin, designed as a toolkit for reviving the shattered world of Maltha Obex. First sighted ten years ago in the Teljkon system by a Hrasskis monitor ship, the vagabond disabled the ship's communications with a powerful broadband signal and fled into hyperspace. It later disabled the NR frigate Boldheart with a single shot and destroyed an NRI ferret that attempted to attach a locator limpet. Colonel Pakkpekatt's chase team eventually found it near the Gmar Askilon system. General Lando Calrissian, Lobot, C-3PO and R2-D2 cracked the vagabond's Qella genetic recognition code and boarded the craft, discovering it could repair itself at a prodigious rate — immediately after being injured the vagabond makes a natural healing roll using its Hull dice (scale modifiers applying), with further healing rolls every hour. The ship responds to organic touch and contains a vast museum of Qella culture. Jedi Master Luke Skywalker eventually rescued the boarding team and determined the ship's true purpose. The Maltha Obex system is now under black seal; the Qella are expected to eventually reawaken. The vagabond is now rated as a non-threat."
   }
  ],
  "Stock Capital Carriers": [
@@ -33026,6 +34027,126 @@ const STARSHIP_DATA = {
      "damage": "4D"
     }
    ]
+  },
+  {
+   "name": "Defender Carrier",
+   "craft": "Republic Engineering Corporation Defender-class Assault Carrier",
+   "type": "Assault carrier",
+   "era": "New Republic",
+   "affiliation": "New Republic",
+   "source": "WEG40139 Cracken's Threat Dossier p.79",
+   "scale": "Capital",
+   "length": "700 meters",
+   "skill": "Capital ship piloting",
+   "crew": "4,050, gunners: 20, skeleton: 1,350/+10",
+   "crew_skill": "Varies",
+   "passengers": "700 (troops)",
+   "cargo_capacity": "12,000 metric tons",
+   "consumables": "5 months",
+   "cost": "Not available for sale",
+   "hyperdrive_multiplier": "x1",
+   "hyperdrive_backup": "x10",
+   "nav_computer": "Yes",
+   "maneuverability": "1D",
+   "space": "7",
+   "atmosphere": "350; 1,000 kmh",
+   "hull": "7D",
+   "shields": "4D",
+   "sensors": {
+    "passive": "50/1D",
+    "scan": "100/2D",
+    "search": "150/3D",
+    "focus": "5/3D+2"
+   },
+   "weapons": [
+    {
+     "name": "20 Laser Cannons",
+     "fire_arc": "5 front, 5 left, 5 right, 5 back",
+     "crew": "1",
+     "skill": "Starship gunnery",
+     "scale": "Starfighter",
+     "fire_control": "3D",
+     "space_range": "1-3/12/25",
+     "atmo_range": "200-600/24/50 km",
+     "damage": "5D"
+    }
+   ],
+   "capsule": "The Defender-class assault carrier is a fighter platform, with no heavy guns and only light anti-fighter laser cannons. The Defender carrier is mothership to one wing of fighters, sometimes consisting of a single class of starfighter, sometimes a mixed wing. The majority of the Defender-based wings in the Fifth Fleet have three E-wing squadrons, while a few are dedicated to supporting K-wing bomber wings. Only a single Defender carrier actually carries Defender starfighters — the starfighter it was originally designed to host — as part of the Defender design. (The Defender design was absorbed into the New Class project, and altered to suit current needs.) In addition to the starfighter berths, the Defender carrier has hangar space for assault shuttles and various personnel transports."
+  },
+  {
+   "name": "Endurance Fleet Carrier",
+   "craft": "Republic Engineering Corporation Endurance-class Fleet Carrier",
+   "type": "Fleet carrier",
+   "era": "New Republic",
+   "affiliation": "New Republic",
+   "source": "WEG40139 Cracken's Threat Dossier p.81",
+   "scale": "Capital",
+   "length": "1,040 meters",
+   "skill": "Capital ship piloting",
+   "crew": "6,795, gunners: 76, skeleton: 2,265/+10",
+   "crew_skill": "Varies",
+   "passengers": "1,600 (troops)",
+   "cargo_capacity": "15,000 metric tons",
+   "consumables": "5 months",
+   "cost": "Not available for sale",
+   "hyperdrive_multiplier": "x1",
+   "hyperdrive_backup": "x10",
+   "nav_computer": "Yes",
+   "maneuverability": "1D",
+   "space": "7",
+   "atmosphere": "350; 1,000 kmh",
+   "hull": "8D",
+   "shields": "3D",
+   "sensors": {
+    "passive": "50/1D",
+    "scan": "100/2D",
+    "search": "150/3D",
+    "focus": "5/3D+2"
+   },
+   "weapons": [
+    {
+     "name": "12 Turbolaser Cannons",
+     "fire_arc": "4 front, 4 left, 4 right",
+     "crew": "2",
+     "skill": "Capital ship gunnery",
+     "fire_control": "2D",
+     "space_range": "3-15/35/75",
+     "atmo_range": "6-30/70/150 km",
+     "damage": "7D"
+    },
+    {
+     "name": "20 Laser Cannons",
+     "fire_arc": "5 front, 5 left, 5 right, 5 back",
+     "crew": "1",
+     "skill": "Starship gunnery",
+     "scale": "Starfighter",
+     "fire_control": "3D",
+     "space_range": "1-3/12/25",
+     "atmo_range": "200-600/24/50 km",
+     "damage": "5D"
+    },
+    {
+     "name": "8 Ion Cannons",
+     "fire_arc": "5 front, 1 left, 1 right, 1 back",
+     "crew": "1",
+     "skill": "Capital ship gunnery",
+     "fire_control": "3D",
+     "space_range": "1-10/25/50",
+     "atmo_range": "2-20/50/100 km",
+     "damage": "4D"
+    },
+    {
+     "name": "4 Tractor Beam Projectors",
+     "fire_arc": "1 front, 1 left, 1 right, 1 back",
+     "crew": "6",
+     "skill": "Capital ship gunnery",
+     "fire_control": "3D",
+     "space_range": "1-5/15/30",
+     "atmo_range": "2-10/30/60 km",
+     "damage": "4D"
+    }
+   ],
+   "capsule": "The Endurance-class fleet carrier is a fitting symbol of the New Republic. The Empire chose as one of its most powerful martial symbols the Imperial Star Destroyer, backbone of the Sector Group — a huge heavy cruiser designed for ship-to-ship combat, orbital bombardment and supported by a wing of short-range TIE fighters. The New Republic has centered its much smaller military on carriers, with starfighters as the main projection of New Republic firepower. Combat ships are used in the modern New Republic fleets as support ships and guardians. The Endurance is the ultimate expression of this change in military theory. The Endurance carries two starfighter wings — one assault wing with short-range K-wings and Defenders for close support, and one superiority wing with hyperspace-capable long-range fighters, used to strike at targets from extended distances. The Endurance is also a command ship; fleet officers use this class as their flagship, the centerpiece of the modern battlegroup."
   }
  ],
  "Named Modified Capital Carriers": [],
@@ -34299,6 +35420,45 @@ const STARSHIP_DATA = {
      "damage": "4D"
     }
    ]
+  },
+  {
+   "name": "Orbiting Repair Yard",
+   "craft": "Kuat Drive Yards Type II Orbiting Repair Yard",
+   "type": "Orbital space dock",
+   "era": "Galactic Empire",
+   "affiliation": "Galactic Empire",
+   "source": "WEG40139 Cracken's Threat Dossier p.89",
+   "scale": "Capital",
+   "length": "1,200 meters",
+   "crew": "4,114",
+   "crew_skill": "Varies",
+   "passengers": "200 (troops)",
+   "cargo_capacity": "250,000 metric tons",
+   "consumables": "3 years",
+   "cost": "Not available for sale",
+   "hyperdrive_multiplier": "x4",
+   "nav_computer": "Yes",
+   "space": "0; relies on spacetugs for adjustment",
+   "hull": "6D+2",
+   "shields": "2D+2",
+   "sensors": {
+    "passive": "20/1D",
+    "scan": "40/2D",
+    "search": "80/2D+2",
+    "focus": "4/3D+1"
+   },
+   "weapons": [
+    {
+     "name": "9 Tractor Beam Projectors",
+     "fire_arc": "Front",
+     "crew": "3",
+     "skill": "Capital ship gunnery",
+     "fire_control": "4D",
+     "space_range": "1-5/15/30",
+     "damage": "4D"
+    }
+   ],
+   "capsule": "The Imperial OB calls for each sector to maintain two deepdock shipyards, plus as many orbital yards as were necessary to maintain the sector group. These great shipyards not only repaired but also constructed Imperial ships from light cruisers to Imperial Star Destroyers, usually by local contractors under corporate supervision. These contractors often made use of alien slave labor and droid assembly. Most Type II Orbital Yards are in a cubical arrangement, heavily armored and shielded but nearly unarmed. They are theoretically defended by at least a full escort force and stormtrooper company, but recent Imperial losses have pared the ships available for this duty to a minimum. Black Sword Command used KDY Type II yards almost exclusively. Recent intelligence reveals five of these orbital yards are unaccounted for."
   }
  ],
  "Named Modified Capital Transports & Support": [],
@@ -40291,6 +41451,665 @@ const STARSHIP_DATA = {
    ],
    "capsule": "A unique mobile space platform built by the cyborg recluse Kligson from a variety of starship hulls, space station components, and capital ship engines. Populated exclusively by droids, Kligson refuses to allow any organic life aboard. While appearing ungainly, the platform is surprisingly strong with substantial shielding and weaponry. After an encounter with the Empire and Rebellion, Kligson moved his 'Droid World' and its current location is unknown.",
    "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.14"
+  },
+  {
+   "name": "BD-17: Defender",
+   "craft": "Bakura-class Destroyer",
+   "type": "Star Destroyer",
+   "era": "New Republic",
+   "affiliation": "New Republic",
+   "source": "WEG40139 Cracken's Threat Dossier p.136",
+   "scale": "Capital",
+   "length": "850 meters",
+   "skill": "Capital ship piloting",
+   "crew": "8,250, gunners: 275, skeleton: 5,000/+20",
+   "crew_skill": "Astrogation 4D, capital ship gunnery 4D+2, capital ship piloting 5D+1, capital ship shields 4D+1, sensors 4D",
+   "passengers": "2,000 (troops)",
+   "cargo_capacity": "36,000 metric tons",
+   "consumables": "6 years",
+   "cost": "Not available for sale",
+   "hyperdrive_multiplier": "x2",
+   "hyperdrive_backup": "x8",
+   "nav_computer": "Yes",
+   "maneuverability": "1D",
+   "space": 6,
+   "atmosphere": "",
+   "hull": "7D",
+   "shields": "3D",
+   "sensors": {
+    "passive": "50/1D",
+    "scan": "100/3D",
+    "search": "200/4D",
+    "focus": "6/4D+2"
+   },
+   "weapons": [
+    {
+     "name": "60 Turbolaser Batteries",
+     "fire_arc": "20 front, 20 left, 20 right",
+     "crew": "1 (20), 2 (40)",
+     "skill": "Capital ship gunnery",
+     "fire_control": "4D",
+     "space_range": "3-15/36/75",
+     "atmo_range": "6-30/72/150 km",
+     "damage": "5D"
+    },
+    {
+     "name": "60 Ion Cannons",
+     "fire_arc": "20 front, 15 left, 15 right, 10 back",
+     "crew": "1 (15), 2 (45)",
+     "skill": "Capital ship gunnery",
+     "fire_control": "4D+2",
+     "space_range": "1-10/25/50",
+     "atmo_range": "2-20/50/100 km",
+     "damage": "3D"
+    },
+    {
+     "name": "10 Tractor Beam Projectors",
+     "fire_arc": "6 front, 2 left, 2 right",
+     "crew": "1 (2), 4 (2), 10 (6)",
+     "skill": "Capital ship gunnery",
+     "fire_control": "4D",
+     "space_range": "1-5/15/30",
+     "atmo_range": "2-10/30/60 km",
+     "damage": "6D"
+    }
+   ],
+   "capsule": "The Defender (registry number BD-17) is a Bakura-class destroyer, built by the Bakurans in the aftermath of the Ssi-ruuk invasion. The original design was based around the power plant of an Imperial II-class Star Destroyer, though the Bakura destroyer eschews the angular hull structure of Imperial designs for a more streamlined appearance. The Bakura-class destroyers are superb combat vessels ideally suited for the post-Imperial era; unfortunately production levels are at an all time low — roughly four Bakura-class destroyers are built in a standard year. While the Corellian Incident has helped increase demand for them, it is likely that production levels will level out now that the crisis has passed. Equipped with the Bakuran Hyperwave Sustainer (HIMS), allowing travel in an interdiction field."
+  },
+  {
+   "name": "DD-80: Sentinel",
+   "craft": "Bakura-class Destroyer",
+   "type": "Star Destroyer",
+   "era": "New Republic",
+   "affiliation": "New Republic",
+   "source": "WEG40139 Cracken's Threat Dossier p.137",
+   "scale": "Capital",
+   "length": "850 meters",
+   "skill": "Capital ship piloting",
+   "crew": "8,250, gunners: 275, skeleton: 5,000/+20",
+   "crew_skill": "Astrogation 4D, capital ship gunnery 4D+2, capital ship piloting 5D+1, capital ship shields 4D+1, sensors 4D",
+   "passengers": "2,000 (troops)",
+   "cargo_capacity": "36,000 metric tons",
+   "consumables": "6 years",
+   "cost": "Not available for sale",
+   "hyperdrive_multiplier": "x2",
+   "hyperdrive_backup": "x8",
+   "nav_computer": "Yes",
+   "maneuverability": "1D",
+   "space": 6,
+   "atmosphere": "",
+   "hull": "7D",
+   "shields": "3D",
+   "sensors": {
+    "passive": "50/1D",
+    "scan": "100/3D",
+    "search": "200/4D",
+    "focus": "6/4D+2"
+   },
+   "weapons": [
+    {
+     "name": "60 Turbolaser Batteries",
+     "fire_arc": "20 front, 20 left, 20 right",
+     "crew": "1 (20), 2 (40)",
+     "skill": "Capital ship gunnery",
+     "fire_control": "4D",
+     "space_range": "3-15/36/75",
+     "atmo_range": "6-30/72/150 km",
+     "damage": "5D"
+    },
+    {
+     "name": "60 Ion Cannons",
+     "fire_arc": "20 front, 15 left, 15 right, 10 back",
+     "crew": "1 (15), 2 (45)",
+     "skill": "Capital ship gunnery",
+     "fire_control": "4D+2",
+     "space_range": "1-10/25/50",
+     "atmo_range": "2-20/50/100 km",
+     "damage": "3D"
+    },
+    {
+     "name": "10 Tractor Beam Projectors",
+     "fire_arc": "6 front, 2 left, 2 right",
+     "crew": "1 (2), 4 (2), 10 (6)",
+     "skill": "Capital ship gunnery",
+     "fire_control": "4D",
+     "space_range": "1-5/15/30",
+     "atmo_range": "2-10/30/60 km",
+     "damage": "6D"
+    }
+   ],
+   "capsule": "The Sentinel (registry DD-80) saw extensive duty on the Bakuran 'frontier' during the early days of the Ssi-ruuk campaign. The Sentinel participated in dozens of engagements and emerged victorious from each. After the Ssi-ruuk conflict was more-or-less resolved (or entered a dormant phase), the Sentinel became a patrol vessel, safeguarding Bakura from local pirates. Equipped with the Bakuran Hyperwave Sustainer (HIMS), allowing travel in an interdiction field."
+  },
+  {
+   "name": "BD-09: Watchkeeper",
+   "craft": "Bakura-class Destroyer",
+   "type": "Star Destroyer",
+   "era": "New Republic",
+   "affiliation": "New Republic",
+   "source": "WEG40139 Cracken's Threat Dossier p.137-138",
+   "scale": "Capital",
+   "length": "850 meters",
+   "skill": "Capital ship piloting",
+   "crew": "8,250, gunners: 275, skeleton: 5,000/+20",
+   "crew_skill": "Astrogation 4D, capital ship gunnery 4D+2, capital ship piloting 5D+1, capital ship shields 4D+1, sensors 4D",
+   "passengers": "2,000 (troops)",
+   "cargo_capacity": "36,000 metric tons",
+   "consumables": "6 years",
+   "cost": "Not available for sale",
+   "hyperdrive_multiplier": "x2",
+   "hyperdrive_backup": "x8",
+   "nav_computer": "Yes",
+   "maneuverability": "1D",
+   "space": 6,
+   "atmosphere": "",
+   "hull": "7D",
+   "shields": "3D",
+   "sensors": {
+    "passive": "50/1D",
+    "scan": "100/3D",
+    "search": "200/4D",
+    "focus": "6/4D+2"
+   },
+   "weapons": [
+    {
+     "name": "60 Turbolaser Batteries",
+     "fire_arc": "20 front, 20 left, 20 right",
+     "crew": "1 (20), 2 (40)",
+     "skill": "Capital ship gunnery",
+     "fire_control": "4D",
+     "space_range": "3-15/36/75",
+     "atmo_range": "6-30/72/150 km",
+     "damage": "5D"
+    },
+    {
+     "name": "60 Ion Cannons",
+     "fire_arc": "20 front, 15 left, 15 right, 10 back",
+     "crew": "1 (15), 2 (45)",
+     "skill": "Capital ship gunnery",
+     "fire_control": "4D+2",
+     "space_range": "1-10/25/50",
+     "atmo_range": "2-20/50/100 km",
+     "damage": "3D"
+    },
+    {
+     "name": "10 Tractor Beam Projectors",
+     "fire_arc": "6 front, 2 left, 2 right",
+     "crew": "1 (2), 4 (2), 10 (6)",
+     "skill": "Capital ship gunnery",
+     "fire_control": "4D",
+     "space_range": "1-5/15/30",
+     "atmo_range": "2-10/30/60 km",
+     "damage": "6D"
+    }
+   ],
+   "capsule": "The Watchkeeper (registry BD-09), along with the Sentinel and Defender, was originally built to guard against the possible return of the Ssi-ruuk and was modified to break through an interdiction field. The Watchkeeper was damaged badly in the initial stages of Ossilege's campaign and was used as a decoy during one of the early engagements of the conflict. The Watchkeeper was destroyed by a blast from a planetary repulsor. No hands were lost. Equipped with the Bakuran Hyperwave Sustainer (HIMS), allowing travel in an interdiction field."
+  },
+  {
+   "name": "BLC-7: Intruder",
+   "craft": "Namana-class Bakuran Light Cruiser",
+   "type": "Light Cruiser",
+   "era": "New Republic",
+   "affiliation": "New Republic",
+   "source": "WEG40139 Cracken's Threat Dossier p.138",
+   "scale": "Capital",
+   "length": "400 meters",
+   "skill": "Capital ship piloting: cruiser",
+   "crew": "1,200, gunners: 100, skeleton: 500/+10",
+   "crew_skill": "Astrogation 3D+2, capital ship gunnery 4D+2, capital ship piloting 4D+1, capital ship shields 4D, sensors 4D+1",
+   "passengers": "150 (troops)",
+   "cargo_capacity": "3,500 metric tons",
+   "consumables": "1 year",
+   "cost": "Not available for sale",
+   "hyperdrive_multiplier": "x1",
+   "hyperdrive_backup": "x12",
+   "nav_computer": "Yes",
+   "maneuverability": "2D",
+   "space": 8,
+   "atmosphere": "",
+   "hull": "5D",
+   "shields": "2D+2",
+   "sensors": {
+    "passive": "30/0D",
+    "scan": "50/1D",
+    "search": "100/2D",
+    "focus": "4/3D"
+   },
+   "weapons": [
+    {
+     "name": "10 Heavy Turbolasers",
+     "fire_arc": "2 front, 3 right, 3 left, 2 back",
+     "crew": "3",
+     "skill": "Capital ship gunnery",
+     "fire_control": "1D",
+     "space_range": "3-15/35/75",
+     "atmo_range": "3-15/35/75 km",
+     "damage": "7D"
+    },
+    {
+     "name": "20 Laser Cannons",
+     "fire_arc": "5 front, 5 right, 5 left, 5 back",
+     "crew": "3",
+     "skill": "Capital ship gunnery",
+     "fire_control": "2D",
+     "space_range": "1-5/15/30",
+     "atmo_range": "1-5/15/30 km",
+     "damage": "4D"
+    },
+    {
+     "name": "2 Tractor Beam Projectors",
+     "fire_arc": "2 front",
+     "crew": "1 (2)",
+     "skill": "Capital ship gunnery",
+     "fire_control": "2D",
+     "space_range": "1-5/15/30",
+     "atmo_range": "2-10/30/60 km",
+     "damage": "4D"
+    }
+   ],
+   "capsule": "The Intruder (registry BLC-7) was the first ship specifically designed to escape an interdiction field, using the hyperwave sustainer. Originally, this Bakuran cruiser saw duty in tandem with the Sentinel, protecting its home system from pirate attacks and remaining vigilant in the event of a Ssi-ruuvi resurgence. Equipped with the Bakuran Hyperwave Sustainer (HIMS), allowing travel in an interdiction field."
+  }
+ ]
+,
+  {
+   "name": "Corellian Assault Boat",
+   "craft": "Corellian Mynock-class Assault Boat",
+   "type": "Assault Boat",
+   "era": "New Republic",
+   "affiliation": "New Republic",
+   "source": "WEG40139 Cracken's Threat Dossier p.139",
+   "scale": "Starfighter",
+   "length": "44 meters",
+   "skill": "Space transports: assault boat",
+   "crew": "2, gunners: 1, skeleton: 1/+10",
+   "crew_skill": "Varies widely",
+   "passengers": "24 (troops)",
+   "cargo_capacity": "40 metric tons",
+   "consumables": "1 month",
+   "cost": "250,000 (used)",
+   "hyperdrive_multiplier": "x2",
+   "hyperdrive_backup": "x10",
+   "nav_computer": "Yes",
+   "maneuverability": "1D",
+   "space": 8,
+   "atmosphere": "365; 1,050 kmh",
+   "hull": "4D",
+   "shields": "3D",
+   "sensors": {
+    "passive": "30/1D",
+    "scan": "60/2D",
+    "search": "90/4D",
+    "focus": "4/4D+1"
+   },
+   "weapons": [
+    {
+     "name": "Quad Laser Cannon",
+     "fire_arc": "Turret",
+     "crew": "1",
+     "skill": "Starship gunnery",
+     "fire_control": "2D",
+     "space_range": "1-3/12/25",
+     "atmo_range": "100-300/1.2/3.5 km",
+     "damage": "5D"
+    },
+    {
+     "name": "Concussion Missile Tube",
+     "fire_arc": "Turret",
+     "crew": "1",
+     "skill": "Starship gunnery",
+     "fire_control": "2D",
+     "space_range": "1/3/7",
+     "atmo_range": "50-100/300/700",
+     "damage": "9D"
+    },
+    {
+     "name": "2 Medium Ion Cannons (fire-linked)",
+     "fire_arc": "Front",
+     "crew": "1 (pilot or co-pilot)",
+     "skill": "Starship gunnery",
+     "fire_control": "3D",
+     "space_range": "1-3/7/365",
+     "atmo_range": "100-300/700/3.6 km",
+     "damage": "4D"
+    },
+    {
+     "name": "2 Chin Guns",
+     "fire_arc": "Front",
+     "crew": "1",
+     "skill": "Starship gunnery",
+     "fire_control": "3D",
+     "space_range": "1-3/12/25",
+     "atmo_range": "100-300/1.2/3.5 km",
+     "damage": "2D"
+    }
+   ],
+   "capsule": "The Corellian Mynock-class assault boat is little more than an upgunned system patrol craft. The vessel has a higher crew capacity (to accommodate boarding actions) and slightly upgraded weaponry. The assault boat's primary mission profile is ground assault; the craft has sufficient weaponry to cover ground troopers during a landing action, and can carry a sufficient ground strike force to handle most small skirmishes."
+  }
+ ]
+,
+  {
+   "name": "Corellian/B-wing \"Ugly\"",
+   "craft": "Average Corellian/B-wing \"Ugly\"",
+   "type": "Patchwork Starfighter",
+   "era": "New Republic",
+   "affiliation": "The Fringe",
+   "source": "WEG40139 Cracken's Threat Dossier p.140",
+   "scale": "Starfighter",
+   "length": "16.9 meters",
+   "skill": "Space transports: B-wing",
+   "crew": "1, gunners: 1",
+   "crew_skill": "Starfighter piloting 5D, starship gunnery 4D+2, starship shields 3D+1",
+   "passengers": "6",
+   "cargo_capacity": "65 kilograms",
+   "consumables": "1 week",
+   "cost": "",
+   "hyperdrive_multiplier": "x2",
+   "hyperdrive_backup": "",
+   "nav_computer": "Limited to two jumps",
+   "maneuverability": "1D+1",
+   "space": 6,
+   "atmosphere": "330; 950 kmh",
+   "hull": "2D",
+   "shields": "2D",
+   "sensors": {
+    "passive": "30/0D",
+    "scan": "50/1D",
+    "search": "75/2D",
+    "focus": "4/4D+1"
+   },
+   "weapons": [
+    {
+     "name": "Anti-Infantry Turbolaser Cannon",
+     "fire_arc": "Turret",
+     "crew": "1",
+     "skill": "Vehicle blaster/starship gunnery",
+     "fire_control": "2D",
+     "space_range": "1-5/15/30",
+     "atmo_range": "100-300/1.2/2.5 km",
+     "damage": "4D",
+     "scale": "Vehicle"
+    }
+   ],
+   "capsule": "The Corellian B-wing 'Ugly' is essentially little more than flying junk. Made up of the cockpit of a Corellian stock light freighter bolted onto the fuselage of a B-wing, this type of craft typically sees action only among cash-poor pirates. The latest 'refinement' is the addition of a ground-based anti-infantry turbolaser cannon bolted onto the undercarriage. While this hardly qualifies as military-grade space weaponry, it is sufficient to damage lightly shielded cargo vessels — the primary mission profile of most pirate craft."
+  },
+  {
+   "name": "Jade's Fire",
+   "craft": "SoroSuub Luxury 3000",
+   "type": "Private Space Yacht",
+   "era": "New Republic",
+   "affiliation": "The Fringe",
+   "source": "WEG40139 Cracken's Threat Dossier p.140-141",
+   "scale": "Starfighter",
+   "length": "50 meters",
+   "skill": "Space transports: Luxury 3000 yacht",
+   "crew": "1",
+   "crew_skill": "Varies widely",
+   "passengers": "10",
+   "cargo_capacity": "100 metric tons",
+   "consumables": "1 month",
+   "cost": "",
+   "hyperdrive_multiplier": "x2",
+   "hyperdrive_backup": "x14",
+   "nav_computer": "Yes",
+   "maneuverability": "1D",
+   "space": 8,
+   "atmosphere": "365; 1,050 kmh",
+   "hull": "4D",
+   "shields": "4D",
+   "sensors": {
+    "passive": "30/1D",
+    "scan": "80/2D",
+    "search": "100/3D",
+    "focus": "4/4D"
+   },
+   "weapons": [
+    {
+     "name": "3 Quad Turbolasers (fire separately)",
+     "fire_arc": "1 front, 1 left, 1 right",
+     "crew": "1",
+     "skill": "Starship gunnery",
+     "fire_control": "2D",
+     "space_range": "3-15/35/75",
+     "atmo_range": "300-1.5/3.5/7.5 km",
+     "damage": "5D"
+    },
+    {
+     "name": "1 \"Shoot-Back\" Blaster",
+     "fire_arc": "Turret",
+     "crew": "",
+     "skill": "",
+     "fire_control": "2D",
+     "space_range": "1-5/10/17",
+     "atmo_range": "100-500/1/1.7 km",
+     "damage": "2D"
+    },
+    {
+     "name": "1 Tractor Beam Projector",
+     "fire_arc": "Front",
+     "crew": "1",
+     "skill": "Starship gunnery",
+     "fire_control": "2D",
+     "space_range": "1-3/7/15",
+     "atmo_range": "100-300/700/1.5 km",
+     "damage": "2D"
+    }
+   ],
+   "capsule": "When Master Trader Mara Jade went into business for herself, she immediately upgraded the sensor, weapons, and nearly everything on her ship: the Jade's Fire. One unique system on her ship is the shoot-back system: when laser fire hits the hull, a small turret blaster automatically pops up and fires in the general direction of the incoming shots. She also added a special slave circuit which she can operate by a remote control to bring Jade's Fire to her."
+  },
+  {
+   "name": "Light Attack Fighter",
+   "craft": "Corellian LAF-250",
+   "type": "Multi-purpose Starfighter",
+   "era": "New Republic",
+   "affiliation": "New Republic",
+   "source": "WEG40139 Cracken's Threat Dossier p.141",
+   "scale": "Starfighter",
+   "length": "12 meters",
+   "skill": "Starfighter piloting: light attack fighter",
+   "crew": "1",
+   "crew_skill": "Varies widely",
+   "passengers": "",
+   "cargo_capacity": "65 kilograms",
+   "consumables": "2 days",
+   "cost": "35,000 (used)",
+   "hyperdrive_multiplier": "x2",
+   "hyperdrive_backup": "",
+   "nav_computer": "Yes",
+   "maneuverability": "3D",
+   "space": 5,
+   "atmosphere": "350; 1,000 kmh",
+   "hull": "2D",
+   "shields": "1D",
+   "sensors": {
+    "passive": "15/0D",
+    "scan": "25/1D",
+    "search": "50/1D+2",
+    "focus": "2/2D"
+   },
+   "weapons": [
+    {
+     "name": "2 Laser Cannons",
+     "fire_arc": "Front",
+     "crew": "1",
+     "skill": "Starship gunnery",
+     "fire_control": "1D",
+     "space_range": "1/3/7",
+     "atmo_range": "50-100/300/700",
+     "damage": "5D"
+    }
+   ],
+   "capsule": "The LAF-250 — designed by Corellian Engineering Corporation and recently manufactured by Republic Engineering Corp. — is a combination heavy starfighter/patrol vessel ideally suited to combat in the Corellia region (long a hotbed of pirate activity). The LAF-250 is fairly maneuverable and possesses modest shielding (though it has hull strength comparable to a production-model TIE). In addition, the weapons loadout is somewhat light; well-prepared pirates will find the LAF-250 poses no significant threat, a fact many unfortunate '250 pilots have had cause to lament."
+  },
+  {
+   "name": "Light Attack Fighter (Upgraded)",
+   "type": "Corellian HLAF-500",
+   "category": "Starfighter",
+   "scale": "Starfighter",
+   "length": "12 meters",
+   "skill": "Starfighter piloting: HLAF-500",
+   "crew": "1",
+   "crew_skill": "Varies widely",
+   "cargo_capacity": "65 kilograms",
+   "consumables": "2 days",
+   "cost": "40,000 (used)",
+   "hyperdrive_multiplier": "x2",
+   "nav_computer": "Yes",
+   "maneuverability": "4D",
+   "space": "12",
+   "atmosphere": "450; 1,300 kmh",
+   "hull": "2D",
+   "shields": "2D",
+   "sensors": {
+    "passive": "15/0D",
+    "scan": "25/1D",
+    "search": "50/1D+2",
+    "focus": "2/2D"
+   },
+   "weapons": [
+    {
+     "name": "2 Laser Cannons",
+     "fire_arc": "Front",
+     "crew": "1",
+     "skill": "Starship gunnery",
+     "fire_control": "1D",
+     "space_range": "1/3/7",
+     "atmo_range": "50-100/300/700",
+     "damage": "5D"
+    },
+    {
+     "name": "2 Proton Torpedo Launchers",
+     "fire_arc": "Front",
+     "crew": "1",
+     "skill": "Starship gunnery",
+     "fire_control": "2D",
+     "space_range": "1/3/7",
+     "atmo_range": "50-100/300/700",
+     "damage": "9D"
+    }
+   ],
+   "source": "WEG40139 Cracken's Threat Dossier p.142",
+   "capsule": "The HLAF-500 — an acronym for the somewhat unusual 'Heavy/Light Attack Fighter' — was a direct response to pilot feedback on the agile-but-underpowered LAF-250. Almost identical to the LAF, with the addition of SoroSuub 9X2 fusial engines and extra weapons hardpoints. The modifications were eventually incorporated into the LAF-250 (which were mandated by the Corellian Defense Force after a particularly harsh battle with local raiders — a conflict that cost the CDF a wing of pilots who attempted to stop an aged Nebulon-B pirate frigate and were blown from the skies)."
+  },
+  {
+   "name": "Naritus",
+   "type": "Mon Calamari MC80A",
+   "category": "Capital Ship",
+   "scale": "Capital",
+   "length": "1,200 meters",
+   "skill": "Capital ship piloting: Mon Calamari cruiser",
+   "crew": "5,156, gunners: 246, skeleton: 1,230/+10",
+   "passengers": "1,200 (troops)",
+   "cargo_capacity": "20,000 metric tons",
+   "consumables": "2 years",
+   "hyperdrive_multiplier": "x1",
+   "hyperdrive_backup": "x8",
+   "nav_computer": "Yes",
+   "maneuverability": "2D",
+   "space": "6",
+   "hull": "6D",
+   "shields": "3D*",
+   "sensors": {
+    "passive": "40/1D",
+    "scan": "60/2D",
+    "search": "120/3D",
+    "focus": "5/4D"
+   },
+   "weapons": [
+    {
+     "name": "48 Turbolaser Batteries",
+     "fire_arc": "12 front, 12 left, 12 right, 12 back",
+     "crew": "1 (12), 2 (10), 3 (26)",
+     "skill": "Capital ship gunnery",
+     "fire_control": "2D",
+     "space_range": "3-15/35/75",
+     "atmo_range": "6-30/70/150 km",
+     "damage": "4D"
+    },
+    {
+     "name": "20 Ion Cannon Batteries",
+     "fire_arc": "8 front, 4 left, 4 right, 4 back",
+     "crew": "1 (6), 4 (6), 12 (8)",
+     "skill": "Capital ship gunnery",
+     "fire_control": "3D",
+     "space_range": "1-10/25/50",
+     "atmo_range": "2-20/50/100",
+     "damage": "3D"
+    },
+    {
+     "name": "6 Tractor Beam Projectors",
+     "fire_arc": "4 front, 1 left, 1 right",
+     "crew": "1 (2), 5 (2), 10 (2)",
+     "skill": "Capital ship gunnery",
+     "fire_control": "2D+2",
+     "space_range": "1-5/15/30",
+     "atmo_range": "2-10/30/60",
+     "damage": "4D"
+    }
+   ],
+   "source": "WEG40139 Cracken's Threat Dossier p.142",
+   "capsule": "The Naritus — an aging MC80A Mon Calamari cruiser — is one of the few New Republic capital ships still in service. The Naritus participated in several pirate skirmishes in the Outer Rim Territories, helping to crush the Khuiumin Survivors band due to the heroic actions of her captain, Genkal of Calamari. The Naritus was the lead rescue craft in the relief effort to Thanta Zilbra and served as flight coordination control for Rogue Squadron. Captain Genkal is scheduled to step down, and his chief duty officer, Commander Bril Parry, is expected to replace him. *Mon Cal Star Cruisers have 6D of backup shields. When a die of shields is lost, if the shield operators can make an easy capital ship shields roll, one of the backup die codes of shields can be brought up to increase the shields back to 3D."
+  },
+  {
+   "name": "Selonian Coneship",
+   "type": "Selonian Hunchuzuc Den Coneship",
+   "category": "Transport",
+   "scale": "Starfighter",
+   "length": "20.5 meters",
+   "skill": "Space transports: Selonian coneship",
+   "crew": "1",
+   "crew_skill": "See Salculd",
+   "passengers": "2",
+   "cargo_capacity": "1 metric ton",
+   "consumables": "1 week",
+   "hyperdrive_multiplier": null,
+   "nav_computer": "None",
+   "maneuverability": "1D",
+   "space": "5",
+   "atmosphere": "225; 650 kmh",
+   "hull": "3D",
+   "shields": null,
+   "sensors": null,
+   "weapons": [],
+   "source": "WEG40139 Cracken's Threat Dossier p.143",
+   "capsule": "The Selonian coneship is perhaps the most primitive vessel currently constructed in the Corellian region. A coneship is little more than engines and cockpit (though the nose is built almost entirely of transparisteel, offering a spectacular view despite the craft's limited sophistication). Without shields, sensors, or armament, the ship is an easy target — and so completely unreliable that no sane pilot would even get into one. The coneship that Salculd and Han Solo used during the Corellian Incident is believed to be the Selonians' first successful attempt at a spacecraft. Solo indicated that two more coneships may be under construction and recommended a travelling advisory be enacted in the Corellia region, as coneships are navigational hazards and should be given a wide berth."
+  },
+  {
+   "name": "X-TIE Ugly",
+   "type": "Incom T-65B X-wing-TIE Fighter",
+   "category": "Starfighter",
+   "scale": "Starfighter",
+   "length": "12.5 meters",
+   "skill": "Starfighter piloting: X-wing, starfighter piloting: TIE fighter",
+   "crew": "1",
+   "crew_skill": "Starfighter piloting 5D, starship gunnery 4D+2, starship shields 3D",
+   "cargo_capacity": "110 kilograms",
+   "consumables": "1 week",
+   "hyperdrive_multiplier": "x1",
+   "nav_computer": "Limited to one jump",
+   "maneuverability": "3D+1",
+   "space": "9",
+   "atmosphere": "365; 1,050 kmh",
+   "hull": "4D",
+   "shields": "1D",
+   "sensors": {
+    "passive": "25/1D",
+    "scan": "50/1D",
+    "search": "75/2D",
+    "focus": "4/3D+1"
+   },
+   "weapons": [
+    {
+     "name": "4 Laser Cannons (fire-linked)",
+     "fire_arc": "Front",
+     "crew": "1",
+     "skill": "Starship gunnery",
+     "fire_control": "3D",
+     "space_range": "1-3/12/25",
+     "atmo_range": "100-300/1.2/2.5 km",
+     "damage": "6D"
+    }
+   ],
+   "source": "WEG40139 Cracken's Threat Dossier p.144",
+   "capsule": "Another so-called 'Ugly' design, this patchwork starfighter is typically constructed by mating the solar panels from an early model TIE fighter onto the fuselage of an Incom X-wing. These ships are barely spaceworthy and the pilots that fly them are generally pirates or down-on-their-luck smugglers. While the X-TIE is an adequate weapon against unarmed commercial vessels, a true starfighter is sufficient to destroy 'Uglies' by the dozen."
   }
  ]
 // --- END OF STARSHIP_DATA ---

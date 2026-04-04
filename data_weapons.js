@@ -4943,6 +4943,20 @@ const WEAPONS_DATA = [
   "ammo": "",
   "game_notes": "Difficulty: Moderate. Custom weapon crafted by Togorian master smith Mlatar Thon Gra for Cene Gilvent. Combines elements of the Somreth tri-blade of the Drevun Six, the Barnax 'Twenchok' foil, and the Coynite sat'skar. Gilvent receives +2D to melee combat when wielding this weapon due to her specialized training.",
   "source": "WEG40109 Alliance Intelligence Reports p.78"
+ },
+ {
+  "name": "Hapan Gun of Command",
+  "category": "Blaster Pistols",
+  "type": "Charubah Industries Gun of Command",
+  "skill": "Blaster: Gun of Command",
+  "cost": "17,500",
+  "availability": "4, R or X",
+  "damage": "5D, Special",
+  "range": "3-7/25/50",
+  "ammo": "6",
+  "fire_rate": "1",
+  "game_notes": "Scale: Character. Neural-effect blaster. A successful hit lowers the target's ability to resist commands from the assailant. The target uses willpower skill against the Gun of Command's damage dice instead of Strength. Willpower Effects — Damage Roll ≥ Willpower Roll: 0-3 = -1D to willpower for 1 round; 4-8 = -1D to willpower for 1D rounds; 9-12 = -2D to willpower for 2D minutes; 13-15 = -2D to willpower for 2D hours; 16+ = -3D to willpower for 3D hours. If target's willpower falls to 0D or below, they automatically accept any command from the assailant within reason. If the command puts the target into direct harm (like walking off a balcony), the target will 'snap out' of the trance, voiding the effects completely. Looks identical to any other blaster except for a large dial on the weapon's side. Developed by the technologically advanced society of Charubah in the Hapes Cluster as a non-violent policing alternative. Prohibitively expensive — outfitting all law-enforcement teams would have broken many local governments.",
+  "source": "WEG40139 Cracken's Threat Dossier p.54"
  }
 // --- END OF WEAPONS_DATA ---
 ];
