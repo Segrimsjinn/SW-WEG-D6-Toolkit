@@ -12458,6 +12458,50 @@ const STARSHIP_DATA = {
      "damage": "4D"
     }
    ]
+  },
+  {
+   "name": "Raptor Transport (Y-4)",
+   "craft": "Incom Y-4 Transport",
+   "type": "Military troop transport",
+   "affiliation": "Galactic Empire",
+   "era": "Rebellion",
+   "source": "WEG40139 Cracken's Threat Dossier p.48",
+   "price_new": "250,000 (military model, available on black market only)",
+   "price_used": "160,000 (civilian model, no weaponry)",
+   "scale": "Starfighter",
+   "length": "28 meters",
+   "skill": "Space transports: Incom Y-4 Transport",
+   "crew": "1, gunners: 2",
+   "crew_skill": "Astrogation 4D, sensors 3D+1, space transports: Incom Y-4 Transport 5D+1, starship gunnery 4D, starship shields 3D",
+   "passengers": "40 (Raptors)",
+   "cargo": "300 metric tons",
+   "consumables": "1 month",
+   "hyperdrive": "x1.5",
+   "hyperdrive_backup": "x8",
+   "nav_computer": "Yes, astromech droid adds +1D to astrogation roll",
+   "maneuverability": "1D+1",
+   "space": "6",
+   "atmosphere": "",
+   "hull": "5D+2",
+   "shields": "3D",
+   "of_note": "Designed by Incom shortly before it was absorbed by the Empire. The Y-4 never gained acceptance from the Imperial Navy due to Incom's 'Rebel' connections. Saw a resurgence under Warlord Zsinj as the primary Raptor shuttle, commonly known as the 'Raptor Incubator' in New Republic Naval circles. Features retractable wings for emergency braking and increased maneuverability. Can carry up to 40 Raptors plus four AT-STs and smaller ground assault vehicles and speeders.",
+   "sensors_passive": "40/1D",
+   "sensors_scan": "80/2D",
+   "sensors_search": "100/3D",
+   "sensors_focus": "5/4D",
+   "weapons": [
+    {
+     "name": "2 Double Laser Cannons",
+     "fire_arc": "2 front, 2 turret",
+     "crew": "1, 1",
+     "scale": "Starfighter",
+     "skill": "Starship Gunnery",
+     "fire_control": "2D",
+     "space_range": "1-5/12/20",
+     "atmo_range": "100-300/1.2/2.5 km",
+     "damage": "3D"
+    }
+   ]
   }
  ],
  "Named Modified Military Transports": [],
@@ -22144,6 +22188,112 @@ const STARSHIP_DATA = {
      "damage": "3D (single), 4D (2–3 linked), 5D (all 4 linked)"
     }
    ]
+  },
+  {
+   "name": "Miy'til Fighter",
+   "craft": "Hapan Cluster Miy'til Fighter",
+   "type": "Heavy combat starfighter",
+   "affiliation": "Neutral",
+   "era": "Rebellion",
+   "source": "WEG40139 Cracken's Threat Dossier p.45",
+   "price_new": "210,000",
+   "price_used": "",
+   "scale": "Starfighter",
+   "length": "7.5 meters",
+   "skill": "Starfighter piloting: Miy'til fighter",
+   "crew": "1 (plus astromech droid)",
+   "crew_skill": "Astrogation 3D+2, starship gunnery 3D+1, starfighter piloting 4D, starship shields 3D+2",
+   "passengers": "",
+   "cargo": "25 kilograms",
+   "consumables": "1 week",
+   "hyperdrive": "x1.5",
+   "hyperdrive_backup": "Yes",
+   "nav_computer": "Astromech droid holds 10 jumps",
+   "maneuverability": "3D",
+   "space": "9",
+   "atmosphere": "400; 1,150 kmh",
+   "hull": "3D+1",
+   "shields": "1D+1",
+   "of_note": "Backbone of the Hapan fast-attack forces. Compact starfighter capable of going one-to-one with any Imperial starfighter including the TIE Advanced. Powered by four Incom 6X4 fusial thrust engines. Slightly slower than a New Republic A-wing but compensates with superior maneuverability.",
+   "sensors_passive": "25/0D",
+   "sensors_scan": "50/1D",
+   "sensors_search": "75/1D+2",
+   "sensors_focus": "3/3D+1",
+   "weapons": [
+    {
+     "name": "2 Laser Cannons (fire-linked)",
+     "fire_arc": "Front",
+     "crew": "",
+     "skill": "Starship Gunnery",
+     "fire_control": "2D+2",
+     "space_range": "1-4/15/30",
+     "atmo_range": "100-300/1.2/1.5 km",
+     "damage": "5D"
+    },
+    {
+     "name": "Concussion Missile Tube",
+     "fire_arc": "Front",
+     "crew": "",
+     "skill": "Starship Gunnery",
+     "fire_control": "3D",
+     "space_range": "1/5/9",
+     "atmo_range": "50-100/500/900",
+     "ammo": "5",
+     "damage": "9D"
+    }
+   ]
+  },
+  {
+   "name": "Raptor Fighter",
+   "craft": "Zsinj TIE/rpt",
+   "type": "Combat starfighter",
+   "affiliation": "Galactic Empire",
+   "era": "Rebellion",
+   "source": "WEG40139 Cracken's Threat Dossier p.47",
+   "price_new": "Unknown, not available for sale",
+   "price_used": "",
+   "scale": "Starfighter",
+   "length": "6.8 meters",
+   "skill": "Starfighter piloting: Raptor Fighter",
+   "crew": "1",
+   "crew_skill": "Starfighter piloting 5D+1, starship gunnery 5D",
+   "passengers": "",
+   "cargo": "50 kilograms",
+   "consumables": "",
+   "hyperdrive": "None",
+   "nav_computer": "No",
+   "maneuverability": "3D+2",
+   "space": "8",
+   "atmosphere": "365; 1,050 kmh",
+   "hull": "4D",
+   "shields": "None",
+   "of_note": "Custom design from Warlord Zsinj's hidden shipyard stationed outside Dathomir's atmosphere. Not technically a TIE fighter (Sienar Fleet Systems had no hand in the design) but possesses characteristics of both the TIE Bomber and TIE Interceptor. Surpasses fire capability of both, making it a highly effective combat starfighter. Maneuverability analogous to a New Republic A-wing. No shield generators, though prototype Raptor fighters with shields are believed to exist in the possession of Zsinj's former troops.",
+   "sensors_passive": "20/0D",
+   "sensors_scan": "35/1D",
+   "sensors_search": "50/2D",
+   "sensors_focus": "3/2D+2",
+   "weapons": [
+    {
+     "name": "4 Laser Cannons",
+     "fire_arc": "Front",
+     "crew": "",
+     "skill": "Starship Gunnery",
+     "fire_control": "2D+2",
+     "space_range": "1-5/14/27",
+     "atmo_range": "100-500/1.4/2.7 km",
+     "damage": "3D+2"
+    },
+    {
+     "name": "2 Concussion Missile Tubes",
+     "fire_arc": "Front",
+     "crew": "",
+     "skill": "Starship Gunnery",
+     "fire_control": "3D",
+     "space_range": "1/4/7",
+     "atmo_range": "50-500/1/5 km",
+     "damage": "9D"
+    }
+   ]
   }
  ],
  "Named Modified Space Superiority Fighters": [
@@ -26320,6 +26470,145 @@ const STARSHIP_DATA = {
      "damage": "4D"
     }
    ]
+  },
+  {
+   "name": "Hapes Nova Battle Cruiser",
+   "craft": "Hapan Consortium Hapes Nova-Class Battle Cruiser",
+   "type": "Heavy combat frigate",
+   "affiliation": "Neutral",
+   "era": "Rebellion",
+   "source": "WEG40139 Cracken's Threat Dossier p.44",
+   "price_new": "15 million (new)",
+   "price_used": "",
+   "scale": "Capital",
+   "length": "400 meters",
+   "skill": "Capital ship piloting: Hapes Nova",
+   "crew": "1,700, gunners: 90",
+   "crew_skill": "Astrogation 5D, capital ship gunnery 5D+2, capital starship piloting: Hapes Nova 6D, capital ship shields 6D+2, communications 5D+2, sensors 4D+2",
+   "passengers": "600 (troops, support personnel)",
+   "starfighter_complement": "2 squadrons of Miy'til fighters, up to 6 assault bombers",
+   "cargo": "600 metric tons",
+   "consumables": "1 month",
+   "hyperdrive": "x1.5",
+   "hyperdrive_backup": "x12",
+   "nav_computer": "Yes",
+   "maneuverability": "1D+1",
+   "space": "4",
+   "atmosphere": "",
+   "hull": "5D",
+   "shields": "2D*",
+   "of_note": "Backup Shields: The Hapes Nova has a set of backup shields (4D). When a die of shields is lost, the shield operators can make an Easy capital ship shields roll to use one of the backup dice to bring the shields back to a full 2D. Hapan Turbolaser Technology: Once fired, a single turbolaser takes three times the normal recharge time of the more standard Imperial turbolasers (Fire Rate: 1/3). Many design innovations were stolen from SoroSuub and Kuat Drive Yards. Backup shield generator design believed stolen from a Mon Cal stardock during a data-raid.",
+   "sensors_passive": "40/0D",
+   "sensors_scan": "55/2D",
+   "sensors_search": "80/2D+2",
+   "sensors_focus": "5/3D",
+   "weapons": [
+    {
+     "name": "25 Hapan Turbolaser Batteries",
+     "fire_arc": "5 front, 5 left, 5 right, 5 back, 5 turret",
+     "crew": "3",
+     "skill": "Capital Ship Gunnery",
+     "fire_control": "1D+2",
+     "fire_rate": "1/3",
+     "space_range": "3-15/35/75",
+     "damage": "7D"
+    },
+    {
+     "name": "10 Laser Cannons",
+     "fire_arc": "Front",
+     "crew": "2",
+     "scale": "Starfighter",
+     "skill": "Capital Starship Gunnery",
+     "fire_control": "2D",
+     "space_range": "1-3/12/25",
+     "damage": "5D"
+    },
+    {
+     "name": "10 Ion Cannons",
+     "fire_arc": "Front",
+     "crew": "1",
+     "skill": "Capital Ship Gunnery",
+     "fire_control": "3D",
+     "space_range": "1-10/25/50",
+     "atmo_range": "2-20/50/100 km",
+     "damage": "3D"
+    }
+   ]
+  },
+  {
+   "name": "Corona Frigate",
+   "craft": "Kuat Drive Yards Corona-class Frigate",
+   "type": "Line frigate",
+   "era": "New Republic",
+   "affiliation": "New Republic",
+   "source": "WEG40139 Cracken's Threat Dossier p.72",
+   "scale": "Capital",
+   "length": "275 meters",
+   "skill": "Capital ship piloting: Corona",
+   "crew": "782, gunners: 56, skeleton: 281/+10",
+   "crew_skill": "Astrogation 4D, capital ship gunnery 4D+1, capital ship piloting 4D, capital ship shields 3D, starship gunnery 4D+1",
+   "passengers": "80 (troops)",
+   "cargo_capacity": "4,000 metric tons",
+   "consumables": "1 year",
+   "cost": "Not available for sale",
+   "hyperdrive_multiplier": "x1",
+   "hyperdrive_backup": "x12",
+   "nav_computer": "Yes",
+   "maneuverability": "1D",
+   "space": 5,
+   "atmosphere": "295; 850 kmh",
+   "hull": "4D",
+   "shields": "2D",
+   "sensors": {
+    "passive": "40/0D",
+    "scan": "75/1D",
+    "search": "150/2D",
+    "focus": "4/3D"
+   },
+   "weapons": [
+    {
+     "name": "10 Turbolaser Cannons",
+     "fire_arc": "5 front, 2 left, 2 right, 1 back",
+     "crew": "2",
+     "skill": "Capital ship gunnery",
+     "fire_control": "2D",
+     "space_range": "3-15/35/75",
+     "atmo_range": "6-30/70/150 km",
+     "damage": "5D"
+    },
+    {
+     "name": "10 Laser Cannons",
+     "fire_arc": "5 front, 2 left, 2 right, 1 back",
+     "crew": "2",
+     "scale": "Starfighter",
+     "skill": "Starship gunnery",
+     "fire_control": "2D",
+     "space_range": "1-3/12/25",
+     "atmo_range": "2-6/24/50 km",
+     "damage": "4D"
+    },
+    {
+     "name": "4 Ion Cannons",
+     "fire_arc": "1 front, 1 left, 1 right, 1 back",
+     "crew": "2",
+     "skill": "Capital ship gunnery",
+     "fire_control": "2D",
+     "space_range": "1-10/25/50",
+     "atmo_range": "2-20/50/100 km",
+     "damage": "3D"
+    },
+    {
+     "name": "2 Tractor Beam Projectors",
+     "fire_arc": "Front",
+     "crew": "4",
+     "skill": "Capital ship gunnery",
+     "fire_control": "4D",
+     "space_range": "1-5/15/30",
+     "atmo_range": "2-10/30/60 km",
+     "damage": "6D"
+    }
+   ],
+   "capsule": "Modeled after the highly successful Nebulon-B escort frigate, the Corona line frigate provides reconnaissance-in-force, close-line fire support, and anti-starfighter cover for cruisers and Star Destroyers. The Corona is designed to carry a starfighter squadron (36 starfighters), although not all frigates have a full complement and some are assigned short-range fighters only. Orders for the Corona have been modest but steady. Coronas currently in service in the Core Worlds include the Corona, Boldheart, Endor, and Shooting Star."
   }
  ],
  "Named Modified Capital Frigates": [],
@@ -31249,9 +31538,295 @@ const STARSHIP_DATA = {
      "damage": "4D"
     }
    ]
+  },
+  {
+   "rank": 1,
+   "name": "Hapan Battle Dragon",
+   "craft": "Olanji/Charubah Battle Dragon",
+   "type": "Heavy assault warship",
+   "affiliation": "Neutral",
+   "era": "New Republic",
+   "source": "WEG40139 Cracken's Threat Dossier p.42-43",
+   "price_new": "Not available for sale",
+   "price_used": "",
+   "scale": "Capital",
+   "length": "500 meters (diameter)",
+   "crew": "1,200, gunners: 190, skeleton: 700/+10",
+   "gunners": "",
+   "passengers": "500 (troops)",
+   "cargo": "6,000 metric tons",
+   "consumables": "1 year",
+   "hyperdrive": "x2",
+   "hyperdrive_backup": "x14",
+   "nav_computer": "Yes",
+   "maneuverability": "1D",
+   "space": "4",
+   "atmosphere": "",
+   "hull": "7D+2",
+   "shields": "3D",
+   "of_note": "Carries 3 squadrons of starfighters (usually Miy'til fighters, though recently Hapans have adopted X-wings). Double-saucer design with large-scale rotational turbolaser system — when one fires, it rotates away and the next replaces it, compensating for archaic Hapan turbolaser technology that takes 3x normal recharge time. Weapons linked to 4 separate targeting computers, allowing concentrated fire on up to 4 single targets simultaneously. Equipped with 4 pulse mass generator tubes carrying 16 pulse mass mines that produce mass shadows to block hyperspace travel (each mine covers a 30-unit diameter). Crew Skill: Astrogation 5D, capital ship gunnery 5D+2, capital starship piloting: Hapan Battle Dragon 6D, capital ship shields 6D+2, communications 5D+2, sensors 4D+2.",
+   "sensors_passive": "50/0D",
+   "sensors_scan": "100/3D",
+   "sensors_search": "200/4D",
+   "sensors_focus": "6/4D+2",
+   "weapons": [
+    {
+     "name": "40 Hapan Turbolaser Batteries",
+     "fire_arc": "Rotational (see notes)",
+     "crew": "3",
+     "skill": "Capital ship gunnery",
+     "fire_control": "1D+2",
+     "space_range": "3-15/35/75",
+     "atmo_range": "",
+     "damage": "7D"
+    },
+    {
+     "name": "40 Ion Cannons",
+     "fire_arc": "Turret",
+     "crew": "2",
+     "skill": "Capital ship gunnery",
+     "fire_control": "3D",
+     "space_range": "1-10/25/50",
+     "atmo_range": "2-20/50/100 km",
+     "damage": "3D"
+    },
+    {
+     "name": "4 Pulse Mass Generator Tubes",
+     "fire_arc": "1 front, 1 left, 1 right, 1 back",
+     "crew": "3",
+     "skill": "Capital ship gunnery: Pulse Mass Generator",
+     "fire_control": "5D",
+     "space_range": "1-5/75/150",
+     "atmo_range": "",
+     "damage": "Blocks hyperspace travel (each mine covers 30-unit diameter). Ammo: 16"
+    },
+    {
+     "name": "2 Triple Ion Cannons",
+     "fire_arc": "Turret",
+     "crew": "2",
+     "skill": "Capital ship gunnery",
+     "fire_control": "1D",
+     "space_range": "2-20/50/80",
+     "atmo_range": "",
+     "damage": "3D+2"
+    },
+    {
+     "name": "1 Tractor Beam Projector",
+     "fire_arc": "Turret",
+     "crew": "3",
+     "skill": "Capital ship gunnery",
+     "fire_control": "4D",
+     "space_range": "1-5/15/30",
+     "atmo_range": "",
+     "damage": "6D"
+    }
+   ],
+   "capsule": "The Hapan Battle Dragon is a foundation of the Hapan Consortium's military strength. Designed in a distinctive double-saucer formation quite different from streamlined Imperial designs, it is an instantly recognizable vessel. Armed with 40 Hapan turbolasers, 40 ion cannons, two triple ion cannons, a tractor beam projector, and four pulse mass generator tubes. The Hapans compensate for their antiquated turbolaser technology — each turbolaser has only one-third the capacity of comparable Imperial weapons — with a large-scale rotation system that whisks each turbolaser away after firing, replacing it with the next while the spent one recharges. Borrowing from Imperial Interdictor gravity-well technology, each Battle Dragon carries pulse mass mines that produce mass shadows to confuse and jam enemy hyperdrive motivators. Capable of carrying three squadrons of starfighters."
+  },
+  {
+   "name": "Belarus Medium Cruiser",
+   "craft": "Loronar Belarus-class medium cruiser",
+   "type": "Medium line cruiser",
+   "era": "New Republic",
+   "affiliation": "New Republic",
+   "source": "WEG40139 Cracken's Threat Dossier p.73",
+   "scale": "Capital",
+   "length": "400 meters",
+   "skill": "Capital ship piloting",
+   "crew": "1,753, gunners: 125, skeleton: 718",
+   "crew_skill": "Astrogation 4D, capital ship gunnery 4D+1, capital ship piloting 4D, capital ship shields 3D",
+   "passengers": "410 (troops)",
+   "cargo_capacity": "7,500 metric tons",
+   "consumables": "1 year",
+   "cost": "Not available for sale",
+   "hyperdrive_multiplier": "x2",
+   "hyperdrive_backup": "x12",
+   "nav_computer": "Yes",
+   "maneuverability": "2D",
+   "space": 6,
+   "atmosphere": "",
+   "hull": "6D",
+   "shields": "2D",
+   "sensors": {
+    "passive": "30/0D",
+    "scan": "50/1D",
+    "search": "100/2D",
+    "focus": "4/3D"
+   },
+   "weapons": [
+    {
+     "name": "15 Turbolaser Cannons",
+     "fire_arc": "5 front, 5 left, 5 right",
+     "crew": "2",
+     "skill": "Capital ship gunnery",
+     "fire_control": "2D",
+     "space_range": "3-15/35/75",
+     "atmo_range": "6-30/70/150 km",
+     "damage": "5D"
+    },
+    {
+     "name": "10 Turbolaser Batteries",
+     "fire_arc": "5 left, 5 right",
+     "crew": "4",
+     "skill": "Capital ship gunnery",
+     "fire_control": "1D",
+     "space_range": "3-15/35/75",
+     "atmo_range": "6-30/70/150 km",
+     "damage": "7D"
+    },
+    {
+     "name": "5 Ion Cannons",
+     "fire_arc": "1 front, 2 left, 2 right",
+     "crew": "3",
+     "skill": "Capital ship gunnery",
+     "fire_control": "2D",
+     "space_range": "1-10/25/50",
+     "atmo_range": "2-20/50/100 km",
+     "damage": "4D"
+    },
+    {
+     "name": "10 Tractor Beam Projectors",
+     "fire_arc": "4 front, 2 left, 2 right, 2 back",
+     "crew": "4",
+     "skill": "Capital ship gunnery",
+     "fire_control": "4D",
+     "space_range": "1-5/15/30",
+     "atmo_range": "2-10/30/60 km",
+     "damage": "5D"
+    }
+   ],
+   "capsule": "The Belarus-class medium cruiser was one of the first of the New Republic's line ships to glide out of construction. Originally designed by Loronar as an improvement over their successful Strike-class cruiser, the Belarus was rushed into production by the New Republic. The design was implemented by cutting a few cutting corners — primarily by reducing the single turbolaser emplacements, and settling on a single design with modular construction — the Belarus lacks the Strike-class cruiser's design conformity. While cheaper to construct, the Belarus requires a standard refit to alter. The resulting medium cruiser is moderately more crew efficient than its predecessor and has increased its left-right broadside firepower by 40 percent, but has no heavy firepower forward and virtually no fire to the rear. Generally deployed in line formation with lighter ships covering the forward and rear of the deployment, or as part of the center section of a progressively heavier line."
+  },
+  {
+   "name": "Republic Star Destroyer",
+   "craft": "Rendili StarDrive Republic-class Star Destroyer",
+   "type": "Star Destroyer",
+   "era": "New Republic",
+   "affiliation": "New Republic",
+   "source": "WEG40139 Cracken's Threat Dossier p.74",
+   "scale": "Capital",
+   "length": "1,250 meters",
+   "skill": "Capital ship piloting",
+   "crew": "8,168, gunners: 260, skeleton: 2,917/+10",
+   "crew_skill": "Astrogation 4D, capital ship gunnery 4D+1, capital ship piloting 4D, capital ship shields 3D",
+   "passengers": "3,200 (troops)",
+   "cargo_capacity": "11,000 metric tons",
+   "consumables": "2 years",
+   "cost": "Not available for sale",
+   "hyperdrive_multiplier": "x2",
+   "hyperdrive_backup": "x10",
+   "nav_computer": "Yes",
+   "maneuverability": "1D",
+   "space": 6,
+   "atmosphere": "",
+   "hull": "6D",
+   "shields": "3D",
+   "sensors": {
+    "passive": "50/1D",
+    "scan": "100/3D",
+    "search": "200/4D",
+    "focus": "6/4D+2"
+   },
+   "weapons": [
+    {
+     "name": "40 Heavy Turbolaser Batteries",
+     "fire_arc": "20 front, 10 left, 10 right",
+     "crew": "2",
+     "skill": "Capital ship gunnery",
+     "fire_control": "0D",
+     "space_range": "3-15/35/75",
+     "atmo_range": "6-30/70/150 km",
+     "damage": "8D"
+    },
+    {
+     "name": "40 Heavy Turbolaser Cannons",
+     "fire_arc": "10 front, 10 left, 10 right, 10 back",
+     "crew": "2",
+     "skill": "Capital ship gunnery",
+     "fire_control": "1D",
+     "space_range": "3-15/35/75",
+     "atmo_range": "6-30/70/150 km",
+     "damage": "6D"
+    },
+    {
+     "name": "20 Ion Cannons",
+     "fire_arc": "5 front, 5 left, 5 right, 5 back",
+     "crew": "3",
+     "skill": "Capital ship gunnery",
+     "fire_control": "3D",
+     "space_range": "1-10/25/50",
+     "atmo_range": "2-20/50/100 km",
+     "damage": "5D"
+    },
+    {
+     "name": "10 Tractor Beam Projectors",
+     "fire_arc": "4 front, 2 left, 2 right, 2 back",
+     "crew": "4",
+     "skill": "Capital ship gunnery",
+     "fire_control": "4D",
+     "space_range": "1-5/15/30",
+     "atmo_range": "2-10/30/60 km",
+     "damage": "6D"
+    }
+   ],
+   "capsule": "The Republic-class Star Destroyer is Walex Blissex's follow-up design to his classic Victory-class Star Destroyer. It is smaller than his daughter's Imperial-class design, but retains Blissex's trademark efficiency. Two Republics can be produced for the cost of an Imperial, with about one-fifth the crew complement and 20 percent more firepower than the Imperial I model. Although still outmatched in terms of raw firepower by the Imperial II model and gargantuan Super Star Destroyer, the Republic can hold its own against any other Star Destroyer, heavy cruiser or host of smaller ships. In addition to its considerable combat outfitting, the Republic carries a full wing of long-range starfighters and is able to transport an average ground regiment."
   }
  ],
- "Named Modified Capital Cruisers & SDs": [],
+ "Named Modified Capital Cruisers & SDs": [
+  {
+   "name": "Mon Remonda",
+   "craft": "Mon Calamari MC80B Star Cruiser",
+   "type": "Heavy assault star cruiser",
+   "affiliation": "New Republic",
+   "era": "Rebellion",
+   "source": "WEG40139 Cracken's Threat Dossier p.46",
+   "price_new": "Not available for sale",
+   "price_used": "",
+   "scale": "Capital",
+   "length": "1,200 meters",
+   "skill": "Capital ship piloting: MC80B",
+   "crew": "5,156, gunners: 246, skeleton: 1,230/+10",
+   "crew_skill": "Astrogation 4D+2*, capital ship gunnery 5D+1*, capital ship piloting 6D*, capital ship shields 5D*, sensors 4D* (*Like the MC80, the Mon Remonda is designed to give Mon Calamari their +1D bonus for operating in moist environments. These skill levels do not reflect these bonuses.)",
+   "passengers": "1,200 (troops)",
+   "cargo": "15,000 metric tons",
+   "consumables": "1.5 years",
+   "hyperdrive": "x1",
+   "hyperdrive_backup": "x6",
+   "nav_computer": "Yes",
+   "maneuverability": "2D+2",
+   "space": "7",
+   "atmosphere": "",
+   "hull": "8D",
+   "shields": "4D*",
+   "of_note": "Flagship of General Han Solo during the offensive campaign against Warlord Zsinj. One of the first MC80B cruisers to enter service, essentially a refitted MC80 with superior shielding and a reinforced hull. Advanced Backup Shields: The Mon Remonda has an advanced set of backup shields (8D). When a die of shields is lost, the shield operators can make an Easy capital ship shields roll to use one of the backup dice to bring the shields back to a full 4D. Designed for Mon Calamari physiology — air slightly more damp than standard, displays and controls optimized for Mon Calamari, making human and other alien species' stays quite uncomfortable. Newer, more streamlined design than the MC80.",
+   "sensors_passive": "50/1D",
+   "sensors_scan": "65/2D+1",
+   "sensors_search": "115/3D",
+   "sensors_focus": "5/4D",
+   "weapons": [
+    {
+     "name": "48 Turbolaser Batteries",
+     "fire_arc": "12 front, 12 left, 12 right, 12 back",
+     "crew": "1 (12), 2 (10), 3 (26)",
+     "skill": "Capital Ship Gunnery",
+     "fire_control": "2D",
+     "space_range": "3-15/35/75",
+     "atmo_range": "6-30/70/150 km",
+     "damage": "4D"
+    },
+    {
+     "name": "20 Ion Cannon Batteries",
+     "fire_arc": "8 front, 4 left, 3 right, 4 back",
+     "crew": "1 (6), 4 (6), 12 (8)",
+     "skill": "Capital Ship Gunnery",
+     "fire_control": "3D",
+     "space_range": "1-10/25/50",
+     "atmo_range": "2-20/50/100 km",
+     "damage": "3D"
+    }
+   ]
+  }
+ ],
  "Stock Capital Super Ships": [
   {
    "rank": 1,
@@ -31826,7 +32401,71 @@ const STARSHIP_DATA = {
    ]
   }
  ],
- "Named Modified Capital Super Ships": [],
+ "Named Modified Capital Super Ships": [
+  {
+   "name": "Star Home",
+   "craft": "Star Home",
+   "type": "Custom-built Royal Conveyance",
+   "affiliation": "Neutral",
+   "era": "Rebellion",
+   "source": "WEG40139 Cracken's Threat Dossier p.49",
+   "price_new": "Not available for sale",
+   "price_used": "",
+   "scale": "Capital",
+   "length": "2,500 meters",
+   "skill": "Capital starship piloting: Star Home",
+   "crew": "9,500, gunners: 112, skeleton: 25,000/+10",
+   "crew_skill": "Astrogation 5D, capital ship gunnery 5D+2, capital starship piloting: Star Home 6D, capital ship shields 6D+2, communications 5D+2, sensors 4D+2",
+   "passengers": "1,000",
+   "starfighter_complement": "60 Miy'til starfighters",
+   "cargo": "25,000 metric tons",
+   "consumables": "4 years",
+   "hyperdrive": "x3",
+   "hyperdrive_backup": "x10",
+   "nav_computer": "Yes (slave rigged adds +1D to astrogation)",
+   "maneuverability": "1D+2",
+   "space": "3",
+   "atmosphere": "N/A",
+   "hull": "3D+2",
+   "shields": "4D+2",
+   "of_note": "Built over four millennia ago as an exact replica of the Queen Mother's Castle of Per'Agthra on Hapes. Chassis of black basalt, presumably the remains of a celestial body indigenous to the Hapan Cluster. The 'bedrock' holds the ship's systems and the castle itself. Castle features the Queen Mother's quarters, hearing room, meeting rooms, and guest chambers — walls of dark stone convey the impression of a fortress rather than a starship. Many towers covered in a crystalline dome providing an unobstructed view of open space. Basalt hollowed out and reinforced by a molecular shielding system — both castle and basalt are extremely delicate, but shielding provides enough protection to withstand a moderate battle while making calculations for escape. One-third of the basalt base houses six power generators powering 24 sublight drives and 4 slaved hyperspace engines. Greatest military threat is the complement of 60 Miy'til starfighters. Hapan Turbolaser Technology: Once fired, a single turbolaser takes three times the normal recharge time of standard Imperial turbolasers (Fire Rate: 1/3).",
+   "sensors_passive": "75/2D",
+   "sensors_scan": "150/3D+1",
+   "sensors_search": "300/4D+2",
+   "sensors_focus": "8/7D",
+   "weapons": [
+    {
+     "name": "20 Hapan Turbolaser Batteries",
+     "fire_arc": "4 on each of the Star Home's 5 'legs'",
+     "crew": "3",
+     "skill": "Capital Ship Gunnery",
+     "fire_control": "1D+2",
+     "fire_rate": "1/3",
+     "space_range": "3-15/35/75",
+     "damage": "7D"
+    },
+    {
+     "name": "20 Laser Cannons",
+     "fire_arc": "4 on each of the Star Home's 5 'legs'",
+     "crew": "2",
+     "scale": "Starfighter",
+     "skill": "Capital Starship Gunnery",
+     "fire_control": "2D",
+     "space_range": "1-3/12/25",
+     "damage": "5D"
+    },
+    {
+     "name": "6 Tractor Beam Emplacements",
+     "fire_arc": "1 on each of the Star Home's 5 'legs', 1 turret mounted ventrally",
+     "crew": "2",
+     "skill": "Capital Ship Gunnery",
+     "fire_control": "4D",
+     "space_range": "1-5/15/30",
+     "damage": "6D"
+    }
+   ]
+  }
+ ],
  "Stock Capital Carriers": [
   {
    "rank": 6,

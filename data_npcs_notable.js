@@ -38893,5 +38893,222 @@ const NOTABLE_NPCS = [
     capsule: "Gethzerion was the second child born to Augwynne, Clan Mother of Singing Mountain, and by far the most powerful of three sisters — she could even cast some spells silently, something only her mother and Clan Protector Tannith could do. Her fatal flaw was pride. When she cheated to lose a draw of lots for war chief to her sister Kara'Teel, she coveted her mother's position. After Baruka refused to challenge Augwynne, Gethzerion and her friend Baritha planned Augwynne's assassination in detail — a telekinetic tug to send boulders crashing down on the Clan Mother. But it was Kara'Teel, not Augwynne, who paid the price, sacrificing her life to push her mother from the boulder's path. Exiled forever from Singing Mountain, Gethzerion and Baritha wandered Dathomir until ambushed by three outcast Witches — they dispatched two and spared the third in exchange for eternal loyalty, founding the Nightsister Clan. As Gethzerion's fame grew, so did defections — even the powerful Ocheron and Augwynne's own eldest daughter Baruka joined. The Imperial prison fell before their might. But Gethzerion refused to account for the 'weaker' Allyan ways, and though she thought she had killed Luke Skywalker, he returned stronger than ever. Gethzerion managed to escape Dathomir's orbit but was killed when Warlord Zsinj's forces destroyed her ship.",
     source: "WEG40139 Cracken's Threat Dossier p.31-32"
   }
+  ,{
+    name: "Prince Isolder (8 ABY)",
+    species: "Hapan",
+    system: "Hapes",
+    location: "Hapes — Fountain Palace",
+    affiliations: ["Neutral"],
+    role: "Chume'da of the Hapan Empire",
+    type: "Chume'da of the Hapan Empire",
+    stats: {
+      DEXTERITY: { base: "3D+2", skills: { "Blaster": "7D", "Blaster: blaster pistol": "8D+1", "Blaster: gun of command": "7D+2", "Brawling parry": "8D+2", "Dodge": "7D", "Grenade": "5D+1", "Melee combat": "5D+1", "Melee parry": "6D", "Melee parry: energy shield": "8D", "Running": "7D", "Thrown weapons": "6D+1" } },
+      KNOWLEDGE: { base: "3D+1", skills: { "Alien species": "7D", "Bureaucracy": "4D+1", "Bureaucracy: Hapan Empire": "12D+2", "Business": "11D", "Business: piracy": "7D", "Cultures": "7D", "Intimidation": "6D", "Languages": "8D", "Planetary systems": "7D+1", "Streetwise": "7D", "Survival": "7D+2", "Tactics: capital ship": "5D", "Tactics: starfighters": "6D+1", "Value": "9D", "Willpower": "7D" } },
+      MECHANICAL: { base: "3D", skills: { "Astrogation": "8D", "Beast riding": "6D", "Capital ship gunnery": "6D", "Capital ship piloting": "6D+1", "Communications": "6D", "Repulsorlift operation": "7D+2", "Space transports": "5D+1", "Starfighter piloting": "8D+2", "Starfighter piloting: Storm": "10D+1", "Starfighter gunnery": "8D", "Starship shields": "6D" } },
+      PERCEPTION: { base: "3D+2", skills: { "Bargain": "7D", "Command": "10D", "Command: Hapan troops": "12D+2", "Con": "4D", "Forgery: ship IDs": "6D", "Forgery: Imperial port codes": "7D", "Hide": "6D", "Persuasion": "8D", "Search": "6D", "Sneak": "6D+1" } },
+      STRENGTH: { base: "3D+1", skills: { "Brawling": "9D", "Climbing/jumping": "4D+2", "Lifting": "7D+1", "Stamina": "7D+1", "Swimming": "6D" } },
+      TECHNICAL: { base: "2D", skills: { "Computer programming/repair": "5D", "Demolition": "3D+1", "First aid": "6D+1", "Security": "8D", "(A) Starfighter engineering": "2D", "Starfighter repair": "7D+2", "Starship weapons repair": "7D+1" } }
+    },
+    specialAbilities: "Attractiveness: +1D bonus to any bargain, con, command, or persuasion rolls made against a non-Hapan human of the opposite sex. Vision: All low-light conditions are treated as complete darkness, adding +4D to the difficulty for all ranged attacks.",
+    forcePoints: 3,
+    characterPoints: 12,
+    move: 11,
+    equipment: "Blaster pistol (4D), Chume'da robes, vibroblade, video/scrambler comlink, Charubah personal energy shield",
+    capsule: "Prince Isolder was born on Hapes approximately 25 standard years ago, son of Queen Mother Ta'a Chume. Though a prince by birth, Isolder never considered himself heir — that honor was reserved for his older brother Kalen, the Chume'da. Isolder spent his adolescence practicing weapons and excelling in physical arts, entering Hapan pilot training at age eleven and graduating as a flight officer at fifteen — the youngest in Hapan history. At nineteen, his brother Kalen was captured and executed by pirates during a tour near the Terephon system. Suspecting his aunt Seccah but lacking proof, Isolder disappeared, disguising himself as a roaming pirate to find the killer. He discovered Captain Harravan was responsible, and after years of privateering adventures across the galaxy, located and captured the Pirate King in a terrific starfighter battle. Harravan was killed in prison before he could be questioned. When Princess Leia Organa visited Hapes to negotiate against Warlord Zsinj, Isolder asked Ta'a Chume to arrange their marriage. The flight to Dathomir followed, where Han Solo won Leia and Isolder met Teneniel Djo, the Dathomir Witch he would wed instead. NRI considers Hapes a valuable but potentially unreliable ally — Isolder and Djo are friends, but the xenophobic Hapan society could turn isolationist again.",
+    source: "WEG40139 Cracken's Threat Dossier p.33"
+  }
+  ,{
+    name: "General Melvar (8 ABY)",
+    species: "Human",
+    system: "Dathomir",
+    location: "Dathomir — Imperial Prison",
+    affiliations: ["Galactic Empire"],
+    role: "Raptor General, Zsinj's Second-in-Command",
+    type: "Raptor General",
+    stats: {
+      DEXTERITY: { base: "4D", skills: { "Blaster": "5D+1", "Dodge": "5D", "Melee combat": "5D", "Melee parry": "4D+1", "Running": "5D", "Thrown weapons": "4D" } },
+      KNOWLEDGE: { base: "3D", skills: { "Bureaucracy: Zsinj's Empire": "7D", "Intimidation": "7D+2", "Intimidation: interrogation": "9D", "Streetwise": "5D+1", "Tactics: ground assault": "6D+1" } },
+      MECHANICAL: { base: "3D", skills: { "Astrogation": "4D", "Beast riding": "5D", "Capital ship piloting": "4D+1", "Capital ship gunnery": "3D+2", "Space transports": "4D" } },
+      PERCEPTION: { base: "3D+1", skills: { "Bargain": "5D", "Command": "6D", "Command: Raptors": "12D", "Persuasion": "6D+1", "Search": "6D", "Sneak": "6D" } },
+      STRENGTH: { base: "3D", skills: { "Brawling": "5D" } },
+      TECHNICAL: { base: "2D", skills: {} }
+    },
+    specialAbilities: "Platinum Fingernails: Melvar is equipped with costly cuticle implants that grant him STR+1D to damage when using his brawling skill. Melvar has cut himself several times accidentally, and consequently has several white scars on his face to prove it.",
+    forcePoints: 0,
+    characterPoints: 5,
+    move: 10,
+    equipment: "Blaster pistol (4D, 3-10/30/120), platinum fingernails",
+    capsule: "General Melvar is one example of the many psychopaths the Empire called 'patriotic soldiers.' Originally a member of an Imperial Intelligence Destab team, Melvar proved too vicious for even that group — although sadism is often considered a Destab virtue. Personnel records captured after the Battle of Selaggis indicate he was considered a 'tactical liability' by his fellow Destab agents. His psychological profile indicates a grasping, evil man whose only pleasures came from inflicting pain. Imperial Intelligence transferred him to IntCon branch, and eventually he was stationed aboard the Star Destroyer Iron Fist. Promoted alongside Zsinj after a successful attack on the Nightsisters of Dathomir, Melvar used his bonus to purchase ten cybernetic cuticle implants giving his hands the appearance of claws. He attained the rank of General, serving as Zsinj's personal secretary and second-in-command. He was architect of the Raptor program and occasionally accompanied these fearsome soldiers on missions. Melvar's reign ended on Dathomir when he was executed by Nightsister Gethzerion. NRI assessment: had he survived, he could have easily taken Zsinj's place as the next Warlord.",
+    source: "WEG40139 Cracken's Threat Dossier p.35"
+  }
+  ,{
+    name: "Zsinj's Raptor Commando",
+    species: "Human",
+    system: "Dathomir",
+    location: "Dathomir — Imperial Prison",
+    affiliations: ["Galactic Empire"],
+    role: "Warlord Zsinj's Personal Shock Troop",
+    type: "Generic Template",
+    stats: {
+      DEXTERITY: { base: "4D+1", skills: { "Blaster": "6D", "Blaster: blaster rifle": "6D+2", "Dodge": "5D", "Grenade": "7D", "Melee combat": "5D" } },
+      KNOWLEDGE: { base: "3D", skills: { "Intimidation": "6D", "Law enforcement: Imperial law": "4D+1" } },
+      MECHANICAL: { base: "3D+2", skills: {} },
+      PERCEPTION: { base: "2D", skills: { "Search": "6D", "Sneak": "6D+2" } },
+      STRENGTH: { base: "3D", skills: { "Brawling": "4D+1", "Brawling: martial arts": "6D+2" } },
+      TECHNICAL: { base: "2D", skills: { "Demolitions": "7D" } }
+    },
+    specialAbilities: "Story Factors — Loyal: The Raptors are as loyal to Zsinj as the stormtroopers were to the Emperor. They cannot be bargained with or bribed, though a good old fashioned con has been known to work on occasion.",
+    forcePoints: 0,
+    characterPoints: 2,
+    move: 10,
+    equipment: "Raptor armor (+1D physical and energy, all locations, no Dexterity penalty), blaster pistol (4D), blaster rifle (5D), vibroblade (STR+3D, moderate)",
+    capsule: "The Raptors were Warlord Zsinj's answer to the post-Endor stormtrooper shortage. A deadly special forces unit made up of marine commandos dedicated to spreading terror, their primary mission was infiltration and subsequent destruction of hostile planetary forces. They also served as Zsinj's secret police force, holding conquered planetary governors accountable. On more than a thousand worlds, the faceless black uniform of Zsinj's Raptors inspired fear. Each Raptor is a qualified demolitions expert, skilled in blaster weapons, and highly proficient in martial arts. Masters of silent combat who work best operating in the shadows. Though most were captured after Zsinj's defeat, a few managed to escape and are presumed to be linking up with remaining Imperial forces.",
+    source: "WEG40139 Cracken's Threat Dossier p.36-37"
+  },
+  {
+    name: "Mother Rell (8 ABY)",
+    species: "Human",
+    system: "Dathomir",
+    location: "Dathomir — Singing Mountain Clan",
+    affiliations: ["Neutral"],
+    role: "Ancient Witch, Former Leader of Singing Mountain Clan",
+    type: "Ancient Witch",
+    stats: {
+      DEXTERITY: { base: "1D", skills: {} },
+      KNOWLEDGE: { base: "2D", skills: { "Cultures: Dathomir Witches": "4D", "Law enforcement: the Book of Law": "4D" } },
+      MECHANICAL: { base: "0D", skills: {} },
+      PERCEPTION: { base: "2D", skills: {} },
+      STRENGTH: { base: "1D+2", skills: {} },
+      TECHNICAL: { base: "0D", skills: {} }
+    },
+    specialAbilities: "Force-sensitive. Due to her extreme age, Mother Rell has lost most of her ability to function without aid. She no longer remembers any of the spells that once made her powerful.",
+    forcePoints: 16,
+    characterPoints: 6,
+    move: 3,
+    equipment: "Robes, blanket",
+    capsule: "Little is known of Mother Rell, the ancient leader of the Singing Mountain Clan on Dathomir. According to Jedi Skywalker, Mother Rell had some dealings with Jedi of the Old Republic, including Skywalker's own teacher, Yoda. She was rumored to be over 300 years old. The extent of her powers is not known, though her extreme age has robbed her of most ability to function without aid. NRI reports that a recent transmission from Dathomir via the Hapan Embassy on Coruscant announced that Mother Rell has died. Captain Lathe recommends NRI agents keep a watchful eye on the Singing Mountain Clan, as the next leader may not be as benevolent as Rell was. Height: 1.3 meters.",
+    source: "WEG40139 Cracken's Threat Dossier p.37"
+  }
+  ,{
+    name: "Tosh (8 ABY)",
+    species: "Dathomirian Rancor",
+    system: "Dathomir",
+    location: "Dathomir — Singing Mountain Clan",
+    affiliations: ["Neutral"],
+    role: "Herd-Mother of the Singing Mountain Rancor Tribe",
+    type: "Dathomirian Rancor",
+    stats: {
+      DEXTERITY: { base: "4D", skills: { "Brawling parry": "5D+2", "Dodge": "4D+2", "Melee combat": "5D+2", "Melee parry": "5D" } },
+      KNOWLEDGE: { base: "1D", skills: { "Languages: Symbolic writing": "5D" } },
+      MECHANICAL: { base: "0D", skills: {} },
+      PERCEPTION: { base: "1D", skills: {} },
+      STRENGTH: { base: "7D", skills: { "Brawling": "9D" } },
+      TECHNICAL: { base: "1D", skills: {} }
+    },
+    specialAbilities: "Scale: Creature. Armor: +3D protection versus physical and energy attacks. Claws: STR+3D damage. Teeth: STR+5D damage. Walker-scale creature. Melee weapons (clubs, trees): one round to use, STR+1 Walker-scale damage. Thrown weapons (boulders, nets, trees): one round to use, 2D Walker-scale damage, range 20-30/50/100m. Symbolic writing: rancors use this skill to understand simple commands written by the Witches of Dathomir; a rating of 4D or higher means the rancor can write the language as well. Story Factors — Evolved: Dathomirian rancors have evolved over thousands of years; rancors encountered off Dathomir will most likely not be identical. Domesticated: most of Dathomir's rancors have been domesticated by the human clans and are treated as loved pets, even friends.",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 25,
+    equipment: "",
+    capsule: "Tosh is the herd-mother of the Singing Mountain rancor tribe, the largest and oldest rancor ever catalogued at 9 meters tall. She has protected the Singing Mountain Witches her entire life, learning much from them. Tosh is the first of her kind to learn and use a written language, which she has used to teach her daughters and sons their history and the histories of the rancors' ancestors. When the Heroes of Yavin arrived on Dathomir, Tosh assisted them by taking them to the Imperial prison that was home to the Nightsisters. During the return to Singing Mountain, Imperial AT-STs attacked the group — Tosh's daughter Dhum was killed by the advancing walkers. Tosh retaliated by ripping the small vehicle's 'head' apart. The Battle of Singing Mountain had many casualties, including rancors who fought alongside the Witches. Tosh and her herd continue to assist in rebuilding the fortress. NRI Captain Lathe finds it difficult to believe all Dathomirian rancors are as civilized as Tosh, having personally witnessed the damage she is capable of — the AT-ST drivers had no idea what was happening to them.",
+    source: "WEG40139 Cracken's Threat Dossier p.38"
+  }
+  ,{
+    name: "Warlord Zsinj (8 ABY)",
+    species: "Human",
+    system: "Dathomir",
+    location: "Dathomir — Iron Fist",
+    affiliations: ["Galactic Empire"],
+    role: "Imperial Warlord",
+    type: "Imperial Warlord",
+    stats: {
+      DEXTERITY: { base: "3D+2", skills: { "Blaster": "4D", "Bows: longbow": "6D", "Dodge": "4D", "Melee combat": "5D", "Melee parry": "4D+1", "Running": "5D", "Thrown weapons": "4D" } },
+      KNOWLEDGE: { base: "3D", skills: { "Alien species": "6D", "Bureaucracy: Zsinj's Empire": "11D+1", "Intimidation": "7D", "Languages": "6D", "Languages: curses": "12D+2", "Law enforcement: Imperial law": "4D+1", "Planetary systems": "6D+1", "Streetwise": "4D+2", "Survival": "4D+2", "Tactics: fleets": "6D", "Tactics: starfighters": "5D+1", "Tactics: ground assault": "5D", "Value": "7D" } },
+      MECHANICAL: { base: "4D", skills: { "Astrogation": "4D+1", "Beast riding": "5D", "Capital ship piloting": "4D+1", "Capital ship gunnery": "4D+1", "Space transports": "4D+1" } },
+      PERCEPTION: { base: "2D", skills: { "Bargain": "3D+1", "Command": "8D", "Command: Raptors": "11D", "Con": "5D", "Persuasion": "9D+1", "Search": "4D", "Sneak": "4D+2" } },
+      STRENGTH: { base: "3D", skills: { "Brawling": "3D+2" } },
+      TECHNICAL: { base: "2D+1", skills: { "Capital ship repair": "4D", "(A) Starfighter engineering": "3D+2", "Starfighter repair": "7D" } }
+    },
+    specialAbilities: "Lying: Despite years of practice, Zsinj has a hard time being convincing when he lies. He receives a -2D penalty to any con attempt.",
+    forcePoints: 0,
+    darkSidePoints: 3,
+    characterPoints: 13,
+    move: 10,
+    equipment: "Blaster pistol (4D), scepter (STR+1D, Easy difficulty)",
+    capsule: "Warlord Zsinj was a brilliant, thoroughly evil man whose combat prowess held the New Republic navy in check for years. Arrogant to a fault and reportedly a pathological liar, he was also an expert battle tactician, superior organizer, and accomplished linguist. Despite his fearsome reputation, Zsinj was almost comical in appearance — pudgy figure, balding head, and oversized moustache — typically dressed in the stark white uniform of an Imperial Grand Admiral, a rank he never actually achieved. Originally from Fondor, he entered the naval academy at minimum age and amazed tutors with his mechanical insights. Assigned a Victory-class Destroyer called the Iron Fist (originally The Brawl), he was personally awarded a Super Star Destroyer by Emperor Palpatine for stranding Gethzerion on Dathomir, and renamed the new vessel Iron Fist as well. Rather than join the Emperor's Ruling Circle on Coruscant, Zsinj consolidated his own power base in the Quelii oversector, using the Iron Fist to terrorize the Outer Rim with lightning-quick raids. His most audacious attack prompted the evacuation of New Alderaan. General Han Solo was tasked with tracking him down and ultimately bested Zsinj at the Battle of Selaggis, killing the would-be warlord. NRI warns that the bulk of Zsinj's forces remain at large.",
+    source: "WEG40139 Cracken's Threat Dossier p.39-41"
+  },
+  {
+    name: "Colonel Ejagga Pakkpekatt",
+    species: "Hortek",
+    system: "Coruscant",
+    location: "New Republic Intelligence — Special Threats Department",
+    affiliations: ["New Republic"],
+    role: "NRI Intelligence Officer",
+    type: "Named Villain/Rival",
+    stats: {
+      DEXTERITY: { base: "3D+2", skills: { "blaster": "5D", "brawling parry": "5D", "dodge": "5D+2" } },
+      KNOWLEDGE: { base: "4D", skills: { "alien species": "5D", "bureaucracy": "4D+2", "cultures": "4D+2", "intimidation": "6D+2", "languages": "5D+2", "law enforcement": "4D+1", "streetwise": "5D+1", "survival": "5D", "willpower": "6D+1" } },
+      MECHANICAL: { base: "2D", skills: { "astrogation": "3D", "communications": "4D", "sensors": "4D+1", "space transports": "3D" } },
+      PERCEPTION: { base: "4D", skills: { "command": "5D+2", "con": "5D", "investigation": "5D+1", "telepathy": "5D+2" } },
+      STRENGTH: { base: "3D", skills: { "brawling": "4D+2", "stamina": "4D" } },
+      TECHNICAL: { base: "1D+1", skills: { "first aid": "2D+2", "security": "4D" } }
+    },
+    specialAbilities: "Hortek telepathy: Horteks are moderately telepathic, an ability originally developed to predict the actions of prey. This telepathy works just as the Force power receptive telepathy does, but for Hortek it is a Perception skill. Like receptive telepathy, Hortek telepathy is modified by relationship and proximity. Horteks also use their telepathy skill to resist the telepathic probes of others.",
+    forcePoints: 3,
+    characterPoints: 15,
+    move: "9",
+    equipment: "Datapad, blaster (4D), comlink",
+    capsule: "Colonel Ejagga Pakkpekatt is a veteran Intelligence officer with a distinguished career in the New Republic and in the Alliance. He began his career as an Alliance interrogation officer, using his natural telepathic skill and intimidating manner to glean information from recalcitrant Imperial prisoners. He was promoted and transferred after the re-establishment of the New Republic to New Republic Intelligence's Special Threats department. He was appointed head of the vagabond chase team for his methodical approach and stalking nature. He is usually direct and pointed, although his time outwitting Imperial officers has turned him into a shrewd con artist when need be. Very intimidating even when relaxed, with a moderate paranoid streak — his immediate reaction to General Calrissian's penetration of the vagabond was to accuse him of withholding information. Dedicated to his duty and likely to go far in the NRI.",
+    source: "WEG40139 Cracken's Threat Dossier p.69"
+  },
+  {
+    name: "Nil Spaar",
+    species: "Yevetha",
+    system: "N'zoth",
+    location: "N'zoth — Giat Nor",
+    affiliations: ["Neutral"],
+    role: "Viceroy of the Duskhan League",
+    type: "Named Villain/Rival",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "5D", "brawling parry": "3D+1", "dodge": "3D+2" } },
+      KNOWLEDGE: { base: "2D", skills: { "bureaucracy: Yevethan": "4D", "intimidation": "6D", "survival": "4D", "tactics: Yevethan guerilla": "6D", "willpower": "5D" } },
+      MECHANICAL: { base: "2D", skills: {} },
+      PERCEPTION: { base: "4D", skills: { "command": "6D", "con": "6D+1", "investigation": "5D+2", "persuasion": "4D+2" } },
+      STRENGTH: { base: "4D", skills: { "brawling": "7D", "stamina": "5D" } },
+      TECHNICAL: { base: "3D", skills: {} }
+    },
+    specialAbilities: "Technical Aptitude: Yevethans have an innate talent for engineering. Yevethan technicians can improve and copy any device they have an opportunity to study, assuming the tech has an appropriate skill. This examination takes 1D days. Once learned, the technician can apply +2D to repairing or modifying such devices. These modifications are highly reliable and unlikely to break down. Dew Claw: Yevethan males have large 'dew claws' that retract fully into their wrist. The claws do STR+1D damage and are usually used on a vulnerable spot, such as the throat.",
+    forcePoints: 1,
+    characterPoints: 18,
+    move: "10",
+    equipment: "Ceremonial scarlet robes, private processional car, thrustship Armadia, SSD Pride of Yevetha, underlings and minions",
+    capsule: "Nil Spaar is the Viceroy of the Duskhan League, also called the Blessed. By his own word, he was the leader of the Yevethan underground and involved in driving the Empire out of the Koornacht Cluster — though this claim is questionable, since the Empire withdrew during a period of general retreat and regrouping. Nil Spaar demonstrated great political skill, effectively manipulating the New Republic Senate's factions into stalemating the President long enough to seize coveted territory and consolidate his hold. Precisely what happened to Nil Spaar in the moments before the Black Fleet exited the battle zone is unknown. His fate remains unclear.",
+    source: "WEG40139 Cracken's Threat Dossier p.70"
+  },
+  {
+    name: "General Etahn A'baht",
+    species: "Dornean",
+    system: "Coruscant",
+    location: "New Republic Defense Force — Fifth Fleet",
+    affiliations: ["New Republic"],
+    role: "Fleet Commander",
+    type: "Named Ally/Contact",
+    stats: {
+      DEXTERITY: { base: "2D+2", skills: { "blaster": "3D+2", "dodge": "4D", "melee combat": "3D+1", "melee parry": "3D+2" } },
+      KNOWLEDGE: { base: "3D+1", skills: { "alien species": "4D", "bureaucracy": "4D+2", "cultures": "3D+2", "intimidation": "4D", "languages": "4D", "planetary systems": "4D", "streetwise": "4D", "survival": "3D+2", "tactics": "4D+2", "tactics: capital ships": "6D+2", "willpower": "5D" } },
+      MECHANICAL: { base: "3D", skills: { "astrogation": "5D", "capital ship gunnery": "4D", "capital ship piloting": "4D", "communications": "4D+2", "sensors": "4D", "space transports": "4D" } },
+      PERCEPTION: { base: "4D", skills: { "bargain": "4D+1", "command": "5D", "con": "4D+1", "persuasion": "4D+2" } },
+      STRENGTH: { base: "2D", skills: { "brawling": "3D" } },
+      TECHNICAL: { base: "3D", skills: { "computer programming/repair": "4D", "first aid": "4D", "security": "4D+2" } }
+    },
+    specialAbilities: "",
+    forcePoints: 2,
+    characterPoints: 14,
+    move: "10",
+    equipment: "Datapad, comlink, security clearance card, resources of Fifth Fleet",
+    capsule: "General Etahn A'baht is the Dornean commander of the New Republic Fifth Fleet and one of the few flag rank officers who did not serve with the Alliance. Dornea did not join the New Republic until after the second fall of the Empire. Nevertheless, the Dornean government spent years engaging the Empire in a protracted cold war. Dornean systems are remote enough and defended well enough to make invasion difficult, and the Imperial Navy never sent sufficient force to crush local defenses. When the Navy suddenly found itself pressed by Alliance forces, the Dornean Navy — only 80 vessels strong — launched an effective active campaign that wiped Imperial ships from Dornean skies. A'baht was the principal officer in these campaigns and was recruited into the New Republic Navy when Dornea joined. He was allowed to keep his title of General as a courtesy and took command of the new Fifth Fleet for practical reasons: he was more familiar than any Alliance officer with integrated fleet tactics. A skilled commander with years more experience than most flag officers. Dorneans live for up to three hundred years, and A'baht is only in his middle age. He commands from his flagship, the fleet carrier Intrepid.",
+    source: "WEG40139 Cracken's Threat Dossier p.70-71"
+  }
 // --- END OF NOTABLE_NPCS ---
 ];

@@ -910,6 +910,66 @@ const FORCE_POWERS_DATA = [
   "keepUp": "No",
   "effect": "Does not need to be learned \u2014 any Jedi with 9D+ total in Force skills can attempt it at the moment of death. The Jedi calms mind and body (Difficult control), then reaches out tracing the Force (Difficult sense). On success, the spirit exits the body and becomes one with the Force; the body fades into nothingness. The Jedi can make visitations to close friends equal to their Force Points at death. Duration of each visitation = combined sense + alter + control roll in minutes. At GM discretion, only Force-sensitive characters may witness visitations. After death, the Jedi cannot influence the material world beyond visitations.",
   "source": "D6 Holocron"
+ },
+ {
+  "number": 77,
+  "name": "Immerse",
+  "category": "Control",
+  "prereqs": "Fallanassi only",
+  "darkSide": false,
+  "difficulty": "Moderate if relaxed and focused without distractions; Difficult if under stress or distracted; Very Difficult if in general danger; Heroic if in direct immediate danger.",
+  "timeToUse": "",
+  "keepUp": "Yes",
+  "effect": "Fallanassi White Current power. Allows the user to vanish from the perceptions of others. Successful use leaves the user undetectable by any known means. The user may move without being seen, heard or otherwise sensed by organic or artificial means. This is not a mind trick \u2014 the user causes the White Current to well up and hide the user.",
+  "source": "WEG40139 Cracken's Threat Dossier p.58"
+ },
+ {
+  "number": 78,
+  "name": "Immerse Another",
+  "category": "Control & Alter",
+  "prereqs": "Fallanassi only, 77",
+  "darkSide": false,
+  "difficulty": "Control: Moderate if relaxed and focused without distractions, Difficult if under stress or distracted, Very Difficult if in general danger, Heroic if in direct immediate danger. Alter: As Control Difficulty, modified by proximity and relationship.",
+  "timeToUse": "",
+  "keepUp": "Yes",
+  "effect": "Fallanassi White Current power. Allows a user to immerse another in the White Current. The immersed other may be almost anything: a person, ship, town, city, planet, or star system. The immersed person or object is undetectable while the power is kept up.",
+  "source": "WEG40139 Cracken's Threat Dossier p.58"
+ },
+ {
+  "number": 79,
+  "name": "Scribing",
+  "category": "Control & Alter",
+  "prereqs": "Fallanassi only, 80",
+  "darkSide": false,
+  "difficulty": "Control: Easy. Alter: Moderate.",
+  "timeToUse": "",
+  "keepUp": "No",
+  "effect": "Fallanassi White Current power. Required Power: Sense Scribing. Allows the user to make a mark or inscription undetectable by mundane or artificial senses. Only an adept trained to sense these marks can detect and uncover the scribing. Usually used to leave a trail for another Fallanassi to follow. Scribing is persistent and may continue even if the surface scribed on is defaced or partially destroyed (gamemaster's discretion).",
+  "source": "WEG40139 Cracken's Threat Dossier p.58"
+ },
+ {
+  "number": 80,
+  "name": "Sense Scribing",
+  "category": "Sense",
+  "prereqs": "Fallanassi only",
+  "darkSide": false,
+  "difficulty": "Moderate, modified by relationship to the scriber.",
+  "timeToUse": "",
+  "keepUp": "Yes",
+  "effect": "Fallanassi White Current power. Used to first detect, then uncover Fallanassi scribing. Requires two rolls: the first to detect the scribing exists, the second to uncover it. Once uncovered, the scribing may be read plainly by the user.",
+  "source": "WEG40139 Cracken's Threat Dossier p.58"
+ },
+ {
+  "number": 81,
+  "name": "Image",
+  "category": "Control, Sense & Alter",
+  "prereqs": "Fallanassi only",
+  "darkSide": false,
+  "difficulty": "Control: Moderate. Sense: Easy. Alter: Easy if the image is very familiar, Moderate if somewhat familiar, Difficult if the user has only seen the basis of the image a few times, Very Difficult if the user has not seen a basis for the image. Modified by proximity.",
+  "timeToUse": "",
+  "keepUp": "Yes",
+  "effect": "Fallanassi White Current power. Allows the user to create a fully realistic, three-dimensional image that is visually, audially, behaviorally, and in virtually every other way convincing. The image behaves according to the knowledge of the user; if the user has not seen a particular person, object or action, the image may fail or become suddenly unconvincing.",
+  "source": "WEG40139 Cracken's Threat Dossier p.58"
  }
 // --- END OF FORCE_POWERS_DATA ---
 ];
