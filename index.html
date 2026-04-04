@@ -1731,7 +1731,44 @@ color:var(--text-dim);min-width:35px;text-align:right;
 
       <div class="card" id="gm-dathomir" style="border-color:#2e7d32">
         <div class="card-title" style="display:flex;justify-content:space-between;align-items:center;color:#4caf50">⟐ Dathomir Magic — Allyan Spell Reference<a href="#gm-top" style="font-size:9px;color:var(--text-dim);text-decoration:none">↑ Top</a></div>
-        <div style="font-size:10px;color:var(--text-dim);margin-bottom:10px;border-left:2px solid #2e7d32;padding-left:8px;font-style:italic">The Witches of Dathomir use the Force through ritualized "spells" — chanting, singing, dancing, and written incantations passed down from the exiled Jedi Allya. Each spell corresponds to a standard Force power. Nightsisters use the same spells but channel the Dark Side.</div>
+        <div style="font-size:10px;color:var(--text-dim);margin-bottom:10px;border-left:2px solid #2e7d32;padding-left:8px;font-style:italic">The Witches of Dathomir use the Force through ritualized "spells" — chanting, singing, and written incantations passed down from the exiled Jedi Allya. Unlike Jedi (who use Control, Sense, Alter), each Dathomir spell has its own separate die code advanced like any normal skill. "Allyan Magic" is the light-side tradition; "Shadow Magic" is the Nightsisters' dark-side corruption of the same spells.</div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px">
+          <!-- Learning -->
+          <div style="flex:1;min-width:155px">
+            <div style="font-family:'Exo 2',monospace;font-size:8px;color:#4caf50;letter-spacing:1px;margin-bottom:4px">TIME OF LEARNING</div>
+            <div style="font-size:10px;color:var(--text-dim);line-height:1.6">
+              <div>Requires a <span style="color:#a5d6a7">Mentor</span> who knows the spell (any proficiency). Costs <span style="color:#a5d6a7">20 CP</span> + <span style="color:#a5d6a7">10 weeks</span> uninterrupted training per spell. Each extra CP above 20 reduces training by 1 day (min 1 week). Interruption = start over + spend 20 CP again. Gains spell at <span style="color:#a5d6a7">1D</span>.</div>
+            </div>
+            <div style="font-family:'Exo 2',monospace;font-size:8px;color:#4caf50;letter-spacing:1px;margin-bottom:4px;margin-top:8px">LEARNING MULTIPLE SPELLS</div>
+            <div style="font-size:10px;color:var(--text-dim);line-height:1.7">
+              <div style="margin-bottom:2px"><span style="color:#a5d6a7">Perception</span> roll (no CP/FP). Costs &amp; time are cumulative.</div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid #1b5e20;padding:1px 0"><span>1 spell</span><span style="color:#4caf50">No roll</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid #1b5e20;padding:1px 0"><span>2 spells</span><span style="color:#4caf50">Moderate</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid #1b5e20;padding:1px 0"><span>3 spells</span><span style="color:#4caf50">Difficult</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid #1b5e20;padding:1px 0"><span>4 spells</span><span style="color:#4caf50">Very Difficult</span></div>
+              <div style="display:flex;justify-content:space-between;padding:1px 0"><span>5 spells</span><span style="color:#4caf50">Heroic</span></div>
+            </div>
+          </div>
+          <!-- Trial of Fire -->
+          <div style="flex:1;min-width:155px">
+            <div style="font-family:'Exo 2',monospace;font-size:8px;color:#ef5350;letter-spacing:1px;margin-bottom:4px">TRIAL OF FIRE (QUICK LEARNING)</div>
+            <div style="font-size:10px;color:var(--text-dim);line-height:1.6">
+              <div>Learn a spell in <span style="color:#ef5350">1 hour</span> instead of 10 weeks. Still costs <span style="color:#a5d6a7">20 CP</span>. Decision is <span style="color:#ef5350">irreversible</span>. The first 5 castings are dangerous — the Initiate must hit specific Wild Die results or the spell <span style="color:#ef5350">backfires</span> (GM discretion on severity).</div>
+            </div>
+            <div style="font-family:'Exo 2',monospace;font-size:8px;color:#ef5350;letter-spacing:1px;margin-bottom:4px;margin-top:8px">WILD DIE REQUIREMENT</div>
+            <div style="font-size:10px;color:var(--text-dim);line-height:1.9">
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid #1b5e20;padding:1px 0"><span>1st casting</span><span style="color:#ef5350">6</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid #1b5e20;padding:1px 0"><span>2nd casting</span><span style="color:#ef5350">5–6</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid #1b5e20;padding:1px 0"><span>3rd casting</span><span style="color:#ef5350">4–6</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid #1b5e20;padding:1px 0"><span>4th casting</span><span style="color:#ef5350">3–6</span></div>
+              <div style="display:flex;justify-content:space-between;padding:1px 0"><span>5th casting</span><span style="color:#ef5350">2–6</span></div>
+            </div>
+            <div style="font-family:'Exo 2',monospace;font-size:8px;color:#4caf50;letter-spacing:1px;margin-bottom:4px;margin-top:8px">ADVANCING SPELLS</div>
+            <div style="font-size:10px;color:var(--text-dim);line-height:1.6">
+              <div>Like normal skills: spend CP equal to the number before the "D". Plus <span style="color:#a5d6a7">1 day meditation per pip</span> improved. Max <span style="color:#a5d6a7">+1D per session</span>, then wait 1 week.</div>
+            </div>
+          </div>
+        </div>
         <div style="display:flex;gap:10px;flex-wrap:wrap">
           <!-- Control Spells -->
           <div style="flex:1;min-width:155px">
@@ -1792,7 +1829,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
           </div>
         </div>
         <div style="margin-top:10px;padding:8px;background:rgba(46,125,50,0.1);border:1px solid #1b5e20;border-radius:var(--radius-sm);font-size:9px;color:var(--text-dim);line-height:1.6">
-          <span style="color:#4caf50;font-family:'Exo 2',monospace;letter-spacing:1px">NIGHTSISTER NOTE:</span> Dark Side witches (Nightsisters) use the same spell names but channel anger and hatred. Lightning, Tempest, and Mimicry are especially favored by Nightsisters. A witch who uses spells fueled by the Dark Side risks corruption — same Dark Side Point rules as standard Force users. Source: WEG40018 Courtship of Princess Leia Sourcebook, WEG40139 Cracken's Threat Dossier.
+          <span style="color:#4caf50;font-family:'Exo 2',monospace;letter-spacing:1px">DARK SIDE &amp; NIGHTSISTERS:</span> No Dathomir spell automatically grants a Dark Side Point. If a Witch casts a "gray area" spell in defense of herself or others, no DSP is given. Conversely, a Nightsister can twist a heroic spell to earn one — GM discretion. Nightsisters call their tradition "Shadow Magic" and favor Lightning, Tempest, and Mimicry. <span style="color:var(--text-dim)">Relationship &amp; Proximity modifiers are the same as standard Force powers (see table above).</span> Source: WEG40018 Courtship of Princess Leia Sourcebook.
         </div>
       </div>
 
