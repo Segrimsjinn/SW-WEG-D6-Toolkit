@@ -42106,6 +42106,42 @@ const STARSHIP_DATA = {
    ],
    "source": "WEG40139 Cracken's Threat Dossier p.144",
    "capsule": "Another so-called 'Ugly' design, this patchwork starfighter is typically constructed by mating the solar panels from an early model TIE fighter onto the fuselage of an Incom X-wing. These ships are barely spaceworthy and the pilots that fly them are generally pirates or down-on-their-luck smugglers. While the X-TIE is an adequate weapon against unarmed commercial vessels, a true starfighter is sufficient to destroy 'Uglies' by the dozen."
+  },
+  {
+   "name": "Royal Mistress",
+   "type": "Medium Freighter (Modified)",
+   "category": "Transport",
+   "scale": "Starfighter",
+   "length": "",
+   "skill": "Space transports",
+   "crew": "2",
+   "crew_skill": "See Bryce-Kelley and Rypka",
+   "passengers": "",
+   "cargo_capacity": "500 metric tons",
+   "consumables": "",
+   "cost": "",
+   "hyperdrive_multiplier": "",
+   "nav_computer": "Yes",
+   "maneuverability": "2D",
+   "space": "6",
+   "atmosphere": "330; 950 kmh",
+   "hull": "6D",
+   "shields": "2D",
+   "sensors": null,
+   "weapons": [
+    {
+     "name": "1 Quad Laser Cannon (concealed)",
+     "fire_arc": "",
+     "crew": "1",
+     "skill": "Starship gunnery",
+     "fire_control": "2D",
+     "space_range": "",
+     "atmo_range": "",
+     "damage": "6D"
+    }
+   ],
+   "source": "WEG40141 Platt's Smugglers Guide p.70",
+   "capsule": "The Royal Mistress is a cumbersome-looking medium freighter belonging to Hawker Bryce-Kelley and Rypka. Despite its appearance, the ship is fast and maneuverable. The cargo bay can hold 500 metric tons, and the vessel is well-armed with a concealed quad laser cannon. The ship only requires a crew of two, so the human-Twi'lek duo rarely takes on hirelings. The Royal Mistress has become a welcome sight to Outer Rim smugglers whom Bryce-Kelley and Rypka help."
   }
  ]
 // --- END OF STARSHIP_DATA ---
