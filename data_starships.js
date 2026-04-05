@@ -41707,9 +41707,7 @@ const STARSHIP_DATA = {
     }
    ],
    "capsule": "The Intruder (registry BLC-7) was the first ship specifically designed to escape an interdiction field, using the hyperwave sustainer. Originally, this Bakuran cruiser saw duty in tandem with the Sentinel, protecting its home system from pirate attacks and remaining vigilant in the event of a Ssi-ruuvi resurgence. Equipped with the Bakuran Hyperwave Sustainer (HIMS), allowing travel in an interdiction field."
-  }
- ]
-,
+  },
   {
    "name": "Corellian Assault Boat",
    "craft": "Corellian Mynock-class Assault Boat",
