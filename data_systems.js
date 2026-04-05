@@ -2109,6 +2109,7 @@ const SYSTEMS_DATA = [
   { "name": "Galidraan", "grid": "R-6", "region": "Outer Rim Territories", "col": 16, "row": 6, "quadrant": "NE", "hours": 1.5 },
   { "name": "Galitan", "grid": "L-9", "region": "Core Worlds", "col": 10, "row": 9, "quadrant": "C", "hours": 0.7 },
   { "name": "Galjaero", "grid": "K-18", "region": "Outer Rim Territories", "col": 9, "row": 18, "quadrant": "S", "hours": 0.8 },
+  { "name": "Gall", "grid": "P-17", "region": "Outer Rim Territories", "col": 14, "row": 17, "quadrant": "SE", "hours": 1.7 },
   { "name": "Gallapraxis", "grid": "M-16", "region": "Expansion Region", "col": 11, "row": 16, "quadrant": "S", "hours": 3.3 },
   { "name": "Galleefryn", "grid": "S-3", "region": "Outer Rim Territories", "col": 17, "row": 3, "quadrant": "NE", "hours": 60.6 },
   { "name": "Gallimere", "grid": "P-19", "region": "Outer Rim Territories", "col": 14, "row": 19, "quadrant": "SE", "hours": 19.6 },

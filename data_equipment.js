@@ -4712,6 +4712,411 @@ const EQUIPMENT_DATA = [
   "availability": "Unique",
   "game_notes": "Anti-interdiction field hyperwave sustainer. Scale: Capital. Skill: Capital ship piloting. The Bakuran hyperwave sustainer allows a ship to pass through an interdiction field. During an 'interrupted jump' the pilot must make successful Very Difficult capital ship piloting rolls for each round the vessel is attempting to travel. The hyperdrive speed of the vessel is reduced to x12. Failure to make at least an Easy total on the required capital ship piloting checks results in a mishap; typically the ship is thrown off course or is damaged and must revert to sublight speeds (at the gamemaster's discretion). Uses a gravitic sensor for fast cut-off of the ship's normal hyperdrive, saving it from damage caused by entering an interdiction field. Simultaneously activates a static hyperspace bubble produced by a hyperspace coil designed to burn up and blow out in the presence of the interdiction field. The static hyperwave bubble cannot provide any thrust, but it can hold the ship in hyperspace while the ship's forward momentum carries it along. Still in preliminary experimental stages; the Corellian Incident marked the device's first battlefield test.",
   "source": "WEG40139 Cracken's Threat Dossier p.135"
+ },
+ {
+  "name": "Spacer's Chest",
+  "type": "SoroSuub Wanderer Space Chest",
+  "category": "General Equipment",
+  "cost": "200",
+  "availability": "1",
+  "game_notes": "Durable personal storage chest for spacers. Can be protected with an electronic combo-lock (Moderate to pick). Sealed against vacuum. Has the equivalent of 6D strength against damage. Padded compartments for fragile items. Comes in various shapes — cylindrical, rectangular, or small cargo container style. Most spacers customize them with holo-stickers, scratched-in messages, and busted Imperial Customs seals. Recommended contents: spare blaster or hold-out blaster, knife, comlink, medpac, food bars, portable emergency beacon, and a few 100-credit chits beneath a hidden flap.",
+  "source": "WEG40141 Platt's Smugglers Guide p.44"
+ },
+ {
+  "name": "Gear Bag",
+  "type": "SoroSuub Pak-It Gear Bag",
+  "category": "General Equipment",
+  "cost": "50",
+  "availability": "1",
+  "game_notes": "Portable gear bag for transient spacers. Tear and heat-resistant fabric withstands the usual rigors of a spacer's life, but can be cut with a blade or burned by direct flame. Multiple straps and fasteners allow shoulder or back carry. Meagerly padded interior pouches for hard or fragile items. Not as durable or secure as a spacer's chest, but far more portable. Can double as a pillow or mattress when stuffed with soft clothing.",
+  "source": "WEG40141 Platt's Smugglers Guide p.44-45"
+ },
+ {
+  "name": "Permit Datapad",
+  "type": "BoSS Documentation Datapad",
+  "category": "General Equipment",
+  "cost": "1,500",
+  "availability": "2, F",
+  "game_notes": "Stores official spacer documentation — ship registry, captain's accreditation, arms load-out permit, operating license. A customized BoSS input plug (available only at BoSS and Imperial Space Ministry offices) is the only legal way to alter data. Has a separate 'read only' interface for downloading info to ship computers. Forgery: Altering data by reversing the 'read only' port to 'write only' requires a Heroic forgery roll (high risk of frying the datapad). Using a custom-made BoSS input plug requires a Difficult forgery roll (plug must be acquired or crafted first). Cracking the datapad casing to change documentation requires a Very Difficult forgery roll. Rolling a 1 on the Wild Die means the forger has accidentally fried the circuitry and destroyed the datapad. Sharp customs officers check for hairline cracks, adhesive drips, casing fractures, or data display malfunctions.",
+  "source": "WEG40141 Platt's Smugglers Guide p.45-46"
+ },
+ {
+  "name": "Archaic Astrogation Plotter",
+  "type": "Republic Sienar Systems A-121 Plotter",
+  "category": "General Equipment",
+  "cost": "1,000-7,500",
+  "availability": "4",
+  "game_notes": "Manual astrogation plotter from the pioneer days of hyperspace. Assembly of plastic and metal slide rules, factor wheels, and slot charts. If a pilot has all necessary astrographic information on the point of origin and destination, using the plotter quintuples the time a nav computer would ordinarily take and increases the astrogation difficulty by two levels. Downloading coordinates into the ship's hyperdrive motivators requires a jury-rigged interface with a personal computer or sophisticated datapad — a Very Difficult computer programming/repair roll. Useful as a backup when nav computers and ship data systems are inoperable.",
+  "source": "WEG40141 Platt's Smugglers Guide p.46-47"
+ },
+ {
+  "name": "Headset Comlink",
+  "type": "VargeCorp Hands-Free Comlink",
+  "category": "General Equipment",
+  "cost": "100",
+  "availability": "1",
+  "game_notes": "Hands-free personal comlink. Speaker microphone mounted on an adjustable boom, voice-activated. Earphone covers one ear, leaving the other free. Dials on the earpiece for channel switching and volume. Some models include plug cords to jack into a ship's intercom system (disables normal comlink transmission while plugged in). The microphone transmitter is voice-activated; a comlink will not activate unless spoken to at or above background noise level.",
+  "source": "WEG40141 Platt's Smugglers Guide p.47"
+ },
+ {
+  "name": "Thermal Credit Belt",
+  "type": "Nuvaplasx Security Belt",
+  "category": "General Equipment",
+  "cost": "100",
+  "availability": "2",
+  "game_notes": "Concealed money belt worn flush around the belly. Four fabric credit pouches absorb body heat on the inside and radiate it on the outside, making it more difficult to detect on scans. The soft, warm fabric resists detection during pat-downs. Best worn with loose-fitting clothes — obvious under close-cut outfits. If worn with a blast vest or other torso armor, the user suffers -2 to Dexterity and related rolls. Body heat accentuates the smell of any spice concealed inside — customs sniffers can still detect it.",
+  "source": "WEG40141 Platt's Smugglers Guide p.48"
+ },
+ {
+  "name": "Tox Detector",
+  "type": "SuriTech Disposable Toxmeter Patch",
+  "category": "General Equipment",
+  "cost": "20",
+  "availability": "2",
+  "game_notes": "Flat, half-meter square metallic patch with a deep-blue circle in the center. Adhesive or magnetic backing for mounting on bulkheads. Visually alerts to poisonous fumes — if the center dot turns from deep blue to any degree of fluorescent orange, something noxious is in the air. Manufactured to react with any gas harmful to those breathing standard human atmospheres; some tailored for specific alien biologies. Single-use: once triggered, the chemical reactant cannot revert. Place midway between deckplates and overhead panels. Used detectors can serve as decoy contamination markers.",
+  "source": "WEG40141 Platt's Smugglers Guide p.49"
+ },
+ {
+  "name": "Crate Hooks",
+  "type": "Vlanth Cargo Grippers",
+  "category": "General Equipment",
+  "cost": "50 per pair",
+  "availability": "1",
+  "game_notes": "Skill: Lifting or melee combat. Damage: STR+1D. Handles with curved, blunted blades used to grasp cargo crates and box handles. Protect a loader's hands from being ragged and chaffed. Can pull boxes from hold recesses, grasp handles, and swing cargo onto repulsor carts. Secondary uses: crack cargo seals, pry open stuck lids, rough climbing claws on softer surfaces. Too small and awkward to parry attacks. Available in various handle styles for different species.",
+  "source": "WEG40141 Platt's Smugglers Guide p.49-50"
+ },
+ {
+  "name": "Loader's Gloves",
+  "type": "Vlanth LG-70 Hauler's Gloves",
+  "category": "General Equipment",
+  "cost": "100 per pair",
+  "availability": "1",
+  "game_notes": "Skill: Lifting or melee combat. Damage: STR+2. Heavy fabric gloves covering hands and forearms with a protective exoskeleton of metal struts and armor plates. Provide extra leverage and protection when moving crates. Metal framework protects hands from cuts and crushing, can be locked in place for extra gripping endurance. Rubber finger and palm pads maintain grip on smooth containers. Unwieldy for anything other than moving cargo or bashing heads — cannot fire blasters, press finger controls, or use datapads. Takes 5 minutes to put on or remove, and requires a second person to help with the second glove.",
+  "source": "WEG40141 Platt's Smugglers Guide p.50"
+ },
+ {
+  "name": "Repulsorlift Cart",
+  "type": "Ubrikkian Model B Cargo Platform",
+  "category": "General Equipment",
+  "cost": "500",
+  "availability": "2",
+  "game_notes": "2 meters long, 1.5 meters wide. Fixed altitude of 0.35 meters. Repulsor coil beneath a platform — keeps cart hovering but provides no propulsion. Pushed/pulled via raised bars on each end. Raised railings with clips for straps and nets to restrain cargo. Notoriously difficult to control without feet on the ground. No substitute for a good cargo skiff, but ideal for dragging crates longer distances through starports.",
+  "source": "WEG40141 Platt's Smugglers Guide p.50-51"
+ },
+ {
+  "name": "Servo-Lifter",
+  "type": "Verekil Servo-Lifter V-2r",
+  "category": "General Equipment",
+  "cost": "10,000 (new), 7,000 (used)",
+  "availability": "3",
+  "game_notes": "Powered exoskeleton for lifting heavy cargo. Scale: Character. Length: 3 meters tall. Skill: Powersuit operation: servo-lifter. Crew: 1. Maneuverability: 1D. Move: 30; 50 kmh. Body Strength: 2D. Can lift up to 1.5 metric tons. Strictly a luxury for spacers — most are better off hiring roustabouts or buying a worker droid.",
+  "source": "WEG40141 Platt's Smugglers Guide p.51"
+ },
+ {
+  "name": "Crate Tag Imprinter",
+  "type": "MerenData Cargo Label Generator 2-CLG",
+  "category": "General Equipment",
+  "cost": "1,500",
+  "availability": "2, F",
+  "game_notes": "Hand-held unit resembling a datapad with a bulky printer attachment. Dedicated freight inventory recorder that prints individual scancode tags. Enter cargo information and the unit imprints a tag with details in coding and lettering: cargo type, number, sender, receiver, authorized transport agent, ship date, hazards/cautions, and system routing data. Takes about one minute to produce one tag. Copy function duplicates data with sequential tracking numbers. No programming prevents mislabeling contents.",
+  "source": "WEG40141 Platt's Smugglers Guide p.51-52"
+ },
+ {
+  "name": "Tag Scanner Datapad",
+  "type": "MerenData DH-4 Scanner",
+  "category": "General Equipment",
+  "cost": "150",
+  "availability": "2",
+  "game_notes": "Standard datapad with inventory tracking programming and a removable comlink-sized scanner unit. Run the sensor over tag coding to record data; plugging it into the datapad socket automatically downloads and interprets scanned information. Can be modified to interpret other scancode coding — requires access to the coding cipher program, a Very Difficult computer programming/repair roll, and a Moderate sensors roll.",
+  "source": "WEG40141 Platt's Smugglers Guide p.52"
+ },
+ {
+  "name": "Imperial Customs Holoseal",
+  "type": "MerenData Imperial Holoseal",
+  "category": "General Equipment",
+  "cost": "Not available for sale",
+  "availability": "2, R",
+  "game_notes": "Plastic stickers used to seal and mark cargo that has passed Imperial Customs inspection. One side has a holographic Imperial symbol, the other is adhesive. Applied along the crack between container body and lid. Each has a register code readable by special Imperial Customs tag scanners. Successfully removing an Imperial holoseal without destroying it is a Very Difficult security task. Seals used by sector and system customs authorities can be removed with a Moderate to Difficult security roll. Tampering with a holoseal is a class four infraction: 1,000-5,000 credit fine, up to a month imprisonment, and cargo confiscation.",
+  "source": "WEG40141 Platt's Smugglers Guide p.52-53"
+ },
+ {
+  "name": "Containment Box",
+  "type": "Synthtech Medtech Corporation Irradiator Box",
+  "category": "General Equipment",
+  "cost": "500",
+  "availability": "2",
+  "game_notes": "Uses broad-spectrum radiation, ultrasonics, and other means to kill bacteria, viruses, and microscopic contaminants on tools and equipment. No larger than a spacer's chest — stows in engineering spaces, cargo holds, or personal quarters. Rechargeable power source. One-minute sterilization cycle. Residual power can foul up scanners, but anyone looking inside will find contraband.",
+  "source": "WEG40141 Platt's Smugglers Guide p.53"
+ },
+ {
+  "name": "Containment Booth",
+  "type": "Synthtech Medtech Corporation Irradiator Booth",
+  "category": "General Equipment",
+  "cost": "2,500",
+  "availability": "1, F",
+  "game_notes": "Larger version of the containment box for sterilizing spacesuits and bulky items. Requires hookup into the ship's power system to operate.",
+  "source": "WEG40141 Platt's Smugglers Guide p.53"
+ },
+ {
+  "name": "Cold Crate",
+  "type": "SoroSuub CLEK-50 CryoCase",
+  "category": "General Equipment",
+  "cost": "250 (50 per additional cryo canister)",
+  "availability": "2",
+  "game_notes": "Insulated crate with a small cryogenic unit mounted at one end. Temperature adjustable from cool to well below freezing. Power and liquid gas maintain freezing temperatures for 50 standard hours; low temperatures maintained indefinitely by recharging fuel cells from ship's generator and replacing cryo canisters. Most are 1m wide, 2m long, 1m deep. Not designed for suspended animation. Extreme temperatures and insulated case block most sensors — hide contraband at the bottom under frozen cargo. Few customs inspectors willing to chip through frozen filla-fish.",
+  "source": "WEG40141 Platt's Smugglers Guide p.54"
+ },
+ {
+  "name": "Hot Box",
+  "type": "SoroSuub HT-50 Heated Crate",
+  "category": "General Equipment",
+  "cost": "250",
+  "availability": "2",
+  "game_notes": "Insulated crate with a heater unit in the base. Temperature adjustable from warm to near-boiling. Pressure valves vent excess steam (recommend hooking to a hose). Power cells keep contents hot for up to 50 hours, rechargeable from ship's generator. Check every 10 hours — heater units tend to overheat and pressure valves sometimes jam. If carrying more than 5 hot boxes, lower bay temperature and seal hatches. Vented steam can turn cargo bay into a humid nightmare. Insulated body and excessive heat foil sensors; vented steam fouls readings on nearby crates. Not very good for smuggling — few items withstand prolonged heat and humidity.",
+  "source": "WEG40141 Platt's Smugglers Guide p.54-55"
+ },
+ {
+  "name": "Sleight Box",
+  "type": "Ecls Industries R-Coil Crate",
+  "category": "General Equipment",
+  "cost": "750-2,000",
+  "availability": "3, X",
+  "game_notes": "Looks like an ordinary cargo container but has a low-powered repulsorlift coil matrix and power supply concealed in the bottom casing. A small compensation field helps the repulsor field neutralize the weight of anything inside, making the box feel empty. Fools most customs officials who don't look inside — avoid holoseals or tag markers indicating cargo within. Scans detect the energy source on a Difficult sensors roll; increase difficulty one level if stowed near another power source. Custom-made in smuggler shadowports; not available from regular freight outfitters.",
+  "source": "WEG40141 Platt's Smugglers Guide p.55"
+ },
+ {
+  "name": "Cargo Netting",
+  "type": "SoroSuub 1010 Cargo Restraint",
+  "category": "General Equipment",
+  "cost": "100 per 10x10 meter section",
+  "availability": "2",
+  "game_notes": "Webbing to tie down and partition crates in cargo bays. Tightly woven synthetic fiber straps fastened at crossings by sturdy metal grommets. Adjustable edge straps with durable hooks, buckles, and clamps for securing to hold fixtures. Resists normal wear and tear but can be cut with a blade and is easily melted by blaster fire. Netting straps have 3D Strength for resisting damage. Not effective for capturing anything unless used in a pitfall or with weighted edge straps.",
+  "source": "WEG40141 Platt's Smugglers Guide p.55-56"
+ },
+ {
+  "name": "Portable Emergency Beacon",
+  "type": "Chedak Emergency Pack",
+  "category": "General Equipment",
+  "cost": "1,000",
+  "availability": "2",
+  "game_notes": "About the size of two medpacs. Contains one burst beacon broadcasting position on emergency frequency — anyone within 4 light years will pick it up. Strobe marks position for search parties within a few km. Detachable glow rod lantern. Powered by a mini-fusion generator (250 hours capacity). Power jack recharges glow rods, blaster power packs, and low-power accessories — each charge drains about 1 hour from generator. Heat vent with fan warms immediate area. Activated by a rip-cord switch — once activated, cannot be shut off until generator dies. Rigging it for on/off capability is a Moderate Technical task but risks blowing out all powered components.",
+  "source": "WEG40141 Platt's Smugglers Guide p.56-57"
+ },
+ {
+  "name": "Personal Strobe Locator",
+  "type": "Saladar Systems Solo Strobe",
+  "category": "General Equipment",
+  "cost": "100",
+  "availability": "2",
+  "game_notes": "Comlink-sized personal strobe with a ring for hooking and a retractable spike for ground placement. Flashes once every 5 seconds for up to 20 hours, visible for 3 km. Rechargeable from most energy sources. Can be turned on and off as needed. Can be used as a blinding distraction in dark conditions — flick on for one burst to temporarily blind a target (like a reusable flash grenade).",
+  "source": "WEG40141 Platt's Smugglers Guide p.57"
+ },
+ {
+  "name": "Survival Pack",
+  "type": "Chedak Survival Kit",
+  "category": "General Equipment",
+  "cost": "750",
+  "availability": "2",
+  "game_notes": "Knapsack crammed with survival supplies for uncivilized environments. Standard contents: 2 weeks rations, 3 medpacs, glow rod, 2 thermal flares, single-person di-chrome shelter, breath mask, 6 meters syntherope, knife, portable fusion power generator. Multiple lanyards, hooks, rings, and pockets for additional gear. Experienced smugglers customize contents — swap power generator for a portable emergency beacon, replace flares with a hold-out blaster, add a personal flamer for starting fires.",
+  "source": "WEG40141 Platt's Smugglers Guide p.58"
+ },
+ {
+  "name": "Aqua Survival Shelter",
+  "type": "Vaterenn Environmentals Flotation Shelter",
+  "category": "General Equipment",
+  "cost": "2,500",
+  "availability": "2",
+  "game_notes": "Ocean survival raft. Comes in a pack the size of a large spacer's chest. Grasp rip handle and toss — inflates with rising support struts forming a two-person di-chrome shelter. Flotation material withstands reasonable acidity/saltiness but moderately corrosive liquid eats through it. Built-in homing beacon broadcasts on civilian and military emergency channels up to 4 light years, activates on deployment. Powered by a small fusion generator (250 hours, with heat vent). Detachable supply bundle: 2 weeks rations, glow rod, 6m syntherope, 2 medpacs, large fresh water tank (some models include a water purifier). Includes collapsible bailing bucket and quick-patch repair kit with mini-inflator. No propulsion, but shelter components can be dismantled into a makeshift sail. Supplies support 2 people for 2 weeks; reduce time if more are aboard.",
+  "source": "WEG40141 Platt's Smugglers Guide p.58-59"
+ },
+ {
+  "name": "Electronic Combination Hatch Lock",
+  "type": "VargeCorp Cipher Security Seal",
+  "category": "General Equipment",
+  "cost": "750",
+  "availability": "2, F",
+  "game_notes": "Installing yourself requires a Difficult security roll. Failure means the lock sometimes sticks or doesn't engage all the way. Bypassing requires a Difficult security roll.",
+  "source": "WEG40141 Platt's Smugglers Guide p.59"
+ },
+ {
+  "name": "Key Card Ship's Lock",
+  "type": "Aratech Cardset System",
+  "category": "General Equipment",
+  "cost": "1,000",
+  "availability": "2, F",
+  "game_notes": "Installing yourself requires a Difficult security roll. Failure means the lock sometimes sticks or doesn't engage all the way. Comes with two imprinted key cards. Bypassing requires a Very Difficult security roll.",
+  "source": "WEG40141 Platt's Smugglers Guide p.59"
+ },
+ {
+  "name": "Remote Control Hatch Lock",
+  "type": "VargeCorp Ranged Lock",
+  "category": "General Equipment",
+  "cost": "1,250",
+  "availability": "2, F",
+  "game_notes": "Installing yourself requires a Very Difficult security roll. Failure means the lock sometimes sticks or doesn't engage all the way. Remote control unit has a range of 30 meters. Bypassing requires a Very Difficult security roll.",
+  "source": "WEG40141 Platt's Smugglers Guide p.59"
+ },
+ {
+  "name": "Console Lock Panel",
+  "type": "VargeCorp CS-20 Board Plate",
+  "category": "General Equipment",
+  "cost": "300 (electronic combination), 500 (key card)",
+  "availability": "2",
+  "game_notes": "Large metal plate form-molded to cockpit console contours, slides into place and locks down over controls. Installing yourself requires a Difficult security roll. Failure means the panel sometimes sticks or doesn't engage all the way. Bypassing the lock mechanism requires a Moderate security roll. Takes 6 rounds to engage or remove. Must stow the heavy metal panel during flight. A bit of a hindrance — takes a minute to put on or remove, and needs a second person ideally.",
+  "source": "WEG40141 Platt's Smugglers Guide p.60"
+ },
+ {
+  "name": "Console Dead Lock",
+  "type": "Arakyd PowerLock 2500",
+  "category": "General Equipment",
+  "cost": "1,000 (electronic combination), 1,500 (key card)",
+  "availability": "2",
+  "game_notes": "Hooks directly into the power coupling to cockpit controls. When engaged, cuts the energy feed to control boards until the proper combination or key card is used. Installed beneath control panels where not easily noticeable. Have a professional install it — installing yourself requires a Very Difficult security roll; failure damages cockpit instrumentation and controls. Damage by inexperienced thieves often blows command consoles or melts wiring. Bypassing requires a Very Difficult security roll.",
+  "source": "WEG40141 Platt's Smugglers Guide p.60-61"
+ },
+ {
+  "name": "Starship Tool Kit",
+  "type": "SoroSuub Journeyman Tool Box",
+  "category": "General Equipment",
+  "cost": "200",
+  "availability": "1",
+  "game_notes": "Sturdy box organized into neat compartments with one of nearly every kind of tool needed for starship repairs. Includes basic hydrospanners and servodrivers, plus extra power couplings, a spool of all-purpose wiring, and one strip of hull-patch metal. Adds +1D to any starship-related repair rolls.",
+  "source": "WEG40141 Platt's Smugglers Guide p.61"
+ },
+ {
+  "name": "Power Prybar",
+  "type": "SoroSuub Prybar 2H00",
+  "category": "General Equipment",
+  "cost": "30",
+  "availability": "1",
+  "game_notes": "Metal prybar with joined fulcrums and hydraulic pistons. A small pressure computer gauges force and uses hydraulics to provide extra leverage. Internal energy cell is long-lasting and replaceable. Can't pry gaps wider than 10 cm. Adds +1D to +3D when used to pry things up, open, or apart. Damage as melee weapon: STR+1D.",
+  "source": "WEG40141 Platt's Smugglers Guide p.62"
+ },
+ {
+  "name": "Servodriver",
+  "type": "Corellian Engineering SD-47",
+  "category": "General Equipment",
+  "cost": "50",
+  "availability": "1",
+  "game_notes": "Shaft handle with a sonic drive head. Torque surface perpendicular to shaft — must hold upright relative to fastener. Tightens or loosens screws, bolts, and twist fasteners. Power cell lasts years. Switch for clockwise, counterclockwise, or off. Zero-gravity compensators included. Each servodriver handles a certain size range of bolts. Bonuses for repair work range from +1 to +1D at GM discretion.",
+  "source": "WEG40141 Platt's Smugglers Guide p.62"
+ },
+ {
+  "name": "Hydrospanner",
+  "type": "Corellian Engineering V-07 Hydrospanner",
+  "category": "General Equipment",
+  "cost": "50",
+  "availability": "1",
+  "game_notes": "Sonic drive head mounted parallel to the shaft, allowing side-access to bolts, nuts, and screws in hard-to-reach places. Same energy capacity, power controls, and varied size range as a servodriver. Bonuses for repair work range from +1 to +1D at GM discretion.",
+  "source": "WEG40141 Platt's Smugglers Guide p.62"
+ },
+ {
+  "name": "Power Scanner",
+  "type": "VargeCorp Energy Tester",
+  "category": "General Equipment",
+  "cost": "150",
+  "availability": "1",
+  "game_notes": "Diagnostic tool monitoring energy flow through circuits, conduits, and power couplings. Hand-held box with digital power readout and variable settings for many energy ranges. Two extendible wires with clamp leads connect to power sources. Tests conductive metal and connection points. Can be cannibalized for parts (wires, digital readout, energy flux capacitors, micro-power regulators). Can be hooked to an inactive power line as a diversion — turning on the power blows the scanner in a shower of sparks. Bonuses for repair work range from +1 to +1D at GM discretion.",
+  "source": "WEG40141 Platt's Smugglers Guide p.63"
+ },
+ {
+  "name": "Laser Welder",
+  "type": "Boralite Metalworking & Materials LSW-983",
+  "category": "General Equipment",
+  "cost": "50",
+  "availability": "1",
+  "game_notes": "Two independently directed laser emitters for welding seams in metal. Also effective for slicing through most high-grade reinforced plastics. Internal power cell provides about 50 hours of use, rechargeable via standard adapter or ship power systems. Emitters finely tunable from 0.2-20 cm weld diameter. Keep spare hull plating strips nearby for hull breaches. Bonuses for repair work range from +1 to +1D at GM discretion.",
+  "source": "WEG40141 Platt's Smugglers Guide p.63"
+ },
+ {
+  "name": "Fusion Cutter",
+  "type": "Boralite Metalworking & Materials PCW-876",
+  "category": "General Equipment",
+  "cost": "75",
+  "availability": "1",
+  "game_notes": "Variable-beam fusion cutter that shears through most metals, plastics, and ceramics up to 25 cm thick in seconds. Great for slicing through entry hatch deadbolt seals. Can be used as a melee weapon at close range — accidental exposure to beam causes 3D-6D damage. Bonuses for repair work range from +1 to +1D at GM discretion.",
+  "source": "WEG40141 Platt's Smugglers Guide p.63"
+ },
+ {
+  "name": "Tech Vacuum Suit",
+  "type": "LifeLine TechMaster II Vacuum Suit",
+  "category": "Armor",
+  "cost": "1,000",
+  "availability": "1",
+  "game_notes": "Bare-essentials vacuum suit tailored for starship repair work in space. Covered with tool harnesses, sealable pouches, syntherope tether, and padded guards for knees, elbows, and shoulders. Tight-fitting gloves for intricate manipulation. Trades temperature regulators, waste recyclers, and extra atmosphere for more mobility. Since the suit is only insulated, not heated, a character in space must make a Moderate stamina or Strength check every hour or suffer a wound from freezing cold.",
+  "source": "WEG40141 Platt's Smugglers Guide p.64"
+ },
+ {
+  "name": "Flitter Vacuum Suit",
+  "type": "Corellian Engineering Flitter",
+  "category": "Armor",
+  "cost": "1,500",
+  "availability": "2",
+  "game_notes": "Skill: Rocket pack operation. Tech vacuum suit with more durable fabric resistant to tears and punctures from space debris. Includes a small maneuvering backpack unit with rocket nozzles, controlled from a wrist-mounted panel. Pack has fuel for only a few bursts — enough to scoot back to a ship. Reinforced fabric provides +2 bonus when resisting physical attacks. Same insulation as tech suit — unless a character executes a 'heater burn' (Moderate rocket pack operation roll), must make a Moderate stamina or Strength check every hour or suffer a wound from freezing cold. A heater burn fires half the engines then uses opposing thrust to neutralize momentum, warming the suit.",
+  "source": "WEG40141 Platt's Smugglers Guide p.64-65"
+ },
+ {
+  "name": "ASP-7 Droid",
+  "type": "Industrial Automaton ASP-7",
+  "category": "Droids",
+  "cost": "1,000 (new), 300 (used)",
+  "availability": "1",
+  "game_notes": "Height: 1.6m. Move: 6. DEX 1D, KNO 1D, MEC 1D, PER 1D (search 2D), STR 1D (lifting 2D), TEC 1D. Simple menial laborer. Restricted vocabulary — only replies 'affirmative' or 'negative.' Can be upgraded with new programming and physical modifications.",
+  "source": "WEG40141 Platt's Smugglers Guide p.65"
+ },
+ {
+  "name": "B1 Worker Droid",
+  "type": "AccuTronics B1 Worker Droid",
+  "category": "Droids",
+  "cost": "9,800 (new), 6,400 (used)",
+  "availability": "2, F",
+  "game_notes": "Move: 6. DEX 1D, KNO 1D, MEC 1D, PER 1D, STR 8D (lifting 10D, stamina 4D), TEC 1D. Reinforced chassis with exceptional strength and a third stabilizer leg (+1D to lifting when deployed). Durable chassis makes good portable cover. Extremely limited intelligence — stomps around, doesn't watch where it dumps crates, takes orders from anyone, can't learn new tasks. Tiny visual spectrum scanners easily shot off.",
+  "source": "WEG40141 Platt's Smugglers Guide p.66"
+ },
+ {
+  "name": "Binary Load Lifter",
+  "type": "Cybot Galactica Binary Load Lifter",
+  "category": "Droids",
+  "cost": "2,500",
+  "availability": "2, F",
+  "game_notes": "Move: 7. DEX 1D, KNO 1D, MEC 1D, PER 1D, STR 6D (lifting 8D), TEC 1D. About 3 meters tall when fully standing. Can lift cargoes higher, farther, and faster than B1 workers. Responds to simple verbal commands. Oblivious to surroundings — life preservation programming prevents harm to living beings but tends to march uncomfortably close to people. Often too big for light freighters; common on bulk freighters and in major starports.",
+  "source": "WEG40141 Platt's Smugglers Guide p.66"
+ },
+ {
+  "name": "LE Repair Droid",
+  "type": "Cybot Galactica LE Repair Droid",
+  "category": "Droids",
+  "cost": "12,800 (new), 6,500 (used)",
+  "availability": "2",
+  "game_notes": "Move: 7. DEX 1D, KNO 2D, MEC 2D (astrogation 2D+1, communications 3D, sensors 3D), PER 1D, STR 2D, TEC 2D (capital starship repair 4D, computer programming/repair 5D, space transports repair 3D). Combination astromech and protocol droid — carries out maintenance duties and interacts decently with people. Learns quickly on technical and social ends; develops loyal personality over time.",
+  "source": "WEG40141 Platt's Smugglers Guide p.66"
+ },
+ {
+  "name": "NR-5 Maintenance Droid",
+  "type": "Cybot Galactica NR-5 Maintenance Droid",
+  "category": "Droids",
+  "cost": "2,200",
+  "availability": "2",
+  "game_notes": "Move: 3. DEX 1D (dodge 1D+2), KNO 1D, MEC 1D, PER 1D, STR 1D, TEC 1D (computer programming/repair 4D, security 2D, space transports repair 3D). Wide-band comm receptor. Retractable heavy grasper arm (+1D to lifting). Retractable fine manipulator arm. Small circular saw (4D). Narrower tread base than WED droids allows access to tighter spaces. Longer, more adjustable visual receptor arm for poking around tight spots.",
+  "source": "WEG40141 Platt's Smugglers Guide p.66-67"
+ },
+ {
+  "name": "R5 Astromech Droid",
+  "type": "Industrial Automaton R5-Series Astromech",
+  "category": "Droids",
+  "cost": "2,000",
+  "availability": "2",
+  "game_notes": "Move: 5. DEX 1D, KNO 1D, MEC 1D, PER 1D, STR 1D, TEC 2D (computer programming/repair 4D, space transports repair 4D). Retractable heavy grasper arm (+1D to lifting, max 2D), retractable fine worker arm, small circular saw (4D), holographic projector/recorder, fire extinguisher. Cheaper alternative to R2s — breaks down more easily, holds only 1 set of astrogation coordinates. Simple personality matrix. Not heavily monitored by Imperial Intelligence.",
+  "source": "WEG40141 Platt's Smugglers Guide p.67"
+ },
+ {
+  "name": "V5-T Transport Droid",
+  "type": "Veril Line Systems V5-T Transport Droid",
+  "category": "Droids",
+  "cost": "2,500 (tread), 4,500 (repulsorlift)",
+  "availability": "2",
+  "game_notes": "Move: 35 (tread), 50 (repulsorlift). DEX 1D, KNO 1D, MEC 1D, PER 1D, STR 4D, TEC 1D. Retractable lifting arm (lifting 4D). Can carry up to 2 metric tons in low-walled payload area. Tread versions are slower but more stable than repulsorlift models. Doubles as uncovered personnel transport. Not very smart — takes commands from almost anyone unless security recognition routine installed. Good for long-distance cargo transport but less efficient than B1s or binary lifters for loading/unloading.",
+  "source": "WEG40141 Platt's Smugglers Guide p.67-68"
  }
 // --- END OF EQUIPMENT_DATA ---
 ];
