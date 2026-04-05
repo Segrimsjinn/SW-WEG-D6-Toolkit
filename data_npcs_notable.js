@@ -40198,6 +40198,102 @@ const NOTABLE_NPCS = [
     equipment: "Comlink, blaster pistol (4D)",
     capsule: "Typical crew of a bulk freighter or container ship. Competent at their jobs but not remarkable combatants.",
     source: "WEG40143 Pirates & Privateers p.56"
+  },
+  {
+    name: "Typical Iotran Braceman",
+    species: "Iotran",
+    system: "Iotra",
+    location: "",
+    affiliations: ["Neutral", "Iotran Police Force"],
+    role: "Special Law Enforcer",
+    type: "Generic Template",
+    stats: {
+      DEXTERITY: { base: "4D", skills: { "blaster": "5D", "brawling parry": "5D", "dodge": "5D", "firearms": "6D", "grenade": "4D+2", "melee combat": "4D+2", "melee parry": "4D+1", "running": "4D+2", "vehicle blasters": "4D+1" } },
+      KNOWLEDGE: { base: "2D+2", skills: { "alien species": "3D", "bureaucracy": "4D", "cultures": "3D", "intimidation": "5D", "languages": "3D+1", "law enforcement": "6D", "streetwise": "5D+2", "survival": "5D", "tactics": "4D", "willpower": "4D" } },
+      MECHANICAL: { base: "2D+2", skills: { "astrogation": "3D", "communications": "4D", "ground vehicle operation": "4D", "sensors": "3D", "space transports": "3D" } },
+      PERCEPTION: { base: "3D", skills: { "bargain": "3D+1", "command": "4D", "investigation": "5D", "persuasion": "4D", "search": "5D", "sneak": "4D+2" } },
+      STRENGTH: { base: "3D+2", skills: { "brawling": "6D", "climbing/jumping": "5D", "stamina": "5D", "swimming": "4D+1" } },
+      TECHNICAL: { base: "2D", skills: { "computer programming/repair": "3D", "droid programming": "3D", "first aid": "4D", "security": "5D" } }
+    },
+    specialAbilities: "",
+    forcePoints: 2,
+    characterPoints: 8,
+    move: 10,
+    equipment: "IPF issue slugthrower pistol (4D, ammo: 12), restraining braces, 2 stun-gas grenades, night-vision visor, utility knife, syntherope dispenser, IPF identification",
+    capsule: "Elite special agents of the Iotran Bracemen Council, assigned to track down criminals outside of Iotran-patrolled space. Tireless hunters dedicated to capturing targets wherever they may be, without regard to jurisdiction. Considered by some criminals to be a worse fate than capture by bounty hunters — some criminals have turned themselves in upon learning a Braceman was on their trail.",
+    source: "WEG40143 Pirates & Privateers p.76"
+  },
+  {
+    name: "Typical Trianii Ranger",
+    species: "Trianii",
+    system: "",
+    location: "Trianii Space",
+    affiliations: ["Neutral", "Trianii Rangers"],
+    role: "Law Enforcement Officer",
+    type: "Generic Template",
+    stats: {
+      DEXTERITY: { base: "3D+2", skills: { "blaster": "7D", "brawling parry": "6D", "dodge": "8D", "grenade": "5D+2", "melee combat": "7D" } },
+      KNOWLEDGE: { base: "2D+2", skills: { "alien species": "5D", "bureaucracy": "3D+2", "cultures": "3D+1", "intimidation": "4D", "languages": "3D+1", "law enforcement": "4D", "planetary systems": "5D", "streetwise": "6D", "survival": "5D", "willpower": "5D" } },
+      MECHANICAL: { base: "2D+2", skills: { "astrogation": "4D", "communications": "4D", "repulsorlift operation": "5D", "sensors": "4D", "space transports": "5D+2", "starship gunnery": "5D", "starship shields": "4D+1" } },
+      PERCEPTION: { base: "3D", skills: { "command": "5D", "con": "4D", "investigation": "6D", "persuasion": "5D", "search": "5D", "sneak": "4D" } },
+      STRENGTH: { base: "3D+2", skills: { "brawling": "6D", "climbing/jumping": "5D+1", "stamina": "5D", "swimming": "4D" } },
+      TECHNICAL: { base: "2D+1", skills: { "computer programming/repair": "4D", "droid programming": "4D", "first aid": "4D+2", "security": "5D", "space transports repair": "4D+1" } }
+    },
+    specialAbilities: "Prehensile tail: limited use to move light (<3 kg) objects, cannot be used for fine manipulation. Special balance: +2D to climbing, jumping, and actions requiring careful balance. Claws: +1D to brawling damage.",
+    forcePoints: 1,
+    characterPoints: 5,
+    move: 12,
+    equipment: "Datapad, blaster (4D), Trianii Ranger ID, RX4 patrol ship",
+    capsule: "Honored and famous independent space force of the Trianii, patrolling the frontiers of the seven Trianii worlds. Rangers come from all seven independent Trianii worlds and are considered citizens of all yet separate. They patrol in long-range family ships, often circuiting Trianii space several times in a year-long patrol. Brave, intelligent, skilled law enforcement officers subject only to their own organization. No authority outside Trianii territories.",
+    source: "WEG40143 Pirates & Privateers p.76"
+  },
+  {
+    name: "Typical CSA Location Enforcement Operative",
+    species: "Various",
+    system: "",
+    location: "Corporate Sector",
+    affiliations: ["Neutral", "Corporate Sector Authority"],
+    role: "Investigator/Undercover Agent",
+    type: "Generic Template",
+    stats: {
+      DEXTERITY: { base: "3D+2", skills: { "blaster": "6D", "brawling parry": "5D+2", "dodge": "6D", "melee combat": "4D" } },
+      KNOWLEDGE: { base: "2D+2", skills: { "alien species": "4D", "bureaucracy": "5D", "cultures": "3D", "intimidation": "5D", "languages": "4D", "law enforcement": "7D", "streetwise": "6D", "survival": "4D+2", "willpower": "4D" } },
+      MECHANICAL: { base: "2D", skills: { "communications": "3D+2", "repulsorlift operation": "4D", "sensors": "3D", "space transports": "3D+1", "starship gunnery": "3D" } },
+      PERCEPTION: { base: "3D+2", skills: { "command": "4D+2", "con": "5D", "hide": "4D", "investigation": "6D", "persuasion": "4D+2", "search": "5D+1", "sneak": "5D" } },
+      STRENGTH: { base: "3D", skills: { "brawling": "4D", "climbing/jumping": "3D+2", "stamina": "3D+1" } },
+      TECHNICAL: { base: "3D", skills: { "computer programming/repair": "4D+2", "droid programming": "4D", "first aid": "4D", "security": "5D" } }
+    },
+    specialAbilities: "",
+    forcePoints: 1,
+    characterPoints: 8,
+    move: 10,
+    equipment: "Authority Credit Voucher (20,000 limit), datapad, Espo-issue blaster (4D), Authority Security Division ID",
+    capsule: "Location Enforcement operatives (LEs) are investigators and undercover agents of the Corporate Sector Authority Security Division ('Espos'). They coordinate reaction to pirates operating in a particular Market. The Security Division focuses on profitability — piracy, smuggling, and industrial espionage are Class A infractions, more serious than murder (a Class D infraction under 'Unapproved work behavior'). Espo policy is to execute pirates on the spot.",
+    source: "WEG40143 Pirates & Privateers p.77-78"
+  },
+  {
+    name: "Typical Sector Ranger",
+    species: "Various",
+    system: "",
+    location: "",
+    affiliations: ["Galactic Empire", "Imperial Customs"],
+    role: "Law Enforcement",
+    type: "Generic Template",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "5D+1", "dodge": "4D+2", "melee combat": "5D", "melee parry": "4D+2" } },
+      KNOWLEDGE: { base: "4D", skills: { "alien species": "5D", "cultures": "5D+1", "languages": "5D", "law enforcement": "8D", "planetary systems": "5D+1", "streetwise": "5D+2" } },
+      MECHANICAL: { base: "2D", skills: { "astrogation": "3D", "sensors": "3D+1", "space transports": "3D", "starfighter piloting": "3D" } },
+      PERCEPTION: { base: "4D", skills: { "bargain": "5D", "command": "5D", "hide": "5D", "investigation": "7D", "sneak": "5D" } },
+      STRENGTH: { base: "3D", skills: { "brawling": "4D", "stamina": "4D+2" } },
+      TECHNICAL: { base: "2D", skills: { "armor repair": "3D", "blaster repair": "4D", "computer programming/repair": "3D+1" } }
+    },
+    specialAbilities: "",
+    forcePoints: 1,
+    characterPoints: 5,
+    move: 10,
+    equipment: "Blaster pistol (4D), blast helmet (+1 energy, +1D physical, head only), comlink, medpac, survival kit, datapad",
+    capsule: "Sector Rangers are elite Imperial law enforcement officers operating across entire sectors. Highly skilled investigators with extensive knowledge of local laws and customs, they hunt pirates, smugglers, and other criminals across multiple systems.",
+    source: "WEG40143 Pirates & Privateers p.80"
   }
 // --- END OF NOTABLE_NPCS ---
 ];
