@@ -41781,9 +41781,7 @@ const STARSHIP_DATA = {
     }
    ],
    "capsule": "The Corellian Mynock-class assault boat is little more than an upgunned system patrol craft. The vessel has a higher crew capacity (to accommodate boarding actions) and slightly upgraded weaponry. The assault boat's primary mission profile is ground assault; the craft has sufficient weaponry to cover ground troopers during a landing action, and can carry a sufficient ground strike force to handle most small skirmishes."
-  }
- ]
-,
+  },
   {
    "name": "Corellian/B-wing \"Ugly\"",
    "craft": "Average Corellian/B-wing \"Ugly\"",
