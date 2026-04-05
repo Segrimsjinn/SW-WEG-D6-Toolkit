@@ -40126,6 +40126,78 @@ const NOTABLE_NPCS = [
     equipment: "Blaster pistol (4D), comlink, datapad",
     capsule: "A lowly Imperial Navy officer serving aboard the Victory Star Destroyer Sentinel in orbit over Wroona. After embarrassing his captain, Rowen was assigned to board and inspect commercial vessels — duty usually reserved for Imperial Customs personnel. Bitter and curt with freighter pilots, he expects all laws obeyed and all datawork in order. His boarding entourage includes a squad of stormtroopers, partly to inspect but mostly to intimidate. Never offer Rowen a bribe — he's about as loyal as a stormtrooper. His dedication to the Empire is so strict that his brief, biting manner can be exploited to sidetrack inspections. Challenge whatever law he's enforcing and you'll get a long lecture on the merits of the Emperor's New Order. He's a hard case, but with enough experience you can play him.",
     source: "WEG40141 Platt's Smugglers Guide p.84-85"
+  },
+  {
+    name: "Typical Starfighter Pirate",
+    species: "Various",
+    system: "",
+    location: "",
+    affiliations: ["Criminal Underworld"],
+    role: "Starfighter Pilot",
+    type: "Generic Template",
+    stats: {
+      DEXTERITY: { base: "2D", skills: {} },
+      KNOWLEDGE: { base: "2D", skills: {} },
+      MECHANICAL: { base: "3D", skills: { "starship gunnery": "4D", "starfighter piloting": "5D", "starship shields": "3D", "sensors": "3D+1" } },
+      PERCEPTION: { base: "2D", skills: {} },
+      STRENGTH: { base: "2D", skills: {} },
+      TECHNICAL: { base: "2D", skills: {} }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 10,
+    move: 10,
+    equipment: "Comlink, blaster pistol (4D)",
+    capsule: "Pirates willing to fly Uglies and ancient, outdated starfighters tend to be thrillseekers looking for a challenge and danger. Such pilots usually have short careers, but those that survive tend to become extremely competent and dangerous combatants.",
+    source: "WEG40143 Pirates & Privateers p.53"
+  },
+  {
+    name: "Veteran Starfighter Pirate",
+    species: "Various",
+    system: "",
+    location: "",
+    affiliations: ["Criminal Underworld"],
+    role: "Starfighter Pilot",
+    type: "Generic Template",
+    stats: {
+      DEXTERITY: { base: "2D", skills: {} },
+      KNOWLEDGE: { base: "2D", skills: {} },
+      MECHANICAL: { base: "3D", skills: { "starship gunnery": "5D", "starfighter piloting": "5D+2", "starship shields": "4D", "sensors": "4D" } },
+      PERCEPTION: { base: "2D", skills: {} },
+      STRENGTH: { base: "2D", skills: {} },
+      TECHNICAL: { base: "2D", skills: {} }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 20,
+    move: 10,
+    equipment: "Comlink, blaster pistol (4D)",
+    capsule: "A veteran starfighter pirate who has survived long enough to become an extremely competent and dangerous combatant. Years of flying Uglies and outdated fighters have honed their skills to a razor edge.",
+    source: "WEG40143 Pirates & Privateers p.53"
+  },
+  {
+    name: "Typical Bulk Freighter Crew",
+    species: "Various",
+    system: "",
+    location: "",
+    affiliations: ["The Fringe"],
+    role: "Freighter Crew",
+    type: "Generic Template",
+    stats: {
+      DEXTERITY: { base: "2D", skills: {} },
+      KNOWLEDGE: { base: "2D", skills: {} },
+      MECHANICAL: { base: "3D", skills: { "astrogation": "4D", "capital ship gunnery": "5D", "capital ship piloting": "5D", "capital ship shields": "4D+2", "sensors": "3D+2" } },
+      PERCEPTION: { base: "2D", skills: {} },
+      STRENGTH: { base: "2D", skills: {} },
+      TECHNICAL: { base: "2D", skills: {} }
+    },
+    specialAbilities: "",
+    forcePoints: 0,
+    characterPoints: 10,
+    move: 10,
+    equipment: "Comlink, blaster pistol (4D)",
+    capsule: "Typical crew of a bulk freighter or container ship. Competent at their jobs but not remarkable combatants.",
+    source: "WEG40143 Pirates & Privateers p.56"
   }
 // --- END OF NOTABLE_NPCS ---
 ];

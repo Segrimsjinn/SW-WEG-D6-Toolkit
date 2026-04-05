@@ -5117,6 +5117,255 @@ const EQUIPMENT_DATA = [
   "availability": "2",
   "game_notes": "Move: 35 (tread), 50 (repulsorlift). DEX 1D, KNO 1D, MEC 1D, PER 1D, STR 4D, TEC 1D. Retractable lifting arm (lifting 4D). Can carry up to 2 metric tons in low-walled payload area. Tread versions are slower but more stable than repulsorlift models. Doubles as uncovered personnel transport. Not very smart — takes commands from almost anyone unless security recognition routine installed. Good for long-distance cargo transport but less efficient than B1s or binary lifters for loading/unloading.",
   "source": "WEG40141 Platt's Smugglers Guide p.67-68"
+ },
+ {
+  "category": "Ship Equipment",
+  "name": "Sensor Baffling",
+  "type": "Arakyd Nightshadow Anti-Sensor Treatment",
+  "cost": "20,000/starfighter Hull die; 50,000/capital Hull die (ignore pips)",
+  "availability": "4, X",
+  "game_notes": "Sensor countermeasure coating. Light treatment (1 coat) adds 1D to sensor operator's difficulty to detect the ship. Heavy treatment (2 coats) adds 2D. Additional coats are futile — does not prevent detection of engine exhaust. Ships 500+ meters long, blunt/angular, or with more than 5D Hull (either scale) can only be baffled to 1D protection. Slender, rounded ships (e.g. smaller Mon Calamari vessels) baffle more effectively. Possession of a sensor-baffled ship is an Imperial code one violation.",
+  "source": "WEG40143 Pirates & Privateers p.38"
+ },
+ {
+  "category": "Ship Equipment",
+  "name": "Sensor Mask",
+  "type": "Fabritech Vanish 2 Military Sensor Masking System",
+  "cost": "150,000 per starfighter Hull die; 300,000 per capital Hull die",
+  "availability": "4, X",
+  "game_notes": "When activated, adds 2D to enemy sensor operator's difficulty to detect and identify. Can be turned on/off (less obvious than baffling). Monitors conditions around ship (radiation, comm signals, visible light) and re-emits them on opposite side — effectively camouflages the ship. Leaves a refracting edge but otherwise invisible. Current masking technologies offer a maximum of 3D sensor protection. Combined with baffling and other stealth techniques, can render a ship virtually invisible.",
+  "source": "WEG40143 Pirates & Privateers p.38"
+ },
+ {
+  "category": "Ship Equipment",
+  "name": "Sensor Decoy (Trickster)",
+  "type": "Corellian Engineering Trickster Drone",
+  "cost": "7,500 (1 tube + 5 drones); 500/additional drone",
+  "availability": "2, F",
+  "game_notes": "Adds 2D to sensor operator's difficulty to discriminate between decoy and real ship. Includes 5 drones. Drones move in pre-programmed pattern up to speed 5. Cannot be used in atmosphere. Decoy tubes cost ~5,000 per tube to install, or standard missile/torpedo launchers can be modified (Moderate starship weapon repair) to accept decoys (launcher can no longer fire regular ordnance).",
+  "source": "WEG40143 Pirates & Privateers p.39"
+ },
+ {
+  "category": "Ship Equipment",
+  "name": "Sensor Decoy (Mimic)",
+  "type": "MerenData Mimic Sensor Decoy",
+  "cost": "13,000 (2 tubes + 3 decoys); 1,000/additional decoy",
+  "availability": "2, X",
+  "game_notes": "Adds 2D to sensor operator's difficulty to discriminate between decoy and real ship. Decoys move up to speed 10, have simple droid brains, and can be issued new movement instructions via comlink or programmed with several patterns. False image option impersonates one of 5 preloaded profiles: ship of origin, TIE/ln, YT-1300, Lambda shuttle, or Corellian corvette. New profiles: Moderate droid programming roll + appropriate signal profile.",
+  "source": "WEG40143 Pirates & Privateers p.39"
+ },
+ {
+  "category": "Ship Equipment",
+  "name": "Comm Jammer",
+  "type": "IntelStar Silencer Comm Jammer",
+  "cost": "5,000 plus installation",
+  "availability": "2, R",
+  "game_notes": "Skill: Communications. Floods comm frequencies with static. Operates 10 combat rounds before recharging (10 rounds to recharge). Subtract 1 round operating time per fire arc jammed (focused jamming subtracts 5 rounds). Opposed communications roll; jamming ship gains bonus dice based on arcs jammed: All arcs +0D, 3 arcs +1D, 2 arcs +2D, 1 arc +3D, focused (1 ship) +4D.",
+  "source": "WEG40143 Pirates & Privateers p.39"
+ },
+ {
+  "category": "Ship Equipment",
+  "name": "Sensor Jammer",
+  "type": "IntelStar BlindSide Sensor Jammer",
+  "cost": "5,000 plus installation",
+  "availability": "2, X",
+  "game_notes": "Skill: Sensors. Floods sensor frequencies with static. Opposed sensors roll against jamming ship's sensor operator. Jamming ship adds its sensor dice to the jamming roll, using standard sensor arcs, active modes only.",
+  "source": "WEG40143 Pirates & Privateers p.39"
+ },
+ {
+  "category": "Ship Equipment",
+  "name": "Baffled Drive",
+  "type": "Rendili StarDrive WhisperThrust",
+  "cost": "100,000+ (black market); extra tank: 7,000",
+  "weight": "20 metric tons; extra tank: 2 metric tons",
+  "availability": "4, X",
+  "game_notes": "Highly illegal baffled realspace drive using supercooled chemical thrust. Allows ship to move while running silent at base speed 2. Detectability: Cautious movement = no more detectable than drifting; Cruise +5 to sensor operator's roll; High Speed +10; All-Out +15. Fuel capacity: 100 spatial units of movement. Fuel synthesis requires 120 liters spin-sealed tibanna gas + 2 kg high-grade hyperbarides + standard power generator; refining takes ~3 standard days.",
+  "source": "WEG40143 Pirates & Privateers p.39-40"
+ },
+ {
+  "category": "Ship Equipment",
+  "name": "Backup Battery",
+  "type": "CEC Lifesaver Emergency Battery",
+  "cost": "10,000",
+  "weight": "1 metric ton",
+  "availability": "2",
+  "game_notes": "Life support fail-safe providing up to 1 hour extra survival during catastrophic power failure. Pirates use these when running silent — normally life support fails in minutes without power, but the backup battery extends silent running significantly.",
+  "source": "WEG40143 Pirates & Privateers p.40"
+ },
+ {
+  "category": "Ship Equipment",
+  "name": "Transponder Code Masking Modulator",
+  "type": "Code Masking Device",
+  "cost": "1,500-6,000 (varies by number of codes)",
+  "availability": "4, X",
+  "game_notes": "Interferes with ship's transponder code, producing a new code or mimicking another ship of the same model. Codes switchable from ship controls. Installation difficulty by number of additional codes: 1 code Easy/1,500cr, 2 codes Moderate/3,000cr, 3 codes Difficult/4,500cr, 4 codes Very Difficult/6,000cr. Detection: 5+ codes Easy sensors, 4 codes Moderate, 3 codes Difficult, 2 codes Very Difficult, 1 code Heroic. Acquiring another ship's code: 1 week research + 1,000cr per code. Registering a code: Moderate-Difficult con or bureaucracy + 1,000cr per code.",
+  "source": "WEG40143 Pirates & Privateers p.40-41"
+ },
+ {
+  "category": "Armor",
+  "name": "Armored Vacuum Suit",
+  "type": "Corellian Technologies Boarding Armor",
+  "cost": "4,000",
+  "availability": "2, R",
+  "game_notes": "Based on classic Incom vacuum suit. 10 hours atmosphere, Moderate stamina check every hour in vacuum or suffer a wound. +1D vs energy and physical damage. -1D from Dexterity and related skills in gravity. Self-patching.",
+  "source": "WEG40143 Pirates & Privateers p.44"
+ },
+ {
+  "category": "Armor",
+  "name": "Armored Spacesuit",
+  "type": "Merr-Sonn Weapons Superior Boarding Armor",
+  "cost": "10,000",
+  "availability": "2, X",
+  "game_notes": "Simpler than spacetrooper armor but adequate for most boarders. 25 hours atmosphere, heating unit, waste unit, onboard food supplements. Self-patching, includes comlink. +2D vs energy and +1D vs physical damage. -1D from Dexterity and related skills in gravity. Includes rocket pack (Space Move: 1, uses rocket pack operation).",
+  "source": "WEG40143 Pirates & Privateers p.44"
+ },
+ {
+  "category": "Ship Equipment",
+  "name": "Ion Cannon (Light)",
+  "type": "Comar f-2 Ion Cannon",
+  "cost": "1,000",
+  "weight": "0.5 metric tons",
+  "availability": "2, F",
+  "game_notes": "Scale: Starfighter. Skill: Starship gunnery. Space Range: 1-3/7/36. Atmo Range: 100-300/700/3.6 km. Fire Control: 1D. Damage: 2D (ion). Cheap and simple, suitable for light defense.",
+  "source": "WEG40143 Pirates & Privateers p.45"
+ },
+ {
+  "category": "Ship Equipment",
+  "name": "Ion Cannon (Medium)",
+  "type": "Comar f-4 Ion Cannon",
+  "cost": "1,500",
+  "weight": "1 metric ton",
+  "availability": "2, F",
+  "game_notes": "Scale: Starfighter. Skill: Starship gunnery. Space Range: 1-3/7/36. Atmo Range: 100-300/700/3.6 km. Fire Control: 2D. Damage: 3D (ion). Moderately more powerful version of the f-2.",
+  "source": "WEG40143 Pirates & Privateers p.45"
+ },
+ {
+  "category": "Ship Equipment",
+  "name": "Ion Cannon (Heavy)",
+  "type": "Comar f-9 Ion Cannon",
+  "cost": "3,000",
+  "weight": "1 metric ton",
+  "availability": "2, F",
+  "game_notes": "Scale: Starfighter. Skill: Starship gunnery. Space Range: 1-3/7/36. Atmo Range: 100-300/700/3.6 km. Fire Control: 4D. Damage: 4D (ion). Same power as f-4 but with superior fire control computer.",
+  "source": "WEG40143 Pirates & Privateers p.45"
+ },
+ {
+  "category": "Ship Equipment",
+  "name": "Tractor Beam (Light)",
+  "type": "Bonadon Cargo-Mover Tractor Beam",
+  "cost": "8,000",
+  "weight": "15 metric tons",
+  "availability": "2",
+  "game_notes": "Scale: Starfighter. Skill: Starship gunnery. Space Range: 1-3/7/15. Atmo Range: 100-300/700/1.5 km. Fire Control: 2D. Damage: 2D. Standard commercial cargo tractor beam, adaptable to less legitimate pursuits.",
+  "source": "WEG40143 Pirates & Privateers p.45"
+ },
+ {
+  "category": "Ship Equipment",
+  "name": "Conner Web",
+  "type": "SoroSuub Type IV Ship Restraining Net",
+  "cost": "5,000 per canister",
+  "availability": "2, R",
+  "game_notes": "Scale: Starfighter. Skill: Starship gunnery. Space Range: 1/5/10. Atmo Range: 100/500/1 km. Fire Control: 2D. Damage: 5D (ion). Base difficulty: Difficult. Net is 50m diameter. Enmeshes a ship and delivers strong electrical charge — ionizes controls. Battery lasts 1 hour, can be switched off by signal from firing ship. Works in space or atmosphere (updated from older ground-only Conner nets).",
+  "source": "WEG40143 Pirates & Privateers p.45"
+ },
+ {
+  "category": "Ship Equipment",
+  "name": "Concussion Missile Launcher",
+  "type": "Arakyd Morne-3 Concussion Missile Launcher",
+  "cost": "3,500 (launcher); 500/dumb missile, 1,500/smart missile, 3,000/savant missile",
+  "availability": "2, X",
+  "game_notes": "Scale: Starfighter. Skill: Starship gunnery. Space Range: 1-2/8/15. Atmo Range: 100-200/800/1.5 km. Fire Control: 1D. Damage: 8D. Dumb missiles: no tracking. Smart missiles: 4D fire control, move 15 spatial units/round for up to 10 rounds, droid brain picks nearest target if first moves out of range. Savant missiles: act dumb on first round, become smart on second round if they miss.",
+  "source": "WEG40143 Pirates & Privateers p.45"
+ },
+ {
+  "category": "Medical",
+  "name": "MedKit",
+  "type": "BioTech MedKit",
+  "cost": "2,200 (full kit); 1,000 (reload medpacs)",
+  "availability": "2",
+  "game_notes": "Skill: First aid or (A) Medicine. Can be used as a medpac up to 10 times. Diagnostics sensor: Easy first aid roll to diagnose diseases, assess health, and basic medical uses. Sufficiently equipped for field surgery with medicine advanced skill (exhausts medpacs).",
+  "source": "WEG40143 Pirates & Privateers p.47"
+ },
+ {
+  "category": "Communications",
+  "name": "Alliance Communications Encoder",
+  "type": "Alliance Communications Encoder/Decoder",
+  "cost": "Not for sale",
+  "availability": "4",
+  "game_notes": "Skill: Communications. Standard Alliance privateer/military equipment. Adds +2D to communications skill for encoding or decoding transmissions, making intercepted comms difficult or impossible to understand. Also carries Code Quasar, a METOSP broadcast identifying the ship as an Alliance privateer (no game effect — equivalent to flying an ID flag).",
+  "source": "WEG40143 Pirates & Privateers p.47"
+ },
+ {
+  "category": "Clothing",
+  "name": "Shipsuit",
+  "type": "Ayelic/Krongbing Textiles Shipsuit",
+  "cost": "200",
+  "availability": "1",
+  "game_notes": "Multi-pocketed coverall for tools and equipment. Tough synthweave fabric lasts years — fireproof and electrically nonconductive (but not heat-resistant). Functions as a vacuum suit internal body sleeve, allowing fast change into EVA gear.",
+  "source": "WEG40143 Pirates & Privateers p.47"
+ },
+ {
+  "category": "Tools",
+  "name": "Squib Battering Ram",
+  "type": "Fegigrish Heavy Industrials Battering Ram",
+  "cost": "3,500",
+  "availability": "3",
+  "game_notes": "Scale: Character. Structural weakener — does 4D damage against targeted material. Weakens material at the molecular level. Somewhat underpowered but will eventually hammer through any door or hatchway. Not intended for breaching hull integrity.",
+  "source": "WEG40143 Pirates & Privateers p.47"
+ },
+ {
+  "category": "Tools",
+  "name": "Plasma Punch",
+  "type": "Drever Corporation Phoenix Plasma Punch",
+  "cost": "5,000",
+  "availability": "2, X",
+  "game_notes": "Scale: Starfighter. Variable setting cutter — cuts circles from 3cm to 3m diameter. Damage: 6D. Can cut through any material including quadranium and magnetically sealed hatches given time. Very power-hungry: 2 activations of up to 10 minutes each before batteries drain; 6-hour recharge. Range: 0-2m. Impractical as ship-to-ship weapon. Favored by Imperial Customs branches.",
+  "source": "WEG40143 Pirates & Privateers p.47"
+ },
+ {
+  "category": "Ship Equipment",
+  "name": "Plasma Torch Boarding Device",
+  "type": "BlasTech Plasma Cut Boarding Device",
+  "cost": "4,750",
+  "availability": "X",
+  "game_notes": "Scale: Starfighter. Skill: Starship gunnery. Crew: 2. Mounted on ship's airlock system, controls just inside main airlock. Extendable plasma torch: Fire Control 0D, Range 4m, Damage 8D. Roll target ship's hull -2D; 'lightly damaged' = hull breached. After breach, 1 full minute to cut a 1m x 2m hole. Extendable boarding tube attaches to hull and forms airtight seal in 30 seconds.",
+  "source": "WEG40143 Pirates & Privateers p.48"
+ },
+ {
+  "category": "Tools",
+  "name": "Lock Breaking Kit",
+  "type": "Individual Manufacture Security Code De-scrambler",
+  "cost": "8,000 (legitimate); 16,000+ (black market)",
+  "availability": "4, R or X",
+  "game_notes": "Skill: Security. Adds +2D to security skill when attempting to open an electronically sealed entryway. Most kits are self-assembled from other tool kits with rare components from security manufacturers.",
+  "source": "WEG40143 Pirates & Privateers p.48"
+ },
+ {
+  "category": "Ship Equipment",
+  "name": "Universal Airlock",
+  "type": "SoroSuub Corp. Universal Airlock",
+  "cost": "3,000",
+  "availability": "2",
+  "game_notes": "Space-to-ship portable airlock. Durable synthetic fabric over collapsible frame. Collapsed: 0.5m diameter. Expanded: 5m diameter capsule with hatch and bag-lock. Bag-lock exits to space, pressurized by high-power pneumatic pump. Other exit is a simple hatch with multi-lock sealing ring. 3D Strength to resist damage (somewhat vulnerable to punctures, but frame resists instant depressurization).",
+  "source": "WEG40143 Pirates & Privateers p.48"
+ },
+ {
+  "category": "Ship Equipment",
+  "name": "Cotterdam",
+  "type": "TaggeCo. Cotterdam Universal Airlock",
+  "cost": "3,500",
+  "availability": "2",
+  "game_notes": "Ship-to-ship airlock. Flexible tube with interior ladder/walkway and multi-lock ring on extended end. Multi-lock ring houses three sets of pressure, chemical, magnetic, and mechanical surface-to-surface sealing methods. One of the older and more proven universal spacelocks.",
+  "source": "WEG40143 Pirates & Privateers p.48"
+ },
+ {
+  "category": "Medical",
+  "name": "Cybernetic Prosthetics (Repli-Limb)",
+  "type": "Bio-Tech Repli-Limb Prosthetics",
+  "cost": "Arm 2,000; Ear 2,750; Eye 2,750; Hand 1,000; Heart 5,000; Kidney 4,500; Leg 2,000; Lungs 4,000",
+  "availability": "2",
+  "game_notes": "State-of-the-art prosthetics. Difficult Perception roll to tell from organic. No special abilities — replacement matches original function. Cost includes prosthetic and operation. Jury-rigging enhancements: cost = base price x pip increase x starting die code (ignore pips). E.g., boosting a 3D+1 hand by 2D = 1,000 x 6 x 3 = 18,000cr. Drawbacks: strong social prejudice against obvious cybernetics; enhanced characters accumulate Dark Side Points faster when committing evil (1-2 enhancements +1 DSP, 3-4 +2 DSP, 5-6 +3 DSP). A basic replacement counts as half an enhancement (round down).",
+  "source": "WEG40143 Pirates & Privateers p.50"
  }
 // --- END OF EQUIPMENT_DATA ---
 ];

@@ -4957,6 +4957,121 @@ const WEAPONS_DATA = [
   "fire_rate": "1",
   "game_notes": "Scale: Character. Neural-effect blaster. A successful hit lowers the target's ability to resist commands from the assailant. The target uses willpower skill against the Gun of Command's damage dice instead of Strength. Willpower Effects — Damage Roll ≥ Willpower Roll: 0-3 = -1D to willpower for 1 round; 4-8 = -1D to willpower for 1D rounds; 9-12 = -2D to willpower for 2D minutes; 13-15 = -2D to willpower for 2D hours; 16+ = -3D to willpower for 3D hours. If target's willpower falls to 0D or below, they automatically accept any command from the assailant within reason. If the command puts the target into direct harm (like walking off a balcony), the target will 'snap out' of the trance, voiding the effects completely. Looks identical to any other blaster except for a large dial on the weapon's side. Developed by the technologically advanced society of Charubah in the Hapes Cluster as a non-violent policing alternative. Prohibitively expensive — outfitting all law-enforcement teams would have broken many local governments.",
   "source": "WEG40139 Cracken's Threat Dossier p.54"
+ },
+ {
+  "category": "Melee Weapons",
+  "name": "Vibrorapier",
+  "type": "LaserHone Duelist Vibrorapier",
+  "cost": "300",
+  "availability": "2, R",
+  "damage": "STR+3D (max 7D)",
+  "game_notes": "Skill: Melee combat. Difficulty: Moderate. Elegant vibroweapon carried by nobles, gentlebeings, and rogues. Unlike most vibroweapons, LaserHones are silent (ultrasonic) — no high-pitched whine.",
+  "source": "WEG40143 Pirates & Privateers p.42"
+ },
+ {
+  "category": "Melee Weapons",
+  "name": "Vibrodagger",
+  "type": "LaserHone Talon Vibrodagger",
+  "cost": "50",
+  "availability": "2, R",
+  "damage": "STR+2D (max 6D)",
+  "game_notes": "Skill: Melee combat. Difficulty: Easy. Favored by pirates, infiltrators, Imperial Storm Commandos, and others needing silent operation. Purely functional with no aesthetic appeal. Silent (ultrasonic) like all LaserHone vibroweapons.",
+  "source": "WEG40143 Pirates & Privateers p.42"
+ },
+ {
+  "category": "Blaster Weapons",
+  "name": "Deck-Sweeper Stunner",
+  "type": "Merr-Sonn Deck Sweeper Stunning Blaster",
+  "cost": "500",
+  "availability": "2, X",
+  "damage": "6D (stun only)",
+  "range": "3/5/10",
+  "game_notes": "Skill: Blaster. Fire Rate: 1/2. Ammo: 5. Hits everyone within a 45-degree arc of the firer. Characters within 5m cannot dodge. Characters 6-10m may dodge at -1D. Designed for stunning large numbers at close range. Sold exclusively to police/military — civilian possession illegal. Empire rejected it for Naval use (too short range, slow fire rate, bulky for armored marines).",
+  "source": "WEG40143 Pirates & Privateers p.42"
+ },
+ {
+  "category": "Melee Weapons",
+  "name": "Stun Gauntlets",
+  "type": "Palandrix Personal Protection Gear Stun Gauntlets",
+  "cost": "300",
+  "availability": "2",
+  "damage": "STR+2D (stun)",
+  "game_notes": "Skill: Brawling. Ammo: 10 charges. Appear as standard heavy gauntlets with long cuffs. Conceal a tiny battery connected to contact wiring mesh over an insulated glove — delivers stun charge on contact. Useful when disarmed of obvious weapons.",
+  "source": "WEG40143 Pirates & Privateers p.42"
+ },
+ {
+  "category": "Melee Weapons",
+  "name": "Stun Baton",
+  "type": "Merr-Sonn Stun Baton",
+  "cost": "300",
+  "availability": "R",
+  "damage": "STR+2D+2 (with stun charge); STR+1D (charge off)",
+  "game_notes": "Skill: Melee combat. Difficulty: Easy. Short club with small power pack for non-lethal melees.",
+  "source": "WEG40143 Pirates & Privateers p.43"
+ },
+ {
+  "category": "Grenades & Explosives",
+  "name": "Stun Grenade",
+  "type": "Merr-Sonn Stun Grenade",
+  "cost": "450",
+  "availability": "X",
+  "damage": "6D/5D/3D (stun)",
+  "range": "0-8/16/25",
+  "game_notes": "Skill: Grenade. Blast Radius: 0-2/20/40. Originally designed for riot control. Can be reused but only holds one charge at a time.",
+  "source": "WEG40143 Pirates & Privateers p.43"
+ },
+ {
+  "category": "Grenades & Explosives",
+  "name": "Spore/B Stun Grenade",
+  "type": "Czerka Spore/B Grenade",
+  "cost": "300",
+  "availability": "2, X",
+  "damage": "4D/3D/2D (stun)",
+  "range": "0-8/16/25",
+  "game_notes": "Skill: Grenade. Blast Radius: 0-2/20/40. Releases Bothan stun spores. Ineffective against breath masks or sealed suits. Spores slow breathing until victim falls unconscious. Wild Die roll of 1 when resisting = respiratory failure — must be resuscitated (Moderate first aid) or die of suffocation within 2D rounds.",
+  "source": "WEG40143 Pirates & Privateers p.43"
+ },
+ {
+  "category": "Grenades & Explosives",
+  "name": "T-289 Gas Grenade",
+  "type": "Czerka T-289 Gas Grenade",
+  "cost": "325",
+  "availability": "2, X",
+  "damage": "4D/2D/1D (stun)",
+  "range": "0-8/16/25",
+  "game_notes": "Skill: Grenade. Blast Radius: 0-2/20/40. Releases T-289 stun gas. Non-fatal except in very large doses. Causes intense nausea, disorientation, and vomiting. Ineffective against breath masks or sealed suits.",
+  "source": "WEG40143 Pirates & Privateers p.43"
+ },
+ {
+  "category": "Blaster Weapons",
+  "name": "Deck Clearing Blaster",
+  "type": "BlasTech Firespray DL-87",
+  "cost": "100",
+  "availability": "2, X",
+  "damage": "5D",
+  "range": "1/5/10",
+  "game_notes": "Skill: Blaster. Fire Rate: 1/2. Ammo: 10. Wide-field blaster — hits everyone within a 45-degree arc of the firer. Characters within 5m cannot dodge. Characters 6-10m may dodge at -1D. Rejected by Imperial Navy for slow fire rate and limited ammo capacity.",
+  "source": "WEG40143 Pirates & Privateers p.43"
+ },
+ {
+  "category": "Grenades & Explosives",
+  "name": "Shaped Charge",
+  "type": "Merr-Sonn Pre-shaped Detonite Charge",
+  "cost": "200",
+  "availability": "2, R",
+  "damage": "2D per charge (speeder scale) + bonuses",
+  "game_notes": "Skill: Demolitions. Difficulty: Moderate. Scale: Speeder. Used to penetrate strong building materials (duracrete, plasteel, durelium hulls). Successful use increases explosion damage by +2D.",
+  "source": "WEG40143 Pirates & Privateers p.44"
+ },
+ {
+  "category": "Grenades & Explosives",
+  "name": "Plasticene Thermite Gel",
+  "type": "Gatrellis Plasticene Thermite Cube",
+  "cost": "1,000 per kg",
+  "availability": "2, X",
+  "damage": "20D per kg; 2D per 100g",
+  "game_notes": "Skill: Demolitions. Scale: Character. Controlled pyrotechnic explosive. Malleable — can be shaped, molded, or stretched. 1 kg covers up to 20 sq cm. Burns for 3 rounds. Ignited by remote relay. Used by boarders to cut through hulls or bulkheads.",
+  "source": "WEG40143 Pirates & Privateers p.44"
  }
 // --- END OF WEAPONS_DATA ---
 ];
