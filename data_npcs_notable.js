@@ -40439,6 +40439,30 @@ const NOTABLE_NPCS = [
     equipment: "Datapad, comlink, BlasTech StarSlasher blaster carbine (5D), massive pirate armada, the Fa-Loh-Sui (Corellian corvette flagship)",
     capsule: "Ruthless Tiss'shar trader-turned-pirate commanding the 'Dark Wing' pirate fleet — a growing armada of a bulk cruiser, three Corellian corvettes, and 20+ starfighters sweeping up the Perlemian Trade Route. All plunder goes directly to support the fleet. Crews that resist are executed but a few survivors are released to spread word of the Dark Wing's ferocity. Slave cargos vanish — likely recruited into the fleet. Has a 300,000 credit galactic bounty, rare for a nonpolitical criminal.",
     source: "WEG40143 Pirates & Privateers p.101-103"
+  },
+  {
+    name: "Chidee Na Maak",
+    species: "Duros",
+    system: "StarForge Nebula",
+    location: "StarForge Nebula - StarForge Station — StarForge Shipyard",
+    affiliations: ["The Fringe"],
+    role: "Starshipwright",
+    type: "Shipwright",
+    stats: {
+      DEXTERITY: { base: "2D+2", skills: { "blaster": "5D", "dodge": "4D+2" } },
+      KNOWLEDGE: { base: "3D", skills: { "alien species": "4D+2", "bureaucracy": "4D", "languages": "4D", "law enforcement": "4D+1", "streetwise": "6D" } },
+      MECHANICAL: { base: "3D", skills: { "astrogation": "6D", "capital ship gunnery": "5D+1", "capital ship piloting": "5D+2", "communications": "4D+2", "sensors": "4D+1", "space transports": "7D", "starship gunnery": "6D+1", "starship shields": "5D" } },
+      PERCEPTION: { base: "2D+2", skills: { "bargain": "5D", "command": "4D", "hide": "5D", "search": "4D", "sneak": "3D+2" } },
+      STRENGTH: { base: "2D+2", skills: { "brawling": "3D", "climbing/jumping": "3D", "stamina": "3D+1" } },
+      TECHNICAL: { base: "4D", skills: { "capital ship repair": "6D", "capital ship weapon repair": "6D", "computer programming/repair": "5D", "demolitions": "5D", "first aid": "5D", "security": "4D+2", "space transports repair": "5D", "starship weapon repair": "5D" } }
+    },
+    specialAbilities: "",
+    forcePoints: 3,
+    characterPoints: 18,
+    move: 10,
+    equipment: "Comlink, datapad, small toolkit",
+    capsule: "Duros starshipwright who inherited the StarForge Shipyards from his parents twelve years ago after they died in a fuel explosion. After fending off takeover attempts, he settled into the profitable business of knockoff starship construction. Has several dozen designs on file and relishes turning clients' vague concepts into workable ships. Construction takes about one week per hull die (double for capital ships) at roughly double new cost, cash up front, no bargaining. His work is guaranteed. Friends all over the Station, people who owe him favors across the sector. Recently courting a Duros smuggler named Kuuda De Nall.",
+    source: "WEG40143 Pirates & Privateers p.111-112"
   }
 // --- END OF NOTABLE_NPCS ---
 ];

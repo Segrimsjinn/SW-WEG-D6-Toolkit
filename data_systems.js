@@ -4347,6 +4347,7 @@ const SYSTEMS_DATA = [
   { "name": "Ord Jannak", "grid": "R-10", "region": "Mid Rim", "col": 16, "row": 10, "quadrant": "E", "hours": 2.7 },
   { "name": "Ord Janon", "grid": "N-2", "region": "Outer Rim Territories", "col": 12, "row": 2, "quadrant": "NE", "hours": 8.0 },
   { "name": "Ord Klina", "grid": "S-13", "region": "Outer Rim Territories", "col": 17, "row": 13, "quadrant": "E", "hours": 5.7 },
+  { "name": "Ord Antalaha", "grid": "S-14", "region": "Outer Rim Territories", "col": 17, "row": 14, "quadrant": "E", "hours": 6.0 },
   { "name": "Ord Lithone", "grid": "L-8", "region": "Inner Rim", "col": 10, "row": 8, "quadrant": "C", "hours": 3.0 },
   { "name": "Ord Lonesome", "grid": "T-12", "region": "Outer Rim Territories", "col": 18, "row": 12, "quadrant": "E", "hours": 4.0 },
   { "name": "Ord Mantell", "grid": "L-7", "region": "Mid Rim", "col": 10, "row": 7, "quadrant": "N", "hours": 5.2 },
