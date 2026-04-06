@@ -5083,6 +5083,42 @@ const WEAPONS_DATA = [
   "range": "3-30/80/350",
   "game_notes": "Skill: Blaster. Scale: Character. Ammo: 8. Fire Rate: 1. Fire Control: 2D (dual-laser targeting beams). Each time fired, user must make Moderate Strength roll to contain recoil and be able to fire next round. Experimental weapon — only three prototypes exist. Two undergoing testing at Exotar Labs, the third field-evaluated by Kaori Batta.",
   "source": "WEG40153 Wretched Hives p.43"
+ },
+ {
+  "name": "Caelli-Merced Series III Blaster Pistol",
+  "type": "Blaster pistol",
+  "category": "Blaster Pistols",
+  "model": "Caelli-Merced Series III",
+  "cost": "900 (power packs: 30)",
+  "availability": "4, R",
+  "damage": "4D+2",
+  "range": "3-10/30/120",
+  "game_notes": "Skill: Blaster. Scale: Character. Ammo: 100. Designed for skilled marksmen. Adds +5 to difficulty for any user with blaster skill of less than 4D, but anyone with blaster skill of 6D or higher gets +1D to hit. The Series III packs considerably more punch than a standard pistol while retaining a small, compact design. The first weapon ever produced by the Caelli-Merced Syndicate and remains its best seller. Due to incredible demand and Caelli-Merced's limited manufacturing capabilities, the Series III is only available on Socorro and the black market.",
+  "source": "WEG40154 Black Sands of Socorro p.44"
+ },
+ {
+  "name": "Caelli-Merced Sentinel IV Heavy Blaster Pistol",
+  "type": "Heavy blaster pistol",
+  "category": "Blaster Pistols",
+  "model": "Caelli-Merced Sentinel IV",
+  "cost": "1,200",
+  "availability": "4, R",
+  "damage": "5D+2",
+  "range": "3-10/30/60",
+  "game_notes": "Skill: Blaster. Scale: Character. Ammo: 100. Precisely designed for the advanced user. Adds +5 to difficulty for any user with blaster skill of less than 4D, but anyone with blaster skill of 6D or higher gets +1D to hit. Of all Caelli-Merced products, no other weapon carries the distinction and reputation of the Sentinel IV — so highly prized that they are almost never found for sale off the planet, even through the most well-connected black marketeers. Carrying a Sentinel IV is a status symbol among the Black Bha'lir; older variations passed down generations remain just as formidable as new models. RECOGNITION: Anyone who makes a Difficult streetwise roll and recognizes a Sentinel IV understands that whoever is carrying it is not a person to be trifled with. Smugglers, bounty hunters, assassins, and similar backgrounds get +1D bonus to this roll.",
+  "source": "WEG40154 Black Sands of Socorro p.44"
+ },
+ {
+  "name": "Caelli-Merced Ice Spike",
+  "type": "Fragmentation grenade",
+  "category": "Grenades & Explosives",
+  "model": "Caelli-Merced Ice Detonator",
+  "cost": "800",
+  "availability": "2, F, R",
+  "damage": "8D/6D/4D/2D",
+  "range": "1-2/5/8",
+  "game_notes": "Skill: Demolitions. Scale: Character. Blast Radius: 0-2/4/6/8 meters. The fist-sized explosive is bottom-heavy. Fishermen drill a hole into the ice approximately half a meter deep, then drop the ice spike bottom-first into the shaft. While the timer counts down, the fisherman rushes to get beyond the eight-meter blast radius. Made popular by the fishermen of Neftali for cracking through thick ice to reach guda fish and other aquatic prey.",
+  "source": "WEG40154 Black Sands of Socorro p.66"
  }
 // --- END OF WEAPONS_DATA ---
 ];

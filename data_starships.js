@@ -8615,6 +8615,71 @@ const STARSHIP_DATA = {
    ],
    "capsule": "The Shield's highly modified bulk freighter, reinforced to be battle-worthy and serve as a home base for extended periods without resupply. The Cygnante has five false transponders that can give false ship identification codes to nosy Imperial patrol cruisers.",
    "source": "WEG40084 Cracken's Rebel Operatives p.21"
+  },
+  {
+   "rank": 1,
+   "name": "Merkel",
+   "craft": "Modified Corellian Action V Transport",
+   "type": "Medium bulk freighter",
+   "affiliation": "Criminal Underworld",
+   "era": "Rebellion",
+   "source": "WEG40154 Black Sands of Socorro p.56",
+   "price_new": "Not for sale (Saadoon-Kauldi)",
+   "price_used": "",
+   "scale": "Capital",
+   "length": "115 meters",
+   "crew": "8",
+   "gunners": "23",
+   "passengers": "350",
+   "cargo": "80,500 metric tons",
+   "consumables": "4 months",
+   "hyperdrive": "x2",
+   "hyperdrive_backup": "x15",
+   "nav_computer": "Yes",
+   "maneuverability": "1D+2",
+   "space": "2",
+   "atmosphere": "225; 650 kmh",
+   "hull": "5D",
+   "shields": "3D",
+   "of_note": "Black hull — appears in space as no more than a ghostly outline, like a free-roaming nebula devoid of stars. Most armaments are hidden, lending the appearance of a typical bulk freighter — a facade that has served the ship well over the years. Cargo areas have been converted to passenger cabins, galleys, recreation centers, and a private sanctuary for Saadoon-Kauldi. Hangar bay houses a small squadron of Z-95 Headhunters. Proximity alarm systems are locked into the control boards of Cjaalysce'l traffic towers and Soco-Jarel Spaceport — any attack instantly sounds alarms and brings vessels to Saadoon's defense. Rarely seen out of Socorran space, remaining in secured orbit around Neftali.",
+   "sensors_passive": "20/0D",
+   "sensors_scan": "30/1D",
+   "sensors_search": "40/2D",
+   "sensors_focus": "1/3D",
+   "weapons": [
+    {
+     "name": "6 Turbolasers",
+     "fire_arc": "Turret",
+     "crew": "2",
+     "skill": "Capital ship gunnery",
+     "fire_control": "2D+1",
+     "space_range": "3-15/35/75",
+     "atmo_range": "300-1.5/3.5/7.5 km",
+     "damage": "5D"
+    },
+    {
+     "name": "4 Quad Laser Cannons",
+     "fire_arc": "2 front, 1 left, 1 right",
+     "crew": "2",
+     "skill": "Starship gunnery",
+     "fire_control": "2D+1",
+     "space_range": "1-5/10/17",
+     "atmo_range": "100-500/1/1.7 km",
+     "damage": "5D"
+    },
+    {
+     "name": "1 Tractor Beam Projector",
+     "fire_arc": "Front",
+     "crew": "3",
+     "skill": "Capital ship gunnery",
+     "fire_control": "2D",
+     "space_range": "1-5/15/30",
+     "atmo_range": "100-500/1.5/3 km",
+     "damage": "4D"
+    }
+   ],
+   "capsule": "The Merkel is the modified Corellian Action V Transport that serves as Saadoon-Kauldi's mobile fortress and residence. After several attempts on his life, Pret Swain and the Caelli-Merced Syndicate technicians adapted the freighter inside and out to meet the needs of the ever-growing Kadri'Ra crime lord. The ship orbits Neftali, providing the Kadri'Ra with relative safety from the Empire while letting him operate his spice smuggling operation under the protection of the Black Bha'lir.",
+   "source": "WEG40154 Black Sands of Socorro p.56"
   }
  ],
  "Stock Shuttles": [

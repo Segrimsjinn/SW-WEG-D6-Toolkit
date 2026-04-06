@@ -4164,6 +4164,47 @@ const VEHICLES_DATA = [
   "weapons": "2 Blaster Pulse Cannons (fire-linked): Fire Arc: Front, Skill: Vehicle blasters, Fire Control: 3D+2, Range: 50-100/250/500, Damage: 6D",
   "game_notes": "Active sound dampers dramatically reduce noise. Sensor bafflers add +3D to difficulty to detect by sensor, Perception, or search rolls. Bith vehicle voice lock (advanced theft deterrent requiring voice command code to power up). Prototype too fast for mass production — most pilots cannot endure the g-forces or match the lightning reflexes required.",
   "source": "WEG40153 Wretched Hives p.103"
+},
+{
+  "name": "Caelli-Merced Sandpopper",
+  "type": "Airspeeder",
+  "category": "Airspeeders",
+  "model": "Caelli-Merced Sandpopper",
+  "scale": "Speeder",
+  "length": "9 meters",
+  "skill": "Repulsorlift operation: sandpopper",
+  "crew": "1",
+  "passengers": "3",
+  "cargo_capacity": "100 kilograms",
+  "cover": "Full",
+  "cost": "20,000 (new), 15,000 (used)",
+  "maneuverability": "3D+1",
+  "move": "260; 750 kmh",
+  "body_strength": "2D+2",
+  "shields": "1D+2",
+  "altitude_range": "Ground level-5 km",
+  "sensors": "Passive: 1 km. Focus: 500 meters.",
+  "weapons": "1 Double Laser Cannon (Optional): Fire Arc: Front, Skill: Vehicle blaster, Fire Control: 2D, Range: 50-100/300/1.2 km, Damage: 4D",
+  "game_notes": "One of the most popular surface-to-air vehicles on Socorro. A favorite of the twenty-something generation, the specialty airspeeder is a hot-seller due to its low cost. Named after a field-testing accident — a technician forgot to cover the engine housing and sand got sucked into the repulsorlift chambers, causing a peculiar popping sound. The error was promptly corrected, but the name stuck, so Caelli-Merced engineers added a special filter that allows a minimum of sand into the engine to replicate the peculiar sound without causing damage.",
+  "source": "WEG40154 Black Sands of Socorro p.45"
+},
+{
+  "name": "Caelli-Merced CR-43 Low-Ride Gossbey Racing Edition",
+  "type": "Racing swoop",
+  "category": "Swoops",
+  "model": "Caelli-Merced CR-43",
+  "scale": "Speeder",
+  "length": "2.44 meters",
+  "skill": "Swoop operation",
+  "crew": "1",
+  "cargo_capacity": "3 kilograms",
+  "altitude_range": "Ground level-3.05 meters",
+  "cost": "8,000 credits",
+  "maneuverability": "5D+1",
+  "move": "120; 350 kmh",
+  "body_strength": "2D+2",
+  "game_notes": "The vehicle of choice for swoopchasers. Engines are governed at 350 kmh per regulation, but the composite frame is designed to withstand velocities up to 800 kmh. Cruising altitude limited to 3.05 meters by regulation. Spin-off street-legal version: the Caelli-Merced CR-43XA, with maximum altitude of 55 meters and top speed of 800 kmh.",
+  "source": "WEG40154 Black Sands of Socorro p.67"
 }
 // --- END OF VEHICLES_DATA ---
 ];
