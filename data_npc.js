@@ -288,7 +288,10 @@
                  "Merchant",
                  "Cynical Free-Trader",
                  "Comm Slicker",
-                 "Classy Smuggler"
+                 "Classy Smuggler",
+                 "Privateer Captain",
+                 "Alliance Observer",
+                 "Boarder"
              ],
     "training":  [
                      "Novice",
