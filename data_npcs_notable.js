@@ -41916,6 +41916,30 @@ const NOTABLE_NPCS = [
     equipment: "Heavy blaster pistol (5D), comlink, black trenchcoat, datapad, blast vest (+1D physical, +1 energy)",
     capsule: "Calm and laid back, an expert investigator who once served in the Corellian Security Forces. Cool under fire, seldom loses his temper — prefers to let others get emotional so they make exploitable mistakes. Main office on Corellia but will travel anywhere for a well-paying job. Specializes in missing persons cases but takes any challenging case. Maintains a code of honor, refusing morally questionable jobs. Doesn't stand out in a crowd but has a charming personality — '95% of this job is talking to people, the other 5% is shooting at them.'",
     source: "WEG40153 Wretched Hives p.144"
+  },
+  {
+    name: "Jobany Cyrs",
+    species: "Human",
+    system: "Socorro",
+    location: "Socorro — Freelance Scout",
+    affiliations: ["Rebel Alliance"],
+    role: "Freelance Scout",
+    type: "Scout",
+    stats: {
+      DEXTERITY: { base: "2D+2", skills: { "blaster": "6D+1", "brawling parry": "5D", "dodge": "5D+2", "melee combat": "4D+1", "melee parry": "4D", "running": "5D" } },
+      KNOWLEDGE: { base: "4D", skills: { "alien species": "7D", "cultures": "6D+2", "languages": "6D+2", "law enforcement": "6D", "planetary systems": "7D+1", "survival": "5D+1" } },
+      MECHANICAL: { base: "3D", skills: { "astrogation": "6D", "communications": "5D", "sensors": "5D+2", "space transports: Pathfinder": "7D+2", "starship gunnery": "6D+2", "starship shields": "5D+1" } },
+      PERCEPTION: { base: "3D", skills: { "con": "4D", "gambling": "5D", "persuasion": "4D+2", "sneak": "5D" } },
+      STRENGTH: { base: "3D", skills: { "brawling": "5D+2", "stamina": "5D" } },
+      TECHNICAL: { base: "2D+1", skills: { "computer programming/repair": "6D", "security": "5D+1", "space transports repair": "6D+2", "starship weapon repair": "5D" } }
+    },
+    specialAbilities: "None",
+    forcePoints: 2,
+    characterPoints: 9,
+    move: 10,
+    equipment: "Comlink, heavy blaster pistol (5D), blaster rifle (5D), datapad, Outward Bound (scout ship), 350 credits",
+    capsule: "Jobany Cyrs is a freelance scout. A wanderer and accomplished traveler, he has a fondness for the ideals of the Rebel Alliance and works in earnest to seek out and appropriate worlds for bases. Only 23 years old, he is one of the finest scouts employed by the Alliance and one of the most successful. Fair-haired and handsome, he dresses in the typical garb of a smuggler and idolizes that type of dangerous lifestyle. Coming from a long line of scouts and colonists, Jobany is something of a romantic. He finds nostalgia in nearly every aspect of life. As a result, his reports tend to be more travelogue than objective reconnaissance. He is an expert on alien cultures and enjoys immersing himself into strange situations.",
+    source: "WEG40154 Black Sands of Socorro p.6"
   }
 // --- END OF NOTABLE_NPCS ---
 ];
