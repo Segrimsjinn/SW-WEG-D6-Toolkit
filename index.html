@@ -1348,6 +1348,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
     <div id="tab-gm" class="tab-panel">
       <div id="gm-top" style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:8px;font-size:9px;font-family:'Exo 2',monospace;letter-spacing:0.5px">
         <a href="#gm-dice" style="color:var(--gold);text-decoration:none;padding:3px 8px;border:1px solid var(--card-border);border-radius:4px">Dice</a>
+        <a href="#gm-aliengen" style="color:var(--cyan);text-decoration:none;padding:3px 8px;border:1px solid var(--cyan);border-radius:4px">Alien Gen</a>
         <a href="#gm-combat" style="color:var(--gold);text-decoration:none;padding:3px 8px;border:1px solid var(--card-border);border-radius:4px">Combat</a>
         <a href="#gm-combatref" style="color:var(--gold);text-decoration:none;padding:3px 8px;border:1px solid var(--card-border);border-radius:4px">Combat Ref</a>
         <a href="#gm-chase" style="color:var(--gold);text-decoration:none;padding:3px 8px;border:1px solid var(--card-border);border-radius:4px">Chase</a>
@@ -1417,6 +1418,15 @@ color:var(--text-dim);min-width:35px;text-align:right;
           </div>
           <button class="ship-sort-btn" onclick="clearHistory()" style="margin-top:8px;font-size:7px">CLEAR HISTORY</button>
         </div>
+      </div>
+
+      <div class="card" id="gm-aliengen">
+        <div class="card-title" style="display:flex;justify-content:space-between;align-items:center">⟐ Random Alien Generator<a href="#gm-top" style="font-size:9px;color:var(--text-dim);text-decoration:none">↑ Top</a></div>
+        <div style="font-size:11px;color:var(--text-dim);margin-bottom:10px;line-height:1.5">Generate a random new alien species using the WEG40166 <em>Alien Encounters</em> Chapter One tables. Output is meant as a creative seed — tweak ranges, ability counts, and story factors as needed.</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:10px">
+          <button class="btn btn-primary" onclick="generateRandomAlien()" style="padding:8px 18px;font-size:11px;letter-spacing:1px">⟐ GENERATE ALIEN</button>
+        </div>
+        <div id="alienGenResult" style="display:none"></div>
       </div>
 
       <div class="card" id="gm-combat">
@@ -2526,6 +2536,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
 <script src="data_planets.js"></script>
 <script src="data_npcs_notable.js"></script>
 <script src="data_sysgen.js"></script>
+<script src="data_aliengen.js"></script>
 <script src="data_gazetteers.js"></script>
 
 <script>
@@ -5281,6 +5292,125 @@ function generateWildSpaceSystem() {
   </div>`;
 
   const container = document.getElementById('sysgenResult');
+  container.innerHTML = html;
+  container.style.display = 'block';
+  container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// ---- Random Alien Generator (WEG40166 Alien Encounters Ch.1) ----
+function roll3D() { return rollD(6) + rollD(6) + rollD(6); }
+function alienRoll(tbl, dice) {
+  let r;
+  if (dice === '1D') r = rollD(6);
+  else if (dice === '3D') r = roll3D();
+  else r = roll2D();
+  for (const e of tbl) if (r >= e.range[0] && r <= e.range[1]) return e;
+  return tbl[0];
+}
+function pickN(tbl, n) {
+  const pool = [...tbl];
+  const picked = [];
+  for (let i = 0; i < n && pool.length; i++) {
+    const idx = Math.floor(Math.random() * pool.length);
+    picked.push(pool[idx]);
+    pool.splice(idx, 1);
+  }
+  return picked;
+}
+
+function generateRandomAlien() {
+  if (window.goatcounter) goatcounter.count({ path: 'aliengen-generated', event: true });
+  const D = ALIENGEN_DATA;
+
+  const env       = alienRoll(D.environment, '2D');
+  const origin    = alienRoll(D.origin, '2D');
+  // Plants skip niche per the rules
+  const niche     = origin.value === 'Plant' ? null : alienRoll(D.niche, '1D');
+  const tech      = alienRoll(D.techLevel, '2D');
+  const attrDice  = alienRoll(D.attributeDice, '2D');
+
+  const attrs = ['DEXTERITY', 'KNOWLEDGE', 'MECHANICAL', 'PERCEPTION', 'STRENGTH', 'TECHNICAL'];
+  const ranges = attrs.map(a => ({ name: a, range: alienRoll(D.attributeRange, '3D').value }));
+
+  // Special abilities — roll 1D for count: 1=1, 2-3=2, 4-5=3, 6=4
+  const cntRoll = rollD(6);
+  const abilityCount = cntRoll === 1 ? 1 : cntRoll <= 3 ? 2 : cntRoll <= 5 ? 3 : 4;
+  // Pick from category mix: weapons, armor, skill bonus, constant, beginning, penalties
+  const categories = ['weapon', 'armor', 'skill', 'constant', 'beginning', 'penalty'];
+  const chosenCats = pickN(categories, abilityCount);
+  const abilities = [];
+  for (const cat of chosenCats) {
+    if (cat === 'weapon') {
+      const w = alienRoll(D.naturalWeapon, '2D');
+      const dmg = alienRoll(D.naturalWeaponDamage, '2D').value;
+      abilities.push({ label: 'Natural Weapon: ' + w.value, desc: dmg });
+    } else if (cat === 'armor') {
+      const a = alienRoll(D.naturalArmor, '1D');
+      abilities.push({ label: a.value, desc: a.desc });
+    } else if (cat === 'skill') {
+      const s = alienRoll(D.skillBonus, '3D');
+      abilities.push({ label: s.value, desc: s.desc });
+    } else if (cat === 'constant') {
+      const c = alienRoll(D.constantAbility, '2D');
+      abilities.push({ label: c.value, desc: c.desc });
+    } else if (cat === 'beginning') {
+      const b = alienRoll(D.beginningAbility, '2D');
+      abilities.push({ label: b.value, desc: b.desc });
+    } else if (cat === 'penalty') {
+      const p = alienRoll(D.penalty, '2D');
+      abilities.push({ label: 'Penalty: ' + p.value, desc: p.desc });
+    }
+  }
+
+  // 50% chance of a story factor
+  const story = Math.random() < 0.5 ? alienRoll(D.storyFactor, '1D') : null;
+
+  const ms = alienRoll(D.moveSize, '3D');
+
+  const row = (label, val) => `<div style="display:flex;gap:8px;padding:3px 0;border-bottom:1px solid rgba(255,255,255,0.04)"><span style="color:var(--text-dim);min-width:130px;flex-shrink:0">${label}</span><span style="color:var(--text-primary)">${val}</span></div>`;
+
+  const attrRows = ranges.map(r => row(r.name, r.range)).join('');
+  const abilityRows = abilities.map(a => `<div style="padding:4px 0;border-bottom:1px solid rgba(255,255,255,0.04)"><span style="color:var(--gold)">${a.label}</span><span style="color:var(--text-dim)"> — ${a.desc}</span></div>`).join('');
+  const storyRow = story ? `<div style="padding:4px 0"><span style="color:var(--gold)">${story.value}</span><span style="color:var(--text-dim)"> — ${story.desc}</span></div>` : '<div style="color:var(--text-dim);font-style:italic;font-size:11px">None rolled</div>';
+
+  const html = `<div class="card" style="border:1px solid var(--cyan);margin-bottom:12px">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+      <div style="color:var(--cyan);font-size:16px;font-weight:700;letter-spacing:1px">RANDOM ALIEN SPECIES</div>
+      <div style="display:flex;gap:6px"><button onclick="generateRandomAlien()" style="font-size:11px;color:var(--gold);background:none;border:1px solid var(--gold);border-radius:var(--radius);padding:2px 8px;cursor:pointer;font-family:inherit">Re-roll</button><button onclick="document.getElementById('alienGenResult').style.display='none'" style="font-size:11px;color:var(--red);background:none;border:1px solid var(--red);border-radius:var(--radius);padding:2px 8px;cursor:pointer;font-family:inherit">✕</button></div>
+    </div>
+
+    <div style="display:grid;gap:0;margin-bottom:14px;padding:10px;background:rgba(0,0,0,0.2);border-radius:6px">
+      ${row('Environment', env.value + ' — ' + env.desc)}
+      ${row('Origin', origin.value + ' — ' + origin.desc)}
+      ${niche ? row('Ecological Niche', niche.value + ' — ' + niche.desc) : row('Ecological Niche', 'N/A (plant species)')}
+      ${row('Tech Level', tech.value + ' — ' + tech.desc)}
+    </div>
+
+    <div style="font-family:'Exo 2',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:6px">⟐ ATTRIBUTE DICE: ${attrDice.value}</div>
+    <div style="display:grid;gap:0;margin-bottom:14px;padding:10px;background:rgba(0,0,0,0.2);border-radius:6px">
+      ${attrRows}
+    </div>
+    <div style="font-size:10px;color:var(--text-dim);font-style:italic;margin:-8px 0 14px">Each attribute is shown as min/max die range. Verify min sum ≤ ${attrDice.value} and max sum ≥ ${attrDice.value}+6D; tweak ranges if not.</div>
+
+    <div style="font-family:'Exo 2',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:6px">⟐ SPECIAL ABILITIES</div>
+    <div style="margin-bottom:14px;padding:10px;background:rgba(0,0,0,0.2);border-radius:6px">
+      ${abilityRows}
+    </div>
+
+    <div style="font-family:'Exo 2',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:6px">⟐ STORY FACTOR</div>
+    <div style="margin-bottom:14px;padding:10px;background:rgba(0,0,0,0.2);border-radius:6px">
+      ${storyRow}
+    </div>
+
+    <div style="display:grid;gap:0;margin-bottom:8px">
+      ${row('Move', ms.move)}
+      ${row('Height', ms.height)}
+    </div>
+
+    <div style="color:var(--text-dim);font-size:11px;font-style:italic;margin-top:8px">Generated using WEG40166 Alien Encounters Chapter One tables (pp.4-17)</div>
+  </div>`;
+
+  const container = document.getElementById('alienGenResult');
   container.innerHTML = html;
   container.style.display = 'block';
   container.scrollIntoView({ behavior: 'smooth', block: 'start' });
