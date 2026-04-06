@@ -1488,6 +1488,38 @@ const EQUIPMENT_DATA = [
   "source": "WEG40114 The Jedi Academy Sourcebook p.141"
  },
  {
+  "name": "Slave Collars (and Director Unit)",
+  "category": "Security",
+  "cost": "10,000 (one director unit and 10 slave collars)",
+  "availability": "3, R, X",
+  "game_notes": "Custom-made slave collars. Metal circlets (adjustable for size) that fit around the neck, arm, or other extremity. Contains micro-circuitry and couplings for power cables to link multiple units. The director unit broadcasts commands and directs high-voltage shocks (2D-5D physical damage depending on setting). Some units feature a 'kill' setting (8D damage) for escape attempts. Once endorsed by the Empire for licensed slavers, now seen only among illegal slaving operations.",
+  "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.74"
+ },
+ {
+  "name": "Slaver Snare Gun",
+  "category": "Security",
+  "cost": "1,200 (black market)",
+  "availability": "3, F or X",
+  "game_notes": "Thalassian Corodex Snare. Skill: Missile weapons: Thalassian snare gun. Scale: Character. Ammo: 6. Range: 5-10/25/50. Damage: 2D stun. Shoulder-mounted tube-launched device that emits a cone of chemically treated wire filaments. On striking the target, filaments coil tightly and begin to expand and contract, fusing into a hard shell. On contact, target makes opposed Strength roll vs snare's starting STR 3D to avoid entanglement. Snare's STR increases by +1D each additional round as filaments harden. A special dissolving agent degrades the filaments. Favored by slaver strike teams.",
+  "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.75"
+ },
+ {
+  "name": "Tangier Gun",
+  "category": "Security",
+  "cost": "900 (extra clip: 25)",
+  "availability": "3",
+  "game_notes": "Salus Tangier Elite 1. Skill: Missile weapons. Ammo: 5. Range: 5-10/30/60. Damage: 2D (impact of weighted ends), 4D stun (durawire tangier package). Fires a triple strand of durawire weighted at each of the three ends. The spinning wires ensnare opponents. Available as a short, wide-barreled sidearm with folding stock and retractable sight, or as armor-mounted. Opponent works free by making opposed Strength roll greater than the stun damage of the tangier.",
+  "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.76"
+ },
+ {
+  "name": "Universal Energy Cage",
+  "category": "Security",
+  "cost": "100,000",
+  "availability": "X (restricted to legal governments)",
+  "game_notes": "Imperial Universal Energy Cage. Move: 15; 45 kmh. Created by Junior Engineer Umak Leth during the Great Jedi Purge to safely transport Jedi to Imperial dungeons. A floating confinement sphere 3 meters in diameter filled with elaborate coils of superconductors. Once energized, the entire sphere is wrapped in a force field with STR up to 15D (unit applies only as much energy as needed, so it's often lower when the prisoner isn't resisting). Emanates a special energy that blocks Force and similar mental energies (effectiveness up to 15D). A bottom-mounted repulsor unit suspends the prisoner in the center and supplies oxygen. Self-contained, floats through the air, no external sabotage points. Only unlocks via a specially coded radio signal held by the Sovereign Protectors. Prisoners are presumed to enter Force hibernation for long stays — no provisions for food or water.",
+  "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.77"
+ },
+ {
   "name": "Corellidyne Doubler Suit",
   "category": "Security",
   "cost": "30,000",
@@ -5375,6 +5407,276 @@ const EQUIPMENT_DATA = [
   "availability": "3",
   "game_notes": "Synthetic organic gill allowing a diver to breathe underwater.",
   "source": "WEG40153 Wretched Hives p.79"
+ },
+ {
+  "name": "Fibra-rope",
+  "type": "Standard Fibra-rope",
+  "category": "Survival Gear",
+  "cost": "10 per 25 meters",
+  "availability": "1",
+  "game_notes": "Synthetic rope manufactured in small thin spools. Three large fibrous cables tightly woven together, 6-8 cm in diameter. Bulky, but capable of supporting up to 750 kilograms of weight before breaking.",
+  "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.79"
+ },
+ {
+  "name": "Animal Excluder",
+  "type": "Merr-Sonn Excluder",
+  "category": "Survival Gear",
+  "cost": "350",
+  "availability": "2, F or R",
+  "game_notes": "Hand-sized sonic device generating high-frequency sound waves (inaudible to humans and many aliens) that ward off most creatures. Three power settings: low (2D, 10m sphere), normal (4D, 20m sphere), high (6D, 40m sphere). Each round a creature attempts to approach, it makes a willpower or Strength roll vs the excluder's power. Failure means it retreats; success means it advances but suffers -2D to all actions due to irritation. Cornering an affected creature triggers full flight-or-fight instincts. Some predators become enraged by certain frequencies. Sentient species with delicate hearing (e.g., Wookiees) can buy cancellation headsets.",
+  "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.81"
+ },
+ {
+  "name": "Anti-Insect Canister",
+  "type": "Barkhesh Insect Culture",
+  "category": "Survival Gear",
+  "cost": "275",
+  "availability": "3",
+  "game_notes": "Sealed canister filled with a unique microorganism discovered in the dense southern jungles of Barkhesh. The airborne microorganisms infest local insect life, congregating inside the insect's body and digesting it from within. They show no interest in higher life forms, have a short lifespan once released, and cannot reproduce outside their Barkhesh jungle environment. Sprayed onto uniforms, equipment, or shelters; or into the air around a base camp. Effects last 1-5 days depending on application method (direct surface = effective but short; atmospheric = longer). One canister can coat 3 humans or protect a small ship/camp. Effective up to one month from purchase before microorganisms die. Sentient insect aliens experience odd carapace irritation but no danger.",
+  "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.81"
+ },
+ {
+  "name": "Dehydrated Food Pack",
+  "type": "Standard Dehydrated Food Pack",
+  "category": "Survival Gear",
+  "cost": "2",
+  "availability": "1",
+  "game_notes": "Moistureless nutritional supplements that can be stored indefinitely in minimal space — a major concern on space-faring vessels. Each pack contains enough nourishment for a human for one meal (does not include liquids). Notoriously bland; ordering a disobedient crewman to subsist on dry packs is a common form of military punishment. Sealed packs remain edible for centuries.",
+  "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.82"
+ },
+ {
+  "name": "Gyro-Grappler",
+  "type": "Standard Gyro-Grappler",
+  "category": "Survival Gear",
+  "cost": "15",
+  "availability": "1",
+  "game_notes": "Grappling hook equipped with built-in microthrusters that activate upon throwing, propelling the device forward in the intended direction. Originally designed for Old Republic military scaling of walls/inclines. The thruster package is extremely quiet and allows throws up to 120 meters. Climbers using a gyro-grappler get +1D to climbing skill rolls during ascent. Most military forces stopped using them decades ago — found primarily in Outer Rim surplus dumps.",
+  "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.82"
+ },
+ {
+  "name": "Med-aid",
+  "type": "Jassim Design QuickMed",
+  "category": "Medical",
+  "cost": "250",
+  "availability": "1",
+  "game_notes": "Small medical kit providing rudimentary first aid gear for burns, cuts, and contusions. More expensive kits also contain anti-venom supplements and pain-killers. Conveys a +1D bonus to any one first aid skill roll. Each med-aid may be used only once. Many surviving kits are old Outer Rim surplus — the medicines have lost potency or become toxic, but military-issue med-aids remain valuable to collectors.",
+  "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.83"
+ },
+ {
+  "name": "Verti-Go Line Thrower",
+  "type": "Susuax Verti-Go Climbing System",
+  "category": "Survival Gear",
+  "cost": "400",
+  "availability": "2",
+  "game_notes": "Skill: Missile weapons. Range: 10-150m. Damage: 4D+2. Reliable lightweight personal line thrower and climber. Can be stowed in a backpack or mounted under a blaster rifle. Consists of gas-propelled projectile rod, assorted grappler heads, pulley gear ascent motor, and 150 meters of high-strength thincord. Two ascent speeds: fast (6 m/sec) and very fast (12 m/sec — three times louder, reduces Perception difficulty to spot the climber by two levels). Designed for utility, not combat.",
+  "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.85"
+ },
+ {
+  "name": "B'shingh",
+  "type": "Dakerno Inc. B'shingh Holo Game",
+  "category": "Entertainment",
+  "cost": "500",
+  "availability": "3",
+  "game_notes": "Skill: Alien species, tactics. Holo boardgame invented by military strategist Crat Dakerno after studying ritualistic tribal customs of two warring factions on Ab'Bshingh — the Farangs and the Waroots. Object: paim or kill your opponents and capture his base (the opposite side of the board) in a series of moves across the gameboard. Moves include physical steps in any direction (tribal chiefs may only move forward) or a stance change. Knowledge of tribal rituals helps players anticipate the randomizer's move every fifth turn. Rarely seen outside intellectual or military circles.",
+  "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.86"
+ },
+ {
+  "name": "Chidinkalu",
+  "type": "Bith Musical Instrument",
+  "category": "Entertainment",
+  "cost": "2,500",
+  "availability": "3",
+  "game_notes": "Skill: Musical instrument operation: chidinkalu. Gonidor Supply Co. Hand-made. A large bass musical instrument almost exclusively played by Biths — used as the rhythm section in jatz bands. Stands nearly as tall as the average Bith. The base rests on the floor and is tilted back so the musician can reach the mouthpiece; air travels down through the neck and body before angling up and pouring out the amplifying cone facing the audience. Because of its size, an uncommon studio-only instrument. Often modified to smuggle contraband (the body has plenty of internal space).",
+  "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.86"
+ },
+ {
+  "name": "Kloo Horn",
+  "type": "Bith Musical Instrument",
+  "category": "Entertainment",
+  "cost": "2,000",
+  "availability": "3",
+  "game_notes": "Skill: Musical instrument operation: Kloo Horn. Gonidor Supply Co. Hand-made. The most popular instrument used by Biths who play jizz and jatz. Nearly three-fourths the height of a Bith musician, held in the hands. Mouthpiece contains a double reed; the stem bends back on itself in an elongated 's' to connect with the top of the body. Internal sections allow pitch and tone changes. Tenor in pitch, mainly used as the lead instrument. A good horn doubles as an effective truncheon when cantina audiences turn rowdy.",
+  "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.86"
+ },
+ {
+  "name": "Synth-Harmonica",
+  "type": "Mikar Music Amplified Synth-Harmonica",
+  "category": "Entertainment",
+  "cost": "500",
+  "availability": "2",
+  "game_notes": "Skill: Musical instrument operation: synth-harmonica. Electronic instrument designed to accommodate nearly every alien form. Only about 20 cm long with a 4 cm wide pressure-sensitive keyboard, playable by a digit or a centimeter-wide baton. Underside has three pressure pads to change pitch range (high/medium/low). Built-in speakers can fill a normally chatting room. A side switch activates any one of ten pre-recorded popular songs for the non-musically inclined.",
+  "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.87"
+ },
+ {
+  "name": "Electronic Blaster Sighting System",
+  "type": "SoroSuub True-Site System",
+  "category": "Electronics",
+  "cost": "500",
+  "availability": "2, R",
+  "game_notes": "Skill: Blaster. Small electronic sight that fits on top of a blaster and projects a holographic crosshair one meter in front of the muzzle. Adds +1D to blaster. Drawback: the glowing sight profile gives away the user's position in night firefights, and polarized lens filters (such as those in stormtrooper helmets) obscure the holosight.",
+  "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.91"
+ },
+ {
+  "name": "Hover-Cam",
+  "type": "Data-Link Industries 250 Hover-Cam",
+  "category": "Electronics",
+  "cost": "900",
+  "availability": "2, F",
+  "game_notes": "Audio, visual, and holo-recording device. Uses small repulsors to float about a meter above and slightly behind the user, following spoken directions. The DLI-250 is the reporter's favorite — it 'learns' on the job what action its user wants recorded, so it doesn't need constant direction. Flight ceiling: 50 meters. Can be summoned to return via beckon call. Common in journalism, family recording, and (with espionage programming) urban surveillance.",
+  "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.91"
+ },
+ {
+  "name": "Infra-goggles",
+  "type": "Drolan Plasteel Infra-goggles",
+  "category": "Electronics",
+  "cost": "300",
+  "availability": "2",
+  "game_notes": "Common night-vision device that decodes ambient infrared and ultraviolet light to enhance visibility in near-dark conditions. Reduces darkness-related attack difficulty modifiers by 2D. If intense light (glowrod or sudden illumination) is shined directly on the goggles, the wearer must immediately make a Difficult willpower roll or be blinded for 1D rounds.",
+  "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.91"
+ },
+ {
+  "name": "PTP Link",
+  "type": "Point-to-Point Multi-channel Personal Communicator",
+  "category": "Electronics",
+  "cost": "150 (basic); up to 1,000 (encrypted)",
+  "availability": "2",
+  "game_notes": "Multiple-channel personal audio comm device with a range of 25 km. Average models are simple audio-only. More expensive models contain encryption packages — using one requires a Moderate communications roll; if successful, the channel cannot be deciphered. Today PTP links are mostly seen on low-tech worlds (particularly the Tion Hegemony) or prized by collectors. Modern signal scanners have a hard time detecting their low-powered, out-of-date carrier wave.",
+  "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.92"
+ },
+ {
+  "name": "Wide-scan Binocs",
+  "type": "Jassim Design VX3 Scanner",
+  "category": "Electronics",
+  "cost": "100",
+  "availability": "1",
+  "game_notes": "Image-intensification binoculars using only a series of lenses (no electronics, no power cells required). Several control knobs adjust focus and magnification. Provides a +1D bonus to search skill rolls where the target lies more than 20 meters from the viewer. A reasonably effective and easily-repaired alternative to macrobinoculars.",
+  "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.92"
+ },
+ {
+  "name": "Master Command Unit",
+  "type": "Authority Master Command Unit",
+  "category": "Electronics",
+  "cost": "100,000",
+  "availability": "4, X",
+  "game_notes": "Small flat unit usually worn on a belt. Can keep control over up to 25 different items (communications, primary defense systems, etc.) within 300 meters (more with receptor circuitry extension). The user activates the code slicer/takeover switch to capture the signals of a specific system and binds it to a numbered button. Originally given to only the highest-ranking Corporate Sector Authority officials. Can control everything from lights to mass security systems — in the wrong hands, capable of destroying a government. Most CSA buildings are slave-rigged, making the device especially valuable for larceny against CSA installations.",
+  "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.93"
+ },
+ {
+  "name": "TerexComm DataSearch 9C",
+  "type": "TerexComm Deluxe DataSearch Engine 9C",
+  "category": "Electronics",
+  "cost": "600",
+  "availability": "2",
+  "game_notes": "Skill: Computer programming/repair. Easy roll to connect. Adds +1D+2 to computer programming/repair and +2D to security skill when used to search for information. Valuable administrative tool for searching thousands of data screen units (DSUs) quickly. A Moderate computer programming/repair roll modifies the unit with a power condenser, which then allows the 9C to locate low-level encrypted files — but the additional power will virtually destroy any program it searches unless run through a power-flux regulator.",
+  "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.93"
+ },
+ {
+  "name": "TerexComm DataSearch 12C-A",
+  "type": "TerexComm Executive DataSearch Engine 12C-A",
+  "category": "Electronics",
+  "cost": "850",
+  "availability": "2",
+  "game_notes": "Skill: Computer programming/repair. Easy roll to use. Adds +2D to computer programming/repair when searching for information. Capable of searching through thousands of DSUs in less than three seconds. Unlike the 9C, the 12C-A does NOT function with the power condenser modification — attempting it usually shorts out the unit and causes spectacular fires.",
+  "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.93"
+ },
+ {
+  "name": "UniTech \"Patch\"",
+  "type": "UniTech Diagnostic Systems Diverter",
+  "category": "Electronics",
+  "cost": "5,200",
+  "availability": "2, R (restricted to governments)",
+  "game_notes": "Skill: Computer programming/repair (Moderate to apply). Adds +1D+2 to security or relevant skill. Re-routes security/programming so that a system breach cannot be detected. Consists of a master/base unit and eight slave units placed at junction points between the bypassed subsystem and the outside system. Emulates the signals and responses of the bypassed subsystem, tricking the master computer core into thinking the subsystem is unaffected. Used by tech teams during emergency repairs and by Rebel agents to acquire classified Imperial documents undetected. Can also be reversed to make a healthy system think it is damaged — useful for triggering false alarms, dousing lights, or staging diversions.",
+  "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.94"
+ },
+ {
+  "name": "AccuTronics Encryption Package",
+  "type": "AccuTronics Encryption Package 1a.44.87",
+  "category": "Electronics",
+  "cost": "500",
+  "availability": "2",
+  "game_notes": "Skill: Computer programming/repair. Datafile encryption device — civilian-grade but commonly modified by Alliance Cryptography for lesser-security datafiles. Any datafile encrypted with the package gains a +5 modifier to its difficulty number to be found, and requires a Moderate computer programming/repair roll to crack the encrypt code if the password is known. Can be improved by slicing the algorithms to a base 12 system from base 10.",
+  "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.95"
+ },
+ {
+  "name": "Code Slicer",
+  "type": "Duwani Mechanical Products UniSlice",
+  "category": "Security",
+  "cost": "2,000",
+  "availability": "3",
+  "game_notes": "Skill: Security. Provides +1D security bonus in attempts to bypass or break through security measures. Infiltrates the electronic hardware of locks, slicing the cabling that security measures contain. While keeping the electronics busy, a low-power energy torch burns through the locking mechanism. Generally takes 5-8 minutes to use. An older Old Republic-era design — illegal in most jurisdictions today, but still useful in the Outer Rim where archaic anti-theft measures are common. Carrying one is a fineable offense in most modern systems.",
+  "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.95"
+ },
+ {
+  "name": "Portable Plasma Cutter",
+  "type": "Portable Plasma Cutter",
+  "category": "Tools",
+  "cost": "150 (gas canister: 20)",
+  "availability": "1",
+  "game_notes": "Hand-held device slightly larger than a standard hold-out blaster. Portable fuel cylinder attaches forward of the pistol grip; internal fuel supply lasts 4 minutes, the canister has fuel for 1 hour of continuous use. Adjustable focusing for cutting depth and intensity. Damage: 7D. Takes one round per 1D of body strength to cut a 2m x 1m hole (e.g., a 6D blast door takes 6 rounds). When used as a weapon, requires a Moderate melee combat roll to hit. The included blast goggles (or a blast visor) must be worn — anyone within 2 meters without proper eye protection must make a Moderate Perception roll to look away or be blinded for 3 minutes. Includes one set of blast goggles; extras 15 credits each. WARNING: shooting the plasma canister with a blaster makes an instant bomb.",
+  "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.96"
+ },
+ {
+  "name": "VoiceBox",
+  "type": "BothiCorp VoiceBox Speech Pattern Duplicator",
+  "category": "Security",
+  "cost": "5,000",
+  "availability": "X",
+  "game_notes": "Skill: Security. Voice lock buster. Plugs into a lock's wiring and fools the lock by encrypting the user's voice patterns with a copy of the authentication files. Modern voice-activated security systems process accent, inflection, tone, stress, and many other voice pattern characteristics — the VoiceBox defeats them. A successful security roll against the lock's difficulty rating is required for success. Can also be patched into a freighter's communications system for limited voice disguising against customs voiceprint analyzers.",
+  "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.96"
+ },
+ {
+  "name": "CorSec Autoscan Weapons Detector",
+  "type": "CorSec Autoscan Weapons Detector",
+  "category": "Sensors & Detection",
+  "cost": "7,200",
+  "availability": "2, R (restricted to governments)",
+  "game_notes": "Stationary weapons detector. Has search 6D to detect hidden energy weapons. Petal-shaped array tracks individuals and vehicles moving within range. Deployed in fixed sites near public thoroughfares and transportation centers. If weapons are detected, an alarm is transmitted to security personnel. Difficulty to detect weapons depends on how well the user has hidden them with hide skill.",
+  "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.102"
+ },
+ {
+  "name": "Geological Scanner",
+  "type": "Fabritech 7000 Geoscanner",
+  "category": "Sensors & Detection",
+  "cost": "4,800",
+  "availability": "2",
+  "game_notes": "Range: 500m / 1km / 2km. Primarily used by miners and prospectors. Detects geologic characteristics like precious minerals, ore deposits, and underground features. Can also analyze geothermal, seismic, volcanic, and glacial activity. A favorite tool of claims-jumper outfits.",
+  "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.103"
+ },
+ {
+  "name": "Medscanner",
+  "type": "Cryoncorp Mediscan 21",
+  "category": "Medical",
+  "cost": "3,000",
+  "availability": "2",
+  "game_notes": "Small hand-held diagnostic unit used by field medical personnel to quickly diagnose diseases and assess injuries. Difficulty matches medpac difficulty: Easy for Wounded, Moderate for Incapacitated, Difficult for Mortally Wounded. Successful use adds +1D to first aid rolls. Sensitive instruments — easily damaged when dropped or roughly handled.",
+  "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.103"
+ },
+ {
+  "name": "Search-Scan 4 Security Scanner",
+  "type": "BlasTech Search-Scan 4",
+  "category": "Sensors & Detection",
+  "cost": "9,800",
+  "availability": "2, R (restricted to governments)",
+  "game_notes": "Multi-capable security scanner used by Imperial and local planetary governments. The size of a large chest — typically wheeled around on a cart or repulsor sled. Contains numerous probes and receptors attached by insulated cables. Highly sensitive — can often penetrate some forms of shielding. Adds +1D to the operator's sensor skill roll. Detects structural anomalies hiding secret compartments, energy signatures showing weapons, life forms, and energy sources within a confined area (docking bay, cargo hold, compartment).",
+  "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.104"
+ },
+ {
+  "name": "Droid Disabler",
+  "type": "Mandroxan Exports Defense Weapon EDWX-843",
+  "category": "Security",
+  "cost": "10,000 (black market)",
+  "availability": "4, X",
+  "game_notes": "Skill: Blaster. Scale: Character. Ammo: 10 (power pack). Range: 5-10/30/50. Damage: 6D stun (+1D for each hit after the first). Anti-droid weapon that fires a tight beam of phased energy particles which disrupt a droid's internal electrical impulses. Unlike a simple electrical charge, these phased particles cling to the droid's exterior and continue to build their charge. When hit, droids suffer -1D to skill and attribute rolls for 3 rounds if stunned; otherwise rendered 'unconscious' per stun damage rules. No permanent damage — a diagnostic overhaul and power-up will reactivate the droid. Useful when you need to recover data from a target droid intact.",
+  "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.107"
+ },
+ {
+  "name": "Malkite Poisoner's Kit",
+  "type": "Malkite Poisoner's Kit",
+  "category": "Security",
+  "cost": "800,000",
+  "availability": "4, X",
+  "game_notes": "Illegal assassination tool used by the Malkite Poisoners — a deadly sect within the Outer Rim Malkite Ring assassins. A small unadorned duraplas box with a sophisticated locking mechanism (+1D to hide attempts due to small size). Contains: vials of H'gartha liquid neurotoxin (kills target on contact within two rounds; no known antidote save bacta immersion, and the poison resumes once removed; +2 levels to (A) medicine/first aid difficulty to detect); needles (Difficult sneak + Moderate melee combat to apply); aerosol spray applicators (must be within 0.5m, Moderate Dexterity or Poisoner is also exposed); Disruption Field Override Generator (within 1m of medical scanner, Moderate computer programming/repair, increases (A) medicine/first aid difficulty by one level to detect cause of death); Pheromone Zone Generator (within 3m of food sniffers, +1 level search/investigation difficulty); Scanner Jammer (within 2m of airborne-substance sensor, +1 level detection difficulty); Heat-Sealer (Moderate Dexterity or sneak, instantly closes puncture wounds in one round). Malkite honor creed forbids using any tools beyond those in the kit.",
+  "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.108"
  }
  ,{
   "name": "Vec-Tech Keeper Subdermal Control System",

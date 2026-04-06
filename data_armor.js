@@ -95,6 +95,22 @@ const ARMOR_DATA = {
       "desc": "Reflect Body Glove\nModel: Syncronics ENVC-370 Glove\nType: Protective energy-displacement suit\nCost: 4,000\nAvailability: 3, X\nGame Notes: This suit adds +1D to a character\u2019s Strength when resisting damage from blaster attacks as long as the person hit was at the weapons\u2019s medium or long range (blaster bolts disperse slightly over distance, and the minor dispersal at medium and long range makes blaster bolts much easier for the suit to affect). The suit can absorb five blasts before being destroyed. If the wearer of the suit is wounded (or worse) as the result of an energy blast, the suit is also destroyed."
     },
     {
+      "name": "CT3 Concussion Helmet",
+      "desc": "CT3 Concussion Helmet\nModel: Core World Arms CT3\nType: Personal armor\nScale: Character\nCost: 375\nAvailability: 1\nGame Notes: Head: +2 to front and back from physical (non-energy) attacks, including crash and falling damage. Designed primarily to protect the head from damage in bad falls or crashes. Cannot protect against energy attacks, but when developed, blasters and other energy weapons were very rare. Popular among parents buying protective gear for swoop-riding children, and as a collector's item.\nSource: WEG40158 Gundark's Fantastic Technology: Personal Gear p.46"
+    },
+    {
+      "name": "CV14-B Concussion Vest",
+      "desc": "CV14-B Concussion Vest\nModel: Core World Arms CV14-B\nType: Personal armor\nScale: Character\nCost: 500\nAvailability: 1\nGame Notes: Torso: +1D to front and back from physical (non-energy) attacks, including crash and falling damage. Built to match the Core World Arms concussion helmet. Capable of protecting the torso from physical attacks, crashes, and falls. Popular among collectors and backwater swoop racers.\nSource: WEG40158 Gundark's Fantastic Technology: Personal Gear p.46"
+    },
+    {
+      "name": "Doubler Suit",
+      "desc": "Doubler Suit\nModel: Modified Corellidyne Holographic Projector Doubler Suit\nType: Human-sized three-dimensional imaging system\nSkill: Computer programming/repair (Difficult to operate doubler-imaging application)\nCost: 30,000\nAvailability: 4, X\nGame Notes: A miniaturized portable 3D holovid recorder mated to a directed projector that creates a life-size holographic image of the wearer. The person to be 'doubled' must be recorded for one hour, then the projection system is tied into a portable computer with the unique 'doubler' software, creating a holo-composite that the computer blends into convincing new images. A bodysuit lined with thousands of microsensors relays movement data to the projector. Once programmed, an Easy Mechanical roll allows projection of a lifelike image up to 10 meters away in any direction. Viewers must make a Very Difficult Perception or search roll to discover the image is fake at 50m+ range; reduce the difficulty by one level for every 10 meters closer to the target. Allows the user to draw enemy fire with minimal exposure.\nSource: WEG40158 Gundark's Fantastic Technology: Personal Gear p.47"
+    },
+    {
+      "name": "Riot Shield",
+      "desc": "Riot Shield\nModel: Drearian Defense Actiwl Riot Shield\nType: Riot shield\nScale: Character\nSkill: Melee parry\nCost: 500\nAvailability: 2, R\nDifficulty: Easy\nDamage: 4D (stun)\nGame Notes: One-meter-long shield made of layered metal and one-way-mirrored transparisteel. Has a small notch to fit the muzzle of a blaster. Simple handle with a stud to activate a fairly potent stun charge. If the character makes the skill roll, the user has used the shield to block incoming attacks on one facing. The shield has a Strength of 4D. If used as a melee weapon, it causes STR+2 damage as well as 4D stun damage. Using the firing notch adds one level to the difficulty of firing blasters, but the character is protected by the shield. The stun charge lasts for one hour of consecutive use.\nSource: WEG40158 Gundark's Fantastic Technology: Personal Gear p.51"
+    },
+    {
       "name": "Shockball Uniform",
       "desc": "Shockball Uniform\nType: Standard shockball uniform\nAvailability: 1\nGame Notes: Padding provides +2 to Strength to resist physical damage, helmet provides +1. Insulated mit, scoop."
     },

@@ -42935,6 +42935,52 @@ const NOTABLE_NPCS = [
     equipment: "Swoopchase rider flight suit, comlink, datapad",
     capsule: "A long-time veteran of swoopchasing, Jobones retired from the racing circuit and took up promoting the sport. Having spent the majority of his career at the Outlaw level, he is well-versed in the glories and tribulations of champions. As a promoter, he has become a one-man crusade to improve the safety and quality of advanced-level courses (after all, dead heroes don't sell race tickets nearly as well as live ones). Dressed in the traditional flight suit of the swoopchase rider, he is a common sight at the main tracks. In the off-season, he trains rookie and tourist riders at his home-base on Neftali.",
     source: "WEG40154 Black Sands of Socorro p.67"
+  },
+  {
+    name: "Division Three Field Agent",
+    species: "Human",
+    system: "Imperial Center (Coruscant)",
+    location: "Imperial Bureau of Taxation — Division Three (D-3)",
+    affiliations: ["Galactic Empire", "COMPNOR"],
+    role: "CompForce Special Officer / D-3 Anti-Contraband Investigator",
+    type: "Generic Template",
+    stats: {
+      DEXTERITY: { base: "3D+2", skills: { "blaster": "6D", "dodge": "6D", "melee combat": "5D", "melee parry": "5D" } },
+      KNOWLEDGE: { base: "3D+2", skills: { "alien species": "4D", "law enforcement": "6D", "law enforcement: D-3 legal codes": "7D", "planetary systems": "5D", "streetwise": "7D" } },
+      MECHANICAL: { base: "2D+2", skills: { "astrogation": "4D", "space transports": "5D", "starship gunnery": "6D", "starship shields": "6D" } },
+      PERCEPTION: { base: "3D", skills: { "bargain": "5D", "command": "5D", "command: D-3 assault troopers": "8D", "search": "6D", "sneak": "6D" } },
+      STRENGTH: { base: "3D", skills: { "brawling": "6D" } },
+      TECHNICAL: { base: "2D", skills: { "computer programming/repair": "4D" } }
+    },
+    specialAbilities: "None",
+    characterPoints: "Varies; typically 5-15",
+    move: 10,
+    equipment: "Heavy blaster pistol (5D), knife (STR+1D), stun cuffs (4D stun damage), datapad, military protocol droid, 5,000 credits",
+    capsule: "Division Three (D-3) is a newly-formed division of the Imperial Bureau of Taxation, created to direct the campaign against black market trade. Little more than a CompForce detachment with a loose affiliation with the Bureau, D-3's extreme methods led to a violently aggressive campaign against contraband. Hundreds of unlicensed merchants were incarcerated, thousands more were fined or had property seized, and seventy percent of those apprehended required medical attention. Field Agents direct anti-smuggling operations and command squads of D-3 assault troopers.",
+    source: "WEG40158 Gundark's Fantastic Technology: Personal Gear p.5"
+  },
+  {
+    name: "Division Three Assault Trooper",
+    species: "Human",
+    system: "Imperial Center (Coruscant)",
+    location: "Imperial Bureau of Taxation — Division Three (D-3)",
+    affiliations: ["Galactic Empire", "COMPNOR"],
+    role: "CompForce Special Agent / D-3 Anti-Contraband Shock Trooper",
+    type: "Generic Template",
+    stats: {
+      DEXTERITY: { base: "3D+2", skills: { "blaster": "5D", "dodge": "6D" } },
+      KNOWLEDGE: { base: "3D+2", skills: { "law enforcement": "5D", "survival": "5D" } },
+      MECHANICAL: { base: "2D+2", skills: {} },
+      PERCEPTION: { base: "3D", skills: { "investigation": "5D", "search": "5D", "sneak": "5D" } },
+      STRENGTH: { base: "3D", skills: {} },
+      TECHNICAL: { base: "2D", skills: {} }
+    },
+    specialAbilities: "None",
+    characterPoints: "Varies; typically 2-7",
+    move: 10,
+    equipment: "Blaster rifle (5D), power armor (+1D energy, +2D physical), heavy blaster pistol (5D), three grenades (5D), knife (STR+1D), medpac",
+    capsule: "Front-line CompForce shock troops attached to Division Three of the Imperial Bureau of Taxation. D-3 Assault Troopers conduct violent raids on suspected black market operations under the command of D-3 Field Agents. Notorious for excessive force — some seventy percent of merchants apprehended in D-3 raids required medical attention afterward.",
+    source: "WEG40158 Gundark's Fantastic Technology: Personal Gear p.5"
   }
 // --- END OF NOTABLE_NPCS ---
 ];
