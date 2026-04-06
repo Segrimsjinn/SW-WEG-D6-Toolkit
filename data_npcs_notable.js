@@ -42981,6 +42981,28 @@ const NOTABLE_NPCS = [
     equipment: "Blaster rifle (5D), power armor (+1D energy, +2D physical), heavy blaster pistol (5D), three grenades (5D), knife (STR+1D), medpac",
     capsule: "Front-line CompForce shock troops attached to Division Three of the Imperial Bureau of Taxation. D-3 Assault Troopers conduct violent raids on suspected black market operations under the command of D-3 Field Agents. Notorious for excessive force — some seventy percent of merchants apprehended in D-3 raids required medical attention afterward.",
     source: "WEG40158 Gundark's Fantastic Technology: Personal Gear p.5"
+  },
+  {
+    name: "Givin",
+    species: "Givin",
+    system: "Yag'Dhul",
+    location: "Yag'Dhul — galaxy-wide as starship crews",
+    affiliations: ["The Fringe"],
+    role: "Mathematician / Pilot / Shipbuilder",
+    type: "Generic Template",
+    stats: {
+      DEXTERITY: { base: "1D/3D", skills: {} },
+      KNOWLEDGE: { base: "2D/4D", skills: {} },
+      MECHANICAL: { base: "2D+2/4D+2", skills: {} },
+      PERCEPTION: { base: "1D/3D", skills: {} },
+      STRENGTH: { base: "1D+1/3D", skills: {} },
+      TECHNICAL: { base: "3D/5D", skills: {} }
+    },
+    specialAbilities: "Mathematical Aptitude: +2D when using skills involving mathematics, including astrogation; can automatically solve most 'simple' equations (GM option). Vacuum Protection: A built-in organic vacuum suit (impermeable bone plates linked by flexible membranes) protects against vacuum and harsh elements; +2D to Strength or stamina rolls resisting such extremes. To survive 24 standard hours in complete vacuum, make an Easy roll, with difficulty increasing by one every hour thereafter. Increased Consumption: Givin must eat at least three times the food a normal Human would consume (~9 kg per 24 hours) or they lose vacuum protection.",
+    move: "8/10",
+    equipment: "Varies — typically tools, datapad, navigational aids; many Givin own personal starships",
+    capsule: "Givin appear as the animated skeletons of a humanoid race, carrying their bone-white skeletons on the exterior of their bodies. Large triangular eye sockets dominate their faces, lending perpetually sad, anguished expressions; small frowning mouths add to the impression. They are thin and tubular with oddly-working body joints, holding their arms and legs out from their bodies like reptiles. Their exoskeleton is an organic vacuum suit — bone plates linked by membranes that seal all bodily orifices. The Givin homeworld of Yag'Dhul has a 175-hour retrograde rotation but its three moons orbit the planet in only 53 hours, producing tides so severe that oceans and even the atmosphere flow from one side of the planet to the other; lakes are exposed directly to vacuum within hours. Givin society is a mathematocracy — mathematicians are the most powerful and revered members of society, leaders are chosen through contests calculating multidimensional differentials, and political decisions follow null-modal probability. Mathematics is essentially their religion, with priests studying 'transcendental mathematics' to predict the future. Givin are starship-builders and pilots, found throughout the galaxy in transport. They take advantage of their physiology to save weight, pressurizing only their sleeping quarters, and perform navigational computations — even hyperspace jumps — entirely in their heads. They feel kinship with Duros and Verpine (fellow shipbuilders) and great respect for the Duinuogwuin, but cannot abide Mon Calamari due to incompatible design philosophy. Givin are markedly distrustful of outsiders, finding exposed flesh appallingly rude, and consider non-vacuum-breathing species inferior — though they remain polite if guests keep their flesh covered. Visitors are expected to solve simple quadratic equations as part of polite Givin introductions.",
+    source: "WEG40166 Alien Encounters p.GG4-44 (reprinted from WEG40004 Galaxy Guide 4 p.44)"
   }
 // --- END OF NOTABLE_NPCS ---
 ];
