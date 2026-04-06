@@ -7508,7 +7508,52 @@ const STARSHIP_DATA = {
    ]
   }
  ],
- "Named Modified Scout Ships": [],
+ "Named Modified Scout Ships": [
+  {
+   "rank": 1,
+   "name": "Outward Bound",
+   "craft": "Vangaard Pathfinder",
+   "type": "Modified scout ship",
+   "affiliation": "Rebel Alliance",
+   "era": "Rebellion",
+   "source": "WEG40154 Black Sands of Socorro p.7",
+   "price_new": "Not for sale (Jobany Cyrs)",
+   "price_used": "",
+   "scale": "Starfighter",
+   "length": "36 meters",
+   "crew": "1",
+   "gunners": "",
+   "passengers": "2",
+   "cargo": "100 metric tons",
+   "consumables": "6 months",
+   "hyperdrive": "x2",
+   "hyperdrive_backup": "x15",
+   "nav_computer": "Yes",
+   "maneuverability": "1D",
+   "space": "4",
+   "atmosphere": "350; 950 kmh",
+   "hull": "3D+1",
+   "shields": "3D",
+   "of_note": "Shields absorb and channel energy into the laser cannon. For each shot the shields absorb without decreasing the shield code, the cannon's damage goes up by +1 (up to a maximum of +3). If the shield die code is reduced — or automatically after 10 rounds — the shield generator overloads and shuts down for three rounds, resetting the bonus to zero. Family heirloom passed down through several generations of the Cyrs family.",
+   "sensors_passive": "30/0D",
+   "sensors_scan": "45/1D",
+   "sensors_search": "60/2D",
+   "sensors_focus": "5/3D",
+   "weapons": [
+    {
+     "name": "Double Laser Cannon",
+     "fire_arc": "Turret",
+     "crew": "",
+     "skill": "Starship gunnery",
+     "fire_control": "2D+1",
+     "space_range": "1-5/15/20",
+     "atmo_range": "1-5/15/20 km",
+     "damage": "3D (special)"
+    }
+   ],
+   "capsule": "The Outward Bound is a standard Pathfinder scout ship with a few minor customizations. A relic that has been in the Cyrs family for several generations, the ship has undergone numerous engine overhauls and hull upgrades and remains a fine and reliable vessel. Jobany has a strong emotional attachment to this ship. Since it served his father, grandfather and several other family members before him, he considers it something of a family heirloom."
+  }
+ ],
  "Stock Bulk Freighters": [
   {
    "rank": 27,
@@ -44698,46 +44743,6 @@ const STARSHIP_DATA = {
    ],
    "capsule": "Lynnori's tramp freighter, purchased by Talandro Starlyte and modified by Scizzic. A well-armed craft that replaced her previous 'hunk of junk,' making both Lynnori and the protective Talandro happy.",
    "source": "WEG40153 Wretched Hives p.140"
-  },
-  {
-    name: "Outward Bound",
-    type: "Modified Vangaard Pathfinder",
-    category: "Scout Ship",
-    scale: "Starfighter",
-    length: "36 meters",
-    skill: "Space transports: Pathfinder",
-    crew: 1,
-    passengers: 2,
-    cargo_capacity: "100 metric tons",
-    consumables: "6 months",
-    hyperdrive_multiplier: "x2",
-    hyperdrive_backup: "x15",
-    nav_computer: "Yes",
-    maneuverability: "1D",
-    space: 4,
-    atmosphere: "350; 950 kmh",
-    hull: "3D+1",
-    shields: "3D",
-    sensors: {
-      passive: "30/0D",
-      scan: "45/1D",
-      search: "60/2D",
-      focus: "5/3D"
-    },
-    weapons: [
-      {
-        name: "Double Laser Cannon",
-        fire_arc: "Turret",
-        skill: "Starship gunnery",
-        fire_control: "2D+1",
-        space_range: "1-5/15/20",
-        atmosphere_range: "1-5/15/20 km",
-        damage: "3D (special)",
-        notes: "Shields absorb and channel energy into the cannon. For each shot the shields absorb without decreasing the shield code, the cannon's damage goes up by +1 (up to a maximum of +3). If the shield die code is reduced — or automatically after 10 rounds — the shield generator overloads and shuts down for three rounds, resetting the bonus to zero."
-      }
-    ],
-    capsule: "The Outward Bound is a standard Pathfinder scout ship with a few minor customizations. A relic that has been in the Cyrs family for several generations, the ship has undergone numerous engine overhauls and hull upgrades and remains a fine and reliable vessel. Jobany has a strong emotional attachment to this ship. Since it served his father, grandfather and several other family members before him, he considers it something of a family heirloom.",
-    source: "WEG40154 Black Sands of Socorro p.7"
   }
  ]
 // --- END OF STARSHIP_DATA ---
