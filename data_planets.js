@@ -8766,5 +8766,32 @@ const PLANETS_DATA = [
     locations: "Virmeude Starport (Carved deep into frozen bedrock under a sham mining operation. Below-ground facilities far more extensive than a casual scan reveals. Standard starport services for Alliance ships only. Incoming goods routed onto Alliance ships or into the supply network. Ships either converted to Alliance service or stripped for parts — hulls reforged into armor plating or melted into ingots).",
     ofNote: "The Issham Mining Corporation posts modest profits/losses, recruits investors, maintains Imperial certification, and avoids controversy. In reality, profits come from privateer raids reported as mining income. Continuous mining and construction maintains cover and prepares for a hoped-for breakout into the Core. | Alliance High Command may someday need Virmeude as a forward base."
   },
+  {
+    name: "Kluistar - Ace of Sabres",
+    system: "Kluistar",
+    star: "",
+    grid: "M-8",
+    region: "Colonies",
+    type: "Terrestrial",
+    temperature: "Temperate",
+    atmosphere: "Type I (breathable)",
+    hydrosphere: "Moderate",
+    gravity: "Standard",
+    terrain: "Forests, wilderness",
+    lengthOfDay: "",
+    lengthOfYear: "",
+    sapientSpecies: "Humans, mixed others",
+    starport: "Standard",
+    population: "",
+    function: "Entertainment/Gambling Resort",
+    government: "Corporate (Ace Entertainment Corporation)",
+    techLevel: "Space",
+    majorExports: "Entertainment services",
+    majorImports: "Luxury goods, foodstuffs",
+    source: "WEG40153 Wretched Hives of Scum and Villainy p.5-12",
+    summary: "The Ace of Sabres is an incredible resort on the planet Kluistar, a comfortable but undistinguished world on the border of the Colonies region. The resort is a massive complex including a 99-level hotel with seven themed restaurants, hundreds of leisure facilities, three nightclubs, two dancehalls, and a dozen casinos with over 1,000 games of chance.",
+    locations: "The Sabre Club (Exclusive casino limited to 999 members at 25,000 credits for two-year membership. Triple-shielded blast doors. Outstanding Kubaz chef staff. Massive data library, banquet hall seating 500+, private holo-imaging rooms. Stakes include inconceivable sums, priceless properties, and even lives. Minimum 8D gambling for dealers. Managed by Gandin T'Noull). The Casinos (12 public gambling halls plus the exclusive Sabre Club. Sabacc wing, electronic gambling machines, strategy games. Adjustable dampener fields for privacy, localized lighting. No droids, datapads, or weapons — 10D search detectors at doors. Dealers rated 4D-7D gambling). The Forests (Vast tracts of unspoiled wilderness surrounding the resort. Camping, hunting, fishing, sporting activities with rental equipment).",
+    ofNote: "Security headed by Dunan Par'Ell, former Imperial military specialist — his presence alone deters most criminals. His firm UniGuard provides elite security staff. Despite the security, robbery, assassinations, and thievery occur more often than management admits. Some visitors who 'took a walk in the woods' have gotten permanently lost. | The house provides generous loans to preferred customers at lofty interest rates. | Credit prices: Economy room 20cr/night, mid-range 40cr, penthouse 100cr. Meals 7-30cr. Drinks 2-20+ cr."
+  },
 // --- END OF PLANETS_DATA ---
 ];

@@ -3159,6 +3159,7 @@ const SYSTEMS_DATA = [
   { "name": "Kloodavia", "grid": "K-13", "region": "Core Worlds", "col": 9, "row": 13, "quadrant": "C", "hours": 5.0 },
   { "name": "Kloper", "grid": "N-9", "region": "Inner Rim", "col": 12, "row": 9, "quadrant": "E", "hours": 5.5 },
   { "name": "Kluistar", "grid": "M-8", "region": "Colonies", "col": 11, "row": 8, "quadrant": "C", "hours": 5.5 },
+  { "name": "Kluistar - Ace of Sabres", "grid": "M-8", "region": "Colonies", "col": 11, "row": 8, "quadrant": "C", "hours": 5.5 },
   { "name": "Klynan", "grid": "S-13", "region": "Outer Rim Territories", "col": 17, "row": 13, "quadrant": "E", "hours": 5.7 },
   { "name": "Klytonia", "grid": "U-11", "region": "Outer Rim Territories", "col": 19, "row": 11, "quadrant": "E", "hours": 45.3 },
   { "name": "Klytus", "grid": "H-15", "region": "Wild Space", "col": 6, "row": 15, "quadrant": "SW", "hours": 8.0 },
