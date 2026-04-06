@@ -23,6 +23,9 @@
 <link rel="manifest" href="manifest.json">
 <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700;900&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
+@font-face{font-family:'Aurebesh';src:url('fonts/AurebeshAF-Legends.otf') format('opentype');font-display:swap}
+@font-face{font-family:'Aurebesh Tech';src:url('fonts/AurebeshAF-LegendsTech.otf') format('opentype');font-display:swap}
+.credit-glyph{font-family:'Aurebesh',sans-serif;color:var(--gold);font-weight:normal;display:inline-block;margin-left:2px;vertical-align:baseline}
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
 --bg:#0a0a0f;--bg2:#12121a;--bg3:#1a1a28;--bg4:#22223a;
@@ -2546,6 +2549,23 @@ color:var(--text-dim);min-width:35px;text-align:right;
 const pick = arr => arr[Math.floor(Math.random() * arr.length)];
 const randBetween = (a, b) => Math.floor(Math.random() * (b - a + 1)) + a;
 
+// Replace "credits" / "cr" / "cred" in cost strings with the Aurebesh credit glyph.
+// If no "credits" word is present but the string contains digits, append the glyph.
+// Renders inline HTML, so callers must use innerHTML (not textContent).
+const CREDIT_GLYPH = '<span class="credit-glyph">$</span>';
+function formatCost(str) {
+  if (str == null) return '';
+  let s = String(str);
+  if (/\b(credits?|creds?|cr)\b/i.test(s)) {
+    return s.replace(/\b(credits?|creds?|cr)\b/gi, CREDIT_GLYPH);
+  }
+  // Bare numeric cost (e.g. "300", "500,000 (100,000 used)") — append glyph if digits present
+  if (/\d/.test(s) && s !== '—') {
+    return s + ' ' + CREDIT_GLYPH;
+  }
+  return s;
+}
+
 function pipsToD6(pips) {
   const d = Math.floor(pips / 3), r = pips % 3;
   return r === 0 ? d + 'D' : d + 'D+' + r;
@@ -3352,7 +3372,7 @@ function showShipStats() {
   if (s.troop_capacity) h += line('Troop Capacity', s.troop_capacity);
   h += line('Cargo Capacity', s.cargo);
   h += line('Consumables', s.consumables);
-  h += line('Cost', formatPrice(s.price_new, s.price_used));
+  h += line('Cost', formatCost(formatPrice(s.price_new, s.price_used)));
   h += line('Hyperdrive Multiplier', s.hyperdrive);
   h += line('Nav Computer', s.nav_computer);
   h += line('Maneuverability', s.maneuverability);
@@ -3458,7 +3478,7 @@ function displayNPC() {
   // Fluff
   document.getElementById('fluffFS').textContent = npc.forceSensitive;
   document.getElementById('fluffFS').style.color = npc.forceSensitive === 'Yes' ? 'var(--purple)' : 'var(--text-dim)';
-  document.getElementById('fluffCreds').textContent = npc.credits;
+  document.getElementById('fluffCreds').innerHTML = formatCost(npc.credits);
   document.getElementById('fluffFP').textContent = npc.forcePoints;
   document.getElementById('fluffCP').textContent = npc.charPoints;
 
@@ -4189,7 +4209,7 @@ function buildNotableNpcDetail(n) {
 
   // Equipment
   if (n.equipment) {
-    html += '<div style="margin-top:6px;font-size:11px;color:var(--text-dim);line-height:1.6"><span style="font-weight:bold;color:var(--cyan)">Equipment:</span> ' + n.equipment + '</div>';
+    html += '<div style="margin-top:6px;font-size:11px;color:var(--text-dim);line-height:1.6"><span style="font-weight:bold;color:var(--cyan)">Equipment:</span> ' + formatCost(n.equipment) + '</div>';
   }
 
   // Capsule
@@ -6907,7 +6927,7 @@ function renderEquipList() {
       + '<div style="font-size:10px;color:var(--text-dim)">' + (e.category || '') + '</div>'
       + '</div>'
       + '<div style="display:flex;gap:10px;align-items:center;flex-shrink:0;margin-left:8px">'
-      + '<span style="font-size:10px;color:var(--green);font-family:\'IBM Plex Mono\',monospace">' + costShort + '</span>'
+      + '<span style="font-size:10px;color:var(--green);font-family:\'IBM Plex Mono\',monospace">' + formatCost(costShort) + '</span>'
       + '</div></div>';
   });
   el.innerHTML = html;
@@ -6923,7 +6943,7 @@ function showEquipItem(idx) {
   let infoHtml = '<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:10px">';
   infoHtml += '<div style="background:var(--bg);border:1px solid var(--card-border);border-radius:var(--radius-sm);padding:6px 8px">'
     + '<div style="font-family:\'Exo 2\',monospace;font-size:8px;color:var(--text-dim);letter-spacing:1px;margin-bottom:2px">COST</div>'
-    + '<div style="font-family:\'IBM Plex Mono\',monospace;font-size:12px;color:var(--green)">' + (e.cost || '—') + '</div></div>';
+    + '<div style="font-family:\'IBM Plex Mono\',monospace;font-size:12px;color:var(--green)">' + formatCost(e.cost || '—') + '</div></div>';
   infoHtml += '<div style="background:var(--bg);border:1px solid var(--card-border);border-radius:var(--radius-sm);padding:6px 8px">'
     + '<div style="font-family:\'Exo 2\',monospace;font-size:8px;color:var(--text-dim);letter-spacing:1px;margin-bottom:2px">AVAILABILITY</div>'
     + '<div style="font-family:\'IBM Plex Mono\',monospace;font-size:12px;color:var(--cyan)">' + (e.availability || '—') + '</div></div>';
@@ -7032,7 +7052,7 @@ function renderShipEquipList() {
     html += '<div onclick="showShipEquipItem(' + i + ')" style="display:flex;align-items:center;justify-content:space-between;padding:8px 10px;margin-bottom:2px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);cursor:pointer;transition:border-color .15s" onmouseover="this.style.borderColor=\'var(--gold-dim)\'" onmouseout="this.style.borderColor=\'var(--card-border)\'">'
       + '<div style="flex:1;min-width:0"><div style="font-size:13px;color:var(--gold);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">' + e.name + '</div>'
       + '<div style="font-size:10px;color:var(--text-dim)">' + (e.type || 'Ship Equipment') + '</div></div>'
-      + '<div style="flex-shrink:0;margin-left:8px"><span style="font-size:10px;color:var(--green);font-family:\'IBM Plex Mono\',monospace">' + costShort + '</span></div></div>';
+      + '<div style="flex-shrink:0;margin-left:8px"><span style="font-size:10px;color:var(--green);font-family:\'IBM Plex Mono\',monospace">' + formatCost(costShort) + '</span></div></div>';
   });
   el.innerHTML = html;
 }
@@ -7043,7 +7063,7 @@ function showShipEquipItem(idx) {
   const el = document.getElementById('shipEquipDetail');
   el.style.display = 'block';
   let infoHtml = '<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:10px">';
-  infoHtml += '<div style="background:var(--bg);border:1px solid var(--card-border);border-radius:var(--radius-sm);padding:6px 8px"><div style="font-family:\'Exo 2\',monospace;font-size:8px;color:var(--text-dim);letter-spacing:1px;margin-bottom:2px">COST</div><div style="font-family:\'IBM Plex Mono\',monospace;font-size:12px;color:var(--green)">' + (e.cost || '—') + '</div></div>';
+  infoHtml += '<div style="background:var(--bg);border:1px solid var(--card-border);border-radius:var(--radius-sm);padding:6px 8px"><div style="font-family:\'Exo 2\',monospace;font-size:8px;color:var(--text-dim);letter-spacing:1px;margin-bottom:2px">COST</div><div style="font-family:\'IBM Plex Mono\',monospace;font-size:12px;color:var(--green)">' + formatCost(e.cost || '—') + '</div></div>';
   infoHtml += '<div style="background:var(--bg);border:1px solid var(--card-border);border-radius:var(--radius-sm);padding:6px 8px"><div style="font-family:\'Exo 2\',monospace;font-size:8px;color:var(--text-dim);letter-spacing:1px;margin-bottom:2px">AVAILABILITY</div><div style="font-family:\'IBM Plex Mono\',monospace;font-size:12px;color:var(--cyan)">' + (e.availability || '—') + '</div></div>';
   infoHtml += '</div>';
   let notesHtml = '';
@@ -7149,9 +7169,10 @@ function showWeapItem(idx) {
   statPairs.forEach(([lbl, val]) => {
     if (!val) return;
     const color = lbl === 'DAMAGE' ? 'var(--red)' : lbl === 'COST' ? 'var(--green)' : 'var(--gold)';
+    const displayVal = lbl === 'COST' ? formatCost(val) : val;
     statsHtml += '<div style="background:var(--bg);border:1px solid var(--card-border);border-radius:var(--radius-sm);padding:6px 8px;text-align:center">'
       + '<div style="font-family:\'Exo 2\',monospace;font-size:8px;color:var(--text-dim);letter-spacing:1px;margin-bottom:2px">' + lbl + '</div>'
-      + '<div style="font-family:\'IBM Plex Mono\',monospace;font-size:12px;color:' + color + ';word-break:break-word">' + val + '</div></div>';
+      + '<div style="font-family:\'IBM Plex Mono\',monospace;font-size:12px;color:' + color + ';word-break:break-word">' + displayVal + '</div></div>';
   });
   statsHtml += '</div>';
 
@@ -7283,9 +7304,10 @@ function showVehItem(idx) {
   statPairs.forEach(([lbl, val]) => {
     if (!val) return;
     const color = lbl === 'BODY' ? 'var(--cyan)' : lbl === 'SHIELDS' ? 'var(--blue)' : lbl === 'COST' ? 'var(--green)' : lbl === 'MANEUVER' ? 'var(--gold)' : 'var(--text)';
+    const displayVal = lbl === 'COST' ? formatCost(val) : val;
     statsHtml += '<div style="background:var(--bg);border:1px solid var(--card-border);border-radius:var(--radius-sm);padding:5px 6px;text-align:center">'
       + '<div style="font-family:\'Exo 2\',monospace;font-size:7px;color:var(--text-dim);letter-spacing:1px;margin-bottom:1px">' + lbl + '</div>'
-      + '<div style="font-family:\'IBM Plex Mono\',monospace;font-size:11px;color:' + color + ';word-break:break-word">' + val + '</div></div>';
+      + '<div style="font-family:\'IBM Plex Mono\',monospace;font-size:11px;color:' + color + ';word-break:break-word">' + displayVal + '</div></div>';
   });
   statsHtml += '</div>';
 
