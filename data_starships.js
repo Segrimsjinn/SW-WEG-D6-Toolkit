@@ -44653,6 +44653,52 @@ const STARSHIP_DATA = {
    "capsule": "Baydo Chasdy's personal ship, used for his covert Rebel Special Ops Foster Agent missions. The Chaser transports 'orphans' — Alliance agents stranded in the field or with blown cover — safely back to the Rebellion.",
    "source": "WEG40153 Wretched Hives p.75"
   }
+ ,{
+   "name": "Starbound Misfit",
+   "type": "Modified Corellian YT-1930 Transport",
+   "manufacturer": "Corellian Engineering Corporation",
+   "scale": "Starfighter",
+   "length": "35 meters",
+   "skill": "Space transports: YT-1930",
+   "crew": "2",
+   "passengers": "6",
+   "cargo_capacity": "200 metric tons",
+   "consumables": "4 months",
+   "hyperdrive": "x1/2",
+   "hyperdrive_backup": "x10",
+   "nav_computer": "Yes",
+   "maneuverability": "2D",
+   "space": "6",
+   "atmosphere": "330; 950 kmh",
+   "hull": "5D",
+   "shields": "2D",
+   "sensors_passive": "10/0D",
+   "sensors_scan": "25/1D",
+   "sensors_search": "40/2D",
+   "sensors_focus": "2/3D",
+   "weapons": [
+     {
+       "name": "Twin Heavy Laser Cannons (fire-linked)",
+       "fire_arc": "Turret",
+       "skill": "Starship gunnery",
+       "fire_control": "2D",
+       "space_range": "1-3/12/25",
+       "atmosphere_range": "100-300/1.2/2.5 km",
+       "damage": "4D"
+     },
+     {
+       "name": "Concussion Missile Launcher",
+       "fire_arc": "Front",
+       "skill": "Starship gunnery",
+       "fire_control": "1D",
+       "space_range": "1/3/7",
+       "atmosphere_range": "50-100/300/700",
+       "damage": "8D"
+     }
+   ],
+   "capsule": "Lynnori's tramp freighter, purchased by Talandro Starlyte and modified by Scizzic. A well-armed craft that replaced her previous 'hunk of junk,' making both Lynnori and the protective Talandro happy.",
+   "source": "WEG40153 Wretched Hives p.140"
+  }
  ]
 // --- END OF STARSHIP_DATA ---
 };

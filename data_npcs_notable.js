@@ -41589,5 +41589,333 @@ const NOTABLE_NPCS = [
     capsule: "The up-and-coming racer known as Miraj shocks most opponents when the helmet comes off and they're greeted by a beautiful woman. She uses the blatant sexism in the swoop racer community to her advantage. Her real name is Narra Mesyne — a Sector Rangers Special Enforcement Officer empowered to pursue criminals using whatever means necessary. Her quarry is Kaylo NaKuda, using her racing cover to discover enough evidence against the Herglic's slave ring and stolen vehicle operation to bring him to justice. Rides a white and silver bike called Wraith.",
     source: "WEG40153 Wretched Hives p.112"
   }
+  ,{
+    name: "Corinna A'Daasha",
+    species: "Human",
+    system: "Adarlon",
+    location: "Adarlon — Glow Dome",
+    affiliations: ["Rebel Alliance"],
+    role: "Co-owner of Glow Dome, Rebel sympathizer",
+    type: "Businesswoman",
+    stats: {
+      DEXTERITY: { base: "3D+1", skills: { "blaster": "5D+1", "dodge": "6D", "grenade": "4D", "running": "4D" } },
+      KNOWLEDGE: { base: "3D", skills: { "alien species": "5D", "business": "8D", "languages": "6D+1", "planetary systems": "6D", "streetwise": "9D", "value": "7D", "willpower": "5D+1" } },
+      MECHANICAL: { base: "2D+1", skills: { "sensors": "5D+1", "space transports": "6D" } },
+      PERCEPTION: { base: "4D", skills: { "bargain": "9D", "con": "10D", "gambling": "9D", "hide": "7D", "persuasion": "9D+1", "search": "8D", "sneak": "7D" } },
+      STRENGTH: { base: "2D", skills: { "climbing/jumping": "4D+1" } },
+      TECHNICAL: { base: "3D", skills: { "computer programming/repair": "6D+2", "first aid": "6D", "security": "5D" } }
+    },
+    forcePoints: 1,
+    characterPoints: 20,
+    move: 10,
+    equipment: "Hold-out blaster (3D+2), vibroknife (STR+1D), flight jumpsuit, datapad, personal holo player",
+    capsule: "An enterprising young woman from Corellia. She and twin sister Kandria were born into wealth and never had to struggle for anything. While Kandria enjoyed the upbringing, Corinna became bored and restless, taking a small portion of her bank account to explore the galaxy. The twins reunited on Adarlon and founded Glow Dome, an extremely successful enterprise. Still feeling something was missing, Corinna met a member of the underground group 'No-Holds-Barred' who introduced her to banned Rebel Alliance and Jedi holos. Though she hasn't officially joined the Alliance, she sympathizes and has allowed underground holos to be sold through the Dome and even let it be used as a safehouse for Rebel operatives. Very attractive with sparkling eyes full of mischief — enjoys practical jokes, tight-fitting clothes, and subjecting boorish people to her pranks.",
+    source: "WEG40153 Wretched Hives p.119"
+  },
+  {
+    name: "Vallikor En-Vahdi",
+    species: "Ipharian-Da'Lor",
+    system: "Adarlon",
+    location: "Adarlon — Glow Dome",
+    affiliations: ["The Fringe", "Bounty Hunters' Guild"],
+    role: "Bounty hunter",
+    type: "Bounty Hunter",
+    stats: {
+      DEXTERITY: { base: "4D", skills: { "blaster": "9D", "brawling parry": "6D", "dodge": "10D+1", "firearms": "12D+1", "grenade": "8D", "melee combat": "8D+2" } },
+      KNOWLEDGE: { base: "2D", skills: { "intimidation": "7D+1", "interrogation": "8D", "interrogation: torture": "10D", "willpower": "8D" } },
+      MECHANICAL: { base: "3D", skills: { "repulsorlift operation": "6D+2", "space transports": "8D" } },
+      PERCEPTION: { base: "3D", skills: { "con": "6D", "hide": "10D", "search": "9D+1", "sneak": "11D+2" } },
+      STRENGTH: { base: "4D", skills: { "brawling": "11D", "lifting": "6D" } },
+      TECHNICAL: { base: "2D", skills: { "computer programming/repair": "5D", "demolitions": "6D", "first aid": "5D", "security": "10D" } }
+    },
+    specialAbilities: "Tail Spike: Retractable tail spike inflicts STR+3D damage. Natural Camouflage: Grayish skin takes on color of surroundings — +2D to difficulty of search/Perception rolls to spot a motionless Ipharian-Da'Lor.",
+    forcePoints: 1,
+    darkSidePoints: 9,
+    characterPoints: 30,
+    move: 14,
+    equipment: "Comlink, slugthrower assault rifle (5D+1), slugthrower pistol (3D+2), slugthrower ammo packs, hold-out blaster (3D), bandolier with several throwing knives (STR+1D+1), surgical kit, 2 medpacs, Nullifier energy diffusion armor (5D energy force field, deflects lightsabers, but prevents firing energy weapons from inside)",
+    capsule: "Often described as cold-blooded, twisted, and cruel — and indeed all those things and more. He enjoys dealing out pain, sometimes to extract information but mostly for amusement. The Ipharian-Da'Lor are a serpentine species with a truncated snake-like lower body, standing slightly over three meters tall but measuring over four meters head to tail. A spiny ridge extends from the back of the head to the tail tip with a retractable spike. The prehensile tail supports the creature's full weight. Following Ipharian-Da'Lor custom of masking their elongated-snout faces, Vallikor wears unique Nullifier armor covering face, upper torso, and hands. Currently hunting underground holo makers and seeking Dr. Urtell's rumored prototype personal holographic projector.",
+    source: "WEG40153 Wretched Hives p.122"
+  },
+  {
+    name: "Cha Raas",
+    species: "Human",
+    system: "Adarlon",
+    location: "Adarlon — Glow Dome",
+    affiliations: ["Galactic Empire", "ISB Agents"],
+    role: "ISB Investigations Specialist, undercover operative",
+    type: "ISB Investigations Specialist",
+    stats: {
+      DEXTERITY: { base: "3D+1", skills: { "blaster": "7D+1", "brawling parry": "6D", "dodge": "5D", "melee combat": "5D" } },
+      KNOWLEDGE: { base: "3D", skills: { "alien species": "4D", "bureaucracy": "6D", "bureaucracy: Imperial": "7D", "intimidation": "3D", "planetary systems": "4D+2", "streetwise": "6D+1", "willpower": "7D" } },
+      MECHANICAL: { base: "2D", skills: { "astrogation": "4D", "repulsorlift operation": "3D+2", "space transports": "5D", "starship gunnery": "4D" } },
+      PERCEPTION: { base: "4D+1", skills: { "command": "6D", "con": "3D", "disguise": "9D+2", "investigation": "8D+2", "search": "6D", "sneak": "7D" } },
+      STRENGTH: { base: "3D", skills: { "brawling": "5D" } },
+      TECHNICAL: { base: "2D", skills: { "computer programming/repair": "6D", "demolitions": "4D", "first aid": "5D", "security": "5D" } }
+    },
+    forcePoints: 1,
+    darkSidePoints: 5,
+    characterPoints: 9,
+    move: 10,
+    equipment: "Blaster pistol (4D+2), comlink, datapad, ISB uniform, Imperial ISB identification, rank cylinders, disguise kit and plainclothes",
+    capsule: "Apprentice of the despised Babel Torsh and one of the nastiest Imperials in the Minos Cluster. Hates almost everyone — Rebel or Imperial — including his boss. Antisocial, rude, and prejudiced against non-humans, he believes his formidable skill allows him to operate among those he despises. A master of disguise and social chameleon who can fit any role, winning confidence and trust. Charged with investigating illegal holo activity at Glow Dome, he has donned a variety of personas. No one knows what he really looks like — believed to be an average-looking man of medium build in his early thirties who blends perfectly into any crowd.",
+    source: "WEG40153 Wretched Hives p.125"
+  }
+  ,{
+    name: "Kandria A'Daasha",
+    species: "Human",
+    system: "Adarlon",
+    location: "Adarlon — Glow Dome",
+    affiliations: ["The Fringe"],
+    role: "Co-owner of Glow Dome, performer, Derriphan host",
+    type: "Businesswoman/Performer",
+    stats: {
+      DEXTERITY: { base: "3D+1", skills: { "blaster": "6D", "dance": "5D", "dodge": "5D+2" } },
+      KNOWLEDGE: { base: "3D", skills: { "alien species": "5D", "artist": "5D", "streetwise": "5D+2", "value": "7D" } },
+      MECHANICAL: { base: "2D", skills: { "repulsorlift operation": "6D" } },
+      PERCEPTION: { base: "4D", skills: { "con": "7D", "gambling": "5D", "hide": "5D+2", "persuasion": "7D+2", "search": "4D", "sneak": "6D+1" } },
+      STRENGTH: { base: "2D", skills: { "brawling": "4D", "climbing/jumping": "5D+1" } },
+      TECHNICAL: { base: "3D+2", skills: { "computer programming/repair": "7D", "first aid": "4D", "security": "6D+2" } }
+    },
+    forcePoints: 1,
+    characterPoints: 10,
+    move: 10,
+    equipment: "2 Quickfire-4 hold-out blasters (4D), bright azure cloak, expensive clothing and jewelry",
+    capsule: "Though they are twins, Kandria is the antithesis of her sister in many ways — a free spirit who does not like being tied down by responsibility. From an early age she liked to perform, excelling at musical instruments, singing, and dancing, and still enjoys performing at Glow Dome. Contemplating acting in holovids. Favors revealing, tight-fitting clothing — her trademark second-skin black jumpsuit accented by an azure cloak matching her eyes, with long curly blonde hair always elegantly styled. Has an impish streak that often gets her into bad situations forcing Corinna to rescue her. Can be cruel, going through boyfriends like fashion trends. SECRETLY HOSTED BY ZIAKAS: A Derriphan (dark side parasite) has recently taken her as host. She has no idea she is being fed upon, blaming the fatigue on lack of sleep and too much partying. Suffers blackouts from Ziakas's memory wipes.",
+    source: "WEG40153 Wretched Hives p.127"
+  }
+  ,{
+    name: "Dr. Lytos Urtell",
+    species: "Sullustan",
+    system: "Adarlon",
+    location: "Adarlon — Glow Dome",
+    affiliations: ["Neutral"],
+    role: "Holophysicist, inventor of Glow Dome's systems",
+    type: "Sullustan Holophysicist",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { "blaster": "4D+1" } },
+      KNOWLEDGE: { base: "4D", skills: { "alien species": "9D", "cultures": "6D+1", "languages": "5D+2", "planetary systems": "8D", "(A) science: holophysics": "12D", "value": "5D" } },
+      MECHANICAL: { base: "2D", skills: { "astrogation": "4D" } },
+      PERCEPTION: { base: "4D", skills: { "hide": "6D", "persuasion": "7D", "search": "5D+2", "sneak": "6D" } },
+      STRENGTH: { base: "1D+1", skills: {} },
+      TECHNICAL: { base: "4D+2", skills: { "computer programming/repair": "11D+1", "droid programming": "10D+2", "droid repair": "9D", "(A) machinery engineering": "10D+2", "machinery repair": "9D", "security": "6D" } }
+    },
+    specialAbilities: "Enhanced Senses: +2D to Perception/search checks involving vision, low-light conditions, or hearing. Location Sense: Always remembers how to get back to visited places, +1D astrogation to previously visited locations.",
+    forcePoints: 1,
+    darkSidePoints: 2,
+    characterPoints: 12,
+    move: 9,
+    equipment: "Datapad, diagnostic scanner, tools, repair kits, lab equipment, blaster pistol (4D)",
+    capsule: "A very odd and enigmatic individual, even for a Sullustan. He once held a high-level position at SoroSuub Corporation, but his records are sealed behind high company security clearance. Why he was let go remains unknown. Corinna hired him to design the Dome's holoproj system, giving him a private office and lab. Fiercely private, quiet, and unassuming, he prefers to be left alone and is obviously uncomfortable in social situations. Has a high degree of curiosity and views everything and everyone as potential subjects for experimentation. SECRETS: His SenseLights are actually experiments in subtle mind control with hidden subliminal messages. He has placed holo-recording snoopers throughout the Dome to spy on conversations. He has developed a prototype personal holographic projector worth millions — sought by the Empire, Alliance, Vallikor, and Cha Raas.",
+    source: "WEG40153 Wretched Hives p.128"
+  },
+  {
+    name: "Lux",
+    species: "Droid (Modified Seeker)",
+    system: "Adarlon",
+    location: "Adarlon — Glow Dome",
+    affiliations: ["Neutral"],
+    role: "Security droid",
+    type: "Modified Seeker Droid",
+    stats: {
+      DEXTERITY: { base: "4D", skills: { "blaster": "7D", "dodge": "7D+1" } },
+      KNOWLEDGE: { base: "3D+1", skills: { "languages": "5D+1", "law enforcement": "8D" } },
+      MECHANICAL: { base: "2D", skills: {} },
+      PERCEPTION: { base: "4D+2", skills: { "search": "8D", "sneak": "6D" } },
+      STRENGTH: { base: "1D", skills: {} },
+      TECHNICAL: { base: "3D", skills: { "security": "8D" } }
+    },
+    specialAbilities: "Perfect Memory: Keeps permanent record of all visual/auditory experiences for replay or hard copy. Genetic Tracer/Tracking Module: +3D to search when tracking a target via genetic traces. Threat Evaluation Mode: On-board analysis determines whether to attempt disarm/detain or request assistance.",
+    move: 16,
+    equipment: "Spherical body, visual/auditory sensor recorders, vocabulator, AA-1 Verbo-brain, TranLang III with 50,000+ languages, repulsorlift stabilizers (0-50m altitude), built-in comlink, Merr-Sonn MSD-32 disruptor (5D+2, 0-3/5/10, retractable), BlasTech Persuader heavy stun gun (6D stun, 5-20/40/60, retractable), SunnGunn B-3 SpotLuma (industrial searchlight)",
+    capsule: "Purchased second-hand by Corinna and refurbished by Dr. Urtell, this seeker droid retains tough-talking 'police officer' programming — a rough-and-tumble veteran of the streets who doesn't tolerate back-talk. The harmless-looking floating sphere blends into the Dome's scenery, mistaken by most customers for just another floating projector. Lux's talent for detecting criminal activity has Dr. Urtell worried the droid will discover his extracurricular activities. Urtell is trying to find a reason for a maintenance overhaul, but Lux doesn't trust the doctor and won't let him near — considering the firepower Lux carries, no one argues.",
+    source: "WEG40153 Wretched Hives p.121"
+  }
+  ,{
+    name: "Talandro Starlyte",
+    species: "Human",
+    system: "Tshindral",
+    location: "Tshindral III — Starlyte Station",
+    affiliations: ["Criminal Underworld"],
+    role: "Owner/operator of Starlyte Station, black marketeer",
+    type: "Black Marketeer",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "6D", "blaster: hold-out": "8D+2", "dodge": "6D", "pick pocket": "5D+1" } },
+      KNOWLEDGE: { base: "3D", skills: { "alien species": "7D", "business": "8D+2", "business: black market operations": "10D+1", "languages": "5D", "planetary systems": "7D+1", "streetwise": "8D", "value": "11D" } },
+      MECHANICAL: { base: "3D", skills: { "astrogation": "5D", "repulsorlift operation": "6D", "space transports": "6D+2", "starfighter piloting": "4D+2", "starship gunnery": "6D" } },
+      PERCEPTION: { base: "4D", skills: { "bargain": "10D+2", "con": "12D", "gambling": "7D+1", "hide": "8D+2", "search": "6D", "sneak": "6D" } },
+      STRENGTH: { base: "3D", skills: { "brawling": "7D", "climbing/jumping": "6D+1" } },
+      TECHNICAL: { base: "2D", skills: { "computer programming/repair": "5D+2", "security": "5D" } }
+    },
+    forcePoints: 2,
+    characterPoints: 15,
+    move: 10,
+    equipment: "Blaster pistol (4D+2), hold-out blaster (3D+2), vibroknife (STR+1D), voice-locked datapad, expensive clothing and jewelry, custom chronometer, black jumpsuit, hooded gray cloak, spit-shined boots",
+    capsule: "One of the premiere black market fences in the Outer Rim Territories. If you need to move merchandise or find a rare item, he's the man to see — very upfront and honest in transactions, doesn't deal in junk, and while prices are inflated, they're fair compared to competitors. Claims to hail from Coruscant with typical distaste for Corellians. Rumors of influential Imperial connections explaining why the Empire does business with this known scoundrel. Spent time on Cloud City where he met his Ugnaught techno-whiz Scizzic, reportedly having dealings with Lando Calrissian. Handsome, nearly as tall as most Wookiees, with piercing light-blue eyes and straight black hair in a ponytail. Meticulous appearance, taste for expensive clothing, Savareen brandy, and fascinating women. A shrewd businessman, charming rogue, and relentless scrapper.",
+    source: "WEG40153 Wretched Hives p.133"
+  },
+  {
+    name: "Lt. Arissa Fawn",
+    species: "Human",
+    system: "Tshindral",
+    location: "Tshindral III — Starlyte Station",
+    affiliations: ["Galactic Empire"],
+    role: "Imperial Liaison Officer",
+    type: "Imperial Liaison",
+    stats: {
+      DEXTERITY: { base: "2D+2", skills: { "blaster": "6D+2", "dodge": "5D+2" } },
+      KNOWLEDGE: { base: "3D", skills: { "bureaucracy": "4D", "languages": "5D+2" } },
+      MECHANICAL: { base: "3D+2", skills: { "repulsorlift operation": "4D+1" } },
+      PERCEPTION: { base: "3D+1", skills: { "command": "4D+1", "con": "6D", "persuasion": "5D", "search": "4D", "sneak": "4D+1" } },
+      STRENGTH: { base: "2D+1", skills: { "brawling": "5D+2", "climbing/jumping": "7D" } },
+      TECHNICAL: { base: "3D", skills: { "computer programming/repair": "6D+1", "first aid": "4D+1", "security": "5D" } }
+    },
+    forcePoints: 1,
+    characterPoints: 10,
+    move: 10,
+    equipment: "Imperial uniform, protective vest (+2 energy and physical), blaster pistol (4D+1), datapad, regular clothing and jewelry",
+    capsule: "Once as idealistic as the next SAGroup member, Arissa has begun to face the harsh realities of the Empire. She knows she's gone as far as she can in rank — the fact that a small-minded philosophy blocks her goal infuriates her. Without propaganda-fueled adrenaline, she finally recognized the Empire stands for terror and evil, not peace and law. She wants to leave and possibly join the Alliance, but has doubts: she's well-paid by both the Empire and Talandro with a cushy remote posting, she's afraid of her suspicious second-in-command Brezzic Marr, and she suspects something sinister behind Talandro's smile.",
+    source: "WEG40153 Wretched Hives p.135"
+  }
+  ,{
+    name: "Commander Brezzic Marr",
+    species: "Human",
+    system: "Tshindral",
+    location: "Tshindral III — Starlyte Station",
+    affiliations: ["Galactic Empire", "Stormtrooper Corps"],
+    role: "Commander of the 105th Stormtrooper Platoon",
+    type: "Veteran Imperial Stormtrooper",
+    stats: {
+      DEXTERITY: { base: "4D", skills: { "blaster": "9D+1", "brawling parry": "8D", "dodge": "10D", "grenade": "7D+1", "melee combat": "8D" } },
+      KNOWLEDGE: { base: "3D", skills: { "bureaucracy: Imperial": "6D", "intimidation": "8D", "planetary systems": "6D", "streetwise": "7D+1", "streetwise: Starlyte Station": "10D", "tactics": "9D", "tactics: squads": "11D", "willpower": "10D" } },
+      MECHANICAL: { base: "2D", skills: { "astrogation": "6D+1", "capital ship gunnery": "8D+1", "repulsorlift operation": "5D+2", "space transports": "4D", "starship gunnery": "5D" } },
+      PERCEPTION: { base: "3D", skills: { "command": "9D", "investigation": "5D+2", "search": "7D", "sneak": "8D" } },
+      STRENGTH: { base: "3D+2", skills: { "brawling": "8D" } },
+      TECHNICAL: { base: "2D+1", skills: { "computer programming/repair": "5D", "demolitions": "6D", "first aid": "4D", "security": "8D" } }
+    },
+    forcePoints: 2,
+    darkSidePoints: 3,
+    characterPoints: 18,
+    move: 10,
+    equipment: "BlasTech T-45 'Thunderer' heavy blaster pistol (6D+1), modified stormtrooper armor (+2D+2 physical, +2D+1 energy, -1D Dexterity and related skills), hold-out blaster (3D+2), 2 serrated vibroknives (STR+1D+2), bandolier of 5 stun grenades (5D stun), comlink (built into helmet)",
+    capsule: "Not much is known of his past exploits before the 105th. Ugly rumors circulate that he is mentally unbalanced to the point of being a liability, but his tactical mind is so sound that his strategies have resulted in revisions to Imperial tactics manuals. Extremely intense, borderline fanatical, and slightly sadistic — often gets a faraway look in his steely eyes that unnerves others. He sees nothing wrong with accepting Talandro's bribes, as long as Starlyte understands no amount of money will put personal wishes ahead of loyal service to the Empire. His troopers fight to the death, gladly taking as many opponents as they can with them, and never, ever retreat.",
+    source: "WEG40153 Wretched Hives p.136"
+  },
+  {
+    name: "Emperor's Irregulars Stormtrooper",
+    species: "Human",
+    system: "Tshindral",
+    location: "Tshindral III — Starlyte Station",
+    affiliations: ["Galactic Empire", "Stormtrooper Corps"],
+    role: "105th Stormtrooper Platoon trooper",
+    type: "Generic Template",
+    stats: {
+      DEXTERITY: { base: "3D+1", skills: { "blaster": "6D+2", "brawling parry": "5D", "dodge": "6D", "melee combat": "7D" } },
+      KNOWLEDGE: { base: "2D", skills: { "streetwise": "5D", "streetwise: Starlyte Station": "8D" } },
+      MECHANICAL: { base: "3D", skills: { "capital ship gunnery": "7D", "repulsorlift operation": "5D", "starship gunnery": "6D+1" } },
+      PERCEPTION: { base: "3D", skills: { "investigation": "6D+2", "search": "5D" } },
+      STRENGTH: { base: "3D+2", skills: { "brawling": "6D+1" } },
+      TECHNICAL: { base: "2D+1", skills: { "computer programming/repair": "4D", "demolitions": "5D", "first aid": "6D", "security": "7D" } }
+    },
+    forcePoints: 1,
+    characterPoints: 10,
+    move: 10,
+    equipment: "SoroSuub Stormtrooper-Two blaster carbine (6D+2), modified stormtrooper armor (+2D physical, +2D energy, -1D Dexterity and related skills), vibroknife (STR+1D), hold-out blaster (3D+2), comlink (built into helmet)",
+    capsule: "Described as loopy, shell-shocked, and blaster-brained. Not the best or brightest, but possess blind unswerving loyalty. They fight to the death and never retreat. Commander Marr allows personalized armor markings — all proudly display the stylized 105th emblem: the Imperial symbol emblazoned with arcing lightning.",
+    source: "WEG40153 Wretched Hives p.137"
+  },
+  {
+    name: "Lynnori",
+    species: "Near-Human (feline characteristics)",
+    system: "Tshindral",
+    location: "Tshindral III — Starlyte Station",
+    affiliations: ["The Fringe"],
+    role: "Tramp freighter captain, Talandro's romantic interest",
+    type: "Tramp Freighter Captain",
+    stats: {
+      DEXTERITY: { base: "2D+2", skills: { "blaster": "5D", "blaster: hold-out": "6D", "dodge": "4D+2", "grenade": "3D", "melee combat": "3D", "pick pocket": "4D+1" } },
+      KNOWLEDGE: { base: "3D+1", skills: { "business": "6D+1", "languages": "4D", "streetwise": "4D+2", "value": "5D" } },
+      MECHANICAL: { base: "3D", skills: { "astrogation": "5D+1", "communications": "4D", "sensors": "5D+2", "space transports": "6D", "starfighter piloting": "5D", "starship gunnery": "5D", "starship shields": "5D" } },
+      PERCEPTION: { base: "3D+2", skills: { "bargain": "5D", "con": "4D", "gambling": "4D+1", "hide": "4D", "search": "5D+1", "sneak": "4D" } },
+      STRENGTH: { base: "2D", skills: { "brawling": "4D" } },
+      TECHNICAL: { base: "3D+1", skills: { "computer programming/repair": "4D+2", "first aid": "5D", "security": "4D+1", "space transports repair": "6D" } }
+    },
+    forcePoints: 2,
+    characterPoints: 20,
+    move: 10,
+    equipment: "BlasTech DM-4 heavy blaster pistol (5D), Czerka 411 hold-out blaster (3D+1), vibroknife (STR+1D+2)",
+    capsule: "Typical of Starlyte Station visitors — a tramp freighter captain dealing in passengers, cargo, free-trading, and sometimes smuggling if the price is right. Currently linked romantically to Talandro Starlyte and something of a fixture at the station. Talandro tried to convince her to stay full-time, but being an independent spirit she keeps him at arm's length. He purchased a new ship for her — the Starbound Misfit — and had Scizzic make modifications. A near-human with pronounced feline characteristics, extremely attractive and knows it. Very physical, independent, and loves to flirt — a fact which often grates on Talandro's nerves, making it even more fun for her.",
+    source: "WEG40153 Wretched Hives p.139"
+  }
+  ,{
+    name: "Scizzic",
+    species: "Ugnaught",
+    system: "Tshindral",
+    location: "Tshindral III — Starlyte Station, The Graveyard",
+    affiliations: ["The Fringe"],
+    role: "Master ship technician",
+    type: "Ugnaught Tech",
+    stats: {
+      DEXTERITY: { base: "3D+1", skills: { "blaster": "4D", "dodge": "5D+1" } },
+      KNOWLEDGE: { base: "2D+2", skills: { "streetwise": "5D", "value": "8D" } },
+      MECHANICAL: { base: "3D", skills: { "hover vehicle operation": "4D+1", "repulsorlift operation": "5D+1", "sensors": "5D", "starship gunnery": "4D+1" } },
+      PERCEPTION: { base: "3D", skills: { "bargain": "5D", "hide": "4D", "search": "10D+2", "sneak": "5D" } },
+      STRENGTH: { base: "2D", skills: { "climbing/jumping": "3D+2" } },
+      TECHNICAL: { base: "4D", skills: { "computer programming/repair": "10D+2", "droid programming": "9D", "droid repair": "7D", "(A) machinery engineering": "7D", "repulsorlift repair": "7D", "space transports repair": "9D", "starfighter repair": "8D", "starship weapon repair": "6D+2" } }
+    },
+    forcePoints: 1,
+    characterPoints: 12,
+    move: 8,
+    equipment: "Work coveralls, diagnostic scanner, datapad, various repair kits, laser cutter, plasma welder, hydrospanners, hold-out blaster (3D)",
+    capsule: "Your typical Ugnaught in many ways, but he never cared for the mining life, preferring machines over dirty old caves from an early age. Believed to have spent time on Bespin's Cloud City where he first met Talandro Starlyte. Recognizing his skill, Talandro offered him a job fixing up the old station. Thanks to his genius, all important systems were up and running in a miraculously short time. Now works mostly in The Graveyard — the main hangar bay filled with ship hulks and debris piles — cannibalizing parts for his designs. His services are significantly more expensive than many techs, but results are incredibly reliable. Wealthy many times over but happy at Starlyte Station. Shy and reserved, but prone to manic excitement when making discoveries.",
+    source: "WEG40153 Wretched Hives p.141"
+  },
+  {
+    name: "Dahz Thulaka",
+    species: "Twi'lek",
+    system: "Tshindral",
+    location: "Tshindral III — Starlyte Station (deep corridors)",
+    affiliations: ["Criminal Underworld"],
+    role: "Dark side Force-user, genetic experimenter, slaver",
+    type: "Twi'lek Dark Sider",
+    stats: {
+      DEXTERITY: { base: "4D", skills: { "blaster": "6D", "dodge": "8D", "lightsaber": "5D+2", "pick pocket": "5D+1" } },
+      KNOWLEDGE: { base: "3D+2", skills: { "alien species": "5D", "languages": "4D+2", "intimidation": "8D+1", "planetary systems": "7D", "streetwise": "6D" } },
+      MECHANICAL: { base: "2D", skills: { "astrogation": "5D", "repulsorlift operation": "4D", "space transports": "6D+1", "starship gunnery": "5D+2" } },
+      PERCEPTION: { base: "3D+1", skills: { "bargain": "5D", "con": "5D+2", "hide": "8D", "search": "6D+1", "sneak": "7D+2" } },
+      STRENGTH: { base: "3D", skills: { "brawling": "6D" } },
+      TECHNICAL: { base: "2D", skills: { "computer programming/repair": "7D", "first aid": "6D", "(A) medicine": "8D", "(A) medicine: genetic manipulation": "6D", "security": "5D" } }
+    },
+    specialAbilities: "Head-tails: Twi'leks can use their tentacles to communicate secretly with each other. Force-sensitive.",
+    forcePoints: 4,
+    darkSidePoints: 9,
+    characterPoints: 18,
+    move: 10,
+    equipment: "Lightsaber (5D, indigo blade), BlasTech DL-22 (4D+1), double-bladed T'kyja knife (STR+2D), hooded cloak",
+    capsule: "Was not always evil, though he had a malicious streak even early on. Enrolled at a renowned school of medicine when he realized he was Force-sensitive, gaining the attention of a hiding Jedi. He learned what the Jedi could teach but struggled with patience and peace — craving power after a childhood of suffering at the hands of larger, stronger beings. When the dark side called, Thulaka answered, reaching his master's level and promptly arranging for the Empire to discover the Jedi's hiding place. Now he conducts dark genetic experiments on kidnapped station visitors, using medical skill and twisted ideas to create horrible creatures that stalk the darkened halls. Talandro is fully aware and assists by providing lists of lone or unmissable occupants. Failed experiments are sold to the Karazak Slavers' Guild; after one month without docking fee payment, victims' ships and possessions become Talandro's property. A short, thin Twi'lek with blood-red eyes, dark gray mottled skin, and long thin head-tails.",
+    source: "WEG40153 Wretched Hives p.143"
+  }
+  ,{
+    name: "Denell Kel'Vannon",
+    species: "Human",
+    system: "Tshindral",
+    location: "Tshindral III — Starlyte Station",
+    affiliations: ["Neutral"],
+    role: "Private investigator, missing persons specialist",
+    type: "Private Investigator",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "4D", "brawling parry": "3D+1", "dodge": "3D+2", "melee combat": "3D+1" } },
+      KNOWLEDGE: { base: "2D+1", skills: { "alien species": "3D", "languages": "2D+2", "streetwise": "3D" } },
+      MECHANICAL: { base: "3D", skills: { "repulsorlift operation": "3D+1", "space transports": "4D", "starship gunnery": "3D+1" } },
+      PERCEPTION: { base: "3D+2", skills: { "bargain": "7D", "con": "7D", "hide": "4D", "investigation": "7D+2", "search": "5D+2", "sneak": "6D" } },
+      STRENGTH: { base: "3D", skills: { "brawling": "4D" } },
+      TECHNICAL: { base: "3D", skills: { "computer programming/repair": "3D+2", "first aid": "3D+2", "security": "5D" } }
+    },
+    characterPoints: 3,
+    move: 10,
+    equipment: "Heavy blaster pistol (5D), comlink, black trenchcoat, datapad, blast vest (+1D physical, +1 energy)",
+    capsule: "Calm and laid back, an expert investigator who once served in the Corellian Security Forces. Cool under fire, seldom loses his temper — prefers to let others get emotional so they make exploitable mistakes. Main office on Corellia but will travel anywhere for a well-paying job. Specializes in missing persons cases but takes any challenging case. Maintains a code of honor, refusing morally questionable jobs. Doesn't stand out in a crowd but has a charming personality — '95% of this job is talking to people, the other 5% is shooting at them.'",
+    source: "WEG40153 Wretched Hives p.144"
+  }
 // --- END OF NOTABLE_NPCS ---
 ];

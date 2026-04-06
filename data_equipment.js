@@ -5385,5 +5385,14 @@ const EQUIPMENT_DATA = [
   "game_notes": "A beacon surgically implanted under the victim's skin. Can only be removed by the being with the tracker unit, who must enter a password. Any other extraction attempt releases an exotic neurotoxin (8D damage, kills instantly). Tracker shows range, direction, and speed up to 25 km. If target moves beyond 25 km, the neurotoxin releases automatically.",
   "source": "WEG40153 Wretched Hives p.112"
  }
+ ,{
+  "name": "Nullifier Energy Diffusion Armor",
+  "type": "Unknown manufacturer",
+  "category": "Armor",
+  "cost": "Not available for sale",
+  "availability": "X (believed unique)",
+  "game_notes": "Ancient powered armor: black carapace-like plates, full-cover helmet, and tactile gloves. When activated, emits a powerful force field (5D to resist energy attacks, acts as cover) capable of nullifying nearly all energy attacks. Blaster bolts are absorbed on contact. Lightsabers 'bounce' off. Major drawback: the force field makes it impossible to fire energy weapons from inside — outgoing bolts are absorbed just like incoming. The energy field hums and crackles visibly, making the wearer an outstanding target. Worn by bounty hunter Vallikor En-Vahdi, who uses projectile weapons to compensate.",
+  "source": "WEG40153 Wretched Hives p.123"
+ }
 // --- END OF EQUIPMENT_DATA ---
 ];

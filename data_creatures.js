@@ -7755,5 +7755,19 @@ const CREATURES_DATA = [
    "special": "Scale: Speeder. Tentacles: Each does 4D+1 damage. If more than three tentacles hit a diver, the diver is caught fast and drawn into the mouth on the following turn. Teeth: Crushing jaws do STR+2D damage. Sneak 7D. One of the most feared predators on Calamari, dwelling in deep-sea trenches like Rako's Rift.",
    "source": "WEG40153 Wretched Hives p.79"
   }
+ ,{
+   "name": "Ziakas (Derriphan)",
+   "type": "Dark side parasite",
+   "planet": "Adarlon",
+   "habitat": "Parasitic — inhabits sentient hosts",
+   "dex": "5D",
+   "per": "7D",
+   "str": "0D",
+   "move": "18 (flying, natural form)",
+   "size": "Variable (natural form is crackling sphere of ebony energy)",
+   "orneriness": "6D",
+   "special": "Force Skills: Control 8D, Sense 8D+1, Alter 7D. Innate Force Powers (no prerequisites needed): Control: Absorb/dissipate energy. Sense: Sense Force potential. Sense+Alter: Lesser force shield. Alter: Telekinesis. Control+Alter: Aura of uneasiness, Force lightning. Control+Sense+Alter: Control mind, telekinetic kill, memory wipe. | Derriphan are ancient Sith-spawned parasites — crackling spheres of ebony energy that devour the thoughts and experiences of sentient beings. Probing: Sense roll vs target's Perception/control to enter victim. Hosting: Easy control roll vs target's Perception/control at -1D (penalty increases by -1D each day). Feeding: One drain per day in preference order — Force skills, Force Points, Dark Side Points, Character Points, Knowledge/Perception/Technical skills, then attributes. Drains convert to Dark Side Points (Derriphan's lifeblood — must spend 1 DSP/day to survive). Can be sensed by Jedi (not Dark Jedi) within 10m as 'a source of great evil.' Destroyed by Jedi using transfer Force (removes control dice +1 Dark Side Points). 9 Force Points, 40 Dark Side Points, 35 Character Points. Dodge 10D, alien species 11D, cultures 10D, languages 8D+1, planetary systems 9D, streetwise 11D, bargain 8D+2, command 9D, con 12D+1, persuasion 8D, search 9D, sneak 11D. Currently hosting Kandria A'Daasha at Glow Dome.",
+   "source": "WEG40153 Wretched Hives p.126"
+  }
 // --- END OF CREATURES_DATA ---
 ];
