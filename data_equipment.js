@@ -5367,5 +5367,23 @@ const EQUIPMENT_DATA = [
   "game_notes": "State-of-the-art prosthetics. Difficult Perception roll to tell from organic. No special abilities — replacement matches original function. Cost includes prosthetic and operation. Jury-rigging enhancements: cost = base price x pip increase x starting die code (ignore pips). E.g., boosting a 3D+1 hand by 2D = 1,000 x 6 x 3 = 18,000cr. Drawbacks: strong social prejudice against obvious cybernetics; enhanced characters accumulate Dark Side Points faster when committing evil (1-2 enhancements +1 DSP, 3-4 +2 DSP, 5-6 +3 DSP). A basic replacement counts as half an enhancement (round down).",
   "source": "WEG40143 Pirates & Privateers p.50"
  }
+ ,{
+  "name": "Organic Gill",
+  "type": "Mon Calamari",
+  "category": "Survival Gear",
+  "cost": "200",
+  "availability": "3",
+  "game_notes": "Synthetic organic gill allowing a diver to breathe underwater.",
+  "source": "WEG40153 Wretched Hives p.79"
+ }
+ ,{
+  "name": "Vec-Tech Keeper Subdermal Control System",
+  "type": "Vector Technologies AA-2 Keeper",
+  "category": "Security Devices",
+  "cost": "5,000",
+  "availability": "4, X",
+  "game_notes": "A beacon surgically implanted under the victim's skin. Can only be removed by the being with the tracker unit, who must enter a password. Any other extraction attempt releases an exotic neurotoxin (8D damage, kills instantly). Tracker shows range, direction, and speed up to 25 km. If target moves beyond 25 km, the neurotoxin releases automatically.",
+  "source": "WEG40153 Wretched Hives p.112"
+ }
 // --- END OF EQUIPMENT_DATA ---
 ];

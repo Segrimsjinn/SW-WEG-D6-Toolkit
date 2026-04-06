@@ -4122,5 +4122,48 @@ const VEHICLES_DATA = [
   "game_notes": "Particularly tough and fast swoop, common throughout the swoop market.",
   "source": "WEG40143 Pirates & Privateers p.49"
 }
+ ,{
+  "name": "Mon Calamari Submersible Explorer",
+  "type": "Urukabb Typhoon-2 Submersible Vehicle",
+  "category": "Watercraft",
+  "scale": "Speeder",
+  "length": "14 meters",
+  "skill": "Repulsorlift operation: submarine",
+  "crew": "1",
+  "passengers": "4",
+  "cargo_capacity": "15 kilograms",
+  "cover": "Full",
+  "cost": "22,000 (new), 8,000 (used)",
+  "maneuverability": "1D+2",
+  "move": "70; 200 kmh",
+  "body_strength": "1D",
+  "sensors_passive": "5/0D",
+  "sensors_scan": "10/1D",
+  "sensors_search": "15/2D",
+  "sensors_focus": "2/3D",
+  "weapons": "",
+  "game_notes": "Compact exploratory submarine for recreational diving and underwater excursions.",
+  "source": "WEG40153 Wretched Hives p.79"
+}
+ ,{
+  "name": "Black Raptor",
+  "type": "Ikas-Adno XP-2000 Speeder Bike",
+  "category": "Speeder Bikes",
+  "scale": "Speeder",
+  "length": "4 meters",
+  "skill": "Repulsorlift operation: speeder bike",
+  "crew": "1",
+  "passengers": "0",
+  "cargo_capacity": "2 kilograms",
+  "cover": "1/2",
+  "cost": "Unique: not available for sale",
+  "maneuverability": "5D+2",
+  "move": "450; 1,300 kmh",
+  "body_strength": "2D+1",
+  "altitude_range": "Ground level-50 meters",
+  "weapons": "2 Blaster Pulse Cannons (fire-linked): Fire Arc: Front, Skill: Vehicle blasters, Fire Control: 3D+2, Range: 50-100/250/500, Damage: 6D",
+  "game_notes": "Active sound dampers dramatically reduce noise. Sensor bafflers add +3D to difficulty to detect by sensor, Perception, or search rolls. Bith vehicle voice lock (advanced theft deterrent requiring voice command code to power up). Prototype too fast for mass production — most pilots cannot endure the g-forces or match the lightning reflexes required.",
+  "source": "WEG40153 Wretched Hives p.103"
+}
 // --- END OF VEHICLES_DATA ---
 ];

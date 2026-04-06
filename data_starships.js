@@ -44607,6 +44607,52 @@ const STARSHIP_DATA = {
    "capsule": "Modified DeepWater formerly owned by Yarkora 'antiquities dealer' Saell-Terae, who mapped portions of the Unknown Regions before abandoning the ship near Elrood Sector. Life support replaced for non-aquatic species. Concealed military-grade weapons and shields. Underwater torpedo launchers (cannot fire in space/atmosphere). Hidden dataplaque in airlock compartment (Difficult search) contains Unknown Regions astrogation charts. Three valuable warrior statues hidden in water-landing pontoons — crafted by a species in conflict with Admiral Thrawn. Saell-Terae is searching for his ship and willing to kill for it. Same backup shield mechanics as stock DeepWater.",
    "source": "WEG40150 Stock Ships p.73-74"
   }
+ ,{
+   "name": "Chaser",
+   "type": "Modified Corellian YT-1300 Transport",
+   "manufacturer": "Corellian Engineering Corporation",
+   "scale": "Starfighter",
+   "length": "26.7 meters",
+   "skill": "Space transports: YT-1300",
+   "crew": "1",
+   "passengers": "6",
+   "cargo_capacity": "40 metric tons",
+   "consumables": "5 weeks",
+   "hyperdrive": "x1/2",
+   "hyperdrive_backup": "x10",
+   "nav_computer": "Yes",
+   "maneuverability": "3D",
+   "space": "8",
+   "atmosphere": "295; 850 kmh",
+   "hull": "4D",
+   "shields": "2D",
+   "sensors_passive": "15/1D",
+   "sensors_scan": "30/2D",
+   "sensors_search": "45/3D",
+   "sensors_focus": "3/4D",
+   "weapons": [
+     {
+       "name": "2 Laser Cannons (fire-linked)",
+       "fire_arc": "Turret",
+       "skill": "Starship gunnery",
+       "fire_control": "3D",
+       "space_range": "1-5/10/17",
+       "atmosphere_range": "100-500/1/1.7 km",
+       "damage": "4D"
+     },
+     {
+       "name": "1 Heavy Quad Laser Cannon",
+       "fire_arc": "Turret",
+       "skill": "Starship gunnery",
+       "fire_control": "3D",
+       "space_range": "1-3/7/15",
+       "atmosphere_range": "100-300/700/1.5 km",
+       "damage": "6D"
+     }
+   ],
+   "capsule": "Baydo Chasdy's personal ship, used for his covert Rebel Special Ops Foster Agent missions. The Chaser transports 'orphans' — Alliance agents stranded in the field or with blown cover — safely back to the Rebellion.",
+   "source": "WEG40153 Wretched Hives p.75"
+  }
  ]
 // --- END OF STARSHIP_DATA ---
 };

@@ -5073,5 +5073,16 @@ const WEAPONS_DATA = [
   "game_notes": "Skill: Demolitions. Scale: Character. Controlled pyrotechnic explosive. Malleable — can be shaped, molded, or stretched. 1 kg covers up to 20 sq cm. Burns for 3 rounds. Ignited by remote relay. Used by boarders to cut through hulls or bulkheads.",
   "source": "WEG40143 Pirates & Privateers p.44"
  }
+ ,{
+  "name": "Predator Hunting Blaster",
+  "type": "Exotar Arms EXP-7(a) Predator",
+  "category": "Blaster Rifles",
+  "cost": "7,000 (175 power pack)",
+  "availability": "4, X",
+  "damage": "7D",
+  "range": "3-30/80/350",
+  "game_notes": "Skill: Blaster. Scale: Character. Ammo: 8. Fire Rate: 1. Fire Control: 2D (dual-laser targeting beams). Each time fired, user must make Moderate Strength roll to contain recoil and be able to fire next round. Experimental weapon — only three prototypes exist. Two undergoing testing at Exotar Labs, the third field-evaluated by Kaori Batta.",
+  "source": "WEG40153 Wretched Hives p.43"
+ }
 // --- END OF WEAPONS_DATA ---
 ];

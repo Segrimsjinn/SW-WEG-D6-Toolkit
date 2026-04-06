@@ -7741,5 +7741,19 @@ const CREATURES_DATA = [
    "special": "Search 2D+1. STR dependent on length. Strong Hide: hide of a dead wuffa makes incredibly strong rope (treat as STR 3D when resisting damage). Armor: +3D against physical attacks. Scale: Creature. Giant burrowing mineral-eaters living in inner recesses of planet's crust, surfacing only after severe flooding invades subterranean home. Distinct males and females (not asexual). Dathomirians hunt them by filling wuffa holes with fermented liquor smelling like a female wuffa's mating trail, luring males to the surface. Hides make excellent ropes and protective clothing; inner meat makes tasty stew. A large wuffa can feed an entire clan for two weeks.",
    "source": "WEG40139 Cracken's Threat Dossier p.53"
   }
+ ,{
+   "name": "Krakana",
+   "type": "Deep-sea predator",
+   "planet": "Mon Calamari",
+   "habitat": "Deep ocean trenches",
+   "dex": "2D",
+   "per": "2D",
+   "str": "6D",
+   "move": "24 (swimming)",
+   "size": "14.5-26 meters",
+   "orneriness": "5D",
+   "special": "Scale: Speeder. Tentacles: Each does 4D+1 damage. If more than three tentacles hit a diver, the diver is caught fast and drawn into the mouth on the following turn. Teeth: Crushing jaws do STR+2D damage. Sneak 7D. One of the most feared predators on Calamari, dwelling in deep-sea trenches like Rako's Rift.",
+   "source": "WEG40153 Wretched Hives p.79"
+  }
 // --- END OF CREATURES_DATA ---
 ];
