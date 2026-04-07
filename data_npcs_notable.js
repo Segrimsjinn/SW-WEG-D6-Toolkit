@@ -43273,6 +43273,76 @@ const NOTABLE_NPCS = [
     equipment: "Blaster pistol (4D), comlink, Imperial uniform and rank insignia",
     capsule: "Major Gaevril Daraada is a vicious man and a model Imperial — a tall, thin man with a hooked beak of a nose. A string of bad luck has slowed his rise in rank and left him on the Mid-Rim planet of Venaari, where he takes his frustrations out on the 'so-called citizens of the festering backwater planet' he has been assigned to. The unfortunate Major enjoys causing others pain as if he could alleviate his own by doing so. He is quite adept at interrogation and is a skilled torturer — infamous for not employing an Imperial interrogator because he enjoys the task too much himself. He is hoping these abilities will grant him recognition and reassignment. Daraada is constantly at odds with Imperial Governor Vaerganth, who refuses his requests for better equipment, tighter security, and more troops. His latest assignment is providing security for Project Orrad, developed in the secrecy of an underground lab near the capital city of Ven-Kav. He is worried that the New Republic cell in Ven-Kav may have discovered Project Orrad and may move to interfere with it.",
     source: "WEG40157 Star Wars Adventure Journal #5 p.29"
+  },
+  {
+    name: "Celia Durasha",
+    species: "Human",
+    system: "Maelstrom Nebula",
+    location: "Kuari Princess — Bridge",
+    affiliations: ["The Fringe"],
+    role: "Starship Navigator",
+    type: "Notable NPC",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "5D+2", "dodge": "5D", "melee combat": "5D+2" } },
+      KNOWLEDGE: { base: "2D+2", skills: { "alien species": "5D", "bureaucracy": "4D", "cultures": "5D+1", "languages": "3D+1", "planetary systems": "6D+1" } },
+      MECHANICAL: { base: "4D", skills: { "astrogation": "6D+1", "capital ship piloting": "4D+2", "sensors": "5D", "space transports": "6D" } },
+      PERCEPTION: { base: "3D", skills: { "bargain": "4D", "command": "5D", "gambling": "5D" } },
+      STRENGTH: { base: "2D+1", skills: {} },
+      TECHNICAL: { base: "3D", skills: { "computer programming/repair": "4D" } }
+    },
+    forcePoints: 3,
+    characterPoints: 10,
+    move: "10",
+    equipment: "Blaster pistol (4D), knife (STR+1D), nav-aid datapads",
+    capsule: "Ten generations of the Durasha family served in the military under the Empire and its predecessor, the Old Republic. Like her father and brothers, Celia Durasha had planned to continue that tradition. When her father, Commander Reise Durasha, blocked her application to the Academy, Celia broke all ties with him and left her homeworld of Lankashiir embittered. Undaunted, she spent a year at Baylagon Technical Institute excelling in every aspect of starship systems. Hired by Galaxy Tours after graduation, she served aboard the small passenger liner Majestic and proved herself indispensable when she single-handedly guided the damaged liner safely back to port after a pirate attack. Promoted to lieutenant, she was assigned as navigator aboard the luxury liner Kuari Princess. Her dearest friend and mentor on board is the ship's Chief of Security, Detien Kaileel, who affectionately calls her 'Crimson' for her stunning red hair. They meet frequently off-duty to play the holo gameboard B'shingh. Celia is bright, ambitious, and well-respected by the Princess's captain and crew.",
+    source: "WEG41008 Star Wars Adventure Journal #8 p.21"
+  },
+  {
+    name: "Detien Kaileel",
+    species: "Kabieroun",
+    system: "Maelstrom Nebula",
+    location: "Kuari Princess — Security Office",
+    affiliations: ["Rebel Alliance"],
+    role: "Kuari Princess Security Chief",
+    type: "Notable NPC",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { "blaster": "5D+2", "blaster: blaster rifle": "4D", "dodge": "4D", "melee combat": "4D", "melee parry": "4D" } },
+      KNOWLEDGE: { base: "3D", skills: { "alien species": "4D", "cultures": "5D+1", "languages": "3D+2", "law enforcement": "7D", "planetary systems": "5D", "streetwise": "5D" } },
+      MECHANICAL: { base: "2D", skills: {} },
+      PERCEPTION: { base: "4D", skills: { "command": "6D+1", "gambling": "7D", "investigation": "6D", "persuasion": "5D" } },
+      STRENGTH: { base: "3D", skills: { "brawling": "4D" } },
+      TECHNICAL: { base: "3D", skills: { "computer programming/repair": "4D+1", "first aid": "4D", "security": "5D" } }
+    },
+    forcePoints: 1,
+    characterPoints: 12,
+    move: "10",
+    equipment: "Comlink, heavy blaster pistol (5D)",
+    capsule: "Chief Kaileel is a tall, long-snouted Kabieroun native of the planet Kabieroun in the Outer Rim Territories. He was fortunate to escape his homeworld years before the Empire began its enslavement of the population. Kaileel studied police science at Balaidas Academy before the Empire closed that institution to non-Humans. After graduating with honors, he worked for more than two decades as a detective with the well-known Mid-Rim Sentinel Agency. Wounded during an undercover operation against a notorious crime lord, Kaileel retired hoping to find a job less fraught with danger, taking the post of Chief of Security on the luxury liner Kuari Princess. He could not, however, ignore the growing injustices inflicted by the Empire in the Outer Rim Territories — and quietly began smuggling blasters from the Princess's lockers to Rebel cells on Mantooine. He is the dearest friend and mentor of the ship's navigator Celia Durasha, whom he affectionately calls 'little Crimson.' His cover was eventually blown by ISB agent Adion Lang, and he was killed in the Princess's hangar bay during an escape attempt.",
+    source: "WEG41008 Star Wars Adventure Journal #8 p.26"
+  },
+  {
+    name: "Adion Lang",
+    species: "Human",
+    system: "Aris",
+    location: "Aris — Sector HQ",
+    affiliations: ["Galactic Empire", "ISB Agents"],
+    role: "Imperial Lieutenant (ISB)",
+    type: "Notable NPC",
+    stats: {
+      DEXTERITY: { base: "4D", skills: { "blaster": "6D+2", "dodge": "5D" } },
+      KNOWLEDGE: { base: "3D", skills: { "alien species": "4D", "bureaucracy": "5D+2", "cultures": "4D", "intimidation": "4D", "law enforcement": "7D", "planetary systems": "4D+1", "streetwise": "6D" } },
+      MECHANICAL: { base: "2D", skills: { "communications": "4D+2", "repulsorlift operation": "3D+2" } },
+      PERCEPTION: { base: "4D", skills: { "command": "6D", "con": "5D", "investigation": "6D+1", "persuasion": "4D+1", "search": "6D", "sneak": "5D" } },
+      STRENGTH: { base: "3D", skills: {} },
+      TECHNICAL: { base: "2D", skills: { "computer programming/repair": "3D", "security": "4D" } }
+    },
+    forcePoints: 1,
+    darkSidePoints: 1,
+    characterPoints: 8,
+    move: "10",
+    equipment: "Blaster pistol (4D)",
+    capsule: "Adion Lang is 26 years old, with piercing blue eyes and muscular good looks. An ambitious lieutenant in the Imperial Army, Adion has always had the desire to succeed — a desire rooted in his childhood. His father was a strict taskmaster who demanded the very best from his son, and Adion discovered at an early age that there was little he could do to please the elder Lang. Inspired by Reise Durasha's tales of life in the military, Adion decided to pursue a career in the Imperial Army; he had been a childhood friend of the Durasha sons on Lankashiir, and once carried a romantic torch for Celia Durasha. He found life in the army similar to life with his father, and adjusted well to the regimen, enjoying the status and respect the uniform provided. An excellent student, Adion was chosen for special training with the Imperial Security Bureau after his graduation from Raithal Academy. He takes great pride in his work in the Outer Rim, viewing the tracking of Rebel sympathizers as a unique opportunity to serve his Emperor. Posing as the new assistant to the Moff of Aris sector, he boarded the Kuari Princess to expose Chief Kaileel's blaster smuggling — and personally killed Kaileel in the ship's hangar bay before Celia escaped into the Maelstrom Nebula.",
+    source: "WEG41008 Star Wars Adventure Journal #8 p.34"
   }
 // --- END OF NOTABLE_NPCS ---
 ];
