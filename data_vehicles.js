@@ -4205,6 +4205,27 @@ const VEHICLES_DATA = [
   "body_strength": "2D+2",
   "game_notes": "The vehicle of choice for swoopchasers. Engines are governed at 350 kmh per regulation, but the composite frame is designed to withstand velocities up to 800 kmh. Cruising altitude limited to 3.05 meters by regulation. Spin-off street-legal version: the Caelli-Merced CR-43XA, with maximum altitude of 55 meters and top speed of 800 kmh.",
   "source": "WEG40154 Black Sands of Socorro p.67"
+},
+{
+  "name": "Venaari SV-50 Swift-Strike Speeder",
+  "type": "Military assault speeder",
+  "category": "Repulsorcraft",
+  "model": "Venaari Enterprises SV-50 Swift-Strike Speeder",
+  "scale": "Speeder",
+  "length": "9 meters",
+  "skill": "Repulsorlift operation: Venaari strike speeder",
+  "crew": "1, gunners: 1",
+  "passengers": "10",
+  "cargo_capacity": "1 metric ton",
+  "cover": "Full",
+  "altitude_range": "Ground level-1 meter",
+  "cost": "50,000",
+  "maneuverability": "2D",
+  "move": "90; 260 kmh",
+  "body_strength": "2D",
+  "weapons": "Heavy Blaster Cannon: Fire Arc: Turret, Crew: 1, Skill: Vehicle blasters, Fire Control: 2D, Range: 50-300/500/1000, Damage: 6D. Double Laser Cannon: Fire Arc: Front, Skill: Vehicle blasters, Fire Control: 1D, Range: 50-200/500/750, Damage: 4D",
+  "game_notes": "One of Venaari Enterprises' greatest achievements and their largest contribution to the Imperial war machine. A versatile, extremely reliable attack craft that transports attack squads where they need to be quickly and with enough firepower to protect their deployment. Widely used on Imperially held planets throughout the Mid-Rim where the Empire, the New Republic, and splinter Imperial factions are battling for supremacy.",
+  "source": "WEG40157 Star Wars Adventure Journal #5 p.38"
 }
 // --- END OF VEHICLES_DATA ---
 ];

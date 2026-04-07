@@ -4639,6 +4639,7 @@ const SYSTEMS_DATA = [
   { "name": "Phorose", "grid": "M-13", "region": "Colonies", "col": 11, "row": 13, "quadrant": "C", "hours": 2.3 },
   { "name": "Phorsa Gedd", "grid": "R-13", "region": "Mid Rim", "col": 16, "row": 13, "quadrant": "E", "hours": 2.0 },
   { "name": "Phosphura Belt Nebula", "grid": "L-20", "region": "Outer Rim Territories", "col": 10, "row": 20, "quadrant": "S", "hours": 0.5 },
+  { "name": "Phosphura Belt Nebula - Zirtran's Anchor", "grid": "L-20", "region": "Outer Rim Territories", "col": 10, "row": 20, "quadrant": "S", "hours": 0.5 },
   { "name": "Phothrell", "grid": "M-8", "region": "Inner Rim", "col": 11, "row": 8, "quadrant": "C", "hours": 5.5 },
   { "name": "Phr'sha", "grid": "P-13", "region": "Mid Rim", "col": 14, "row": 13, "quadrant": "E", "hours": 5.0 },
   { "name": "Phracas", "grid": "J-10", "region": "Core Worlds", "col": 8, "row": 10, "quadrant": "C", "hours": 8.2 },
