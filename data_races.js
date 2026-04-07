@@ -177,6 +177,95 @@ const RACES_DATA = {
       "Varies based on subtype please look up for special abilities an unique characteristics"
     ]
   },
+  "Adarian": {
+    "Dex": [
+      "1D+1",
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1"
+    ],
+    "Kno": [
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D"
+    ],
+    "Mec": [
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D"
+    ],
+    "Per": [
+      "1D",
+      "1D+1",
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2"
+    ],
+    "Str": [
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2"
+    ],
+    "Tec": [
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D",
+      "4D+1"
+    ],
+    "Mov": [
+      "10",
+      "10",
+      "11",
+      "11",
+      "12",
+      "12"
+    ],
+    "Height": [
+      "1.5",
+      "1.6",
+      "1.7",
+      "1.8",
+      "1.9",
+      "2.0"
+    ],
+    "Sex": [
+      "M",
+      "F",
+      "M",
+      "F",
+      "M",
+      "M"
+    ],
+    "StoryFactor": [
+      "Adarians are native to the mountainous world of Adari, immediately recognizable by their elongated skull which has a large hole completely piercing the head from side to side \u2014 it is possible to peer through the hole, giving rise to many 'empty-headed' jokes (none ever repeated in their company). They average 1.7 meters tall (females are slightly taller but more slender) with skin ranging from gray-blue to green to startling yellow. They have a mouth and two eyes (solid black to metallic gold) but no visible nose or ears \u2014 their senses of smell and hearing are centered in the cranial cavity in the back of their skulls. Their mouth has two sharp bony biting ridges useful for cracking nuts. They have an inflatable throat pouch used for the subsonic 'long call' \u2014 originally a mating or distress signal, now used in long-range communication and short-range attack. Adarians are technologically advanced, plying the star lanes for millennia, and are shrewd in business with expertise in mining, refining, and deep-space construction. Their society is a planet-wide corporate civilization administered from the Hall of Decisions on Adari. They are bound by a rigid caste system called sceel'sara that determines lifetime occupation by birth \u2014 cross-caste romantic relations are forbidden and strict etiquette governs inter-caste business. Recently, low-caste Adarians of high ability have begun agitating for merit-based caste assignment. The Adarians have signed a non-aggression treaty with the Empire and supply vast quantities of raw material for Imperial military starship construction. They invented the Carbon-Ice Drive \u2014 a macro-scale comet-ice computer up to 200 meters across capable of housing an artificial intelligence linked to a starship's systems. Most off-world Adarians try to visit Adari at least twice per local year (409 standard days)."
+    ],
+    "SpecAb": [
+      "Adarian Long Call: By puffing up the throat pouch (one round), an Adarian can emit a subsonic vocalization. Any character within five meters suffers 3D stun damage; Strength may be used to resist, but plugging the ears does not help \u2014 the vibration affects the brain and internal organs directly. The long call may be used safely three times per standard day; on the fourth and successive uses in 24 hours, the Adarian also takes stun damage (Strength resists). Has no effect on other Adarians, but can be heard by them up to 20 km away in quiet outdoor settings.\n\nLanguages: When speaking languages requiring precise pronunciation (e.g. Basic), an Adarian suffers a -1D penalty. When speaking languages relying on tonal variation (e.g. Wookiee), no penalty.\n\nSearch (Sound-Based): When conducting a search relying on sound, an Adarian receives a +2D bonus due to extended range of hearing into ultrasonic and subsonic ranges. Can hear machinery or people at extremely long distances (up to several kilometers).\n\nSpecial Skills: (A) Carbon-Ice Drive engineering and (A) Carbon-Ice Drive programming/repair \u2014 advanced Technical specialties used to design, program, and repair Adarian macro-scale starship computers.\n\nCaste System: Adarians are bound by a rigid sceel'sara caste system and must obey the dictates of all higher-caste Adarians and their planetary corporation, often to the detriment of their own desires."
+    ]
+  },
   "Adnerem": {
     "Dex": [
       "1D",

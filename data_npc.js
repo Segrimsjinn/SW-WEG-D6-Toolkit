@@ -1,5 +1,6 @@
 ﻿const NPC_DATA = {
     "races":  [
+                  "Adarian",
                   "Adnerem",
                   "Advozse",
                   "Aleena",
