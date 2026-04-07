@@ -114,6 +114,7 @@ const RACE_IMAGES = {
   'Nautolan': 'image095.jpg',
   'Near-Human': 'image002.jpg',
   'Neimoidian': 'image096.jpg',
+  'Nikto': 'image190.jpg',
   'Nimbanel': 'image188.jpg',
   'Nosaurian': 'image097.jpg',
   'Nuknog': 'image098.jpg',

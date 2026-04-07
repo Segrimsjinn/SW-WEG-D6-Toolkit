@@ -10480,6 +10480,92 @@ const RACES_DATA = {
       "Skill Bonus: At the time of character creation only, Neimoidian characters gain 2D for every 1D placed in either the Value or Con skills."
     ]
   },
+  "Nikto": {
+    "Dex": [
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D",
+      "4D+1",
+      "4D+2"
+    ],
+    "Kno": [
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D"
+    ],
+    "Mec": [
+      "1D",
+      "1D+1",
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D"
+    ],
+    "Per": [
+      "1D",
+      "1D+1",
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2"
+    ],
+    "Str": [
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D",
+      "4D+1"
+    ],
+    "Tec": [
+      "1D",
+      "1D+1",
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D"
+    ],
+    "Mov": [
+      "10",
+      "10",
+      "11",
+      "11",
+      "12",
+      "12"
+    ],
+    "Height": [
+      "1.6",
+      "1.7",
+      "1.8",
+      "1.9"
+    ],
+    "Sex": [
+      "M",
+      "F",
+      "M",
+      "F",
+      "M",
+      "M"
+    ],
+    "StoryFactor": [
+      "The Nikto are reptilian humanoids from Kintan in the Si'klaata Cluster who have a long history serving the Hutts as enforcers \u2014 the most dangerous of the three Si'klaata Cluster species the Hutts conquered (alongside the Klatooinans and Vodrans). Cataclysmic radiation from the M'dweshuu Nova millennia ago caused mutations that produced both the giant warbeasts of Kintan and the intelligent Nikto themselves. Constant predator threats forged the Nikto into a fierce, war-like people who consider themselves invincible \u2014 they conquered their own world against terrible odds, even burning down their forests and swamps to drive the most dangerous creatures to extinction. Five distinct races evolved on Kintan due to regional adaptation, all interfertile: KAJAIN'SA'NIKTO ('red Nikto') from the Endless Wastes desert have ridges and eight horns ringing the eyes plus chin horns, with permeable membranes that filter sand and recycle exhaled water; KADAS'SA'NIKTO ('green Nikto') from the forested coastal regions have visible scales, small horns ringing the eyes, a visible nose, and long climbing claws; ESRAL'SA'NIKTO ('mountain Nikto') are blue-gray with large facial fins lined with vibrating sensory hairs that enhance hearing and regulate body temperature, plus expanding neck cavities for water storage; GLUSS'SA'NIKTO ('pale Nikto') are white-gray islanders with both small horn ridges and small fins; M'SHENTO'SU'NIKTO ('southern Nikto') have white/yellow/orange skin, no horns, and primitive ultrasonic sensory tubes on the back of the skull. The Cult of M'dweshuu \u2014 a fanatical religious sect worshipping the nova that birthed the Nikto monsters \u2014 ruled Kintan with terror for 30 years before the Hutts arrived; Churabba the Hutt bombarded the cult's main stronghold from orbit and the Nikto regarded the Hutts as saviors, signing the Treaty of Vontor into eternal servitude. Four thousand years ago the Cult rose again during the Great Sith War and overthrew the Hutts' minimal Kintan presence \u2014 the Hutts brutally suppressed the uprising, liquidated the Nikto government, and now rule them through an attache of the Hutt Clan of Ancients. Almost every year sees at least a minor insurrection. The Nikto produce nikta, a frothy and powerful alcoholic beverage. Notable: Lieutenant Ma'w'shiye (M'shento'su'Nikto sharpshooter for the Rebel Alliance SpecForces Twilight Squad); Jabba the Hutt employs many Kadas'sa'Nikto and Kajain'sa'Nikto as henchmen. Fearless and humorless, Nikto are proud and ferocious fighters who rarely back down from a challenge \u2014 when truly enraged, even commands from their Hutt masters may be insufficient to calm them down."
+    ],
+    "SpecAb": [
+      "Vision (All Subraces): Nikto have a natural transparent keratin-like eye-shielding. They suffer no adverse effects from sandstorms or similar conditions, nor does their vision blur underwater.\n\nKajain'sa'Nikto (Red): Stamina: +1D bonus to survival: desert and stamina rolls in desert environments. Filtering nasal/neck membranes that recycle exhaled water vapor.\n\nKadas'sa'Nikto (Green): Climbing Claws: +1D to climbing and STR+2 damage on melee attacks.\n\nEsral'sa'Nikto (Mountain): Temperature Tolerance: Can withstand great extremes of temperature for long periods. Advanced Hearing: +1 bonus to search and Perception rolls relating to hearing thanks to vibrating sensory hairs in the facial fins.\n\nGluss'sa'Nikto (Pale): Combine smaller versions of the Kadas'sa horns and Esral'sa fins.\n\nM'shento'su'Nikto (Southern): Primitive ultrasonic sensory tubes on the back of the skull \u2014 evolutionary adaptation in progress."
+    ]
+  },
   "Nimbanel": {
     "Dex": [
       "2D",

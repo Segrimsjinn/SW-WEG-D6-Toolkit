@@ -111,6 +111,7 @@
                   "Nautolan",
                   "Near-Human",
                   "Neimoidian",
+                  "Nikto",
                   "Nimbanel",
                   "Nosaurian",
                   "Nuknog",
