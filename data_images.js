@@ -88,6 +88,7 @@ const RACE_IMAGES = {
   'Khil': 'image076.jpg',
   'Krish': 'image177.png',
   'Klatooinian': 'image077.jpg',
+  'Krytollak': 'image185.jpg',
   'Kobok': 'image078.jpg',
   'Koorivar': 'image079.jpg',
   'Krestian': 'image075.jpg',

@@ -8212,6 +8212,102 @@ const RACES_DATA = {
       "Klatooinians were a humanoid species leathery skin tecture with mastiff like facial features with a  were closely associated with the Hutts, as criminal henchmen, soldiers, and slaves. By the time of the Galactic Civil War, however, some Klatooinians began to break away from their servitude."
     ]
   },
+  "Krytollak": {
+    "Dex": [
+      "1D",
+      "1D+1",
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2"
+    ],
+    "Kno": [
+      "1D",
+      "1D+1",
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D"
+    ],
+    "Mec": [
+      "1D",
+      "1D+1",
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D"
+    ],
+    "Per": [
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D"
+    ],
+    "Str": [
+      "1D",
+      "1D+1",
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D"
+    ],
+    "Tec": [
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2"
+    ],
+    "Mov": [
+      "9",
+      "9",
+      "10",
+      "10",
+      "11",
+      "11"
+    ],
+    "Height": [
+      "1.8",
+      "2.0",
+      "2.2",
+      "2.4",
+      "2.6",
+      "2.8"
+    ],
+    "Sex": [
+      "M",
+      "F",
+      "M",
+      "F",
+      "M",
+      "M"
+    ],
+    "StoryFactor": [
+      "Krytollaks come from Thandruss, a world with a rigid social structure and a staunchly pro-Imperial government. They virtually worship Emperor Palpatine and have a reputation among other species for 'having skulls as thick as their shells.' Warm-blooded with both a hard internal skeleton and a tough outer shell of multiple plates (usually dull brown or black, rarely green \u2014 a sign of greatness). Krytollak nobles paint personal crests on their body plates. Their shells grow throughout their lives and they cannot survive removal of the plates. Krytollaks have visible mouths and eyes between facial plates, hear through membranes ringing the facial plates, and have no sense of smell. Females average 10-20 cm taller than males with darker shells. They grow throughout their century-long lives, reaching up to 3 meters with little aging. Their diet is mostly vegetable but they can also devour any sort of carbon-based rock for trace elements; they consider rocks and plants from other worlds to be delicacies. They dress in robes imitating Imperial officers' clothing; gray is reserved for nobility. Krytollaks tend to come off as apathetic and self-involved \u2014 actually they want to fully understand a situation before becoming part of it. Difficult to anger but slow to forgive once offended. Society has only two classes: workers (96%) and royalty (the green-shelled and their children). Empress Devir has ruled for 20 standard years and has recognized Emperor Palpatine as her lord and master, naming him the rightful ruler of the galaxy. They believe in absolute leadership and see democratic institutions as more susceptible to corruption. Krytollaks prefer violent forms of entertainment including unarmed combat \u2014 their thick shells protect them in brawls and matters of honor between nobles are settled in personal combat with hand weapons. Ranged weapons are considered dishonorable. Krytollaks place a special value on vibroweapons. They are recent additions to the galactic community, having developed only early steam power on their own before the Empire arrived; they are quickly adding galactic-standard technology to their society."
+    ],
+    "SpecAb": [
+      "Shell: A Krytollak's thick outer shell provides +1D+2 physical and +2 energy protection. They cannot survive removal of these shell plates. Their shells continue to grow throughout their lives, and they live nearly a century with few signs of aging."
+    ]
+  },
   "Kobok": {
     "Dex": [
       "2D",
