@@ -76,6 +76,7 @@ const RACE_IMAGES = {
   'Ishi Tib': 'image069.jpg',
   'Ithorian': 'image070.jpg',
   'Jarell': 'image071.jpg',
+  'Jawa': 'image181.jpg',
   'Jenet': 'image072.jpg',
   'Kaleesh': 'image073.jpg',
   'Kallidahin': 'image113.jpg',

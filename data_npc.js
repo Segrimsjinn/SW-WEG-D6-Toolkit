@@ -76,6 +76,7 @@
                   "Ishi Tib",
                   "Ithorian",
                   "Jarell",
+                  "Jawa",
                   "Jenet",
                   "Kaleesh",
                   "Kallidahin",

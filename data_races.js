@@ -7349,6 +7349,98 @@ const RACES_DATA = {
       "Following contact with the outside galaxy, many of the planet's monarchies made arrangements for young Jarells to serve periods of indentured servitude to corporations, private citizens, criminal organizations, and even Imperial governors as hired muscle and general servants. The length of service was usually between seven and eleven years, and while it was essentially slavery, young Jarells were socialized to accept this as a natural period of their lives. They saw it as a period of maturation, symbolizing their transition from child to adult. While few Jarells actually ever profited from the arrangement, they hoped that their servitude would introduce them to beings who could make them powerful, or help them acquire wealth. As a result, young Jarells on the cusp of their service looked forward to the time with excitement and purpose. While generally loyal to their employers, some Jarells were willing to undermine them if it would benefit them to do so."
     ]
   },
+  "Jawa": {
+    "Dex": [
+      "1D",
+      "1D+1",
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D"
+    ],
+    "Kno": [
+      "1D",
+      "1D+1",
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1"
+    ],
+    "Mec": [
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D",
+      "4D+1",
+      "4D+2"
+    ],
+    "Per": [
+      "1D",
+      "1D+1",
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D"
+    ],
+    "Str": [
+      "1D",
+      "1D+1",
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2"
+    ],
+    "Tec": [
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D",
+      "4D+1",
+      "4D+2"
+    ],
+    "Mov": [
+      "8",
+      "8",
+      "9",
+      "9",
+      "10",
+      "10"
+    ],
+    "Height": [
+      "0.8",
+      "0.9",
+      "1.0",
+      "1.1",
+      "1.2"
+    ],
+    "Sex": [
+      "M",
+      "F",
+      "M",
+      "M",
+      "F",
+      "M"
+    ],
+    "StoryFactor": [
+      "Jawas are small rodent-like scavengers unique to Tatooine. About a meter tall, they are obsessed with collecting discarded hardware and machinery. They wear rough-woven hooded cloaks to shield themselves from Tatooine's twin suns, with only their glowing eyes visible from within the darkness of their hoods. They have a unique and rather unpleasant smell. While Jawas understand Basic, they only speak in their jabbering, nearly incomprehensible native language. They make their homes in massive sandcrawlers \u2014 several hundred Jawas live in each \u2014 prowling the desert wastes in search of wrecked starships, abandoned droids, and other technology that can be refurbished and sold to moisture farmers. They delight in tinkering with salvaged items, and although they purport to only salvage discarded junk they have been known to acquire 'abandoned' droids from homesteads, making cosmetic changes so the items are virtually unrecognizable \u2014 sometimes even by the original owners. Fearful and paranoid of larger races, Jawas count Sand People and krayt dragons as natural enemies. They seldom engage in combat directly, relying on jury-rigged blasters and unusual ionization weapons used to disable droids. Trade Language: Jawas have developed a very flexible trade language which is virtually unintelligible to other species \u2014 when Jawas want it to be unintelligible. Despite appearances, they are accomplished repairmen with an innate knack for analyzing machinery; they may not understand the grand theories but they can get a landspeeder running or refurbish a damaged droid in record time."
+    ],
+    "SpecAb": [
+      "Technical Aptitude: At the time of character creation only, Jawa characters receive 2D for every 1D they place in repair-oriented Technical skills.\n\nTrade Language: Jawas have developed a very flexible trade language which is virtually unintelligible to other species \u2014 when Jawas want it to be unintelligible."
+    ]
+  },
   "Jenet": {
     "Dex": [
       "2D",
