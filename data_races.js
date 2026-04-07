@@ -171,7 +171,7 @@ const RACES_DATA = {
       "F"
     ],
     "StoryFactor": [
-      "There are many Near-Humans some of them do have special factors you'll have to look them up if you want one.\nAquar, Arhan, Arkanian, Bimm, Boltrunian, Borneck, Brosin, Chev, Chiss, Emmerian, Enso, Enu, Epicanthix, Etti, Firrerreo, Galandan, Ganathan, Hapan, Kalzerians, Keeds, Keshiri, Khommite, Kiffar, Locan, Lorrdian, Lowen, Miraluka, Mirialan, Morellian, Nagai, Nish, Ocsinin, Ogemite, Omwati, O'reenian, Pantoran, Pau'an, Qiraash, Reussi, Ropagu, Ruusanian, Samuac, Sernpidalian, Shownarri, Skups, S'kytri, Stennes, Sullustan, Taung, Torine, Ubese (True), Utai, Vendaran, Vorzydiak, Wroonian, Xa Fel, Zelosian, Zeltron, Zisian, Zygerrian"
+      "There are many Near-Humans some of them do have special factors you'll have to look them up if you want one.\nAquar, Arhan, Arkanian, Bimm, Boltrunian, Borneck, Brosin, Chev, Chiss, Emmerian, Enso, Enu, Epicanthix, Etti, Firrerreo, Galandan, Ganathan, Hapan, Kalzerians, Keeds, Keshiri, Khommite, Kiffar, Locan, Lorrdian, Lowen, Miraluka, Mirialan, Morellian, Nagai, Nish, Ocsinin, Ogemite, Omwati, O'reenian, Pantoran, Pau'an, Qiraash, Reussi, Ropagu, Ruusanian, Samuac, Sernpidalian, Shownarri, Skups, S'kytri, Stennes, Sullustan, Taung, Torine, Ubese (True), Utai, Vendaran, Vorzydiak, Wroonian, Zelosian, Zeltron, Zisian, Zygerrian"
     ],
     "SpecAb": [
       "Varies based on subtype please look up for special abilities an unique characteristics"
