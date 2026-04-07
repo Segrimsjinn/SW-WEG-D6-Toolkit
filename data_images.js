@@ -199,6 +199,7 @@ const RACE_IMAGES = {
   'Yevetha': 'image167.jpg',
   'Yinchorri': 'image168.jpg',
   'Zabrak': 'image169.jpg',
+  'ZeHethbra': 'image198.jpg',
   'Zexx': 'image170.jpg',
   'Tasari': 'image171.jpg',
 // --- END OF RACE_IMAGES ---

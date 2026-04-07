@@ -18617,6 +18617,101 @@ const RACES_DATA = {
       "Sense of Ownership: Zexx never permit others to borrow any item under any circumstances and hoard possessions compulsively even when they serve no practical purpose. They react violently to any perceived theft or unauthorized use of their property. Appearance: Massive gray-scaled humanoids standing 1.8 to 2.5 meters with pointed heads bearing long curved tusks sharp and strong enough to cut through living tissue. Bear a strong resemblance to Esoomians and may be distantly related."
     ]
   },
+  "ZeHethbra": {
+    "Dex": [
+      "1D",
+      "1D+1",
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D"
+    ],
+    "Kno": [
+      "1D",
+      "1D+1",
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D"
+    ],
+    "Mec": [
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D",
+      "4D+1"
+    ],
+    "Per": [
+      "1D+1",
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1"
+    ],
+    "Str": [
+      "1D",
+      "1D+1",
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D"
+    ],
+    "Tec": [
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2"
+    ],
+    "Mov": [
+      "9",
+      "9",
+      "10",
+      "10",
+      "11",
+      "11",
+      "12",
+      "12"
+    ],
+    "Height": [
+      "1.6",
+      "1.7",
+      "1.8"
+    ],
+    "Sex": [
+      "M",
+      "F",
+      "M",
+      "F",
+      "M",
+      "M"
+    ],
+    "StoryFactor": [
+      "The ZeHethbra of ZeHeth are a well-known species that has traveled throughout the galaxy and settled on a number of worlds. The species has no less than 80 distinct cultural, racial, and ethnic groups that developed due to historical and geographic variances. While many non-ZeHethbra have trouble distinguishing between the various groups (the casual observer perceives only five or six major groups), ZeHethbra themselves have no problems telling each other apart due to subtle markings, body language, mannerisms, slight changes in accent, and pheromones. ZeHethbra are tall brawny humanoids with a short coating of fur and a small vestigial tail. All ZeHethbra have a white stripe of fur that begins at the bridge of the nose and widens as it stretches to the small of the back \u2014 the width denotes gender, with wider stripes on females and narrower 'branched' stripes on males. Fur color varies: black is the norm, brown and red fur is common in the mountainous northern regions of ZeHeth, blue-white fur covers ZeHethbra from the southern polar region, and spotting/mottled coloration appears on those of mixed lineage. The ZeHethbra are naturally capable of producing and identifying extremely sophisticated pheromones \u2014 a large portion of their cultural identity consists of these pheromones, and many ZeHethbra can identify other clans and history simply by scent. In times of danger they can expel a spray that is blinding and unpleasant to the target."
+    ],
+    "SpecAb": [
+      "Venom Spray: ZeHethbra can project a stinging spray that can blind and stun those within a three-meter radius. All characters within range must make a Difficult willpower roll or take 5D stun damage; if the result is wounded or worse, the character is overcome by the scents and collapses to the ground for one minute.\n\nPheromone Identification: ZeHethbra can identify other ZeHethbra clans, families, and histories simply by their scent."
+    ]
+  },
   "Krish": {
     "Dex": [
       "2D",
