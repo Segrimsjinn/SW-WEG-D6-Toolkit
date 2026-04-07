@@ -44808,6 +44808,131 @@ const STARSHIP_DATA = {
    ],
    "capsule": "Lynnori's tramp freighter, purchased by Talandro Starlyte and modified by Scizzic. A well-armed craft that replaced her previous 'hunk of junk,' making both Lynnori and the protective Talandro happy.",
    "source": "WEG40153 Wretched Hives p.140"
+  },
+  {
+   "name": "Moondrake",
+   "type": "Salvaged YT-1300 freighter",
+   "scale": "Starfighter",
+   "skill": "Space transports",
+   "crew": "2",
+   "crew_skill": "See Sassan Sareeta",
+   "passengers": "4",
+   "cargo_capacity": "100 metric tons",
+   "consumables": "2 months",
+   "hyperdrive": "x2",
+   "hyperdrive_backup": "x8",
+   "nav_computer": "Yes",
+   "maneuverability": "1D",
+   "space": "3",
+   "atmosphere": "260; 750 kmh",
+   "hull": "5D",
+   "shields": "3D",
+   "sensors": {
+     "passive": "10/0D",
+     "scan": "25/1D",
+     "search": "40/2D",
+     "focus": "2/3D"
+   },
+   "weapons": [
+     {
+       "name": "Double Laser Cannon",
+       "fire_arc": "Front",
+       "skill": "Starship gunnery",
+       "fire_control": "2D",
+       "space_range": "1-3/12/25",
+       "atmosphere_range": "100-300/1.2/2.5 km",
+       "damage": "4D+2"
+     }
+   ],
+   "capsule": "Sassan Sareeta's hot-rod light freighter, constructed from components salvaged from three YT-1300 hulks. Heavily armored for blockade running — Sassan once jury-rigged the controls to orient all shields forward and punched through a TIE picket line in the Lazerian system, smashing all in his path. Now used by Syndicate One for gun-running expeditions through the Slice and adjacent sectors.",
+   "source": "WEG41008 Star Wars Adventure Journal #8 p.131"
+  },
+  {
+   "name": "The Surge (Instigator)",
+   "type": "Modified Trianii RX4 Patrol Ship",
+   "scale": "Starfighter",
+   "length": "33 meters",
+   "skill": "Space transports",
+   "crew": "2, gunners: 2, skeleton 1/+5",
+   "passengers": "6",
+   "cargo_capacity": "30 metric tons",
+   "consumables": "2 years",
+   "hyperdrive": "x1",
+   "hyperdrive_backup": "x14",
+   "nav_computer": "Yes",
+   "maneuverability": "1D+1",
+   "space": "4",
+   "atmosphere": "295; 850 kmh",
+   "hull": "5D",
+   "shields": "2D+1",
+   "sensors": {
+     "passive": "20/1D",
+     "scan": "35/1D+1",
+     "search": "60/2D+1",
+     "focus": "2/3D"
+   },
+   "weapons": [
+     {
+       "name": "2 Twin Turbolasers (may be fire-linked)",
+       "fire_arc": "Turret",
+       "skill": "Starship gunnery",
+       "fire_control": "2D",
+       "space_range": "1-5/15/20",
+       "atmosphere_range": "100-500/1.5/2 km",
+       "damage": "4D (5D fire-linked)"
+     },
+     {
+       "name": "Ion Cannon (special generator, fires once per day)",
+       "fire_arc": "Rear",
+       "scale": "Capital",
+       "skill": "Capital ship gunnery",
+       "fire_control": "2D",
+       "space_range": "1-10/25/50",
+       "atmosphere_range": "2-20/50/100 km",
+       "damage": "3D+1"
+     }
+   ],
+   "capsule": "An aging Trianii RX4 Patrol Ship modified by Captain Naren Bluuis in his pre-Alliance days, then transferred to New Republic Intell service in Corva Sector. True designation Instigator, but reprogrammed by ship techs with the transponder code Surge as part of a smuggler cover. Battered but heavily customized — twin turbolasers in turret mounts and a rear-firing capital-scale ion cannon (drawing off a special power generator that limits it to one shot per day). Issued to a New Republic strike team to track the Kaarenth Dissension to its hidden shipyard inside the Spawn Nebula.",
+   "source": "WEG41008 Star Wars Adventure Journal #8 p.142"
+  },
+  {
+   "name": "Atron's Mistress",
+   "type": "Custom Zuraco Cargo Hauler (modified medium transport)",
+   "scale": "Starfighter",
+   "length": "87.3 meters",
+   "skill": "Space transports: Zuraco cargo transport",
+   "crew": "4, gunners: 1, skeleton 2/+10",
+   "crew_skill": "Astrogation 4D, space transports 4D+2, starship shields 4D+2, starship gunnery 4D",
+   "passengers": "6",
+   "cargo_capacity": "185 slaves",
+   "consumables": "2 months",
+   "hyperdrive": "x2",
+   "hyperdrive_backup": "x5",
+   "nav_computer": "Yes",
+   "space": "6",
+   "atmosphere": "330; 950 kmh",
+   "hull": "5D",
+   "shields": "2D",
+   "sensors": {
+     "passive": "30/1D",
+     "scan": "80/2D",
+     "search": "100/3D",
+     "focus": "4/4D"
+   },
+   "weapons": [
+     {
+       "name": "Medium Turbolaser",
+       "fire_arc": "Turret",
+       "crew": "1",
+       "skill": "Starship gunnery",
+       "fire_control": "2D",
+       "space_range": "1-3/12/25",
+       "atmosphere_range": "100-300/1.2/2.5 km",
+       "damage": "6D"
+     }
+   ],
+   "capsule": "Atron's Mistress is Greezim Trentacal's personal slave transport and mobile base of operations. Although the slave lord often conducts business in starports, he rarely ventures from his inner sanctuary when the ship lands on hostile or primitive worlds to collect slaves. His comfortable quarters are located near the bridge and filled with luxuries from a hundred worlds. The transport's cargo hold has been modified to hold 185 Human-sized beings in sealable inner modules — each compartment has bunks, nutrient dispensers, and waste facilities. Often packed with slaves, though Trentacal is careful not to allow overcrowding that would damage his goods. Includes a cabin for his bodyguards (currently the Defel wraith Vex).",
+   "source": "WEG41008 Star Wars Adventure Journal #8 p.194"
   }
  ]
 // --- END OF STARSHIP_DATA ---

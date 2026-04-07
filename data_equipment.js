@@ -5696,5 +5696,14 @@ const EQUIPMENT_DATA = [
   "game_notes": "Ancient powered armor: black carapace-like plates, full-cover helmet, and tactile gloves. When activated, emits a powerful force field (5D to resist energy attacks, acts as cover) capable of nullifying nearly all energy attacks. Blaster bolts are absorbed on contact. Lightsabers 'bounce' off. Major drawback: the force field makes it impossible to fire energy weapons from inside — outgoing bolts are absorbed just like incoming. The energy field hums and crackles visibly, making the wearer an outstanding target. Worn by bounty hunter Vallikor En-Vahdi, who uses projectile weapons to compensate.",
   "source": "WEG40153 Wretched Hives p.123"
  }
+ ,{
+  "name": "ShipFinder",
+  "type": "Drooim-Durtha Systems ShipFinder",
+  "category": "Sensors",
+  "cost": "100,000",
+  "availability": "X",
+  "game_notes": "Subspace tracking device. Use requires an Easy sensors roll — on a success the user can locate the tracker and plot a course to it from any present coordinates. Rather than emitting a continuous beam, the ShipFinder disperses bursts of particles at a given time interval (faster interval = easier to track but shorter cell life). Range 20 light years. The current production version's power cell lasts only 8 days before going dead. Designed by Neb Ufentes for the remaining Imperial forces; prototypes were stolen from Ufentes' private lab by the crimelord Mahk'khar shortly before he was captured by the New Republic.",
+  "source": "WEG41008 Star Wars Adventure Journal #8 p.143"
+ }
 // --- END OF EQUIPMENT_DATA ---
 ];
