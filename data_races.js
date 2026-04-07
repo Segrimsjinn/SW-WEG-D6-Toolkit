@@ -7541,6 +7541,94 @@ const RACES_DATA = {
       "Beak: The beak of the Ishi Tib does Strength +2D damage.\n\nPlanners: The Ishi Tib are natural planners and organizers. At the time of character creation only, they may receive 2D for every 1D of beginning skill dice placed in bureaucracy, business, law enforcement, scholar or tactics skills (Ishi Tib still have the limit of being able to place only 2D of beginning skill dice in a skill).\n\nImmersion: The Ishi Tib must fully immerse themselves (for 10 rounds) in a brine solution similar to the oceans of Tibrin after spending 30 hours out of the water. If they fail to do this, they suffer 1D damage (cumulative) for every hour over 30 that they stay out of the water (roll for damage once per hour, starting at hour 31)."
     ]
   },
+  "Issori": {
+    "Dex": [
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D"
+    ],
+    "Kno": [
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D",
+      "4D+1",
+      "4D+2",
+      "5D"
+    ],
+    "Mec": [
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D"
+    ],
+    "Per": [
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D",
+      "4D+1"
+    ],
+    "Str": [
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D"
+    ],
+    "Tec": [
+      "1D",
+      "1D+1",
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D"
+    ],
+    "Mov": [
+      "10",
+      "10",
+      "11",
+      "11",
+      "12",
+      "12"
+    ],
+    "Height": [
+      "1.7",
+      "1.8",
+      "1.9",
+      "2.0",
+      "2.1",
+      "2.2"
+    ],
+    "Sex": [
+      "M",
+      "F",
+      "M",
+      "F",
+      "M",
+      "M"
+    ],
+    "StoryFactor": [
+      "The Issori are tall pale-skinned bipeds with webbed hands and feet from the planet Issor. They are hairless except for their heads, and their faces are covered with wrinkles, usually the result of loose skin, evolution, or old age \u2014 some wrinkles, like those between the eyes and mouth, function as olfactory organs equally effective in and out of water. The Issori have dwelled on the scarce land of Issor for untold millennia. Early Issori cities were mostly primitive ports where each settlement could trade extensively with others. Eventually they discovered the aquatic Odenji, their cousin species, and were thrilled to find new beings to interact with \u2014 the Issori gladly shared their then-feudal-level technology with the Odenji, and soon the two species lived and worked together in large numbers. Together they made scientific progress like never before, reaching information-level technology within centuries. They began a space program and a search for intelligent life, eventually colonizing other planets in their system (and establishing dominance over the humans of Trulalis) before receiving a response from a Corellian scout team and joining the galactic community. Several centuries ago, the Odenji entered a species-wide sadness known as the melanncho \u2014 the Issori tried to help their cousins through this troubling period but were ultimately unsuccessful, and as an unfortunate result the Issori are far more widespread than the Odenji today. The Issori are governed by a bicameral legislature consisting of the Tribe of Issori and the Tribe of Odenji; members of both houses are elected by their respective species to serve for life, and their laws affect the entire system. The Issori have merged their own space-level technological achievements with those brought to their planet by others. They have an active export market for quality industrial products and import several billion computers and droids per year. Many believe the Issori to be a rambunctious and disreputable group, but this is not true \u2014 the myth has been perpetuated through the exploits of more famous Issori, many of whom are smugglers and pirates."
+    ],
+    "SpecAb": [
+      "Swimming: Issori gain +2 to Move scores and +1D to dodge in underwater conditions."
+    ]
+  },
   "Ithorian": {
     "Dex": [
       "1D",

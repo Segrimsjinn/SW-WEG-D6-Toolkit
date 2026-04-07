@@ -78,6 +78,7 @@
                   "Hysalrian",
                   "Iotran",
                   "Ishi Tib",
+                  "Issori",
                   "Ithorian",
                   "Jarell",
                   "Jawa",

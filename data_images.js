@@ -78,6 +78,7 @@ const RACE_IMAGES = {
   'Hysalrian': 'image067.jpg',
   'Iotran': 'image068.jpg',
   'Ishi Tib': 'image069.jpg',
+  'Issori': 'image194.jpg',
   'Ithorian': 'image070.jpg',
   'Jarell': 'image071.jpg',
   'Jawa': 'image181.jpg',
