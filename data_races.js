@@ -6080,6 +6080,91 @@ const RACES_DATA = {
       "Ammonia Breathers: Most Gands do not respire. However, there is a small number of Gands that are of older evolutionary stock and do respire in the traditional sense. These Gands are ammonia breathers and find other gases toxic to their respiratory system--including oxygen.\n\n Exoskeleton: The ceremonial chemical baths of some findsmen initiations promote the growth of pronounced knobby bits on a Gand\u2019s exoskeleton. The bits on a Gand\u2019s arms or legs can be used as rough, serrated weapons in close-quarter combat and will do STR+1 damage when brawling. \n\n Eye Shielding: Most Gands have a double layer of eyeshielding. The first layer is composed of a transparent keratin-like substance: the Gand suffers no adverse effects from sandstorms or conditions with other airborne debris. The Gands\u2019 second layer of eye protection is an exceptionally durable chitin that can endure substantial punishment. For calculating damage, this outer layer has the same Strength as the character.\n\n Findsman Ceremonies: Gands use elaborate and arcane rituals to find prey. Whenever a Gand uses a ritual (which takes at least three hours) he gains a +2D to track a target. \n\nMist Vision: Having evolved on a mist-enshrouded world, Gands receive a +2D advantage to Perception and relevant skills in environments obscured by smoke, fog, or other gases. \n\nNatural Armor: Gands have limited clavicular armor about their shoulders and neck, which provides +2 physical protection to that region (they are immune to nerve or pressure point strikes to the neck or shoulders.)\n\n\nRegeneration: Many Gands-particularly those who have remained on their homeworld or are of one of the very traditional sects- can regenerate lost limbs. Once a day, a Gand must make a Strength or stamina roll: a Very Difficult roll results in 20 percent regeneration; a Difficult roll will result in 10 percent regeneration, a Moderate roll will not assist a Gand\u2019s accelerated healing process, and the character must wait until the next day to roll. \n\nReserve Sleep: Most Gands need only a fraction of the sleep most living beings require. They can \u201cstore\u201d sleep for times when being unconscious is not desirable. As such, the Gand need not make stamina rolls with the same frequency as most characters for purposes of determining the effects of sleep-deprivation. Unless otherwise stated, this is an assumed trait in a Gand. \n\nUltraviolet Vision: Gand can see in the ultraviolet color spectrum. Martial Arts: Some Gand are trained in a specialized form of combat developed by a band of findsman centuries ago. The tenets of the art are complex and misunderstood, but the few that have been described. Two techniques are described below. There are believed to be many more.\n\n Piercing Touch Description: The findsman can use his chitinous fist to puncture highly durable substances and materials. Difficulty: Very Difficult Effect: If the character rolls successfully (and is not parried or dodged), the strike does STR+2D damage and can penetrate bone, chitin, and assorted armors.\n\n Striking Mist Description: The findsman can sneak close enough to an opponent to prevent the victim from dodging or parrying the blow. Difficulty: Difficult Effect: If the character rolls successfully, and rolls a successful sneak versus his opponent\u2019s Perception, the findsman\u2019s strike cannot be dodged or parried. The Gand must declare whether they are striking to injure or immobilize the victim prior to making the attempt."
     ]
   },
+  "Givin": {
+    "Dex": [
+      "1D",
+      "1D+1",
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D"
+    ],
+    "Kno": [
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D"
+    ],
+    "Mec": [
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D",
+      "4D+1",
+      "4D+2"
+    ],
+    "Per": [
+      "1D",
+      "1D+1",
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D"
+    ],
+    "Str": [
+      "1D+1",
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D"
+    ],
+    "Tec": [
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D",
+      "4D+1",
+      "4D+2",
+      "5D"
+    ],
+    "Mov": [
+      "8",
+      "8",
+      "9",
+      "9",
+      "10",
+      "10"
+    ],
+    "Height": [
+      "1.7",
+      "1.8",
+      "1.8",
+      "1.9",
+      "1.9",
+      "2.0"
+    ],
+    "Sex": [
+      "M",
+      "M",
+      "F",
+      "M",
+      "F",
+      "M"
+    ],
+    "StoryFactor": [
+      "Givin appear as the animated skeletons of a humanoid race \u2014 they carry their bone-white skeletons on the exterior of their bodies. Large triangular eye sockets dominate their faces, lending perpetually sad anguished expressions; small frowning mouths add to the impression. They are thin and tubular with oddly-working body joints, holding their arms and legs out from their bodies like reptiles. Their exoskeleton is an organic vacuum suit \u2014 bone plates linked by membranes that seal all bodily orifices. Their homeworld of Yag'Dhul has a 175-hour retrograde rotation but its three moons orbit in only 53 hours, producing tides so severe that oceans and even the atmosphere flow from one side of the planet to the other. Givin society is a mathematocracy where mathematicians are the most powerful and revered members \u2014 leaders are chosen through contests calculating multidimensional differentials. Mathematics is essentially their religion. Givin are starship-builders and pilots, performing navigational computations \u2014 even hyperspace jumps \u2014 entirely in their heads. They feel kinship with Duros and Verpine but cannot abide Mon Calamari due to incompatible design philosophy. Givin are markedly distrustful of outsiders, finding exposed flesh appallingly rude, and consider non-vacuum-breathing species inferior \u2014 though they remain polite if guests keep their flesh covered. Visitors are expected to solve simple quadratic equations as part of polite Givin introductions."
+    ],
+    "SpecAb": [
+      "Mathematical Aptitude: Givin receive a bonus of +2D when using skills involving mathematics, including astrogation. They can automatically solve most 'simple' equations (gamemaster option).\n\nVacuum Protection: Every Givin has a built-in vacuum suit which protects from vacuum or harsh elements. Add +2D to a Givin's Strength or stamina rolls when resisting such extremes. To survive 24 standard hours in complete vacuum, make an Easy roll, with difficulty increasing by one every hour thereafter.\n\nIncreased Consumption: Givin must eat at least three times the food a normal Human would consume (~9 kg per 24 hours) or they lose vacuum protection."
+    ]
+  },
   "Gotal": {
     "Dex": [
       "1D+2",
