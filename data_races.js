@@ -2927,6 +2927,101 @@ const RACES_DATA = {
       "Memory Sharing:\u00a0Caamasi can store and share memories with others of their species. Force-users can also share memories with Caamasi, though this requires a successful use of either\u00a0Receptive Telepathy\u00a0(to receive a memory)  \nWise and Tranquil:\u00a0Due to their reputation for being peaceful and wise, Caamasi gain a +2 pip bonus to all Bargain and Persuasion skill checks. or\u00a0Projective Telepathy\u00a0(to share a memory)."
     ]
   },
+  "Carosite": {
+    "Dex": [
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D"
+    ],
+    "Kno": [
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D",
+      "4D+1",
+      "4D+2"
+    ],
+    "Mec": [
+      "1D",
+      "1D+1",
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D"
+    ],
+    "Per": [
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D",
+      "4D+1",
+      "4D+2"
+    ],
+    "Str": [
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D"
+    ],
+    "Tec": [
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D",
+      "4D+1",
+      "4D+2",
+      "5D"
+    ],
+    "Mov": [
+      "7",
+      "8",
+      "9",
+      "9",
+      "10",
+      "10",
+      "11",
+      "11"
+    ],
+    "Height": [
+      "1.3",
+      "1.4",
+      "1.5",
+      "1.6",
+      "1.7"
+    ],
+    "Sex": [
+      "M",
+      "F",
+      "M",
+      "F",
+      "M",
+      "M"
+    ],
+    "StoryFactor": [
+      "Carosites are a bipedal species originally native to Carosi IV. Their culture experienced a major upheaval 200 years ago when the Carosi sun began an unusually rapid expansion \u2014 the Carosites spent 20 years evacuating Carosi IV in favor of the remote ice world Carosi XII, which became temperate all too soon. Terraforming continues two centuries later, and Carosi has a great need for scientists and other specialists interested in building a world. They are 1.5 meters tall and quite thin, with unusually long necks, long-snouted faces, small dark eyes, and a fine layer of warming fur covering their bodies. Their senses are extremely acute and their hands very nimble. Carosites have a 120-year life expectancy. The only social unit is the family \u2014 adult male, adult female, young, and any family member too old to remain independent. Carosites reproduce only twice in their lifetime, each birth producing a litter of one to six young. Their intense respect for life (born of so few opportunities for renewal) drove them to develop the medical talents that benefit the entire galaxy. Despite innate pacifism, they will vigorously fight to defend their homes, families, and planet. Tradition and ritual are important; the loss of their home planet has strengthened their resolve to remember and venerate the past. Verbal or written promises are completely binding to a Carosite, and they extend that courtesy to offworlders \u2014 they are frequently disappointed by what they perceive as the dishonor prevalent among other species. Medical metaphors saturate their language: 'The business is ailing, but may be healed with proper treatment.' Once every 10 years, the Carosites elect one of their number to serve as the ultimate planetary authority, advised by 11 counselors from the most prominent families. A small but vocal segment called 'The Preventers' calls for aggressive action against the Empire so that no more lives will be lost. The Carosites are loyal to the Alliance but will treat Imperials and Imperial sympathizers all the same \u2014 every life is sacred and every private thought inviolate. They would never interrogate, brainwash, or otherwise attempt to remove information from their patients' minds. Their flagship vessel is the Sudden Restoration, a hospital ship offering free care across the region. Their medical-software engineers can squeeze maximum performance out of medical droids \u2014 increasing existing programming on Carosi XII costs half the standard credits. The famous Carosite medical school attracts doctors and surgeons from across the galaxy, and they have made significant strides in the cataloguing and treatment of mental illness. They are not enamored with alcohol \u2014 establishments serving liquor are kept to a minimum and the liquor itself heavily taxed."
+    ],
+    "SpecAb": [
+      "Medical Aptitude: Carosites automatically have a first aid skill of 5D; they may not add additional skill dice to this at the time of character creation, but this is a 'free skill.'\n\nProtectiveness: Carosites are incredibly protective of children, patients, and other helpless beings. They gain +2D to their brawling skill and damage in combat when acting to protect the helpless."
+    ]
+  },
   "Cerean": {
     "Dex": [
       "2D",

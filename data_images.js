@@ -28,6 +28,7 @@ const RACE_IMAGES = {
   'Brubb': 'image025.jpg',
   'Buzchub': 'image026.jpg',
   'Caamasi': 'image027.jpg',
+  'Carosite': 'image191.jpg',
   'Cerean': 'image028.jpg',
   'Cha\'a': 'image029.jpg',
   'Chadra-Fan': 'image030.jpg',

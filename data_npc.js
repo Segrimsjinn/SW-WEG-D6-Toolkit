@@ -29,6 +29,7 @@
                   "Brubb",
                   "Buzchub",
                   "Caamasi",
+                  "Carosite",
                   "Cerean",
                   "Cha\u0027a",
                   "Chadra-Fan",
