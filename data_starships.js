@@ -44933,6 +44933,157 @@ const STARSHIP_DATA = {
    ],
    "capsule": "Atron's Mistress is Greezim Trentacal's personal slave transport and mobile base of operations. Although the slave lord often conducts business in starports, he rarely ventures from his inner sanctuary when the ship lands on hostile or primitive worlds to collect slaves. His comfortable quarters are located near the bridge and filled with luxuries from a hundred worlds. The transport's cargo hold has been modified to hold 185 Human-sized beings in sealable inner modules — each compartment has bunks, nutrient dispensers, and waste facilities. Often packed with slaves, though Trentacal is careful not to allow overcrowding that would damage his goods. Includes a cabin for his bodyguards (currently the Defel wraith Vex).",
    "source": "WEG41008 Star Wars Adventure Journal #8 p.194"
+  },
+  {
+   "name": "Starwayman",
+   "type": "Modified light freighter",
+   "scale": "Starfighter",
+   "skill": "Space transports",
+   "crew_skill": "See Booster Terrik / Llollulion",
+   "maneuverability": "2D",
+   "space": "4",
+   "atmosphere": "280; 800 kmh",
+   "hull": "3D+2",
+   "shields": "2D",
+   "weapons": [
+     {
+       "name": "Triple Laser Cannon",
+       "fire_arc": "Turret",
+       "skill": "Starship gunnery",
+       "fire_control": "2D",
+       "damage": "5D"
+     }
+   ],
+   "capsule": "Booster Terrik's modified light freighter, co-piloted by the Borlovian noble Llollulion. Old and battered but quick — Booster boasts she can outpace most anything in the galaxy given a halfway decent head start. Famously evaded a Victory-class Star Destroyer pursuit in the Unknown Regions by jumping blind into uncharted space and grounding in a cliffside cave on the same forested world where the exiled Chiss Mitth'raw'nuruodo (Thrawn) was discovered.",
+   "source": "WEG41007 Star Wars Adventure Journal #7 p.46 (Mist Encounter)"
+  },
+  {
+   "name": "Kappa-class Shuttle",
+   "type": "Republic Sienar Systems Troop Shuttle",
+   "scale": "Starfighter",
+   "length": "35 meters",
+   "skill": "Space transports: Kappa shuttle",
+   "crew": "2, gunners: 2",
+   "crew_skill": "Space transports 5D, starship gunnery 4D+2, starship shields 4D",
+   "passengers": "40 (troops)",
+   "cargo_capacity": "50 metric tons",
+   "consumables": "1 month",
+   "cost": "Not available for sale",
+   "hyperdrive": "x1",
+   "hyperdrive_backup": "x10",
+   "nav_computer": "Yes",
+   "maneuverability": "1D",
+   "space": "5",
+   "atmosphere": "295; 850 kmh",
+   "hull": "4D",
+   "shields": "1D",
+   "sensors": {
+     "passive": "20/0D",
+     "scan": "40/1D",
+     "search": "80/2D",
+     "focus": "4/2D+2"
+   },
+   "weapons": [
+     {
+       "name": "2 Double Blaster Cannons",
+       "fire_arc": "Turret",
+       "crew": "1",
+       "skill": "Starship gunnery",
+       "fire_control": "2D",
+       "space_range": "1-3/12/25",
+       "atmosphere_range": "100-300/1.2/2.5 km",
+       "damage": "4D"
+     },
+     {
+       "name": "2 Repeating Blaster Cannons (fire-linked)",
+       "fire_arc": "Front",
+       "scale": "Speeder",
+       "skill": "Vehicle blasters",
+       "fire_control": "2D",
+       "atmosphere_range": "1-50/100/250",
+       "damage": "3D+2"
+     }
+   ],
+   "capsule": "Designed back in the days before Republic Sienar Systems became Sienar Fleet Systems, the Kappa-class shuttle is an obsolete troop transport relegated to secondary ships in the Imperial fleet. Carries one platoon of troopers, with two double blaster cannon turrets for flight defense and two forward-firing repeating blasters to clear landing zones. The Kappa capitalized on a revolutionary and short-lived idea for its time — an aft vehicle bay for two AT-PT walkers, providing heavy firepower and armor support to ground troops. The concept saw limited use before being replaced by modern dropships carrying AT-ST and AT-AT walkers, and most surviving Kappas have had their AT-PTs scrapped, with the vehicle bays now used for cargo. Some Kappas have escaped Imperial service onto the general used starship market — sometimes with one or both AT-PTs intact — and have been seen serving with mercenary groups. Both the shuttles and the walkers are highly illegal in civilian hands. Many features (angled cockpit with wide viewport, ventral debarkation hatch, three stubby stabilization fins) were later incorporated into the Lambda-class shuttle.",
+   "source": "WEG41007 Star Wars Adventure Journal #7 p.49 (Mist Encounter)"
+  },
+  {
+   "name": "The Messenger",
+   "type": "Ghtroc Industries class 720 freighter (Core Courier Service mail freighter)",
+   "scale": "Starfighter",
+   "length": "35 meters",
+   "skill": "Space transports: Ghtroc freighter",
+   "crew": "1 or 2",
+   "passengers": "10",
+   "cargo_capacity": "135 metric tons",
+   "consumables": "2 months",
+   "hyperdrive": "x1",
+   "hyperdrive_backup": "x15",
+   "nav_computer": "Yes",
+   "maneuverability": "1D",
+   "space": "3",
+   "atmosphere": "260; 750 kmh",
+   "hull": "3D+2",
+   "shields": "1D (+1D back-up)",
+   "sensors": {
+     "passive": "15/0D",
+     "scan": "30/1D",
+     "search": "50/3D",
+     "focus": "2/4D"
+   },
+   "weapons": [
+     {
+       "name": "Double Laser Cannon",
+       "fire_arc": "Front",
+       "skill": "Starship gunnery",
+       "fire_control": "1D+2",
+       "space_range": "1-3/12/25",
+       "atmosphere_range": "100-300/1.2/2.5 km",
+       "damage": "4D"
+     }
+   ],
+   "capsule": "The Messenger is a standard Core Courier Service mail freighter with one very handy modification Captain Taryn Clancy made — back-up shields. When the regular 1D of shields is lost, the shields operator may make an Easy starship shields roll to bring the back-up shields online. Although Core Courier Service freighters are maintained by company technicians when in their home port, the company tends to look the other way if captains wish to tinker with them and improve performance. Since Taryn has only recently taken command, she hasn't gotten as far on the planned modifications as she'd like — but the back-up shields saved the ship more than once during the New Republic's retreat from Coruscant, when she carried a secret rendezvous-coordinates datacard out through the Imperial blockade with Colonel Jak Bremen and her first mate Del Sato.",
+   "source": "WEG41007 Star Wars Adventure Journal #7 p.180 (Retreat From Coruscant)"
+  },
+  {
+   "name": "Star Quest",
+   "type": "Suwantek Systems TL-1800 Transport (stock light freighter)",
+   "scale": "Starfighter",
+   "length": "30 meters",
+   "skill": "Space transports: TL-1800 transport",
+   "crew": "1 to 2 (can coordinate)",
+   "crew_skill": "See Tere Metallo",
+   "passengers": "7",
+   "cargo_capacity": "110 metric tons",
+   "consumables": "3 months",
+   "cost": "Not available for sale",
+   "hyperdrive": "x2",
+   "hyperdrive_backup": "x10",
+   "nav_computer": "Yes",
+   "maneuverability": "1D+2",
+   "space": "4",
+   "atmosphere": "480; 800 kmh",
+   "hull": "4D",
+   "shields": "2D",
+   "sensors": {
+     "passive": "10/0D",
+     "scan": "25/1D",
+     "search": "40/2D",
+     "focus": "2/3D"
+   },
+   "weapons": [
+     {
+       "name": "2 Laser Cannons (fire-linked)",
+       "fire_arc": "Front",
+       "skill": "Starship gunnery",
+       "fire_control": "2D",
+       "space_range": "1-3/12/25",
+       "atmosphere_range": "100-300/1.2/2.5 km",
+       "damage": "5D"
+     }
+   ],
+   "capsule": "Tere Metallo's Suwantek TL-1800 freighter, used for legitimate (and not-so-legitimate) runs through the Outer Rim Territories. Equipped with a concealed storage chamber accessed via a special access-panel sequence beneath the deck plates near the cargo hatch — large enough to hide a wounded passenger from a casual Imperial search. Crewed by Metallo and her co-pilot Matt Turhaya, the ship smuggled members of the Kabairan Rebel underground (including Del Hunter, his son Chaz, and the agent known as Midget) offworld after an Imperial crackdown in Eponte Spaceport. Metallo plans engine modifications now that her work is putting her up against Imperial Z-95 patrols.",
+   "source": "WEG41007 Star Wars Adventure Journal #7 p.268 (Passages)"
   }
  ]
 // --- END OF STARSHIP_DATA ---

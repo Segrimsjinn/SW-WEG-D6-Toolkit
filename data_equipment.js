@@ -5705,5 +5705,59 @@ const EQUIPMENT_DATA = [
   "game_notes": "Subspace tracking device. Use requires an Easy sensors roll — on a success the user can locate the tracker and plot a course to it from any present coordinates. Rather than emitting a continuous beam, the ShipFinder disperses bursts of particles at a given time interval (faster interval = easier to track but shorter cell life). Range 20 light years. The current production version's power cell lasts only 8 days before going dead. Designed by Neb Ufentes for the remaining Imperial forces; prototypes were stolen from Ufentes' private lab by the crimelord Mahk'khar shortly before he was captured by the New Republic.",
   "source": "WEG41008 Star Wars Adventure Journal #8 p.143"
  }
+ ,{
+  "name": "P2 Astromech Droid",
+  "type": "Industrial Automaton (Automata Galactica) P2 Astromech Droid Prototype",
+  "category": "Droids",
+  "cost": "2,500 (used)",
+  "availability": "2",
+  "game_notes": "Height: 2.2m. Move: 4. DEX 1D, KNO 1D, MEC 1D (space transports 2D), PER 1D (search 2D), STR 2D, TEC 2D (space transports repair 5D). Three wheeled legs (one retractable), heavy grasper arm, three medium retractable arms, laser welder (5D damage, 0.5m range), buzzsaw (5D damage), video display screen. Strengthened body shell gives +1D STR vs damage. Communicates only through video screen or input jacks. Original Industrial Automaton (Automata Galactica) astromech prototype, precursor to the R-series. Sold exclusively to the Old Republic shipping fleet to test the prototype and serve massive container vessels and capital-scale transports. Large, cylindrical, clumsy, and lacking aesthetic value but very subservient. To this day some still operate on independent and privateer vessels — outdated and never sold new anymore; encountered units are often modified.",
+  "source": "WEG41007 Star Wars Adventure Journal #7 p.132 (History of R-Series Astromech Droids)"
+ }
+ ,{
+  "name": "R1 Astromech Droid",
+  "type": "Industrial Automaton R1 Astromech Droid",
+  "category": "Droids",
+  "cost": "3,000 (used)",
+  "availability": "2",
+  "game_notes": "Height: 2m. Move: 2. DEX 1D, KNO 1D, MEC 2D (astrogation 4D, space transports 3D), PER 1D (search 3D), STR 1D, TEC 2D (capital starship repair 5D, space transports repair 5D). Treaded unipod (single foot), light retractable manipulator, heavy retractable manipulator, welding arm (1D-4D damage), small circular saw (3D damage), laser cutters (3D+1 damage), video screen, acoustic signaler, comlink. Strengthened body gives +2D STR vs damage. Built into the Mark II reactor drone shell to recover from the P2 lawsuit fiasco — extensive radiation shielding, Intellex III computer with 500 starship designs and primitive single-jump nav computer. Large astromech designed for use in capital warships or large transports. Not very mobile and prone to recalcitrance if given time to develop a personality. Often modified and commonly mistaken for Mark II reactor drones.",
+  "source": "WEG41007 Star Wars Adventure Journal #7 p.134 (History of R-Series Astromech Droids)"
+ }
+ ,{
+  "name": "R3 Astromech Droid",
+  "type": "Industrial Automaton R3 Astromech Droid (military issue)",
+  "category": "Droids",
+  "cost": "5,000",
+  "availability": "2, R or X (military)",
+  "game_notes": "Height: 1m. Move: 5. DEX 1D, KNO 1D, MEC 2D (astrogation 4D, capital starship piloting 4D, space transports 3D), PER 1D (search 4D), STR 1D, TEC 2D (capital starship repair 6D, capital starship weapon repair 6D, computer programming/repair 5D, security 5D). Three wheeled legs, retractable heavy grasper arm (lifting 2D), retractable fine worker arm, small electric welder (1D-5D, 0.3m range), small circular saw (4D, 0.3m range), video display screen, acoustic signaler, holographic projector/recorder, fire extinguisher. Distinguished by clear plastex dome head showing off the Intellex V computer and a more sensitive sensor package. Holds up to 5 hyperspace jump coordinates in RAM. Built specifically for capital warship and battle station service with gunnery repair and security skills — served on Old Republic capital ships, Imperial Star Destroyers, both Death Stars, and now privateer vessels and stolen Rebel ships. Originally restricted to government military agencies; since the rise of the New Republic, Industrial Automaton sells to planetary governments and private fleets, but its policy bars knowingly selling to the Empire or Imperial factions.",
+  "source": "WEG41007 Star Wars Adventure Journal #7 p.138 (History of R-Series Astromech Droids)"
+ }
+ ,{
+  "name": "R4 Astromech Droid",
+  "type": "Industrial Automaton R4 Astromech Droid (urban issue)",
+  "category": "Droids",
+  "cost": "3,000",
+  "availability": "2, F",
+  "game_notes": "Height: 1m. Move: 5. DEX 1D, KNO 1D, MEC 2D (repulsorlift operation 4D), PER 1D, STR 1D, TEC 2D (computer programming/repair 5D, repulsorlift repair 4D, space transports repair 5D). Three wheeled legs, retractable heavy grasper arm (lifting 2D), retractable fine worker arm, small electric welder (1D-5D, 0.3m range), small circular saw (4D, 0.3m range), acoustic signaler, holographic projector/recorder. Recognizable by its truncated conical head; uses the familiar R2 shell. Not technically an astromech droid — its Intellex VI computer features repulsorcraft designs as well as starship configurations to appeal to the Outer Rim urban market with limited income. Holds only 1 hyperspace jump coordinate in RAM. Cheap and effective; popular with Rebel and privateer groups, with many Rebel starfighters using R4 counterparts running repairs — a tradition continued by the New Republic.",
+  "source": "WEG41007 Star Wars Adventure Journal #7 p.139 (History of R-Series Astromech Droids)"
+ }
+ ,{
+  "name": "R6 Astromech Droid",
+  "type": "Industrial Automaton R6 Astromech Droid",
+  "category": "Droids",
+  "cost": "4,000",
+  "availability": "2, F",
+  "game_notes": "Height: 1m. Move: 5. DEX 1D, KNO 1D, MEC 2D (astrogation 5D, starfighter piloting 3D, space transports 3D), PER 1D, STR 1D, TEC 2D (computer programming/repair 5D, space transports repair 6D, starfighter repair 5D). Note: astromechs in co-pilot capacity may attempt starship repairs in flight. Three wheeled legs, retractable heavy grasper arm (lifting 2D), retractable fine worker arm, extendable 0.3m video sensor (360° rotation), small electric welder (1D-5D, 0.3m range), small circular saw (4D, 0.3m range), video display screen, holographic projector/recorder, acoustic signaler, fire extinguisher, internal cargo area (20cm × 8cm). The first astromech sold by Industrial Automaton after the fall of the Empire — built to redeem Industrial Automaton's image after the failure of the R5, priced low for the turbulent New Republic economy. Holds an impressive 12 hyperspace jump coordinates in RAM. Sold very well until the rise of Grand Admiral Thrawn and the return of the Empire-Republic struggle.",
+  "source": "WEG41007 Star Wars Adventure Journal #7 p.141 (History of R-Series Astromech Droids)"
+ }
+ ,{
+  "name": "R7 Astromech Droid",
+  "type": "Industrial Automaton R7 Astromech Droid (E-wing dedicated)",
+  "category": "Droids",
+  "cost": "Not for sale",
+  "availability": "X (New Republic military only)",
+  "game_notes": "Height: 1m. Move: 5. DEX 1D, KNO 1D, MEC 3D (astrogation 5D, starfighter piloting: E-wing 5D), PER 2D (search 4D), STR 1D, TEC 2D (computer programming/repair 6D, starfighter repair: E-wing 7D). Note: astromechs in co-pilot capacity may attempt starship repairs in flight. Three wheeled legs, retractable heavy grasper arm (lifting 2D), retractable fine worker arm, extendable 0.3m video sensor (360° rotation), small electric welder (1D-5D, 0.3m range), small circular saw (4D, 0.3m range), video display screen, holographic projector/recorder, acoustic signaler, fire extinguisher, internal cargo area (20cm × 8cm). The first R-series astromech designed for a specific starfighter — the New Republic E-wing built by FreiTek Incorporated. The traditional Intellex computer was replaced with a dedicated FreiTek system, achieving a higher counterpart interactivity ratio than the old R2/X-wing configuration. Holds 15 hyperspace jump coordinates in RAM. Civilians cannot legally purchase R7s, and the unit is somewhat limited in its abilities interfacing with craft other than the FreiTek E-wing. Both the E-wing and R7 were rushed into service to combat the resurrected Emperor's World Devastators over Calamari before full testing could be completed.",
+  "source": "WEG41007 Star Wars Adventure Journal #7 p.142 (History of R-Series Astromech Droids)"
+ }
 // --- END OF EQUIPMENT_DATA ---
 ];
