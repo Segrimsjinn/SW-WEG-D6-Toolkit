@@ -64,6 +64,7 @@
                   "Gacerite",
                   "Gamorrean",
                   "Gand",
+                  "Geelan",
                   "Givin",
                   "Gotal",
                   "Gran",

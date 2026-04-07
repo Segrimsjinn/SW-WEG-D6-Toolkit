@@ -64,6 +64,7 @@ const RACE_IMAGES = {
   'Gacerite': 'image058.jpg',
   'Gamorrean': 'image059.jpg',
   'Gand': 'image060.jpg',
+  'Geelan': 'image193.jpg',
   'Givin': 'image178.jpg',
   'Gotal': 'image061.jpg',
   'Gran': 'image062.jpg',

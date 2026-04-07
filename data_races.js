@@ -6619,6 +6619,94 @@ const RACES_DATA = {
       "Vision: Grans\u2019 unique combination of eyestalks gives them a larger spectrum of vision than other species. They can see well into the infrared range (no penalties in darkness), and gain a bonus of +1D to notice sudden movements."
     ]
   },
+  "Geelan": {
+    "Dex": [
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D",
+      "4D+1",
+      "4D+2"
+    ],
+    "Kno": [
+      "1D",
+      "1D+1",
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D"
+    ],
+    "Mec": [
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D"
+    ],
+    "Per": [
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D",
+      "4D+1",
+      "4D+2"
+    ],
+    "Str": [
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2"
+    ],
+    "Tec": [
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D"
+    ],
+    "Mov": [
+      "10",
+      "10",
+      "11",
+      "11",
+      "12",
+      "12"
+    ],
+    "Height": [
+      "0.75",
+      "0.9",
+      "1.0",
+      "1.1",
+      "1.2",
+      "1.3",
+      "1.4",
+      "1.5"
+    ],
+    "Sex": [
+      "M",
+      "F",
+      "M",
+      "F",
+      "M",
+      "M"
+    ],
+    "StoryFactor": [
+      "The Geelan are short pot-bellied beings from the extremely remote world of Needan, beyond even the Outer Rim. Their bodies are covered in coarse dark-colored fur, with two short legs, two arms ending in sharp-clawed hands, long tooth-filled snouts ending in dark wet noses, brilliant yellow forward-facing eyes, and upward-pointing ears. Roughly humanoid, they are meddlesome beings whose only concerns are collecting shiny trinkets and engaging in continuous barter and haggling. Natural entrepreneurs, they are quite annoying to outsiders \u2014 yet renowned for ingenuity, partly from Geelan curiosity (trying to do something just to see if it can be done) and partly from good business instinct. They evolved from canine pack animals on what was once a beautiful jungle world covered in life-teeming oceans, and after developing sentience their pack instinct led to rapid civilization. Their information-age technology was just beginning to soar when a passing comet wrenched Needan from its orbit, sending it drifting from its sun. Most native species died from the eternal winter; the Geelan survived by building dome habitats but their fuel supply was dwindling rapidly. Distress signals were eventually intercepted by an Arcona medical vessel and the Geelan were introduced to galactic technology, leaving in great numbers to explore the galaxy. The Geelan now operate lucrative businesses across the galaxy \u2014 casinos, cantinas, and spaceports \u2014 each paying a percentage to the Geelan leader, the Geeloniran (Great Geel or Master Geel), who has jurisdiction over a loosely connected series of 'nests' each led by a Nest Leader. Other nest members may be treasurer, secretary, spy, assassin, or negotiator. They live for trade and thrive on the adventure of pursuing a deal and obtaining baubles for their hoards. They love possessions of any value but prefer spice, jewels, and credits \u2014 most Geelan nests are filled with wealth beyond imagination. They employ a no-holds-barred method of conducting business: when pursuing a deal anything is acceptable, from blackmail to bribery to physical violence. Geelan prefer to perform business transactions with outsiders only when the other members of their nest are present as a defensive precaution. Those who trade with Geelan know that 'normal' deals bore them to no end \u2014 the more complicated a deal, the more likely it will be acceptable to the Geelan. Geelan are fairly widespread throughout the galaxy, working as information-brokers and investment-speculators. They notably own and operate Zirtran's Anchor in the Phosphura Belt Nebula."
+    ],
+    "SpecAb": [
+      "Claws: The claws of the Geelan inflict STR+1D damage.\n\nHoarders: Geelan are incurable hoarders \u2014 they never throw anything away. The only way Geelan will part with a possession is if they are paid or if their lives are in danger."
+    ]
+  },
   "Gree": {
     "Dex": [
       "2D",
