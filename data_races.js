@@ -8794,6 +8794,95 @@ const RACES_DATA = {
       "Fearless:\u00a0Lannik are not easily frightened. They get a +2 pip bonus to Willpower rolls when resisting Intimidation skill rolls against them."
     ]
   },
+  "Lasat": {
+    "Dex": [
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D",
+      "4D+1"
+    ],
+    "Kno": [
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2"
+    ],
+    "Mec": [
+      "1D",
+      "1D+1",
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2"
+    ],
+    "Per": [
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D"
+    ],
+    "Str": [
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D"
+    ],
+    "Tec": [
+      "1D",
+      "1D+1",
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D"
+    ],
+    "Mov": [
+      "10",
+      "10",
+      "11",
+      "11",
+      "12",
+      "12"
+    ],
+    "Height": [
+      "1.2",
+      "1.3",
+      "1.4",
+      "1.5",
+      "1.6",
+      "1.7",
+      "1.8",
+      "1.9"
+    ],
+    "Sex": [
+      "M",
+      "F",
+      "M",
+      "F",
+      "M",
+      "M"
+    ],
+    "StoryFactor": [
+      "Lasat are an obscure species from the far reaches of the Outer Rim. Their homeworld Lasan is a warm arid planet with extensive desert and plains separated by high mountains. Lasat are well adapted to this environment with large thin pointed heat-dissipating ears, light fur insulating against cold desert nights, small oral and nasal openings, and large eyes facilitating twilight vision. They are carnivores with canines in the front of the mouth and bone-crushing molars behind, covered with light-brown fur (longer in males than females). Face, hands, and tail are hairless; males' heads tend to bald with age. Lasat tend to be furtive, self-centered, indirect, and sneaky. Though carnivores, they typically capture food by trapping rather than hunting. They always call themselves by name but only use pronouns to refer to others. Lasat history is primarily oral; their written history remains a primitive hieroglyphic script. Most legendary heroes are clever, stealthy trappers. Their society is largely tribal and nomadic, though two regions have developed early-stage city-states with social stratification. Tribal Lasat follow bantha herds across the plains, living in tents made from hides over bone frames. City Lasat live in mud-brick shells lit by bantha-grease oil lamps. Hereditary religious rulers maintain a warrior-police caste; city-states increasingly hire nomad tribes as mercenaries. Lasat technology ranges from late stone age to early feudal \u2014 nets, spears, and stick-and-hair traps for primitives, simple metal-working among 'civilized' Lasat. Their chemistry is disproportionately advanced: superior fermentation and surprisingly potent simple explosives are at the command of city-state precursor scientist-engineers (the Lasat word for these professionals translates more closely to 'magician'). Little trade has occurred between Lasat and the wider galaxy; the few free-traders who land find little to export beyond finely woven Lasat rugs and tapestries."
+    ],
+    "SpecAb": [
+      "Mistaken Identity: Lasat are occasionally mistaken for Wookiees by the uninformed \u2014 despite the height difference and the Lasat tail \u2014 and are sometimes harassed by local law enforcement over this."
+    ]
+  },
   "Meri": {
     "Dex": [
       "3D+2",

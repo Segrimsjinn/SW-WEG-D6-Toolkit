@@ -92,6 +92,7 @@
                   "Kwa",
                   "Lafrarian",
                   "Lannik",
+                  "Lasat",
                   "Meri",
                   "Miraluka",
                   "Mon Calamari",

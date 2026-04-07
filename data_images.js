@@ -94,6 +94,7 @@ const RACE_IMAGES = {
   'Kwa': 'image081.jpg',
   'Lafrarian': 'image082.jpg',
   'Lannik': 'image083.jpg',
+  'Lasat': 'image182.jpg',
   'Meri': 'image084.jpg',
   'Miraluka': 'image085.jpg',
   'Mon Calamari': 'image086.jpg',
