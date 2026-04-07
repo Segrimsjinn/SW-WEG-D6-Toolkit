@@ -132,6 +132,7 @@
                   "Riileb",
                   "Rodian",
                   "Saurton",
+                  "Selonian",
                   "Skrilling",
                   "Sludir",
                   "Sluissi",

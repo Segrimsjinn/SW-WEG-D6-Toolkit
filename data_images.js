@@ -135,6 +135,7 @@ const RACE_IMAGES = {
   'Riileb': 'image120.jpg',
   'Rodian': 'image121.jpg',
   'Saurton': 'image123.jpg',
+  'Selonian': 'image183.jpg',
   'Skrilling': 'image124.jpg',
   'Sludir': 'image125.jpg',
   'Sluissi': 'image126.jpg',

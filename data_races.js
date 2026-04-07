@@ -12696,6 +12696,96 @@ const RACES_DATA = {
       "Disease Resistance: Saurton are highly resistant to disease, doubling their Stamina skill when rolling to resist illness. However, they are dangerous passive carriers of many harmful bacteria and pathogens, posing a health risk to other species they interact with closely."
     ]
   },
+  "Selonian": {
+    "Dex": [
+      "1D",
+      "1D+1",
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2"
+    ],
+    "Kno": [
+      "1D",
+      "1D+1",
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D"
+    ],
+    "Mec": [
+      "1D",
+      "1D+1",
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2"
+    ],
+    "Per": [
+      "1D",
+      "1D+1",
+      "1D+2",
+      "2D",
+      "2D+1"
+    ],
+    "Str": [
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D",
+      "4D+1",
+      "4D+2",
+      "5D"
+    ],
+    "Tec": [
+      "1D",
+      "1D+1",
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1"
+    ],
+    "Mov": [
+      "10",
+      "10",
+      "11",
+      "11",
+      "12",
+      "12"
+    ],
+    "Height": [
+      "1.8",
+      "1.9",
+      "2.0",
+      "2.1",
+      "2.2"
+    ],
+    "Sex": [
+      "F",
+      "F",
+      "F",
+      "F",
+      "M",
+      "F"
+    ],
+    "StoryFactor": [
+      "Selonians are bipedal mammals native to Selonia in the Corellia system. They are taller and thinner than Humans, with slightly shorter arms and legs and longer bodies \u2014 comfortable walking on either two legs or four. They have retractable claws at the ends of their paw-like hands for digging and climbing, and a half-meter tail that counterbalances them when upright. Their faces are long and pointed with bristly whiskers and very sharp teeth, and they have glossy short brown or black coats. Selonians are first and foremost concerned with the safety of their dens, then with Selonians in general; the well-being of the individual is not as important as the well-being of the whole. This hive-mind philosophy makes them very unemotional toward the rest of the universe, and intensely honorable \u2014 the actions of an individual reflect on the entire den. Selonians find lying as terrible a crime as murder. Dens consist of one fertile female 'queen,' a few fertile males, and a large number of sterile females sub-organized into 'septs' (offspring fathered by the same male). A queen can become pregnant up to five times a year. Sterile females train for specific den jobs; some are specially trained to interact with humans and other aliens, learning carefully studied mannerisms to put outsiders at ease. To the uninitiated, Selonians might appear outgoing, friendly, and charitable \u2014 in reality they rarely have any interest beyond advancing the good of their den. Selonians build intricate underground tunnel-dens with their claws; much of the underground of both Selonia and Corellia is criss-crossed with their work. Despite seeming primitive they are at an information-age tech level with their own shipyards building Corellian-system vessels, but they have never developed hyperdrives nor shown much interest in venturing beyond the Corellian system."
+    ],
+    "SpecAb": [
+      "Retractable Claws: Selonians receive a +1D bonus to climbing and brawling.\n\nTail: Used to help steer and propel a Selonian through water, adds a +1D bonus to swimming skill. Can also be used as an additional weapon as a club, doing STR+2D damage.\n\nSwimming: Swimming comes naturally to Selonians; they gain +1D+2 to dodge in underwater conditions.\n\nHive-Mind: Selonians live in underground dens like social insects. Only sterile females leave the den to interact with the outside world.\n\nAgoraphobia: Selonians are not comfortable in wide-open spaces. They suffer a -1D penalty on all actions when in large open spaces."
+    ]
+  },
   "Skrilling": {
     "Dex": [
       "1D",
