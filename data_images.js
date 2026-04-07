@@ -97,6 +97,7 @@ const RACE_IMAGES = {
   'Lafrarian': 'image082.jpg',
   'Lannik': 'image083.jpg',
   'Lasat': 'image182.jpg',
+  'Marasan': 'image187.jpg',
   'Meri': 'image084.jpg',
   'M\'shinn': 'image186.jpg',
   'Miraluka': 'image085.jpg',

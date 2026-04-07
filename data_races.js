@@ -9068,6 +9068,93 @@ const RACES_DATA = {
       "Mistaken Identity: Lasat are occasionally mistaken for Wookiees by the uninformed \u2014 despite the height difference and the Lasat tail \u2014 and are sometimes harassed by local law enforcement over this."
     ]
   },
+  "Marasan": {
+    "Dex": [
+      "1D",
+      "1D+1",
+      "1D+2",
+      "2D"
+    ],
+    "Kno": [
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D",
+      "4D+1",
+      "4D+2",
+      "5D"
+    ],
+    "Mec": [
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D",
+      "4D+1"
+    ],
+    "Per": [
+      "1D",
+      "1D+1",
+      "1D+2",
+      "2D"
+    ],
+    "Str": [
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D"
+    ],
+    "Tec": [
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D",
+      "4D+1",
+      "4D+2"
+    ],
+    "Mov": [
+      "6",
+      "6",
+      "7",
+      "7",
+      "8",
+      "8"
+    ],
+    "Height": [
+      "1.4",
+      "1.6",
+      "1.8",
+      "2.0",
+      "2.1",
+      "2.3"
+    ],
+    "Sex": [
+      "M",
+      "F",
+      "M",
+      "F",
+      "M",
+      "M"
+    ],
+    "StoryFactor": [
+      "Marasans are a species of cyborged sentients from the Marasa Nebula \u2014 an expanse of energized gas that cut them off from the rest of the galaxy for thousands of years. They turned to technology to free themselves from their dark, chaotic homeworld of Marasai, only to be subjugated by the Empire. Large marsupials with tubular bodies on muscular legs, long thin arms with large clumsy hands, and tiny eyes supplemented by sensory stalks growing from the corners of their large mouths. A thin silver band of electronic hardware wraps around the base of every Marasan's skull \u2014 cybernetic implants developed by Marasan scientists to navigate through the chaotic nebula, later refined to control autonomic functions and natural abilities. They are easy-going beings who move slowly but think rapidly, often exchanging information cybernetically; their interaction with other species is stilted and awkward. They are clumsy due to the implants hampering motor functions and tend to break delicate machinery they aren't accustomed to. Unused to verbal communication, they garble messages because their brains work too fast for their mouths \u2014 characterized as cheerfully tactless, though their insults are seldom intended. Politics are conducted through the Mindnet, an interconnected cybernetic-computer network where elected 'electnodes' filter voter opinions to the Grand Daern. Marasan politicians often grow obese due to physical inactivity. The Marasans evolved from land herbivores and developed advanced mathematics to predict the climatological effects of a world inside a cosmic dust storm. They invented advanced computer systems, starships, a primitive intra-nebula hyperdrive, and even weaponry against the giant plasma-fliers concealed in the nebula. Their hyperdrive is a direct brainlink cyborg system \u2014 navigators locate 'anchorpoints' within the cloud, allowing travel among the 13 systems and 20+ colonies. Imperial scientist Umak Leth developed devices that produce high-energy resonance waves causing painful feedback in Marasan minds; the Empire built planet-scale 'resonators' that can punish entire populations at will, and now uses Marasan navigators to guide ships through the chaotic nebula. 12 billion Marasans are held captive in the nebula; only a few hundred have escaped and most of those work to free their people. Marasans have no droids \u2014 menial tasks are done by mindless robots directly controlled by Marasan cybernetic transmissions. Their computers rely on protein-based bio-memory systems."
+    ],
+    "SpecAb": [
+      "Cybernetic Astrogation: Marasans have a nav-computer built into their brains, granting +1D to astrogation rolls outside the Marasa Nebula and +2D inside it. They never face the 'no nav computer' penalty when astrogating.\n\nComputerized Mind: Marasans solve complex problems in their minds in half the time required for other species. In combat round situations, they can perform two Knowledge or two Technical skills as if they were one action. Complex verbal communications and instructions take twice as long, and failing the skill roll by any amount means the Marasan made a critical mistake in the explanation. Marasans can communicate cybernetically over a range of up to 100 meters \u2014 to outside observers they appear to communicate silently.\n\nCyborged Beings: Marasans suffer stun damage (add +1D to the damage value) from any ion or DEMP weaponry or other electrical fields that adversely affect droids. If injured by such an attack, first aid or medicine rolls suffer +5 difficulty for a Marasan healer and +10 for a non-Marasan healer."
+    ]
+  },
   "Meri": {
     "Dex": [
       "3D+2",
