@@ -64,6 +64,7 @@ const RACE_IMAGES = {
   'Givin': 'image178.jpg',
   'Gotal': 'image061.jpg',
   'Gran': 'image062.jpg',
+  'Gree': 'image179.jpg',
   'Gungun': 'image063.jpg',
   'Herglic': 'image064.jpg',
   'Houk': 'image065.jpg',

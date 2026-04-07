@@ -6351,6 +6351,90 @@ const RACES_DATA = {
       "Vision: Grans\u2019 unique combination of eyestalks gives them a larger spectrum of vision than other species. They can see well into the infrared range (no penalties in darkness), and gain a bonus of +1D to notice sudden movements."
     ]
   },
+  "Gree": {
+    "Dex": [
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D"
+    ],
+    "Kno": [
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D"
+    ],
+    "Mec": [
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D",
+      "4D+1",
+      "4D+2",
+      "5D"
+    ],
+    "Per": [
+      "1D",
+      "1D+1",
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D"
+    ],
+    "Str": [
+      "1D",
+      "1D+1",
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D"
+    ],
+    "Tec": [
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D",
+      "4D+1",
+      "4D+2",
+      "5D"
+    ],
+    "Mov": [
+      "5",
+      "5",
+      "6",
+      "6",
+      "7",
+      "7"
+    ],
+    "Height": [
+      "0.8",
+      "0.9",
+      "1.0",
+      "1.1",
+      "1.2"
+    ],
+    "Sex": [
+      "M",
+      "F",
+      "M",
+      "F",
+      "M"
+    ],
+    "StoryFactor": [
+      "Gree are a species of cephalopods \u2014 six-tentacled creatures with gray skin, large sad-looking eyes, and tall foreheads supporting immense brain sacs. They decorate their foreheads with hieroglyphic tattoos indicating rank and caste. One pair of tentacles functions as fine manipulators, another as heavier grippers, and the third as ambulators. They rarely grow greater than 1.5 meters and evolved in a Type II atmosphere on the wet, gray, high-pressure world of Asation. The Gree are the remnant of an ancient and once highly advanced civilization, their Enclave occupying a handful of isolated systems in the Outer Rim. Masters \u2014 the most proficient operators of ancient Gree technology \u2014 dominate Gree society. Trade in Gree artifacts is restricted to lower technology items: nothing more advanced than Imperial standard may be traded to non-Gree. Gree completely ignore and look down on droids. Gree prefer bartered goods over credits. A new class of Gree called sevarks act as trader-guides who translate and bargain with masters on behalf of alien clients."
+    ],
+    "SpecAb": [
+      "Device Operation (MEC) and Device Repair (TEC): Specialized skills used for Gree technology. Humans operating Gree devices and Gree operating Imperial-standard devices both suffer a +5 difficulty modifier. Brain Sacs: Gree are highly intelligent and serve as masters of ancient technology far beyond Imperial standard."
+    ]
+  },
   "Gungun": {
     "Dex": [
       "1D+1",
