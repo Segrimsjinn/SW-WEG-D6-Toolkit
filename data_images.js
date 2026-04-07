@@ -34,6 +34,7 @@ const RACE_IMAGES = {
   'Chadra-Fan': 'image030.jpg',
   'Chagrian': 'image031.jpg',
   'Chevin': 'image032.jpg',
+  'Chikarri': 'image192.jpg',
   'Chiss': 'image033.jpg',
   'Cizerack': 'image034.jpg',
   'Clawdite': 'image035.jpg',

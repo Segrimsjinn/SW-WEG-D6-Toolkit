@@ -3504,6 +3504,90 @@ const RACES_DATA = {
       "empty"
     ]
   },
+  "Chikarri": {
+    "Dex": [
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D",
+      "4D+1",
+      "4D+2"
+    ],
+    "Kno": [
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D"
+    ],
+    "Mec": [
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2"
+    ],
+    "Per": [
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2"
+    ],
+    "Str": [
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D"
+    ],
+    "Tec": [
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D",
+      "4D+1",
+      "4D+2",
+      "5D"
+    ],
+    "Mov": [
+      "9",
+      "9",
+      "10",
+      "10",
+      "11",
+      "11"
+    ],
+    "Height": [
+      "1.3",
+      "1.4",
+      "1.5"
+    ],
+    "Sex": [
+      "M",
+      "F",
+      "M",
+      "F",
+      "M",
+      "M"
+    ],
+    "StoryFactor": [
+      "The rodent Chikarri are natives of Plagen, a world on the edge of the Mid-Rim. These chubby-cheeked beings are masters of Plagen's temperate high-plateau forests and low plains, and through galactic trade have developed a modern society in their tree and burrow cities. They are short, covered in thick short fur, with enlarged front teeth, chubby cheeks, long pointed ears, and a bushy tail. Highland Chikarri have gray or reddish-brown fur; lowlanders range from tan to medium brown. They are herbivorous, eating nuts, berries, and grains grown in extensive agri-forest combines and grassland farms. Chikarri speech is high-pitched and their Basic suffers from a species-wide lisp. Tremendously active and cheerful, Chikarri are usually busy and bustling \u2014 to them, activity is an end in itself and need not be productive to be worth doing. Notoriously tight with money, they are the subjects of thriftiness jokes up and down the Enarc and Harrin Runs. Wealthy Chikarri do not show off their riches \u2014 the joke goes that you can tell how rich a Chikarri is by how old and mended its clothes are: the more patches, the more money. The main exception to this stinginess is bright metals and gems; Chikarri are known throughout the region for their shiny-bauble weakness. They have an unfortunate tendency toward kleptomania but are otherwise forthright and honest. They aren't particularly brave \u2014 a Chikarri faced with danger is bound to turn tail and run. First discovered several hundred years ago on a promising hyperspace route (later the Enarc Run), the Chikarri sold port rights to the Klatooinan Trade Guild for several tons of gemstones, allowing them to develop technology cheaply. They live in compact modern apartments in the cool tall goldleaf trees of plateau communities or the cool sprawling burrow cities of the dry plains. Chikarri society is built on the nuclear family. There are no nation-states on Plagen \u2014 cities are governed by half-elected, half-randomly-drafted councils. Only insanity, disability, or serious crime excuses civic duty; resident aliens after 10 years are also subject to draft. Organized warfare is unknown among them. The main social division is between highlanders and lowlanders \u2014 lowlanders grow staple crops and mine low-grade precious metals, exchanging these for water and technology from the highlanders. Both sides are characteristically stingy, and the trade balance is a constant source of irritation. Chikarri are modern but lack heavy industry; they import median-grade technology cheaply due to proximity to the Enarc Run. Their main export is agri-forest products \u2014 wood, fruit, and nuts. Independent traders routinely stop to sell the natives cheap gaudy baubles."
+    ],
+    "SpecAb": [
+      "Hoarders: Chikarri are hyperactive and hard working, but are driven to hoard valuables, goods, or money \u2014 especially in the form of shiny metal or gems. They have an unfortunate tendency toward kleptomania."
+    ]
+  },
   "Chiss": {
     "Dex": [
       "1D+1",

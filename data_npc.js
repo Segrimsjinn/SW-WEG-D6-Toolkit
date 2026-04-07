@@ -35,6 +35,7 @@
                   "Chadra-Fan",
                   "Chagrian",
                   "Chevin",
+                  "Chikarri",
                   "Chiss",
                   "Cizerack",
                   "Clawdite",
