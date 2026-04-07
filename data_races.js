@@ -6630,6 +6630,93 @@ const RACES_DATA = {
       "Natural Armor: The thick layer of blubber beneath the outer skin of a Herglic gives +1D to resist damage from physical attacks, It gives no bonus to energy attacks.\nDistrust: Because the Herglics openlyjoined the Empire in order to survive, they have come to be seen as less than worthy ol trust Many still believe that the neutral Herglics are still working with the Empire, which gives others a +1D when making opposed Perception checks against the Herglics.\n\nGambling Frenzy: Herglics, when exposed to games of chance, find themselves irresistibly drawn to them. A Herglic who passes by a gambling game must make a Moderate willpower check not to feel compelled to play, although they may be granted a bonus to their roll if it is critical or life-threatening for them not to play."
     ]
   },
+  "Ho'Din": {
+    "Dex": [
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D"
+    ],
+    "Kno": [
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D"
+    ],
+    "Mec": [
+      "1D",
+      "1D+1",
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D"
+    ],
+    "Per": [
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D"
+    ],
+    "Str": [
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D",
+      "4D+1",
+      "4D+2"
+    ],
+    "Tec": [
+      "1D+1",
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1"
+    ],
+    "Mov": [
+      "10",
+      "10",
+      "11",
+      "11",
+      "12",
+      "12",
+      "13"
+    ],
+    "Height": [
+      "2.5",
+      "2.6",
+      "2.7",
+      "2.8",
+      "2.9",
+      "3.0"
+    ],
+    "Sex": [
+      "M",
+      "F",
+      "M",
+      "F",
+      "M",
+      "F"
+    ],
+    "StoryFactor": [
+      "Ho'Din means 'walking flower' in their native tongue, and the name suits them well. Slender, brilliantly colored, and topped with a full head of snakelike tresses covered in gleaming red and violet scales, they look like giant wuppa flowers in full bloom. Despite their plant-like appearance, Ho'Din are cold-blooded oxygen-breathing reptiles with bulging dark eyes, a wide lipless mouth, and four-fingered hands tipped with ridged suction pads for climbing. Their snake-like 'hair' is actually a multitude of thermographic appendages that monitor ambient temperature. They live on Moltok in the Dartibek system, dwelling in rain-drenched equatorial forests where they 'grow' their dwellings from native flora using huge aerial vines and giant flower petals. Ho'Din are master botanists and herbal-pharmacologists \u2014 their medicines are recognized galaxy-wide as legitimate treatments. Three centuries ago a period called the 'Great Rape of the Land' (widespread mining, farming, low-tech manufacturing) led to a virulent parasitic plague that nearly exterminated them, after which they returned to the trees and now strictly limit technology on Moltok as 'unnatural.' Their religion the Dinante Fli'R teaches that Ho'Din were once mobile plants punished into animal form, and that good stewardship of nature will eventually return them to plant form via the 'Virtuous Circle of Nature.' They mate for life, deposit their dead on the forest floor, and live 120+ standard years. Children are born blind and bald \u2014 their snake-like locks emerge as green sprouts at age seven, ceasing to grow and turning to their final red or violet shade at sexual maturity around age 30. Ho'Din are vain about their appearance and easily insulted. Most Ho'Din encountered offworld are either guileless botanists wrapped up in their research, or vain 'artistes' enjoying careers in modeling and entertainment."
+    ],
+    "SpecAb": [
+      "Special Skills (Knowledge): Ecology: Moltok \u2014 ability to recognize and identify the countless plants on Moltok. Acquired only by characters who have spent at least 10 years on the planet.\n\nSpecial Skills (Technical): (A) First Aid: Ho'Din Herbal Medicines \u2014 must have first aid 5D first. The ability to use Moltok's medicinal plants for healing and disease control. Acquired only by characters who have spent at least 10 years on Moltok. The GM determines difficulty based on the affliction (Easy for a broken limb, Very Easy for a rash, Heroic for off-world diseases). Successful use can cure disease, grant extra healing rolls, and/or provide bonus dice to future healing rolls.\n\nNature Worship: Ho'Din will go to great lengths to ensure the survival of plants, considering the existence of plants more important than the existence of animal organisms. They react negatively to anything that adversely affects a world's ecosystem.\n\nThermographic Hair: Their snake-like 'tresses' are actually thermographic sensory appendages that allow them to monitor ambient temperature."
+    ]
+  },
   "Houk": {
     "Dex": [
       "1D",

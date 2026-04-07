@@ -67,6 +67,7 @@
                   "Gree",
                   "Gungun",
                   "Herglic",
+                  "Ho'Din",
                   "Houk",
                   "Human",
                   "Hutt",

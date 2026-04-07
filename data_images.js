@@ -67,6 +67,7 @@ const RACE_IMAGES = {
   'Gree': 'image179.jpg',
   'Gungun': 'image063.jpg',
   'Herglic': 'image064.jpg',
+  'Ho\'Din': 'image180.jpg',
   'Houk': 'image065.jpg',
   'Human': 'image001.jpg',
   'Hutt': 'image066.jpg',
