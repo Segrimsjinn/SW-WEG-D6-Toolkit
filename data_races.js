@@ -10480,6 +10480,97 @@ const RACES_DATA = {
       "Skill Bonus: At the time of character creation only, Neimoidian characters gain 2D for every 1D placed in either the Value or Con skills."
     ]
   },
+  "Nimbanel": {
+    "Dex": [
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D"
+    ],
+    "Kno": [
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D",
+      "4D+1"
+    ],
+    "Mec": [
+      "1D",
+      "1D+1",
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2"
+    ],
+    "Per": [
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D",
+      "4D+1"
+    ],
+    "Str": [
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D"
+    ],
+    "Tec": [
+      "1D",
+      "1D+1",
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D"
+    ],
+    "Mov": [
+      "10",
+      "10",
+      "11",
+      "11",
+      "12",
+      "12"
+    ],
+    "Height": [
+      "1.6",
+      "1.7",
+      "1.8",
+      "1.9"
+    ],
+    "Sex": [
+      "M",
+      "F",
+      "M",
+      "F",
+      "M",
+      "M"
+    ],
+    "StoryFactor": [
+      "Of the alien species conquered and forced into servitude by the Hutts, the Nimbanese (singular: Nimbanel) have the distinction of being the only ones who actively petitioned the Hutts and requested to be brought into their servitude \u2014 having already established themselves as capable bankers and bureaucrats, they sold these credentials into service. They are humanoid reptiles with endothermic (warm-blooded) metabolisms and pale scaleless skin, large circular lidless eyes, a protruding snout, and tufts of hair growing from their cheeks (and occasionally the top of their heads). They are oviparous \u2014 females produce three to five eggs at a time and can only give birth once upon reaching adulthood. Eggs take about three standard months to develop and hatch and are cared for by communal groups; young begin formal education immediately. The Nimbanese place great value on knowledge and work ethic and are well-suited to business, galactic finance, managerial concerns, and union relations. Often called snobbish and arrogant, they are highly visible throughout Hutt organizations, galactic corporations, and institutions like BoSS and the First Imperial Bank. They evolved from grazing reptiles tracking traveling plants across Nimban's plains, developing problem-solving abilities to unlock the petals of the puzzleflower and reach the succulent berries of the boyy'lo plant. Where the Givin used mathematics to survive, the Nimbanese use figures to willfully convolute and obscure meaning \u2014 they delight in weaving paths through complex layers of redundant numerical data to reach the intended truth, be it a hyperspace destination, corporate data, or a punch line. Through centuries of clan competitions called muhndees \u2014 mind or number puzzles presented between rival clans \u2014 they developed a robust bureaucracy. Where other worlds stockpiled weapons, Nimbanel clans challenged each other with incredible volumes of paperwork. After the Bovark clan's BoSS expulsion for threatening violence, the Krovalis clan approached the Hutt Clan of Ancients on Nal Hutta and offered complete database access in exchange for protection \u2014 the Hutts accepted, and the Nimbanese now live in loyal servitude. They own Delban Faxicorp, a droid manufacturer, and one of their clans is a BoSS family. Notable: Mosep, one of Jabba the Hutt's accountants on Tatooine."
+    ],
+    "SpecAb": [
+      "Skill Bonus: At the time of character creation only, Nimbanese characters may place only 1D of starting skill dice in bureaucracy or business, but receive +2D+1 dice for the skill."
+    ]
+  },
   "Nosaurian": {
     "Dex": [
       "2D",
