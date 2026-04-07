@@ -9169,6 +9169,93 @@ const RACES_DATA = {
       "Skill Bonus: Meris can choose to focus on one of the following skills: agriculture, first aid or medicine. They receive a bonus of +2D to the skill, and advancing that skill costs half the normal amount of skill points.\n\nStealth: Meris gain a +2D bonus when using sneak.\nKNOWLEDGE SKILLS: Weather Prediction: Time to use: one minute. This skill allows Meris to accurately predict weather on Merisee and similar worlds. This is a Moderate task on planets with climate conditions similar to Merisee. The task\u2019s difficulty increases the more the planet\u2019s climate differs from Merisee\u2019s. The prediction is effective for four hours; the difficulty increases if the Meri wants to predict over a longer period of time.\n\nAgriculture: Time to use: five minutes. Agriculture enables the user to know when and where to best plant crops, how to keep the crops alive, how to rid them of pests, and how to best harvest and store them."
     ]
   },
+  "M'shinn": {
+    "Dex": [
+      "1D",
+      "1D+1",
+      "1D+2",
+      "2D",
+      "2D+1"
+    ],
+    "Kno": [
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D",
+      "4D+1",
+      "4D+2"
+    ],
+    "Mec": [
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D"
+    ],
+    "Per": [
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D"
+    ],
+    "Str": [
+      "1D",
+      "1D+1",
+      "1D+2",
+      "2D",
+      "2D+1"
+    ],
+    "Tec": [
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D"
+    ],
+    "Mov": [
+      "8",
+      "8",
+      "9",
+      "9",
+      "10",
+      "10",
+      "11",
+      "11"
+    ],
+    "Height": [
+      "1.5",
+      "1.6",
+      "1.7",
+      "1.8",
+      "1.9",
+      "2.0",
+      "2.1",
+      "2.2"
+    ],
+    "Sex": [
+      "F",
+      "F",
+      "F",
+      "F",
+      "F"
+    ],
+    "StoryFactor": [
+      "M'shinni (singular: M'shinn) are humanoids known as 'Mossies' for the soft thick coating of plant growth covering their entire bodies. They are skilled botanists and traders famous for their knowledge of terraforming. Approximately the same size and shape as Humans, their hairless bodies are completely covered by symbiotic plant growth that may range from pale yellow-green to dark emerald with tones of blue or black depending on local star type. Only palms and soles are bare. If unhealthy, patches dry to dull brown; if kept in complete darkness for more than 10 standard days, the covering dies. Heads are large with watery bulging eyes, centimeter-wide cheek nostrils, and 5cm black sound-sensitive membranes at either side of the head. Mouths have bony grinding ridges instead of teeth. The plant covering roots in the skin, feeds on sweat and dead skin cells, and supplies nutrients in return. Scraped-away coverings regrow over bare spots within two days; destroyed roots take about three weeks to regrow. All M'shinni are female and reproduce through parthenogenesis triggered by climatic conditions \u2014 in plentiful conditions a M'shinn gives birth once every three years to a single 1cm infant carried in a belly pouch for ~100 days. As natural clones, family members look almost identical, but each generation is subtly altered. M'shinni express individuality by clipping and sculpting their plant coverings and wearing jewelry; they do not wear clothes since clothing would block sunlight from the plant. They show as wide a range of temperament as Humans but share unswerving allegiance to their family or 'Rootline.' Each Rootline traces back to a 'firstmother' from the now-extinct humanoid predecessor species who first entered into the plant symbiosis. Rootlines are several thousand strong and form the basis of M'shinn politics; each Rootline controls a particular family-business and competes with rivals for prestige through stewardship of agricultural lands. The M'shinni have terraformed an entire sector along the Celanon Spur (the 'Mossonian sector'). They are friendly rivals of the Ithorians in agricultural and biospheric technology."
+    ],
+    "SpecAb": [
+      "Natural Healing: Damage that does not remove the plant covering (blunt blows, narrow piercing wounds) heals in half the normal time. Damage that removes the covering takes 1.5 times the normal healing time; if a M'shinn loses ALL of her plant covering this penalty becomes permanent. M'shinni can be healed in bacta tanks or with standard medicines, but those treatments kill the plant covering in the treated area. The M'shinni have developed their own bacta and medpac analogs which heal M'shinn without damaging the plant covering, but these specialized treatments are useless on other species.\n\nSkill Bonus: M'shinn characters at the time of creation only receive 3D bonus skill dice (in addition to the normal number) which may only be used to improve the following skills: agriculture, business, ecology, languages, value, weather prediction, bargain, persuasion, or first aid.\n\nSpecial Skills: Agriculture (KNO), Ecology (KNO), and Weather Prediction (KNO) \u2014 the same as the Ithorian skills."
+    ]
+  },
   "Miraluka": {
     "Dex": [
       "2D",

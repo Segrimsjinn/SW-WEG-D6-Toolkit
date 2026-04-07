@@ -96,6 +96,7 @@
                   "Lannik",
                   "Lasat",
                   "Meri",
+                  "M'shinn",
                   "Miraluka",
                   "Mon Calamari",
                   "Mulgaari",

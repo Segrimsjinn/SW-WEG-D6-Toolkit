@@ -98,6 +98,7 @@ const RACE_IMAGES = {
   'Lannik': 'image083.jpg',
   'Lasat': 'image182.jpg',
   'Meri': 'image084.jpg',
+  'M\'shinn': 'image186.jpg',
   'Miraluka': 'image085.jpg',
   'Mon Calamari': 'image086.jpg',
   'Mon Calimari': 'image086.jpg',
