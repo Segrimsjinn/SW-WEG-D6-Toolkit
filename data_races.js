@@ -13839,6 +13839,115 @@ const RACES_DATA = {
       "Retractable Claws: Selonians receive a +1D bonus to climbing and brawling.\n\nTail: Used to help steer and propel a Selonian through water, adds a +1D bonus to swimming skill. Can also be used as an additional weapon as a club, doing STR+2D damage.\n\nSwimming: Swimming comes naturally to Selonians; they gain +1D+2 to dodge in underwater conditions.\n\nHive-Mind: Selonians live in underground dens like social insects. Only sterile females leave the den to interact with the outside world.\n\nAgoraphobia: Selonians are not comfortable in wide-open spaces. They suffer a -1D penalty on all actions when in large open spaces."
     ]
   },
+  "Shistavanen": {
+    "Dex": [
+      "1D",
+      "1D+1",
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D",
+      "4D+1",
+      "4D+2",
+      "5D"
+    ],
+    "Kno": [
+      "1D",
+      "1D+1",
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D"
+    ],
+    "Mec": [
+      "1D",
+      "1D+1",
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D"
+    ],
+    "Per": [
+      "1D",
+      "1D+1",
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D",
+      "4D+1",
+      "4D+2",
+      "5D"
+    ],
+    "Str": [
+      "1D",
+      "1D+1",
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D"
+    ],
+    "Tec": [
+      "1D",
+      "1D+1",
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D"
+    ],
+    "Mov": [
+      "10",
+      "10",
+      "11",
+      "11",
+      "12",
+      "12",
+      "13"
+    ],
+    "Height": [
+      "1.3",
+      "1.4",
+      "1.5",
+      "1.6",
+      "1.7",
+      "1.8",
+      "1.9"
+    ],
+    "Sex": [
+      "M",
+      "F",
+      "M",
+      "F",
+      "M",
+      "M"
+    ],
+    "StoryFactor": [
+      "The 'Shistavanen Wolfmen' are human-sized hirsute bipeds hailing from the Uvena star system. Their ears are set high on their heads and they have pronounced snouts and large canines. Excellent hunters, Shistavanens can track prey through crowded urban streets and desolate desert plains alike. They have highly developed sight, can see in near-absolute darkness, and are capable of moving very quickly with high endurance. As a species the Shistavanens are isolationists and do not encourage outsiders to involve themselves in Shistavanen affairs. They do not forbid foreigners from coming to Uvena to trade and set up businesses but are not apologetic in favoring their own kind in law and trade. A large minority of Shistavanens are more outgoing and range out into the galaxy in a wide variety of professions \u2014 many take advantage of their natural talents and become soldiers, guards, bounty hunters, and scouts. Their superior dexterity and survival skills make them attractive candidates for such jobs even in an Empire disinclined to favor aliens. Most of Shistavanen society is at a space technological level, though pockets remain at an information level. The Shistavanen economy is largely self-sufficient. Three of the worlds in the Uvena system are colonized in addition to Uvena Prime itself."
+    ],
+    "SpecAb": [
+      "Night Vision: Shistavanens have excellent night vision and can see in darkness with no penalty.\n\nKeen Tracker: Shistavanens are exceptional hunters and trackers, capable of following prey through crowded urban streets and desolate desert plains alike."
+    ]
+  },
   "Skrilling": {
     "Dex": [
       "1D",

@@ -145,6 +145,7 @@
                   "Rodian",
                   "Saurton",
                   "Selonian",
+                  "Shistavanen",
                   "Skrilling",
                   "Sludir",
                   "Sluissi",
