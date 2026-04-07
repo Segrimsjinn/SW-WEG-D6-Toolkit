@@ -104,6 +104,8 @@
                   "M'shinn",
                   "Miraluka",
                   "Mon Calamari",
+                  "Mrissi",
+                  "Mrlssti",
                   "Mulgaari",
                   "Murachaun",
                   "Mustafarian",

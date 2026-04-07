@@ -9890,6 +9890,168 @@ const RACES_DATA = {
       "Moist Environments: When in moist environments Mon Calamari receive a +1D bonus to all Dexterity, Perception and Strength attribute and skill checks. This is purely a psychological advantage.\n\nDry Environments: When in very dry environments, Mon Calamari seem depressed and withdrawn. They suffer a -1D penalty to all Dexterity, Perception and Strength attribute and skill checks. Again, this is psychological only.\n\nAquatic: Mon Calamari can breathe both air and water and can withstand extreme pressures found in ocean depths."
     ]
   },
+  "Mrissi": {
+    "Dex": [
+      "1D",
+      "1D+1",
+      "1D+2",
+      "2D",
+      "2D+1"
+    ],
+    "Kno": [
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D",
+      "4D+1",
+      "4D+2",
+      "5D",
+      "5D+1"
+    ],
+    "Mec": [
+      "0D",
+      "1D",
+      "1D+1",
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D"
+    ],
+    "Per": [
+      "1D",
+      "1D+1",
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2"
+    ],
+    "Str": [
+      "1D",
+      "1D+1",
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D"
+    ],
+    "Tec": [
+      "1D",
+      "1D+1",
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1"
+    ],
+    "Mov": [
+      "4",
+      "5",
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "Height": [
+      "0.3",
+      "0.4",
+      "0.5"
+    ],
+    "Sex": [
+      "M",
+      "F",
+      "M",
+      "F",
+      "M",
+      "M"
+    ],
+    "StoryFactor": [
+      "The Mrissi of the planet Mrisst, in the GaTir system, had been subjugated by the Empire for decades. They are small avian-descended creatures who lost the power of flight millennia ago, with a light covering of feathers and small vestigial wings protruding from their backs. They have small beaks and round piercing eyes. The Mrissi operate several respected universities catering to students with the aptitude for advanced studies who cannot afford the most famous and prestigious galactic universities. Mrissi tend to be scholars and administrators serving these universities' clientele. Their cultures are known for radical (but peaceful) political views, though they have been subdued under the watchful Imperial eye. NOTE: The Mrissi are weaker than the average species (only 7D in starting attribute dice). Many Mrissi left their planet during the Imperial subjugation and continue roaming the space-lanes \u2014 some are refugees but most are curious scholars."
+    ],
+    "SpecAb": [
+      "Teaching Ability: The vast majority of Mrissi are scholars and should have the scholar skill and a specialization. Mrissi can advance all specializations of the scholar skill at half the normal Character Point cost.\n\nReduced Attributes: Mrissi only have 7D in starting attribute dice (instead of the standard 12D)."
+    ]
+  },
+  "Mrlssti": {
+    "Dex": [
+      "1D+2",
+      "2D",
+      "2D+1"
+    ],
+    "Kno": [
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D",
+      "4D+1",
+      "4D+2"
+    ],
+    "Mec": [
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D",
+      "4D+1",
+      "4D+2",
+      "5D"
+    ],
+    "Per": [
+      "1D+1",
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D"
+    ],
+    "Str": [
+      "1D",
+      "1D+1",
+      "1D+2"
+    ],
+    "Tec": [
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D"
+    ],
+    "Mov": [
+      "5",
+      "5",
+      "6",
+      "7",
+      "7",
+      "8"
+    ],
+    "Height": [
+      "0.3",
+      "0.4",
+      "0.5"
+    ],
+    "Sex": [
+      "M",
+      "F",
+      "M",
+      "F",
+      "M",
+      "M"
+    ],
+    "StoryFactor": [
+      "The Mrlssti are native to the verdant world of Mrlsst on the very edge of Tapani space along the Shapani Bypass. They lacked space travel when first surveyed by Republic and Tapani scouts 7,000 years ago, but have long since made up for lost time \u2014 they are regarded as scholars and scientists, very good at figuring out how things work, and jump-started their renowned computer and starship-design industries by reverse-engineering other companies' products. The Mrlssti are diminutive flightless avian humanoids. Unlike most avians they are born live. They are covered in soft gray feathers, except on the head, which is bare except for a fringe of delicate feathers covering the back of the head above large orb-like eyes. Mrlssti speak Basic with little difficulty, but their high piping voices grate on some humans (others find it charming). Young Mrlssti have dusky-brown facial plumage which gradually shifts to more colorful coloring as they age \u2014 the condition and color of one's facial plumage plays an important social role in Mrlssti society. Elders are highly honored for their colorful plumage representing the wisdom gained from a long life. 'Show your colors' is a saying used to chastise adults not acting their age. Knowledge is very important to the Mrlssti: millennia ago when their first civilizations were developing, Mrlsst's continents were unstable with earthquakes and tidal waves common, so physical possessions were easily lost while knowledge in one's head was safe from calamity. Today Mrlsst boasts some of the best universities in the sector, attended by students of many species. Mrlssti humor is very dry to humans \u2014 so dry that many humans do not realize when Mrlssti are joking. NOTE: Mrlssti are weaker than average (only 8D in starting attribute dice)."
+    ],
+    "SpecAb": [
+      "Reduced Attributes: Mrlssti only have 8D in starting attribute dice (instead of the standard 12D), reflecting their diminutive size and frailty.\n\nReverse Engineering: Mrlssti are exceptional at figuring out how technology works and are widely regarded as scholars and scientists, particularly in computer and starship design."
+    ]
+  },
   "Mulgaari": {
     "Dex": [
       "1D",
