@@ -176,6 +176,7 @@ const RACE_IMAGES = {
   'Vaathkree': 'image154.jpg',
   'Vernol': 'image155.jpg',
   'Verpine': 'image156.jpg',
+  'Vodran': 'image189.jpg',
   'Vratix': 'image157.jpg',
   'Weequay': 'image158.jpg',
   'Wequay': 'image158.jpg',

@@ -16461,6 +16461,93 @@ const RACES_DATA = {
       "Body Armor: Natural chitinous plating provides +1D against physical attacks. Microscopic Sight: +1D to Search rolls when looking for small objects. Organic Telecommunication: Verpine can send and receive radio waves through their antennae, communicating with other Verpine or specially tuned comlinks up to 1km individually or across the entire Roche asteroid field when part of the hive. Technical Bonus: +2D bonus to all Technical skill rolls."
     ]
   },
+  "Vodran": {
+    "Dex": [
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D"
+    ],
+    "Kno": [
+      "1D",
+      "1D+1",
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2"
+    ],
+    "Mec": [
+      "1D",
+      "1D+1",
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D"
+    ],
+    "Per": [
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D"
+    ],
+    "Str": [
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D",
+      "3D+1",
+      "3D+2",
+      "4D",
+      "4D+1"
+    ],
+    "Tec": [
+      "1D",
+      "1D+1",
+      "1D+2",
+      "2D",
+      "2D+1",
+      "2D+2",
+      "3D"
+    ],
+    "Mov": [
+      "10",
+      "10",
+      "11",
+      "11",
+      "12",
+      "12"
+    ],
+    "Height": [
+      "1.6",
+      "1.7",
+      "1.8",
+      "1.9"
+    ],
+    "Sex": [
+      "M",
+      "F",
+      "M",
+      "F",
+      "M",
+      "M"
+    ],
+    "StoryFactor": [
+      "The Vodrans are possibly the most loyal species the Hutts have in their employ. Millennia ago the Hutts conquered the Vodrans alongside the Klatooinans and Nikto; the Vodran who made it possible, Kl'ieutu Mutela, signed his species into 'eternal' servitude after the great battle of Vontor and is greatly revered. Vodrans are humanoids approximately 1.8 meters tall with tough olive-to-brown skin and a small ridge of spiny horns framing their faces. Warm-blooded reptiles whose offspring are born in egg clutches of two or three young; they live about 80 standard years. They exhibit very little outward personality \u2014 their tough skin and limited facial muscles cannot show a wide range of emotion, so they rely on body language and vocal inflection. Peaceful by nature with a deep-rooted respect for authority figures. Individuality is not prized; individuals are expected to defer to the state, the clan, the union, or the ruling Hutt kajidic. They evolved on the jungle world of Vodran from insectivorous tree-dwelling reptiles, learning to hunt and work together to build secure tree-top settlements on a deadly world that would destroy most species. The Hutts arrived as godlike demons to a primitive Vodran culture living in thatched huts above the rivers \u2014 with language convertor lexicons, the Hutts recruited them to fight Xim the Despot at the legendary battle of Vontor, where an army of one million Vodrans, Klatooinans, and Nikto destroyed Xim's war-robot army. Since then the Vodrans have served as enforcers, guards, and crewmen for their masters. The Hutts imposed their own culture on the Vodran people, completely eradicating what came before \u2014 according to Hutt-imposed mythology, before the Hutts there were no Vodrans, and that is what their stories tell them and their art depicts. The Vodrans have given the galaxy one notable thing: the parasitic dianoga, which has spread to countless worlds while in microscopic larval stages aboard space travel. Notable rebel: Xenon Nnaksta, an infamous Vodran who rejected his people's ways to join the Rebel Alliance."
+    ],
+    "SpecAb": [
+      "Hutt Loyalty: Most Vodrans are completely loyal to the Hutt Crime Empire. Those so allied receive +2D to willpower rolls to resist betraying the Hutts.\n\nLack of Individuality: Vodrans have little self image and view themselves as a collective. They believe in the value of many over the value of one and rarely seek individual power."
+    ]
+  },
   "Vratix": {
     "Dex": [
       "1D",
