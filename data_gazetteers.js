@@ -155,12 +155,12 @@ const GAZETTEER_DATA = {
   },
 
   // ----------------------------------------------------------
-  // MINOS CLUSTER — WEG40063 Galaxy Guide 6: Tramp Freighters
+  // MINOS CLUSTER — WEG40095 Galaxy Guide 6: Tramp Freighters (2nd Ed)
   // Full matrix, 10 systems, grid M-20 (Outer Rim)
   // 5-day (120h) surcharge to reach Travnin from M-20 grid
   // ----------------------------------------------------------
   "Minos Cluster": {
-    source: "WEG40063 Galaxy Guide 6: Tramp Freighters",
+    source: "WEG40095 Galaxy Guide 6: Tramp Freighters (2nd Ed)",
     grid: "M-20",
     gateways: [
       { system: "Travnin", fromGrids: null }          // all traffic
