@@ -3032,8 +3032,8 @@ const PLANETS_DATA = [
     ofNote: "Home of Relekin Confidential — a collection agency formed by a small group of skip-tracers who decided working on the other side of the law was more profitable. 'Guarantees injuries' — this group tracks down debtors anywhere in the galaxy and makes them pay 'one way or the other.' Relekin is not averse to employing bounty hunters for more important assignments, and many wealthy crime bosses use Relekin to post illegal bounties. A Tenloss Syndicate subsidiary. Little is known about the organization's leadership."
   },
   {
-    name: "Demesei",
-    system: "Demesei",
+    name: "Demesel",
+    system: "Demesel",
     star: "",
     grid: "",
     region: "Outer Rim Territories",
@@ -3054,7 +3054,7 @@ const PLANETS_DATA = [
     majorExports: "Biochemicals, herbal pharmaceuticals",
     majorImports: "Food stores, electronics; unsanctioned imports include smuggled contraband and slaves",
     source: "WEG40075 Galaxy Guide 11: Criminal Organizations p.78",
-    summary: "Originally founded by a consortium of inner Sphere businesses, Demesei has long served as a trading center supplying the needs of various frontier worlds along the Outer Rim. With the civil war, suppliers dried up, trade routes shifted, and Demesei lost much of its original importance. A peaceful backwater world, it has sidestepped the troubles many other worlds have witnessed by trying hard not to be overly conspicuous. Despite the rising chaos from criminal gangs, Demesei remains an anomaly among criminal havens — it is one of the few places where Hutt influence is practically nonexistent.",
+    summary: "Originally founded by a consortium of inner Sphere businesses, Demesel has long served as a trading center supplying the needs of various frontier worlds along the Outer Rim. With the civil war, suppliers dried up, trade routes shifted, and Demesel lost much of its original importance. A peaceful backwater world, it has sidestepped the troubles many other worlds have witnessed by trying hard not to be overly conspicuous. Despite the rising chaos from criminal gangs, Demesel remains an anomaly among criminal havens — it is one of the few places where Hutt influence is practically nonexistent.",
     locations: "Favaran foothills (site of a limited-service spaceport built by Thalassian slavers under a deal with Glasfir'a'lik).",
     ofNote: "The Glasfir Ring, led by the Defel crimelord Glasfir'a'lik, serves as the de facto ruling coalition despite attempts by legitimate authorities to maintain control. Glasfir rules the underworld with an iron claw, having personally dispatched rival leaders to seize power. An estimated one in four public servants are on his payroll. The planetary government rules by day, maintaining the fiction that everything is normal, while Glasfir and his cronies are undisputed rulers by night. He has struck a deal with Thalassian slavers, providing them a free-market base in the Favaran foothills in exchange for smuggling capabilities. Citizens are increasingly emigrating off-world, causing economic hardship and generating new recruits for the underground. The Hutts have a 60,000-credit bounty on Glasfir's head and may eventually move to reclaim the planet."
   },
