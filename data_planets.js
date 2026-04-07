@@ -216,8 +216,8 @@ const PLANETS_DATA = [
     ofNote: "DOOMSDAY WEAPON: shaman resets 6-month countdown at Tharak Installation — if timer reaches zero, Deathmoon launches hundreds of atomic missiles, poisoning the entire world. Technology taboo: all tech above medieval is forbidden (except slugthrowers). Droids are 'demons' — attacked on sight along with companions. Force use makes Fyodoi worship user as deity (they'll kill to keep the 'deity' forever). Galidyn: 16D attribute dice, flying (35+ speed), +1D armor, STR+2D fangs, lifespan thousands of years, underground cities with advanced tech, participatory democracy, unknown to Empire. Galidyn speak pure form of Fyodoi language — corrupted Fyodoi barely understand them. Lesynn: golden-plumed songbirds, a small cult worships them and may trigger a holy war against Galidyn. Three-moon conjunction every 190 days causes 'The Gathering' festival + aurora borealis + 20hr sensor/comm interference. Asteroid belt is a navigational hazard around the entire system."
   },
   {
-    name: "Gacerlan",
-    system: "Klozar",
+    name: "Gacerian",
+    system: "Gacerian",
     star: "Klozar (orange)",
     grid: "N-15",
     region: "Expansion Region",
@@ -238,7 +238,7 @@ const PLANETS_DATA = [
     majorExports: "Musical entertainment, gemstones",
     majorImports: "Technology, foodstuffs",
     source: "WEG40100 The Planets Collection p.230",
-    summary: "Gacerlan is the homeworld of the Gacerites — 2.5m tall, hairless beings with a third lung in their neck 'gills' that allows them to sing while breathing. Music and etiquette define their culture; silence is considered equivalent to death. The only city, Harmonia (520 sq km), features crystal spires that resonate in the wind, glowing with orange light through translucent crystal. The Musical Rocks (Oueee-ha) and Singing Forest (Keee-s'ae) are cultural shrines. The Gacerites are rabidly pro-Imperial. A secret Imperial moon base (Tempay) houses 40 stormtroopers, 32 TIE pilots, and 12 TIEs + 12 TIE/rc.",
+    summary: "Gacerian is the homeworld of the Gacerites — 2.5m tall, hairless beings with a third lung in their neck 'gills' that allows them to sing while breathing. Music and etiquette define their culture; silence is considered equivalent to death. The only city, Harmonia (520 sq km), features crystal spires that resonate in the wind, glowing with orange light through translucent crystal. The Musical Rocks (Oueee-ha) and Singing Forest (Keee-s'ae) are cultural shrines. The Gacerites are rabidly pro-Imperial. A secret Imperial moon base (Tempay) houses 40 stormtroopers, 32 TIE pilots, and 12 TIEs + 12 TIE/rc.",
     locations: "Harmonia (only city, 520 sq km, crystal spires that resonate in wind, orange light through translucent crystal). Musical Rocks (Oueee-ha, Plateau of Dreams, wind-music shrine). Singing Forest (Keee-s'ae, s'ae trees 100m tall, seismic resonance, spring lake). Gem Mines (110 Gacerites + 20 stormtroopers each). Tempay Imperial Base (secret moon base, 40 stormtroopers, 32 TIE pilots, 12 TIEs + 12 TIE/rc).",
     ofNote: "Gacerites: 2.5m tall, hairless, third lung in neck 'gills' for singing while breathing. Music + etiquette = culture. Silence = death. Rabidly pro-Imperial. Sound-based weapons. Imperial Governor Ulbrek Gostech (fair but loyal). Captain Engar Ret (moon base, scheming against Gostech). Two moons always in opposition."
   },
