@@ -46279,6 +46279,48 @@ const STARSHIP_DATA = {
    "weapons": []
   },
   {
+   "rank": 4,
+   "name": "Seventy-Seven Stars",
+   "craft": "Modified Light Freighter",
+   "type": "Modified light freighter",
+   "affiliation": "The Fringe",
+   "era": "Rebellion / New Republic",
+   "source": "WEG41010 Star Wars Adventure Journal #10 p.132 (A Free-Trader's Guide to the Planets)",
+   "price_new": "",
+   "price_used": "",
+   "scale": "Starfighter",
+   "length": "",
+   "crew": "1-2 (To'iir and Liadden)",
+   "gunners": "",
+   "passengers": "",
+   "cargo": "",
+   "consumables": "",
+   "hyperdrive": "",
+   "nav_computer": "Yes",
+   "maneuverability": "2D",
+   "space": "6",
+   "atmosphere": "",
+   "hull": "3D+2",
+   "shields": "1D",
+   "of_note": "The aging modified light freighter that has carried the Twi'lek free-trader To'iir across the known galaxy for decades, now co-piloted by his young human apprentice Liadden. Equipped with a subscription to the Lantillan Spacers Brotherhood's Trader's Gamble database — a restricted feature that flags potentially lucrative (and usually dangerous, remote, generally unpleasant) markets for Brotherhood members in good standing. To'iir relies on it heavily when picking bolt-holes between hot runs. Currently in the icy edge of an unspecified system, hiding from a Moff while plotting a refit/refuel run to Gamorr.",
+   "sensors_passive": "",
+   "sensors_scan": "",
+   "sensors_search": "",
+   "sensors_focus": "",
+   "weapons": [
+     {
+       "name": "Laser Cannon",
+       "fire_arc": "Turret",
+       "crew": "1",
+       "skill": "Starship gunnery",
+       "fire_control": "2D",
+       "space_range": "",
+       "atmo_range": "",
+       "damage": "3D"
+     }
+   ]
+  },
+  {
    "rank": 5,
    "name": "Plexus Death-Hunter Courier Vessel (Modified)",
    "craft": "Plexus Droid Courier Vessel (Death-Hunter conversion)",

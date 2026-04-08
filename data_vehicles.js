@@ -4326,5 +4326,25 @@ const VEHICLES_DATA = [
   "game_notes": "Wheelbikes are a popular sport vehicle on many worlds, particularly where conditions make repulsorlift speeder bikes unusable — Sedesia, with its violent wind storms, is a prime example. A wheelbike consists of a single large wheel, two meters in diameter, with the driver and power unit located inside the wheel and gyrostabilizers keeping it upright. Civilian wheelbikes are generally two-seaters, but the Imperial scout version replaces the passenger seat with a forward-firing repeating blaster. Issued to CompForce wheelbike companies on Sedesia in place of speeder bikes (though their pilots, normally trained on repulsorlift speeder bikes, are not as skilled with wheelbikes as one might expect). Many different brands are in use on Sedesia, of which the Gallis-Tech model is typical.",
   "source": "WEG41006 Star Wars Adventure Journal #6 p.208 (The Cure)"
 }
+,{
+  "name": "Ikas-Adno Sunwolf",
+  "type": "Ikas-Adno Sunwolf Speeder Bike",
+  "category": "Speeder Bike",
+  "scale": "Speeder",
+  "length": "2.8 meters",
+  "skill": "Repulsorlift operation: speeder bike",
+  "crew": "1",
+  "passengers": "0",
+  "cargo_capacity": "",
+  "cover": "1/4",
+  "altitude_range": "Ground level-15 meters",
+  "cost": "5,500 (new), 1,150 (used)",
+  "maneuverability": "3D",
+  "move": "150; 425 kmh",
+  "body_strength": "1D+1",
+  "weapons": "Laser Cannon: Fire Arc: Front, Skill: Vehicle blasters, Fire Control: 2D, Range: 3-50/100/200, Damage: 2D+2",
+  "game_notes": "Ikas-Adno's first venture into the military speeder bike market — an improved single-seat military version of the popular civilian Starhawk. While no competition for the faster, more powerful, and far more expensive Aratech 74-Z, the Sunwolf has found a loyal following among planetary governments and mercenary groups that lack the Empire's financial resources. Aside from the military upgrade it is nearly identical in appearance to its civilian Starhawk cousin, which makes it especially popular with Rebel agents, mercenaries, and other operatives who routinely need to be mistaken for harmless civilians. Thilis-Brin (Shroud Team) flies a modified Sunwolf and credits it with countless successful escapes through the Talamp Industrial District on Pirik.",
+  "source": "WEG41010 Star Wars Adventure Journal #10 p.65 (Cracken's Rebel Operatives — Shroud Team)"
+}
 // --- END OF VEHICLES_DATA ---
 ];

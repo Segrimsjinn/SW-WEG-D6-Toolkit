@@ -5777,5 +5777,86 @@ const EQUIPMENT_DATA = [
   "game_notes": "Anti-corrosion treatment developed by Bith chemists to protect equipment positioned outside their hermetically sealed cities after the Bith biochemical civil war. Applied as a spray or a thicker gel, the coated area is shielded from extreme heat and hostile environments. Anti-Corr 113 takes decades to chemically break down or evaporate and can normally only be removed by very powerful (and expensive) chemical solvents — which sometimes physically damage softer treated items in the process. One liter in spray form covers about three square meters; gel form covers less because it is applied in thicker protective layers. Notorious side effect: the formula stains everything it touches a pasty blue residue and is designed to penetrate deeply, so it is seldom buffed out. Unprotected surfaces (notably stormtrooper armor) suffer severe discoloration on contact during application or handling. Smugglers regularly coat 'industrial repulsor coils' or other innocuous machine parts with Anti-Corr to discourage thorough hands-on inspection by Imperial boarding teams (see Lumrunners, AJ#9).",
   "source": "WEG41009 Star Wars Adventure Journal #9 p.142 (Lumrunners)"
  }
+ ,{
+  "name": "UniTech \"Patch\" Diverter",
+  "type": "UniTech Diagnostic Systems Diverter",
+  "category": "Tools",
+  "cost": "5,200",
+  "availability": "2, R (restricted to governments)",
+  "game_notes": "Interlacing system bridge. Requires a Moderate computer programming/repair roll to apply; adds +1D+2 to the user's security or relevant skill. Consists of a master base unit plus eight slave units placed at junction points between the bypassed subsystem and the outside system. Originally a legitimate Imperial tech tool used during emergency repairs to keep a damaged or breached subsystem from disrupting the master computer core — the patch emulates the signals and responses of the affected subsystem so the master treats it as healthy. In Alliance hands the patch lets a slicer enter a specific part of an Imperial system and operate relatively undetected. Crucial limitation: the patch handles routine automated security sweeps fine, but has serious trouble dealing with sentient remote inquiries from another system — once a live tech starts probing through, the patch falls behind quickly and the slicer is exposed (Cracken nearly lost his team this way during operations in the Trugan Cluster).",
+  "source": "WEG41010 Star Wars Adventure Journal #10 p.135 (Cracken's Rebel Field Guide — Slicing Aids)"
+ }
+ ,{
+  "name": "TerexComm DataSearch 9C",
+  "type": "TerexComm Deluxe DataSearch Engine 9C",
+  "category": "Tools",
+  "cost": "600",
+  "availability": "2",
+  "game_notes": "Administrative datasearch device. Requires an Easy computer programming/repair roll to connect; adds +1D+2 to computer programming/repair and +2D to security skill when used to search for information. Modifying the 9C with a simple power condenser (Moderate computer programming/repair) lets it locate lower-level encrypted files — discovered by an Alliance field agent on Dixthaar — but the additional power virtually destroys any program or scandoc the 9C searches as it tears them into electronic bits. When using a modified 9C, your escape craft must be ready and waiting; you don't have long before someone notices the damage trail unless you've also laid a UniTech Patch across the system.",
+  "source": "WEG41010 Star Wars Adventure Journal #10 p.136 (Cracken's Rebel Field Guide — Slicing Aids)"
+ }
+ ,{
+  "name": "TerexComm DataSearch 12C-A",
+  "type": "TerexComm Executive DataSearch Engine 12C-A",
+  "category": "Tools",
+  "cost": "850",
+  "availability": "2",
+  "game_notes": "Administrative datasearch device. Requires an Easy computer programming/repair roll to use; adds +2D to computer programming/repair when searching for information. Searches thousands of DSUs (data screen units) in less than three seconds without destroying the data, unlike the 9C. A general query like 'stormtrooper' yields a vast and useless results pile; a more specific query like 'stormtrooper attempts to use Yag-tessix in queries' produces immediately actionable intel. Will not function with the 9C's power condenser modification — it tends to short out if so modified.",
+  "source": "WEG41010 Star Wars Adventure Journal #10 p.137 (Cracken's Rebel Field Guide — Slicing Aids)"
+ }
+ ,{
+  "name": "AccuTronics Encryption Package",
+  "type": "AccuTronics Encryption Package Ia 41 87",
+  "category": "Tools",
+  "cost": "500",
+  "availability": "2",
+  "game_notes": "Datafile encryption device. Files encrypted with the AccuTronics Package gain +5 to the difficulty number to be found and require a Moderate computer programming/repair roll to crack the encryption code if the password is unknown. Originally a civilian product, modified and upgraded by the Alliance Cryptology division for protecting lesser-security datafiles. Adequate for the day-to-day disinformation kits the Alliance circulates, but Cracken explicitly notes he would not use it to safeguard the location of Delta Base.",
+  "source": "WEG41010 Star Wars Adventure Journal #10 p.137 (Cracken's Rebel Field Guide — Slicing Aids)"
+ }
+ ,{
+  "name": "Analysis/Encoding Computer (A/E Unit)",
+  "type": "Analysis/Encoding Document Server",
+  "category": "Tools",
+  "cost": "Not for sale (Imperial)",
+  "availability": "2, R (restricted to Imperial use)",
+  "game_notes": "Analysis/encoding computer used by Imperial Intelligence and as crewing droids on Plexus Droid Vessels (PDVs) to code and recode Sector Plexus messages. Designed to take a file, open the encryption, analyze the contents, and recode it. Connecting an A/E unit to another system requires a Moderate computer programming/repair roll, and activating it requires a second Moderate computer programming/repair roll. Once active, an A/E unit reduces the encryption difficulty on Imperial scandocs or files transferred to a connected system by one level (Difficult to Moderate, etc.). No complete A/E unit has yet been captured intact by the Alliance, so the theoretical applications — slicing Imperial encryption techniques, intercepting Sector Plexus traffic via captured PDV droids — remain untested. Cracken is publicly skeptical of using captured A/E units for live message interception, but considers them genuinely promising for offline encryption-cracking research.",
+  "source": "WEG41010 Star Wars Adventure Journal #10 p.138 (Cracken's Rebel Field Guide — Slicing Aids)"
+ }
+ ,{
+  "name": "Modified TranLang III Module (Espionage)",
+  "type": "Modified TranLang III Communication Module",
+  "category": "Tools",
+  "cost": "1,500 (market version)",
+  "availability": "2 (market version) — modified Alliance Intel version is strictly illegal",
+  "game_notes": "Standard droid translation module covertly modified to deliver coded keyword messages to Alliance contacts. Modifying a standard unit to spec requires a Difficult droid programming roll followed by a Moderate droid repair roll to install without damaging the host droid; planting the droid in the target locale afterward is its own problem. Once installed, the modified module subliminally biases the host droid (usually a protocol droid, sometimes an astromech or medical droid) toward using pre-specified keywords from a particular language at designated intervals during normal conversation — to any observer or eavesdropping translator droid, the conversation sounds entirely natural, but to the receiving Alliance agent the keyword sequence carries a coded message decoded from a key sheet supplied by Intelligence. The modification is wired directly to the portion of the droid's CPU that handles word selection (so the droid never questions its own choices), but that same direct connection makes the module relatively easy to detect — a Moderate droid programming roll, if the technician is specifically looking for secondary programming. Modified droids accordingly have shorter lifespans than most espionage units. Lieutenant Zeneta's Shroud Team is one of the units fed valuable intel through this method.",
+  "source": "WEG41010 Star Wars Adventure Journal #10 p.139 (Cracken's Rebel Field Guide — Slicing Aids)"
+ }
+ ,{
+  "name": "Subspace Tight-Beam Transmission Core",
+  "type": "MerenData 45-T InfoCore",
+  "category": "Tools",
+  "cost": "900",
+  "availability": "2, R",
+  "game_notes": "Subspace tight-beam transmission core that forms the integral relay component of an espionage droid's secondary programming. Upon receipt of a prearranged high-frequency activation signal, the host droid downloads its recorded data via a tight beam to the signal's source. Detecting an espionage droid carrying one of these requires a Very Difficult droid programming roll, and the technician must specifically state they are searching for secondary programming; once detected, removing the chips without damaging the droid requires a Moderate droid programming roll (the chips must be physically removed — the espionage programming will withstand a normal memory wipe). The tight-beam transmission evades nearly all sensor types except dedicated energy receptors (DERs) in active scan mode, which can pick the transmission up and triangulate its source. Most commonly installed in protocol droids, though astromechs and medical droids are also used. Both the Empire and the Alliance use espionage droids extensively against each other — Cracken personally headed the investigation into the droid that compromised Sinjan Outpost.",
+  "source": "WEG41010 Star Wars Adventure Journal #10 p.140 (Cracken's Rebel Field Guide — Slicing Aids)"
+ }
+ ,{
+  "name": "Intellex IV Internal Computer",
+  "type": "Industrial Automaton Intellex IV Astromech Internal Computer",
+  "category": "Tools",
+  "cost": "800",
+  "availability": "2",
+  "game_notes": "Internal computer and analysis program package found in many of the better astromech units, including Industrial Automaton R2-series and the VI-series pilot droids. Performs over 10,000 MPF operations per second, and supports sophisticated analysis programs including lifeform identification subroutines (LFIs) and many low-level scanner tasks. Primarily valued as part of an astromech for its ability to scan technical files, pinpoint potential problems, find data patterns, and debug computer code. Removed from its host droid, an independent Intellex IV becomes a slicer's tool — a character can use one as a portable slicing aid when entering restricted systems or files (gamemaster determines computer programming/repair difficulties for the target). Removing an Intellex IV from a non-cooperative astromech droid requires a Moderate droid repair roll and takes about half an hour; cooperative astromech allies will often perform the operation themselves on request. The same trick works with the Intellex V or VI but every difficulty is raised one level. Agent Shaparo's R2-Q8 supplied an Intellex IV that broke into the Dnalvec garrison's prisoner files on Sriluur during the rescue of captured Alliance personnel.",
+  "source": "WEG41010 Star Wars Adventure Journal #10 p.141 (Cracken's Rebel Field Guide — Slicing Aids)"
+ }
+ ,{
+  "name": "TaggeCo TC-40 Padlink",
+  "type": "TaggeCo TC-40 Padlink — Remote Datapad/System Interface",
+  "category": "Tools",
+  "cost": "1,000",
+  "availability": "2",
+  "game_notes": "Remote two-piece datapad/system interface unit with a 100-meter range. Originally marketed to executives who want to work from a datapad without losing their connection to the office system: the comm attachment installs on the master terminal (Easy computer programming/repair roll) and the mobile half links to the datapad through its two minor coupler ports, leaving a constant power source routed through the primary port. Alliance technicians have started using padlinks for remote slicing — once the comm unit is on a target master system, an authorized hacker can sit up to 100 m away with a datapad and download files in moments without ever entering the building. Slicing through the padlink requires an Easy computer programming/repair roll to use the device as intended, plus a +5 modifier added to the target system's normal computer programming/repair difficulty. Critical limitation: the comm unit must already be installed on the target master system, so this only works on systems where the owner (or a planted operative) has previously installed the padlink. Cracken used one personally on Arsteni to download troop reports from a constable's personal system without ever entering the building.",
+  "source": "WEG41010 Star Wars Adventure Journal #10 p.142 (Cracken's Rebel Field Guide — Slicing Aids)"
+ }
 // --- END OF EQUIPMENT_DATA ---
 ];
