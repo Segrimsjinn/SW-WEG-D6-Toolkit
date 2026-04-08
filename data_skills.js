@@ -178,7 +178,12 @@
                                     "Technician",
                                     "Tough Native",
                                     "Young Jedi",
-                                    "Young Senator"
+                                    "Young Senator",
+                                    "Swoop Gang Leader",
+                                    "Swoop Brute",
+                                    "Outlaw Swoop Tech",
+                                    "Street Thief",
+                                    "Street Weasel"
                                 ]
                    },
                    {
@@ -279,7 +284,11 @@
                                     "Smuggler",
                                     "Swoop Ganger",
                                     "Tough Native",
-                                    "Young Senator"
+                                    "Young Senator",
+                                    "Swoop Gang Leader",
+                                    "Swoop Brute",
+                                    "Outlaw Swoop Tech",
+                                    "Street Thief"
                                 ]
                    },
                    {
@@ -389,7 +398,12 @@
                                     "Technician",
                                     "Tough Native",
                                     "Young Jedi",
-                                    "Young Senator"
+                                    "Young Senator",
+                                    "Swoop Gang Leader",
+                                    "Swoop Brute",
+                                    "Outlaw Swoop Tech",
+                                    "Street Thief",
+                                    "Street Weasel"
                                 ]
                    },
                    {
@@ -436,7 +450,9 @@
                                     "Privateer Captain",
                                     "Retired Captain",
                                     "Smuggler",
-                                    "Tough Native"
+                                    "Tough Native",
+                                    "Swoop Gang Leader",
+                                    "Swoop Brute"
                                 ]
                    },
                    {
@@ -521,7 +537,10 @@
                                     "Technician",
                                     "Tough Native",
                                     "Young Jedi",
-                                    "Young Senator"
+                                    "Young Senator",
+                                    "Swoop Gang Leader",
+                                    "Swoop Brute",
+                                    "Street Thief"
                                 ]
                    },
                    {
@@ -579,7 +598,10 @@
                                     "Technician",
                                     "Tough Native",
                                     "Young Jedi",
-                                    "Young Senator"
+                                    "Young Senator",
+                                    "Swoop Gang Leader",
+                                    "Swoop Brute",
+                                    "Street Thief"
                                 ]
                    },
                    {
@@ -620,7 +642,9 @@
                                     "Jawa Trader",
                                     "Quarren Swindler",
                                     "Imperial Double Agent",
-                                    "Kid"
+                                    "Kid",
+                                    "Outlaw Swoop Tech",
+                                    "Street Thief"
                                 ]
                    },
                    {
@@ -679,7 +703,11 @@
                                     "Force Student",
                                     "Quixotic Jedi",
                                     "Swoop Ganger",
-                                    "Young Jedi"
+                                    "Young Jedi",
+                                    "Swoop Gang Leader",
+                                    "Outlaw Swoop Tech",
+                                    "Street Thief",
+                                    "Street Weasel"
                                 ]
                    },
                    {
@@ -698,7 +726,9 @@
                                  "Roustabout",
                                  "Hot-Shot Pilot",
                                  "Classy Smuggler",
-                                    "Kid"
+                                    "Kid",
+                                    "Swoop Gang Leader",
+                                    "Street Thief"
                                 ]
                    },
                    {
@@ -724,7 +754,10 @@
                                     "Local Guard",
                                     "Retired Captain",
                                     "Smuggler",
-                                    "Young Jedi"
+                                    "Young Jedi",
+                                    "Swoop Gang Leader",
+                                    "Swoop Brute",
+                                    "Outlaw Swoop Tech"
                                 ]
                    },
                    {
@@ -857,7 +890,8 @@
                                     "Local Guard",
                                     "Retired Captain",
                                     "Tough Native",
-                                    "Young Senator"
+                                    "Young Senator",
+                                    "Street Weasel"
                                 ]
                    },
                    {
@@ -903,7 +937,8 @@
                                     "Wealthy Physician",
                                     "Gambler",
                                     "Pirate",
-                                    "Privateer Captain"
+                                    "Privateer Captain",
+                                    "Outlaw Swoop Tech"
                                 ]
                    },
                    {
@@ -968,7 +1003,9 @@
                                     "Old Senator",
                                     "Retired Captain",
                                     "Tough Native",
-                                    "Young Senator"
+                                    "Young Senator",
+                                    "Street Thief",
+                                    "Street Weasel"
                                 ]
                    },
                    {
@@ -1008,7 +1045,9 @@
                                     "Local Guard",
                                     "Pirate",
                                     "Privateer Captain",
-                                    "Young Senator"
+                                    "Young Senator",
+                                    "Swoop Gang Leader",
+                                    "Swoop Brute"
                                 ]
                    },
                    {
@@ -1093,7 +1132,12 @@
                                     "Smuggler",
                                     "Technician",
                                     "Tough Native",
-                                    "Young Jedi"
+                                    "Young Jedi",
+                                    "Swoop Gang Leader",
+                                    "Swoop Brute",
+                                    "Outlaw Swoop Tech",
+                                    "Street Thief",
+                                    "Street Weasel"
                                 ]
                    },
                    {
@@ -1128,7 +1172,10 @@
                                     "ISB Protocol Officer",
                                     "Unemployed Imperial Bureaucrat",
                                     "Local Guard",
-                                    "Privateer Captain"
+                                    "Privateer Captain",
+                                    "Swoop Gang Leader",
+                                    "Street Thief",
+                                    "Street Weasel"
                                 ]
                    },
                    {
@@ -1297,7 +1344,12 @@
                                     "Retired Captain",
                                     "Smuggler",
                                     "Technician",
-                                    "Tough Native"
+                                    "Tough Native",
+                                    "Swoop Gang Leader",
+                                    "Swoop Brute",
+                                    "Outlaw Swoop Tech",
+                                    "Street Thief",
+                                    "Street Weasel"
                                 ]
                    },
                    {
@@ -1351,7 +1403,11 @@
                                     "Local Guard",
                                     "Quixotic Jedi",
                                     "Tough Native",
-                                    "Young Jedi"
+                                    "Young Jedi",
+                                    "Swoop Gang Leader",
+                                    "Swoop Brute",
+                                    "Street Thief",
+                                    "Street Weasel"
                                 ]
                    },
                    {
@@ -1424,7 +1480,10 @@
                                     "Smuggler",
                                     "Swoop Ganger",
                                     "Technician",
-                                    "Young Senator"
+                                    "Young Senator",
+                                    "Swoop Gang Leader",
+                                    "Outlaw Swoop Tech",
+                                    "Street Thief"
                                 ]
                    },
                    {
@@ -1470,7 +1529,10 @@
                                     "Force Student",
                                     "Local Guard",
                                     "Young Jedi",
-                                    "Young Senator"
+                                    "Young Senator",
+                                    "Swoop Gang Leader",
+                                    "Swoop Brute",
+                                    "Street Weasel"
                                 ]
                    },
                    {
@@ -1663,7 +1725,9 @@
                                     "Ground Assault Vehicle Commander",
                                     "Unemployed Imperial Bureaucrat",
                                     "Brash Pilot",
-                                    "Young Senator"
+                                    "Young Senator",
+                                    "Outlaw Swoop Tech",
+                                    "Street Thief"
                                 ]
                    },
                    {
@@ -1688,7 +1752,9 @@
                                     "Arrogant Imperial Noble",
                                     "Kid",
                                     "Mercenary",
-                                    "Local Guard"
+                                    "Local Guard",
+                                    "Swoop Brute",
+                                    "Street Weasel"
                                 ]
                    },
                    {
@@ -1834,7 +1900,12 @@
                                     "Technician",
                                     "Tough Native",
                                     "Young Jedi",
-                                    "Young Senator"
+                                    "Young Senator",
+                                    "Swoop Gang Leader",
+                                    "Swoop Brute",
+                                    "Outlaw Swoop Tech",
+                                    "Street Thief",
+                                    "Street Weasel"
                                 ]
                    },
                    {
@@ -1891,7 +1962,8 @@
                                     "Brash Pilot",
                                     "Gambler",
                                     "Local Guard",
-                                    "Young Senator"
+                                    "Young Senator",
+                                    "Street Thief"
                                 ]
                    },
                    {
@@ -2098,7 +2170,11 @@
                                     "Galactic Big Game Hunter",
                                     "Mon Calamari Courier",
                                     "Imperial Smuggler",
-
+                                    "Swoop Gang Leader",
+                                    "Swoop Brute",
+                                    "Outlaw Swoop Tech",
+                                    "Street Thief",
+                                    "Street Weasel"
                                 ]
                    },
                    {
@@ -2202,7 +2278,10 @@
                                     "Technician",
                                     "Tough Native",
                                     "Young Jedi",
-                                    "Young Senator"
+                                    "Young Senator",
+                                    "Swoop Gang Leader",
+                                    "Outlaw Swoop Tech",
+                                    "Street Thief"
                                 ]
                    },
                    {
@@ -2266,7 +2345,10 @@
                                     "Technician",
                                     "Tough Native",
                                     "Young Jedi",
-                                    "Young Senator"
+                                    "Young Senator",
+                                    "Swoop Gang Leader",
+                                    "Swoop Brute",
+                                    "Street Thief"
                                 ]
                    },
                    {
@@ -2340,7 +2422,10 @@
                                     "Retired Captain",
                                     "Smuggler",
                                     "Tough Native",
-                                    "Young Senator"
+                                    "Young Senator",
+                                    "Swoop Gang Leader",
+                                    "Outlaw Swoop Tech",
+                                    "Street Weasel"
                                 ]
                    },
                    {
@@ -2371,7 +2456,10 @@
                                     "Imperial Smuggler",
                                     "Unemployed Imperial Bureaucrat",
                                     "Gambler",
-                                    "Pirate"
+                                    "Pirate",
+                                    "Outlaw Swoop Tech",
+                                    "Street Thief",
+                                    "Street Weasel"
                                 ]
                    },
                    {
@@ -2415,7 +2503,8 @@
                                     "Privateer Captain",
                                     "Smuggler",
                                     "Technician",
-                                    "Tough Native"
+                                    "Tough Native",
+                                    "Swoop Gang Leader"
                                 ]
                    },
                    {
@@ -2488,7 +2577,11 @@
                                     "Retired Captain",
                                     "Smuggler",
                                     "Tough Native",
-                                    "Young Jedi"
+                                    "Young Jedi",
+                                    "Swoop Gang Leader",
+                                    "Outlaw Swoop Tech",
+                                    "Street Thief",
+                                    "Street Weasel"
                                 ]
                    },
                    {
@@ -2521,7 +2614,8 @@
                                     "Failed Jedi",
                                     "Force Student",
                                     "Privateer Captain",
-                                    "Young Jedi"
+                                    "Young Jedi",
+                                    "Street Weasel"
                                 ]
                    },
                    {
@@ -2600,7 +2694,9 @@
                                     "Gambler",
                                     "Quixotic Jedi",
                                     "Young Jedi",
-                                    "Young Senator"
+                                    "Young Senator",
+                                    "Swoop Gang Leader",
+                                    "Street Weasel"
                                 ]
                    },
                    {
@@ -2681,7 +2777,11 @@
                                     "Technician",
                                     "Tough Native",
                                     "Young Jedi",
-                                    "Young Senator"
+                                    "Young Senator",
+                                    "Swoop Gang Leader",
+                                    "Outlaw Swoop Tech",
+                                    "Street Thief",
+                                    "Street Weasel"
                                 ]
                    },
                    {
@@ -2757,7 +2857,11 @@
                                     "Quixotic Jedi",
                                     "Smuggler",
                                     "Tough Native",
-                                    "Young Jedi"
+                                    "Young Jedi",
+                                    "Swoop Gang Leader",
+                                    "Outlaw Swoop Tech",
+                                    "Street Thief",
+                                    "Street Weasel"
                                 ]
                    },
                    {
@@ -2852,7 +2956,11 @@
                                     "Smuggler",
                                     "Swoop Ganger",
                                     "Tough Native",
-                                    "Young Jedi"
+                                    "Young Jedi",
+                                    "Swoop Gang Leader",
+                                    "Swoop Brute",
+                                    "Outlaw Swoop Tech",
+                                    "Street Thief"
                                 ]
                    },
                    {
@@ -2937,7 +3045,12 @@
                                     "Technician",
                                     "Tough Native",
                                     "Young Jedi",
-                                    "Young Senator"
+                                    "Young Senator",
+                                    "Swoop Gang Leader",
+                                    "Swoop Brute",
+                                    "Outlaw Swoop Tech",
+                                    "Street Thief",
+                                    "Street Weasel"
                                 ]
                    },
                    {
@@ -2991,7 +3104,8 @@
                                     "Local Guard",
                                     "Technician",
                                     "Tough Native",
-                                    "Young Senator"
+                                    "Young Senator",
+                                    "Swoop Brute"
                                 ]
                    },
                    {
@@ -3091,7 +3205,11 @@
                                     "Technician",
                                     "Tough Native",
                                     "Young Jedi",
-                                    "Young Senator"
+                                    "Young Senator",
+                                    "Swoop Gang Leader",
+                                    "Swoop Brute",
+                                    "Street Thief",
+                                    "Street Weasel"
                                 ]
                    },
                    {
@@ -3181,7 +3299,8 @@
                                     "Bounty Hunter",
                                     "Local Guard",
                                     "Pirate",
-                                    "Quixotic Jedi"
+                                    "Quixotic Jedi",
+                                    "Outlaw Swoop Tech"
                                 ]
                    },
                    {
@@ -3215,7 +3334,9 @@
                                     "Brash Pilot",
                                     "Local Guard",
                                     "Privateer Captain",
-                                    "Young Jedi"
+                                    "Young Jedi",
+                                    "Swoop Brute",
+                                    "Outlaw Swoop Tech"
                                 ]
                    },
                    {
@@ -3326,7 +3447,10 @@
                                     "Smuggler",
                                     "Technician",
                                     "Tough Native",
-                                    "Young Senator"
+                                    "Young Senator",
+                                    "Outlaw Swoop Tech",
+                                    "Street Thief",
+                                    "Street Weasel"
                                 ]
                    },
                    {
@@ -3362,7 +3486,9 @@
                                     "Pirate",
                                     "Privateer Captain",
                                     "Retired Captain",
-                                    "Tough Native"
+                                    "Tough Native",
+                                    "Swoop Brute",
+                                    "Street Thief"
                                 ]
                    },
                    {
@@ -3418,7 +3544,9 @@
                                     "Kid",
                                     "Minor Jedi",
                                     "Old Senator",
-                                    "Technician"
+                                    "Technician",
+                                    "Outlaw Swoop Tech",
+                                    "Street Thief"
                                 ]
                    },
                    {
@@ -3467,7 +3595,8 @@
                                     "Pirate",
                                     "Technician",
                                     "Tough Native",
-                                    "Young Jedi"
+                                    "Young Jedi",
+                                    "Outlaw Swoop Tech"
                                 ]
                    },
                    {
@@ -3554,7 +3683,10 @@
                                     "Smuggler",
                                     "Tough Native",
                                     "Young Jedi",
-                                    "Young Senator"
+                                    "Young Senator",
+                                    "Swoop Gang Leader",
+                                    "Outlaw Swoop Tech",
+                                    "Street Weasel"
                                 ]
                    },
                    {
@@ -3568,7 +3700,8 @@
                                     "Jawa Trader",
                                     "Outlaw Tech",
                                     "Ground Assault Vehicle Commander",
-                                    "Arrogant Imperial Noble"
+                                    "Arrogant Imperial Noble",
+                                    "Outlaw Swoop Tech"
                                 ]
                    },
                    {
@@ -3620,7 +3753,10 @@
                                     "Swoop Ganger",
                                     "Technician",
                                     "Tough Native",
-                                    "Young Jedi"
+                                    "Young Jedi",
+                                    "Swoop Gang Leader",
+                                    "Swoop Brute",
+                                    "Outlaw Swoop Tech"
                                 ]
                    },
                    {
@@ -3682,7 +3818,10 @@
                                     "Smuggler",
                                     "Technician",
                                     "Tough Native",
-                                    "Young Jedi"
+                                    "Young Jedi",
+                                    "Swoop Gang Leader",
+                                    "Street Thief",
+                                    "Street Weasel"
                                 ]
                    },
                    {

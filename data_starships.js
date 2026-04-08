@@ -45084,6 +45084,240 @@ const STARSHIP_DATA = {
    ],
    "capsule": "Tere Metallo's Suwantek TL-1800 freighter, used for legitimate (and not-so-legitimate) runs through the Outer Rim Territories. Equipped with a concealed storage chamber accessed via a special access-panel sequence beneath the deck plates near the cargo hatch — large enough to hide a wounded passenger from a casual Imperial search. Crewed by Metallo and her co-pilot Matt Turhaya, the ship smuggled members of the Kabairan Rebel underground (including Del Hunter, his son Chaz, and the agent known as Midget) offworld after an Imperial crackdown in Eponte Spaceport. Metallo plans engine modifications now that her work is putting her up against Imperial Z-95 patrols.",
    "source": "WEG41007 Star Wars Adventure Journal #7 p.268 (Passages)"
+  },
+  {
+   "name": "Wroshyr",
+   "type": "Chenlambec's small saucer-shaped bounty hunter ship",
+   "scale": "Starfighter",
+   "length": "Small (saucer-shaped)",
+   "skill": "Starfighter piloting",
+   "crew": "1",
+   "passengers": "1",
+   "cargo_capacity": "Small",
+   "consumables": "Limited",
+   "hyperdrive": "Yes",
+   "nav_computer": "Yes",
+   "maneuverability": "2D",
+   "space": "5",
+   "atmosphere": "295; 850 kmh",
+   "hull": "3D",
+   "shields": "1D",
+   "weapons": [
+     {
+       "name": "2 Laser Cannons",
+       "fire_arc": "Front",
+       "skill": "Starship gunnery",
+       "fire_control": "1D",
+       "damage": "4D"
+     }
+   ],
+   "capsule": "Wroshyr is the small, aging saucer-shaped ship of the Wookiee bounty hunter Chenlambec — named for the home trees of Kashyyyk. Three mammoth engines on the underside give the little craft surprising speed for its class, but its shields are minimal: full shielding would have cost more than the ship was worth, more than Chenlambec brings home from a good bounty job. The Wookiee runs the ship single-handed, manning the laser cannons while a copilot handles engines and the nav computer; he took on Tinian I'att as his apprentice partner during the Imperial assault on Silver Station, where she stood ready at the engine controls while he downed at least one TIE fighter before they jumped to lightspeed.",
+   "source": "WEG41006 Star Wars Adventure Journal #6 p.44 (To Fight Another Day)"
+  },
+  {
+   "name": "Sitting Duck",
+   "type": "Una Poot's personal armed tugship",
+   "scale": "Capital",
+   "length": "Tugship",
+   "skill": "Capital ship piloting",
+   "crew": "Several",
+   "crew_skill": "Astrogation 3D, capital ship gunnery 4D+1, capital ship piloting 5D, capital ship shields 4D+2",
+   "passengers": "Refugees and cargo",
+   "cargo_capacity": "Designed to tow two dozen pressurized conductive-gas tanks; substantial holds",
+   "consumables": "Long-haul",
+   "hyperdrive": "Yes",
+   "nav_computer": "Yes",
+   "maneuverability": "1D",
+   "space": "8",
+   "atmosphere": "365; 1,050 kmh",
+   "hull": "4D",
+   "shields": "3D",
+   "weapons": [
+     {
+       "name": "2 Laser Cannons",
+       "fire_arc": "Turret",
+       "skill": "Capital ship gunnery",
+       "fire_control": "2D",
+       "damage": "5D"
+     }
+   ],
+   "capsule": "The Sitting Duck is Una Poot's personal armed tugship — the same vessel she and her first husband Drogue used to flee Ord Segra Customs decades earlier with two dozen tanks of culsion gas in tow. Una has kept the crew current and the ship combat-ready against the day Silver Station finally falls. Her shields will stand four or five direct hits from a Star Destroyer's screen of TIE fighters, easily enough to outrun pursuit and reach lightspeed. She held the Sitting Duck back as her final-evacuation craft from Silver Station and used it to escape the Imperial assault carrying refugees, the bacta-treated Daye Azur-Jamin, the Druckenwell couriers Toalar and Woyiq, and a hold full of stolen blaster carbines bound for the Rebel rendezvous in the Monor system.",
+   "source": "WEG41006 Star Wars Adventure Journal #6 p.43 (To Fight Another Day)"
+  },
+  {
+   "name": "Warhog",
+   "type": "Koensayr VGK-3 Shooting Star-class starfighter (prototype) — heavy assault starfighter",
+   "scale": "Starfighter",
+   "length": "19 meters",
+   "skill": "Starfighter piloting: VGK-3 Shooting Star",
+   "crew": "1, gunners: 1",
+   "crew_skill": "See Bryce Agoris and Myrgaanti Shi-iki",
+   "passengers": "0",
+   "cargo_capacity": "150 kilograms",
+   "consumables": "1 week",
+   "hyperdrive": "x1",
+   "hyperdrive_backup": "None",
+   "nav_computer": "Yes",
+   "maneuverability": "2D",
+   "space": "7",
+   "atmosphere": "350; 1,000 kmh",
+   "hull": "4D",
+   "shields": "2D",
+   "sensors": {
+     "passive": "20/0D",
+     "scan": "40/1D",
+     "search": "90/3D",
+     "focus": "3/4D"
+   },
+   "weapons": [
+     {
+       "name": "5 Laser Cannons (fire-linked)",
+       "fire_arc": "Front",
+       "skill": "Starship gunnery",
+       "fire_control": "3D",
+       "space_range": "1-2/10/22",
+       "atmosphere_range": "100-250/1.1/2.3 km",
+       "damage": "7D"
+     },
+     {
+       "name": "2 Proton Torpedo Launchers",
+       "fire_arc": "Front",
+       "skill": "Starship gunnery",
+       "fire_control": "2D",
+       "space_range": "1/3/7",
+       "atmosphere_range": "50-100/300/700",
+       "damage": "9D"
+     },
+     {
+       "name": "Twin Ion Cannons (fire-linked)",
+       "fire_arc": "Rear",
+       "crew": "1",
+       "skill": "Starship gunnery",
+       "fire_control": "3D",
+       "space_range": "1-3/7/36",
+       "atmosphere_range": "100-300/700/3.6 km",
+       "damage": "4D"
+     }
+   ],
+   "capsule": "The Warhog — better known as the prototype Koensayr VGK-3 Shooting Star — is a slow but extremely well-armed and durable heavy assault starfighter. Its five-winged design gives it a star-like shape from the front; the addition of one laser cannon at the end of each wing gave this potent craft its name. Two proton torpedo launchers make it a danger to capital ships, and its rear-firing twin ion cannons protect the slow ship from rear assaults. Originally captured from the Empire by the Rebellion, the prototype was stolen along with roughly two million credits of military hardware when Lieutenant Bryce Agoris and his Gorvan Horansi companion Myrgaanti Shi-iki deserted shortly before the Battle of Endor. The theft has put Koensayr behind schedule and destroyed most hopes of the New Republic obtaining a supply of these ships. The pair were last seen in the Nal Hutta system flying it under the new name Warhog.",
+   "source": "WEG41006 Star Wars Adventure Journal #6 p.96 (Wanted by Cracken)"
+  },
+  {
+   "name": "Striker",
+   "type": "Ree Shala's stolen Imperial Assault Shuttle",
+   "scale": "Capital",
+   "length": "Assault shuttle",
+   "skill": "Capital ship piloting",
+   "crew": "Several",
+   "crew_skill": "Capital ship gunnery 3D+2, capital ship piloting 5D, capital ship shields 4D",
+   "passengers": "Crew and Twi'lek crime lady's retinue",
+   "cargo_capacity": "Standard assault shuttle",
+   "consumables": "Long-haul",
+   "hyperdrive": "Yes (damaged during the Galaan engagement)",
+   "nav_computer": "Yes",
+   "maneuverability": "2D",
+   "space": "8",
+   "atmosphere": "415; 1,200 kmh",
+   "hull": "3D+2",
+   "shields": "4D+2",
+   "weapons": [
+     {
+       "name": "4 Laser Cannons",
+       "fire_arc": "Turret",
+       "skill": "Starship gunnery",
+       "fire_control": "3D",
+       "damage": "2D"
+     },
+     {
+       "name": "Tractor Beam Projector",
+       "fire_arc": "Front",
+       "skill": "Starship gunnery",
+       "fire_control": "4D",
+       "damage": "5D+2"
+     }
+   ],
+   "capsule": "The Striker is the personal assault shuttle of the Twi'lek crime lady Ree Shala, leader of a mid-sized smuggling organization in Corva Sector. She used the Striker to lead her share of the assault on the New Republic's hidden Galaan communications base — an attack arranged by the same mysterious Human who had recently bought her organization's permanent loyalty with a substantial sign-on bonus. The shuttle's hyperdrive motivator was damaged during the Galaan engagement, leaving Shala stranded in orbit and forcing her to stall the pursuing New Republic operatives with conversation while her crew effected repairs. Once underway she fled to a deserted area of deep space to plan her next move.",
+   "source": "WEG41006 Star Wars Adventure Journal #6 p.119 (Relic, Episode Five)"
+  },
+  {
+   "name": "Dark Star",
+   "type": "Mahk'khar's modified bulk freighter",
+   "scale": "Capital",
+   "length": "Bulk freighter",
+   "skill": "Space transports",
+   "crew": "Several",
+   "crew_skill": "Astrogation 3D+2, space transports 4D, capital ship gunnery 4D, capital ship shields 3D",
+   "passengers": "Mahk'khar's retinue and cargo",
+   "cargo_capacity": "Substantial (modified bulk holds)",
+   "consumables": "Long-haul",
+   "hyperdrive": "Yes",
+   "nav_computer": "Yes",
+   "maneuverability": "1D",
+   "space": "2",
+   "atmosphere": "225; 650 kmh",
+   "hull": "3D",
+   "shields": "1D",
+   "weapons": [
+     {
+       "name": "2 Laser Cannons",
+       "fire_arc": "Turret",
+       "skill": "Starship gunnery",
+       "fire_control": "1D",
+       "damage": "4D"
+     }
+   ],
+   "capsule": "The Dark Star is the personal modified bulk freighter of Mahk'khar, the Gotal crimelord of Corva Sector. Slow and lightly armed, it functioned as the centerpiece of his attack on the New Republic communications base hidden in the gas giant Galaan, alongside Ree Shala's Striker and two hired Skipray blastboats. After the assault stalled, Mahk'khar fled around to the far side of Galaan in the Dark Star — carrying the Kashi Mer relic — and jumped to lightspeed for a contact rendezvous in the Jandoon system, where he intended to sell the artifact to the dark-side adept Durrei in exchange for Professor Oron's kidnapped daughter Meela and 10,000 credits.",
+   "source": "WEG41006 Star Wars Adventure Journal #6 p.127 (Relic, Episode Six)"
+  },
+  {
+   "name": "Jedi Dreamer",
+   "type": "Custom-built deep space scouting craft",
+   "scale": "Starfighter",
+   "length": "51.8 meters",
+   "skill": "Space transports",
+   "crew": "2",
+   "crew_skill": "See Korren Starchaser and Mowa Gundeeb",
+   "passengers": "4",
+   "cargo_capacity": "10 metric tons",
+   "consumables": "6 months",
+   "cost": "Not available for sale",
+   "hyperdrive": "x1",
+   "hyperdrive_backup": "x12",
+   "nav_computer": "Yes",
+   "maneuverability": "1D",
+   "space": "7",
+   "atmosphere": "350; 1,000 kmh",
+   "hull": "5D+2",
+   "shields": "1D+1",
+   "sensors": {
+     "passive": "30/0D",
+     "scan": "75/1D",
+     "search": "110/2D",
+     "focus": "6/4D"
+   },
+   "weapons": [
+     {
+       "name": "Twin Laser Cannons (fire-linked)",
+       "fire_arc": "Front",
+       "skill": "Starship gunnery",
+       "fire_control": "1D",
+       "space_range": "1-3/11/20",
+       "atmosphere_range": "100-300/1.1/2 km",
+       "damage": "4D"
+     },
+     {
+       "name": "Tractor Beam Projector",
+       "fire_arc": "Turret",
+       "crew": "1",
+       "skill": "Starship gunnery",
+       "fire_control": "3D",
+       "space_range": "1-4/14/23",
+       "atmosphere_range": "100-400/1.4/2.3 km",
+       "damage": "5D"
+     }
+   ],
+   "capsule": "The Jedi Dreamer is Captain Korren Starchaser's custom-built scout ship, and like most custom ships it suffers occasionally from fits and spurts of eccentric programming. Streamlined for atmospheric handling, outfitted with one of the better sensor packages this side of Coruscant, and built with extremely sturdy alloys for rough landings and rougher terrain, the Jedi Dreamer doesn't look like much — but as an anonymous smuggler once remarked, 'she's got it where it counts.' The ship is still technically under construction, as Korren's young tech Senni Otek constantly modifies and refits her for better performance. When she's running correctly, the Jedi Dreamer is one of the finest scout ships ever to venture into unknown territory, and Korren is exceedingly proud of it. The crew also includes Sullustan first mate Mowa Gundeeb and the antiquated protocol droid CKO-171. When asked why he named his ship the Jedi Dreamer, Korren — who does not believe in the Force — simply shrugs and says it was 'for a friend.'",
+   "source": "WEG41006 Star Wars Adventure Journal #6 p.245 (Scouts' Dispatch)"
   }
  ]
 // --- END OF STARSHIP_DATA ---

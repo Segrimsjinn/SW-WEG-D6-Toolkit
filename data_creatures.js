@@ -7933,6 +7933,66 @@ const CREATURES_DATA = [
    "orneriness": "",
    "special": "Skills: Hide 4D, search 3D, sneak 3D+1, brawling 3D+2, climbing/jumping 4D+2, stamina 5D, swimming 6D. Bite does STR+2 damage. Spur does STR+1D damage. Sonar: Guda fish receive +1D to detect objects below water or walking on the surface by homing in on sound and vibration. Escape: When attempting to escape fishing hooks, a guda fish gains +1D to brawling. | Three meters long, thin, bony, and muscular. Their cartilage is favored by native fishermen for hooks. Completely blind by millennia of evolution in watery darkness, the guda fish possesses an innate sonar that doubles as a motion detector — it can feel minute tremors in the water, such as when an animal walks over the ice. Once motion is detected, schools of 15-20 guda fish use their powerful nose spurs to hack through the ice, reducing a 3-8 meter section to slush in moments. Any animal unfortunate enough to slip through into the water will never see daylight again. The guda fish's spur is a prized trophy among fishermen and a sign of fortune and good luck to Neftali's natives. Believed to be Neftali's largest aquatic animal — accounts for more deaths per year than the q'lk and d'oemir bears combined. Hatched from eggs laid in the undersurface of the ice; the eggs and supple young fish command exorbitant prices, believed to have medicinal value. The fish was a staple for early settlers and is considered a delicacy by many Neftali residents.",
    "source": "WEG40154 Black Sands of Socorro p.66"
+  },
+  {
+   "name": "Greel Screamer",
+   "type": "Carnivorous avian",
+   "planet": "Pii 4",
+   "habitat": "Greel forests (nesting in greel trees)",
+   "dex": "4D",
+   "per": "2D",
+   "str": "3D",
+   "move": "14 (flying)",
+   "size": "0.75 meters long, 1.5 meter wingspan",
+   "scale": "Creature",
+   "orneriness": "",
+   "special": "Bite: STR damage. | The greel screamers reside in the greel trees harvested by the Greel Wood Logging Corporation loggers on Pii 4. These avians have reptilian bodies, toothy beaks, and flexible wings that easily fold when nesting. They often nest in greel trees in groups of four to eight. Though logging crews take measures to flush the nomadic flying creatures from a tree before cutting, on more than one occasion the screamers have been known to attack in the middle of a cut. They are extremely hostile toward those who disturb them — their name comes from the screaming cries they make when their territory is threatened.",
+   "source": "WEG41006 Star Wars Adventure Journal #6 p.58 (The Greel Wood Haven)"
+  },
+  {
+   "name": "Timber Render",
+   "type": "Omnivorous forest-dwelling mammal",
+   "planet": "Pii 4",
+   "habitat": "Lower greel forests",
+   "dex": "2D",
+   "per": "2D",
+   "str": "8D (brawling 10D+2)",
+   "move": "9",
+   "size": "3-4.5 meters long, 2 meters at the shoulder",
+   "scale": "Creature",
+   "orneriness": "",
+   "special": "Claws: STR+2D damage. Paw Crush: STR damage. | Huge four-limbed timber renders inhabit the lower forests of Pii 4 and their territories are easily avoided — they leave their trademark slashed greel trunks for all to see. Hulking behemoths covered in tawny, ragged fur, with long snouts filled with various teeth for gathering and eating a variety of foods found in the greel forests. Their preferred attack is with sharp claws and a crushing hold from their forelimbs. Sightings are not unheard of, but on only one recorded occasion has a timber render attacked a Greel Wood Logging Corporation crew — the result was a dead Esoomian, four dead Reigat, two dead Whiphids, and a seriously-injured Wookiee. Company workers take active measures to avoid contact with timber renders.",
+   "source": "WEG41006 Star Wars Adventure Journal #6 p.59 (The Greel Wood Haven)"
+  },
+  {
+   "name": "Strider",
+   "type": "Reptilian riding animal",
+   "planet": "Sedesia",
+   "habitat": "Steppe and tundra",
+   "dex": "2D",
+   "per": "2D",
+   "str": "5D (brawling 6D, stamina 7D)",
+   "move": "20",
+   "size": "1.5-2.5 meters tall at the shoulder, 6-8 meters long",
+   "scale": "Creature",
+   "orneriness": "3D (females), 5D (males)",
+   "special": "Tail: STR damage. Tusks: STR+1D damage. | Striders are large six-legged reptilian creatures native to Sedesia. Fast runners with excellent stamina, they have been the riding animal of choice on the planet for generations — particularly in outlying areas where roads are bad and the planet's violent storms make repulsorcraft dangerous. Striders are very cantankerous and hard to train, however. Females are merely willful (Orneriness 3D), but male striders are downright vicious (Orneriness 5D). When angered they attack with their long whiplike tails and sharp tusks.",
+   "source": "WEG41006 Star Wars Adventure Journal #6 p.207 (The Cure)"
+  },
+  {
+   "name": "Breedtash",
+   "type": "Herd herbivore (livestock)",
+   "planet": "Sedesia",
+   "habitat": "Steppe and tundra (domesticated, ranched in vast herds)",
+   "dex": "2D",
+   "per": "1D",
+   "str": "5D (brawling 6D)",
+   "move": "18",
+   "size": "Large herd animal",
+   "scale": "Creature",
+   "orneriness": "",
+   "special": "Barbed Tail: STR+1D damage. Trample: STR damage. | Breedtash are the primary livestock of Sedesia, ranched in vast herds across the planet's steppes. They are the foundation of the Sedesian economy — breedtash meat is exported off-world and (before the FNV-23 plague disrupted shipping) made its way into Rebel mess halls in considerable tonnage. Each fall, ranchers drive their herds into Besia Osurne for sale at the city's stockyards and processing plant. When agitated by gunfire or predators, breedtash can stampede in panicked thousands — riding through a stampede is a Very Difficult task even on a strider, and trying to drive a wheelbike through a herd in motion is borderline suicidal.",
+   "source": "WEG41006 Star Wars Adventure Journal #6 p.209 (The Cure)"
   }
 // --- END OF CREATURES_DATA ---
 ];

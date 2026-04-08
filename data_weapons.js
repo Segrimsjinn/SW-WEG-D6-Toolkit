@@ -5384,6 +5384,18 @@ const WEAPONS_DATA = [
   "range": "1-2/5/8",
   "game_notes": "Skill: Demolitions. Scale: Character. Blast Radius: 0-2/4/6/8 meters. The fist-sized explosive is bottom-heavy. Fishermen drill a hole into the ice approximately half a meter deep, then drop the ice spike bottom-first into the shaft. While the timer counts down, the fisherman rushes to get beyond the eight-meter blast radius. Made popular by the fishermen of Neftali for cracking through thick ice to reach guda fish and other aquatic prey.",
   "source": "WEG40154 Black Sands of Socorro p.66"
+ },
+ {
+  "category": "Firearms",
+  "name": "Talex-Delcor SWE/2 Riot Suppression Gun ('Popper')",
+  "type": "Sonic stun effect rifle",
+  "model": "Talex-Delcor SWE/2 Riot Suppression Gun",
+  "cost": "800",
+  "availability": "2, R",
+  "damage": "6D/5D/4D (stun)",
+  "range": "2-3/5/10",
+  "game_notes": "Skill: Firearms. Scale: Character. Ammo: 2. Fire Rate: 2. Dual-barrel breach-loading rifle used primarily by law enforcement agencies for crowd control. Only one shell may be loaded per barrel, but both barrels may be fired simultaneously; empty shells are ejected manually. When fired, the chemical shell explodes inside the barrel and emits an expanding wall of over-pressurized air and chemical reactants capable of knocking down doors, people, and minor barricades. Only proven lethal at point-blank range, but minor physical injuries can result from being knocked down. Ammo costs 25 credits/shell. The blast affects most targets in the gun's line of sight with stun damage decreasing over range. The chemical compound is unstable and must be loaded manually every two shots — a Moderate demolitions roll is required to safely reload (failure causes the rounds to detonate, inflicting 6D lethal damage to the loader). Reload normally takes four combat turns; this can be cut in half by raising the demolitions check to Difficult. Both barrels can be fired at once, but a 1 on the wild die means the gun explodes and inflicts the damage of both barrels on the shooter. Roy Harlison of the Rabid Mynocks carries one named 'Old Besi.'",
+  "source": "WEG41006 Star Wars Adventure Journal #6 p.183 (Swoop Gangs)"
  }
 // --- END OF WEAPONS_DATA ---
 ];

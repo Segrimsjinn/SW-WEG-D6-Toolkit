@@ -312,7 +312,12 @@
                  "Classy Smuggler",
                  "Privateer Captain",
                  "Alliance Observer",
-                 "Boarder"
+                 "Boarder",
+                 "Swoop Gang Leader",
+                 "Swoop Brute",
+                 "Outlaw Swoop Tech",
+                 "Street Thief",
+                 "Street Weasel"
              ],
     "training":  [
                      "Novice",
