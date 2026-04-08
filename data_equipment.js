@@ -5759,5 +5759,23 @@ const EQUIPMENT_DATA = [
   "game_notes": "Height: 1m. Move: 5. DEX 1D, KNO 1D, MEC 3D (astrogation 5D, starfighter piloting: E-wing 5D), PER 2D (search 4D), STR 1D, TEC 2D (computer programming/repair 6D, starfighter repair: E-wing 7D). Note: astromechs in co-pilot capacity may attempt starship repairs in flight. Three wheeled legs, retractable heavy grasper arm (lifting 2D), retractable fine worker arm, extendable 0.3m video sensor (360° rotation), small electric welder (1D-5D, 0.3m range), small circular saw (4D, 0.3m range), video display screen, holographic projector/recorder, acoustic signaler, fire extinguisher, internal cargo area (20cm × 8cm). The first R-series astromech designed for a specific starfighter — the New Republic E-wing built by FreiTek Incorporated. The traditional Intellex computer was replaced with a dedicated FreiTek system, achieving a higher counterpart interactivity ratio than the old R2/X-wing configuration. Holds 15 hyperspace jump coordinates in RAM. Civilians cannot legally purchase R7s, and the unit is somewhat limited in its abilities interfacing with craft other than the FreiTek E-wing. Both the E-wing and R7 were rushed into service to combat the resurrected Emperor's World Devastators over Calamari before full testing could be completed.",
   "source": "WEG41007 Star Wars Adventure Journal #7 p.142 (History of R-Series Astromech Droids)"
  }
+ ,{
+  "name": "Imperial Customs Bureau Seals",
+  "type": "Coded shipping container seals",
+  "category": "Tools",
+  "cost": "Not available for sale",
+  "availability": "X (Imperial use only)",
+  "game_notes": "Small plastic strips and stickers used to seal the latches, locks, and openings of shipping containers. Embedded with tiny microchips and thin reservoirs of dissolving compounds; individual seals are identified with standard code-scanner units. The seals are coated with a bonding agent that activates when the protective wrapper is removed and dries in approximately 30 seconds, hardening the seal in place. After hardening, any code tampering, electronic disruption, rough handling, or breakage triggers the seal's small reservoirs of dissolving compounds, destroying it and rendering it useless. Containers bearing intact Imperial seals matched against Imperial inspection reports written to Write-Once-Read-Many (WORM) chips are allowed to bypass normal customs inspections — the linchpin of the lumrunner's classic 'pre-sealed cargo' shell game (rotating Imperial seals onto previously inspected legitimate cargoes while contraband flows through under the same paperwork). Virtually impossible to counterfeit; success should be beyond the scope of most characters.",
+  "source": "WEG41009 Star Wars Adventure Journal #9 p.135 (Lumrunners)"
+ }
+ ,{
+  "name": "ColuChem Anti-Corr 113",
+  "type": "Anti-corrosion spray/gel",
+  "category": "Tools",
+  "cost": "75 per liter",
+  "availability": "2",
+  "game_notes": "Anti-corrosion treatment developed by Bith chemists to protect equipment positioned outside their hermetically sealed cities after the Bith biochemical civil war. Applied as a spray or a thicker gel, the coated area is shielded from extreme heat and hostile environments. Anti-Corr 113 takes decades to chemically break down or evaporate and can normally only be removed by very powerful (and expensive) chemical solvents — which sometimes physically damage softer treated items in the process. One liter in spray form covers about three square meters; gel form covers less because it is applied in thicker protective layers. Notorious side effect: the formula stains everything it touches a pasty blue residue and is designed to penetrate deeply, so it is seldom buffed out. Unprotected surfaces (notably stormtrooper armor) suffer severe discoloration on contact during application or handling. Smugglers regularly coat 'industrial repulsor coils' or other innocuous machine parts with Anti-Corr to discourage thorough hands-on inspection by Imperial boarding teams (see Lumrunners, AJ#9).",
+  "source": "WEG41009 Star Wars Adventure Journal #9 p.142 (Lumrunners)"
+ }
 // --- END OF EQUIPMENT_DATA ---
 ];
