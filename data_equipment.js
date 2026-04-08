@@ -5858,5 +5858,68 @@ const EQUIPMENT_DATA = [
   "game_notes": "Remote two-piece datapad/system interface unit with a 100-meter range. Originally marketed to executives who want to work from a datapad without losing their connection to the office system: the comm attachment installs on the master terminal (Easy computer programming/repair roll) and the mobile half links to the datapad through its two minor coupler ports, leaving a constant power source routed through the primary port. Alliance technicians have started using padlinks for remote slicing — once the comm unit is on a target master system, an authorized hacker can sit up to 100 m away with a datapad and download files in moments without ever entering the building. Slicing through the padlink requires an Easy computer programming/repair roll to use the device as intended, plus a +5 modifier added to the target system's normal computer programming/repair difficulty. Critical limitation: the comm unit must already be installed on the target master system, so this only works on systems where the owner (or a planted operative) has previously installed the padlink. Cracken used one personally on Arsteni to download troop reports from a constable's personal system without ever entering the building.",
   "source": "WEG41010 Star Wars Adventure Journal #10 p.142 (Cracken's Rebel Field Guide — Slicing Aids)"
  }
+ ,{
+  "name": "TelBrinTel Science Research Droid",
+  "type": "TelBrinTel Science Research Droid",
+  "category": "Droids",
+  "cost": "12,500",
+  "availability": "3",
+  "game_notes": "Height: 1.9 m. Move: 8. DEX 2D, KNO 4D (scholar: chemistry 6D, scholar: physics 6D, scholar: science 7D), MEC 1D, PER 2D, STR 1D, TEC 2D. Equipped with: enhanced protocol chip; molecular microscopic eyepiece; olfactory sensors (+1D Knowledge to identify any odor); two fine control manipulating arms (+1D on any Dexterity roll requiring precise movement); suspension system (+2D on any Dexterity roll requiring smooth movement); endosystem (six dockable ports on the upper-torso vertebrae for additional arms, injection needles, work surfaces, and small tools). The Empire commissioned TelBrinTel's research droid for chemical compound work tied to armor and biological weapons projects; the first large shipment reached Imperial research centers immediately following the Battle of Hoth, and rumors indicate a substantial portion of that shipment is in Rebel hands.",
+  "source": "WEG41010 Star Wars Adventure Journal #10 p.143 (Toria Tell's Droid Journal)"
+ }
+ ,{
+  "name": "Lovolan Supreme-class Servant Droid",
+  "type": "Lovolan Supreme-class Servant Droid",
+  "category": "Droids",
+  "cost": "3,500",
+  "availability": "2",
+  "game_notes": "Height: 2 m. Move: 12. DEX 3D, KNO 4D (cultures 5D, languages 5D), MEC 1D (communications 4D), PER 2D, STR 1D, TEC 1D. Equipped with: Lovolan network communications package (constant link to galactic news services and financial databases); repulsorlift propulsion system (20-meter flight ceiling); two secondary serving arms stored in hidden compartments. Designed to serve food and drinks in the elegant lounges and bars of Coruscant, Cloud City, and other high-class venues, with the etiquette and small-talk programming to match aristocratic clientele. Lovolan rushed production to meet demand and the droids constantly fall apart, creating embarrassing scenes for owners. Some unscrupulous customers exploit the droids' communication and data access systems to launder credits from corporate databases, place remote bets, and listen in on private comm conversations — a problem that has drawn Imperial Intelligence attention.",
+  "source": "WEG41010 Star Wars Adventure Journal #10 p.145 (Toria Tell's Droid Journal)"
+ }
+ ,{
+  "name": "Scavenger Series Labor and Recycling Droid",
+  "type": "Scavenger Series Labor and Recycling Droid",
+  "category": "Droids",
+  "cost": "10,500",
+  "availability": "3, R",
+  "game_notes": "Height: 2.9 m. Move: 6. DEX 3D, KNO 1D, MEC 1D, PER 2D (search 3D), STR 4D (lifting 7D), TEC 1D. Equipped with: crawler system; repulsorlift propulsion system (Move drops to 3 in a gravity environment, 25 m flight ceiling); two heavy-duty arms (+1D on lifting rolls); basic lighting package; beamcutter breakdown chute; storage area (3 cubic meters); six tractor beam projectors (Strength 1D total). Joint underworld project between several pirate, scavenger, and outlaw tech groups to recycle the enormous amounts of debris left by the Galactic Civil War — collected materials are compacted, indexed, and sold back into the rawmat shortage at high markup. Two huge arms feed the breakdown chute while six head-mounted tractor beam projectors net the smallest fragments; the droid plants marker transponders on debris too large for it to handle and signals heavier equipment.",
+  "source": "WEG41010 Star Wars Adventure Journal #10 p.149 (Toria Tell's Droid Journal)"
+ }
+ ,{
+  "name": "Ulban Arms Class I Defense Droid",
+  "type": "Ulban Arms Class I Defense Droid",
+  "category": "Droids",
+  "cost": "20,000",
+  "availability": "3, X",
+  "game_notes": "Height: 3.2 m (six meters long, four-legged design). Move: 17. DEX 2D (blaster 5D, blaster artillery 4D+2), KNO 1D, MEC 1D, PER 2D (search 4D), STR 5D, TEC 1D. Equipped with: 4 heavy-duty legs; 1 medium anti-vehicle laser cannon (speeder, blaster artillery, 10–500/1.5/2.5 km, damage 5D, rotates 30° down / 105° up, top section traverses left-right); 1 medium repeating blaster (character, blaster, 3-75/200/500, damage 7D, mounted on the belly pylon); lighting package. Originally conceived by Imperial Army Captain Kist as an unmanned defense supplement for ground troops; rejected by Imperial engineers and (according to Imperial accusations) stolen for the Corporate Sector Authority. Rumor says Kist sold the plans to the CSA himself. Built for the maneuverability of an AT-ST with reduced leg vulnerability. The processor section uses redundant layers of components and an information matrix center (IMAC) that relays sensor and tactical data back to a mobile command base or fixed bunker. Saboteurs have discovered the IMAC processor is vulnerable to foreign manipulation and have reprogrammed several droids to serve their own ends.",
+  "source": "WEG41010 Star Wars Adventure Journal #10 p.151 (Toria Tell's Droid Journal)"
+ }
+ ,{
+  "name": "Publictechnic Model 850.AA Public Service Headquarters and Maintenance Droid",
+  "type": "Publictechnic Model 850.AA Public Service Headquarters and Maintenance Droid",
+  "category": "Droids",
+  "cost": "75,000",
+  "availability": "3",
+  "game_notes": "Height: 13 m (nearly 13 m wide). Move: 30. DEX 1D, KNO 2D, MEC 1D, PER 1D (command 4D), STR 7D, TEC 1D. Equipped with: repulsorlift system (20 m flight ceiling); Publictechnic power cell system (reserve fuel cells store a small portion of energy with every hour of operation, enough to recharge all onboard equipment); 14 beamcleaners; 3 coarse cleaning brushes; sensorlink network system (monitors roads, lighting, waste receptacles, and commbooths); equipment bay (25 sq m of storage; lower level houses ~30 droids of various sizes; second level holds two ~10 m land vehicles; top level is a landing platform for two ~10 m airspeeders); various repair droids. Massive urban-maintenance base droid used in the Corporate Sector and Empire — assigns priorities to maintenance tasks and dispatches the right droid or human team to each job. Typical droid complement includes 5 Accutronics B-1 Worker Droids, 5 EG-6 Veril Line Systems power droids, 10 Industrial Automaton MN2D General Maintenance Droids, and 10 Cybot Galactica WED-15 Treadwell droids. Publictechnic offers fire-fighting and construction package variants on the same chassis.",
+  "source": "WEG41010 Star Wars Adventure Journal #10 p.152 (Toria Tell's Droid Journal)"
+ }
+ ,{
+  "name": "Xebonica (Imperial Security Neurotoxin)",
+  "type": "Imperial Intelligence Class A Code Red Security Substance",
+  "category": "Medical",
+  "cost": "Restricted (Imperial Intelligence issue only)",
+  "availability": "4, X",
+  "game_notes": "Slow-acting time-released neurotoxin issued by Imperial Intelligence to garrison commanders and field operatives, mandatory for all Class A Code Red individuals (research scientists, weapons manufacturers, and others carrying top-priority information) during transfer from native worlds to secure areas. Includes a bio-masking agent to prevent easy detection. Antidote: Trypanid 20 mcg at 10-hour intervals for standard humans, as directed for other lifeforms — without the antidote the active ingredient becomes lethal far more rapidly. Symptoms in human and similar life-forms follow the standard pattern for invasive neurotoxin poisoning. Imperial Intelligence advises commanders to provide cover stories that give the subject sufficient cause to seek regular medical checks at the required intervals. Custom variants exist — Major Pedrin used a sub-variant on Ketrian Altronel that the standard Trypanid antidote could not counter.",
+  "source": "WEG41010 Star Wars Adventure Journal #10 p.208 (Desperate Measures — Chemical Security Protocols)"
+ }
+ ,{
+  "name": "Mangoriza (Imperial Security Neurotoxin)",
+  "type": "Imperial Intelligence Class A Code Red Security Substance",
+  "category": "Medical",
+  "cost": "Restricted (Imperial Intelligence issue only)",
+  "availability": "4, X",
+  "game_notes": "Slow-acting time-released neurotoxin issued by Imperial Intelligence as an alternate to Xebonica for use on Class A Code Red individuals. Includes a bio-masking agent to prevent easy detection. Antidote: Alaswal-XT 40 mcg at 10-hour intervals for standard humans, as directed for other lifeforms — without the antidote the active ingredient becomes lethal far more rapidly. Symptoms follow the standard invasive neurotoxin pattern. Intelligence Command continually rotates the chemicals on issue to defeat terrorist counter-intelligence; supplies must be regularly upgraded.",
+  "source": "WEG41010 Star Wars Adventure Journal #10 p.208 (Desperate Measures — Chemical Security Protocols)"
+ }
 // --- END OF EQUIPMENT_DATA ---
 ];

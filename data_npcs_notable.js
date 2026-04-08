@@ -43915,8 +43915,8 @@ const NOTABLE_NPCS = [
     characterPoints: 8,
     move: "10",
     equipment: "Comlink, heavy blaster pistol (5D), knife (STR+1D), pilot's flight suit",
-    capsule: "Lean and agile, Makintay is a 28-year-old extensively educated man born into the royal family on Hargeeva — Lord Stevan Makintay, elder son and heir, raised in a palace and trained from age 8 with his father's Palace Guard. He prefers an egalitarian manner and is often teased about his background, particularly his expertise with the sword (a distinctive duelling scar runs the length of his right cheekbone — the legacy of trying to prevent his lover Ketrian Altronel from carving up a rival in jealousy). When the Empire annexed Hargeeva and made his father Imperial governor, Mak left to attend the Imperial Academy and grew to love starfighter piloting. He later returned to his father's court but opposed the Empire's tyrannical oppression of his native people. When Mak announced his intention to marry the lowborn metallurgist Ketrian Altronel instead of the high-born noblewoman his father had chosen, he was disinherited — and his enraged father had him kidnapped and sent to a penal colony on Garen IV to remove him from both the political and social scene. He spent a year languishing there before escaping with several Rebels during a daring raid. Indebted to the Alliance, he secretly returned to Hargeeva to start a small Rebel cell among his oppressed people. The movement quickly grew into an unplanned revolt that was ruthlessly put down, winning him a death mark on his homeworld. He joined a larger Rebel force as an X-wing pilot. He has a basically gentle nature and genial temperament, though he is roused to anger by injustice and cruelty. His stern on-duty demeanor with his pilots hides great protectiveness and loyalty. Currently squadron leader of Green Squadron at Eyrie Base on Karatha, he is constantly worried that material shortages within the Rebellion will destroy any chance of defeating the Empire — a worry that drove him to personally recruit Ketrian Altronel for the Alliance, reuniting them after five years of bitter separation.",
-    source: "WEG41008 Star Wars Adventure Journal #8 p.258"
+    capsule: "Lean and agile, Makintay is a 28-year-old extensively educated man born into the royal family on Hargeeva — Lord Stevan Makintay, elder son and heir, raised in a palace and trained from age 8 with his father's Palace Guard. He prefers an egalitarian manner and is often teased about his background, particularly his expertise with the sword (a distinctive duelling scar runs the length of his right cheekbone — the legacy of trying to prevent his lover Ketrian Altronel from carving up a rival in jealousy). When the Empire annexed Hargeeva and made his father Imperial governor, Mak left to attend the Imperial Academy and grew to love starfighter piloting. He later returned to his father's court but opposed the Empire's tyrannical oppression of his native people. When Mak announced his intention to marry the lowborn metallurgist Ketrian Altronel instead of the high-born noblewoman his father had chosen, he was disinherited — and his enraged father had him kidnapped and sent to a penal colony on Garen IV to remove him from both the political and social scene. He spent a year languishing there before escaping with several Rebels during a daring raid. Indebted to the Alliance, he secretly returned to Hargeeva to start a small Rebel cell among his oppressed people. The movement quickly grew into an unplanned revolt that was ruthlessly put down, winning him a death mark on his homeworld. He joined a larger Rebel force as an X-wing pilot. He has a basically gentle nature and genial temperament, though he is roused to anger by injustice and cruelty. His stern on-duty demeanor with his pilots hides great protectiveness and loyalty. Currently squadron leader of Green Squadron at Eyrie Base on Karatha, he is constantly worried that material shortages within the Rebellion will destroy any chance of defeating the Empire — a worry that drove him to personally recruit Ketrian Altronel for the Alliance, reuniting them after five years of bitter separation. WEG41010 (Desperate Measures, p.190): When Pedrin's slow-acting poison turned out to be a custom variant Doctor Tarrek's standard antidotes could not break, Mak knocked out Eyrie's cowardly intelligence officer Commander Biros Baran (who had refused to authorize the rescue), commandeered a Sullustan-restored captured freighter from chief tech Merinda Niemeh, infiltrated Arginall City in stinking oversized tech's coveralls, and ambushed Pedrin in his lover Thera Capens's apartment. After Thera tipped them off to a tracking transponder implanted in Pedrin's arm, Merinda removed it and dumped it into deep space. Back at Eyrie, Mak discovered the actual poisoner was assistant medic Astina Griek — taking her vengeance on Ketrian for the deaths of her own husband and son in Imperial reprisals. Pedrin scalpel-stabbed Mak in the kidney from behind before Griek was killed by Pedrin's stolen blaster and Merinda dropped Pedrin with a stun shot. Mak survived (barely — losing nearly all of Eyrie's stored type-blood) and woke two days later to find Ketrian fully cured by Griek's hypo, Baran posted to an obscure desk job by the returning Colonel Farland, Pedrin held as a high-value AT-AT intelligence prisoner, and Ketrian effectively blackmailing Alliance Command into reassigning Mak to lead Green Squadron back into battle in exchange for production of her revolutionary alloy.",
+    source: "WEG41008 Star Wars Adventure Journal #8 p.258 | WEG41010 Star Wars Adventure Journal #10 p.191 (Desperate Measures)"
   },
   {
     name: "Ketrian Altronel",
@@ -43938,8 +43938,8 @@ const NOTABLE_NPCS = [
     characterPoints: 12,
     move: "10",
     equipment: "Knife (STR+1D), revolutionary heat-absorbent ostrine alloy sample, research jumpsuit",
-    capsule: "Always fascinated by geology, Ketrian was determined to leave the backward surroundings of her native Hargeeva. Her cloth-merchant parents worked hard to give her an unusually thorough education for a Hargeevan woman. She won a prestigious Imperial scholarship and was sent to a university attached to the Imperial Academy, where she studied metal sciences and earned recognition for her outspoken and revolutionary theories of industrial application to machine and vehicle design. Her fascination with metals also drew her to collect swords and knives — at a fencing class she met and fell in love with Lord Stevan Makintay. Intensely jealous of advances made to him by another student, she gave him a facial scar as he stepped in to break up a duel. Stevan was disinherited after proposing to her and they were planning their marriage when he disappeared. Stevan's father (now Imperial Governor) led Ketrian to believe his son had abandoned her for his first love, starfighter piloting. Embittered, Ketrian immersed herself in her work, accepting the position of head research metallurgist back at the newly established Imperial refinery in Arginall City, Hargeeva. She later learned of Stevan's return when she saw his criminal profile on a wanted holo accusing him of leading the uprising. Slim but strongly boned, she is an attractive young woman of middle-class background with a fiery temperament matching her shoulder-length red hair, deep sea-blue eyes, and an air of shrewdness and cynicism from past betrayal. She is the inventor of the revolutionary blue ostrine plas-bonding alloy with ten-fold increased heat absorption — perfect for replacing X-wing laser cannon tips. After being reunited with Mak by Rebel sympathizer Alikka Nolan, captured and poisoned by Major Pedrin, then rescued mid-transport when pirates attacked the Imperial ship carrying her to Coruscant, she defected to the Alliance with her alloy sample.",
-    source: "WEG41008 Star Wars Adventure Journal #8 p.267"
+    capsule: "Always fascinated by geology, Ketrian was determined to leave the backward surroundings of her native Hargeeva. Her cloth-merchant parents worked hard to give her an unusually thorough education for a Hargeevan woman. She won a prestigious Imperial scholarship and was sent to a university attached to the Imperial Academy, where she studied metal sciences and earned recognition for her outspoken and revolutionary theories of industrial application to machine and vehicle design. Her fascination with metals also drew her to collect swords and knives — at a fencing class she met and fell in love with Lord Stevan Makintay. Intensely jealous of advances made to him by another student, she gave him a facial scar as he stepped in to break up a duel. Stevan was disinherited after proposing to her and they were planning their marriage when he disappeared. Stevan's father (now Imperial Governor) led Ketrian to believe his son had abandoned her for his first love, starfighter piloting. Embittered, Ketrian immersed herself in her work, accepting the position of head research metallurgist back at the newly established Imperial refinery in Arginall City, Hargeeva. She later learned of Stevan's return when she saw his criminal profile on a wanted holo accusing him of leading the uprising. Slim but strongly boned, she is an attractive young woman of middle-class background with a fiery temperament matching her shoulder-length red hair, deep sea-blue eyes, and an air of shrewdness and cynicism from past betrayal. She is the inventor of the revolutionary blue ostrine plas-bonding alloy with ten-fold increased heat absorption — perfect for replacing X-wing laser cannon tips. After being reunited with Mak by Rebel sympathizer Alikka Nolan, captured and poisoned by Major Pedrin, then rescued mid-transport when pirates attacked the Imperial ship carrying her to Coruscant, she defected to the Alliance with her alloy sample. WEG41010 (Desperate Measures, p.189): At Eyrie Base she fell into a coma — Pedrin had given her a custom variant of an Imperial security poison that the standard Trypanid antidote could not counter. Doctor Tarrek's increasingly desperate antidotes failed to slow the toxin while Mak risked everything to recover Pedrin and force the formula out of him.",
+    source: "WEG41008 Star Wars Adventure Journal #8 p.267 | WEG41010 Star Wars Adventure Journal #10 p.189 (Desperate Measures)"
   },
   {
     name: "Major Nial Pedrin",
@@ -43962,8 +43962,8 @@ const NOTABLE_NPCS = [
     characterPoints: 10,
     move: "10",
     equipment: "Blaster pistol (4D), comlink, datapad, Imperial uniform",
-    capsule: "Short and stocky, Major Pedrin compensates with an almost fanatical dedication to physical fitness. Always immaculately groomed, he is fastidiously neat and has a habit of continually pressing flat his already smooth, neatly trimmed black moustache. He has a somber expression and rigid posture, with low dark brows adding to his midnight-black eyes and disapproving stare. Pedrin has an obsessive/compulsive personality and is fearful of change and unpredictability — his ideal world would be populated entirely by soldiers, all identical in uniform and trained to unquestioning obedience. Variety and individuality are his pet hates; his only other interest is geology, since stone never changes. He revelled in his former position as a commander of an AT-AT walker platoon, but his background training in geology brought an unexpected promotion as garrison commander on Hargeeva, a backward world he despises. He was responsible for the cruel suppression of the Hargeevan uprising and remains vigilant for any resistance activity in Arginall City. He has imprisoned Alikka Nolan's brother as a safeguard to keep the young mine personnel chief in line — he suspects her of being an Alliance sympathizer. Desperate to attract praise from his superiors, he believes his only means to rapid promotion and transfer off Hargeeva is to capture an Alliance operative and uncover the location of a Rebel base. He had Ketrian Altronel poisoned with a slow-acting toxin via an Imperial med-droid as standard procedure to prevent her defecting with her revolutionary alloy.",
-    source: "WEG41008 Star Wars Adventure Journal #8 p.273"
+    capsule: "Short and stocky, Major Pedrin compensates with an almost fanatical dedication to physical fitness. Always immaculately groomed, he is fastidiously neat and has a habit of continually pressing flat his already smooth, neatly trimmed black moustache. He has a somber expression and rigid posture, with low dark brows adding to his midnight-black eyes and disapproving stare. Pedrin has an obsessive/compulsive personality and is fearful of change and unpredictability — his ideal world would be populated entirely by soldiers, all identical in uniform and trained to unquestioning obedience. Variety and individuality are his pet hates; his only other interest is geology, since stone never changes. He revelled in his former position as a commander of an AT-AT walker platoon, but his background training in geology brought an unexpected promotion as garrison commander on Hargeeva, a backward world he despises. He was responsible for the cruel suppression of the Hargeevan uprising and remains vigilant for any resistance activity in Arginall City. He has imprisoned Alikka Nolan's brother as a safeguard to keep the young mine personnel chief in line — he suspects her of being an Alliance sympathizer. Desperate to attract praise from his superiors, he believes his only means to rapid promotion and transfer off Hargeeva is to capture an Alliance operative and uncover the location of a Rebel base. He had Ketrian Altronel poisoned with a slow-acting toxin via an Imperial med-droid as standard procedure to prevent her defecting with her revolutionary alloy. WEG41010 (Desperate Measures, p.198): After both Altronel and Makintay vanished en route to Coruscant in what high command called a pirate attack, Pedrin was demoted and reassigned to an even more isolated backwater. He talked his superiors into baiting a trap — letting an Alliance rescuer abduct him with a tracking transponder implanted in his arm — believing he could lead Sector Fleet to the Rebel base, win a combat posting, and exact personal revenge on Makintay. He physically abuses his terrified mistress Thera Capens in her shabby Arginall apartment; she ultimately defected to the Alliance with Mak's rescue. After Thera spotted the lump from his transponder during a beating and tipped Mak off, Merinda surgically removed it and ejected it into deep space, leaving Pedrin completely cut off from his fleet. Cornered by a feigned interrogation/torture threat, Pedrin invented a phony 'antidote needs continual adjustment' story to bargain himself onto Eyrie Base as a hostage opportunity — never realizing the actual poisoner was Griek, not him. In sickbay he scalpel-stabbed Mak in the kidney, killed Griek with a stun-set-to-kill shot to the chest, and was finally felled by Merinda's blaster (which she had thought was set to kill — to her later annoyance). Captured alive, Pedrin became Eyrie's high-value AT-AT intelligence asset under the new intelligence officer who replaced Baran.",
+    source: "WEG41008 Star Wars Adventure Journal #8 p.273 | WEG41010 Star Wars Adventure Journal #10 p.198 (Desperate Measures)"
   },
   {
     name: "Mitth'raw'nuruodo (Mist Encounter)",
@@ -47918,6 +47918,563 @@ const NOTABLE_NPCS = [
     equipment: "Blaster (4D), jumpsuit, 100 credits",
     capsule: "Liadden is the perky, energetic, and notoriously impatient 18-year-old human partner of the old Twi'lek trader To'iir. Born on Moer in the Dalon system, she pilots, maintains, and fusses over the Seventy-Seven Stars as if it were a sibling, and looks on To'iir as her favorite uncle while constantly trying to keep him out of trouble. She plans to acquire her own ship someday and travel the galaxy — particularly the more interesting-sounding regions that To'iir's caution steers them away from. She has a marked dislike of bugs (Kubindi is automatically off her list of acceptable destinations) and a marked tendency to push for the first listed option on any decision tree, which her mentor patiently overrules. She and To'iir were last seen evaluating the Lantillan Spacers Brotherhood Trader's Gamble database from the icy edge of an unspecified system — running from a Moff and looking for somewhere unobtrusive to refuel, repair, and trade. To'iir picked Gamorr; Liadden was not pleased.",
     source: "WEG41010 Star Wars Adventure Journal #10 p.132 (A Free-Trader's Guide to the Planets)"
+  }
+  ,{
+    name: "Geth",
+    species: "Droid (Modified TelBrinTel Science Research Droid)",
+    system: "Ohratuu",
+    location: "Ohratuu — General Reesen Jivrak's outlaw base",
+    affiliations: ["Criminal Underworld"],
+    role: "Modified Science Droid / Toxin Chemist",
+    type: "Modified TelBrinTel Science Research Droid",
+    stats: {
+      DEXTERITY: { base: "2D", skills: {} },
+      KNOWLEDGE: { base: "4D", skills: { "scholar: chemistry": "6D", "scholar: physics": "6D", "scholar: science": "7D" } },
+      MECHANICAL: { base: "1D", skills: {} },
+      PERCEPTION: { base: "2D", skills: {} },
+      STRENGTH: { base: "1D", skills: {} },
+      TECHNICAL: { base: "2D", skills: {} }
+    },
+    specialAbilities: "Equipped with: enhanced protocol chip; molecular microscopic eyepiece; olfactory sensors (+1D Knowledge to identify any odor — Geth's databank also identifies individual species and people by scent); two fine control manipulating arms (+1D on Dex rolls requiring precise movement); suspension system (+2D on Dex rolls requiring smooth movement); endosystem with six accessory ports.",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 8,
+    equipment: "Built-in chemical analysis and injection systems",
+    capsule: "Geth is a TelBrinTel science research droid stolen from an Imperial convoy by Rebel General Reesen Jivrak, who renamed and modified the unit for his own use. Jivrak was ejected from the Rebel Alliance for unethical conduct and now operates a small outlaw band from a base on the planet Ohratuu, perpetually short on supplies. The General's followers herd docile riding mounts called deripors and use Geth's chemistry expertise to formulate toxins that, injected into the creatures' nervous systems, alter their chemical balance and turn the placid beasts into stronger, more violent shock animals for hit-and-run attacks. Geth accompanies Jivrak everywhere as his personal aide and chemist.",
+    source: "WEG41010 Star Wars Adventure Journal #10 p.144 (Toria Tell's Droid Journal)"
+  }
+  ,{
+    name: "Threna",
+    species: "Droid (Lovolan Supreme-class Servant Droid)",
+    system: "Grathus",
+    location: "Grathus — Xig Rollem's tavern in a mud basin settlement",
+    affiliations: ["The Fringe"],
+    role: "Misplaced Servant Droid / Tavern Hostess",
+    type: "Lovolan Supreme-class Servant Droid",
+    stats: {
+      DEXTERITY: { base: "3D", skills: {} },
+      KNOWLEDGE: { base: "1D", skills: { cultures: "5D", languages: "5D" } },
+      MECHANICAL: { base: "1D", skills: { communications: "4D" } },
+      PERCEPTION: { base: "2D", skills: { bargain: "3D+2", gambling: "3D" } },
+      STRENGTH: { base: "1D", skills: {} },
+      TECHNICAL: { base: "2D", skills: {} }
+    },
+    specialAbilities: "Equipped with: Lovolan network communication package; repulsorlift propulsion system (20 m flight ceiling); secondary serving arms.",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 12,
+    equipment: "Built-in serving and comm systems",
+    capsule: "Threna is a Lovolan Supreme-class servant droid whose shipping destination was scrambled by Lovolan's notoriously buggy computer network. Instead of the scorched parts the people of Grathus were expecting for waste storage, they received a brand-new high-class servant droid. Local Xig Rollem brought Threna to one of the planet's huge mud basin settlements and put her to work serving refreshments at his tavern. Far from her programmed environment, Threna adapted quickly and grew to appreciate the straightforward manner of the locals; her courtesies, in turn, have softened the rowdy crowd into something resembling polite customers. Things are going so well that Xig has even abandoned his original plan of reprogramming her into a well-armed bouncer.",
+    source: "WEG41010 Star Wars Adventure Journal #10 p.146 (Toria Tell's Droid Journal)"
+  }
+  ,{
+    name: "Bruthus",
+    species: "Droid (Scavenger Series Labor and Recycling Droid)",
+    system: "Corporate Sector",
+    location: "Borders of the Corporate Sector — Torsteen's salvage operation",
+    affiliations: ["Criminal Underworld"],
+    role: "Salvage Droid / Secret Hoarder",
+    type: "Scavenger Series Labor and Recycling Droid",
+    stats: {
+      DEXTERITY: { base: "3D", skills: {} },
+      KNOWLEDGE: { base: "1D", skills: {} },
+      MECHANICAL: { base: "1D", skills: {} },
+      PERCEPTION: { base: "2D", skills: { hide: "3D", search: "3D" } },
+      STRENGTH: { base: "4D", skills: { lifting: "7D" } },
+      TECHNICAL: { base: "1D", skills: {} }
+    },
+    specialAbilities: "Equipped with: crawler system; repulsorlift propulsion (Move 3 in gravity, 25 m flight ceiling); two heavy-duty arms (+1D lifting); basic lighting package; beamcutter breakdown chute; storage area (3 cubic meters); six head-mounted tractor beam projectors (Strength 1D total).",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 6,
+    equipment: "Built-in scavenging gear",
+    capsule: "Bruthus is a Scavenger series labor and recycling droid working for a small pirate outfit run by the Svivreni named Torsteen, harvesting space junk on the borders of the Corporate Sector. Torsteen is increasingly convinced that his fellow smugglers are skimming from the haul, since such a rich debris field shouldn't yield so little profit — but the real culprit is Bruthus himself, who has developed a quiet appreciation for the things he collects. The droid considers each special piece of debris a prized possession with its own character, and treats secret hoarding as an extension of its programming, tucking favorites into hidden niches around the work site. The other droids in the operation have begun to notice and quietly start collections of their own.",
+    source: "WEG41010 Star Wars Adventure Journal #10 p.149 (Toria Tell's Droid Journal)"
+  }
+  ,{
+    name: "Enell",
+    species: "Droid (Publictechnic Model 850.AA)",
+    system: "Lo'Uran",
+    location: "Lo'Uran — The Landing Nest spaceport",
+    affiliations: ["The Fringe"],
+    role: "Spaceport Maintenance Headquarters Droid",
+    type: "Publictechnic Model 850.AA Public Service Headquarters and Maintenance Droid",
+    stats: {
+      DEXTERITY: { base: "1D", skills: {} },
+      KNOWLEDGE: { base: "2D", skills: {} },
+      MECHANICAL: { base: "1D", skills: {} },
+      PERCEPTION: { base: "1D", skills: { command: "4D" } },
+      STRENGTH: { base: "7D", skills: {} },
+      TECHNICAL: { base: "1D", skills: {} }
+    },
+    specialAbilities: "Equipped with: repulsorlift system (20 m flight ceiling); Publictechnic power cell system; 14 beamcleaners; 3 coarse cleaning brushes; sensorlink network system; equipment bay; various repair droids.",
+    forcePoints: 0,
+    characterPoints: 0,
+    move: 30,
+    equipment: "Full Publictechnic 850.AA droid and vehicle complement",
+    capsule: "Enell is the loved and respected Publictechnic 850.AA that maintains the Landing Nest, one of Lo'Uran's major spaceport facilities, and serves as a mother figure to the smaller droids housed inside her equipment bay. Originally brought to Lo'Uran by Imperial forces, Enell endured years of abuse under the corrupt Imperial Governor Blithane — a treatment her memory circuits will never let her forget. When the Imperial Security Bureau eventually arrested Blithane for fencing Imperial equipment to underworld syndicates, Enell took quiet pleasure in maintaining the ISB shuttle bay perfectly so the Governor's transport would have no trouble leaving (he never returned). The Empire later judged Lo'Uran too remote and import-dependent to bother garrisoning, leaving the planet under a small Imperial prefect detail; Enell led the effort to clean up afterward, and spacers who use the Landing Nest now know her by name. They also know never to speak well of the Empire in her presence — if Imperial forces ever returned in numbers, everyone is certain Enell would hamper them in any way her programming would allow.",
+    source: "WEG41010 Star Wars Adventure Journal #10 p.154 (Toria Tell's Droid Journal)"
+  }
+  ,{
+    name: "Toria Tell",
+    species: "Human",
+    system: "Tebru",
+    location: "Tebru — Outer Rim home, droid collection and workshop",
+    affiliations: ["The Fringe", "Rebel Alliance"],
+    role: "Droid Inventor, Historian, and Collector",
+    type: "Droid Inventor",
+    stats: {
+      DEXTERITY: { base: "3D", skills: {} },
+      KNOWLEDGE: { base: "3D", skills: { "alien species": "4D", languages: "4D", "languages: droid languages": "5D" } },
+      MECHANICAL: { base: "3D", skills: { astrogation: "3D+2", communications: "4D", "space transports": "4D" } },
+      PERCEPTION: { base: "2D+2", skills: { con: "4D", investigation: "4D", persuasion: "3D", search: "3D", sneak: "3D" } },
+      STRENGTH: { base: "2D+1", skills: { stamina: "3D", swimming: "3D" } },
+      TECHNICAL: { base: "4D", skills: { "droid programming": "6D", "droid repair": "7D+2" } }
+    },
+    specialAbilities: "None",
+    forcePoints: 1,
+    characterPoints: 3,
+    move: 10,
+    equipment: "Comlink, hold-out blaster (3D), light freighter, portable computer, tool kit",
+    capsule: "Toria Tell is a highly dedicated droid inventor, historian, and collector whose large home on the rocky Outer Rim planet of Tebru houses one of the rarest droid collections in the galaxy along with a massive research library and workshop. She does not stay home — Toria travels in her own stock light freighter, hunting down new kinds of automata, adding pieces to her collection, and chronicling her findings in her scandoc 'Toria Tell's Droid Journal,' which has earned her a reputation as a resourceful and persistent troublemaker. She loves machines for two reasons: a fascination with how efficient machinery interacts with its environment and with living beings, and the simple fact that she trusts machines to complete tasks more reliably than people, who tend to come with annoying or dangerous quirks. No one is sure how she funds her exploits — speculation runs from inherited wealth to active spy work — and Imperial officials have begun to suspect she is a small but growing link in the chain of Rebel sympathizers.",
+    source: "WEG41010 Star Wars Adventure Journal #10 p.156 (Toria Tell's Droid Journal)"
+  }
+  ,{
+    name: "Sayer Mon Neela",
+    species: "Human",
+    system: "Horob",
+    location: "Mobile (formerly Horob — Rebel medical clinic cover base)",
+    affiliations: ["Rebel Alliance"],
+    role: "Alliance War Strategist / former Assistant Barrister General of the Old Republic",
+    type: "Alliance War Strategist",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { blaster: "4D", dodge: "4D" } },
+      KNOWLEDGE: { base: "4D", skills: { bureaucracy: "8D", cultures: "7D", languages: "5D", "law enforcement": "8D", "planetary systems": "5D" } },
+      MECHANICAL: { base: "2D", skills: {} },
+      PERCEPTION: { base: "4D", skills: { bargain: "7D", command: "6D", con: "5D+2", persuasion: "6D+2", "persuasion: debate": "7D+2" } },
+      STRENGTH: { base: "2D+1", skills: {} },
+      TECHNICAL: { base: "2D+2", skills: { "computer programming/repair": "3D+2" } }
+    },
+    specialAbilities: "None",
+    forcePoints: 1,
+    characterPoints: 18,
+    move: 10,
+    equipment: "Atmospheric oxygen mask and shoulder cloak (disguise), tiny experimental sensor data chip from the Horob research base",
+    capsule: "Sayer Mon Neela is one of the Rebel Alliance's most renowned war strategists, a former Assistant Barrister General of the Old Republic, and one of the few Senate voices who openly protested as Palpatine began to exceed the polite rules of the Council. Approximately fifty years old, the stunning beauty of her youth has mellowed into softer, gentler lines — a face no one would mistake for a militarist's until she speaks, at which point her authoritative voice tends to make people follow. The war against Palpatine has become an obsession; the loss of two sons to the Rebellion and her current strategist post have made it the only thing she lives for, and she will run over allies and enemies alike to see her objective met. She has a dry sense of humor (mostly aimed at her stern young bodyguard Stasheff) and badly needs friends, romance, or a confidant, but considers such things frivolities she has no time for. Last seen escaping Horob aboard Captain Heedon's Starcrossed, where she ordered the captain to intercept the Victory-class Star Destroyer Imperial Hazard and demand its surrender on the strength of a bluff that the unarmed luxury yacht was rigged to detonate.",
+    source: "WEG41010 Star Wars Adventure Journal #10 p.160 (The Capture of Imperial Hazard)"
+  }
+  ,{
+    name: "Captain Heedon",
+    species: "Human",
+    system: "Horob",
+    location: "Aboard the Starcrossed",
+    affiliations: ["Rebel Alliance", "The Fringe"],
+    role: "Rebel Yacht Captain / Luxury Cruise Operator",
+    type: "Rebel Yacht Captain",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { blaster: "3D", dodge: "3D" } },
+      KNOWLEDGE: { base: "4D", skills: { "alien species": "5D", business: "5D", cultures: "5D", languages: "4D+2", "planetary systems": "6D" } },
+      MECHANICAL: { base: "4D", skills: { astrogation: "5D", "space transports": "6D" } },
+      PERCEPTION: { base: "3D", skills: { bargain: "5D", command: "4D", con: "5D", persuasion: "4D" } },
+      STRENGTH: { base: "2D+2", skills: {} },
+      TECHNICAL: { base: "2D+1", skills: {} }
+    },
+    specialAbilities: "None",
+    forcePoints: 1,
+    characterPoints: 5,
+    move: 10,
+    equipment: "Tailored aristocrat's jacket and trousers, slicked-back hair, the SoroSuub luxury cruiser Starcrossed",
+    capsule: "Captain Heedon (first name unknown — he despises it so much he will never tell anyone) is a fop, an aristocrat, a socialite, and a surprisingly astute businessman who runs his own one-ship luxury cruise operation aboard the SoroSuub yacht Starcrossed. In his mid-thirties but looking older from the perpetual expression of boredom he affects, Heedon hides genuine bravery and dedication to the Rebellion under all the snobbery — though his motives are not entirely philanthropic. He wants the Empire overthrown specifically so the wealthy families Palpatine has subjugated can once again afford to take luxury cruises, restoring his clientele and his livelihood. Rebel Intelligence rates him highly and the Alliance routinely uses him for high-profile extractions because no one expects a Rebel leader to escape in a powder-blue pleasure yacht. He helped Sayer Mon Neela bluff the Star Destroyer Imperial Hazard into accepting a docking-claw conference above Horob, holding the Imperials in place long enough for the ground troops to evacuate.",
+    source: "WEG41010 Star Wars Adventure Journal #10 p.162 (The Capture of Imperial Hazard)"
+  }
+  ,{
+    name: "Captain Sergus Lanox",
+    species: "Human",
+    system: "Horob",
+    location: "Aboard the Imperial Hazard (Victory-class Star Destroyer)",
+    affiliations: ["Galactic Empire", "Imperial Navy"],
+    role: "Victory-class Star Destroyer Captain",
+    type: "Victory-class Star Destroyer Captain",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { blaster: "4D", "blaster artillery": "5D", dodge: "4D" } },
+      KNOWLEDGE: { base: "4D", skills: { "alien species": "5D", bureaucracy: "6D+1", business: "5D", intimidation: "5D", "law enforcement": "5D", "planetary systems": "6D", "tactics: capital ships": "7D" } },
+      MECHANICAL: { base: "3D", skills: { astrogation: "4D", "capital ship piloting": "5D", communications: "4D", sensors: "4D" } },
+      PERCEPTION: { base: "4D", skills: { command: "7D", investigation: "5D", persuasion: "5D" } },
+      STRENGTH: { base: "2D", skills: { running: "3D" } },
+      TECHNICAL: { base: "2D", skills: {} }
+    },
+    specialAbilities: "None",
+    forcePoints: 1,
+    characterPoints: 9,
+    move: 10,
+    equipment: "Imperial captain's uniform, sidearm, the Victory-class Star Destroyer Imperial Hazard",
+    capsule: "Captain Sergus Lanox is the middle-aged, handsome commanding officer of the Victory-class Star Destroyer Imperial Hazard — gray-eyed, soft-spoken, with eyes that are slightly too large for his face. Although sworn to Palpatine, Lanox is (if truth be told) far prouder of commanding a starship than of serving the Empire. He is a natural leader who inspires loyalty in his subordinates through fairness and self-confidence, sharp and uncompromising in a crisis but generally just toward his crew. He is also a romantic — a reader of poetry and fine literature, a lover of good food and drink, and not above admiring an enemy with scruples even when those scruples differ from his own. He has ambitions to move up to a larger Imperial command. When Sayer Mon Neela presented herself for capture above Horob, he met her with personal courtesy, an extolment of Imperial virtues he half-recognized as embarrassing propaganda, and the calm assurance of an officer who expected the Emperor's personal reward for her delivery. After the Horob sensor chip overloaded the Hazard's computers and the umbilical began to depressurize, Lanox — already off-balance from his unwilling admiration of Neela — made the impossible choice of crawling back into the failing corridor to help her wrench her ship's blast door open, kissing her hard as 'his payment' before shoving her to safety and clawing his way back to his own dying vessel. He survived to spin the entire fiasco into propaganda gold: Grand Admiral Takel personally awarded him the Distinguished Medal of Imperial Honor 'for extreme heroism, and for not relinquishing your ship, even when faced with the latest and most heinous example of Rebel terrorism since the destruction of Alderaan.' Neela considers him likely to resurface again.",
+    source: "WEG41010 Star Wars Adventure Journal #10 p.172 (The Capture of Imperial Hazard)"
+  }
+  ,{
+    name: "Raan Stasheff",
+    species: "Human",
+    system: "Horob",
+    location: "Aboard the Starcrossed (Sayer Mon Neela's bodyguard)",
+    affiliations: ["Rebel Alliance"],
+    role: "Alliance Intelligence Officer / Personal Bodyguard to Sayer Mon Neela",
+    type: "Alliance Intelligence Officer",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { blaster: "6D", "blaster artillery": "4D", "brawling parry": "5D", dodge: "5D", grenade: "4D+2", running: "5D" } },
+      KNOWLEDGE: { base: "3D", skills: { cultures: "4D", intimidation: "4D", "law enforcement": "5D", "planetary systems": "5D", survival: "5D+1" } },
+      MECHANICAL: { base: "3D", skills: { astrogation: "4D", "ground vehicle operation": "3D+2", "hover vehicle operation": "3D+1", "repulsorlift operation": "4D" } },
+      PERCEPTION: { base: "4D", skills: { investigation: "6D+1", sneak: "6D" } },
+      STRENGTH: { base: "3D", skills: { brawling: "5D", "climbing/jumping": "4D", stamina: "4D" } },
+      TECHNICAL: { base: "2D", skills: { demolitions: "5D", security: "4D" } }
+    },
+    specialAbilities: "None",
+    forcePoints: 1,
+    characterPoints: 11,
+    move: 10,
+    equipment: "Blaster pistol, comlink, concealed datachip planted by Neela (Horob prototype sensor)",
+    capsule: "Raan Stasheff is in his early twenties but is already a top-notch security expert assigned as personal bodyguard to one of the Rebellion's major war strategists, Madame Sayer Mon Neela. Espionage, security, and protection are the family business — his grandfather served the Corellian Security force, his father was an agent during the Yavin incident, and Stasheff yearns to live up to their ideals. He has consequently become rigid, very serious, and so good at being stern that he has misplaced most of his sense of humor; underneath it all he is a likeable and even vulnerable young man, but his desperate desire to live up to family expectations and his fervor to see Palpatine overthrown make him inflexible. Aboard the Starcrossed he was repeatedly ambushed by Neela's improvised stratagems — including the moment she revealed she had planted a prototype Horob sensor chip beneath his collar specifically to record the Imperial Hazard's detention and tractor beam codes during his time in Imperial custody. Took blaster fire to the right arm and shoulder during the umbilical breach, was last seen on Carosi XII in a bacta cast at Neela's celebration banquet, agreeing to remain her bodyguard 'only if you confine all your bluffs to sabacc.'",
+    source: "WEG41010 Star Wars Adventure Journal #10 p.175 (The Capture of Imperial Hazard)"
+  }
+  ,{
+    name: "General Polo Se'lab",
+    species: "Bothan",
+    system: "Horob",
+    location: "Mobile (Rebel base commander, frequently posted alongside Neela)",
+    affiliations: ["Rebel Alliance", "Bothan Spynet"],
+    role: "Bothan General / Rebel Base Commander",
+    type: "Bothan General",
+    stats: {
+      DEXTERITY: { base: "3D+1", skills: { blaster: "5D", "brawling parry": "4D", dodge: "4D", "thrown weapons": "5D" } },
+      KNOWLEDGE: { base: "3D", skills: { bureaucracy: "4D+2", intimidation: "4D", "law enforcement": "5D", "planetary systems": "4D", "streetwise: Bothawui": "5D", survival: "4D", willpower: "4D+1" } },
+      MECHANICAL: { base: "2D", skills: { astrogation: "4D", "repulsorlift operation": "4D" } },
+      PERCEPTION: { base: "4D", skills: { bargain: "5D", command: "6D+2", hide: "4D", investigation: "4D+2", persuasion: "5D" } },
+      STRENGTH: { base: "2D+2", skills: { brawling: "4D", stamina: "3D" } },
+      TECHNICAL: { base: "3D", skills: { security: "4D+2" } }
+    },
+    specialAbilities: "None",
+    forcePoints: 1,
+    characterPoints: 7,
+    move: 10,
+    equipment: "Blaster pistol, comlink, datachip courier kit",
+    capsule: "General Polo Se'lab was once a Junior Senator of the Old Republic and frequently found himself on the same side of a debate as Assistant Barrister General Sayer Mon Neela. The two have formed a friendship that transcends their political bond, and quite by coincidence the old friends often find themselves on the same Rebel bases — Neela as war strategist, Se'lab as commander — looking out for one another. Like most Bothans, Se'lab once considered the acquisition of power and wealth a challenge and a duty, but that goal has been supplanted by a desire for revenge against the Empire after his wife was killed during an Imperial raid on a Bothan spynet installation. He is impervious to Neela's persuasive rhetoric and one of the few who can talk her out of an unwise commitment, as he did on Horob when he convinced her to evacuate by reminding her where her loyalties truly lay. He gave her the prototype Horob sensor chip just before her departure — the chip that would later cripple the Imperial Hazard's tractor beams and detention codes.",
+    source: "WEG41010 Star Wars Adventure Journal #10 p.184 (The Capture of Imperial Hazard)"
+  }
+  ,{
+    name: "Commander Biros Baran",
+    species: "Human",
+    system: "Karatha",
+    location: "Karatha — Eyrie Base (Intelligence office)",
+    affiliations: ["Rebel Alliance"],
+    role: "Eyrie Base Intelligence Officer",
+    type: "Alliance Intelligence Officer",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { blaster: "3D+2", dodge: "4D", "melee combat": "3D+1" } },
+      KNOWLEDGE: { base: "4D", skills: { "alien species": "5D", bureaucracy: "6D", languages: "4D+2", "planetary systems": "5D" } },
+      MECHANICAL: { base: "2D", skills: { "repulsorlift operation": "3D", astrogation: "3D" } },
+      PERCEPTION: { base: "3D", skills: { bargain: "4D", command: "4D", con: "3D+2", hide: "5D", investigation: "4D+2", persuasion: "4D", sneak: "4D" } },
+      STRENGTH: { base: "3D", skills: {} },
+      TECHNICAL: { base: "3D", skills: { "computer programming/repair": "5D", "droid programming": "4D+1", security: "3D+2" } }
+    },
+    specialAbilities: "None",
+    forcePoints: 1,
+    characterPoints: 2,
+    move: 10,
+    equipment: "Blaster pistol (4D), datapad, recording rod",
+    capsule: "Biros Baran is a middle-aged human from Corellia whose self-opinion has always been much higher than his true worth. He would have preferred to have been born into an aristocratic heritage and resents those who legitimately possess such a background. A somewhat cowardly, incompetent bureaucrat, Baran joined the Alliance chiefly because he believed his talents were ignored by Imperial governors. His beady eyes, outsized nose, and habit of hiding behind a littered desk in an isolated corner of Eyrie Base have earned him the universal nickname 'Barren-Brain' Baran, and his inaccurate readings of incoming intelligence probe reports have cost the base too many good pilots. He has always envied Stevan Makintay's princely bearing and birthright. With Colonel Farland off-world, Baran refused to authorize Mak's emergency rescue mission to Hargeeva to recover the antidote for the dying Ketrian Altronel — earning a fist to the nose, an unwilling nap on his own office floor, and the silent approval of the guards who are also more loyal to Makintay than to him.",
+    source: "WEG41010 Star Wars Adventure Journal #10 p.194 (Desperate Measures)"
+  }
+  ,{
+    name: "Merinda Niemeh",
+    species: "Sullustan",
+    system: "Karatha",
+    location: "Karatha — Eyrie Base (Main Hangar)",
+    affiliations: ["Rebel Alliance"],
+    role: "Sullustan Technician (Green Squadron Chief Tech, Eyrie Base)",
+    type: "Sullustan Technician",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { blaster: "5D", "brawling parry": "5D", dodge: "6D", "melee combat": "5D" } },
+      KNOWLEDGE: { base: "2D+1", skills: { cultures: "6D", "planetary systems": "5D", survival: "6D", value: "4D" } },
+      MECHANICAL: { base: "1D", skills: { astrogation: "5D", communications: "6D", "repulsorlift operation": "6D", sensors: "6D", "space transports": "5D" } },
+      PERCEPTION: { base: "3D", skills: { bargain: "4D", con: "5D", hide: "5D", search: "5D", sneak: "5D" } },
+      STRENGTH: { base: "2D", skills: { brawling: "5D", stamina: "6D" } },
+      TECHNICAL: { base: "3D+2", skills: { "computer programming/repair": "8D", "droid programming/repair": "6D", "first aid": "5D", "repulsorlift repair": "6D", "space transports repair": "5D+2", "starfighter repair": "7D", "starship weapon repair": "7D" } }
+    },
+    specialAbilities: "Enhanced Senses: +2D to search and related Perception checks in low-light conditions due to Sullustan vision and hearing. Location Sense: Sullustans cannot get lost in a place they have visited before — +1D when making astrogation rolls for a planet they've visited before.",
+    forcePoints: 2,
+    characterPoints: 6,
+    move: 10,
+    equipment: "Comlink, datapad, starship tool kit (+1D to space transports repair), vibro-knife (STR+1D)",
+    capsule: "A middle-aged Sullustan female with an impish sense of humor and a lively disposition, Merinda 'Merin' Niemeh's avid curiosity and keen intelligence led her to a life seeking adventure among the stars. Her natural aptitude for technical repairs earned her a position as advisor to the Hargeevan High King, who needed to equip his palace to space-tech standards after that world allied with the Empire. During her years at court, Merinda became fast friends and a mentor to the young prince Stevan Makintay. When her friend was kidnapped and hauled off to a penal colony, she doggedly traced him and played a major part in his rescue; when his attempted Hargeevan revolt failed, she followed him into the Alliance and is now Green Squadron's chief tech at Eyrie Base. She delights in calling Mak 'my Prince,' 'your Royalness,' and 'your Regalness' (gestures he hates as much as she hates being patted on the head) and loves it when 'the aristocracy talks mutiny.' When Mak punched out Commander Baran and tried to launch a solo X-wing rescue to Hargeeva, Merinda revealed she had already restored a captured Ongella-system freighter wreck (new registration, Mak's R2 unit on board, forged work orders ready) and refused to let him go alone. On Hargeeva she produced fake IDs and led the slicing run on the Arginall communicator factory; in transit she surgically removed the tracking transponder from Pedrin's arm; back at Eyrie she stunned Pedrin in sickbay before he could finish off the wounded Mak (and was annoyed afterwards to discover she had thought her blaster was set to kill).",
+    source: "WEG41010 Star Wars Adventure Journal #10 p.196 (Desperate Measures)"
+  }
+  ,{
+    name: "Doctor Tarrek",
+    species: "Human",
+    system: "Karatha",
+    location: "Karatha — Eyrie Base (Sick Bay)",
+    affiliations: ["Rebel Alliance"],
+    role: "Eyrie Base Doctor",
+    type: "Alliance Doctor",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { dodge: "3D" } },
+      KNOWLEDGE: { base: "3D+1", skills: { "alien species": "4D+2", "scholar: medicine": "5D+2", survival: "4D" } },
+      MECHANICAL: { base: "2D", skills: {} },
+      PERCEPTION: { base: "3D", skills: { command: "4D", investigation: "4D", persuasion: "4D" } },
+      STRENGTH: { base: "2D", skills: { stamina: "3D" } },
+      TECHNICAL: { base: "5D", skills: { "(a) medicine": "7D", "first aid": "7D", "computer programming/repair": "5D+2" } }
+    },
+    specialAbilities: "None",
+    forcePoints: 0,
+    characterPoints: 4,
+    move: 10,
+    equipment: "Medpac, surgical kit, datapad, hypno-trance equipment",
+    capsule: "Doctor Tarrek is the chief medical officer of Eyrie Base on Karatha. Calm, patient, and physically warm in his bedside manner, he is also genuinely competent — he is the one who provided Mak Makintay with standard anti-trauma deprogramming via hypno-trance after Mak's torture at Pedrin's hands, and the one who refused to give up on Ketrian Altronel as her body burned through every standard antidote in the Alliance medical inventory. Frustrated by his inability to break Pedrin's custom poison, Tarrek nonetheless kept Ketrian alive long enough for Mak to bring back the answer.",
+    source: "WEG41010 Star Wars Adventure Journal #10 p.190 (Desperate Measures)"
+  }
+  ,{
+    name: "Astina Griek",
+    species: "Human",
+    system: "Karatha",
+    location: "Karatha — Eyrie Base (Sick Bay)",
+    affiliations: ["Rebel Alliance"],
+    role: "Assistant Medic",
+    type: "Hargeevan Refugee Medic",
+    stats: {
+      DEXTERITY: { base: "2D", skills: { dodge: "3D" } },
+      KNOWLEDGE: { base: "2D", skills: { survival: "3D+1", "languages: Hargeevan": "3D" } },
+      MECHANICAL: { base: "2D", skills: {} },
+      PERCEPTION: { base: "2D+2", skills: { hide: "3D+2", sneak: "3D+2" } },
+      STRENGTH: { base: "2D", skills: { stamina: "3D" } },
+      TECHNICAL: { base: "3D+2", skills: { "first aid": "5D", "(a) medicine": "4D" } }
+    },
+    specialAbilities: "Twisted back (legacy of Imperial labor camp imprisonment) — penalty at gamemaster discretion to STR-based athletic checks.",
+    forcePoints: 0,
+    characterPoints: 2,
+    move: 8,
+    equipment: "Medpac, sickbay tray, simple Hargeevan workclothes",
+    capsule: "Astina Griek is a slightly stooped, brown-haired, blue-eyed Hargeevan assistant medic at Eyrie Base sickbay — what Mak Makintay's high lord father would have sneeringly called a 'lowborn,' a poor peasant from the squalid back streets of Arginall City. The twist in her back is a legacy of her time in an Imperial labor camp. She has been thoroughly cowed by High Lord Makintay and keeps lapsing back into calling Mak 'm'lord' and curtsying to him, even after years of friendship in the Alliance — a running joke among Mak's pilots and a small irritation to Mak himself, who hates the title. She worked tirelessly through the three days Ketrian Altronel was dying in sickbay — because she was the one who had been quietly poisoning Altronel the entire time, with an undetectable concoction of her own she swore the doctor would never trace. Griek blamed Altronel for the death of her own husband and son in the Imperial reprisals that followed Ketrian's metallurgy work for the Arginall refinery, and took her vengeance under cover of nursing care. When Mak returned with Pedrin, Griek had a working antidote loaded in a hypo and was on the verge of administering it (out of grudging respect for the Rebel lives Altronel's alloy could save) when Mak overheard her gloating confession from behind a privacy screen. In the chaos that followed, Pedrin scalpel-stabbed Mak in the kidney from behind, took his blaster, and shot Griek dead through the chest at kill setting when she lunged for the weapon. The hypo she dropped on Ket's bed was the actual cure.",
+    source: "WEG41010 Star Wars Adventure Journal #10 p.192 (Desperate Measures)"
+  }
+  ,{
+    name: "Thera Capens",
+    species: "Human",
+    system: "Hargeeva",
+    location: "Hargeeva — Arginall City (Pedrin's mistress, later defected)",
+    affiliations: ["Rebel Alliance"],
+    role: "Hargeevan Civilian / Defector",
+    type: "Hargeevan Civilian",
+    stats: {
+      DEXTERITY: { base: "2D+2", skills: { dodge: "3D+2" } },
+      KNOWLEDGE: { base: "2D", skills: { streetwise: "3D+2", "value": "3D" } },
+      MECHANICAL: { base: "2D", skills: { "repulsorlift operation": "3D" } },
+      PERCEPTION: { base: "3D", skills: { bargain: "4D", con: "4D", hide: "4D", persuasion: "3D+2", sneak: "4D" } },
+      STRENGTH: { base: "2D", skills: { stamina: "3D" } },
+      TECHNICAL: { base: "2D", skills: { "first aid": "3D" } }
+    },
+    specialAbilities: "None",
+    forcePoints: 0,
+    characterPoints: 3,
+    move: 10,
+    equipment: "Personal effects, ground vehicle access codes, off-world travel papers",
+    capsule: "Thera Capens is a Hargeevan woman from the squalid back streets of Arginall City who was forced to become Major Niall Pedrin's mistress under threats against her friends. He visited her shabby apartment whenever he wanted privacy from his garrison and routinely beat her when his pet hates of variety and unpredictability got the better of him. She was huddled bleeding on the floor of her bedroom, eye swelling shut and cheek welted, when Stevan Makintay broke in through her safety-exit window during a night storm and stunned Pedrin from behind. Despite the bruises, she had the presence of mind to organize Mak's escape with Pedrin — arranging a friend's motor-sled around back, warning Mak away from the front door's spy-eyes, and reminding him an investigation would freeze Pedrin's transfer. She left Hargeeva with Mak that night and joined the Alliance, having seen quite enough of the Empire from inside its bedrooms.",
+    source: "WEG41010 Star Wars Adventure Journal #10 p.205 (Desperate Measures)"
+  }
+  ,{
+    name: "Mihalik",
+    species: "Svivreni",
+    system: "Af'El",
+    location: "Af'El — Uhur'qah mines (Toxis Metals); home of record Svivren — Milatvac mines",
+    affiliations: ["New Republic", "The Fringe"],
+    role: "Mining and Extraction Manager / Self-Appointed Bounty Hunter",
+    type: "Svivreni Miner",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { blaster: "4D", "brawling parry": "5D", dodge: "4D", "melee combat": "5D", "melee parry": "4D+2" } },
+      KNOWLEDGE: { base: "3D", skills: { bureaucracy: "4D", intimidation: "4D", languages: "4D+2", "law enforcement": "4D+2", "law enforcement: Svivreni mines": "6D+2", "law enforcement: Af'El": "5D", "planetary systems": "4D+1", "scholar: geology": "7D", "scholar: metallurgy": "5D+2", streetwise: "3D+2", survival: "5D", "survival: mines": "6D", "value: minerals": "7D", willpower: "4D" } },
+      MECHANICAL: { base: "2D+2", skills: { astrogation: "3D+1", "repulsorlift operation": "3D+2", "space transports: Epoch-class": "4D", "starship gunnery": "3D+2", "starship shields": "3D+2" } },
+      PERCEPTION: { base: "2D+2", skills: { "bargain: minerals": "5D", command: "3D+2", search: "4D+2" } },
+      STRENGTH: { base: "4D+1", skills: { brawling: "6D+1", lifting: "6D+1", stamina: "7D+1" } },
+      TECHNICAL: { base: "2D+1", skills: { demolition: "4D+1", "droid programming: B-1 worker droid": "4D+1", "droid repair: B-1 worker droid": "4D+1", "first aid": "3D+2", security: "3D+1", "space transports repair": "3D+1" } }
+    },
+    specialAbilities: "Stamina: Due to the harsh nature of Svivren, Svivreni receive a +2D bonus to stamina and willpower checks. Value Estimation: +1D bonus to value skill checks involving the value of ores, gems, and other mined materials.",
+    forcePoints: 1,
+    characterPoints: 6,
+    move: 7,
+    equipment: "Blaster rifle (5D), comlink, Toxis Metals mining uniform, Epoch-class freighter Resolve",
+    capsule: "Reward for Capture: 5,000 credits. Crimes: none against the New Republic — wanted for unsanctioned military and police activity. Mihalik is a Svivreni male of average build with long copper-colored hair on his head and arms, fashioned into thick braids bound by Nalvar grass from his home continent on Svivren so it doesn't hinder him in the mines. He has the hardened look of a being who has spent a lifetime underground but is a kind and caring individual despite his rough profession. He has worked nearly a decade as a mining and extraction manager for Toxis Metals on Af'El and is fiercely loyal to both the missing Colonel Caleb Hctaqsas and the Colonel's son, Alliance operative Sasnaq Toxis (Hctaqsas). Immediately following the meleenium heist at Qua'Tahc, Mihalik was overseeing an equipment transfer from one of the central Uhur'qah mines when he came upon the wounded Republic operatives — including Kichiir the Wookiee — patched up their injuries, alerted the nearest medical facilities, then boarded his personal Epoch-class freighter Resolve and took off in pursuit of the thieves. Neither Mihalik nor the thieves have been seen since. Cracken considers him an upstanding New Republic citizen and a valued member of the Af'El mining community, but he is decidedly not authorized to conduct his own manhunt; his long prior service as constable of the Milatvac mines on Svivren has made him formidably knowledgeable in law enforcement procedure, which will make him difficult for New Republic agents to bring in.",
+    source: "WEG41010 Star Wars Adventure Journal #10 p.268 (Wanted by Cracken — Mihalik)"
+  }
+  ,{
+    name: "Ostan Atur",
+    species: "Near-Human (Lowen)",
+    system: "Low'n",
+    location: "Mobile (Lesser Plooriod Cluster / Minos Cluster / Af'El)",
+    affiliations: ["Criminal Underworld"],
+    role: "Lowen Saboteur / Slicer-Demolitionist",
+    type: "Lowen Saboteur",
+    stats: {
+      DEXTERITY: { base: "2D+2", skills: { blaster: "3D+2", dodge: "4D+2" } },
+      KNOWLEDGE: { base: "3D+2", skills: { "alien species": "4D+2", languages: "4D", "value": "5D+2" } },
+      MECHANICAL: { base: "2D+2", skills: { astrogation: "3D+2", "beast riding": "3D+2", "repulsorlift operation": "4D+2", "starship shields": "3D+2" } },
+      PERCEPTION: { base: "2D", skills: { con: "4D+1", hide: "5D", search: "4D", sneak: "5D+2" } },
+      STRENGTH: { base: "3D", skills: { brawling: "3D+2", stamina: "4D+1" } },
+      TECHNICAL: { base: "4D", skills: { "computer programming/repair": "6D+1", demolition: "5D+2", "droid programming": "5D", "droid repair": "5D", "first aid": "4D+2", "repulsorlift repair": "5D", "space transports repair": "6D", security: "6D+2" } }
+    },
+    specialAbilities: "None",
+    forcePoints: 0,
+    characterPoints: 7,
+    move: 10,
+    equipment: "Blaster pistol (3D+1), comlink, datapad, pocket computer, security tool kit",
+    capsule: "Reward for Capture: 25,000 credits (15,000 New Republic, 10,000 New Republic-aligned Af'El government). Crimes: sabotage, destruction of New Republic property, accessory to theft of New Republic property, accessory to assault of New Republic personnel, espionage against the New Republic, resisting arrest, accessory to smuggling of stolen goods, aiding and abetting known criminals. A 1.6-meter, 29-year-old Lowen woman from the populous Mid-Rim world Low'n, Ostan Atur is a skilled saboteur who has proven a serious hindrance to several key New Republic installations — most recently the Qua'Tahc meleenium mines on Af'El. Born surrounded by the cutthroat mercenaries, smugglers, and shady technicians of Low'n's spaceports and tech shops, she learned early that there was a good price to be paid for saboteurs and chose the career deliberately. After running with several underworld figures in the Lesser Plooriod Cluster she landed a generous contract with the Ithorian gangster Tolad Dor of the Nilg system, working for Dor for nearly two years — disabling equipment to let his crews loot installations, rigging detonators on the repulsorcraft of the infamous Imperial Colonel Sil Ompren, and crippling many starships so Dor's people could collect the goods from the stores and resell them on the invisible market. She was an invaluable part of Dor's growing syndicate, but the Ithorian's criminal empire could only bring her so much profit. She relocated to the little-known Minos Cluster, partnered with the Reigat bruiser Talak, and was recruited by Rani Quanic to slice into the Qua'Tahc meleenium mines for a heist of 100 kilograms of meleenium. Atur disabled several of the mine's security monitors, emergency repulsorcraft, and the B1 worker droids assigned to the southeast tunnel shafts, allowing the team to escape with relative ease. When three New Republic operatives caught up to the fleeing trio, Ostan and her companions pinned them down with cover fire, wounding all three; two were then quite seriously hurt by Talak's follow-up attack. Cracken's note: 100 kilograms of meleenium is enough to provide laser actuators for an entire MC80 cruiser or nearly seven entire starfighter squadrons, and is a key component of durasteel hull plating and the phototropic shielding on T-65 X-wings — the only viable substitutes are cubirian and thoranium, both of whose sources remain in Imperial hands.",
+    source: "WEG41010 Star Wars Adventure Journal #10 p.271 (Wanted by Cracken — Ostan Atur)"
+  }
+  ,{
+    name: "Rani Quanic",
+    species: "Sullustan",
+    system: "Sullust",
+    location: "Mobile (Ison Corridor / Minos Cluster / Thann and Arkanis sectors)",
+    affiliations: ["Criminal Underworld"],
+    role: "Sullustan Smuggler / SoroSuub Hijacker",
+    type: "Sullustan Smuggler",
+    stats: {
+      DEXTERITY: { base: "2D+1", skills: { blaster: "4D+1", dodge: "3D+1", "melee combat": "3D+1" } },
+      KNOWLEDGE: { base: "2D+1", skills: { "alien species": "3D+1", cultures: "3D+1", languages: "4D", "planetary systems": "4D+1", streetwise: "5D+1" } },
+      MECHANICAL: { base: "3D+2", skills: { astrogation: "5D", "space transports": "5D+2", "space transports: Nella 342": "6D+2", "starship gunnery": "4D+2" } },
+      PERCEPTION: { base: "3D+1", skills: { bargain: "4D+1", con: "4D+1", gambling: "3D+2" } },
+      STRENGTH: { base: "2D+2", skills: { brawling: "3D+2" } },
+      TECHNICAL: { base: "3D+2", skills: { "computer programming/repair": "4D+2", "droid repair": "4D", security: "4D+1", "space transports repair": "4D+1", "space transports repair: Nella 342": "5D" } }
+    },
+    specialAbilities: "Enhanced Senses: Sullustans have advanced hearing and vision; +2D to Perception or search checks involving vision in low-light areas. Location Sense: once a Sullustan has visited an area, she always remembers how to return; +1D to astrogation rolls for places previously visited.",
+    forcePoints: 0,
+    characterPoints: 5,
+    move: 10,
+    equipment: "Blaster pistol (4D+2), comlink, modified Nella 342 light freighter Lathien Leth, 500 credits, Republic Y-wing pilot's flight suit",
+    capsule: "Reward for Capture: 30,000 credits (20,000 New Republic, 10,000 New Republic-allied Af'El government). Crimes: smuggling stolen goods, destruction of New Republic property, theft of New Republic property, assault of New Republic personnel, espionage against the New Republic, resisting arrest, aiding and abetting known criminals. A 1.4-meter Sullustan smuggler who began as a freighter pilot along the Ison Corridor and quickly learned spice and other valuable contraband paid better. Not one to engage herself in galactic politics, she was largely unbothered when the Empire seized Sullust and enslaved or imprisoned many of her people — she just kept trying to make as many credits as possible before the final jump. After an encounter with Imperial customs frigates drove her out of the Ison Corridor she worked the Minos Cluster with her old Rodian partner Chordak (see Galaxy Guide 6: Tramp Freighters, 2nd Ed.), but the small hauls there frustrated her and she returned home — only to be captured by Imperial forces within a week and imprisoned. She was released under a personal pardon from the Sullust system Moff and Sin Suub, chairman of SoroSuub Corporation, on condition that she work for SoroSuub (and indirectly the Empire) disrupting suspected Rebel smuggling operations without the obvious footprint of an Imperial frigate. Willing to do anything to be released, she enjoyed a successful career as a contraband and weapons hijacker under the Imperial prefect's protection. After Endor, SoroSuub remained — now an illegal Imperial-allied corporation — and Rani's brief was loosely retasked to stealing New Republic starship construction materials. She contacted the Reigat bruiser Talak from her Minos Cluster days, was introduced to the Lowen saboteur Ostan Atur, and the trio conceived the plan to hijack 100 kg of meleenium from its source in the Ka'Dedus system. They succeeded and nearly escaped clean until Kichiir the Wookiee's Republic team appeared on scene; in the firefight her prized Lathien Leth received minor damage but the trio escaped. Cracken considers Rani the leader of the trio. She is thin, short, quiet, reserved, and increasingly cynical; she dreams of one big enough haul to retire to Cloud City or Alassa Major. She habitually wears a Republic Y-wing pilot's flight suit (a souvenir of an early SoroSuub job). Commander Nunb has personally offered to take up the matter of her apprehension.",
+    source: "WEG41010 Star Wars Adventure Journal #10 p.273 (Wanted by Cracken — Rani Quanic)"
+  }
+  ,{
+    name: "Talak",
+    species: "Reigat",
+    system: "Reigalius",
+    location: "Mobile (Malthor — Fabrillan / Minos Cluster / Af'El)",
+    affiliations: ["Criminal Underworld"],
+    role: "Reigat Strong Man / Brawler",
+    type: "Reigat Strong Man",
+    stats: {
+      DEXTERITY: { base: "3D+2", skills: { "brawling parry": "5D+2", dodge: "5D+2", "melee combat": "7D+2", "melee parry": "7D+2" } },
+      KNOWLEDGE: { base: "2D", skills: { intimidation: "5D", streetwise: "4D", "streetwise: Gallisport": "5D+1" } },
+      MECHANICAL: { base: "2D+1", skills: {} },
+      PERCEPTION: { base: "3D", skills: { command: "4D" } },
+      STRENGTH: { base: "5D+2", skills: { brawling: "9D+2", "climbing/jumping": "6D+2", stamina: "7D" } },
+      TECHNICAL: { base: "2D+1", skills: {} }
+    },
+    specialAbilities: "Intimidation: Reigats are frightening to many beings and receive a +1D bonus to intimidation.",
+    forcePoints: 1,
+    darkSidePoints: 2,
+    characterPoints: 9,
+    move: 11,
+    equipment: "Blaster pistol (4D)",
+    capsule: "Reward for Capture: 10,000 credits (5,000 New Republic, 5,000 New Republic-allied Af'El government). Crimes: assault of New Republic personnel, assault with intent to kill, resisting arrest, aggravated assault, aiding and abetting known criminals, accessory to theft of New Republic property, accessory to destruction of New Republic property. A 2.1-meter Reigat male with the species' mottled gray skin, blue facial features and hair, and an immense physique, Talak is something of a departure from the normally solitary Reigats — though not overly social, he has been known to work with others. Alliance Intelligence believes he resided in Fabrillan on the Reigat homeworld Malthor (a world with a relatively large Reigat population — among them the Rebel operative Bakku, see Cracken's Rebel Operatives p.13) for some time before deciding to hire out his strength and combat abilities. He moved from job to job and eventually landed in the Minos Cluster, where he worked for various underworld elements for nearly three years and made the acquaintance of the Sullustan smuggler Rani Quanic. After Quanic resurfaced on the Minos scene (following some time in prison) looking for accomplices for a recently-conceived heist, Talak and her most recent partner — Lowen saboteur Ostan Atur — agreed to join. While Quanic secured the escape craft and Atur covered her with heavy fire from the gun emplacements, Talak preferred to deal with pursuing New Republic operatives in his own style: he engaged all three Republic agents in a fierce brawl, seriously wounded Agent Oollj, and seriously wounded the Ug'Ggeran technician Cith Sninif. Only Kichiir the Wookiee — a member of the elite Lightning tech squadron of the SpecForces Eclipse Team — was able to match Talak's size and strength, but with the combined ferocity of Talak's attack and the constant cover from Atur's guns even Kichiir was beaten down. Before reinforcements could be called, Talak rushed to the Lathien Leth and the trio fled the Ka'Dedus system with their 100 kilograms of stolen meleenium. Talak thoroughly enjoys his occupation and has in recent months become increasingly overconfident — having recently defeated a Wookiee (with the help of the Lathien Leth's blaster cannons), his already considerable ego has only grown. Cracken's note: Talak's self-image has inflated further since his 'victory' against Kichiir. Tal-Yannar Najjan, one of the medics at Delta Base treating Kichiir and the others, reports that the Eclipse Team is talking about sending one of their agents to cool Talak's increasing self-regard. Cracken's credits are on Tirranna, or possibly Kichiir himself if he is up and about sooner than the medical staff has predicted. Cracken hopes Talak's overconfidence will lead him to a mistake that allows Republic forces to apprehend him and his accomplices.",
+    source: "WEG41010 Star Wars Adventure Journal #10 p.276 (Wanted by Cracken — Talak)"
+  }
+  ,{
+    name: "Borun Call",
+    species: "Quarren",
+    system: "Mon Calamari",
+    location: "Mobile (formerly Sar Galva — Murul Trench / Borderland Regions / Wernicn 3 — Jinorota City)",
+    affiliations: ["Criminal Underworld"],
+    role: "Quarren Slaver / Slave Trade Coordinator",
+    type: "Quarren Slaver",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { blaster: "6D+2", "brawling parry": "4D", dodge: "5D", "melee combat": "4D", "melee parry": "3D+2", "missile weapons: spear gun": "5D" } },
+      KNOWLEDGE: { base: "2D+2", skills: { "alien species": "6D+2", bureaucracy: "7D+2", cultures: "6D+2", intimidation: "5D+2", languages: "3D+2", "languages: Huttese": "5D+2", "languages: Wookiee": "4D+2", "law enforcement": "5D+2", "planetary systems": "4D", streetwise: "6D+2", "survival": "4D+2", "survival: aquatic": "6D", "value: slaves": "7D+2" } },
+      MECHANICAL: { base: "2D", skills: { astrogation: "4D", "beast riding": "3D+2", "beast riding: glor'ag": "5D", "repulsorlift operation": "4D", "waveskimmer": "4D", "space transports": "4D", "starship gunnery": "3D+2" } },
+      PERCEPTION: { base: "3D+1", skills: { bargain: "7D+1", command: "5D+1", con: "4D", gambling: "4D", hide: "5D", persuasion: "6D+1", search: "5D+1", sneak: "4D+1" } },
+      STRENGTH: { base: "3D", skills: { brawling: "4D+1", lifting: "4D+1", stamina: "4D+1", swimming: "4D+1" } },
+      TECHNICAL: { base: "2D+2", skills: { "computer programming/repair": "3D+2", demolition: "4D+2", security: "5D+2" } }
+    },
+    specialAbilities: "Aquatic: Quarren can breathe both air and water and can withstand extreme pressures found in ocean depths.",
+    forcePoints: 1,
+    darkSidePoints: 4,
+    characterPoints: 16,
+    move: "10 (walking), 11 (swimming)",
+    equipment: "Comlink, datapad, stun pistol (4D stun), heavy blaster pistol (5D), partial armor (+2 physical, +1 energy, torso only), spear gun (3D+1)",
+    capsule: "Reward for Capture: 45,000 credits. Crimes: assault on New Republic personnel, kidnapping, theft, smuggling, transportation of slaves, conspiracy to deprive sapients of their freedom. A 1.7-meter, 72-year-old Quarren slaver who has been plying the slave trade since the ages of the Old Republic — mentor to the rising Twi'lek slaver Slar-dan'ti Gardi, Call is one of the most infamous slavers in the Borderland Regions and one of the few who catered to Imperial General Tagge during construction of the first Death Star. Call grew up in the rough undercity streets of Sar Galva, a small mining outpost in the Murul Trench on Calamari. Arrested for various crimes during his youth, his leadership abilities were recognized by wardens and he was given a position as labor crew coordinator, where he developed the slave-handling skills that became his profession. He directly aided in the enslavement of the Talz on Alzoc III (see Galaxy Guide 4: Alien Races, 2nd Ed., pp. 85-86) and on one occasion promoted the enslavement of the Mon Calamari themselves; recently he attended the more current Zygerian Conference. He has enslaved and sold members of over a hundred different species but seems to have a preference for the larger ones, which ensure greater profit. He has temporarily allied with virtually any individual for profit. A stable fixture in the corrupt economy of the Empire, he immediately became a wanted being when the New Republic took power, but his criminal status was not upgraded until several incidents in which he and his Twi'lek companion resumed their despicable trade. Following the quelling of the Vaffin Labor Camps Insurgence, Slar-dan ti Gardi captured two Wookiees Call did not know were Kashyyyk representatives. Sergeant Tauran Nartal of Vodran (a SpecForces operative) headed the investigation; Call's friend in Jinorota City on Wernicn 3 incapacitated Nartal for him without taking the elderly Quarren's cunning into account. Call and his companion sold Nartal to representatives of the Kessel mines, who have since continued to enslave sapient species throughout the Listehol Run and surrounding territories. His companion has gone into hiding to avoid capture for the Wernicn 3 incident, but headstrong Borun Call is confident he will avoid capture as he has for nearly four decades. Call is also not presently concerned about being captured by New Republic forces because he spends a good deal of his time in areas still held by the diminishing Empire — now sells his slaves to the highest bidder. Borun Call is an elderly Quarren male with a lavender complexion. He is missing one of his facial tentacles, the result of a brief melee during his attempt to capture a Trianii operative working for the Alliance — the light blue eyes typical of his people, but his face is heavily wrinkled from both his age and his infrequent contact with his natural aquatic element. He dresses in dark clothing and always has one of his Esoomian bodyguards by his side; despite his wealth he attempts to maintain a low profile and never flaunts his material goods. He commands a large group of slaving craft, his personal ship, the Vanquisher, a modified Sydon Vehicle Works MRX-BR Pacifier (see Galaxy Guide 8: Scouts p.42). Cracken's note: Call is one of the most despicable slavers to have ever denied others their freedom, and his contemptuous attitude in the face of his warrant for arrest is irritating. Cracken cannot wait for the day the Empire's territory shrinks to such a point that Call is squeezed into New Republic jurisdiction — perhaps then, if the current attempts to free the Wookiee representatives and Sergeant Nartal are successful, Nartal can personally apply the magnacuffs to Call's wrists.",
+    source: "WEG41010 Star Wars Adventure Journal #10 p.278 (Wanted by Cracken — Borun Call)"
+  }
+  ,{
+    name: "Drolen Antig",
+    species: "Nalroni",
+    system: "Celanon",
+    location: "Mobile (Kessel Run / Sisar Run / Sanrafsix Corridor / Ethav Regions / Roche Asteroid Field)",
+    affiliations: ["Criminal Underworld"],
+    role: "Nalroni Smuggler / Thief",
+    type: "Nalroni Smuggler",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { blaster: "4D", dodge: "3D+2" } },
+      KNOWLEDGE: { base: "2D", skills: { languages: "3D", "planetary systems": "4D+1", streetwise: "3D", value: "4D" } },
+      MECHANICAL: { base: "3D+2", skills: { astrogation: "4D", "capital ship gunnery": "4D+2", "capital ship shields": "4D", "repulsorlift operation": "4D+1", "space transports": "5D+2", "space transports: Etti lighter": "6D+2" } },
+      PERCEPTION: { base: "4D+1", skills: { bargain: "6D+1", command: "5D+1", gambling: "5D", hide: "5D+1", persuasion: "6D+1", sneak: "5D+2" } },
+      STRENGTH: { base: "2D+1", skills: { brawling: "3D+1" } },
+      TECHNICAL: { base: "2D+2", skills: { "capital ship repair": "3D+2", "computer programming/repair": "3D", security: "4D+2", "space transports repair": "3D+2" } }
+    },
+    specialAbilities: "None",
+    forcePoints: 1,
+    darkSidePoints: 2,
+    characterPoints: 8,
+    move: 10,
+    equipment: "Blaster carbine (5D), blaster pistol (4D), comlink, datapad, 700 credits",
+    capsule: "Reward for Capture: 20,000 credits. Crimes: smuggling, accessory to smuggling stolen goods, murder, treason, theft of New Republic military property, aiding Imperial forces. A 1.6-meter, 32-year-old Nalroni male with orange-red fur. Drolen Antig is a cunning con, thief, and smuggler who has plied (and survived) such infamous trade routes as the Kessel Run, the Sisar Run, and the Sanrafsix Corridor. Prior to the Alliance victory at the Battle of Endor he was known to have smuggled everything from jellied cannon to spice, and had on occasion smuggled weapons to the Alliance cell in Corint City. He commands a troupe of approximately 30 other smugglers and lowlifes, none of whom trust the Nalroni entirely. Following the destruction of the second Death Star, Antig spent considerable time 'down time' on his homeworld Celanon (see the Star Wars Planets Collection). When he returned to the smuggling scene he was contracted for some work by Kuat Drive Yards, the giant manufacturer of such Imperial war machines as the AT-AT and AT-ST walkers and Imperial-class Star Destroyers. Following its defeat at Endor, the Imperial Navy has increasingly suffered from a critically short supply of combat-worthy craft; as New Republic forces continue to push the once-indomitable Empire further and further, Imperial forces lose more and more craft. Kuat Drive Yards has attempted to increase its production and to advance the effectiveness of many of its current designs. Drolen was offered a rather lucrative contract to acquire for KDY materials that would aid in increasing the manufacturer's output — and he knew exactly the place: rumors around the bar were that a few Advozse thieves Drolen had worked with back on Fresia were planning a heist of the New Republic-allied Roche Asteroid Field, and Imperial-allied corporations such as Hydrospeare (see Alliance Intelligence Reports) had been recently sighted in the Ethav Regions, where the New Republic now fears Kuat Drive Yards may be developing a new assault starfighter that will utilize the Verpine designs sold them. Drolen took the deal with Kuat, located his former partners, and arranged a deal in which his Advozse friends would infiltrate the Roche Field, make off with various high-tech items and prototypes, and then sell them to Kuat for a high price. When all the intricacies of the plan were agreed upon, Drolen and his accomplices infiltrated the Slayn & Korpil hive design complexes, made off with four complete gyroscopic stabilization systems (used in the B-wing starfighter), and a number of weapon prototypes. The Nalroni smuggler and Advozse thieves fled the Roche system aboard Antig's transport, the Trustworthy, and made their way to the Kuat system Yards (see Platt's Starport Guide). While preparing to land the Trustworthy, Drolen and some of his cronies killed the three Advozse. Drolen and his crew arrived at the Kuat office with the stolen goods minutes later, delivered the goods, and received the payment. The Advozse's bodies were later discovered jettisoned in the nearby Relarr system. The gyroscopic stabilizers Drolen Antig stole are an integral part of the B-wing's composition and were a carefully-guarded technological secret. A group of operatives is currently preparing to locate and detain Antig, as he has recently been sighted in the Ethav Regions without his crew or the Trustworthy; the New Republic is also considering sending a team of infiltrators directly into Kuat Drive Yards to retrieve the stolen stabilizers and prototypes, but as such a mission is extremely perilous the many considerations and plans are taking some time. Cracken's note: Drolen Antig's collaboration with the thieves who aided him in the use of valued technology is damaging to the New Republic's struggle to maintain an ever-strengthening position. His murder of his accomplices so he could keep all of the payment was despicable. Drolen's actions could cost the Republic dearly if KDY utilizes the technology they have acquired in new design. It is for this reason a team of SpecForces infiltrators into Kuat is needed to retrieve the equipment before the techs make too much progress.",
+    source: "WEG41010 Star Wars Adventure Journal #10 p.281 (Wanted by Cracken — Drolen Antig)"
+  }
+  ,{
+    name: "Kea Ra-Lan",
+    species: "Gran",
+    system: "Kinyen",
+    location: "Mobile (Kinyen / Tasrin / Kashyyyk — Kamarkiia, Wartaki — Neocomora vaults)",
+    affiliations: ["Criminal Underworld"],
+    role: "Gran Thief / Cat-Burglar",
+    type: "Gran Thief",
+    stats: {
+      DEXTERITY: { base: "3D", skills: { dodge: "5D", "pick pocket": "6D", running: "4D" } },
+      KNOWLEDGE: { base: "2D+2", skills: { "alien species": "3D+2", cultures: "3D+2", "law enforcement": "4D+2" } },
+      MECHANICAL: { base: "2D+1", skills: { astrogation: "3D+1", "repulsorlift operation": "3D+1", "space transports": "3D", "starship shields": "4D+1" } },
+      PERCEPTION: { base: "4D", skills: { bargain: "5D", con: "5D", forgery: "5D+2", hide: "6D", search: "5D", sneak: "7D" } },
+      STRENGTH: { base: "3D", skills: { "climbing/jumping": "4D" } },
+      TECHNICAL: { base: "2D+1", skills: { "computer programming/repair": "5D", demolition: "4D", security: "7D" } }
+    },
+    specialAbilities: "Vision: A Gran's unique combination of eye-stalks gives them a larger spectrum of vision than other species — they can see well into the infrared range (no penalties in darkness, provided there are heat sources), and gain a +1D bonus to notice sudden movements.",
+    forcePoints: 0,
+    darkSidePoints: 1,
+    characterPoints: 2,
+    move: 10,
+    equipment: "Comlink, datapad, lectrolocker (see Cracken's Rebel Field Guide), security tool kit",
+    capsule: "Reward for Capture: 57,500 credits (7,500 New Republic, 50,000 Kashyyyk Embassy). Crimes: theft, trespassing, entering restricted space. A 1.9-meter, 26-year-old Gran female who presents a strange case — she absolutely abhors violence and has never physically harmed another being in all her years as a thief. Unlike the Gran murderer Ree-Yees (see the Star Wars Movie Trilogy Sourcebook), Kea was actually arrested by New Republic forces on Tasrin for an earlier break-in when she was cornered and refused to struggle; her compliance reduced a potential prison term to a stiff fine. She has made a successful career out of her questionable means and is known to own a rather luxurious retreat in the Dal forests on Kinyen, though a recent raid by the Kinyen planetary constabulary on her home apparently has Republic orders found the abode empty. She has thrown lavish parties in the past, and spent a great many credits to ensure her guests thoroughly enjoy themselves; though she had committed some minor crimes against the New Republic she has only recently landed herself among some of the most hunted fugitives. Two months ago, she managed to infiltrate the current New Republic occupational blockade about the Wookiee homeworld Kashyyyk and the Imperial forces currently holding out on the world. Evading both forces, Kea managed to secret herself in the abandoned Wookiee city Kamarkiia on the island continent Wartaki, and there somehow was able to enter the sacred vaults of Neocomora and make off with an undetermined number of the ancient texts held there, thought destroyed some years ago. It is unknown what she intends to do with the texts, but the New Republic forces of law, in concurrence with pending Kashyyyk Ambassador Kerrithrarr, have offered a substantial bounty for their return. Several high-stature Kashyyyk citizens — among them Alliance and New Republic benefactors Tarkazza and Motamba — have requested the actual contents of the texts not be divulged to those who may attempt to retrieve the works and apprehend Kea Ra-Lan; they have assured the New Republic that the texts contain no information pertinent to the Gran thief's capture. They are religious texts originally believed to have been lost during the initial Imperial occupation; now that they have been discovered intact, they have been retrieved. Kea Ra-Lan is a younger Gran woman who commonly sports the brown and tan padded clothing often associated with her people. She has been thieving since shortly after the Battle of Yavin, and in that time has made a considerable fortune. Unlike many brutal thieves who do not give a second thought to killing any who oppose their activities, Kea absolutely refuses to harm any being, even droids, or even defend herself against a those who would capture her. It is strange she has been decided to anger the Wookiee community, a people not known for such restraint. Cracken's note: it is not known why Kea has chosen to raid the Neocomora vaults, and expose herself to both New Republic and Imperial military forces and the general contempt of the Wookiee populace. Kerrithrarr suggests she may have been hired by a Trandoshan faction attempting to further the Wookiees' plight, but this has yet to be proven. Cracken does not have any sympathy for this thief, but if one of the Wookiee teams Kerrithrarr and Tarkazza have sent searching for Kea locates her before one of the New Republic teams does, she may very well regret never having learned to fight (and fight well).",
+    source: "WEG41010 Star Wars Adventure Journal #10 p.284 (Wanted by Cracken — Kea Ra-Lan)"
+  }
+  ,{
+    name: "Mar Balayan",
+    species: "Shistavanen",
+    system: "Uvena",
+    location: "Mobile (Uvena / Periphery / Imperial-held Outer Rim slave routes)",
+    affiliations: ["Criminal Underworld", "Galactic Empire"],
+    role: "Former Republic Scout / Slaver",
+    type: "Shistavanen Wolfman Scout",
+    stats: {
+      DEXTERITY: { base: "1D+2", skills: { blaster: "5D", "brawling parry": "2D+2", dodge: "3D+2", "melee combat": "2D" } },
+      KNOWLEDGE: { base: "4D", skills: { "alien species": "6D", business: "5D", "planetary systems": "6D+2", survival: "5D", "value: slaves": "6D" } },
+      MECHANICAL: { base: "3D", skills: { astrogation: "6D+2", "space transports": "3D+2", "starship shields": "4D" } },
+      PERCEPTION: { base: "2D", skills: { search: "5D", "search: tracking": "6D" } },
+      STRENGTH: { base: "2D+1", skills: { brawling: "3D+1", "climbing/jumping": "3D", stamina: "2D+1" } },
+      TECHNICAL: { base: "3D+1", skills: { "space transports repair": "4D" } }
+    },
+    specialAbilities: "Some attributes and skills have been lowered to reflect aging.",
+    forcePoints: 1,
+    darkSidePoints: 2,
+    characterPoints: 2,
+    move: "8*",
+    equipment: "Hold-out blaster (3D), macrobinoculars, survival gear",
+    capsule: "Reward for Capture: 20,000 credits. Crimes: aiding Imperial forces, smuggling, transportation of slaves, conspiracy to deprive sapients of their freedom. A 1.53-meter, 61-year-old Shistavanen male — a former Republic Scout, native of the Shistavanen-controlled Uvena star system, who is believed to have recently reappeared in the Periphery selling slaves to Imperial forces and independent interests. Mar Balayan was believed killed nearly five years ago, prior to the debacle at Hoth, as all signs of him and his activities abruptly vanished soon after he was reported fighting a group of Stalimur pirates; it appears Mar has resumed his immortal trade in recent months. Upon Palpatine's ascension and declaration of the New Order, Balayan, one of the Republic Scout Service's most renowned scouts, began his own slave trade — Mar enslaved many defenseless sentient species from the many planets he had surveyed but not yet reported. According to preliminary findings, Mar Balayan has again banded with several other slavers and provides slaves to virtually all who engage in the illicit sale of sapient beings. New Republic Intelligence has been unable to gather any substantial information on Balayan, as he has proven extremely difficult to keep under surveillance, and operates in many areas of the Periphery still held by the Empire. From his activities prior to the Battle of Hoth, it can be assumed he has arranged a system in which he scouts out new worlds with sentient inhabitants, and before any New Republic authorities can register the find, relocates the entire population to slave auctions through Imperial-held space. The recent influx of several previously-unseen species into Periphery and Outer Rim slave inventories appears to confirm the Republic's suspicions. Mar Balayan is an extremely aged Shistavanen male whose once-thick black fur has grayed considerably; he has a noticeable limp that favors his left leg, a result of a 'misunderstanding' with a Frimm bi-tail, one of the creatures indigenous to a world he discovered for the Empire years ago. Cracken's note: I wish there was more I could provide our agents concerning the very real threat Mar Balayan undoubtedly presents to those species who have no means of defense against slavers, but Intell simply does not at this time have any more information regarding the Shistavanen. If any individual units in the Periphery or adjacent territories become available to conduct a further investigation, I have intentions of directing them to do so immediately.",
+    source: "WEG41010 Star Wars Adventure Journal #10 p.286 (Wanted by Cracken — Mar Balayan)"
   }
 // --- END OF NOTABLE_NPCS ---
 ];
