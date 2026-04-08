@@ -45318,6 +45318,423 @@ const STARSHIP_DATA = {
    ],
    "capsule": "The Jedi Dreamer is Captain Korren Starchaser's custom-built scout ship, and like most custom ships it suffers occasionally from fits and spurts of eccentric programming. Streamlined for atmospheric handling, outfitted with one of the better sensor packages this side of Coruscant, and built with extremely sturdy alloys for rough landings and rougher terrain, the Jedi Dreamer doesn't look like much — but as an anonymous smuggler once remarked, 'she's got it where it counts.' The ship is still technically under construction, as Korren's young tech Senni Otek constantly modifies and refits her for better performance. When she's running correctly, the Jedi Dreamer is one of the finest scout ships ever to venture into unknown territory, and Korren is exceedingly proud of it. The crew also includes Sullustan first mate Mowa Gundeeb and the antiquated protocol droid CKO-171. When asked why he named his ship the Jedi Dreamer, Korren — who does not believe in the Force — simply shrugs and says it was 'for a friend.'",
    "source": "WEG41006 Star Wars Adventure Journal #6 p.245 (Scouts' Dispatch)"
+  },
+  {
+   "name": "Sable III",
+   "type": "Drek Drednar's modified Corellian corvette pirate flagship",
+   "scale": "Capital",
+   "length": "150 meters",
+   "skill": "Capital ship piloting: Corellian corvette",
+   "crew": "145, gunners: 19, skeleton 40/+10",
+   "crew_skill": "Astrogation 7D, capital ship gunnery 6D+2, capital ship piloting 6D, capital ship shields 5D, sensors 5D+2",
+   "passengers": "40",
+   "cargo_capacity": "2,500 metric tons",
+   "consumables": "1 year",
+   "hyperdrive": "x1",
+   "hyperdrive_backup": "x10",
+   "nav_computer": "Yes",
+   "maneuverability": "2D+1",
+   "space": "6",
+   "atmosphere": "330; 950 kmh",
+   "hull": "1D+1",
+   "shields": "2D+1",
+   "sensors": {
+     "passive": "40/1D",
+     "scan": "80/2D",
+     "search": "100/3D",
+     "focus": "5/4D"
+   },
+   "weapons": [
+     {
+       "name": "5 Double Turbolaser Cannon",
+       "fire_arc": "2 front, 1 right, 1 left, 1 back",
+       "crew": "2",
+       "skill": "Capital ship gunnery",
+       "fire_control": "3D",
+       "space_range": "3-15/35/75",
+       "atmosphere_range": "6-30/70/150 km",
+       "damage": "4D+2"
+     },
+     {
+       "name": "Ion Cannon",
+       "fire_arc": "Turret",
+       "crew": "3",
+       "skill": "Capital ship gunnery",
+       "fire_control": "2D+2",
+       "space_range": "1-10/25/30",
+       "atmosphere_range": "2-20/50/100 km",
+       "damage": "3D"
+     },
+     {
+       "name": "2 Tractor Beam Projectors",
+       "fire_arc": "1 turret, 1 front",
+       "crew": "3",
+       "skill": "Capital ship gunnery",
+       "fire_control": "2D",
+       "space_range": "1-5/15/30",
+       "atmosphere_range": "2-10/30/60 km",
+       "damage": "4D"
+     }
+   ],
+   "capsule": "The Sable III is the flagship of pirate captain Drek Drednar — a heavily modified Corellian corvette that began life as the brand-new Anto's Star, stolen from a Corellian shipyard by allies of Drednar shortly before his mutiny against pirate captain Karn Granzor. Drednar's loyal mechanics customized the corvette in advance, then helped him use it to destroy Granzor's gunship Sable II and assume command of the band. Drednar named it Sable III in honor of his old ship, salvaged what he could from the Sable II's wreck (one tractor beam projector and two turret gun mounts), and sold the corvette's original front turbolasers to fund an ion cannon and a second tractor beam. His crew has reinforced the hull and upgraded the shields. Most notably, the Sable III houses a docking bay for six non-hyperdrive snub fighters — usually three Z-95 Headhunters, two Zebras, and an extra emergency bay; a stolen X-wing and Y-wings ride along on raids when needed. The hull is decorated with the 'blazing claw,' a symbol of piracy stretching back thousands of years and made famous by old holos. The full pirate band keeps 10 Z-95s, 5 Zebras, 3 Y-wings, and 1 X-wing total, with non-deployed fighters left behind on patrol at the hidden Taraloon base inside the Quintar Nebula.",
+   "source": "WEG41005 Star Wars Adventure Journal #5 p.92 (Stand and Deliver)"
+  },
+  {
+   "name": "Beggar's Solace",
+   "type": "Jin-Jin's modified Rendilli-Surron Starlight light freighter",
+   "scale": "Starfighter",
+   "length": "34 meters",
+   "skill": "Space transports",
+   "crew": "2 (Jin-Jin uses an R2 unit to astrogate)",
+   "crew_skill": "See Jin-Jin",
+   "passengers": "4",
+   "cargo_capacity": "50 metric tons",
+   "consumables": "3 weeks",
+   "hyperdrive": "x1",
+   "hyperdrive_backup": "x12",
+   "nav_computer": "Yes",
+   "maneuverability": "1D",
+   "space": "7",
+   "atmosphere": "350; 1,000 kmh",
+   "hull": "5D",
+   "shields": "2D",
+   "sensors": {
+     "passive": "35/1D+1",
+     "scan": "55/2D+1",
+     "search": "80/3D+1",
+     "focus": "3/4D+1"
+   },
+   "weapons": [
+     {
+       "name": "Twin Blaster Cannons (fire-linked)",
+       "fire_arc": "Turret",
+       "skill": "Starship gunnery",
+       "fire_control": "2D",
+       "space_range": "1-5/10/17",
+       "atmosphere_range": "100-500/1/1.7 km",
+       "damage": "5D"
+     },
+     {
+       "name": "Proton Torpedo Launcher",
+       "fire_arc": "Front",
+       "skill": "Starship gunnery",
+       "fire_control": "3D+2",
+       "space_range": "1/3/7",
+       "atmosphere_range": "50-100/300/700 km",
+       "damage": "9D"
+     }
+   ],
+   "capsule": "The Beggar's Solace is a banged-up Rendilli-Surron Starlight light freighter belonging to the down-on-his-luck smuggler and former Imperial TIE pilot Jin-Jin. He happened upon it in an Imperial impound while fleeing a botched theft of an advanced TIE fighter — its hyperdrive motivator activated prematurely as he climbed aboard, sending him on a wild ride through hyperspace and starting his career-long string of disasters. He has been rebuilding the ship from the ground up ever since, and despite its eyesore exterior it has plenty of tricks up its sleeve. He's grown quite fond of the ship that adopted him.",
+   "source": "WEG41005 Star Wars Adventure Journal #5 p.104 (Smugglers of the Outer Rim)"
+  },
+  {
+   "name": "Bosphon Forever",
+   "type": "Bora Boru's Surronian L19 heavy freighter (claimed temple/ship)",
+   "scale": "Starfighter",
+   "length": "50 meters",
+   "skill": "Space transports",
+   "crew": "1",
+   "crew_skill": "See Bora Boru",
+   "passengers": "10",
+   "cargo_capacity": "120 metric tons",
+   "consumables": "8 weeks",
+   "hyperdrive": "x2",
+   "hyperdrive_backup": "x16",
+   "nav_computer": "Yes",
+   "maneuverability": "1D",
+   "space": "6",
+   "atmosphere": "330; 950 kmh",
+   "hull": "6D",
+   "shields": "1D",
+   "sensors": {
+     "passive": "30/1D",
+     "scan": "80/2D",
+     "search": "120/3D",
+     "focus": "4/4D"
+   },
+   "weapons": [
+     {
+       "name": "Twin Blaster Cannon (fire-linked)",
+       "fire_arc": "Turret",
+       "skill": "Starship gunnery",
+       "fire_control": "2D",
+       "space_range": "1-3/12/25",
+       "atmosphere_range": "100-300/1.2/2.5 km",
+       "damage": "5D"
+     },
+     {
+       "name": "Ion Cannon",
+       "fire_arc": "Turret",
+       "skill": "Starship gunnery",
+       "fire_control": "2D",
+       "space_range": "1-3/7/36",
+       "atmosphere_range": "50-100/200/500 km",
+       "damage": "5D"
+     }
+   ],
+   "capsule": "The Bosphon Forever is the Surronian L19 heavy freighter belonging to the Bosph Farseer Bora Boru, who claimed it from its original owner using his Bosph glyph (a symbol of personal possession granted only to ranking Bosph Farseers — to mark something with one's glyph is to make it one's own). The original Human owner returned outraged to find symbols painted across his ship and refused to honor the claim, forcing Bora Boru to take his life and assume the ship by Bosph law. The interior is now coated in glyphs and runes — some signifying ownership, others recounting the history and accomplishments of the destroyed planet Bosph — making the ship a virtual temple to Bora Boru's lost homeworld. Only the truly trusted may enter the ship unguarded, and any violation of the artifacts inside is a violation of Bora Boru himself.",
+   "source": "WEG41005 Star Wars Adventure Journal #5 p.109 (Smugglers of the Outer Rim)"
+  },
+  {
+   "name": "Jericho's Pride (a.k.a. Josephine's Honor)",
+   "type": "Modified Mindabaal Custom Pleasure Yacht (formerly the Royal Flower)",
+   "scale": "Starfighter",
+   "length": "30.1 meters",
+   "skill": "Space transports",
+   "crew": "2",
+   "crew_skill": "See Jericho and Josephine Donovan",
+   "passengers": "8",
+   "cargo_capacity": "35 metric tons",
+   "consumables": "5 weeks",
+   "hyperdrive": "x3/4",
+   "hyperdrive_backup": "x14",
+   "nav_computer": "Yes",
+   "maneuverability": "3D",
+   "space": "8",
+   "atmosphere": "365; 1,050 kmh",
+   "hull": "3D",
+   "shields": "2D",
+   "sensors": {
+     "passive": "35/1D+1",
+     "scan": "60/2D+1",
+     "search": "100/3D+1",
+     "focus": "4/4D+1"
+   },
+   "weapons": [
+     {
+       "name": "2 Heavy Turbolaser Cannons",
+       "fire_arc": "Turret",
+       "skill": "Starship gunnery",
+       "fire_control": "2D",
+       "space_range": "1-3/12/25",
+       "atmosphere_range": "100-500/1.1/2 km",
+       "damage": "5D+2"
+     }
+   ],
+   "capsule": "Jericho's Pride (sometimes renamed Josephine's Honor depending on which sister is currently winning) was originally the modified Mindabaal Custom Pleasure Yacht Royal Flower — a gift Lord James Ortell Donovan was preparing to present to an Imperial ambassador. His rebellious elder daughter Jericho and several of her newly-graduated Mindabaal Royal Academy classmates stole it as her ultimate strike against him, and Jericho converted it from a pleasure yacht into her piracy flagship for a long career of raiding Imperial-aligned shipping. The ship is now home to both estranged Donovan sisters, the runaway pirate Jericho and the former Mindabaal Imperial ambassador Josephine, who reunited under desperate circumstances and now operate it together (while bickering nonstop). Streamlined for maneuverability and speed (3D maneuverability, x3/4 hyperdrive), it's still recognizable as the gilded yacht it once was.",
+   "source": "WEG41005 Star Wars Adventure Journal #5 p.114 (Smugglers of the Outer Rim)"
+  },
+  {
+   "name": "Efficient",
+   "type": "SCr-114 'Skar's modified Subla-Ranson medium cargo hauler (all-droid crew)",
+   "scale": "Starfighter",
+   "length": "75.5 meters",
+   "skill": "Space transports",
+   "crew": "25 (Skar uses an all-droid crew)",
+   "crew_skill": "See Skar; astrogation 5D, sensors 4D, space transports 4D, starship gunnery 4D, starship shields 4D",
+   "passengers": "0 (all life-support spaces stripped)",
+   "cargo_capacity": "700 metric tons",
+   "consumables": "Indefinite (no biological needs)",
+   "hyperdrive": "x1",
+   "hyperdrive_backup": "x11",
+   "nav_computer": "Yes",
+   "maneuverability": "1D",
+   "space": "5",
+   "atmosphere": "335; 950 kmh",
+   "hull": "6D",
+   "shields": "3D+1",
+   "sensors": {
+     "passive": "30/1D",
+     "scan": "65/2D+1",
+     "search": "110/3D",
+     "focus": "4/4D+1"
+   },
+   "weapons": [
+     {
+       "name": "6 Blaster Cannons",
+       "fire_arc": "Turret",
+       "skill": "Starship gunnery",
+       "fire_control": "2D",
+       "space_range": "1-5/10/17",
+       "atmosphere_range": "100-500/1/1.7 km",
+       "damage": "5D"
+     },
+     {
+       "name": "Proton Torpedo Launcher",
+       "fire_arc": "Front",
+       "skill": "Starship gunnery",
+       "fire_control": "3D+2",
+       "space_range": "1/3/7",
+       "atmosphere_range": "50-100/300/700 km",
+       "damage": "9D"
+     },
+     {
+       "name": "Ion Cannon",
+       "fire_arc": "Turret",
+       "skill": "Starship gunnery",
+       "fire_control": "2D",
+       "space_range": "1-3/7/36",
+       "atmosphere_range": "50-100/200/500 km",
+       "damage": "5D"
+     }
+   ],
+   "capsule": "The Efficient is the heavily modified Subla-Ranson medium cargo hauler crewed entirely by reprogrammed droids under the command of the rogue assassin droid SCr-114 'Skar.' Originally a salvage transport stolen from the Human team that came to scavenge the wrecked pleasure cruiser Malka'an Eternal on Edonaaris, the ship has been entirely converted from passenger spaces into a droid repair and maintenance facility. There are no escape pods, no living quarters, no food processors, no entertainment consoles, and no life-support reserves — Skar's all-droid crew needs none of it. Favorite tactic: drift lifelessly through space pretending to be a derelict, luring biological prey into laser cannon range, then unleashing the full broadside.",
+   "source": "WEG41005 Star Wars Adventure Journal #5 p.117 (Smugglers of the Outer Rim)"
+  },
+  {
+   "name": "Steadfast",
+   "type": "Drake Paulsen's Ghtroc light freighter",
+   "scale": "Starfighter",
+   "length": "~30 meters",
+   "skill": "Space transports: Ghtroc freighter",
+   "crew": "1 (Drake Paulsen) + Wookiee first mate Nikaede Celso",
+   "crew_skill": "See Drake Paulsen and Nikaede Celso",
+   "passengers": "4",
+   "cargo_capacity": "100 metric tons",
+   "consumables": "2 months",
+   "hyperdrive": "x1",
+   "hyperdrive_backup": "x12",
+   "nav_computer": "Yes",
+   "maneuverability": "1D+2",
+   "space": "5",
+   "atmosphere": "295; 850 kmh",
+   "hull": "4D",
+   "shields": "2D",
+   "sensors": {
+     "passive": "20/0D",
+     "scan": "40/1D",
+     "search": "60/2D",
+     "focus": "3/3D"
+   },
+   "weapons": [
+     {
+       "name": "Laser Cannon",
+       "fire_arc": "Turret",
+       "skill": "Starship gunnery",
+       "fire_control": "2D",
+       "space_range": "1-3/12/25",
+       "atmosphere_range": "100-300/1.2/2.5 km",
+       "damage": "4D"
+     },
+     {
+       "name": "Concealed Bottom Laser Turret",
+       "fire_arc": "Belly turret",
+       "skill": "Starship gunnery",
+       "fire_control": "1D+2",
+       "space_range": "1-3/12/25",
+       "atmosphere_range": "100-300/1.2/2.5 km",
+       "damage": "4D"
+     }
+   ],
+   "capsule": "The Steadfast is the Ghtroc light freighter belonging to Socorran smuggler Drake Paulsen — the 'Little Prince of Socorro' and son of the legendary Kaine 'Chula' Paulsen. Drake's first mate is the Wookiee Nikaede Celso, who handles its drive systems and engineering with Wookiee patience and skill. The Steadfast carried Drake on his rescue mission to Tatooine for the dying Toob Ancher, then to Redcap, then through a high-stakes intercept above the Imperial Star Galleon Aremin where Drake was forced to mercy-kill the delirious Toob in his stolen Z-95 Headhunter. The ship features a heavy belly gunner's turret accessible by ladder from the main corridor.",
+   "source": "WEG41005 Star Wars Adventure Journal #5 p.122 (A Bitter Winter)"
+  },
+  {
+   "name": "Glory",
+   "type": "Toob Ancher's YT-1300 light freighter (the 'Dame of Nar Shaddaa')",
+   "scale": "Starfighter",
+   "length": "26.7 meters",
+   "skill": "Space transports: YT-1300 transport",
+   "crew": "2",
+   "crew_skill": "See Toob Ancher and Fahs Oxsor (his old first mate); inherited by Fahs after Toob's death",
+   "passengers": "6",
+   "cargo_capacity": "100 metric tons",
+   "consumables": "2 months",
+   "hyperdrive": "x2",
+   "hyperdrive_backup": "x12",
+   "nav_computer": "Yes",
+   "maneuverability": "2D",
+   "space": "4",
+   "atmosphere": "280; 800 kmh",
+   "hull": "5D (heavily customized over decades of pirate service)",
+   "shields": "2D",
+   "sensors": {
+     "passive": "20/0D",
+     "scan": "40/1D",
+     "search": "60/2D",
+     "focus": "3/3D"
+   },
+   "weapons": [
+     {
+       "name": "Quad Laser Cannons (modified)",
+       "fire_arc": "Turret",
+       "skill": "Starship gunnery",
+       "fire_control": "2D",
+       "space_range": "1-3/12/25",
+       "atmosphere_range": "100-300/1.2/2.5 km",
+       "damage": "6D"
+     }
+   ],
+   "capsule": "The Glory is the legendary YT-1300 light freighter of Corellian smuggler Toob Ancher — once the 'Dame of Nar Shaddaa,' a freighter who in her glory days ran the Kessel Run in 20.5 parsecs (a bantha's pace by today's standards, but a marvel back then). Every crack in her armor, every discolored shield plate, every breach to her frame is a medallion of an exceptional career: she carried Toob and his first mate Fahs Oxsor through over a decade of foolhardy adventures and reckless tirades against the Empire and sector authorities, entertaining underground royalty and thumbing her nose at sector authorities across the galaxy long before the days of Tait Ransom, Elias Halbert, or even Han Solo. Toob retired her after the thermal-detonator incident on Ottega blinded and scarred him; for the past two years she had been hidden in Ruck's Rut in Tyma Canyon on Redcap, her hull stained vermilion-pink by the local clay. After Toob's death the Issori Fahs Oxsor inherited her and took her one last time out to Nar Shaddaa, Socorro, and a few old haunts.",
+   "source": "WEG41005 Star Wars Adventure Journal #5 p.151 (A Bitter Winter)"
+  },
+  {
+   "name": "Starlight Red",
+   "type": "Mistress Crimson's smuggling light freighter",
+   "scale": "Starfighter",
+   "length": "~30 meters",
+   "skill": "Space transports",
+   "crew": "1 (Mistress Crimson) + U-THR protocol droid as sensor operator",
+   "crew_skill": "See Mistress Crimson and U-THR (Uthre)",
+   "passengers": "4",
+   "cargo_capacity": "100 metric tons (with hidden contraband compartments)",
+   "consumables": "2 months",
+   "hyperdrive": "x2",
+   "hyperdrive_backup": "x12",
+   "nav_computer": "Yes",
+   "maneuverability": "1D",
+   "space": "5",
+   "atmosphere": "295; 850 kmh",
+   "hull": "4D",
+   "shields": "1D+2",
+   "sensors": {
+     "passive": "20/0D",
+     "scan": "40/1D",
+     "search": "60/2D",
+     "focus": "3/3D"
+   },
+   "weapons": [
+     {
+       "name": "Quad Laser Cannons (illegal ventral mount)",
+       "fire_arc": "Ventral turret",
+       "skill": "Starship gunnery",
+       "fire_control": "2D",
+       "space_range": "1-3/12/25",
+       "atmosphere_range": "100-300/1.2/2.5 km",
+       "damage": "5D"
+     }
+   ],
+   "capsule": "The Starlight Red is the smuggling light freighter of free-trader Mistress Crimson, with her loyal protocol droid U-THR (Uthre) handling the sensor and cockpit-monitoring duties. The ship sports illegal quad laser cannons on its ventral gunnery mount — the kind of obvious weapons violation that draws Imperial Customs attention at the first inspection. During a contraband-unloading run at starport tower 214, level 3301, docking bay 789012634 on Byblos, Mistress Crimson was arrested by Imperial Customs stormtroopers, but Uthre managed to break her out of the level's customs office and the pair blasted out of the impounded docking bay before the blast doors could fully close.",
+   "source": "WEG41005 Star Wars Adventure Journal #5 p.158 (Crimson Jailbreak)"
+  },
+  {
+   "name": "Wroona Stardock",
+   "type": "Kuat Drive Yards Type IV-A Orbital Repair Stardock",
+   "scale": "Capital",
+   "length": "1,900 meters",
+   "skill": "Capital ship piloting (station-keeping only)",
+   "crew": "200, gunners: 24",
+   "crew_skill": "Capital ship gunnery 4D+2",
+   "passengers": "50 technicians",
+   "cargo_capacity": "5,000 metric tons",
+   "consumables": "3 months",
+   "cost": "Not available for sale",
+   "hyperdrive": "None",
+   "nav_computer": "N/A",
+   "maneuverability": "0D (orbital station)",
+   "space": "0",
+   "atmosphere": "N/A",
+   "hull": "4D",
+   "shields": "0D",
+   "sensors": {
+     "passive": "25/0D",
+     "scan": "50/1D",
+     "search": "75/2D",
+     "focus": "3/2D+1"
+   },
+   "weapons": [
+     {
+       "name": "8 Turbolasers",
+       "fire_arc": "Turret",
+       "crew": "3",
+       "skill": "Capital ship gunnery",
+       "fire_control": "2D",
+       "space_range": "1-5/8/14",
+       "damage": "4D+2"
+     }
+   ],
+   "capsule": "The Wroona Stardock is a Kuat Drive Yards Type IV-A orbital repair facility floating above the Wroonian capital. Initially constructed by Wroona's Imperial governor during the Empire's stay on the planet, it has been run by the Wroonian Guilds since the post-Endor Wroonian revolt as a repair facility for anyone who can pay the expensive berthing and repair fees. The repair facility is large enough to fit an Imperial Star Destroyer or several smaller capital ships. Sections of the stardock house storage bays, quarters for crew and technicians, space tugs and shuttles, and repair bays. Only 50 technicians are on duty at any given time — for more important jobs more techs are shuttled up from Wroona's surface. The stardock is exclusively for capital ships unable to land at planetside starport facilities; Wroona starport itself can handle most starfighter, freighter, and small capital-ship work. The Imperial Star Destroyer Vengeance was berthed here for repairs when the Black Curs sabotaged its bridge during the Vengeance Strike — the dying ship listed within the stardock framework, slowly tearing it apart, before finally breaking up.",
+   "source": "WEG41005 Star Wars Adventure Journal #5 p.284 (Vengeance Strike)"
   }
  ]
 // --- END OF STARSHIP_DATA ---
