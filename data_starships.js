@@ -46899,6 +46899,158 @@ const STARSHIP_DATA = {
      "damage": "9D"
     }
    ]
+  },
+  {
+   "rank": 5,
+   "name": "Ashanda Ray",
+   "craft": "Modified Mon Calamari MC-18 Light Freighter",
+   "type": "Modified light freighter (Kinnin Vo-Shay's personal ship)",
+   "affiliation": "The Fringe",
+   "era": "Rebellion / New Republic",
+   "source": "WEG41013 Star Wars Adventure Journal #13 (The Last Hand)",
+   "scale": "Starfighter",
+   "length": "23.6 meters",
+   "crew": "1",
+   "passengers": "5",
+   "cargo": "50 metric tons",
+   "consumables": "2 months",
+   "hyperdrive": "x1 (backup x10)",
+   "nav_computer": "Yes",
+   "maneuverability": "2D+1",
+   "space": "8",
+   "atmosphere": "365; 1,050 kmh",
+   "hull": "5D",
+   "shields": "2D (4D backup)",
+   "of_note": "The personal freighter of Kinnin Vo-Shay, the legendary gambler thought lost in the Tyus Cluster for over twenty years. The Ashanda Ray was caught by the Cluster's gravity wells while Vo-Shay was fleeing his own fame on a deep-frontier run; at the heart of the Cluster, where time itself ceased to flow, the ship and its captain endured an unmeasurable interval before the Force-spirit of Jedi Master Aryzah guided them out — Vo-Shay reemerging into the galaxy decades later, apparently un-aged and quietly trained in the basics of the Force. Mon Calamari MC-18 freighters carry 4D of backup shields: when a die of the active 2D shields is lost, the pilot may make an Easy starship shields roll to bring one of the backup die codes online and restore the shields to full 2D — letting the ship absorb significantly more punishment than its baseline rating suggests. Heavily modified weaponry: turret-mounted heavy triple-laser cannon (6D+2 damage), 3 forward proton torpedo launchers (9D damage), and forward ion cannon (4D damage).",
+   "sensors_passive": "10/0D",
+   "sensors_scan": "25/1D",
+   "sensors_search": "45/3D",
+   "sensors_focus": "3/4D",
+   "weapons": [
+    {
+     "name": "Heavy Triple-Laser Cannon",
+     "fire_arc": "Turret",
+     "skill": "Starship gunnery",
+     "fire_control": "3D",
+     "space_range": "1-7/20/30",
+     "atmo_range": "100-700/2/3 km",
+     "damage": "6D+2"
+    },
+    {
+     "name": "3 Proton Torpedo Launchers",
+     "fire_arc": "Front",
+     "skill": "Starship gunnery",
+     "fire_control": "2D+2",
+     "space_range": "1-5/15/30",
+     "atmo_range": "100-500/1.5/3 km",
+     "damage": "9D"
+    },
+    {
+     "name": "Ion Cannon",
+     "fire_arc": "Front",
+     "skill": "Starship gunnery",
+     "fire_control": "1D+1",
+     "space_range": "1-5/10/15",
+     "atmo_range": "100-500/1/1.5 km",
+     "damage": "4D"
+    }
+   ]
+  },
+  {
+   "rank": 4,
+   "name": "The Maker",
+   "craft": "Modified Corellian YT-1300 Transport",
+   "type": "Modified light freighter (originally Sythluss Leethe / now Rebel Special Ops captured)",
+   "affiliation": "The Fringe / Rebel Alliance",
+   "era": "Rebellion",
+   "source": "WEG41013 Star Wars Adventure Journal #13 (Special Ops: Shipjackers)",
+   "scale": "Starfighter",
+   "length": "26.7 meters",
+   "crew": "1 to 2 (can coordinate)",
+   "passengers": "6",
+   "cargo": "100 metric tons",
+   "consumables": "2 months",
+   "hyperdrive": "x2 (backup x12)",
+   "nav_computer": "Yes",
+   "maneuverability": "1D",
+   "space": "6",
+   "atmosphere": "330; 950 kmh",
+   "hull": "4D",
+   "shields": "2D",
+   "of_note": "Originally the personal freighter of Ruurian black-market droid manufacturer Sythluss Leethe, the Maker is a near-stock YT-1300 with one critical custom modification: a transponder mask installed during an expensive Minos Cluster trip that lets the operator switch between two BoSS-registered transponder codes at will (the Maker's original code, plus a second registration as the One Shot). Both codes are entered into official BoSS records, and since both the ship and the modification are brand-new, neither identity has any black marks. Inside, the smuggler Leethe rigged a manual-override pressure hatch to seal off the cockpit corridor as a final-line defense. He also installed a Telex-Delcor Stun Steps system on the entry ramp, capable of delivering 3D-5D stun shocks to anyone setting foot on the ramp without first disabling the system. Both anti-boarding measures temporarily caught Major T'Charek Haathi's Rebel Special Ops shipjacking team during their Zelos II heist, but the team prevailed: Lt. Morgan Raventhorn cut the steps offline, Cpt. Ivhin Jayme blew the pressure hatch with Flex-5 detonite tape, and the Maker became Rebel Alliance property — exactly the YT-1300 'classic' Haathi insisted on stealing despite the rookie Dren Nord's protests that any of the dozen unguarded YT-1300s elsewhere in the docking bay would have been easier to lift.",
+   "sensors_passive": "10/0D",
+   "sensors_scan": "25/1D",
+   "sensors_search": "40/2D",
+   "sensors_focus": "2/3D",
+   "weapons": [
+    {
+     "name": "Quad Laser Cannon",
+     "fire_arc": "Turret",
+     "crew": "1",
+     "skill": "Starship gunnery",
+     "fire_control": "2D",
+     "space_range": "1-3/12/25",
+     "atmo_range": "100-300/1.2/2.5 km",
+     "damage": "5D"
+    },
+    {
+     "name": "2 Concussion Missile Tubes (fire-linked)",
+     "fire_arc": "Forward",
+     "skill": "Starship gunnery",
+     "fire_control": "2D",
+     "space_range": "1-2/8/15",
+     "atmo_range": "100-200/800/1.5 km",
+     "damage": "7D"
+    }
+   ]
+  },
+  {
+   "rank": 5,
+   "name": "Starcat",
+   "craft": "Custom-built Starcat-class Light Freighter",
+   "type": "Custom-built armored light freighter (Salem Victory's Happy Blasters)",
+   "affiliation": "Criminal Underworld",
+   "era": "Rebellion / New Republic",
+   "source": "WEG41013 Star Wars Adventure Journal #13 (Scouts' Dispatch — Kriekaal)",
+   "scale": "Starfighter",
+   "length": "32.8 meters",
+   "crew": "2",
+   "passengers": "6",
+   "cargo": "65 metric tons",
+   "consumables": "2 months",
+   "hyperdrive": "x1 (backup x12)",
+   "nav_computer": "Yes",
+   "maneuverability": "2D+1",
+   "space": "6",
+   "atmosphere": "330; 950 kmh",
+   "hull": "4D+2",
+   "shields": "2D+1",
+   "of_note": "The Starcat is the brainchild of Salem Victory and Dapp Solus, who put it together with the idea of arming a freighter as heavily as possible without losing all its cargo potential. What they came upon in final design required some bloodshed and an enormous amount of swindling and stealing. Thanks to a tech contact of Dapp's on Nar Shaddaa (who disappeared after the work was finished), the ship was put together soundly and does not suffer from many of the quirks that hand-crafted ships usually have. Mac, the Happy Blasters' technician, has equipped the Starcat's interior with force fields, blaster traps, the armed torso of an old security droid that monitors the hallways, and an extensive intrusion-counter security suite operated from his quarters in engineering — Mac has also designed the ship to self-destruct if anyone attempts to fly her without giving an appropriate coded response. If the ship has an Achilles heel it is the massive amount of power required to maintain the Starcat's blatantly illegal weapons systems, which draw a considerable amount of energy when operational. Salem Victory is rumored to keep many trophy heads (creatures and sentient beings alike) sitting above the cockpit controls. All in all, the Starcat is an extremely dangerous vessel and should — like its crew — be approached with extreme caution.",
+   "sensors_passive": "10/0D",
+   "sensors_scan": "25/1D",
+   "sensors_search": "40/2D",
+   "sensors_focus": "2/3D",
+   "weapons": [
+    {
+     "name": "2 Concussion Missile Launchers",
+     "fire_arc": "Front",
+     "skill": "Starship gunnery",
+     "fire_control": "1D",
+     "space_range": "1-2/8/15",
+     "atmo_range": "100-200/800/1.5 km",
+     "damage": "7D"
+    },
+    {
+     "name": "3 Double Laser Cannons",
+     "fire_arc": "Turret",
+     "crew": "1",
+     "skill": "Starship gunnery",
+     "fire_control": "2D+2",
+     "space_range": "1-3/12/25",
+     "atmo_range": "100-300/1.2/2.5 km",
+     "damage": "5D"
+    }
+   ]
   }
  ]
 // --- END OF STARSHIP_DATA ---

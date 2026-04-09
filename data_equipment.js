@@ -5921,5 +5921,50 @@ const EQUIPMENT_DATA = [
   "game_notes": "Slow-acting time-released neurotoxin issued by Imperial Intelligence as an alternate to Xebonica for use on Class A Code Red individuals. Includes a bio-masking agent to prevent easy detection. Antidote: Alaswal-XT 40 mcg at 10-hour intervals for standard humans, as directed for other lifeforms — without the antidote the active ingredient becomes lethal far more rapidly. Symptoms follow the standard invasive neurotoxin pattern. Intelligence Command continually rotates the chemicals on issue to defeat terrorist counter-intelligence; supplies must be regularly upgraded.",
   "source": "WEG41010 Star Wars Adventure Journal #10 p.208 (Desperate Measures — Chemical Security Protocols)"
  }
+ ,{
+  "name": "Flex-5 Detonite Tape",
+  "type": "Merr-Sonn Munitions Compound Flex-5 Detonite Tape",
+  "category": "Demolitions",
+  "cost": "1,500 (per 5 meters)",
+  "availability": "X",
+  "game_notes": "Adhesive explosive strip favored by Rebel Alliance Special Operations shipjacking teams for blowing internal hatches and sealed doors. Flexible adhesive backing lets the operator quickly tape an explosive perimeter around any doorframe, hatch seal, or pressure bulkhead in seconds. Difficulty 10 to use; blast radius 0-0.5 meters; damage 3D. Rebel field operative Jayme used Flex-5 to blow open a smuggler-modified internal pressure hatch sealing off the cockpit of a YT-1300 named The Maker during the team's heist of Sythluss Leethe's brand-new freighter at a Zelos II starport.",
+  "source": "WEG41013 Star Wars Adventure Journal #13 (Special Ops: Shipjackers)"
+ }
+ ,{
+  "name": "Stun Steps",
+  "type": "Telex-Delcor Ramp Entry Security System",
+  "category": "Ship Equipment",
+  "cost": "1,500 (additional 500 per +1D stun damage past 3D, max 5D)",
+  "availability": "2, F",
+  "game_notes": "Anti-boarding security device. Uses the natural conductive abilities of standard ramps and steps to create an electromagnetic neuro-shock field — anything that enters the field receives a 3D stun shock (upgradable to 5D). Plugs directly into the ship's power grid for unlimited shocks while powered; backup battery delivers a total of 20D of stun damage if main power is lost. System consists of a backup power supply, charge capacitor, remote control unit, field generator rods, and a simple sensor package. A separate system must be installed for each ramp/step/entrance, but multiple systems can be slaved to the same remote. Most users do not integrate stun-step controls into the ship's security programs — they prefer a remote control device, making the unit nearly invisible to intruders until it's too late. Encountered by Rebel Special Ops Major T'Charek Haathi during a Zelos II shipjacking when she set foot on the Maker's entry ramp before Lt. Morgan Raventhorn could disconnect the system; she was thrown backward in a sizzling pink flash and temporarily lost the use of her legs.",
+  "source": "WEG41013 Star Wars Adventure Journal #13 (Special Ops: Shipjackers)"
+ }
+ ,{
+  "name": "VoiceBox",
+  "type": "BothiCorp VoiceBox Speech Pattern Duplicator",
+  "category": "Tools",
+  "cost": "5,000",
+  "availability": "X",
+  "game_notes": "Voice lock buster. Modern voice-activated security systems process accent, inflection, tone, stress, and many other voice pattern characteristics for encryption — super-encryption and multi-sensors make these locks difficult to defeat. The VoiceBox is plugged into a lock's wiring where it searches the memory for the voice authentication files; the unit then fools the lock by encrypting the user's voice patterns with a copy of the authentication files. A successful Security skill roll against the lock's difficulty rating is required for success. Standard equipment for Rebel Alliance Special Ops shipjacking teams.",
+  "source": "WEG41013 Star Wars Adventure Journal #13 (Special Ops: Shipjackers)"
+ }
+ ,{
+  "name": "Scomp-Spiker",
+  "type": "Custom-built Outlaw Tech Computer Spiker",
+  "category": "Tools",
+  "cost": "20 (in spare parts)",
+  "availability": "X",
+  "game_notes": "Outlaw-tech computer wrecker consisting of a charge capacitor, scomp link, power jack, and a remote control. Plugged first into the scomp link, then into the power jack to prevent blowout. After charging, the unit sends a high-voltage blast into the computer system, melting connections and destroying programs along its course. The device is not selective — it is designed to destroy computer components or, at minimum, render the sub-station where it is used inoperable. Common gear for shipjacker teams who need to crater a security computer rather than slice it.",
+  "source": "WEG41013 Star Wars Adventure Journal #13 (Special Ops: Shipjackers)"
+ }
+ ,{
+  "name": "Serv-O-Droid 87-RM Scout Collector Droid",
+  "type": "Serv-O-Droid 87-RM Scouting Droid",
+  "category": "Droids",
+  "cost": "4,350 credits",
+  "availability": "2, F",
+  "game_notes": "Second Degree Droid (engineering/maintenance). Personality: Simple. Height: 2.5 meters. Move: 7. DEX 1D (melee combat 3D, melee parry 4D), KNO 1D, MEC 1D, PER 1D (search 3D), STR 6D (lifting 8D), TEC 1D. Equipped with: repulsorlift floaters, two grappling claws, shields, flash-freeze unit. CLAW ATTACK: claws do 3D damage in melee combat; a successful hit means the target has been restrained and will be dumped next round into the flash-freeze chamber. FLASH-FREEZE: the droid flash-freezes its specimens; after a couple of minutes of cryogenically controlled hypothermia, the sample is flash-frozen for the return trip. A character captured by the droid but rescued within two minutes can be revived using first aid techniques for cold exposure (Moderate first aid roll); only three attempts can be made (once per hour) and failure to revive results in incapacitated wound status; success means the frozen character is treated as wounded for 1D hours but recovers completely. SHIELDS: limited shields worth +2D against energy attacks; if a creature touches the outer shell, the droid can concentrate its shields into a contact stun of 5D damage, but only once per combat round. Created by Serv-O-Droid to assist colonists and scouts during the initial stages of a planet's exploration — collector droids perform cleanup duties after scout droids locate and stun target specimens, rumbling along with a steam condensation trail behind them, picking up stunned units with their two large claws and placing them inside their gaping maw at the top of the droid for flash-freezing. Repulsorlift generators underneath maintain a one-meter elevation. The Empire reportedly discontinued use of this model after one unit went crazy and clawed something like 300 colonists on Corva Yag near the Minos Cluster — public safety briefs blamed counter-programming, possibly Rebel sabotage, but Cynabar's contributors speculated the colonists may have stumbled into something the Imperials wanted hidden.",
+  "source": "WEG41013 Star Wars Adventure Journal #13 (Cynabar's Droid Datalog)"
+ }
 // --- END OF EQUIPMENT_DATA ---
 ];
