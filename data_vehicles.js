@@ -4345,6 +4345,26 @@ const VEHICLES_DATA = [
   "weapons": "Laser Cannon: Fire Arc: Front, Skill: Vehicle blasters, Fire Control: 2D, Range: 3-50/100/200, Damage: 2D+2",
   "game_notes": "Ikas-Adno's first venture into the military speeder bike market — an improved single-seat military version of the popular civilian Starhawk. While no competition for the faster, more powerful, and far more expensive Aratech 74-Z, the Sunwolf has found a loyal following among planetary governments and mercenary groups that lack the Empire's financial resources. Aside from the military upgrade it is nearly identical in appearance to its civilian Starhawk cousin, which makes it especially popular with Rebel agents, mercenaries, and other operatives who routinely need to be mistaken for harmless civilians. Thilis-Brin (Shroud Team) flies a modified Sunwolf and credits it with countless successful escapes through the Talamp Industrial District on Pirik.",
   "source": "WEG41010 Star Wars Adventure Journal #10 p.65 (Cracken's Rebel Operatives — Shroud Team)"
+},
+{
+  "name": "Bountiful (Ubrikkian HV6 Harvester Factory)",
+  "type": "Repulsorlift fishing platform and processing plant",
+  "manufacturer": "Ubrikkian",
+  "scale": "Walker",
+  "length": "120 meters",
+  "skill": "Repulsorlift operation: harvester factory",
+  "crew": "10",
+  "passengers": "120",
+  "cargo_capacity": "20,000 metric tons",
+  "cover": "Full",
+  "altitude_range": "Ocean surface to 25 meters",
+  "cost": "2,500,000",
+  "maneuverability": "",
+  "move": "25; 70 kmh",
+  "body_strength": "3D",
+  "weapons": "",
+  "game_notes": "An immense Ubrikkian repulsorlift platform used to harvest sea life from a planet's oceans — the Bountiful is the named example assigned to Imperial duty above Ando as part of the Ando Project. The platform can float on the surface or hover above the water to avoid rough seas or harvest shallow areas, equipped with power scoops and retrieval systems capable of harvesting 25 metric tons of fish per day. Normally staffed by more than 100 workers (cleaning, sorting, packaging, processing) but the Bountiful runs at less than a fifth of capacity — its scoops haven't been deployed in days because its real Imperial mission is collecting live Andoan mineral-fish for cryogenic transport to Uridia. Layout: Deck 1 upper landing pads (small + large) with cargo crane; Deck 2 crew quarters with bridge, scoop engines, mess hall, rec room, secret stormtrooper barracks; Deck 3 processing plant (ramp, receiving, cleaning/prep, processing, packaging — all currently idle); Deck 4 storage with bow dry storage, equipment storage, cold storage, belly hatch (used by seatroopers to enter the ocean and hunt mineral-fish), and aft dry storage holding 8 cryogenic stasis units full of captured Andoan mineral-fish under guard; Deck 5 (not shown) repulsor generators, fuel cells, desalination plant, fresh water storage. Routine pickups by the Imperial bulk freighter Eclipse every three days transport the cryogenically-frozen mineral-fish to the secret aquaculture base on Uridia.",
+  "source": "WEG41011 Star Wars Adventure Journal #11 p.184 (The Ando Project)"
 }
 // --- END OF VEHICLES_DATA ---
 ];

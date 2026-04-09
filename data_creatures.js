@@ -8221,5 +8221,61 @@ const CREATURES_DATA = [
    "special": "Blubber: +2D to STR against physical damage. Bull Ram: STR+2 damage. Tusks: STR+2D damage. Fish-eating sea rodents with great flat tusks protruding from short snouts, layered in fat but conveying an impression of sleekness from their tapering aquadynamic shape. Bull arabores collect harems of 2-12 cows and acquire fishing territories by dueling with neighboring bulls. Bulls are very territorial, regard any creature stumbling across the pod as a potential threat, and respond with a charge — often punctuated by a tusk attack — while the cows dive into the safety of the sea. Whiphids hunt arabore only occasionally; a young hunter traditionally kills a bull bare-handed with tusks alone to prove himself a mighty hunter, and a new Spearmaster does the same. Otherwise the arabore are in no more danger from Whiphids than any other Toolan creature.",
    "source": "WEG41010 Star Wars Adventure Journal #10 p.126 (A Free-Trader's Guide to the Planets)"
   }
+  ,{
+   "name": "Zdrinbagh",
+   "type": "Shelled Predator (Edible)",
+   "planet": "Outer Rim worlds (various)",
+   "habitat": "Mixed",
+   "dex": "3D",
+   "per": "2D",
+   "str": "3D",
+   "move": "16",
+   "size": "0.5 meters tall, 0.25 meters wide",
+   "orneriness": "Aggressive when hungry",
+   "special": "Dodge 5D, brawling 5D. Claws and teeth do STR damage. Shells offer +2D bonus against energy attacks, +1D against physical attacks. Slavering, hungry, and very fast — four legs and four claws, razor-sharp pointed teeth, beady red eyes. Highly prized for their light tender meat — typically shipped live to keep them fresh, with chef-droid handlers releasing a stun gas canister in the kitchen (to which droids are immune) before opening the shipping crates and slaughtering the sleeping zdrinbagh. The Farrimmer Cafe on Mynock 7 once suffered a famous incident in which a bad/weak stun canister failed to put two dozen zdrinbagh to sleep — when the chef droids opened the crates, the angry creatures swarmed into the dining room and had to be beaten back by the patrons (with H'nib Statermast yelling 'Just stun them if you can — if you blast them too hard the chefs can't make stew out of them!').",
+   "source": "WEG41011 Star Wars Adventure Journal #11 p.65 (The Farrimmer Cafe)"
+  }
+  ,{
+   "name": "Snuzzleguff",
+   "type": "Tiny Flying Predator",
+   "planet": "Unknown",
+   "habitat": "Mixed (kept as exotic pets — Snowball lives in a Gamorrean mercenary's shipboard cabin cage)",
+   "dex": "5D",
+   "per": "4D",
+   "str": "2D",
+   "move": "18",
+   "size": "0.2 meters in diameter",
+   "orneriness": "1D (very aggressive when hungry)",
+   "special": "Dodge 7D, flight 7D, sneak 5D, brawling 4D. Natural Anti-Gravity: snuzzleguffs have a natural immunity to gravity that gives them the ability to leap and fly at incredible speeds for short distances. Poisonous Bite: bite does 1D damage and the victim must make a Difficult stamina roll or become incapacitated. A tiny creature covered with white fur — survives by cunning instincts rather than intelligence. The Gamorrean mercenary Bnugor keeps one as a pet (named Snowball) and once tracked it through the Mynock 7 ventilation system to the Farrimmer Cafe after it escaped its cage. Captures must be made by trap, cage, or Very Difficult brawling — and Bnugor will use his vibro-axe on anyone who attempts to harm Snowball.",
+   "source": "WEG41011 Star Wars Adventure Journal #11 p.79 (The Farrimmer Cafe)"
+  }
+  ,{
+   "name": "Andoan Marsh Lizard",
+   "type": "Giant Carnivorous Marsh Predator",
+   "planet": "Ando",
+   "habitat": "Coastal swamps and quagmires",
+   "dex": "2D+1",
+   "per": "3D",
+   "str": "3D+1",
+   "move": "7 (walking), 12 (swimming)",
+   "size": "2.5-4 meters long",
+   "orneriness": "Aggressive predator",
+   "special": "Search 4D+2, brawling: bite 4D+2. Bite: STR+1D damage. Claws: STR damage (front legs only — used as secondary weapons). Hide: +1D against physical attacks. The largest predator in Ando's coastal swamps. Dull brown scaled hide. Flat head with eyes pointing up at a 45-degree angle, allowing the creature to lie submerged and see above the water's surface. Four long legs — front pair ending in sharp claws, rear pair being oversized paddle-like flippers. Adept at swimming but somewhat awkward on land. Short flat tail acts as a third flipper for increased swimming speed and doubles as a rudder for turns. Their favorite nocturnal prey is the gray flingler bird, but they can mistake speeder bikes for the same target — exploding from a quagmire in a curtain of mud and water before realizing the mistake and concentrating on the soft morsel (the rider) instead.",
+   "source": "WEG41011 Star Wars Adventure Journal #11 p.179 (The Ando Project)"
+  }
+  ,{
+   "name": "Giant Amorphous Bantha Breakfast Biscuit",
+   "type": "Mutant Breakfast Delicacy",
+   "planet": "Various (Tagge Company laboratory accident)",
+   "habitat": "Wherever Bantha Breakfast Biscuits are activated in autochefs",
+   "dex": "2D",
+   "per": "2D",
+   "str": "8D",
+   "move": "15",
+   "size": "Varies",
+   "orneriness": "Mean and hungry",
+   "special": "Brawling 9D. Bite: STR damage. Horns: STR+1D damage. Trample: STR damage. Blue Sauce Vulnerability: these creatures are killed instantly (and rather explosively) when smeared with Biscuit Baron blue sauce. Not much is known about these giant amoebic ruminants — they are a new lifeform and no one has gotten close enough to study one without being consumed. They are big, mean, and will eat anything that happens to find itself placed in front of them. Several laboratory chefs working for the Tagge Company learned this the hard way from inside the gullet of what they thought was going to be their morning meal — they popped a couple of Bantha Breakfast Biscuits into the autochef and out came their worst gastronomic nightmare. Accidentally created when Biscuit Baron preservatives somehow bonded to bantha genetic material, these beasts are now being considered for use as biological weapons by the Empire. Until they can be controlled, the Tagge Company has restricted Bantha Breakfast Biscuits from being shipped to those planets they refer to as 'inadequately prepared to delight in this yummy breakfast delicacy.' Come hungry, but carry plenty of Biscuit Baron blue sauce with you.",
+   "source": "WEG41011 Star Wars Adventure Journal #11 p.219 (Bungo n' Rusti Get Curry-Out)"
+  }
 // --- END OF CREATURES_DATA ---
 ];
