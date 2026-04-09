@@ -3953,11 +3953,11 @@ const WEAPONS_DATA = [
   "skill": "Blaster: heavy blaster pistol",
   "cost": "750",
   "availability": "2, R or X",
-  "damage": "5D+1",
+  "damage": "5D+2",
   "range": "",
   "ammo": "",
   "game_notes": "",
-  "source": "WEG40025 Galladinium's Fantastic Technology p.83"
+  "source": "WEG40025 Galladinium's Fantastic Technology p.83 | WEG40113 Galaxy Guide 9: Fragments from the Rim"
  },
  {
   "name": "Calban Model X",
