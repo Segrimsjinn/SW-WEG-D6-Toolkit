@@ -46852,6 +46852,53 @@ const STARSHIP_DATA = {
        "damage": "4D"
      }
    ]
+  },
+  {
+   "rank": 5,
+   "name": "G Cat",
+   "craft": "Modified Arakyd Helix Light Freighter",
+   "type": "Light freighter (Cryle Caw's personal ship)",
+   "affiliation": "Rebel Alliance",
+   "era": "Rebellion",
+   "source": "WEG41012 Star Wars Adventure Journal #12 p.117 (Small Favors)",
+   "scale": "Starfighter",
+   "length": "30.9 meters",
+   "crew": "2",
+   "passengers": "1",
+   "cargo": "25 metric tons",
+   "consumables": "6 weeks",
+   "hyperdrive": "x3/4",
+   "nav_computer": "Yes",
+   "maneuverability": "2D+2 (space) / +2 (atmosphere)",
+   "space": "8",
+   "atmosphere": "295; 850 kmh",
+   "hull": "4D",
+   "shields": "3D",
+   "of_note": "Cryle Caw's personal Arakyd Helix, heavily modified from the stock template — improved hyperdrive (x3/4 vs stock x2), upgraded sublight (8 vs stock 7), better maneuverability (2D+2 vs stock 2D+1), heavier hull (4D vs 3D+2), stronger shields (3D vs 1D+2), and rebuilt fire-linked weaponry (4 Plasburst laser cannons fire-linked instead of 2; ion cannons stripped out and replaced with 2 proton torpedo launchers). As with all Arakyd Helix freighters, sensor operators searching for the G Cat get a +5 bonus to their sensor rolls while its main ion drives are active — a longstanding flaw in the Arakyd hull that Caw has never bothered to fix because it suits his style to be 'noticed' on the way out the door.",
+   "sensors_passive": "15/1D",
+   "sensors_scan": "30/2D",
+   "sensors_search": "50/3D",
+   "sensors_focus": "2/4D",
+   "weapons": [
+    {
+     "name": "4 Plasburst Laser Cannons (fire-linked)",
+     "fire_arc": "Turret",
+     "skill": "Starship gunnery",
+     "fire_control": "4D",
+     "space_range": "1-3/12/25",
+     "atmo_range": "100-300/1.2/2.5 km",
+     "damage": "6D"
+    },
+    {
+     "name": "2 Proton Torpedo Launchers",
+     "fire_arc": "Forward",
+     "skill": "Starship gunnery",
+     "fire_control": "2D",
+     "space_range": "1/3/7",
+     "atmo_range": "100/300/700",
+     "damage": "9D"
+    }
+   ]
   }
  ]
 // --- END OF STARSHIP_DATA ---

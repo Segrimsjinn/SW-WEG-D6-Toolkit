@@ -8276,6 +8276,20 @@ const CREATURES_DATA = [
    "orneriness": "Mean and hungry",
    "special": "Brawling 9D. Bite: STR damage. Horns: STR+1D damage. Trample: STR damage. Blue Sauce Vulnerability: these creatures are killed instantly (and rather explosively) when smeared with Biscuit Baron blue sauce. Not much is known about these giant amoebic ruminants — they are a new lifeform and no one has gotten close enough to study one without being consumed. They are big, mean, and will eat anything that happens to find itself placed in front of them. Several laboratory chefs working for the Tagge Company learned this the hard way from inside the gullet of what they thought was going to be their morning meal — they popped a couple of Bantha Breakfast Biscuits into the autochef and out came their worst gastronomic nightmare. Accidentally created when Biscuit Baron preservatives somehow bonded to bantha genetic material, these beasts are now being considered for use as biological weapons by the Empire. Until they can be controlled, the Tagge Company has restricted Bantha Breakfast Biscuits from being shipped to those planets they refer to as 'inadequately prepared to delight in this yummy breakfast delicacy.' Come hungry, but carry plenty of Biscuit Baron blue sauce with you.",
    "source": "WEG41011 Star Wars Adventure Journal #11 p.219 (Bungo n' Rusti Get Curry-Out)"
+  },
+  {
+   "name": "Boetay",
+   "type": "Mammal (predator)",
+   "planet": "Garos IV",
+   "habitat": "Forested mountains and countryside",
+   "dex": "3D",
+   "per": "3D+2",
+   "str": "4D",
+   "move": "14",
+   "size": "1.5 meters at the shoulder (adult)",
+   "orneriness": "2D (vicious if young are threatened, otherwise avoids humans)",
+   "special": "Brawling 5D. Bite: STR+1D damage. Claws: STR+1D damage. Search 5D, sneak 5D. Wild boetays roam the countryside in small packs and are quite vicious when their young are disturbed, but they generally avoid contact with humans. Adult boetays stand about a meter and a half at the shoulder, with dark fawn hides marked at regular intervals by black stripes running the length of their necks, backs, and quarters; cubs sport the same coloration. Their mournful howls echo through the forested hillsides outside Ariana on Garos IV at night. A Force-sensitive can calm even an adult boetay through patient projective Sense work, persuading the animal that no threat is intended — Jaalib Brandl famously charmed a mother boetay and her three-week-old pup on a moonlit forest path during the New Republic's invasion of Garos.",
+   "source": "WEG41012 Star Wars Adventure Journal #12 p.93 (Betrayal by Knight)"
   }
 // --- END OF CREATURES_DATA ---
 ];

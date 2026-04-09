@@ -1099,6 +1099,7 @@ const SYSTEMS_DATA = [
   { "name": "Chrome Citadel", "grid": "O-11", "region": "Expansion Region", "col": 13, "row": 11, "quadrant": "E", "hours": 3.3 },
   { "name": "Chromovon", "grid": "P-4", "region": "Outer Rim Territories", "col": 14, "row": 4, "quadrant": "NE", "hours": 4.7 },
   { "name": "Chrona", "grid": "O-8", "region": "Inner Rim", "col": 13, "row": 8, "quadrant": "E", "hours": 3.0 },
+  { "name": "Chrona - Corestrike", "grid": "O-8", "region": "Inner Rim", "col": 13, "row": 8, "quadrant": "E", "hours": 3.0 },
   { "name": "Chryya", "grid": "M-17", "region": "Mid Rim", "col": 11, "row": 17, "quadrant": "S", "hours": 1.7 },
   { "name": "Chundu", "grid": "L-20", "region": "Outer Rim Territories", "col": 10, "row": 20, "quadrant": "S", "hours": 0.5 },
   { "name": "Churr", "grid": "N-12", "region": "Colonies", "col": 12, "row": 12, "quadrant": "E", "hours": 1.3 },
