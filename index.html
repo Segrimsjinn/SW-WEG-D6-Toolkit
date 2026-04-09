@@ -3043,10 +3043,34 @@ document.addEventListener('click', function(e) {
   }
 });
 
+// Aggregates every entry from "Named Modified ___" categories into a single
+// virtual "Named Ships" key. Same object references — no duplication. Sorted
+// alphabetically since cross-class rank is meaningless.
+function buildNamedShipsCategory() {
+  const named = [];
+  Object.keys(STARSHIP_DATA).forEach(cat => {
+    if (cat.startsWith('Named Modified ')) {
+      STARSHIP_DATA[cat].forEach(s => named.push(s));
+    }
+  });
+  named.sort((a, b) => (a.name || '').localeCompare(b.name || ''));
+  STARSHIP_DATA['Named Ships'] = named;
+}
+
 function initShipLookup() {
+  buildNamedShipsCategory();
   const catSel = document.getElementById('shipCategory');
   catSel.innerHTML = '<option value="">— Select Category —</option>';
+  // Named Ships first (spotlight)
+  if (STARSHIP_DATA['Named Ships'] && STARSHIP_DATA['Named Ships'].length) {
+    const opt = document.createElement('option');
+    opt.value = 'Named Ships';
+    opt.textContent = '★ Named Ships';
+    catSel.appendChild(opt);
+  }
+  // Then all stock cats (skip per-class Named Modified buckets and the virtual key itself)
   Object.keys(STARSHIP_DATA).forEach(cat => {
+    if (cat === 'Named Ships' || cat.startsWith('Named Modified ')) return;
     const opt = document.createElement('option');
     opt.value = cat;
     opt.textContent = cat;
@@ -5514,7 +5538,14 @@ function initCompareDropdowns() {
   ['A', 'B'].forEach(side => {
     const sel = document.getElementById('compareCat' + side);
     sel.innerHTML = '<option value="">— Select —</option>';
+    if (STARSHIP_DATA['Named Ships'] && STARSHIP_DATA['Named Ships'].length) {
+      const opt = document.createElement('option');
+      opt.value = 'Named Ships';
+      opt.textContent = '★ Named Ships';
+      sel.appendChild(opt);
+    }
     Object.keys(STARSHIP_DATA).forEach(cat => {
+      if (cat === 'Named Ships' || cat.startsWith('Named Modified ')) return;
       const opt = document.createElement('option');
       opt.value = cat;
       opt.textContent = cat;
