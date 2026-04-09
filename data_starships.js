@@ -45694,8 +45694,8 @@ const STARSHIP_DATA = {
        "damage": "5D"
      }
    ],
-   "capsule": "The Starlight Red is the smuggling light freighter of free-trader Mistress Crimson, with her loyal protocol droid U-THR (Uthre) handling the sensor and cockpit-monitoring duties. The ship sports illegal quad laser cannons on its ventral gunnery mount — the kind of obvious weapons violation that draws Imperial Customs attention at the first inspection. During a contraband-unloading run at starport tower 214, level 3301, docking bay 789012634 on Byblos, Mistress Crimson was arrested by Imperial Customs stormtroopers, but Uthre managed to break her out of the level's customs office and the pair blasted out of the impounded docking bay before the blast doors could fully close.",
-   "source": "WEG41005 Star Wars Adventure Journal #5 p.158 (Crimson Jailbreak)"
+   "capsule": "The Starlight Red is the smuggling light freighter of Crimson Durasha and her partner Kaj Nedmak, with the loyal protocol droid U-THR (Uthre) handling sensor and cockpit-monitoring duties. The ship sports illegal quad laser cannons on its ventral gunnery mount — the kind of obvious weapons violation that draws Imperial Customs attention at the first inspection. ORIGIN: The freighter was previously known as the Faceted, owned and crewed by the bounty hunter Thune. After a job that ended very badly for Thune (Kaj was wounded but survived; Thune was disarmed and consigned to the cargo hold to be dropped off where she could cause no more trouble), Crimson and Kaj took the ship as the spoils of victory and Crimson rechristened it the Starlight Red — over Kaj's skeptical eyebrow at the new name. The droid Uthre passed to Crimson with the ship and was offered a permanent position as crew. RECENT EVENTS: During a contraband-unloading run at starport tower 214, level 3301, docking bay 789012634 on Byblos, Crimson was arrested by Imperial Customs stormtroopers but Uthre broke her out of the level's customs office and the pair blasted out of the impounded docking bay before the blast doors could fully close. Crimson now uses the Starlight Red to run guns for the Rebel Alliance.",
+   "source": "WEG41005 Star Wars Adventure Journal #5 p.158 (Crimson Jailbreak) | WEG41014 Star Wars Adventure Journal #14 p.230 (Crimson Bounty)"
   },
   {
    "name": "Wroona Stardock",
@@ -46977,7 +46977,7 @@ const STARSHIP_DATA = {
    "atmosphere": "330; 950 kmh",
    "hull": "4D",
    "shields": "2D",
-   "of_note": "Originally the personal freighter of Ruurian black-market droid manufacturer Sythluss Leethe, the Maker is a near-stock YT-1300 with one critical custom modification: a transponder mask installed during an expensive Minos Cluster trip that lets the operator switch between two BoSS-registered transponder codes at will (the Maker's original code, plus a second registration as the One Shot). Both codes are entered into official BoSS records, and since both the ship and the modification are brand-new, neither identity has any black marks. Inside, the smuggler Leethe rigged a manual-override pressure hatch to seal off the cockpit corridor as a final-line defense. He also installed a Telex-Delcor Stun Steps system on the entry ramp, capable of delivering 3D-5D stun shocks to anyone setting foot on the ramp without first disabling the system. Both anti-boarding measures temporarily caught Major T'Charek Haathi's Rebel Special Ops shipjacking team during their Zelos II heist, but the team prevailed: Lt. Morgan Raventhorn cut the steps offline, Cpt. Ivhin Jayme blew the pressure hatch with Flex-5 detonite tape, and the Maker became Rebel Alliance property — exactly the YT-1300 'classic' Haathi insisted on stealing despite the rookie Dren Nord's protests that any of the dozen unguarded YT-1300s elsewhere in the docking bay would have been easier to lift.",
+   "of_note": "Originally the personal freighter of Sluissi black-market droid manufacturer Sythluss Leethe, the Maker is a near-stock YT-1300 with one critical custom modification: a transponder mask installed during an expensive Minos Cluster trip that lets the operator switch between two BoSS-registered transponder codes at will (the Maker's original code, plus a second registration as the One Shot). Both codes are entered into official BoSS records, and since both the ship and the modification are brand-new, neither identity has any black marks. Inside, the smuggler Leethe rigged a manual-override pressure hatch to seal off the cockpit corridor as a final-line defense. He also installed a Telex-Delcor Stun Steps system on the entry ramp, capable of delivering 3D-5D stun shocks to anyone setting foot on the ramp without first disabling the system. Both anti-boarding measures temporarily caught Major T'Charek Haathi's Rebel Special Ops shipjacking team during their Zelos II heist, but the team prevailed: Lt. Morgan Raventhorn cut the steps offline, Cpt. Ivhin Jayme blew the pressure hatch with Flex-5 detonite tape, and the Maker became Rebel Alliance property — exactly the YT-1300 'classic' Haathi insisted on stealing despite the rookie Dren Nord's protests that any of the dozen unguarded YT-1300s elsewhere in the docking bay would have been easier to lift. THE GELGELAR INCIDENT: Unbeknownst to Haathi's team, Sythluss Leethe's latest creation — a Doom Slayer customized assassin droid — was already hidden aboard the Maker on a delayed activation timer when the team stole the ship from Zelos II. It activated shortly before the Maker's scheduled service stop at Drop Point Gelgelar (Slerog Fenn's warehouse, Free Port), electrified Lt. Morgan Raventhorn in the repair bay, then locked down the entire warehouse, killed most of Colonel Arik Stijhl's duty staff, and was finally beaten to destruction with hull cutters by Cpt. Jayme. The Maker took heavy hangar-door damage punching out through the still-closing doors as the Doom Slayer's self-destruct vaporized the warehouse and an enormous Rebel supply cache. The team subsequently absorbed Lady Maglenna Pendower (formerly Stijhl's aide and field medic) in trade for Cpl. Dren Nord, who returned to OaS with Stijhl. Source: WEG41014 Star Wars Adventure Journal #14 p.110 (Special Ops: Drop Points).",
    "sensors_passive": "10/0D",
    "sensors_scan": "25/1D",
    "sensors_search": "40/2D",
@@ -47048,6 +47048,45 @@ const STARSHIP_DATA = {
      "fire_control": "2D+2",
      "space_range": "1-3/12/25",
      "atmo_range": "100-300/1.2/2.5 km",
+     "damage": "5D"
+    }
+   ]
+  },
+  {
+   "rank": 5,
+   "name": "Zicreex",
+   "craft": "Subla Ransom Cargo Hauler",
+   "type": "Medium freighter (Captain Ugmush's Gamorrean trader)",
+   "affiliation": "The Fringe",
+   "era": "Rebellion / New Republic",
+   "source": "WEG41014 Star Wars Adventure Journal #14 p.40 (Murder in Slushtime)",
+   "scale": "Starfighter",
+   "length": "75.5 meters",
+   "crew": "Varies, typically 30-50 (Gamorrean clan crew)",
+   "passengers": "5",
+   "cargo": "150 metric tons",
+   "consumables": "3 months",
+   "hyperdrive": "x2 (backup x12)",
+   "nav_computer": "Yes",
+   "maneuverability": "1D",
+   "space": "5",
+   "atmosphere": "335; 950 kmh",
+   "hull": "5D",
+   "shields": "2D",
+   "of_note": "The Zicreex is a Subla Ransom medium cargo hauler — a reliable but little-known freighter design from the Mid Rim. Its current crew consists of Captain Ugmush (a Gamorrean sow), her husband, her brother Guth, two tuskers, a human slave-engineer named Jos, and the former Jedi Knight Callista Ming (signed on as gunner during her wandering self-exile from Yavin 4). Although armed, the ship's main defense against pirates is the Gamorrean reputation for being unboardable. 'Zicreex' was the name of the ship under its previous owner; under Gamorrean law it technically should now be the Ugmush, but Captain Ugmush never got around to filling out the BoSS datawork. The ship runs trade routes between Gamorr and nearby worlds, returning home in slushtime and croptime so the Gamorrean crew can trade, socialize, and eat ethnic foods.",
+   "sensors_passive": "30/1D",
+   "sensors_scan": "65/2D",
+   "sensors_search": "110/3D",
+   "sensors_focus": "4/4D",
+   "weapons": [
+    {
+     "name": "Blaster Cannon",
+     "fire_arc": "Turret",
+     "crew": "1",
+     "skill": "Starship gunnery",
+     "fire_control": "2D",
+     "space_range": "1-5/10/17",
+     "atmo_range": "100-500/1/1.7 km",
      "damage": "5D"
     }
    ]

@@ -970,6 +970,17 @@ const FORCE_POWERS_DATA = [
   "keepUp": "Yes",
   "effect": "Fallanassi White Current power. Allows the user to create a fully realistic, three-dimensional image that is visually, audially, behaviorally, and in virtually every other way convincing. The image behaves according to the knowledge of the user; if the user has not seen a particular person, object or action, the image may fail or become suddenly unconvincing.",
   "source": "WEG40139 Cracken's Threat Dossier p.58"
+ },
+ {
+  "name": "Merge Senses",
+  "category": "Sense",
+  "prereqs": "Magnify Senses",
+  "darkSide": false,
+  "difficulty": "Moderate. Modified by proximity.",
+  "timeToUse": "Three rounds",
+  "keepUp": "Yes",
+  "effect": "Allows a Force user to perceive through the senses of another creature with animal intelligence or less — seeing through its eyes, hearing through its ears, smelling what it smells, and physically feeling whatever it feels (subject to the benefits and restrictions of that creature's senses). The Force user does not control the creature, but can make suggestions: simpler or less threatening requests are more likely agreed to, while suggestions against the creature's nature or that put it in obvious danger require a sense roll vs. the subject's willpower (failure means the suggestion is ignored). While merged, the Force user's body is motionless and his own senses do not function until the meld is broken. Releasing the target requires a Moderate roll. The link is also broken by the death of either the creature or the user. If the creature suffers damage or dies during a meld, the Force user suffers one-half the amount of damage.",
+  "source": "WEG41014 Star Wars Adventure Journal #14 p.183 (The Breath of Gelgelar)"
  }
 // --- END OF FORCE_POWERS_DATA ---
 ];

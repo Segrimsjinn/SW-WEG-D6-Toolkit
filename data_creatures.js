@@ -8121,7 +8121,7 @@ const CREATURES_DATA = [
    "size": "1-5 cm",
    "orneriness": "",
    "special": "Bloodsucker: causes -1 damage per round from blood loss; Gamorreans are immune. Gamorrean physiology is adjusted to host morrts (other species lose -1 pip Strength per attached morrt). Morrts attach painlessly — their skin exudes a slime that acts as a local anesthetic, which Gamorreans use as the base for a pain-killer. They usually remain in place until found visually and can be detached by lifting them off by the tail. Wild morrts are aggressive about attaching to hosts and group in clusters of up to several dozen; a swarm could drain a Gamorrean dry. Tame morrts are docile, usually so fat from feasting on their host they can barely move. Worn as pets and status symbols on Gamorr — the more morrts you wear, the higher your status (warlords carry up to 20, matrons many more, common boars 6-10, veterans about a dozen).",
-   "source": "WEG41010 Star Wars Adventure Journal #10 p.107 (A Free-Trader's Guide to the Planets)"
+   "source": "WEG41010 Star Wars Adventure Journal #10 p.107 (A Free-Trader's Guide to the Planets) | WEG41014 Star Wars Adventure Journal #14 p.46 (Murder in Slushtime)"
   },
   {
    "name": "Algark Stalk",
@@ -8290,6 +8290,65 @@ const CREATURES_DATA = [
    "orneriness": "2D (vicious if young are threatened, otherwise avoids humans)",
    "special": "Brawling 5D. Bite: STR+1D damage. Claws: STR+1D damage. Search 5D, sneak 5D. Wild boetays roam the countryside in small packs and are quite vicious when their young are disturbed, but they generally avoid contact with humans. Adult boetays stand about a meter and a half at the shoulder, with dark fawn hides marked at regular intervals by black stripes running the length of their necks, backs, and quarters; cubs sport the same coloration. Their mournful howls echo through the forested hillsides outside Ariana on Garos IV at night. A Force-sensitive can calm even an adult boetay through patient projective Sense work, persuading the animal that no threat is intended — Jaalib Brandl famously charmed a mother boetay and her three-week-old pup on a moonlit forest path during the New Republic's invasion of Garos.",
    "source": "WEG41012 Star Wars Adventure Journal #12 p.93 (Betrayal by Knight)"
+  },
+  {
+   "name": "Kheilwar",
+   "type": "Homunculus-Wasp Predator",
+   "planet": "Af'El",
+   "habitat": "Warm natural crevasses; will invade live biological hosts",
+   "dex": "4D",
+   "per": "4D",
+   "str": "4D",
+   "move": "20 (flight)",
+   "size": "0.01 to 2 meters",
+   "orneriness": "4D",
+   "special": "Brawling parry 6D, search 5D, sneak 5D, brawling 6D, stamina 7D. RAZOR-FINS: cause STR+2D damage. SUPER-THINNESS: the kheilwar can flatten and fold itself out to an extraordinary degree, slipping into very small cracks, crannies, and niches to hide. IMPERSONATE: the kheilwar can momentarily take on the image and sound of another being or creature it has seen — apparently a kind of telepathic projection (it can communicate simple concepts and they are understood in the language of the observer). It does not seem to consciously select its decoy, instead picking recent impressions. LIGHT BLIND: unable to 'see' in strong light (and possibly other radiation), and unable to attack while blinded; its visual sense organs are often destroyed by direct sunlight. The dark and dangerous homunculus-wasp of Af'El is deadly to nearly all forms of life. In its larval stage it is near-microscopic and only slightly larger when first matured. It seeks warm crevasses to feed and grow, often invading a live biological host; well-fed specimens grow quickly. A whirling storm of sharp fins, mandibles, and wings — fast, deadly, strong, and mean. Stats above reflect a roughly 10-kilo specimen; subtract 1D-2D from attributes and skills for small specimens and add 1D-2D for larger ones.",
+   "source": "WEG41014 Star Wars Adventure Journal #14 p.43 (Murder in Slushtime)"
+  },
+  {
+   "name": "Pittin",
+   "type": "Domesticated Pet Pest Predator",
+   "planet": "Unknown (galaxy-wide where droid pest-units are impractical)",
+   "habitat": "Homes, shops, and businesses as a pet vermin-hunter",
+   "dex": "4D",
+   "per": "3D",
+   "str": "2D",
+   "move": "12",
+   "size": "0.5 meters",
+   "orneriness": "3D",
+   "special": "Brawling parry 5D, search 4D, brawling 5D. TEETH: STR+2D damage. CLAWS: STR+2D damage. Pittins are pesters — small carnivores kept as pets to clear vermin from homes and shops. Their world of origin is unknown; they have been domesticated for millennia and are most commonly found on worlds where droid pest-units are impractical or non-existent (such as Gamorr). They make good and loyal pets, although their owners are occasionally frustrated with their natural independence.",
+   "source": "WEG41014 Star Wars Adventure Journal #14 p.46 (Murder in Slushtime)"
+  },
+  {
+   "name": "Dwoob",
+   "type": "Semi-Domesticated Draft Animal",
+   "planet": "Gamorr",
+   "habitat": "Cleared tracks, snowy slushtime trails",
+   "dex": "2D",
+   "per": "2D",
+   "str": "3D",
+   "move": "10",
+   "size": "1 meter long",
+   "orneriness": "4D",
+   "special": "Lifting 4D, stamina 5D. Dwoobs are small, semi-domesticated draft animals used on Gamorr — generally hitched to pull sleds in winter and early slushtime. They are not a triumph of Gamorrean domestication and are usually only handled by skilled sled drivers; most Gamorreans prefer wheelbarrows for hauling goods.",
+   "source": "WEG41014 Star Wars Adventure Journal #14 p.46 (Murder in Slushtime)"
+  },
+  {
+   "name": "Glarsaur",
+   "type": "Sentient Carnivore (Gelgelar Native)",
+   "planet": "Gelgelar",
+   "habitat": "Swamps and wetlands",
+   "dex": "2D/4D",
+   "kno": "1D/3D",
+   "mec": "1D/2D",
+   "per": "2D/4D+2",
+   "str": "2D/4D",
+   "tec": "1D/2D",
+   "move": "10",
+   "size": "1-1.5 meters tall",
+   "orneriness": "Highly aggressive",
+   "special": "Attribute Dice: 12D. BITE: STR+1D+2 damage. CLAWS: STR+1D damage. The only native sentient creatures on the swamp planet Gelgelar — brutish, warlike, highly aggressive, perpetually hungry carnivores who get along with no one. They stand a meter to a meter and a half tall and are covered with small green scales that resemble leaves; their coloration helps them blend into the Gelgelar foliage, rendering them practically invisible until they strike. Cold-blooded and muscular, they are adept at using their claws or fashioning crude weapons such as spears and clubs. Though dull-witted they are not without the ability to make plans and set ambushes, and have been known from time to time to work with elements of Gelgelar's criminal underworld — stopping vohis mold shipments from reaching the Free Port in exchange for particularly tasty hunks of meat and not-so-crude weapons. Some Gelgelar settlers (primarily humans and Sullustans) have tried to communicate with them and establish a tenuous relationship; while Glarsaurs are capable of reasoning, they have shown no desire to be reasoned with and have on more than one occasion attacked the individuals trying to befriend them. TYPICAL GLARSAUR WARRIOR: Dexterity 2D+2, dodge 4D+2, Perception 2D, hide 5D, search 4D, Strength 2D+2, brawling 4D+2; bite STR+1D+2, claws STR+1D, Move 10.",
+   "source": "WEG41014 Star Wars Adventure Journal #14 p.182 (The Breath of Gelgelar)"
   }
 // --- END OF CREATURES_DATA ---
 ];

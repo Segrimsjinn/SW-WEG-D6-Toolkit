@@ -636,8 +636,8 @@ const EQUIPMENT_DATA = [
   "category": "Droids",
   "cost": "",
   "availability": "",
-  "game_notes": "Mechanical Universal Labor Eliminating Droid. Height: 1.5m. Move: 7 (repulsorlift, max altitude 1m). DEX 1D, KNO 1D, MEC 3D (repulsorlift operation 4D+1), PER 3D (search 3D+2), STR 6D (lifting 7D), TEC 2D (droid programming 4D, droid repair 5D). One heavy lifting claw, one large storage bay (2 cubic meters, +1D armor). Has self-repair feature — uses droid programming and droid repair to assist a scout with combined actions repairs.",
-  "source": "WEG40061 Galaxy Guide 8: Scouts"
+  "game_notes": "Mechanical Universal Labor Eliminating Droid. Height: 1.5m. Move: 7 (repulsorlift, max altitude 1m). DEX 1D, KNO 1D, MEC 3D (repulsorlift operation 4D+1), PER 3D (search 3D+2), STR 6D (lifting 7D), TEC 2D (droid programming 4D, droid repair 5D). One heavy lifting claw, one large storage bay (2 cubic meters, +1D armor). Has self-repair feature — uses droid programming and droid repair to assist a scout with combined actions repairs. Cost: 3,500 credits standard. Availability: 2. Fifth Degree Droid. Personality: Simple. Designed by PackTrack to assist corporate scouts on mission, the MULE moves at a steady (slow) pace and carries up to 1 metric ton of cargo across difficult terrain — when terrain becomes too rough, a backup repulsorlift kicks in. Popular with smugglers and tramp freighter captains making trade runs to low-tech worlds.",
+  "source": "WEG40061 Galaxy Guide 8: Scouts | WEG41014 Star Wars Adventure Journal #14 p.262 (Cynabar's Droid Datalog)"
  },
  {
   "name": "House Paramexor Squire Armorer Droid",
@@ -2036,8 +2036,8 @@ const EQUIPMENT_DATA = [
   "category": "Droids",
   "cost": "",
   "availability": "",
-  "game_notes": "Security guard droid. Height: 1.2m. Move: 10 (repulsorlift). DEX 3D (blaster 5D, dodge 4D, melee combat 4D+1, running 4D), KNO 2D (bureaucracy 3D, intimidation 4D, intimidation: interrogation 5D, languages 3D, law enforcement 3D+2), MEC 2D (repulsorlift operation 4D, sensors 5D), PER 4D (command 5D, investigation 5D, search 7D), STR 4D+1, TEC 2D (first aid 3D, security 5D). Visual/sound sensors. Vocabulator. Broad-band antenna. Stun appendage (6D stun). Blaster appendage (5D, ranges 3-7/25/50). Grasping claw (+1D lifting). Programming allows deadly force if necessary.",
-  "source": "WEG40131 The Thrawn Trilogy Sourcebook p.196"
+  "game_notes": "Security guard droid. Height: 1.2m. Move: 10 (repulsorlift). DEX 3D (blaster 5D, dodge 4D, melee combat 4D+1, running 4D), KNO 2D (bureaucracy 3D, intimidation 4D, intimidation: interrogation 5D, languages 3D, law enforcement 3D+2), MEC 2D (repulsorlift operation 4D, sensors 5D), PER 4D (command 5D, investigation 5D, search 7D), STR 4D+1, TEC 2D (first aid 3D, security 5D). Visual/sound sensors. Vocabulator. Broad-band antenna. Stun appendage (6D stun). Blaster appendage (5D, ranges 3-7/25/50). Grasping claw (+1D lifting). Programming allows deadly force if necessary. Cost: 6,000 credits. Availability: 2, R. Fourth Degree Droid. Personality: Advanced. Often demanding or abusive in behavior, with a strong operational record. Used by security departments, law enforcement, and prison systems. Smuggler tip: a blaster power cell wired to a restraining bolt has been known to short out the safeguards on a G-2RD's programming (with high risk of injury to the slicer).",
+  "source": "WEG40131 The Thrawn Trilogy Sourcebook p.196 | WEG41014 Star Wars Adventure Journal #14 p.255 (Cynabar's Droid Datalog)"
  },
  {
   "name": "Rebaxan Colmuni MSE-6 General Purpose Droid",
@@ -2053,7 +2053,7 @@ const EQUIPMENT_DATA = [
   "cost": "",
   "availability": "X",
   "game_notes": "Interrogation droid. Height: 1m. Move: 3 (repulsorlift). DEX 1D (dodge 3D, melee combat 3D, melee combat: interrogation tools 4D+1), KNO 3D (alien species 4D, humanoid biology 5D, intimidation 6D, intimidation: interrogation 7D), MEC 2D (sensors 3D), PER 4D (investigation 5D, search 5D), STR 3D, TEC 2D (first aid 5D, medicine 5D, security 4D). Visual/sound sensors. Vocabulator. Laser scalpel (2D damage). Hypodermic injectors (4D stun). Power shears (5D damage). Grasping claw (+1D lifting). Monitors vital signs to apply maximum pain with minimal damage.",
-  "source": "WEG40131 The Thrawn Trilogy Sourcebook p.197"
+  "source": "WEG40131 The Thrawn Trilogy Sourcebook p.197 | WEG41014 Star Wars Adventure Journal #14 p.258 (Cynabar's Droid Datalog)"
  },
  {
   "name": "Industrial Automaton MD-5 Medical Droid",
@@ -2068,8 +2068,8 @@ const EQUIPMENT_DATA = [
   "category": "Droids",
   "cost": "800",
   "availability": "",
-  "game_notes": "Janitorial/maintenance droid. Height: 1m. Move: 7 (repulsorlift, max altitude 75m). DEX 1D, KNO 1D, MEC 2D, PER 1D, STR 2D, TEC 2D. Wastestream Systems refuse recycling unit. Vibro-shears (STR+2). Extendable arm with buffer and polisher attachments. Extendable cleanser applicator. Refuse collection scanning computer. Communicates via electronic squawks and clucks. Can be equipped with program modules for specialized duties (plant care, sensitive sanitation protocols).",
-  "source": "WEG40131 The Thrawn Trilogy Sourcebook p.198"
+  "game_notes": "Janitorial/maintenance droid. Height: 1m. Move: 7 (repulsorlift, max altitude 75m). DEX 1D, KNO 1D, MEC 2D, PER 1D, STR 2D, TEC 2D. Wastestream Systems refuse recycling unit. Vibro-shears (STR+2). Extendable arm with buffer and polisher attachments. Extendable cleanser applicator. Refuse collection scanning computer. Communicates via electronic squawks and clucks. Can be equipped with program modules for specialized duties (plant care, sensitive sanitation protocols). Cost: 800 credits. Availability: 1. Second Degree Droid. Personality: None. Easy Programming Story Factor: any character attempting to program gardening, light equipment maintenance, or sensitive sanitation duties does so at one difficulty level below the normal roll. Originally developed for the facilities director of the Imperial Palace on Coruscant for janitorial work in the dark recesses of the Palace's vaulted ceilings.",
+  "source": "WEG40131 The Thrawn Trilogy Sourcebook p.198 | WEG41014 Star Wars Adventure Journal #14 p.250 (Cynabar's Droid Datalog)"
  },
  {
   "name": "Arakyd Viper Probe Droid",
@@ -2092,8 +2092,8 @@ const EQUIPMENT_DATA = [
   "category": "Droids",
   "cost": "3,500",
   "availability": "",
-  "game_notes": "Scanning Patrol Detail security droid. Height: 0.4m. Move: 7 (treads). DEX 2D, KNO 1D, MEC 1D, PER 5D (search 6D, search: transmitting devices 8D+2), STR 1D, TEC 1D. Fabritech communications/sensor array. Four retractable extensor arms (extend up to 15m). Retractable fine work grasper arm. Extendable video sensor. Four sensor modules (thermal imaging +1D search, audio receptors, laser scan, pulse scan). Probability projection computer for detailed search procedures. Communicates in astromech-style chirps and beeps.",
-  "source": "WEG40131 The Thrawn Trilogy Sourcebook p.200"
+  "game_notes": "Scanning Patrol Detail security droid. Height: 0.4m. Move: 7 (treads). DEX 2D, KNO 1D, MEC 1D, PER 5D (search 6D, search: transmitting devices 8D+2), STR 1D, TEC 1D. Fabritech communications/sensor array. Four retractable extensor arms (extend up to 15m). Retractable fine work grasper arm. Extendable video sensor. Four sensor modules (thermal imaging +1D search, audio receptors, laser scan, pulse scan). Probability projection computer for detailed search procedures. Communicates in astromech-style chirps and beeps. Cost: 3,500 credits. Availability: 2, R. Fourth Degree Droid. Personality: Elementary. The bane of fringers — extremely good at locating covert transmissions and hidden weapons. Communications use the same high-pitched beeps and chirps as astromechs, requiring a scomp-linked translation system to decipher. Slicer note: since these droids must scomp-link into a comm system to 'talk,' it should be relatively easy to plant a false 'all clear' into them.",
+  "source": "WEG40131 The Thrawn Trilogy Sourcebook p.200 | WEG41014 Star Wars Adventure Journal #14 p.260 (Cynabar's Droid Datalog)"
  },
  {
   "name": "Melihat UniScan Sensor System",
@@ -2204,8 +2204,8 @@ const EQUIPMENT_DATA = [
   "category": "Droids",
   "cost": "9,000 (new)",
   "availability": "",
-  "game_notes": "Height: 1.9m. Move: 10. DEX 4D (blaster: arm blaster 7D, dodge 5D+1), KNO 3D (cultures 6D, languages 5D, scholar: child care 9D), MEC 1D, PER 2D (hide 3D+1, search 3D, sneak 4D), STR 2D, TEC 1D (first aid 5D, security 4D). Humanoid body (four arms, two legs). Armor plating (+2D vs physical and energy). Two heavy blasters concealed in lower arms (4D+2, 0-3/10/20). Two visual and two audial sensors (human range). Vocabulator speech/sound system. AA-1 VerboBrain. TranLang III Communications module with over seven million languages.",
-  "source": "WEG40114 The Jedi Academy Sourcebook pp.141-143"
+  "game_notes": "Height: 1.9m. Move: 10. DEX 4D (blaster: arm blaster 7D, dodge 5D+1), KNO 3D (cultures 6D, languages 5D, scholar: child care 9D), MEC 1D, PER 2D (hide 3D+1, search 3D, sneak 4D), STR 2D, TEC 1D (first aid 5D, security 4D). Humanoid body (four arms, two legs). Armor plating (+2D vs physical and energy). Two heavy blasters concealed in lower arms (4D+2, 0-3/10/20). Two visual and two audial sensors (human range). Vocabulator speech/sound system. AA-1 VerboBrain. TranLang III Communications module with over seven million languages. Synthskin special ability: equipped with synthetic warmed flesh that youngsters find less disturbing than the metal skin common to most droids. Cost: 9,000 credits new. Availability: 2. Third Degree Droid. Personality: Complex. Primary programming module contains a wealth of information on the child-rearing habits of thousands of species and 'hug circuitry' for extreme affection toward charges. Favored by executives and politicians for child care. SECURITY WARNING: TDL processors have notoriously weak security — children with access to a computer probe have been known to spike them and insert routines forcing the droid to let them stay up late. Corporate execs and Imperial higher-ups are rumored to reprogram family TDLs into extremely effective bodyguards using the heavy blasters built into the lower arms.",
+  "source": "WEG40114 The Jedi Academy Sourcebook pp.141-143 | WEG41014 Star Wars Adventure Journal #14 p.253 (Cynabar's Droid Datalog)"
  },
  {
   "name": "FIDO (Foreign Intruder Defense Organism)",
@@ -2445,7 +2445,7 @@ const EQUIPMENT_DATA = [
   "cost": "3,000",
   "availability": "2, F",
   "game_notes": "Height: 1.6m. Move: 8 (dual-tread). DEX 2D, KNO 1D (languages: droid languages 4D), MEC 1D, PER 3D (search 3D+1), STR 1D, TEC 2D (computer programming/repair 4D+2, machinery repair 6D, repulsorlift repair 4D, space transports repair 4D+1, starfighter repair 5D+1). Equipped: video sensor, dual-tread locomotion, fine manipulator arms (+1D to repair skills), extensible video microbinoculars (+2D search for microscale work), various tools, Cybot acoustic signaler (droid languages). Simple rolling-platform design with viewer stalk and 4+ tool arms — often mistaken for a tool rack. Arms swap quickly; many owners keep a stockpile of specialty arms. Not particularly bright, but obedient, single-minded, and reliable. Popular on fringe worlds. Fragile — requires regular maintenance and low-hazard environments.",
-  "source": "REUP Star Wars RPG: Revised Expanded Updated p.375"
+  "source": "REUP Star Wars RPG: Revised Expanded Updated p.375 | WEG41014 Star Wars Adventure Journal #14 p.249 (Cynabar's Droid Datalog)"
  },
  {
   "name": "3PO Protocol Droid",
@@ -2597,7 +2597,7 @@ const EQUIPMENT_DATA = [
   "cost": "15,000",
   "availability": "",
   "game_notes": "Length: 6m. Scale: Speeder. Move: 105; 300 kmh. DEX 1D, KNO 1D (streetwise: local shortcuts 6D), MEC 1D (repulsorlift operation: landspeeder 6D), PER 1D (con 5D), STR 3D, TEC 1D. Equipped: armor plating (+4D exterior and droid brain/credit compartment), internal passenger compartment (seats 3), heavy suspension repulsorlift motors, internal streetmap/database with uplink to local communication and transportation network, credit operation box, vocabulator panel. Central Learning Chip allows the droid to learn from past experiences. Some are programmed to produce maximum revenue rather than provide customer service — known to ride extra kilometers to defraud visitors. Self-defense: doors auto-lock in case of robbery or non-payment, delivering the individual to the nearest law enforcement.",
-  "source": "WEG40042 Han Solo and the Corporate Sector Sourcebook p.130"
+  "source": "WEG40042 Han Solo and the Corporate Sector Sourcebook p.130 | WEG41014 Star Wars Adventure Journal #14 p.265 (Cynabar's Droid Datalog)"
  },
  {
   "name": "Bith Vehicle Voice Lock (BiWoL) RVR-325",
@@ -2677,7 +2677,7 @@ const EQUIPMENT_DATA = [
   "cost": "4,000",
   "availability": "",
   "game_notes": "Height: 1.4m. Move: 6. DEX 1D, KNO 2D (culinary arts 6D+2, cultures 3D, cultures: galactic cuisines 5D, cultures: food preparation 5D, home economics 4D+2, languages 2D+1, value: foodstuffs 2D+2), MEC 1D, PER 2D, STR 1D, TEC 1D. Equipped: humanoid body, two visual/auditory sensor recorders (Human range), vocabulator, various cooking attachments (replaceable, left arm), AA-1 Verbobrain, TranLang I Communications module, food preparation database (17,000+ recipes), food sample analyzer. Also serves as mobile food taste-tester, shopping servant and host's assistant.",
-  "source": "WEG40025 Galladinium's Fantastic Technology p.22"
+  "source": "WEG40025 Galladinium's Fantastic Technology p.22 | WEG41014 Star Wars Adventure Journal #14 p.252 (Cynabar's Droid Datalog)"
  },
  {
   "name": "Opti-Prime XA-540 Personal Secretary Droid",
@@ -5892,7 +5892,7 @@ const EQUIPMENT_DATA = [
   "cost": "20,000",
   "availability": "3, X",
   "game_notes": "Height: 3.2 m (six meters long, four-legged design). Move: 17. DEX 2D (blaster 5D, blaster artillery 4D+2), KNO 1D, MEC 1D, PER 2D (search 4D), STR 5D, TEC 1D. Equipped with: 4 heavy-duty legs; 1 medium anti-vehicle laser cannon (speeder, blaster artillery, 10–500/1.5/2.5 km, damage 5D, rotates 30° down / 105° up, top section traverses left-right); 1 medium repeating blaster (character, blaster, 3-75/200/500, damage 7D, mounted on the belly pylon); lighting package. Originally conceived by Imperial Army Captain Kist as an unmanned defense supplement for ground troops; rejected by Imperial engineers and (according to Imperial accusations) stolen for the Corporate Sector Authority. Rumor says Kist sold the plans to the CSA himself. Built for the maneuverability of an AT-ST with reduced leg vulnerability. The processor section uses redundant layers of components and an information matrix center (IMAC) that relays sensor and tactical data back to a mobile command base or fixed bunker. Saboteurs have discovered the IMAC processor is vulnerable to foreign manipulation and have reprogrammed several droids to serve their own ends.",
-  "source": "WEG41010 Star Wars Adventure Journal #10 p.151 (Toria Tell's Droid Journal)"
+  "source": "WEG41010 Star Wars Adventure Journal #10 p.151 (Toria Tell's Droid Journal) | WEG41014 Star Wars Adventure Journal #14 p.255 (Cynabar's Droid Datalog)"
  }
  ,{
   "name": "Publictechnic Model 850.AA Public Service Headquarters and Maintenance Droid",
@@ -5965,6 +5965,105 @@ const EQUIPMENT_DATA = [
   "availability": "2, F",
   "game_notes": "Second Degree Droid (engineering/maintenance). Personality: Simple. Height: 2.5 meters. Move: 7. DEX 1D (melee combat 3D, melee parry 4D), KNO 1D, MEC 1D, PER 1D (search 3D), STR 6D (lifting 8D), TEC 1D. Equipped with: repulsorlift floaters, two grappling claws, shields, flash-freeze unit. CLAW ATTACK: claws do 3D damage in melee combat; a successful hit means the target has been restrained and will be dumped next round into the flash-freeze chamber. FLASH-FREEZE: the droid flash-freezes its specimens; after a couple of minutes of cryogenically controlled hypothermia, the sample is flash-frozen for the return trip. A character captured by the droid but rescued within two minutes can be revived using first aid techniques for cold exposure (Moderate first aid roll); only three attempts can be made (once per hour) and failure to revive results in incapacitated wound status; success means the frozen character is treated as wounded for 1D hours but recovers completely. SHIELDS: limited shields worth +2D against energy attacks; if a creature touches the outer shell, the droid can concentrate its shields into a contact stun of 5D damage, but only once per combat round. Created by Serv-O-Droid to assist colonists and scouts during the initial stages of a planet's exploration — collector droids perform cleanup duties after scout droids locate and stun target specimens, rumbling along with a steam condensation trail behind them, picking up stunned units with their two large claws and placing them inside their gaping maw at the top of the droid for flash-freezing. Repulsorlift generators underneath maintain a one-meter elevation. The Empire reportedly discontinued use of this model after one unit went crazy and clawed something like 300 colonists on Corva Yag near the Minos Cluster — public safety briefs blamed counter-programming, possibly Rebel sabotage, but Cynabar's contributors speculated the colonists may have stumbled into something the Imperials wanted hidden.",
   "source": "WEG41013 Star Wars Adventure Journal #13 (Cynabar's Droid Datalog)"
+ }
+ ,{
+  "name": "BioTech Mark 16 Enzymer",
+  "type": "Bio-Identification Unit and Counter-Agent Producer",
+  "category": "Medical",
+  "cost": "Not for general sale (requires medical/scientific license)",
+  "availability": "1",
+  "game_notes": "Skill: first aid. The enzymer is a tabletop console device that grows and identifies biological residues — bacteria, viruses, and certain parasites — and produces a matching counter-agent. The unit is only as good as its sample database; counter-agents can only be produced for known pathogens already on file. Outdated registry programming (as on the unit at the Irrational Number bar/inn at Jugsmuk Station, Gamorr) limits the device's usefulness for treating exotic diseases from undocumented worlds, but for most galactic-mainline infections it remains a reliable rough-and-ready medical tool — popular with remote outpost bars, frontier clinics, and traders working on planets where proper medical droids and clinics are non-existent.",
+  "source": "WEG41014 Star Wars Adventure Journal #14 p.50 (Murder in Slushtime)"
+ }
+ ,{
+  "name": "Cybot Galactica IC-M Utility Droid",
+  "type": "Cybot Galactica IC-M General Utility Droid",
+  "category": "Droids",
+  "cost": "1,700 credits (new), 500 credits (used)",
+  "availability": "2, R",
+  "game_notes": "Second Degree Droid. Personality: None. Height: 1.5m. Move: 7. DEX 1D, KNO 1D, MEC 2D, PER 2D, STR 3D (lifting 5D), TEC 4D (computer programming/repair 5D, general repair 8D+1, machinery repair 5D). Equipped with: photoreceptor/auditory receiver (human range), seven manipulator arms with interchangeable fixtures, heavy Treadwell locomotion, rear storage bay containing various cleaning and repair tools, two heads (allows the unit to access data such as Imperial building codes and scheduled tasks while performing the job at hand). Designed to maintain and clean the lower levels of Coruscant for the Empire. Programming allows minor structural repairs (changing dead light fixtures) to minor landscaping (weeding walkways). Many IC-Ms have been purchased by other system and local governments to save on the cost of organic workers. SMUGGLER NOTE: since IC-Ms operate deep in the Coruscant underlevels they are harder to keep under Imperial surveillance and easier to co-opt for illegal purposes — recommended for covert communication memory-buffer relay on Imperial Center as an alternative to the closely-monitored IN-4 message droids.",
+  "source": "WEG41014 Star Wars Adventure Journal #14 p.249 (Cynabar's Droid Datalog)"
+ }
+ ,{
+  "name": "Cybot Galactica M4 Message Droid",
+  "type": "Cybot Galactica M4 Message Droid (M4m military variant available)",
+  "category": "Droids",
+  "cost": "2,000 credits (civilian issue), 4,000 credits (M4m military issue)",
+  "availability": "1 (civilian), 2 R (military)",
+  "game_notes": "Second Degree Droid. Personality: Simple. Height: 0.3m. Move: 30 (repulsorlift, max altitude 4m). DEX 1D (dodge 5D), KNO 1D, MEC 1D, PER 1D, STR 1D, TEC 1D. Equipped with: holographic projector/recorder, repulsorlift drive unit with 4-meter flight ceiling. Military variant (M4m) adds: body armor (+2D physical, +1D energy) and an internal sporting blaster (3D+1 stun damage, ranges 0-5/10/20). Designed to make quick information exchange less risky than standard data transmission methods. Capable of playing pre-recorded messages and datatapes as well as recording holo messages on the spot; encryption codes must be entered by the recipient of any given message. The Rebel Alliance uses the M4m model (officially designated 'IN-4') for message drops, drawing close Imperial attention to anything resembling one in the wild.",
+  "source": "WEG41014 Star Wars Adventure Journal #14 p.249 (Cynabar's Droid Datalog)"
+ }
+ ,{
+  "name": "Industrial Automaton A9G Data Storage Droid",
+  "type": "Industrial Automaton A9G Series Data Storage Unit",
+  "category": "Droids",
+  "cost": "8,000 credits",
+  "availability": "2",
+  "game_notes": "Third Degree Droid. Personality: Moderate. Height: 1.7m. Move: 9. DEX 2D, KNO 2D (bureaucracy: library science 4D), MEC 1D, PER 1D, STR 1D+2, TEC 2D (computer programming/repair 3D). Equipped with: Kraren XI Superprocessors (rapid data collation), Cybot Galactica Data-Sifter software (+1D to all computer programming/repair rolls involving data searches), humanoid body construction (head, two arms, two legs). Designed to handle the arduous task of cataloging and maintaining vast amounts of datafiles for libraries both public and private — capable of processing catalogs at incredibly high accuracy, perfect as a retrieval device. However, given a substandard memory core that makes its primary high-end storage function 'glitch-prone'; many large libraries have either replaced the core or purchased multiple A9Gs to handle specific departments. The Rebel Alliance has obtained and modified several A9Gs to assist with military strategy based on previous Imperial activities. RUMOR: Someone is buying up large numbers of A9Gs on Ryloth — price is good, risk is low.",
+  "source": "WEG41014 Star Wars Adventure Journal #14 p.252 (Cynabar's Droid Datalog)"
+ }
+ ,{
+  "name": "Cybot Galactica Guardian-class Droid",
+  "type": "Cybot Galactica Guardian-class Protector/Companion Droid",
+  "category": "Droids",
+  "cost": "4,000 credits (new), 2,000 credits (used)",
+  "availability": "2, F",
+  "game_notes": "Fourth Degree Droid. Personality: Elementary. Height: 1.5m (roughly canine in appearance). Move: 13. DEX 2D (blaster 4D, brawling parry 2D+1, dodge 3D+2, melee combat 4D, melee parry 4D, running 4D), KNO 1D (alien species 2D, intimidation 4D), MEC 3D (communications 2D, sensors 4D), PER 2D (search 3D), STR 3D (brawling 4D), TEC 1D. Equipped with: four legs, hinged grasping jaw with retractable blade incisors (STR+2 damage), two visual/auditory sensor recorders (human range), retractable blaster (3D damage, ranges 0-3/10/20). LOYALTY IMPRINT special ability: absolute obedience to master and designated family members; will defend would-be attackers in a potential threat situation unless directly countermanded by a designated family member. Made extremely popular by a series of children's holotexts and favored by parents who require a protector/companion for children. Modders frequently retrofit Guardians with sensor packages, tracking SkillWare, automaps (excellent scouting assistants), or — less commonly — combat SkillWare and metal claws/fangs for freighter security duty (the modified version actually growls).",
+  "source": "WEG41014 Star Wars Adventure Journal #14 p.257 (Cynabar's Droid Datalog)"
+ }
+ ,{
+  "name": "Cybot Galactica LIN Demolitionmech Mining Droid",
+  "type": "Cybot Galactica LIN Demolitionmech Mining Droid (military minelayer variant)",
+  "category": "Droids",
+  "cost": "12,000 credits (black market), 6,000 credits (military issue)",
+  "availability": "2, R",
+  "game_notes": "Fourth Degree Droid. Personality: None. Height: 0.7m. Move: 3. DEX 1D (blaster artillery 4D), KNO 1D, MEC 1D, PER 3D, STR 6D, TEC 3D (demolitions 6D+1). Equipped with: video sensor, dual-tread locomotion, fine manipulator arm under dome (for planting explosives), Cybot acoustic signaler (droid languages only), armored housing (+2D Strength). Military model adds a minelayer mount (ammo magazine, up to 60 mines of varying types). Developed for deep excavation mining where the highly sensitive charges required would be too dangerous for organic workers — moves slowly, strategically planting explosives so detected ore can be made available. Easily modified for military use, planting or removing mines from a battlefield. SLICER NOTE: the programming module is not difficult to slice; with a few hardpoints for distance weapons (concussion missiles, grenade launchers, flame projectors) the LIN can be a formidable opponent, especially in night engagements where its sensitive sensors give it an advantage.",
+  "source": "WEG41014 Star Wars Adventure Journal #14 p.259 (Cynabar's Droid Datalog)"
+ }
+ ,{
+  "name": "Publictechnic 850.AA Public Maintenance Droid",
+  "type": "Publictechnic 850.AA Public Maintenance Droid",
+  "category": "Droids",
+  "cost": "75,000 credits",
+  "availability": "2",
+  "game_notes": "Fourth Degree Droid (officially classified for political reasons; functionally a fifth degree maintenance unit). Personality: None. Height: 13m. Move: 30 (repulsorlift, flight ceiling 20m). DEX 1D, KNO 2D, MEC 1D, PER 1D (command 4D), STR 7D, TEC 1D. Equipped with: repulsorlift system, Publictechnic power cell system, beamcleaners, coarse cleaning brushes, sensorlink network system, equipment bay, various smaller repair droids it can deploy and recall. An immense unit capable of handling almost all of an urban region's maintenance duties; the internal bay houses smaller maintenance units which the 850.AA controls by regulating their schedules and workloads. NOTORIETY: 850.AAs have been banned on Kothlis after a Bothan clan squabble in which one faction reprogrammed an 850.AA to pass a rival's home and disgorge dozens of reprogrammed Arakyd Seekers (the official newsnet classification of the resulting firefight as 'a minor geologic upheaval' satisfied no one).",
+  "source": "WEG41014 Star Wars Adventure Journal #14 p.260 (Cynabar's Droid Datalog)"
+ }
+ ,{
+  "name": "Cybot Galactica CLL-8 Binary Cargo Load Lifter",
+  "type": "Cybot Galactica CLL-8 Binary Cargo Load Lifter",
+  "category": "Droids",
+  "cost": "2,500 credits",
+  "availability": "1",
+  "game_notes": "Fifth Degree Droid. Personality: None. Height: 3m. Move: 7. DEX 1D, KNO 1D, MEC 1D, PER 1D, STR 6D (lifting 8D), TEC 1D. Equipped with: two gyro-stabilized heavy lifting legs, two heavy cargo arms, armored systems housing. Standard binary cargo lifter found throughout the galaxy's starports — legs and arms are reinforced and filled with hydraulics to allow heavy cargo lifting. Responds to simple verbal commands; protocol droids are sometimes used to program CLL-8s for more complex extended jobs such as loading an entire freighter cargo bay while sorting by data identification labels. NOTE: Cybot Galactica uses the same binary language to program load lifters that moisture farmers use to control vaporators — Jawas and other local scavengers tend to cannibalize vaporator programming modules to repair damaged load lifters. WARNING: equipping a CLL-8 with combat weaponry powerful enough to stop armored troops risks punching a blaster shot through the freighter hull (CLL-8s aren't terribly bright).",
+  "source": "WEG41014 Star Wars Adventure Journal #14 p.262 (Cynabar's Droid Datalog)"
+ }
+ ,{
+  "name": "Serv-O-Droid DC5-1 Cargo Droid",
+  "type": "Serv-O-Droid DC5-1 Cargo Labor Droid",
+  "category": "Droids",
+  "cost": "4,500 credits",
+  "availability": "1",
+  "game_notes": "Fifth Degree Droid. Personality: None. Height: 2.8m. Move: 6. DEX 2D, KNO 1D, MEC 1D, PER 1D, STR 4D (lifting 10D), TEC 1D (security 4D). Equipped with: four extendible manipulators, one pair of heavy treads, one pair of lifting claws, cranial turret with audio/video sensor, remote directional transponder, armored chassis (+1D physical and energy), laser scanner. CARGO CODE DATABASE special ability: the laser scanner identifies each cargo module's identity band on the side of the module and correlates it to where the module should be off-loaded; the scanner can also re-code identity bands for new cargoes. Popular on Imperial-aligned worlds where Customs officials tend to trust the droid's internal cargo manifests — with creative reprogramming, falsifying records is straightforward. WARNING: the DC5-1 has a hardwired memory backup that automatically dumps a copy of the original system parameters anytime primary programming is altered. Smart Customs officials check the backup memory.",
+  "source": "WEG41014 Star Wars Adventure Journal #14 p.263 (Cynabar's Droid Datalog)"
+ }
+ ,{
+  "name": "Industrial Automaton L2 Base Labor Droid",
+  "type": "Industrial Automaton L2 Base Labor Droid",
+  "category": "Droids",
+  "cost": "1,200 credits",
+  "availability": "2, F",
+  "game_notes": "Fifth Degree Droid. Personality: Simple. Height: 1m. Move: 5. DEX 1D, KNO 1D, MEC 1D, PER 1D, STR 2D (lifting 4D), TEC 1D. Equipped with: two heavy grasper arms (+1D lifting), retractable fine work heavy grasper arm, two tractor feet, two visual and two auditory sensor recorders, small circular saw (4D damage, 0.3m range). SKILL DUPLICATION special ability: since L2 labor droids record all visual and auditory instruction, they attempt to duplicate the instructions to the letter — an L2 can perform a Mechanical or Technical task at the same skill level of the instructor, provided all steps to complete the task have been explained to the droid in exacting detail. Cheap, reliable, menial workers; can be programmed to complete tasks of up to 100 separate steps and repeat them indefinitely without further instruction. Popular for owners needing units in industrial activities, maintenance, construction, and mechanical repair. The L2 is so heavily moddable that many in service have been customized beyond recognition.",
+  "source": "WEG41014 Star Wars Adventure Journal #14 p.263 (Cynabar's Droid Datalog)"
+ }
+ ,{
+  "name": "Cybot Galactica RA Servant Droid",
+  "type": "Cybot Galactica RA-series Servant Droid",
+  "category": "Droids",
+  "cost": "1,500 credits",
+  "availability": "1",
+  "game_notes": "Fifth Degree Droid. Personality: Complex. Height: 1.7m. Move: 5. DEX 1D, KNO 2D (cultures 3D), MEC 1D, PER 1D, STR 2D, TEC 2D. Equipped with: two photoreceptors and auditory receptors (human range), vocabulator (capable of speaking one programmed language), humanoid frame (two arms, two legs). Cybot Galactica's answer to the galactic call for a more appealing servant droid — based on the popular 3PO protocol unit, the RA provides owners with a low-end affordable servant droid capable of minor cleaning and attendance duties. NOTE: the RA-series is innocuous and inexpensive, making it very easy to upgrade into a combat or espionage unit. The well-known thief Tombat famously reprogrammed an RA droid to give him the layout of a manor house, casing the entire structure without ever setting foot inside — simply by adding a holocam and automap to the unit.",
+  "source": "WEG41014 Star Wars Adventure Journal #14 p.265 (Cynabar's Droid Datalog)"
  }
 // --- END OF EQUIPMENT_DATA ---
 ];
