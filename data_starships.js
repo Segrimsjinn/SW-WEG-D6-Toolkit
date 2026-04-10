@@ -10839,6 +10839,53 @@ const STARSHIP_DATA = {
    "sensors_search": "30/1D+2",
    "sensors_focus": "1/1D",
    "weapons": []
+  },
+  {
+   "rank": 50,
+   "name": "Muvon (Tofarain's Shuttle)",
+   "craft": "Modified Loronar B-7 Light Freighter",
+   "type": "Modified Light Freighter",
+   "affiliation": "New Republic",
+   "era": "New Republic",
+   "source": "WEG40209 The DarkStryder Campaign p.77",
+   "price_new": "",
+   "price_used": "20,000",
+   "scale": "Starfighter",
+   "length": "19 meters",
+   "skill": "Space transports: B-7 freighter",
+   "crew": "1, gunners: 1",
+   "crew_skill": "See Brophar Tofarain",
+   "passengers": "8",
+   "cargo_capacity": "1 metric ton",
+   "consumables": "1 month",
+   "cost": "20,000",
+   "hyperdrive_multiplier": "x3",
+   "hyperdrive_backup": "x10",
+   "nav_computer": "Yes",
+   "maneuverability": "1D",
+   "space": 2,
+   "atmosphere": "225; 650 kmh",
+   "hull": "4D",
+   "shields": "1D+2",
+   "sensors": {
+    "passive": "10/1D",
+    "scan": "20/1D",
+    "search": "30/1D+2",
+    "focus": "3/2D"
+   },
+   "weapons": [
+    {
+     "name": "1 Light Laser Cannon",
+     "fire_arc": "Turret",
+     "crew": "1",
+     "skill": "Starship gunnery",
+     "fire_control": "1D+2 (may be fired by pilot at 0D fire control)",
+     "space_range": "1-2/7/15",
+     "atmo_range": "100-200/700/1.5 km",
+     "damage": "4D"
+    }
+   ],
+   "capsule": "The Muvon is Sergeant Brophar Tofarain's personal shuttle, used by the FarStar for non-military operations. It is typically used as a personnel transport with room for eight passengers and a pair of speeder bikes or exploration equipment. The small shuttle is an excellent choice when the FarStar wishes to arrive on a planet in a subdued manner — it can easily be mistaken for a nondescript civilian transport hauler rather than an advance scout for a New Republic military vessel. Tofarain insists on personally piloting the ship on all missions and is very intolerant of passengers making fun of his vessel."
   }
  ],
  "Named Modified Shuttles": [],
@@ -27718,6 +27765,54 @@ const STARSHIP_DATA = {
     }
    ],
    "capsule": "All known Yevethan thrustships are physically similar to each other, 240-meter diameter spheroids with chemical thrust pulse-lift engine cones protruding from one end. The Armadia-class thrustship, later code-named T-type and nicknamed 'Fat Man,' is the main combat cruiser of the Yevethan space force. The pulse-lift thrusters are used both for landing and realspace drive, and are not dampened — thrustships make a fantastic amount of noise in atmosphere. The Armadia has relatively few weapons for a main cruiser, but they are more varied than among New Republic designs and very powerful in combination. The gravity bombs are too slow to be effective against fighters and are vulnerable to counter-fire, but their side-steering maneuvering thrusters give them excellent fire control. Yevethan use of physical munitions takes advantage of matter weapons being unaffected by energy shields. Each Armadia carries a wing of 40 Yevethan fighters. Thrustship armor is very strong and their shielding is about one-third more powerful."
+  },
+  {
+   "rank": 50,
+   "name": "FarStar",
+   "craft": "Corellian Engineering Corporation Corvette",
+   "type": "Converted Military Ship",
+   "affiliation": "New Republic",
+   "era": "New Republic",
+   "source": "WEG40209 The DarkStryder Campaign p.23",
+   "price_new": "",
+   "price_used": "",
+   "scale": "Capital",
+   "length": "150 meters",
+   "skill": "Capital ship piloting: Corellian Corvette",
+   "crew": "120, gunners: 10, skeleton: 50/+10",
+   "crew_skill": "See individual crew members",
+   "passengers": "",
+   "cargo_capacity": "3,000 metric tons",
+   "consumables": "3 months",
+   "cost": "",
+   "hyperdrive_multiplier": "x2",
+   "hyperdrive_backup": "",
+   "nav_computer": "Yes",
+   "maneuverability": "2D",
+   "space": 7,
+   "atmosphere": "350; 1,000 kmh",
+   "hull": "5D",
+   "shields": "2D",
+   "sensors": {
+    "passive": "50/1D+1",
+    "scan": "100/3D+1",
+    "search": "200/4D+1",
+    "focus": "6/5D"
+   },
+   "weapons": [
+    {
+     "name": "6 Double Turbolaser Cannons",
+     "fire_arc": "2 turret, 1 front/left, 1 left/back, 1 front/right, 1 right/back",
+     "crew": "1 (4), 3 (2)",
+     "skill": "Capital ship gunnery",
+     "fire_control": "2D (4D after two full rounds of targeting)",
+     "space_range": "3-15/35/75",
+     "atmo_range": "6-30/70/150 km",
+     "damage": "4D+2"
+    }
+   ],
+   "capsule": "Originally commissioned as the Freedom's Messenger by the Chandrilan government nearly six decades ago, this Corellian Corvette served as a diplomatic vessel, then was refitted for military duty. Her greatest moment was at the Battle of Ord Torrenze, where she led a fleet to save millions of evacuees before suffering a power core overload. Recovered by the Empire and renamed the Renegade, she served under then-Captain Kentor Sarne in the 15th Deep Core Reserve Fleet. When Sarne became Moff of Kathol sector, he had the ship extensively refitted for a long-range exploration mission into the Kathol Outback — adding an internal flight deck for fighters, advanced sensors nearly doubling standard range, upgraded hull armor (+1D over standard Corvette), 'predict and pinpoint' turbolaser targeting routines, and a high-power subspace transceiver with 100 light-year range. Captured by Page's Commandos during the liberation of Kal'Shebbol and renamed the FarStar, the ship was jury-rigged in 28 hours and sent to track down the fleeing Moff Sarne under Captain Keleman Ciro. The FarStar carries 8 X-wings and 4 Defender starfighters in its cramped landing bay, plus shuttles on docking tubes. Sarne left hidden traps in the ship's computers — a communications 'deeplink' broadcasting the ship's location, sabotage programs on a 10-day timer, and a droid programming override capable of corrupting astromech units.",
+   "of_note": ""
   }
  ],
  "Named Modified Capital Frigates": [],
