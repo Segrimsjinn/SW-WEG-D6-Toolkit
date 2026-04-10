@@ -5706,6 +5706,98 @@ const STARSHIP_DATA = {
      "damage": "4D"
     }
    ]
+  },
+  {
+   "rank": 99999,
+   "name": "Ordinary Trader",
+   "craft": "Modified Ghtroc Industries Class 720 Freighter",
+   "type": "Modified light freighter",
+   "scale": "Starfighter",
+   "length": "35 meters",
+   "skill": "Space transports: Ghtroc freighter",
+   "crew": "1 or 2 (can coordinate)",
+   "crew_skill": "See Rav Mace",
+   "passengers": "4",
+   "cargo": "120 metric tons",
+   "consumables": "4 months",
+   "cost": "Not available for sale",
+   "hyperdrive": "x2",
+   "hyperdrive_backup": "x15",
+   "nav_computer": "Yes",
+   "maneuverability": "2D",
+   "space": "6",
+   "atmosphere": "330; 950 kmh",
+   "hull": "3D+2",
+   "shields": "1D",
+   "of_note": "Rav Mace's heavily modified Ghtroc freighter. More powerful engines make it much faster and more maneuverable than expected (Space 6 vs stock 4, Maneuverability 2D vs stock 1D). Guns beefed up as well, but Mace prefers to run rather than fight. Improvements come at the expense of cargo and passenger space (120 tons vs stock 135, 4 passengers vs stock 10). Registered out of Dovull. Used for trade with primitive worlds and occasional Rebel Alliance scouting missions. Captured by Commander Panatic of the Sentinel but later 'reported stolen' after Mace helped break up a slaver ring at Zahir.",
+   "sensors_passive": "15/0D",
+   "sensors_scan": "30/1D",
+   "sensors_search": "50/3D",
+   "sensors_focus": "2/4D",
+   "weapons": [
+    {
+     "name": "Double Laser Cannon",
+     "fire_arc": "Front",
+     "crew": "1",
+     "skill": "Starship gunnery",
+     "fire_control": "2D",
+     "space_range": "1-3/12/25",
+     "atmo_range": "100-300/1.2/2.5 km",
+     "damage": "5D"
+    }
+   ],
+   "source": "WEG41016 Star Wars Adventure Journal #16 p.103 (A Servant of the Empire)"
+  },
+  {
+   "rank": 99999,
+   "name": "Zoda",
+   "craft": "Modified Ghtroc Industries Class 720 Freighter",
+   "type": "Modified light freighter",
+   "scale": "Starfighter",
+   "length": "35 meters",
+   "skill": "Space transports: Ghtroc freighter",
+   "crew": "1",
+   "gunners": "1",
+   "passengers": "10",
+   "cargo": "135 metric tons",
+   "consumables": "2 months",
+   "cost": "Not available for sale",
+   "hyperdrive": "x2",
+   "hyperdrive_backup": "x15",
+   "nav_computer": "Yes",
+   "maneuverability": "2D",
+   "space": "4",
+   "atmosphere": "260; 750 kmh",
+   "hull": "3D+2",
+   "shields": "2D",
+   "of_note": "Rendra Maex's Ghtroc 720, bought fresh from the factory and custom-modified by hired workers. Total cost exceeded 100,000 credits, financed through GalactiCore (loan still outstanding). Nopul Etrefa later enhanced the sensors with his slicing skills. After the Sriluur incident, the ship bears the Houk-Weequay Alliance symbol painted across the hull (to Nopul's aesthetic dismay). BoSS registry swapped with a trading vessel called the Runaround — Nopul forged the BoSS computer files rather than the transponder, making the forgery harder to detect. Also known as the Runaround under forged registry.",
+   "sensors_passive": "20/1D",
+   "sensors_scan": "40/1D+2",
+   "sensors_search": "75/3D",
+   "sensors_focus": "6/4D",
+   "weapons": [
+    {
+     "name": "Double Laser Cannon",
+     "fire_arc": "Front",
+     "crew": "1",
+     "skill": "Starship gunnery",
+     "fire_control": "1D+2",
+     "space_range": "1-3/12/25",
+     "atmo_range": "100-300/1.2/2.5 km",
+     "damage": "4D"
+    },
+    {
+     "name": "2 Quad Laser Cannons",
+     "fire_arc": "Turret",
+     "crew": "1",
+     "skill": "Starship gunnery",
+     "fire_control": "3D",
+     "space_range": "1-3/12/25",
+     "atmo_range": "100-300/1.2/2.5 km",
+     "damage": "5D"
+    }
+   ],
+   "source": "WEG41016 Star Wars Adventure Journal #16 p.209 (Credit Denied)"
   }
  ],
  "Stock Yachts": [
@@ -10715,6 +10807,37 @@ const STARSHIP_DATA = {
    "sensors_scan": "",
    "sensors_search": "",
    "sensors_focus": "",
+   "weapons": []
+  },
+  {
+   "rank": 1,
+   "name": "W-33 Star Ferry",
+   "craft": "Incom W-33 Star Ferry",
+   "type": "Intra-system Passenger Ferry",
+   "affiliation": "General",
+   "era": "Rebellion",
+   "source": "WEG41016 Star Wars Adventure Journal #16 p.62 (Corellian Translines)",
+   "price_new": "196000",
+   "price_used": "50000",
+   "scale": "Capital",
+   "length": "80 meters",
+   "crew": "2",
+   "gunners": "",
+   "passengers": "40",
+   "cargo": "250 metric tons",
+   "consumables": "1 month",
+   "hyperdrive": "",
+   "nav_computer": "",
+   "maneuverability": "1D+1",
+   "space": "3",
+   "atmosphere": "260; 750 kmh",
+   "hull": "3D+2",
+   "shields": "1D",
+   "of_note": "Skeleton: 1/+5. No hyperdrive — designed for intra-system passenger service only. Passenger configuration of the W-23 Star Hauler. Used by Corellian Translines for surface-to-orbit, surface-to-satellite, and inter-planet shuttle routes. One or more departures per standard hour; 5 credits per ticket. Source cites Thrawn Trilogy Sourcebook.",
+   "sensors_passive": "15/0D",
+   "sensors_scan": "30/1D",
+   "sensors_search": "30/1D+2",
+   "sensors_focus": "1/1D",
    "weapons": []
   }
  ],
@@ -36506,7 +36629,7 @@ const STARSHIP_DATA = {
    "atmosphere": "",
    "hull": "2D",
    "shields": "",
-   "of_note": "",
+   "of_note": "Part of the Corellian Translines fleet. Tours the Corporate Sector under the auspices of Authority Tours, boarding at the borderworld of Dis and visiting Bonadan, Reltoolne, Ammuud, and several other systems.",
    "sensors_passive": "20/0D",
    "sensors_scan": "30/1D",
    "sensors_search": "40/2D",
@@ -40993,7 +41116,7 @@ const STARSHIP_DATA = {
    "atmosphere_speed": "",
    "hull": "5D",
    "shields": "2D",
-   "of_note": "One of the masterpieces of Mon Calamari design, built before the Mon Calamari joined the Alliance. Much of the technology used in MC80 Star Cruiser construction was developed during the Princess's design. Crew of 840 includes 500 droids — stewards, engineers, recreation directors, band members, and wallball pros. Commanded by Captain Stenn Glidrick, ex-Imperial Navy pilot, with 10 staff officers. Has a 60-man security force enforcing Imperial regulations against carrying weaponry aboard.",
+   "of_note": "One of the masterpieces of Mon Calamari design, built before the Mon Calamari joined the Alliance. Much of the technology used in MC80 Star Cruiser construction was developed during the Princess's design. Crew of 840 includes 500 droids — stewards, engineers, recreation directors, band members, and wallball pros. Commanded by Captain Stenn Glidrick, ex-Imperial Navy pilot, with 10 staff officers. Has a 60-man security force enforcing Imperial regulations against carrying weaponry aboard. CORELLIAN TRANSLINES: Flagship of Galaxy Tours' Four Week Grand Galactic Tour. Boards at Corellia, visits the deserts of Tatooine, the gambling resorts of Bespin, and the Imperial splendor of Coruscant. Sister ship Empress (full-sized 1,200m MC80 Star Cruiser) departs from Coruscant and visits Pantolomin, The Wheel orbital casino, Berchest (City of Glowing Crystal), and Hijarna (archaeological ruins). The Empress features the galaxy's first shipboard biosphere resort managed by Ithorian and Ho'Din ecologists.",
    "sensors": {
     "passive": "30/1D",
     "scan": "50/2D",
@@ -41012,7 +41135,7 @@ const STARSHIP_DATA = {
      "damage": "3D"
     }
    ],
-   "source": "WEG40133 Classic Adventures Vol 3 p.13"
+   "source": "WEG40133 Classic Adventures Vol 3 p.13 | WEG41016 Star Wars Adventure Journal #16 p.63 (Corellian Translines)"
   },
   {
    "rank": 99999,

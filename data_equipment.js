@@ -6316,6 +6316,14 @@ const EQUIPMENT_DATA = [
   "availability": "4, F",
   "game_notes": "Color: Light blue shading to green. Power: NATURAL NAVIGATION. Effect: prevents the user from getting lost, as long as the person has a map or some sense of the appropriate direction. If the individual has no idea of the surroundings, they can still discern magnetic north. Difficulty: Very Easy. Random generation table: Table 2 result 6. (Attunement rules as per Tasar Power Crystal — Amethyst.) Notable bearer: Bersin Sekolah.",
   "source": "WEG41015 Star Wars Adventure Journal #15 p.197 (Tasariq: The Crystal Planet)"
+ },
+ {
+  "name": "Simcronics MagnaForce Personal Energy Shield",
+  "category": "Personal Defense",
+  "cost": "25,000 (frontal only), 50,000 (full protection), 2,500 (custom power cells)",
+  "availability": "4, F, R or X",
+  "game_notes": "Character scale. Worn as a powerbox around the waist (usually under clothing). Shield score: 5D to deflect blaster bolts and other energy weapons (use protection rules p.63 Revised & Expanded). Any further damage affects target per 'Cover Modifiers' chart. Power cells last 1 standard hour before draining. Politician's dream — popular with crime lords, bounty hunters, and bill collectors. Embellished version of the MagnaForce Security Shield with longer duration (1 hour vs 2 minutes) and stronger defenses.",
+  "source": "WEG41016 Star Wars Adventure Journal #16 p.215 (Credit Denied)"
  }
 // --- END OF EQUIPMENT_DATA ---
 ];
