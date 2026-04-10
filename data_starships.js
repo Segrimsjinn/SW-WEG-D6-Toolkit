@@ -47565,6 +47565,55 @@ const STARSHIP_DATA = {
      "damage": "5D"
     }
    ]
+  },
+  {
+   "name": "Tanquilla Beach",
+   "type": "Space Station (Shadowport)",
+   "scale": "Capital",
+   "length": "900 meters tall",
+   "skill": "",
+   "crew": "1,200, gunners: 85, skeleton: 400/+10",
+   "crew_skill": "Capital ship gunnery 4D, capital ship shields 4D, sensors 4D+1",
+   "passengers": "7,000",
+   "cargo_capacity": "800,000 metric tons",
+   "consumables": "1 year",
+   "hull": "4D",
+   "shields": "7D",
+   "sensors_passive": "75/1D",
+   "sensors_scan": "150/2D",
+   "sensors_search": "300/3D+2",
+   "sensors_focus": "9/5D",
+   "weapons": [
+    {
+     "name": "80 Turbolaser Batteries",
+     "fire_arc": "20 front, 20 back, 20 right, 20 left",
+     "crew": "1",
+     "skill": "Capital ship gunnery",
+     "fire_control": "1D",
+     "space_range": "3-15/35/75",
+     "damage": "7D"
+    },
+    {
+     "name": "20 Ion Cannons",
+     "fire_arc": "5 front, 5 back, 5 right, 5 left",
+     "crew": "1",
+     "skill": "Capital ship gunnery",
+     "fire_control": "4D",
+     "space_range": "1-10/25/50",
+     "damage": "4D"
+    },
+    {
+     "name": "10 Tractor Beam Projectors",
+     "fire_arc": "3 front, 3 back, 2 right, 2 left",
+     "crew": "1",
+     "skill": "Capital ship gunnery",
+     "fire_control": "4D",
+     "space_range": "1-5/15/40",
+     "damage": "9D"
+    }
+   ],
+   "source": "WEG40209 The DarkStryder Campaign p.154 (Shintel Downtime)",
+   "capsule": "Tanquilla Beach is a major shadowport in Kathol sector, located within a small nebula. Built on a gutted mining asteroid transported to its present location about a century ago by a group of outlaw-techs, the station specializes in high technology services for pirates and smugglers. The external surfaces are plated in metal and plastics, having grown beyond the original asteroid surface by up to 10 meters. The station has 15 levels of open trading space including the infamous Level 12 slavers market. Administered by Bequesh 'The Cardinal,' the sole surviving founder, the station maintains strict customs enforcement and iron-clad rules. Its formidable armament — procured and installed by master engineer Spang — can fight off any single ship smaller than a Star Destroyer. Defense force includes 5 X-wings and 8 Skipray blastboats."
   }
  ]
 // --- END OF STARSHIP_DATA ---
