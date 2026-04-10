@@ -10886,6 +10886,120 @@ const STARSHIP_DATA = {
     }
    ],
    "capsule": "The Muvon is Sergeant Brophar Tofarain's personal shuttle, used by the FarStar for non-military operations. It is typically used as a personnel transport with room for eight passengers and a pair of speeder bikes or exploration equipment. The small shuttle is an excellent choice when the FarStar wishes to arrive on a planet in a subdued manner — it can easily be mistaken for a nondescript civilian transport hauler rather than an advance scout for a New Republic military vessel. Tofarain insists on personally piloting the ship on all missions and is very intolerant of passengers making fun of his vessel."
+  },
+  {
+   "rank": 50,
+   "name": "Steel Fist (Qulok's Fist)",
+   "craft": "Corellian Engineering YT-1300 Freighter",
+   "type": "Modified Light Freighter",
+   "affiliation": "Criminal Underworld",
+   "era": "New Republic",
+   "source": "WEG40209 The DarkStryder Campaign p.88",
+   "price_new": "",
+   "price_used": "",
+   "scale": "Starfighter",
+   "length": "26.7 meters",
+   "skill": "Space transports: YT-1300",
+   "crew": "1, gunners: 3",
+   "crew_skill": "See Kolig",
+   "passengers": "4",
+   "cargo_capacity": "75 metric tons",
+   "consumables": "2 months",
+   "cost": "",
+   "hyperdrive_multiplier": "x1",
+   "hyperdrive_backup": "x10",
+   "nav_computer": "Yes",
+   "maneuverability": "2D",
+   "space": 4,
+   "atmosphere": "280; 800 kmh",
+   "hull": "5D",
+   "shields": "2D+2",
+   "sensors": {
+    "passive": "15/1D",
+    "scan": "35/2D",
+    "search": "50/3D",
+    "focus": "4/4D"
+   },
+   "weapons": [
+    {
+     "name": "2 Quad Laser Cannons",
+     "fire_arc": "Turret",
+     "crew": "1",
+     "skill": "Starship gunnery",
+     "fire_control": "2D",
+     "space_range": "1-3/12/25",
+     "atmo_range": "100-300/1.2/2.5 km",
+     "damage": "5D"
+    },
+    {
+     "name": "1 Proton Torpedo Tube",
+     "fire_arc": "Front",
+     "crew": "1",
+     "skill": "Starship gunnery",
+     "fire_control": "2D (may be fired from cockpit at 0D fire control)",
+     "space_range": "1/3/7",
+     "atmo_range": "30-100/300/700",
+     "damage": "7D"
+    }
+   ],
+   "capsule": "The Steel Fist is Kolig's personal freighter and the base of operations for Qulok's Fist bounty hunter gang. Heavily modified with reinforced armor plating, shield generators, and greatly improved maneuverability. The paired quad laser cannons intimidate lightly armored freighters, while the proton torpedo tube (magazine of 6 torpedoes) gives a decisive edge in close quarters combat. Hired by Moff Sarne to tail the FarStar through Kathol sector."
+  },
+  {
+   "rank": 50,
+   "name": "Fxz'Et (Ned'Ix's Ship)",
+   "craft": "Ghtroc Industries Class 720 Freighter",
+   "type": "Modified Light Freighter",
+   "affiliation": "New Republic",
+   "era": "New Republic",
+   "source": "WEG40209 The DarkStryder Campaign p.90",
+   "price_new": "",
+   "price_used": "",
+   "scale": "Starfighter",
+   "length": "35 meters",
+   "skill": "Space transports: Ghtroc freighter",
+   "crew": "1, gunners: 2",
+   "crew_skill": "See Kyli Ned'Ix",
+   "passengers": "1",
+   "cargo_capacity": "135 metric tons (currently filled with junk)",
+   "consumables": "2 months",
+   "cost": "",
+   "hyperdrive_multiplier": "x2",
+   "hyperdrive_backup": "x10",
+   "nav_computer": "Yes",
+   "maneuverability": "3D",
+   "space": 4,
+   "atmosphere": "280; 800 kmh",
+   "hull": "4D",
+   "shields": "2D",
+   "sensors": {
+    "passive": "15/0D",
+    "scan": "30/1D",
+    "search": "50/3D",
+    "focus": "2/4D"
+   },
+   "weapons": [
+    {
+     "name": "1 Double Laser Cannon",
+     "fire_arc": "Front",
+     "crew": "1",
+     "skill": "Starship gunnery",
+     "fire_control": "2D",
+     "space_range": "1-3/12/25",
+     "atmo_range": "100-300/1.2/2.5 km",
+     "damage": "5D"
+    },
+    {
+     "name": "2 Proton Torpedo Launchers",
+     "fire_arc": "Front, back",
+     "crew": "1",
+     "skill": "Starship gunnery",
+     "fire_control": "2D (may be fired from cockpit at 0D fire control)",
+     "space_range": "1/3/7",
+     "atmo_range": "30-100/300/700",
+     "damage": "9D"
+    }
+   ],
+   "capsule": "The Fxz'Et is Verpine gadgeteer Kyli Ned'Ix's ancient Ghtroc freighter, repaired with junk parts left behind on Kal'Shebbol and filled with disassembled droids, partially fused turbolaser circuit boards, and spare ion drive power couplings. Ned'Ix chases the FarStar through Kathol sector, attempting to aid the crew whenever possible despite being rejected from the expedition. The ship has impressive maneuverability (3D) thanks to Ned'Ix's modifications."
   }
  ],
  "Named Modified Shuttles": [],
@@ -36930,6 +37044,65 @@ const STARSHIP_DATA = {
      "damage": "4D"
     }
    ]
+  },
+  {
+   "rank": 50,
+   "name": "Asagov Raider (Des'Maric Pirates)",
+   "craft": "Modified Corellian Action IV Transport",
+   "type": "Medium Bulk Freighter (Pirate Command Ship)",
+   "affiliation": "Criminal Underworld",
+   "era": "New Republic",
+   "source": "WEG40209 The DarkStryder Campaign p.94",
+   "price_new": "",
+   "price_used": "",
+   "scale": "Capital",
+   "length": "100 meters",
+   "skill": "Space transports: bulk freighter",
+   "crew": "15, gunners: 40, skeleton: 8/+10",
+   "crew_skill": "Astrogation 4D, space transports 4D+1, starship gunnery 4D",
+   "passengers": "",
+   "cargo_capacity": "60,000 metric tons",
+   "consumables": "3 months",
+   "cost": "Not available for sale",
+   "hyperdrive_multiplier": "x3",
+   "hyperdrive_backup": "x15",
+   "nav_computer": "Yes",
+   "maneuverability": "",
+   "space": 3,
+   "atmosphere": "",
+   "hull": "2D+2",
+   "shields": "2D",
+   "sensors": {
+    "passive": "15/0D",
+    "scan": "25/1D",
+    "search": "40/1D+2",
+    "focus": "2/2D"
+   },
+   "weapons": [
+    {
+     "name": "8 Ion Cannons",
+     "fire_arc": "2 front, 2 left, 2 right, 2 back",
+     "crew": "2",
+     "skill": "Starship gunnery",
+     "scale": "Starfighter",
+     "fire_control": "2D",
+     "space_range": "1-3/7/15",
+     "atmo_range": "100-300/700/1.5 km",
+     "damage": "4D"
+    },
+    {
+     "name": "12 Double Laser Cannons",
+     "fire_arc": "6 front, 3 left, 3 right",
+     "crew": "2",
+     "skill": "Starship gunnery",
+     "scale": "Starfighter",
+     "fire_control": "2D",
+     "space_range": "1-3/12/25",
+     "atmo_range": "100-300/1.2/2.5 km",
+     "damage": "4D+2"
+    }
+   ],
+   "capsule": "The Asagov Raider is the heavily modified bulk cruiser serving as the Des'Maric pirates' command ship and main base. Originally the Cekbar Servant, a standard bulk freighter owned by Nalroni merchants from Celanon, it was captured shortly after Miktiss acquired his three Skipray blastboats. A former Sienar Fleet Systems engineer was coerced into modifying the vessel with an armored hull, excellent shields, and increased speed. Eight ion cannons disable target vessels while a dozen laser cannons provide additional firepower. The ship houses over a hundred pirates and has dank detention cells in the bottom levels where Miktiss personally interrogates prisoners."
   }
  ],
  "Stock Battle Stations": [
