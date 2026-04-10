@@ -311,6 +311,57 @@ const GAZETTEER_DATA = {
       "Tragrud|Vaath'kror":13,"Tragrud|Verde":19,
       "Vaath'kror|Verde":10
     }
+  },
+
+  // ----------------------------------------------------------
+  // KATHOL SECTOR — WEG40209 The DarkStryder Campaign
+  // Route map, 17 systems, grid M-21 (Outer Rim Territories)
+  // Trition Trade Route is the main known route; lesser-known
+  // routes are discovered by the FarStar crew during the campaign.
+  // All-pairs computed via Dijkstra from astrogation chart.
+  // ----------------------------------------------------------
+  "Kathol Sector": {
+    source: "WEG40209 The DarkStryder Campaign",
+    grid: "M-21",
+    gateways: [
+      { system: "Kal'Shebbol", fromGrids: null }
+    ],
+    surcharge: 0,
+    systems: ["Aaris","Brolsam","Charis","Corjain","Galtea","Gandle Ott","Ivatch","Kal'Shebbol","Kolatill","Mairne","Oon Tien","Peirs","Pembric II","Sebiris","Shintel","Tanquilla Beach","Torize"],
+    times: {
+      "Aaris|Brolsam":76,"Aaris|Charis":21,"Aaris|Corjain":35,"Aaris|Galtea":79,"Aaris|Gandle Ott":27,
+      "Aaris|Ivatch":64,"Aaris|Kal'Shebbol":46,"Aaris|Kolatill":16,"Aaris|Mairne":33,"Aaris|Oon Tien":35,
+      "Aaris|Peirs":34,"Aaris|Pembric II":47,"Aaris|Sebiris":106,"Aaris|Shintel":39,"Aaris|Tanquilla Beach":63,"Aaris|Torize":28,
+      "Brolsam|Charis":67,"Brolsam|Corjain":81,"Brolsam|Galtea":134,"Brolsam|Gandle Ott":82,
+      "Brolsam|Ivatch":119,"Brolsam|Kal'Shebbol":30,"Brolsam|Kolatill":62,"Brolsam|Mairne":79,"Brolsam|Oon Tien":81,
+      "Brolsam|Peirs":89,"Brolsam|Pembric II":102,"Brolsam|Sebiris":161,"Brolsam|Shintel":94,"Brolsam|Tanquilla Beach":118,"Brolsam|Torize":48,
+      "Charis|Corjain":14,"Charis|Galtea":67,"Charis|Gandle Ott":15,"Charis|Ivatch":52,
+      "Charis|Kal'Shebbol":37,"Charis|Kolatill":5,"Charis|Mairne":12,"Charis|Oon Tien":24,
+      "Charis|Peirs":22,"Charis|Pembric II":35,"Charis|Sebiris":94,"Charis|Shintel":27,"Charis|Tanquilla Beach":51,"Charis|Torize":19,
+      "Corjain|Galtea":81,"Corjain|Gandle Ott":29,"Corjain|Ivatch":66,
+      "Corjain|Kal'Shebbol":51,"Corjain|Kolatill":19,"Corjain|Mairne":26,"Corjain|Oon Tien":11,
+      "Corjain|Peirs":36,"Corjain|Pembric II":49,"Corjain|Sebiris":108,"Corjain|Shintel":41,"Corjain|Tanquilla Beach":65,"Corjain|Torize":33,
+      "Galtea|Gandle Ott":52,"Galtea|Ivatch":75,
+      "Galtea|Kal'Shebbol":104,"Galtea|Kolatill":72,"Galtea|Mairne":60,"Galtea|Oon Tien":91,
+      "Galtea|Peirs":45,"Galtea|Pembric II":32,"Galtea|Sebiris":27,"Galtea|Shintel":40,"Galtea|Tanquilla Beach":51,"Galtea|Torize":86,
+      "Gandle Ott|Ivatch":37,"Gandle Ott|Kal'Shebbol":52,"Gandle Ott|Kolatill":20,"Gandle Ott|Mairne":8,"Gandle Ott|Oon Tien":39,
+      "Gandle Ott|Peirs":7,"Gandle Ott|Pembric II":20,"Gandle Ott|Sebiris":79,"Gandle Ott|Shintel":12,"Gandle Ott|Tanquilla Beach":36,"Gandle Ott|Torize":34,
+      "Ivatch|Kal'Shebbol":89,"Ivatch|Kolatill":57,"Ivatch|Mairne":45,"Ivatch|Oon Tien":76,
+      "Ivatch|Peirs":30,"Ivatch|Pembric II":43,"Ivatch|Sebiris":102,"Ivatch|Shintel":35,"Ivatch|Tanquilla Beach":59,"Ivatch|Torize":71,
+      "Kal'Shebbol|Kolatill":32,"Kal'Shebbol|Mairne":49,"Kal'Shebbol|Oon Tien":51,
+      "Kal'Shebbol|Peirs":59,"Kal'Shebbol|Pembric II":72,"Kal'Shebbol|Sebiris":131,"Kal'Shebbol|Shintel":64,"Kal'Shebbol|Tanquilla Beach":88,"Kal'Shebbol|Torize":18,
+      "Kolatill|Mairne":17,"Kolatill|Oon Tien":19,"Kolatill|Peirs":27,"Kolatill|Pembric II":40,
+      "Kolatill|Sebiris":99,"Kolatill|Shintel":32,"Kolatill|Tanquilla Beach":56,"Kolatill|Torize":14,
+      "Mairne|Oon Tien":36,"Mairne|Peirs":15,"Mairne|Pembric II":28,"Mairne|Sebiris":87,
+      "Mairne|Shintel":20,"Mairne|Tanquilla Beach":44,"Mairne|Torize":31,
+      "Oon Tien|Peirs":46,"Oon Tien|Pembric II":59,"Oon Tien|Sebiris":118,
+      "Oon Tien|Shintel":51,"Oon Tien|Tanquilla Beach":75,"Oon Tien|Torize":33,
+      "Peirs|Pembric II":13,"Peirs|Sebiris":72,"Peirs|Shintel":5,"Peirs|Tanquilla Beach":29,"Peirs|Torize":41,
+      "Pembric II|Sebiris":59,"Pembric II|Shintel":8,"Pembric II|Tanquilla Beach":19,"Pembric II|Torize":54,
+      "Sebiris|Shintel":67,"Sebiris|Tanquilla Beach":78,"Sebiris|Torize":113,
+      "Shintel|Tanquilla Beach":24,"Shintel|Torize":46,
+      "Tanquilla Beach|Torize":70
+    }
   }
 
 // --- END OF GAZETTEER_DATA ---
