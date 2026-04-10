@@ -10604,6 +10604,33 @@ const PLANETS_DATA = [
     summary: "Shintel is a wet muddy little world with extremely heavy cloud cover. The rainy season in the northern hemisphere lasts seven out of ten months, and winters and summers are both mild. A small Imperial supply depot in the northwestern hemisphere normally houses 1,500 personnel, mostly non-combatants in supply and ordnance capacities. Moff Sarne established the depot as one of several unofficial supply caches at the remote edges of Kathol sector, anticipating he might need to flee and regroup.",
     locations: "Imperial Supply Depot (Northwestern hemisphere. Houses 1,500 regular supply and ordnance personnel plus 500 additional troops stranded by Moff Sarne after his loyalty purge. The depot has limited starport services, five old TIE fighters, and a few cargo shuttles — all with hyperdrives destroyed by Sarne's men before departure).",
     ofNote: "SARNE'S TRAP: Before leaving, Sarne erased all references to Kathol Outback systems from the base computers and replaced them with a less detailed astrogation chart containing hidden code designed to activate trap programs in the FarStar's nav computer when uplinked. He also surrounded the planet with ion mines, restricting the stranded Imperials' movements — they cannot risk sending ships up since they lack resources to rescue disabled vessels. | STRANDED IMPERIALS: The 500 additional personnel are Imperial officers and troops whom Sarne deemed more loyal to the Empire than to himself personally. He stranded them here as a final purge of his officer corps, destroying every hyperdrive engine on the planet and all hyper-capable courier droids. | SUPPLY CACHE: Sarne left the outpost intact in case he might need it someday, and left the men alive to avoid causing unrest in his command chain. They were ordered to hold the depot and construct a landing field for blastboats."
+  },
+  {
+    name: "Pembric II",
+    system: "Pembric",
+    star: "",
+    grid: "M-21",
+    region: "Outer Rim Territories",
+    type: "Terrestrial",
+    temperature: "Temperate",
+    atmosphere: "Type I (breathable)",
+    hydrosphere: "Moderate",
+    gravity: "Standard",
+    terrain: "Wetlands, urban",
+    lengthOfDay: "33 standard hours",
+    lengthOfYear: "302 local days",
+    sapientSpecies: "Humans",
+    starport: "Standard class",
+    population: "200 million",
+    function: "Organized crime, natural resources",
+    government: "Organized crime (Bombaasa Cartel)",
+    techLevel: "Space",
+    majorExports: "Imperial and New Republic contraband, hfredium ore, precious stones",
+    majorImports: "Food, technology, weapons",
+    source: "WEG40209 The DarkStryder Campaign p.163 (Crisis)",
+    summary: "Pembric II was originally intended as a colony world, a meteorite-scarred ball of rock that had been terraformed to suit agricultural needs. Haphazard terraforming made the planet habitable but unpleasant — extremely warm with constant drizzling misty rain and boggy terrain unsuited for agriculture. The planet became a gangster's resort, attracting criminals who found more conventional tourist locales too legally restrictive. Cantinas, museums, and entertainment facilities sprang up around spectacular beaches and a field of volcanoes.",
+    locations: "Pembric Spaceport (Grubby, hot, poorly maintained and thoroughly squalid. Buildings constructed from basic stone rather than prefab material, encrusted with mold and dirt. The 'Red Zone' district houses the ThrusterBurn Tapcafe, the most popular tavern in the spaceport, managed by Breslin Drake and owned by Crev Bombaasa. Pad 642 is a crumbling dome-shaped enclosure with no amenities). Bombaasa Cartel Warehouse (Large hangar at the spaceport perimeter housing Gaelin's computer labs and Cartel storage — hull plating, bulkhead fittings, and crates of hyperdrive components stacked to the ceiling).",
+    ofNote: "BOMBAASA CARTEL: Founded by Crev Bombaasa to unite small independent criminals from Kathol sector against domination by the Empire and the Hutts. After Sarne's departure, the Cartel seized control of mining interests, purged Imperial loyalists, and installed a puppet government claiming to be pro-Imperial to discourage New Republic interference. Criminal activities include hijacking, piracy, black marketeering, gunrunning, fencing, and loan sharking. Operations span 20 star systems in Kathol sector. | SECURITY LEGION: Once an honest police force, now thoroughly corrupted — little more than thugs in fancy white uniforms. Led by Chief Magistrate Kebbo, a ruthless Rodian agent of the Cartel. They actively prevent 'unauthorized' crime but offer no protection against Bombaasa's activities. Exit passes and transit visas are required to leave the planet, with astronomical fees trapping civilians. | MINING: The Pembric system's large asteroid field contains hfredium deposits. Raw ore is processed on Pembric II and shipped to Imperial arms manufacturers. The erratic radiation fields and dense asteroid belt historically made the system a favorite smuggler's haunt. | STRANDED CIVILIANS: Many Imperial-era workers transferred to support industry are stranded — the Cartel discourages departure through high tariffs, and a thriving underground sells passage at phenomenal prices."
   }
 // --- END OF PLANETS_DATA ---
 ];
