@@ -2144,8 +2144,36 @@ const WEAPONS_DATA = [
   "damage": "3D (1D vs Space Age armor)",
   "range": "10/20/40",
   "ammo": "1",
-  "game_notes": "10 rounds (1 min) to reload.",
-  "source": "Adventure Journal 15 (page 191)"
+  "game_notes": "10 rounds (1 min) to reload. Custom-made by individual Tasari as dictated by tradition — never mass-produced. Popular among the Tasari blood cultists who regard the crossbow (alongside the dagger and the sword) as a traditional weapon of a warrior. At one time, building a crossbow was a major Tasari rite of passage from childhood into adulthood.",
+  "source": "WEG41015 Star Wars Adventure Journal #15 p.191 (Tasariq: The Crystal Planet)"
+ },
+ {
+  "name": "Barimoq Industries Protector Revolver",
+  "category": "Slugthrowers",
+  "type": "Tasari Slugthrower Revolver",
+  "skill": "Firearms: slugthrower",
+  "cost": "200",
+  "availability": "3",
+  "damage": "4D (2D+1 vs Space-Age body armor)",
+  "range": "3-10/30/55",
+  "ammo": "5",
+  "fire_rate": "1",
+  "game_notes": "Scale: Character. A self-defense slugthrower revolver of Tasari manufacture. Crude and unrefined compared to blaster-era weapons — limited ammo capacity, difficult to fit with muzzle flash suppressors or silencers. Tasari slugthrowers are made for self-defense (the Protector revolver) or for hunting (the Provider rifle), not for assassination, so they lack the modifications off-worlders typically look for. Many offworlders are nonetheless turning to Tasari firearms when their blasters start running low on gas charges due to the Imperial tariffs on imported equipment on Tasariq.",
+  "source": "WEG41015 Star Wars Adventure Journal #15 p.191 (Tasariq: The Crystal Planet)"
+ },
+ {
+  "name": "Barimoq Industries Provider Rifle",
+  "category": "Slugthrowers",
+  "type": "Tasari Slugthrower Rifle",
+  "skill": "Firearms: slugthrower",
+  "cost": "450",
+  "availability": "3",
+  "damage": "5D (3D vs Space-Age body armor)",
+  "range": "5-15/50/150",
+  "ammo": "4",
+  "fire_rate": "1",
+  "game_notes": "Scale: Character. A hunting slugthrower rifle of Tasari manufacture. Like the Barimoq Protector revolver, it is crude and unrefined compared to blaster-era weapons, but fills the hunting-rifle niche on Tasariq where blaster gas charges are expensive and heavily tariffed by the Imperial governor.",
+  "source": "WEG41015 Star Wars Adventure Journal #15 p.192 (Tasariq: The Crystal Planet)"
  },
  {
   "name": "Auto-Caster (4000 BBY)",

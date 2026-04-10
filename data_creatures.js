@@ -8349,6 +8349,48 @@ const CREATURES_DATA = [
    "orneriness": "Highly aggressive",
    "special": "Attribute Dice: 12D. BITE: STR+1D+2 damage. CLAWS: STR+1D damage. The only native sentient creatures on the swamp planet Gelgelar — brutish, warlike, highly aggressive, perpetually hungry carnivores who get along with no one. They stand a meter to a meter and a half tall and are covered with small green scales that resemble leaves; their coloration helps them blend into the Gelgelar foliage, rendering them practically invisible until they strike. Cold-blooded and muscular, they are adept at using their claws or fashioning crude weapons such as spears and clubs. Though dull-witted they are not without the ability to make plans and set ambushes, and have been known from time to time to work with elements of Gelgelar's criminal underworld — stopping vohis mold shipments from reaching the Free Port in exchange for particularly tasty hunks of meat and not-so-crude weapons. Some Gelgelar settlers (primarily humans and Sullustans) have tried to communicate with them and establish a tenuous relationship; while Glarsaurs are capable of reasoning, they have shown no desire to be reasoned with and have on more than one occasion attacked the individuals trying to befriend them. TYPICAL GLARSAUR WARRIOR: Dexterity 2D+2, dodge 4D+2, Perception 2D, hide 5D, search 4D, Strength 2D+2, brawling 4D+2; bite STR+1D+2, claws STR+1D, Move 10.",
    "source": "WEG41014 Star Wars Adventure Journal #14 p.182 (The Breath of Gelgelar)"
+  },
+  {
+   "name": "Spidercat",
+   "type": "Temple Guardian (Domesticated Predator)",
+   "planet": "Tasariq",
+   "habitat": "Ancient Tasari temples and the areas surrounding them",
+   "dex": "4D",
+   "per": "3D",
+   "str": "3D",
+   "move": "12",
+   "size": "2 meters long",
+   "orneriness": "Territorial / Aggressive",
+   "special": "CLAWS: spidercats strike victims with barbed claws on their legs for STR+2 damage. POISONOUS BITE: the bite attack does 1D damage; additionally, the victim must roll Moderate or better against Strength or be paralyzed for 1-6 hours. Fur-covered insects that look like a cross between a spider and a cat. In the dark times after the destruction of Tasari society, the Tasari bred them for use as guardians in the temples devoted to the tasar crystals. Even now, more ferocious spidercats (Dexterity and Strength 5D each) are found in the areas surrounding the forgotten temples.",
+   "source": "WEG41015 Star Wars Adventure Journal #15 p.184 (Tasariq: The Crystal Planet)"
+  },
+  {
+   "name": "Sting-Snake",
+   "type": "Electrical Ground Snake",
+   "planet": "Tasariq",
+   "habitat": "Habitable craters (greater concentrations around ancient temples)",
+   "dex": "3D",
+   "per": "3D",
+   "str": "2D",
+   "move": "9",
+   "size": "1 meter long",
+   "orneriness": "Docile unless startled or cornered",
+   "special": "ELECTRICAL DISCHARGE: Sting-Snakes attack by discharging electricity from the stinger in their tail. The sting inflicts 3D damage; after an attack it takes an hour for the snake to build up enough charge for another attack. Found in all the habitable craters of Tasariq; rarely attack humanoids but can be dangerous if startled or cornered. Found in greater concentrations around the ancient tasar crystal temples because trained sting-snakes were used alongside spidercats as temple guardians. Off-worlders have discovered sting-snakes can be trained as attack beasts — an increasing number of miners use them to guard their tents and vehicles.",
+   "source": "WEG41015 Star Wars Adventure Journal #15 p.184 (Tasariq: The Crystal Planet)"
+  },
+  {
+   "name": "Tunnel Worm",
+   "type": "Earth-Burrowing Carnivore",
+   "planet": "Tasariq",
+   "habitat": "Underground tunnels near habitable craters",
+   "dex": "3D",
+   "per": "2D",
+   "str": "4D",
+   "move": "8",
+   "size": "4 meters long",
+   "orneriness": "Aggressive predator",
+   "special": "BITE ATTACK: STR+2D damage. Large segmented worms that live in tunnels they burrow through the earth. They can hunt on the surface for hours, living off stored oxygen. They tend to cluster around habitable craters where the most food is available, but concerted efforts are made to keep their numbers down near inhabited craters.",
+   "source": "WEG41015 Star Wars Adventure Journal #15 p.185 (Tasariq: The Crystal Planet)"
   }
 // --- END OF CREATURES_DATA ---
 ];

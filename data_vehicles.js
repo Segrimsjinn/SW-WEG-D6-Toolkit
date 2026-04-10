@@ -4365,6 +4365,44 @@ const VEHICLES_DATA = [
   "weapons": "",
   "game_notes": "An immense Ubrikkian repulsorlift platform used to harvest sea life from a planet's oceans — the Bountiful is the named example assigned to Imperial duty above Ando as part of the Ando Project. The platform can float on the surface or hover above the water to avoid rough seas or harvest shallow areas, equipped with power scoops and retrieval systems capable of harvesting 25 metric tons of fish per day. Normally staffed by more than 100 workers (cleaning, sorting, packaging, processing) but the Bountiful runs at less than a fifth of capacity — its scoops haven't been deployed in days because its real Imperial mission is collecting live Andoan mineral-fish for cryogenic transport to Uridia. Layout: Deck 1 upper landing pads (small + large) with cargo crane; Deck 2 crew quarters with bridge, scoop engines, mess hall, rec room, secret stormtrooper barracks; Deck 3 processing plant (ramp, receiving, cleaning/prep, processing, packaging — all currently idle); Deck 4 storage with bow dry storage, equipment storage, cold storage, belly hatch (used by seatroopers to enter the ocean and hunt mineral-fish), and aft dry storage holding 8 cryogenic stasis units full of captured Andoan mineral-fish under guard; Deck 5 (not shown) repulsor generators, fuel cells, desalination plant, fresh water storage. Routine pickups by the Imperial bulk freighter Eclipse every three days transport the cryogenically-frozen mineral-fish to the secret aquaculture base on Uridia.",
   "source": "WEG41011 Star Wars Adventure Journal #11 p.184 (The Ando Project)"
+},
+{
+  "name": "Akin-Dower MechMiner Mk IV",
+  "type": "Mechanized Autominer",
+  "category": "Industrial Vehicles",
+  "craft": "Akin-Dower Mechanized Autominer Mk IV",
+  "scale": "Character",
+  "length": "3 meters",
+  "skill": "Machine operation: mining machines",
+  "crew": "1 operator",
+  "cost": "12,000 credits (new); 3,000 credits (used)",
+  "availability": "1",
+  "maneuverability": "",
+  "move": "Slow crawl (tracked)",
+  "body_strength": "",
+  "cover": "",
+  "game_notes": "A small tracked mining vehicle with the driver seated in a control seat and operating a variety of mining tools. With a MechMiner a single person can do the work of a dozen men by hand. 3 meters long but built low to the ground to better fit into mine shafts. On Tasariq the operator needs to wear a breath mask. If successfully operated, MechMiners provide characters excavating tasar crystals with +2D to their Search or mining skill rolls. Gaining popularity on Tasariq since although not every crystal in a claim is found using a MechMiner (compared to slower hand-mining), the speed of excavation more than makes up for the shortfall.",
+  "source": "WEG41015 Star Wars Adventure Journal #15 p.193 (Tasariq: The Crystal Planet)"
+},
+{
+  "name": "Barimoq Industries K-111 Steam Rover",
+  "type": "Tasari Half-Tracked Ground Car (steam-turbine)",
+  "category": "Landspeeders",
+  "craft": "Barimoq Industries All Terrain Cruiser K-111",
+  "scale": "Speeder",
+  "length": "8 meters",
+  "skill": "Ground vehicle operation: ground car",
+  "crew": "1 driver",
+  "passengers": "6",
+  "cargo_capacity": "5 metric tons, 10 cubic meters",
+  "cost": "11,000 credits (new); 3,000 credits (used)",
+  "availability": "3",
+  "maneuverability": "1D",
+  "move": "22; 80 kmh",
+  "body_strength": "3D",
+  "cover": "Full",
+  "game_notes": "A half-tracked ground car of Tasari design, powered by steam turbines. The engines run on compressed hydrogen and helium which heats steam in a boiler to power pistons. A large airscoop separates, compresses, then replaces gas lost during operation — at the optimum cruising speed of 40 kmh the fuel is largely self-replacing, though running at the top speed of 80 kmh burns fuel faster than it can be replaced. Carries a 100-gallon water tank at the back; under normal conditions this needs refilling every 2,000 km. The cab is completely self-enclosed, and one internal oxygen tank carries sufficient air for three days of normal usage. Solid, dependable, and capable of climbing steep grades and traveling virtually anywhere on the Tasariq surface. Used heavily by the native Tasari and by off-world miners and tourists who venture onto the planet's inhospitable surface. Tasari vehicles like the K-111 are constructed to be airtight and do not require the atmosphere-sealing modifications off-world civilian craft need (which increases vehicle prices on Tasariq by 250%-350% over norm).",
+  "source": "WEG41015 Star Wars Adventure Journal #15 p.193 (Tasariq: The Crystal Planet)"
 }
 // --- END OF VEHICLES_DATA ---
 ];

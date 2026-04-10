@@ -6065,5 +6065,257 @@ const EQUIPMENT_DATA = [
   "game_notes": "Fifth Degree Droid. Personality: Complex. Height: 1.7m. Move: 5. DEX 1D, KNO 2D (cultures 3D), MEC 1D, PER 1D, STR 2D, TEC 2D. Equipped with: two photoreceptors and auditory receptors (human range), vocabulator (capable of speaking one programmed language), humanoid frame (two arms, two legs). Cybot Galactica's answer to the galactic call for a more appealing servant droid — based on the popular 3PO protocol unit, the RA provides owners with a low-end affordable servant droid capable of minor cleaning and attendance duties. NOTE: the RA-series is innocuous and inexpensive, making it very easy to upgrade into a combat or espionage unit. The well-known thief Tombat famously reprogrammed an RA droid to give him the layout of a manor house, casing the entire structure without ever setting foot inside — simply by adding a holocam and automap to the unit.",
   "source": "WEG41014 Star Wars Adventure Journal #14 p.265 (Cynabar's Droid Datalog)"
  }
+ ,{
+  "name": "TasCorp Blaststick",
+  "type": "Tasari Mining Explosive",
+  "category": "Demolitions",
+  "cost": "50 credits per stick (sold in packages of 10)",
+  "availability": "F",
+  "game_notes": "Scale: Speeder. Skill: Demolitions. Blast Radius 0-2/4/6/8. Damage 3D/2D+2/2D/1D. Damage is cumulative if more than one blaststick is used. A blaststick is inert until coupled with a TasCorp Detonator via electrical wires, but they CAN be triggered prematurely by the stun bolts fired by most blasters — a hazard off-worlders frequently discover the hard way. A mining explosive developed by Tasari for carving out their underground crater-cities and tunnels; many off-world tasar crystal miners find blaststicks useful for rapid excavation (some crystals are destroyed in the blast but many survive, and impatient miners prefer picking through rubble to digging by hand). Unsafe practices by off-worlders (and Imperial pressure) has caused the Tasari Council of Elders to place licensing restrictions on the sale and purchase of blaststicks.",
+  "source": "WEG41015 Star Wars Adventure Journal #15 p.187 (Tasariq: The Crystal Planet)"
+ }
+ ,{
+  "name": "TasCorp Detonator Model 3E",
+  "type": "Electric Blaststick Detonator",
+  "category": "Demolitions",
+  "cost": "200 credits",
+  "availability": "F",
+  "game_notes": "Skill: Demolitions. A reusable electric detonator designed to trigger TasCorp Blaststicks. A single detonator can trigger up to five blaststicks simultaneously via electrical wires. Each can be programmed with up to a one-minute time delay, but all linked blaststicks are triggered by a single button press. The detonator itself is not destroyed in the blast, as long as it is set up outside the blast area.",
+  "source": "WEG41015 Star Wars Adventure Journal #15 p.187 (Tasariq: The Crystal Planet)"
+ }
+ ,{
+  "name": "Bavar Tasari Breath Mask",
+  "type": "Bavar Breathing Systems Portable Environmental Support Unit",
+  "category": "Survival Gear",
+  "cost": "40 credits",
+  "availability": "3",
+  "game_notes": "Tasari-manufactured breath mask covering the face and nose of humanoid beings. Oxygen is supplied through a hose from a detachable Tasari Oxygen Tank (sold separately). Tasari masks are bulkier than the standard galactic breath mask (2 kg airtank weight) but have a major advantage: the Tasari have developed a way to compress oxygen (or other gases a being might need to survive) so that each tank supplies the wearer with roughly two days of breathable gases depending on how much physical exertion the wearer performs.",
+  "source": "WEG41015 Star Wars Adventure Journal #15 p.187 (Tasariq: The Crystal Planet)"
+ }
+ ,{
+  "name": "TasCorp Essential Miner's Gear (Mining Kit)",
+  "type": "Tasari Mining Utility Kit",
+  "category": "Survival Gear",
+  "cost": "200 credits",
+  "availability": "3",
+  "game_notes": "A complete mining kit provides all non-power equipment needed for successful tasar crystal mining, packed into a sturdy backpack. Contents: basic manual-excavation tools for tasar crystals or blaststick-debris sifting, one week of military-style dried rations, a Tasari breath mask, and two personal Tasari oxygen tanks. The backpack is designed so that miners can repurpose it to carry tasar crystals once they start eating their rations. Provides characters excavating tasar crystals with +1D to Search or mining skill rolls. Widely used by both native Tasari and cash-poor, ill-prepared off-worlders starting their quest for tasar crystal fortune.",
+  "source": "WEG41015 Star Wars Adventure Journal #15 p.188 (Tasariq: The Crystal Planet)"
+ }
+ ,{
+  "name": "Tasari Personal Oxygen Tank",
+  "type": "Tasari Elder Council Oxygen Tank (personal model)",
+  "category": "Survival Gear",
+  "cost": "10 credits (1 credit to refill at any Tasari Filling Station)",
+  "availability": "3",
+  "game_notes": "Armor value 1D. Weighs 2 kilograms. Connects to a Tasari breath mask or other life-support valve. Tasari compression technology lets each tank supply approximately six days of breathable atmosphere (vs. about 1 hour for a standard galactic breath mask before filters and power packs need replacement). Fitted with a gauge. Intended to be reused — although many off-worlders treat them as disposable due to their low cost, the Tasari virtually always reuse them and every settlement has at least one Filling Station. PUNCTURE HAZARD: should a personal tank be punctured, the carrier suffers 2D damage from the resulting explosion and shrapnel from the sudden release of compressed gases. The manufacture of oxygen tanks is a Tasari community project — Tasari who commit minor infractions of tribal law are sentenced to manufacture oxygen tanks (quality control is strict; failing a safety inspection extends the sentence by a week), which is one reason why they are priced so low.",
+  "source": "WEG41015 Star Wars Adventure Journal #15 p.189 (Tasariq: The Crystal Planet)"
+ }
+ ,{
+  "name": "Tasari Vehicle Oxygen Tank",
+  "type": "Tasari Elder Council Oxygen Tank (vehicle model)",
+  "category": "Survival Gear",
+  "cost": "55 credits (5 credits to refill at any Tasari Filling Station)",
+  "availability": "3",
+  "game_notes": "Armor value 3D. Weighs 10 kilograms. Designed for use on surface vehicles and temporary shelters (pressure tents). Provides approximately six days of breathable atmosphere at normal consumption rates. PUNCTURE HAZARD: when a vehicle tank is punctured, all beings within 2 meters suffer 2D damage from the explosion and shrapnel.",
+  "source": "WEG41015 Star Wars Adventure Journal #15 p.189 (Tasariq: The Crystal Planet)"
+ }
+ ,{
+  "name": "TasCorp Enviro-Tent 2A (Small Pressure Tent)",
+  "type": "Tasari Small Survival Pressure Tent",
+  "category": "Survival Gear",
+  "cost": "100 credits",
+  "availability": "3",
+  "game_notes": "Skill: Survival. Holds 1-3 people. Uses 2 personal oxygen tanks; the tanks provide one week of use. Setup time: about one hour. A lightweight domed pressure tent with hollow poles covered by a plastic skin and a special airlock entrance. A gas regulator maintains the atmosphere. Provides protection from weather conditions (even severe storms) but NO protection from blaster fire, explosions, or projectile/melee weapons. When not in use it can be packed away compactly.",
+  "source": "WEG41015 Star Wars Adventure Journal #15 p.190 (Tasariq: The Crystal Planet)"
+ }
+ ,{
+  "name": "TasCorp Enviro-Tent 9B (Medium Pressure Tent)",
+  "type": "Tasari Medium Survival Pressure Tent",
+  "category": "Survival Gear",
+  "cost": "350 credits",
+  "availability": "3",
+  "game_notes": "Skill: Survival. Holds 6-12 people. Uses 2 vehicle oxygen tanks; the tanks provide one week of use. Setup time: about one hour. Features two airlocks and can be joined to other pressure tents to form many-roomed buildings. A gas regulator maintains the atmosphere. Weather protection only — no protection from weapons.",
+  "source": "WEG41015 Star Wars Adventure Journal #15 p.190 (Tasariq: The Crystal Planet)"
+ }
+ ,{
+  "name": "TasCorp Enviro-Tent 30C (Large Pressure Tent)",
+  "type": "Tasari Large Survival Pressure Tent",
+  "category": "Survival Gear",
+  "cost": "1,200 credits",
+  "availability": "3",
+  "game_notes": "Skill: Survival. Holds 20-40 people. Uses 4 vehicle oxygen tanks; the tanks provide one week of use. Setup time: about one hour. Multiple airlocks, can be joined to other pressure tents to build permanent-feeling complexes. A gas regulator maintains the atmosphere. Weather protection only — no protection from weapons.",
+  "source": "WEG41015 Star Wars Adventure Journal #15 p.190 (Tasariq: The Crystal Planet)"
+ }
+ ,{
+  "name": "Tasar Crystal (Ordinary)",
+  "type": "Tasar Crystal",
+  "category": "Tasar Crystals",
+  "cost": "2D × 1,000 credits (varies by color count and size)",
+  "availability": "1 (F on Tasariq)",
+  "game_notes": "Ordinary tasar crystals have no practical application but are ascetically prized and valuable as jewelry. Come in a variety of colors and sizes (the more colors, the higher the value). Size ranges from a few millimeters to as much as 3 meters in length and width. The famous Rainbow Labyrinth crystal sold for 50 million credits. The Tasari believe crystals promote healing and good health and carry one as a good luck charm; some crystals have a noticeable soothing effect even to ardent skeptics. Only off-worlders sell tasar crystals by raw carat-weight; Tasari themselves recognize that a rare minority are POWER CRYSTALS and keep these within family lines.",
+  "source": "WEG41015 Star Wars Adventure Journal #15 p.195 (Tasariq: The Crystal Planet)"
+ }
+ ,{
+  "name": "Tasar Power Crystal — Amethyst",
+  "type": "Tasar Power Crystal",
+  "category": "Tasar Crystals",
+  "cost": "10x normal price (if recognized); Tasari rarely sell recognized power crystals at any price",
+  "availability": "4, F",
+  "game_notes": "Color: Deep purple. Power: ION GENERATION. Effect: ions have a soothing effect upon most beings — ion generation helps calm lost tempers and promote feelings of good will. The power adds +1D (+2D for Tasari) to interpersonal skills such as willpower, bargain, command, con, and persuasion. Difficulty: Easy used within 2 meters; raise the difficulty level by one for every additional 2 meters of range. Random generation table: Table 1 (roll 1) result 1. Attunement: beings who carry a tasar power crystal on their person for 2D months gradually become attuned to the crystal and become Force-sensitive, gaining Force-power-like abilities specific to the crystal type. Power levels: 4D (native Tasari), 3D (Jedi), 2D (Force-sensitive prior to attunement), 1D (other characters). If a character owns more than one power crystal, powers function at different levels — once they become Force-sensitive through attunement to the first, a second will function at 2D instead of 1D.",
+  "source": "WEG41015 Star Wars Adventure Journal #15 p.195 (Tasariq: The Crystal Planet)"
+ }
+ ,{
+  "name": "Tasar Power Crystal — Aquamarine",
+  "type": "Tasar Power Crystal",
+  "category": "Tasar Crystals",
+  "cost": "10x normal price (if recognized)",
+  "availability": "4, F",
+  "game_notes": "Color: Pale blue-green. Power: PSYCHOMETRY. Effect: the ability to handle a non-animate object and discover information about its past. Difficulty: Easy to receive simple information (mood and physical condition of the person who last handled the object); Difficult to receive complex information (name, race, and other personal information). Random generation table: Table 1 result 2. (Attunement rules as per Tasar Power Crystal — Amethyst.)",
+  "source": "WEG41015 Star Wars Adventure Journal #15 p.195 (Tasariq: The Crystal Planet)"
+ }
+ ,{
+  "name": "Tasar Power Crystal — Azurite",
+  "type": "Tasar Power Crystal",
+  "category": "Tasar Crystals",
+  "cost": "10x normal price (if recognized)",
+  "availability": "4, F",
+  "game_notes": "Color: Mottled blue. Power: REMAIN CONSCIOUS (as per the Force rules, except no prerequisite power is needed). Random generation table: Table 2 result 1. (Attunement rules as per Tasar Power Crystal — Amethyst.)",
+  "source": "WEG41015 Star Wars Adventure Journal #15 p.196 (Tasariq: The Crystal Planet)"
+ }
+ ,{
+  "name": "Tasar Power Crystal — Bloodstone",
+  "type": "Tasar Power Crystal",
+  "category": "Tasar Crystals",
+  "cost": "10x normal price (if recognized)",
+  "availability": "4, F",
+  "game_notes": "Color: Dark gray with flecks of red. Power: WOUND REDUCTION. Effect: if the Wound Reduction power works, the user has his wound level healed by one. The power can only be used once per day. Difficulty: Easy for wounded; Moderate for incapacitated; Difficult for mortally wounded. Random generation table: Table 3 result 1. (Attunement rules as per Tasar Power Crystal — Amethyst.)",
+  "source": "WEG41015 Star Wars Adventure Journal #15 p.196 (Tasariq: The Crystal Planet)"
+ }
+ ,{
+  "name": "Tasar Power Crystal — Carnelian",
+  "type": "Tasar Power Crystal",
+  "category": "Tasar Crystals",
+  "cost": "10x normal price (if recognized)",
+  "availability": "4, F",
+  "game_notes": "Color: Orange shading to red. Power: ANIMAL TELEPATHY. Effect: allows the user to read the thoughts of an animal or other creature. The more intelligent the animal the more complex the thoughts; simple animals have thought processes based strongly on instinct. Does NOT work on sapient species. Difficulty: Easy. Random generation table: Table 2 result 2. (Attunement rules as per Tasar Power Crystal — Amethyst.)",
+  "source": "WEG41015 Star Wars Adventure Journal #15 p.196 (Tasariq: The Crystal Planet)"
+ }
+ ,{
+  "name": "Tasar Power Crystal — Chalcite",
+  "type": "Tasar Power Crystal",
+  "category": "Tasar Crystals",
+  "cost": "10x normal price (if recognized)",
+  "availability": "4, F",
+  "game_notes": "Color: Green mixed with swirling golden lines. Power: RECEPTIVE TELEPATHY (as per the Force rules, except that no prerequisite power is needed). Random generation table: Table 3 result 2. (Attunement rules as per Tasar Power Crystal — Amethyst.)",
+  "source": "WEG41015 Star Wars Adventure Journal #15 p.196 (Tasariq: The Crystal Planet)"
+ }
+ ,{
+  "name": "Tasar Power Crystal — Citrine",
+  "type": "Tasar Power Crystal",
+  "category": "Tasar Crystals",
+  "cost": "10x normal price (if recognized)",
+  "availability": "4, F",
+  "game_notes": "Color: Yellow-brown. Power: ACCELERATE HEALING (as per the Force rules). Random generation table: Table 1 result 3. (Attunement rules as per Tasar Power Crystal — Amethyst.) Notable bearers: Ansan Talam; Garuk (as part of his power amulet).",
+  "source": "WEG41015 Star Wars Adventure Journal #15 p.196 (Tasariq: The Crystal Planet)"
+ }
+ ,{
+  "name": "Tasar Power Crystal — Garnet",
+  "type": "Tasar Power Crystal",
+  "category": "Tasar Crystals",
+  "cost": "10x normal price (if recognized)",
+  "availability": "4, F",
+  "game_notes": "Color: Red, brown, and green. Power: CONTROL ANOTHER'S PAIN (as per the Force rules). Random generation table: Table 3 result 3. (Attunement rules as per Tasar Power Crystal — Amethyst.)",
+  "source": "WEG41015 Star Wars Adventure Journal #15 p.196 (Tasariq: The Crystal Planet)"
+ }
+ ,{
+  "name": "Tasar Power Crystal — Jasper",
+  "type": "Tasar Power Crystal",
+  "category": "Tasar Crystals",
+  "cost": "10x normal price (if recognized)",
+  "availability": "4, F",
+  "game_notes": "Color: Brown shading to blue-black. Power: MAGNIFY SENSES (as per the Force rules). Random generation table: Table 2 result 3. (Attunement rules as per Tasar Power Crystal — Amethyst.) Notable bearer: Garuk (in his ceremonial headband).",
+  "source": "WEG41015 Star Wars Adventure Journal #15 p.196 (Tasariq: The Crystal Planet)"
+ }
+ ,{
+  "name": "Tasar Power Crystal — Malachite",
+  "type": "Tasar Power Crystal",
+  "category": "Tasar Crystals",
+  "cost": "10x normal price (if recognized)",
+  "availability": "4, F",
+  "game_notes": "Color: Bands of light and dark green. Power: POISON SENSE. Effect: allows the user to sense, in advance, any contaminants or other factors that could make a substance dangerous to ingest. Difficulty: Easy. Random generation table: Table 2 result 4. (Attunement rules as per Tasar Power Crystal — Amethyst.)",
+  "source": "WEG41015 Star Wars Adventure Journal #15 p.197 (Tasariq: The Crystal Planet)"
+ }
+ ,{
+  "name": "Tasar Power Crystal — Opal",
+  "type": "Tasar Power Crystal",
+  "category": "Tasar Crystals",
+  "cost": "10x normal price (if recognized)",
+  "availability": "4, F",
+  "game_notes": "Color: A rainbow spectrum of colors. Power: BATTLE SENSE. Effect: if the Battle Sense power works, the user receives +1D to initiative on the first round of combat only. Difficulty: Moderate. Random generation table: Table 3 result 4. (Attunement rules as per Tasar Power Crystal — Amethyst.)",
+  "source": "WEG41015 Star Wars Adventure Journal #15 p.197 (Tasariq: The Crystal Planet)"
+ }
+ ,{
+  "name": "Tasar Power Crystal — Peridot",
+  "type": "Tasar Power Crystal",
+  "category": "Tasar Crystals",
+  "cost": "10x normal price (if recognized)",
+  "availability": "4, F",
+  "game_notes": "Color: Olive green. Power: CONTROL PAIN (as per the Force rules). Random generation table: Table 1 result 4. (Attunement rules as per Tasar Power Crystal — Amethyst.) Notable bearers: Jhorag Corconnan (in a ring); Garuk (as part of his power amulet).",
+  "source": "WEG41015 Star Wars Adventure Journal #15 p.197 (Tasariq: The Crystal Planet)"
+ }
+ ,{
+  "name": "Tasar Power Crystal — Sardonyx",
+  "type": "Tasar Power Crystal",
+  "category": "Tasar Crystals",
+  "cost": "10x normal price (if recognized)",
+  "availability": "4, F",
+  "game_notes": "Color: Red and white. Power: ACCELERATE ANOTHER'S HEALING (as per the Force rules). Random generation table: Table 3 result 5. (Attunement rules as per Tasar Power Crystal — Amethyst.)",
+  "source": "WEG41015 Star Wars Adventure Journal #15 p.197 (Tasariq: The Crystal Planet)"
+ }
+ ,{
+  "name": "Tasar Power Crystal — Spinel",
+  "type": "Tasar Power Crystal",
+  "category": "Tasar Crystals",
+  "cost": "10x normal price (if recognized)",
+  "availability": "4, F",
+  "game_notes": "Color: Red-brown. Power: HYPERTHERMIA. Effect: the ability to see minute temperature differences in animate objects, allowing rolls against a character's Perception or search ratings to detect the changes. Range 15 meters. Also allows a character to see animate objects in the dark, and acts as a diagnostic aid in healing — giving a bonus to the first aid skill equal to the number before the 'D.' Difficulty: Easy. Random generation table: Table 1 result 5. (Attunement rules as per Tasar Power Crystal — Amethyst.)",
+  "source": "WEG41015 Star Wars Adventure Journal #15 p.197 (Tasariq: The Crystal Planet)"
+ }
+ ,{
+  "name": "Tasar Power Crystal — Tiger's Eye",
+  "type": "Tasar Power Crystal",
+  "category": "Tasar Crystals",
+  "cost": "10x normal price (if recognized)",
+  "availability": "4, F",
+  "game_notes": "Color: Dark brown with a central yellow eye. Power: TELEKINESIS (as per the Force rules). Random generation table: Table 3 result 6. (Attunement rules as per Tasar Power Crystal — Amethyst.) Notable bearer: Garuk (in his left arm bracelet).",
+  "source": "WEG41015 Star Wars Adventure Journal #15 p.197 (Tasariq: The Crystal Planet)"
+ }
+ ,{
+  "name": "Tasar Power Crystal — Topaz",
+  "type": "Tasar Power Crystal",
+  "category": "Tasar Crystals",
+  "cost": "10x normal price (if recognized)",
+  "availability": "4, F",
+  "game_notes": "Color: Golden yellow. Power: LIFE DETECTION (as per the Force rules). Random generation table: Table 1 result 6. (Attunement rules as per Tasar Power Crystal — Amethyst.) Notable bearer: Bersin Sekolah.",
+  "source": "WEG41015 Star Wars Adventure Journal #15 p.197 (Tasariq: The Crystal Planet)"
+ }
+ ,{
+  "name": "Tasar Power Crystal — Tourmaline",
+  "type": "Tasar Power Crystal",
+  "category": "Tasar Crystals",
+  "cost": "10x normal price (if recognized)",
+  "availability": "4, F",
+  "game_notes": "Color: The blue spectrum, from pale azure to deep indigo. Power: EMPATHY. Effect: allows the user to experience the emotions of a sapient individual, but no actual thoughts can be read. Difficulty: Easy for own species; Moderate for other species. Random generation table: Table 2 result 5. (Attunement rules as per Tasar Power Crystal — Amethyst.)",
+  "source": "WEG41015 Star Wars Adventure Journal #15 p.197 (Tasariq: The Crystal Planet)"
+ }
+ ,{
+  "name": "Tasar Power Crystal — Turquoise",
+  "type": "Tasar Power Crystal",
+  "category": "Tasar Crystals",
+  "cost": "10x normal price (if recognized)",
+  "availability": "4, F",
+  "game_notes": "Color: Light blue shading to green. Power: NATURAL NAVIGATION. Effect: prevents the user from getting lost, as long as the person has a map or some sense of the appropriate direction. If the individual has no idea of the surroundings, they can still discern magnetic north. Difficulty: Very Easy. Random generation table: Table 2 result 6. (Attunement rules as per Tasar Power Crystal — Amethyst.) Notable bearer: Bersin Sekolah.",
+  "source": "WEG41015 Star Wars Adventure Journal #15 p.197 (Tasariq: The Crystal Planet)"
+ }
 // --- END OF EQUIPMENT_DATA ---
 ];
