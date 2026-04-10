@@ -5849,6 +5849,7 @@ const SYSTEMS_DATA = [
   { "name": "Tedel", "grid": "L-8", "region": "Expansion Region", "col": 10, "row": 8, "quadrant": "C", "hours": 3.0 },
   { "name": "Tedonia", "grid": "O-18", "region": "Outer Rim Territories", "col": 13, "row": 18, "quadrant": "SE", "hours": 6.0 },
   { "name": "Teedio", "grid": "R-7", "region": "Outer Rim Territories", "col": 16, "row": 7, "quadrant": "NE", "hours": 3.0 },
+  { "name": "Teedio - Exis Station", "grid": "R-7", "region": "Outer Rim Territories", "col": 16, "row": 7, "quadrant": "NE", "hours": 3.0 },
   { "name": "Teevan", "grid": "P-5", "region": "Outer Rim Territories", "col": 14, "row": 5, "quadrant": "NE", "hours": 5.5 },
   { "name": "Tefau", "grid": "S-9", "region": "Outer Rim Territories", "col": 17, "row": 9, "quadrant": "E", "hours": 3.3 },
   { "name": "Tegrat", "grid": "J-18", "region": "Outer Rim Territories", "col": 8, "row": 18, "quadrant": "S", "hours": 3.8 },
