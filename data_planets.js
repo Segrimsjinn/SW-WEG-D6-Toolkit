@@ -10577,6 +10577,33 @@ const PLANETS_DATA = [
     summary: "Gandle Ott is the last major world in Kathol sector, first settled 600 years ago as a 'gasper' — an extremely rare world with a near-perfect profile for supporting Human life. A consortium of corporations promoted it as a 'showcase world' for colonization. Within a hundred years it was so well developed it was informally known as 'Little Coruscant.' Eventually eclipsed by younger colonies like Kal'Shebbol, the world has slumped into a genteel second-class status but remains surprisingly mature for its age and remoteness. The people have a strong independent streak and pride themselves on their provincial status.",
     locations: "Montrol City (Capital city and seat of government. Features the Bank (planetary parliament building), the Imperial Plaza Hotel, Montrol Spaceport with VIP berths, Crimler Naval Base, the Montrol City Computer Center housing the sentient BRT mainframe Cuthbert, the Torqumada Hanging Gardens near the coast, Theatre Dankse (premier theater company), art museums, harbor industrial and tourist areas, city courts, and the remains of an old Jedi Chapter House now used as a greenhouse — showing faint signs of having once been burned about the eaves). Groves of huge cattarash mushrooms grow in the midst of the cities.",
     ofNote: "POLITICAL CRISIS: When Sarne fled, the Governor and most Imperial staff departed unannounced, leaving Gandle Ott in confusion. Vice-Governor Marja Lang is consolidating Imperial power while General Herron Dade positions himself as the native candidate for leadership. The world is torn between New Republic and Imperial sympathies. | CUTHBERT: The Montrol City Computer Center houses CUTH-BRT-92-X3, a sentient BRT mainframe from the Core. Sarne activated hidden command protocols compelling Cuthbert to stop the FarStar at all costs — the computer controls city systems, automated vehicles, drone trucks, spaceport computers, and droids. | SARNE'S TRAP: Colonel Lansel, a sleeper agent, activated Cuthbert's hostile programming and planted intelligence that Sarne is heading for Shintel. An assassin droid RX5-TLN was left as a last resort. | CULTURE: Citizens speak Basic with a pronounced accent, ending sentences with 'mab.' Groves of huge mushrooms grow in cities, people wear much animal leather, and the Ceremonial Mushroom Cutting is a colonial tradition symbolizing self-subsistence. | DEFENSES: The system is near-defenseless after Sarne took most of the Imperial defense force. Pirates are an increasing threat."
+  },
+  {
+    name: "Shintel",
+    system: "Shintel",
+    star: "",
+    grid: "M-21",
+    region: "Outer Rim Territories",
+    type: "Terrestrial",
+    temperature: "Temperate",
+    atmosphere: "Type I (breathable)",
+    hydrosphere: "Moist",
+    gravity: "Standard",
+    terrain: "Forests, mudflats, low seas, mountains",
+    lengthOfDay: "19 standard hours",
+    lengthOfYear: "343 local days",
+    sapientSpecies: "Humans (Imperial garrison only)",
+    starport: "Limited services",
+    population: "2,000",
+    function: "Imperial supply depot",
+    government: "Military",
+    techLevel: "Space",
+    majorExports: "None",
+    majorImports: "Foodstuffs, low tech, mid tech, high tech",
+    source: "WEG40209 The DarkStryder Campaign p.143 (Shintel Downtime)",
+    summary: "Shintel is a wet muddy little world with extremely heavy cloud cover. The rainy season in the northern hemisphere lasts seven out of ten months, and winters and summers are both mild. A small Imperial supply depot in the northwestern hemisphere normally houses 1,500 personnel, mostly non-combatants in supply and ordnance capacities. Moff Sarne established the depot as one of several unofficial supply caches at the remote edges of Kathol sector, anticipating he might need to flee and regroup.",
+    locations: "Imperial Supply Depot (Northwestern hemisphere. Houses 1,500 regular supply and ordnance personnel plus 500 additional troops stranded by Moff Sarne after his loyalty purge. The depot has limited starport services, five old TIE fighters, and a few cargo shuttles — all with hyperdrives destroyed by Sarne's men before departure).",
+    ofNote: "SARNE'S TRAP: Before leaving, Sarne erased all references to Kathol Outback systems from the base computers and replaced them with a less detailed astrogation chart containing hidden code designed to activate trap programs in the FarStar's nav computer when uplinked. He also surrounded the planet with ion mines, restricting the stranded Imperials' movements — they cannot risk sending ships up since they lack resources to rescue disabled vessels. | STRANDED IMPERIALS: The 500 additional personnel are Imperial officers and troops whom Sarne deemed more loyal to the Empire than to himself personally. He stranded them here as a final purge of his officer corps, destroying every hyperdrive engine on the planet and all hyper-capable courier droids. | SUPPLY CACHE: Sarne left the outpost intact in case he might need it someday, and left the men alive to avoid causing unrest in his command chain. They were ordered to hold the depot and construct a landing field for blastboats."
   }
 // --- END OF PLANETS_DATA ---
 ];
