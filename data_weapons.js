@@ -5424,6 +5424,36 @@ const WEAPONS_DATA = [
   "range": "2-3/5/10",
   "game_notes": "Skill: Firearms. Scale: Character. Ammo: 2. Fire Rate: 2. Dual-barrel breach-loading rifle used primarily by law enforcement agencies for crowd control. Only one shell may be loaded per barrel, but both barrels may be fired simultaneously; empty shells are ejected manually. When fired, the chemical shell explodes inside the barrel and emits an expanding wall of over-pressurized air and chemical reactants capable of knocking down doors, people, and minor barricades. Only proven lethal at point-blank range, but minor physical injuries can result from being knocked down. Ammo costs 25 credits/shell. The blast affects most targets in the gun's line of sight with stun damage decreasing over range. The chemical compound is unstable and must be loaded manually every two shots — a Moderate demolitions roll is required to safely reload (failure causes the rounds to detonate, inflicting 6D lethal damage to the loader). Reload normally takes four combat turns; this can be cut in half by raising the demolitions check to Difficult. Both barrels can be fired at once, but a 1 on the wild die means the gun explodes and inflicts the damage of both barrels on the shooter. Roy Harlison of the Rabid Mynocks carries one named 'Old Besi.'",
   "source": "WEG41006 Star Wars Adventure Journal #6 p.183 (Swoop Gangs)"
+ },
+ {
+  "category": "Blaster Pistols",
+  "name": "Telex/Delcor Tranq 25 HV Pistol",
+  "type": "Tranquilizer 'Blaster'",
+  "cost": "450",
+  "damage": "6D stun",
+  "range": "3-10/20/30",
+  "game_notes": "Skill: Blaster: blaster pistol. Scale: Character. Ammo: 25 (ammo packs: 75 credits). Fire Rate: 1. Availability: 1, F. Not technically a blaster or energy weapon — targets receive applicable armor bonuses for physical attacks. Can only penetrate clothing, animal hides, and light personal armor; ineffective against doors, buildings, vehicles, and other dense materials. Each point of damage causes 10 minutes of unconsciousness; only a medical stimulant can awaken a target before the stun wears off naturally. Fires thousands of microscopic gel-balls (concentrated neuro-relaxers) along a focused repulsor beam at super high velocity. Uses the casing and firing controls of a discontinued line of sporting blasters. Heavily silenced and virtually noiseless — lacks the violent combustion of blaster gases.",
+  "source": "WEG41017 Star Wars Adventure Journal #17 p.76-77 (Special Ops: The Art of Infiltration)"
+ },
+ {
+  "category": "Blaster Carbines",
+  "name": "Captain Jayme's Tranq 25 HV Carbine",
+  "type": "Modified Tranquilizer 'Blaster' Carbine",
+  "cost": "Not available for sale",
+  "damage": "6D stun",
+  "range": "3-25/50/150",
+  "game_notes": "Skill: Blaster: blaster carbine. Scale: Character. Ammo: 25 (ammo packs: 75 credits). Fire Rate: 1. Custom crafted, not rated. Same stun mechanics as the Tranq 25 HV Pistol — not technically a blaster, targets receive physical armor bonuses, each damage point = 10 minutes unconsciousness, medical stimulant required to wake early. Modified by Lieutenant Morgan Q. Raventhorn with a fully integrated targeting computer/scope featuring holo-imaging, light amplifiers, image shifters, and heat signature sensors. Stability and effective range increased by a booster muzzle/hand grip with recessed scope controls for range, zoom, focus, and sensor selections.",
+  "source": "WEG41017 Star Wars Adventure Journal #17 p.77 (Special Ops: The Art of Infiltration)"
+ },
+ {
+  "category": "Heavy Blaster Pistols",
+  "name": "M'Kyas Love's 'Ventilator'",
+  "type": "Modified Calban Model X Heavy Blaster Pistol",
+  "cost": "Not for sale (unique)",
+  "damage": "7D",
+  "range": "3-6/20/40",
+  "game_notes": "Skill: Blaster. Scale: Character. Availability: Unique. Fire Rate: 1/2. Modified with side-mounted blaster sight, galven pattern upgrade, energy converter valve adjustment, dualistic static pulse adaptors, and half a dozen other tweaks. These improvements increase overall power but cumulatively reduce range. Love conducts most of his business at close range. A Latarzian 'soul weapon' — more than merely a gun, it is a statement of identity.",
+  "source": "WEG41017 Star Wars Adventure Journal #17 p.121 (Love Is A Warm Blaster)"
  }
 // --- END OF WEAPONS_DATA ---
 ];

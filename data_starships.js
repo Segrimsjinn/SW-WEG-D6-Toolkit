@@ -42150,7 +42150,7 @@ const STARSHIP_DATA = {
    "type": "Private Space Yacht",
    "era": "New Republic",
    "affiliation": "The Fringe",
-   "source": "WEG40139 Cracken's Threat Dossier p.140-141",
+   "source": "WEG40139 Cracken's Threat Dossier p.140-141 | WEG41017 Star Wars Adventure Journal #17 p.59 (Jade Solitaire)",
    "scale": "Starfighter",
    "length": "50 meters",
    "skill": "Space transports: Luxury 3000 yacht",
@@ -42206,7 +42206,7 @@ const STARSHIP_DATA = {
      "damage": "2D"
     }
    ],
-   "capsule": "When Master Trader Mara Jade went into business for herself, she immediately upgraded the sensor, weapons, and nearly everything on her ship: the Jade's Fire. One unique system on her ship is the shoot-back system: when laser fire hits the hull, a small turret blaster automatically pops up and fires in the general direction of the incoming shots. She also added a special slave circuit which she can operate by a remote control to bring Jade's Fire to her."
+   "capsule": "Originally called the Winning Gamble, this highly-modified SoroSuub Luxury 3000 was stolen from a SoroSuub executive by the Bardrin Group. Many systems — including the shoot-back auto-targeting blaster and an advanced sensor/cam system for covert surveillance — were such advanced prototypes at the time that they remain cutting-edge. Sansia Bardrin gave the ship to Mara Jade after Jade rescued her from Chay Praysh's slaver fortress on Torpris. Renamed Jade's Fire, Mara further upgraded the sensors, weapons, and nearly everything else when she went into business as a Master Trader. The shoot-back system automatically pops up a turret blaster and fires in the general direction of incoming shots when the hull is hit. She also added a special slave circuit operable by remote control to bring Jade's Fire to her."
   },
   {
    "name": "Light Attack Fighter",

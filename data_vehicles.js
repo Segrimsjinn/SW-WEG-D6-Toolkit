@@ -4403,6 +4403,37 @@ const VEHICLES_DATA = [
   "cover": "Full",
   "game_notes": "A half-tracked ground car of Tasari design, powered by steam turbines. The engines run on compressed hydrogen and helium which heats steam in a boiler to power pistons. A large airscoop separates, compresses, then replaces gas lost during operation — at the optimum cruising speed of 40 kmh the fuel is largely self-replacing, though running at the top speed of 80 kmh burns fuel faster than it can be replaced. Carries a 100-gallon water tank at the back; under normal conditions this needs refilling every 2,000 km. The cab is completely self-enclosed, and one internal oxygen tank carries sufficient air for three days of normal usage. Solid, dependable, and capable of climbing steep grades and traveling virtually anywhere on the Tasariq surface. Used heavily by the native Tasari and by off-world miners and tourists who venture onto the planet's inhospitable surface. Tasari vehicles like the K-111 are constructed to be airtight and do not require the atmosphere-sealing modifications off-world civilian craft need (which increases vehicle prices on Tasariq by 250%-350% over norm).",
   "source": "WEG41015 Star Wars Adventure Journal #15 p.193 (Tasariq: The Crystal Planet)"
+},
+{
+  "name": "LD5 Patrol Speeder",
+  "craft": "Ubrikkian LD5 Land Speeder",
+  "type": "Light Duty Land Speeder",
+  "scale": "Speeder",
+  "length": "5 meters",
+  "skill": "Repulsorlift operation: landspeeder",
+  "crew": "1 driver, 1 gunner",
+  "crew_skill": "Repulsorlift operation: landspeeder 4D, vehicle blasters 3D+2",
+  "passengers": "4",
+  "cargo_capacity": "500 kilograms",
+  "cover": "1/2",
+  "altitude_range": "0-5 meters",
+  "cost": "22,000 (new), 12,000 (used)",
+  "maneuverability": "3D+2",
+  "move": "195; 560 kmh",
+  "body_strength": "2D",
+  "weapons": [
+    {
+      "name": "Twin Blaster Cannon (rear-mounted deck gun)",
+      "fire_arc": "Turret",
+      "crew": "1 (gunner)",
+      "skill": "Vehicle blasters",
+      "fire_control": "1D",
+      "range": "50-200/1/2 km",
+      "damage": "4D"
+    }
+  ],
+  "game_notes": "A small, tough landspeeder perfectly suited to patrol duty, with seating for six. Can carry a moderate-sized patrol team swiftly about their rounds and the rear-mounted deck gun packs enough punch to detain all but the best-armed intruders.",
+  "source": "WEG41017 Star Wars Adventure Journal #17 p.82 (Special Ops: The Art of Infiltration)"
 }
 // --- END OF VEHICLES_DATA ---
 ];

@@ -8391,6 +8391,34 @@ const CREATURES_DATA = [
    "orneriness": "Aggressive predator",
    "special": "BITE ATTACK: STR+2D damage. Large segmented worms that live in tunnels they burrow through the earth. They can hunt on the surface for hours, living off stored oxygen. They tend to cluster around habitable craters where the most food is available, but concerted efforts are made to keep their numbers down near inhabited craters.",
    "source": "WEG41015 Star Wars Adventure Journal #15 p.185 (Tasariq: The Crystal Planet)"
+  },
+  {
+   "name": "Krizar (pupal stage)",
+   "type": "Developing predator",
+   "planet": "Torpris",
+   "habitat": "Subterranean nutrient slime caverns",
+   "dex": "1D",
+   "per": "1D",
+   "str": "1D",
+   "move": "3",
+   "size": "4-8 centimeters long",
+   "orneriness": "Developing predator",
+   "special": "BITE: 1D damage. Locking teeth have a Strength of 5D+2 to hold in place — must typically be removed surgically. SHELL: Hard ellipsoid shell provides +1D+2 defense against physical damage. Sometimes referred to as 'clampjaws' even in pupal stage. The pupae are sustained by viscous gray sludge that flows through subterranean caverns. When ready to hatch, mouth palps emerge first — if they sink into skin, a trip to the med facility is required. Krizar are now bred and slave-harvested in large numbers by unscrupulous beings, Chay Praysh among them.",
+   "source": "WEG41017 Star Wars Adventure Journal #17 p.56-57 (Jade Solitaire)"
+  },
+  {
+   "name": "Krizar (adult)",
+   "type": "Predator",
+   "planet": "Torpris",
+   "habitat": "Mountain, Urban (guard creature)",
+   "dex": "3D",
+   "per": "3D",
+   "str": "1D",
+   "move": "14",
+   "size": "0.75-1.2 meters at the shoulder",
+   "orneriness": "Aggressive predator",
+   "special": "BITE: 4D+1 damage first round, plus 1D additional damage every round the creature stays clamped. Clamping jaw has a Strength of 7D — killing the creature will NOT release the jaw (system floods with a locking chemical upon death). CLAWS: STR+1 physical damage. DEW CLAWS: Sheathed claws on all four hind legs can sink nearly half a meter into the ground, anchoring the creature and its victim. Provides +2D Strength bonus to resist being moved — killing the creature will NOT weaken the dew claws' hold. Skills: tracking 5D, brawling 5D+2. Sometimes called 'clampjaws,' krizar are fierce guard animals indigenous to Torpris, used by many estates and compounds. Some analogous species inhabit Vodran and other marsh-like worlds, but krizar are the most vicious and are exported to other systems for a hefty price.",
+   "source": "WEG41017 Star Wars Adventure Journal #17 p.56-57 (Jade Solitaire)"
   }
 // --- END OF CREATURES_DATA ---
 ];

@@ -6324,6 +6324,33 @@ const EQUIPMENT_DATA = [
   "availability": "4, F, R or X",
   "game_notes": "Character scale. Worn as a powerbox around the waist (usually under clothing). Shield score: 5D to deflect blaster bolts and other energy weapons (use protection rules p.63 Revised & Expanded). Any further damage affects target per 'Cover Modifiers' chart. Power cells last 1 standard hour before draining. Politician's dream — popular with crime lords, bounty hunters, and bill collectors. Embellished version of the MagnaForce Security Shield with longer duration (1 hour vs 2 minutes) and stronger defenses.",
   "source": "WEG41016 Star Wars Adventure Journal #16 p.215 (Credit Denied)"
+ },
+ {
+  "category": "Weapons",
+  "name": "BioTech BlastHand",
+  "type": "Concealed Carpal Blaster Unit",
+  "cost": "1,300",
+  "availability": "4, R, X",
+  "game_notes": "Character scale. Skill: Blaster. Damage: 4D. The BlastHand is a prosthetic shell with limited dexterity (clench fist, point fingers) that houses a compact blaster. Surgically attached to the user's arm — cannot be disarmed without restraining that arm. Has a port for blaster packs and recharging. Treated as a regular blaster for game purposes. Most users are beings who lost their natural hand. Relatively uncommon but very effective for gaining a decisive advantage.",
+  "source": "WEG41017 Star Wars Adventure Journal #17 p.58 (Jade Solitaire)"
+ },
+ {
+  "category": "Security/Surveillance",
+  "name": "HackCom 3000 Code Key Cylinder Slicer",
+  "type": "Outlaw Cylinder Slicer / ID Maker",
+  "cost": "12,000 (black market only), cipher program updates 3,000",
+  "availability": "4, X",
+  "game_notes": "Skill: Forgery: cylinder slicer. Small hand-held microcomputer that copies and alters most civilian and military code key cylinders and ident badges. Uses highly illegal cipher programs to break and mimic security protocols. Features detachable holocam, data jacks, standard scomp-link, two universal cylinder sockets, and a key card slot accepting all standard ident cards. Forgery roll required per attempt — Easy: unaltered copies; Moderate: minor data alterations (name, picture, personal info); Difficult: major alterations (retina patterns, fingerprints, voice samples). Modifiers: +10 if using matching blanks, +5 for extensive experience with ident type, +5 difficulty if no experience, +10+ difficulty for non-matching blanks, +30 difficulty for cipher programs more than 4 months old. Wild die 1 = accidental destruction of original ident. WARNING: Possession carries a mandatory 30-year sentence in an Imperial correction facility.",
+  "source": "WEG41017 Star Wars Adventure Journal #17 p.75-76 (Special Ops: The Art of Infiltration)"
+ },
+ {
+  "category": "Security/Surveillance",
+  "name": "Modified BothiCorp Remote Detonator Glove",
+  "type": "Outlaw Tech Remote Demolition Controller",
+  "cost": "300 (glove), 200 (c-chips and parts)",
+  "availability": "X",
+  "game_notes": "Skill: Demolitions: detonator glove. Originally a BothiCorp Labor Droid Remote Glove for controlling cargo-handling BI labor droids. Commands entered via input buttons in palm and wristband, uploaded via built-in comlink. Moderate computer repair roll to replace and modify command chips and programming. Easy demolitions roll to synchronize each explosive device's remote detonator to the glove's comlink. Once modified, controls up to 200 individual explosive devices at 300 meters range. Created by Lieutenant Morgan Q. Raventhorn; has become near-standard gear in the Special Ops community.",
+  "source": "WEG41017 Star Wars Adventure Journal #17 p.78 (Special Ops: The Art of Infiltration)"
  }
 // --- END OF EQUIPMENT_DATA ---
 ];
