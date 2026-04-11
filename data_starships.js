@@ -34281,6 +34281,46 @@ const STARSHIP_DATA = {
     }
    ],
    "capsule": "The Teljkon vagabond is a semi-intelligent organic spacecraft of Qella origin, designed as a toolkit for reviving the shattered world of Maltha Obex. First sighted ten years ago in the Teljkon system by a Hrasskis monitor ship, the vagabond disabled the ship's communications with a powerful broadband signal and fled into hyperspace. It later disabled the NR frigate Boldheart with a single shot and destroyed an NRI ferret that attempted to attach a locator limpet. Colonel Pakkpekatt's chase team eventually found it near the Gmar Askilon system. General Lando Calrissian, Lobot, C-3PO and R2-D2 cracked the vagabond's Qella genetic recognition code and boarded the craft, discovering it could repair itself at a prodigious rate — immediately after being injured the vagabond makes a natural healing roll using its Hull dice (scale modifiers applying), with further healing rolls every hour. The ship responds to organic touch and contains a vast museum of Qella culture. Jedi Master Luke Skywalker eventually rescued the boarding team and determined the ship's true purpose. The Maltha Obex system is now under black seal; the Qella are expected to eventually reawaken. The vagabond is now rated as a non-threat."
+  },
+  {
+   "rank": 99999,
+   "name": "Imperial Mass Star Destroyer (Sarne's Rift Trap)",
+   "craft": "Imperial Mass Star Destroyer (modified)",
+   "type": "Modified Star Destroyer — half the size of a Victory-class",
+   "scale": "Capital",
+   "skill": "Capital ship piloting: Star Destroyer",
+   "of_note": "A prized Star Destroyer detached from Moff Sarne's main fleet and sent to the Kathol Outback to lure the FarStar into the Kathol Rift. About half the size of a Victory-class Star Destroyer. Modified with a single devastator torpedo launcher — a Sarne innovation that fires 10D torpedoes capable of obliterating everything within a 10km blast radius on a planet's surface. Launcher has a 3-round recharge between shots. Sarne's orders forbid harming the FarStar itself; during the Danoor battle, the Star Destroyer deliberately fires a devastator torpedo past the FarStar into Danoor's atmosphere, vaporizing a 10km circle of the populated surface as a demonstration of power. The ship's torpedo tube is its critical weakness — a Difficult starship gunnery or Very Difficult capital ship gunnery roll through a 5-meter exposed aperture can set off a chain reaction destroying the entire vessel. Rammed and destroyed by an Aing-Tii Sanhedrim ship summoned via Minister Mooren's coded channel gamma-gamma-eleven transmission.",
+   "maneuverability": "1D",
+   "space": "6",
+   "hull": "7D",
+   "shields": "3D",
+   "weapons": [
+    {
+     "name": "60 Turbolaser Batteries",
+     "skill": "Capital ship gunnery",
+     "fire_control": "4D",
+     "damage": "5D"
+    },
+    {
+     "name": "60 Ion Cannons",
+     "skill": "Capital ship gunnery",
+     "fire_control": "2D+2",
+     "damage": "3D"
+    },
+    {
+     "name": "10 Tractor Beam Projectors",
+     "skill": "Capital ship gunnery",
+     "fire_control": "4D",
+     "damage": "6D"
+    },
+    {
+     "name": "1 Devastator Torpedo Launcher",
+     "skill": "Capital ship gunnery",
+     "fire_control": "1D+1",
+     "damage": "10D (obliterates everything within 10km blast radius; 3-round recharge)"
+    }
+   ],
+   "source": "WEG40209 The DarkStryder Campaign: Kathol Outback p.94 (Galaxy's Edge)"
   }
  ],
  "Stock Capital Carriers": [

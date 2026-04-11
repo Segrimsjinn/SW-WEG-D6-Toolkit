@@ -8475,6 +8475,20 @@ const CREATURES_DATA = [
    "orneriness": "Non-sentient",
    "special": "SCALE: Speeder. MAW: STR+1D damage but feeders must place victim inside to attack. SIZE: +10 to hit rolls to strike a vital part (otherwise attacks do not harm it). WEAKNESS: Energy weapons do +1D damage. In natural habitat on Binaros, the adult plant is dormant during daylight and folds in on itself, unfurling only at night. Life cycle: grows from spore, generates feeders to bring nutrients (water, minerals, metals for growth, then blood for nitrogen when preparing to spawn new spores). Completes cycle in 1-2 weeks. Round body with a huge thorny-toothed maw hidden by leafy stalks, six short taproots and dense secondary root mat, green coloration with brown roots. Emits a mild sweet-honey and earthy scent. The FarStar's hold is actually a better environment than Binaros — warm, metal-rich, and the feeders solve the water problem by raiding hydroponics.",
    "source": "WEG40209 The DarkStryder Campaign: Kathol Outback p.37 (Plant Food)"
+  },
+  {
+   "name": "Ghest",
+   "type": "Cartilaginous reptile predator",
+   "planet": "Rodia (transplanted to Danoor's irrigation canals)",
+   "habitat": "Dark, flooded underground tunnels",
+   "dex": "1D",
+   "per": "2D",
+   "str": "7D",
+   "move": "15 (swimming), 8 (walking)",
+   "size": "6 meters long",
+   "orneriness": "Ambush predator",
+   "special": "TEETH: STR+2D damage. CLAWS: STR+1D damage. A 6-meter reptilian predator with slick skin and crooked razor-sharp teeth. Native to Rodia but somehow transplanted to Danoor's ancient abandoned irrigation canals beneath Eror Zeen, where it ambushes travelers from the murky water. Leaps up from the water with wicked claws and crooked teeth, striking before victims can fully react.",
+   "source": "WEG40209 The DarkStryder Campaign: Kathol Outback p.93 (Galaxy's Edge)"
   }
 // --- END OF CREATURES_DATA ---
 ];
