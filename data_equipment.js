@@ -6387,6 +6387,15 @@ const EQUIPMENT_DATA = [
   "availability": "3, X (Devisors only)",
   "game_notes": "Skill: Archaic guns: flash pistol. Does no damage. Target must make a Moderate Perception roll or be blinded for 1D rounds. Used by Devisors for self-defense inside the Ministry of Technology. Effective against walker pilots when fired through cockpit viewports.",
   "source": "WEG40209 The DarkStryder Campaign: Kathol Outback p.77 (The Masters of Exocron)"
+ },
+ {
+  "name": "Imperial Munitions Rampart II Portable Shield Generator",
+  "category": "Security/Surveillance",
+  "type": "Portable tactical shield generator",
+  "cost": "Not generally available",
+  "availability": "3, R",
+  "game_notes": "Skill: Computer programming/repair. Crew: 1. Scale: Character. Provides 6D character-scale protection to those behind the shield. Can be configured to either close off an entire corridor (full-width barrier) or to stand roughly 1.5m high and 6m wide (half-wall allowing return fire over the top). When struck, roll 6D vs the incoming weapon's damage — if the generator's total is lower than the damage roll, its protection drops by -1D. When the shield reaches 0D it is destroyed. The FarStar carries several in the Forward Topside Hold and the Deck One Forward Cargo Hold; used by Chase's mutineers to fortify the corridors to engineering during 'Rogue Elements.'",
+  "source": "WEG40121 The Kathol Rift p.47 (Rogue Elements)"
  }
 // --- END OF EQUIPMENT_DATA ---
 ];
