@@ -5981,6 +5981,58 @@ const STARSHIP_DATA = {
     }
    ],
    "source": "WEG40209 The DarkStryder Campaign: Kathol Outback p.62 (Wildfire)"
+  },
+  {
+   "rank": 99999,
+   "name": "The Heart of Flesh (Qektoth Attack Cruiser)",
+   "craft": "Qektoth Attack Cruiser",
+   "type": "Modified strike cruiser (biological technology)",
+   "scale": "Capital",
+   "length": "105 meters",
+   "crew": "38",
+   "gunners": "10",
+   "skeleton": "6/+10",
+   "crew_skill": "Capital ship gunnery 4D+2, capital ship piloting 5D, capital ship shields 4D+2",
+   "passengers": "50",
+   "cargo": "100 metric tons",
+   "consumables": "1 year",
+   "hyperdrive": "x3",
+   "hyperdrive_backup": "x12",
+   "nav_computer": "Yes",
+   "maneuverability": "1D",
+   "space": "3",
+   "atmosphere": "260; 750 kmh",
+   "hull": "4D+2",
+   "shields": "2D+2 (can only cover two arcs at a time)",
+   "of_note": "Sister ship to the Scourge (encountered at Qu'mock). Designed at the same time but perfected in a hidden facility within the Rift. Carries five bio-modified Zebra-class starfighters and pursued the FarStar through the Rift seeking Yvarema bio-specimens for the Qektoth Confederation's long-sought human-hive-mind experiments. Like the Scourge, its plasma cannons and bio-energy array bypass conventional shields, and its weapons cannot sustain ionization damage (independent power systems). Its own shields can only cover two fire arcs at a time. Arrives at Yvara during the Home adventure to perform a sensor scan and capture Yvarema samples, then retreat to a clear area to jump to hyperspace with the coordinates.",
+   "sensors_passive": "45/2D",
+   "sensors_scan": "55/2D+1",
+   "sensors_search": "100/2D+2",
+   "sensors_focus": "4/3D+2",
+   "weapons": [
+    {
+     "name": "4 Plasma Cannons",
+     "fire_arc": "Turret",
+     "crew": "1",
+     "scale": "Starfighter",
+     "skill": "Starship gunnery",
+     "fire_control": "2D+2",
+     "space_range": "1-7/20/35",
+     "atmo_range": "100-700/2/3.5 km",
+     "damage": "5D (bypasses conventional shields)"
+    },
+    {
+     "name": "1 Bio-Energy Array",
+     "fire_arc": "Forward",
+     "crew": "6",
+     "skill": "Capital ship gunnery",
+     "fire_control": "1D+1",
+     "space_range": "1-30/55/75",
+     "atmo_range": "2-60/110/150 km",
+     "damage": "4D+1 (bypasses conventional shields; fires 1/3 rounds)"
+    }
+   ],
+   "source": "WEG40121 The Kathol Rift p.83 (Home)"
   }
  ],
  "Stock Yachts": [
@@ -8944,6 +8996,46 @@ const STARSHIP_DATA = {
      "damage": "4D"
     }
    ]
+  },
+  {
+   "rank": 99999,
+   "name": "Yvarema Royal Scout Ship",
+   "craft": "Royal Yvarema Scout Ship",
+   "type": "Medium-range exploration craft (fluidics technology)",
+   "scale": "Starfighter",
+   "length": "20 meters",
+   "skill": "Archaic starship piloting: Yvarema scout ship",
+   "crew": "2",
+   "crew_skill": "Archaic starship piloting 5D, astrogation 4D, starship shields 4D+1",
+   "passengers": "3",
+   "cargo": "20 metric tons",
+   "consumables": "1 month",
+   "cost": "Not available for sale",
+   "hyperdrive": "x4",
+   "nav_computer": "Yes, limited to three jumps",
+   "maneuverability": "1D",
+   "space": "5",
+   "atmosphere": "295; 800 kmh",
+   "hull": "2D+2",
+   "shields": "1D",
+   "of_note": "Primitive by galactic standards but serves the Yvarema hive-mind well in exploring their small patch of space. Fluidics-based control systems (computer control via micro-valves and pipes of pressurized liquids/gases) make the ship immune to ionization damage, though fluidic systems can be punctured or ruptured by solid impacts. Unarmed — the powerful navigational deflector meant to clear a path through Rift dust and gas can be used as a make-shift weapon in emergencies, though limited in range. Steam catapults launch these craft from the Yvarema hangar. A standard Yvarema exploration team consists of a scholar, three workers, two explorers, and one royal explorer — Gunthar was piloting one of these ships on his disastrous maiden voyage when slavers killed his crew and captured him.",
+   "sensors_passive": "25/0D",
+   "sensors_scan": "35/1D",
+   "sensors_search": "50/2D+1",
+   "sensors_focus": "3/3D",
+   "weapons": [
+    {
+     "name": "Navigational Deflector (improvised weapon)",
+     "fire_arc": "Front",
+     "crew": "1",
+     "skill": "Starship gunnery",
+     "fire_control": "",
+     "space_range": "1-3/8/15",
+     "atmo_range": "100-300/800/1.5 km",
+     "damage": "2D"
+    }
+   ],
+   "source": "WEG40121 The Kathol Rift p.84 (Home)"
   }
  ],
  "Named Modified Bulk Freighters": [
@@ -24916,6 +25008,50 @@ const STARSHIP_DATA = {
      "damage": "4D"
     }
    ]
+  },
+  {
+   "rank": 99999,
+   "name": "Qektoth Zebra Starfighter (Bio-Modified)",
+   "craft": "Qektoth starfighter",
+   "type": "Modified Zebra starfighter",
+   "scale": "Starfighter",
+   "length": "12.3 meters",
+   "skill": "Starfighter piloting: Zebra",
+   "crew": "1",
+   "crew_skill": "Starfighter piloting 5D, starship gunnery 5D+2",
+   "cargo": "65 kilograms",
+   "consumables": "1 day",
+   "maneuverability": "2D",
+   "space": "7",
+   "atmosphere": "350; 1,000 kmh",
+   "hull": "2D",
+   "shields": "1D",
+   "of_note": "Standard Qektoth Confederation starfighter, bio-modified and equipped with a new bio-plasmatic gel launcher weapon — each fighter carries three torpedoes armed with gel that clings to a target's hull and continues burning until frozen in space or burned off in atmosphere (5D damage first round, -1D each additional round). Resourceful pilots can remodulate particle shields to 'buck' the gel off (Moderate starship shields roll — particle shields are down during the attempt; any hits sustained roll against hull -2D). Five of these launch from the Heart of Flesh during the attack on Yvara.",
+   "sensors_passive": "15/0D",
+   "sensors_scan": "25/1D+1",
+   "sensors_search": "45/2D",
+   "sensors_focus": "3/2D+2",
+   "weapons": [
+    {
+     "name": "2 Laser Cannons (fire-linked)",
+     "fire_arc": "Front",
+     "skill": "Starship gunnery",
+     "fire_control": "1D",
+     "space_range": "1-5/10/17",
+     "atmo_range": "100-500/1/1.7 km",
+     "damage": "5D"
+    },
+    {
+     "name": "Bio-Plasmatic Gel Launcher",
+     "fire_arc": "Front",
+     "skill": "Starship gunnery",
+     "fire_control": "1D",
+     "space_range": "1-3/6/10",
+     "atmo_range": "100-300/600/1 km",
+     "damage": "5D (hull-clinging burning gel; -1D/round until frozen or burned off)"
+    }
+   ],
+   "source": "WEG40121 The Kathol Rift p.84 (Home)"
   }
  ],
  "Named Modified Capital Corvettes": [

@@ -6396,6 +6396,24 @@ const EQUIPMENT_DATA = [
   "availability": "3, R",
   "game_notes": "Skill: Computer programming/repair. Crew: 1. Scale: Character. Provides 6D character-scale protection to those behind the shield. Can be configured to either close off an entire corridor (full-width barrier) or to stand roughly 1.5m high and 6m wide (half-wall allowing return fire over the top). When struck, roll 6D vs the incoming weapon's damage — if the generator's total is lower than the damage roll, its protection drops by -1D. When the shield reaches 0D it is destroyed. The FarStar carries several in the Forward Topside Hold and the Deck One Forward Cargo Hold; used by Chase's mutineers to fortify the corridors to engineering during 'Rogue Elements.'",
   "source": "WEG40121 The Kathol Rift p.47 (Rogue Elements)"
+ },
+ {
+  "name": "The Codex",
+  "category": "Exotic",
+  "type": "Ancient DarkStryder Force artifact",
+  "cost": "Not for sale (unique)",
+  "availability": "Unique",
+  "game_notes": "Scale: Character. A small metallic pyramid that can easily be lifted in one hand. Thousands of years old and covered in flowing alien script. GAME NOTES: Provides +2D to all Force skills the user possesses. Allows a Force-sensitive to automatically locate 'galactic' scale disturbances in the Force (destruction of a planet or other cataclysm). If used for more than 3 rounds per day: any Dark Side Points the character receives while using it are DOUBLED, and other Force-sensitives can detect the device over distances of more than 100 light years. Body strength 1D to resist damage; if roughly handled or damaged it will break and cannot be repaired. Recovered from an ancient alien waystation in the Kathol Rift. The Aing-Tii trained Makezh specifically to retrieve this artifact, which they believe will allow them to communicate with 'Those Who Dwell Beyond The Veil.' Brings Jessa Dajus a severe Force vision when brought aboard the FarStar, collapsing her into a coma.",
+  "source": "WEG40121 The Kathol Rift p.63 (Waystation)"
+ },
+ {
+  "name": "Imperial Medical Resources Trauma Kit",
+  "category": "Medical",
+  "type": "Trauma-specific medpac",
+  "cost": "200",
+  "availability": "1, F",
+  "game_notes": "Skill: First aid. Scale: Character. Provides +1D to first aid or medicine when used to treat severe physical trauma — burns, cuts, contusions, abrasions, and other external physical injuries. Provides no bonus for other types of injury (internal injuries) or for the treatment of toxins or poisons. Features medicines and treatments specifically for physical injuries common in a crash (burns, contusions, broken limbs, etc.).",
+  "source": "WEG40121 The Kathol Rift p.90 (Showdown)"
  }
 // --- END OF EQUIPMENT_DATA ---
 ];

@@ -8489,6 +8489,62 @@ const CREATURES_DATA = [
    "orneriness": "Ambush predator",
    "special": "TEETH: STR+2D damage. CLAWS: STR+1D damage. A 6-meter reptilian predator with slick skin and crooked razor-sharp teeth. Native to Rodia but somehow transplanted to Danoor's ancient abandoned irrigation canals beneath Eror Zeen, where it ambushes travelers from the murky water. Leaps up from the water with wicked claws and crooked teeth, striking before victims can fully react.",
    "source": "WEG40209 The DarkStryder Campaign: Kathol Outback p.93 (Galaxy's Edge)"
+  },
+  {
+   "name": "Tunnel Worm",
+   "type": "Mutated bio-experiment (aquatic predator)",
+   "planet": "Alien Construct (Kathol Rift Waystation)",
+   "habitat": "Flooded lower-level corridors of the ancient alien construct",
+   "dex": "3D",
+   "per": "2D",
+   "str": "3D",
+   "move": "15 (swimming)",
+   "size": "3 meters long",
+   "orneriness": "Stealth predator",
+   "special": "BRAWLING PARRY: 5D. SEARCH: 6D, SNEAK: 5D. BRAWLING: 5D. INTERNAL LUMINESCENCE: Generates an internal phosphorescent glow — normally uses this to blind underwater lifeforms; appears dim to human eyes. ABSORPTION: Absorbs prey through its permeable outer membrane. Internal digestive acids have 4D Strength for damage. PERMEABLE BODY: Attempts to puncture the translucent creature will fail — it can adjust its outer membrane to let solids pass through. However, energy weapons inflict major damage: all blaster hits receive +1D bonus to damage. Result of an ancient alien experiment — the original designers intended 1cm versions to be introduced into the water supply to ingest bacteria. After centuries of evolution and the Rift's mutagenic effects, the transparent viscous-looking worm has evolved into its present predatory form.",
+   "source": "WEG40121 The Kathol Rift p.65 (Waystation)"
+  },
+  {
+   "name": "Owr'apa",
+   "type": "Amphibious feline predator",
+   "planet": "Yvara",
+   "habitat": "Fungal plains watering holes and creeks",
+   "dex": "4D",
+   "per": "3D",
+   "str": "3D+2",
+   "move": "10 (running), 12 (jumping), 6 (swimming)",
+   "size": "1.5-2 meters long, 0.9m at shoulder",
+   "orneriness": "Territorial predator",
+   "special": "BRAWLING: claws 5D+1, swimming 4D+2. CLAWS: STR+1D slash damage. LEAP: Can leap up to 12 meters with a Moderate jumping roll. AMPHIBIOUS: Pair of extra nostrils on a snorkel-horn allows indefinite underwater breathing. A large feline with a thick dark pelt. Submerges itself in watering holes found on the long dry treks of zeebuck herds, concealing its breathing snorkel among the reeds. Uses claws and incredible leaps to ambush prey. Territorial and will attack any creatures straying too close to its watering holes.",
+   "source": "WEG40121 The Kathol Rift p.76 (Home)"
+  },
+  {
+   "name": "Zeebuck",
+   "type": "Grazing ruminant",
+   "planet": "Yvara",
+   "habitat": "Fungal plains",
+   "dex": "2D",
+   "per": "4D",
+   "str": "4D",
+   "move": "11",
+   "size": "1.5 meters at shoulder",
+   "orneriness": "3D",
+   "special": "RUNNING: 4D. Knobby-boned three-eyed four-legged ruminant that feeds off the fungal plains of Yvara. Tan to cinnamon-brown fur. Always on the move. Gorges on the fungus when predators aren't around; proteins and essential nutrients the zeebuck can't immediately process are diverted to tubular sacks that grow down the length of its neck. These sacks are eaten by young when food is scarce, or re-assimilated after a period. Yvarema do not hunt, but occasionally tame zeebucks and harvest the protein sacks.",
+   "source": "WEG40121 The Kathol Rift p.76 (Home)"
+  },
+  {
+   "name": "DarkStryder Fire Creature",
+   "type": "DarkStryder-conjured fiery apparition",
+   "planet": "Alien Construct (Kathol Rift Waystation)",
+   "habitat": "Wherever summoned by its DarkStryder control artifact",
+   "dex": "3D",
+   "per": "1D",
+   "str": "2D",
+   "move": "15",
+   "size": "20 meters (scale: Speeder)",
+   "orneriness": "Controlled apparition",
+   "special": "SEARCH: 4D. FIRE: Inflicts 6D damage. A glowing deep-red cone-shaped fiery apparition that reaches almost 20 meters high and 20 meters wide, with a discernable eerie monstrous face, glowing ember-eyes, and huge ravenous jaws. Mist deploys this creature via a silvery-white wire-like DarkStryder artifact coiled around an arm — the wire glows red as it activates. Duration: 1D rounds, after which the fire dissipates. Blaster fire has no effect. The controller can direct the creature to herd or attack specific targets.",
+   "source": "WEG40121 The Kathol Rift p.68 (Waystation)"
   }
 // --- END OF CREATURES_DATA ---
 ];
