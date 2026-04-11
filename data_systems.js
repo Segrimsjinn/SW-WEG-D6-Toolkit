@@ -130,6 +130,7 @@ const SYSTEMS_DATA = [
   { "name": "Algnadesh", "grid": "O-9", "region": "Inner Rim", "col": 13, "row": 9, "quadrant": "E", "hours": 3.5 },
   { "name": "Algor", "grid": "S-6", "region": "Outer Rim Territories", "col": 17, "row": 6, "quadrant": "NE", "hours": 5.5 },
   { "name": "Algunnis", "grid": "Q-10", "region": "Mid Rim", "col": 15, "row": 10, "quadrant": "E", "hours": 3.3 },
+  { "name": "Alien Construct (Kathol Rift)", "grid": "M-21", "region": "Outer Rim Territories", "col": 11, "row": 21, "quadrant": "S", "hours": 71.5 },
   { "name": "Alion", "grid": "L-14", "region": "Inner Rim", "col": 10, "row": 14, "quadrant": "C", "hours": 2.2 },
   { "name": "Alios", "grid": "N-11", "region": "Colonies", "col": 12, "row": 11, "quadrant": "E", "hours": 1.5 },
   { "name": "Alis Point", "grid": "N-18", "region": "Outer Rim Territories", "col": 12, "row": 18, "quadrant": "SE", "hours": 3.2 },
