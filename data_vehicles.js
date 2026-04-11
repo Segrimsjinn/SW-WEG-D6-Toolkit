@@ -4434,6 +4434,30 @@ const VEHICLES_DATA = [
   ],
   "game_notes": "A small, tough landspeeder perfectly suited to patrol duty, with seating for six. Can carry a moderate-sized patrol team swiftly about their rounds and the rear-mounted deck gun packs enough punch to detain all but the best-armed intruders.",
   "source": "WEG41017 Star Wars Adventure Journal #17 p.82 (Special Ops: The Art of Infiltration)"
+},
+{
+  "name": "Uukaablis Trans-Systems Light Swoop",
+  "type": "Light swoop",
+  "scale": "Speeder",
+  "skill": "Swoop operation",
+  "crew": "1",
+  "passengers": "0",
+  "maneuverability": "4D",
+  "move": "175; 500 kmh",
+  "body_strength": "1D",
+  "weapons": [
+    {
+      "name": "2 Light Laser Cannons (fire-linked)",
+      "fire_arc": "Forward",
+      "crew": "1",
+      "skill": "Vehicle blasters",
+      "fire_control": "2D",
+      "range": "",
+      "damage": "3D"
+    }
+  ],
+  "game_notes": "Standard light swoop used by the Uukaablians for transportation along the elevated skyways of their capital city. Offered to the FarStar crew during Khzam's defection chase through the medical research complex. Highly maneuverable but can clip corners in tight hallway pursuits.",
+  "source": "WEG40209 The DarkStryder Campaign: Kathol Outback p.57 (Wildfire)"
 }
 // --- END OF VEHICLES_DATA ---
 ];

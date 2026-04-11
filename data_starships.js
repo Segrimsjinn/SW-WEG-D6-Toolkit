@@ -5892,6 +5892,57 @@ const STARSHIP_DATA = {
     }
    ],
    "source": "WEG40209 The DarkStryder Campaign: Kathol Outback p.17 (Denizens of the Outback)"
+  },
+  {
+   "rank": 99999,
+   "name": "The Scourge (Qektoth Attack Cruiser)",
+   "craft": "Qektoth Attack Cruiser",
+   "type": "Modified strike cruiser (biological technology)",
+   "scale": "Starfighter",
+   "length": "103 meters",
+   "crew": "30",
+   "gunners": "10",
+   "skeleton": "5/+10",
+   "passengers": "50",
+   "cargo": "100 metric tons",
+   "consumables": "1 year",
+   "hyperdrive": "x3",
+   "hyperdrive_backup": "x12",
+   "nav_computer": "Yes",
+   "maneuverability": "1D",
+   "space": "3",
+   "atmosphere": "260; 750 kmh",
+   "hull": "5D",
+   "shields": "2D+1 (can only be focused in one direction at a time due to bio-energy drain)",
+   "of_note": "Flagship of the Qektoth Confederation — a biotechnology-converted strike cruiser that bypasses conventional shields with its plasma weapons. Mounts an experimental Bio-Energy Array: a tangled mass of dark green sinew spotted with beige ovals that deploys on a mounting platform, crackling with blue electricity before firing capital-scale forked lightning. The massive energy drain from the living weapon prevents the ship from shielding more than one fire arc at a time, making it vulnerable to attacks from multiple vessels. Fires the Bio-Energy Array only once every 4 rounds. This vessel pursued Fasha Dansun's expedition and captured her for Confederation experimentation, and later engaged the FarStar and Drigor Tarrens at the Qektoth space station in the Qu'mock system.",
+   "sensors_passive": "40/2D",
+   "sensors_scan": "55/2D+1",
+   "sensors_search": "100/2D+2",
+   "sensors_focus": "4/3D+1",
+   "weapons": [
+    {
+     "name": "4 Plasma Cannons",
+     "fire_arc": "Turret",
+     "crew": "1",
+     "skill": "Starship gunnery",
+     "fire_control": "2D+2",
+     "space_range": "1-7/20/35",
+     "atmo_range": "100-700/2/3.5 km",
+     "damage": "5D (bypasses conventional shields)"
+    },
+    {
+     "name": "1 Bio-Energy Array",
+     "fire_arc": "Forward",
+     "crew": "6",
+     "scale": "Capital",
+     "skill": "Capital ship gunnery",
+     "fire_control": "1D+1",
+     "space_range": "1-30/55/75",
+     "atmo_range": "2-60/110/150 km",
+     "damage": "4D+1 (bypasses conventional shields; fires 1/4 rounds)"
+    }
+   ],
+   "source": "WEG40209 The DarkStryder Campaign: Kathol Outback p.62 (Wildfire)"
   }
  ],
  "Stock Yachts": [

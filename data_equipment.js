@@ -6360,6 +6360,15 @@ const EQUIPMENT_DATA = [
   "availability": "Basic suit X (illegal on most planets); modified suit is unique",
   "game_notes": "Skill: Powersuit operation: Krail 1010 armor. BASIC SUIT: +2D to Strength vs energy attacks, +2D+1 vs physical attacks; -1D to Dexterity and related skills. Powered movement: Move 15 rolled on powersuit operation skill. POWER SUIT: +1D to lifting. SENSOR POD: +1D+1 to search. INTEGRAL FLECHETTE LAUNCHER: 20m range, missile weapons skill, 3D stun. JET PACK: Move 100m horizontal/65m vertical, jet pack operation skill (base Easy difficulty), 16 charges, up to 2 per round. SEALED ENVIRO FILTER: Blocks harmful molecules; can fully seal with 3 hours of oxygen. Blast helmet filter includes voice disguiser (renders voiceprint ID futile). PHOTO-REACTIVE COATING: Microscopic photosensitive crystals reflect ambient colors, making the armor difficult to see in virtually any situation (+2D to sneak). REFLEC PLATING: Fine mesh of reflec sensor-absorbing material (favored by Imperial Storm Commandos) adds +1D to sneak. Worn by the enigmatic bounty hunter Mist, making them nearly invisible in most situations while still providing full protection.",
   "source": "WEG40209 The DarkStryder Campaign: Kathol Outback p.19 (Denizens of the Outback)"
+ },
+ {
+  "name": "Paravacc 1JC",
+  "category": "Medical",
+  "type": "Uukaablian MedCorp Paravacc 1JC Parasite-Repelling Vaccine",
+  "cost": "1,000",
+  "availability": "2",
+  "game_notes": "Skill: Medicine. Easy medicine roll to administer. Successful vaccination grants +1D to Strength for rolls to resist diseases caused by parasites for the next 20 hours. Each paravacc cylinder holds 10 doses. WARNING: Characters using the vaccine for more than 3 consecutive days begin to suffer what seems like utter exhaustion, losing 1 pip from each attribute per day until use ends. Each day without injection returns 1 pip per attribute. Prolonged use has been known to cause deleterious effects on the nervous system. Delivered via polished metal cylinder pressed against the back of the target's neck and activated via end stud; injection causes a slight headache but no other immediate effects.",
+  "source": "WEG40209 The DarkStryder Campaign: Kathol Outback p.54 (Wildfire)"
  }
 // --- END OF EQUIPMENT_DATA ---
 ];
