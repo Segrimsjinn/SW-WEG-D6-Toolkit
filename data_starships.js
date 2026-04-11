@@ -24943,6 +24943,58 @@ const STARSHIP_DATA = {
     }
    ],
    "source": "WEG40209 The DarkStryder Campaign: Kathol Outback p.16 (Denizens of the Outback)"
+  },
+  {
+   "rank": 99999,
+   "name": "Kathol Republic Navy Marauder Corvette (Quillion, Mirandine, Triumph, Juno II, Siroma, Solidarity, Bravado III)",
+   "craft": "Republic Sienar Systems Marauder-class Corvette",
+   "type": "Combat cruiser",
+   "scale": "Capital",
+   "length": "195 meters",
+   "skill": "Capital ship piloting: Marauder",
+   "crew": "129",
+   "gunners": "48",
+   "skeleton": "52/+10",
+   "crew_skill": "Astrogation 2D+2, capital ship gunnery 3D+2, capital ship piloting 3D+2, capital ship shields 3D, sensors 3D+1",
+   "passengers": "40 (troops)",
+   "cargo": "300 metric tons",
+   "consumables": "3 months",
+   "cost": "Not available for sale",
+   "hyperdrive": "x2",
+   "nav_computer": "Yes",
+   "maneuverability": "2D+1",
+   "space": "5",
+   "atmosphere": "295; 850 kmh",
+   "hull": "3D+2",
+   "shields": "2D+1",
+   "of_note": "The Kathol Republic's entire obsolete navy consists of a small fleet of aging Marauder-class corvettes — led by Fleet Commander Hendric Faile aboard the Triumph. The fleet is no match for Sarne's forces but more than adequate to threaten a lone Corellian corvette, which is why Captain Treidum targeted them for his deception campaign. One ship (the Bravado III under Captain Willa Udine) was crippled in a Lance of Endor attack, another badly damaged. The surviving corvettes (Quillion, Mirandine, Triumph, Juno II, Siroma, Solidarity) converge on the FarStar when it arrives in the Episol system, mistaking it for Treidum's ship. Senator Sho'ban Do blames President Hobat for failing to properly fund military modernization.",
+   "sensors_passive": "40/1D",
+   "sensors_scan": "80/1D+2",
+   "sensors_search": "100/2D+2",
+   "sensors_focus": "5/3D+1",
+   "weapons": [
+    {
+     "name": "8 Double Turbolaser Cannons",
+     "fire_arc": "2 front, 2 left, 2 right, 2 back",
+     "crew": "3",
+     "skill": "Capital ship gunnery",
+     "fire_control": "3D",
+     "space_range": "3-15/35/75",
+     "atmo_range": "300-1.5/3.5/7 km",
+     "damage": "5D"
+    },
+    {
+     "name": "3 Tractor Beam Projectors",
+     "fire_arc": "2 front, 1 back",
+     "crew": "8",
+     "skill": "Capital ship gunnery",
+     "fire_control": "2D",
+     "space_range": "1-5/15/30",
+     "atmo_range": "2-10/30/60 km",
+     "damage": "4D"
+    }
+   ],
+   "source": "WEG40209 The DarkStryder Campaign: Kathol Outback p.41 (Little Empires)"
   }
  ],
  "Stock Capital Frigates": [
