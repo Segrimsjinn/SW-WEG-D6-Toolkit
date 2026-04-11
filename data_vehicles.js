@@ -4458,6 +4458,123 @@ const VEHICLES_DATA = [
   ],
   "game_notes": "Standard light swoop used by the Uukaablians for transportation along the elevated skyways of their capital city. Offered to the FarStar crew during Khzam's defection chase through the medical research complex. Highly maneuverable but can clip corners in tight hallway pursuits.",
   "source": "WEG40209 The DarkStryder Campaign: Kathol Outback p.57 (Wildfire)"
+},
+{
+  "name": "Sky-Dreadnaught Maxion",
+  "type": "Exocron Airfleet battleship (archaic airspeeder)",
+  "scale": "Walker",
+  "length": "200 meters",
+  "skill": "Repulsorlift operation: archaic airspeeder (unskilled -2D)",
+  "crew": "340, gunners: 120, skeleton: 280/+10",
+  "crew_skill": "Varies dramatically",
+  "passengers": "150 (troops)",
+  "cargo": "880 metric tons",
+  "cover": "Full",
+  "altitude": "Ground level-10 kilometers",
+  "cost": "Not available for sale",
+  "maneuverability": "",
+  "move": "21; 60 kmh",
+  "body_strength": "5D+2",
+  "weapons": [
+    { "name": "18 Large Bore Projectile Cannons", "fire_arc": "3 front, 6 left, 6 right, 3 back", "crew": "4", "skill": "Archaic guns: projectile cannon", "fire_control": "1D", "range": "6-25/250/20 km", "damage": "6D" },
+    { "name": "38 Percussion Repeater Cannons", "fire_arc": "5 front, 14 left, 14 right, 5 back", "crew": "1", "scale": "Starfighter", "skill": "Archaic guns: percussion weapons", "fire_control": "1D", "range": "2-10/250/1 km", "damage": "3D" },
+    { "name": "2 Static Ion Field Dischargers", "fire_arc": "Turret", "crew": "5", "scale": "Starfighter", "skill": "Archaic guns: ion field discharger", "fire_control": "1D", "range": "1 km (Moderate difficulty)", "damage": "4D ion damage" }
+  ],
+  "game_notes": "Flagship of the Exocron Airfleet, commanded by Captain Horzao Darr. A massive airfoil-shaped vessel with a central spar connected to two huge finned cylinders bearing bulbous turrets. Carries cloud-jumper regiments and Skylark escort craft. Exocron's hidden technology keeps it airborne despite its immense size.",
+  "source": "WEG40209 The DarkStryder Campaign: Kathol Outback p.69 (The Masters of Exocron)"
+},
+{
+  "name": "Airfleet Cruiser Desadates",
+  "type": "Exocron Airfleet cruiser",
+  "scale": "Walker",
+  "skill": "Repulsorlift operation: archaic airspeeder",
+  "maneuverability": "1D",
+  "move": "25; 75 kmh",
+  "body_strength": "3D",
+  "weapons": [
+    { "name": "10 Projectile Cannons", "fire_arc": "", "crew": "", "scale": "Capital", "skill": "Archaic guns: projectile cannon", "fire_control": "1D", "range": "6-25/250/20 km", "damage": "3D" },
+    { "name": "18 Percussion Cannons", "fire_arc": "", "crew": "", "scale": "Starfighter", "skill": "Archaic guns: percussion weapons", "fire_control": "1D", "range": "2-10/250/1 km", "damage": "3D" }
+  ],
+  "game_notes": "Sister cruiser to the Maxion and Bremarc. Attempted to transport the FarStar's probe droid vessel back to Caballa City before being attacked by western corsair gunships. Went down in the ocean with all repulsorlift pods destroyed.",
+  "source": "WEG40209 The DarkStryder Campaign: Kathol Outback p.72 (The Masters of Exocron)"
+},
+{
+  "name": "Airfleet Rocket Cruiser Bremarc",
+  "type": "Exocron Airfleet rocket cruiser",
+  "scale": "Walker",
+  "skill": "Repulsorlift operation: archaic airspeeder",
+  "maneuverability": "1D",
+  "move": "25; 70 kmh",
+  "body_strength": "3D",
+  "weapons": [
+    { "name": "6 Projectile Cannons", "fire_arc": "", "crew": "", "skill": "Archaic guns: projectile cannon", "fire_control": "1D", "range": "6-25/250/20 km", "damage": "3D" },
+    { "name": "14 Percussion Cannons", "fire_arc": "", "crew": "", "scale": "Starfighter", "skill": "Archaic guns: percussion weapons", "fire_control": "1D", "range": "2-10/250/1 km", "damage": "3D" },
+    { "name": "24 Air-to-Air Rockets", "fire_arc": "", "crew": "", "scale": "Starfighter", "skill": "Missile weapons", "fire_control": "1D", "range": "50-75/300/750", "damage": "6D" }
+  ],
+  "game_notes": "Rocket cruiser of the Exocron Airfleet, assigned to defend the Ministry's tractor beam projector bunker. Works with Skyraptor wings to screen the bunker from aerial assault.",
+  "source": "WEG40209 The DarkStryder Campaign: Kathol Outback p.77 (The Masters of Exocron)"
+},
+{
+  "name": "Exocron Skylark",
+  "type": "Exocron Airfleet escort airspeeder",
+  "scale": "Speeder",
+  "skill": "Repulsorlift operation: airspeeder",
+  "maneuverability": "2D+1",
+  "move": "70; 200 kmh",
+  "body_strength": "3D+2",
+  "weapons": [
+    { "name": "1 Projectile Cannon", "fire_arc": "Forward", "crew": "1", "skill": "Archaic guns", "fire_control": "1D", "range": "6-25/250/20 km", "damage": "3D" },
+    { "name": "2 Percussion Cannons", "fire_arc": "Forward", "crew": "1", "skill": "Archaic guns", "fire_control": "1D", "range": "2-10/250/1000", "damage": "3D" }
+  ],
+  "game_notes": "Bizarre winged aircraft deployed from sky-dreadnoughts as escort and interception vessels. Used to corral the FarStar's X-wings when they first entered the Exocron atmosphere.",
+  "source": "WEG40209 The DarkStryder Campaign: Kathol Outback p.69 (The Masters of Exocron)"
+},
+{
+  "name": "Exocron Skyraptor",
+  "type": "Exocron Airfleet starfighter",
+  "scale": "Starfighter",
+  "skill": "Repulsorlift operation: airspeeder",
+  "maneuverability": "3D",
+  "move": "350; 1,000 kmh",
+  "body_strength": "1D+2",
+  "weapons": [
+    { "name": "2 Percussion Cannons", "fire_arc": "Forward", "crew": "1", "skill": "Archaic guns", "fire_control": "1D", "range": "2-10/250/1 km", "damage": "3D" },
+    { "name": "4 Air-to-Air Rockets", "fire_arc": "Forward", "crew": "1", "skill": "Missile weapons", "fire_control": "1D", "range": "50-75/300/750", "damage": "6D" }
+  ],
+  "game_notes": "Exocron's primary starfighter-scale air combat craft. Fast but lightly armored. Deployed to defend the Bremarc and the Ministry's tractor beam projector bunker during the FarStar's assault.",
+  "source": "WEG40209 The DarkStryder Campaign: Kathol Outback p.77 (The Masters of Exocron)"
+},
+{
+  "name": "Exocron Corsair Raider",
+  "type": "Western corsair winged gunship",
+  "scale": "Speeder",
+  "skill": "Repulsorlift operation: airspeeder",
+  "maneuverability": "2D+1",
+  "move": "70; 200 kmh",
+  "body_strength": "4D+2",
+  "weapons": [
+    { "name": "1 Projectile Cannon", "fire_arc": "Forward", "crew": "1", "skill": "Archaic guns", "fire_control": "1D", "range": "6-25/250/20 km", "damage": "3D" },
+    { "name": "4 Percussion Cannons", "fire_arc": "Forward", "crew": "1", "skill": "Archaic guns", "fire_control": "1D", "range": "2-10/250/1 km", "damage": "3D" },
+    { "name": "12 Air-to-Air Rockets", "fire_arc": "Forward", "crew": "1", "skill": "Missile weapons", "fire_control": "1D", "range": "50-75/300/750", "damage": "6D" }
+  ],
+  "game_notes": "Winged, torpedo-shaped gunships used by the western canyon corsairs of Exocron. Fast and heavily armed for hit-and-run raids. Several can lash themselves to the hull of a targeted cruiser for boarding actions.",
+  "source": "WEG40209 The DarkStryder Campaign: Kathol Outback p.72 (The Masters of Exocron)"
+},
+{
+  "name": "Exocron Archaic Personal Walker",
+  "type": "Ancient one-man walker (Pagda Gevtes)",
+  "scale": "Walker",
+  "skill": "Walker operation: archaic",
+  "crew": "1",
+  "maneuverability": "2D",
+  "move": "21; 60 kmh",
+  "body_strength": "1D+2",
+  "weapons": [
+    { "name": "Blaster Cannon", "fire_arc": "Forward", "crew": "1", "skill": "Vehicle blasters", "fire_control": "1D", "range": "", "damage": "4D" },
+    { "name": "Concussion Grenade Launcher", "fire_arc": "Forward", "crew": "1", "skill": "Missile weapons", "fire_control": "1D", "range": "", "damage": "2D" }
+  ],
+  "game_notes": "All rivets and bolts — a model that has been out of service in Imperial space for decades, but maintained by the Devisors for use in the Ministry of Technology's narrow corridors. Pagda Gevtes pilots one against the FarStar crew during Adrimetrum's rescue, firing the cannon in enclosed spaces and attempting to crush escapees beneath its treads.",
+  "source": "WEG40209 The DarkStryder Campaign: Kathol Outback p.77 (The Masters of Exocron)"
 }
 // --- END OF VEHICLES_DATA ---
 ];

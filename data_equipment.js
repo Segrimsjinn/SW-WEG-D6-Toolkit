@@ -6369,6 +6369,24 @@ const EQUIPMENT_DATA = [
   "availability": "2",
   "game_notes": "Skill: Medicine. Easy medicine roll to administer. Successful vaccination grants +1D to Strength for rolls to resist diseases caused by parasites for the next 20 hours. Each paravacc cylinder holds 10 doses. WARNING: Characters using the vaccine for more than 3 consecutive days begin to suffer what seems like utter exhaustion, losing 1 pip from each attribute per day until use ends. Each day without injection returns 1 pip per attribute. Prolonged use has been known to cause deleterious effects on the nervous system. Delivered via polished metal cylinder pressed against the back of the target's neck and activated via end stud; injection causes a slight headache but no other immediate effects.",
   "source": "WEG40209 The DarkStryder Campaign: Kathol Outback p.54 (Wildfire)"
+ },
+ {
+  "name": "Exocron Repulsorlift Personal Jump Pack (Cloud Jumper)",
+  "category": "Personal Gear",
+  "type": "Exocron Airfleet cloud-jumper repulsorlift pack",
+  "cost": "Not available for sale",
+  "availability": "3, R",
+  "game_notes": "Skill: Repulsorlift operation. Not a true rocket pack — the wearer cannot fly. Instead, the pack allows the wearer to make incredible leaps of over 200 meters at a time, from point to point (hence the 'Cloud Jumper' nickname). Can also be used to slow a free-fall descent for a soft landing in most cases. Cannot be carried while hauling another pack or another person without -1D penalty to repulsorlift operation rolls. Moderate-to-Difficult repulsorlift operation rolls required for most tactical leaps. Looks similar to a popular model of rug-cleaning droid.",
+  "source": "WEG40209 The DarkStryder Campaign: Kathol Outback p.76 (The Masters of Exocron)"
+ },
+ {
+  "name": "Exocron Devisor Flash Pistol",
+  "category": "Archaic Weapons",
+  "type": "Archaic non-lethal flash weapon",
+  "cost": "Not available for sale",
+  "availability": "3, X (Devisors only)",
+  "game_notes": "Skill: Archaic guns: flash pistol. Does no damage. Target must make a Moderate Perception roll or be blinded for 1D rounds. Used by Devisors for self-defense inside the Ministry of Technology. Effective against walker pilots when fired through cockpit viewports.",
+  "source": "WEG40209 The DarkStryder Campaign: Kathol Outback p.77 (The Masters of Exocron)"
  }
 // --- END OF EQUIPMENT_DATA ---
 ];

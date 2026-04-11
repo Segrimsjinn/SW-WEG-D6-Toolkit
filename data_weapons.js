@@ -5454,6 +5454,36 @@ const WEAPONS_DATA = [
   "range": "3-6/20/40",
   "game_notes": "Skill: Blaster. Scale: Character. Availability: Unique. Fire Rate: 1/2. Modified with side-mounted blaster sight, galven pattern upgrade, energy converter valve adjustment, dualistic static pulse adaptors, and half a dozen other tweaks. These improvements increase overall power but cumulatively reduce range. Love conducts most of his business at close range. A Latarzian 'soul weapon' — more than merely a gun, it is a statement of identity.",
   "source": "WEG41017 Star Wars Adventure Journal #17 p.121 (Love Is A Warm Blaster)"
+ },
+ {
+  "category": "Archaic Slugthrowers",
+  "name": "Exocron Percussion Rifle",
+  "type": "Archaic explosive-projectile long arm",
+  "cost": "Not available for sale (Exocron-only)",
+  "damage": "4D+2",
+  "range": "",
+  "game_notes": "Skill: Archaic guns. Archaic guns of a type that have not been in common use since the days of the Old Republic — fires explosive projectiles. Standard infantry weapon of the Exocron Airfleet and Ministry Guards. Typically fitted with a bayonet blade (STR+1D+2) for close-quarters combat.",
+  "source": "WEG40209 The DarkStryder Campaign: Kathol Outback p.69 (The Masters of Exocron)"
+ },
+ {
+  "category": "Archaic Slugthrowers",
+  "name": "Exocron Percussion Pistol",
+  "type": "Archaic explosive-projectile sidearm",
+  "cost": "Not available for sale (Exocron-only)",
+  "damage": "3D+2",
+  "range": "",
+  "game_notes": "Skill: Archaic guns. Sidearm version of the Exocron percussion rifle. Carried by corsairs, officers, and Airfleet pilots as a personal weapon.",
+  "source": "WEG40209 The DarkStryder Campaign: Kathol Outback p.72 (The Masters of Exocron)"
+ },
+ {
+  "category": "Archaic Slugthrowers",
+  "name": "Exocron Slugthrower Pistol",
+  "type": "Archaic ceremonial slugthrower",
+  "cost": "Not available for sale",
+  "damage": "3D",
+  "range": "",
+  "game_notes": "Skill: Archaic guns. Carried by Exocron command-rank officers like Captain Horzao Darr and commerce makers like Eida Sharden. Considered a mark of authority in Exocron society.",
+  "source": "WEG40209 The DarkStryder Campaign: Kathol Outback p.70 (The Masters of Exocron)"
  }
 // --- END OF WEAPONS_DATA ---
 ];
