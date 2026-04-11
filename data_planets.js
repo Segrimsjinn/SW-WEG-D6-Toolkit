@@ -10685,6 +10685,33 @@ const PLANETS_DATA = [
     summary: "Sebiris is a hot, muggy jungle world at the edge of Kathol sector, populated by the Sebiri — a greenish-brown humanoid race covered in thick scaly hide with bony horn ridges, red slit-pupiled eyes, and night vision. The Sebiri are excellent hunters and trappers who live in tribal villages of 200 or fewer. The extremely thick jungle terrain is filled with dangerous indigenous predators. There are no major installations like spaceports or cities.",
     locations: "Sebiri Village (Small tribal settlement of two to three dozen extended families, at most 200 people. Scale-covered children play in the mud while the females watch strangers suspiciously. Males treat visitors as honored guests, offering sap-based beverages). Hexagonal Mound (Sacred ruin near the village — carved stone decorated with intricate patterns, constructed from a single piece of stone transported nearly 2,000 km from the southernmost continent. Created by 'those who came before,' an advanced race that 'spread their people across the sky' using small glowing devices to perform miracles — technology remarkably similar to Moff Sarne's DarkStryder artifacts. Herbs growing near the mound provide the only antidote to the Wraith's assassination toxin).",
     ofNote: "THE SEBIRI: Humanoid race native to this world. Greenish-brown with thick scaly hide, bony horn ridge from nose to forehead, red slit-pupiled eyes, long black mane hair often braided with bone and foliage decorations. Excellent stealth hunters (4D+2 stealth innate), night vision, enhanced olfactory senses (+1D scent tracking), sign language for silent communication. They carry primitive flintlocks, spears, slings, and clubs. They are superstitious but generally friendly to strangers bearing gifts (Ka'va'tuk). Trespassing on L'noak'chi (holy ground) is met with violence. | THE WRAITH'S CONNECTION: Imperial agent Klendost Petrivoor (Drenn) made frequent visits to acquire a lethal toxin used for political assassinations. Some Sebiri recognize him on sight. | ANCIENT RUINS: The hexagonal mound is a relic of an ancient civilization — 'those who came before' — whose technology appears connected to DarkStryder. The mound interior has no carvings or indicators of origin despite stunning architecture."
+  },
+  {
+    name: "Binaros",
+    system: "Binaros",
+    star: "Unnamed",
+    grid: "M-21",
+    region: "Outer Rim Territories — Kathol Outback",
+    type: "Terrestrial",
+    temperature: "Hot",
+    atmosphere: "Type I (breathable)",
+    hydrosphere: "Moist",
+    gravity: "Standard",
+    terrain: "Early succession tropical forests, oceans",
+    lengthOfDay: "32 standard hours",
+    lengthOfYear: "110 standard days",
+    sapientSpecies: "None",
+    starport: "Landing field",
+    population: "None (uninhabited)",
+    function: "Natural resources",
+    government: "None",
+    techLevel: "None",
+    majorExports: "None",
+    majorImports: "None",
+    source: "WEG40209 The DarkStryder Campaign: Kathol Outback p.23 (Plant Food)",
+    summary: "Binaros is a young, hot, humid planet largely covered in ocean with a few land masses clustered around the equator. High volcanic activity and its close proximity to its sun keep the atmosphere sweltering. The land masses are rich in vegetation and animal life — mostly grasses, bushes, shrubs, and young trees, none growing much higher than two meters. Animals are an even mix between docile herbivores and fierce predators. The islands are periodically flooded every decade or so, creating rapid early-succession plant growth.",
+    locations: "Imperial Research Station (Abandoned hidden Imperial biological weapons research facility, buried in a hill behind an ancient temple and concealed by jungle vegetation. Contains a comm room, barracks, officers' quarters, scientists' quarters, biolab with climate-controlled mini-labs, biotesting lab overgrown with corrosive green algae, and a storeroom where MSE-X-PR6 was abandoned. Accessible via a hidden turbolift door in an ancient crypt). Ancient Temple (Twenty-five meter tall weathered stone structure covered in vines, with a single arched doorway. Built ~300 years ago by a small cult venerating a solemn hermitic deity. The cult was wiped out by disease within 20 years. Contains a main worship chamber with altar and pews, and a burial crypt with five empty hexagonal sarcophagi and colorful murals depicting small shaggy simian beings). Dead Zone (Perfectly symmetrical 100m-diameter clearing of gray lifeless soil near the ruins — result of Imperial DarkStryder artifact experimentation. Force-sensitive characters feel a strange twinge here). Landing Field (25m semi-circular area of charred soil 175m northeast of the ruins, used by Imperial shuttles and cargo vessels. Jungle vegetation is beginning to reclaim it).",
+    ofNote: "WILDLIFE: Binaros is home to Binarian Sabercats (huge eight-pawed feline predators, 2-3m long with camouflaged brown-tan fur, bony tail bulb for mating rituals, huge incisors) and Binarian Carnivorous Plants (3m tall ambush predators with six 3m tendrils and a digestive maw, capable of feeding on creatures up to 2m long). | DANGEROUS FLORA: Small pink-tinted capless mushrooms cause severe stomach pains and incapacitation (cure with medpac). Small white berries cloud thought processes for 6 hours (-1D to Knowledge rolls). Large oval leaves are edible but stringy. Round blue succulent fruits are tart and delicious. Red-brown filamentous algae is mildly poisonous but aids wound healing when applied with a medpac (+2 to first aid). | MOTHER PLANT SPORES: A dormant plant on Binaros releases yellow spores that cling to fur and clothing. In warm, dark, metal-rich environments (like a starship hold), these spores rapidly grow into a massive 10m mother plant that spawns mobile 'feeder' creatures. The plant cycles through growth stages in two weeks, progressing to a nitrogen-hungry spawning stage where feeders hunt blood from living creatures. Visiting ships should grooming thoroughly before departure. | IMPERIAL REMNANTS: Moff Sarne's recon team discovered the temple and established a research base to study biological weapons. The station was abandoned ~1 year ago when Sarne recalled research teams to Kal'Shebbol. A beacon still triggers when intruders enter the Imperial labs, alerting Sarne's patrol flotilla lurking in the area. The research ruins still contain a functional DarkStryder artifact (stolen by MSE-X-PR6)."
   }
 // --- END OF PLANETS_DATA ---
 ];

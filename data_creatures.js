@@ -8419,6 +8419,62 @@ const CREATURES_DATA = [
    "orneriness": "Aggressive predator",
    "special": "BITE: 4D+1 damage first round, plus 1D additional damage every round the creature stays clamped. Clamping jaw has a Strength of 7D — killing the creature will NOT release the jaw (system floods with a locking chemical upon death). CLAWS: STR+1 physical damage. DEW CLAWS: Sheathed claws on all four hind legs can sink nearly half a meter into the ground, anchoring the creature and its victim. Provides +2D Strength bonus to resist being moved — killing the creature will NOT weaken the dew claws' hold. Skills: tracking 5D, brawling 5D+2. Sometimes called 'clampjaws,' krizar are fierce guard animals indigenous to Torpris, used by many estates and compounds. Some analogous species inhabit Vodran and other marsh-like worlds, but krizar are the most vicious and are exported to other systems for a hefty price.",
    "source": "WEG41017 Star Wars Adventure Journal #17 p.56-57 (Jade Solitaire)"
+  },
+  {
+   "name": "Binarian Sabercat",
+   "type": "Jungle predator",
+   "planet": "Binaros",
+   "habitat": "Tropical forests and undergrowth",
+   "dex": "3D",
+   "per": "3D+1",
+   "str": "3D+2",
+   "move": "12",
+   "size": "1m at shoulder, 2-3m long",
+   "orneriness": "Aggressive predator",
+   "special": "BRAWLING PARRY: 4D. SEARCH: 4D+1, SNEAK: 5D. BRAWLING: 4D. CLAWS: Can attack with two claw attacks per round without penalty (third paw -1D, fourth -2D, etc.). Claws do STR+1D damage. BITE: Huge teeth do STR+2D damage. A lie-in-wait ambush predator with eight powerful clawed paws and natural brown-tan camouflage fur speckled with green splotches. Has a 2m-long tail ending in a bony bulbous protrusion (used in mating rituals, not combat). Four paws can be brought to bear on an opponent including a rear raking attack.",
+   "source": "WEG40209 The DarkStryder Campaign: Kathol Outback p.27 (Plant Food)"
+  },
+  {
+   "name": "Binarian Carnivorous Plant",
+   "type": "Ambush predator plant",
+   "planet": "Binaros",
+   "habitat": "Jungle undergrowth",
+   "dex": "1D",
+   "per": "1D",
+   "str": "4D",
+   "move": "0 (mouth moves in 2m radius)",
+   "size": "3 meters tall",
+   "orneriness": "Ambush predator",
+   "special": "MISSILE WEAPONS: tendril 3D+1. HIDE: 4D. BRAWLING: 5D. TENDRILS: Six 3m-long tendrils entangle victims — no damage, but -1D to all Dex rolls and +1D to plant's next bite attack. Entangled characters make opposed Strength rolls or are drawn closer. BITE: 4D+1 damage from digestive juices every other round (via brawling). On incapacitated result, victim is swallowed. Only one victim can be entrapped at a time. Lies still until prey comes within reach, then snakes out tendrils to draw prey into its bulbous oval maw (three modified leaves atop a half-meter stalk adorned with alternating orange and red leaves). Can go months between feedings.",
+   "source": "WEG40209 The DarkStryder Campaign: Kathol Outback p.28 (Plant Food)"
+  },
+  {
+   "name": "Binaros Feeder",
+   "type": "Mobile hunter plant (spore-spawned)",
+   "planet": "Binaros",
+   "habitat": "Mother plant territory; spreads to any warm, dark, metal-rich environment",
+   "dex": "2D+2",
+   "per": "1D",
+   "str": "1D+1",
+   "move": "15",
+   "size": "0.5 meters tall",
+   "orneriness": "Mindless hunter — swarms prey",
+   "special": "BRAWLING PARRY: 3D+2, RUNNING: 4D+1. SEARCH: 2D+1, SNEAK: 4D, HIDE: 4D. BRAWLING: 2D. PROBOSCIS: Needle-like proboscis stabs for STR+1D damage. If attached for more than one turn, begins sucking blood for +1D damage per turn. BRAWLING SWARM: Each additional feeder beyond the first attacking an opponent grants +1D to all attackers' brawling rolls (up to 5 feeders on a human-sized target). Spawned by a mother plant to gather water, minerals, and nitrogen (from blood). Four fleshy vine-like legs, lichen-encrusted underbelly with water-storage sacs, spiny thorned carapace, and protruding bony proboscis. Non-intelligent — responds to environmental cues triggering hunt, flee, and feed behaviors. Prefers darkened corridors and shadowed spaces.",
+   "source": "WEG40209 The DarkStryder Campaign: Kathol Outback p.35 (Plant Food)"
+  },
+  {
+   "name": "Binaros Mother Plant",
+   "type": "Huge spawning plant (Speeder scale)",
+   "planet": "Binaros",
+   "habitat": "Warm, dark, metal-rich environments",
+   "dex": "—",
+   "per": "—",
+   "str": "5D+1",
+   "move": "0",
+   "size": "10 meters in diameter",
+   "orneriness": "Non-sentient",
+   "special": "SCALE: Speeder. MAW: STR+1D damage but feeders must place victim inside to attack. SIZE: +10 to hit rolls to strike a vital part (otherwise attacks do not harm it). WEAKNESS: Energy weapons do +1D damage. In natural habitat on Binaros, the adult plant is dormant during daylight and folds in on itself, unfurling only at night. Life cycle: grows from spore, generates feeders to bring nutrients (water, minerals, metals for growth, then blood for nitrogen when preparing to spawn new spores). Completes cycle in 1-2 weeks. Round body with a huge thorny-toothed maw hidden by leafy stalks, six short taproots and dense secondary root mat, green coloration with brown roots. Emits a mild sweet-honey and earthy scent. The FarStar's hold is actually a better environment than Binaros — warm, metal-rich, and the feeders solve the water problem by raiding hydroponics.",
+   "source": "WEG40209 The DarkStryder Campaign: Kathol Outback p.37 (Plant Food)"
   }
 // --- END OF CREATURES_DATA ---
 ];

@@ -6351,6 +6351,15 @@ const EQUIPMENT_DATA = [
   "availability": "X",
   "game_notes": "Skill: Demolitions: detonator glove. Originally a BothiCorp Labor Droid Remote Glove for controlling cargo-handling BI labor droids. Commands entered via input buttons in palm and wristband, uploaded via built-in comlink. Moderate computer repair roll to replace and modify command chips and programming. Easy demolitions roll to synchronize each explosive device's remote detonator to the glove's comlink. Once modified, controls up to 200 individual explosive devices at 300 meters range. Created by Lieutenant Morgan Q. Raventhorn; has become near-standard gear in the Special Ops community.",
   "source": "WEG41017 Star Wars Adventure Journal #17 p.78 (Special Ops: The Art of Infiltration)"
+ },
+ {
+  "name": "Mist's Modified Krail 1010 Photo-reactive Armor",
+  "category": "Combat Armor",
+  "type": "Modified personal battle armor",
+  "cost": "80,000 (with all modifications)",
+  "availability": "Basic suit X (illegal on most planets); modified suit is unique",
+  "game_notes": "Skill: Powersuit operation: Krail 1010 armor. BASIC SUIT: +2D to Strength vs energy attacks, +2D+1 vs physical attacks; -1D to Dexterity and related skills. Powered movement: Move 15 rolled on powersuit operation skill. POWER SUIT: +1D to lifting. SENSOR POD: +1D+1 to search. INTEGRAL FLECHETTE LAUNCHER: 20m range, missile weapons skill, 3D stun. JET PACK: Move 100m horizontal/65m vertical, jet pack operation skill (base Easy difficulty), 16 charges, up to 2 per round. SEALED ENVIRO FILTER: Blocks harmful molecules; can fully seal with 3 hours of oxygen. Blast helmet filter includes voice disguiser (renders voiceprint ID futile). PHOTO-REACTIVE COATING: Microscopic photosensitive crystals reflect ambient colors, making the armor difficult to see in virtually any situation (+2D to sneak). REFLEC PLATING: Fine mesh of reflec sensor-absorbing material (favored by Imperial Storm Commandos) adds +1D to sneak. Worn by the enigmatic bounty hunter Mist, making them nearly invisible in most situations while still providing full protection.",
+  "source": "WEG40209 The DarkStryder Campaign: Kathol Outback p.19 (Denizens of the Outback)"
  }
 // --- END OF EQUIPMENT_DATA ---
 ];

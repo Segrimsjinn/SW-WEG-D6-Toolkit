@@ -5798,6 +5798,100 @@ const STARSHIP_DATA = {
     }
    ],
    "source": "WEG41016 Star Wars Adventure Journal #16 p.209 (Credit Denied)"
+  },
+  {
+   "rank": 99999,
+   "name": "Scupper Bantoo (Maddie Macatten's Ship)",
+   "craft": "Modified CorelliSpace Gymsnor-2 Freighter",
+   "type": "Modified light freighter",
+   "scale": "Starfighter",
+   "length": "31.7 meters",
+   "skill": "Space transports: Gymsnor-2",
+   "crew": "1",
+   "passengers": "4",
+   "cargo": "82 metric tons",
+   "consumables": "2 months",
+   "cost": "Not available for sale",
+   "hyperdrive": "x3",
+   "hyperdrive_backup": "x14",
+   "nav_computer": "Yes",
+   "maneuverability": "",
+   "space": "3",
+   "atmosphere": "260; 750 kmh",
+   "hull": "5D",
+   "shields": "1D+2",
+   "of_note": "A very old and battered CorelliSpace model, obsolete 20 years ago. Maddie Macatten and her former master made extensive modifications to keep it moderately up to date, but there's only so much one can do with such an old ship. Maddie flew it from her master's docking bays on Kal'Shebbol after he was killed by an Aing-Tii ship; she has the papers, so the ship is legally hers. Now roams the Kathol Outback while Maddie hunts for the Aing-Tii homeworld.",
+   "sensors_passive": "15/0D",
+   "sensors_scan": "30/1D",
+   "sensors_search": "45/2D",
+   "sensors_focus": "3/3D",
+   "weapons": [
+    {
+     "name": "Heavy Blaster Cannon",
+     "fire_arc": "Turret",
+     "crew": "1",
+     "skill": "Starship gunnery",
+     "fire_control": "2D",
+     "space_range": "1-5/10/17",
+     "atmo_range": "100-500/1/1.7 km",
+     "damage": "4D+2"
+    }
+   ],
+   "source": "WEG40209 The DarkStryder Campaign: Kathol Outback p.21 (Denizens of the Outback)"
+  },
+  {
+   "rank": 99999,
+   "name": "Typical Skandrei Bandit Gunship",
+   "craft": "Modified CSA Etti Light Transport",
+   "type": "Modified medium freighter",
+   "scale": "Capital",
+   "length": "125 meters",
+   "skill": "Space transports: Etti Lighter",
+   "crew": "30",
+   "gunners": "14",
+   "skeleton": "15/+5",
+   "crew_skill": "Capital ship gunnery 4D, capital ship shields 3D+2, space transports 3D+2, starship gunnery 4D",
+   "passengers": "15",
+   "cargo": "400 metric tons",
+   "consumables": "3 days",
+   "cost": "Not available",
+   "hyperdrive": "x2",
+   "hyperdrive_backup": "x6",
+   "nav_computer": "Yes",
+   "maneuverability": "1D",
+   "space": "4",
+   "atmosphere": "280; 800 kmh",
+   "hull": "3D",
+   "shields": "2D",
+   "of_note": "One of the smaller ships employed by the Skandrei Bandits, a cutthroat gang of pirates who prey on colonies throughout the Kathol Outback. Obtained from an arms dealer in the Corporate Sector and retooled for piracy. The Skandrei fleet comprises six or seven small capital ships plus supporting starfighters; they typically travel in roving bands of 2-3 ships, uniting only for well-defended targets. They hit 1-2 settlements per month, stealing high-tech equipment and foodstuffs. Rumors persist of a secret space station in the Marcol Void, but no known permanent base and leader unknown.",
+   "sensors_passive": "30/1D",
+   "sensors_scan": "60/2D",
+   "sensors_search": "90/3D+2",
+   "sensors_focus": "6/4D",
+   "weapons": [
+    {
+     "name": "4 Double Turbolaser Cannons",
+     "fire_arc": "1 front, 1 left, 1 right, 1 back",
+     "crew": "2",
+     "skill": "Capital ship gunnery",
+     "fire_control": "3D",
+     "space_range": "3-15/35/75",
+     "atmo_range": "300-1.5/3.5/7.5 km",
+     "damage": "4D+2"
+    },
+    {
+     "name": "6 Quad Laser Cannons",
+     "fire_arc": "2 front, 1 left, 1 right, 2 back",
+     "crew": "1",
+     "scale": "Starfighter",
+     "skill": "Starship gunnery",
+     "fire_control": "1D",
+     "space_range": "1-5/10/20",
+     "atmo_range": "100-500/1/2 km",
+     "damage": "5D"
+    }
+   ],
+   "source": "WEG40209 The DarkStryder Campaign: Kathol Outback p.17 (Denizens of the Outback)"
   }
  ],
  "Stock Yachts": [
@@ -24807,6 +24901,48 @@ const STARSHIP_DATA = {
      "damage": "5D"
     }
    ]
+  },
+  {
+   "rank": 99999,
+   "name": "Lance of Endor (Lialic II — Captain Rolf Treidum)",
+   "craft": "Corellian Engineering Corporation Corvette",
+   "type": "Multi-purpose mid-sized vessel",
+   "scale": "Capital",
+   "length": "150 meters",
+   "skill": "Capital ship piloting: Corellian corvette",
+   "crew": "85",
+   "gunners": "12",
+   "skeleton": "65/+10",
+   "crew_skill": "Astrogation 3D, capital ship gunnery 4D+1, capital ship piloting 3D+2, capital ship shields 3D, sensors 3D+1",
+   "passengers": "90",
+   "cargo": "2,500 metric tons",
+   "consumables": "1 year",
+   "hyperdrive": "x2",
+   "hyperdrive_backup": "x10",
+   "nav_computer": "Yes",
+   "maneuverability": "2D",
+   "space": "6",
+   "atmosphere": "330; 950 kmh",
+   "hull": "4D",
+   "shields": "2D",
+   "of_note": "Moff Sarne had several Corellian corvettes in his fleet besides the FarStar, and several escaped with him when the New Republic invaded the sector. Captain Rolf Treidum commands the Lialic II, renamed the Lance of Endor as part of a deception campaign — Treidum masquerades as a New Republic captain, visiting Outback colonies to make impossible demands and then blast them when they refuse, turning neutral settlements against the New Republic. Outfitted with decades-old equipment; was due for refurbishment months after the FarStar was completed.",
+   "sensors_passive": "40/1D",
+   "sensors_scan": "80/2D",
+   "sensors_search": "100/3D",
+   "sensors_focus": "5/4D",
+   "weapons": [
+    {
+     "name": "6 Double Turbolaser Cannons",
+     "fire_arc": "3 front, 1 left, 1 right, 1 back",
+     "crew": "1 (3), 3 (3)",
+     "skill": "Capital ship gunnery",
+     "fire_control": "3D",
+     "space_range": "3-15/35/75",
+     "atmo_range": "6-30/70/150 km",
+     "damage": "4D+2"
+    }
+   ],
+   "source": "WEG40209 The DarkStryder Campaign: Kathol Outback p.16 (Denizens of the Outback)"
   }
  ],
  "Stock Capital Frigates": [
@@ -33313,6 +33449,57 @@ const STARSHIP_DATA = {
      "damage": "3D"
     }
    ]
+  },
+  {
+   "rank": 99999,
+   "name": "Aing-Tii Sanhedrim Ship",
+   "craft": "Aing-Tii Pilgrimage Vessel",
+   "type": "Heavy Cruiser",
+   "scale": "Capital",
+   "length": "300 meters",
+   "skill": "Capital ship piloting: Aing-Tii vessel",
+   "crew": "150",
+   "gunners": "66",
+   "skeleton": "75/+10",
+   "crew_skill": "Capital ship gunnery 5D, capital ship piloting 4D+2, capital ship shields 4D+1, sensors 6D",
+   "cargo": "900 metric tons",
+   "consumables": "1 month",
+   "cost": "Not available for sale",
+   "hyperdrive": "x2",
+   "hyperdrive_backup": "x5",
+   "nav_computer": "Yes",
+   "maneuverability": "2D",
+   "space": "4",
+   "hull": "5D",
+   "shields": "1D+2",
+   "of_note": "Huge, cigar-shaped organic-looking craft etched with millions of glyphs and symbols. Split-shell design with exhaust ports and thruster pods emerging from all sides in no symmetrical order. Aing-Tii ships employ a great deal of organic technology, unlike anything seen in the Empire — each ship is slightly different, but all share a similar look. Aing-Tii monks pilot these pilgrimage vessels through the Kathol Outback on unknowable errands, passing in and out of the Kathol Rift. They are known to ram slave ships on sight (the monks abhor slavery) and dazzle pursuers with a stunning null-burst beam that causes victims to lose hours. Crew targets are all Force-sensitive Aing-Tii monks — the species' non-monk members never venture into space.",
+   "sensors_passive": "60/0D",
+   "sensors_scan": "100/1D",
+   "sensors_search": "200/2D",
+   "sensors_focus": "6/3D",
+   "weapons": [
+    {
+     "name": "30 Aing-Tii Energy Web Generators",
+     "fire_arc": "5 front, 10 left, 10 right, 5 back",
+     "crew": "2",
+     "skill": "Capital ship gunnery",
+     "fire_control": "2D",
+     "space_range": "1-3/7/10",
+     "atmo_range": "",
+     "damage": "7D/6D/5D"
+    },
+    {
+     "name": "6 Null-Burst Projectors",
+     "fire_arc": "1 front, 2 left, 2 right, 1 back",
+     "crew": "1",
+     "skill": "Capital ship gunnery",
+     "fire_control": "4D",
+     "space_range": "1-40/50/75",
+     "atmo_range": "",
+     "damage": "All aboard target vessel are stunned for 1D hours and can take no actions during that period"
+    }
+   ],
+   "source": "WEG40209 The DarkStryder Campaign: Kathol Outback p.15 (Denizens of the Outback)"
   }
  ],
  "Stock Capital Super Ships": [
