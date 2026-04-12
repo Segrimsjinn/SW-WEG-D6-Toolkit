@@ -317,7 +317,15 @@
                  "Swoop Brute",
                  "Outlaw Swoop Tech",
                  "Street Thief",
-                 "Street Weasel"
+                 "Street Weasel",
+                 "Saber Rake",
+                 "House Troubleshooter",
+                 "House Knight",
+                 "Mining Guild Recruiter",
+                 "JAN Operative",
+                 "Rebel Conspirator",
+                 "Tutor",
+                 "Freeworlds Trader"
              ],
     "training":  [
                      "Novice",
