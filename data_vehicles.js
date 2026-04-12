@@ -4576,5 +4576,49 @@ const VEHICLES_DATA = [
   "game_notes": "All rivets and bolts — a model that has been out of service in Imperial space for decades, but maintained by the Devisors for use in the Ministry of Technology's narrow corridors. Pagda Gevtes pilots one against the FarStar crew during Adrimetrum's rescue, firing the cannon in enclosed spaces and attempting to crush escapees beneath its treads.",
   "source": "WEG40209 The DarkStryder Campaign: Kathol Outback p.77 (The Masters of Exocron)"
 }
+ ,
+ // === WEG40215 Lords of the Expanse — Tapani Sector Vehicles ===
+ {
+  "name": "RES-Q Airspeeder",
+  "type": "Ubrikkian RES-Q Airspeeder",
+  "category": "Airspeeders",
+  "scale": "Speeder",
+  "length": "12 meters",
+  "skill": "Repulsorlift operation: RES-Q airspeeder",
+  "crew": "1",
+  "passengers": "1 plus 10 patients",
+  "cargo_capacity": "2 metric tons",
+  "cover": "Full",
+  "altitude_range": "Ground level-750 meters",
+  "cost": "27,500 (new)",
+  "maneuverability": "1D",
+  "move": "225; 650 kmh",
+  "body_strength": "2D+1",
+  "shields": "2D",
+  "weapons": [],
+  "game_notes": "Medical relief airspeeder equipped with 10 bacta trays, 2 computer monitoring stations, 20 medpacs, a mini-surgery suite (usable in flight), and an MD-0 medical droid assisted by 2 technicians. Reinforced hull plating and shields allow it to absorb heavy fire. Ion engine afterburner provides speeds exceeding 600 kmh. Advanced repulsor shock system ensures a smooth ride for patients.",
+  "source": "WEG40215 Lords of the Expanse p.35"
+ },
+ {
+  "name": "Mrlsst Flitter",
+  "type": "Mrlsst Motorworks MVD-1 Arcoflitter",
+  "category": "Airspeeders",
+  "scale": "Speeder",
+  "length": "11 meters",
+  "skill": "Repulsorlift operation: flitter",
+  "crew": "1",
+  "passengers": "5",
+  "cargo_capacity": "1 metric ton",
+  "cover": "Full",
+  "altitude_range": "Ground level-1,050 meters",
+  "cost": "11,500 (new)",
+  "maneuverability": "3D",
+  "move": "225; 650 kmh",
+  "body_strength": "1D",
+  "shields": "",
+  "weapons": [],
+  "game_notes": "A compact dragonfly-like vehicle that flies by flapping large insect-like wings. Originally designed centuries ago for the diminutive Mrlssti to move about during tidal floods, later expanded to human-scale craft. Constructed of lightweight alloys and high-impact plastics making it extremely affordable. Lifespan is only about 5 years. Available as civilian commuter, police interceptor (may be armed with light weapons), and service vehicle configurations. In high demand along the Shapani Bypass.",
+  "source": "WEG40215 Lords of the Expanse p.36"
+ }
 // --- END OF VEHICLES_DATA ---
 ];

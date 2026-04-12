@@ -6442,5 +6442,70 @@ const EQUIPMENT_DATA = [
   "game_notes": "Skill: Willpower (used like blaster skill to determine hits). Scale: Character. Range: 3-4/8/12. Launches a fan of green flame at a single target. Damage: 3D per round until fire is extinguished. Single-use only. Same misfire rules as Mindwarper Module based on distance from Kathol.",
   "source": "WEG40112 Endgame p.29 (The DarkStryder Planet)"
  }
+ ,
+ // === WEG40215 Lords of the Expanse — Tapani Sector Equipment ===
+ {
+  "name": "BDG Series Bodyguard Droid",
+  "type": "Lanthe Artifice BDG Bodyguard Droid",
+  "category": "Droids",
+  "cost": "12,500",
+  "availability": "2",
+  "game_notes": "Height: 2.2m. Move: 10/12. DEX 3D (blaster 4D+2, brawling parry 4D, dodge 4D, melee combat 4D), KNO 1D (intimidation 1D), MEC 1D, PER 2D (investigation 3D, search 3D+2), STR 1D (brawling 5D, lifting 5D), TEC 1D. Equipped with: humanoid body, visual/auditory sensors, body armor (+1D physical resist), vocabulator, AA-1 VerboBrain, retractable heavy stun pistol (4D+2 stun). Loyalty programming bonds the droid to a single individual upon activation — memory wipe required to reassign. Customizable modules (additional weapons, martial arts programming, enhanced sensors) available for 1,000-2,500 credits each.",
+  "source": "WEG40215 Lords of the Expanse p.39"
+ },
+ {
+  "name": "KI 301-MAX Nightlight",
+  "type": "Kalibac Industries 301-MAX Nightlight",
+  "category": "Droids",
+  "cost": "8,000",
+  "availability": "2",
+  "game_notes": "Height: 0.5m. Move: 15. Floater security droid. DEX 3D (blaster 4D+2, dodge 6D), KNO 1D, MEC 1D, PER 3D (hide 4D+2, search 5D+1, sneak 5D), STR 1D, TEC 2D (security 4D). Equipped with: repulsorlift generator (+2D dodge), visual/audio/combat sensors (+2D search and blaster), ionization buffer (+3D vs ion damage), retractable fine work grasper arm, computer I/O jack, stun blaster (2D stun, range 3-10/30/100). Anti-reprogramming package: unauthorized reprogramming attempts cause circuitry overload and burnout.",
+  "source": "WEG40215 Lords of the Expanse p.40"
+ },
+ {
+  "name": "Bacta Geltab",
+  "type": "Genetech G-5 Geltab",
+  "category": "Medical Supplies",
+  "cost": "50 (pack of 6)",
+  "availability": "1",
+  "game_notes": "Fluorescent green marble-sized capsule containing bacta. Apply to wound with a Very Easy Dexterity roll before using a medpac to gain +1D bonus on the subsequent first aid roll. Covers approximately 0.3m² area. Large wounds may require 2+ geltabs for full bonus; insufficient coverage grants only +1 or +2 pips instead. Useless without a medpac — acts only as antiseptic on its own.",
+  "source": "WEG40215 Lords of the Expanse p.40"
+ },
+ {
+  "name": "Bacta Tray",
+  "type": "Genetech BT-16 Bacta Tray",
+  "category": "Medical Supplies",
+  "cost": "2,200",
+  "availability": "2",
+  "game_notes": "Mobile medical stabilization unit. 2.5m x 0.5m rectangular tray floating on a repulsor field, filled with a thin bacta layer held by low-power tractor beam. 30-hour power pack charge. Activating requires an Easy first aid roll — success stabilizes a mortally wounded patient's condition until full bacta tank treatment is available. Navigates rocky terrain via repulsor field. Designed to complement the RES-Q airspeeder.",
+  "source": "WEG40215 Lords of the Expanse p.40"
+ },
+ {
+  "name": "EAR-1 Eavesdropping Unit",
+  "type": "EAR-1 Unit",
+  "category": "Surveillance",
+  "cost": "750 (each bug), 1,000 (headset), 2,500 (microcomputer & recording unit)",
+  "availability": "2, R",
+  "game_notes": "Eavesdropping system with 5 thumbnail-sized electrobugs, headset, and matte-black microcomputer receiver/recorder. Bugs emit a dampening field that prevents standard scanning equipment from detecting them. 200-meter range, line-of-sight only (blocked by metal and thick walls, but passes through clothing and thin walls). Microcomputer records audio and produces hardcopy transcripts.",
+  "source": "WEG40215 Lords of the Expanse p.41"
+ },
+ {
+  "name": "Hex Heavy Turbolaser Battery (HX.6)",
+  "type": "Golan Arms HX.6",
+  "category": "Ship Equipment",
+  "cost": "300,000 (new), 75,000 (used)",
+  "availability": "3, X",
+  "game_notes": "Scale: Capital. Skill: Blaster artillery: HX.6 turbolaser battery. Crew: 21, skeleton 9/+10. Six barrels firing in alternating pattern. Fire Rate: 1. Fire Control: 3D. Damage: 8D. Body: 4D. Unlimited ammo via dedicated power generator. Surface-to-space weapon designed to defend against capital ship assault. Currently unsuitable for ship mounting due to space, power, and heat requirements. Best mounted in mountainous or forested terrain; can be placed on orbital platforms but crews dislike being on obvious stationary targets. Three batteries are mounted on Reena's moon as planetary defense.",
+  "source": "WEG40215 Lords of the Expanse p.41"
+ },
+ {
+  "name": "Power Pitons",
+  "type": "MTS-56T Power Piton",
+  "category": "Tools",
+  "cost": "300",
+  "availability": "2",
+  "game_notes": "Set of 4 climbing aids (2 hand discs, 2 foot ovals). Two settings: magnetic (for metallic surfaces) and vibro (generates vibrosharp projections for rock, wood, durocrete). Using all 4 pitons with an Easy Dexterity roll adds +2D to climbing rolls. Using only 2 (hand or foot only) grants +1D. Originally designed for mountaineers; popular with fringers for catburgling and emergency escape routes.",
+  "source": "WEG40215 Lords of the Expanse p.41"
+ }
 // --- END OF EQUIPMENT_DATA ---
 ];

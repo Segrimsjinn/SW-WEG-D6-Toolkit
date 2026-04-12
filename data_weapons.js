@@ -5485,5 +5485,33 @@ const WEAPONS_DATA = [
   "game_notes": "Skill: Archaic guns. Carried by Exocron command-rank officers like Captain Horzao Darr and commerce makers like Eida Sharden. Considered a mark of authority in Exocron society.",
   "source": "WEG40209 The DarkStryder Campaign: Kathol Outback p.70 (The Masters of Exocron)"
  }
+ ,
+ // === WEG40215 Lords of the Expanse — Tapani Sector Weapons ===
+ {
+  "name": "Lightfoil",
+  "type": "Lightfoil",
+  "category": "Melee Weapons",
+  "scale": "Character",
+  "skill": "Lightsaber",
+  "cost": "10,000",
+  "availability": "4, X",
+  "damage": "3D-4D (varies by construction)",
+  "range": "",
+  "game_notes": "Petite, elegant lightsaber popular among Tapani saber rakes. Weaker than authentic lightsabers — built without proper Jedi focusing crystals or the same devotion to craftsmanship. On a roll of 1 on the Wild Die, the beam flickers and fades. Repairing requires 2 hours and a Moderate lightsaber repair roll.",
+  "source": "WEG40215 Lords of the Expanse p.40"
+ },
+ {
+  "name": "Droid Disabler",
+  "type": "Felehreck Electrical Defense Systems Droid Disabler",
+  "category": "Blaster Pistols",
+  "scale": "Character",
+  "skill": "Blaster",
+  "cost": "2,700 (25 per power pack)",
+  "availability": "3",
+  "damage": "1D ionization",
+  "range": "0-5/7/10",
+  "game_notes": "Droid ionizer pistol. 5 shots per standard power pack. Deals ionization damage only — effective against droids but harmless to organic targets.",
+  "source": "WEG40215 Lords of the Expanse p.40"
+ }
 // --- END OF WEAPONS_DATA ---
 ];
