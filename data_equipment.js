@@ -6414,6 +6414,33 @@ const EQUIPMENT_DATA = [
   "availability": "1, F",
   "game_notes": "Skill: First aid. Scale: Character. Provides +1D to first aid or medicine when used to treat severe physical trauma — burns, cuts, contusions, abrasions, and other external physical injuries. Provides no bonus for other types of injury (internal injuries) or for the treatment of toxins or poisons. Features medicines and treatments specifically for physical injuries common in a crash (burns, contusions, broken limbs, etc.).",
   "source": "WEG40121 The Kathol Rift p.90 (Showdown)"
+ },
+ {
+  "name": "DarkStryder Mindwarper Module",
+  "category": "Exotic",
+  "type": "DarkStryder artifact — area-effect incapacitant",
+  "cost": "Not available for sale",
+  "availability": "4",
+  "game_notes": "Skill: Willpower. Scale: Character. Range: 20 meters. Requires Moderate willpower to activate (1 round). All characters within 20 meters must make a Very Difficult willpower check or fall immediately unconscious for 1 hour; can only be awakened by vigorous shaking (Moderate Strength). Single-use only. Same type that Sarne used to escape New Republic ground forces at Kal'Shebbol. Powered by embryonic Precursor life-energy from the Lifewell — each use kills a bit of the trapped Precursors. MISFIRE: On-planet misfires on Wild Die 1; in Kathol system 1-2; in the Rift 1-3; in the Outback 1-4; within 5 weeks travel 1-5; beyond 5 weeks auto-detonates as 10D thermal detonator.",
+  "source": "WEG40112 Endgame p.28 (The DarkStryder Planet)"
+ },
+ {
+  "name": "DarkStryder Lightning Module",
+  "category": "Exotic",
+  "type": "DarkStryder artifact — lightning bolt weapon",
+  "cost": "Not available for sale",
+  "availability": "4",
+  "game_notes": "Skill: Willpower (used like blaster skill to determine hits). Scale: Character. Range: 3-7/25/50. Fires a lightning bolt at a single target. Damage: 7D. Single-use only. Same misfire rules as Mindwarper Module based on distance from Kathol.",
+  "source": "WEG40112 Endgame p.29 (The DarkStryder Planet)"
+ },
+ {
+  "name": "DarkStryder Firespray Module",
+  "category": "Exotic",
+  "type": "DarkStryder artifact — burning flame weapon",
+  "cost": "Not available for sale",
+  "availability": "4",
+  "game_notes": "Skill: Willpower (used like blaster skill to determine hits). Scale: Character. Range: 3-4/8/12. Launches a fan of green flame at a single target. Damage: 3D per round until fire is extinguished. Single-use only. Same misfire rules as Mindwarper Module based on distance from Kathol.",
+  "source": "WEG40112 Endgame p.29 (The DarkStryder Planet)"
  }
 // --- END OF EQUIPMENT_DATA ---
 ];
