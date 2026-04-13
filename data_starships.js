@@ -48119,9 +48119,9 @@ const STARSHIP_DATA = {
    "source": "WEG40209 The DarkStryder Campaign p.154 (Shintel Downtime)",
    "capsule": "Tanquilla Beach is a major shadowport in Kathol sector, located within a small nebula. Built on a gutted mining asteroid transported to its present location about a century ago by a group of outlaw-techs, the station specializes in high technology services for pirates and smugglers. The external surfaces are plated in metal and plastics, having grown beyond the original asteroid surface by up to 10 meters. The station has 15 levels of open trading space including the infamous Level 12 slavers market. Administered by Bequesh 'The Cardinal,' the sole surviving founder, the station maintains strict customs enforcement and iron-clad rules. Its formidable armament — procured and installed by master engineer Spang — can fight off any single ship smaller than a Star Destroyer. Defense force includes 5 X-wings and 8 Skipray blastboats."
   }
- ]
- ,
+ ],
  // === WEG40215 Lords of the Expanse — Tapani Sector Ships ===
+ "Tapani Sector Ships": [
  {
   "name": "Manta-class Assault Starfighter",
   "type": "Tapani Starship Cooperative Manta-class Starfighter",
@@ -48554,5 +48554,6 @@ const STARSHIP_DATA = {
   "source": "WEG40147 Tapani Sector Instant Adventures p.26 (The Bacta Heist)",
   "capsule": "An ElialMass Cargo Barge used by Hamar-Chaktak as part of his bacta transport hijacking scheme. The characters dock stolen Manta starfighters to its hull via magnetic clamps and piggyback into hyperspace to the rendezvous point."
  }
+ ]
 // --- END OF STARSHIP_DATA ---
 };

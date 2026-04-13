@@ -571,8 +571,6 @@
                    },
                    {
                        "attr":  "Dex",
-                   {
-                       "attr":  "Dex",
                        "name":  "Firearms",
                        "jobs":  [
                                     "Weapons Instructor"
@@ -585,6 +583,8 @@
                                     "Weapons Instructor"
                                 ]
                    },
+                   {
+                       "attr":  "Dex",
                        "name":  "Melee Combat",
                        "jobs":  ["SpaceOps Trooper", "SpecForce Infiltrator", "SpecForce Wilderness Fighter", "SpecForce Urban Combat Specialist", 
                                     "Bacta Pirate",
@@ -2646,8 +2646,6 @@
                    },
                    {
                        "attr":  "Mec",
-                   {
-                       "attr":  "Mec",
                        "name":  "Starship Shields",
                        "jobs":  [
                                     "Bacta Merchant",
@@ -2659,10 +2657,11 @@
                                     "Locator",
                                     "Mrlssti Roving Entertainer",
                                     "Mrlssti Swindler",
-                                    "Weapons Instructor",
+                                    "Weapons Instructor"
                                 ]
                    },
                    {
+                       "attr":  "Mec",
                        "name":  "Swoop Operation",
                        "jobs":  [
                                     "Corporate Slicer",
