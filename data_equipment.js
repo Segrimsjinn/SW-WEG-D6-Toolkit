@@ -6507,5 +6507,24 @@ const EQUIPMENT_DATA = [
   "game_notes": "Set of 4 climbing aids (2 hand discs, 2 foot ovals). Two settings: magnetic (for metallic surfaces) and vibro (generates vibrosharp projections for rock, wood, durocrete). Using all 4 pitons with an Easy Dexterity roll adds +2D to climbing rolls. Using only 2 (hand or foot only) grants +1D. Originally designed for mountaineers; popular with fringers for catburgling and emergency escape routes.",
   "source": "WEG40215 Lords of the Expanse p.41"
  }
+ ,
+ {
+  "name": "SIS Surveillance Droid",
+  "type": "Taptronics SIS Surveillance Droid",
+  "category": "Droids",
+  "cost": "5,000",
+  "availability": "2",
+  "game_notes": "Size: 1m diameter. Move: 20. DEX 3D (dodge 6D), KNO 2D (law enforcement 4D), MEC 1D, PER 2D (search 6D), STR 1D, TEC 1D. Equipped with: repulsorlift unit (50m flight ceiling), holographic/audio recorder, internal comlink. Simple security camera with repulsorlift and basic brain — too simple to reason with or con. Job is to spot criminal activity and notify human officers.",
+  "source": "WEG40147 Tapani Sector Instant Adventures p.9 (The Mecetti File)"
+ },
+ {
+  "name": "K4 Security Droid",
+  "type": "Rim Securities K4 Security Droid",
+  "category": "Droids",
+  "cost": "7,200 (new)",
+  "availability": "2",
+  "game_notes": "Size: 1.6m. Move: 11. DEX 3D (blaster 7D, dodge 8D, running 4D), KNO 1D (law enforcement: Lamuir IV), MEC 1D, PER 1D, STR 1D, TEC 1D. Equipped with: two auto-balance arms, body armor (+2D to Strength to resist damage), internal blaster rifle (5D, range 5-30/100/200). Recently purchased by Lemuir IV Spaceport Security and augmented with law enforcement SkillWare.",
+  "source": "WEG40147 Tapani Sector Instant Adventures p.9 (The Mecetti File)"
+ }
 // --- END OF EQUIPMENT_DATA ---
 ];

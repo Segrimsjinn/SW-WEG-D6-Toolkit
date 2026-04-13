@@ -5513,5 +5513,19 @@ const WEAPONS_DATA = [
   "game_notes": "Droid ionizer pistol. 5 shots per standard power pack. Deals ionization damage only — effective against droids but harmless to organic targets.",
   "source": "WEG40215 Lords of the Expanse p.40"
  }
+ ,
+ {
+  "name": "Vrakolian Spinblade",
+  "type": "Vrakolian Spinblade",
+  "category": "Thrown Weapons",
+  "scale": "Character",
+  "skill": "Thrown weapons: spinblade",
+  "cost": "10 each",
+  "availability": "3, R",
+  "damage": "3D",
+  "range": "2-5/10/20",
+  "game_notes": "Small razor-edged wheels like tiny buzzsaws. Skilled throwers can curve them in flight to hit targets under cover (medium or long range only). Up to 2 can be thrown at once from each hand, but must target the same target. Makes a high-pitched whistling sound when thrown. Originally used by thick-skinned Vrakolians in a harmless game of skill, adopted by other species as deadly weapons.",
+  "source": "WEG40147 Tapani Sector Instant Adventures p.23 (The Bacta Heist)"
+ }
 // --- END OF WEAPONS_DATA ---
 ];
