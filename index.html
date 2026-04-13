@@ -7556,8 +7556,24 @@ document.addEventListener('DOMContentLoaded', function() {
     html += '<div style="margin-bottom:20px">';
     html += '<div style="font-family:\'Exo 2\',monospace;font-size:11px;color:var(--gold);letter-spacing:1px;margin-bottom:4px">' + name.toUpperCase() + '</div>';
     html += '<div style="font-size:10px;color:var(--text-dark);margin-bottom:6px">' + gaz.source + (gaz.grid ? ' · Grid ' + gaz.grid : '') + '</div>';
-    if (hasMatrix) {
-      // Full matrix table
+    if (hasMatrix && systems.length > 30) {
+      // Large gazetteer — dropdown pair lookup
+      const gazId = name.replace(/[^a-zA-Z]/g, '');
+      html += '<div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:10px">';
+      html += '<select id="gaz' + gazId + 'A" style="padding:6px 10px;font-size:12px;background:var(--card-bg);color:var(--text);border:1px solid var(--card-border);border-radius:var(--radius-sm)" onchange="gazLookup(\'' + gazId + '\')">';
+      html += '<option value="">— Origin —</option>';
+      for (const s of systems) html += '<option value="' + s + '">' + s + '</option>';
+      html += '</select>';
+      html += '<span style="color:var(--text-dark);font-size:14px">→</span>';
+      html += '<select id="gaz' + gazId + 'B" style="padding:6px 10px;font-size:12px;background:var(--card-bg);color:var(--text);border:1px solid var(--card-border);border-radius:var(--radius-sm)" onchange="gazLookup(\'' + gazId + '\')">';
+      html += '<option value="">— Destination —</option>';
+      for (const s of systems) html += '<option value="' + s + '">' + s + '</option>';
+      html += '</select>';
+      html += '<div id="gaz' + gazId + 'Result" style="font-size:16px;color:var(--gold);font-family:\'Exo 2\',monospace;min-width:80px"></div>';
+      html += '</div>';
+      html += '<div style="font-size:10px;color:var(--text-dark)">' + systems.length + ' systems · ' + Object.keys(gaz.times).length + ' routes</div>';
+    } else if (hasMatrix) {
+      // Small gazetteer — full matrix table
       html += '<div style="overflow-x:auto"><table style="font-size:10px;border-collapse:collapse;width:100%">';
       html += '<tr><th style="padding:3px 5px;border-bottom:1px solid var(--card-border)"></th>';
       for (const s of systems) {
@@ -7601,6 +7617,26 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   container.innerHTML = html;
 });
+
+function gazLookup(gazId) {
+  const a = document.getElementById('gaz' + gazId + 'A').value;
+  const b = document.getElementById('gaz' + gazId + 'B').value;
+  const result = document.getElementById('gaz' + gazId + 'Result');
+  if (!a || !b || a === b) { result.innerHTML = a === b && a ? '<span style="color:var(--text-dark)">Same system</span>' : ''; return; }
+  // Find the matching gazetteer
+  for (const [name, gaz] of Object.entries(GAZETTEER_DATA)) {
+    if (name.replace(/[^a-zA-Z]/g, '') === gazId) {
+      const t = gazetteerLookup(gaz.times, a, b);
+      if (t !== null) {
+        const tf = t >= 168 ? Math.floor(t/168) + 'w' + (Math.floor((t%168)/24) > 0 ? ' ' + Math.floor((t%168)/24) + 'd' : '') + (t%24 > 0 ? ' ' + (t%24) + 'h' : '') : t >= 24 ? Math.floor(t/24) + 'd ' + (t%24 > 0 ? (t%24) + 'h' : '') : t + 'h';
+        result.innerHTML = '⏱ ' + tf + ' <span style="font-size:10px;color:var(--text-dark)">(' + t + 'h at x1)</span>';
+      } else {
+        result.innerHTML = '<span style="color:var(--text-dark)">No route</span>';
+      }
+      return;
+    }
+  }
+}
 </script>
 
 <script>
