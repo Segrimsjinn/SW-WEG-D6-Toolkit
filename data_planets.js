@@ -11391,5 +11391,33 @@ const PLANETS_DATA = [
     ofNote: "FIERCE INDEPENDENCE: Tallaani bristle at suggestions they've grown rich only from house ore shipping and the bacta trade. Family name is a source of pride, but citizens are expected to make their own reputations — nobles don't get automatic deference. | TAPANI STARSHIP COOPERATIVE: Based on Tallaan and Procopia, TCS favors no house above others and has won contracts from all sides. Manufactures affordable vehicles using cheap local ore, popular in the Colonies and Inner Rim. | IMPERIAL PRESENCE: Sector headquarters for ISB and numerous Imperial bureaus, plus the massive Imperial Shipyards."
   }
 
+  ,
+  {
+    name: "Vilhon",
+    system: "Vycinyth",
+    star: "",
+    grid: "L-13",
+    region: "Colonies",
+    type: "Forest moon",
+    temperature: "Temperate",
+    atmosphere: "Type I (breathable)",
+    hydrosphere: "Moderate",
+    gravity: "Standard",
+    terrain: "Forests, swamps, plains",
+    lengthOfDay: "27 standard hours",
+    lengthOfYear: "320 standard days",
+    sapientSpecies: "Mixed, mostly Human",
+    starport: "1 limited services, numerous landing fields",
+    population: "100 (permanent), varies",
+    function: "Hunting preserve",
+    government: "House Barnaba",
+    techLevel: "Space (largely undeveloped)",
+    majorExports: "Wild game parts",
+    majorImports: "Foodstuffs, medical supplies, wild game",
+    source: "WEG40215 Lords of the Expanse: Campaign Guide p.57",
+    summary: "Vilhon is a forest moon orbiting the vacation planet Vycinyth. Its surface is covered with tangled vegetation in several layers — rampant ground cover, low-level bushes and shrubs, and immense canopy trees. All animal life has been imported from other worlds, carefully balanced to maintain an artificial ecology including vicious predators, benign herbivores, and unique plant and fungus species. Maintained as a large hunting preserve, attracting galactic big game hunters. Each royal house maintains an orbiting hunting lodge around the moon.",
+    locations: "Fort Departure (Only permanent settlement, maintains a limited service spaceport and simple barracks. Many expeditions start here. Airspeeders can be rented for accessing remote landing fields). House Melantha Orbital Hunting Lodge (150-meter diameter metallic station orbiting Vilhon. Four docking bays, command deck, storage/computer deck, manor deck with Great Hall, Glass Palace ballroom, Hanging Gardens, concert shell, festival pavilion, bathhouse, target range, 13 guest suites, and kitchen capable of 22-course meals for 100+ guests. Site of the annual Vor-cal hunting competition).",
+    ofNote: "THE VOR-CAL: Annual hunting competition hosted by one of the Tapani houses on a rotating basis. Each house sends a representative, along with corporate and institutional guests from TamCo, the Mining Guild, and Mrlsst Academy. Participants hunt imported predators (typically Rodian karstags) over a 10-hour period. The hunt doubles as a major networking and political event for the sector's elite — deals are struck, alliances formed, and schemes hatched in the hunting lodges and during pre-hunt festivities. | IMPORTED WILDLIFE: All creatures on Vilhon are imported and carefully managed. Includes Rodian karstags (swamp predators with antlered tail clubs), ghests, zuxu, and various other species from across the galaxy."
+  }
 // --- END OF PLANETS_DATA ---
 ];

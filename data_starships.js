@@ -48400,5 +48400,67 @@ const STARSHIP_DATA = {
   "source": "WEG40215 Lords of the Expanse: Gamemaster Guide p.78",
   "capsule": "The Benevolence is a modified Nebulon-B medical frigate commanded by the Herglic captain Melchi. Salvaged from the wreckage of House Pelagia's fleet after the Imperial purge, it was repaired and converted into a mobile medical relief unit funded by the Great Council. Carries 550 beds, 12 bacta tanks, 25 medics, 50 Emdee-line medical droids, and 5 operating theaters. In reality, Melchi's relief work is a cover for smuggling weapons and war supplies for House Pelagia's secret military build-up. The ship moves freely between provinces without suspicion thanks to Melchi's reputation, though he avoids larger Imperial patrols."
  }
+ ,
+ // === WEG40215 Lords of the Expanse — Campaign Guide Ships ===
+ {
+  "name": "Solar Flare",
+  "type": "Modified Corellian Engineering Corporation Barloz-class Medium Freighter",
+  "category": "Named Modified Transports",
+  "scale": "Starfighter",
+  "length": "41 meters",
+  "skill": "Space transports: Barloz-class freighter",
+  "crew": "2, gunners: 2, skeleton: 1/+5",
+  "crew_skill": "Varies",
+  "passengers": "6",
+  "cargo_capacity": "100 metric tons",
+  "consumables": "2 months",
+  "cost": "Not for sale",
+  "hyperdrive_multiplier": "x1",
+  "hyperdrive_backup": "x10",
+  "nav_computer": "Yes",
+  "maneuverability": "1D+1",
+  "space": "6",
+  "hull": "4D+1",
+  "shields": "1D",
+  "sensors_passive": "10/0D",
+  "sensors_scan": "25/1D",
+  "sensors_search": "45/2D",
+  "sensors_focus": "3/3D+1",
+  "weapons": [
+   { "name": "Quad Turbolaser", "fire_arc": "Turret", "crew": "1", "skill": "Starship gunnery", "fire_control": "2D+1", "range": "1-3/15/30", "damage": "5D" },
+   { "name": "2 Double Laser Cannons", "fire_arc": "1 front left, 1 front right", "crew": "1 each", "skill": "Starship gunnery", "fire_control": "1D", "range": "1-3/10/20", "damage": "3D" },
+   { "name": "2 Concussion Missile Launchers (fire-linked)", "fire_arc": "Front", "crew": "1", "skill": "Starship gunnery", "fire_control": "1D+2", "range": "1/3/7", "damage": "6D+1" }
+  ],
+  "source": "WEG40215 Lords of the Expanse: Campaign Guide p.14",
+  "capsule": "The Solar Flare is a modified CEC Barloz-class transport provided by the Rebel Alliance to the characters' Tapani sector cell. A sturdy vessel showing years of hard service — five captains in two years have pushed her to the limit, causing frequent breakdowns. Modifications include a quad turbolaser tower, scaled-down concussion missile launchers (8 missiles), and a sophisticated countermeasures package (+2D to detection difficulty). Expanded crew quarters for six passengers plus four crew, well-stocked galley, and entertainment area with hologame table (50+ games), holovid player, and workout equipment."
+ },
+ {
+  "name": "Torpedo Sphere (Tallaan, inactive)",
+  "type": "Loronar Torpedo Sphere",
+  "category": "Space Stations",
+  "scale": "Capital",
+  "length": "1,900 meters",
+  "skill": "Capital ship piloting: Torpedo Sphere",
+  "crew": "Skeleton: 14,000 techs and guards (full: 61,245)",
+  "crew_skill": "Astrogation 3D+2, capital ship gunnery 4D+2, capital ship piloting 3D+2, capital ship shields 4D, sensors 4D+1",
+  "passengers": "1,200 (troops)",
+  "cargo_capacity": "3,800,000 metric tons",
+  "consumables": "4 years",
+  "cost": "Not available for sale",
+  "hyperdrive_multiplier": "Offline",
+  "hyperdrive_backup": "x18",
+  "nav_computer": "Yes",
+  "maneuverability": "0D",
+  "space": "2",
+  "hull": "7D",
+  "shields": "2D",
+  "sensors_passive": "50/1D",
+  "sensors_scan": "75/3D",
+  "sensors_search": "150/4D",
+  "sensors_focus": "5/4D+2",
+  "weapons": [],
+  "source": "WEG40215 Lords of the Expanse: Campaign Guide p.30",
+  "capsule": "An Imperial torpedo sphere undergoing routine maintenance at the Tallaan dockyards. Stats reflect the inactive vessel with skeleton crew and offline ordnance (see Imperial Sourcebook p.59 for fully operational stats). Currently guarded by the Star Destroyer Reisa or the escort carrier Dallust, plus TIE interceptor patrols. The sphere is the target of a conspiracy between House Melantha lords, Mining Guild officials, and the Justice Action Network to destroy it and provoke Imperial intervention in Tapani sector. 800 naval troopers and 400 stormtroopers provide security, with 13,000 workers aboard for upgrades."
+ }
 // --- END OF STARSHIP_DATA ---
 };

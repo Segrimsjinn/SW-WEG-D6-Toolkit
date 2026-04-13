@@ -8546,5 +8546,9 @@ const CREATURES_DATA = [
    "special": "SEARCH: 4D. FIRE: Inflicts 6D damage. A glowing deep-red cone-shaped fiery apparition that reaches almost 20 meters high and 20 meters wide, with a discernable eerie monstrous face, glowing ember-eyes, and huge ravenous jaws. Mist deploys this creature via a silvery-white wire-like DarkStryder artifact coiled around an arm — the wire glows red as it activates. Duration: 1D rounds, after which the fire dissipates. Blaster fire has no effect. The controller can direct the creature to herd or attack specific targets.",
    "source": "WEG40121 The Kathol Rift p.68 (Waystation)"
   }
+  ,
+  // === WEG40215 Lords of the Expanse — Creatures ===
+  { name: "Rodian Karstag", type: "Swamp-dwelling predator", planet: "Vilhon (imported from Rodia)", habitat: "Swampy/damp forests", dex: "2D+1", per: "3D+1 (hide 4D+1, sneak 4D)", str: "3D+2 (brawling: tail 4D+2)", move: "9 (8 swimming)", size: "1.5m shoulder, 4-5m long", orneriness: "3D+2", special: "Thick Hide: +1D resist physical and energy. Bite: STR damage. Antlered Tail Club: damage varies by age (0-1yr STR, 1-3yr STR+1D, 3-5yr STR+2D, 5-10yr STR+3D, 10+yr STR+4D). Number of tail spikes increases with age. Four powerful webbed feet grant good mobility in water and swamps.", source: "WEG40215 Lords of the Expanse: Campaign Guide p.58" },
+  { name: "Mrlssti Mynkin", type: "Ambush predator", planet: "Mrlsst", habitat: "Greenstalk forests, caves", dex: "2D", per: "3D+1 (hide 5D+1, sneak 4D)", str: "3D", move: "7", size: "2+ meters tall", orneriness: "3D", special: "Claws: STR+1D damage. Bite: STR+2D damage. Stone Hide Camouflage: +2D to hide against stone surfaces. Stone Hide Armor: +1D to Strength to resist damage. Humanoid shape with gangly arms, stumpy legs, huge tooth-filled maw, mottled plate scales that can be manipulated to blend with rocky surfaces.", source: "WEG40215 Lords of the Expanse: Campaign Guide p.27" }
 // --- END OF CREATURES_DATA ---
 ];
