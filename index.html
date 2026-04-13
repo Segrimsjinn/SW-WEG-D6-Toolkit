@@ -5825,10 +5825,15 @@ function generateRandomCreature() {
     pool.splice(pool.indexOf(picked), 1);
   }
 
-  // Orneriness (based on behavior)
-  const ornMap = { 'Herbivore': rollBetween(1,3), 'Scavenger': rollBetween(2,5), 'Predator': rollBetween(4,8),
-                   'Pack Hunter': rollBetween(4,9), 'Ambush Predator': rollBetween(5,9), 'Apex Predator': rollBetween(7,12), 'Parasite': rollBetween(2,5) };
-  const ornPips = ornMap[behavior.value] || rollBetween(3,7);
+  // Orneriness — 15% chance of docile (1D-2D), otherwise 5D-15D scaled by behavior
+  let ornPips;
+  if (Math.random() < 0.15) {
+    ornPips = rollBetween(3, 6); // 1D to 2D — tameable
+  } else {
+    const ornMap = { 'Herbivore': rollBetween(15,27), 'Scavenger': rollBetween(18,30), 'Predator': rollBetween(21,36),
+                     'Pack Hunter': rollBetween(21,36), 'Ambush Predator': rollBetween(24,39), 'Apex Predator': rollBetween(30,45), 'Parasite': rollBetween(18,30) };
+    ornPips = ornMap[behavior.value] || rollBetween(21,36);
+  }
 
   // Creature name: demonym from a random undocumented system + body-type name part
   const undoc = getUndocumentedSystems();
