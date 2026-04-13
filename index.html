@@ -926,9 +926,9 @@ color:var(--text-dim);min-width:35px;text-align:right;
 
       <div class="card" id="gm-aliengen">
         <div class="card-title">⟐ Random Alien Generator</div>
-        <div style="font-size:11px;color:var(--text-dim);margin-bottom:10px;line-height:1.5">Generate a random new alien species using the WEG40166 <em>Alien Encounters</em> Chapter One tables. Output is meant as a creative seed — tweak ranges, ability counts, and story factors as needed.</div>
-        <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:10px">
-          <button class="btn btn-primary" onclick="generateRandomAlien()" style="padding:8px 18px;font-size:11px;letter-spacing:1px">⟐ GENERATE ALIEN</button>
+        <div style="font-size:9px;color:var(--text-dim);margin-bottom:6px;line-height:1.4">Generate a random alien species using WEG40166 <em>Alien Encounters</em> Ch.1 tables. Creative seed — tweak as needed.</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:6px">
+          <button class="btn btn-primary" onclick="generateRandomAlien()" style="padding:6px 18px;font-size:10px;letter-spacing:1px">⟐ GENERATE ALIEN</button>
         </div>
         <div id="alienGenResult" style="display:none"></div>
       </div>
@@ -5622,7 +5622,7 @@ function generateRandomAlien() {
   const homeworld = undoc.length > 0 ? undoc[Math.floor(Math.random() * undoc.length)] : null;
   const speciesName = homeworld ? deriveSpeciesName(homeworld.name) : 'Unknown Species';
 
-  const row = (label, val) => `<div style="display:flex;gap:8px;padding:3px 0;border-bottom:1px solid rgba(255,255,255,0.04)"><span style="color:var(--text-dim);min-width:130px;flex-shrink:0">${label}</span><span style="color:var(--text-primary)">${val}</span></div>`;
+  const row = (label, val) => `<div style="display:flex;gap:8px;padding:2px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:11px"><span style="color:var(--text-dim);min-width:110px;flex-shrink:0">${label}</span><span style="color:var(--text-primary)">${val}</span></div>`;
 
   const hwClick = homeworld ? ` onclick="switchTab('galaxy');document.getElementById('galaxySearch').value='${homeworld.name.replace(/'/g,"\\'")}';searchGalaxy('${homeworld.name.replace(/'/g,"\\'")}')" style="cursor:pointer;color:var(--cyan);text-decoration:underline"` : '';
   const hwText = homeworld ? `<span${hwClick}>${homeworld.name}</span> <span style="color:var(--text-dim)">(${homeworld.grid} · ${homeworld.region})</span>` : '<span style="color:var(--text-dim);font-style:italic">Unknown</span>';
@@ -5631,14 +5631,14 @@ function generateRandomAlien() {
   const abilityRows = abilities.map(a => `<div style="padding:4px 0;border-bottom:1px solid rgba(255,255,255,0.04)"><span style="color:var(--gold)">${a.label}</span><span style="color:var(--text-dim)"> — ${a.desc}</span></div>`).join('');
   const storyRow = story ? `<div style="padding:4px 0"><span style="color:var(--gold)">${story.value}</span><span style="color:var(--text-dim)"> — ${story.desc}</span></div>` : '<div style="color:var(--text-dim);font-style:italic;font-size:11px">None rolled</div>';
 
-  const html = `<div class="card" style="border:1px solid var(--cyan);margin-bottom:12px">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
-      <div style="color:var(--cyan);font-size:18px;font-weight:700;letter-spacing:1px">${speciesName}</div>
+  const html = `<div class="card" style="border:1px solid var(--cyan);margin-bottom:10px;flex:1;min-width:260px">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:2px">
+      <div style="color:var(--cyan);font-size:14px;font-weight:700;letter-spacing:1px">${speciesName}</div>
       <div style="display:flex;gap:6px"><button onclick="generateRandomAlien()" style="font-size:11px;color:var(--gold);background:none;border:1px solid var(--gold);border-radius:var(--radius);padding:2px 8px;cursor:pointer;font-family:inherit">Re-roll</button><button onclick="document.getElementById('alienGenResult').style.display='none'" style="font-size:11px;color:var(--red);background:none;border:1px solid var(--red);border-radius:var(--radius);padding:2px 8px;cursor:pointer;font-family:inherit">✕</button></div>
     </div>
-    <div style="font-size:11px;color:var(--text-dim);margin-bottom:12px">First Contact Report — Undocumented Species</div>
+    <div style="font-size:9px;color:var(--text-dim);margin-bottom:8px">First Contact Report — Undocumented Species</div>
 
-    <div style="display:grid;gap:0;margin-bottom:14px;padding:10px;background:rgba(0,0,0,0.2);border-radius:6px">
+    <div style="display:grid;gap:0;margin-bottom:10px;padding:6px 10px;background:rgba(0,0,0,0.2);border-radius:6px">
       ${row('Homeworld', hwText)}
       ${row('Environment', env.value + ' — ' + env.desc)}
       ${row('Origin', origin.value + ' — ' + origin.desc)}
@@ -5646,35 +5646,35 @@ function generateRandomAlien() {
       ${row('Tech Level', tech.value + ' — ' + tech.desc)}
     </div>
 
-    <div style="font-family:'Exo 2',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:6px">⟐ ATTRIBUTE DICE: ${attrDice.value}</div>
-    <div style="display:grid;gap:0;margin-bottom:14px;padding:10px;background:rgba(0,0,0,0.2);border-radius:6px">
+    <div style="font-family:'Exo 2',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:4px">⟐ ATTRIBUTE DICE: ${attrDice.value}</div>
+    <div style="display:grid;gap:0;margin-bottom:8px;padding:6px 10px;background:rgba(0,0,0,0.2);border-radius:6px">
       ${attrRows}
     </div>
-    <div style="font-size:10px;color:var(--text-dim);font-style:italic;margin:-8px 0 14px">Each attribute is shown as min/max die range. Verify min sum ≤ ${attrDice.value} and max sum ≥ ${attrDice.value}+6D; tweak ranges if not.</div>
+    <div style="font-size:9px;color:var(--text-dim);font-style:italic;margin:-4px 0 10px">Min/max die range per attribute. Verify min sum ≤ ${attrDice.value} and max sum ≥ ${attrDice.value}+6D.</div>
 
-    <div style="font-family:'Exo 2',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:6px">⟐ SPECIAL ABILITIES</div>
-    <div style="margin-bottom:14px;padding:10px;background:rgba(0,0,0,0.2);border-radius:6px">
+    <div style="font-family:'Exo 2',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:4px">⟐ SPECIAL ABILITIES</div>
+    <div style="margin-bottom:10px;padding:6px 10px;background:rgba(0,0,0,0.2);border-radius:6px">
       ${abilityRows}
     </div>
 
-    <div style="font-family:'Exo 2',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:6px">⟐ STORY FACTOR</div>
-    <div style="margin-bottom:14px;padding:10px;background:rgba(0,0,0,0.2);border-radius:6px">
+    <div style="font-family:'Exo 2',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:4px">⟐ STORY FACTOR</div>
+    <div style="margin-bottom:10px;padding:6px 10px;background:rgba(0,0,0,0.2);border-radius:6px">
       ${storyRow}
     </div>
 
-    <div style="display:grid;gap:0;margin-bottom:8px">
+    <div style="display:grid;gap:0;margin-bottom:6px">
       ${row('Move', ms.move)}
       ${row('Height', ms.height)}
     </div>
 
-    <div style="color:var(--text-dim);font-size:11px;font-style:italic;margin-top:8px">Generated using WEG40166 Alien Encounters Chapter One tables (pp.4-17). Homeworld drawn from ${undoc.length.toLocaleString()} undocumented systems.</div>
+    <div style="color:var(--text-dim);font-size:9px;font-style:italic;margin-top:4px">WEG40166 Alien Encounters Ch.1 tables (pp.4-17). Homeworld from ${undoc.length.toLocaleString()} undocumented systems.</div>
   </div>`;
 
   // --- Typical Native stat block ---
   const nativeHtml = buildTypicalNative(speciesName, tech.value, ranges, ms);
 
   const container = document.getElementById('alienGenResult');
-  container.innerHTML = html + nativeHtml;
+  container.innerHTML = `<div style="display:flex;gap:10px;align-items:flex-start;flex-wrap:wrap">${html}<div style="flex:1;min-width:260px">${nativeHtml}</div></div>`;
   container.style.display = 'block';
   container.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
@@ -5742,15 +5742,15 @@ function buildTypicalNative(speciesName, techValue, ranges, ms) {
     statHtml += `<div style="padding:2px 0;border-bottom:1px solid rgba(255,255,255,0.04)"><span style="color:var(--gold);font-size:10px;font-weight:700;min-width:100px;display:inline-block">${attrFull[aKey]} ${base}</span> ${skillStr}</div>`;
   }
 
-  return `<div class="card" style="border:1px solid var(--cyan);margin-bottom:12px">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
-      <div style="color:var(--gold);font-size:14px;font-weight:700;letter-spacing:1px">Average ${speciesName}</div>
-      <div style="font-size:10px;color:var(--text-dim)">${template} · ${training}</div>
+  return `<div class="card" style="border:1px solid var(--cyan);margin-bottom:10px;height:fit-content">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+      <div style="color:var(--gold);font-size:12px;font-weight:700;letter-spacing:1px">Average ${speciesName}</div>
+      <div style="font-size:9px;color:var(--text-dim)">${template} · ${training}</div>
     </div>
-    <div style="padding:8px 10px;background:rgba(0,0,0,0.2);border-radius:6px;font-size:11px;line-height:1.7;margin-bottom:8px">
+    <div style="padding:6px 10px;background:rgba(0,0,0,0.2);border-radius:6px;font-size:10px;line-height:1.6;margin-bottom:6px">
       ${statHtml}
     </div>
-    <div style="display:flex;gap:16px;font-size:11px;color:var(--text-dim)">
+    <div style="display:flex;gap:16px;font-size:10px;color:var(--text-dim)">
       <span>Move: <span style="color:var(--text-primary)">${ms.move}</span></span>
       <span>Height: <span style="color:var(--text-primary)">${ms.height}</span></span>
     </div>
