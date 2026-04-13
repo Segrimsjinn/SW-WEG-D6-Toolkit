@@ -5456,6 +5456,48 @@ function pickN(tbl, n) {
   return picked;
 }
 
+// Lazy-built pool of systems with no PLANETS_DATA entry (undocumented frontier worlds)
+let _undocSystems = null;
+function getUndocumentedSystems() {
+  if (_undocSystems) return _undocSystems;
+  const documented = new Set();
+  if (typeof PLANETS_DATA !== 'undefined') {
+    for (const p of PLANETS_DATA) {
+      documented.add(p.name.toLowerCase());
+      if (p.system) documented.add(p.system.toLowerCase());
+      if (p.aliases) for (const a of p.aliases) documented.add(a.toLowerCase());
+    }
+  }
+  _undocSystems = SYSTEMS_DATA.filter(s => {
+    if (s.name.includes(' - ')) return false;           // skip sub-locations
+    const low = s.name.toLowerCase();
+    if (documented.has(low)) return false;              // exact match on name
+    // check if any planet name starts with this system name + ' -' (sub-location parent)
+    for (const d of documented) if (d.startsWith(low + ' -')) return false;
+    return true;
+  });
+  return _undocSystems;
+}
+
+// Generate a random alien species name from syllable pools
+function generateSpeciesName() {
+  const onset = ['b','br','ch','d','dr','f','g','gl','gr','h','j','k','kh','kr','l','m','n','p','pr','q','r','s','sh','sk','sl','sr','st','t','th','tr','v','vr','w','x','z','zh'];
+  const vowel = ['a','e','i','o','u','aa','ai','au','ee','ei','ia','ie','oo','ou','ua'];
+  const coda  = ['b','d','g','k','l','m','n','ng','nn','r','rr','s','sh','ss','t','th','x','z',''];
+  const pick = arr => arr[Math.floor(Math.random() * arr.length)];
+  const syl = () => pick(onset) + pick(vowel) + pick(coda);
+  const count = Math.random() < 0.3 ? 2 : Math.random() < 0.7 ? 3 : 4;
+  let name = '';
+  for (let i = 0; i < count; i++) name += syl();
+  // Capitalize and optionally add an apostrophe break
+  name = name.charAt(0).toUpperCase() + name.slice(1);
+  if (name.length > 5 && Math.random() < 0.4) {
+    const pos = 2 + Math.floor(Math.random() * (name.length - 4));
+    name = name.slice(0, pos) + "'" + name.slice(pos);
+  }
+  return name;
+}
+
 function generateRandomAlien() {
   if (window.goatcounter) goatcounter.count({ path: 'aliengen-generated', event: true });
   const D = ALIENGEN_DATA;
@@ -5505,19 +5547,29 @@ function generateRandomAlien() {
 
   const ms = alienRoll(D.moveSize, '3D');
 
+  // Species name + homeworld from undocumented frontier systems
+  const speciesName = generateSpeciesName();
+  const undoc = getUndocumentedSystems();
+  const homeworld = undoc.length > 0 ? undoc[Math.floor(Math.random() * undoc.length)] : null;
+
   const row = (label, val) => `<div style="display:flex;gap:8px;padding:3px 0;border-bottom:1px solid rgba(255,255,255,0.04)"><span style="color:var(--text-dim);min-width:130px;flex-shrink:0">${label}</span><span style="color:var(--text-primary)">${val}</span></div>`;
+
+  const hwClick = homeworld ? ` onclick="switchTab('galaxy');document.getElementById('galaxySearch').value='${homeworld.name.replace(/'/g,"\\'")}';searchGalaxy('${homeworld.name.replace(/'/g,"\\'")}')" style="cursor:pointer;color:var(--cyan);text-decoration:underline"` : '';
+  const hwText = homeworld ? `<span${hwClick}>${homeworld.name}</span> <span style="color:var(--text-dim)">(${homeworld.grid} · ${homeworld.region})</span>` : '<span style="color:var(--text-dim);font-style:italic">Unknown</span>';
 
   const attrRows = ranges.map(r => row(r.name, r.range)).join('');
   const abilityRows = abilities.map(a => `<div style="padding:4px 0;border-bottom:1px solid rgba(255,255,255,0.04)"><span style="color:var(--gold)">${a.label}</span><span style="color:var(--text-dim)"> — ${a.desc}</span></div>`).join('');
   const storyRow = story ? `<div style="padding:4px 0"><span style="color:var(--gold)">${story.value}</span><span style="color:var(--text-dim)"> — ${story.desc}</span></div>` : '<div style="color:var(--text-dim);font-style:italic;font-size:11px">None rolled</div>';
 
   const html = `<div class="card" style="border:1px solid var(--cyan);margin-bottom:12px">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
-      <div style="color:var(--cyan);font-size:16px;font-weight:700;letter-spacing:1px">RANDOM ALIEN SPECIES</div>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+      <div style="color:var(--cyan);font-size:18px;font-weight:700;letter-spacing:1px">${speciesName}</div>
       <div style="display:flex;gap:6px"><button onclick="generateRandomAlien()" style="font-size:11px;color:var(--gold);background:none;border:1px solid var(--gold);border-radius:var(--radius);padding:2px 8px;cursor:pointer;font-family:inherit">Re-roll</button><button onclick="document.getElementById('alienGenResult').style.display='none'" style="font-size:11px;color:var(--red);background:none;border:1px solid var(--red);border-radius:var(--radius);padding:2px 8px;cursor:pointer;font-family:inherit">✕</button></div>
     </div>
+    <div style="font-size:11px;color:var(--text-dim);margin-bottom:12px">First Contact Report — Undocumented Species</div>
 
     <div style="display:grid;gap:0;margin-bottom:14px;padding:10px;background:rgba(0,0,0,0.2);border-radius:6px">
+      ${row('Homeworld', hwText)}
       ${row('Environment', env.value + ' — ' + env.desc)}
       ${row('Origin', origin.value + ' — ' + origin.desc)}
       ${niche ? row('Ecological Niche', niche.value + ' — ' + niche.desc) : row('Ecological Niche', 'N/A (plant species)')}
@@ -5545,7 +5597,7 @@ function generateRandomAlien() {
       ${row('Height', ms.height)}
     </div>
 
-    <div style="color:var(--text-dim);font-size:11px;font-style:italic;margin-top:8px">Generated using WEG40166 Alien Encounters Chapter One tables (pp.4-17)</div>
+    <div style="color:var(--text-dim);font-size:11px;font-style:italic;margin-top:8px">Generated using WEG40166 Alien Encounters Chapter One tables (pp.4-17). Homeworld drawn from ${undoc.length.toLocaleString()} undocumented systems.</div>
   </div>`;
 
   const container = document.getElementById('alienGenResult');
