@@ -543,6 +543,16 @@ font-family:'Eras Demi ITC','Era Demi','Rajdhani',sans-serif;font-size:14px;
 color:var(--text-dim);min-width:35px;text-align:right;
 }
 .ar-dir-grid button:hover{border-color:var(--gold)}
+.npc-subtab-bar{position:sticky;top:-16px;z-index:92;display:flex;gap:0;margin:-16px -16px 0;padding:22px 16px 0;background:var(--bg)}
+.npc-subtab-bar button{flex:1;padding:8px 4px;font-family:'Orbitron','Exo 2',monospace;font-size:9px;letter-spacing:1.5px;color:var(--text-dim);background:var(--bg2);border:1px solid var(--card-border);cursor:pointer;transition:all .15s}
+.npc-subtab-bar button:first-child{border-radius:var(--radius-sm) 0 0 var(--radius-sm)}
+.npc-subtab-bar button:last-child{border-radius:0 var(--radius-sm) var(--radius-sm) 0}
+.npc-subtab-bar button:not(:first-child){border-left:none}
+.npc-subtab-bar button.active{background:var(--gold-dim);color:var(--bg);font-weight:600;border-color:var(--gold-dim)}
+.npc-subtab-bar button:hover:not(.active){background:var(--bg3);color:var(--gold)}
+.npc-subtab-panel{display:none}
+.npc-subtab-panel.active{display:block}
+#tab-npc .jump-to-menu{top:24px;padding-top:8px;margin-top:0}
 .jump-to-menu{position:sticky;top:-16px;z-index:90;padding:22px 0 6px;margin:-16px -16px 8px;padding-left:16px;padding-right:16px;background:var(--bg);border-bottom:1px solid var(--card-border)}
 .jump-to-btn{display:flex;align-items:center;gap:6px;background:none;border:1px solid var(--gold-dim);border-radius:var(--radius);padding:6px 14px;cursor:pointer;font-family:'Orbitron','Exo 2',monospace;font-size:10px;letter-spacing:1.5px;color:var(--gold);width:100%}
 .jump-to-btn:hover{border-color:var(--gold);color:var(--text)}
@@ -565,18 +575,15 @@ color:var(--text-dim);min-width:35px;text-align:right;
   <div class="app-content">
     <!-- TAB 1: NPC GENERATOR -->
     <div id="tab-npc" class="tab-panel active">
-      <div class="jump-to-menu">
-        <button class="jump-to-btn" onclick="toggleJumpTo(this)">⟐ JUMP TO <span style="color:var(--text-dim);font-size:9px;margin-left:4px">7 tools</span><span class="jt-arrow">▾</span></button>
-        <div class="jump-to-dropdown">
-          <a class="jump-to-item" onclick="jumpTo('npc-generator')">⟐ NPC Generator</a>
-          <a class="jump-to-item" onclick="jumpTo('npc-weapons')">⟐ Weapons Lookup</a>
-          <a class="jump-to-item" onclick="jumpTo('npc-equipment')">⟐ Equipment Lookup</a>
-          <a class="jump-to-item" onclick="jumpTo('npc-creatures')">⟐ Creature Lookup</a>
-          <a class="jump-to-item" onclick="jumpTo('npc-notable')">⟐ Notable NPC Lookup</a>
-          <a class="jump-to-item" onclick="jumpTo('gm-aliengen')">⟐ Random Alien Generator</a>
-          <a class="jump-to-item" onclick="jumpTo('gm-creaturegen')">⟐ Random Creature Generator</a>
-        </div>
+      <div class="npc-subtab-bar">
+        <button onclick="switchNpcSubtab('generators')" data-npcst="generators">GENERATORS</button>
+        <button onclick="switchNpcSubtab('lookups')" data-npcst="lookups">LOOKUPS</button>
       </div>
+      <div class="jump-to-menu" id="npcJumpToMenu">
+        <button class="jump-to-btn" onclick="toggleJumpTo(this)">⟐ JUMP TO <span id="npcJumpToCount" style="color:var(--text-dim);font-size:9px;margin-left:4px">3 tools</span><span class="jt-arrow">▾</span></button>
+        <div class="jump-to-dropdown" id="npcJumpToDropdown"></div>
+      </div>
+      <div class="npc-subtab-panel" data-subtab="generators">
       <div class="card" id="npc-generator">
         <div class="card-title">⟐ Generate NPC</div>
         <div class="bias-row">
@@ -586,7 +593,9 @@ color:var(--text-dim);min-width:35px;text-align:right;
         </div>
         <button class="btn btn-generate" onclick="rollAll()">⟐ GENERATE NPC ⟐</button>
       </div>
+      </div><!-- /generators panel (continued below after lookups) -->
 
+      <div class="npc-subtab-panel" data-subtab="lookups">
       <!-- WEAPONS LOOKUP -->
       <div class="card" id="npc-weapons" style="margin-top:8px">
         <div class="card-title" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer" onclick="toggleWeapPanel()">
@@ -769,8 +778,9 @@ color:var(--text-dim);min-width:35px;text-align:right;
           <div id="notableNpcDetail" style="display:none"></div>
         </div>
       </div>
+      </div><!-- /lookups panel -->
 
-
+      <div class="npc-subtab-panel npc-generators-continued" data-subtab="generators">
       <div id="npcResult" style="display:none">
         <!-- PDF controls + info row -->
         <div style="display:flex;align-items:center;justify-content:space-between;padding:6px 2px;flex-wrap:wrap;gap:4px">
@@ -931,6 +941,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
         </div>
         <div id="creatureGenResult" style="display:none"></div>
       </div>
+      </div><!-- /generators-continued panel -->
     </div>
 
     <!-- TAB 2: TRAVEL CALCULATOR -->
@@ -2688,15 +2699,57 @@ function jumpTo(id) {
   if (!el) return;
   const panel = el.closest('.tab-panel');
   if (!panel) return;
-  // Get sticky menu height for offset
+  // Get sticky elements height for offset
+  const subtabBar = panel.querySelector('.npc-subtab-bar');
   const menu = panel.querySelector('.jump-to-menu');
-  const offset = menu ? menu.offsetHeight + 8 : 50;
+  let offset = 8;
+  if (subtabBar) offset += subtabBar.offsetHeight;
+  if (menu) offset += menu.offsetHeight;
+  if (!subtabBar && !menu) offset = 50;
   const targetTop = el.offsetTop - offset;
   panel.scrollTo({ top: targetTop, behavior: 'smooth' });
 }
 document.addEventListener('click', e => {
   if (!e.target.closest('.jump-to-menu')) closeAllJumpTo();
 });
+
+// ============================================================
+// NPC SUB-TABS
+// ============================================================
+const NPC_SUBTAB_ITEMS = {
+  generators: [
+    { id: 'npc-generator', label: '⟐ NPC Generator' },
+    { id: 'gm-aliengen', label: '⟐ Random Alien Generator' },
+    { id: 'gm-creaturegen', label: '⟐ Random Creature Generator' }
+  ],
+  lookups: [
+    { id: 'npc-notable', label: '⟐ Notable NPC Lookup' },
+    { id: 'npc-weapons', label: '⟐ Weapons Lookup' },
+    { id: 'npc-equipment', label: '⟐ Equipment Lookup' },
+    { id: 'npc-creatures', label: '⟐ Creature Lookup' }
+  ]
+};
+function switchNpcSubtab(name) {
+  // Update buttons
+  document.querySelectorAll('.npc-subtab-bar button').forEach(b => b.classList.toggle('active', b.dataset.npcst === name));
+  // Show/hide panels (multiple panels may share the same data-subtab value)
+  document.querySelectorAll('.npc-subtab-panel').forEach(p => p.classList.toggle('active', p.dataset.subtab === name));
+  // Update Jump To dropdown
+  const items = NPC_SUBTAB_ITEMS[name] || [];
+  const dd = document.getElementById('npcJumpToDropdown');
+  dd.innerHTML = items.map(i => '<a class="jump-to-item" onclick="jumpTo(\'' + i.id + '\')">' + i.label + '</a>').join('');
+  document.getElementById('npcJumpToCount').textContent = items.length + ' tools';
+  closeAllJumpTo();
+  // Scroll to top
+  document.getElementById('tab-npc').scrollTop = 0;
+  // Persist
+  try { localStorage.setItem('npcSubtab', name); } catch(e) {}
+}
+// Init on load
+(function() {
+  const saved = (function(){ try { return localStorage.getItem('npcSubtab'); } catch(e) { return null; } })();
+  switchNpcSubtab(saved && NPC_SUBTAB_ITEMS[saved] ? saved : 'lookups');
+})();
 
 // ============================================================
 // NPC STATE
@@ -4233,6 +4286,7 @@ function showNotableNpcByName(encodedName) {
 
 function lookupNotableNpcsBySystem(system) {
   switchTab('npc');
+  switchNpcSubtab('lookups');
   if (!notableNpcPanelOpen) toggleNotableNpcPanel();
   const searchEl = document.getElementById('notableNpcSearch');
   const sysEl = document.getElementById('notableNpcSystemFilter');
