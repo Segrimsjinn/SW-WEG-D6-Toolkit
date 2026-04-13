@@ -48274,5 +48274,37 @@ const STARSHIP_DATA = {
   "source": "WEG40215 Lords of the Expanse: Gamemaster Guide p.38",
   "capsule": "Standard orbit dock at the Tallaan Imperial Shipyards, the largest shipyard facility in the Tapani sector region. Each dock can service several dozen bulk freighters or hundreds of smaller craft. The shipyards consist of several hundred such docks, most over 200 years old and continually updated. Hundreds of thousands of workers team in and around docked vessels. Many docks are dedicated to Imperial vessels — at least one Imperial Star Destroyer is always present for routine maintenance, plus a torpedo sphere in drydock undergoing refurbishment. Protected by patrolling Imperial cruisers and Golan armored defense platforms."
  }
+ ,
+ {
+  "name": "Shindra Lily (MRX-BR Pacifier)",
+  "type": "Sydon Vehicle Works MRX-BR Pacifier",
+  "category": "Named Modified Transports",
+  "scale": "Starfighter",
+  "length": "25 meters",
+  "skill": "Space transports",
+  "crew": "1",
+  "crew_skill": "See Jinjur Tomas",
+  "passengers": "3",
+  "cargo_capacity": "24 metric tons",
+  "consumables": "1 year",
+  "cost": "Not for sale",
+  "hyperdrive_multiplier": "x1",
+  "hyperdrive_backup": "x8",
+  "nav_computer": "Yes",
+  "maneuverability": "1D",
+  "space": "7",
+  "hull": "2D",
+  "shields": "2D",
+  "sensors_passive": "30/1D",
+  "sensors_scan": "60/2D",
+  "sensors_search": "120/3D",
+  "sensors_focus": "10/3D+2",
+  "weapons": [
+   { "name": "2 Proton Torpedo Launchers", "fire_arc": "Front", "crew": "1", "skill": "Starship gunnery", "fire_control": "2D", "range": "1/3/7", "damage": "9D" },
+   { "name": "3 Laser Cannons", "fire_arc": "1 rear, 1 left, 1 right", "crew": "1 each (remote from cockpit)", "skill": "Starship gunnery", "fire_control": "3D", "range": "1-3/12/25", "damage": "3D" }
+  ],
+  "source": "WEG40215 Lords of the Expanse: Gamemaster Guide p.42",
+  "capsule": "The Shindra Lily is Mining Guild recruiter Jinjur Tomas's pride and joy — a stock, almost-new Sydon Vehicle Works MRX-BR Pacifier exploration fighter. She saved for six years to buy it and is fiercely protective of 'her baby.' The Pacifier is a well-armed exploration vessel with impressive sensors (Focus range 10) and a year's consumables, ideal for scouting unexplored systems along the Rimma Trade Route looking for rogue mining operations."
+ }
 // --- END OF STARSHIP_DATA ---
 };
