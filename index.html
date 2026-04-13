@@ -543,6 +543,15 @@ font-family:'Eras Demi ITC','Era Demi','Rajdhani',sans-serif;font-size:14px;
 color:var(--text-dim);min-width:35px;text-align:right;
 }
 .ar-dir-grid button:hover{border-color:var(--gold)}
+.jump-to-menu{position:sticky;top:0;z-index:90;padding:6px 0;background:var(--bg);border-bottom:1px solid var(--card-border);margin-bottom:8px}
+.jump-to-btn{display:flex;align-items:center;gap:6px;background:none;border:1px solid var(--gold-dim);border-radius:var(--radius);padding:6px 14px;cursor:pointer;font-family:'Orbitron','Exo 2',monospace;font-size:10px;letter-spacing:1.5px;color:var(--gold);width:100%}
+.jump-to-btn:hover{border-color:var(--gold);color:var(--text)}
+.jump-to-btn .jt-arrow{margin-left:auto;transition:transform .2s}
+.jump-to-btn.open .jt-arrow{transform:rotate(180deg)}
+.jump-to-dropdown{display:none;position:absolute;left:0;right:0;top:100%;background:var(--bg3,#12122a);border:1px solid var(--card-border);border-radius:0 0 var(--radius) var(--radius);box-shadow:0 8px 24px rgba(0,0,0,0.5);max-height:60vh;overflow-y:auto;z-index:91}
+.jump-to-dropdown.open{display:block}
+.jump-to-item{display:block;padding:10px 16px;font-family:'Eras Demi ITC','Era Demi','Rajdhani',sans-serif;font-size:12px;color:var(--text-dim);cursor:pointer;border-bottom:1px solid rgba(255,255,255,0.04);text-decoration:none;min-height:40px;display:flex;align-items:center}
+.jump-to-item:hover{background:rgba(255,255,255,0.05);color:var(--gold)}
 </style>
 </head>
 <body>
@@ -556,7 +565,19 @@ color:var(--text-dim);min-width:35px;text-align:right;
   <div class="app-content">
     <!-- TAB 1: NPC GENERATOR -->
     <div id="tab-npc" class="tab-panel active">
-      <div class="card">
+      <div class="jump-to-menu" style="position:relative">
+        <button class="jump-to-btn" onclick="toggleJumpTo(this)">⟐ JUMP TO <span style="color:var(--text-dim);font-size:9px;margin-left:4px">7 tools</span><span class="jt-arrow">▾</span></button>
+        <div class="jump-to-dropdown">
+          <a class="jump-to-item" onclick="jumpTo('npc-generator')">⟐ NPC Generator</a>
+          <a class="jump-to-item" onclick="jumpTo('npc-weapons')">⟐ Weapons Lookup</a>
+          <a class="jump-to-item" onclick="jumpTo('npc-equipment')">⟐ Equipment Lookup</a>
+          <a class="jump-to-item" onclick="jumpTo('npc-creatures')">⟐ Creature Lookup</a>
+          <a class="jump-to-item" onclick="jumpTo('npc-notable')">⟐ Notable NPC Lookup</a>
+          <a class="jump-to-item" onclick="jumpTo('gm-aliengen')">⟐ Random Alien Generator</a>
+          <a class="jump-to-item" onclick="jumpTo('gm-creaturegen')">⟐ Random Creature Generator</a>
+        </div>
+      </div>
+      <div class="card" id="npc-generator">
         <div class="card-title">⟐ Generate NPC</div>
         <div class="bias-row">
           <span style="font-size:11px;color:var(--text-dim)">Human Bias</span>
@@ -567,7 +588,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
       </div>
 
       <!-- WEAPONS LOOKUP -->
-      <div class="card" style="margin-top:8px">
+      <div class="card" id="npc-weapons" style="margin-top:8px">
         <div class="card-title" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer" onclick="toggleWeapPanel()">
           <span>⟐ Weapons Lookup <span id="weapCountBadge" style="color:var(--text-dim);font-weight:400;font-size:10px;letter-spacing:1px"></span></span>
           <span id="weapToggleIcon" style="font-size:14px;color:var(--text-dim);transition:transform .2s">▼</span>
@@ -627,7 +648,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
       </div>
 
       <!-- EQUIPMENT LOOKUP -->
-      <div class="card" style="margin-top:8px">
+      <div class="card" id="npc-equipment" style="margin-top:8px">
         <div class="card-title" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer" onclick="toggleEquipPanel()">
           <span>⟐ Equipment Lookup <span id="equipCountBadge" style="color:var(--text-dim);font-weight:400;font-size:10px;letter-spacing:1px"></span></span>
           <span id="equipToggleIcon" style="font-size:14px;color:var(--text-dim);transition:transform .2s">▼</span>
@@ -687,7 +708,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
       </div>
 
       <!-- CREATURE LOOKUP -->
-      <div class="card" style="margin-top:8px">
+      <div class="card" id="npc-creatures" style="margin-top:8px">
         <div class="card-title" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer" onclick="toggleCreaturePanel()">
           <span>⟐ Creature Lookup <span id="creatureCountBadge" style="color:var(--text-dim);font-weight:400;font-size:10px;letter-spacing:1px"></span></span>
           <span id="creatureToggleIcon" style="font-size:14px;color:var(--text-dim);transition:transform .2s">▼</span>
@@ -770,7 +791,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
       </div>
 
       <!-- NOTABLE NPC LOOKUP -->
-      <div class="card" style="margin-top:8px">
+      <div class="card" id="npc-notable" style="margin-top:8px">
         <div class="card-title" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer" onclick="toggleNotableNpcPanel()">
           <span>⟐ Notable NPC Lookup <span id="notableNpcCountBadge" style="color:var(--text-dim);font-weight:400;font-size:10px;letter-spacing:1px"></span></span>
           <span id="notableNpcToggleIcon" style="font-size:14px;color:var(--text-dim);transition:transform .2s">▼</span>
@@ -962,7 +983,17 @@ color:var(--text-dim);min-width:35px;text-align:right;
 
     <!-- TAB 2: TRAVEL CALCULATOR -->
     <div id="tab-travel" class="tab-panel">
-      <div class="card">
+      <div class="jump-to-menu" style="position:relative">
+        <button class="jump-to-btn" onclick="toggleJumpTo(this)">⟐ JUMP TO <span style="color:var(--text-dim);font-size:9px;margin-left:4px">5 tools</span><span class="jt-arrow">▾</span></button>
+        <div class="jump-to-dropdown">
+          <a class="jump-to-item" onclick="jumpTo('travel-calc')">⟐ Hyperspace Travel Calculator</a>
+          <a class="jump-to-item" onclick="jumpTo('travel-ref')">⟐ Astrogation Quick Reference</a>
+          <a class="jump-to-item" onclick="jumpTo('travel-summary')">⟐ Route Summary</a>
+          <a class="jump-to-item" onclick="jumpTo('travel-path')">⟐ Route Path</a>
+          <a class="jump-to-item" onclick="jumpTo('travel-map')">⟐ Route Map</a>
+        </div>
+      </div>
+      <div class="card" id="travel-calc">
         <div class="card-title">⟐ Hyperspace Travel Calculator</div>
         <div class="route-toggle">
           <button id="routeTrade" class="route-opt active" onclick="setRoute('trade')">Trade Route<span style="display:block;font-size:9px;opacity:0.7;font-weight:400">(Dijkstra Shortest Path)</span></button>
@@ -999,7 +1030,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
         <button class="btn btn-sm btn-secondary btn-full" style="margin-top:8px" onclick="resetAstrogation()">✕ Clear Route</button>
       </div>
 
-      <div class="card">
+      <div class="card" id="travel-ref">
         <div class="card-title">⟐ Astrogation Quick Reference</div>
         <div style="display:flex;gap:10px;flex-wrap:wrap">
           <!-- Col 1: Difficulty Modifiers -->
@@ -1058,7 +1089,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
       </div>
 
       <div id="travelResult" style="display:none">
-        <div class="card fade-in">
+        <div class="card fade-in" id="travel-summary">
           <div class="card-title">⟐ Route Summary</div>
           <div id="routeLabel" style="font-size:11px;color:var(--text-dim);margin-bottom:10px"></div>
           <div class="result-grid">
@@ -1075,12 +1106,12 @@ color:var(--text-dim);min-width:35px;text-align:right;
           </div>
         </div>
 
-        <div class="card fade-in">
+        <div class="card fade-in" id="travel-path">
           <div class="card-title">⟐ Route Path <span style="font-size:9px;color:#4caf50;font-weight:400;margin-left:8px">🏰 Green sites are clickable links to critical system notes</span></div>
           <div id="pathOutput" class="path-list"></div>
         </div>
 
-        <div class="card fade-in">
+        <div class="card fade-in" id="travel-map">
           <div class="card-title">⟐ Route Map</div>
           <div style="padding:16px 0">
           <div class="map-container" id="travelMapContainer">
@@ -1123,7 +1154,16 @@ color:var(--text-dim);min-width:35px;text-align:right;
       </div>
     </div>
     <div id="tab-ships" class="tab-panel">
-      <div class="card">
+      <div class="jump-to-menu" style="position:relative">
+        <button class="jump-to-btn" onclick="toggleJumpTo(this)">⟐ JUMP TO <span style="color:var(--text-dim);font-size:9px;margin-left:4px">4 tools</span><span class="jt-arrow">▾</span></button>
+        <div class="jump-to-dropdown">
+          <a class="jump-to-item" onclick="jumpTo('ships-database')">⟐ Starship Database</a>
+          <a class="jump-to-item" onclick="jumpTo('ships-vehicles')">⟐ Vehicle Database</a>
+          <a class="jump-to-item" onclick="jumpTo('ships-equipment')">⟐ Ship Equipment</a>
+          <a class="jump-to-item" onclick="jumpTo('ships-builder')">⟐ Ship Builder</a>
+        </div>
+      </div>
+      <div class="card" id="ships-database">
         <div class="card-title">⟐ Starship Database</div>
         <div class="ship-dropdowns">
           <div>
@@ -1230,7 +1270,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
       </div>
 
       <!-- VEHICLE LOOKUP -->
-      <div class="card" style="margin-top:8px">
+      <div class="card" id="ships-vehicles" style="margin-top:8px">
         <div class="card-title" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer" onclick="toggleVehiclePanel()">
           <span>⟐ Vehicle Database <span id="vehCountBadge" style="color:var(--text-dim);font-weight:400;font-size:10px;letter-spacing:1px"></span></span>
           <span id="vehToggleIcon" style="font-size:14px;color:var(--text-dim);transition:transform .2s">▼</span>
@@ -1297,7 +1337,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
       </div>
 
       <!-- SHIP EQUIPMENT LOOKUP -->
-      <div class="card" style="margin-top:8px">
+      <div class="card" id="ships-equipment" style="margin-top:8px">
         <div class="card-title" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer" onclick="toggleShipEquipPanel()">
           <span>⟐ Ship Equipment <span id="shipEquipCountBadge" style="color:var(--text-dim);font-weight:400;font-size:10px;letter-spacing:1px"></span></span>
           <span id="shipEquipToggleIcon" style="font-size:14px;color:var(--text-dim);transition:transform .2s">▼</span>
@@ -1315,7 +1355,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
       </div>
 
       <!-- SHIP BUILDER -->
-      <div class="card" style="margin-top:8px">
+      <div class="card" id="ships-builder" style="margin-top:8px">
         <div class="card-title" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer" onclick="toggleShipBuilder()">
           <span>⟐ Ship Builder</span>
           <span id="sbToggleIcon" style="font-size:14px;color:var(--text-dim)">▼</span>
@@ -1356,20 +1396,23 @@ color:var(--text-dim);min-width:35px;text-align:right;
 
     <!-- TAB 5: GM TOOLS -->
     <div id="tab-gm" class="tab-panel">
-      <div id="gm-top" style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:8px;font-size:9px;font-family:'Exo 2',monospace;letter-spacing:0.5px">
-        <a href="#gm-dice" style="color:var(--gold);text-decoration:none;padding:3px 8px;border:1px solid var(--card-border);border-radius:4px">Dice</a>
-        <a href="#gm-combat" style="color:var(--gold);text-decoration:none;padding:3px 8px;border:1px solid var(--card-border);border-radius:4px">Combat</a>
-        <a href="#gm-combatref" style="color:var(--gold);text-decoration:none;padding:3px 8px;border:1px solid var(--card-border);border-radius:4px">Combat Ref</a>
-        <a href="#gm-chase" style="color:var(--gold);text-decoration:none;padding:3px 8px;border:1px solid var(--card-border);border-radius:4px">Chase</a>
-        <a href="#gm-cp" style="color:var(--gold);text-decoration:none;padding:3px 8px;border:1px solid var(--card-border);border-radius:4px">CP & FP</a>
-        <a href="#gm-advance" style="color:var(--gold);text-decoration:none;padding:3px 8px;border:1px solid var(--card-border);border-radius:4px">Advancement</a>
-        <a href="#gm-force" style="color:var(--gold);text-decoration:none;padding:3px 8px;border:1px solid var(--card-border);border-radius:4px">Force Powers</a>
-        <a href="#gm-freighter" style="color:var(--gold);text-decoration:none;padding:3px 8px;border:1px solid var(--card-border);border-radius:4px">Freighter</a>
-        <a href="#gm-shipmods" style="color:var(--gold);text-decoration:none;padding:3px 8px;border:1px solid var(--card-border);border-radius:4px">Ship Mods</a>
-        <a href="#gm-repairs" style="color:var(--gold);text-decoration:none;padding:3px 8px;border:1px solid var(--card-border);border-radius:4px">Repairs</a>
-        <a href="#gm-mishaps" style="color:var(--gold);text-decoration:none;padding:3px 8px;border:1px solid var(--card-border);border-radius:4px">Mishaps</a>
-        <a href="#gm-dathomir" style="color:#4caf50;text-decoration:none;padding:3px 8px;border:1px solid #2e7d32;border-radius:4px">Dathomir Magic</a>
-        <a href="#gm-taree" style="color:#ce93d8;text-decoration:none;padding:3px 8px;border:1px solid #6a1b9a;border-radius:4px">Ta-Ree Magic</a>
+      <div class="jump-to-menu" style="position:relative">
+        <button class="jump-to-btn" onclick="toggleJumpTo(this)">⟐ JUMP TO <span style="color:var(--text-dim);font-size:9px;margin-left:4px">13 tools</span><span class="jt-arrow">▾</span></button>
+        <div class="jump-to-dropdown">
+          <a class="jump-to-item" onclick="jumpTo('gm-dice')">⟐ D6 Dice Roller</a>
+          <a class="jump-to-item" onclick="jumpTo('gm-combat')">⟐ Combat Tracker</a>
+          <a class="jump-to-item" onclick="jumpTo('gm-combatref')">⟐ Combat Quick Reference</a>
+          <a class="jump-to-item" onclick="jumpTo('gm-chase')">⟐ Chase & Movement Reference</a>
+          <a class="jump-to-item" onclick="jumpTo('gm-cp')">⟐ Character Points & Force Points</a>
+          <a class="jump-to-item" onclick="jumpTo('gm-advance')">⟐ Character Advancement</a>
+          <a class="jump-to-item" onclick="jumpTo('gm-force')">⟐ Force Powers Reference</a>
+          <a class="jump-to-item" style="color:#4caf50" onclick="jumpTo('gm-dathomir')">⟐ Dathomir Magic</a>
+          <a class="jump-to-item" style="color:#ce93d8" onclick="jumpTo('gm-taree')">⟐ Ta-Ree Magic</a>
+          <a class="jump-to-item" onclick="jumpTo('gm-freighter')">⟐ Freighter Captain's Guide</a>
+          <a class="jump-to-item" onclick="jumpTo('gm-shipmods')">⟐ Ship Modifications</a>
+          <a class="jump-to-item" onclick="jumpTo('gm-repairs')">⟐ Ship Repairs & Spaceport</a>
+          <a class="jump-to-item" onclick="jumpTo('gm-mishaps')">⟐ Starship Mishap Tables</a>
+        </div>
       </div>
       <div class="card" id="gm-dice">
         <div class="card-title">⟐ D6 Dice Roller</div>
@@ -1430,7 +1473,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
       </div>
 
       <div class="card" id="gm-combat">
-        <div class="card-title" style="display:flex;justify-content:space-between;align-items:center">⟐ Combat Tracker<a href="#gm-top" style="font-size:9px;color:var(--text-dim);text-decoration:none">↑ Top</a></div>
+        <div class="card-title" style="display:flex;justify-content:space-between;align-items:center">⟐ Combat Tracker</div>
         <!-- Initiative Header -->
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;flex-wrap:wrap;gap:8px">
           <div style="display:flex;align-items:center;gap:8px">
@@ -1469,7 +1512,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
       </div>
 
       <div class="card" id="gm-combatref">
-        <div class="card-title" style="display:flex;justify-content:space-between;align-items:center">⟐ Combat Quick Reference<a href="#gm-top" style="font-size:9px;color:var(--text-dim);text-decoration:none">↑ Top</a></div>
+        <div class="card-title" style="display:flex;justify-content:space-between;align-items:center">⟐ Combat Quick Reference</div>
         <div style="display:flex;gap:10px;flex-wrap:wrap">
           <!-- Col 1: Difficulty + Range -->
           <div style="flex:1;min-width:140px">
@@ -1516,7 +1559,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
       </div>
 
       <div class="card" id="gm-chase">
-        <div class="card-title" style="display:flex;justify-content:space-between;align-items:center">⟐ Chase & Movement Reference<a href="#gm-top" style="font-size:9px;color:var(--text-dim);text-decoration:none">↑ Top</a></div>
+        <div class="card-title" style="display:flex;justify-content:space-between;align-items:center">⟐ Chase & Movement Reference</div>
         <div style="display:flex;gap:10px;flex-wrap:wrap">
           <!-- Col 1: Speed Levels -->
           <div style="flex:1;min-width:140px">
@@ -1587,7 +1630,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
       </div>
 
       <div class="card" id="gm-cp">
-        <div class="card-title" style="display:flex;justify-content:space-between;align-items:center">⟐ Character Points & Force Points (In-Scene)<a href="#gm-top" style="font-size:9px;color:var(--text-dim);text-decoration:none">↑ Top</a></div>
+        <div class="card-title" style="display:flex;justify-content:space-between;align-items:center">⟐ Character Points & Force Points (In-Scene)</div>
         <div style="display:flex;gap:12px;margin-bottom:10px;flex-wrap:wrap">
           <div style="flex:1;min-width:200px">
             <div style="font-family:'Exo 2',monospace;font-size:8px;color:var(--gold);letter-spacing:1px;margin-bottom:4px">CHARACTER POINTS (CP)</div>
@@ -1633,7 +1676,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
       </div>
 
       <div class="card" id="gm-advance">
-        <div class="card-title" style="display:flex;justify-content:space-between;align-items:center">⟐ Character Advancement (Between Adventures)<a href="#gm-top" style="font-size:9px;color:var(--text-dim);text-decoration:none">↑ Top</a></div>
+        <div class="card-title" style="display:flex;justify-content:space-between;align-items:center">⟐ Character Advancement (Between Adventures)</div>
         <div style="display:flex;gap:12px;margin-bottom:10px;flex-wrap:wrap">
           <div style="flex:1;min-width:220px">
             <div style="font-family:'Exo 2',monospace;font-size:8px;color:var(--gold);letter-spacing:1px;margin-bottom:4px">SKILL IMPROVEMENT (1 pip per adventure)</div>
@@ -1692,7 +1735,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
       </div>
 
       <div class="card" id="gm-force">
-        <div class="card-title" style="display:flex;justify-content:space-between;align-items:center">⟐ Force Powers Reference<a href="#gm-top" style="font-size:9px;color:var(--text-dim);text-decoration:none">↑ Top</a></div>
+        <div class="card-title" style="display:flex;justify-content:space-between;align-items:center">⟐ Force Powers Reference</div>
         <div style="display:flex;gap:12px;margin-bottom:12px;flex-wrap:wrap">
           <div style="flex:1;min-width:140px">
             <div style="font-family:'Exo 2',monospace;font-size:8px;color:var(--gold);letter-spacing:1px;margin-bottom:4px">RELATIONSHIP</div>
@@ -1740,7 +1783,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
       </div>
 
       <div class="card" id="gm-dathomir" style="border-color:#2e7d32">
-        <div class="card-title" style="display:flex;justify-content:space-between;align-items:center;color:#4caf50">⟐ Dathomir Magic — Allyan Spell Reference<a href="#gm-top" style="font-size:9px;color:var(--text-dim);text-decoration:none">↑ Top</a></div>
+        <div class="card-title" style="display:flex;justify-content:space-between;align-items:center;color:#4caf50">⟐ Dathomir Magic — Allyan Spell Reference</div>
         <div style="font-size:10px;color:var(--text-dim);margin-bottom:10px;border-left:2px solid #2e7d32;padding-left:8px;font-style:italic">The Witches of Dathomir use the Force through ritualized "spells" — chanting, singing, and written incantations passed down from the exiled Jedi Allya. Unlike Jedi (who use Control, Sense, Alter), each Dathomir spell has its own separate die code advanced like any normal skill. "Allyan Magic" is the light-side tradition; "Shadow Magic" is the Nightsisters' dark-side corruption of the same spells.</div>
         <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px">
           <!-- Learning -->
@@ -1844,7 +1887,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
       </div>
 
       <div class="card" id="gm-taree" style="border-color:#6a1b9a">
-        <div class="card-title" style="display:flex;justify-content:space-between;align-items:center;color:#ce93d8">⟐ Ta-Ree Magic — Spirit Energy Spell Reference<a href="#gm-top" style="font-size:9px;color:var(--text-dim);text-decoration:none">↑ Top</a></div>
+        <div class="card-title" style="display:flex;justify-content:space-between;align-items:center;color:#ce93d8">⟐ Ta-Ree Magic — Spirit Energy Spell Reference</div>
         <div style="font-size:10px;color:var(--text-dim);margin-bottom:10px;border-left:2px solid #6a1b9a;padding-left:8px;font-style:italic">Ta-Ree ("Spirit Energy") is a quasi-mystical energy field unique to the DarkStryder planet of Kathol. Created by the Precursors merging with the Lifewell, it amplifies the Force locally — any sentient being on the planet can access magical abilities without Jedi training. Ta-Ree powers <span style="color:#ef5350">cannot be used anywhere except the DarkStryder planet</span>. Skilled users are called <span style="color:#ce93d8">gosho-ree</span> ("Ascendants"). Source: WEG40112 DarkStryder: Endgame.</div>
         <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px">
           <div style="flex:1;min-width:155px">
@@ -1984,7 +2027,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
       </div>
 
       <div class="card" id="gm-freighter">
-        <div class="card-title" style="display:flex;justify-content:space-between;align-items:center">⟐ Freighter Captain's Guide<a href="#gm-top" style="font-size:9px;color:var(--text-dim);text-decoration:none">↑ Top</a></div>
+        <div class="card-title" style="display:flex;justify-content:space-between;align-items:center">⟐ Freighter Captain's Guide</div>
         <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px">
           <!-- Col 1: Finding a Customer + Delivery Fees -->
           <div style="flex:1;min-width:155px">
@@ -2101,7 +2144,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
       </div>
 
       <div class="card" id="gm-shipmods">
-        <div class="card-title" style="display:flex;justify-content:space-between;align-items:center">⟐ Ship Modifications<a href="#gm-top" style="font-size:9px;color:var(--text-dim);text-decoration:none">↑ Top</a></div>
+        <div class="card-title" style="display:flex;justify-content:space-between;align-items:center">⟐ Ship Modifications</div>
         <div style="font-size:9px;color:var(--text-dim);font-style:italic;margin-bottom:8px">All costs are % of original retail price (Weapons/Shields/Range: % of weapon cost). One pip or one Move/Space level at a time. Max +1D+2 or +4 Space. One mod roll per month of game time. Repair bay rental: ~100 cr/day. Labor: 2–3x cost if hiring out. Used parts: half price but may be unreliable.</div>
         <div style="display:flex;gap:10px;flex-wrap:wrap">
           <div style="flex:1;min-width:155px">
@@ -2209,7 +2252,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
       </div>
 
       <div class="card" id="gm-repairs">
-        <div class="card-title" style="display:flex;justify-content:space-between;align-items:center">⟐ Ship Repairs &amp; Spaceport Services<a href="#gm-top" style="font-size:9px;color:var(--text-dim);text-decoration:none">↑ Top</a></div>
+        <div class="card-title" style="display:flex;justify-content:space-between;align-items:center">⟐ Ship Repairs &amp; Spaceport Services</div>
         <div style="display:flex;gap:10px;flex-wrap:wrap">
           <div style="flex:1;min-width:155px">
             <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin-bottom:3px">REPAIR COSTS <span style="color:var(--text-dim);font-weight:normal">(% of ship cost, new parts)</span></div>
@@ -2270,7 +2313,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
       </div>
 
       <div class="card" id="gm-mishaps">
-        <div class="card-title" style="display:flex;justify-content:space-between;align-items:center">⟐ Modified Starship Mishap Tables<a href="#gm-top" style="font-size:9px;color:var(--text-dim);text-decoration:none">↑ Top</a></div>
+        <div class="card-title" style="display:flex;justify-content:space-between;align-items:center">⟐ Modified Starship Mishap Tables</div>
         <div style="font-size:9px;color:var(--text-dim);font-style:italic;margin-bottom:8px">When wild die = 1 on a modified system, roll 1D + mishap modifier. <b style="color:var(--gold)">1–2</b> Minor · <b style="color:var(--cyan)">3–5</b> Moderate · <b style="color:var(--red)">6+</b> Catastrophic. Use <span style="color:var(--cyan)">REUP Quick Tables</span> for fast resolution or the <span style="color:var(--gold)">Tramp Freighters Detailed Tables</span> for specific results (roll 1D).</div>
         <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px">
           <div style="flex:1;min-width:180px">
@@ -2693,7 +2736,36 @@ function switchTab(tab) {
   document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
   document.getElementById('tab-' + tab).classList.add('active');
   document.querySelector(`[data-tab="${tab}"]`).classList.add('active');
+  closeAllJumpTo();
 }
+
+// ============================================================
+// JUMP TO MENUS
+// ============================================================
+function toggleJumpTo(btn) {
+  const dd = btn.nextElementSibling;
+  const isOpen = dd.classList.contains('open');
+  closeAllJumpTo();
+  if (!isOpen) { dd.classList.add('open'); btn.classList.add('open'); }
+}
+function closeAllJumpTo() {
+  document.querySelectorAll('.jump-to-dropdown.open').forEach(d => d.classList.remove('open'));
+  document.querySelectorAll('.jump-to-btn.open').forEach(b => b.classList.remove('open'));
+}
+function jumpTo(id) {
+  closeAllJumpTo();
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  // Offset for sticky header (~50px)
+  setTimeout(() => {
+    const panel = el.closest('.tab-panel');
+    if (panel) panel.scrollBy({ top: -50, behavior: 'smooth' });
+  }, 300);
+}
+document.addEventListener('click', e => {
+  if (!e.target.closest('.jump-to-menu')) closeAllJumpTo();
+});
 
 // ============================================================
 // NPC STATE
