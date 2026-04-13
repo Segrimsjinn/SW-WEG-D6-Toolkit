@@ -940,6 +940,15 @@ color:var(--text-dim);min-width:35px;text-align:right;
           </div>
         </div>
       </div>
+
+      <div class="card" id="gm-aliengen">
+        <div class="card-title">⟐ Random Alien Generator</div>
+        <div style="font-size:11px;color:var(--text-dim);margin-bottom:10px;line-height:1.5">Generate a random new alien species using the WEG40166 <em>Alien Encounters</em> Chapter One tables. Output is meant as a creative seed — tweak ranges, ability counts, and story factors as needed.</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:10px">
+          <button class="btn btn-primary" onclick="generateRandomAlien()" style="padding:8px 18px;font-size:11px;letter-spacing:1px">⟐ GENERATE ALIEN</button>
+        </div>
+        <div id="alienGenResult" style="display:none"></div>
+      </div>
     </div>
 
     <!-- TAB 2: TRAVEL CALCULATOR -->
@@ -1340,7 +1349,6 @@ color:var(--text-dim);min-width:35px;text-align:right;
     <div id="tab-gm" class="tab-panel">
       <div id="gm-top" style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:8px;font-size:9px;font-family:'Exo 2',monospace;letter-spacing:0.5px">
         <a href="#gm-dice" style="color:var(--gold);text-decoration:none;padding:3px 8px;border:1px solid var(--card-border);border-radius:4px">Dice</a>
-        <a href="#gm-aliengen" style="color:var(--cyan);text-decoration:none;padding:3px 8px;border:1px solid var(--cyan);border-radius:4px">Alien Gen</a>
         <a href="#gm-combat" style="color:var(--gold);text-decoration:none;padding:3px 8px;border:1px solid var(--card-border);border-radius:4px">Combat</a>
         <a href="#gm-combatref" style="color:var(--gold);text-decoration:none;padding:3px 8px;border:1px solid var(--card-border);border-radius:4px">Combat Ref</a>
         <a href="#gm-chase" style="color:var(--gold);text-decoration:none;padding:3px 8px;border:1px solid var(--card-border);border-radius:4px">Chase</a>
@@ -1410,15 +1418,6 @@ color:var(--text-dim);min-width:35px;text-align:right;
           </div>
           <button class="ship-sort-btn" onclick="clearHistory()" style="margin-top:8px;font-size:7px">CLEAR HISTORY</button>
         </div>
-      </div>
-
-      <div class="card" id="gm-aliengen">
-        <div class="card-title" style="display:flex;justify-content:space-between;align-items:center">⟐ Random Alien Generator<a href="#gm-top" style="font-size:9px;color:var(--text-dim);text-decoration:none">↑ Top</a></div>
-        <div style="font-size:11px;color:var(--text-dim);margin-bottom:10px;line-height:1.5">Generate a random new alien species using the WEG40166 <em>Alien Encounters</em> Chapter One tables. Output is meant as a creative seed — tweak ranges, ability counts, and story factors as needed.</div>
-        <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:10px">
-          <button class="btn btn-primary" onclick="generateRandomAlien()" style="padding:8px 18px;font-size:11px;letter-spacing:1px">⟐ GENERATE ALIEN</button>
-        </div>
-        <div id="alienGenResult" style="display:none"></div>
       </div>
 
       <div class="card" id="gm-combat">
