@@ -5479,23 +5479,28 @@ function getUndocumentedSystems() {
   return _undocSystems;
 }
 
-// Generate a random alien species name from syllable pools
-function generateSpeciesName() {
-  const onset = ['b','br','ch','d','dr','f','g','gl','gr','h','j','k','kh','kr','l','m','n','p','pr','q','r','s','sh','sk','sl','sr','st','t','th','tr','v','vr','w','x','z','zh'];
-  const vowel = ['a','e','i','o','u','aa','ai','au','ee','ei','ia','ie','oo','ou','ua'];
-  const coda  = ['b','d','g','k','l','m','n','ng','nn','r','rr','s','sh','ss','t','th','x','z',''];
+// Derive a demonym-style species name from a planet name (e.g. Chandrila → Chandrilan)
+function deriveSpeciesName(planetName) {
+  // Strip any numeric suffixes like "IV", "III", trailing numbers
+  let base = planetName.replace(/\s+(I{1,3}|IV|V|VI{0,3}|[0-9]+)$/i, '').trim();
+  const suffixes = ['an','ian','ese','i','ite','ar','id','on','oi','ene','al','ri','ik'];
   const pick = arr => arr[Math.floor(Math.random() * arr.length)];
-  const syl = () => pick(onset) + pick(vowel) + pick(coda);
-  const count = Math.random() < 0.3 ? 2 : Math.random() < 0.7 ? 3 : 4;
-  let name = '';
-  for (let i = 0; i < count; i++) name += syl();
-  // Capitalize and optionally add an apostrophe break
-  name = name.charAt(0).toUpperCase() + name.slice(1);
-  if (name.length > 5 && Math.random() < 0.4) {
-    const pos = 2 + Math.floor(Math.random() * (name.length - 4));
-    name = name.slice(0, pos) + "'" + name.slice(pos);
+  const last = base.slice(-1).toLowerCase();
+  const last2 = base.slice(-2).toLowerCase();
+  // Choose suffix based on ending sound for natural results
+  if ('aeiou'.includes(last)) {
+    // Vowel ending: drop it or keep it, add consonant-led suffix
+    if (Math.random() < 0.5) base = base.slice(0, -1);
+    return base + pick(['an','ian','ese','ite','id','ene']);
   }
-  return name;
+  if (last2 === 'on' || last2 === 'an' || last2 === 'en') {
+    // Already ends -on/-an/-en: works as-is or add -ese/-i/-ite
+    return base + pick(['ese','i','ite','ian']);
+  }
+  if (last === 'r' || last === 'l') {
+    return base + pick(['ian','i','ese','ite']);
+  }
+  return base + pick(suffixes);
 }
 
 function generateRandomAlien() {
@@ -5547,10 +5552,10 @@ function generateRandomAlien() {
 
   const ms = alienRoll(D.moveSize, '3D');
 
-  // Species name + homeworld from undocumented frontier systems
-  const speciesName = generateSpeciesName();
+  // Homeworld from undocumented frontier systems, species name derived from it
   const undoc = getUndocumentedSystems();
   const homeworld = undoc.length > 0 ? undoc[Math.floor(Math.random() * undoc.length)] : null;
+  const speciesName = homeworld ? deriveSpeciesName(homeworld.name) : 'Unknown Species';
 
   const row = (label, val) => `<div style="display:flex;gap:8px;padding:3px 0;border-bottom:1px solid rgba(255,255,255,0.04)"><span style="color:var(--text-dim);min-width:130px;flex-shrink:0">${label}</span><span style="color:var(--text-primary)">${val}</span></div>`;
 
