@@ -5676,7 +5676,7 @@ function generateRandomAlien() {
   const container = document.getElementById('alienGenResult');
   container.innerHTML = `<div style="display:flex;gap:10px;align-items:flex-start;flex-wrap:wrap">${html}<div style="flex:1;min-width:260px">${nativeHtml}</div></div>`;
   container.style.display = 'block';
-  container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  jumpTo('gm-aliengen');
 }
 
 function buildTypicalNative(speciesName, techValue, ranges, ms) {
@@ -5953,7 +5953,7 @@ function generateRandomCreature() {
   const container = document.getElementById('creatureGenResult');
   container.innerHTML = html;
   container.style.display = 'block';
-  container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  jumpTo('gm-creaturegen');
 }
 
 function clearGalaxyHighlights() {
