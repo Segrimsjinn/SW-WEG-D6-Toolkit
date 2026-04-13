@@ -950,10 +950,10 @@ color:var(--text-dim);min-width:35px;text-align:right;
         <button class="jump-to-btn" onclick="toggleJumpTo(this)">⟐ JUMP TO <span style="color:var(--text-dim);font-size:9px;margin-left:4px">5 tools</span><span class="jt-arrow">▾</span></button>
         <div class="jump-to-dropdown">
           <a class="jump-to-item" onclick="jumpTo('travel-calc')">⟐ Hyperspace Travel Calculator</a>
-          <a class="jump-to-item" onclick="jumpTo('travel-ref')">⟐ Astrogation Quick Reference</a>
           <a class="jump-to-item" onclick="jumpTo('travel-summary')">⟐ Route Summary</a>
           <a class="jump-to-item" onclick="jumpTo('travel-path')">⟐ Route Path</a>
           <a class="jump-to-item" onclick="jumpTo('travel-map')">⟐ Route Map</a>
+          <a class="jump-to-item" onclick="jumpTo('travel-ref')">⟐ Astrogation Quick Reference</a>
         </div>
       </div>
       <div class="card" id="travel-calc">
@@ -991,6 +991,42 @@ color:var(--text-dim);min-width:35px;text-align:right;
         <button class="btn btn-sm btn-secondary btn-full" style="margin-bottom:12px" onclick="randomBoth()">⟳ Random Both</button>
         <button class="btn btn-generate" onclick="engage()">⟐ PLOT ASTROGATION ⟐</button>
         <button class="btn btn-sm btn-secondary btn-full" style="margin-top:8px" onclick="resetAstrogation()">✕ Clear Route</button>
+      </div>
+
+      <div id="travelResult" style="display:none">
+        <div class="card fade-in" id="travel-summary">
+          <div class="card-title">⟐ Route Summary</div>
+          <div id="routeLabel" style="font-size:11px;color:var(--text-dim);margin-bottom:10px"></div>
+          <div class="result-grid">
+            <div class="result-box"><div class="result-label">ORIGIN GRID</div><div id="resOGrid" class="result-value"></div></div>
+            <div class="result-box"><div class="result-label">DEST GRID</div><div id="resDGrid" class="result-value"></div></div>
+            <div class="result-box"><div class="result-label">ORIGIN REGION</div><div id="resORegion" class="result-value"></div></div>
+            <div class="result-box"><div class="result-label">DEST REGION</div><div id="resDRegion" class="result-value"></div></div>
+            <div class="result-box"><div class="result-label">TILES</div><div id="resTiles" class="result-value highlight"></div></div>
+            <div class="result-box"><div class="result-label">TRAVEL TIME</div><div id="resTime" class="result-value highlight"></div></div>
+            <div class="result-box"><div class="result-label">BASE HOURS</div><div id="resBaseHrs" class="result-value"></div></div>
+            <div class="result-box"><div class="result-label">TOTAL HOURS</div><div id="resTotalHrs" class="result-value highlight"></div></div>
+            <div class="result-box wide"><div class="result-label">⚠ MALFUNCTION POINT</div><div id="resMalfunction" class="result-value" style="color:var(--red)"></div></div>
+            <div id="resGazetteerRow" class="result-box wide" style="display:none"><div class="result-label">🏰 SECTOR GAZETTEER</div><div id="resGazetteer" class="result-value" style="color:#4caf50"></div></div>
+          </div>
+        </div>
+
+        <div class="card fade-in" id="travel-path">
+          <div class="card-title">⟐ Route Path <span style="font-size:9px;color:#4caf50;font-weight:400;margin-left:8px">🏰 Green sites are clickable links to critical system notes</span></div>
+          <div id="pathOutput" class="path-list"></div>
+        </div>
+
+        <div class="card fade-in" id="travel-map">
+          <div class="card-title">⟐ Route Map</div>
+          <div style="padding:16px 0">
+          <div class="map-container" id="travelMapContainer">
+            <div class="map-zoom-wrap" id="travelMapZoom">
+            <img id="mapImage" src="galaxy-map.jpg" alt="Galaxy Map">
+            <canvas id="mapCanvas"></canvas>
+            </div>
+          </div>
+          </div>
+        </div>
       </div>
 
       <div class="card" id="travel-ref">
@@ -1047,42 +1083,6 @@ color:var(--text-dim);min-width:35px;text-align:right;
               <div style="display:flex;gap:6px;border-bottom:1px solid var(--card-border);padding:2px 0"><span style="color:var(--gold);min-width:20px">10</span><span>Close call. Ship completes journey but one secondary system (sublight, nav computer, escape pods, or weapons) is damaged on arrival.</span></div>
               <div style="display:flex;gap:6px;padding:2px 0"><span style="color:var(--red);min-width:20px">11-12</span><span style="color:var(--red)">Collision — heavy damage. Hull breach, ship not spaceworthy. Abandon ship. Crew must reach survival suits in 1 round or face stamina checks each round (Easy → Moderate → Difficult → Very Difficult → Heroic…).</span></div>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <div id="travelResult" style="display:none">
-        <div class="card fade-in" id="travel-summary">
-          <div class="card-title">⟐ Route Summary</div>
-          <div id="routeLabel" style="font-size:11px;color:var(--text-dim);margin-bottom:10px"></div>
-          <div class="result-grid">
-            <div class="result-box"><div class="result-label">ORIGIN GRID</div><div id="resOGrid" class="result-value"></div></div>
-            <div class="result-box"><div class="result-label">DEST GRID</div><div id="resDGrid" class="result-value"></div></div>
-            <div class="result-box"><div class="result-label">ORIGIN REGION</div><div id="resORegion" class="result-value"></div></div>
-            <div class="result-box"><div class="result-label">DEST REGION</div><div id="resDRegion" class="result-value"></div></div>
-            <div class="result-box"><div class="result-label">TILES</div><div id="resTiles" class="result-value highlight"></div></div>
-            <div class="result-box"><div class="result-label">TRAVEL TIME</div><div id="resTime" class="result-value highlight"></div></div>
-            <div class="result-box"><div class="result-label">BASE HOURS</div><div id="resBaseHrs" class="result-value"></div></div>
-            <div class="result-box"><div class="result-label">TOTAL HOURS</div><div id="resTotalHrs" class="result-value highlight"></div></div>
-            <div class="result-box wide"><div class="result-label">⚠ MALFUNCTION POINT</div><div id="resMalfunction" class="result-value" style="color:var(--red)"></div></div>
-            <div id="resGazetteerRow" class="result-box wide" style="display:none"><div class="result-label">🏰 SECTOR GAZETTEER</div><div id="resGazetteer" class="result-value" style="color:#4caf50"></div></div>
-          </div>
-        </div>
-
-        <div class="card fade-in" id="travel-path">
-          <div class="card-title">⟐ Route Path <span style="font-size:9px;color:#4caf50;font-weight:400;margin-left:8px">🏰 Green sites are clickable links to critical system notes</span></div>
-          <div id="pathOutput" class="path-list"></div>
-        </div>
-
-        <div class="card fade-in" id="travel-map">
-          <div class="card-title">⟐ Route Map</div>
-          <div style="padding:16px 0">
-          <div class="map-container" id="travelMapContainer">
-            <div class="map-zoom-wrap" id="travelMapZoom">
-            <img id="mapImage" src="galaxy-map.jpg" alt="Galaxy Map">
-            <canvas id="mapCanvas"></canvas>
-            </div>
-          </div>
           </div>
         </div>
       </div>
