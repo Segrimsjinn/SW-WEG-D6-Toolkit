@@ -949,6 +949,15 @@ color:var(--text-dim);min-width:35px;text-align:right;
         </div>
         <div id="alienGenResult" style="display:none"></div>
       </div>
+
+      <div class="card" id="gm-creaturegen">
+        <div class="card-title">⟐ Random Creature Generator</div>
+        <div style="font-size:11px;color:var(--text-dim);margin-bottom:10px;line-height:1.5">Generate a random creature with stats, abilities, and a homeworld. Body type, size, habitat, and behavior are rolled, then stats and special abilities are derived from distributions across 600+ sourcebook creatures.</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:10px">
+          <button class="btn btn-primary" onclick="generateRandomCreature()" style="padding:8px 18px;font-size:11px;letter-spacing:1px">⟐ GENERATE CREATURE</button>
+        </div>
+        <div id="creatureGenResult" style="display:none"></div>
+      </div>
     </div>
 
     <!-- TAB 2: TRAVEL CALCULATOR -->
@@ -5689,6 +5698,200 @@ function buildTypicalNative(speciesName, techValue, ranges, ms) {
       <span>Height: <span style="color:var(--text-primary)">${ms.height}</span></span>
     </div>
   </div>`;
+}
+
+// ============================================================
+// RANDOM CREATURE GENERATOR
+// ============================================================
+const CREATURE_GEN = {
+  bodyType: [
+    { range: [1,1], value: 'Reptilian', attacks: ['Bite','Claws','Tail'], movement: 'ground', nameparts: ['Crawler','Slither','Fang','Scale','Drake','Snap','Ridge-back','Crester'] },
+    { range: [2,2], value: 'Mammalian', attacks: ['Bite','Claws','Tusks','Horns'], movement: 'ground', nameparts: ['Stalker','Howler','Prowler','Mane-back','Fanger','Tusk','Charger','Loper'] },
+    { range: [3,3], value: 'Insectoid', attacks: ['Bite','Sting','Pincers'], movement: 'ground', nameparts: ['Skitter','Chitin','Driller','Hiver','Swarmer','Click','Borer','Spinner'] },
+    { range: [4,4], value: 'Avian', attacks: ['Beak','Talons'], movement: 'flying', nameparts: ['Swooper','Screamer','Diver','Wing','Raptor','Shrike','Glider','Kite'] },
+    { range: [5,5], value: 'Aquatic', attacks: ['Bite','Tentacles','Constriction'], movement: 'swimming', nameparts: ['Lurker','Gulper','Drifter','Tendril','Maw','Fin','Deep-jaw','Siphon'] },
+    { range: [6,6], value: 'Amorphous', attacks: ['Tentacles','Constriction','Acid'], movement: 'ground', nameparts: ['Ooze','Creeper','Blob','Mass','Slime','Feeder','Engulfer','Spreader'] }
+  ],
+  habitat: [
+    { range: [2,3], value: 'Forest' },
+    { range: [4,4], value: 'Desert' },
+    { range: [5,5], value: 'Swamp' },
+    { range: [6,6], value: 'Aquatic' },
+    { range: [7,7], value: 'Plains' },
+    { range: [8,8], value: 'Mountain' },
+    { range: [9,9], value: 'Subterranean' },
+    { range: [10,10], value: 'Arctic' },
+    { range: [11,11], value: 'Jungle' },
+    { range: [12,12], value: 'Various' }
+  ],
+  behavior: [
+    { range: [2,2], value: 'Parasite', desc: 'Attaches to host, drains nutrients or energy' },
+    { range: [3,4], value: 'Scavenger', desc: 'Feeds on carrion, avoids direct confrontation' },
+    { range: [5,6], value: 'Herbivore', desc: 'Grazes or forages, flees when threatened' },
+    { range: [7,8], value: 'Predator', desc: 'Active hunter, stalks and attacks prey' },
+    { range: [9,10], value: 'Pack Hunter', desc: 'Hunts cooperatively in groups of 3-12' },
+    { range: [11,11], value: 'Ambush Predator', desc: 'Lies in wait, strikes from concealment' },
+    { range: [12,12], value: 'Apex Predator', desc: 'Dominant territorial hunter, extremely aggressive' }
+  ],
+  // Size drives STR, DEX inverse scaling, and move
+  size: [
+    { range: [2,2],   label: 'Tiny',       meters: '0.1-0.3m',  strRange: [1,3],   dexRange: [9,15],  perRange: [3,9],  moveRange: [3,6],    scale: '' },
+    { range: [3,3],   label: 'Small',      meters: '0.3-0.8m',  strRange: [2,5],   dexRange: [7,13],  perRange: [3,9],  moveRange: [4,10],   scale: '' },
+    { range: [4,5],   label: 'Medium',     meters: '0.8-1.5m',  strRange: [4,9],   dexRange: [5,12],  perRange: [3,9],  moveRange: [6,14],   scale: '' },
+    { range: [6,8],   label: 'Large',      meters: '1.5-3m',    strRange: [7,15],  dexRange: [4,12],  perRange: [3,8],  moveRange: [8,16],   scale: '' },
+    { range: [9,10],  label: 'Huge',       meters: '3-6m',      strRange: [12,21], dexRange: [3,10],  perRange: [3,7],  moveRange: [8,18],   scale: 'Creature scale' },
+    { range: [11,11], label: 'Massive',    meters: '6-15m',     strRange: [15,27], dexRange: [3,7],   perRange: [3,6],  moveRange: [6,15],   scale: 'Creature scale' },
+    { range: [12,12], label: 'Colossal',   meters: '15-50m',    strRange: [21,42], dexRange: [3,6],   perRange: [3,6],  moveRange: [5,12],   scale: 'Starfighter scale' }
+  ],
+  // Special abilities pool — each has weight, body type affinity, and generator
+  abilities: [
+    { name: 'Armor', weight: 36, types: null, gen: sz => { const d = sz.label==='Tiny'||sz.label==='Small' ? rollBetween(1,3) : sz.label==='Colossal'||sz.label==='Massive' ? rollBetween(3,8) : rollBetween(1,5); return `Armor: +${d}D physical, +${Math.max(1,d-1)}D energy`; }},
+    { name: 'Camouflage', weight: 46, types: null, gen: () => `Camouflage: +${rollBetween(1,3)}D to sneak/hide` },
+    { name: 'Exceptional Reflexes', weight: 31, types: null, gen: () => 'Exceptional Reflexes: +1D initiative' },
+    { name: 'Darkvision', weight: 22, types: null, gen: () => `Darkvision: ${rollBetween(10,30)}m` },
+    { name: 'Tremorsense', weight: 7, types: ['Reptilian','Insectoid','Amorphous'], gen: () => `Tremorsense: ${rollBetween(10,30)}m` },
+    { name: 'Silent Movement', weight: 7, types: ['Mammalian','Reptilian','Insectoid'], gen: () => 'Silent Movement: +2D to sneak' },
+    { name: 'Camouflage', weight: 0, types: null, gen: () => null }, // placeholder to avoid dupe picks
+    { name: 'Thick Hide', weight: 6, types: ['Reptilian','Mammalian','Aquatic'], gen: () => `Thick Hide: +${rollBetween(1,2)}D physical` },
+    { name: 'Poison', weight: 13, types: ['Reptilian','Insectoid','Amorphous'], gen: () => { const d = rollBetween(2,5); return `Poison: ${d}D damage over ${rollBetween(2,4)} rounds (Moderate STR to resist)`; }},
+    { name: 'Venom', weight: 5, types: ['Reptilian','Insectoid','Aquatic'], gen: () => { const d = rollBetween(3,6); return `Venom: Difficult STR or ${d}D damage and paralyzed ${rollBetween(1,4)} rounds`; }},
+    { name: 'Swallow Whole', weight: 9, types: ['Reptilian','Aquatic','Amorphous'], gen: () => 'Swallow Whole: on bite hit 5+ over difficulty, target is swallowed. STR+2D damage per round inside.' },
+    { name: 'Constriction', weight: 10, types: ['Reptilian','Aquatic','Amorphous'], gen: () => 'Constriction: STR+1D damage per round while grappled' },
+    { name: 'Trample', weight: 17, types: ['Mammalian','Reptilian'], gen: sz => { const d = sz.label==='Colossal'||sz.label==='Massive' ? rollBetween(2,4) : rollBetween(1,2); return `Trample: STR+${d}D damage to smaller targets in path`; }},
+    { name: 'Pack Tactics', weight: 5, types: ['Mammalian','Reptilian','Insectoid'], gen: () => `Pack Tactics: +1D per additional pack member (max +3D) to hit` },
+    { name: 'Keen Senses', weight: 6, types: null, gen: () => `Keen Senses: +${rollBetween(1,2)}D to search/tracking` },
+    { name: 'Climbing', weight: 12, types: ['Reptilian','Insectoid','Mammalian'], gen: () => `Climbing: climbing ${rollBetween(3,6)}D` },
+    { name: 'Burrowing', weight: 4, types: ['Insectoid','Reptilian','Amorphous'], gen: () => `Burrowing: can dig through earth at Move ${rollBetween(3,8)}` }
+  ]
+};
+
+function rollBetween(lo, hi) { return lo + Math.floor(Math.random() * (hi - lo + 1)); }
+
+function generateRandomCreature() {
+  if (window.goatcounter) goatcounter.count({ path: 'creaturegen-generated', event: true });
+  const pick = arr => arr[Math.floor(Math.random() * arr.length)];
+  const rollTable = (table, dice) => {
+    const nd = parseInt(dice);
+    let total = 0;
+    for (let i = 0; i < nd; i++) total += rollBetween(1, 6);
+    for (const entry of table) if (total >= entry.range[0] && total <= entry.range[1]) return entry;
+    return table[table.length - 1];
+  };
+
+  // Core rolls
+  const body = CREATURE_GEN.bodyType[rollBetween(0, 5)];
+  const habitat = rollTable(CREATURE_GEN.habitat, '2');
+  const behavior = rollTable(CREATURE_GEN.behavior, '2');
+  const size = rollTable(CREATURE_GEN.size, '2');
+
+  // Stats from size ranges (in pips)
+  const strPips = rollBetween(size.strRange[0], size.strRange[1]);
+  const dexPips = rollBetween(size.dexRange[0], size.dexRange[1]);
+  const perPips = rollBetween(size.perRange[0], size.perRange[1]);
+  const movVal = rollBetween(size.moveRange[0], size.moveRange[1]);
+  const moveStr = body.movement === 'flying' ? movVal + ' (flying)' :
+                  body.movement === 'swimming' ? movVal + ' (swimming)' : String(movVal);
+
+  // Primary attack from body type
+  const primaryAtk = pick(body.attacks);
+  const atkDmg = ['STR+1','STR+2','STR+1D','STR+1D+1','STR+1D+2','STR+2D'];
+  const dmgIdx = Math.min(5, Math.max(0, Math.floor(strPips / 4) + rollBetween(-1, 1)));
+  const primaryDmg = atkDmg[dmgIdx];
+  let attacksText = `${primaryAtk}: ${primaryDmg} damage`;
+
+  // 50% chance of secondary attack
+  const otherAtks = body.attacks.filter(a => a !== primaryAtk);
+  if (otherAtks.length > 0 && Math.random() < 0.5) {
+    const secAtk = pick(otherAtks);
+    const secIdx = Math.max(0, dmgIdx + rollBetween(-2, 0));
+    attacksText += `. ${secAtk}: ${atkDmg[secIdx]} damage`;
+  }
+
+  // Special abilities (1-3 rolled, body-type-weighted)
+  const abilCount = rollBetween(1, 3);
+  const eligible = CREATURE_GEN.abilities.filter(a =>
+    a.weight > 0 && (a.types === null || a.types.includes(body.value))
+  );
+  // Weighted random selection without replacement
+  const chosen = [];
+  const pool = [...eligible];
+  for (let i = 0; i < abilCount && pool.length > 0; i++) {
+    const totalW = pool.reduce((s, a) => s + a.weight, 0);
+    let r = Math.random() * totalW;
+    let picked = pool[0];
+    for (const a of pool) { r -= a.weight; if (r <= 0) { picked = a; break; } }
+    const text = picked.gen(size);
+    if (text) chosen.push(text);
+    pool.splice(pool.indexOf(picked), 1);
+  }
+
+  // Orneriness (based on behavior)
+  const ornMap = { 'Herbivore': rollBetween(1,3), 'Scavenger': rollBetween(2,5), 'Predator': rollBetween(4,8),
+                   'Pack Hunter': rollBetween(4,9), 'Ambush Predator': rollBetween(5,9), 'Apex Predator': rollBetween(7,12), 'Parasite': rollBetween(2,5) };
+  const ornPips = ornMap[behavior.value] || rollBetween(3,7);
+
+  // Creature name: demonym from a random undocumented system + body-type name part
+  const undoc = getUndocumentedSystems();
+  const hw = undoc.length > 0 ? undoc[Math.floor(Math.random() * undoc.length)] : null;
+  const demonym = hw ? deriveSpeciesName(hw.name).replace(/an$|ian$|ese$|ite$|id$|ene$/i, '') : 'Wild';
+  // Clean up trailing vowels for compound name
+  const prefix = demonym.replace(/[aeiou]$/i, '') + (demonym.match(/[aeiou]$/i) ? '' : '');
+  const suffix = pick(body.nameparts);
+  const creatureName = (hw ? deriveSpeciesName(hw.name).split(/(?=[A-Z])/).join('') : 'Unknown') + ' ' + suffix;
+  // Actually let's keep it simple: "[Demonym] [NamePart]"
+  const simpleDemonym = hw ? deriveSpeciesName(hw.name) : 'Wild';
+  const finalName = simpleDemonym + ' ' + suffix;
+
+  // Size text — pick a specific value within the range
+  const sizeMeters = size.meters;
+
+  // Build card HTML
+  const row = (label, val) => `<div style="display:flex;gap:8px;padding:3px 0;border-bottom:1px solid rgba(255,255,255,0.04)"><span style="color:var(--text-dim);min-width:120px;flex-shrink:0">${label}</span><span style="color:var(--text-primary)">${val}</span></div>`;
+
+  const hwClick = hw ? ` onclick="switchTab('galaxy');document.getElementById('galaxySearch').value='${hw.name.replace(/'/g,"\\'")}';searchGalaxy('${hw.name.replace(/'/g,"\\'")}')" style="cursor:pointer;color:var(--cyan);text-decoration:underline"` : '';
+  const hwText = hw ? `<span${hwClick}>${hw.name}</span> <span style="color:var(--text-dim)">(${hw.grid})</span>` : '<span style="color:var(--text-dim);font-style:italic">Unknown</span>';
+
+  const specialLines = [attacksText, ...chosen].map(s =>
+    `<div style="padding:2px 0;border-bottom:1px solid rgba(255,255,255,0.04)"><span style="color:var(--text-primary)">${s}</span></div>`
+  ).join('');
+
+  const scaleNote = size.scale ? `<div style="font-size:10px;color:var(--gold);font-style:italic;margin-top:4px">${size.scale}</div>` : '';
+
+  const html = `<div class="card" style="border:1px solid var(--cyan);margin-bottom:12px">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+      <div style="color:var(--cyan);font-size:18px;font-weight:700;letter-spacing:1px">${finalName}</div>
+      <div style="display:flex;gap:6px"><button onclick="generateRandomCreature()" style="font-size:11px;color:var(--gold);background:none;border:1px solid var(--gold);border-radius:var(--radius);padding:2px 8px;cursor:pointer;font-family:inherit">Re-roll</button><button onclick="document.getElementById('creatureGenResult').style.display='none'" style="font-size:11px;color:var(--red);background:none;border:1px solid var(--red);border-radius:var(--radius);padding:2px 8px;cursor:pointer;font-family:inherit">✕</button></div>
+    </div>
+    <div style="font-size:11px;color:var(--text-dim);margin-bottom:12px">${body.value} ${behavior.value.toLowerCase()}</div>
+
+    <div style="display:grid;gap:0;margin-bottom:14px;padding:10px;background:rgba(0,0,0,0.2);border-radius:6px">
+      ${row('Planet', hwText)}
+      ${row('Habitat', habitat.value)}
+      ${row('Size', size.label + ' (' + sizeMeters + ')')}
+    </div>
+
+    <div style="font-family:'Exo 2',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:6px">⟐ STATS</div>
+    <div style="display:grid;gap:0;margin-bottom:14px;padding:10px;background:rgba(0,0,0,0.2);border-radius:6px">
+      ${row('DEXTERITY', pipsToD6(dexPips))}
+      ${row('PERCEPTION', pipsToD6(perPips))}
+      ${row('STRENGTH', pipsToD6(strPips))}
+      ${row('Move', moveStr)}
+      ${row('Orneriness', pipsToD6(ornPips))}
+    </div>
+
+    <div style="font-family:'Exo 2',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:6px">⟐ ATTACKS & SPECIAL ABILITIES</div>
+    <div style="margin-bottom:10px;padding:10px;background:rgba(0,0,0,0.2);border-radius:6px;font-size:11px;line-height:1.7">
+      ${specialLines}
+      ${scaleNote}
+    </div>
+
+    <div style="color:var(--text-dim);font-size:11px;font-style:italic;margin-top:4px">Randomly generated creature. Stats based on distributions from ${typeof CREATURES_DATA !== 'undefined' ? CREATURES_DATA.length : '600+' } sourcebook creatures.</div>
+  </div>`;
+
+  const container = document.getElementById('creatureGenResult');
+  container.innerHTML = html;
+  container.style.display = 'block';
+  container.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 function clearGalaxyHighlights() {
