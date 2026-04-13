@@ -543,7 +543,7 @@ font-family:'Eras Demi ITC','Era Demi','Rajdhani',sans-serif;font-size:14px;
 color:var(--text-dim);min-width:35px;text-align:right;
 }
 .ar-dir-grid button:hover{border-color:var(--gold)}
-.jump-to-menu{position:sticky;top:0;z-index:90;padding:6px 0;background:var(--bg);border-bottom:1px solid var(--card-border);margin-bottom:8px}
+.jump-to-menu{position:sticky;top:-16px;z-index:90;padding:22px 0 6px;margin:-16px -16px 8px;padding-left:16px;padding-right:16px;background:var(--bg);border-bottom:1px solid var(--card-border)}
 .jump-to-btn{display:flex;align-items:center;gap:6px;background:none;border:1px solid var(--gold-dim);border-radius:var(--radius);padding:6px 14px;cursor:pointer;font-family:'Orbitron','Exo 2',monospace;font-size:10px;letter-spacing:1.5px;color:var(--gold);width:100%}
 .jump-to-btn:hover{border-color:var(--gold);color:var(--text)}
 .jump-to-btn .jt-arrow{margin-left:auto;transition:transform .2s}
@@ -2756,12 +2756,13 @@ function jumpTo(id) {
   closeAllJumpTo();
   const el = document.getElementById(id);
   if (!el) return;
-  el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  // Offset for sticky header (~50px)
-  setTimeout(() => {
-    const panel = el.closest('.tab-panel');
-    if (panel) panel.scrollBy({ top: -50, behavior: 'smooth' });
-  }, 300);
+  const panel = el.closest('.tab-panel');
+  if (!panel) return;
+  // Get sticky menu height for offset
+  const menu = panel.querySelector('.jump-to-menu');
+  const offset = menu ? menu.offsetHeight + 8 : 50;
+  const targetTop = el.offsetTop - offset;
+  panel.scrollTo({ top: targetTop, behavior: 'smooth' });
 }
 document.addEventListener('click', e => {
   if (!e.target.closest('.jump-to-menu')) closeAllJumpTo();
