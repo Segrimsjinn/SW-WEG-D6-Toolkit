@@ -5605,10 +5605,91 @@ function generateRandomAlien() {
     <div style="color:var(--text-dim);font-size:11px;font-style:italic;margin-top:8px">Generated using WEG40166 Alien Encounters Chapter One tables (pp.4-17). Homeworld drawn from ${undoc.length.toLocaleString()} undocumented systems.</div>
   </div>`;
 
+  // --- Typical Native stat block ---
+  const nativeHtml = buildTypicalNative(speciesName, tech.value, ranges, ms);
+
   const container = document.getElementById('alienGenResult');
-  container.innerHTML = html;
+  container.innerHTML = html + nativeHtml;
   container.style.display = 'block';
   container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function buildTypicalNative(speciesName, techValue, ranges, ms) {
+  // Template by tech level
+  const techTemplateMap = {
+    'Stone': 'Tough Native', 'Feudal': 'Tough Native',
+    'Industrial': 'Local Guard', 'Atomic': 'Local Guard',
+    'Information': 'Scout', 'Space': 'Scout'
+  };
+  const template = techTemplateMap[techValue] || 'Tough Native';
+
+  // Random training
+  const trainKeys = Object.keys(SKILLS_DATA.training);
+  const training = trainKeys[Math.floor(Math.random() * trainKeys.length)];
+  const tData = SKILLS_DATA.training[training];
+
+  // Pick midpoint of each attribute range → base dice code
+  const attrMap = { DEXTERITY: 'Dex', KNOWLEDGE: 'Kno', MECHANICAL: 'Mec', PERCEPTION: 'Per', STRENGTH: 'Str', TECHNICAL: 'Tec' };
+  const baseAttrs = {};
+  for (const r of ranges) {
+    const parts = r.range.split('/');
+    const lo = d6ToPips(parts[0]), hi = d6ToPips(parts[1]);
+    const mid = Math.round((lo + hi) / 2);
+    baseAttrs[attrMap[r.name]] = mid;
+  }
+
+  // Collect skills flagged for this template
+  const flagged = SKILLS_DATA.skills.filter(s => s.jobs.includes(template));
+  const shuffled = [...flagged].sort(() => Math.random() - 0.5);
+  const alloc = shuffled.map(s => ({ ...s, pips: 0 }));
+  let budget = tData.budget, cap = tData.cap;
+
+  // Novice guarantee: 3 pips each
+  if (training === 'Novice') {
+    for (const sk of alloc) {
+      const g = Math.min(3, cap, budget);
+      sk.pips = g; budget -= g;
+      if (budget <= 0) break;
+    }
+  }
+  // Random scatter
+  let safety = 0;
+  while (budget > 0 && safety < 5000) {
+    const eligible = alloc.filter(s => s.pips < cap);
+    if (!eligible.length) break;
+    const s = eligible[Math.floor(Math.random() * eligible.length)];
+    s.pips++; budget--;
+    safety++;
+  }
+
+  // Build skill list grouped by attribute
+  const attrOrder = ['Dex','Per','Kno','Str','Mec','Tec'];
+  const attrFull = { Dex:'DEXTERITY', Kno:'KNOWLEDGE', Mec:'MECHANICAL', Per:'PERCEPTION', Str:'STRENGTH', Tec:'TECHNICAL' };
+  const skills = alloc.filter(s => s.pips > 0).map(s => ({
+    name: s.name, attr: s.attr, dice: pipsToD6(baseAttrs[s.attr] + s.pips)
+  }));
+
+  let statHtml = '';
+  for (const aKey of attrOrder) {
+    const base = pipsToD6(baseAttrs[aKey]);
+    const aSkills = skills.filter(s => s.attr === aKey);
+    const skillStr = aSkills.length ? aSkills.map(s => `<span style="color:var(--text-primary)">${s.name} ${s.dice}</span>`).join(', ') : '';
+    statHtml += `<div style="padding:2px 0;border-bottom:1px solid rgba(255,255,255,0.04)"><span style="color:var(--gold);font-size:10px;font-weight:700;min-width:100px;display:inline-block">${attrFull[aKey]} ${base}</span> ${skillStr}</div>`;
+  }
+
+  return `<div class="card" style="border:1px solid var(--gold-dim);margin-bottom:12px">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+      <div style="color:var(--gold);font-size:14px;font-weight:700;letter-spacing:1px">Average ${speciesName}</div>
+      <div style="font-size:10px;color:var(--text-dim)">${template} · ${training}</div>
+    </div>
+    <div style="padding:8px 10px;background:rgba(0,0,0,0.2);border-radius:6px;font-size:11px;line-height:1.7;margin-bottom:8px">
+      ${statHtml}
+    </div>
+    <div style="display:flex;gap:16px;font-size:11px;color:var(--text-dim)">
+      <span>Move: <span style="color:var(--text-primary)">${ms.move}</span></span>
+      <span>Height: <span style="color:var(--text-primary)">${ms.height}</span></span>
+    </div>
+  </div>`;
 }
 
 function clearGalaxyHighlights() {
