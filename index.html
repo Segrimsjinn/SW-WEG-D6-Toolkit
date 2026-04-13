@@ -7507,13 +7507,14 @@ document.addEventListener('DOMContentLoaded', function() {
       const gazId = name.replace(/[^a-zA-Z]/g, '');
       html += '<div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:10px">';
       html += '<select id="gaz' + gazId + 'A" style="padding:6px 10px;font-size:12px;background:#1a1a2e;color:#e0e0e0;border:1px solid var(--card-border);border-radius:var(--radius-sm)" onchange="gazLookup(\'' + gazId + '\')">';
+      const gwSet = new Set(gaz.gateways ? gaz.gateways.map(g => g.system) : []);
       html += '<option value="" style="background:#1a1a2e;color:#e0e0e0">— Origin —</option>';
-      for (const s of systems) html += '<option value="' + s + '" style="background:#1a1a2e;color:#e0e0e0">' + s + '</option>';
+      for (const s of systems) html += '<option value="' + s + '" style="background:#1a1a2e;color:' + (gwSet.has(s) ? '#4caf50' : '#e0e0e0') + '">' + (gwSet.has(s) ? '🏰 ' : '') + s + '</option>';
       html += '</select>';
       html += '<span style="color:var(--text-dark);font-size:14px">→</span>';
       html += '<select id="gaz' + gazId + 'B" style="padding:6px 10px;font-size:12px;background:#1a1a2e;color:#e0e0e0;border:1px solid var(--card-border);border-radius:var(--radius-sm)" onchange="gazLookup(\'' + gazId + '\')">';
       html += '<option value="" style="background:#1a1a2e;color:#e0e0e0">— Destination —</option>';
-      for (const s of systems) html += '<option value="' + s + '" style="background:#1a1a2e;color:#e0e0e0">' + s + '</option>';
+      for (const s of systems) html += '<option value="' + s + '" style="background:#1a1a2e;color:' + (gwSet.has(s) ? '#4caf50' : '#e0e0e0') + '">' + (gwSet.has(s) ? '🏰 ' : '') + s + '</option>';
       html += '</select>';
       html += '<div id="gaz' + gazId + 'Result" style="font-size:16px;color:var(--gold);font-family:\'Exo 2\',monospace;min-width:80px"></div>';
       html += '</div>';
