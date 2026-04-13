@@ -4583,14 +4583,14 @@
                    },
                    {
                        "attr":  "Tec",
-                   {
-                       "attr":  "Tec",
                        "name":  "Lightsaber Repair",
                        "jobs":  [
                                     "Disgraced House Guardsman",
                                     "Saber Rake"
                                 ]
                    },
+                   {
+                       "attr":  "Tec",
                        "name":  "Musical Instrument Repair",
                        "jobs":  [
                                     "Bimm Bard",
