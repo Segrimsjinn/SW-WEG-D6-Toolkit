@@ -4620,5 +4620,50 @@ const VEHICLES_DATA = [
   "game_notes": "A compact dragonfly-like vehicle that flies by flapping large insect-like wings. Originally designed centuries ago for the diminutive Mrlssti to move about during tidal floods, later expanded to human-scale craft. Constructed of lightweight alloys and high-impact plastics making it extremely affordable. Lifespan is only about 5 years. Available as civilian commuter, police interceptor (may be armed with light weapons), and service vehicle configurations. In high demand along the Shapani Bypass.",
   "source": "WEG40215 Lords of the Expanse p.36"
  }
+ ,
+ {
+  "name": "Parawing Glider",
+  "type": "Parawing Glider",
+  "category": "Airspeeders",
+  "scale": "Speeder",
+  "length": "",
+  "skill": "Repulsorlift operation",
+  "crew": "1",
+  "passengers": "1",
+  "cargo_capacity": "",
+  "cover": "None",
+  "altitude_range": "",
+  "cost": "",
+  "maneuverability": "1D",
+  "move": "20",
+  "body_strength": "1D+2",
+  "shields": "",
+  "weapons": [],
+  "game_notes": "Wind-powered glider with small repulsorlift engine for emergencies and additional thrust. Two saddles slung underneath the central wing — one pilot, one passenger (typically carrying a hunting blaster). Used by the Hejaran noble family for hunting nightsingers in canyon crags. Flying in a straight line is Easy; maneuvering in canyons ranges from Moderate to Very Difficult.",
+  "source": "WEG40147 Tapani Sector Instant Adventures p.48 (Blood Inheritance)"
+ },
+ {
+  "name": "REPSUB Submersible Carrier",
+  "type": "Aratech REPSUB",
+  "category": "Airspeeders",
+  "scale": "Speeder",
+  "length": "",
+  "skill": "Repulsorlift operation",
+  "crew": "2",
+  "passengers": "20",
+  "cargo_capacity": "",
+  "cover": "Full",
+  "altitude_range": "",
+  "cost": "",
+  "maneuverability": "1D",
+  "move": "70; 200 kmh (repulsorlift) / 21; 60 kmh (submarine)",
+  "body_strength": "4D",
+  "shields": "",
+  "weapons": [
+    { "name": "Light Laser Cannon", "fire_arc": "Front", "crew": "1", "skill": "Vehicle blasters", "fire_control": "1D", "range": "", "damage": "3D" }
+  ],
+  "game_notes": "Disc-shaped repulsorcraft capable of both flight and submarine modes. When submerged, -2D to opponent's sensors checks to detect. Used by JAN commandos to infiltrate the Unification Gala on Crispos Isle via underwater approach.",
+  "source": "WEG40147 Tapani Sector Instant Adventures p.64 (The Event of the Season)"
+ }
 // --- END OF VEHICLES_DATA ---
 ];
