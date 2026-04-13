@@ -605,6 +605,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
             <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--cyan)"><input type="checkbox" checked class="weapLegalCb" value="F" onchange="filterWeapons()" style="accent-color:var(--cyan);width:13px;height:13px">F</label>
             <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--gold)"><input type="checkbox" checked class="weapLegalCb" value="R" onchange="filterWeapons()" style="accent-color:var(--gold);width:13px;height:13px">R</label>
             <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--red)"><input type="checkbox" checked class="weapLegalCb" value="X" onchange="filterWeapons()" style="accent-color:var(--red);width:13px;height:13px">X</label>
+            <button onclick="showAvailLegalGuide()" style="margin-left:auto;background:none;border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text-dim);font-family:'Exo 2',monospace;font-size:8px;letter-spacing:1px;padding:3px 8px;cursor:pointer" title="Availability & Legality Guide">ⓘ GUIDE</button>
           </div>
           <input type="text" id="weapSearch" placeholder="Search by name, category, damage, skill..." oninput="filterWeapons()"
             style="width:100%;padding:10px 12px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:13px;font-family:inherit;margin-bottom:8px">
@@ -616,31 +617,6 @@ color:var(--text-dim);min-width:35px;text-align:right;
           <div style="display:flex;gap:6px;margin-bottom:10px">
             <button class="btn btn-primary" onclick="randomWeapon()" style="flex:1;padding:10px 8px;font-size:10px;letter-spacing:1.5px">⟐ RANDOM</button>
             <button class="btn btn-primary" onclick="clearWeapFilters()" style="padding:10px 12px;font-size:10px;letter-spacing:1.5px;background:var(--bg3);color:var(--text-dim);border:1px solid var(--card-border)">CLEAR</button>
-          </div>
-          <!-- Availability Guide (collapsible) -->
-          <div style="margin-bottom:10px">
-            <div onclick="document.getElementById('weapAvailRef').style.display=document.getElementById('weapAvailRef').style.display==='none'?'block':'none';this.querySelector('span:last-child').textContent=document.getElementById('weapAvailRef').style.display==='none'?'▼':'▲'" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer;padding:6px 8px;background:var(--bg);border:1px solid var(--card-border);border-radius:var(--radius-sm)">
-              <span style="font-family:'Exo 2',monospace;font-size:9px;color:var(--text-dim);letter-spacing:1px">AVAILABILITY & LEGALITY GUIDE</span>
-              <span style="font-size:11px;color:var(--text-dim)">▼</span>
-            </div>
-            <div id="weapAvailRef" style="display:none;padding:10px;background:var(--bg);border:1px solid var(--card-border);border-top:none;border-radius:0 0 var(--radius-sm) var(--radius-sm)">
-              <div style="font-family:'Exo 2',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:6px">AVAILABILITY NUMBER</div>
-              <div style="display:grid;grid-template-columns:auto 1fr;gap:4px 10px;margin-bottom:8px;font-size:11px">
-                <span style="color:var(--green);font-weight:600">1</span><span style="color:var(--text)">Readily available throughout the galaxy</span>
-                <span style="color:var(--green);font-weight:600">2</span><span style="color:var(--text)">Normally available, may require brief search</span>
-                <span style="color:var(--gold);font-weight:600">3</span><span style="color:var(--text)">Specialized item, limited supply — may need specific dealers</span>
-                <span style="color:var(--red);font-weight:600">4</span><span style="color:var(--text)">Rare, hard to find — black market, special order, or unique</span>
-              </div>
-              <div style="font-family:'Exo 2',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:6px">LEGALITY CODES</div>
-              <div style="display:grid;grid-template-columns:auto 1fr;gap:4px 10px;font-size:11px">
-                <span style="color:var(--cyan);font-weight:600">F</span><span style="color:var(--text)">Fee or permit required — legal but regulated</span>
-                <span style="color:var(--gold);font-weight:600">R</span><span style="color:var(--text)">Restricted — military/law enforcement only, license needed</span>
-                <span style="color:var(--red);font-weight:600">X</span><span style="color:var(--text)">Illegal — banned, black market only, severe penalties</span>
-              </div>
-              <div style="font-size:10px;color:var(--text-dim);margin-top:8px;line-height:1.5">
-                Example: <span style="color:var(--cyan)">2, R</span> = normally available but restricted to licensed buyers. <span style="color:var(--cyan)">4, X</span> = rare and illegal. Availability can vary by planet — Core Worlds are stricter, Outer Rim more lenient. The GM may adjust prices by 25-100% for restricted/illegal items.
-              </div>
-            </div>
           </div>
           <div id="weapList" style="max-height:300px;overflow-y:auto;margin-bottom:8px"></div>
           <div id="weapDetail" style="display:none"></div>
@@ -665,6 +641,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
             <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--cyan)"><input type="checkbox" checked class="equipLegalCb" value="F" onchange="filterEquipment()" style="accent-color:var(--cyan);width:13px;height:13px">F</label>
             <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--gold)"><input type="checkbox" checked class="equipLegalCb" value="R" onchange="filterEquipment()" style="accent-color:var(--gold);width:13px;height:13px">R</label>
             <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--red)"><input type="checkbox" checked class="equipLegalCb" value="X" onchange="filterEquipment()" style="accent-color:var(--red);width:13px;height:13px">X</label>
+            <button onclick="showAvailLegalGuide()" style="margin-left:auto;background:none;border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text-dim);font-family:'Exo 2',monospace;font-size:8px;letter-spacing:1px;padding:3px 8px;cursor:pointer" title="Availability & Legality Guide">ⓘ GUIDE</button>
           </div>
           <input type="text" id="equipSearch" placeholder="Search by name, category, stats..." oninput="filterEquipment()"
             style="width:100%;padding:10px 12px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:13px;font-family:inherit;margin-bottom:8px">
@@ -676,31 +653,6 @@ color:var(--text-dim);min-width:35px;text-align:right;
           <div style="display:flex;gap:6px;margin-bottom:10px">
             <button class="btn btn-primary" onclick="randomEquipment()" style="flex:1;padding:10px 8px;font-size:10px;letter-spacing:1.5px">⟐ RANDOM</button>
             <button class="btn btn-primary" onclick="clearEquipFilters()" style="padding:10px 12px;font-size:10px;letter-spacing:1.5px;background:var(--bg3);color:var(--text-dim);border:1px solid var(--card-border)">CLEAR</button>
-          </div>
-          <!-- Availability Guide (collapsible) -->
-          <div style="margin-bottom:10px">
-            <div onclick="document.getElementById('equipAvailRef').style.display=document.getElementById('equipAvailRef').style.display==='none'?'block':'none';this.querySelector('span:last-child').textContent=document.getElementById('equipAvailRef').style.display==='none'?'▼':'▲'" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer;padding:6px 8px;background:var(--bg);border:1px solid var(--card-border);border-radius:var(--radius-sm)">
-              <span style="font-family:'Exo 2',monospace;font-size:9px;color:var(--text-dim);letter-spacing:1px">AVAILABILITY & LEGALITY GUIDE</span>
-              <span style="font-size:11px;color:var(--text-dim)">▼</span>
-            </div>
-            <div id="equipAvailRef" style="display:none;padding:10px;background:var(--bg);border:1px solid var(--card-border);border-top:none;border-radius:0 0 var(--radius-sm) var(--radius-sm)">
-              <div style="font-family:'Exo 2',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:6px">AVAILABILITY NUMBER</div>
-              <div style="display:grid;grid-template-columns:auto 1fr;gap:4px 10px;margin-bottom:8px;font-size:11px">
-                <span style="color:var(--green);font-weight:600">1</span><span style="color:var(--text)">Readily available throughout the galaxy</span>
-                <span style="color:var(--green);font-weight:600">2</span><span style="color:var(--text)">Normally available, may require brief search</span>
-                <span style="color:var(--gold);font-weight:600">3</span><span style="color:var(--text)">Specialized item, limited supply — may need specific dealers</span>
-                <span style="color:var(--red);font-weight:600">4</span><span style="color:var(--text)">Rare, hard to find — black market, special order, or unique</span>
-              </div>
-              <div style="font-family:'Exo 2',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:6px">LEGALITY CODES</div>
-              <div style="display:grid;grid-template-columns:auto 1fr;gap:4px 10px;font-size:11px">
-                <span style="color:var(--cyan);font-weight:600">F</span><span style="color:var(--text)">Fee or permit required — legal but regulated</span>
-                <span style="color:var(--gold);font-weight:600">R</span><span style="color:var(--text)">Restricted — military/law enforcement only, license needed</span>
-                <span style="color:var(--red);font-weight:600">X</span><span style="color:var(--text)">Illegal — banned, black market only, severe penalties</span>
-              </div>
-              <div style="font-size:10px;color:var(--text-dim);margin-top:8px;line-height:1.5">
-                Example: <span style="color:var(--cyan)">2, R</span> = normally available but restricted to licensed buyers. <span style="color:var(--cyan)">4, X</span> = rare and illegal. Availability can vary by planet — Core Worlds are stricter, Outer Rim more lenient. The GM may adjust prices by 25-100% for restricted/illegal items.
-              </div>
-            </div>
           </div>
           <div id="equipList" style="max-height:300px;overflow-y:auto;margin-bottom:8px"></div>
           <div id="equipDetail" style="display:none"></div>
@@ -1212,30 +1164,8 @@ color:var(--text-dim);min-width:35px;text-align:right;
           <div id="rankMethodBody" style="font-size:11px;color:var(--text-dim);line-height:1.7"></div>
         </div>
 
-        <!-- Availability Guide (collapsible) -->
-        <div style="margin-top:12px">
-          <div onclick="document.getElementById('shipAvailRef').style.display=document.getElementById('shipAvailRef').style.display==='none'?'block':'none';this.querySelector('span:last-child').textContent=document.getElementById('shipAvailRef').style.display==='none'?'▼':'▲'" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer;padding:6px 8px;background:var(--bg);border:1px solid var(--card-border);border-radius:var(--radius-sm)">
-            <span style="font-family:'Exo 2',monospace;font-size:9px;color:var(--text-dim);letter-spacing:1px">AVAILABILITY & LEGALITY GUIDE</span>
-            <span style="font-size:11px;color:var(--text-dim)">▼</span>
-          </div>
-          <div id="shipAvailRef" style="display:none;padding:10px;background:var(--bg);border:1px solid var(--card-border);border-top:none;border-radius:0 0 var(--radius-sm) var(--radius-sm)">
-            <div style="font-family:'Exo 2',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:6px">AVAILABILITY NUMBER</div>
-            <div style="display:grid;grid-template-columns:auto 1fr;gap:4px 10px;margin-bottom:8px;font-size:11px">
-              <span style="color:var(--green);font-weight:600">1</span><span style="color:var(--text)">Readily available throughout the galaxy</span>
-              <span style="color:var(--green);font-weight:600">2</span><span style="color:var(--text)">Normally available, may require brief search</span>
-              <span style="color:var(--gold);font-weight:600">3</span><span style="color:var(--text)">Specialized item, limited supply — may need specific dealers</span>
-              <span style="color:var(--red);font-weight:600">4</span><span style="color:var(--text)">Rare, hard to find — black market, special order, or unique</span>
-            </div>
-            <div style="font-family:'Exo 2',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:6px">LEGALITY CODES</div>
-            <div style="display:grid;grid-template-columns:auto 1fr;gap:4px 10px;font-size:11px">
-              <span style="color:var(--cyan);font-weight:600">F</span><span style="color:var(--text)">Fee or permit required — legal but regulated</span>
-              <span style="color:var(--gold);font-weight:600">R</span><span style="color:var(--text)">Restricted — military/law enforcement only, license needed</span>
-              <span style="color:var(--red);font-weight:600">X</span><span style="color:var(--text)">Illegal — banned, black market only, severe penalties</span>
-            </div>
-            <div style="font-size:10px;color:var(--text-dim);margin-top:8px;line-height:1.5">
-              Example: <span style="color:var(--cyan)">2, R</span> = normally available but restricted to licensed buyers. <span style="color:var(--cyan)">4, X</span> = rare and illegal. Availability can vary by planet — Core Worlds are stricter, Outer Rim more lenient. The GM may adjust prices by 25-100% for restricted/illegal items.
-            </div>
-          </div>
+        <div style="margin-top:12px;text-align:right">
+          <button onclick="showAvailLegalGuide()" style="background:none;border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text-dim);font-family:'Exo 2',monospace;font-size:8px;letter-spacing:1px;padding:3px 8px;cursor:pointer" title="Availability & Legality Guide">ⓘ AVAIL/LEGAL GUIDE</button>
         </div>
 
         <!-- COMPARE MODE PANEL -->
@@ -1287,6 +1217,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
             <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--cyan)"><input type="checkbox" checked class="vehLegalCb" value="F" onchange="filterVehicles()" style="accent-color:var(--cyan);width:13px;height:13px">F</label>
             <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--gold)"><input type="checkbox" checked class="vehLegalCb" value="R" onchange="filterVehicles()" style="accent-color:var(--gold);width:13px;height:13px">R</label>
             <label style="display:flex;align-items:center;gap:3px;cursor:pointer;font-size:11px;color:var(--red)"><input type="checkbox" checked class="vehLegalCb" value="X" onchange="filterVehicles()" style="accent-color:var(--red);width:13px;height:13px">X</label>
+            <button onclick="showAvailLegalGuide()" style="margin-left:auto;background:none;border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text-dim);font-family:'Exo 2',monospace;font-size:8px;letter-spacing:1px;padding:3px 8px;cursor:pointer" title="Availability & Legality Guide">ⓘ GUIDE</button>
           </div>
           <input type="text" id="vehSearch" placeholder="Search by name, category, weapons..." oninput="filterVehicles()"
             style="width:100%;padding:10px 12px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:13px;font-family:inherit;margin-bottom:8px">
@@ -1305,31 +1236,6 @@ color:var(--text-dim);min-width:35px;text-align:right;
           <div style="display:flex;gap:6px;margin-bottom:10px">
             <button class="btn btn-primary" onclick="randomVehicle()" style="flex:1;padding:10px 8px;font-size:10px;letter-spacing:1.5px">⟐ RANDOM</button>
             <button class="btn btn-primary" onclick="clearVehFilters()" style="padding:10px 12px;font-size:10px;letter-spacing:1.5px;background:var(--bg3);color:var(--text-dim);border:1px solid var(--card-border)">CLEAR</button>
-          </div>
-          <!-- Availability Guide (collapsible) -->
-          <div style="margin-bottom:10px">
-            <div onclick="document.getElementById('vehAvailRef').style.display=document.getElementById('vehAvailRef').style.display==='none'?'block':'none';this.querySelector('span:last-child').textContent=document.getElementById('vehAvailRef').style.display==='none'?'▼':'▲'" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer;padding:6px 8px;background:var(--bg);border:1px solid var(--card-border);border-radius:var(--radius-sm)">
-              <span style="font-family:'Exo 2',monospace;font-size:9px;color:var(--text-dim);letter-spacing:1px">AVAILABILITY & LEGALITY GUIDE</span>
-              <span style="font-size:11px;color:var(--text-dim)">▼</span>
-            </div>
-            <div id="vehAvailRef" style="display:none;padding:10px;background:var(--bg);border:1px solid var(--card-border);border-top:none;border-radius:0 0 var(--radius-sm) var(--radius-sm)">
-              <div style="font-family:'Exo 2',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:6px">AVAILABILITY NUMBER</div>
-              <div style="display:grid;grid-template-columns:auto 1fr;gap:4px 10px;margin-bottom:8px;font-size:11px">
-                <span style="color:var(--green);font-weight:600">1</span><span style="color:var(--text)">Readily available throughout the galaxy</span>
-                <span style="color:var(--green);font-weight:600">2</span><span style="color:var(--text)">Normally available, may require brief search</span>
-                <span style="color:var(--gold);font-weight:600">3</span><span style="color:var(--text)">Specialized item, limited supply — may need specific dealers</span>
-                <span style="color:var(--red);font-weight:600">4</span><span style="color:var(--text)">Rare, hard to find — black market, special order, or unique</span>
-              </div>
-              <div style="font-family:'Exo 2',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:6px">LEGALITY CODES</div>
-              <div style="display:grid;grid-template-columns:auto 1fr;gap:4px 10px;font-size:11px">
-                <span style="color:var(--cyan);font-weight:600">F</span><span style="color:var(--text)">Fee or permit required — legal but regulated</span>
-                <span style="color:var(--gold);font-weight:600">R</span><span style="color:var(--text)">Restricted — military/law enforcement only, license needed</span>
-                <span style="color:var(--red);font-weight:600">X</span><span style="color:var(--text)">Illegal — banned, black market only, severe penalties</span>
-              </div>
-              <div style="font-size:10px;color:var(--text-dim);margin-top:8px;line-height:1.5">
-                Example: <span style="color:var(--cyan)">2, R</span> = normally available but restricted to licensed buyers. <span style="color:var(--cyan)">4, X</span> = rare and illegal. Availability can vary by planet — Core Worlds are stricter, Outer Rim more lenient. The GM may adjust prices by 25-100% for restricted/illegal items.
-              </div>
-            </div>
           </div>
           <div id="vehList" style="max-height:400px;overflow-y:auto;margin-bottom:8px"></div>
           <div id="vehDetail" style="display:none"></div>
@@ -2662,6 +2568,30 @@ color:var(--text-dim);min-width:35px;text-align:right;
       SETTINGS
     </button>
   </nav>
+</div>
+
+<!-- AVAILABILITY & LEGALITY GUIDE MODAL -->
+<div id="availLegalModal" style="display:none;position:fixed;inset:0;z-index:10000;align-items:center;justify-content:center;background:rgba(0,0,0,.7);padding:16px" onclick="if(event.target===this)hideAvailLegalGuide()">
+  <div style="background:var(--bg);border:2px solid var(--gold-dim);border-radius:var(--radius);max-width:480px;width:100%;max-height:80vh;overflow-y:auto;padding:20px 18px;position:relative">
+    <button onclick="hideAvailLegalGuide()" style="position:absolute;top:8px;right:12px;background:none;border:none;color:var(--text-dim);font-size:20px;cursor:pointer;padding:4px 8px;line-height:1" title="Close">&times;</button>
+    <div style="font-family:'Orbitron','Exo 2',monospace;font-size:11px;color:var(--gold);letter-spacing:2px;margin-bottom:14px;text-align:center">AVAILABILITY &amp; LEGALITY GUIDE</div>
+    <div style="font-family:'Exo 2',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:6px">AVAILABILITY NUMBER</div>
+    <div style="display:grid;grid-template-columns:auto 1fr;gap:4px 10px;margin-bottom:12px;font-size:12px">
+      <span style="color:var(--green);font-weight:600">1</span><span style="color:var(--text)">Readily available throughout the galaxy</span>
+      <span style="color:var(--green);font-weight:600">2</span><span style="color:var(--text)">Normally available, may require brief search</span>
+      <span style="color:var(--gold);font-weight:600">3</span><span style="color:var(--text)">Specialized item, limited supply — may need specific dealers</span>
+      <span style="color:var(--red);font-weight:600">4</span><span style="color:var(--text)">Rare, hard to find — black market, special order, or unique</span>
+    </div>
+    <div style="font-family:'Exo 2',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:6px">LEGALITY CODES</div>
+    <div style="display:grid;grid-template-columns:auto 1fr;gap:4px 10px;margin-bottom:12px;font-size:12px">
+      <span style="color:var(--cyan);font-weight:600">F</span><span style="color:var(--text)">Fee or permit required — legal but regulated</span>
+      <span style="color:var(--gold);font-weight:600">R</span><span style="color:var(--text)">Restricted — military/law enforcement only, license needed</span>
+      <span style="color:var(--red);font-weight:600">X</span><span style="color:var(--text)">Illegal — banned, black market only, severe penalties</span>
+    </div>
+    <div style="font-size:11px;color:var(--text-dim);line-height:1.6">
+      Example: <span style="color:var(--cyan)">2, R</span> = normally available but restricted to licensed buyers. <span style="color:var(--cyan)">4, X</span> = rare and illegal. Availability can vary by planet — Core Worlds are stricter, Outer Rim more lenient. The GM may adjust prices by 25-100% for restricted/illegal items.
+    </div>
+  </div>
 </div>
 
 <!-- DATA SCRIPTS -->
@@ -7637,6 +7567,14 @@ function randomShipEquip() {
 }
 </script>
 
+<script>
+// ============================================================
+// AVAILABILITY & LEGALITY GUIDE MODAL
+// ============================================================
+function showAvailLegalGuide(){const m=document.getElementById('availLegalModal');m.style.display='flex'}
+function hideAvailLegalGuide(){document.getElementById('availLegalModal').style.display='none'}
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&document.getElementById('availLegalModal').style.display==='flex')hideAvailLegalGuide()});
+</script>
 <script>
 // ============================================================
 // WEAPONS LOOKUP
