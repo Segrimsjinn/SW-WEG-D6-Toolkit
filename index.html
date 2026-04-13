@@ -5623,8 +5623,8 @@ function buildTypicalNative(speciesName, techValue, ranges, ms) {
   };
   const template = techTemplateMap[techValue] || 'Tough Native';
 
-  // Random training
-  const trainKeys = Object.keys(SKILLS_DATA.training);
+  // Random training — Trained or Experienced only for an average citizen
+  const trainKeys = ['Trained', 'Experienced'];
   const training = trainKeys[Math.floor(Math.random() * trainKeys.length)];
   const tData = SKILLS_DATA.training[training];
 
