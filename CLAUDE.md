@@ -87,7 +87,7 @@ The entire app. Contains all CSS (minified, inline `<style>`), all HTML tab pane
 }
 ```
 
-**Current gazetteers (8):**
+**Current gazetteers (9):**
 - **Brak Sector** (WEG40077) — 23 systems, full matrix from book table, grid O-14. Gateways: Enet (default), Latoma (from M/N-14), Genesia (from N-15).
 - **Ringali Shell** (WEG40029) — 6 systems, full matrix from book table, grid L-9. Gateways: Corulag (default/west/Deep Core), Brentaal (north), Raltiir (east).
 - **Elrood Sector** (WEG40132) — 15 systems, pre-computed from route map, grid M-20. Gateway: Coyn.
@@ -96,6 +96,7 @@ The entire app. Contains all CSS (minified, inline `<style>`), all HTML tab pane
 - **Sisar Run** (WEG40136) — 21 systems, pre-computed from route map, multi-grid corridor. Gateways: Sriluur (default), Reibrin (from R-7/R-8/S-7), Novor (from R-7/S-7), Nwarcol Point (from S-7/T-7/T-8), Sespe (from S-9/T-9/T-10), Ques (from T-8/T-9).
 - **Kathol Sector** (WEG40209) — 17 systems, pre-computed from route map (Trition Trade Route + lesser-known routes), grid M-21. Gateway: Kal'Shebbol (default).
 - **Kathol Outback** (WEG40209) — 18 systems, pre-computed from route map (all lesser-known routes across Marcol Void), grid M-21. Gateways: Galtea (default), Sebiris (default). Shared systems with Kathol Sector: Galtea, Sebiris.
+- **Tapani Sector** (WEG40215) — 89 systems, pre-computed from route map (tree-structured network with hyperspace buoys), grid L-13. Gateways: Achillea (default), Mrlsst (from L-12/K-13), Tallaan (from L-14/M-13/M-14). Largest gazetteer — 3,916 pairs.
 
 **Adding a new gazetteer:**
 1. If the sourcebook has a **full distance table** (matrix), transcribe it directly into `times` with alphabetical `"A|B"` keys.

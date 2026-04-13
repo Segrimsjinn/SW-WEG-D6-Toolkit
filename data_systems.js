@@ -1366,6 +1366,7 @@ const SYSTEMS_DATA = [
   { "name": "Danoor", "grid": "M-21", "region": "Outer Rim Territories", "col": 11, "row": 21, "quadrant": "S", "hours": 71.5 },
   { "name": "Danoria", "grid": "N-7", "region": "Inner Rim", "col": 12, "row": 7, "quadrant": "NE", "hours": 3.0 },
   { "name": "Danos", "grid": "U-8", "region": "Outer Rim Territories", "col": 19, "row": 8, "quadrant": "E", "hours": 61.3 },
+  { "name": "Danju", "grid": "L-13", "region": "Colonies", "col": 10, "row": 13, "quadrant": "C", "hours": 3.0 },
   { "name": "Danteel", "grid": "M-12", "region": "Core Worlds", "col": 11, "row": 12, "quadrant": "C", "hours": 2.2 },
   { "name": "Dantooine", "grid": "L-4", "region": "Outer Rim Territories", "col": 10, "row": 4, "quadrant": "N", "hours": 6.7 },
   { "name": "Danuta", "grid": "S-9", "region": "Mid Rim", "col": 17, "row": 9, "quadrant": "E", "hours": 3.3 },
