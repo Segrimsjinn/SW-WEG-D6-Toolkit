@@ -2604,7 +2604,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
     </button>
     <button class="nav-btn" onclick="switchTab('gazetteers')" data-tab="gazetteers">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="4" cy="5" r="2" fill="currentColor"/><circle cx="19" cy="17" r="3"/><ellipse cx="19" cy="17" rx="5" ry="1.5" fill="none"/><path d="M6 6l10 9" stroke-dasharray="2 2"/><path d="M14 13l2 2M16 13l-2 2"/></svg>
-      ROUTES
+      GAZETTE
     </button>
     <button class="nav-btn" onclick="switchTab('settings')" data-tab="settings">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
@@ -7506,14 +7506,14 @@ document.addEventListener('DOMContentLoaded', function() {
       // Large gazetteer — dropdown pair lookup
       const gazId = name.replace(/[^a-zA-Z]/g, '');
       html += '<div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:10px">';
-      html += '<select id="gaz' + gazId + 'A" style="padding:6px 10px;font-size:12px;background:var(--card-bg);color:var(--text);border:1px solid var(--card-border);border-radius:var(--radius-sm)" onchange="gazLookup(\'' + gazId + '\')">';
-      html += '<option value="">— Origin —</option>';
-      for (const s of systems) html += '<option value="' + s + '">' + s + '</option>';
+      html += '<select id="gaz' + gazId + 'A" style="padding:6px 10px;font-size:12px;background:#1a1a2e;color:#e0e0e0;border:1px solid var(--card-border);border-radius:var(--radius-sm)" onchange="gazLookup(\'' + gazId + '\')">';
+      html += '<option value="" style="background:#1a1a2e;color:#e0e0e0">— Origin —</option>';
+      for (const s of systems) html += '<option value="' + s + '" style="background:#1a1a2e;color:#e0e0e0">' + s + '</option>';
       html += '</select>';
       html += '<span style="color:var(--text-dark);font-size:14px">→</span>';
-      html += '<select id="gaz' + gazId + 'B" style="padding:6px 10px;font-size:12px;background:var(--card-bg);color:var(--text);border:1px solid var(--card-border);border-radius:var(--radius-sm)" onchange="gazLookup(\'' + gazId + '\')">';
-      html += '<option value="">— Destination —</option>';
-      for (const s of systems) html += '<option value="' + s + '">' + s + '</option>';
+      html += '<select id="gaz' + gazId + 'B" style="padding:6px 10px;font-size:12px;background:#1a1a2e;color:#e0e0e0;border:1px solid var(--card-border);border-radius:var(--radius-sm)" onchange="gazLookup(\'' + gazId + '\')">';
+      html += '<option value="" style="background:#1a1a2e;color:#e0e0e0">— Destination —</option>';
+      for (const s of systems) html += '<option value="' + s + '" style="background:#1a1a2e;color:#e0e0e0">' + s + '</option>';
       html += '</select>';
       html += '<div id="gaz' + gazId + 'Result" style="font-size:16px;color:var(--gold);font-family:\'Exo 2\',monospace;min-width:80px"></div>';
       html += '</div>';
