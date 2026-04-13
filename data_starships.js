@@ -48245,5 +48245,34 @@ const STARSHIP_DATA = {
   "source": "WEG40215 Lords of the Expanse p.39",
   "capsule": "The B-12 is a dedicated bacta transport commissioned by the Empire. Its fore section resembles the Lancer-class Frigate — KDY used the B-12's hull designs as a basis for the frigate when it was rushed into production after the Battle of Yavin. Sixteen bacta storage spheres are attached to a central pole linking the fore command section to the aft engine cluster. At orbital transfer stations, filled modules are swapped for empty ones, preventing contamination from unnecessary pumping. Unarmed but capable of operating with a skeleton crew of just four."
  }
+ ,
+ {
+  "name": "Tallaan Yards Orbit Dock",
+  "type": "Corellian Engineering Corporation Space Dock",
+  "category": "Space Stations",
+  "scale": "Capital",
+  "length": "6,890 meters",
+  "skill": "Capital ship piloting",
+  "crew": "10,000, skeleton: 4,500/+5",
+  "crew_skill": "",
+  "passengers": "15,000",
+  "cargo_capacity": "1,000,000 metric tons",
+  "consumables": "",
+  "cost": "Not for sale to civilians",
+  "hyperdrive_multiplier": "None",
+  "hyperdrive_backup": "None",
+  "nav_computer": "None",
+  "maneuverability": "0",
+  "space": "0 (immobile)",
+  "hull": "6D",
+  "shields": "5D",
+  "sensors_passive": "",
+  "sensors_scan": "",
+  "sensors_search": "",
+  "sensors_focus": "",
+  "weapons": [],
+  "source": "WEG40215 Lords of the Expanse: Gamemaster Guide p.38",
+  "capsule": "Standard orbit dock at the Tallaan Imperial Shipyards, the largest shipyard facility in the Tapani sector region. Each dock can service several dozen bulk freighters or hundreds of smaller craft. The shipyards consist of several hundred such docks, most over 200 years old and continually updated. Hundreds of thousands of workers team in and around docked vessels. Many docks are dedicated to Imperial vessels — at least one Imperial Star Destroyer is always present for routine maintenance, plus a torpedo sphere in drydock undergoing refurbishment. Protected by patrolling Imperial cruisers and Golan armored defense platforms."
+ }
 // --- END OF STARSHIP_DATA ---
 };
