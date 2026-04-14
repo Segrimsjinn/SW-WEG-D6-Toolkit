@@ -2436,7 +2436,14 @@ color:var(--text-dim);min-width:35px;text-align:right;
     <div id="tab-gazetteers" class="tab-panel">
       <div class="card">
         <div class="card-title">⟐ Sector Gazetteers — Local Hyperspace Travel Times</div>
-        <div style="font-size:11px;color:var(--text-dim);margin-bottom:12px">Sector-specific hyperspace travel times from WEG sourcebooks. All times at x1 hyperdrive multiplier. These override grid-based calculations in the astrogation calculator when both systems are in the same gazetteer.</div>
+        <div style="font-size:11px;color:var(--text-dim);margin-bottom:6px">Sector-specific hyperspace travel times from WEG sourcebooks. All times at x1 hyperdrive multiplier. These override grid-based calculations in the astrogation calculator when both systems are in the same gazetteer.</div>
+        <div style="font-size:10px;color:var(--text-dim);margin-bottom:12px;display:flex;gap:14px;flex-wrap:wrap;align-items:center">
+          <span style="font-family:'Exo 2',monospace;font-size:8px;color:var(--gold);letter-spacing:1px">TRAVEL TIME:</span>
+          <span><span style="color:#66bb6a;font-weight:600">green</span> = ≤ 10h (fast hop)</span>
+          <span><span style="color:var(--gold);font-weight:600">gold</span> = 11–30h (medium)</span>
+          <span><span style="color:var(--text-dim);font-weight:600">grey</span> = 30h+ (long haul)</span>
+          <span><span style="color:#4caf50">🏰</span> = gateway system</span>
+        </div>
         <div id="gazetteerTables"></div>
       </div>
     </div>
