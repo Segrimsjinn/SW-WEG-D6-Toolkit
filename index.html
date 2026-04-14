@@ -4322,6 +4322,27 @@ function lookupNotableNpcsBySystem(system) {
   setTimeout(() => sysEl.scrollIntoView({ behavior: 'smooth', block: 'center' }), 120);
 }
 
+function lookupNotableNpcByName(baseName) {
+  switchTab('npc');
+  switchNpcSubtab('lookups');
+  if (!notableNpcPanelOpen) toggleNotableNpcPanel();
+  const searchEl = document.getElementById('notableNpcSearch');
+  const sysEl = document.getElementById('notableNpcSystemFilter');
+  const affEl = document.getElementById('notableNpcAffFilter');
+  if (!searchEl) return;
+  if (sysEl) sysEl.value = '';
+  if (affEl) affEl.value = '';
+  searchEl.value = baseName;
+  filterNotableNpcs();
+  // If there's exactly one hit (or one matching base name across eras), open the first one
+  const matches = (typeof NOTABLE_NPCS !== 'undefined') ? NOTABLE_NPCS.filter(n => {
+    const base = n.name.replace(/\s*\([^)]*\)\s*$/, '').trim().toLowerCase();
+    return base === baseName.toLowerCase();
+  }) : [];
+  if (matches.length === 1) showNotableNpcDetail(matches[0]);
+  setTimeout(() => searchEl.scrollIntoView({ behavior: 'smooth', block: 'center' }), 120);
+}
+
 function linkifyNpcNames(text, system) {
   if (!text || typeof NOTABLE_NPCS === 'undefined' || !NOTABLE_NPCS.length) return text;
   // Build deduplicated base names (strip era suffix like "(0 BBY)")
@@ -4333,12 +4354,12 @@ function linkifyNpcNames(text, system) {
   });
   // Sort longest first to prevent partial substitution
   names.sort((a, b) => b.length - a.length);
-  const encSys = encodeURIComponent(system || '');
   let result = text;
   names.forEach(name => {
     const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     const re = new RegExp('\\b' + escaped + '\\b', 'g');
-    result = result.replace(re, `<span style="color:var(--cyan);cursor:pointer;border-bottom:1px dotted var(--cyan)" onclick="lookupNotableNpcsBySystem(decodeURIComponent('${encSys}'))">$&</span>`);
+    const encName = name.replace(/'/g, "\\'");
+    result = result.replace(re, `<span style="color:var(--cyan);cursor:pointer;border-bottom:1px dotted var(--cyan)" onclick="lookupNotableNpcByName('${encName}')">$&</span>`);
   });
   return result;
 }
