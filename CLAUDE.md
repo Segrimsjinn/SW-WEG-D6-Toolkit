@@ -89,7 +89,7 @@ The entire app. Contains all CSS (minified, inline `<style>`), all HTML tab pane
 
 **Current gazetteers (9):**
 - **Brak Sector** (WEG40077) — 23 systems, full matrix from book table, grid O-14. Gateways: Enet (default), Latoma (from M/N-14), Genesia (from N-15).
-- **Ringali Shell** (WEG40029) — 6 systems, full matrix from book table, grid L-9. Gateways: Corulag (default/west/Deep Core), Brentaal (north), Raltiir (east).
+- **Ringali Shell** (WEG40021) — 6 systems, full matrix from book table, grid L-9. Gateways: Corulag (default/west/Deep Core), Brentaal (north), Raltiir (east).
 - **Elrood Sector** (WEG40132) — 15 systems, pre-computed from route map, grid M-20. Gateway: Coyn.
 - **Minos Cluster** (WEG40095) — 10 systems, full matrix from book table, grid M-20. Gateway: Travnin. +120h surcharge (5 days to reach cluster).
 - **Kira Run** (WEG40060) — 14 systems, pre-computed from route map, multi-grid corridor. Gateways: Opiteihr (default/SW), Krann (east), Kalinda (SE), Lahopa (west/north).

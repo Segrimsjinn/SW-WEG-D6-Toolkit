@@ -107,7 +107,7 @@ const LIBRARY_DATA = {
         { wegNum: "40018", title: "Otherspace", edition: "1st", year: 1989, pages: 40, format: "Softcover" },
         { wegNum: "40019", title: "Graveyard of Alderaan", edition: "1st", year: 1991, pages: 64, format: "Softcover" },
         { wegNum: "40020", title: "Scavenger Hunt", edition: "1st", year: 1989, pages: 40, format: "Softcover" },
-        { wegNum: "40029", title: "Riders of the Maelstrom", edition: "1st", year: 1989, pages: 40, format: "Softcover" },
+        { wegNum: "40021", title: "Riders of the Maelstrom", edition: "1st", year: 1989, pages: 40, format: "Softcover" },
         { wegNum: "40022", title: "Crisis on Cloud City", edition: "1st", year: 1989, pages: 40, format: "Softcover" },
         { wegNum: "40024", title: "Otherspace II: Invasion", edition: "1st", year: 1990, pages: 40, format: "Softcover" },
         { wegNum: "40030", title: "Black Ice", edition: "1st", year: 1990, pages: 40, format: "Softcover" },
@@ -147,6 +147,7 @@ const LIBRARY_DATA = {
         { wegNum: "40151", title: "No Disintegrations", edition: "2nd R&E", year: 1997, pages: 96, format: "Softcover" },
         { wegNum: "40152", title: "Live-Action Adventures Gamemaster Toolkit", edition: "2nd R&E", year: 1996, pages: 96, format: "Softcover" },
         { wegNum: "40165", title: "Classic Adventures, Volume Five", edition: "2nd R&E", year: 1998, pages: 128, format: "Softcover" },
+        { wegNum: "40029", title: "The Far Orbit Project", edition: "2nd R&E", year: 1998, pages: 128, format: "Softcover" },
         { wegNum: "40601", title: "Imperial Double-Cross", edition: "2nd R&E", year: 1997, format: "Softcover" }
       ]
     },

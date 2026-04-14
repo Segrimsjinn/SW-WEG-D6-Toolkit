@@ -89,11 +89,11 @@ const GAZETTEER_DATA = {
   },
 
   // ----------------------------------------------------------
-  // RINGALI SHELL — WEG40029 Far Orbit Project
+  // RINGALI SHELL — WEG40021 Riders of the Maelstrom
   // Full matrix, 6 systems, grid L-9 (Core Worlds)
   // ----------------------------------------------------------
   "Ringali Shell": {
-    source: "WEG40029 Far Orbit Project",
+    source: "WEG40021 Riders of the Maelstrom",
     grid: "L-9",
     // Gateway routing: Corulag (west/Deep Core), Brentaal (north/center), Raltiir (east)
     gateways: [
