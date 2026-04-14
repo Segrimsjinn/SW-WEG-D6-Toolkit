@@ -7034,8 +7034,10 @@ var gcInterval = setInterval(function() {
       r.addEventListener('load', function() {
         try {
           var c = JSON.parse(this.responseText).count;
+          // GoatCounter returns count as a formatted string (e.g. "1,000") once ≥1000
+          var n = parseInt(String(c).replace(/[^\d-]/g, ''), 10);
           var el = document.getElementById(s.el);
-          if (el) el.textContent = Number(c).toLocaleString();
+          if (el) el.textContent = isNaN(n) ? '0' : n.toLocaleString();
         } catch(e) {}
       });
       r.addEventListener('error', function() {
