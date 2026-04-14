@@ -562,6 +562,22 @@ color:var(--text-dim);min-width:35px;text-align:right;
 .jump-to-dropdown.open{display:block}
 .jump-to-item{display:block;padding:10px 16px;font-family:'Eras Demi ITC','Era Demi','Rajdhani',sans-serif;font-size:12px;color:var(--text-dim);cursor:pointer;border-bottom:1px solid rgba(255,255,255,0.04);text-decoration:none;min-height:40px;display:flex;align-items:center}
 .jump-to-item:hover{background:rgba(255,255,255,0.05);color:var(--gold)}
+.pill{display:inline-block;padding:1px 8px;border-radius:10px;font-size:9px;font-weight:500;letter-spacing:.5px;font-family:'Orbitron','Exo 2',monospace;text-align:center;line-height:1.5;border:1px solid transparent}
+.sev-minor{background:rgba(46,125,50,0.25);color:#7dd87d;border-color:rgba(46,125,50,0.5)}
+.sev-mod{background:rgba(107,90,30,0.3);color:#e8c866;border-color:rgba(107,90,30,0.6)}
+.sev-cat{background:rgba(107,42,42,0.35);color:#e87d7d;border-color:rgba(107,42,42,0.7)}
+.val-vl{background:rgba(107,42,42,0.4);color:#ff9a9a;padding:1px 4px;border-radius:4px}
+.val-l{background:rgba(107,62,20,0.35);color:#ffb580;padding:1px 4px;border-radius:4px}
+.val-m{background:rgba(80,80,40,0.25);color:#d4d6dc;padding:1px 4px;border-radius:4px}
+.val-h{background:rgba(30,90,40,0.35);color:#9aff9a;padding:1px 4px;border-radius:4px}
+.val-vh{background:rgba(14,110,30,0.45);color:#7dff7d;padding:1px 4px;border-radius:4px;font-weight:600}
+.val-none{color:var(--text-dark)}
+.diff-ve{background:rgba(46,125,50,0.25);color:#7dd87d;padding:1px 6px;border-radius:8px;font-size:9px;font-weight:500}
+.diff-e{background:rgba(76,120,40,0.3);color:#b6e07d;padding:1px 6px;border-radius:8px;font-size:9px;font-weight:500}
+.diff-m{background:rgba(107,90,30,0.3);color:#e8c866;padding:1px 6px;border-radius:8px;font-size:9px;font-weight:500}
+.diff-d{background:rgba(120,70,30,0.35);color:#f0b070;padding:1px 6px;border-radius:8px;font-size:9px;font-weight:500}
+.diff-vd{background:rgba(120,55,35,0.4);color:#ff9570;padding:1px 6px;border-radius:8px;font-size:9px;font-weight:500}
+.diff-h{background:rgba(107,42,42,0.45);color:#ff7d7d;padding:1px 6px;border-radius:8px;font-size:9px;font-weight:500}
 </style>
 </head>
 <body>
@@ -1435,12 +1451,12 @@ color:var(--text-dim);min-width:35px;text-align:right;
           <div style="flex:1;min-width:140px">
             <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin-bottom:3px">DIFFICULTY / RANGE</div>
             <div style="font-size:10px;color:var(--text-dim);line-height:1.9">
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Very Easy (PB)</span><span style="color:var(--gold)">1-5</span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Easy (Short)</span><span style="color:var(--gold)">6-10</span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Moderate (Med)</span><span style="color:var(--gold)">11-15</span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Difficult (Long)</span><span style="color:var(--gold)">16-20</span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Very Difficult</span><span style="color:var(--gold)">21-30</span></div>
-              <div style="display:flex;justify-content:space-between;padding:1px 0"><span>Heroic</span><span style="color:var(--gold)">31+</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Very Easy (PB)</span><span class="diff-ve">1-5</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Easy (Short)</span><span class="diff-e">6-10</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Moderate (Med)</span><span class="diff-m">11-15</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Difficult (Long)</span><span class="diff-d">16-20</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Very Difficult</span><span class="diff-vd">21-30</span></div>
+              <div style="display:flex;justify-content:space-between;padding:1px 0"><span>Heroic</span><span class="diff-h">31+</span></div>
             </div>
           </div>
           <!-- Col 2: Cover + Multi-Action -->
@@ -1518,12 +1534,12 @@ color:var(--text-dim);min-width:35px;text-align:right;
           <div style="flex:1;min-width:140px">
             <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin-bottom:3px">TERRAIN DIFFICULTY</div>
             <div style="font-size:9px;color:var(--text-dim);line-height:1.8">
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Open/clear</span><span style="color:var(--gold)">VE (1-5)</span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Light traffic</span><span style="color:var(--gold)">E (6-10)</span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Heavy traffic</span><span style="color:var(--gold)">M (11-15)</span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Canyon/dense</span><span style="color:var(--gold)">D (16-20)</span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Asteroid field</span><span style="color:var(--gold)">VD (21-30)</span></div>
-              <div style="display:flex;justify-content:space-between;padding:1px 0"><span>Dense asteroid</span><span style="color:var(--gold)">H (31+)</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Open/clear</span><span class="diff-ve">VE (1-5)</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Light traffic</span><span class="diff-e">E (6-10)</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Heavy traffic</span><span class="diff-m">M (11-15)</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Canyon/dense</span><span class="diff-d">D (16-20)</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Asteroid field</span><span class="diff-vd">VD (21-30)</span></div>
+              <div style="display:flex;justify-content:space-between;padding:1px 0"><span>Dense asteroid</span><span class="diff-h">H (31+)</span></div>
             </div>
             <div style="font-size:8px;color:var(--text-dark);font-style:italic;margin-top:2px;line-height:1.3">Cautious: −1 level. High: Diff+ terrain +1 level. All-Out: Diff+ terrain +2 levels.</div>
           </div>
@@ -2038,26 +2054,26 @@ color:var(--text-dim);min-width:35px;text-align:right;
               </tr>
             </thead>
             <tbody>
-              <tr style="border-bottom:1px solid var(--card-border)"><td rowspan="2" style="padding:2px 4px;color:var(--text);font-weight:bold;vertical-align:middle">Low Tech</td><td style="color:var(--gold);font-size:7px;text-align:center">S</td><td style="text-align:center"><span style="color:var(--gold)">M</span> 3300</td><td style="text-align:center"><span style="color:var(--cyan)">H</span> 3135</td><td style="text-align:center"><span style="color:var(--cyan)">H</span> 3135</td><td style="text-align:center"><span style="color:var(--gold)">M</span> 3300</td><td style="text-align:center"><span style="color:var(--red)">L</span> 3465</td><td style="text-align:center"><span style="color:var(--red)">L</span> 3465</td></tr>
-              <tr style="border-bottom:1px solid var(--card-border)"><td style="color:var(--cyan);font-size:7px;text-align:center">D</td><td style="text-align:center"><span style="color:var(--cyan)">H</span> 3465</td><td style="text-align:center"><span style="color:var(--cyan)">VH</span> 3630</td><td style="text-align:center"><span style="color:var(--gold)">M</span> 3300</td><td style="text-align:center"><span style="color:var(--gold)">M</span> 3300</td><td style="text-align:center"><span style="color:var(--red)">L</span> 3135</td><td style="text-align:center"><span style="color:var(--red)">L</span> 3135</td></tr>
-              <tr style="border-bottom:1px solid var(--card-border)"><td rowspan="2" style="padding:2px 4px;color:var(--text);font-weight:bold;vertical-align:middle">Mid Tech</td><td style="color:var(--gold);font-size:7px;text-align:center">S</td><td style="text-align:center;color:var(--text-dim);font-style:italic">—</td><td style="text-align:center;color:var(--text-dim);font-style:italic">—</td><td style="text-align:center"><span style="color:var(--gold)">M</span> 5400</td><td style="text-align:center"><span style="color:var(--cyan)">H</span> 5130</td><td style="text-align:center"><span style="color:var(--cyan)">H</span> 5130</td><td style="text-align:center"><span style="color:var(--gold)">M</span> 5400</td></tr>
-              <tr style="border-bottom:1px solid var(--card-border)"><td style="color:var(--cyan);font-size:7px;text-align:center">D</td><td style="text-align:center"><span style="color:var(--red)">VL</span> 4860</td><td style="text-align:center"><span style="color:var(--red)">L</span> 5130</td><td style="text-align:center"><span style="color:var(--cyan)">H</span> 5670</td><td style="text-align:center"><span style="color:var(--gold)">M</span> 5400</td><td style="text-align:center"><span style="color:var(--gold)">M</span> 5400</td><td style="text-align:center"><span style="color:var(--red)">L</span> 5130</td></tr>
-              <tr style="border-bottom:1px solid var(--card-border)"><td rowspan="2" style="padding:2px 4px;color:var(--text);font-weight:bold;vertical-align:middle">High Tech</td><td style="color:var(--gold);font-size:7px;text-align:center">S</td><td style="text-align:center;color:var(--text-dim);font-style:italic">—</td><td style="text-align:center;color:var(--text-dim);font-style:italic">—</td><td style="text-align:center;color:var(--text-dim);font-style:italic">—</td><td style="text-align:center;color:var(--text-dim);font-style:italic">—</td><td style="text-align:center"><span style="color:var(--gold)">M</span> 6000</td><td style="text-align:center"><span style="color:var(--cyan)">H</span> 5700</td></tr>
-              <tr style="border-bottom:1px solid var(--card-border)"><td style="color:var(--cyan);font-size:7px;text-align:center">D</td><td style="text-align:center"><span style="color:var(--red)">L</span> 2280</td><td style="text-align:center"><span style="color:var(--gold)">M</span> 2400</td><td style="text-align:center"><span style="color:var(--cyan)">VH</span> 2640</td><td style="text-align:center"><span style="color:var(--cyan)">H</span> 2520</td><td style="text-align:center"><span style="color:var(--cyan)">H</span> 2520</td><td style="text-align:center"><span style="color:var(--gold)">M</span> 2400</td></tr>
-              <tr style="border-bottom:1px solid var(--card-border)"><td rowspan="2" style="padding:2px 4px;color:var(--text);font-weight:bold;vertical-align:middle">Metals</td><td style="color:var(--gold);font-size:7px;text-align:center">S</td><td style="text-align:center;color:var(--text-dim);font-style:italic">—</td><td style="text-align:center;color:var(--text-dim);font-style:italic">—</td><td style="text-align:center"><span style="color:var(--red)">L</span> 2520</td><td style="text-align:center"><span style="color:var(--gold)">M</span> 2400</td><td style="text-align:center"><span style="color:var(--cyan)">H</span> 2280</td><td style="text-align:center"><span style="color:var(--cyan)">VH</span> 2160</td></tr>
-              <tr style="border-bottom:1px solid var(--card-border)"><td style="color:var(--cyan);font-size:7px;text-align:center">D</td><td style="text-align:center"><span style="color:var(--red)">L</span> 2280</td><td style="text-align:center"><span style="color:var(--gold)">M</span> 2400</td><td style="text-align:center"><span style="color:var(--cyan)">VH</span> 2640</td><td style="text-align:center"><span style="color:var(--cyan)">H</span> 2520</td><td style="text-align:center"><span style="color:var(--cyan)">H</span> 2520</td><td style="text-align:center"><span style="color:var(--gold)">M</span> 2400</td></tr>
-              <tr style="border-bottom:1px solid var(--card-border)"><td rowspan="2" style="padding:2px 4px;color:var(--text);font-weight:bold;vertical-align:middle">Minerals</td><td style="color:var(--gold);font-size:7px;text-align:center">S</td><td style="text-align:center"><span style="color:var(--red)">VL</span> 1650</td><td style="text-align:center"><span style="color:var(--red)">L</span> 1575</td><td style="text-align:center"><span style="color:var(--red)">L</span> 1575</td><td style="text-align:center"><span style="color:var(--gold)">M</span> 1500</td><td style="text-align:center"><span style="color:var(--gold)">M</span> 1500</td><td style="text-align:center"><span style="color:var(--gold)">M</span> 1500</td></tr>
-              <tr style="border-bottom:1px solid var(--card-border)"><td style="color:var(--cyan);font-size:7px;text-align:center">D</td><td style="text-align:center"><span style="color:var(--red)">VL</span> 1350</td><td style="text-align:center"><span style="color:var(--red)">L</span> 1425</td><td style="text-align:center"><span style="color:var(--cyan)">VH</span> 1650</td><td style="text-align:center"><span style="color:var(--cyan)">H</span> 1575</td><td style="text-align:center"><span style="color:var(--gold)">M</span> 1500</td><td style="text-align:center"><span style="color:var(--red)">L</span> 1425</td></tr>
-              <tr style="border-bottom:1px solid var(--card-border)"><td rowspan="2" style="padding:2px 4px;color:var(--text);font-weight:bold;vertical-align:middle">Luxuries</td><td style="color:var(--gold);font-size:7px;text-align:center">S</td><td style="text-align:center"><span style="color:var(--red)">VL</span> 110%</td><td style="text-align:center"><span style="color:var(--red)">L</span> 105%</td><td style="text-align:center"><span style="color:var(--red)">L</span> 105%</td><td style="text-align:center"><span style="color:var(--gold)">M</span> 100%</td><td style="text-align:center"><span style="color:var(--cyan)">H</span> 95%</td><td style="text-align:center"><span style="color:var(--cyan)">VH</span> 90%</td></tr>
-              <tr style="border-bottom:1px solid var(--card-border)"><td style="color:var(--cyan);font-size:7px;text-align:center">D</td><td style="text-align:center"><span style="color:var(--gold)">M</span> 100%</td><td style="text-align:center"><span style="color:var(--gold)">M</span> 100%</td><td style="text-align:center"><span style="color:var(--gold)">M</span> 100%</td><td style="text-align:center"><span style="color:var(--gold)">M</span> 100%</td><td style="text-align:center"><span style="color:var(--gold)">M</span> 100%</td><td style="text-align:center"><span style="color:var(--gold)">M</span> 100%</td></tr>
-              <tr style="border-bottom:1px solid var(--card-border)"><td rowspan="2" style="padding:2px 4px;color:var(--text);font-weight:bold;vertical-align:middle">Food</td><td style="color:var(--gold);font-size:7px;text-align:center">S</td><td style="text-align:center"><span style="color:var(--red)">L</span> 1890</td><td style="text-align:center"><span style="color:var(--gold)">M</span> 1800</td><td style="text-align:center"><span style="color:var(--cyan)">H</span> 1710</td><td style="text-align:center"><span style="color:var(--gold)">M</span> 1800</td><td style="text-align:center"><span style="color:var(--red)">L</span> 1890</td><td style="text-align:center"><span style="color:var(--gold)">M</span> 1800</td></tr>
-              <tr style="border-bottom:1px solid var(--card-border)"><td style="color:var(--cyan);font-size:7px;text-align:center">D</td><td style="text-align:center"><span style="color:var(--cyan)">H</span> 1890</td><td style="text-align:center"><span style="color:var(--gold)">M</span> 1800</td><td style="text-align:center"><span style="color:var(--gold)">M</span> 1800</td><td style="text-align:center"><span style="color:var(--gold)">M</span> 1800</td><td style="text-align:center"><span style="color:var(--gold)">M</span> 1800</td><td style="text-align:center"><span style="color:var(--red)">L</span> 1710</td></tr>
-              <tr><td rowspan="2" style="padding:2px 4px;color:var(--text);font-weight:bold;vertical-align:middle">Medicine</td><td style="color:var(--gold);font-size:7px;text-align:center">S</td><td style="text-align:center"><span style="color:var(--red)">VL</span> 4620</td><td style="text-align:center"><span style="color:var(--red)">VL</span> 4620</td><td style="text-align:center"><span style="color:var(--red)">L</span> 4410</td><td style="text-align:center"><span style="color:var(--gold)">M</span> 4200</td><td style="text-align:center"><span style="color:var(--cyan)">H</span> 3990</td><td style="text-align:center"><span style="color:var(--cyan)">H</span> 3990</td></tr>
-              <tr><td style="color:var(--cyan);font-size:7px;text-align:center">D</td><td style="text-align:center"><span style="color:var(--gold)">M</span> 4200</td><td style="text-align:center"><span style="color:var(--cyan)">H</span> 4410</td><td style="text-align:center"><span style="color:var(--cyan)">H</span> 4410</td><td style="text-align:center"><span style="color:var(--gold)">M</span> 4200</td><td style="text-align:center"><span style="color:var(--gold)">M</span> 4200</td><td style="text-align:center"><span style="color:var(--red)">L</span> 3990</td></tr>
+              <tr style="border-bottom:1px solid var(--card-border)"><td rowspan="2" style="padding:2px 4px;color:var(--text);font-weight:bold;vertical-align:middle">Low Tech</td><td style="color:var(--gold);font-size:7px;text-align:center">S</td><td style="text-align:center"><span class="val-m">M</span> 3300</td><td style="text-align:center"><span class="val-h">H</span> 3135</td><td style="text-align:center"><span class="val-h">H</span> 3135</td><td style="text-align:center"><span class="val-m">M</span> 3300</td><td style="text-align:center"><span class="val-l">L</span> 3465</td><td style="text-align:center"><span class="val-l">L</span> 3465</td></tr>
+              <tr style="border-bottom:1px solid var(--card-border)"><td style="color:var(--cyan);font-size:7px;text-align:center">D</td><td style="text-align:center"><span class="val-h">H</span> 3465</td><td style="text-align:center"><span class="val-vh">VH</span> 3630</td><td style="text-align:center"><span class="val-m">M</span> 3300</td><td style="text-align:center"><span class="val-m">M</span> 3300</td><td style="text-align:center"><span class="val-l">L</span> 3135</td><td style="text-align:center"><span class="val-l">L</span> 3135</td></tr>
+              <tr style="border-bottom:1px solid var(--card-border)"><td rowspan="2" style="padding:2px 4px;color:var(--text);font-weight:bold;vertical-align:middle">Mid Tech</td><td style="color:var(--gold);font-size:7px;text-align:center">S</td><td style="text-align:center;color:var(--text-dim);font-style:italic">—</td><td style="text-align:center;color:var(--text-dim);font-style:italic">—</td><td style="text-align:center"><span class="val-m">M</span> 5400</td><td style="text-align:center"><span class="val-h">H</span> 5130</td><td style="text-align:center"><span class="val-h">H</span> 5130</td><td style="text-align:center"><span class="val-m">M</span> 5400</td></tr>
+              <tr style="border-bottom:1px solid var(--card-border)"><td style="color:var(--cyan);font-size:7px;text-align:center">D</td><td style="text-align:center"><span class="val-vl">VL</span> 4860</td><td style="text-align:center"><span class="val-l">L</span> 5130</td><td style="text-align:center"><span class="val-h">H</span> 5670</td><td style="text-align:center"><span class="val-m">M</span> 5400</td><td style="text-align:center"><span class="val-m">M</span> 5400</td><td style="text-align:center"><span class="val-l">L</span> 5130</td></tr>
+              <tr style="border-bottom:1px solid var(--card-border)"><td rowspan="2" style="padding:2px 4px;color:var(--text);font-weight:bold;vertical-align:middle">High Tech</td><td style="color:var(--gold);font-size:7px;text-align:center">S</td><td style="text-align:center;color:var(--text-dim);font-style:italic">—</td><td style="text-align:center;color:var(--text-dim);font-style:italic">—</td><td style="text-align:center;color:var(--text-dim);font-style:italic">—</td><td style="text-align:center;color:var(--text-dim);font-style:italic">—</td><td style="text-align:center"><span class="val-m">M</span> 6000</td><td style="text-align:center"><span class="val-h">H</span> 5700</td></tr>
+              <tr style="border-bottom:1px solid var(--card-border)"><td style="color:var(--cyan);font-size:7px;text-align:center">D</td><td style="text-align:center"><span class="val-l">L</span> 2280</td><td style="text-align:center"><span class="val-m">M</span> 2400</td><td style="text-align:center"><span class="val-vh">VH</span> 2640</td><td style="text-align:center"><span class="val-h">H</span> 2520</td><td style="text-align:center"><span class="val-h">H</span> 2520</td><td style="text-align:center"><span class="val-m">M</span> 2400</td></tr>
+              <tr style="border-bottom:1px solid var(--card-border)"><td rowspan="2" style="padding:2px 4px;color:var(--text);font-weight:bold;vertical-align:middle">Metals</td><td style="color:var(--gold);font-size:7px;text-align:center">S</td><td style="text-align:center;color:var(--text-dim);font-style:italic">—</td><td style="text-align:center;color:var(--text-dim);font-style:italic">—</td><td style="text-align:center"><span class="val-l">L</span> 2520</td><td style="text-align:center"><span class="val-m">M</span> 2400</td><td style="text-align:center"><span class="val-h">H</span> 2280</td><td style="text-align:center"><span class="val-vh">VH</span> 2160</td></tr>
+              <tr style="border-bottom:1px solid var(--card-border)"><td style="color:var(--cyan);font-size:7px;text-align:center">D</td><td style="text-align:center"><span class="val-l">L</span> 2280</td><td style="text-align:center"><span class="val-m">M</span> 2400</td><td style="text-align:center"><span class="val-vh">VH</span> 2640</td><td style="text-align:center"><span class="val-h">H</span> 2520</td><td style="text-align:center"><span class="val-h">H</span> 2520</td><td style="text-align:center"><span class="val-m">M</span> 2400</td></tr>
+              <tr style="border-bottom:1px solid var(--card-border)"><td rowspan="2" style="padding:2px 4px;color:var(--text);font-weight:bold;vertical-align:middle">Minerals</td><td style="color:var(--gold);font-size:7px;text-align:center">S</td><td style="text-align:center"><span class="val-vl">VL</span> 1650</td><td style="text-align:center"><span class="val-l">L</span> 1575</td><td style="text-align:center"><span class="val-l">L</span> 1575</td><td style="text-align:center"><span class="val-m">M</span> 1500</td><td style="text-align:center"><span class="val-m">M</span> 1500</td><td style="text-align:center"><span class="val-m">M</span> 1500</td></tr>
+              <tr style="border-bottom:1px solid var(--card-border)"><td style="color:var(--cyan);font-size:7px;text-align:center">D</td><td style="text-align:center"><span class="val-vl">VL</span> 1350</td><td style="text-align:center"><span class="val-l">L</span> 1425</td><td style="text-align:center"><span class="val-vh">VH</span> 1650</td><td style="text-align:center"><span class="val-h">H</span> 1575</td><td style="text-align:center"><span class="val-m">M</span> 1500</td><td style="text-align:center"><span class="val-l">L</span> 1425</td></tr>
+              <tr style="border-bottom:1px solid var(--card-border)"><td rowspan="2" style="padding:2px 4px;color:var(--text);font-weight:bold;vertical-align:middle">Luxuries</td><td style="color:var(--gold);font-size:7px;text-align:center">S</td><td style="text-align:center"><span class="val-vl">VL</span> 110%</td><td style="text-align:center"><span class="val-l">L</span> 105%</td><td style="text-align:center"><span class="val-l">L</span> 105%</td><td style="text-align:center"><span class="val-m">M</span> 100%</td><td style="text-align:center"><span class="val-h">H</span> 95%</td><td style="text-align:center"><span class="val-vh">VH</span> 90%</td></tr>
+              <tr style="border-bottom:1px solid var(--card-border)"><td style="color:var(--cyan);font-size:7px;text-align:center">D</td><td style="text-align:center"><span class="val-m">M</span> 100%</td><td style="text-align:center"><span class="val-m">M</span> 100%</td><td style="text-align:center"><span class="val-m">M</span> 100%</td><td style="text-align:center"><span class="val-m">M</span> 100%</td><td style="text-align:center"><span class="val-m">M</span> 100%</td><td style="text-align:center"><span class="val-m">M</span> 100%</td></tr>
+              <tr style="border-bottom:1px solid var(--card-border)"><td rowspan="2" style="padding:2px 4px;color:var(--text);font-weight:bold;vertical-align:middle">Food</td><td style="color:var(--gold);font-size:7px;text-align:center">S</td><td style="text-align:center"><span class="val-l">L</span> 1890</td><td style="text-align:center"><span class="val-m">M</span> 1800</td><td style="text-align:center"><span class="val-h">H</span> 1710</td><td style="text-align:center"><span class="val-m">M</span> 1800</td><td style="text-align:center"><span class="val-l">L</span> 1890</td><td style="text-align:center"><span class="val-m">M</span> 1800</td></tr>
+              <tr style="border-bottom:1px solid var(--card-border)"><td style="color:var(--cyan);font-size:7px;text-align:center">D</td><td style="text-align:center"><span class="val-h">H</span> 1890</td><td style="text-align:center"><span class="val-m">M</span> 1800</td><td style="text-align:center"><span class="val-m">M</span> 1800</td><td style="text-align:center"><span class="val-m">M</span> 1800</td><td style="text-align:center"><span class="val-m">M</span> 1800</td><td style="text-align:center"><span class="val-l">L</span> 1710</td></tr>
+              <tr><td rowspan="2" style="padding:2px 4px;color:var(--text);font-weight:bold;vertical-align:middle">Medicine</td><td style="color:var(--gold);font-size:7px;text-align:center">S</td><td style="text-align:center"><span class="val-vl">VL</span> 4620</td><td style="text-align:center"><span class="val-vl">VL</span> 4620</td><td style="text-align:center"><span class="val-l">L</span> 4410</td><td style="text-align:center"><span class="val-m">M</span> 4200</td><td style="text-align:center"><span class="val-h">H</span> 3990</td><td style="text-align:center"><span class="val-h">H</span> 3990</td></tr>
+              <tr><td style="color:var(--cyan);font-size:7px;text-align:center">D</td><td style="text-align:center"><span class="val-m">M</span> 4200</td><td style="text-align:center"><span class="val-h">H</span> 4410</td><td style="text-align:center"><span class="val-h">H</span> 4410</td><td style="text-align:center"><span class="val-m">M</span> 4200</td><td style="text-align:center"><span class="val-m">M</span> 4200</td><td style="text-align:center"><span class="val-l">L</span> 3990</td></tr>
             </tbody>
           </table>
         </div>
-        <div style="font-size:8px;color:var(--text-dim);margin-top:4px;font-style:italic"><span style="color:var(--gold)">S</span> = Supply (buy here) · <span style="color:var(--cyan)">D</span> = Demand (sell here) · Levels: <span style="color:var(--red)">VL/L</span> <span style="color:var(--gold)">M</span> <span style="color:var(--cyan)">H/VH</span> · <em>—</em> = no exportable supply</div>
+        <div style="font-size:8px;color:var(--text-dim);margin-top:4px;font-style:italic"><span style="color:var(--gold)">S</span> = Supply (buy here) · <span style="color:var(--cyan)">D</span> = Demand (sell here) · Levels: <span class="val-vl">VL</span> <span class="val-l">L</span> <span class="val-m">M</span> <span class="val-h">H</span> <span class="val-vh">VH</span> · <em>—</em> = no exportable supply</div>
       </div>
 
       <div class="card" id="gm-shipmods">
@@ -2231,7 +2247,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
 
       <div class="card" id="gm-mishaps">
         <div class="card-title" style="display:flex;justify-content:space-between;align-items:center">⟐ Modified Starship Mishap Tables</div>
-        <div style="font-size:9px;color:var(--text-dim);font-style:italic;margin-bottom:8px">When wild die = 1 on a modified system, roll 1D + mishap modifier. <b style="color:var(--gold)">1–2</b> Minor · <b style="color:var(--cyan)">3–5</b> Moderate · <b style="color:var(--red)">6+</b> Catastrophic. Use <span style="color:var(--cyan)">REUP Quick Tables</span> for fast resolution or the <span style="color:var(--gold)">Tramp Freighters Detailed Tables</span> for specific results (roll 1D).</div>
+        <div style="font-size:9px;color:var(--text-dim);font-style:italic;margin-bottom:8px">When wild die = 1 on a modified system, roll 1D + mishap modifier. <b>1–2</b> <span class="pill sev-minor">Minor</span> · <b>3–5</b> <span class="pill sev-mod">Moderate</span> · <b>6+</b> <span class="pill sev-cat">Catastrophic</span>. Use <span style="color:var(--cyan)">REUP Quick Tables</span> for fast resolution or the <span style="color:var(--gold)">Tramp Freighters Detailed Tables</span> for specific results (roll 1D).</div>
         <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px">
           <div style="flex:1;min-width:180px">
             <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--cyan);letter-spacing:1px;margin-bottom:3px">REUP WEAPON MISHAP (1D)</div>
@@ -2264,7 +2280,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
         <div style="display:flex;gap:10px;flex-wrap:wrap">
           <div style="flex:1;min-width:200px">
             <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin-bottom:3px">SUBLIGHT DRIVE MISHAPS</div>
-            <div style="font-size:8px;color:var(--gold);margin-bottom:2px">Minor (1D)</div>
+            <div style="margin-bottom:2px"><span class="pill sev-minor">Minor (1D)</span></div>
             <div style="font-size:9px;color:var(--text-dim);line-height:1.6">
               <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>1</b> Power conduit blows — Space -2 (Easy fix)</div>
               <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>2</b> Drive stalls — same speed 2 rnds</div>
@@ -2273,7 +2289,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
               <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>5</b> Power surge — +5 diff all maneuvers incl. landing. 10% engine cost</div>
               <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>6</b> Conduits blow — +10 diff maneuvers (Moderate fix, 2 rnds)</div>
             </div>
-            <div style="font-size:8px;color:var(--cyan);margin:4px 0 2px">Moderate (1D)</div>
+            <div style="margin:4px 0 2px"><span class="pill sev-mod">Moderate (1D)</span></div>
             <div style="font-size:9px;color:var(--text-dim);line-height:1.6">
               <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>1</b> +10 diff all maneuvers, 2D rnds</div>
               <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>2</b> Circuit link failure — 1D/rnd, on 1-2 ionized</div>
@@ -2282,7 +2298,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
               <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>5</b> Temp drive failure — dead in space 1D rnds</div>
               <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>6</b> Unsafe temps — no maneuvers 2 rnds or +10 diff (Moderate fix)</div>
             </div>
-            <div style="font-size:8px;color:var(--red);margin:4px 0 2px">Catastrophic (1D)</div>
+            <div style="margin:4px 0 2px"><span class="pill sev-cat">Catastrophic (1D)</span></div>
             <div style="font-size:9px;color:var(--text-dim);line-height:1.6">
               <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>1</b> Overload on landing — 25% engine cost parts</div>
               <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>2</b> Overload — no thrust, 0D maneuver, +15 astrogation</div>
@@ -2294,7 +2310,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
           </div>
           <div style="flex:1;min-width:200px">
             <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin-bottom:3px">MANEUVERABILITY MISHAPS</div>
-            <div style="font-size:8px;color:var(--gold);margin-bottom:2px">Minor (1D)</div>
+            <div style="margin-bottom:2px"><span class="pill sev-minor">Minor (1D)</span></div>
             <div style="font-size:9px;color:var(--text-dim);line-height:1.6">
               <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>1</b> Circuit malfunction — maneuver -1D, 1 rnd</div>
               <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>2</b> Alluvial dampers — -2D maneuver (Easy fix)</div>
@@ -2303,7 +2319,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
               <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>5</b> Circuitry blows — +5 diff maneuvers (Easy fix w/ parts)</div>
               <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>6</b> System short — 0D maneuver 1 rnd</div>
             </div>
-            <div style="font-size:8px;color:var(--cyan);margin:4px 0 2px">Moderate (1D)</div>
+            <div style="margin:4px 0 2px"><span class="pill sev-mod">Moderate (1D)</span></div>
             <div style="font-size:9px;color:var(--text-dim);line-height:1.6">
               <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>1</b> Circuit malfunction — maneuver -2D, 1 rnd</div>
               <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>2</b> Radiation leak — Moderate fix or +10 astro, 2x hyperspace, 4D rad</div>
@@ -2312,7 +2328,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
               <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>5</b> Circuitry blows — +10 diff maneuvers (Easy fix w/ parts)</div>
               <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>6</b> Thrusters misfire — +5 diff, enemies +5 hit, 3 rnds</div>
             </div>
-            <div style="font-size:8px;color:var(--red);margin:4px 0 2px">Catastrophic (1D)</div>
+            <div style="margin:4px 0 2px"><span class="pill sev-cat">Catastrophic (1D)</span></div>
             <div style="font-size:9px;color:var(--text-dim);line-height:1.6">
               <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>1</b> Lateral thrusters blow — 0D, must replace</div>
               <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>2</b> Short — 0D 1 rnd, then 1D/rnd (1-2 shorts out)</div>
@@ -2324,7 +2340,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
           </div>
           <div style="flex:1;min-width:200px">
             <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin-bottom:3px">HYPERDRIVE MISHAPS</div>
-            <div style="font-size:8px;color:var(--gold);margin-bottom:2px">Minor (1D)</div>
+            <div style="margin-bottom:2px"><span class="pill sev-minor">Minor (1D)</span></div>
             <div style="font-size:9px;color:var(--text-dim);line-height:1.6">
               <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>1</b> Fluctuation — trip +1D hours</div>
               <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>2</b> Motivator damaged — won't enter hyper (V.Easy fix)</div>
@@ -2333,7 +2349,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
               <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>5</b> Misaligned — Easy fix before engaging</div>
               <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>6</b> Misjump — cuts out in wrong system</div>
             </div>
-            <div style="font-size:8px;color:var(--cyan);margin:4px 0 2px">Moderate (1D)</div>
+            <div style="margin:4px 0 2px"><span class="pill sev-mod">Moderate (1D)</span></div>
             <div style="font-size:9px;color:var(--text-dim);line-height:1.6">
               <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>1</b> Overload — Difficult fix to restart</div>
               <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>2</b> Power flux — 1D+2 rnd delay before hyperspace</div>
@@ -2342,7 +2358,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
               <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>5</b> Fluctuation — trip +4D hours</div>
               <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>6</b> Arrives but hyperdrive destroyed on exit</div>
             </div>
-            <div style="font-size:8px;color:var(--red);margin:4px 0 2px">Catastrophic (1D)</div>
+            <div style="margin:4px 0 2px"><span class="pill sev-cat">Catastrophic (1D)</span></div>
             <div style="font-size:9px;color:var(--text-dim);line-height:1.6">
               <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>1</b> Main hyperdrive destroyed</div>
               <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>2</b> Overload — V.Difficult fix to restart</div>
@@ -2352,7 +2368,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
               <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>6</b> Near miss — drops to realspace, must replot course</div>
             </div>
             <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin:8px 0 3px">HULL MISHAPS</div>
-            <div style="font-size:8px;color:var(--gold);margin-bottom:2px">Minor (1D)</div>
+            <div style="margin-bottom:2px"><span class="pill sev-minor">Minor (1D)</span></div>
             <div style="font-size:9px;color:var(--text-dim);line-height:1.6">
               <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>1</b> Surge wipes sensors/comms 1D rnds</div>
               <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>2</b> Hull stress — bulkheads seal 2 rnds (V.Easy comp fix)</div>
@@ -2361,7 +2377,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
               <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>5</b> Hull code -1D for 1 rnd</div>
               <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>6</b> Space -1, maneuver -1D for 2 rnds</div>
             </div>
-            <div style="font-size:8px;color:var(--cyan);margin:4px 0 2px">Moderate (1D)</div>
+            <div style="margin:4px 0 2px"><span class="pill sev-mod">Moderate (1D)</span></div>
             <div style="font-size:9px;color:var(--text-dim);line-height:1.6">
               <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>1</b> Hull -1D for 1D rnds</div>
               <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>2</b> Hull stress — +2D enemy damage next 3 rnds</div>
@@ -2370,7 +2386,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
               <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>5</b> Surge — sensors/comms out 1D rnds</div>
               <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>6</b> Surge — +10 astrogation diff 1D rnds</div>
             </div>
-            <div style="font-size:8px;color:var(--red);margin:4px 0 2px">Catastrophic (1D)</div>
+            <div style="margin:4px 0 2px"><span class="pill sev-cat">Catastrophic (1D)</span></div>
             <div style="font-size:9px;color:var(--text-dim);line-height:1.6">
               <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>1</b> Surge destroys 1 system (1D: 1 comm, 2-3 sensor, 4-5 backup hyper, 6 main hyper)</div>
               <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>2</b> Hull breach — 8D vacuum dmg, 1D rnds to auto-seal (Difficult STR manual)</div>
@@ -2382,7 +2398,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
           </div>
           <div style="flex:1;min-width:200px">
             <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin-bottom:3px">WEAPONRY MISHAPS</div>
-            <div style="font-size:8px;color:var(--gold);margin-bottom:2px">Minor (1D)</div>
+            <div style="margin-bottom:2px"><span class="pill sev-minor">Minor (1D)</span></div>
             <div style="font-size:9px;color:var(--text-dim);line-height:1.6">
               <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>1</b> Fire control -1D for 1 rnd</div>
               <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>2</b> Erratic power — -1D FC (Easy weapon fix)</div>
@@ -2391,7 +2407,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
               <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>5</b> Damage -1D for 1 rnd</div>
               <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>6</b> Conduit blows — disabled (V.Easy weapon fix)</div>
             </div>
-            <div style="font-size:8px;color:var(--cyan);margin:4px 0 2px">Moderate (1D)</div>
+            <div style="margin:4px 0 2px"><span class="pill sev-mod">Moderate (1D)</span></div>
             <div style="font-size:9px;color:var(--text-dim);line-height:1.6">
               <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>1</b> Fire control -1D for 1D rnds</div>
               <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>2</b> Erratic power — 0D FC (Easy weapon fix)</div>
@@ -2400,7 +2416,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
               <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>5</b> Faulty range data — +2D gunnery diff, 5 rnds</div>
               <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>6</b> Targeting short — 0D FC, damage -3D (solid kick to fix)</div>
             </div>
-            <div style="font-size:8px;color:var(--red);margin:4px 0 2px">Catastrophic (1D)</div>
+            <div style="margin:4px 0 2px"><span class="pill sev-cat">Catastrophic (1D)</span></div>
             <div style="font-size:9px;color:var(--text-dim);line-height:1.6">
               <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>1</b> Conduit blows — disabled (Moderate weapon fix)</div>
               <div style="border-bottom:1px solid var(--card-border);padding:1px 0"><b>2</b> Turret freezes 1D rnds (non-turret: no effect)</div>
