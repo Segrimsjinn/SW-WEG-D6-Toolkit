@@ -2707,8 +2707,6 @@ color:var(--text-dim);min-width:35px;text-align:right;
       <div class="lib-controls" style="display:flex;gap:6px;flex-wrap:wrap">
         <button class="btn btn-primary" onclick="window.print()" style="padding:6px 12px;font-size:10px;letter-spacing:1px">⟐ PRINT</button>
         <button class="btn btn-primary" onclick="libExportText()" style="padding:6px 12px;font-size:10px;letter-spacing:1px;background:var(--bg3);color:var(--gold);border:1px solid var(--gold-dim)">⟐ EXPORT TEXT</button>
-        <button class="btn btn-primary" onclick="libExportJson()" style="padding:6px 12px;font-size:10px;letter-spacing:1px;background:var(--bg3);color:var(--gold);border:1px solid var(--gold-dim)">⟐ EXPORT JSON</button>
-        <label class="btn btn-primary" style="padding:6px 12px;font-size:10px;letter-spacing:1px;background:var(--bg3);color:var(--gold);border:1px solid var(--gold-dim);cursor:pointer;display:inline-flex;align-items:center">⟐ IMPORT<input type="file" accept=".json,application/json" onchange="libImportJson(event)" style="display:none"></label>
         <button class="btn btn-primary" onclick="libClearAll()" style="padding:6px 12px;font-size:10px;letter-spacing:1px;background:var(--bg3);color:#ff7d7d;border:1px solid rgba(107,42,42,0.6)">⟐ CLEAR ALL</button>
       </div>
     </div>
@@ -7917,30 +7915,6 @@ function libExportText() {
   const c = libCounts();
   lines.push('Total: ' + c.owned + ' / ' + c.total + ' (' + c.pct + '%)');
   libDownload('weg-library-owned.txt', lines.join('\n'), 'text/plain');
-}
-function libExportJson() {
-  const payload = { exported: new Date().toISOString(), owned: libOwned };
-  libDownload('weg-library-owned.json', JSON.stringify(payload, null, 2), 'application/json');
-}
-function libImportJson(ev) {
-  const file = ev.target.files && ev.target.files[0];
-  if (!file) return;
-  const reader = new FileReader();
-  reader.onload = function() {
-    try {
-      const data = JSON.parse(reader.result);
-      const incoming = data.owned || data;
-      if (typeof incoming !== 'object') throw new Error('Invalid file');
-      libOwned = {};
-      Object.keys(incoming).forEach(k => { if (incoming[k]) libOwned[k] = true; });
-      libSave();
-      renderLibrary();
-    } catch(e) {
-      alert('Import failed: ' + e.message);
-    }
-  };
-  reader.readAsText(file);
-  ev.target.value = '';
 }
 function libClearAll() {
   if (!confirm('Uncheck all owned sourcebooks? This cannot be undone.')) return;
