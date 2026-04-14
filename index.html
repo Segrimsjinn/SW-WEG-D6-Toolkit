@@ -55,6 +55,8 @@ background:linear-gradient(135deg,var(--gold) 0%,#fff8c4 50%,var(--gold) 100%);
 text-align:center;
 }
 .app-subtitle{font-size:10px;color:var(--text-dim);text-align:center;letter-spacing:2px;margin-top:2px}
+.app-help-btn{position:absolute;top:10px;right:12px;background:none;border:1px solid var(--gold-dim);color:var(--gold);font-family:'Orbitron','Exo 2',monospace;font-size:9px;letter-spacing:1px;padding:4px 10px;border-radius:var(--radius-sm);cursor:pointer;line-height:1;z-index:2}
+.app-help-btn:hover{background:var(--gold-dim);color:var(--bg)}
 
 .app-content{flex:1;overflow:hidden;position:relative}
 .tab-panel{
@@ -633,6 +635,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
   <header class="app-header">
     <div class="app-title">Star Wars D6 Toolkit</div>
     <div class="app-subtitle">NPC Generator &amp; Astrogation &amp; Starships</div>
+    <button class="app-help-btn" onclick="openHowTo()" title="How to Use This Toolkit">? HOW TO</button>
   </header>
 
   <div class="app-content">
@@ -2503,7 +2506,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
         <div id="speedSettings"></div>
         <button class="btn btn-primary btn-full" style="margin-top:12px" onclick="recalibrate()">RECALIBRATE</button>
       </div>
-      <div class="card">
+      <div class="card" id="settings-howto">
         <div class="card-title">⟐ How to Use This Toolkit</div>
         <p style="font-size:12px;color:var(--text-dim);line-height:1.6;margin-bottom:14px">This toolkit is a digital GM aid for the <span style="color:var(--gold)">West End Games Star Wars D6 RPG</span>. Each tab is a self-contained tool — tap any tab at the bottom to switch between them. Most tabs have a sticky <em>⟐ JUMP TO</em> menu at the top that scrolls directly to any tool on that tab.</p>
 
@@ -2804,6 +2807,17 @@ function switchTab(tab) {
   document.getElementById('tab-' + tab).classList.add('active');
   document.querySelector(`[data-tab="${tab}"]`).classList.add('active');
   closeAllJumpTo();
+}
+
+function openHowTo() {
+  switchTab('settings');
+  const el = document.getElementById('settings-howto');
+  if (!el) return;
+  // Wait a frame for the tab to become active before scrolling
+  setTimeout(() => {
+    const panel = document.getElementById('tab-settings');
+    if (panel) panel.scrollTo({ top: el.offsetTop - 8, behavior: 'smooth' });
+  }, 50);
 }
 
 // ============================================================
