@@ -2505,15 +2505,18 @@ color:var(--text-dim);min-width:35px;text-align:right;
       </div>
       <div class="card">
         <div class="card-title">⟐ How to Use This Toolkit</div>
-        <p style="font-size:12px;color:var(--text-dim);line-height:1.6;margin-bottom:14px">This toolkit is a digital GM aid for the <span style="color:var(--gold)">West End Games Star Wars D6 RPG</span>. Each tab is a self-contained tool — tap any tab at the bottom to switch between them.</p>
+        <p style="font-size:12px;color:var(--text-dim);line-height:1.6;margin-bottom:14px">This toolkit is a digital GM aid for the <span style="color:var(--gold)">West End Games Star Wars D6 RPG</span>. Each tab is a self-contained tool — tap any tab at the bottom to switch between them. Most tabs have a sticky <em>⟐ JUMP TO</em> menu at the top that scrolls directly to any tool on that tab.</p>
 
         <!-- NPC Tab -->
         <div style="margin-bottom:14px">
-          <div style="font-family:'Exo 2',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:5px">⟐ NPC TAB — Characters &amp; Creatures</div>
+          <div style="font-family:'Exo 2',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:5px">⟐ NPC TAB — Characters, Creatures &amp; Gear</div>
           <div style="font-size:12px;color:var(--text-dim);line-height:1.7">
-            <p style="margin-bottom:6px"><span style="color:var(--cyan)">Random NPC Generator</span> — Tap <em>Generate NPC</em> to instantly create a fully randomized non-player character with a name, species, role, personality, quirks, and attribute dice. Use the dropdowns to lock in a specific species, gender, or role before rolling if you want more control. The results are ready to drop straight into a session.</p>
-            <p style="margin-bottom:6px"><span style="color:var(--cyan)">Creature Lookup</span> — Search by name, planet, or habitat to find creature stat blocks from WEG sourcebooks. Useful for encounters or when players wander somewhere dangerous.</p>
-            <p style="margin-bottom:6px"><span style="color:var(--cyan)">Notable NPC Lookup</span> — Search for named characters from WEG sourcebooks — smugglers, crime lords, starport masters, and more. Type a name, affiliation, species, or location and tap any result to see the full stat block including skills, equipment, and background capsule. Multi-era characters (like Luke Skywalker) appear as separate entries for each sourcebook era — pick the one that matches your campaign timeline.</p>
+            <p style="margin-bottom:6px">This tab is split into two sub-tabs at the top: <em>GENERATORS</em> and <em>LOOKUPS</em>. Your last choice is remembered across reloads.</p>
+            <p style="margin-bottom:6px"><span style="color:var(--cyan)">Random NPC Generator</span> <em>(Generators)</em> — Tap <em>Generate NPC</em> to instantly create a fully randomized character with a name, species, role, attributes, skills, gear, and quirks. Use the Race / Sex / Job dropdowns to lock inputs before rolling, or reroll individual sections (Race, Training, Attributes, Skills) with the lock icons. Export the finished sheet as a PDF.</p>
+            <p style="margin-bottom:6px"><span style="color:var(--cyan)">Random Alien Generator</span> <em>(Generators)</em> — Generates a brand-new alien species using <em>WEG40166 Alien Encounters</em> Ch.1 tables: homeworld (from undocumented systems), environment, attribute dice ranges, special abilities, and story factors. A <em>Typical Native</em> stat block is rendered alongside so you can drop a specimen straight into play.</p>
+            <p style="margin-bottom:6px"><span style="color:var(--cyan)">Random Creature Generator</span> <em>(Generators)</em> — Rolls body type, size, habitat, behavior, stats, and special abilities derived from the distribution of ~600+ sourcebook creatures. Homeworld is picked from documented planets.</p>
+            <p style="margin-bottom:6px"><span style="color:var(--cyan)">Notable NPC Lookup</span> <em>(Lookups)</em> — Search named characters from WEG sourcebooks — smugglers, crime lords, starport masters, and more. Filter by system, affiliation, species, or role. Multi-era characters (Luke Skywalker, etc.) appear as separate entries per sourcebook era — pick the one that matches your campaign timeline.</p>
+            <p style="margin-bottom:6px"><span style="color:var(--cyan)">Weapons / Equipment / Creature Lookups</span> <em>(Lookups)</em> — Searchable databases for personal weapons, adventure gear and droids, and creatures. Weapons and Equipment support filtering by availability (1–4) and legality (F/R/X). Tap the <em>ⓘ GUIDE</em> pill for an explanation of the availability and legality codes.</p>
           </div>
         </div>
 
@@ -2521,9 +2524,10 @@ color:var(--text-dim);min-width:35px;text-align:right;
         <div style="margin-bottom:14px">
           <div style="font-family:'Exo 2',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:5px">⟐ TRAVEL TAB — Astrogation Calculator</div>
           <div style="font-size:12px;color:var(--text-dim);line-height:1.7">
-            <p style="margin-bottom:6px"><span style="color:var(--cyan)">Plot a Route</span> — Type any system name in the Origin and Destination fields (autocomplete will help). Set your ship's hyperdrive multiplier with the slider (×1 is fastest, ×2 takes twice as long, etc.). Choose <em>Trade Route</em> for the shortest established path or <em>Smuggler's Route</em> for a straight-line run regardless of lanes. Tap <em>Plot Astrogation</em> to calculate travel time, see the route on the galaxy map, and generate a random malfunction point along the path.</p>
-            <p style="margin-bottom:6px"><span style="color:var(--cyan)">Astrogation Quick Reference</span> — Always visible below the calculator. Shows the modifiers to apply to the player's astrogation roll, how long the calculations take in-game, hyperdrive startup times by ship class, and the full 2D mishap table for when a roll goes wrong.</p>
-            <p style="margin-bottom:6px"><span style="color:var(--cyan)">Clear Route</span> — Resets the inputs and removes the plotted route from the map.</p>
+            <p style="margin-bottom:6px"><span style="color:var(--cyan)">Plot a Route</span> — Type any system name in the Origin and Destination fields (autocomplete will help) or use the <em>Random Origin / Random Dest / Random Both</em> buttons. Set your ship's hyperdrive multiplier with the slider (×1 fastest, ×10 slowest). Choose <em>Trade Route</em> for the shortest established path (Dijkstra) or <em>Smuggler's Route</em> for a straight-line run (Bresenham). Tap <em>Plot Astrogation</em> to calculate travel time, see the route drawn on the galaxy map, and get a random malfunction point along the path.</p>
+            <p style="margin-bottom:6px"><span style="color:var(--cyan)">Sector Gazetteers</span> — When both endpoints are in the same published sector gazetteer (Brak, Ringali Shell, Elrood, Minos Cluster, Kira Run, Sisar Run, Kathol, Kathol Outback, Tapani), the calculator uses sourcebook travel times instead of grid-based math. Gateway systems (marked 🏰) are the published entry points where outside traffic enters a sector.</p>
+            <p style="margin-bottom:6px"><span style="color:var(--cyan)">Route Summary / Path / Map</span> — Appear right below the calculator after you plot. Green 🏰 systems in the Path are clickable links to the Galaxy tab for that system's planet detail. Malfunction point is highlighted on the path.</p>
+            <p style="margin-bottom:6px"><span style="color:var(--cyan)">Astrogation Quick Reference</span> — Sits at the bottom of the tab. Shows modifiers for the astrogation roll, calculation times in-game, hyperdrive startup times by ship class, and the 2D mishap table for when a roll goes wrong.</p>
           </div>
         </div>
 
@@ -2531,42 +2535,53 @@ color:var(--text-dim);min-width:35px;text-align:right;
         <div style="margin-bottom:14px">
           <div style="font-family:'Exo 2',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:5px">⟐ GALAXY TAB — Systems &amp; Planets</div>
           <div style="font-size:12px;color:var(--text-dim);line-height:1.7">
-            <p style="margin-bottom:6px"><span style="color:var(--cyan)">System Search</span> — Type any system, planet, starport, or region name into the search bar. Results show the grid reference, region, and travel hours. Tap a result card to highlight it on the galaxy map below. Tap a highlighted system again to open its full planet detail card — stats, summary, key locations, and GM notes pulled from WEG sourcebooks.</p>
-            <p style="margin-bottom:6px"><span style="color:var(--cyan)">Galaxy Map</span> — A pan-and-zoom interactive map of the Star Wars galaxy. Pinch to zoom on touch screens, scroll-wheel on desktop. Tap a highlighted system dot to open its detail card directly from the map.</p>
+            <p style="margin-bottom:6px"><span style="color:var(--cyan)">System Search</span> — Type any system, planet, starport, city, or region name. Results show grid reference, region, and travel hours. Tap a result card to highlight the system on the galaxy map below. If the system has a planet detail entry, the card is clickable — tap it to open the full detail card with stats, summary, key locations, and GM notes drawn from WEG sourcebooks.</p>
+            <p style="margin-bottom:6px"><span style="color:var(--cyan)">🌍 System Details List</span> — Dropdown next to the search counter that lists every system with a full planet detail entry. Pick one to jump straight to its detail card.</p>
+            <p style="margin-bottom:6px"><span style="color:var(--cyan)">Wild Space System Generator</span> — Button next to the search that rolls a brand-new system using <em>WEG40061 Galaxy Guide 8: Scouts</em> Ch.9 tables (planet type, terrain, atmosphere, government, etc.). Useful when players wander off the established map.</p>
+            <p style="margin-bottom:6px"><span style="color:var(--cyan)">Clickable NPC Names</span> — Inside planet detail cards, the names of any Notable NPCs who live or work there are rendered as cyan links. Click one to jump to that NPC's stat block on the NPC tab.</p>
+            <p style="margin-bottom:6px"><span style="color:var(--cyan)">Galaxy Map</span> — Pan-and-zoom interactive map. Pinch on touch screens, scroll-wheel on desktop. Tap a highlighted system dot to open its detail card.</p>
           </div>
         </div>
 
         <!-- Ships Tab -->
         <div style="margin-bottom:14px">
-          <div style="font-family:'Exo 2',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:5px">⟐ SHIPS TAB — Starship Database</div>
+          <div style="font-family:'Exo 2',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:5px">⟐ SHIPS TAB — Starship Database &amp; Builder</div>
           <div style="font-size:12px;color:var(--text-dim);line-height:1.7">
-            <p style="margin-bottom:6px"><span style="color:var(--cyan)">Starship Lookup</span> — Browse or search the full WEG starship database. Filter by type (starfighter, freighter, capital ship, etc.), manufacturer, or name. Tap any entry to expand its full stat block: scale, crew, passengers, cargo, hyperdrive, maneuverability, hull, shields, sensors, and all weapon systems with fire arcs, ranges, and damage. Also covers vehicles, weapons, armor, and equipment in their own tabs.</p>
+            <p style="margin-bottom:6px"><span style="color:var(--cyan)">Starship Database</span> — Browse or search the full WEG starship database. Sort by A-Z, rank, hull, speed, price, or cargo. Filter by era (Old Republic → Legacy). Tap any entry to expand its full stat block: scale, crew, passengers, cargo, hyperdrive, maneuverability, hull, shields, sensors, weapons. Use <em>⟐ COMPARE</em> to stack two ships side-by-side.</p>
+            <p style="margin-bottom:6px"><span style="color:var(--cyan)">Vehicle Database</span> — Speeders, walkers, starfighters (character-scale through vehicle-scale). Same filtering and availability/legality support as the NPC-tab weapon lookup.</p>
+            <p style="margin-bottom:6px"><span style="color:var(--cyan)">Ship Equipment</span> — Drives, shields, sensors, ship weapons (laser cannons, turbolasers, etc.), countermeasures, fuel systems, tractor beams, secret compartments, and other accessories from the sourcebooks.</p>
+            <p style="margin-bottom:6px"><span style="color:var(--cyan)">Ship Builder</span> — Build a custom starship from scratch, apply modifications, and track costs. Uses the rules from the Ship Modifications quick reference on the Dice tab.</p>
           </div>
         </div>
 
-        <!-- GM Tab -->
+        <!-- Dice Tab -->
         <div style="margin-bottom:14px">
-          <div style="font-family:'Exo 2',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:5px">⟐ DICE TAB — Dice Roller &amp; Combat Reference</div>
+          <div style="font-family:'Exo 2',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:5px">⟐ DICE TAB — GM Tools &amp; References</div>
           <div style="font-size:12px;color:var(--text-dim);line-height:1.7">
-            <p style="margin-bottom:6px"><span style="color:var(--cyan)">Dice Roller</span> — Roll any combination of D6 dice using the WEG notation (e.g. 4D+2). Tap the roll button or type directly. Results show individual dice plus the total. Useful when you don't have physical dice handy.</p>
-            <p style="margin-bottom:6px"><span style="color:var(--cyan)">Combat Initiative Tracker</span> — Add player characters and NPCs to track combat order. Assign dice values and roll initiative for all combatants at once.</p>
-            <p style="margin-bottom:6px"><span style="color:var(--cyan)">Quick Reference Cards</span> — Always-visible tables for difficulty numbers, range bands, cover bonuses, multi-action penalties, scale modifiers, and chase/movement rules. Everything you need to adjudicate a D6 combat without cracking open the rulebook.</p>
+            <p style="margin-bottom:6px"><span style="color:var(--cyan)">Dice Roller</span> — Roll any combination of D6 using WEG notation (e.g. 4D+2). Results show individual dice, wild-die behavior, and the total.</p>
+            <p style="margin-bottom:6px"><span style="color:var(--cyan)">Combat Initiative Tracker</span> — Add PCs and NPCs, assign dice values, and roll initiative for all combatants at once. Track damage and status through the fight.</p>
+            <p style="margin-bottom:6px"><span style="color:var(--cyan)">Combat &amp; Chase Quick References</span> — Always-visible tables for difficulty numbers, range bands, cover bonuses, multi-action penalties, scale modifiers, terrain difficulties, and maneuver modifiers. Color-coded so you can scan by severity at a glance.</p>
+            <p style="margin-bottom:6px"><span style="color:var(--cyan)">Character Points / Force Points / Advancement</span> — Cards covering how CP and FP work, and the full advancement/training costs.</p>
+            <p style="margin-bottom:6px"><span style="color:var(--cyan)">Force Powers Reference</span> — Search all 76+ Force powers (Control / Sense / Alter). Includes <em>Dathomir Magic</em> (Nightsister rites, WEG40139) and <em>Ta-Ree Magic</em> (WEG40121 Kathol Rift) as standalone cards with their own spell lists.</p>
+            <p style="margin-bottom:6px"><span style="color:var(--cyan)">Freighter Captain's Guide</span> — Cargo/trade rules, Supply &amp; Demand table by tech level (color-coded), restocking fees, and docking costs.</p>
+            <p style="margin-bottom:6px"><span style="color:var(--cyan)">Ship Modifications / Repairs / Mishap Tables</span> — Modify drives, weapons, shields, and sensors by % of original cost. Mishap tables for Sublight, Maneuverability, Hyperdrive, Hull, and Weaponry, each with Minor / Moderate / Catastrophic severity tiers (color-coded pills).</p>
           </div>
         </div>
 
-        <!-- Games Tab -->
+        <!-- Gazette Tab -->
         <div style="margin-bottom:14px">
-          <div style="font-family:'Exo 2',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:5px">⟐ GAMES TAB — Minigames</div>
+          <div style="font-family:'Exo 2',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:5px">⟐ GAZETTE TAB — Sector Travel Times</div>
           <div style="font-size:12px;color:var(--text-dim);line-height:1.7">
-            <p style="margin-bottom:6px"><span style="color:var(--cyan)">Asteroid Run</span> — Navigate the Alderaan asteroid field in this board-game adaptation from WEG's Graveyard of Alderaan adventure. Roll dice to control your ship's speed and direction while dodging asteroids, probe droids, and battle droids. Race the AI salvager to the exit.</p>
+            <p style="margin-bottom:6px">All nine published sector gazetteers in one place. Small sectors show a full symmetric distance matrix; large sectors (like Tapani with 89 systems) have an origin/destination dropdown pair. Travel time color legend: <span style="color:#66bb6a">green</span> ≤ 10h (fast hop), <span style="color:var(--gold)">gold</span> 11–30h (medium), <span style="color:var(--text-dim)">grey</span> 30h+ (long haul). 🏰 marks gateway systems.</p>
           </div>
         </div>
 
         <!-- Settings Tab -->
         <div>
-          <div style="font-family:'Exo 2',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:5px">⟐ SETTINGS TAB — Configuration</div>
+          <div style="font-family:'Exo 2',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:5px">⟐ SETTINGS TAB — Configuration &amp; Collection</div>
           <div style="font-size:12px;color:var(--text-dim);line-height:1.7">
-            <p><span style="color:var(--cyan)">Speed Calibration</span> — Adjust the base travel hours per grid tile for each hyperspace lane classification. The defaults match DT Strain's travel time map, but you can tune them to match your campaign's feel. Tap <em>Recalibrate</em> to apply your changes to all future route calculations.</p>
+            <p style="margin-bottom:6px"><span style="color:var(--cyan)">Speed Calibration</span> — Adjust base travel hours per grid tile for each hyperspace lane classification. Defaults match DT Strain's travel time map; tune to taste. Tap <em>Recalibrate</em> to apply.</p>
+            <p style="margin-bottom:6px"><span style="color:var(--cyan)">Print Sourcebook Checklist</span> — Button on the About card. Opens a printable checklist of every WEG D6 product (1987–1998). Check off what you own, search, filter by edition, and print or export the list. Your ownership state is saved locally.</p>
           </div>
         </div>
       </div>
