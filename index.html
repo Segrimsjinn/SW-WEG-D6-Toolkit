@@ -8525,10 +8525,13 @@ function renderRolledNpcSnapshot(pin) {
 
   let out = '';
 
-  // Fluff block
+  // Fluff block — only show "Armor / Gear" for PCs (rolled NPCs list the
+  // same info in the Equipment block below, so it'd be redundant).
+  const isPc = pin.type === 'player-character';
   const fluff = [
     row('Player', n.player), row('Sex', n.sex), row('Height', n.height),
-    row('Move', n.move), row('Credits', n.credits), row('Armor / Gear', n.armor),
+    row('Move', n.move), row('Credits', n.credits),
+    isPc ? row('Armor / Gear', n.armor) : '',
     row('Force Sensitive', n.forceSensitive),
     row('Force Points', n.forcePoints), row('Character Points', n.charPoints)
   ].filter(Boolean).join('');
