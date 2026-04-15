@@ -663,6 +663,16 @@ color:var(--text-dim);min-width:35px;text-align:right;
   body.printing-library .lib-row.owned{background:#fff !important}
   body.printing-library .lib-print-footer{display:block !important;color:#000 !important}
   /* Pin Snapshot print mode */
+  /* The app shell is a viewport-sized flex box with overflow:hidden — in
+     print that clips everything to one page. Break those constraints so
+     the document can flow naturally over as many pages as needed. */
+  body.printing-pin-snapshot,
+  body.printing-pin-snapshot .app,
+  body.printing-pin-snapshot .app-content,
+  body.printing-pin-snapshot .tab-panel{
+    height:auto !important;min-height:0 !important;max-height:none !important;
+    overflow:visible !important;position:static !important;display:block !important
+  }
   body.printing-pin-snapshot *{visibility:hidden}
   body.printing-pin-snapshot #pinSnapshotModal,body.printing-pin-snapshot #pinSnapshotModal *{visibility:visible}
   body.printing-pin-snapshot #pinSnapshotModal{position:absolute !important;inset:auto !important;top:0 !important;left:0 !important;background:#fff !important;padding:0 !important;overflow:visible !important;display:block !important;z-index:auto !important;height:auto !important;max-height:none !important;width:100% !important}
