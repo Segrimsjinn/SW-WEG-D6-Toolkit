@@ -185,7 +185,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Adhesion Disc",
-  "category": "Climbing Gear",
+  "category": "Survival Gear",
   "cost": "150",
   "availability": "2",
   "game_notes": "Micro-suction climbing discs for hands and feet. +2D to climbing skill on smooth surfaces.",
@@ -193,7 +193,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Grappling Gun",
-  "category": "Climbing Gear",
+  "category": "Survival Gear",
   "cost": "200",
   "availability": "2",
   "game_notes": "Fires grappling hook with syntherope. 25m range. Easy missile weapons to fire. +1D climbing with attached rope.",
@@ -201,7 +201,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Syntherope",
-  "category": "Climbing Gear",
+  "category": "Survival Gear",
   "cost": "2/meter",
   "availability": "1",
   "game_notes": "Standard synthetic rope. Supports up to 500kg. Available in lengths up to 200m.",
@@ -896,22 +896,6 @@ const EQUIPMENT_DATA = [
   "source": "WEG40082 Tales of the Jedi Companion"
  },
  {
-  "name": "Anti-Shock Blanket",
-  "category": "Medical",
-  "cost": "50",
-  "availability": "1",
-  "game_notes": "Heated blanket that stabilizes patients. +1D to stamina rolls for shock/exposure.",
-  "source": ""
- },
- {
-  "name": "Bacta Geltab",
-  "category": "Medical",
-  "cost": "50",
-  "availability": "2",
-  "game_notes": "Chewable bacta tablet. Heals Stunned/minor wounds. No skill roll needed.",
-  "source": ""
- },
- {
   "name": "Bacta Tank",
   "category": "Medical",
   "cost": "100,000",
@@ -952,14 +936,6 @@ const EQUIPMENT_DATA = [
   "source": ""
  },
  {
-  "name": "Medisensor",
-  "category": "Medical",
-  "cost": "400",
-  "availability": "2",
-  "game_notes": "Advanced medical sensor. +2D to diagnosis rolls. Detects poisons, diseases, and foreign bodies.",
-  "source": ""
- },
- {
   "name": "Medkit",
   "category": "Medical",
   "cost": "300",
@@ -976,27 +952,11 @@ const EQUIPMENT_DATA = [
   "source": "Rulebook"
  },
  {
-  "name": "Nilar Field Cauterizer",
-  "category": "Medical",
-  "cost": "150",
-  "availability": "2",
-  "game_notes": "Seals wounds. +1D first aid to stop bleeding. Cauterized wounds are treated one wound level lower for healing purposes.",
-  "source": ""
- },
- {
   "name": "Portable Survival Pod",
   "category": "Medical",
   "cost": "3,000",
   "availability": "2",
   "game_notes": "Emergency life support pod. Stabilizes critically injured patients for up to 48 hours. +2D to stabilize mortally wounded.",
-  "source": ""
- },
- {
-  "name": "Spray Plasto-Cast",
-  "category": "Medical",
-  "cost": "25",
-  "availability": "1",
-  "game_notes": "Quick-setting spray cast for broken bones. Keeps limb immobile for proper healing. Reduces healing time by 25%.",
   "source": ""
  },
  {
@@ -3633,7 +3593,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Line Master Tube-Launched Grapple (TLG)",
-  "category": "Climbing Gear",
+  "category": "Survival Gear",
   "cost": "800",
   "availability": "2, R",
   "game_notes": "Skill: Missile weapons, Easy difficulty to fire on target. Portable one-shot grappling device — hollow cylinder 40cm long, 10cm diameter resembling a lightsaber hilt. Features pop-up targeting sight, retractable hand grip with braking controls for controlled descents, 100 meters of ultra-light micro-woven synthecord, small motorized winch (Move: 2, pulls full load at 25 meters/minute), and hook for harness cable. Grapple head is a flat flexible disk coated with strong bonding agent that instantly bonds on impact. Line supports up to 200 kg.",
@@ -6382,7 +6342,7 @@ const EQUIPMENT_DATA = [
  {
   "name": "Power Pitons",
   "type": "MTS-56T Power Piton",
-  "category": "Climbing Gear",
+  "category": "Survival Gear",
   "cost": "300",
   "availability": "2",
   "game_notes": "Set of 4 climbing aids (2 hand discs, 2 foot ovals). Two settings: magnetic (for metallic surfaces) and vibro (generates vibrosharp projections for rock, wood, durocrete). Using all 4 pitons with an Easy Dexterity roll adds +2D to climbing rolls. Using only 2 (hand or foot only) grants +1D. Originally designed for mountaineers; popular with fringers for catburgling and emergency escape routes.",
