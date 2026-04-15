@@ -695,6 +695,9 @@ color:var(--text-dim);min-width:35px;text-align:right;
     <div class="app-title">Star Wars D6 Toolkit</div>
     <div class="app-subtitle">NPC Generator &amp; Astrogation &amp; Starships</div>
     <button class="app-help-btn" onclick="openHowTo()" title="How to Use This Toolkit">? HOW TO</button>
+    <div id="visitorBadge" style="position:absolute;bottom:4px;right:12px;font-family:'Exo 2',monospace;font-size:8px;color:var(--text-dark);letter-spacing:1px;line-height:1" title="Total visitors">
+      <span id="statVisitors" style="color:var(--gold);font-weight:700">—</span> COMMANDERS
+    </div>
   </header>
 
   <div id="globalJumpOverlay" onclick="if(event.target===this)closeGlobalJump()">
@@ -2801,16 +2804,6 @@ color:var(--text-dim);min-width:35px;text-align:right;
           <p>And last but not least, thank you to <span style="color:var(--gold)">Claude Opus 4.6</span> for having my back and turning my ideas into coded creativity.</p>
           <p style="margin-top:12px;color:var(--text-dark);font-size:12px">This project is solely for fun and is not intended for sale. All images were borrowed from publicly available sources to the best of my ability. Based on West End Games' <em>Star Wars: The Roleplaying Game — 2nd Edition, Revised &amp; Expanded</em>.</p>
           <p style="color:var(--gold);font-style:italic;margin-top:12px">Your galaxy is always expanding. Hyperspace speeds may vary. Consult a Wookiee for mynock power losses.</p>
-        </div>
-      </div>
-
-      <div id="statsFooter" style="text-align:center;padding:12px 16px;border-top:1px solid var(--card-border);margin-top:16px">
-        <div style="font-family:'Exo 2',sans-serif;font-size:9px;color:var(--text-dim);letter-spacing:0.8px;line-height:1.8">
-          <span id="statVisitors" style="color:var(--gold);font-weight:700;font-size:11px">—</span> <span style="color:var(--cyan)">COMMANDERS</span> HAVE ENLISTED
-          <span id="statNPCs" style="color:var(--gold);font-weight:700;font-size:11px">—</span> <span style="color:var(--cyan)">MINIONS</span>, PLOTTED
-          <span id="statJourneys" style="color:var(--gold);font-weight:700;font-size:11px">—</span> <span style="color:var(--cyan)">ASTROGATION COURSES</span>, AND PERFORMED
-          <span id="statScans" style="color:var(--gold);font-weight:700;font-size:11px">—</span> <span style="color:var(--cyan)">SYSTEM SECTOR SCANS</span>, AND INSPECTED
-          <span id="statShips" style="color:var(--gold);font-weight:700;font-size:11px">—</span> <span style="color:var(--cyan)">STARSHIPS</span>
         </div>
       </div>
 
@@ -7498,11 +7491,7 @@ var gcInterval = setInterval(function() {
     clearInterval(gcInterval);
     var base = 'https://segrimsjinn.goatcounter.com/counter/';
     var stats = [
-      { path: 'TOTAL.json', el: 'statVisitors' },
-      { path: 'npc-generated.json', el: 'statNPCs' },
-      { path: 'journey-plotted.json', el: 'statJourneys' },
-      { path: 'galaxy-searched.json', el: 'statScans' },
-      { path: 'ship-inspected.json', el: 'statShips' }
+      { path: 'TOTAL.json', el: 'statVisitors' }
     ];
     stats.forEach(function(s) {
       var r = new XMLHttpRequest();
