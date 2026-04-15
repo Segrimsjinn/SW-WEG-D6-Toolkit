@@ -1081,7 +1081,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Anti-Vehicle Grenade",
-  "category": "Grenades",
+  "category": "Grenades & Explosives",
   "skill": "Grenade",
   "cost": "750",
   "availability": "R, X",
@@ -1093,7 +1093,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "C-10 Stun Grenade",
-  "category": "Grenades",
+  "category": "Grenades & Explosives",
   "skill": "Grenade",
   "cost": "600",
   "availability": "2, R or X",
@@ -1105,7 +1105,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "C-14A Stun Grenade",
-  "category": "Grenades",
+  "category": "Grenades & Explosives",
   "skill": "Grenade",
   "cost": "450",
   "availability": "2, R or X",
@@ -1117,7 +1117,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "C-16 Fragmentation Grenade",
-  "category": "Grenades",
+  "category": "Grenades & Explosives",
   "skill": "Grenade",
   "cost": "200",
   "availability": "1, R",
@@ -1129,7 +1129,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "C-22 Fragmentation Grenade",
-  "category": "Grenades",
+  "category": "Grenades & Explosives",
   "skill": "Grenade",
   "cost": "300",
   "availability": "1, R",
@@ -1141,7 +1141,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Cryoban Grenade",
-  "category": "Grenades",
+  "category": "Grenades & Explosives",
   "skill": "Grenade",
   "cost": "800",
   "availability": "2, X",
@@ -1153,7 +1153,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Glop Grenade",
-  "category": "Grenades",
+  "category": "Grenades & Explosives",
   "skill": "Grenade",
   "cost": "275",
   "availability": "2, R or X",
@@ -1165,7 +1165,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Ion Grenade",
-  "category": "Grenades",
+  "category": "Grenades & Explosives",
   "skill": "Grenade",
   "cost": "250",
   "availability": "2, R",
@@ -1177,7 +1177,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Plasma Eel",
-  "category": "Grenades",
+  "category": "Grenades & Explosives",
   "skill": "Thrown weapons: plasma eel",
   "cost": "Not for sale",
   "availability": "4, X",
@@ -1189,7 +1189,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Smoke Grenade",
-  "category": "Grenades",
+  "category": "Grenades & Explosives",
   "skill": "Grenade",
   "cost": "25",
   "availability": "2, R",
@@ -1201,7 +1201,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Thermal Detonator",
-  "category": "Grenades",
+  "category": "Grenades & Explosives",
   "skill": "Demolitions / Grenade",
   "cost": "2,000",
   "availability": "2, X",
@@ -3185,7 +3185,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Double Vibroblade",
-  "category": "Vibro-Weapons",
+  "category": "Melee - Powered",
   "skill": "Melee combat: double vibroblade",
   "cost": "750",
   "availability": "3, R",
@@ -3197,7 +3197,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Double-Bladed Vibrostave",
-  "category": "Vibro-Weapons",
+  "category": "Melee - Powered",
   "skill": "Melee combat: double-bladed vibrostave",
   "cost": "Not for sale",
   "availability": "4, X",
@@ -3209,7 +3209,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Duelist Vibrorapier",
-  "category": "Vibro-Weapons",
+  "category": "Melee - Powered",
   "skill": "Melee combat",
   "cost": "300",
   "availability": "2, R",
@@ -3221,7 +3221,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Jengardin Double-Bladed Vibroblade",
-  "category": "Vibro-Weapons",
+  "category": "Melee - Powered",
   "skill": "Melee combat: vibroblade",
   "cost": "6,000",
   "availability": "4, F/R/X",
@@ -3233,7 +3233,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Talon Vibrodagger",
-  "category": "Vibro-Weapons",
+  "category": "Melee - Powered",
   "skill": "Melee combat: vibrodagger",
   "cost": "50",
   "availability": "2, R",
@@ -3245,7 +3245,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Imperial Munitions Vibrodagger",
-  "category": "Vibro-Weapons",
+  "category": "Melee - Powered",
   "skill": "Melee combat: vibrodagger",
   "cost": "N/A",
   "availability": "4, X",
@@ -3257,7 +3257,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Tehk'la Blade",
-  "category": "Vibro-Weapons",
+  "category": "Melee - Powered",
   "skill": "Melee combat",
   "cost": "250",
   "availability": "4",
@@ -3269,7 +3269,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Vibro-Ax",
-  "category": "Vibro-Weapons",
+  "category": "Melee - Powered",
   "skill": "Melee combat: vibro-ax",
   "cost": "500",
   "availability": "2, R",
@@ -3281,7 +3281,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Vibro-Shiv",
-  "category": "Vibro-Weapons",
+  "category": "Melee - Powered",
   "skill": "Melee combat: vibro-shiv",
   "cost": "200",
   "availability": "2, F",
@@ -3293,7 +3293,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Vibrobayonet",
-  "category": "Vibro-Weapons",
+  "category": "Melee - Powered",
   "skill": "Melee combat: vibrobayonet",
   "cost": "300",
   "availability": "2, F",
@@ -3305,7 +3305,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Vibroblade",
-  "category": "Vibro-Weapons",
+  "category": "Melee - Powered",
   "skill": "Melee combat: vibroblade",
   "cost": "250",
   "availability": "2, F",
@@ -3317,7 +3317,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Vibroknuckler",
-  "category": "Vibro-Weapons",
+  "category": "Melee - Powered",
   "skill": "Melee combat: vibroknuckler",
   "cost": "200",
   "availability": "2, R",
@@ -3425,7 +3425,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Sessian Concussion Stick Model 1-79",
-  "category": "Grenades",
+  "category": "Grenades & Explosives",
   "skill": "Melee combat / thrown weapons",
   "cost": "200 per pair",
   "availability": "3, F/R/X",
@@ -3449,7 +3449,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Jengardin Double-Bladed Vibroblade",
-  "category": "Vibroblades",
+  "category": "Melee - Powered",
   "skill": "Melee weapon: vibroblade",
   "cost": "6,000 (25 power cells, 75 holster sheath)",
   "availability": "4, F/R/X",
@@ -4394,7 +4394,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Fragmentation Grenade",
-  "category": "Grenades",
+  "category": "Grenades & Explosives",
   "damage": "5D/4D/3D/2D",
   "range": "3-7/20/40",
   "ammo": "",
@@ -4405,7 +4405,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Merr-Sonn Stun Grenade",
-  "category": "Grenades",
+  "category": "Grenades & Explosives",
   "damage": "6D/5D/3D (stun)",
   "range": "0-8/16/25",
   "ammo": "",
@@ -4416,7 +4416,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Gatrellis Plasticene Thermite Gel",
-  "category": "Explosives",
+  "category": "Grenades & Explosives",
   "damage": "20D per kg; 2D per 100g",
   "range": "",
   "ammo": "",
@@ -4471,7 +4471,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Thermal Mine",
-  "category": "Explosives",
+  "category": "Grenades & Explosives",
   "damage": "10D/8D/5D/2D",
   "range": "0-2/4/6/10 (blast radius)",
   "ammo": "",
@@ -4866,7 +4866,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "BNO Impact Grenade",
-  "category": "Grenades",
+  "category": "Grenades & Explosives",
   "skill": "Grenade: impact grenade",
   "cost": "150 (box of three)",
   "availability": "2",
