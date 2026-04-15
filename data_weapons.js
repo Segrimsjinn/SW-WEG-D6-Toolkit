@@ -829,7 +829,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Bowcaster",
-  "category": "Firearms",
+  "category": "Projectile Weapons",
   "skill": "Bowcaster",
   "cost": "900",
   "availability": "3, R",
