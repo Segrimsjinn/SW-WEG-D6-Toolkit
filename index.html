@@ -8911,8 +8911,12 @@ const NPC_EQUIP_SLOTS = [
 function collectDroidComponents() {
   const names = [];
   if (typeof EQUIPMENT_DATA !== 'undefined' && Array.isArray(EQUIPMENT_DATA)) {
-    const droidCats = ['Droid Hardware', 'Droid TraitWare'];
-    EQUIPMENT_DATA.forEach(e => { if (droidCats.includes(e.category) && e.name) names.push(e.name); });
+    // Only Droid Hardware — TraitWare/SkillWare are how a droid's attribute
+    // dice and skills exist mechanically, which the PC form already handles
+    // via attribute fields and the skill list. Including them in the gear
+    // grid would be redundant. (The full TraitWare/SkillWare catalog still
+    // lives in data_equipment.js for reference.)
+    EQUIPMENT_DATA.forEach(e => { if (e.category === 'Droid Hardware' && e.name) names.push(e.name); });
   }
   if (typeof DROID_COMPONENTS !== 'undefined' && Array.isArray(DROID_COMPONENTS)) {
     DROID_COMPONENTS.forEach(e => { if (e.name) names.push(e.name); });
