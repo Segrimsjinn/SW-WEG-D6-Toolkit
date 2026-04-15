@@ -2547,8 +2547,8 @@ color:var(--text-dim);min-width:35px;text-align:right;
     </div>
 
     <!-- PINNED SNAPSHOT MODAL (for generated items that can't be re-looked-up) -->
-    <div id="pinSnapshotModal" style="display:none;position:fixed;inset:0;z-index:10000;align-items:center;justify-content:center;background:rgba(0,0,0,.75);padding:16px" onclick="if(event.target===this)hidePinSnapshot()">
-      <div style="background:var(--bg);border:2px solid var(--gold-dim);border-radius:var(--radius);max-width:520px;width:100%;max-height:85vh;overflow-y:auto;padding:20px 18px;position:relative">
+    <div id="pinSnapshotModal" style="display:none;position:fixed;inset:0;z-index:10000;align-items:flex-start;justify-content:center;background:rgba(0,0,0,.75);padding:16px;overflow-y:auto" onclick="if(event.target===this)hidePinSnapshot()">
+      <div style="background:var(--bg);border:2px solid var(--gold-dim);border-radius:var(--radius);max-width:640px;width:100%;max-height:90vh;overflow-y:auto;padding:20px 18px;position:relative;margin:auto">
         <button onclick="hidePinSnapshot()" style="position:absolute;top:8px;right:12px;background:none;border:none;color:var(--text-dim);font-size:22px;cursor:pointer;padding:4px 8px;line-height:1" title="Close">&times;</button>
         <div id="pinSnapshotBody"></div>
       </div>
@@ -8374,26 +8374,17 @@ function hidePinSnapshot() {
   document.getElementById('pinSnapshotModal').style.display = 'none';
 }
 
-// Render a saved snapshot for a generated pin (random NPC, alien, creature, system, built ship)
+// Render a saved snapshot for a generated pin
 function showPinSnapshot(pin) {
   const body = document.getElementById('pinSnapshotBody');
   const typeLabel = CB_TYPE_LABELS[pin.type] || pin.type;
-  const d = pin.data || {};
   let html = '<div style="font-family:\'Orbitron\',\'Exo 2\',monospace;font-size:10px;color:var(--cyan);letter-spacing:2px;margin-bottom:2px">' + escapeHtml(typeLabel) + '</div>';
   html += '<div style="font-family:\'Exo 2\',monospace;font-size:16px;color:var(--gold);font-weight:700;letter-spacing:1px;margin-bottom:4px">' + escapeHtml(pin.title) + '</div>';
   if (pin.subtitle) html += '<div style="font-size:11px;color:var(--text-dim);margin-bottom:12px">' + escapeHtml(pin.subtitle) + '</div>';
-  const rows = Object.keys(d).filter(k => d[k] !== '' && d[k] != null);
-  if (rows.length) {
-    html += '<div style="display:grid;gap:0;padding:10px;background:rgba(0,0,0,0.2);border-radius:6px;margin-bottom:10px">';
-    rows.forEach(k => {
-      const label = k.replace(/([A-Z])/g, ' $1').replace(/^./, c => c.toUpperCase());
-      html += '<div style="display:flex;gap:8px;padding:3px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:12px">'
-            + '<span style="color:var(--text-dim);min-width:120px;flex-shrink:0">' + escapeHtml(label) + '</span>'
-            + '<span style="color:var(--text)">' + escapeHtml(String(d[k])) + '</span></div>';
-    });
-    html += '</div>';
+  if (pin.type === 'random-npc') {
+    html += renderRolledNpcSnapshot(pin);
   } else {
-    html += '<div style="color:var(--text-dim);font-size:11px;font-style:italic;padding:8px 0">No additional details were saved with this pin.</div>';
+    html += renderGenericSnapshot(pin);
   }
   html += '<div style="font-size:10px;color:var(--text-dark);font-style:italic;margin-top:10px;line-height:1.5">This is a saved snapshot from when you pinned it. The original generator rolls fresh results each time — this entry won\'t change unless you edit or remove it.</div>';
   html += '<div style="display:flex;gap:8px;justify-content:flex-end;margin-top:14px">';
@@ -8401,6 +8392,115 @@ function showPinSnapshot(pin) {
   html += '</div>';
   body.innerHTML = html;
   document.getElementById('pinSnapshotModal').style.display = 'flex';
+}
+
+// Full NPC snapshot: attributes, skills, Force, equipment, lore — mirrors the generator card
+function renderRolledNpcSnapshot(pin) {
+  const n = pin.data || {};
+  const row = (label, val) => (val == null || val === '' || val === '--') ? '' :
+    '<div style="display:flex;gap:8px;padding:2px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:11px">' +
+    '<span style="color:var(--text-dim);min-width:90px;flex-shrink:0">' + escapeHtml(label) + '</span>' +
+    '<span style="color:var(--text)">' + escapeHtml(String(val)) + '</span></div>';
+
+  let out = '';
+
+  // Fluff block
+  const fluff = [
+    row('Sex', n.sex), row('Height', n.height), row('Move', n.move),
+    row('Credits', n.credits), row('Force Sensitive', n.forceSensitive),
+    row('Force Points', n.forcePoints), row('Character Points', n.charPoints)
+  ].filter(Boolean).join('');
+  if (fluff) out += '<div style="padding:6px 10px;background:rgba(0,0,0,0.2);border-radius:6px;margin-bottom:10px">' + fluff + '</div>';
+
+  // Story factor / special abilities
+  if (n.storyFactor && n.storyFactor !== '--') {
+    out += '<div style="margin-bottom:10px"><div style="font-family:\'Exo 2\',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:4px">STORY FACTOR</div><div style="font-size:11px;color:var(--text);line-height:1.5">' + escapeHtml(n.storyFactor) + '</div></div>';
+  }
+  if (n.specAbility && n.specAbility !== '--') {
+    out += '<div style="margin-bottom:10px"><div style="font-family:\'Exo 2\',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:4px">SPECIAL ABILITIES</div><div style="font-size:11px;color:var(--text);line-height:1.5">' + escapeHtml(n.specAbility) + '</div></div>';
+  }
+
+  // Attribute grid
+  const attrPairs = [['DEX', n.dex], ['KNO', n.kno], ['MEC', n.mec], ['PER', n.per], ['STR', n.str], ['TEC', n.tec]];
+  if (attrPairs.some(p => p[1])) {
+    out += '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:10px">';
+    attrPairs.forEach(([lbl, val]) => {
+      out += '<div style="background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);padding:6px 4px;text-align:center">' +
+        '<div style="font-family:\'Exo 2\',monospace;font-size:8px;color:var(--text-dim);letter-spacing:1px;margin-bottom:2px">' + lbl + '</div>' +
+        '<div style="font-family:\'IBM Plex Mono\',monospace;font-size:12px;color:var(--gold)">' + escapeHtml(val || '—') + '</div></div>';
+    });
+    out += '</div>';
+  }
+
+  // Force dice
+  if (n.forceControl || n.forceSense || n.forceAlter) {
+    out += '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:10px">';
+    [['CONTROL', n.forceControl], ['SENSE', n.forceSense], ['ALTER', n.forceAlter]].forEach(([lbl, val]) => {
+      if (!val) return;
+      out += '<div style="background:var(--bg2);border:1px solid rgba(187,134,252,0.3);border-radius:var(--radius-sm);padding:6px 4px;text-align:center">' +
+        '<div style="font-family:\'Exo 2\',monospace;font-size:8px;color:var(--purple);letter-spacing:1px;margin-bottom:2px">' + lbl + '</div>' +
+        '<div style="font-family:\'IBM Plex Mono\',monospace;font-size:12px;color:var(--purple)">' + escapeHtml(val) + '</div></div>';
+    });
+    out += '</div>';
+  }
+
+  // Force powers
+  if (Array.isArray(n.forcePowers) && n.forcePowers.length) {
+    out += '<div style="margin-bottom:10px"><div style="font-family:\'Exo 2\',monospace;font-size:9px;color:var(--purple);letter-spacing:1px;margin-bottom:4px">FORCE POWERS</div>';
+    out += '<div style="font-size:11px;color:var(--text);line-height:1.6">' + n.forcePowers.map(p => {
+      if (typeof p === 'string') return escapeHtml(p);
+      const name = p && (p.name || p.title || p.label);
+      return escapeHtml(name || JSON.stringify(p));
+    }).join(', ') + '</div></div>';
+  }
+
+  // Skills
+  if (Array.isArray(n.skills) && n.skills.length) {
+    out += '<div style="margin-bottom:10px"><div style="font-family:\'Exo 2\',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:4px">SKILLS</div>';
+    out += '<div style="font-size:11px;color:var(--text);line-height:1.7">';
+    out += n.skills.map(s => {
+      if (typeof s === 'string') return escapeHtml(s);
+      const nm = s.name || ''; const dc = s.dice || '';
+      return '<span style="color:var(--cyan)">' + escapeHtml(nm) + '</span> ' + escapeHtml(dc);
+    }).join(' · ');
+    out += '</div></div>';
+  }
+
+  // Equipment
+  const equipFields = [
+    ['Weapon 1', n.weapon1], ['Weapon 2', n.weapon2], ['Weapon 3', n.weapon3],
+    ['Melee', n.melee], ['Armor', n.armor], ['Shield', n.shield], ['Camo', n.camo],
+    ['Lightsaber', n.saber], ['Comms', n.comms], ['Jet Pack', n.jetpack],
+    ['Medical', n.med], ['Booster', n.booster], ['Tools', n.tools],
+    ['Survival', n.survival], ['Surveillance 1', n.surveil1], ['Surveillance 2', n.surveil2],
+    ['Security 1', n.sec1], ['Security 2', n.sec2]
+  ].filter(p => p[1] && p[1] !== '--');
+  if (equipFields.length) {
+    out += '<div style="margin-bottom:10px"><div style="font-family:\'Exo 2\',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:4px">EQUIPMENT</div>';
+    out += '<div style="padding:6px 10px;background:rgba(0,0,0,0.2);border-radius:6px">';
+    out += equipFields.map(p => row(p[0], p[1])).join('');
+    out += '</div></div>';
+  }
+
+  return out;
+}
+
+// Generic key/value renderer for alien, creature, wild system, built ship pins
+function renderGenericSnapshot(pin) {
+  const d = pin.data || {};
+  const rows = Object.keys(d).filter(k => d[k] !== '' && d[k] != null);
+  if (!rows.length) {
+    return '<div style="color:var(--text-dim);font-size:11px;font-style:italic;padding:8px 0">No additional details were saved with this pin.</div>';
+  }
+  let out = '<div style="display:grid;gap:0;padding:10px;background:rgba(0,0,0,0.2);border-radius:6px;margin-bottom:10px">';
+  rows.forEach(k => {
+    const label = k.replace(/([A-Z])/g, ' $1').replace(/^./, c => c.toUpperCase());
+    out += '<div style="display:flex;gap:8px;padding:3px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:12px">'
+          + '<span style="color:var(--text-dim);min-width:120px;flex-shrink:0">' + escapeHtml(label) + '</span>'
+          + '<span style="color:var(--text)">' + escapeHtml(String(d[k])) + '</span></div>';
+  });
+  out += '</div>';
+  return out;
 }
 
 // ---- Send-to-Tracker ----
@@ -8567,7 +8667,7 @@ function pinBuiltShip() {
   });
 }
 
-// Snapshot the current rolled NPC into the corkboard
+// Snapshot the current rolled NPC into the corkboard — deep-clone the full npc state
 function pinCurrentNpc() {
   if (typeof npc !== 'object' || !npc || !npc.firstName) {
     alert('Generate an NPC first, then pin it.');
@@ -8576,17 +8676,14 @@ function pinCurrentNpc() {
   const fullName = (npc.firstName + ' ' + (npc.surname || '')).trim();
   const id = 'rolled-npc-' + Date.now();
   const subtitle = [npc.race, npc.job, npc.training].filter(Boolean).join(' · ');
-  // Capture damage/soak dice from the live state if available
-  const data = {
-    name: fullName,
-    race: npc.race,
-    job: npc.job,
-    training: npc.training,
-    sex: npc.sex,
-    dmgDice: npc.attrs && npc.attrs.DEXTERITY ? npc.attrs.DEXTERITY : '4D',
-    resDice: npc.attrs && npc.attrs.STRENGTH ? npc.attrs.STRENGTH : '3D'
-  };
-  corkboardAdd({ type: 'random-npc', id: id, title: fullName || 'Unnamed NPC', subtitle: subtitle, data: data });
+  // Deep clone so pin is independent of future generator rolls
+  let snapshot;
+  try { snapshot = JSON.parse(JSON.stringify(npc)); }
+  catch(e) { snapshot = Object.assign({}, npc); }
+  // Tracker uses DEX for attack dice and STR for soak
+  snapshot.dmgDice = npc.dex || '4D';
+  snapshot.resDice = npc.str || '3D';
+  corkboardAdd({ type: 'random-npc', id: id, title: fullName || 'Unnamed NPC', subtitle: subtitle, data: snapshot });
   // Flash the button to confirm
   const btns = document.querySelectorAll('button[onclick="pinCurrentNpc()"]');
   btns.forEach(b => {
