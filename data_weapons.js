@@ -517,7 +517,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Combat Gloves",
-  "category": "Brawling Weapons",
+  "category": "Melee Weapons",
   "skill": "Brawling",
   "cost": "200",
   "availability": "1, F",
@@ -529,7 +529,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Fighting Claws",
-  "category": "Brawling Weapons",
+  "category": "Melee Weapons",
   "skill": "Brawling",
   "cost": "Not for sale",
   "availability": "4, X",
@@ -541,7 +541,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Juggernaut Droid Arm",
-  "category": "Brawling Weapons",
+  "category": "Melee Weapons",
   "skill": "Brawling/Blaster",
   "cost": "Not for sale",
   "availability": "4, X",
@@ -553,7 +553,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Neuro-Shock Hand",
-  "category": "Brawling Weapons",
+  "category": "Melee - Stun",
   "skill": "Brawling",
   "cost": "1,000 + 300/pip",
   "availability": "\u2014",
@@ -565,7 +565,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Repulse-Hand",
-  "category": "Brawling Weapons",
+  "category": "Melee - Powered",
   "skill": "Repulse-hand",
   "cost": "1,500 min + 300/pip",
   "availability": "\u2014",
@@ -577,7 +577,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Shockboxing Gloves",
-  "category": "Brawling Weapons",
+  "category": "Melee - Stun",
   "skill": "Brawling",
   "cost": "500/pair",
   "availability": "2, F",
@@ -589,7 +589,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Stun Gauntlets",
-  "category": "Brawling Weapons",
+  "category": "Melee - Stun",
   "skill": "Brawling",
   "cost": "300",
   "availability": "2",
@@ -1873,7 +1873,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Adumari Blastsword",
-  "category": "Powered Melee",
+  "category": "Melee - Powered",
   "skill": "Melee combat: vibroblade",
   "cost": "600",
   "availability": "3, R",
@@ -1885,7 +1885,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Archaic Lightsaber",
-  "category": "Powered Melee",
+  "category": "Melee - Powered",
   "skill": "Lightsaber",
   "cost": "1,600",
   "availability": "4, X",
@@ -1897,7 +1897,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Double-Bladed Lightsaber",
-  "category": "Powered Melee",
+  "category": "Melee - Powered",
   "skill": "Lightsaber: double-bladed",
   "cost": "Not for sale",
   "availability": "4, X",
@@ -1909,7 +1909,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Dual-Phase Lightsaber",
-  "category": "Powered Melee",
+  "category": "Melee - Powered",
   "skill": "Lightsaber",
   "cost": "6,000",
   "availability": "4, X",
@@ -1921,7 +1921,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Electrostaff",
-  "category": "Powered Melee",
+  "category": "Melee - Powered",
   "skill": "Melee combat: electrostaff",
   "cost": "5,750",
   "availability": "3",
@@ -1933,7 +1933,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Force Pike",
-  "category": "Powered Melee",
+  "category": "Melee - Powered",
   "skill": "Melee combat: force pike",
   "cost": "500",
   "availability": "2, R",
@@ -1945,7 +1945,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Great Force Pike",
-  "category": "Powered Melee",
+  "category": "Melee - Powered",
   "skill": "Melee combat: force pike",
   "cost": "1,000",
   "availability": "2",
@@ -1957,7 +1957,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Great Lightsaber",
-  "category": "Powered Melee",
+  "category": "Melee - Powered",
   "skill": "Lightsaber",
   "cost": "5,200",
   "availability": "4, X",
@@ -1969,7 +1969,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Lightfoil",
-  "category": "Powered Melee",
+  "category": "Melee - Powered",
   "skill": "Lightsaber",
   "cost": "10,000",
   "availability": "4, X",
@@ -1981,7 +1981,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Lightsaber",
-  "category": "Powered Melee",
+  "category": "Melee - Powered",
   "skill": "Lightsaber",
   "cost": "Not for sale",
   "availability": "4, X",
@@ -1993,7 +1993,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Lightwhip",
-  "category": "Powered Melee",
+  "category": "Melee - Powered",
   "skill": "Lightwhip",
   "cost": "Not for sale",
   "availability": "4, X",
@@ -2005,7 +2005,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Power Sword",
-  "category": "Powered Melee",
+  "category": "Melee - Powered",
   "skill": "Melee combat: power sword",
   "cost": "600",
   "availability": "2, R",
@@ -2017,7 +2017,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Shock Whip",
-  "category": "Powered Melee",
+  "category": "Melee - Powered",
   "skill": "Melee combat: whip",
   "cost": "1,200",
   "availability": "2, X",
@@ -2029,7 +2029,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Short Lightsaber",
-  "category": "Powered Melee",
+  "category": "Melee - Powered",
   "skill": "Lightsaber",
   "cost": "Not for sale",
   "availability": "4, X",
@@ -2041,7 +2041,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Training Lightsaber",
-  "category": "Powered Melee",
+  "category": "Melee - Powered",
   "skill": "Lightsaber",
   "cost": "1,500",
   "availability": "4, X",
@@ -2465,7 +2465,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Amphistaff",
-  "category": "Standard Melee",
+  "category": "Melee Weapons",
   "skill": "Melee combat: amphistaff",
   "cost": "Not for sale",
   "availability": "4, X",
@@ -2477,7 +2477,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Arg'garok",
-  "category": "Standard Melee",
+  "category": "Melee Weapons",
   "skill": "Melee combat: arg'garok",
   "cost": "1,000 (250 on Gamorr)",
   "availability": "3, R",
@@ -2489,7 +2489,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Axe",
-  "category": "Standard Melee",
+  "category": "Melee Weapons",
   "skill": "Melee combat: axe",
   "cost": "100",
   "availability": "1",
@@ -2501,7 +2501,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Club",
-  "category": "Standard Melee",
+  "category": "Melee Weapons",
   "skill": "Melee combat: club",
   "cost": "15",
   "availability": "1",
@@ -2513,7 +2513,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Combat Knife",
-  "category": "Standard Melee",
+  "category": "Melee Weapons",
   "skill": "Melee combat: knife",
   "cost": "30",
   "availability": "1",
@@ -2525,7 +2525,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Coufee",
-  "category": "Standard Melee",
+  "category": "Melee Weapons",
   "skill": "Melee combat",
   "cost": "Not for sale",
   "availability": "4, X",
@@ -2537,7 +2537,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Gaffi Stick (Gaderffii)",
-  "category": "Standard Melee",
+  "category": "Melee Weapons",
   "skill": "Melee combat: gaderffii",
   "cost": "\u2014",
   "availability": "2, F",
@@ -2549,7 +2549,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Knife",
-  "category": "Standard Melee",
+  "category": "Melee Weapons",
   "skill": "Melee combat: knife",
   "cost": "25-35",
   "availability": "1",
@@ -2561,7 +2561,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Light Mace",
-  "category": "Standard Melee",
+  "category": "Melee Weapons",
   "skill": "Melee combat: mace",
   "cost": "50",
   "availability": "2, F or R",
@@ -2573,7 +2573,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Longsword / Broadsword",
-  "category": "Standard Melee",
+  "category": "Melee Weapons",
   "skill": "Melee combat: longsword",
   "cost": "150",
   "availability": "2, F or R",
@@ -2585,7 +2585,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Rodian Razor-Stick",
-  "category": "Standard Melee",
+  "category": "Melee Weapons",
   "skill": "Melee combat: razor-stick",
   "cost": "Not for sale",
   "availability": "3, R",
@@ -2597,7 +2597,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Ryyk Blade",
-  "category": "Standard Melee",
+  "category": "Melee Weapons",
   "skill": "Melee combat",
   "cost": "250-500",
   "availability": "3, R",
@@ -2609,7 +2609,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Sat'skar",
-  "category": "Standard Melee",
+  "category": "Melee Weapons",
   "skill": "Melee combat",
   "cost": "700",
   "availability": "3",
@@ -2621,7 +2621,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Scitrok",
-  "category": "Standard Melee",
+  "category": "Melee Weapons",
   "skill": "Melee combat: scitrok",
   "cost": "Not for sale",
   "availability": "4",
@@ -2633,7 +2633,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Sith Sword",
-  "category": "Standard Melee",
+  "category": "Melee Weapons",
   "skill": "Melee combat: Sith sword",
   "cost": "Not for sale",
   "availability": "4",
@@ -2645,7 +2645,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Snap Baton",
-  "category": "Standard Melee",
+  "category": "Melee Weapons",
   "skill": "Melee combat: baton",
   "cost": "200",
   "availability": "2",
@@ -2657,7 +2657,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Spear",
-  "category": "Standard Melee",
+  "category": "Melee Weapons",
   "skill": "Melee combat / Thrown weapons",
   "cost": "60",
   "availability": "1",
@@ -2669,7 +2669,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Staff",
-  "category": "Standard Melee",
+  "category": "Melee Weapons",
   "skill": "Melee combat: staff",
   "cost": "15",
   "availability": "1",
@@ -2681,7 +2681,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Sword",
-  "category": "Standard Melee",
+  "category": "Melee Weapons",
   "skill": "Melee combat: sword",
   "cost": "200",
   "availability": "1",
@@ -2693,7 +2693,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Thogk",
-  "category": "Standard Melee",
+  "category": "Melee Weapons",
   "skill": "Melee combat: club",
   "cost": "30",
   "availability": "3",
@@ -2705,7 +2705,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Whip",
-  "category": "Standard Melee",
+  "category": "Melee Weapons",
   "skill": "Melee combat: whip",
   "cost": "100",
   "availability": "1",
@@ -2837,7 +2837,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Buzz-Knuck",
-  "category": "Stun Melee",
+  "category": "Melee - Stun",
   "skill": "Melee combat: buzz-knuck",
   "cost": "500",
   "availability": "2, R",
@@ -2849,7 +2849,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Electro-Jabber",
-  "category": "Stun Melee",
+  "category": "Melee - Stun",
   "skill": "Melee combat",
   "cost": "700",
   "availability": "2, R",
@@ -2861,7 +2861,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Electropole",
-  "category": "Stun Melee",
+  "category": "Melee - Stun",
   "skill": "Melee combat",
   "cost": "Not for sale",
   "availability": "3, R",
@@ -2873,7 +2873,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Fear Stick",
-  "category": "Stun Melee",
+  "category": "Melee - Stun",
   "skill": "Melee combat: knife",
   "cost": "600; 50 (refills)",
   "availability": "4, F",
@@ -2885,7 +2885,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Flashstick",
-  "category": "Stun Melee",
+  "category": "Melee - Stun",
   "skill": "Melee combat",
   "cost": "100",
   "availability": "3, F",
@@ -2897,7 +2897,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Gand Shockprod Staff",
-  "category": "Stun Melee",
+  "category": "Melee - Stun",
   "skill": "Melee combat: shockprod",
   "cost": "1,000 (500 on Gand)",
   "availability": "3, R",
@@ -2909,7 +2909,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Hand-Held Contact Stunner",
-  "category": "Stun Melee",
+  "category": "Melee - Stun",
   "skill": "Melee combat: contact stunner",
   "cost": "575",
   "availability": "2, R",
@@ -2921,7 +2921,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Neuronic Whip",
-  "category": "Stun Melee",
+  "category": "Melee - Stun",
   "skill": "Melee combat: neuronic whip",
   "cost": "700",
   "availability": "4, X",
@@ -2933,7 +2933,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Stun Baton",
-  "category": "Stun Melee",
+  "category": "Melee - Stun",
   "skill": "Melee combat: stun baton",
   "cost": "300",
   "availability": "R",
@@ -2945,7 +2945,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Drearian Actiwl Riot Shield",
-  "category": "Stun Melee",
+  "category": "Melee - Stun",
   "skill": "Melee parry",
   "cost": "500",
   "availability": "2, R",
@@ -2957,7 +2957,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Stun Cloak",
-  "category": "Stun Melee",
+  "category": "Melee - Stun",
   "skill": "Melee combat",
   "cost": "1,500",
   "availability": "2",
@@ -2969,7 +2969,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Taser Staff",
-  "category": "Stun Melee",
+  "category": "Melee - Stun",
   "skill": "Melee combat: taser staff",
   "cost": "500",
   "availability": "2, R",
@@ -2981,7 +2981,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Z2 Stun Baton",
-  "category": "Stun Melee",
+  "category": "Melee - Stun",
   "skill": "Melee combat: stun baton",
   "cost": "400",
   "availability": "R",
@@ -3365,7 +3365,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Merr-Sonn Taser Staff",
-  "category": "Powered Melee",
+  "category": "Melee - Powered",
   "skill": "Melee combat: taser staff",
   "cost": "500",
   "availability": "2, R",
@@ -3437,7 +3437,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Sabrashi FSI-200 Fear Stick",
-  "category": "Stun Melee",
+  "category": "Melee - Stun",
   "skill": "Melee weapon: knife",
   "cost": "600 (50 refills)",
   "availability": "4, F",
@@ -3461,7 +3461,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Xana MSW-9 Molecular Stiletto",
-  "category": "Standard Melee",
+  "category": "Melee Weapons",
   "skill": "Melee combat",
   "cost": "400",
   "availability": "4, R or X",
@@ -3473,7 +3473,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Palandrix Power Cane",
-  "category": "Stun Melee",
+  "category": "Melee - Stun",
   "skill": "Melee combat: power cane",
   "cost": "400",
   "availability": "3, F/R/X",
@@ -3485,7 +3485,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Rodian Cryogen Whip",
-  "category": "Standard Melee",
+  "category": "Melee - Powered",
   "skill": "Melee combat",
   "cost": "350",
   "availability": "3, F/R/X",
@@ -3497,7 +3497,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Togorian Yil Tribe Scimitar",
-  "category": "Standard Melee",
+  "category": "Melee Weapons",
   "skill": "Melee combat: Togorian Scimitar",
   "cost": "8,500",
   "availability": "4, F or R",
@@ -3665,7 +3665,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Credit Case Surprise",
-  "category": "Stun Melee",
+  "category": "Melee - Stun",
   "skill": "",
   "cost": "75",
   "availability": "2",
@@ -3725,7 +3725,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Xerithin BGA-900 Bio-Guard",
-  "category": "Stun Melee",
+  "category": "Melee - Stun",
   "skill": "Missile weapons",
   "cost": "100 (10 ammo)",
   "availability": "3, possibly F or R",
@@ -3737,7 +3737,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Brisallon Bio-Tractant Repulsor",
-  "category": "Stun Melee",
+  "category": "Melee - Stun",
   "skill": "Firearms",
   "cost": "200 (5 per dose, many species available)",
   "availability": "4",
@@ -3773,7 +3773,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Ekkar Arms Coyn'skar",
-  "category": "Standard Melee",
+  "category": "Melee Weapons",
   "skill": "Melee combat",
   "cost": "400",
   "availability": "3",
@@ -3785,7 +3785,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Ekkar Arms Sat'skar",
-  "category": "Standard Melee",
+  "category": "Melee Weapons",
   "skill": "Melee combat",
   "cost": "700",
   "availability": "3",
@@ -3797,7 +3797,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Ekkar Arms D'skar",
-  "category": "Standard Melee",
+  "category": "Melee Weapons",
   "skill": "Melee combat",
   "cost": "150",
   "availability": "3",
@@ -3809,7 +3809,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Ekkar Arms Ar'gor",
-  "category": "Standard Melee",
+  "category": "Melee Weapons",
   "skill": "Melee combat",
   "cost": "175",
   "availability": "3",
@@ -3821,7 +3821,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Rodian Ceremonial Dagger",
-  "category": "Standard Melee",
+  "category": "Melee Weapons",
   "skill": "Melee combat",
   "cost": "160",
   "availability": "3",
@@ -3833,7 +3833,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Powerstaff",
-  "category": "Powered Melee",
+  "category": "Melee - Powered",
   "skill": "Melee combat",
   "cost": "300",
   "availability": "2, F or R",
@@ -3845,7 +3845,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Buzz-Knuck",
-  "category": "Powered Melee",
+  "category": "Melee - Powered",
   "skill": "Melee combat",
   "cost": "550",
   "availability": "2, R",
@@ -3857,7 +3857,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "SoroSuub Controller FP Force Pike",
-  "category": "Powered Melee",
+  "category": "Melee - Powered",
   "skill": "Melee combat",
   "cost": "500",
   "availability": "2, R",
@@ -4313,7 +4313,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Chestrashi Void Spear",
-  "category": "Standard Melee",
+  "category": "Melee Weapons",
   "skill": "Thrown weapons: spear",
   "cost": "5,000",
   "availability": "4, F/R/X",
@@ -4449,7 +4449,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "SoroSuub CS-12 Stun Master",
-  "category": "Standard Melee",
+  "category": "Melee - Stun",
   "damage": "4D+2 stun",
   "range": "",
   "ammo": "5",
@@ -4460,7 +4460,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Portable Plasma Cutter",
-  "category": "Standard Melee",
+  "category": "Melee - Powered",
   "damage": "7D",
   "range": "",
   "ammo": "4 min internal, 1 hr with canister",
@@ -4554,7 +4554,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Bitthaevrian Dematoil",
-  "category": "Standard Melee",
+  "category": "Melee Weapons",
   "skill": "Melee combat: dematoil",
   "cost": "Not for sale",
   "availability": "4, X",
@@ -4770,7 +4770,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Alliance-Issue Garrote",
-  "category": "Standard Melee",
+  "category": "Melee Weapons",
   "skill": "Melee combat: garrote",
   "cost": "",
   "availability": "1",
@@ -4782,7 +4782,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Alliance-Issue Slicewire",
-  "category": "Standard Melee",
+  "category": "Melee Weapons",
   "skill": "Melee combat: slicewire",
   "cost": "",
   "availability": "4, X",
@@ -4794,7 +4794,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Infiltrator Multi-Weapon",
-  "category": "Standard Melee",
+  "category": "Melee Weapons",
   "skill": "Melee combat: dagger/club/garrote",
   "cost": "Not for sale",
   "availability": "3",
@@ -4938,7 +4938,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Togorian Scimitar (Sc'rath)",
-  "category": "Standard Melee",
+  "category": "Melee Weapons",
   "skill": "Melee combat: sc'rath",
   "cost": "Not for sale",
   "availability": "4, R",
@@ -4950,7 +4950,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Ka'hren Rantok",
-  "category": "Standard Melee",
+  "category": "Melee Weapons",
   "skill": "Melee combat: rantok",
   "cost": "Not for sale",
   "availability": "4",
@@ -4962,7 +4962,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Soknar (Cene Gilvent's Custom Blade)",
-  "category": "Standard Melee",
+  "category": "Melee Weapons",
   "skill": "Melee combat: Soknar",
   "cost": "Not for sale",
   "availability": "Unique",
@@ -4987,7 +4987,7 @@ const WEAPONS_DATA = [
   "source": "WEG40139 Cracken's Threat Dossier p.54"
  },
  {
-  "category": "Standard Melee",
+  "category": "Melee Weapons",
   "name": "Vibrorapier",
   "type": "LaserHone Duelist Vibrorapier",
   "cost": "300",
@@ -4997,7 +4997,7 @@ const WEAPONS_DATA = [
   "source": "WEG40143 Pirates & Privateers p.42"
  },
  {
-  "category": "Standard Melee",
+  "category": "Melee - Powered",
   "name": "Vibrodagger",
   "type": "LaserHone Talon Vibrodagger",
   "cost": "50",
@@ -5018,7 +5018,7 @@ const WEAPONS_DATA = [
   "source": "WEG40143 Pirates & Privateers p.42"
  },
  {
-  "category": "Standard Melee",
+  "category": "Melee - Stun",
   "name": "Stun Gauntlets",
   "type": "Palandrix Personal Protection Gear Stun Gauntlets",
   "cost": "300",
@@ -5028,7 +5028,7 @@ const WEAPONS_DATA = [
   "source": "WEG40143 Pirates & Privateers p.42"
  },
  {
-  "category": "Standard Melee",
+  "category": "Melee - Stun",
   "name": "Stun Baton",
   "type": "Merr-Sonn Stun Baton",
   "cost": "300",
@@ -5038,7 +5038,7 @@ const WEAPONS_DATA = [
   "source": "WEG40143 Pirates & Privateers p.43"
  },
  {
-  "category": "Standard Melee",
+  "category": "Melee - Stun",
   "name": "Dematoil",
   "type": "Bitthaevrian Morningstar",
   "model": "Bitthaevrian Dematoil",
@@ -5049,7 +5049,7 @@ const WEAPONS_DATA = [
   "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.6"
  },
  {
-  "category": "Standard Melee",
+  "category": "Melee Weapons",
   "name": "Ekkar Arms Coyn'skar",
   "type": "Coynite Bladed Pole",
   "model": "Ekkar Arms Coyn'skar",
@@ -5060,7 +5060,7 @@ const WEAPONS_DATA = [
   "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.6"
  },
  {
-  "category": "Standard Melee",
+  "category": "Melee Weapons",
   "name": "Ekkar Arms D'skar",
   "type": "Coynite Dagger",
   "model": "Ekkar Arms D'skar",
@@ -5071,7 +5071,7 @@ const WEAPONS_DATA = [
   "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.7"
  },
  {
-  "category": "Standard Melee",
+  "category": "Melee Weapons",
   "name": "Ekkar Arms Sat'skar",
   "type": "Coynite Sword",
   "model": "Ekkar Arms Sat'skar",
@@ -5082,7 +5082,7 @@ const WEAPONS_DATA = [
   "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.7"
  },
  {
-  "category": "Standard Melee",
+  "category": "Melee Weapons",
   "name": "Hand-Held Contact Stunner",
   "type": "Contact Stunner",
   "model": "SoroSuub CS-12 Stun Master",
@@ -5093,7 +5093,7 @@ const WEAPONS_DATA = [
   "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.7"
  },
  {
-  "category": "Standard Melee",
+  "category": "Melee - Stun",
   "name": "Neuronic Whip",
   "type": "Neuronic Whip",
   "model": "TholCorp Neuronic Whip",
@@ -5104,7 +5104,7 @@ const WEAPONS_DATA = [
   "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.7"
  },
  {
-  "category": "Standard Melee",
+  "category": "Melee Weapons",
   "name": "Rantok",
   "type": "Ka'hren Sword",
   "model": "Rantok",
@@ -5115,7 +5115,7 @@ const WEAPONS_DATA = [
   "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.7"
  },
  {
-  "category": "Standard Melee",
+  "category": "Melee Weapons",
   "name": "Stun Baton (Z2)",
   "type": "Stun Baton",
   "model": "Merr-Sonn Z2 Stun Baton",
@@ -5126,7 +5126,7 @@ const WEAPONS_DATA = [
   "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.8"
  },
  {
-  "category": "Standard Melee",
+  "category": "Melee - Stun",
   "name": "Vibro-saw",
   "type": "Vibro-saw",
   "model": "Greel Wood Logging Corporation Tree Felling Vibro-Saw",
@@ -5490,7 +5490,7 @@ const WEAPONS_DATA = [
  {
   "name": "Lightfoil",
   "type": "Lightfoil",
-  "category": "Standard Melee",
+  "category": "Melee - Powered",
   "scale": "Character",
   "skill": "Lightsaber",
   "cost": "10,000",
