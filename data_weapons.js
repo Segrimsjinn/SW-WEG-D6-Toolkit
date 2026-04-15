@@ -1970,7 +1970,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Duo-Flechette Rifle",
-  "category": "Projectile Shooters",
+  "category": "Projectile Weapons",
   "skill": "Armor/Missile weapons",
   "cost": "1,000",
   "availability": "3, R or X",
@@ -1982,7 +1982,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Flechette Smart Pistol",
-  "category": "Projectile Shooters",
+  "category": "Projectile Weapons",
   "skill": "Missile weapons",
   "cost": "500",
   "availability": "3, F or R",
@@ -1994,7 +1994,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Magna Caster",
-  "category": "Projectile Shooters",
+  "category": "Projectile Weapons",
   "skill": "Missile weapons: magna caster",
   "cost": "2,000",
   "availability": "3, F",
