@@ -1585,7 +1585,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Sound Pistol",
-  "category": "Misc Blasters",
+  "category": "Sonic Weapons",
   "skill": "Blaster: sound pistol",
   "cost": "Not for sale",
   "availability": "\u2014",
@@ -1597,7 +1597,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Sound Rifle",
-  "category": "Misc Blasters",
+  "category": "Sonic Weapons",
   "skill": "Blaster: sound rifle",
   "cost": "Not for sale",
   "availability": "",
@@ -4265,7 +4265,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Merr-Sonn DEMP Gun Handgun",
-  "category": "Misc Blasters",
+  "category": "Ion Weapons",
   "skill": "Blaster",
   "cost": "500",
   "availability": "2, R",
@@ -4277,7 +4277,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Merr-Sonn DEMP Gun Carbine",
-  "category": "Misc Blasters",
+  "category": "Ion Weapons",
   "skill": "Blaster",
   "cost": "750",
   "availability": "2, R",
@@ -4301,7 +4301,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "SoroSuub Equalizer Ion Cannon",
-  "category": "Misc Blasters",
+  "category": "Ion Weapons",
   "skill": "Blaster",
   "cost": "5,000",
   "availability": "2, X",
@@ -4890,7 +4890,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Salamini Luma Flare",
-  "category": "Misc Blasters",
+  "category": "Missile Launchers",
   "skill": "Missile weapons",
   "cost": "100",
   "availability": "2",
