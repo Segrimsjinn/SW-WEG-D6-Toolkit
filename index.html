@@ -665,12 +665,15 @@ color:var(--text-dim);min-width:35px;text-align:right;
   /* Pin Snapshot print mode */
   body.printing-pin-snapshot *{visibility:hidden}
   body.printing-pin-snapshot #pinSnapshotModal,body.printing-pin-snapshot #pinSnapshotModal *{visibility:visible}
-  body.printing-pin-snapshot #pinSnapshotModal{position:absolute !important;inset:0 !important;background:#fff !important;padding:0 !important;overflow:visible !important;display:block !important;z-index:auto !important}
-  body.printing-pin-snapshot #pinSnapshotModal > div{border:none !important;border-radius:0 !important;max-width:100% !important;max-height:none !important;background:#fff !important;color:#000 !important;display:block !important;margin:0 !important;padding:0 !important}
+  body.printing-pin-snapshot #pinSnapshotModal{position:absolute !important;inset:auto !important;top:0 !important;left:0 !important;background:#fff !important;padding:0 !important;overflow:visible !important;display:block !important;z-index:auto !important;height:auto !important;max-height:none !important;width:100% !important}
+  body.printing-pin-snapshot #pinSnapshotModal > div{border:none !important;border-radius:0 !important;max-width:100% !important;max-height:none !important;height:auto !important;overflow:visible !important;background:#fff !important;color:#000 !important;display:block !important;margin:0 !important;padding:0 !important;width:100% !important}
   body.printing-pin-snapshot .pin-snapshot-actions,body.printing-pin-snapshot #pinSnapshotModal > div > button{display:none !important}
-  body.printing-pin-snapshot #pinSnapshotBody{color:#000 !important;font-size:10pt}
+  body.printing-pin-snapshot #pinSnapshotBody{color:#000 !important;font-size:10pt;max-height:none !important;overflow:visible !important}
   body.printing-pin-snapshot #pinSnapshotBody *{color:#000 !important;background:transparent !important;border-color:#777 !important;box-shadow:none !important}
+  body.printing-pin-snapshot #pinSnapshotBody div[style*="overflow"]{overflow:visible !important;max-height:none !important}
   body.printing-pin-snapshot #pinSnapshotBody .cb-spec-row,body.printing-pin-snapshot #pinSnapshotBody div[style*="background:rgba(0,0,0"]{background:#f6f6f6 !important;border:1px solid #bbb !important}
+  /* Keep the Force block together so the dice grid doesn't split from the powers */
+  body.printing-pin-snapshot .pin-force-block{page-break-inside:avoid;break-inside:avoid}
 }
 </style>
 </head>
@@ -8583,7 +8586,7 @@ function renderRolledNpcSnapshot(pin) {
   const hasForceDice = [n.forceControl, n.forceSense, n.forceAlter].some(v => v && v !== '0D');
   const hasForcePowers = Array.isArray(n.forcePowers) && n.forcePowers.length;
   if (hasForceDice || hasForcePowers) {
-    out += '<div style="margin-bottom:10px"><div style="font-family:\'Exo 2\',monospace;font-size:9px;color:var(--purple);letter-spacing:1px;margin-bottom:6px">⟐ FORCE</div>';
+    out += '<div class="pin-force-block" style="margin-bottom:10px"><div style="font-family:\'Exo 2\',monospace;font-size:9px;color:var(--purple);letter-spacing:1px;margin-bottom:6px">⟐ FORCE</div>';
     if (n.forceControl || n.forceSense || n.forceAlter) {
       out += '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:8px">';
       [['CONTROL', n.forceControl], ['SENSE', n.forceSense], ['ALTER', n.forceAlter]].forEach(([lbl, val]) => {
