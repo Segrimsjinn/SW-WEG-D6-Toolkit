@@ -1729,7 +1729,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Heavy Radiation Powersuit",
-  "category": "Spacesuits",
+  "category": "Powersuits",
   "cost": "3,000",
   "availability": "2",
   "game_notes": "+2D physical and energy, -1D DEX. Move 3. Detachable boosters (10 bursts, Space 1, 1D maneuverability). +1D sensors. Comlink, 12hr O2, 6hr power, fusion cutter (5D), magnetic boots.",
@@ -1744,16 +1744,8 @@ const EQUIPMENT_DATA = [
   "source": "Rulebook (pages 227-228)"
  },
  {
-  "name": "Merr-Sonn Armored Spacesuit",
-  "category": "Spacesuits",
-  "cost": "10,000",
-  "availability": "2, X",
-  "game_notes": "+2D energy, +1D physical, -1D DEX. 25hr atmosphere. Includes rocket pack (Space Move 1).",
-  "source": "Gundark's Fantastic Technology (page 58)"
- },
- {
   "name": "Nova-Tech Powersuit",
-  "category": "Spacesuits",
+  "category": "Powersuits",
   "cost": "1,000",
   "availability": "2",
   "game_notes": "+2D energy, +3D physical. 1D maneuverability, Space 1. Blaster cannon (FC 1D, 5D damage).",
@@ -1785,7 +1777,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Vagabond Suit",
-  "category": "Spacesuits",
+  "category": "Powersuits",
   "cost": "2,500",
   "availability": "3",
   "game_notes": "Deep space powersuit. +2D sensors/comms (independent) or +1D (linked to ship). +2D vs physical. Booster jets: Space 1, 1D maneuverability. Sensor array included.",
@@ -5200,7 +5192,7 @@ const EQUIPMENT_DATA = [
   "cost": "10,000",
   "availability": "2, X",
   "game_notes": "Simpler than spacetrooper armor but adequate for most boarders. 25 hours atmosphere, heating unit, waste unit, onboard food supplements. Self-patching, includes comlink. +2D vs energy and +1D vs physical damage. -1D from Dexterity and related skills in gravity. Includes rocket pack (Space Move: 1, uses rocket pack operation).",
-  "source": "WEG40143 Pirates & Privateers p.44"
+  "source": "WEG40143 Pirates & Privateers p.44; Gundark's Fantastic Technology p.58"
  },
  {
   "category": "Ship Equipment",
@@ -5279,7 +5271,7 @@ const EQUIPMENT_DATA = [
   "source": "WEG40143 Pirates & Privateers p.47"
  },
  {
-  "category": "Tools",
+  "category": "Spacesuits",
   "name": "Shipsuit",
   "type": "Ayelic/Krongbing Textiles Shipsuit",
   "cost": "200",
