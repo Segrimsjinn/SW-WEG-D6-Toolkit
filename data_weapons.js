@@ -1332,16 +1332,16 @@ const WEAPONS_DATA = [
   "source": "Galaxy Guide 9 (page 9)"
  },
  {
-  "name": "Merr-Sonn Q-2",
+  "name": "Merr-Sonn Munitions Q2",
   "category": "Hold-Out Blasters",
-  "skill": "Blaster: hold-out",
+  "skill": "Blaster: hold-out blaster",
   "cost": "275",
   "availability": "2, R or X",
   "damage": "3D",
   "range": "3-4/8/12",
   "ammo": "6",
   "game_notes": "",
-  "source": "Rulebook (page 229)"
+  "source": "WEG40025 Galladinium's Fantastic Technology p.82; Core Rulebook p.229"
  },
  {
   "name": "Merr-Sonn Quickfire-4",
@@ -3839,18 +3839,6 @@ const WEAPONS_DATA = [
   "cost": "350",
   "availability": "2, R or X",
   "damage": "3D+2",
-  "range": "",
-  "ammo": "",
-  "game_notes": "",
-  "source": "WEG40025 Galladinium's Fantastic Technology p.82"
- },
- {
-  "name": "Merr-Sonn Munitions Q2",
-  "category": "Hold-Out Blasters",
-  "skill": "Blaster: hold-out blaster",
-  "cost": "275",
-  "availability": "2, R or X",
-  "damage": "3D",
   "range": "",
   "ammo": "",
   "game_notes": "",
