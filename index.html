@@ -57,6 +57,21 @@ text-align:center;
 .app-subtitle{font-size:10px;color:var(--text-dim);text-align:center;letter-spacing:2px;margin-top:2px}
 .app-help-btn{position:absolute;top:10px;right:12px;background:none;border:1px solid var(--gold-dim);color:var(--gold);font-family:'Orbitron','Exo 2',monospace;font-size:9px;letter-spacing:1px;padding:4px 10px;border-radius:var(--radius-sm);cursor:pointer;line-height:1;z-index:2}
 .app-help-btn:hover{background:var(--gold-dim);color:var(--bg)}
+.app-find-btn{position:absolute;top:10px;left:12px;background:none;border:1px solid var(--gold-dim);color:var(--gold);font-family:'Orbitron','Exo 2',monospace;font-size:9px;letter-spacing:1px;padding:4px 10px;border-radius:var(--radius-sm);cursor:pointer;line-height:1;z-index:2}
+.app-find-btn:hover{background:var(--gold-dim);color:var(--bg)}
+#globalJumpOverlay{position:fixed;inset:0;background:rgba(0,0,0,0.65);z-index:1000;display:none;align-items:flex-start;justify-content:center;padding:10vh 16px 16px}
+#globalJumpOverlay.open{display:flex}
+.global-jump-panel{background:var(--bg);border:1px solid var(--gold-dim);border-radius:var(--radius);width:min(520px,95vw);max-height:80vh;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 12px 32px rgba(0,0,0,0.6)}
+.global-jump-panel input{width:100%;padding:10px 12px;background:var(--bg2);border:0;border-bottom:1px solid var(--card-border);color:var(--text);font-size:13px;font-family:inherit;outline:none}
+.global-jump-results{flex:1;overflow-y:auto}
+.global-jump-group{font-family:'Exo 2',monospace;font-size:8px;color:var(--gold);letter-spacing:1.5px;padding:8px 12px 4px;background:var(--bg2);border-top:1px solid var(--card-border)}
+.global-jump-item{padding:8px 14px;font-family:'Eras Demi ITC','Rajdhani',sans-serif;font-size:12px;color:var(--text-dim);cursor:pointer;border-bottom:1px solid rgba(255,255,255,0.04)}
+.global-jump-item:hover,.global-jump-item.active{background:rgba(255,255,255,0.06);color:var(--gold)}
+.jump-pills{display:flex;flex-wrap:wrap;gap:4px}
+.jump-pill{background:var(--bg2);border:1px solid var(--gold-dim);border-radius:999px;padding:4px 10px;font-family:'Exo 2',monospace;font-size:9px;letter-spacing:1px;color:var(--gold);cursor:pointer;line-height:1.4;transition:background .15s,color .15s}
+.jump-pill:hover{background:var(--gold-dim);color:var(--bg)}
+@keyframes jumpFlash{0%{background:rgba(239,192,80,0.25);box-shadow:0 0 0 0 rgba(239,192,80,0.6)}50%{background:rgba(239,192,80,0.12);box-shadow:0 0 0 10px rgba(239,192,80,0)}100%{background:transparent;box-shadow:none}}
+.jump-flash{animation:jumpFlash 1.2s ease-out;border-radius:var(--radius-sm)}
 
 .app-content{flex:1;overflow:hidden;position:relative}
 .tab-panel{
@@ -550,14 +565,6 @@ color:var(--text-dim);min-width:35px;text-align:right;
 .npc-subtab-panel.active{display:block}
 #tab-npc .jump-to-menu{top:24px;padding-top:8px;margin-top:0}
 .jump-to-menu{position:sticky;top:-16px;z-index:90;padding:22px 0 6px;margin:-16px -16px 8px;padding-left:16px;padding-right:16px;background:var(--bg);border-bottom:1px solid var(--card-border)}
-.jump-to-btn{display:flex;align-items:center;gap:6px;background:none;border:1px solid var(--gold-dim);border-radius:var(--radius);padding:6px 14px;cursor:pointer;font-family:'Orbitron','Exo 2',monospace;font-size:10px;letter-spacing:1.5px;color:var(--gold);width:100%}
-.jump-to-btn:hover{border-color:var(--gold);color:var(--text)}
-.jump-to-btn .jt-arrow{margin-left:auto;transition:transform .2s}
-.jump-to-btn.open .jt-arrow{transform:rotate(180deg)}
-.jump-to-dropdown{display:none;position:absolute;left:0;right:0;top:100%;background:var(--bg3,#12122a);border:1px solid var(--card-border);border-radius:0 0 var(--radius) var(--radius);box-shadow:0 8px 24px rgba(0,0,0,0.5);max-height:60vh;overflow-y:auto;z-index:91}
-.jump-to-dropdown.open{display:block}
-.jump-to-item{display:block;padding:10px 16px;font-family:'Eras Demi ITC','Era Demi','Rajdhani',sans-serif;font-size:12px;color:var(--text-dim);cursor:pointer;border-bottom:1px solid rgba(255,255,255,0.04);text-decoration:none;min-height:40px;display:flex;align-items:center}
-.jump-to-item:hover{background:rgba(255,255,255,0.05);color:var(--gold)}
 .pill{display:inline-block;padding:1px 8px;border-radius:10px;font-size:9px;font-weight:500;letter-spacing:.5px;font-family:'Orbitron','Exo 2',monospace;text-align:center;line-height:1.5;border:1px solid transparent}
 .sev-minor{background:rgba(46,125,50,0.25);color:#7dd87d;border-color:rgba(46,125,50,0.5)}
 .sev-mod{background:rgba(107,90,30,0.3);color:#e8c866;border-color:rgba(107,90,30,0.6)}
@@ -684,10 +691,18 @@ color:var(--text-dim);min-width:35px;text-align:right;
 
 <div class="app">
   <header class="app-header">
+    <button class="app-find-btn" onclick="openGlobalJump()" title="Jump to any card">⟐ FIND</button>
     <div class="app-title">Star Wars D6 Toolkit</div>
     <div class="app-subtitle">NPC Generator &amp; Astrogation &amp; Starships</div>
     <button class="app-help-btn" onclick="openHowTo()" title="How to Use This Toolkit">? HOW TO</button>
   </header>
+
+  <div id="globalJumpOverlay" onclick="if(event.target===this)closeGlobalJump()">
+    <div class="global-jump-panel">
+      <input type="text" id="globalJumpSearch" placeholder="Jump to any card — type to filter (Esc to close)" oninput="renderGlobalJump()" onkeydown="globalJumpKey(event)">
+      <div class="global-jump-results" id="globalJumpResults"></div>
+    </div>
+  </div>
 
   <div class="app-content">
     <!-- TAB 1: NPC GENERATOR -->
@@ -697,8 +712,18 @@ color:var(--text-dim);min-width:35px;text-align:right;
         <button onclick="switchNpcSubtab('lookups')" data-npcst="lookups">LOOKUPS</button>
       </div>
       <div class="jump-to-menu" id="npcJumpToMenu">
-        <button class="jump-to-btn" onclick="toggleJumpTo(this)">⟐ JUMP TO <span id="npcJumpToCount" style="color:var(--text-dim);font-size:9px;margin-left:4px">3 tools</span><span class="jt-arrow">▾</span></button>
-        <div class="jump-to-dropdown" id="npcJumpToDropdown"></div>
+        <div class="jump-pills">
+          <button class="jump-pill" onclick="jumpTo('npc-generator')">Generate NPC</button>
+          <button class="jump-pill" onclick="jumpTo('forceCard')">Force</button>
+          <button class="jump-pill" onclick="jumpTo('skillsCard')">Skills</button>
+          <button class="jump-pill" onclick="jumpTo('npc-equip-rolled')">Equipment</button>
+          <button class="jump-pill" onclick="jumpTo('gm-aliengen')">Alien Gen</button>
+          <button class="jump-pill" onclick="jumpTo('gm-creaturegen')">Creature Gen</button>
+          <button class="jump-pill" onclick="jumpTo('npc-weapons')">Weapons</button>
+          <button class="jump-pill" onclick="jumpTo('npc-equipment')">Equipment Lookup</button>
+          <button class="jump-pill" onclick="jumpTo('npc-creatures')">Creatures</button>
+          <button class="jump-pill" onclick="jumpTo('npc-notable')">Notable NPCs</button>
+        </div>
       </div>
       <div class="npc-subtab-panel" data-subtab="generators">
       <div class="card" id="npc-generator">
@@ -1034,7 +1059,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
               <div id="armorDesc" class="armor-desc" style="display:none"></div>
             </div>
           </div>
-          <div class="card fade-in equip-half">
+          <div class="card fade-in equip-half" id="npc-equip-rolled">
             <div class="card-title">⟐ Equipment</div>
             <div id="equipOutput" class="equip-grid"></div>
           </div>
@@ -1064,13 +1089,12 @@ color:var(--text-dim);min-width:35px;text-align:right;
     <!-- TAB 2: TRAVEL CALCULATOR -->
     <div id="tab-travel" class="tab-panel">
       <div class="jump-to-menu">
-        <button class="jump-to-btn" onclick="toggleJumpTo(this)">⟐ JUMP TO <span style="color:var(--text-dim);font-size:9px;margin-left:4px">5 tools</span><span class="jt-arrow">▾</span></button>
-        <div class="jump-to-dropdown">
-          <a class="jump-to-item" onclick="jumpTo('travel-calc')">⟐ Hyperspace Travel Calculator</a>
-          <a class="jump-to-item" onclick="jumpTo('travel-summary')">⟐ Route Summary</a>
-          <a class="jump-to-item" onclick="jumpTo('travel-path')">⟐ Route Path</a>
-          <a class="jump-to-item" onclick="jumpTo('travel-map')">⟐ Route Map</a>
-          <a class="jump-to-item" onclick="jumpTo('travel-ref')">⟐ Astrogation Quick Reference</a>
+        <div class="jump-pills">
+          <button class="jump-pill" onclick="jumpTo('travel-calc')">Travel Calculator</button>
+          <button class="jump-pill" onclick="jumpTo('travel-summary')">Route Summary</button>
+          <button class="jump-pill" onclick="jumpTo('travel-path')">Route Path</button>
+          <button class="jump-pill" onclick="jumpTo('travel-map')">Route Map</button>
+          <button class="jump-pill" onclick="jumpTo('travel-ref')">Quick Reference</button>
         </div>
       </div>
       <div class="card" id="travel-calc">
@@ -1238,12 +1262,11 @@ color:var(--text-dim);min-width:35px;text-align:right;
     </div>
     <div id="tab-ships" class="tab-panel">
       <div class="jump-to-menu">
-        <button class="jump-to-btn" onclick="toggleJumpTo(this)">⟐ JUMP TO <span style="color:var(--text-dim);font-size:9px;margin-left:4px">4 tools</span><span class="jt-arrow">▾</span></button>
-        <div class="jump-to-dropdown">
-          <a class="jump-to-item" onclick="jumpTo('ships-database')">⟐ Starship Database</a>
-          <a class="jump-to-item" onclick="jumpTo('ships-vehicles')">⟐ Vehicle Database</a>
-          <a class="jump-to-item" onclick="jumpTo('ships-equipment')">⟐ Ship Equipment</a>
-          <a class="jump-to-item" onclick="jumpTo('ships-builder')">⟐ Ship Builder</a>
+        <div class="jump-pills">
+          <button class="jump-pill" onclick="jumpTo('ships-database')">Starships</button>
+          <button class="jump-pill" onclick="jumpTo('ships-vehicles')">Vehicles</button>
+          <button class="jump-pill" onclick="jumpTo('ships-equipment')">Ship Equipment</button>
+          <button class="jump-pill" onclick="jumpTo('ships-builder')">Ship Builder</button>
         </div>
       </div>
       <div class="card" id="ships-database">
@@ -1435,21 +1458,20 @@ color:var(--text-dim);min-width:35px;text-align:right;
     <!-- TAB 5: GM TOOLS -->
     <div id="tab-gm" class="tab-panel">
       <div class="jump-to-menu">
-        <button class="jump-to-btn" onclick="toggleJumpTo(this)">⟐ JUMP TO <span style="color:var(--text-dim);font-size:9px;margin-left:4px">13 tools</span><span class="jt-arrow">▾</span></button>
-        <div class="jump-to-dropdown">
-          <a class="jump-to-item" onclick="jumpTo('gm-dice')">⟐ D6 Dice Roller</a>
-          <a class="jump-to-item" onclick="jumpTo('gm-combat')">⟐ Combat Tracker</a>
-          <a class="jump-to-item" onclick="jumpTo('gm-combatref')">⟐ Combat Quick Reference</a>
-          <a class="jump-to-item" onclick="jumpTo('gm-chase')">⟐ Chase & Movement Reference</a>
-          <a class="jump-to-item" onclick="jumpTo('gm-cp')">⟐ Character Points & Force Points</a>
-          <a class="jump-to-item" onclick="jumpTo('gm-advance')">⟐ Character Advancement</a>
-          <a class="jump-to-item" onclick="jumpTo('gm-force')">⟐ Force Powers Reference</a>
-          <a class="jump-to-item" style="color:#4caf50" onclick="jumpTo('gm-dathomir')">⟐ Dathomir Magic</a>
-          <a class="jump-to-item" style="color:#ce93d8" onclick="jumpTo('gm-taree')">⟐ Ta-Ree Magic</a>
-          <a class="jump-to-item" onclick="jumpTo('gm-freighter')">⟐ Freighter Captain's Guide</a>
-          <a class="jump-to-item" onclick="jumpTo('gm-shipmods')">⟐ Ship Modifications</a>
-          <a class="jump-to-item" onclick="jumpTo('gm-repairs')">⟐ Ship Repairs & Spaceport</a>
-          <a class="jump-to-item" onclick="jumpTo('gm-mishaps')">⟐ Starship Mishap Tables</a>
+        <div class="jump-pills">
+          <button class="jump-pill" onclick="jumpTo('gm-dice')">Dice Roller</button>
+          <button class="jump-pill" onclick="jumpTo('gm-combat')">Combat Tracker</button>
+          <button class="jump-pill" onclick="jumpTo('gm-combatref')">Combat Ref</button>
+          <button class="jump-pill" onclick="jumpTo('gm-chase')">Chase &amp; Movement</button>
+          <button class="jump-pill" onclick="jumpTo('gm-cp')">CP &amp; FP</button>
+          <button class="jump-pill" onclick="jumpTo('gm-advance')">Advancement</button>
+          <button class="jump-pill" onclick="jumpTo('gm-force')">Force Powers</button>
+          <button class="jump-pill" style="color:#4caf50;border-color:#4caf5088" onclick="jumpTo('gm-dathomir')">Dathomir Magic</button>
+          <button class="jump-pill" style="color:#ce93d8;border-color:#ce93d888" onclick="jumpTo('gm-taree')">Ta-Ree Magic</button>
+          <button class="jump-pill" onclick="jumpTo('gm-freighter')">Freighter Guide</button>
+          <button class="jump-pill" onclick="jumpTo('gm-shipmods')">Ship Mods</button>
+          <button class="jump-pill" onclick="jumpTo('gm-repairs')">Ship Repairs</button>
+          <button class="jump-pill" onclick="jumpTo('gm-mishaps')">Mishap Tables</button>
         </div>
       </div>
       <div class="card" id="gm-dice">
@@ -2657,7 +2679,15 @@ color:var(--text-dim);min-width:35px;text-align:right;
 
     <!-- TAB 6: SETTINGS -->
     <div id="tab-settings" class="tab-panel">
-      <div class="card">
+      <div class="jump-to-menu">
+        <div class="jump-pills">
+          <button class="jump-pill" onclick="jumpTo('settings-calibration')">Speed Calibration</button>
+          <button class="jump-pill" onclick="jumpTo('settings-howto')">How to Use</button>
+          <button class="jump-pill" onclick="jumpTo('settings-about')">About</button>
+          <button class="jump-pill" onclick="jumpTo('settings-credits')">Credits</button>
+        </div>
+      </div>
+      <div class="card" id="settings-calibration">
         <div class="card-title">⟐ Speed Calibration</div>
         <p style="font-size:12px;color:var(--text-dim);margin-bottom:12px">Adjust base hours per tile for each route classification.</p>
         <div id="speedSettings"></div>
@@ -2746,7 +2776,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
         </div>
       </div>
 
-      <div class="card">
+      <div class="card" id="settings-about">
         <div class="card-title">⟐ About</div>
         <p style="font-size:13px;color:var(--text-dim);line-height:1.6">
           Star Wars D6 Toolkit — NPC Generator &amp; Astrogation Calculator.<br>
@@ -2757,7 +2787,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
         <button class="btn btn-primary" onclick="showLibraryChecklist()" style="margin-top:10px;padding:10px 18px;font-size:11px;letter-spacing:1.5px">⟐ PRINT SOURCEBOOK CHECKLIST</button>
       </div>
 
-      <div class="card">
+      <div class="card" id="settings-credits">
         <div class="card-title">⟐ Credits &amp; Appreciation</div>
         <div style="font-size:13px;color:var(--text-dim);line-height:1.8">
           <p>A heartfelt thank you to <span style="color:var(--gold)">West End Games</span>, <span style="color:var(--gold)">Bill Smith</span>, and the entire WEG team for creating a gem of a gaming system that has kept people passionate for decades.</p>
@@ -2975,7 +3005,6 @@ function switchTab(tab) {
   document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
   document.getElementById('tab-' + tab).classList.add('active');
   document.querySelector(`[data-tab="${tab}"]`).classList.add('active');
-  closeAllJumpTo();
 }
 
 function openHowTo() {
@@ -2990,74 +3019,179 @@ function openHowTo() {
 }
 
 // ============================================================
-// JUMP TO MENUS
+// JUMP NAVIGATION
 // ============================================================
-function toggleJumpTo(btn) {
-  const dd = btn.nextElementSibling;
-  const isOpen = dd.classList.contains('open');
-  closeAllJumpTo();
-  if (!isOpen) { dd.classList.add('open'); btn.classList.add('open'); }
+const NAV_CARDS = [
+  // NPC — Generators
+  {id:'npc-generator', label:'Generate NPC', tab:'npc', subtab:'generators', group:'NPC · Generators'},
+  {id:'forceCard', label:'Force (rolled)', tab:'npc', subtab:'generators', fallback:'npc-generator', group:'NPC · Generators'},
+  {id:'skillsCard', label:'Skills (rolled)', tab:'npc', subtab:'generators', fallback:'npc-generator', group:'NPC · Generators'},
+  {id:'npc-equip-rolled', label:'Equipment (rolled)', tab:'npc', subtab:'generators', fallback:'npc-generator', group:'NPC · Generators'},
+  {id:'gm-aliengen', label:'Random Alien Generator', tab:'npc', subtab:'generators', group:'NPC · Generators'},
+  {id:'gm-creaturegen', label:'Random Creature Generator', tab:'npc', subtab:'generators', group:'NPC · Generators'},
+  // NPC — Lookups
+  {id:'npc-weapons', label:'Weapons Lookup', tab:'npc', subtab:'lookups', group:'NPC · Lookups'},
+  {id:'npc-equipment', label:'Equipment Lookup', tab:'npc', subtab:'lookups', group:'NPC · Lookups'},
+  {id:'npc-creatures', label:'Creature Lookup', tab:'npc', subtab:'lookups', group:'NPC · Lookups'},
+  {id:'npc-notable', label:'Notable NPC Lookup', tab:'npc', subtab:'lookups', group:'NPC · Lookups'},
+  // Travel
+  {id:'travel-calc', label:'Hyperspace Travel Calculator', tab:'travel', group:'Travel'},
+  {id:'travel-summary', label:'Route Summary', tab:'travel', fallback:'travel-calc', group:'Travel'},
+  {id:'travel-path', label:'Route Path', tab:'travel', fallback:'travel-calc', group:'Travel'},
+  {id:'travel-map', label:'Route Map', tab:'travel', fallback:'travel-calc', group:'Travel'},
+  {id:'travel-ref', label:'Astrogation Quick Reference', tab:'travel', group:'Travel'},
+  // Ships
+  {id:'ships-database', label:'Starship Database', tab:'ships', group:'Ships'},
+  {id:'ships-vehicles', label:'Vehicle Database', tab:'ships', group:'Ships'},
+  {id:'ships-equipment', label:'Ship Equipment', tab:'ships', group:'Ships'},
+  {id:'ships-builder', label:'Ship Builder', tab:'ships', group:'Ships'},
+  // Dice (gm)
+  {id:'gm-dice', label:'D6 Dice Roller', tab:'gm', group:'Dice'},
+  {id:'gm-combat', label:'Combat Tracker', tab:'gm', group:'Dice'},
+  {id:'gm-combatref', label:'Combat Quick Reference', tab:'gm', group:'Dice'},
+  {id:'gm-chase', label:'Chase & Movement Reference', tab:'gm', group:'Dice'},
+  {id:'gm-cp', label:'Character Points & Force Points', tab:'gm', group:'Dice'},
+  {id:'gm-advance', label:'Character Advancement', tab:'gm', group:'Dice'},
+  {id:'gm-force', label:'Force Powers Reference', tab:'gm', group:'Dice'},
+  {id:'gm-dathomir', label:'Dathomir Magic', tab:'gm', group:'Dice'},
+  {id:'gm-taree', label:'Ta-Ree Magic', tab:'gm', group:'Dice'},
+  {id:'gm-freighter', label:"Freighter Captain's Guide", tab:'gm', group:'Dice'},
+  {id:'gm-shipmods', label:'Ship Modifications', tab:'gm', group:'Dice'},
+  {id:'gm-repairs', label:'Ship Repairs & Spaceport', tab:'gm', group:'Dice'},
+  {id:'gm-mishaps', label:'Starship Mishap Tables', tab:'gm', group:'Dice'},
+  // Settings
+  {id:'settings-calibration', label:'Speed Calibration', tab:'settings', group:'Settings'},
+  {id:'settings-howto', label:'How to Use This Toolkit', tab:'settings', group:'Settings'},
+  {id:'settings-about', label:'About', tab:'settings', group:'Settings'},
+  {id:'settings-credits', label:'Credits & Appreciation', tab:'settings', group:'Settings'}
+];
+
+function flashCardTitle(card) {
+  const title = card.querySelector('.card-title') || card;
+  title.classList.remove('jump-flash');
+  void title.offsetWidth;
+  title.classList.add('jump-flash');
+  setTimeout(() => title.classList.remove('jump-flash'), 1300);
 }
-function closeAllJumpTo() {
-  document.querySelectorAll('.jump-to-dropdown.open').forEach(d => d.classList.remove('open'));
-  document.querySelectorAll('.jump-to-btn.open').forEach(b => b.classList.remove('open'));
-}
+
 function jumpTo(id) {
-  closeAllJumpTo();
-  const el = document.getElementById(id);
-  if (!el) return;
-  const panel = el.closest('.tab-panel');
-  if (!panel) return;
-  // Get sticky elements height for offset
-  const subtabBar = panel.querySelector('.npc-subtab-bar');
-  const menu = panel.querySelector('.jump-to-menu');
-  let offset = 8;
-  if (subtabBar) offset += subtabBar.offsetHeight;
-  if (menu) offset += menu.offsetHeight;
-  if (!subtabBar && !menu) offset = 50;
-  const targetTop = el.offsetTop - offset;
-  panel.scrollTo({ top: targetTop, behavior: 'smooth' });
+  const card = NAV_CARDS.find(c => c.id === id);
+  if (!card) {
+    // Unknown id — best-effort scroll without tab/subtab switching
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    return;
+  }
+  switchTab(card.tab);
+  if (card.subtab) switchNpcSubtab(card.subtab);
+  requestAnimationFrame(() => {
+    let targetId = id;
+    const el = document.getElementById(id);
+    // offsetParent === null means hidden (display:none on self or ancestor)
+    if (!el || el.offsetParent === null) {
+      if (card.fallback) targetId = card.fallback;
+    }
+    const target = document.getElementById(targetId);
+    if (!target) return;
+    const panel = target.closest('.tab-panel');
+    if (!panel) return;
+    const subtabBar = panel.querySelector('.npc-subtab-bar');
+    const menu = panel.querySelector('.jump-to-menu');
+    let offset = 8;
+    if (subtabBar) offset += subtabBar.offsetHeight;
+    if (menu) offset += menu.offsetHeight;
+    if (!subtabBar && !menu) offset = 50;
+    panel.scrollTo({top: Math.max(0, target.offsetTop - offset), behavior:'smooth'});
+    flashCardTitle(target);
+  });
 }
-document.addEventListener('click', e => {
-  if (!e.target.closest('.jump-to-menu')) closeAllJumpTo();
+
+// ============================================================
+// GLOBAL JUMP PICKER (header "FIND")
+// ============================================================
+let globalJumpActiveIdx = 0;
+function openGlobalJump() {
+  document.getElementById('globalJumpOverlay').classList.add('open');
+  const inp = document.getElementById('globalJumpSearch');
+  inp.value = '';
+  globalJumpActiveIdx = 0;
+  renderGlobalJump();
+  setTimeout(() => inp.focus(), 20);
+}
+function closeGlobalJump() {
+  document.getElementById('globalJumpOverlay').classList.remove('open');
+}
+function renderGlobalJump() {
+  const q = document.getElementById('globalJumpSearch').value.trim().toLowerCase();
+  const matches = q
+    ? NAV_CARDS.filter(c => c.label.toLowerCase().includes(q) || c.group.toLowerCase().includes(q))
+    : NAV_CARDS.slice();
+  const grouped = {};
+  matches.forEach(c => { (grouped[c.group] = grouped[c.group] || []).push(c); });
+  let html = '';
+  let flatIdx = 0;
+  Object.keys(grouped).forEach(g => {
+    html += '<div class="global-jump-group">' + g + '</div>';
+    grouped[g].forEach(c => {
+      const active = (flatIdx === globalJumpActiveIdx) ? ' active' : '';
+      html += '<div class="global-jump-item' + active + '" data-idx="' + flatIdx + '" onclick="pickGlobalJump(\'' + c.id + '\')">' + c.label + '</div>';
+      flatIdx++;
+    });
+  });
+  if (!flatIdx) html = '<div style="padding:16px;color:var(--text-dark);font-size:12px;font-style:italic">No cards match.</div>';
+  document.getElementById('globalJumpResults').innerHTML = html;
+}
+function pickGlobalJump(id) {
+  closeGlobalJump();
+  jumpTo(id);
+}
+function globalJumpKey(e) {
+  if (e.key === 'Escape') { closeGlobalJump(); return; }
+  const items = document.querySelectorAll('#globalJumpResults .global-jump-item');
+  if (!items.length) return;
+  if (e.key === 'ArrowDown') { e.preventDefault(); globalJumpActiveIdx = Math.min(items.length - 1, globalJumpActiveIdx + 1); renderGlobalJump(); scrollActiveIntoView(); }
+  else if (e.key === 'ArrowUp') { e.preventDefault(); globalJumpActiveIdx = Math.max(0, globalJumpActiveIdx - 1); renderGlobalJump(); scrollActiveIntoView(); }
+  else if (e.key === 'Enter') {
+    e.preventDefault();
+    const cur = document.querySelector('#globalJumpResults .global-jump-item.active');
+    if (cur) {
+      const idx = parseInt(cur.dataset.idx, 10);
+      const q = document.getElementById('globalJumpSearch').value.trim().toLowerCase();
+      const matches = q
+        ? NAV_CARDS.filter(c => c.label.toLowerCase().includes(q) || c.group.toLowerCase().includes(q))
+        : NAV_CARDS.slice();
+      if (matches[idx]) pickGlobalJump(matches[idx].id);
+    }
+  } else {
+    // Typing resets selection
+    globalJumpActiveIdx = 0;
+  }
+}
+function scrollActiveIntoView() {
+  const cur = document.querySelector('#globalJumpResults .global-jump-item.active');
+  if (cur) cur.scrollIntoView({block:'nearest'});
+}
+// Global "/" shortcut opens picker
+document.addEventListener('keydown', e => {
+  if (e.key === '/' && !['INPUT','TEXTAREA','SELECT'].includes(document.activeElement.tagName)) {
+    e.preventDefault();
+    openGlobalJump();
+  }
 });
 
 // ============================================================
 // NPC SUB-TABS
 // ============================================================
-const NPC_SUBTAB_ITEMS = {
-  generators: [
-    { id: 'npc-generator', label: '⟐ NPC Generator' },
-    { id: 'gm-aliengen', label: '⟐ Random Alien Generator' },
-    { id: 'gm-creaturegen', label: '⟐ Random Creature Generator' }
-  ],
-  lookups: [
-    { id: 'npc-notable', label: '⟐ Notable NPC Lookup' },
-    { id: 'npc-weapons', label: '⟐ Weapons Lookup' },
-    { id: 'npc-equipment', label: '⟐ Equipment Lookup' },
-    { id: 'npc-creatures', label: '⟐ Creature Lookup' }
-  ]
-};
 function switchNpcSubtab(name) {
-  // Update buttons
+  if (name !== 'generators' && name !== 'lookups') return;
   document.querySelectorAll('.npc-subtab-bar button').forEach(b => b.classList.toggle('active', b.dataset.npcst === name));
-  // Show/hide panels (multiple panels may share the same data-subtab value)
   document.querySelectorAll('.npc-subtab-panel').forEach(p => p.classList.toggle('active', p.dataset.subtab === name));
-  // Update Jump To dropdown
-  const items = NPC_SUBTAB_ITEMS[name] || [];
-  const dd = document.getElementById('npcJumpToDropdown');
-  dd.innerHTML = items.map(i => '<a class="jump-to-item" onclick="jumpTo(\'' + i.id + '\')">' + i.label + '</a>').join('');
-  document.getElementById('npcJumpToCount').textContent = items.length + ' tools';
-  closeAllJumpTo();
-  // Scroll to top
-  document.getElementById('tab-npc').scrollTop = 0;
-  // Persist
   try { localStorage.setItem('npcSubtab', name); } catch(e) {}
 }
 // Init on load
 (function() {
   const saved = (function(){ try { return localStorage.getItem('npcSubtab'); } catch(e) { return null; } })();
-  switchNpcSubtab(saved && NPC_SUBTAB_ITEMS[saved] ? saved : 'lookups');
+  switchNpcSubtab(saved === 'generators' ? 'generators' : 'lookups');
 })();
 
 // ============================================================
