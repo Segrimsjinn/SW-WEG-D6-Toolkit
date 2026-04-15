@@ -672,8 +672,10 @@ color:var(--text-dim);min-width:35px;text-align:right;
   body.printing-pin-snapshot #pinSnapshotBody *{color:#000 !important;background:transparent !important;border-color:#777 !important;box-shadow:none !important}
   body.printing-pin-snapshot #pinSnapshotBody div[style*="overflow"]{overflow:visible !important;max-height:none !important}
   body.printing-pin-snapshot #pinSnapshotBody .cb-spec-row,body.printing-pin-snapshot #pinSnapshotBody div[style*="background:rgba(0,0,0"]{background:#f6f6f6 !important;border:1px solid #bbb !important}
-  /* Keep the Force block together so the dice grid doesn't split from the powers */
-  body.printing-pin-snapshot .pin-force-block{page-break-inside:avoid;break-inside:avoid}
+  /* Keep the Force dice grid from splitting off the "⟐ FORCE" header — but let
+     the powers list wrap naturally so it doesn't get clipped when long. */
+  body.printing-pin-snapshot .pin-force-block > div:first-child,
+  body.printing-pin-snapshot .pin-force-block > div:nth-child(2){page-break-after:avoid;break-after:avoid}
 }
 </style>
 </head>
