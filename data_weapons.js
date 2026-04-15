@@ -624,18 +624,6 @@ const WEAPONS_DATA = [
   "source": "WEG40042 Han Solo and the Corporate Sector Sourcebook p.118; Gundark's Fantastic Technology (page 17)"
  },
  {
-  "name": "Prax Stealth Palm Shooter",
-  "category": "Dart Shooters",
-  "skill": "Missile weapons: dart shooter",
-  "cost": "360",
-  "availability": "2, F or R",
-  "damage": "1D + 3-5D chemical",
-  "range": "1-3/10/15",
-  "ammo": "3",
-  "game_notes": "Ineffective in non-oxygenated atmospheres. Wristband stores 6 extra darts. +1D+1 to hide.",
-  "source": "Arms and Equipment Guide (pages 24-25)"
- },
- {
   "name": "Saberdart Launcher",
   "category": "Dart Shooters",
   "skill": "Missile weapons: dart launcher",
