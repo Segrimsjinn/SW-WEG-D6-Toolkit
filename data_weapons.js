@@ -649,7 +649,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Detonite",
-  "category": "Demolitions",
+  "category": "Grenades & Explosives",
   "skill": "Demolitions",
   "cost": "500/cube",
   "availability": "2, R",
@@ -661,7 +661,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Detonite Tape",
-  "category": "Demolitions",
+  "category": "Grenades & Explosives",
   "skill": "Demolitions",
   "cost": "1,500/5m",
   "availability": "X",
@@ -673,7 +673,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Plasticine Thermite Gel",
-  "category": "Demolitions",
+  "category": "Grenades & Explosives",
   "skill": "Demolitions",
   "cost": "1,000/kg",
   "availability": "2, X",
@@ -685,7 +685,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Thermal Well",
-  "category": "Demolitions",
+  "category": "Grenades & Explosives",
   "skill": "Demolitions",
   "cost": "Not for sale",
   "availability": "4",
