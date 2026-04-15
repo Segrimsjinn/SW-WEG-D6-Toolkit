@@ -8420,67 +8420,62 @@ function renderRolledNpcSnapshot(pin) {
     out += '<div style="margin-bottom:10px"><div style="font-family:\'Exo 2\',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:4px">SPECIAL ABILITIES</div><div style="font-size:11px;color:var(--text);line-height:1.5">' + escapeHtml(n.specAbility) + '</div></div>';
   }
 
-  // Attribute grid
-  const attrPairs = [['DEX', n.dex], ['KNO', n.kno], ['MEC', n.mec], ['PER', n.per], ['STR', n.str], ['TEC', n.tec]];
-  if (attrPairs.some(p => p[1])) {
-    out += '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:10px">';
-    attrPairs.forEach(([lbl, val]) => {
-      out += '<div style="background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);padding:6px 4px;text-align:center">' +
-        '<div style="font-family:\'Exo 2\',monospace;font-size:8px;color:var(--text-dim);letter-spacing:1px;margin-bottom:2px">' + lbl + '</div>' +
-        '<div style="font-family:\'IBM Plex Mono\',monospace;font-size:12px;color:var(--gold)">' + escapeHtml(val || '—') + '</div></div>';
-    });
-    out += '</div>';
-  }
-
-  // Force dice
-  if (n.forceControl || n.forceSense || n.forceAlter) {
-    out += '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:10px">';
-    [['CONTROL', n.forceControl], ['SENSE', n.forceSense], ['ALTER', n.forceAlter]].forEach(([lbl, val]) => {
-      if (!val) return;
-      out += '<div style="background:var(--bg2);border:1px solid rgba(187,134,252,0.3);border-radius:var(--radius-sm);padding:6px 4px;text-align:center">' +
-        '<div style="font-family:\'Exo 2\',monospace;font-size:8px;color:var(--purple);letter-spacing:1px;margin-bottom:2px">' + lbl + '</div>' +
-        '<div style="font-family:\'IBM Plex Mono\',monospace;font-size:12px;color:var(--purple)">' + escapeHtml(val) + '</div></div>';
-    });
-    out += '</div>';
-  }
-
-  // Force powers
-  if (Array.isArray(n.forcePowers) && n.forcePowers.length) {
-    out += '<div style="margin-bottom:10px"><div style="font-family:\'Exo 2\',monospace;font-size:9px;color:var(--purple);letter-spacing:1px;margin-bottom:4px">FORCE POWERS</div>';
-    out += '<div style="font-size:11px;color:var(--text);line-height:1.6">' + n.forcePowers.map(p => {
-      if (typeof p === 'string') return escapeHtml(p);
-      const name = p && (p.name || p.title || p.label);
-      return escapeHtml(name || JSON.stringify(p));
-    }).join(', ') + '</div></div>';
-  }
-
-  // Skills — grouped under each attribute, same layout as the generator card
-  if (Array.isArray(n.skills) && n.skills.length) {
-    const groups = {};
+  // Skills — grouped under each attribute (attribute dice shown in the section header)
+  // Also ensures the six main attributes appear even if they have no skills rolled
+  const attrOrder = ['Dex', 'Per', 'Kno', 'Str', 'Mec', 'Tec'];
+  const attrValues = { Dex: n.dex, Per: n.per, Kno: n.kno, Str: n.str, Mec: n.mec, Tec: n.tec };
+  const groups = {};
+  if (Array.isArray(n.skills)) {
     n.skills.forEach(s => {
       if (typeof s === 'string') return;
       const a = s.attr || 'Other';
       if (!groups[a]) groups[a] = [];
       groups[a].push(s);
     });
-    const attrOrder = ['Dex', 'Per', 'Kno', 'Str', 'Mec', 'Tec'];
-    const attrValues = { Dex: n.dex, Per: n.per, Kno: n.kno, Str: n.str, Mec: n.mec, Tec: n.tec };
-    let skillHtml = '<div style="margin-bottom:10px"><div style="font-family:\'Exo 2\',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:6px">SKILLS</div>';
+  }
+  const hasAnyAttr = attrOrder.some(a => attrValues[a]);
+  if (hasAnyAttr) {
+    let skillHtml = '<div style="margin-bottom:10px"><div style="font-family:\'Exo 2\',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:6px">ATTRIBUTES &amp; SKILLS</div>';
     skillHtml += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px 12px">';
     attrOrder.forEach(attr => {
-      if (!groups[attr] || !groups[attr].length) return;
+      if (!attrValues[attr]) return;
       skillHtml += '<div>';
       skillHtml += '<div style="font-family:\'Exo 2\',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;padding:4px 0 2px;border-bottom:1px solid var(--card-border);margin-bottom:3px">' +
-        attr.toUpperCase() + ' <span style="color:var(--cyan);font-family:\'IBM Plex Mono\',monospace;font-size:11px">' + escapeHtml(attrValues[attr] || '') + '</span></div>';
-      groups[attr].forEach(s => {
-        skillHtml += '<div style="display:flex;justify-content:space-between;padding:1px 0;font-size:11px">' +
-          '<span style="color:var(--text)">' + escapeHtml(s.name || '') + '</span>' +
-          '<span style="color:var(--gold);font-family:\'IBM Plex Mono\',monospace">' + escapeHtml(s.dice || '') + '</span></div>';
-      });
+        attr.toUpperCase() + ' <span style="color:var(--cyan);font-family:\'IBM Plex Mono\',monospace;font-size:11px">' + escapeHtml(attrValues[attr]) + '</span></div>';
+      if (groups[attr] && groups[attr].length) {
+        groups[attr].forEach(s => {
+          skillHtml += '<div style="display:flex;justify-content:space-between;padding:1px 0;font-size:11px">' +
+            '<span style="color:var(--text)">' + escapeHtml(s.name || '') + '</span>' +
+            '<span style="color:var(--gold);font-family:\'IBM Plex Mono\',monospace">' + escapeHtml(s.dice || '') + '</span></div>';
+        });
+      }
       skillHtml += '</div>';
     });
     skillHtml += '</div></div>';
     out += skillHtml;
+  }
+
+  // Force — dice grid + powers list (only if Force-sensitive)
+  if (n.forceControl || n.forceSense || n.forceAlter || (Array.isArray(n.forcePowers) && n.forcePowers.length)) {
+    out += '<div style="margin-bottom:10px"><div style="font-family:\'Exo 2\',monospace;font-size:9px;color:var(--purple);letter-spacing:1px;margin-bottom:6px">⟐ FORCE</div>';
+    if (n.forceControl || n.forceSense || n.forceAlter) {
+      out += '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:8px">';
+      [['CONTROL', n.forceControl], ['SENSE', n.forceSense], ['ALTER', n.forceAlter]].forEach(([lbl, val]) => {
+        if (!val) return;
+        out += '<div style="background:var(--bg2);border:1px solid rgba(187,134,252,0.3);border-radius:var(--radius-sm);padding:6px 4px;text-align:center">' +
+          '<div style="font-family:\'Exo 2\',monospace;font-size:8px;color:var(--purple);letter-spacing:1px;margin-bottom:2px">' + lbl + '</div>' +
+          '<div style="font-family:\'IBM Plex Mono\',monospace;font-size:12px;color:var(--purple)">' + escapeHtml(val) + '</div></div>';
+      });
+      out += '</div>';
+    }
+    if (Array.isArray(n.forcePowers) && n.forcePowers.length) {
+      out += '<div style="font-size:11px;color:var(--text);line-height:1.6">' + n.forcePowers.map(p => {
+        if (typeof p === 'string') return escapeHtml(p);
+        const name = p && (p.name || p.title || p.label);
+        return escapeHtml(name || JSON.stringify(p));
+      }).join(', ') + '</div>';
+    }
+    out += '</div>';
   }
 
   // Equipment
