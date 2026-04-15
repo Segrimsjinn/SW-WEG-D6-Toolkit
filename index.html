@@ -2622,6 +2622,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
             <label style="display:flex;flex-direction:column;gap:3px;flex:1;min-width:200px"><span class="pc-field-lbl" style="color:var(--purple)">FORCE POWER</span><select id="pcPowerSelect" class="pc-field"></select></label>
             <button type="button" class="btn btn-primary" onclick="pcAddPower()" style="padding:8px 14px;font-size:10px;letter-spacing:1px;height:34px">+ ADD</button>
           </div>
+          <div id="pcPowerPrereqWarn" style="display:none;font-size:10px;color:#e8c866;font-style:italic;margin-bottom:6px;line-height:1.5"></div>
           <div id="pcPowerList"></div>
         </div>
 
@@ -8770,6 +8771,7 @@ function renderPcPowerList() {
   if (!container) return;
   if (!pcPowersDraft.length) {
     container.innerHTML = '<div style="color:var(--text-dark);font-size:10px;font-style:italic;padding:2px 0">No powers added yet.</div>';
+    pcUpdatePrereqWarning();
     return;
   }
   const catOrder = { 'Control': 1, 'Sense': 2, 'Alter': 3, 'Control+Sense': 4, 'Control+Alter': 5, 'Sense+Alter': 6, 'Control+Sense+Alter': 7, 'Special': 8 };
@@ -8784,6 +8786,69 @@ function renderPcPowerList() {
     html += '</div>';
   });
   container.innerHTML = html;
+  pcUpdatePrereqWarning();
+}
+
+// Build a lookup of numeric power ID -> canonical name, and flag missing prereqs
+// among the currently-selected powers. Powers in POWERS_DATA are named
+// "01. Absorb/Dissipate Energy" etc. — the leading digits are the reference
+// numbers used in the "prereq" field (comma-separated).
+function pcUpdatePrereqWarning() {
+  const warnEl = document.getElementById('pcPowerPrereqWarn');
+  if (!warnEl) return;
+  if (typeof POWERS_DATA === 'undefined' || !pcPowersDraft.length) {
+    warnEl.style.display = 'none';
+    warnEl.textContent = '';
+    return;
+  }
+  // Build id -> entry map from POWERS_DATA
+  const idToEntry = {};
+  POWERS_DATA.forEach(p => {
+    const m = p.name.match(/^(\d+)\./);
+    if (m) idToEntry[m[1].replace(/^0+/, '') || '0'] = p;
+  });
+  // Also map clean-name -> id so we can look up selected powers
+  const cleanNameToId = {};
+  POWERS_DATA.forEach(p => {
+    const m = p.name.match(/^(\d+)\.\s*(.+)$/);
+    if (m) cleanNameToId[m[2].trim()] = (m[1].replace(/^0+/, '') || '0');
+  });
+  const selectedIds = new Set();
+  pcPowersDraft.forEach(p => {
+    const id = cleanNameToId[p.name];
+    if (id) selectedIds.add(id);
+  });
+  // For every selected power, find prereqs not in the set
+  const missing = [];
+  pcPowersDraft.forEach(p => {
+    const entry = POWERS_DATA.find(x => x.name.replace(/^\d+\.\s*/, '') === p.name);
+    if (!entry || !entry.prereq) return;
+    const prereqIds = entry.prereq.split(',').map(s => s.trim()).filter(Boolean);
+    prereqIds.forEach(pid => {
+      const norm = pid.replace(/^0+/, '') || '0';
+      if (!selectedIds.has(norm)) {
+        const prereqEntry = idToEntry[norm];
+        const prereqName = prereqEntry ? prereqEntry.name.replace(/^\d+\.\s*/, '') : ('power #' + pid);
+        missing.push({ power: p.name, needs: prereqName, id: pid });
+      }
+    });
+  });
+  if (!missing.length) {
+    warnEl.style.display = 'none';
+    warnEl.textContent = '';
+    return;
+  }
+  // Group missing prereqs — dedupe so the warning is compact
+  const seen = new Set();
+  const lines = [];
+  missing.forEach(m => {
+    const key = m.power + '|' + m.needs;
+    if (seen.has(key)) return;
+    seen.add(key);
+    lines.push('<span style="color:var(--text)">' + escapeHtml(m.power) + '</span> needs <span style="color:var(--text)">' + escapeHtml(m.needs) + '</span> (#' + escapeHtml(m.id) + ')');
+  });
+  warnEl.innerHTML = '⚠ Missing prereq' + (lines.length > 1 ? 's' : '') + ': ' + lines.join(' · ');
+  warnEl.style.display = 'block';
 }
 
 function pcAddSkillRow() {
