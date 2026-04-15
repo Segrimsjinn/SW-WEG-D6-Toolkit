@@ -3721,15 +3721,6 @@ const EQUIPMENT_DATA = [
   "source": "WEG40138 Classic Adventures Vol 4"
  },
  {
-  "name": "Blastrod",
-  "category": "Weapons",
-  "type": "Gree ranged weapon",
-  "cost": "Not available for sale",
-  "availability": "4, X",
-  "game_notes": "Damage: 4D. A Gree weapon operated using device operation skill rather than blaster skill. Like all Gree technology, it emits musical notes when used and must be 'played' to operate properly. Designed for manipulation by the suckers coating the underside of Gree tentacles.",
-  "source": "WEG40138 Classic Adventures Vol 4"
- },
- {
   "name": "MicroThrust Holo Ore Scanner FR9",
   "category": "Sensors",
   "type": "Semi-portable ore scanner",
@@ -5922,15 +5913,6 @@ const EQUIPMENT_DATA = [
   "source": "WEG41010 Star Wars Adventure Journal #10 p.208 (Desperate Measures — Chemical Security Protocols)"
  }
  ,{
-  "name": "Flex-5 Detonite Tape",
-  "type": "Merr-Sonn Munitions Compound Flex-5 Detonite Tape",
-  "category": "Demolitions",
-  "cost": "1,500 (per 5 meters)",
-  "availability": "X",
-  "game_notes": "Adhesive explosive strip favored by Rebel Alliance Special Operations shipjacking teams for blowing internal hatches and sealed doors. Flexible adhesive backing lets the operator quickly tape an explosive perimeter around any doorframe, hatch seal, or pressure bulkhead in seconds. Difficulty 10 to use; blast radius 0-0.5 meters; damage 3D. Rebel field operative Jayme used Flex-5 to blow open a smuggler-modified internal pressure hatch sealing off the cockpit of a YT-1300 named The Maker during the team's heist of Sythluss Leethe's brand-new freighter at a Zelos II starport.",
-  "source": "WEG41013 Star Wars Adventure Journal #13 (Special Ops: Shipjackers)"
- }
- ,{
   "name": "Stun Steps",
   "type": "Telex-Delcor Ramp Entry Security System",
   "category": "Ship Equipment",
@@ -6064,24 +6046,6 @@ const EQUIPMENT_DATA = [
   "availability": "1",
   "game_notes": "Fifth Degree Droid. Personality: Complex. Height: 1.7m. Move: 5. DEX 1D, KNO 2D (cultures 3D), MEC 1D, PER 1D, STR 2D, TEC 2D. Equipped with: two photoreceptors and auditory receptors (human range), vocabulator (capable of speaking one programmed language), humanoid frame (two arms, two legs). Cybot Galactica's answer to the galactic call for a more appealing servant droid — based on the popular 3PO protocol unit, the RA provides owners with a low-end affordable servant droid capable of minor cleaning and attendance duties. NOTE: the RA-series is innocuous and inexpensive, making it very easy to upgrade into a combat or espionage unit. The well-known thief Tombat famously reprogrammed an RA droid to give him the layout of a manor house, casing the entire structure without ever setting foot inside — simply by adding a holocam and automap to the unit.",
   "source": "WEG41014 Star Wars Adventure Journal #14 p.265 (Cynabar's Droid Datalog)"
- }
- ,{
-  "name": "TasCorp Blaststick",
-  "type": "Tasari Mining Explosive",
-  "category": "Demolitions",
-  "cost": "50 credits per stick (sold in packages of 10)",
-  "availability": "F",
-  "game_notes": "Scale: Speeder. Skill: Demolitions. Blast Radius 0-2/4/6/8. Damage 3D/2D+2/2D/1D. Damage is cumulative if more than one blaststick is used. A blaststick is inert until coupled with a TasCorp Detonator via electrical wires, but they CAN be triggered prematurely by the stun bolts fired by most blasters — a hazard off-worlders frequently discover the hard way. A mining explosive developed by Tasari for carving out their underground crater-cities and tunnels; many off-world tasar crystal miners find blaststicks useful for rapid excavation (some crystals are destroyed in the blast but many survive, and impatient miners prefer picking through rubble to digging by hand). Unsafe practices by off-worlders (and Imperial pressure) has caused the Tasari Council of Elders to place licensing restrictions on the sale and purchase of blaststicks.",
-  "source": "WEG41015 Star Wars Adventure Journal #15 p.187 (Tasariq: The Crystal Planet)"
- }
- ,{
-  "name": "TasCorp Detonator Model 3E",
-  "type": "Electric Blaststick Detonator",
-  "category": "Demolitions",
-  "cost": "200 credits",
-  "availability": "F",
-  "game_notes": "Skill: Demolitions. A reusable electric detonator designed to trigger TasCorp Blaststicks. A single detonator can trigger up to five blaststicks simultaneously via electrical wires. Each can be programmed with up to a one-minute time delay, but all linked blaststicks are triggered by a single button press. The detonator itself is not destroyed in the blast, as long as it is set up outside the blast area.",
-  "source": "WEG41015 Star Wars Adventure Journal #15 p.187 (Tasariq: The Crystal Planet)"
  }
  ,{
   "name": "Bavar Tasari Breath Mask",
@@ -6324,15 +6288,6 @@ const EQUIPMENT_DATA = [
   "availability": "4, F, R or X",
   "game_notes": "Character scale. Worn as a powerbox around the waist (usually under clothing). Shield score: 5D to deflect blaster bolts and other energy weapons (use protection rules p.63 Revised & Expanded). Any further damage affects target per 'Cover Modifiers' chart. Power cells last 1 standard hour before draining. Politician's dream — popular with crime lords, bounty hunters, and bill collectors. Embellished version of the MagnaForce Security Shield with longer duration (1 hour vs 2 minutes) and stronger defenses.",
   "source": "WEG41016 Star Wars Adventure Journal #16 p.215 (Credit Denied)"
- },
- {
-  "category": "Weapons",
-  "name": "BioTech BlastHand",
-  "type": "Concealed Carpal Blaster Unit",
-  "cost": "1,300",
-  "availability": "4, R, X",
-  "game_notes": "Character scale. Skill: Blaster. Damage: 4D. The BlastHand is a prosthetic shell with limited dexterity (clench fist, point fingers) that houses a compact blaster. Surgically attached to the user's arm — cannot be disarmed without restraining that arm. Has a port for blaster packs and recharging. Treated as a regular blaster for game purposes. Most users are beings who lost their natural hand. Relatively uncommon but very effective for gaining a decisive advantage.",
-  "source": "WEG41017 Star Wars Adventure Journal #17 p.58 (Jade Solitaire)"
  },
  {
   "category": "Security",

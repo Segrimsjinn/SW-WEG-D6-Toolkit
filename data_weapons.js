@@ -5160,6 +5160,61 @@ const WEAPONS_DATA = [
   "range": "2-5/10/20",
   "game_notes": "Small razor-edged wheels like tiny buzzsaws. Skilled throwers can curve them in flight to hit targets under cover (medium or long range only). Up to 2 can be thrown at once from each hand, but must target the same target. Makes a high-pitched whistling sound when thrown. Originally used by thick-skinned Vrakolians in a harmless game of skill, adopted by other species as deadly weapons.",
   "source": "WEG40147 Tapani Sector Instant Adventures p.23 (The Bacta Heist)"
+ },
+ {
+  "name": "Blastrod",
+  "type": "Gree Ranged Weapon",
+  "category": "Specialty Weapons",
+  "cost": "Not available for sale",
+  "availability": "4, X",
+  "damage": "4D",
+  "range": "",
+  "game_notes": "Gree weapon operated using device operation skill rather than blaster. Like all Gree technology, it emits musical notes when used and must be 'played' to operate properly. Designed for manipulation by the suckers coating the underside of Gree tentacles.",
+  "source": "WEG40138 Classic Adventures Vol 4"
+ },
+ {
+  "name": "BioTech BlastHand",
+  "type": "Concealed Carpal Blaster Unit",
+  "category": "Blaster Pistols",
+  "cost": "1,300",
+  "availability": "4, R, X",
+  "damage": "4D",
+  "range": "",
+  "game_notes": "Skill: Blaster. Character scale. Prosthetic shell with limited dexterity (clench fist, point fingers) that houses a compact blaster. Surgically attached to the user's arm — cannot be disarmed without restraining that arm. Has a port for blaster packs and recharging. Treated as a regular blaster for game purposes. Most users are beings who lost their natural hand.",
+  "source": "WEG41017 Star Wars Adventure Journal #17 p.58 (Jade Solitaire)"
+ },
+ {
+  "name": "Flex-5 Detonite Tape",
+  "type": "Merr-Sonn Munitions Compound Flex-5 Detonite Tape",
+  "category": "Grenades & Explosives",
+  "cost": "1,500 (per 5 meters)",
+  "availability": "X",
+  "damage": "3D (blast radius 0-0.5m)",
+  "range": "",
+  "game_notes": "Skill: Demolitions. Difficulty 10 to use. Adhesive explosive strip favored by Rebel Alliance Special Operations shipjacking teams for blowing internal hatches and sealed doors. Flexible adhesive backing lets the operator quickly tape an explosive perimeter around any doorframe, hatch seal, or pressure bulkhead in seconds.",
+  "source": "WEG41013 Star Wars Adventure Journal #13 (Special Ops: Shipjackers)"
+ },
+ {
+  "name": "TasCorp Blaststick",
+  "type": "Tasari Mining Explosive",
+  "category": "Grenades & Explosives",
+  "cost": "50 per stick (packages of 10)",
+  "availability": "F",
+  "damage": "3D/2D+2/2D/1D (blast radius 0-2/4/6/8)",
+  "range": "",
+  "game_notes": "Skill: Demolitions. Scale: Speeder. Damage is cumulative if more than one blaststick is used. Inert until coupled with a TasCorp Detonator via electrical wires, but CAN be triggered prematurely by the stun bolts fired by most blasters — a hazard off-worlders frequently discover the hard way. Mining explosive developed by Tasari for carving out their underground crater-cities and tunnels.",
+  "source": "WEG41015 Star Wars Adventure Journal #15 p.187 (Tasariq: The Crystal Planet)"
+ },
+ {
+  "name": "TasCorp Detonator Model 3E",
+  "type": "Electric Blaststick Detonator",
+  "category": "Grenades & Explosives",
+  "cost": "200",
+  "availability": "F",
+  "damage": "—",
+  "range": "",
+  "game_notes": "Skill: Demolitions. Reusable electric detonator designed to trigger TasCorp Blaststicks. One detonator can trigger up to five blaststicks simultaneously via electrical wires. Programmable up to one-minute time delay, but all linked blaststicks fire on a single button press. The detonator itself is not destroyed in the blast as long as it is set up outside the blast area.",
+  "source": "WEG41015 Star Wars Adventure Journal #15 p.187 (Tasariq: The Crystal Planet)"
  }
 // --- END OF WEAPONS_DATA ---
 ];
