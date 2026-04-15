@@ -1961,7 +1961,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Holorecording Macrobinoculars (Neuro-Saav TT4)",
-  "category": "Tools",
+  "category": "Sensors",
   "cost": "2,000",
   "availability": "2",
   "game_notes": "+2D to search or Perception rolls at ranges over 100 meters. Can record up to 3 standard hours of visuals on a standard data card.",
@@ -3248,14 +3248,6 @@ const EQUIPMENT_DATA = [
   "source": "WEG40025 Galladinium's Fantastic Technology p.55"
  },
  {
-  "name": "Fegegrish Squib Battering Ram",
-  "category": "Tools",
-  "cost": "3,500",
-  "availability": "3",
-  "game_notes": "Shoulder-mounted structural weakener. Large square plate clamped against target obstruction. Alternating energy pulsations batter away at molecular level until obstruction gives way. 6D damage against body of wall or door. Also useful for after-hours 'withdrawals' from locked financial institutions.",
-  "source": "WEG40025 Galladinium's Fantastic Technology p.57"
- },
- {
   "name": "Vercanne FOE-2000 Oxygen Extractor",
   "category": "Survival Gear",
   "cost": "350",
@@ -3641,7 +3633,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Line Master Tube-Launched Grapple (TLG)",
-  "category": "Tools",
+  "category": "Climbing Gear",
   "cost": "800",
   "availability": "2, R",
   "game_notes": "Skill: Missile weapons, Easy difficulty to fire on target. Portable one-shot grappling device — hollow cylinder 40cm long, 10cm diameter resembling a lightsaber hilt. Features pop-up targeting sight, retractable hand grip with braking controls for controlled descents, 100 meters of ultra-light micro-woven synthecord, small motorized winch (Move: 2, pulls full load at 25 meters/minute), and hook for harness cable. Grapple head is a flat flexible disk coated with strong bonding agent that instantly bonds on impact. Line supports up to 200 kg.",
@@ -5285,8 +5277,8 @@ const EQUIPMENT_DATA = [
   "type": "Fegigrish Heavy Industrials Battering Ram",
   "cost": "3,500",
   "availability": "3",
-  "game_notes": "Scale: Character. Structural weakener — does 4D damage against targeted material. Weakens material at the molecular level. Somewhat underpowered but will eventually hammer through any door or hatchway. Not intended for breaching hull integrity.",
-  "source": "WEG40143 Pirates & Privateers p.47"
+  "game_notes": "Scale: Character. Shoulder-mounted structural weakener — large square plate clamped against target; alternating energy pulsations batter at molecular level until obstruction gives way. 4D (P&P) to 6D (Galladinium) damage against body of wall or door. Will eventually hammer through any door or hatchway. Not intended for breaching hull integrity. Also useful for after-hours 'withdrawals' from locked financial institutions.",
+  "source": "WEG40143 Pirates & Privateers p.47; WEG40025 Galladinium's Fantastic Technology p.57"
  },
  {
   "category": "Tools",
@@ -5307,7 +5299,7 @@ const EQUIPMENT_DATA = [
   "source": "WEG40143 Pirates & Privateers p.48"
  },
  {
-  "category": "Tools",
+  "category": "Security",
   "name": "Lock Breaking Kit",
   "type": "Individual Manufacture Security Code De-scrambler",
   "cost": "8,000 (legitimate); 16,000+ (black market)",
@@ -5564,8 +5556,8 @@ const EQUIPMENT_DATA = [
   "category": "Security",
   "cost": "5,000",
   "availability": "X",
-  "game_notes": "Skill: Security. Voice lock buster. Plugs into a lock's wiring and fools the lock by encrypting the user's voice patterns with a copy of the authentication files. Modern voice-activated security systems process accent, inflection, tone, stress, and many other voice pattern characteristics — the VoiceBox defeats them. A successful security roll against the lock's difficulty rating is required for success. Can also be patched into a freighter's communications system for limited voice disguising against customs voiceprint analyzers.",
-  "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.96"
+  "game_notes": "Skill: Security. Voice lock buster. Plugs into a lock's wiring and fools the lock by encrypting the user's voice patterns with a copy of the authentication files. Modern voice-activated security systems process accent, inflection, tone, stress, and many other voice pattern characteristics — the VoiceBox defeats them. A successful security roll against the lock's difficulty rating is required for success. Can also be patched into a freighter's communications system for limited voice disguising against customs voiceprint analyzers. Standard equipment for Rebel Alliance Special Ops shipjacking teams.",
+  "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.96; WEG41013 Star Wars Adventure Journal #13 (Special Ops: Shipjackers)"
  },
  {
   "name": "CorSec Autoscan Weapons Detector",
@@ -5705,7 +5697,7 @@ const EQUIPMENT_DATA = [
  ,{
   "name": "Imperial Customs Bureau Seals",
   "type": "Coded shipping container seals",
-  "category": "Tools",
+  "category": "Security",
   "cost": "Not available for sale",
   "availability": "X (Imperial use only)",
   "game_notes": "Small plastic strips and stickers used to seal the latches, locks, and openings of shipping containers. Embedded with tiny microchips and thin reservoirs of dissolving compounds; individual seals are identified with standard code-scanner units. The seals are coated with a bonding agent that activates when the protective wrapper is removed and dries in approximately 30 seconds, hardening the seal in place. After hardening, any code tampering, electronic disruption, rough handling, or breakage triggers the seal's small reservoirs of dissolving compounds, destroying it and rendering it useless. Containers bearing intact Imperial seals matched against Imperial inspection reports written to Write-Once-Read-Many (WORM) chips are allowed to bypass normal customs inspections — the linchpin of the lumrunner's classic 'pre-sealed cargo' shell game (rotating Imperial seals onto previously inspected legitimate cargoes while contraband flows through under the same paperwork). Virtually impossible to counterfeit; success should be beyond the scope of most characters.",
@@ -5768,7 +5760,7 @@ const EQUIPMENT_DATA = [
  ,{
   "name": "Modified TranLang III Module (Espionage)",
   "type": "Modified TranLang III Communication Module",
-  "category": "Tools",
+  "category": "Droid Hardware",
   "cost": "1,500 (market version)",
   "availability": "2 (market version) — modified Alliance Intel version is strictly illegal",
   "game_notes": "Standard droid translation module covertly modified to deliver coded keyword messages to Alliance contacts. Modifying a standard unit to spec requires a Difficult droid programming roll followed by a Moderate droid repair roll to install without damaging the host droid; planting the droid in the target locale afterward is its own problem. Once installed, the modified module subliminally biases the host droid (usually a protocol droid, sometimes an astromech or medical droid) toward using pre-specified keywords from a particular language at designated intervals during normal conversation — to any observer or eavesdropping translator droid, the conversation sounds entirely natural, but to the receiving Alliance agent the keyword sequence carries a coded message decoded from a key sheet supplied by Intelligence. The modification is wired directly to the portion of the droid's CPU that handles word selection (so the droid never questions its own choices), but that same direct connection makes the module relatively easy to detect — a Moderate droid programming roll, if the technician is specifically looking for secondary programming. Modified droids accordingly have shorter lifespans than most espionage units. Lieutenant Zeneta's Shroud Team is one of the units fed valuable intel through this method.",
@@ -5777,7 +5769,7 @@ const EQUIPMENT_DATA = [
  ,{
   "name": "Subspace Tight-Beam Transmission Core",
   "type": "MerenData 45-T InfoCore",
-  "category": "Tools",
+  "category": "Communications",
   "cost": "900",
   "availability": "2, R",
   "game_notes": "Subspace tight-beam transmission core that forms the integral relay component of an espionage droid's secondary programming. Upon receipt of a prearranged high-frequency activation signal, the host droid downloads its recorded data via a tight beam to the signal's source. Detecting an espionage droid carrying one of these requires a Very Difficult droid programming roll, and the technician must specifically state they are searching for secondary programming; once detected, removing the chips without damaging the droid requires a Moderate droid programming roll (the chips must be physically removed — the espionage programming will withstand a normal memory wipe). The tight-beam transmission evades nearly all sensor types except dedicated energy receptors (DERs) in active scan mode, which can pick the transmission up and triangulate its source. Most commonly installed in protocol droids, though astromechs and medical droids are also used. Both the Empire and the Alliance use espionage droids extensively against each other — Cracken personally headed the investigation into the droid that compromised Sinjan Outpost.",
@@ -5786,7 +5778,7 @@ const EQUIPMENT_DATA = [
  ,{
   "name": "Intellex IV Internal Computer",
   "type": "Industrial Automaton Intellex IV Astromech Internal Computer",
-  "category": "Tools",
+  "category": "Droid Hardware",
   "cost": "800",
   "availability": "2",
   "game_notes": "Internal computer and analysis program package found in many of the better astromech units, including Industrial Automaton R2-series and the VI-series pilot droids. Performs over 10,000 MPF operations per second, and supports sophisticated analysis programs including lifeform identification subroutines (LFIs) and many low-level scanner tasks. Primarily valued as part of an astromech for its ability to scan technical files, pinpoint potential problems, find data patterns, and debug computer code. Removed from its host droid, an independent Intellex IV becomes a slicer's tool — a character can use one as a portable slicing aid when entering restricted systems or files (gamemaster determines computer programming/repair difficulties for the target). Removing an Intellex IV from a non-cooperative astromech droid requires a Moderate droid repair roll and takes about half an hour; cooperative astromech allies will often perform the operation themselves on request. The same trick works with the Intellex V or VI but every difficulty is raised one level. Agent Shaparo's R2-Q8 supplied an Intellex IV that broke into the Dnalvec garrison's prisoner files on Sriluur during the rescue of captured Alliance personnel.",
@@ -5874,18 +5866,9 @@ const EQUIPMENT_DATA = [
   "source": "WEG41013 Star Wars Adventure Journal #13 (Special Ops: Shipjackers)"
  }
  ,{
-  "name": "VoiceBox",
-  "type": "BothiCorp VoiceBox Speech Pattern Duplicator",
-  "category": "Tools",
-  "cost": "5,000",
-  "availability": "X",
-  "game_notes": "Voice lock buster. Modern voice-activated security systems process accent, inflection, tone, stress, and many other voice pattern characteristics for encryption — super-encryption and multi-sensors make these locks difficult to defeat. The VoiceBox is plugged into a lock's wiring where it searches the memory for the voice authentication files; the unit then fools the lock by encrypting the user's voice patterns with a copy of the authentication files. A successful Security skill roll against the lock's difficulty rating is required for success. Standard equipment for Rebel Alliance Special Ops shipjacking teams.",
-  "source": "WEG41013 Star Wars Adventure Journal #13 (Special Ops: Shipjackers)"
- }
- ,{
   "name": "Scomp-Spiker",
   "type": "Custom-built Outlaw Tech Computer Spiker",
-  "category": "Tools",
+  "category": "Security",
   "cost": "20 (in spare parts)",
   "availability": "X",
   "game_notes": "Outlaw-tech computer wrecker consisting of a charge capacitor, scomp link, power jack, and a remote control. Plugged first into the scomp link, then into the power jack to prevent blowout. After charging, the unit sends a high-voltage blast into the computer system, melting connections and destroying programs along its course. The device is not selective — it is designed to destroy computer components or, at minimum, render the sub-station where it is used inoperable. Common gear for shipjacker teams who need to crater a security computer rather than slice it.",
@@ -6399,7 +6382,7 @@ const EQUIPMENT_DATA = [
  {
   "name": "Power Pitons",
   "type": "MTS-56T Power Piton",
-  "category": "Tools",
+  "category": "Climbing Gear",
   "cost": "300",
   "availability": "2",
   "game_notes": "Set of 4 climbing aids (2 hand discs, 2 foot ovals). Two settings: magnetic (for metallic surfaces) and vibro (generates vibrosharp projections for rock, wood, durocrete). Using all 4 pitons with an Easy Dexterity roll adds +2D to climbing rolls. Using only 2 (hand or foot only) grants +1D. Originally designed for mountaineers; popular with fringers for catburgling and emergency escape routes.",
