@@ -2635,7 +2635,10 @@ color:var(--text-dim);min-width:35px;text-align:right;
           <label style="display:flex;flex-direction:column;gap:3px"><span class="pc-field-lbl">ATTACK DICE <span style="color:var(--text-dark)">(weapon)</span></span><select id="pcDmgDice" class="pc-dice-sel"></select></label>
           <label style="display:flex;flex-direction:column;gap:3px"><span class="pc-field-lbl">SOAK DICE <span style="color:var(--text-dark)">(STR+armor)</span></span><select id="pcResDice" class="pc-dice-sel"></select></label>
         </div>
-        <label style="display:flex;flex-direction:column;gap:3px;margin-bottom:10px"><span class="pc-field-lbl">ARMOR / GEAR NOTES</span><input type="text" id="pcArmor" placeholder="e.g. Combat vest +1D phys / +2 energy" class="pc-field"></label>
+        <div style="margin-bottom:10px">
+          <div class="pc-field-lbl" style="margin-bottom:4px">EQUIPMENT <span style="color:var(--text-dark);font-weight:400;font-size:9px;margin-left:4px">18 slots — pick the header to leave a slot blank</span></div>
+          <div id="pcEquipGrid" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px"></div>
+        </div>
 
         <!-- CHARACTER POINTS / FORCE -->
         <div style="font-family:'Exo 2',monospace;font-size:9px;color:var(--gold);letter-spacing:1.5px;margin:12px 0 6px;padding-bottom:3px;border-bottom:1px solid var(--card-border)">⟐ POINTS &amp; FORCE</div>
@@ -8676,13 +8679,9 @@ function renderRolledNpcSnapshot(pin) {
 
   let out = '';
 
-  // Fluff block — only show "Armor / Gear" for PCs (rolled NPCs list the
-  // same info in the Equipment block below, so it'd be redundant).
-  const isPc = pin.type === 'player-character';
   const fluff = [
     row('Player', n.player), row('Sex', n.sex), row('Height', n.height),
     row('Move', n.move), row('Credits', n.credits),
-    isPc ? row('Armor / Gear', n.armor) : '',
     row('Force Sensitive', n.forceSensitive),
     row('Force Points', n.forcePoints), row('Character Points', n.charPoints)
   ].filter(Boolean).join('');
@@ -8876,6 +8875,65 @@ function pcDiceOptions() {
   }
   return out;
 }
+// ------------------------------------------------------------------
+// PC equipment grid (18 typed slots, 3×6 dropdown grid).
+// Each slot's options come from NPC_DATA[slotKey] — picking the header
+// row leaves that slot blank. Data is stored on the pin under the same
+// keys rolled NPCs use (weapon1, armor, saber, sec1, etc.), so the
+// snapshot renderer works for both PCs and rolled NPCs.
+// ------------------------------------------------------------------
+const NPC_EQUIP_SLOTS = [
+  {key:'weapon1',  label:'Weapon 1'},
+  {key:'weapon2',  label:'Weapon 2'},
+  {key:'weapon3',  label:'Weapon 3'},
+  {key:'melee',    label:'Melee'},
+  {key:'armor',    label:'Armor'},
+  {key:'shield',   label:'Shield'},
+  {key:'camo',     label:'Camo'},
+  {key:'saber',    label:'Lightsaber'},
+  {key:'comms',    label:'Comms'},
+  {key:'jetpack',  label:'Jet Pack'},
+  {key:'med',      label:'Medical'},
+  {key:'booster',  label:'Booster'},
+  {key:'tools',    label:'Tools'},
+  {key:'survival', label:'Survival'},
+  {key:'surveil1', label:'Surveil 1'},
+  {key:'surveil2', label:'Surveil 2'},
+  {key:'sec1',     label:'Security 1'},
+  {key:'sec2',     label:'Security 2'}
+];
+function pcPopulateEquipGrid(data) {
+  const grid = document.getElementById('pcEquipGrid');
+  if (!grid) return;
+  const d = data || {};
+  let html = '';
+  NPC_EQUIP_SLOTS.forEach(slot => {
+    const items = (typeof NPC_DATA !== 'undefined' && Array.isArray(NPC_DATA[slot.key])) ? NPC_DATA[slot.key] : [];
+    const current = d[slot.key] && d[slot.key] !== '--' ? String(d[slot.key]) : '';
+    // Include the current value even if not in NPC_DATA (preserve legacy/free-text values).
+    const hasCurrent = current && !items.includes(current);
+    let opts = '<option value="">— ' + slot.label + ' —</option>';
+    if (hasCurrent) opts += '<option value="' + escapeHtml(current) + '" selected>' + escapeHtml(current) + '</option>';
+    items.forEach(item => {
+      const sel = (item === current) ? ' selected' : '';
+      opts += '<option value="' + escapeHtml(item) + '"' + sel + '>' + escapeHtml(item) + '</option>';
+    });
+    html += '<label style="display:flex;flex-direction:column;gap:2px;min-width:0">'
+         +  '<span class="pc-field-lbl" style="font-size:8px">' + slot.label.toUpperCase() + '</span>'
+         +  '<select id="pcEquip_' + slot.key + '" class="pc-field" style="font-size:11px;padding:5px 6px">' + opts + '</select>'
+         +  '</label>';
+  });
+  grid.innerHTML = html;
+}
+function pcCollectEquipSlots() {
+  const out = {};
+  NPC_EQUIP_SLOTS.forEach(slot => {
+    const el = document.getElementById('pcEquip_' + slot.key);
+    if (el && el.value) out[slot.key] = el.value;
+  });
+  return out;
+}
+
 function pcPopulateDiceSelect(el, selected) {
   if (!el) return;
   const opts = pcDiceOptions();
@@ -9146,7 +9204,7 @@ function showAddPlayerCharacter() {
   pcSkillsDraft = [];
   pcPowersDraft = [];
   document.getElementById('addPcTitle').textContent = 'ADD PLAYER CHARACTER';
-  ['pcName','pcPlayer','pcSpecies','pcRole','pcArmor','pcNotes'].forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; });
+  ['pcName','pcPlayer','pcSpecies','pcRole','pcNotes'].forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; });
   document.getElementById('pcCharPoints').value = 5;
   document.getElementById('pcForcePoints').value = 1;
   document.getElementById('pcForceSensitive').checked = false;
@@ -9154,6 +9212,7 @@ function showAddPlayerCharacter() {
   pcPopulateAllDiceSelects();
   pcPopulateSkillSelect();
   pcPopulatePowerSelect();
+  pcPopulateEquipGrid({});
   renderPcSkillList();
   renderPcPowerList();
   document.getElementById('addPcModal').style.display = 'flex';
@@ -9283,7 +9342,7 @@ function copyNotableNpcToCustom(pinId) {
   });
   document.getElementById('pcDmgDice').value = data.dmgDice;
   document.getElementById('pcResDice').value = data.resDice;
-  document.getElementById('pcArmor').value = data.armor;
+  pcPopulateEquipGrid(data);
   document.getElementById('pcCharPoints').value = data.charPoints;
   document.getElementById('pcForcePoints').value = data.forcePoints;
   document.getElementById('pcForceSensitive').checked = data.forceSensitive === 'Yes';
@@ -9340,7 +9399,7 @@ function editCharacterInForm(type, id) {
   // Combat
   if (d.dmgDice) document.getElementById('pcDmgDice').value = d.dmgDice;
   if (d.resDice) document.getElementById('pcResDice').value = d.resDice;
-  document.getElementById('pcArmor').value = d.armor || '';
+  pcPopulateEquipGrid(d);
   // Points
   document.getElementById('pcCharPoints').value = d.charPoints != null ? d.charPoints : 5;
   document.getElementById('pcForcePoints').value = d.forcePoints != null ? d.forcePoints : 1;
@@ -9373,7 +9432,7 @@ function savePlayerCharacter() {
     tec: document.getElementById('pcTec').value,
     dmgDice: document.getElementById('pcDmgDice').value,
     resDice: document.getElementById('pcResDice').value,
-    armor: document.getElementById('pcArmor').value.trim(),
+    ...pcCollectEquipSlots(),
     charPoints: parseInt(document.getElementById('pcCharPoints').value, 10) || 0,
     forcePoints: parseInt(document.getElementById('pcForcePoints').value, 10) || 0,
     forceSensitive: forceOn ? 'Yes' : 'No',
