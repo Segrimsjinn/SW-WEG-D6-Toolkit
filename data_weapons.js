@@ -2309,18 +2309,6 @@ const WEAPONS_DATA = [
   "source": "Arms and Equipment Guide (page 19)"
  },
  {
-  "name": "DDC Defender",
-  "category": "Sporting Blasters",
-  "skill": "Blaster: sporting blaster",
-  "cost": "350",
-  "availability": "1, F",
-  "damage": "3D+1",
-  "range": "3-10/30/60",
-  "ammo": "50",
-  "game_notes": "",
-  "source": "Rulebook (page 229)"
- },
- {
   "name": "KYD-21",
   "category": "Sporting Blasters",
   "skill": "Blaster: sporting blaster",
@@ -2331,30 +2319,6 @@ const WEAPONS_DATA = [
   "ammo": "75",
   "game_notes": "Improved silencer: +2D to difficulty to notice shot fired.",
   "source": ""
- },
- {
-  "name": "Luxan Penetrator MB450",
-  "category": "Sporting Blasters",
-  "skill": "Blaster: sporting blaster",
-  "cost": "600",
-  "availability": "4, F or R",
-  "damage": "5D",
-  "range": "5-20/40/60",
-  "ammo": "100",
-  "game_notes": "+1 level to blaster difficulties due to focused beam precision.",
-  "source": "Galladinium's Fantastic Technology (pages 70-71)"
- },
- {
-  "name": "Merr-Sonn Quick-Six",
-  "category": "Sporting Blasters",
-  "skill": "Blaster: sporting blaster",
-  "cost": "325",
-  "availability": "1, F",
-  "damage": "3D+2",
-  "range": "3-10/25/50",
-  "ammo": "50",
-  "game_notes": "",
-  "source": "Rebel Alliance Sourcebook (pages 99-100)"
  },
  {
   "name": "SoroSuub X-30 Lancer",
@@ -3314,7 +3278,7 @@ const WEAPONS_DATA = [
   "range": "5-20/40/60",
   "ammo": "100",
   "game_notes": "Fire Rate 1. Body 1D. Tiny blaster with precision galven circuits focusing beam into highly concentrated blast. Increase normal blaster difficulties by one level due to precise targeting needed. Punch far out of proportion to its size.",
-  "source": "WEG40025 Galladinium's Fantastic Technology p.70"
+  "source": "WEG40025 Galladinium's Fantastic Technology p.70-71"
  },
  {
   "name": "Merr-Sonn Intimidator IR-5",
@@ -3659,10 +3623,10 @@ const WEAPONS_DATA = [
   "cost": "350",
   "availability": "1, F",
   "damage": "3D+1",
-  "range": "",
-  "ammo": "",
+  "range": "3-10/30/60",
+  "ammo": "50",
   "game_notes": "",
-  "source": "WEG40025 Galladinium's Fantastic Technology p.82"
+  "source": "WEG40025 Galladinium's Fantastic Technology p.82; Core Rulebook p.229"
  },
  {
   "name": "Merr-Sonn Quick 6",
@@ -3671,10 +3635,10 @@ const WEAPONS_DATA = [
   "cost": "325",
   "availability": "2, R",
   "damage": "3D+2",
-  "range": "",
-  "ammo": "",
+  "range": "3-10/25/50",
+  "ammo": "50",
   "game_notes": "",
-  "source": "WEG40025 Galladinium's Fantastic Technology p.82"
+  "source": "WEG40025 Galladinium's Fantastic Technology p.82; WEG40070 Rebel Alliance Sourcebook p.99-100"
  },
  {
   "name": "Elmainin Armaments SBP-200",
