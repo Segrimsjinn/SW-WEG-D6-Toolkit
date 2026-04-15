@@ -8820,10 +8820,17 @@ function pcUpdatePrereqWarning() {
   });
   // For every selected power, find prereqs not in the set
   const missing = [];
+  const darkSideChainPowers = [];
   pcPowersDraft.forEach(p => {
     const entry = POWERS_DATA.find(x => x.name.replace(/^\d+\.\s*/, '') === p.name);
     if (!entry || !entry.prereq) return;
-    const prereqIds = entry.prereq.split(',').map(s => s.trim()).filter(Boolean);
+    const rawPrereq = entry.prereq;
+    // Some entries use a "DS " prefix on the first ID to denote that acquiring
+    // the whole chain requires Dark Side path/points. The prefix isn't part of
+    // a power ID — strip it and surface the Dark Side note separately.
+    const hasDarkSideNote = /\bDS\b/i.test(rawPrereq);
+    if (hasDarkSideNote) darkSideChainPowers.push(p.name);
+    const prereqIds = rawPrereq.split(',').map(s => s.replace(/[^\d]/g, '').trim()).filter(Boolean);
     prereqIds.forEach(pid => {
       const norm = pid.replace(/^0+/, '') || '0';
       if (!selectedIds.has(norm)) {
@@ -8833,11 +8840,6 @@ function pcUpdatePrereqWarning() {
       }
     });
   });
-  if (!missing.length) {
-    warnEl.style.display = 'none';
-    warnEl.textContent = '';
-    return;
-  }
   // Group missing prereqs — dedupe so the warning is compact
   const seen = new Set();
   const lines = [];
@@ -8847,7 +8849,16 @@ function pcUpdatePrereqWarning() {
     seen.add(key);
     lines.push('<span style="color:var(--text)">' + escapeHtml(m.power) + '</span> needs <span style="color:var(--text)">' + escapeHtml(m.needs) + '</span> (#' + escapeHtml(m.id) + ')');
   });
-  warnEl.innerHTML = '⚠ Missing prereq' + (lines.length > 1 ? 's' : '') + ': ' + lines.join(' · ');
+  const darkNote = darkSideChainPowers.length
+    ? '<div style="color:#ff9a9a;margin-top:3px">⚠ Dark Side chain: ' + escapeHtml([...new Set(darkSideChainPowers)].join(', ')) + ' — requires Dark Side Points / path</div>'
+    : '';
+  if (!lines.length && !darkNote) {
+    warnEl.style.display = 'none';
+    warnEl.innerHTML = '';
+    return;
+  }
+  const prereqLine = lines.length ? '⚠ Missing prereq' + (lines.length > 1 ? 's' : '') + ': ' + lines.join(' · ') : '';
+  warnEl.innerHTML = prereqLine + darkNote;
   warnEl.style.display = 'block';
 }
 
