@@ -714,12 +714,12 @@ color:var(--text-dim);min-width:35px;text-align:right;
       <div class="jump-to-menu" id="npcJumpToMenu">
         <div class="jump-pills">
           <button class="jump-pill" onclick="jumpTo('npc-generator')">Generate NPC</button>
-          <button class="jump-pill" onclick="jumpTo('forceCard')">Force</button>
-          <button class="jump-pill" onclick="jumpTo('skillsCard')">Skills</button>
-          <button class="jump-pill" onclick="jumpTo('npc-equip-rolled')">Equipment</button>
+          <button class="jump-pill" onclick="jumpTo('forceCard')">Force - NPC</button>
+          <button class="jump-pill" onclick="jumpTo('skillsCard')">Skills - NPC</button>
+          <button class="jump-pill" onclick="jumpTo('npc-equip-rolled')">Equipment - NPC</button>
           <button class="jump-pill" onclick="jumpTo('gm-aliengen')">Alien Gen</button>
           <button class="jump-pill" onclick="jumpTo('gm-creaturegen')">Creature Gen</button>
-          <button class="jump-pill" style="color:#64b5f6;border-color:#64b5f688" onclick="jumpTo('gm-force')">Force Reference</button>
+          <button class="jump-pill" style="color:#64b5f6;border-color:#64b5f688" onclick="jumpTo('gm-force')">Force Powers</button>
           <button class="jump-pill" onclick="jumpTo('npc-weapons')">Weapons</button>
           <button class="jump-pill" onclick="jumpTo('npc-equipment')">Equipment Lookup</button>
           <button class="jump-pill" onclick="jumpTo('npc-creatures')">Creatures</button>
@@ -1092,9 +1092,9 @@ color:var(--text-dim);min-width:35px;text-align:right;
       <div class="jump-to-menu">
         <div class="jump-pills">
           <button class="jump-pill" onclick="jumpTo('travel-calc')">Travel Calculator</button>
-          <button class="jump-pill" onclick="jumpTo('travel-summary')">Route Summary</button>
-          <button class="jump-pill" onclick="jumpTo('travel-path')">Route Path</button>
-          <button class="jump-pill" onclick="jumpTo('travel-map')">Route Map</button>
+          <button class="jump-pill" onclick="jumpTo('travel-summary')">Route Summary - Plotted</button>
+          <button class="jump-pill" onclick="jumpTo('travel-path')">Route Path - Plotted</button>
+          <button class="jump-pill" onclick="jumpTo('travel-map')">Route Map - Plotted</button>
           <button class="jump-pill" onclick="jumpTo('travel-ref')">Quick Reference</button>
         </div>
       </div>
@@ -3025,9 +3025,9 @@ function openHowTo() {
 const NAV_CARDS = [
   // NPC — Generators
   {id:'npc-generator', label:'Generate NPC', tab:'npc', subtab:'generators', group:'NPC · Generators'},
-  {id:'forceCard', label:'Force (rolled)', tab:'npc', subtab:'generators', fallback:'npc-generator', group:'NPC · Generators'},
-  {id:'skillsCard', label:'Skills (rolled)', tab:'npc', subtab:'generators', fallback:'npc-generator', group:'NPC · Generators'},
-  {id:'npc-equip-rolled', label:'Equipment (rolled)', tab:'npc', subtab:'generators', fallback:'npc-generator', group:'NPC · Generators'},
+  {id:'forceCard', label:'Force - NPC', tab:'npc', subtab:'generators', fallback:'npc-generator', group:'NPC · Generators'},
+  {id:'skillsCard', label:'Skills - NPC', tab:'npc', subtab:'generators', fallback:'npc-generator', group:'NPC · Generators'},
+  {id:'npc-equip-rolled', label:'Equipment - NPC', tab:'npc', subtab:'generators', fallback:'npc-generator', group:'NPC · Generators'},
   {id:'gm-aliengen', label:'Random Alien Generator', tab:'npc', subtab:'generators', group:'NPC · Generators'},
   {id:'gm-creaturegen', label:'Random Creature Generator', tab:'npc', subtab:'generators', group:'NPC · Generators'},
   // NPC — Lookups
@@ -3037,9 +3037,9 @@ const NAV_CARDS = [
   {id:'npc-notable', label:'Notable NPC Lookup', tab:'npc', subtab:'lookups', group:'NPC · Lookups'},
   // Travel
   {id:'travel-calc', label:'Hyperspace Travel Calculator', tab:'travel', group:'Travel'},
-  {id:'travel-summary', label:'Route Summary', tab:'travel', fallback:'travel-calc', group:'Travel'},
-  {id:'travel-path', label:'Route Path', tab:'travel', fallback:'travel-calc', group:'Travel'},
-  {id:'travel-map', label:'Route Map', tab:'travel', fallback:'travel-calc', group:'Travel'},
+  {id:'travel-summary', label:'Route Summary - Plotted', tab:'travel', fallback:'travel-calc', group:'Travel'},
+  {id:'travel-path', label:'Route Path - Plotted', tab:'travel', fallback:'travel-calc', group:'Travel'},
+  {id:'travel-map', label:'Route Map - Plotted', tab:'travel', fallback:'travel-calc', group:'Travel'},
   {id:'travel-ref', label:'Astrogation Quick Reference', tab:'travel', group:'Travel'},
   // Ships
   {id:'ships-database', label:'Starship Database', tab:'ships', group:'Ships'},
