@@ -681,7 +681,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Restraining Bolt",
-  "category": "Droid Gear",
+  "category": "Security",
   "cost": "25",
   "availability": "1",
   "game_notes": "Restricts droid actions and prevents leaving a set area. Droid must make Heroic willpower roll to resist commands while bolted.",
@@ -2617,7 +2617,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Vewas PVC-800 Personal Vehicle Coordinator",
-  "category": "Vehicle Accessories",
+  "category": "Electronics",
   "cost": "1,200",
   "availability": "",
   "game_notes": "Model: Vewas Data Controllers PVC-800. Limited to vehicles under 10m long and under 10 metric tons. Projects data readouts on windshield — speed, course, angle of inclination with coded visual and aural warnings. Adds +1D to vehicle operation skill under normal situations. In emergencies, if programmed by owner, PVC automatically makes evasive maneuvers (+2D to operation roll to avoid collision — but prevents unsafe maneuvers).",
@@ -2625,7 +2625,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Bespin Motors Remote DVI Activator",
-  "category": "Vehicle Accessories",
+  "category": "Electronics",
   "cost": "500 (speeders), 2,500 (starfighter scale starships)",
   "availability": "2",
   "game_notes": "Hand-held remote activation controller. Range 2km. Instructs vehicle's droid brain to begin normal ignition and pre-flight safety checks. Pre-flight takes 20 seconds (some speeders) to 5+ minutes (some starships). User must still pilot manually.",
@@ -2753,7 +2753,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Industrial Automaton R-Series Voice Box Adaptor",
-  "category": "Droid Gear",
+  "category": "Droid Hardware",
   "cost": "250 (language programs 25-100 each)",
   "availability": "",
   "game_notes": "Attaches to R1-R5 series astromech droids. Reprograms droid with chosen language (Basic, Bocce, Rodian, Wookiee, etc.). Adjustable pitch, intonation and speech patterns. Installation: Moderate droid repair, 15 min. Removal: Easy droid repair, 15 min (failed roll = 3D stun to droid + one random skill eliminated). Can cause operation problems (on mishap, skill attempt fails or -2D penalty). Can only fit in specially refitted droid couplings on X-wings/Y-wings, or must be mounted externally (e.g. on droid's head). If damaged or ripped off: 3D stun damage to droid.",
@@ -3321,7 +3321,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Cybersoft Neural Control Collar",
-  "category": "Hunting & Trapping",
+  "category": "Security",
   "cost": "600 (collar + basic computer), 300 (collar only), 1,000 (multi-collar computer)",
   "availability": "2, R",
   "game_notes": "Animal control device overriding voluntary muscles via nervous system attack (7D stun, resisted by target's Strength). Must be fitted around the neck. Two parts: armored collar with lock (6-digit combination, simple power cell) and control computer (wrist-mounted bracelet, central computer, or droid modification). Computer has keypad and 400-word instruction memory. Central computer controls up to 50 collars; remote range 5km. Collar moved out of range forces wearer to return and inflicts 6D pain damage. Droids and lifeforms without central nervous system are immune. Outlawed on many planets, especially Core Worlds.",
@@ -5319,7 +5319,7 @@ const EQUIPMENT_DATA = [
   "source": "WEG40143 Pirates & Privateers p.47"
  },
  {
-  "category": "Clothing",
+  "category": "Electronics",
   "name": "Shipsuit",
   "type": "Ayelic/Krongbing Textiles Shipsuit",
   "cost": "200",
@@ -6327,7 +6327,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Exocron Repulsorlift Personal Jump Pack (Cloud Jumper)",
-  "category": "Personal Gear",
+  "category": "Jet Packs",
   "type": "Exocron Airfleet cloud-jumper repulsorlift pack",
   "cost": "Not available for sale",
   "availability": "3, R",
@@ -6345,7 +6345,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "The Codex",
-  "category": "Exotic",
+  "category": "Artifacts",
   "type": "Ancient DarkStryder Force artifact",
   "cost": "Not for sale (unique)",
   "availability": "Unique",
@@ -6363,7 +6363,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "DarkStryder Mindwarper Module",
-  "category": "Exotic",
+  "category": "Artifacts",
   "type": "DarkStryder artifact — area-effect incapacitant",
   "cost": "Not available for sale",
   "availability": "4",
@@ -6372,7 +6372,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "DarkStryder Lightning Module",
-  "category": "Exotic",
+  "category": "Artifacts",
   "type": "DarkStryder artifact — lightning bolt weapon",
   "cost": "Not available for sale",
   "availability": "4",
@@ -6381,7 +6381,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "DarkStryder Firespray Module",
-  "category": "Exotic",
+  "category": "Artifacts",
   "type": "DarkStryder artifact — burning flame weapon",
   "cost": "Not available for sale",
   "availability": "4",
