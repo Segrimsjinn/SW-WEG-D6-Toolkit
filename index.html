@@ -8679,6 +8679,28 @@ function pinBuiltShip() {
   });
 }
 
+// Scan an NPC's weapon slots for dice notation and return the strongest damage found,
+// e.g. "Naboo Royal Pistol-L 3D+1 (3-10/20/30)" -> "3D+1". Returns null if no match.
+function pickBestWeaponDice(n) {
+  const slots = [n.weapon1, n.weapon2, n.weapon3, n.melee, n.saber].filter(s => s && s !== '--');
+  let best = null;
+  let bestPips = -1;
+  slots.forEach(str => {
+    // Match any "<digits>D(+digits)?" in the string. Skip things like "Str+1D" by preferring
+    // standalone dice values — we grab every match and let the max win.
+    const re = /(\d+)D(?:\+(\d+))?/gi;
+    let m;
+    while ((m = re.exec(str)) !== null) {
+      const pips = (parseInt(m[1], 10) || 0) * 3 + (parseInt(m[2] || '0', 10) || 0);
+      if (pips > bestPips) {
+        bestPips = pips;
+        best = m[2] ? (m[1] + 'D+' + m[2]) : (m[1] + 'D');
+      }
+    }
+  });
+  return best;
+}
+
 // Snapshot the current rolled NPC into the corkboard — deep-clone the full npc state
 function pinCurrentNpc() {
   if (typeof npc !== 'object' || !npc || !npc.firstName) {
@@ -8692,8 +8714,8 @@ function pinCurrentNpc() {
   let snapshot;
   try { snapshot = JSON.parse(JSON.stringify(npc)); }
   catch(e) { snapshot = Object.assign({}, npc); }
-  // Tracker uses DEX for attack dice and STR for soak
-  snapshot.dmgDice = npc.dex || '4D';
+  // Tracker uses highest weapon damage for attack and STR for soak; fall back to DEX/STR
+  snapshot.dmgDice = pickBestWeaponDice(npc) || npc.dex || '4D';
   snapshot.resDice = npc.str || '3D';
   corkboardAdd({ type: 'random-npc', id: id, title: fullName || 'Unnamed NPC', subtitle: subtitle, data: snapshot });
   // Flash the button to confirm
