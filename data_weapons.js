@@ -1264,12 +1264,12 @@ const WEAPONS_DATA = [
   "category": "Heavy Blaster Pistols",
   "skill": "Blaster: heavy blaster pistol",
   "cost": "750",
-  "availability": "1, F/R/X",
+  "availability": "2, R or X",
   "damage": "4D+2",
   "range": "3-7/25/50",
   "ammo": "25",
   "game_notes": "",
-  "source": "Rebel Alliance Sourcebook (pages 99-100)"
+  "source": "WEG40025 Galladinium's Fantastic Technology p.83; WEG40070 Rebel Alliance Sourcebook p.99-100"
  },
  {
   "name": "SoroSuub \"Renegade\"",
@@ -3911,18 +3911,6 @@ const WEAPONS_DATA = [
   "cost": "550",
   "availability": "1, F or R",
   "damage": "4D+1",
-  "range": "",
-  "ammo": "",
-  "game_notes": "",
-  "source": "WEG40025 Galladinium's Fantastic Technology p.83"
- },
- {
-  "name": "Merr-Sonn Flash 4",
-  "category": "Heavy Blaster Pistols",
-  "skill": "Blaster: heavy blaster pistol",
-  "cost": "750",
-  "availability": "2, R or X",
-  "damage": "4D+2",
   "range": "",
   "ammo": "",
   "game_notes": "",
