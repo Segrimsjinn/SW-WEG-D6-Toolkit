@@ -8902,22 +8902,45 @@ const NPC_EQUIP_SLOTS = [
   {key:'sec1',     label:'Security 1'},
   {key:'sec2',     label:'Security 2'}
 ];
+// Pull droid-component labels from EQUIPMENT_DATA (Droid Hardware +
+// Droid TraitWare). Any droid component can be installed in any slot,
+// so these get appended to every slot's dropdown under an <optgroup>.
+function collectDroidComponents() {
+  if (typeof EQUIPMENT_DATA === 'undefined' || !Array.isArray(EQUIPMENT_DATA)) return [];
+  const droidCats = ['Droid Hardware', 'Droid TraitWare'];
+  const names = EQUIPMENT_DATA.filter(e => droidCats.includes(e.category)).map(e => e.name).filter(Boolean);
+  return [...new Set(names)].sort();
+}
 function pcPopulateEquipGrid(data) {
   const grid = document.getElementById('pcEquipGrid');
   if (!grid) return;
   const d = data || {};
+  const droidComponents = collectDroidComponents();
   let html = '';
   NPC_EQUIP_SLOTS.forEach(slot => {
     const items = (typeof NPC_DATA !== 'undefined' && Array.isArray(NPC_DATA[slot.key])) ? NPC_DATA[slot.key] : [];
     const current = d[slot.key] && d[slot.key] !== '--' ? String(d[slot.key]) : '';
-    // Include the current value even if not in NPC_DATA (preserve legacy/free-text values).
-    const hasCurrent = current && !items.includes(current);
+    const inStandard = items.includes(current);
+    const inDroid = droidComponents.includes(current);
+    const hasCurrent = current && !inStandard && !inDroid; // preserve legacy/free-text values
     let opts = '<option value="">— ' + slot.label + ' —</option>';
     if (hasCurrent) opts += '<option value="' + escapeHtml(current) + '" selected>' + escapeHtml(current) + '</option>';
-    items.forEach(item => {
-      const sel = (item === current) ? ' selected' : '';
-      opts += '<option value="' + escapeHtml(item) + '"' + sel + '>' + escapeHtml(item) + '</option>';
-    });
+    if (items.length) {
+      opts += '<optgroup label="' + escapeHtml(slot.label) + '">';
+      items.forEach(item => {
+        const sel = (item === current) ? ' selected' : '';
+        opts += '<option value="' + escapeHtml(item) + '"' + sel + '>' + escapeHtml(item) + '</option>';
+      });
+      opts += '</optgroup>';
+    }
+    if (droidComponents.length) {
+      opts += '<optgroup label="Droid Components">';
+      droidComponents.forEach(item => {
+        const sel = (item === current) ? ' selected' : '';
+        opts += '<option value="' + escapeHtml(item) + '"' + sel + '>' + escapeHtml(item) + '</option>';
+      });
+      opts += '</optgroup>';
+    }
     html += '<label style="display:flex;flex-direction:column;gap:2px;min-width:0">'
          +  '<span class="pc-field-lbl" style="font-size:8px">' + slot.label.toUpperCase() + '</span>'
          +  '<select id="pcEquip_' + slot.key + '" class="pc-field" style="font-size:11px;padding:5px 6px">' + opts + '</select>'
