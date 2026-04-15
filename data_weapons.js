@@ -5503,7 +5503,7 @@ const WEAPONS_DATA = [
  {
   "name": "Droid Disabler",
   "type": "Felehreck Electrical Defense Systems Droid Disabler",
-  "category": "Blaster Pistols",
+  "category": "Ion Weapons",
   "scale": "Character",
   "skill": "Blaster",
   "cost": "2,700 (25 per power pack)",
