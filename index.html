@@ -8295,6 +8295,8 @@ function renderCorkboardCard(pin) {
     actions += '<button class="cb-btn" onclick="editPlayerCharacter(\'' + idAttr.replace(/'/g, "\\'") + '\')">✎ EDIT</button>';
   } else if (pin.type === 'random-npc') {
     actions += '<button class="cb-btn" onclick="editRolledNpc(\'' + idAttr.replace(/'/g, "\\'") + '\')">✎ EDIT</button>';
+  } else if (pin.type === 'notable-npc') {
+    actions += '<button class="cb-btn" onclick="copyNotableNpcToCustom(\'' + idAttr.replace(/'/g, "\\'") + '\')" title="Save an editable copy as a Player Character">📋 SAVE A COPY</button>';
   }
   actions += '<button class="cb-btn cb-btn-remove" onclick="corkboardRemove(\'' + pin.type + '\', \'' + idAttr.replace(/'/g, "\\'") + '\')">✕ REMOVE</button>';
   return '<div class="cb-card ' + cls + '">' +
@@ -8809,6 +8811,133 @@ function hideAddPlayerCharacter() {
 }
 function editRolledNpc(id) {
   editCharacterInForm('random-npc', id);
+}
+
+// Convert a NOTABLE_NPCS entry to the PC-form data shape so the user can
+// tweak and save it as their own Player Character pin.
+function copyNotableNpcToCustom(pinId) {
+  const pin = corkboardPins.find(p => p.type === 'notable-npc' && p.id === pinId);
+  if (!pin) { alert('Pin not found.'); return; }
+  if (typeof NOTABLE_NPCS === 'undefined') { alert('Notable NPC data not loaded.'); return; }
+  const src = NOTABLE_NPCS.find(n => n.name === pin.id);
+  if (!src) { alert('Could not find the original NPC data. The sourcebook entry may have been renamed.'); return; }
+
+  const suggestedName = src.name.replace(/\s*\([^)]*\)\s*$/, '').trim() + ' (Custom)';
+  const newName = prompt('Name for your copy of this character:', suggestedName);
+  if (newName === null) return;
+  const trimmed = newName.trim();
+  if (!trimmed) { alert('Name is required.'); return; }
+
+  // Build the PC data shape from the sourcebook stats
+  const ATTR_MAP = { DEXTERITY: 'Dex', KNOWLEDGE: 'Kno', MECHANICAL: 'Mec', PERCEPTION: 'Per', STRENGTH: 'Str', TECHNICAL: 'Tec' };
+  const ATTR_LOWER = { DEXTERITY: 'dex', KNOWLEDGE: 'kno', MECHANICAL: 'mec', PERCEPTION: 'per', STRENGTH: 'str', TECHNICAL: 'tec' };
+  // Build a lookup: lowercase skill name → canonical { name, attr }
+  const skillLookup = {};
+  if (typeof SKILLS_DATA !== 'undefined' && SKILLS_DATA.skills) {
+    SKILLS_DATA.skills.forEach(s => { skillLookup[s.name.toLowerCase()] = s; });
+  }
+
+  const data = {
+    player: '', species: src.species || '', role: src.role || src.type || '',
+    dex: '', kno: '', mec: '', per: '', str: '', tec: '',
+    dmgDice: '4D', resDice: '3D',
+    armor: src.equipment || '',
+    charPoints: src.characterPoints != null ? src.characterPoints : 5,
+    forcePoints: src.forcePoints != null ? src.forcePoints : 1,
+    forceSensitive: (src.forcePoints && src.forcePoints >= 3) ? 'Yes' : 'No',
+    forceControl: '', forceSense: '', forceAlter: '',
+    notes: src.capsule || '',
+    skills: []
+  };
+
+  // Attributes + skills
+  const skillsMap = {}; // key: base skill name lowercase → { name, attr, dice, specs }
+  if (src.stats) {
+    Object.keys(src.stats).forEach(attrKey => {
+      const attrLower = ATTR_LOWER[attrKey];
+      const attrShort = ATTR_MAP[attrKey];
+      if (!attrLower || !attrShort) return;
+      const block = src.stats[attrKey] || {};
+      if (block.base) data[attrLower] = block.base;
+      const skills = block.skills || {};
+      Object.keys(skills).forEach(rawName => {
+        const dice = skills[rawName];
+        // Split specializations: "business: starships" or "scholar: Jedi lore"
+        const colonIdx = rawName.indexOf(':');
+        let baseName, specName;
+        if (colonIdx > 0) {
+          baseName = rawName.slice(0, colonIdx).trim();
+          specName = rawName.slice(colonIdx + 1).trim();
+        } else {
+          baseName = rawName.trim();
+        }
+        const canonical = skillLookup[baseName.toLowerCase()];
+        const displayName = canonical ? canonical.name : titleCaseName(baseName);
+        const resolvedAttr = canonical ? canonical.attr : attrShort;
+        const key = displayName.toLowerCase();
+        if (!skillsMap[key]) {
+          skillsMap[key] = { name: displayName, attr: resolvedAttr, dice: specName ? dice : dice, specs: [] };
+          // If this entry was originally a specialization (no base version seen yet),
+          // initialize the parent dice from the attribute base as a placeholder.
+          if (specName) skillsMap[key].dice = data[ATTR_LOWER[attrKey === 'DEXTERITY' ? 'DEXTERITY' : attrKey]] || '0D';
+        }
+        if (specName) {
+          skillsMap[key].specs.push({ name: specName, dice: dice });
+        } else {
+          // Base skill dice takes priority over the placeholder
+          skillsMap[key].dice = dice;
+        }
+      });
+    });
+  }
+  data.skills = Object.values(skillsMap);
+
+  // Best weapon dice for attack (falls back to DEX, then 4D)
+  const weaponDice = (function() {
+    if (src.equipment) {
+      const re = /(\d+)D(?:\+(\d+))?/g;
+      let best = null, bestPips = -1;
+      let m;
+      while ((m = re.exec(src.equipment)) !== null) {
+        const pips = (parseInt(m[1], 10) || 0) * 3 + (parseInt(m[2] || '0', 10) || 0);
+        if (pips > bestPips) { bestPips = pips; best = m[2] ? (m[1] + 'D+' + m[2]) : (m[1] + 'D'); }
+      }
+      return best;
+    }
+    return null;
+  })();
+  data.dmgDice = weaponDice || data.dex || '4D';
+  data.resDice = data.str || '3D';
+
+  // Now open the PC form pre-filled with this data as a NEW pin (not editing)
+  editingPcId = null;
+  editingPcType = 'player-character';
+  pcSkillsDraft = JSON.parse(JSON.stringify(data.skills));
+  document.getElementById('addPcTitle').textContent = 'SAVE A COPY — ' + src.name;
+  pcPopulateAllDiceSelects();
+  pcPopulateSkillSelect();
+  document.getElementById('pcName').value = trimmed;
+  document.getElementById('pcPlayer').value = '';
+  document.getElementById('pcSpecies').value = data.species;
+  document.getElementById('pcRole').value = data.role;
+  ['Dex','Kno','Mec','Per','Str','Tec'].forEach(a => {
+    const el = document.getElementById('pc' + a);
+    const key = a.toLowerCase();
+    if (el && data[key]) el.value = data[key];
+  });
+  document.getElementById('pcDmgDice').value = data.dmgDice;
+  document.getElementById('pcResDice').value = data.resDice;
+  document.getElementById('pcArmor').value = data.armor;
+  document.getElementById('pcCharPoints').value = data.charPoints;
+  document.getElementById('pcForcePoints').value = data.forcePoints;
+  document.getElementById('pcForceSensitive').checked = data.forceSensitive === 'Yes';
+  togglePcForceSection();
+  document.getElementById('pcNotes').value = data.notes;
+  renderPcSkillList();
+  document.getElementById('addPcModal').style.display = 'flex';
+}
+function titleCaseName(s) {
+  return String(s).replace(/\b\w/g, c => c.toUpperCase());
 }
 function editPlayerCharacter(id) {
   editCharacterInForm('player-character', id);
