@@ -7,7 +7,8 @@
       "Bash(wc -l c:/Users/styhl/.vscode/SW-WEG-D6-Toolkit/data_*.js c:/Users/styhl/.vscode/SW-WEG-D6-Toolkit/index.html)",
       "Bash(wc -c c:/Users/styhl/.vscode/SW-WEG-D6-Toolkit/data_*.js c:/Users/styhl/.vscode/SW-WEG-D6-Toolkit/index.html)",
       "Bash(powershell.exe -ExecutionPolicy Bypass -File \"c:/Users/styhl/.vscode/SW-WEG-D6-Toolkit/reformat.ps1\")",
-      "Bash(xxd)"
+      "Bash(xxd)",
+      "Bash(python -c ':*)"
     ]
   }
 }

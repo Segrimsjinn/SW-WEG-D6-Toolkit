@@ -1720,14 +1720,6 @@ const EQUIPMENT_DATA = [
   "source": "d20 Core Rulebook (page 138)"
  },
  {
-  "name": "Armored Vacuum Suit",
-  "category": "Spacesuits",
-  "cost": "4,000",
-  "availability": "2, R",
-  "game_notes": "+1D vs physical and energy. 10hr atmosphere. Moderate stamina every hour in space or wound.",
-  "source": "Gundark's Fantastic Technology (pages 48-49)"
- },
- {
   "name": "Bulk Exploratory Armor",
   "category": "Spacesuits",
   "cost": "\u2014",
@@ -1750,14 +1742,6 @@ const EQUIPMENT_DATA = [
   "availability": "1",
   "game_notes": "One-piece coverall + helmet. Life support, hostile environment protection, protects against high-velocity flying effects.",
   "source": "d20 Core Rulebook (page 142)"
- },
- {
-  "name": "Flitter Vacuum Suit",
-  "category": "Spacesuits",
-  "cost": "1,500",
-  "availability": "2",
-  "game_notes": "+2 vs physical. Moderate stamina/STR every hour in space unless \"heater burn\" executed.",
-  "source": "Platt's Smugglers Guide (page 59)"
  },
  {
   "name": "Heavy Radiation Powersuit",
@@ -1806,14 +1790,6 @@ const EQUIPMENT_DATA = [
   "availability": "\u2014",
   "game_notes": "+1D to resist, -1D DEX. Voice-activated comlink. 6hr O2. Heavy gloves prevent normal blaster use (Easy repair to modify, -1D blaster after).",
   "source": "Abduction of Crying Dawn Singer (page 28)"
- },
- {
-  "name": "Tech Vacuum Suit",
-  "category": "Spacesuits",
-  "cost": "1,000",
-  "availability": "1",
-  "game_notes": "Insulated not heated. Moderate stamina/STR every hour in space or suffer wound from cold.",
-  "source": "Platt's Smugglers Guide (pages 58-59)"
  },
  {
   "name": "Vacuum Suit",
@@ -3609,7 +3585,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Simcronics MagnaForce Security Shield",
-  "category": "Personal Defense",
+  "category": "Shields",
   "cost": "25,000 (pair), 2,500 (custom power cells)",
   "availability": "4, F/R/X",
   "game_notes": "Skill: Melee parry. Wrist-worn defensive force field generator (sold in pairs). Easy melee parry to activate — generates 50cm diameter round shield. Use melee parry vs attacker's blaster roll: if higher, shield blocks (bolt must then roll vs shield's 4D defensive field to penetrate). If lower, shield wasn't placed in time. Power cell lasts 2 minutes before draining. Character scale equivalent of starship shields.",
@@ -5063,7 +5039,7 @@ const EQUIPMENT_DATA = [
  {
   "name": "Tech Vacuum Suit",
   "type": "LifeLine TechMaster II Vacuum Suit",
-  "category": "Armor",
+  "category": "Spacesuits",
   "cost": "1,000",
   "availability": "1",
   "game_notes": "Bare-essentials vacuum suit tailored for starship repair work in space. Covered with tool harnesses, sealable pouches, syntherope tether, and padded guards for knees, elbows, and shoulders. Tight-fitting gloves for intricate manipulation. Trades temperature regulators, waste recyclers, and extra atmosphere for more mobility. Since the suit is only insulated, not heated, a character in space must make a Moderate stamina or Strength check every hour or suffer a wound from freezing cold.",
@@ -5072,7 +5048,7 @@ const EQUIPMENT_DATA = [
  {
   "name": "Flitter Vacuum Suit",
   "type": "Corellian Engineering Flitter",
-  "category": "Armor",
+  "category": "Spacesuits",
   "cost": "1,500",
   "availability": "2",
   "game_notes": "Skill: Rocket pack operation. Tech vacuum suit with more durable fabric resistant to tears and punctures from space debris. Includes a small maneuvering backpack unit with rocket nozzles, controlled from a wrist-mounted panel. Pack has fuel for only a few bursts — enough to scoot back to a ship. Reinforced fabric provides +2 bonus when resisting physical attacks. Same insulation as tech suit — unless a character executes a 'heater burn' (Moderate rocket pack operation roll), must make a Moderate stamina or Strength check every hour or suffer a wound from freezing cold. A heater burn fires half the engines then uses opposing thrust to neutralize momentum, warming the suit.",
@@ -5225,7 +5201,7 @@ const EQUIPMENT_DATA = [
   "source": "WEG40143 Pirates & Privateers p.40-41"
  },
  {
-  "category": "Armor",
+  "category": "Spacesuits",
   "name": "Armored Vacuum Suit",
   "type": "Corellian Technologies Boarding Armor",
   "cost": "4,000",
@@ -5234,7 +5210,7 @@ const EQUIPMENT_DATA = [
   "source": "WEG40143 Pirates & Privateers p.44"
  },
  {
-  "category": "Armor",
+  "category": "Spacesuits",
   "name": "Armored Spacesuit",
   "type": "Merr-Sonn Weapons Superior Boarding Armor",
   "cost": "10,000",
@@ -5681,7 +5657,7 @@ const EQUIPMENT_DATA = [
  ,{
   "name": "Nullifier Energy Diffusion Armor",
   "type": "Unknown manufacturer",
-  "category": "Armor",
+  "category": "Combat Armor",
   "cost": "Not available for sale",
   "availability": "X (believed unique)",
   "game_notes": "Ancient powered armor: black carapace-like plates, full-cover helmet, and tactile gloves. When activated, emits a powerful force field (5D to resist energy attacks, acts as cover) capable of nullifying nearly all energy attacks. Blaster bolts are absorbed on contact. Lightsabers 'bounce' off. Major drawback: the force field makes it impossible to fire energy weapons from inside — outgoing bolts are absorbed just like incoming. The energy field hums and crackles visibly, making the wearer an outstanding target. Worn by bounty hunter Vallikor En-Vahdi, who uses projectile weapons to compensate.",
@@ -6283,7 +6259,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Simcronics MagnaForce Personal Energy Shield",
-  "category": "Personal Defense",
+  "category": "Shields",
   "cost": "25,000 (frontal only), 50,000 (full protection), 2,500 (custom power cells)",
   "availability": "4, F, R or X",
   "game_notes": "Character scale. Worn as a powerbox around the waist (usually under clothing). Shield score: 5D to deflect blaster bolts and other energy weapons (use protection rules p.63 Revised & Expanded). Any further damage affects target per 'Cover Modifiers' chart. Power cells last 1 standard hour before draining. Politician's dream — popular with crime lords, bounty hunters, and bill collectors. Embellished version of the MagnaForce Security Shield with longer duration (1 hour vs 2 minutes) and stronger defenses.",
