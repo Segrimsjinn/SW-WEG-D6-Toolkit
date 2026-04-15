@@ -1429,7 +1429,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "E-Mag Mine",
-  "category": "Mines",
+  "category": "Grenades & Explosives",
   "skill": "Demolitions",
   "cost": "200",
   "availability": "2, R or X",
@@ -1441,7 +1441,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Laser Trip Mine",
-  "category": "Mines",
+  "category": "Grenades & Explosives",
   "skill": "Demolitions",
   "cost": "300",
   "availability": "2, R or X",
@@ -1453,7 +1453,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Proton Mine",
-  "category": "Mines",
+  "category": "Grenades & Explosives",
   "skill": "Demolitions",
   "cost": "750",
   "availability": "2, X",
@@ -1465,7 +1465,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Singularity Mine",
-  "category": "Mines",
+  "category": "Grenades & Explosives",
   "skill": "\u2014",
   "cost": "Not for sale",
   "availability": "4, X",
@@ -1477,7 +1477,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Standard Anti-Vehicle Mine",
-  "category": "Mines",
+  "category": "Grenades & Explosives",
   "skill": "Demolitions",
   "cost": "750",
   "availability": "2, X",
@@ -1489,7 +1489,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Magneta-Mine (4000 BBY)",
-  "category": "Mines",
+  "category": "Grenades & Explosives",
   "skill": "Demolitions",
   "cost": "1,500",
   "availability": "2, X",
@@ -4592,7 +4592,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "SoroSuub XG Anti-Gravity Field Mine",
-  "category": "Mines",
+  "category": "Grenades & Explosives",
   "skill": "Demolitions: mines",
   "cost": "400",
   "availability": "2, X",
