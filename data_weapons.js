@@ -2165,18 +2165,6 @@ const WEAPONS_DATA = [
   "source": "Rulebook (pages 231-232)"
  },
  {
-  "name": "Light Repeating Blaster",
-  "category": "Repeating Blasters",
-  "skill": "Blaster: repeating blaster",
-  "cost": "1,500",
-  "availability": "2, R",
-  "damage": "5D+1",
-  "range": "3-30/100/300",
-  "ammo": "300",
-  "game_notes": "Constant-fire: 6 blasts/shot. Once hit, following shots vs adjacent (1m) targets -1 difficulty.",
-  "source": "Rules of Engagement (page 64)"
- },
- {
   "name": "Merr-Sonn Mark II Heavy Repeater",
   "category": "Repeating Blasters",
   "skill": "Blaster: repeating blaster",
@@ -4109,13 +4097,14 @@ const WEAPONS_DATA = [
  {
   "name": "BlasTech Light Repeating Blaster",
   "category": "Repeating Blasters",
+  "skill": "Blaster: repeating blaster",
   "damage": "5D+1",
   "range": "3-30/100/300",
   "ammo": "300",
   "cost": "1,500",
   "availability": "2, R",
   "game_notes": "On constant fire mode fires a burst of 6 blasts per shot. Once a hit is established, all following shots against nearby (1 meter) targets are one difficulty lower.",
-  "source": "WEG40029 The Far Orbit Project p.18"
+  "source": "WEG40029 The Far Orbit Project p.18; WEG40113 Rules of Engagement p.64"
  },
  {
   "name": "Fragmentation Grenade",
