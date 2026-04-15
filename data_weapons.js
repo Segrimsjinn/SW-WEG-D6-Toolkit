@@ -3749,7 +3749,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Felebreck Droid Disabler",
-  "category": "Misc Blasters",
+  "category": "Ion Weapons",
   "skill": "Blaster",
   "cost": "700 (25 power pack)",
   "availability": "3",
