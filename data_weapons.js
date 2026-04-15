@@ -432,18 +432,6 @@ const WEAPONS_DATA = [
   "source": "WEG40042 Han Solo and the Corporate Sector Sourcebook p.117; Gundark's Fantastic Technology (page 32)"
  },
  {
-  "name": "Exotac Arms Predator",
-  "category": "Blaster Rifles",
-  "skill": "Blaster: blaster rifle",
-  "cost": "7,000",
-  "availability": "4, X",
-  "damage": "7D",
-  "range": "3-30/80/350",
-  "ammo": "8",
-  "game_notes": "FC 2D (dual-laser targeting). Moderate STR to control recoil each shot.",
-  "source": "Gundark's Fantastic Technology (page 33)"
- },
- {
   "name": "Merr-Sonn G8",
   "category": "Blaster Rifles",
   "skill": "Blaster: blaster rifle",
@@ -5333,15 +5321,15 @@ const WEAPONS_DATA = [
   "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.36"
  }
  ,{
-  "name": "Predator Hunting Blaster",
-  "type": "Exotar Arms EXP-7(a) Predator",
+  "name": "Exotar Arms EXP-7(a) Predator",
+  "type": "Predator Hunting Blaster",
   "category": "Blaster Rifles",
   "cost": "7,000 (175 power pack)",
   "availability": "4, X",
   "damage": "7D",
   "range": "3-30/80/350",
   "game_notes": "Skill: Blaster. Scale: Character. Ammo: 8. Fire Rate: 1. Fire Control: 2D (dual-laser targeting beams). Each time fired, user must make Moderate Strength roll to contain recoil and be able to fire next round. Experimental weapon — only three prototypes exist. Two undergoing testing at Exotar Labs, the third field-evaluated by Kaori Batta.",
-  "source": "WEG40153 Wretched Hives p.43"
+  "source": "WEG40158 Gundark's Fantastic Technology p.33; WEG40153 Wretched Hives p.43"
  },
  {
   "name": "Caelli-Merced Series III Blaster Pistol",
