@@ -2525,18 +2525,6 @@ const WEAPONS_DATA = [
   "source": "Arms and Equipment Guide (page 29)"
  },
  {
-  "name": "Sat'skar",
-  "category": "Melee Weapons",
-  "skill": "Melee combat",
-  "cost": "700",
-  "availability": "3",
-  "damage": "STR+3D+1 (one-hand: STR+1D)",
-  "range": "",
-  "ammo": "",
-  "game_notes": "Difficult (VD one-handed). Coynite sword.",
-  "source": "Gundark's Fantastic Technology (page 10)"
- },
- {
   "name": "Scitrok",
   "category": "Melee Weapons",
   "skill": "Melee combat: scitrok",
@@ -2811,18 +2799,6 @@ const WEAPONS_DATA = [
   "ammo": "",
   "game_notes": "Easy difficulty.",
   "source": "Ultimate Alien Anthology (pages 63-64)"
- },
- {
-  "name": "Neuronic Whip",
-  "category": "Melee - Stun",
-  "skill": "Melee combat: neuronic whip",
-  "cost": "700",
-  "availability": "4, X",
-  "damage": "STR+1D or 5D (stun/normal)",
-  "range": "",
-  "ammo": "3hr power",
-  "game_notes": "Moderate difficulty.",
-  "source": "Gundark's Fantastic Technology (pages 10-11)"
  },
  {
   "name": "Drearian Actiwl Riot Shield",
@@ -3605,42 +3581,6 @@ const WEAPONS_DATA = [
   "source": "WEG40025 Galladinium's Fantastic Technology p.77"
  },
  {
-  "name": "Ekkar Arms Coyn'skar",
-  "category": "Melee Weapons",
-  "skill": "Melee combat",
-  "cost": "400",
-  "availability": "3",
-  "damage": "STR+2D (blade), STR+2 (hook)",
-  "range": "",
-  "ammo": "",
-  "game_notes": "Moderate difficulty (blade), Very Difficult difficulty (disarm with hook).",
-  "source": "WEG40025 Galladinium's Fantastic Technology p.82"
- },
- {
-  "name": "Ekkar Arms Sat'skar",
-  "category": "Melee Weapons",
-  "skill": "Melee combat",
-  "cost": "700",
-  "availability": "3",
-  "damage": "STR+3D+1",
-  "range": "",
-  "ammo": "",
-  "game_notes": "Difficult difficulty.",
-  "source": "WEG40025 Galladinium's Fantastic Technology p.82"
- },
- {
-  "name": "Ekkar Arms D'skar",
-  "category": "Melee Weapons",
-  "skill": "Melee combat",
-  "cost": "150",
-  "availability": "3",
-  "damage": "STR+1D+1",
-  "range": "",
-  "ammo": "",
-  "game_notes": "Moderate difficulty.",
-  "source": "WEG40025 Galladinium's Fantastic Technology p.82"
- },
- {
   "name": "Ekkar Arms Ar'gor",
   "category": "Melee Weapons",
   "skill": "Melee combat",
@@ -4339,18 +4279,6 @@ const WEAPONS_DATA = [
   "source": "WEG40098 Goroth Slave of the Empire p.83"
  },
  {
-  "name": "Bitthaevrian Dematoil",
-  "category": "Melee Weapons",
-  "skill": "Melee combat: dematoil",
-  "cost": "Not for sale",
-  "availability": "4, X",
-  "damage": "STR+1D to STR+3D (varies by warrior's victories)",
-  "range": "Melee",
-  "ammo": "",
-  "game_notes": "Difficulty: Moderate to Difficult. Body: 3D to 5D+1. Custom-designed morningstar — the ultimate symbol of a Bitthaevrian warrior's ability. Spikes are quills taken from warriors the wielder has defeated in personal combat. The greater the warrior, the more quills, and the more damage. Damage is dependent upon the greatness of the warrior and how many personal victories they have achieved.",
-  "source": "WEG40109 Alliance Intelligence Reports p.48"
- },
- {
   "name": "MerrSonn LX-80 Anti-Infantry Missile Emplacement",
   "category": "Artillery",
   "skill": "Missile weapons: missiles",
@@ -4735,18 +4663,6 @@ const WEAPONS_DATA = [
   "source": "WEG40109 Alliance Intelligence Reports p.74"
  },
  {
-  "name": "Ka'hren Rantok",
-  "category": "Melee Weapons",
-  "skill": "Melee combat: rantok",
-  "cost": "Not for sale",
-  "availability": "4",
-  "damage": "STR+1D+1 (one-handed), STR+2D+1 (two-handed)",
-  "range": "Melee",
-  "ammo": "",
-  "game_notes": "Difficulty: Difficult. When used two-handed, reduce difficulty one level but no parries possible. Thick straight blade ~1.2m attached to ~0.3m wooden hilt. Large crossguards thrust upward on each side. Small quillions on the flat side catch enemy blades. Ancient Ka'hren sword of the extinct Unfyr warriors, used for both military and ceremonial purposes.",
-  "source": "WEG40109 Alliance Intelligence Reports p.76"
- },
- {
   "name": "Soknar (Cene Gilvent's Custom Blade)",
   "category": "Melee Weapons",
   "skill": "Melee combat: Soknar",
@@ -4833,7 +4749,7 @@ const WEAPONS_DATA = [
   "availability": "4, X",
   "damage": "STR+1D to STR+3D (varies)",
   "game_notes": "Skill: Melee combat: dematoil. Scale: Character. Body: 3D-5D+1. Difficulty: Moderate to Difficult. Custom-designed Bitthaevrian morningstar — the ultimate symbol of a warrior's ability. The spikes of the weapon's ball are quills taken from defeated warriors in personal combat. All Bitthaevrians have large quills on their elbow joints; when bested, the victor is given the right to take the largest quill of the loser's weapon arm and affix it to his dematoil. Damage depends on the greatness of the warrior and how many personal victories he has had — the more quills, the more damage.",
-  "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.6"
+  "source": "WEG40109 Alliance Intelligence Reports p.48; WEG40158 Gundark's Fantastic Technology: Personal Gear p.6"
  },
  {
   "category": "Melee Weapons",
@@ -4844,7 +4760,7 @@ const WEAPONS_DATA = [
   "availability": "3",
   "damage": "STR+2D (blade); STR+2 (hook)",
   "game_notes": "Skill: Melee combat. Difficulty: Moderate (blade), Very Difficult (disarm with hook). Pole weapon with a lengthy, sharp blade on one end and a hook at the base. The shaft is tooled to offer maximum grip. The hook can be used to trip or disarm an opponent. Crafted by Ekkar Arms on Coyn — a famously beautiful set of Coynite combat weapons.",
-  "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.6"
+  "source": "WEG40025 Galladinium's Fantastic Technology p.82; WEG40158 Gundark's Fantastic Technology: Personal Gear p.6"
  },
  {
   "category": "Melee Weapons",
@@ -4855,7 +4771,7 @@ const WEAPONS_DATA = [
   "availability": "3",
   "damage": "STR+1D+1",
   "game_notes": "Skill: Melee combat. Difficulty: Moderate. The most common weapon among the Coynites. Range in length from 30 centimeters to a half-meter; each D'skar is unique. Known for fine craftsmanship and deadly blades — extremely durable and have been known to last for centuries with proper care. The easiest Coynite weapon to find off-planet, but prices are typically quadrupled.",
-  "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.7"
+  "source": "WEG40025 Galladinium's Fantastic Technology p.82; WEG40158 Gundark's Fantastic Technology: Personal Gear p.7"
  },
  {
   "category": "Melee Weapons",
@@ -4866,7 +4782,7 @@ const WEAPONS_DATA = [
   "availability": "3",
   "damage": "STR+3D+1 (two-handed); STR+1D (one-handed)",
   "game_notes": "Skill: Melee combat. Difficulty: Difficult (Very Difficult if swung one-handed). Long, sharp-edged Coynite sword that is extremely difficult to master. The blade is grooved, creating a serrated edge that inflicts terrible wounds. Sat'skars take so long to make and have such craftsmanship that they are reserved for the warriors of Coyn — rarely allowed off-world.",
-  "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.7"
+  "source": "WEG40025 Galladinium's Fantastic Technology p.82; WEG40158 Gundark's Fantastic Technology: Personal Gear p.7; Gundark's Fantastic Technology p.10"
  },
  {
   "category": "Melee - Stun",
@@ -4888,7 +4804,7 @@ const WEAPONS_DATA = [
   "availability": "4",
   "damage": "STR+1D+1 (one-handed); STR+2D+1 (two-handed)",
   "game_notes": "Skill: Melee combat: rantok. Scale: Character. Difficulty: Difficult. When used two-handed, reduce difficulty one level but no parries are possible. Ancient Ka'hren sword used by the Unfyr warriors centuries ago. Thick straight blade approximately a third of a meter long, with large crossguards on each side of the hilt that thrust upward (like Fpi Assassin daggers). Small quillons on the flat side of the blade catch enemy sword blades. The weapon was lethal one- or two-handed and remained the preferred Ka'hren weapon even after ranged weapons appeared. The Unfyr's refusal to adopt blasters drove them to extinction.",
-  "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.7"
+  "source": "WEG40109 Alliance Intelligence Reports p.76; WEG40158 Gundark's Fantastic Technology: Personal Gear p.7"
  },
  {
   "category": "Melee - Stun",
