@@ -1561,6 +1561,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Deck-Clearing Blaster",
+  "type": "BlasTech Firespray DL-87",
   "category": "Misc Blasters",
   "skill": "Blaster: deck clearer",
   "cost": "100",
@@ -1568,8 +1569,8 @@ const WEAPONS_DATA = [
   "damage": "5D",
   "range": "1/5/10",
   "ammo": "10",
-  "game_notes": "45\u00b0 arc hits all in front. Within 5m: no dodge. 6-10m: dodge at -1D. Fire Rate 1/2.",
-  "source": "Gundark's Fantastic Technology (page 30)"
+  "game_notes": "Wide-field blaster — 45\u00b0 arc hits everyone in front. Within 5m: no dodge. 6-10m: dodge at -1D. Fire Rate 1/2. Rejected by Imperial Navy for slow fire rate and limited ammo capacity.",
+  "source": "WEG40158 Gundark's Fantastic Technology p.30; WEG40143 Pirates & Privateers p.43"
  },
  {
   "name": "Pulse Rifle",
@@ -3545,7 +3546,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Atgar BI/A15 Picket Gun",
-  "category": "Emplacement Weapons",
+  "category": "Artillery",
   "skill": "Blaster",
   "cost": "5,000",
   "availability": "2, R",
@@ -3677,7 +3678,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Ishi Tib Coral Scepter",
-  "category": "Archaic Weapons",
+  "category": "Melee Weapons",
   "skill": "Archaic weapons",
   "cost": "1,200",
   "availability": "4",
@@ -4818,7 +4819,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Alliance Bolt-Thrower",
-  "category": "Archaic Weapons",
+  "category": "Projectile Weapons",
   "skill": "Bow: mechanical bow",
   "cost": "300",
   "availability": "2 or 3",
@@ -4995,7 +4996,7 @@ const WEAPONS_DATA = [
   "source": "WEG40143 Pirates & Privateers p.42"
  },
  {
-  "category": "Blaster Weapons",
+  "category": "Melee - Powered",
   "name": "Deck-Sweeper Stunner",
   "type": "Merr-Sonn Deck Sweeper Stunning Blaster",
   "cost": "500",
@@ -5263,17 +5264,6 @@ const WEAPONS_DATA = [
   "damage": "4D/2D/1D (stun)",
   "range": "0-8/16/25",
   "game_notes": "Skill: Grenade. Blast Radius: 0-2/20/40. Releases T-289 stun gas. Non-fatal except in very large doses. Causes intense nausea, disorientation, and vomiting. Ineffective against breath masks or sealed suits.",
-  "source": "WEG40143 Pirates & Privateers p.43"
- },
- {
-  "category": "Blaster Weapons",
-  "name": "Deck Clearing Blaster",
-  "type": "BlasTech Firespray DL-87",
-  "cost": "100",
-  "availability": "2, X",
-  "damage": "5D",
-  "range": "1/5/10",
-  "game_notes": "Skill: Blaster. Fire Rate: 1/2. Ammo: 10. Wide-field blaster — hits everyone within a 45-degree arc of the firer. Characters within 5m cannot dodge. Characters 6-10m may dodge at -1D. Rejected by Imperial Navy for slow fire rate and limited ammo capacity.",
   "source": "WEG40143 Pirates & Privateers p.43"
  },
  {
