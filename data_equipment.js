@@ -849,11 +849,11 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Organic Gill",
-  "category": "Environmental Suits",
+  "category": "Survival Gear",
   "cost": "200",
   "availability": "3",
   "game_notes": "Mon Calamari synthetic organic gill. Gelatinous symbiotic blob worn over breathing apertures; filters oxygen from water. Lasts several weeks underwater before dying. Small microphone/earphone inserts allow muffled communication. Usable by most species with compatible atmospheric requirements. Sullustans have an allergic reaction and cannot use it.",
-  "source": "WEG40114 The Jedi Academy Sourcebook p.140"
+  "source": "WEG40114 The Jedi Academy Sourcebook p.140; WEG40153 Wretched Hives p.79"
  },
  {
   "name": "Hush-About Jet Pack AJP-400",
@@ -1224,14 +1224,6 @@ const EQUIPMENT_DATA = [
   "source": "Gundark's Fantastic Technology (pages 58-59)"
  },
  {
-  "name": "Servo-Lifter",
-  "category": "Powersuits",
-  "cost": "10,000 (7,000 used)",
-  "availability": "3",
-  "game_notes": "3m tall exo-skeleton. 1D maneuverability, Move 30 (90 km/h), Body 2D. Lifts up to 1.5 metric tons.",
-  "source": "Galladinium's Fantastic Technology (page 57)"
- },
- {
   "name": "Smasher Armor",
   "category": "Powersuits",
   "cost": "1,250",
@@ -1600,14 +1592,6 @@ const EQUIPMENT_DATA = [
   "source": ""
  },
  {
-  "name": "Baffled Drive",
-  "category": "Ship Equipment",
-  "cost": "10,000+",
-  "availability": "3, R",
-  "game_notes": "Modified sublight drive reducing engine signature. +1D to sneak vs sensor detection while in motion.",
-  "source": ""
- },
- {
   "name": "Comm Jammer (Ship)",
   "category": "Ship Equipment",
   "cost": "2,000",
@@ -1629,30 +1613,6 @@ const EQUIPMENT_DATA = [
   "cost": "8,000",
   "availability": "3",
   "game_notes": "External hyperdrive ring or booster. Adds or improves hyperdrive capability by one class.",
-  "source": ""
- },
- {
-  "name": "Sensor Baffling",
-  "category": "Ship Equipment",
-  "cost": "5,000",
-  "availability": "3, R",
-  "game_notes": "Hull modification reducing sensor profile. +2D to difficulty of detecting ship. Stacks with other countermeasures.",
-  "source": ""
- },
- {
-  "name": "Sensor Jammer (Ship)",
-  "category": "Ship Equipment",
-  "cost": "4,000",
-  "availability": "2, R",
-  "game_notes": "Ship-mounted sensor countermeasure. +2D to difficulty of enemy sensor scans against your ship.",
-  "source": ""
- },
- {
-  "name": "Sensor Mask",
-  "category": "Ship Equipment",
-  "cost": "3,000",
-  "availability": "3, R",
-  "game_notes": "Reduces ship's sensor signature. +1D to difficulty of detecting ship on passive sensors.",
   "source": ""
  },
  {
@@ -1824,83 +1784,11 @@ const EQUIPMENT_DATA = [
   "source": ""
  },
  {
-  "name": "Survival Pack",
-  "category": "Survival Gear",
-  "cost": "500",
-  "availability": "1",
-  "game_notes": "Standard survival kit: 2 glow rods, comlink, knife, ration concentrates (1 week), water purifier, medpac, thermal cloak, breath mask.",
-  "source": ""
- },
- {
-  "name": "Water Purifier",
-  "category": "Survival Gear",
-  "cost": "50",
-  "availability": "1",
-  "game_notes": "Portable water purification device. Filters contaminants and makes most water drinkable.",
-  "source": ""
- },
- {
-  "name": "Organic Gill",
-  "category": "Survival Gear",
-  "cost": "200",
-  "availability": "3",
-  "game_notes": "Mon Calamari synthetic organic gill. Gelatinous symbiotic blob worn over breathing apertures; filters oxygen from water. Lasts several weeks underwater before dying. Small microphone/earphone inserts allow muffled communication. Usable by most species with compatible atmospheric requirements. Sullustans have an allergic reaction and cannot use it.",
-  "source": "WEG40114 The Jedi Academy Sourcebook p.140"
- },
- {
-  "name": "Fusion Cutter",
-  "category": "Tools",
-  "cost": "150",
-  "availability": "1",
-  "game_notes": "Plasma cutting tool. 5D damage to materials at touch range. Essential for heavy repair and cutting through bulkheads.",
-  "source": ""
- },
- {
   "name": "Heavy Fusion Cutter",
   "category": "Tools",
   "cost": "500",
   "availability": "2",
   "game_notes": "Industrial-grade plasma cutter. 7D damage to materials. Cuts through armored plating and starship hulls.",
-  "source": ""
- },
- {
-  "name": "Hydrospanner",
-  "category": "Tools",
-  "cost": "50",
-  "availability": "1",
-  "game_notes": "Standard multi-purpose mechanical tool. Essential for most repair work.",
-  "source": ""
- },
- {
-  "name": "Laser Welder",
-  "category": "Tools",
-  "cost": "100",
-  "availability": "1",
-  "game_notes": "Precision welding tool. Essential for hull patching and fine metalwork. 3D damage to materials.",
-  "source": ""
- },
- {
-  "name": "Power Prybar",
-  "category": "Tools",
-  "cost": "75",
-  "availability": "1",
-  "game_notes": "Powered leverage tool. +1D to STR for prying/forcing open doors, hatches, and panels.",
-  "source": ""
- },
- {
-  "name": "Power Scanner",
-  "category": "Tools",
-  "cost": "250",
-  "availability": "1",
-  "game_notes": "Diagnostic scanner for power systems and electrical circuits. +1D to repair diagnostics on powered systems.",
-  "source": ""
- },
- {
-  "name": "Starship Tool Kit",
-  "category": "Tools",
-  "cost": "250",
-  "availability": "1",
-  "game_notes": "Complete set of tools for starship repair and maintenance. Required for most starship repair rolls.",
   "source": ""
  },
  {
@@ -2608,14 +2496,6 @@ const EQUIPMENT_DATA = [
   "source": "WEG40025 Galladinium's Fantastic Technology p.23"
  },
  {
-  "name": "Cybot Galactica M4 Message Droid",
-  "category": "Droids",
-  "cost": "2,000 (civilian), 4,000 (military)",
-  "availability": "",
-  "game_notes": "Height: 0.3m. Move: 30. DEX 1D (dodge 5D), KNO 1D, MEC 1D, PER 1D, STR 1D, TEC 1D. Equipped: holographic projector/recorder (up to 5 minutes), repulsorlift drive unit (4m flight ceiling). Can carry datatapes and programs. Military version adds: body armor (+2D physical, +1D energy), internal sporting blaster (3D+1 stun, 0-5/10/20). For situations where open-air broadcasts might be intercepted.",
-  "source": "WEG40025 Galladinium's Fantastic Technology p.24"
- },
- {
   "name": "Industrial Automation TTS-15 Tutor Droid",
   "category": "Droids",
   "cost": "500 (initial lease), 1,000/year (service contract with inspection and program upgrades)",
@@ -3168,14 +3048,6 @@ const EQUIPMENT_DATA = [
   "source": "WEG40025 Galladinium's Fantastic Technology p.54"
  },
  {
-  "name": "Borallis LSW-983 Laser Welder",
-  "category": "Tools",
-  "cost": "50",
-  "availability": "1",
-  "game_notes": "Skill: Various repair skills. Two independently directed laser emitters for increased efficiency. Variable surface contact from 0.2-20cm diameter welds. Built-in power cell for portability plus standard adaptor hookup for direct power system access.",
-  "source": "WEG40025 Galladinium's Fantastic Technology p.54"
- },
- {
   "name": "Idellian ILF-5000 Lifeform Scanner",
   "category": "Sensors",
   "cost": "3,500",
@@ -3189,14 +3061,6 @@ const EQUIPMENT_DATA = [
   "cost": "750",
   "availability": "1",
   "game_notes": "Backpack-sized medium fusion power generator. Supplies power equivalent to most medium generators. For powering perimeter shields, equipment and other field devices in the wilderness.",
-  "source": "WEG40025 Galladinium's Fantastic Technology p.55"
- },
- {
-  "name": "Borallis PCW-876 Fusion Cutter",
-  "category": "Tools",
-  "cost": "75",
-  "availability": "1",
-  "game_notes": "Skill: Various repair skills. Variable beam fusion cutter shearing through most metals, plastics and ceramics up to 25cm thick in seconds. Difficulty depends on project. Accidental beam exposure causes 3D-6D variable damage.",
   "source": "WEG40025 Galladinium's Fantastic Technology p.55"
  },
  {
@@ -4733,7 +4597,7 @@ const EQUIPMENT_DATA = [
  {
   "name": "Servo-Lifter",
   "type": "Verekil Servo-Lifter V-2r",
-  "category": "General Equipment",
+  "category": "Powersuits",
   "cost": "10,000 (new), 7,000 (used)",
   "availability": "3",
   "game_notes": "Powered exoskeleton for lifting heavy cargo. Scale: Character. Length: 3 meters tall. Skill: Powersuit operation: servo-lifter. Crew: 1. Maneuverability: 1D. Move: 30; 50 kmh. Body Strength: 2D. Can lift up to 1.5 metric tons. Strictly a luxury for spacers — most are better off hiring roustabouts or buying a worker droid.",
@@ -4841,7 +4705,7 @@ const EQUIPMENT_DATA = [
  {
   "name": "Survival Pack",
   "type": "Chedak Survival Kit",
-  "category": "General Equipment",
+  "category": "Survival Gear",
   "cost": "750",
   "availability": "2",
   "game_notes": "Knapsack crammed with survival supplies for uncivilized environments. Standard contents: 2 weeks rations, 3 medpacs, glow rod, 2 thermal flares, single-person di-chrome shelter, breath mask, 6 meters syntherope, knife, portable fusion power generator. Multiple lanyards, hooks, rings, and pockets for additional gear. Experienced smugglers customize contents — swap power generator for a portable emergency beacon, replace flares with a hold-out blaster, add a personal flamer for starting fires.",
@@ -4904,7 +4768,7 @@ const EQUIPMENT_DATA = [
  {
   "name": "Starship Tool Kit",
   "type": "SoroSuub Journeyman Tool Box",
-  "category": "General Equipment",
+  "category": "Tools",
   "cost": "200",
   "availability": "1",
   "game_notes": "Sturdy box organized into neat compartments with one of nearly every kind of tool needed for starship repairs. Includes basic hydrospanners and servodrivers, plus extra power couplings, a spool of all-purpose wiring, and one strip of hull-patch metal. Adds +1D to any starship-related repair rolls.",
@@ -4913,7 +4777,7 @@ const EQUIPMENT_DATA = [
  {
   "name": "Power Prybar",
   "type": "SoroSuub Prybar 2H00",
-  "category": "General Equipment",
+  "category": "Tools",
   "cost": "30",
   "availability": "1",
   "game_notes": "Metal prybar with joined fulcrums and hydraulic pistons. A small pressure computer gauges force and uses hydraulics to provide extra leverage. Internal energy cell is long-lasting and replaceable. Can't pry gaps wider than 10 cm. Adds +1D to +3D when used to pry things up, open, or apart. Damage as melee weapon: STR+1D.",
@@ -4922,7 +4786,7 @@ const EQUIPMENT_DATA = [
  {
   "name": "Servodriver",
   "type": "Corellian Engineering SD-47",
-  "category": "General Equipment",
+  "category": "Tools",
   "cost": "50",
   "availability": "1",
   "game_notes": "Shaft handle with a sonic drive head. Torque surface perpendicular to shaft — must hold upright relative to fastener. Tightens or loosens screws, bolts, and twist fasteners. Power cell lasts years. Switch for clockwise, counterclockwise, or off. Zero-gravity compensators included. Each servodriver handles a certain size range of bolts. Bonuses for repair work range from +1 to +1D at GM discretion.",
@@ -4931,7 +4795,7 @@ const EQUIPMENT_DATA = [
  {
   "name": "Hydrospanner",
   "type": "Corellian Engineering V-07 Hydrospanner",
-  "category": "General Equipment",
+  "category": "Tools",
   "cost": "50",
   "availability": "1",
   "game_notes": "Sonic drive head mounted parallel to the shaft, allowing side-access to bolts, nuts, and screws in hard-to-reach places. Same energy capacity, power controls, and varied size range as a servodriver. Bonuses for repair work range from +1 to +1D at GM discretion.",
@@ -4940,7 +4804,7 @@ const EQUIPMENT_DATA = [
  {
   "name": "Power Scanner",
   "type": "VargeCorp Energy Tester",
-  "category": "General Equipment",
+  "category": "Tools",
   "cost": "150",
   "availability": "1",
   "game_notes": "Diagnostic tool monitoring energy flow through circuits, conduits, and power couplings. Hand-held box with digital power readout and variable settings for many energy ranges. Two extendible wires with clamp leads connect to power sources. Tests conductive metal and connection points. Can be cannibalized for parts (wires, digital readout, energy flux capacitors, micro-power regulators). Can be hooked to an inactive power line as a diversion — turning on the power blows the scanner in a shower of sparks. Bonuses for repair work range from +1 to +1D at GM discretion.",
@@ -4949,7 +4813,7 @@ const EQUIPMENT_DATA = [
  {
   "name": "Laser Welder",
   "type": "Boralite Metalworking & Materials LSW-983",
-  "category": "General Equipment",
+  "category": "Tools",
   "cost": "50",
   "availability": "1",
   "game_notes": "Two independently directed laser emitters for welding seams in metal. Also effective for slicing through most high-grade reinforced plastics. Internal power cell provides about 50 hours of use, rechargeable via standard adapter or ship power systems. Emitters finely tunable from 0.2-20 cm weld diameter. Keep spare hull plating strips nearby for hull breaches. Bonuses for repair work range from +1 to +1D at GM discretion.",
@@ -4958,7 +4822,7 @@ const EQUIPMENT_DATA = [
  {
   "name": "Fusion Cutter",
   "type": "Boralite Metalworking & Materials PCW-876",
-  "category": "General Equipment",
+  "category": "Tools",
   "cost": "75",
   "availability": "1",
   "game_notes": "Variable-beam fusion cutter that shears through most metals, plastics, and ceramics up to 25 cm thick in seconds. Great for slicing through entry hatch deadbolt seals. Can be used as a melee weapon at close range — accidental exposure to beam causes 3D-6D damage. Bonuses for repair work range from +1 to +1D at GM discretion.",
@@ -5294,15 +5158,7 @@ const EQUIPMENT_DATA = [
   "game_notes": "State-of-the-art prosthetics. Difficult Perception roll to tell from organic. No special abilities — replacement matches original function. Cost includes prosthetic and operation. Jury-rigging enhancements: cost = base price x pip increase x starting die code (ignore pips). E.g., boosting a 3D+1 hand by 2D = 1,000 x 6 x 3 = 18,000cr. Drawbacks: strong social prejudice against obvious cybernetics; enhanced characters accumulate Dark Side Points faster when committing evil (1-2 enhancements +1 DSP, 3-4 +2 DSP, 5-6 +3 DSP). A basic replacement counts as half an enhancement (round down).",
   "source": "WEG40143 Pirates & Privateers p.50"
  }
- ,{
-  "name": "Organic Gill",
-  "type": "Mon Calamari",
-  "category": "Survival Gear",
-  "cost": "200",
-  "availability": "3",
-  "game_notes": "Synthetic organic gill allowing a diver to breathe underwater.",
-  "source": "WEG40153 Wretched Hives p.79"
- },
+ ,
  {
   "name": "Fibra-rope",
   "type": "Standard Fibra-rope",
@@ -5455,42 +5311,6 @@ const EQUIPMENT_DATA = [
   "availability": "4, X",
   "game_notes": "Small flat unit usually worn on a belt. Can keep control over up to 25 different items (communications, primary defense systems, etc.) within 300 meters (more with receptor circuitry extension). The user activates the code slicer/takeover switch to capture the signals of a specific system and binds it to a numbered button. Originally given to only the highest-ranking Corporate Sector Authority officials. Can control everything from lights to mass security systems — in the wrong hands, capable of destroying a government. Most CSA buildings are slave-rigged, making the device especially valuable for larceny against CSA installations.",
   "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.93"
- },
- {
-  "name": "TerexComm DataSearch 9C",
-  "type": "TerexComm Deluxe DataSearch Engine 9C",
-  "category": "Electronics",
-  "cost": "600",
-  "availability": "2",
-  "game_notes": "Skill: Computer programming/repair. Easy roll to connect. Adds +1D+2 to computer programming/repair and +2D to security skill when used to search for information. Valuable administrative tool for searching thousands of data screen units (DSUs) quickly. A Moderate computer programming/repair roll modifies the unit with a power condenser, which then allows the 9C to locate low-level encrypted files — but the additional power will virtually destroy any program it searches unless run through a power-flux regulator.",
-  "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.93"
- },
- {
-  "name": "TerexComm DataSearch 12C-A",
-  "type": "TerexComm Executive DataSearch Engine 12C-A",
-  "category": "Electronics",
-  "cost": "850",
-  "availability": "2",
-  "game_notes": "Skill: Computer programming/repair. Easy roll to use. Adds +2D to computer programming/repair when searching for information. Capable of searching through thousands of DSUs in less than three seconds. Unlike the 9C, the 12C-A does NOT function with the power condenser modification — attempting it usually shorts out the unit and causes spectacular fires.",
-  "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.93"
- },
- {
-  "name": "UniTech \"Patch\"",
-  "type": "UniTech Diagnostic Systems Diverter",
-  "category": "Electronics",
-  "cost": "5,200",
-  "availability": "2, R (restricted to governments)",
-  "game_notes": "Skill: Computer programming/repair (Moderate to apply). Adds +1D+2 to security or relevant skill. Re-routes security/programming so that a system breach cannot be detected. Consists of a master/base unit and eight slave units placed at junction points between the bypassed subsystem and the outside system. Emulates the signals and responses of the bypassed subsystem, tricking the master computer core into thinking the subsystem is unaffected. Used by tech teams during emergency repairs and by Rebel agents to acquire classified Imperial documents undetected. Can also be reversed to make a healthy system think it is damaged — useful for triggering false alarms, dousing lights, or staging diversions.",
-  "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.94"
- },
- {
-  "name": "AccuTronics Encryption Package",
-  "type": "AccuTronics Encryption Package 1a.44.87",
-  "category": "Electronics",
-  "cost": "500",
-  "availability": "2",
-  "game_notes": "Skill: Computer programming/repair. Datafile encryption device — civilian-grade but commonly modified by Alliance Cryptography for lesser-security datafiles. Any datafile encrypted with the package gains a +5 modifier to its difficulty number to be found, and requires a Moderate computer programming/repair roll to crack the encrypt code if the password is known. Can be improved by slicing the algorithms to a base 12 system from base 10.",
-  "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.95"
  },
  {
   "name": "Code Slicer",
@@ -5868,7 +5688,7 @@ const EQUIPMENT_DATA = [
   "cost": "2,000 credits (civilian issue), 4,000 credits (M4m military issue)",
   "availability": "1 (civilian), 2 R (military)",
   "game_notes": "Second Degree Droid. Personality: Simple. Height: 0.3m. Move: 30 (repulsorlift, max altitude 4m). DEX 1D (dodge 5D), KNO 1D, MEC 1D, PER 1D, STR 1D, TEC 1D. Equipped with: holographic projector/recorder, repulsorlift drive unit with 4-meter flight ceiling. Military variant (M4m) adds: body armor (+2D physical, +1D energy) and an internal sporting blaster (3D+1 stun damage, ranges 0-5/10/20). Designed to make quick information exchange less risky than standard data transmission methods. Capable of playing pre-recorded messages and datatapes as well as recording holo messages on the spot; encryption codes must be entered by the recipient of any given message. The Rebel Alliance uses the M4m model (officially designated 'IN-4') for message drops, drawing close Imperial attention to anything resembling one in the wild.",
-  "source": "WEG41014 Star Wars Adventure Journal #14 p.249 (Cynabar's Droid Datalog)"
+  "source": "WEG41014 Star Wars Adventure Journal #14 p.249 (Cynabar's Droid Datalog); WEG40025 Galladinium's Fantastic Technology p.24"
  }
  ,{
   "name": "Industrial Automaton A9G Data Storage Droid",
