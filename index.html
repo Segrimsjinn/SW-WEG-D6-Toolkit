@@ -8293,6 +8293,8 @@ function renderCorkboardCard(pin) {
   actions += '<button class="cb-btn cb-btn-view" onclick="corkboardOpen(\'' + pin.type + '\', \'' + idAttr.replace(/'/g, "\\'") + '\')">🔍 VIEW</button>';
   if (pin.type === 'player-character') {
     actions += '<button class="cb-btn" onclick="editPlayerCharacter(\'' + idAttr.replace(/'/g, "\\'") + '\')">✎ EDIT</button>';
+  } else if (pin.type === 'random-npc') {
+    actions += '<button class="cb-btn" onclick="editRolledNpc(\'' + idAttr.replace(/'/g, "\\'") + '\')">✎ EDIT</button>';
   }
   actions += '<button class="cb-btn cb-btn-remove" onclick="corkboardRemove(\'' + pin.type + '\', \'' + idAttr.replace(/'/g, "\\'") + '\')">✕ REMOVE</button>';
   return '<div class="cb-card ' + cls + '">' +
@@ -8446,12 +8448,14 @@ function showPinSnapshot(pin) {
   } else {
     html += renderGenericSnapshot(pin);
   }
-  if (pin.type !== 'player-character') {
+  if (pin.type !== 'player-character' && pin.type !== 'random-npc') {
     html += '<div style="font-size:10px;color:var(--text-dark);font-style:italic;margin-top:10px;line-height:1.5">This is a saved snapshot from when you pinned it. The original generator rolls fresh results each time — this entry won\'t change unless you edit or remove it.</div>';
   }
   html += '<div style="display:flex;gap:8px;justify-content:flex-end;margin-top:14px">';
   if (pin.type === 'player-character') {
     html += '<button class="btn btn-primary" onclick="hidePinSnapshot();editPlayerCharacter(\'' + escapeHtml(pin.id).replace(/'/g, "\\'") + '\')" style="padding:6px 14px;font-size:10px;letter-spacing:1px;background:var(--bg3);color:var(--gold);border:1px solid var(--gold-dim)">✎ EDIT</button>';
+  } else if (pin.type === 'random-npc') {
+    html += '<button class="btn btn-primary" onclick="hidePinSnapshot();editRolledNpc(\'' + escapeHtml(pin.id).replace(/'/g, "\\'") + '\')" style="padding:6px 14px;font-size:10px;letter-spacing:1px;background:var(--bg3);color:var(--gold);border:1px solid var(--gold-dim)">✎ EDIT</button>';
   }
   html += '<button class="btn btn-primary" onclick="hidePinSnapshot()" style="padding:6px 14px;font-size:10px;letter-spacing:1px">CLOSE</button>';
   html += '</div>';
@@ -8649,6 +8653,7 @@ function corkboardSendToTracker(type, id, side) {
 
 // ---- Player Character modal ----
 let editingPcId = null;
+let editingPcType = 'player-character'; // 'player-character' or 'random-npc'
 let pcSkillsDraft = []; // working copy of { name, attr, dice, specs:[{name,dice}] } entries
 
 // Build the dice-value options for the dropdowns (0D through 15D+2 in pip steps)
@@ -8784,6 +8789,7 @@ function renderPcSkillList() {
 
 function showAddPlayerCharacter() {
   editingPcId = null;
+  editingPcType = 'player-character';
   pcSkillsDraft = [];
   document.getElementById('addPcTitle').textContent = 'ADD PLAYER CHARACTER';
   ['pcName','pcPlayer','pcSpecies','pcRole','pcArmor','pcNotes'].forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; });
@@ -8801,13 +8807,20 @@ function hideAddPlayerCharacter() {
   document.getElementById('addPcModal').style.display = 'none';
   editingPcId = null;
 }
+function editRolledNpc(id) {
+  editCharacterInForm('random-npc', id);
+}
 function editPlayerCharacter(id) {
-  const pin = corkboardPins.find(p => p.type === 'player-character' && p.id === id);
+  editCharacterInForm('player-character', id);
+}
+function editCharacterInForm(type, id) {
+  const pin = corkboardPins.find(p => p.type === type && p.id === id);
   if (!pin) return;
   editingPcId = id;
+  editingPcType = type;
   const d = pin.data || {};
   pcSkillsDraft = Array.isArray(d.skills) ? JSON.parse(JSON.stringify(d.skills)) : [];
-  document.getElementById('addPcTitle').textContent = 'EDIT PLAYER CHARACTER';
+  document.getElementById('addPcTitle').textContent = type === 'random-npc' ? 'EDIT ROLLED NPC' : 'EDIT PLAYER CHARACTER';
   // Populate dropdowns first so we can then set values
   pcPopulateAllDiceSelects();
   pcPopulateSkillSelect();
@@ -8867,19 +8880,40 @@ function savePlayerCharacter() {
     notes: document.getElementById('pcNotes').value.trim(),
     skills: JSON.parse(JSON.stringify(pcSkillsDraft))
   };
-  const subtitleParts = [];
-  if (data.species) subtitleParts.push(data.species);
-  if (data.role) subtitleParts.push(data.role);
-  if (data.player) subtitleParts.push('(' + data.player + ')');
+  const pinType = editingPcId ? editingPcType : 'player-character';
+
+  // Build subtitle — for rolled NPCs prefer the original (race · job · training)
+  let subtitle;
+  if (pinType === 'random-npc') {
+    const existing = corkboardPins.find(p => p.type === 'random-npc' && p.id === editingPcId);
+    const ed = existing ? (existing.data || {}) : {};
+    subtitle = [ed.race || data.species, ed.job || data.role, ed.training].filter(Boolean).join(' · ');
+  } else {
+    const subtitleParts = [];
+    if (data.species) subtitleParts.push(data.species);
+    if (data.role) subtitleParts.push(data.role);
+    if (data.player) subtitleParts.push('(' + data.player + ')');
+    subtitle = subtitleParts.join(' · ');
+  }
+
+  let mergedData = data;
+  if (pinType === 'random-npc' && editingPcId) {
+    // Preserve rolled-NPC fields the form doesn't touch (equipment slots, force
+    // powers list, race/job/training, height/move/sex/credits, story factor,
+    // special ability, etc.) by layering form data on top.
+    const existing = corkboardPins.find(p => p.type === 'random-npc' && p.id === editingPcId);
+    if (existing) mergedData = Object.assign({}, existing.data || {}, data);
+  }
+
   const pin = {
-    type: 'player-character',
+    type: pinType,
     id: editingPcId || ('pc-' + Date.now()),
     title: name,
-    subtitle: subtitleParts.join(' · '),
-    data: data
+    subtitle: subtitle,
+    data: mergedData
   };
   if (editingPcId) {
-    const idx = corkboardPins.findIndex(p => p.type === 'player-character' && p.id === editingPcId);
+    const idx = corkboardPins.findIndex(p => p.type === pinType && p.id === editingPcId);
     if (idx >= 0) {
       pin.pinnedAt = corkboardPins[idx].pinnedAt;
       corkboardPins[idx] = pin;
