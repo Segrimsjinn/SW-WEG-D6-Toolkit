@@ -8534,8 +8534,12 @@ function renderRolledNpcSnapshot(pin) {
     out += skillHtml;
   }
 
-  // Force — dice grid + powers list (only if Force-sensitive)
-  if (n.forceControl || n.forceSense || n.forceAlter || (Array.isArray(n.forcePowers) && n.forcePowers.length)) {
+  // Force — dice grid + powers list. Skip the whole section if all three dice
+  // are empty/0D AND no powers are listed (common when Force Sensitive was
+  // checked but nothing was filled in).
+  const hasForceDice = [n.forceControl, n.forceSense, n.forceAlter].some(v => v && v !== '0D');
+  const hasForcePowers = Array.isArray(n.forcePowers) && n.forcePowers.length;
+  if (hasForceDice || hasForcePowers) {
     out += '<div style="margin-bottom:10px"><div style="font-family:\'Exo 2\',monospace;font-size:9px;color:var(--purple);letter-spacing:1px;margin-bottom:6px">⟐ FORCE</div>';
     if (n.forceControl || n.forceSense || n.forceAlter) {
       out += '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:8px">';
@@ -8677,7 +8681,7 @@ function pcPopulateAllDiceSelects() {
   const defaults = {
     pcDex: '2D', pcKno: '2D', pcMec: '2D', pcPer: '2D', pcStr: '2D', pcTec: '2D',
     pcDmgDice: '4D', pcResDice: '3D',
-    pcForceControl: '1D', pcForceSense: '1D', pcForceAlter: '1D',
+    pcForceControl: '0D', pcForceSense: '0D', pcForceAlter: '0D',
     pcSkillDice: '4D'
   };
   Object.keys(defaults).forEach(id => pcPopulateDiceSelect(document.getElementById(id), defaults[id]));
