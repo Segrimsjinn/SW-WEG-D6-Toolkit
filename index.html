@@ -2546,6 +2546,14 @@ color:var(--text-dim);min-width:35px;text-align:right;
       </div>
     </div>
 
+    <!-- PINNED SNAPSHOT MODAL (for generated items that can't be re-looked-up) -->
+    <div id="pinSnapshotModal" style="display:none;position:fixed;inset:0;z-index:10000;align-items:center;justify-content:center;background:rgba(0,0,0,.75);padding:16px" onclick="if(event.target===this)hidePinSnapshot()">
+      <div style="background:var(--bg);border:2px solid var(--gold-dim);border-radius:var(--radius);max-width:520px;width:100%;max-height:85vh;overflow-y:auto;padding:20px 18px;position:relative">
+        <button onclick="hidePinSnapshot()" style="position:absolute;top:8px;right:12px;background:none;border:none;color:var(--text-dim);font-size:22px;cursor:pointer;padding:4px 8px;line-height:1" title="Close">&times;</button>
+        <div id="pinSnapshotBody"></div>
+      </div>
+    </div>
+
     <!-- ADD PLAYER CHARACTER MODAL -->
     <div id="addPcModal" style="display:none;position:fixed;inset:0;z-index:10000;align-items:center;justify-content:center;background:rgba(0,0,0,.75);padding:16px" onclick="if(event.target===this)hideAddPlayerCharacter()">
       <div style="background:var(--bg);border:2px solid var(--gold-dim);border-radius:var(--radius);max-width:420px;width:100%;max-height:90vh;overflow-y:auto;padding:20px 18px;position:relative">
@@ -8235,43 +8243,164 @@ function renderCorkboardCard(pin) {
     '</div>';
 }
 
-// "VIEW" button jumps back to the source and opens the full record
+// "VIEW" button jumps back to the source and opens the full record,
+// or shows a snapshot modal for generated content that can't be re-looked-up.
 function corkboardOpen(type, id) {
+  const pin = corkboardPins.find(p => p.type === type && p.id === id);
   switch (type) {
     case 'notable-npc':
       if (typeof lookupNotableNpcByName === 'function') lookupNotableNpcByName(id);
       break;
-    case 'creature':
+    case 'creature': {
       switchTab('npc'); switchNpcSubtab('lookups');
-      if (!creaturePanelOpen && typeof toggleCreaturePanel === 'function') toggleCreaturePanel();
+      if (typeof creaturePanelOpen !== 'undefined' && !creaturePanelOpen && typeof toggleCreaturePanel === 'function') toggleCreaturePanel();
       const cSearch = document.getElementById('creatureSearch');
       if (cSearch) { cSearch.value = id; if (typeof filterCreatures === 'function') filterCreatures(); }
+      setTimeout(() => {
+        if (typeof creatureFiltered !== 'undefined' && typeof showCreature === 'function') {
+          const idx = creatureFiltered.findIndex(c => c.name === id);
+          if (idx >= 0) showCreature(idx);
+        }
+      }, 80);
       break;
-    case 'weapon':
+    }
+    case 'weapon': {
       switchTab('npc'); switchNpcSubtab('lookups');
-      if (typeof toggleWeapPanel === 'function' && !weapPanelOpen) toggleWeapPanel();
+      if (typeof toggleWeapPanel === 'function' && typeof weapPanelOpen !== 'undefined' && !weapPanelOpen) toggleWeapPanel();
       const wSearch = document.getElementById('weapSearch');
       if (wSearch) { wSearch.value = id; if (typeof filterWeapons === 'function') filterWeapons(); }
+      setTimeout(() => {
+        if (typeof weapFiltered !== 'undefined' && typeof showWeapItem === 'function') {
+          const idx = weapFiltered.findIndex(w => w.name === id);
+          if (idx >= 0) showWeapItem(idx);
+        }
+      }, 80);
       break;
-    case 'equipment':
+    }
+    case 'equipment': {
       switchTab('npc'); switchNpcSubtab('lookups');
-      if (typeof toggleEquipPanel === 'function' && !equipPanelOpen) toggleEquipPanel();
+      if (typeof toggleEquipPanel === 'function' && typeof equipPanelOpen !== 'undefined' && !equipPanelOpen) toggleEquipPanel();
       const eSearch = document.getElementById('equipSearch');
       if (eSearch) { eSearch.value = id; if (typeof filterEquipment === 'function') filterEquipment(); }
+      setTimeout(() => {
+        if (typeof equipFiltered !== 'undefined' && typeof showEquipItem === 'function') {
+          const idx = equipFiltered.findIndex(e => e.name === id);
+          if (idx >= 0) showEquipItem(idx);
+        }
+      }, 80);
       break;
+    }
     case 'starship':
+      openStarshipByName(id);
+      break;
     case 'vehicle':
+      openVehicleByName(id);
+      break;
     case 'ship-equipment':
-      switchTab('ships');
+      openShipEquipmentByName(id);
       break;
     case 'planet':
-    case 'wild-system':
       switchTab('galaxy');
       if (typeof showPlanetDetail === 'function') showPlanetDetail(id);
       break;
+    // Generated content — show the saved snapshot in a modal
+    case 'random-npc':
+    case 'random-alien':
+    case 'random-creature':
+    case 'wild-system':
+    case 'built-ship':
+      if (pin) showPinSnapshot(pin);
+      break;
     default:
-      switchTab('corkboard');
+      if (pin) showPinSnapshot(pin);
   }
+}
+
+function openStarshipByName(name) {
+  switchTab('ships');
+  if (typeof STARSHIP_DATA === 'undefined') return;
+  // Find which category contains this ship and its index within the original list
+  for (const cat of Object.keys(STARSHIP_DATA)) {
+    const list = STARSHIP_DATA[cat];
+    for (let i = 0; i < list.length; i++) {
+      if (list[i].name === name) {
+        const catSel = document.getElementById('shipCategory');
+        if (catSel) {
+          catSel.value = cat;
+          if (typeof updateShipList === 'function') updateShipList();
+          setTimeout(() => {
+            const itemSel = document.getElementById('shipItem');
+            if (itemSel) {
+              itemSel.value = i;
+              if (typeof showShipStats === 'function') showShipStats();
+            }
+            const block = document.getElementById('shipStatBlock');
+            if (block) block.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 60);
+        }
+        return;
+      }
+    }
+  }
+}
+
+function openVehicleByName(name) {
+  switchTab('ships');
+  if (typeof toggleVehiclePanel === 'function' && typeof vehPanelOpen !== 'undefined' && !vehPanelOpen) toggleVehiclePanel();
+  const search = document.getElementById('vehSearch');
+  if (search) { search.value = name; if (typeof filterVehicles === 'function') filterVehicles(); }
+  setTimeout(() => {
+    if (typeof vehFiltered !== 'undefined' && typeof showVehItem === 'function') {
+      const idx = vehFiltered.findIndex(v => v.name === name);
+      if (idx >= 0) showVehItem(idx);
+    }
+  }, 80);
+}
+
+function openShipEquipmentByName(name) {
+  switchTab('ships');
+  if (typeof toggleShipEquipPanel === 'function' && typeof shipEquipPanelOpen !== 'undefined' && !shipEquipPanelOpen) toggleShipEquipPanel();
+  const search = document.getElementById('shipEquipSearch');
+  if (search) { search.value = name; if (typeof filterShipEquip === 'function') filterShipEquip(); }
+  setTimeout(() => {
+    if (typeof shipEquipFiltered !== 'undefined' && typeof showShipEquipItem === 'function') {
+      const idx = shipEquipFiltered.findIndex(e => e.name === name);
+      if (idx >= 0) showShipEquipItem(idx);
+    }
+  }, 80);
+}
+
+function hidePinSnapshot() {
+  document.getElementById('pinSnapshotModal').style.display = 'none';
+}
+
+// Render a saved snapshot for a generated pin (random NPC, alien, creature, system, built ship)
+function showPinSnapshot(pin) {
+  const body = document.getElementById('pinSnapshotBody');
+  const typeLabel = CB_TYPE_LABELS[pin.type] || pin.type;
+  const d = pin.data || {};
+  let html = '<div style="font-family:\'Orbitron\',\'Exo 2\',monospace;font-size:10px;color:var(--cyan);letter-spacing:2px;margin-bottom:2px">' + escapeHtml(typeLabel) + '</div>';
+  html += '<div style="font-family:\'Exo 2\',monospace;font-size:16px;color:var(--gold);font-weight:700;letter-spacing:1px;margin-bottom:4px">' + escapeHtml(pin.title) + '</div>';
+  if (pin.subtitle) html += '<div style="font-size:11px;color:var(--text-dim);margin-bottom:12px">' + escapeHtml(pin.subtitle) + '</div>';
+  const rows = Object.keys(d).filter(k => d[k] !== '' && d[k] != null);
+  if (rows.length) {
+    html += '<div style="display:grid;gap:0;padding:10px;background:rgba(0,0,0,0.2);border-radius:6px;margin-bottom:10px">';
+    rows.forEach(k => {
+      const label = k.replace(/([A-Z])/g, ' $1').replace(/^./, c => c.toUpperCase());
+      html += '<div style="display:flex;gap:8px;padding:3px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:12px">'
+            + '<span style="color:var(--text-dim);min-width:120px;flex-shrink:0">' + escapeHtml(label) + '</span>'
+            + '<span style="color:var(--text)">' + escapeHtml(String(d[k])) + '</span></div>';
+    });
+    html += '</div>';
+  } else {
+    html += '<div style="color:var(--text-dim);font-size:11px;font-style:italic;padding:8px 0">No additional details were saved with this pin.</div>';
+  }
+  html += '<div style="font-size:10px;color:var(--text-dark);font-style:italic;margin-top:10px;line-height:1.5">This is a saved snapshot from when you pinned it. The original generator rolls fresh results each time — this entry won\'t change unless you edit or remove it.</div>';
+  html += '<div style="display:flex;gap:8px;justify-content:flex-end;margin-top:14px">';
+  html += '<button class="btn btn-primary" onclick="hidePinSnapshot()" style="padding:6px 14px;font-size:10px;letter-spacing:1px">CLOSE</button>';
+  html += '</div>';
+  body.innerHTML = html;
+  document.getElementById('pinSnapshotModal').style.display = 'flex';
 }
 
 // ---- Send-to-Tracker ----
@@ -8398,6 +8527,7 @@ function savePlayerCharacter() {
 
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape' && document.getElementById('addPcModal').style.display === 'flex') hideAddPlayerCharacter();
+  if (e.key === 'Escape' && document.getElementById('pinSnapshotModal').style.display === 'flex') hidePinSnapshot();
 });
 
 // Helper: return HTML for a ★ PIN button for any detail card.
