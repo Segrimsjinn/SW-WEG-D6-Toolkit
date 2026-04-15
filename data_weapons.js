@@ -4542,7 +4542,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Jer'N Microwave Stunner",
-  "category": "Hold-out Blasters",
+  "category": "Hold-Out Blasters",
   "skill": "Blaster: hold-out blaster",
   "cost": "175 (power packs: 25)",
   "availability": "3, X",
