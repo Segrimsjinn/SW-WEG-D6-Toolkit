@@ -1536,7 +1536,7 @@ const EQUIPMENT_DATA = [
   "source": ""
  },
  {
-  "name": "Sensor Jammer",
+  "name": "Sensor Jammer (Character)",
   "category": "Sensors",
   "cost": "1,000",
   "availability": "2, R",
@@ -4956,7 +4956,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "category": "Ship Equipment",
-  "name": "Sensor Jammer",
+  "name": "Sensor Jammer (Starship)",
   "type": "IntelStar BlindSide Sensor Jammer",
   "cost": "5,000 plus installation",
   "availability": "2, X",
