@@ -969,7 +969,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Vitapill",
-  "category": "Medical",
+  "category": "Drugs",
   "cost": "25",
   "availability": "1",
   "game_notes": "Nutritional supplement. Sustains a being for 1 day without food.",
@@ -5801,7 +5801,7 @@ const EQUIPMENT_DATA = [
  ,{
   "name": "Xebonica (Imperial Security Neurotoxin)",
   "type": "Imperial Intelligence Class A Code Red Security Substance",
-  "category": "Medical",
+  "category": "Drugs",
   "cost": "Restricted (Imperial Intelligence issue only)",
   "availability": "4, X",
   "game_notes": "Slow-acting time-released neurotoxin issued by Imperial Intelligence to garrison commanders and field operatives, mandatory for all Class A Code Red individuals (research scientists, weapons manufacturers, and others carrying top-priority information) during transfer from native worlds to secure areas. Includes a bio-masking agent to prevent easy detection. Antidote: Trypanid 20 mcg at 10-hour intervals for standard humans, as directed for other lifeforms — without the antidote the active ingredient becomes lethal far more rapidly. Symptoms in human and similar life-forms follow the standard pattern for invasive neurotoxin poisoning. Imperial Intelligence advises commanders to provide cover stories that give the subject sufficient cause to seek regular medical checks at the required intervals. Custom variants exist — Major Pedrin used a sub-variant on Ketrian Altronel that the standard Trypanid antidote could not counter.",
@@ -5810,7 +5810,7 @@ const EQUIPMENT_DATA = [
  ,{
   "name": "Mangoriza (Imperial Security Neurotoxin)",
   "type": "Imperial Intelligence Class A Code Red Security Substance",
-  "category": "Medical",
+  "category": "Drugs",
   "cost": "Restricted (Imperial Intelligence issue only)",
   "availability": "4, X",
   "game_notes": "Slow-acting time-released neurotoxin issued by Imperial Intelligence as an alternate to Xebonica for use on Class A Code Red individuals. Includes a bio-masking agent to prevent easy detection. Antidote: Alaswal-XT 40 mcg at 10-hour intervals for standard humans, as directed for other lifeforms — without the antidote the active ingredient becomes lethal far more rapidly. Symptoms follow the standard invasive neurotoxin pattern. Intelligence Command continually rotates the chemicals on issue to defeat terrorist counter-intelligence; supplies must be regularly upgraded.",
