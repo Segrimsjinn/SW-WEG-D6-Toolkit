@@ -166,7 +166,6 @@ letter-spacing:1px;font-weight:700;
 .training-Experienced{background:#2a2a1a;color:#ffd700;border:1px solid #4a4a2a}
 .training-Veteran{background:#2a1a2a;color:#bb86fc;border:1px solid #4a2a4a}
 .training-Elite{background:#2a1a1a;color:#ff7043;border:1px solid #4a2a2a}
-.training-hero{background:#2a0a0a;color:#ff4444;border:1px solid #4a1a1a}
 
 /* STAT GRID */
 .stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
@@ -227,10 +226,6 @@ border:1px solid var(--card-border);color:var(--text);
 .fluff-lbl{font-size:13px;color:var(--gold);font-weight:600;letter-spacing:.5px}
 .fluff-lbl::after{content:':'}
 .fluff-val{font-size:14px;color:#fff;font-family:'Eras Demi ITC','Era Demi','Rajdhani',sans-serif}
-.fluff-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:8px}
-.fluff-box{text-align:center}
-.fluff-label{font-size:9px;color:var(--text-dim);letter-spacing:1px}
-.fluff-value{font-size:14px;color:var(--text);margin-top:2px}
 
 /* REROLL BUTTONS */
 .reroll-bar{
@@ -390,7 +385,6 @@ font-size:11px;color:var(--text);cursor:pointer;
   .skills-equip-row{flex-direction:column}
   .skills-half,.equip-half{flex:none;width:100%}
   .stat-grid{grid-template-columns:1fr}
-  .fluff-grid{grid-template-columns:1fr 1fr}
   .skills-columns{grid-template-columns:1fr}
 }
 
@@ -573,7 +567,6 @@ color:var(--text-dim);min-width:35px;text-align:right;
 .val-m{background:rgba(80,80,40,0.25);color:#d4d6dc;padding:1px 4px;border-radius:4px}
 .val-h{background:rgba(30,90,40,0.35);color:#9aff9a;padding:1px 4px;border-radius:4px}
 .val-vh{background:rgba(14,110,30,0.45);color:#7dff7d;padding:1px 4px;border-radius:4px;font-weight:600}
-.val-none{color:var(--text-dark)}
 .diff-ve{background:rgba(46,125,50,0.25);color:#7dd87d;padding:1px 6px;border-radius:8px;font-size:9px;font-weight:500}
 .diff-e{background:rgba(76,120,40,0.3);color:#b6e07d;padding:1px 6px;border-radius:8px;font-size:9px;font-weight:500}
 .diff-m{background:rgba(107,90,30,0.3);color:#e8c866;padding:1px 6px;border-radius:8px;font-size:9px;font-weight:500}
@@ -866,7 +859,6 @@ color:var(--text-dim);min-width:35px;text-align:right;
             <button class="btn-reroll" style="border-color:var(--gold);color:var(--gold)" onclick="exportPDF()">⟐ PDF</button>
           </div>
         </div>
-        <div id="lockConflictHint" style="font-family:'Rajdhani',sans-serif;font-size:11px;color:#cc6666;padding:0 2px 4px;display:none"></div>
         <div class="npc-controls">
           <div class="controls-left">
             <div class="control-row">
@@ -4424,21 +4416,6 @@ function showNotableNpcByName(encodedName) {
   if (n) showNotableNpcDetail(n);
 }
 
-function lookupNotableNpcsBySystem(system) {
-  switchTab('npc');
-  switchNpcSubtab('lookups');
-  if (!notableNpcPanelOpen) toggleNotableNpcPanel();
-  const searchEl = document.getElementById('notableNpcSearch');
-  const sysEl = document.getElementById('notableNpcSystemFilter');
-  const affEl = document.getElementById('notableNpcAffFilter');
-  if (!searchEl || !sysEl) return;
-  searchEl.value = '';
-  if (affEl) affEl.value = '';
-  sysEl.value = system;
-  filterNotableNpcs();
-  setTimeout(() => sysEl.scrollIntoView({ behavior: 'smooth', block: 'center' }), 120);
-}
-
 function lookupNotableNpcByName(baseName) {
   switchTab('npc');
   switchNpcSubtab('lookups');
@@ -5710,7 +5687,6 @@ function deriveSpeciesName(planetName) {
   // Strip any numeric suffixes like "IV", "III", trailing numbers
   let base = planetName.replace(/\s+(I{1,3}|IV|V|VI{0,3}|[0-9]+)$/i, '').trim();
   const suffixes = ['an','ian','ese','i','ite','ar','id','on','oi','ene','al','ri','ik'];
-  const pick = arr => arr[Math.floor(Math.random() * arr.length)];
   const last = base.slice(-1).toLowerCase();
   const last2 = base.slice(-2).toLowerCase();
   // Choose suffix based on ending sound for natural results
@@ -5987,7 +5963,6 @@ function rollBetween(lo, hi) { return lo + Math.floor(Math.random() * (hi - lo +
 
 function generateRandomCreature() {
   if (window.goatcounter) goatcounter.count({ path: 'creaturegen-generated', event: true });
-  const pick = arr => arr[Math.floor(Math.random() * arr.length)];
   const rollTable = (table, dice) => {
     const nd = parseInt(dice);
     let total = 0;
