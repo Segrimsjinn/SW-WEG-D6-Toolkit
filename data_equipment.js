@@ -808,14 +808,6 @@ const EQUIPMENT_DATA = [
   "source": "Gundark's Fantastic Technology (page 60)"
  },
  {
-  "name": "Shipsuit",
-  "category": "Environmental Suits",
-  "cost": "200",
-  "availability": "1",
-  "game_notes": "Multi-pocketed coverall, fireproof and electrically nonconductive.",
-  "source": "Gundark's Fantastic Technology (page 76)"
- },
- {
   "name": "Skakoan Pressure Suit (Heavy)",
   "category": "Environmental Suits",
   "cost": "11,000",
@@ -1565,14 +1557,6 @@ const EQUIPMENT_DATA = [
   "cost": "300",
   "availability": "1",
   "game_notes": "Multi-purpose handheld scanner. +1D to search within 100m. Detects life forms, energy sources, and metals.",
-  "source": ""
- },
- {
-  "name": "Infra-Goggles",
-  "category": "Sensors",
-  "cost": "500",
-  "availability": "2",
-  "game_notes": "Infrared vision goggles. See heat signatures in complete darkness up to 100m. +1D to search in darkness.",
   "source": ""
  },
  {
@@ -5295,7 +5279,7 @@ const EQUIPMENT_DATA = [
   "source": "WEG40143 Pirates & Privateers p.47"
  },
  {
-  "category": "Electronics",
+  "category": "Tools",
   "name": "Shipsuit",
   "type": "Ayelic/Krongbing Textiles Shipsuit",
   "cost": "200",
@@ -5477,7 +5461,7 @@ const EQUIPMENT_DATA = [
  {
   "name": "Electronic Blaster Sighting System",
   "type": "SoroSuub True-Site System",
-  "category": "Electronics",
+  "category": "Weapon Accessories",
   "cost": "500",
   "availability": "2, R",
   "game_notes": "Skill: Blaster. Small electronic sight that fits on top of a blaster and projects a holographic crosshair one meter in front of the muzzle. Adds +1D to blaster. Drawback: the glowing sight profile gives away the user's position in night firefights, and polarized lens filters (such as those in stormtrooper helmets) obscure the holosight.",
@@ -5495,7 +5479,7 @@ const EQUIPMENT_DATA = [
  {
   "name": "Infra-goggles",
   "type": "Drolan Plasteel Infra-goggles",
-  "category": "Electronics",
+  "category": "Sensors",
   "cost": "300",
   "availability": "2",
   "game_notes": "Common night-vision device that decodes ambient infrared and ultraviolet light to enhance visibility in near-dark conditions. Reduces darkness-related attack difficulty modifiers by 2D. If intense light (glowrod or sudden illumination) is shined directly on the goggles, the wearer must immediately make a Difficult willpower roll or be blinded for 1D rounds.",
@@ -5513,7 +5497,7 @@ const EQUIPMENT_DATA = [
  {
   "name": "Wide-scan Binocs",
   "type": "Jassim Design VX3 Scanner",
-  "category": "Electronics",
+  "category": "Sensors",
   "cost": "100",
   "availability": "1",
   "game_notes": "Image-intensification binoculars using only a series of lenses (no electronics, no power cells required). Several control knobs adjust focus and magnification. Provides a +1D bonus to search skill rolls where the target lies more than 20 meters from the viewer. A reasonably effective and easily-repaired alternative to macrobinoculars.",
