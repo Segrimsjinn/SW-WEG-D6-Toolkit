@@ -8833,6 +8833,10 @@ function pcUpdatePrereqWarning() {
     const prereqIds = rawPrereq.split(',').map(s => s.replace(/[^\d]/g, '').trim()).filter(Boolean);
     prereqIds.forEach(pid => {
       const norm = pid.replace(/^0+/, '') || '0';
+      // Lightsaber Combat (#42) is spoofed as a prereq in data_powers.js to bias
+      // the NPC generator's weighting — it's not a canonical WEG prereq. Skip
+      // it here so the PC form's warning doesn't nag users about it.
+      if (norm === '42') return;
       if (!selectedIds.has(norm)) {
         const prereqEntry = idToEntry[norm];
         const prereqName = prereqEntry ? prereqEntry.name.replace(/^\d+\.\s*/, '') : ('power #' + pid);
