@@ -1404,7 +1404,7 @@ const WEAPONS_DATA = [
   "source": "Galaxy Guide 5 (page 65)"
  },
  {
-  "name": "DEMP Gun",
+  "name": "Merr-Sonn DEMP Gun Handgun",
   "category": "Ion Weapons",
   "skill": "Blaster",
   "cost": "500",
@@ -1412,8 +1412,8 @@ const WEAPONS_DATA = [
   "damage": "2D/3D/4D (3 settings)",
   "range": "3-10/30/120",
   "ammo": "10",
-  "game_notes": "Anti-droid electromagnetic pulse weapon.",
-  "source": "Imperial Sourcebook (pages 122-123)"
+  "game_notes": "Destructive ElectroMagnetic Pulse weapon — anti-droid pistol. Three damage settings.",
+  "source": "WEG40025 Galladinium's Fantastic Technology p.84; WEG40068 Imperial Sourcebook p.122-123"
  },
  {
   "name": "Ion Gun Pistol",
@@ -4175,18 +4175,6 @@ const WEAPONS_DATA = [
   "cost": "300",
   "availability": "3, X",
   "damage": "4D",
-  "range": "",
-  "ammo": "",
-  "game_notes": "",
-  "source": "WEG40025 Galladinium's Fantastic Technology p.84"
- },
- {
-  "name": "Merr-Sonn DEMP Gun Handgun",
-  "category": "Ion Weapons",
-  "skill": "Blaster",
-  "cost": "500",
-  "availability": "2, R",
-  "damage": "2D-4D",
   "range": "",
   "ammo": "",
   "game_notes": "",
