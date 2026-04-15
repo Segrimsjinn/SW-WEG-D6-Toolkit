@@ -3678,7 +3678,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Ishi Tib Coral Scepter",
-  "category": "Melee Weapons",
+  "category": "Projectile Weapons",
   "skill": "Archaic weapons",
   "cost": "1,200",
   "availability": "4",
