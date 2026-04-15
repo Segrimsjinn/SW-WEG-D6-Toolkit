@@ -4401,16 +4401,11 @@ function filterForcePowers() {
   const cat = document.getElementById('forcePowerCategory').value;
   const results = document.getElementById('forcePowerResults');
 
-  if (!search && !cat) {
-    results.innerHTML = '<div style="color:var(--text-dark);font-style:italic;font-size:11px;padding:8px">Type a power name or number (01-76), or select a category.</div>';
-    return;
-  }
-
   let filtered = FORCE_POWERS_DATA.filter(p => {
     if (cat && p.category !== cat) return false;
     if (search) {
       const numStr = String(p.number).padStart(2, '0');
-      if (!p.name.toLowerCase().includes(search) && !numStr.startsWith(search) && !String(p.number) === search) return false;
+      if (!p.name.toLowerCase().includes(search) && !numStr.startsWith(search) && String(p.number) !== search) return false;
     }
     return true;
   });
