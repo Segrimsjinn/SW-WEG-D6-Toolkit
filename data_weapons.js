@@ -2941,8 +2941,8 @@ const WEAPONS_DATA = [
   "damage": "STR+1D (max 6D)",
   "range": "2-3/5/10",
   "ammo": "",
-  "game_notes": "May be used as normal knife in melee.",
-  "source": "Rulebook (page 228)"
+  "game_notes": "May be used as a normal knife in melee. Design unchanged for at least 4,000 years — valid across all eras.",
+  "source": "Core Rulebook p.228; WEG40082 Tales of the Jedi Companion (4000 BBY era)"
  },
  {
   "name": "Thud Bug",
@@ -2967,18 +2967,6 @@ const WEAPONS_DATA = [
   "ammo": "",
   "game_notes": "Mistryl Shadow Guard weapon. Full damage only with specialization.",
   "source": "Gundark's Fantastic Technology (page 15)"
- },
- {
-  "name": "Throwing Knife (4000 BBY)",
-  "category": "Thrown Weapons",
-  "skill": "Thrown weapons: knife",
-  "cost": "50",
-  "availability": "1",
-  "damage": "STR+1D (maximum: 6D)",
-  "range": "2-3/5/10",
-  "ammo": "",
-  "game_notes": "Standard throwing knife. May be used as a normal knife in melee. 4000 BBY era tech.",
-  "source": "WEG40082 Tales of the Jedi Companion"
  },
  {
   "name": "Double Vibroblade",
