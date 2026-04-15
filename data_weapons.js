@@ -1885,18 +1885,6 @@ const WEAPONS_DATA = [
   "source": "Wizards Website"
  },
  {
-  "name": "Force Pike",
-  "category": "Melee - Powered",
-  "skill": "Melee combat: force pike",
-  "cost": "500",
-  "availability": "2, R",
-  "damage": "STR+2D",
-  "range": "",
-  "ammo": "",
-  "game_notes": "Moderate difficulty.",
-  "source": "Imperial Sourcebook (pages 124-125)"
- },
- {
   "name": "Great Force Pike",
   "category": "Melee - Powered",
   "skill": "Melee combat: force pike",
@@ -1919,18 +1907,6 @@ const WEAPONS_DATA = [
   "ammo": "",
   "game_notes": "Difficult. Blade up to 300cm. Miss by 10+ = self-damage.",
   "source": "Power of the Jedi Sourcebook (pages 54-55)"
- },
- {
-  "name": "Lightfoil",
-  "category": "Melee - Powered",
-  "skill": "Lightsaber",
-  "cost": "10,000",
-  "availability": "4, X",
-  "damage": "3D-4D",
-  "range": "",
-  "ammo": "",
-  "game_notes": "On wild die 1, beam flickers and fades. 2hr repair (Moderate lightsaber repair).",
-  "source": "Lord of the Expanse (page 47)"
  },
  {
   "name": "Lightsaber",
@@ -3159,42 +3135,6 @@ const WEAPONS_DATA = [
   "ammo": "",
   "game_notes": "Moderate (Difficult without specialization). +5 parry bonus if trained. Royal Guardsman weapon.",
   "source": ""
- },
- {
-  "name": "Duelist Vibrorapier",
-  "category": "Melee - Powered",
-  "skill": "Melee combat",
-  "cost": "300",
-  "availability": "2, R",
-  "damage": "STR+3D (max 7D)",
-  "range": "",
-  "ammo": "",
-  "game_notes": "Moderate difficulty.",
-  "source": "Gundark's Fantastic Technology (page 14)"
- },
- {
-  "name": "Jengardin Double-Bladed Vibroblade",
-  "category": "Melee - Powered",
-  "skill": "Melee combat: vibroblade",
-  "cost": "6,000",
-  "availability": "4, F/R/X",
-  "damage": "STR+4D+1 (max 8D)",
-  "range": "",
-  "ammo": "",
-  "game_notes": "Difficult. Two-handed, requires full concentration. Single-handed increases difficulty 2 levels. Miss by 10+ = self-damage.",
-  "source": "Galladinium's Fantastic Technologies (page 69)"
- },
- {
-  "name": "Talon Vibrodagger",
-  "category": "Melee - Powered",
-  "skill": "Melee combat: vibrodagger",
-  "cost": "50",
-  "availability": "2, R",
-  "damage": "STR+2D (max 6D)",
-  "range": "",
-  "ammo": "",
-  "game_notes": "Easy difficulty.",
-  "source": "Gundark's Fantastic Technology (pages 13-14)"
  },
  {
   "name": "Imperial Munitions Vibrodagger",
@@ -4892,7 +4832,7 @@ const WEAPONS_DATA = [
   "source": "WEG40139 Cracken's Threat Dossier p.54"
  },
  {
-  "category": "Melee Weapons",
+  "category": "Melee - Powered",
   "name": "Vibrorapier",
   "type": "LaserHone Duelist Vibrorapier",
   "cost": "300",
