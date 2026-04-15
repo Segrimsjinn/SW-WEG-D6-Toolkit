@@ -8454,16 +8454,33 @@ function renderRolledNpcSnapshot(pin) {
     }).join(', ') + '</div></div>';
   }
 
-  // Skills
+  // Skills — grouped under each attribute, same layout as the generator card
   if (Array.isArray(n.skills) && n.skills.length) {
-    out += '<div style="margin-bottom:10px"><div style="font-family:\'Exo 2\',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:4px">SKILLS</div>';
-    out += '<div style="font-size:11px;color:var(--text);line-height:1.7">';
-    out += n.skills.map(s => {
-      if (typeof s === 'string') return escapeHtml(s);
-      const nm = s.name || ''; const dc = s.dice || '';
-      return '<span style="color:var(--cyan)">' + escapeHtml(nm) + '</span> ' + escapeHtml(dc);
-    }).join(' · ');
-    out += '</div></div>';
+    const groups = {};
+    n.skills.forEach(s => {
+      if (typeof s === 'string') return;
+      const a = s.attr || 'Other';
+      if (!groups[a]) groups[a] = [];
+      groups[a].push(s);
+    });
+    const attrOrder = ['Dex', 'Per', 'Kno', 'Str', 'Mec', 'Tec'];
+    const attrValues = { Dex: n.dex, Per: n.per, Kno: n.kno, Str: n.str, Mec: n.mec, Tec: n.tec };
+    let skillHtml = '<div style="margin-bottom:10px"><div style="font-family:\'Exo 2\',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:6px">SKILLS</div>';
+    skillHtml += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px 12px">';
+    attrOrder.forEach(attr => {
+      if (!groups[attr] || !groups[attr].length) return;
+      skillHtml += '<div>';
+      skillHtml += '<div style="font-family:\'Exo 2\',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;padding:4px 0 2px;border-bottom:1px solid var(--card-border);margin-bottom:3px">' +
+        attr.toUpperCase() + ' <span style="color:var(--cyan);font-family:\'IBM Plex Mono\',monospace;font-size:11px">' + escapeHtml(attrValues[attr] || '') + '</span></div>';
+      groups[attr].forEach(s => {
+        skillHtml += '<div style="display:flex;justify-content:space-between;padding:1px 0;font-size:11px">' +
+          '<span style="color:var(--text)">' + escapeHtml(s.name || '') + '</span>' +
+          '<span style="color:var(--gold);font-family:\'IBM Plex Mono\',monospace">' + escapeHtml(s.dice || '') + '</span></div>';
+      });
+      skillHtml += '</div>';
+    });
+    skillHtml += '</div></div>';
+    out += skillHtml;
   }
 
   // Equipment
