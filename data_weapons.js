@@ -4470,7 +4470,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Arachnia EMRG-50 Rail Gun",
-  "category": "Rail Guns",
+  "category": "Projectile Weapons",
   "skill": "Rail gun",
   "cost": "10,000",
   "availability": "3, X",
