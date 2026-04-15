@@ -3006,8 +3006,8 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Bow",
-  "category": "Thrown Weapons",
-  "skill": "Thrown weapons: bow",
+  "category": "Projectile Weapons",
+  "skill": "Missile weapons: bow",
   "cost": "200",
   "availability": "1, F",
   "damage": "2D+2",
