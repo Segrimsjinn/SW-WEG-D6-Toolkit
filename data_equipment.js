@@ -1841,7 +1841,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Aquata Breather",
-  "category": "Survival",
+  "category": "Survival Gear",
   "cost": "350",
   "availability": "1",
   "game_notes": "Compact underwater rebreather. Provides 2 hours of breathable air underwater.",
@@ -1849,7 +1849,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Breath Mask",
-  "category": "Survival",
+  "category": "Survival Gear",
   "cost": "50",
   "availability": "1",
   "game_notes": "Filters toxins from breathable atmospheres. Does not provide oxygen in vacuum. Filter lasts 1 hour, replacements 10cr.",
@@ -1857,7 +1857,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Glow Rod",
-  "category": "Survival",
+  "category": "Survival Gear",
   "cost": "10",
   "availability": "1",
   "game_notes": "Portable light source. Illuminates 25m radius. 100 hours of continuous use.",
@@ -1865,7 +1865,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Jedi Utility Belt",
-  "category": "Survival",
+  "category": "Survival Gear",
   "cost": "500",
   "availability": "2",
   "game_notes": "Contains: glow rod, comlink, aquata breather, food capsules (1 week), grappling hook (20m), medical supplies.",
@@ -1873,7 +1873,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Luma Flare",
-  "category": "Survival",
+  "category": "Survival Gear",
   "cost": "5",
   "availability": "1",
   "game_notes": "Emergency flare visible for 1.5km. Burns for 30 minutes.",
@@ -1881,7 +1881,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Micro Fusion Reactor",
-  "category": "Survival",
+  "category": "Survival Gear",
   "cost": "1,500",
   "availability": "2",
   "game_notes": "Portable power source. Powers equipment for months. Recharges power packs.",
@@ -1889,7 +1889,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Pressure Tent",
-  "category": "Survival",
+  "category": "Survival Gear",
   "cost": "500",
   "availability": "2",
   "game_notes": "Pressurized shelter for hostile environments. Maintains breathable atmosphere for 2 beings for 24 hours.",
@@ -1897,7 +1897,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Ration Concentrates",
-  "category": "Survival",
+  "category": "Survival Gear",
   "cost": "5/week",
   "availability": "1",
   "game_notes": "One week of concentrated food. Provides minimum nutrition. Not exactly gourmet.",
@@ -1905,7 +1905,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Shelter",
-  "category": "Survival",
+  "category": "Survival Gear",
   "cost": "100",
   "availability": "1",
   "game_notes": "Standard portable shelter for 2 beings. Provides protection from weather. Sets up in 10 minutes.",
@@ -1913,7 +1913,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Survival Pack",
-  "category": "Survival",
+  "category": "Survival Gear",
   "cost": "500",
   "availability": "1",
   "game_notes": "Standard survival kit: 2 glow rods, comlink, knife, ration concentrates (1 week), water purifier, medpac, thermal cloak, breath mask.",
@@ -1921,7 +1921,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Water Purifier",
-  "category": "Survival",
+  "category": "Survival Gear",
   "cost": "50",
   "availability": "1",
   "game_notes": "Portable water purification device. Filters contaminants and makes most water drinkable.",
@@ -1929,7 +1929,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Organic Gill",
-  "category": "Survival",
+  "category": "Survival Gear",
   "cost": "200",
   "availability": "3",
   "game_notes": "Mon Calamari synthetic organic gill. Gelatinous symbiotic blob worn over breathing apertures; filters oxygen from water. Lasts several weeks underwater before dying. Small microphone/earphone inserts allow muffled communication. Usable by most species with compatible atmospheric requirements. Sullustans have an allergic reaction and cannot use it.",
@@ -2529,7 +2529,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "BlasTech Sniffer Weapon Detector",
-  "category": "Security Equipment",
+  "category": "Security",
   "cost": "5,600",
   "availability": "2, R (restricted to governments)",
   "game_notes": "Portable hand-held weapon scanner. Search 5D to detect hidden energy weapons, or adds +2D to operator's search: weapon detector skill (must have at least 1D in the specialization). Difficulty depends on camouflage: simply in a pack = Easy; drained of blaster gas, power packs removed, cleaned of residue, disassembled and parts spread among luggage = Very Difficult. Scanner is a small cube with scanning panel on one side and output screen on the other showing outlines and energy readings. A skilled operator is necessary for best effectiveness to interpret data.",
@@ -2537,7 +2537,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "TaggeCo. Biodegradable Binders",
-  "category": "Security Equipment",
+  "category": "Security",
   "cost": "75",
   "availability": "2, R",
   "game_notes": "High-strength polymer binders with a one-way clasp that seals once linked. Once applied, character must make opposed Strength roll to break free (binders have STR 6D). Binders deteriorate in 36 hours. Application of a special harmless molecular solvent degrades them sooner.",
@@ -2601,7 +2601,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Bith Vehicle Voice Lock (BiWoL) RVR-325",
-  "category": "Security Equipment",
+  "category": "Security",
   "cost": "650",
   "availability": "3",
   "game_notes": "Model: Casillis Electronic Defenses BiWoL RVR-325. Skill: Streetwise. Easy communications roll to encode or change pattern. Auto-activates within 10m by owner voice command (owner can alter tone to fail under duress). Failed circumvention disables vehicle power until secondary ID system verifies owner. Secondary ID can be customized: datakeys, datachips, specific switch sequences, computer sub-routines, or retinal/fingerprint/genetic scans. Forging requires a voice replication unit with sound adjustment, 3+ hours of work, and Moderate communications + Moderate forgery rolls. Computer holds up to 1 minute of recorded voice data.",
@@ -2729,7 +2729,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Ulqib MacroTronics Droid Customization Kit",
-  "category": "Tool Kits",
+  "category": "Tools",
   "cost": "400 (additional costs for specific attachments)",
   "availability": "",
   "game_notes": "Skills: Droid programming, droid repair. Kit includes: droid datapad neural pathway linkage, memory modulator (skill/attachment software programming), memory wipe module (erases all non-hardwired memory), replacement actuators and micro-servos, additional software node (+2D to one skill if droid's skill is less than 2D over attribute), broadband antenna receiver, movement sensor (search +2D over PER for moving objects within 100m if search is less than 2D over PER), repulsorlift motor (Move 13 for droids under 100kg, requires repulsorlift repair to install), internal computer interface socket, two photoreceptors (above Human range), two audio receptors (Human range), vocabulator panel, database retrieval system, remote programming receiver. Most hardware additions require corresponding software programming. Additional tools and parts may be needed — GM determines difficulty and time.",
@@ -2737,7 +2737,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Mk-11 Droid Diagnostic",
-  "category": "Tool Kits",
+  "category": "Tools",
   "cost": "200",
   "availability": "",
   "game_notes": "Model: Interstellar Droid Monitoring Inc. Mk-11. Skills: Droid programming, droid repair. Very Easy droid programming roll for standard systems check and readout (takes 30 minutes). Contains parameters for over 500 droid models. Diagnostic-assisted repair adds +1D to droid repair for maintenance only — does not apply to major repairs or modifications.",
@@ -2753,7 +2753,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Industrial Automaton R-Series Voice Box Adaptor",
-  "category": "Droid Accessories",
+  "category": "Droid Gear",
   "cost": "250 (language programs 25-100 each)",
   "availability": "",
   "game_notes": "Attaches to R1-R5 series astromech droids. Reprograms droid with chosen language (Basic, Bocce, Rodian, Wookiee, etc.). Adjustable pitch, intonation and speech patterns. Installation: Moderate droid repair, 15 min. Removal: Easy droid repair, 15 min (failed roll = 3D stun to droid + one random skill eliminated). Can cause operation problems (on mishap, skill attempt fails or -2D penalty). Can only fit in specially refitted droid couplings on X-wings/Y-wings, or must be mounted externally (e.g. on droid's head). If damaged or ripped off: 3D stun damage to droid.",
@@ -2769,7 +2769,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Veretrex Bith Hiding Cube SCT-1000",
-  "category": "Security Equipment",
+  "category": "Security",
   "cost": "3,000",
   "availability": "4",
   "game_notes": "75cm cube security container. Advanced prism with fiber optic relays that carry light across each face — when recessed into a wall, appears as continuous wall surface. Does not work in the open (creates a 'fuzzy' effect that draws attention). Moderate Perception roll to notice something about the wall. External magna-locks require Very Difficult security to pick. Outer surface STR 4D to resist damage.",
@@ -2793,7 +2793,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Ealewon DCD-4800 Cryptographic Coder",
-  "category": "Security Equipment",
+  "category": "Security",
   "cost": "1,200",
   "availability": "3",
   "game_notes": "Skill: Computer programming/repair. Hand-held computer data encryptor. Easy computer programming/repair to secure selected data files with encryption. Attempting to access encrypted files without authorization requires Difficult computer programming/repair. Mark individual files for password access while maintaining open systems. Hides sensitive materials even from sophisticated search operations.",
@@ -2849,7 +2849,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Locris Magna Lock MLC-50",
-  "category": "Security Equipment",
+  "category": "Security",
   "cost": "150",
   "availability": "2",
   "game_notes": "Skill: Security. Surface locking mechanism using micro magnetic fields to almost molecularly bond two items in place. Very Easy security roll to activate. Adds +2D to object's Strength to resist damage. Use on entrance panels, viewport windows, speeder accessports, and other entry points. Can only be removed from the inside.",
@@ -2857,7 +2857,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Novaplex Monofilament Screen Guards",
-  "category": "Security Equipment",
+  "category": "Security",
   "cost": "450 (1 pair 80cm strips)",
   "availability": "4, F/R/X",
   "game_notes": "Anti-intrusion device. Place strips above or below intrusion points; when activated, extends hundreds of needle-sharp monofilament fiber strands vertically up to 2m. Practically invisible even with night-enhanced vision. Very Difficult search to detect. Contact causes 6D damage (9D if subject moving rapidly). Illegal in many systems.",
@@ -2985,7 +2985,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Fabreth Anti-Shock Blanket",
-  "category": "Medical Equipment",
+  "category": "Medical",
   "cost": "250 (20-40 to replenish medicines)",
   "availability": "2",
   "game_notes": "Skill: First aid. Emergency blanket administering fast-acting medicines to any portion of a patient's body. Medicine dispersal controlled by medical computer or datapad linked to blanket's computer relay. Use medpac rules but reduce difficulties by one level. Single use before medicines must be replenished.",
@@ -2993,7 +2993,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Nilar Field Cauterizer",
-  "category": "Medical Equipment",
+  "category": "Medical",
   "cost": "200 (50 when sold to Rebel Alliance)",
   "availability": "3",
   "game_notes": "Pen-like device (16cm) emitting small low-frequency laser that cauterizes and disinfects bleeding wounds. Effective against cuts, scrapes, abrasions, minor lacerations and minor slug-thrower wounds. Ineffective for internal injuries. Heals minor wounds, removing stun damage due to bleeding only (GM discretion). Nilar Med/Tech secretly sells to the Rebel Alliance at reduced price.",
@@ -3001,7 +3001,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Chiewab ECM-598 Customized Medical Backpack",
-  "category": "Medical Equipment",
+  "category": "Medical",
   "cost": "600",
   "availability": "2",
   "game_notes": "Skill: First aid. Advanced medical kit with computer-assisted diagnostics. All components Easy first aid unless noted. Contents: Hand-Held Diagnostic Scanner (Easy first aid or Moderate sensors — vital signs, injury specifics, recommended procedures). Medicines (anesthetics, blood pressure, respiration, pulse regulation for common species). Emergency Procedures Database (Easy computer programming/repair — quick reference treatment procedures). Filtration Mask (oxygen supply, connectable to other atmospheric compound bottles). Heat Closure Packs (pressurized sealant bandages, cauterize/sterilize wounds up to 10cm). Laser Scalpel (Difficult first aid). Medicine Dispenser (Moderate first aid, loadable with various medicines). Portable Repulsor-Stretcher (collapsible, supports up to 150kg). Pressure Cuffs (5-30cm diameter inflatable chambers). Sterile Heating Cloth (1.6m x 0.75m). 2 Universal Plasma Fluid Sacks (Moderate first aid, IV plasma stabilization).",
@@ -3009,7 +3009,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Synthtech MDS-50 Medical Diagnostic Scanner",
-  "category": "Medical Equipment",
+  "category": "Medical",
   "cost": "75",
   "availability": "1",
   "game_notes": "Skill: First aid. Hand-held personal medical scanner operable over wide range of species norms. Select diagnostic mode or punch in specific parameters. Easy first aid for basic overall physical condition readouts. Moderate first aid to scan for specific ailments. Identifies current physical abnormalities and suggests probable causes but does not recommend treatment. Difficulties adjusted for unusual or hard-to-detect conditions.",
@@ -3017,7 +3017,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Hadrassi Plasma Protein Replicator PFG-700",
-  "category": "Medical Equipment",
+  "category": "Medical",
   "cost": "5,500",
   "availability": "3",
   "game_notes": "Skill: First aid. Emergency blood synthesizer using proteins from local organic materials to synthesize stabilizing plasma serums. Requires genetic sample (skin, hair or blood) from patient. Difficult first aid roll to prepare tissue/blood sample and match with local organics for synthesis. Produces up to 2 liters of blood substitute per hour. Not a long-term substitute for actual blood type.",
@@ -3025,7 +3025,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Praxen Portable Survival Pod PSP-278",
-  "category": "Medical Equipment",
+  "category": "Medical",
   "cost": "13,500",
   "availability": "3",
   "game_notes": "Skills: First aid, computer programming/repair. 2m long cylinder with swing-open central tube. Computer-guided step-by-step activation for novice users. Incapacitated/Wounded patient: Easy computer programming/repair + Moderate first aid. Mortally Wounded patient: Moderate computer programming/repair + Difficult first aid. Successful activation stabilizes patient (will not worsen) as long as power generator supplies the pod.",
@@ -3033,7 +3033,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Athakam II Med Unit",
-  "category": "Medical Equipment",
+  "category": "Medical",
   "cost": "3,000",
   "availability": "2",
   "game_notes": "Computerized medical cot (2.5m x 1m x 1m) with articulated limbs and display/input panel. Self-contained unit providing care when medpac is insufficient and medical droid/surgeon unavailable. First aid 5D, medicine 1D. Diagnoses patient condition in 1 minute using either skill. Successful diagnosis triggers appropriate treatments (medicines, antibiotics, anti-viral, anti-toxin). Failed diagnosis displays 'Diagnosis Indeterminable' with likely problems and statistical probability. A 2-1B or other medical droid interfacing with the unit receives +2D to first aid and +1D to medicine.",
@@ -3041,7 +3041,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Xarnin Replar Splint GRS-600",
-  "category": "Medical Equipment",
+  "category": "Medical",
   "cost": "200",
   "availability": "2",
   "game_notes": "Skill: First aid. Creates miniature suspension field to immobilize and relieve pressure on damaged bone. Limited movement possible once activated. Easy first aid for normal placement. Moderate for multiple or compound fractures.",
@@ -3049,7 +3049,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Sluissi Gravitic Pressure Bandage SGB-543",
-  "category": "Medical Equipment",
+  "category": "Medical",
   "cost": "750",
   "availability": "2",
   "game_notes": "Skill: First aid. Hollow metal cylinder with inflatable cloth lining. Connected to medical datapad, applies micro-repulsor fields of differing strengths to compress damaged arteries without affecting surrounding tissues. Prevents internal bleeding complications. Easy first aid for proper placement. Wounded patients act as unwounded; Incapacitated patients act as Wounded. Injury remains but patient can move. Patient can be moved carefully once in place.",
@@ -3057,7 +3057,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "SyntheCure Spray Plasto-Cast",
-  "category": "Medical Equipment",
+  "category": "Medical",
   "cost": "35",
   "availability": "1",
   "game_notes": "Skill: First aid. One-handed pistol-spray applying fine chemical mist that instantly solidifies. Additional applications increase pressure for chemical pressure bandage or tourniquet. Safe and non-toxic, removable with reactant chemical washes (included). Easy first aid for proper application (Moderate survival may substitute in emergencies). Adds +2 to character's next healing roll. Covers 50cm x 20cm area. Single use, cannot be refilled. Adjustable emission tip controls spray width.",
@@ -3089,7 +3089,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "MerenData Credit Chip Bio-Encoder",
-  "category": "Security Equipment",
+  "category": "Security",
   "cost": "2,500",
   "availability": "3, R or X",
   "game_notes": "Biological credit chip encryption. Uses owner's genetic sample to replicate a culture of organisms coating the credit chip surface. Neutral-reactive to owner's genetic code. Unauthorized handlers trigger immediate response: discoloration and 4D stun damage. Easy first aid roll to properly encode genetic sample.",
@@ -3097,7 +3097,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Seselin Cyduct E-23 Chemical Booster",
-  "category": "Medical Equipment",
+  "category": "Medical",
   "cost": "1,250",
   "availability": "3, F/R/X",
   "game_notes": "Skill: First aid. Interdermal injection system worn on waist/shoulder strap. Micro-sonic vibration injectors deliver chemicals through skin without pain or marks. Configurable for time-released or continuous feed. Holds up to 10 doses. Easy first aid for first-time setup. Available serums (prescription only): DiMatolin (100/dose, 1hr, negates DEX penalties in high gravity up to 1.4G). Elisinandrox (250/dose, 10hr, +1D+1 STR/stamina vs radiation sickness). Greshollpolyforim (150/dose, 3hr, negates STR penalties in high gravity up to 2G). Haladreshin (200/dose, 8hr, +1D PER and related skills, neurological stimulant). Requilisant (200/dose, 6hr, negates DEX penalties in low/zero gravity).",
@@ -3257,7 +3257,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Borallis LSW-983 Laser Welder",
-  "category": "Tool Kits",
+  "category": "Tools",
   "cost": "50",
   "availability": "1",
   "game_notes": "Skill: Various repair skills. Two independently directed laser emitters for increased efficiency. Variable surface contact from 0.2-20cm diameter welds. Built-in power cell for portability plus standard adaptor hookup for direct power system access.",
@@ -3281,7 +3281,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Borallis PCW-876 Fusion Cutter",
-  "category": "Tool Kits",
+  "category": "Tools",
   "cost": "75",
   "availability": "1",
   "game_notes": "Skill: Various repair skills. Variable beam fusion cutter shearing through most metals, plastics and ceramics up to 25cm thick in seconds. Difficulty depends on project. Accidental beam exposure causes 3D-6D variable damage.",
@@ -3297,7 +3297,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Fegegrish Squib Battering Ram",
-  "category": "Tool Kits",
+  "category": "Tools",
   "cost": "3,500",
   "availability": "3",
   "game_notes": "Shoulder-mounted structural weakener. Large square plate clamped against target obstruction. Alternating energy pulsations batter away at molecular level until obstruction gives way. 6D damage against body of wall or door. Also useful for after-hours 'withdrawals' from locked financial institutions.",
@@ -3329,7 +3329,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Veredictas Bith Computer Retinal Lock",
-  "category": "Security Equipment",
+  "category": "Security",
   "cost": "1,200",
   "availability": "3",
   "game_notes": "Skill: Computer programming/repair. Retinal scanning system providing authorized file access only to pre-scanned retinal patterns. Disguises scans as colorful mathematical pattern startup display using wafer-thin scanner mimicking the monitor. Does not deny system access — only locks specific coded files. Transmits intruder's retinal pattern to authorities. Easy computer programming/repair to install. Only a retinal falsification system bypasses security.",
@@ -3337,7 +3337,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Dalabar SDS-632 Surveillance Detector",
-  "category": "Security Equipment",
+  "category": "Security",
   "cost": "450 (+175 for NI-632 noise inhibitor)",
   "availability": "2",
   "game_notes": "Skill: Sensors. Palm-sized surveillance scanner sweeping 30 cubic meters in under 60 seconds. Scans 5D sensors skill. Detects monitoring carrier waves in infrared, microwave and localized subspace bands. Also scans for motion tracking signal emissions. Adjustable filters for upper electromagnetic spectrum. Optional NI-632 noise inhibitor blankets 10m diameter area with sonic disturbances matching detected sensor frequencies. Note: Imperial Intelligence sensors may operate outside calibrated parameters — no guarantee against Imperial devices.",
@@ -3345,7 +3345,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Servenidain Data Bio-Encryptor",
-  "category": "Security Equipment",
+  "category": "Security",
   "cost": "25,000",
   "availability": "3, R",
   "game_notes": "Skill: Computer programming/repair. Palm-sized chip encoding system — data written to micro-chip encased in jell-like capsule that is physically ingested. Chemical coating prevents digestion; time-released reactant triggers regurgitation (settable 20-200 hours). Stores up to 3 full data chips. Easy computer programming/repair to download/encrypt or upload at destination. Heroic sensors roll to detect ingested capsule. Can be used on unsuspecting couriers by disguising as medicine or hiding in food — courier honestly passes lie detection. Used by couriers throughout the Empire.",
@@ -3353,7 +3353,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Kystallio Eye in the Sky RMD-20",
-  "category": "Security Equipment",
+  "category": "Security",
   "cost": "800",
   "availability": "2",
   "game_notes": "Skill: Sensors. Portable free-flight monitor sphere (30cm diameter) with micro-repulsorlift nodes. Easy sensors for initial activation; free flight is automatic. 20+ programmable flight patterns or auto-heel mode following subject at up to 100m. Max altitude 200m, max range 10km, 5 hours flight per charge. Audio and visual sensor feeds to host computer or datapad within 100m radius. Move: 45; 130 kmh. Dozen+ modulated frequencies available.",
@@ -3369,7 +3369,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Dalesepp HPD-100 Heat Pod",
-  "category": "Security Equipment",
+  "category": "Security",
   "cost": "70",
   "availability": "3, F",
   "game_notes": "Skill: Thrown weapons. Grenade-sized heat generator deployable manually or via grenade launcher. Emits ever-widening zone of light and heat blanketing up to 20m radius for 15 minutes. Increases difficulty of heat-based sensors or tracking by two levels (varies by type, distance, other factors). Operator slips under cover of the more powerful generators.",
@@ -3385,7 +3385,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Varge Corp. PS-xqt9s Pocket Scrambler",
-  "category": "Security Equipment",
+  "category": "Security",
   "cost": "800",
   "availability": "4, F or R",
   "game_notes": "Skill: Security. Attaches to any standard comms device. Modulates frequencies with scrambling signals — requires matching PS-xqt9s and correct encryption code to decode. 5+ million possible codes. Easy communications for normal use. Without matching device and code: Very Difficult to Heroic communications to decrypt.",
@@ -3393,7 +3393,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Culcanis Tagger",
-  "category": "Security Equipment",
+  "category": "Security",
   "cost": "250",
   "availability": "3, F",
   "game_notes": "Remote surveillance tracking device disguised as a datapad stylus. Fires a 5mm transponder dart up to 5m via pressurized gas (silent). Attached transponder sends intermittent high-frequency signal (~every 5 minutes) to receiver up to 1.2km away. Hard for unauthorized receivers to detect due to intermittent broadcast. 40 standard hours of operation.",
@@ -3409,7 +3409,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "zZip PSG-8487 View Masker",
-  "category": "Security Equipment",
+  "category": "Security",
   "cost": "2,500 (50 power cells, 100 sensor alarm module)",
   "availability": "3, F/R/X",
   "game_notes": "Voice code activated portable distortion field (1m diameter). Makes visual or audio scans virtually impossible — waves of color and visual static obscure activity inside the field.",
@@ -3417,7 +3417,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Ulkop SVC-700 Voice Scrambler",
-  "category": "Security Equipment",
+  "category": "Security",
   "cost": "600",
   "availability": "3",
   "game_notes": "Disguised as ornamental jewelry. Low-frequency distortion field modulates and breaks up voice patterns through distortion layers. Conversation unrecognizable at more than 3m range. Normal speech within close proximity unaffected.",
@@ -3521,7 +3521,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "BlasTech Blaster Repair Kit",
-  "category": "Tool Kits",
+  "category": "Tools",
   "cost": "500",
   "availability": "2",
   "game_notes": "Skill: Blaster repair. Deluxe kit containing: pulse adaptor module tester, collimator beam focuser, prismatic crystal aligner, static pulse adaptor modules, energy converter valve (Heter-Valve), multiple gas valve nozzles, power pack recharger, universal power pack, power pack cables, spare gas container, spare trigger cable and variable pressure adjustor.",
@@ -3561,7 +3561,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Kirgalis Abyssin Grafting Patch",
-  "category": "Medical Equipment",
+  "category": "Medical",
   "cost": "5,000",
   "availability": "3",
   "game_notes": "Skill: First aid or medicine. Regenerative cells from Abyssin biochemical extracts. Difficult first aid or Easy medicine to apply. Newly formed skin cells grow in/around wound area like bacta immersion. Healing times: Wounded 2D hours, Incapacitated 8D hours, Mortally Wounded 2D days. Single use. Lifeforms with natural regenerative abilities have high resistance to effects.",
@@ -3593,7 +3593,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Golan Personal Combat Threat Analyzer",
-  "category": "Security Equipment",
+  "category": "Security",
   "cost": "4,500",
   "availability": "4",
   "game_notes": "Provides +1D bonus to tactics or search rolls in specific combat situations. Identifies attacker locations, determines number and types of weapons in use, evaluates situation and suggests where next attack will come from. Results given as percentage probability of attack type, origin and predicted future action. GM can use to give hints without divulging all facts.",
@@ -3649,7 +3649,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Illicit Electronics Flesh Camouflage System",
-  "category": "Security Equipment",
+  "category": "Security",
   "cost": "11,000 (computer), 500 (retinal contacts, non-reusable), 500 (SecCard), 250 (flesh kit, non-reusable)",
   "availability": "4, X",
   "game_notes": "Skill: Computer programming/repair. Advanced disguise system producing retinal contacts, chemical SecCards (10 image sheets, no electronics), and flesh disguises (face/hands/feet replicas with voice modifier). Requires target's retina, fingerprint and genetic scan data. Computer programming/repair roll determines quality: Very Easy = unusable. Easy = +2 to security/con. Moderate = +1D. Difficult = +1D+2. Very Difficult = +2D. Heroic = +3D. Bonuses apply to retinal scans (security), card scans (security), and impersonation (con) respectively.",
@@ -3713,7 +3713,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Rebel Alliance Treaty Recording System",
-  "category": "Sensors and Communications",
+  "category": "Sensors",
   "type": "Holorecorder",
   "cost": "Not available for sale",
   "availability": "4, X",
@@ -3740,7 +3740,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "MineSystems Emergency Life Support Unit",
-  "category": "Survival",
+  "category": "Survival Gear",
   "type": "Emergency life support system",
   "cost": "3,000",
   "availability": "2",
@@ -5627,7 +5627,7 @@ const EQUIPMENT_DATA = [
  {
   "name": "CorSec Autoscan Weapons Detector",
   "type": "CorSec Autoscan Weapons Detector",
-  "category": "Sensors & Detection",
+  "category": "Sensors",
   "cost": "7,200",
   "availability": "2, R (restricted to governments)",
   "game_notes": "Stationary weapons detector. Has search 6D to detect hidden energy weapons. Petal-shaped array tracks individuals and vehicles moving within range. Deployed in fixed sites near public thoroughfares and transportation centers. If weapons are detected, an alarm is transmitted to security personnel. Difficulty to detect weapons depends on how well the user has hidden them with hide skill.",
@@ -5636,7 +5636,7 @@ const EQUIPMENT_DATA = [
  {
   "name": "Geological Scanner",
   "type": "Fabritech 7000 Geoscanner",
-  "category": "Sensors & Detection",
+  "category": "Sensors",
   "cost": "4,800",
   "availability": "2",
   "game_notes": "Range: 500m / 1km / 2km. Primarily used by miners and prospectors. Detects geologic characteristics like precious minerals, ore deposits, and underground features. Can also analyze geothermal, seismic, volcanic, and glacial activity. A favorite tool of claims-jumper outfits.",
@@ -5654,7 +5654,7 @@ const EQUIPMENT_DATA = [
  {
   "name": "Search-Scan 4 Security Scanner",
   "type": "BlasTech Search-Scan 4",
-  "category": "Sensors & Detection",
+  "category": "Sensors",
   "cost": "9,800",
   "availability": "2, R (restricted to governments)",
   "game_notes": "Multi-capable security scanner used by Imperial and local planetary governments. The size of a large chest — typically wheeled around on a cart or repulsor sled. Contains numerous probes and receptors attached by insulated cables. Highly sensitive — can often penetrate some forms of shielding. Adds +1D to the operator's sensor skill roll. Detects structural anomalies hiding secret compartments, energy signatures showing weapons, life forms, and energy sources within a confined area (docking bay, cargo hold, compartment).",
@@ -5681,7 +5681,7 @@ const EQUIPMENT_DATA = [
  ,{
   "name": "Vec-Tech Keeper Subdermal Control System",
   "type": "Vector Technologies AA-2 Keeper",
-  "category": "Security Devices",
+  "category": "Security",
   "cost": "5,000",
   "availability": "4, X",
   "game_notes": "A beacon surgically implanted under the victim's skin. Can only be removed by the being with the tracker unit, who must enter a password. Any other extraction attempt releases an exotic neurotoxin (8D damage, kills instantly). Tracker shows range, direction, and speed up to 25 km. If target moves beyond 25 km, the neurotoxin releases automatically.",
@@ -6335,7 +6335,7 @@ const EQUIPMENT_DATA = [
   "source": "WEG41017 Star Wars Adventure Journal #17 p.58 (Jade Solitaire)"
  },
  {
-  "category": "Security/Surveillance",
+  "category": "Security",
   "name": "HackCom 3000 Code Key Cylinder Slicer",
   "type": "Outlaw Cylinder Slicer / ID Maker",
   "cost": "12,000 (black market only), cipher program updates 3,000",
@@ -6344,7 +6344,7 @@ const EQUIPMENT_DATA = [
   "source": "WEG41017 Star Wars Adventure Journal #17 p.75-76 (Special Ops: The Art of Infiltration)"
  },
  {
-  "category": "Security/Surveillance",
+  "category": "Security",
   "name": "Modified BothiCorp Remote Detonator Glove",
   "type": "Outlaw Tech Remote Demolition Controller",
   "cost": "300 (glove), 200 (c-chips and parts)",
@@ -6381,7 +6381,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Imperial Munitions Rampart II Portable Shield Generator",
-  "category": "Security/Surveillance",
+  "category": "Security",
   "type": "Portable tactical shield generator",
   "cost": "Not generally available",
   "availability": "3, R",
@@ -6456,7 +6456,7 @@ const EQUIPMENT_DATA = [
  {
   "name": "Bacta Geltab",
   "type": "Genetech G-5 Geltab",
-  "category": "Medical Supplies",
+  "category": "Medical",
   "cost": "50 (pack of 6)",
   "availability": "1",
   "game_notes": "Fluorescent green marble-sized capsule containing bacta. Apply to wound with a Very Easy Dexterity roll before using a medpac to gain +1D bonus on the subsequent first aid roll. Covers approximately 0.3m² area. Large wounds may require 2+ geltabs for full bonus; insufficient coverage grants only +1 or +2 pips instead. Useless without a medpac — acts only as antiseptic on its own.",
@@ -6465,7 +6465,7 @@ const EQUIPMENT_DATA = [
  {
   "name": "Bacta Tray",
   "type": "Genetech BT-16 Bacta Tray",
-  "category": "Medical Supplies",
+  "category": "Medical",
   "cost": "2,200",
   "availability": "2",
   "game_notes": "Mobile medical stabilization unit. 2.5m x 0.5m rectangular tray floating on a repulsor field, filled with a thin bacta layer held by low-power tractor beam. 30-hour power pack charge. Activating requires an Easy first aid roll — success stabilizes a mortally wounded patient's condition until full bacta tank treatment is available. Navigates rocky terrain via repulsor field. Designed to complement the RES-Q airspeeder.",
@@ -6474,7 +6474,7 @@ const EQUIPMENT_DATA = [
  {
   "name": "EAR-1 Eavesdropping Unit",
   "type": "EAR-1 Unit",
-  "category": "Surveillance",
+  "category": "Security",
   "cost": "750 (each bug), 1,000 (headset), 2,500 (microcomputer & recording unit)",
   "availability": "2, R",
   "game_notes": "Eavesdropping system with 5 thumbnail-sized electrobugs, headset, and matte-black microcomputer receiver/recorder. Bugs emit a dampening field that prevents standard scanning equipment from detecting them. 200-meter range, line-of-sight only (blocked by metal and thick walls, but passes through clothing and thin walls). Microcomputer records audio and produces hardcopy transcripts.",
