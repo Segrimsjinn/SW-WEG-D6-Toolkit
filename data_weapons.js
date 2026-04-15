@@ -4192,18 +4192,6 @@ const WEAPONS_DATA = [
   "source": "WEG40025 Galladinium's Fantastic Technology p.84"
  },
  {
-  "name": "BlasTech Firearc49 Speargun",
-  "category": "Specialty Weapons",
-  "skill": "",
-  "cost": "300",
-  "availability": "3, X",
-  "damage": "5D, 4D",
-  "range": "",
-  "ammo": "",
-  "game_notes": "",
-  "source": "WEG40025 Galladinium's Fantastic Technology p.84"
- },
- {
   "name": "BlasTech ST-90 Stun Pistol",
   "category": "Stun Blasters",
   "skill": "Blaster",
@@ -4427,7 +4415,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "BlasTech Firearc49 Blaster Speargun",
-  "category": "Ranged",
+  "category": "Projectile Weapons",
   "damage": "Spear: 4D/2D/1D (by range); Blaster: 5D/4D/3D+1 (by range)",
   "range": "Spear: 3-7/25/50; Blaster: 3-20/30/45",
   "ammo": "Spear: 3 (1 loaded, 2 side-mounted); Blaster: 50",
