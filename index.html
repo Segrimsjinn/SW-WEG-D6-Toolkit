@@ -8653,8 +8653,8 @@ let pcSkillsDraft = []; // working copy of { name, attr, dice, specs:[{name,dice
 
 // Build the dice-value options for the dropdowns (0D through 15D+2 in pip steps)
 function pcDiceOptions() {
-  const out = ['0D'];
-  for (let d = 1; d <= 15; d++) {
+  const out = [];
+  for (let d = 0; d <= 15; d++) {
     out.push(d + 'D');
     out.push(d + 'D+1');
     out.push(d + 'D+2');
