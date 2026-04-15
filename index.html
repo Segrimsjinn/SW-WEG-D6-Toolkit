@@ -2951,6 +2951,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
 <script src="data_forcepowers.js"></script>
 <script src="data_creatures.js"></script>
 <script src="data_equipment.js"></script>
+<script src="data_droid_components.js"></script>
 <script src="data_weapons.js"></script>
 <script src="data_vehicles.js"></script>
 <script src="data_planets.js"></script>
@@ -8903,12 +8904,19 @@ const NPC_EQUIP_SLOTS = [
   {key:'sec2',     label:'Security 2'}
 ];
 // Pull droid-component labels from EQUIPMENT_DATA (Droid Hardware +
-// Droid TraitWare). Any droid component can be installed in any slot,
-// so these get appended to every slot's dropdown under an <optgroup>.
+// Droid TraitWare — the WEG40116 formal catalog) and from
+// DROID_COMPONENTS (curated extraction from every other droid
+// template's game_notes). Any droid component can be installed in any
+// slot, so these get appended to every slot's dropdown.
 function collectDroidComponents() {
-  if (typeof EQUIPMENT_DATA === 'undefined' || !Array.isArray(EQUIPMENT_DATA)) return [];
-  const droidCats = ['Droid Hardware', 'Droid TraitWare'];
-  const names = EQUIPMENT_DATA.filter(e => droidCats.includes(e.category)).map(e => e.name).filter(Boolean);
+  const names = [];
+  if (typeof EQUIPMENT_DATA !== 'undefined' && Array.isArray(EQUIPMENT_DATA)) {
+    const droidCats = ['Droid Hardware', 'Droid TraitWare'];
+    EQUIPMENT_DATA.forEach(e => { if (droidCats.includes(e.category) && e.name) names.push(e.name); });
+  }
+  if (typeof DROID_COMPONENTS !== 'undefined' && Array.isArray(DROID_COMPONENTS)) {
+    DROID_COMPONENTS.forEach(e => { if (e.name) names.push(e.name); });
+  }
   return [...new Set(names)].sort();
 }
 function pcPopulateEquipGrid(data) {
