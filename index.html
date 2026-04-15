@@ -637,30 +637,40 @@ color:var(--text-dim);min-width:35px;text-align:right;
 .lib-print-cb{display:none}
 @media print{
   @page{margin:0.6in}
-  body *{visibility:hidden}
-  #libraryModal,#libraryModal *{visibility:visible}
-  #libraryModal{position:absolute !important;inset:0 !important;background:#fff !important;padding:0 !important;overflow:visible !important;display:block !important;z-index:auto !important}
-  #libraryModalInner{border:none !important;border-radius:0 !important;max-width:100% !important;max-height:none !important;background:#fff !important;color:#000 !important;display:block !important;margin:0 !important;padding:0 !important}
-  .lib-close,.lib-controls,#libraryModalHead input,#libraryModalHead button,.lib-pill,#libProgressBar{display:none !important}
-  #libraryModalHead{border-bottom:2px solid #000 !important;padding:0 0 8pt !important;margin-bottom:10pt}
-  #libraryModalHead > div:first-of-type{display:block !important;color:#000 !important;font-size:14pt !important}
-  #libraryModalHead > div:nth-of-type(2){color:#333 !important;font-size:9pt !important}
-  #libStatText{color:#000 !important;font-size:9pt !important;margin-top:6pt}
-  #libraryBody{padding:0 !important;overflow:visible !important;color:#000 !important;font-size:10pt}
-  .lib-category{margin-bottom:14pt;page-break-inside:avoid}
-  .lib-category:not(:first-child){page-break-before:always}
-  .lib-cat-head{color:#000 !important;border-bottom:1.5pt solid #000 !important;font-size:12pt !important}
-  .lib-cat-head .lib-cat-count{color:#444 !important}
-  .lib-edition-div{color:#000 !important}
-  .lib-edition-div::before,.lib-edition-div::after{background:#000 !important}
-  .lib-row{background:#fff !important;border:none !important;border-left:none !important;padding:2pt 0 !important;margin-bottom:0 !important;page-break-inside:avoid;color:#000 !important}
-  .lib-row .lib-cb{display:none}
-  .lib-print-cb{display:inline-block !important;font-family:sans-serif;font-size:13pt;margin-right:6pt;line-height:1}
-  .lib-row .lib-num{color:#0066aa !important}
-  .lib-row .lib-title{color:#000 !important}
-  .lib-row .lib-meta{color:#555 !important}
-  .lib-row.owned{background:#fff !important}
-  .lib-print-footer{display:block !important;color:#000 !important}
+  /* Library Sourcebook Checklist print mode */
+  body.printing-library *{visibility:hidden}
+  body.printing-library #libraryModal,body.printing-library #libraryModal *{visibility:visible}
+  body.printing-library #libraryModal{position:absolute !important;inset:0 !important;background:#fff !important;padding:0 !important;overflow:visible !important;display:block !important;z-index:auto !important}
+  body.printing-library #libraryModalInner{border:none !important;border-radius:0 !important;max-width:100% !important;max-height:none !important;background:#fff !important;color:#000 !important;display:block !important;margin:0 !important;padding:0 !important}
+  body.printing-library .lib-close,body.printing-library .lib-controls,body.printing-library #libraryModalHead input,body.printing-library #libraryModalHead button,body.printing-library .lib-pill,body.printing-library #libProgressBar{display:none !important}
+  body.printing-library #libraryModalHead{border-bottom:2px solid #000 !important;padding:0 0 8pt !important;margin-bottom:10pt}
+  body.printing-library #libraryModalHead > div:first-of-type{display:block !important;color:#000 !important;font-size:14pt !important}
+  body.printing-library #libraryModalHead > div:nth-of-type(2){color:#333 !important;font-size:9pt !important}
+  body.printing-library #libStatText{color:#000 !important;font-size:9pt !important;margin-top:6pt}
+  body.printing-library #libraryBody{padding:0 !important;overflow:visible !important;color:#000 !important;font-size:10pt}
+  body.printing-library .lib-category{margin-bottom:14pt;page-break-inside:avoid}
+  body.printing-library .lib-category:not(:first-child){page-break-before:always}
+  body.printing-library .lib-cat-head{color:#000 !important;border-bottom:1.5pt solid #000 !important;font-size:12pt !important}
+  body.printing-library .lib-cat-head .lib-cat-count{color:#444 !important}
+  body.printing-library .lib-edition-div{color:#000 !important}
+  body.printing-library .lib-edition-div::before,body.printing-library .lib-edition-div::after{background:#000 !important}
+  body.printing-library .lib-row{background:#fff !important;border:none !important;border-left:none !important;padding:2pt 0 !important;margin-bottom:0 !important;page-break-inside:avoid;color:#000 !important}
+  body.printing-library .lib-row .lib-cb{display:none}
+  body.printing-library .lib-print-cb{display:inline-block !important;font-family:sans-serif;font-size:13pt;margin-right:6pt;line-height:1}
+  body.printing-library .lib-row .lib-num{color:#0066aa !important}
+  body.printing-library .lib-row .lib-title{color:#000 !important}
+  body.printing-library .lib-row .lib-meta{color:#555 !important}
+  body.printing-library .lib-row.owned{background:#fff !important}
+  body.printing-library .lib-print-footer{display:block !important;color:#000 !important}
+  /* Pin Snapshot print mode */
+  body.printing-pin-snapshot *{visibility:hidden}
+  body.printing-pin-snapshot #pinSnapshotModal,body.printing-pin-snapshot #pinSnapshotModal *{visibility:visible}
+  body.printing-pin-snapshot #pinSnapshotModal{position:absolute !important;inset:0 !important;background:#fff !important;padding:0 !important;overflow:visible !important;display:block !important;z-index:auto !important}
+  body.printing-pin-snapshot #pinSnapshotModal > div{border:none !important;border-radius:0 !important;max-width:100% !important;max-height:none !important;background:#fff !important;color:#000 !important;display:block !important;margin:0 !important;padding:0 !important}
+  body.printing-pin-snapshot .pin-snapshot-actions,body.printing-pin-snapshot #pinSnapshotModal > div > button{display:none !important}
+  body.printing-pin-snapshot #pinSnapshotBody{color:#000 !important;font-size:10pt}
+  body.printing-pin-snapshot #pinSnapshotBody *{color:#000 !important;background:transparent !important;border-color:#777 !important;box-shadow:none !important}
+  body.printing-pin-snapshot #pinSnapshotBody .cb-spec-row,body.printing-pin-snapshot #pinSnapshotBody div[style*="background:rgba(0,0,0"]{background:#f6f6f6 !important;border:1px solid #bbb !important}
 }
 </style>
 </head>
@@ -2875,7 +2885,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
         <button class="lib-pill" data-ownfilter="missing" onclick="setLibFilter('own','missing')">MISSING</button>
       </div>
       <div class="lib-controls" style="display:flex;gap:6px;flex-wrap:wrap">
-        <button class="btn btn-primary" onclick="window.print()" style="padding:6px 12px;font-size:10px;letter-spacing:1px">⟐ PRINT</button>
+        <button class="btn btn-primary" onclick="printLibraryChecklist()" style="padding:6px 12px;font-size:10px;letter-spacing:1px">⟐ PRINT</button>
         <button class="btn btn-primary" onclick="libExportText()" style="padding:6px 12px;font-size:10px;letter-spacing:1px;background:var(--bg3);color:var(--gold);border:1px solid var(--gold-dim)">⟐ EXPORT TEXT</button>
         <button class="btn btn-primary" onclick="libClearAll()" style="padding:6px 12px;font-size:10px;letter-spacing:1px;background:var(--bg3);color:#ff7d7d;border:1px solid rgba(107,42,42,0.6)">⟐ CLEAR ALL</button>
       </div>
@@ -8024,6 +8034,16 @@ function showLibraryChecklist() {
 }
 function hideLibraryChecklist() {
   document.getElementById('libraryModal').style.display = 'none';
+  document.body.classList.remove('printing-library');
+}
+function printLibraryChecklist() {
+  document.body.classList.add('printing-library');
+  const cleanup = () => {
+    document.body.classList.remove('printing-library');
+    window.removeEventListener('afterprint', cleanup);
+  };
+  window.addEventListener('afterprint', cleanup);
+  setTimeout(() => window.print(), 60);
 }
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape' && document.getElementById('libraryModal').style.display === 'flex') hideLibraryChecklist();
@@ -8444,6 +8464,20 @@ function openShipEquipmentByName(name) {
 
 function hidePinSnapshot() {
   document.getElementById('pinSnapshotModal').style.display = 'none';
+  document.body.classList.remove('printing-pin-snapshot');
+}
+
+// Flag the body while printing so the @media print rule knows to hide everything
+// except the snapshot modal. The flag is also cleared in afterprint.
+function printPinSnapshot() {
+  document.body.classList.add('printing-pin-snapshot');
+  const cleanup = () => {
+    document.body.classList.remove('printing-pin-snapshot');
+    window.removeEventListener('afterprint', cleanup);
+  };
+  window.addEventListener('afterprint', cleanup);
+  // Small delay so the class applies before the print dialog captures layout
+  setTimeout(() => window.print(), 60);
 }
 
 // Render a saved snapshot for a generated pin
@@ -8461,7 +8495,8 @@ function showPinSnapshot(pin) {
   if (pin.type !== 'player-character' && pin.type !== 'random-npc') {
     html += '<div style="font-size:10px;color:var(--text-dark);font-style:italic;margin-top:10px;line-height:1.5">This is a saved snapshot from when you pinned it. The original generator rolls fresh results each time — this entry won\'t change unless you edit or remove it.</div>';
   }
-  html += '<div style="display:flex;gap:8px;justify-content:flex-end;margin-top:14px">';
+  html += '<div class="pin-snapshot-actions" style="display:flex;gap:8px;justify-content:flex-end;margin-top:14px;flex-wrap:wrap">';
+  html += '<button class="btn btn-primary" onclick="printPinSnapshot()" style="padding:6px 14px;font-size:10px;letter-spacing:1px;background:var(--bg3);color:var(--gold);border:1px solid var(--gold-dim)">⟐ PRINT</button>';
   if (pin.type === 'player-character') {
     html += '<button class="btn btn-primary" onclick="hidePinSnapshot();editPlayerCharacter(\'' + escapeHtml(pin.id).replace(/'/g, "\\'") + '\')" style="padding:6px 14px;font-size:10px;letter-spacing:1px;background:var(--bg3);color:var(--gold);border:1px solid var(--gold-dim)">✎ EDIT</button>';
   } else if (pin.type === 'random-npc') {
