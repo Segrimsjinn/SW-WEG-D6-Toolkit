@@ -2612,10 +2612,17 @@ color:var(--text-dim);min-width:35px;text-align:right;
           <label style="display:flex;flex-direction:column;gap:3px"><span class="pc-field-lbl">FORCE POINTS</span><input type="number" id="pcForcePoints" min="0" class="pc-field" value="1"></label>
         </div>
         <label style="display:flex;align-items:center;gap:8px;margin-bottom:8px;cursor:pointer;font-size:11px;color:var(--text)"><input type="checkbox" id="pcForceSensitive" onchange="togglePcForceSection()" style="accent-color:var(--purple);width:14px;height:14px"> Force Sensitive</label>
-        <div id="pcForceSection" style="display:none;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px">
-          <label style="display:flex;flex-direction:column;gap:3px"><span class="pc-field-lbl" style="color:var(--purple)">CONTROL</span><select id="pcForceControl" class="pc-dice-sel"></select></label>
-          <label style="display:flex;flex-direction:column;gap:3px"><span class="pc-field-lbl" style="color:var(--purple)">SENSE</span><select id="pcForceSense" class="pc-dice-sel"></select></label>
-          <label style="display:flex;flex-direction:column;gap:3px"><span class="pc-field-lbl" style="color:var(--purple)">ALTER</span><select id="pcForceAlter" class="pc-dice-sel"></select></label>
+        <div id="pcForceSection" style="display:none;margin-bottom:10px">
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:8px">
+            <label style="display:flex;flex-direction:column;gap:3px"><span class="pc-field-lbl" style="color:var(--purple)">CONTROL</span><select id="pcForceControl" class="pc-dice-sel"></select></label>
+            <label style="display:flex;flex-direction:column;gap:3px"><span class="pc-field-lbl" style="color:var(--purple)">SENSE</span><select id="pcForceSense" class="pc-dice-sel"></select></label>
+            <label style="display:flex;flex-direction:column;gap:3px"><span class="pc-field-lbl" style="color:var(--purple)">ALTER</span><select id="pcForceAlter" class="pc-dice-sel"></select></label>
+          </div>
+          <div style="display:flex;gap:6px;align-items:flex-end;flex-wrap:wrap;margin-bottom:6px">
+            <label style="display:flex;flex-direction:column;gap:3px;flex:1;min-width:200px"><span class="pc-field-lbl" style="color:var(--purple)">FORCE POWER</span><select id="pcPowerSelect" class="pc-field"></select></label>
+            <button type="button" class="btn btn-primary" onclick="pcAddPower()" style="padding:8px 14px;font-size:10px;letter-spacing:1px;height:34px">+ ADD</button>
+          </div>
+          <div id="pcPowerList"></div>
         </div>
 
         <!-- SKILLS -->
@@ -8712,7 +8719,71 @@ function pcPopulateSkillSelect() {
 function togglePcForceSection() {
   const section = document.getElementById('pcForceSection');
   if (!section) return;
-  section.style.display = document.getElementById('pcForceSensitive').checked ? 'grid' : 'none';
+  section.style.display = document.getElementById('pcForceSensitive').checked ? 'block' : 'none';
+}
+
+let pcPowersDraft = []; // [{ name, category, darkSide }]
+
+// Populate the Force Power dropdown grouped by discipline combo
+function pcPopulatePowerSelect() {
+  const sel = document.getElementById('pcPowerSelect');
+  if (!sel || typeof POWERS_DATA === 'undefined') return;
+  const groups = {};
+  POWERS_DATA.forEach(p => {
+    const c = p.category || 'Other';
+    if (!groups[c]) groups[c] = [];
+    groups[c].push(p);
+  });
+  const order = ['Control', 'Sense', 'Alter', 'Control+Sense', 'Control+Alter', 'Sense+Alter', 'Control+Sense+Alter', 'Special'];
+  let html = '<option value="">— Select a Force power —</option>';
+  order.forEach(cat => {
+    if (!groups[cat]) return;
+    html += '<optgroup label="' + cat.toUpperCase() + '">';
+    groups[cat].forEach(p => {
+      // Strip the "NN. " numeric prefix from names if present, for a cleaner dropdown
+      const cleanName = p.name.replace(/^\d+\.\s*/, '');
+      html += '<option value="' + escapeHtml(cleanName) + '" data-cat="' + escapeHtml(cat) + '" data-dark="' + (p.darkSide ? '1' : '0') + '">' + escapeHtml(cleanName) + (p.darkSide ? ' ⚠' : '') + '</option>';
+    });
+    html += '</optgroup>';
+  });
+  sel.innerHTML = html;
+}
+
+function pcAddPower() {
+  const sel = document.getElementById('pcPowerSelect');
+  const name = sel.value;
+  if (!name) { alert('Pick a Force power first.'); return; }
+  if (pcPowersDraft.some(p => p.name === name)) { sel.value = ''; return; } // already added
+  const opt = sel.options[sel.selectedIndex];
+  const category = opt ? opt.getAttribute('data-cat') : '';
+  const darkSide = opt && opt.getAttribute('data-dark') === '1';
+  pcPowersDraft.push({ name: name, category: category, darkSide: darkSide });
+  sel.value = '';
+  renderPcPowerList();
+}
+function pcRemovePower(idx) {
+  pcPowersDraft.splice(idx, 1);
+  renderPcPowerList();
+}
+function renderPcPowerList() {
+  const container = document.getElementById('pcPowerList');
+  if (!container) return;
+  if (!pcPowersDraft.length) {
+    container.innerHTML = '<div style="color:var(--text-dark);font-size:10px;font-style:italic;padding:2px 0">No powers added yet.</div>';
+    return;
+  }
+  const catOrder = { 'Control': 1, 'Sense': 2, 'Alter': 3, 'Control+Sense': 4, 'Control+Alter': 5, 'Sense+Alter': 6, 'Control+Sense+Alter': 7, 'Special': 8 };
+  pcPowersDraft.sort((a, b) => (catOrder[a.category] || 9) - (catOrder[b.category] || 9) || a.name.localeCompare(b.name));
+  let html = '';
+  pcPowersDraft.forEach((p, i) => {
+    const color = p.darkSide ? '#ff7d7d' : 'var(--purple)';
+    html += '<div style="display:flex;align-items:center;gap:6px;padding:4px 10px;margin-bottom:3px;background:rgba(187,134,252,0.08);border:1px solid rgba(187,134,252,0.25);border-radius:var(--radius-sm);font-size:11px">';
+    html += '<span style="color:var(--text-dark);font-size:9px;letter-spacing:1px;min-width:90px">' + escapeHtml((p.category || '').toUpperCase()) + '</span>';
+    html += '<span style="color:' + color + ';flex:1">' + escapeHtml(p.name) + (p.darkSide ? ' ⚠' : '') + '</span>';
+    html += '<button type="button" class="pc-mini-btn danger" onclick="pcRemovePower(' + i + ')">✕</button>';
+    html += '</div>';
+  });
+  container.innerHTML = html;
 }
 
 function pcAddSkillRow() {
@@ -8797,6 +8868,7 @@ function showAddPlayerCharacter() {
   editingPcId = null;
   editingPcType = 'player-character';
   pcSkillsDraft = [];
+  pcPowersDraft = [];
   document.getElementById('addPcTitle').textContent = 'ADD PLAYER CHARACTER';
   ['pcName','pcPlayer','pcSpecies','pcRole','pcArmor','pcNotes'].forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; });
   document.getElementById('pcCharPoints').value = 5;
@@ -8805,7 +8877,9 @@ function showAddPlayerCharacter() {
   togglePcForceSection();
   pcPopulateAllDiceSelects();
   pcPopulateSkillSelect();
+  pcPopulatePowerSelect();
   renderPcSkillList();
+  renderPcPowerList();
   document.getElementById('addPcModal').style.display = 'flex';
   setTimeout(() => document.getElementById('pcName').focus(), 40);
 }
@@ -8917,9 +8991,11 @@ function copyNotableNpcToCustom(pinId) {
   editingPcId = null;
   editingPcType = 'player-character';
   pcSkillsDraft = JSON.parse(JSON.stringify(data.skills));
+  pcPowersDraft = []; // Notable NPCs rarely expose force powers as a discrete list
   document.getElementById('addPcTitle').textContent = 'SAVE A COPY — ' + src.name;
   pcPopulateAllDiceSelects();
   pcPopulateSkillSelect();
+  pcPopulatePowerSelect();
   document.getElementById('pcName').value = trimmed;
   document.getElementById('pcPlayer').value = '';
   document.getElementById('pcSpecies').value = data.species;
@@ -8938,6 +9014,7 @@ function copyNotableNpcToCustom(pinId) {
   togglePcForceSection();
   document.getElementById('pcNotes').value = data.notes;
   renderPcSkillList();
+  renderPcPowerList();
   document.getElementById('addPcModal').style.display = 'flex';
 }
 function titleCaseName(s) {
@@ -8953,10 +9030,26 @@ function editCharacterInForm(type, id) {
   editingPcType = type;
   const d = pin.data || {};
   pcSkillsDraft = Array.isArray(d.skills) ? JSON.parse(JSON.stringify(d.skills)) : [];
+  // Normalize existing forcePowers into the {name, category, darkSide} shape
+  pcPowersDraft = [];
+  if (Array.isArray(d.forcePowers)) {
+    d.forcePowers.forEach(p => {
+      if (typeof p === 'string') {
+        const clean = p.replace(/^\d+\.\s*/, '');
+        const match = typeof POWERS_DATA !== 'undefined' && POWERS_DATA.find(x => x.name.replace(/^\d+\.\s*/, '') === clean);
+        pcPowersDraft.push({ name: clean, category: match ? match.category : '', darkSide: match ? !!match.darkSide : false });
+      } else if (p && typeof p === 'object') {
+        const clean = (p.name || '').replace(/^\d+\.\s*/, '');
+        const match = typeof POWERS_DATA !== 'undefined' && POWERS_DATA.find(x => x.name.replace(/^\d+\.\s*/, '') === clean);
+        pcPowersDraft.push({ name: clean, category: p.category || (match ? match.category : ''), darkSide: p.darkSide != null ? !!p.darkSide : (match ? !!match.darkSide : false) });
+      }
+    });
+  }
   document.getElementById('addPcTitle').textContent = type === 'random-npc' ? 'EDIT ROLLED NPC' : 'EDIT PLAYER CHARACTER';
   // Populate dropdowns first so we can then set values
   pcPopulateAllDiceSelects();
   pcPopulateSkillSelect();
+  pcPopulatePowerSelect();
   // Identity
   document.getElementById('pcName').value = pin.title || '';
   document.getElementById('pcPlayer').value = d.player || '';
@@ -8985,6 +9078,7 @@ function editCharacterInForm(type, id) {
   // Notes
   document.getElementById('pcNotes').value = d.notes || '';
   renderPcSkillList();
+  renderPcPowerList();
   document.getElementById('addPcModal').style.display = 'flex';
 }
 function savePlayerCharacter() {
@@ -9010,6 +9104,7 @@ function savePlayerCharacter() {
     forceControl: forceOn ? document.getElementById('pcForceControl').value : '',
     forceSense: forceOn ? document.getElementById('pcForceSense').value : '',
     forceAlter: forceOn ? document.getElementById('pcForceAlter').value : '',
+    forcePowers: forceOn ? JSON.parse(JSON.stringify(pcPowersDraft)) : [],
     notes: document.getElementById('pcNotes').value.trim(),
     skills: JSON.parse(JSON.stringify(pcSkillsDraft))
   };
