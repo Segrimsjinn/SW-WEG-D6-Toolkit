@@ -252,18 +252,6 @@ const WEAPONS_DATA = [
   "source": "Galaxy Guide 9 (page 11)"
  },
  {
-  "name": "Merr-Sonn Intimidator IR-5",
-  "category": "Blaster Pistols",
-  "skill": "Blaster: blaster pistol",
-  "cost": "1,250",
-  "availability": "3, X",
-  "damage": "3D",
-  "range": "3-7/25/50",
-  "ammo": "50",
-  "game_notes": "Rapid-fire. FC 2D (multiple targets in 90\u00b0 arc only). Retractable stock (+1D aiming 1 round, +200cr).",
-  "source": "Galladinium's Fantastic Technology (page 71)"
- },
- {
   "name": "Merr-Sonn Model 44",
   "category": "Blaster Pistols",
   "skill": "Blaster: blaster pistol",
