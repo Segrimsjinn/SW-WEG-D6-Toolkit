@@ -884,6 +884,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
               <input type="checkbox" id="pdfBlank" style="accent-color:var(--gold);width:12px;height:12px"> Blank
             </label>
             <button class="btn-reroll" style="border-color:var(--gold);color:var(--gold)" onclick="exportPDF()">⟐ PDF</button>
+            <button class="btn-reroll" style="border-color:var(--gold);color:var(--gold)" onclick="pinCurrentNpc()" title="Pin this rolled NPC to the Corkboard">☆ PIN</button>
           </div>
         </div>
         <div class="npc-controls">
@@ -1194,9 +1195,12 @@ color:var(--text-dim);min-width:35px;text-align:right;
 
       <!-- Planet Detail Lookup -->
       <div id="planetDetail" style="display:none;margin-top:16px;padding:16px;background:var(--card-bg);border:1px solid var(--gold-dim);border-radius:var(--radius)">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;gap:8px;flex-wrap:wrap">
           <h3 id="planetDetailName" style="margin:0;color:var(--gold);font-size:18px"></h3>
-          <button onclick="document.getElementById('planetDetail').style.display='none'" style="background:none;border:1px solid var(--text-dim);color:var(--text-dim);border-radius:4px;padding:2px 8px;cursor:pointer;font-size:12px">✕</button>
+          <div style="display:flex;gap:6px;align-items:center">
+            <span id="planetDetailPinSlot"></span>
+            <button onclick="document.getElementById('planetDetail').style.display='none'" style="background:none;border:1px solid var(--text-dim);color:var(--text-dim);border-radius:4px;padding:2px 8px;cursor:pointer;font-size:12px">✕</button>
+          </div>
         </div>
         <div id="planetDetailBody" style="font-size:13px;color:var(--text-secondary);line-height:1.6"></div>
       </div>
@@ -1390,6 +1394,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
                 <input type="text" id="sbShipClass" placeholder="e.g. Light Freighter" style="width:100%;padding:8px;background:var(--bg);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-family:'Exo 2',sans-serif;font-size:12px">
               </div>
               <button onclick="SB.exportPDF()" style="padding:10px 20px;background:var(--gold);color:var(--bg);border:none;border-radius:var(--radius-sm);cursor:pointer;font-family:'Exo 2',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;white-space:nowrap">⟐ DOWNLOAD PDF</button>
+              <button onclick="pinBuiltShip()" style="padding:10px 16px;background:none;color:var(--gold);border:1px solid var(--gold-dim);border-radius:var(--radius-sm);cursor:pointer;font-family:'Exo 2',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;white-space:nowrap" title="Pin this build to the Corkboard">☆ PIN BUILD</button>
             </div>
           </div>
         </div>
@@ -3745,6 +3750,8 @@ function showShipStats() {
   const rc = getRankColor(s.rank, total);
 
   let h = '';
+  // Pin button row
+  h += '<div style="display:flex;justify-content:flex-end;margin-bottom:4px">' + pinButtonHTML({ type: 'starship', id: s.name, title: s.name, subtitle: [s.type, s.scale ? s.scale + ' scale' : ''].filter(Boolean).join(' · ') }) + '</div>';
   // Title + rank badge
   h += '<div class="ship-title">' + s.name;
   if (s.rank) h += '<span class="ship-rank" style="background:'+rc.bg+';color:'+rc.text+'">RANK #'+s.rank+' / '+total+'</span>';
@@ -4549,9 +4556,12 @@ function buildNotableNpcDetail(n) {
   let html = '<div style="background:var(--bg3);border:1px solid var(--card-border);border-radius:var(--radius-sm);padding:12px">';
 
   // Header
-  html += '<div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:2px">';
+  html += '<div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:2px;gap:8px;flex-wrap:wrap">';
   html += '<div style="font-family:\'Exo 2\',monospace;font-size:13px;color:var(--gold)">' + n.name + '</div>';
+  html += '<div style="display:flex;align-items:center;gap:8px">';
+  html += pinButtonHTML({ type: 'notable-npc', id: n.name, title: n.name, subtitle: [n.species, n.role || n.type].filter(Boolean).join(' · ') });
   html += '<div style="font-family:\'Exo 2\',monospace;font-size:8px;color:var(--text-dark);letter-spacing:0.5px">' + n.source + '</div>';
+  html += '</div>';
   html += '</div>';
 
   // Subtitle line
@@ -5500,6 +5510,10 @@ function showPlanetDetail(name) {
   const nameEl = document.getElementById('planetDetailName');
   const bodyEl = document.getElementById('planetDetailBody');
   nameEl.textContent = p.name;
+  const pinSlot = document.getElementById('planetDetailPinSlot');
+  if (pinSlot) {
+    pinSlot.innerHTML = pinButtonHTML({ type: 'planet', id: p.name, title: p.name, subtitle: [p.system, p.region, p.grid].filter(Boolean).join(' · ') });
+  }
 
   const field = (label, val) => val ? `<div style="display:flex;gap:8px;padding:3px 0;border-bottom:1px solid rgba(255,255,255,0.04)"><span style="color:var(--text-dim);min-width:120px;flex-shrink:0">${label}</span><span style="color:var(--text-primary)">${val}</span></div>` : '';
 
@@ -5695,10 +5709,18 @@ function generateWildSpaceSystem() {
   // Build output
   const field = (label, val) => val ? `<div style="display:flex;gap:8px;padding:3px 0;border-bottom:1px solid rgba(255,255,255,0.04)"><span style="color:var(--text-dim);min-width:120px;flex-shrink:0">${label}</span><span style="color:var(--text-primary)">${val}</span></div>` : '';
 
+  const sysPinId = 'wild-' + Date.now();
+  const sysPinBtn = pinButtonHTML({
+    type: 'wild-system',
+    id: sysPinId,
+    title: 'Wild System — ' + planetType.value,
+    subtitle: [terrain.value, atmosphere.value, techLevel.value].filter(Boolean).join(' · '),
+    data: { planetType: planetType.value, terrain: terrain.value, atmosphere: atmosphere.value, techLevel: techLevel.value, star: star.value }
+  });
   const html = `<div class="card" style="border:1px solid var(--cyan);margin-bottom:12px">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;gap:6px;flex-wrap:wrap">
       <div style="color:var(--cyan);font-size:16px;font-weight:700;letter-spacing:1px">WILD SPACE SYSTEM</div>
-      <div style="display:flex;gap:6px"><button onclick="generateWildSpaceSystem()" style="font-size:11px;color:var(--gold);background:none;border:1px solid var(--gold);border-radius:var(--radius);padding:2px 8px;cursor:pointer;font-family:inherit">Re-roll</button><button onclick="document.getElementById('sysgenResult').style.display='none'" style="font-size:11px;color:var(--red);background:none;border:1px solid var(--red);border-radius:var(--radius);padding:2px 8px;cursor:pointer;font-family:inherit">✕</button></div>
+      <div style="display:flex;gap:6px">${sysPinBtn}<button onclick="generateWildSpaceSystem()" style="font-size:11px;color:var(--gold);background:none;border:1px solid var(--gold);border-radius:var(--radius);padding:2px 8px;cursor:pointer;font-family:inherit">Re-roll</button><button onclick="document.getElementById('sysgenResult').style.display='none'" style="font-size:11px;color:var(--red);background:none;border:1px solid var(--red);border-radius:var(--radius);padding:2px 8px;cursor:pointer;font-family:inherit">✕</button></div>
     </div>
     <div style="display:grid;gap:0;margin-bottom:14px">
       ${field('Star Type', star.temp ? star.value + ' — ' + star.color + ' (' + star.temp + 'K)' : star.value + ' — ' + star.color + (star.desc ? '. ' + star.desc : ''))}
@@ -5859,10 +5881,18 @@ function generateRandomAlien() {
   const abilityRows = abilities.map(a => `<div style="padding:4px 0;border-bottom:1px solid rgba(255,255,255,0.04)"><span style="color:var(--gold)">${a.label}</span><span style="color:var(--text-dim)"> — ${a.desc}</span></div>`).join('');
   const storyRow = story ? `<div style="padding:4px 0"><span style="color:var(--gold)">${story.value}</span><span style="color:var(--text-dim)"> — ${story.desc}</span></div>` : '<div style="color:var(--text-dim);font-style:italic;font-size:11px">None rolled</div>';
 
+  const alienPinId = 'alien-' + Date.now();
+  const alienPinBtn = pinButtonHTML({
+    type: 'random-alien',
+    id: alienPinId,
+    title: speciesName,
+    subtitle: (homeworld ? homeworld.name + ' · ' : '') + (tech.value || ''),
+    data: { speciesName: speciesName, homeworld: homeworld ? homeworld.name : '', tech: tech.value, attrDice: attrDice.value }
+  });
   const html = `<div class="card" style="border:1px solid var(--cyan);margin-bottom:10px;flex:1;min-width:260px">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:2px">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:2px;gap:6px;flex-wrap:wrap">
       <div style="color:var(--cyan);font-size:14px;font-weight:700;letter-spacing:1px">${speciesName}</div>
-      <div style="display:flex;gap:6px"><button onclick="generateRandomAlien()" style="font-size:11px;color:var(--gold);background:none;border:1px solid var(--gold);border-radius:var(--radius);padding:2px 8px;cursor:pointer;font-family:inherit">Re-roll</button><button onclick="document.getElementById('alienGenResult').style.display='none'" style="font-size:11px;color:var(--red);background:none;border:1px solid var(--red);border-radius:var(--radius);padding:2px 8px;cursor:pointer;font-family:inherit">✕</button></div>
+      <div style="display:flex;gap:6px">${alienPinBtn}<button onclick="generateRandomAlien()" style="font-size:11px;color:var(--gold);background:none;border:1px solid var(--gold);border-radius:var(--radius);padding:2px 8px;cursor:pointer;font-family:inherit">Re-roll</button><button onclick="document.getElementById('alienGenResult').style.display='none'" style="font-size:11px;color:var(--red);background:none;border:1px solid var(--red);border-radius:var(--radius);padding:2px 8px;cursor:pointer;font-family:inherit">✕</button></div>
     </div>
     <div style="font-size:9px;color:var(--text-dim);margin-bottom:8px">First Contact Report — Undocumented Species</div>
 
@@ -6146,10 +6176,25 @@ function generateRandomCreature() {
 
   const scaleNote = size.scale ? `<div style="font-size:10px;color:var(--gold);font-style:italic;margin-top:4px">${size.scale}</div>` : '';
 
+  const creaturePinId = 'creature-' + Date.now();
+  const creaturePinBtn = pinButtonHTML({
+    type: 'random-creature',
+    id: creaturePinId,
+    title: finalName,
+    subtitle: body.value + ' · ' + habitat.value + (hw ? ' · ' + hw.name : ''),
+    data: {
+      finalName: finalName,
+      planet: hw ? hw.name : '',
+      dex: pipsToD6(dexPips),
+      str: pipsToD6(strPips),
+      dmgDice: pipsToD6(dexPips),
+      resDice: pipsToD6(strPips)
+    }
+  });
   const html = `<div class="card" style="border:1px solid var(--cyan);margin-bottom:12px">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;gap:6px;flex-wrap:wrap">
       <div style="color:var(--cyan);font-size:18px;font-weight:700;letter-spacing:1px">${finalName}</div>
-      <div style="display:flex;gap:6px"><button onclick="generateRandomCreature()" style="font-size:11px;color:var(--gold);background:none;border:1px solid var(--gold);border-radius:var(--radius);padding:2px 8px;cursor:pointer;font-family:inherit">Re-roll</button><button onclick="document.getElementById('creatureGenResult').style.display='none'" style="font-size:11px;color:var(--red);background:none;border:1px solid var(--red);border-radius:var(--radius);padding:2px 8px;cursor:pointer;font-family:inherit">✕</button></div>
+      <div style="display:flex;gap:6px">${creaturePinBtn}<button onclick="generateRandomCreature()" style="font-size:11px;color:var(--gold);background:none;border:1px solid var(--gold);border-radius:var(--radius);padding:2px 8px;cursor:pointer;font-family:inherit">Re-roll</button><button onclick="document.getElementById('creatureGenResult').style.display='none'" style="font-size:11px;color:var(--red);background:none;border:1px solid var(--red);border-radius:var(--radius);padding:2px 8px;cursor:pointer;font-family:inherit">✕</button></div>
     </div>
     <div style="font-size:11px;color:var(--text-dim);margin-bottom:12px">${body.value} ${behavior.value.toLowerCase()}</div>
 
@@ -7507,13 +7552,17 @@ function showCreature(idx) {
     sourceHtml = '<div style="font-size:10px;color:var(--text-dim);border-top:1px solid var(--card-border);padding-top:8px;margin-top:4px"><span style="color:var(--text-dark)">SOURCE:</span> ' + c.source + '</div>';
   }
 
+  const creatureSubtitle = (c.type || '') + (c.planet ? ' — ' + c.planet : '') + (c.habitat ? ' (' + c.habitat + ')' : '');
   el.innerHTML = '<div style="background:var(--bg);border:1px solid var(--gold-dim);border-radius:var(--radius);padding:12px;position:relative">'
-    + '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">'
+    + '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap">'
     + '<div>'
     + '<div style="font-family:\'Exo 2\',monospace;font-size:14px;color:var(--gold);font-weight:700;letter-spacing:1px">' + c.name + '</div>'
     + '<div style="font-size:11px;color:var(--text-dim);margin-top:2px">' + (c.type || '') + (c.planet ? ' — ' + c.planet : '') + (c.habitat ? ' <span style="color:var(--blue)">(' + c.habitat + ')</span>' : '') + '</div>'
     + '</div>'
+    + '<div style="display:flex;gap:6px">'
+    + pinButtonHTML({ type: 'creature', id: c.name, title: c.name, subtitle: creatureSubtitle, data: { dex: c.dex, str: c.str } })
     + '<button onclick="document.getElementById(\'creatureDetail\').style.display=\'none\'" style="background:none;border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text-dim);cursor:pointer;padding:4px 8px;font-size:11px">✕</button>'
+    + '</div>'
     + '</div>'
     + statsHtml
     + specialHtml
@@ -7729,13 +7778,17 @@ function showEquipItem(idx) {
     sourceHtml = '<div style="font-size:10px;color:var(--text-dim);border-top:1px solid var(--card-border);padding-top:8px;margin-top:4px"><span style="color:var(--text-dark)">SOURCE:</span> ' + e.source + '</div>';
   }
 
+  const equipPinType = (e.category === 'Ship Equipment') ? 'ship-equipment' : 'equipment';
   el.innerHTML = '<div style="background:var(--bg);border:1px solid var(--gold-dim);border-radius:var(--radius);padding:12px;position:relative">'
-    + '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">'
+    + '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap">'
     + '<div>'
     + '<div style="font-family:\'Exo 2\',monospace;font-size:14px;color:var(--gold);font-weight:700;letter-spacing:1px">' + e.name + '</div>'
     + '<div style="font-size:11px;color:var(--text-dim);margin-top:2px">' + (e.category || '') + '</div>'
     + '</div>'
+    + '<div style="display:flex;gap:6px">'
+    + pinButtonHTML({ type: equipPinType, id: e.name, title: e.name, subtitle: e.category || '' })
     + '<button onclick="document.getElementById(\'equipDetail\').style.display=\'none\'" style="background:none;border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text-dim);cursor:pointer;padding:4px 8px;font-size:11px">✕</button>'
+    + '</div>'
     + '</div>'
     + infoHtml
     + notesHtml
@@ -7831,10 +7884,12 @@ function showShipEquipItem(idx) {
   }
   let sourceHtml = e.source ? '<div style="font-size:10px;color:var(--text-dim);border-top:1px solid var(--card-border);padding-top:8px;margin-top:4px"><span style="color:var(--text-dark)">SOURCE:</span> ' + e.source + '</div>' : '';
   el.innerHTML = '<div style="background:var(--bg);border:1px solid var(--gold-dim);border-radius:var(--radius);padding:12px;position:relative">'
-    + '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px"><div>'
+    + '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap"><div>'
     + '<div style="font-family:\'Exo 2\',monospace;font-size:14px;color:var(--gold);font-weight:700;letter-spacing:1px">' + e.name + '</div>'
     + '<div style="font-size:11px;color:var(--text-dim);margin-top:2px">' + (e.type || 'Ship Equipment') + '</div></div>'
-    + '<button onclick="document.getElementById(\'shipEquipDetail\').style.display=\'none\'" style="background:none;border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text-dim);cursor:pointer;padding:4px 8px;font-size:11px">✕</button></div>'
+    + '<div style="display:flex;gap:6px">'
+    + pinButtonHTML({ type: 'ship-equipment', id: e.name, title: e.name, subtitle: e.type || 'Ship Equipment' })
+    + '<button onclick="document.getElementById(\'shipEquipDetail\').style.display=\'none\'" style="background:none;border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text-dim);cursor:pointer;padding:4px 8px;font-size:11px">✕</button></div></div>'
     + infoHtml + notesHtml + sourceHtml + '</div>';
   el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
@@ -8102,14 +8157,19 @@ function corkboardRemove(type, id) {
   corkboardPins = corkboardPins.filter(p => !(p.type === type && p.id === id));
   corkboardSave();
   corkboardRender();
-  // Refresh any currently-visible Pin button
-  const pinBtn = document.querySelector('.pin-btn[data-pin-type="' + type + '"][data-pin-id="' + cssEscape(id) + '"]');
-  if (pinBtn) { pinBtn.classList.remove('pinned'); pinBtn.textContent = '☆ PIN'; }
+  // Refresh any currently-visible Pin button for this item
+  document.querySelectorAll('.pin-btn[data-pin-type="' + type + '"]').forEach(btn => {
+    if (btn.getAttribute('data-pin-id') === id) {
+      btn.classList.remove('pinned');
+      btn.textContent = '☆ PIN';
+    }
+  });
 }
 function corkboardToggle(pin, sourceBtn) {
   const existing = corkboardPins.find(p => p.type === pin.type && p.id === pin.id);
   if (existing) {
     corkboardRemove(pin.type, pin.id);
+    if (sourceBtn) { sourceBtn.classList.remove('pinned'); sourceBtn.textContent = '☆ PIN'; }
   } else {
     corkboardAdd(pin);
     if (sourceBtn) { sourceBtn.classList.add('pinned'); sourceBtn.textContent = '★ PINNED'; }
@@ -8340,6 +8400,72 @@ document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape' && document.getElementById('addPcModal').style.display === 'flex') hideAddPlayerCharacter();
 });
 
+// Helper: return HTML for a ★ PIN button for any detail card.
+// pin = { type, id, title, subtitle?, data? } — JSON-serialized into data-pin
+// so the click handler can rebuild it without needing globals in scope.
+function pinButtonHTML(pin) {
+  const pinned = corkboardIsPinned(pin.type, pin.id);
+  const json = JSON.stringify(pin).replace(/"/g, '&quot;');
+  return '<button class="pin-btn' + (pinned ? ' pinned' : '') + '" data-pin-type="' + escapeHtml(pin.type) + '" data-pin-id="' + escapeHtml(pin.id) + '" data-pin="' + json + '" onclick="pinClick(event,this)" title="Pin to Corkboard">' + (pinned ? '★ PINNED' : '☆ PIN') + '</button>';
+}
+function pinClick(ev, btn) {
+  ev && ev.stopPropagation && ev.stopPropagation();
+  try {
+    const pin = JSON.parse(btn.dataset.pin);
+    corkboardToggle(pin, btn);
+  } catch(e) { console.warn('pinClick failed', e); }
+}
+
+// Snapshot the current Ship Builder state into the corkboard
+function pinBuiltShip() {
+  const nameEl = document.getElementById('sbShipName');
+  const classEl = document.getElementById('sbShipClass');
+  const totalEl = document.getElementById('sbTotalPrice');
+  const cpEl = document.getElementById('sbCPTotal');
+  const name = (nameEl && nameEl.value.trim()) || 'Unnamed Build';
+  const cls = classEl ? classEl.value.trim() : '';
+  const total = totalEl ? totalEl.textContent : '';
+  const cp = cpEl ? cpEl.textContent : '';
+  const id = 'built-' + Date.now();
+  const subtitle = [cls, cp ? cp + ' CPs' : '', total].filter(Boolean).join(' · ');
+  corkboardAdd({ type: 'built-ship', id: id, title: name, subtitle: subtitle, data: { shipClass: cls, cps: cp, totalPrice: total } });
+  const btns = document.querySelectorAll('button[onclick="pinBuiltShip()"]');
+  btns.forEach(b => {
+    const orig = b.textContent;
+    b.textContent = '★ PINNED';
+    setTimeout(() => { b.textContent = orig; }, 1200);
+  });
+}
+
+// Snapshot the current rolled NPC into the corkboard
+function pinCurrentNpc() {
+  if (typeof npc !== 'object' || !npc || !npc.firstName) {
+    alert('Generate an NPC first, then pin it.');
+    return;
+  }
+  const fullName = (npc.firstName + ' ' + (npc.surname || '')).trim();
+  const id = 'rolled-npc-' + Date.now();
+  const subtitle = [npc.race, npc.job, npc.training].filter(Boolean).join(' · ');
+  // Capture damage/soak dice from the live state if available
+  const data = {
+    name: fullName,
+    race: npc.race,
+    job: npc.job,
+    training: npc.training,
+    sex: npc.sex,
+    dmgDice: npc.attrs && npc.attrs.DEXTERITY ? npc.attrs.DEXTERITY : '4D',
+    resDice: npc.attrs && npc.attrs.STRENGTH ? npc.attrs.STRENGTH : '3D'
+  };
+  corkboardAdd({ type: 'random-npc', id: id, title: fullName || 'Unnamed NPC', subtitle: subtitle, data: data });
+  // Flash the button to confirm
+  const btns = document.querySelectorAll('button[onclick="pinCurrentNpc()"]');
+  btns.forEach(b => {
+    const orig = b.textContent;
+    b.textContent = '★ PINNED';
+    setTimeout(() => { b.textContent = orig; }, 1200);
+  });
+}
+
 corkboardLoad();
 document.addEventListener('DOMContentLoaded', corkboardRender);
 </script>
@@ -8444,10 +8570,13 @@ function showWeapItem(idx) {
   let sourceHtml = w.source ? '<div style="font-size:10px;color:var(--text-dim);border-top:1px solid var(--card-border);padding-top:8px;margin-top:4px"><span style="color:var(--text-dark)">SOURCE:</span> ' + w.source + '</div>' : '';
 
   el.innerHTML = '<div style="background:var(--bg);border:1px solid var(--gold-dim);border-radius:var(--radius);padding:12px;position:relative">'
-    + '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">'
+    + '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap">'
     + '<div><div style="font-family:\'Exo 2\',monospace;font-size:14px;color:var(--gold);font-weight:700;letter-spacing:1px">' + w.name + '</div>'
     + '<div style="font-size:11px;color:var(--text-dim);margin-top:2px">' + (w.category || '') + '</div></div>'
+    + '<div style="display:flex;gap:6px">'
+    + pinButtonHTML({ type: 'weapon', id: w.name, title: w.name, subtitle: [w.category, w.damage ? 'Damage ' + w.damage : ''].filter(Boolean).join(' · ') })
     + '<button onclick="document.getElementById(\'weapDetail\').style.display=\'none\'" style="background:none;border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text-dim);cursor:pointer;padding:4px 8px;font-size:11px">✕</button>'
+    + '</div>'
     + '</div>' + statsHtml + notesHtml + sourceHtml + '</div>';
   el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
@@ -8578,10 +8707,13 @@ function showVehItem(idx) {
   let sourceHtml = v.source ? '<div style="font-size:10px;color:var(--text-dim);border-top:1px solid var(--card-border);padding-top:6px"><span style="color:var(--text-dark)">SOURCE:</span> ' + v.source + '</div>' : '';
 
   el.innerHTML = '<div style="background:var(--bg);border:1px solid var(--gold-dim);border-radius:var(--radius);padding:12px;position:relative">'
-    + '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">'
+    + '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px;flex-wrap:wrap">'
     + '<div><div style="font-family:\'Exo 2\',monospace;font-size:14px;color:var(--gold);font-weight:700;letter-spacing:1px">' + v.name + '</div>'
     + '<div style="font-size:11px;color:var(--text-dim);margin-top:2px">' + (v.category || '') + ' — <span style="color:var(--blue)">' + (v.scale || '') + ' scale</span></div></div>'
+    + '<div style="display:flex;gap:6px">'
+    + pinButtonHTML({ type: 'vehicle', id: v.name, title: v.name, subtitle: [v.category, v.scale ? v.scale + ' scale' : ''].filter(Boolean).join(' — ') })
     + '<button onclick="document.getElementById(\'vehDetail\').style.display=\'none\'" style="background:none;border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text-dim);cursor:pointer;padding:4px 8px;font-size:11px">✕</button>'
+    + '</div>'
     + '</div>' + statsHtml + weapHtml + notesHtml + sourceHtml + '</div>';
   el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
