@@ -3485,7 +3485,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Rodian Cryogen Whip",
-  "category": "Melee Weapons",
+  "category": "Standard Melee",
   "skill": "Melee combat",
   "cost": "350",
   "availability": "3, F/R/X",
@@ -3497,7 +3497,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Togorian Yil Tribe Scimitar",
-  "category": "Melee Weapons",
+  "category": "Standard Melee",
   "skill": "Melee combat: Togorian Scimitar",
   "cost": "8,500",
   "availability": "4, F or R",
@@ -3773,7 +3773,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Ekkar Arms Coyn'skar",
-  "category": "Melee Weapons",
+  "category": "Standard Melee",
   "skill": "Melee combat",
   "cost": "400",
   "availability": "3",
@@ -3785,7 +3785,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Ekkar Arms Sat'skar",
-  "category": "Melee Weapons",
+  "category": "Standard Melee",
   "skill": "Melee combat",
   "cost": "700",
   "availability": "3",
@@ -3797,7 +3797,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Ekkar Arms D'skar",
-  "category": "Melee Weapons",
+  "category": "Standard Melee",
   "skill": "Melee combat",
   "cost": "150",
   "availability": "3",
@@ -3809,7 +3809,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Ekkar Arms Ar'gor",
-  "category": "Melee Weapons",
+  "category": "Standard Melee",
   "skill": "Melee combat",
   "cost": "175",
   "availability": "3",
@@ -4313,7 +4313,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Chestrashi Void Spear",
-  "category": "Melee Weapons",
+  "category": "Standard Melee",
   "skill": "Thrown weapons: spear",
   "cost": "5,000",
   "availability": "4, F/R/X",
@@ -4449,7 +4449,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "SoroSuub CS-12 Stun Master",
-  "category": "Melee Weapons",
+  "category": "Standard Melee",
   "damage": "4D+2 stun",
   "range": "",
   "ammo": "5",
@@ -4460,7 +4460,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Portable Plasma Cutter",
-  "category": "Melee Weapons",
+  "category": "Standard Melee",
   "damage": "7D",
   "range": "",
   "ammo": "4 min internal, 1 hr with canister",
@@ -4554,7 +4554,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Bitthaevrian Dematoil",
-  "category": "Melee Weapons",
+  "category": "Standard Melee",
   "skill": "Melee combat: dematoil",
   "cost": "Not for sale",
   "availability": "4, X",
@@ -4938,7 +4938,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Togorian Scimitar (Sc'rath)",
-  "category": "Melee Weapons",
+  "category": "Standard Melee",
   "skill": "Melee combat: sc'rath",
   "cost": "Not for sale",
   "availability": "4, R",
@@ -4950,7 +4950,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Ka'hren Rantok",
-  "category": "Melee Weapons",
+  "category": "Standard Melee",
   "skill": "Melee combat: rantok",
   "cost": "Not for sale",
   "availability": "4",
@@ -4962,7 +4962,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Soknar (Cene Gilvent's Custom Blade)",
-  "category": "Melee Weapons",
+  "category": "Standard Melee",
   "skill": "Melee combat: Soknar",
   "cost": "Not for sale",
   "availability": "Unique",
@@ -4987,7 +4987,7 @@ const WEAPONS_DATA = [
   "source": "WEG40139 Cracken's Threat Dossier p.54"
  },
  {
-  "category": "Melee Weapons",
+  "category": "Standard Melee",
   "name": "Vibrorapier",
   "type": "LaserHone Duelist Vibrorapier",
   "cost": "300",
@@ -4997,7 +4997,7 @@ const WEAPONS_DATA = [
   "source": "WEG40143 Pirates & Privateers p.42"
  },
  {
-  "category": "Melee Weapons",
+  "category": "Standard Melee",
   "name": "Vibrodagger",
   "type": "LaserHone Talon Vibrodagger",
   "cost": "50",
@@ -5018,7 +5018,7 @@ const WEAPONS_DATA = [
   "source": "WEG40143 Pirates & Privateers p.42"
  },
  {
-  "category": "Melee Weapons",
+  "category": "Standard Melee",
   "name": "Stun Gauntlets",
   "type": "Palandrix Personal Protection Gear Stun Gauntlets",
   "cost": "300",
@@ -5028,7 +5028,7 @@ const WEAPONS_DATA = [
   "source": "WEG40143 Pirates & Privateers p.42"
  },
  {
-  "category": "Melee Weapons",
+  "category": "Standard Melee",
   "name": "Stun Baton",
   "type": "Merr-Sonn Stun Baton",
   "cost": "300",
@@ -5038,7 +5038,7 @@ const WEAPONS_DATA = [
   "source": "WEG40143 Pirates & Privateers p.43"
  },
  {
-  "category": "Melee Weapons",
+  "category": "Standard Melee",
   "name": "Dematoil",
   "type": "Bitthaevrian Morningstar",
   "model": "Bitthaevrian Dematoil",
@@ -5049,7 +5049,7 @@ const WEAPONS_DATA = [
   "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.6"
  },
  {
-  "category": "Melee Weapons",
+  "category": "Standard Melee",
   "name": "Ekkar Arms Coyn'skar",
   "type": "Coynite Bladed Pole",
   "model": "Ekkar Arms Coyn'skar",
@@ -5060,7 +5060,7 @@ const WEAPONS_DATA = [
   "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.6"
  },
  {
-  "category": "Melee Weapons",
+  "category": "Standard Melee",
   "name": "Ekkar Arms D'skar",
   "type": "Coynite Dagger",
   "model": "Ekkar Arms D'skar",
@@ -5071,7 +5071,7 @@ const WEAPONS_DATA = [
   "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.7"
  },
  {
-  "category": "Melee Weapons",
+  "category": "Standard Melee",
   "name": "Ekkar Arms Sat'skar",
   "type": "Coynite Sword",
   "model": "Ekkar Arms Sat'skar",
@@ -5082,7 +5082,7 @@ const WEAPONS_DATA = [
   "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.7"
  },
  {
-  "category": "Melee Weapons",
+  "category": "Standard Melee",
   "name": "Hand-Held Contact Stunner",
   "type": "Contact Stunner",
   "model": "SoroSuub CS-12 Stun Master",
@@ -5093,7 +5093,7 @@ const WEAPONS_DATA = [
   "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.7"
  },
  {
-  "category": "Melee Weapons",
+  "category": "Standard Melee",
   "name": "Neuronic Whip",
   "type": "Neuronic Whip",
   "model": "TholCorp Neuronic Whip",
@@ -5104,7 +5104,7 @@ const WEAPONS_DATA = [
   "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.7"
  },
  {
-  "category": "Melee Weapons",
+  "category": "Standard Melee",
   "name": "Rantok",
   "type": "Ka'hren Sword",
   "model": "Rantok",
@@ -5115,7 +5115,7 @@ const WEAPONS_DATA = [
   "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.7"
  },
  {
-  "category": "Melee Weapons",
+  "category": "Standard Melee",
   "name": "Stun Baton (Z2)",
   "type": "Stun Baton",
   "model": "Merr-Sonn Z2 Stun Baton",
@@ -5126,7 +5126,7 @@ const WEAPONS_DATA = [
   "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.8"
  },
  {
-  "category": "Melee Weapons",
+  "category": "Standard Melee",
   "name": "Vibro-saw",
   "type": "Vibro-saw",
   "model": "Greel Wood Logging Corporation Tree Felling Vibro-Saw",
@@ -5490,7 +5490,7 @@ const WEAPONS_DATA = [
  {
   "name": "Lightfoil",
   "type": "Lightfoil",
-  "category": "Melee Weapons",
+  "category": "Standard Melee",
   "scale": "Character",
   "skill": "Lightsaber",
   "cost": "10,000",
