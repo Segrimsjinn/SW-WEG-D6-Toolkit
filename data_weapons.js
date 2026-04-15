@@ -4422,7 +4422,7 @@ const WEAPONS_DATA = [
   "cost": "300",
   "availability": "Restricted to Imperial personnel",
   "game_notes": "Fire rate: Spear 1/3, Blaster 1. Skill: Blaster rifle. A long metal pipe which shoots a small spear through the water, with a small blaster slung under the spear barrel that shoots a concentrated blue beam. Above stats do not reflect usual underwater damage and skill penalties. Additional spears can be carried in a quiver.",
-  "source": "WEG40129 Adventure Journal 1 p.62"
+  "source": "WEG40025 Galladinium's Fantastic Technology p.84; WEG40129 Adventure Journal 1 p.62"
  },
  {
   "name": "Neegad 7 Tranquilizer Pistol",
