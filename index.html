@@ -600,6 +600,21 @@ color:var(--text-dim);min-width:35px;text-align:right;
 .pin-btn{background:none;border:1px solid var(--gold-dim);color:var(--gold);font-family:'Exo 2',monospace;font-size:9px;letter-spacing:1px;padding:4px 10px;border-radius:var(--radius-sm);cursor:pointer;transition:all .15s}
 .pin-btn:hover{background:var(--gold-dim);color:var(--bg)}
 .pin-btn.pinned{background:var(--gold-dim);color:var(--bg);font-weight:600}
+.pc-field{padding:8px 10px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-family:inherit;font-size:13px}
+.pc-field:focus{outline:none;border-color:var(--gold-dim)}
+.pc-field-lbl{font-size:9px;color:var(--text-dim);letter-spacing:1px;font-family:'Exo 2',monospace}
+.pc-dice-sel{padding:8px 6px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-family:'IBM Plex Mono',monospace;font-size:13px;cursor:pointer}
+.pc-dice-sel:focus{outline:none;border-color:var(--gold-dim)}
+.pc-skill-row{display:flex;align-items:center;gap:6px;padding:6px 10px;margin-bottom:4px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);font-size:12px;flex-wrap:wrap}
+.pc-skill-row .pc-skill-name{flex:1;color:var(--text);min-width:120px}
+.pc-skill-row .pc-skill-dice{font-family:'IBM Plex Mono',monospace;color:var(--gold);min-width:50px;text-align:right}
+.pc-spec-row{display:flex;align-items:center;gap:6px;padding:4px 10px 4px 28px;margin-bottom:4px;background:rgba(0,0,0,0.2);border-left:2px solid var(--gold-dim);font-size:11px;flex-wrap:wrap}
+.pc-spec-row .pc-spec-label{color:var(--text-dim);font-style:italic;flex:1;min-width:140px}
+.pc-spec-row .pc-spec-dice{font-family:'IBM Plex Mono',monospace;color:var(--gold)}
+.pc-mini-btn{background:none;border:1px solid var(--card-border);color:var(--text-dim);font-family:'Exo 2',monospace;font-size:9px;letter-spacing:.5px;padding:3px 8px;border-radius:var(--radius-sm);cursor:pointer}
+.pc-mini-btn:hover{color:var(--gold);border-color:var(--gold-dim)}
+.pc-mini-btn.danger{color:#ff7d7d}
+.pc-mini-btn.danger:hover{color:#ff9a9a;border-color:rgba(107,42,42,0.6)}
 .lib-pill{background:var(--bg2);border:1px solid var(--card-border);color:var(--text-dim);font-family:'Exo 2',monospace;font-size:9px;letter-spacing:1px;padding:4px 10px;border-radius:10px;cursor:pointer;transition:all .15s}
 .lib-pill:hover{color:var(--gold);border-color:var(--gold-dim)}
 .lib-pill.active{background:var(--gold-dim);color:var(--bg);border-color:var(--gold-dim);font-weight:600}
@@ -2555,22 +2570,67 @@ color:var(--text-dim);min-width:35px;text-align:right;
     </div>
 
     <!-- ADD PLAYER CHARACTER MODAL -->
-    <div id="addPcModal" style="display:none;position:fixed;inset:0;z-index:10000;align-items:center;justify-content:center;background:rgba(0,0,0,.75);padding:16px" onclick="if(event.target===this)hideAddPlayerCharacter()">
-      <div style="background:var(--bg);border:2px solid var(--gold-dim);border-radius:var(--radius);max-width:420px;width:100%;max-height:90vh;overflow-y:auto;padding:20px 18px;position:relative">
+    <div id="addPcModal" style="display:none;position:fixed;inset:0;z-index:10000;align-items:flex-start;justify-content:center;background:rgba(0,0,0,.75);padding:16px;overflow-y:auto" onclick="if(event.target===this)hideAddPlayerCharacter()">
+      <div style="background:var(--bg);border:2px solid var(--gold-dim);border-radius:var(--radius);max-width:640px;width:100%;max-height:92vh;overflow-y:auto;padding:20px 18px;position:relative;margin:auto">
         <button onclick="hideAddPlayerCharacter()" style="position:absolute;top:8px;right:12px;background:none;border:none;color:var(--text-dim);font-size:22px;cursor:pointer;padding:4px 8px;line-height:1" title="Close">&times;</button>
         <div style="font-family:'Orbitron','Exo 2',monospace;font-size:12px;color:var(--gold);letter-spacing:2px;margin-bottom:4px" id="addPcTitle">ADD PLAYER CHARACTER</div>
         <div style="font-size:10px;color:var(--text-dim);margin-bottom:14px">All fields except Name are optional. Update any time using the Edit button on the PC's corkboard card.</div>
-        <div style="display:grid;gap:8px;font-size:12px">
-          <label style="display:flex;flex-direction:column;gap:3px"><span style="font-size:9px;color:var(--text-dim);letter-spacing:1px;font-family:'Exo 2',monospace">CHARACTER NAME *</span><input type="text" id="pcName" placeholder="e.g. Jyn Orso" style="padding:8px 10px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-family:inherit;font-size:13px"></label>
-          <label style="display:flex;flex-direction:column;gap:3px"><span style="font-size:9px;color:var(--text-dim);letter-spacing:1px;font-family:'Exo 2',monospace">PLAYER NAME</span><input type="text" id="pcPlayer" style="padding:8px 10px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-family:inherit;font-size:13px"></label>
-          <label style="display:flex;flex-direction:column;gap:3px"><span style="font-size:9px;color:var(--text-dim);letter-spacing:1px;font-family:'Exo 2',monospace">SPECIES</span><input type="text" id="pcSpecies" placeholder="e.g. Human, Twi'lek" style="padding:8px 10px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-family:inherit;font-size:13px"></label>
-          <label style="display:flex;flex-direction:column;gap:3px"><span style="font-size:9px;color:var(--text-dim);letter-spacing:1px;font-family:'Exo 2',monospace">ROLE / JOB</span><input type="text" id="pcRole" placeholder="e.g. Smuggler" style="padding:8px 10px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-family:inherit;font-size:13px"></label>
-          <div style="display:flex;gap:8px">
-            <label style="display:flex;flex-direction:column;gap:3px;flex:1"><span style="font-size:9px;color:var(--text-dim);letter-spacing:1px;font-family:'Exo 2',monospace">ATTACK DICE</span><input type="text" id="pcDmgDice" placeholder="4D" value="4D" style="padding:8px 10px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-family:inherit;font-size:13px"></label>
-            <label style="display:flex;flex-direction:column;gap:3px;flex:1"><span style="font-size:9px;color:var(--text-dim);letter-spacing:1px;font-family:'Exo 2',monospace">STR (SOAK)</span><input type="text" id="pcResDice" placeholder="3D" value="3D" style="padding:8px 10px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-family:inherit;font-size:13px"></label>
+
+        <!-- IDENTITY -->
+        <div style="display:grid;gap:8px;font-size:12px;margin-bottom:12px">
+          <label style="display:flex;flex-direction:column;gap:3px"><span class="pc-field-lbl">CHARACTER NAME *</span><input type="text" id="pcName" placeholder="e.g. Jyn Orso" class="pc-field"></label>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+            <label style="display:flex;flex-direction:column;gap:3px"><span class="pc-field-lbl">PLAYER NAME</span><input type="text" id="pcPlayer" class="pc-field"></label>
+            <label style="display:flex;flex-direction:column;gap:3px"><span class="pc-field-lbl">SPECIES</span><input type="text" id="pcSpecies" placeholder="e.g. Human, Twi'lek" class="pc-field"></label>
           </div>
-          <label style="display:flex;flex-direction:column;gap:3px"><span style="font-size:9px;color:var(--text-dim);letter-spacing:1px;font-family:'Exo 2',monospace">NOTES</span><textarea id="pcNotes" rows="2" placeholder="Anything worth remembering at the table" style="padding:8px 10px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-family:inherit;font-size:12px;resize:vertical"></textarea></label>
+          <label style="display:flex;flex-direction:column;gap:3px"><span class="pc-field-lbl">ROLE / JOB</span><input type="text" id="pcRole" placeholder="e.g. Smuggler, Jedi, Scout" class="pc-field"></label>
         </div>
+
+        <!-- ATTRIBUTES -->
+        <div style="font-family:'Exo 2',monospace;font-size:9px;color:var(--gold);letter-spacing:1.5px;margin:12px 0 6px;padding-bottom:3px;border-bottom:1px solid var(--card-border)">⟐ ATTRIBUTES</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px">
+          <label style="display:flex;flex-direction:column;gap:3px"><span class="pc-field-lbl">DEX</span><select id="pcDex" class="pc-dice-sel"></select></label>
+          <label style="display:flex;flex-direction:column;gap:3px"><span class="pc-field-lbl">KNO</span><select id="pcKno" class="pc-dice-sel"></select></label>
+          <label style="display:flex;flex-direction:column;gap:3px"><span class="pc-field-lbl">MEC</span><select id="pcMec" class="pc-dice-sel"></select></label>
+          <label style="display:flex;flex-direction:column;gap:3px"><span class="pc-field-lbl">PER</span><select id="pcPer" class="pc-dice-sel"></select></label>
+          <label style="display:flex;flex-direction:column;gap:3px"><span class="pc-field-lbl">STR</span><select id="pcStr" class="pc-dice-sel"></select></label>
+          <label style="display:flex;flex-direction:column;gap:3px"><span class="pc-field-lbl">TEC</span><select id="pcTec" class="pc-dice-sel"></select></label>
+        </div>
+
+        <!-- COMBAT -->
+        <div style="font-family:'Exo 2',monospace;font-size:9px;color:var(--gold);letter-spacing:1.5px;margin:12px 0 6px;padding-bottom:3px;border-bottom:1px solid var(--card-border)">⟐ COMBAT</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px">
+          <label style="display:flex;flex-direction:column;gap:3px"><span class="pc-field-lbl">ATTACK DICE <span style="color:var(--text-dark)">(weapon)</span></span><select id="pcDmgDice" class="pc-dice-sel"></select></label>
+          <label style="display:flex;flex-direction:column;gap:3px"><span class="pc-field-lbl">SOAK DICE <span style="color:var(--text-dark)">(STR+armor)</span></span><select id="pcResDice" class="pc-dice-sel"></select></label>
+        </div>
+        <label style="display:flex;flex-direction:column;gap:3px;margin-bottom:10px"><span class="pc-field-lbl">ARMOR / GEAR NOTES</span><input type="text" id="pcArmor" placeholder="e.g. Combat vest +1D phys / +2 energy" class="pc-field"></label>
+
+        <!-- CHARACTER POINTS / FORCE -->
+        <div style="font-family:'Exo 2',monospace;font-size:9px;color:var(--gold);letter-spacing:1.5px;margin:12px 0 6px;padding-bottom:3px;border-bottom:1px solid var(--card-border)">⟐ POINTS &amp; FORCE</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px">
+          <label style="display:flex;flex-direction:column;gap:3px"><span class="pc-field-lbl">CHARACTER POINTS</span><input type="number" id="pcCharPoints" min="0" class="pc-field" value="5"></label>
+          <label style="display:flex;flex-direction:column;gap:3px"><span class="pc-field-lbl">FORCE POINTS</span><input type="number" id="pcForcePoints" min="0" class="pc-field" value="1"></label>
+        </div>
+        <label style="display:flex;align-items:center;gap:8px;margin-bottom:8px;cursor:pointer;font-size:11px;color:var(--text)"><input type="checkbox" id="pcForceSensitive" onchange="togglePcForceSection()" style="accent-color:var(--purple);width:14px;height:14px"> Force Sensitive</label>
+        <div id="pcForceSection" style="display:none;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px">
+          <label style="display:flex;flex-direction:column;gap:3px"><span class="pc-field-lbl" style="color:var(--purple)">CONTROL</span><select id="pcForceControl" class="pc-dice-sel"></select></label>
+          <label style="display:flex;flex-direction:column;gap:3px"><span class="pc-field-lbl" style="color:var(--purple)">SENSE</span><select id="pcForceSense" class="pc-dice-sel"></select></label>
+          <label style="display:flex;flex-direction:column;gap:3px"><span class="pc-field-lbl" style="color:var(--purple)">ALTER</span><select id="pcForceAlter" class="pc-dice-sel"></select></label>
+        </div>
+
+        <!-- SKILLS -->
+        <div style="font-family:'Exo 2',monospace;font-size:9px;color:var(--gold);letter-spacing:1.5px;margin:12px 0 6px;padding-bottom:3px;border-bottom:1px solid var(--card-border)">⟐ SKILLS</div>
+        <div style="display:flex;gap:6px;align-items:flex-end;flex-wrap:wrap;margin-bottom:8px">
+          <label style="display:flex;flex-direction:column;gap:3px;flex:2;min-width:180px"><span class="pc-field-lbl">SKILL</span><select id="pcSkillSelect" class="pc-field"></select></label>
+          <label style="display:flex;flex-direction:column;gap:3px;flex:1;min-width:90px"><span class="pc-field-lbl">DICE</span><select id="pcSkillDice" class="pc-dice-sel"></select></label>
+          <button type="button" class="btn btn-primary" onclick="pcAddSkillRow()" style="padding:8px 14px;font-size:10px;letter-spacing:1px;height:34px">+ ADD</button>
+        </div>
+        <div id="pcSkillList" style="margin-bottom:6px"></div>
+
+        <!-- NOTES -->
+        <div style="font-family:'Exo 2',monospace;font-size:9px;color:var(--gold);letter-spacing:1.5px;margin:12px 0 6px;padding-bottom:3px;border-bottom:1px solid var(--card-border)">⟐ NOTES</div>
+        <label style="display:flex;flex-direction:column;gap:3px;margin-bottom:8px"><textarea id="pcNotes" rows="2" placeholder="Anything worth remembering at the table" class="pc-field" style="resize:vertical;font-size:12px"></textarea></label>
+
         <div style="display:flex;gap:8px;margin-top:14px;justify-content:flex-end">
           <button class="btn btn-primary" onclick="hideAddPlayerCharacter()" style="padding:8px 14px;font-size:10px;letter-spacing:1px;background:var(--bg3);color:var(--text-dim);border:1px solid var(--card-border)">CANCEL</button>
           <button class="btn btn-primary" onclick="savePlayerCharacter()" style="padding:8px 14px;font-size:10px;letter-spacing:1px">SAVE</button>
@@ -8230,10 +8290,9 @@ function renderCorkboardCard(pin) {
     actions += '<button class="cb-btn cb-btn-pc" onclick="corkboardSendToTracker(\'' + pin.type + '\', \'' + idAttr.replace(/'/g, "\\'") + '\', \'pc\')">⚔ AS PC</button>';
     actions += '<button class="cb-btn cb-btn-npc" onclick="corkboardSendToTracker(\'' + pin.type + '\', \'' + idAttr.replace(/'/g, "\\'") + '\', \'npc\')">⚔ AS NPC</button>';
   }
+  actions += '<button class="cb-btn cb-btn-view" onclick="corkboardOpen(\'' + pin.type + '\', \'' + idAttr.replace(/'/g, "\\'") + '\')">🔍 VIEW</button>';
   if (pin.type === 'player-character') {
     actions += '<button class="cb-btn" onclick="editPlayerCharacter(\'' + idAttr.replace(/'/g, "\\'") + '\')">✎ EDIT</button>';
-  } else {
-    actions += '<button class="cb-btn cb-btn-view" onclick="corkboardOpen(\'' + pin.type + '\', \'' + idAttr.replace(/'/g, "\\'") + '\')">🔍 VIEW</button>';
   }
   actions += '<button class="cb-btn cb-btn-remove" onclick="corkboardRemove(\'' + pin.type + '\', \'' + idAttr.replace(/'/g, "\\'") + '\')">✕ REMOVE</button>';
   return '<div class="cb-card ' + cls + '">' +
@@ -8303,8 +8362,9 @@ function corkboardOpen(type, id) {
       switchTab('galaxy');
       if (typeof showPlanetDetail === 'function') showPlanetDetail(id);
       break;
-    // Generated content — show the saved snapshot in a modal
+    // Generated content / PCs — show the saved snapshot in a modal
     case 'random-npc':
+    case 'player-character':
     case 'random-alien':
     case 'random-creature':
     case 'wild-system':
@@ -8381,13 +8441,18 @@ function showPinSnapshot(pin) {
   let html = '<div style="font-family:\'Orbitron\',\'Exo 2\',monospace;font-size:10px;color:var(--cyan);letter-spacing:2px;margin-bottom:2px">' + escapeHtml(typeLabel) + '</div>';
   html += '<div style="font-family:\'Exo 2\',monospace;font-size:16px;color:var(--gold);font-weight:700;letter-spacing:1px;margin-bottom:4px">' + escapeHtml(pin.title) + '</div>';
   if (pin.subtitle) html += '<div style="font-size:11px;color:var(--text-dim);margin-bottom:12px">' + escapeHtml(pin.subtitle) + '</div>';
-  if (pin.type === 'random-npc') {
+  if (pin.type === 'random-npc' || pin.type === 'player-character') {
     html += renderRolledNpcSnapshot(pin);
   } else {
     html += renderGenericSnapshot(pin);
   }
-  html += '<div style="font-size:10px;color:var(--text-dark);font-style:italic;margin-top:10px;line-height:1.5">This is a saved snapshot from when you pinned it. The original generator rolls fresh results each time — this entry won\'t change unless you edit or remove it.</div>';
+  if (pin.type !== 'player-character') {
+    html += '<div style="font-size:10px;color:var(--text-dark);font-style:italic;margin-top:10px;line-height:1.5">This is a saved snapshot from when you pinned it. The original generator rolls fresh results each time — this entry won\'t change unless you edit or remove it.</div>';
+  }
   html += '<div style="display:flex;gap:8px;justify-content:flex-end;margin-top:14px">';
+  if (pin.type === 'player-character') {
+    html += '<button class="btn btn-primary" onclick="hidePinSnapshot();editPlayerCharacter(\'' + escapeHtml(pin.id).replace(/'/g, "\\'") + '\')" style="padding:6px 14px;font-size:10px;letter-spacing:1px;background:var(--bg3);color:var(--gold);border:1px solid var(--gold-dim)">✎ EDIT</button>';
+  }
   html += '<button class="btn btn-primary" onclick="hidePinSnapshot()" style="padding:6px 14px;font-size:10px;letter-spacing:1px">CLOSE</button>';
   html += '</div>';
   body.innerHTML = html;
@@ -8406,8 +8471,9 @@ function renderRolledNpcSnapshot(pin) {
 
   // Fluff block
   const fluff = [
-    row('Sex', n.sex), row('Height', n.height), row('Move', n.move),
-    row('Credits', n.credits), row('Force Sensitive', n.forceSensitive),
+    row('Player', n.player), row('Sex', n.sex), row('Height', n.height),
+    row('Move', n.move), row('Credits', n.credits), row('Armor / Gear', n.armor),
+    row('Force Sensitive', n.forceSensitive),
     row('Force Points', n.forcePoints), row('Character Points', n.charPoints)
   ].filter(Boolean).join('');
   if (fluff) out += '<div style="padding:6px 10px;background:rgba(0,0,0,0.2);border-radius:6px;margin-bottom:10px">' + fluff + '</div>';
@@ -8447,6 +8513,13 @@ function renderRolledNpcSnapshot(pin) {
           skillHtml += '<div style="display:flex;justify-content:space-between;padding:1px 0;font-size:11px">' +
             '<span style="color:var(--text)">' + escapeHtml(s.name || '') + '</span>' +
             '<span style="color:var(--gold);font-family:\'IBM Plex Mono\',monospace">' + escapeHtml(s.dice || '') + '</span></div>';
+          if (Array.isArray(s.specs) && s.specs.length) {
+            s.specs.forEach(sp => {
+              skillHtml += '<div style="display:flex;justify-content:space-between;padding:1px 0 1px 10px;font-size:11px">' +
+                '<span style="color:var(--text-dim);font-style:italic">specialization - ' + escapeHtml(sp.name) + ':</span>' +
+                '<span style="color:var(--gold);font-family:\'IBM Plex Mono\',monospace">' + escapeHtml(sp.dice) + '</span></div>';
+            });
+          }
         });
       }
       skillHtml += '</div>';
@@ -8492,6 +8565,12 @@ function renderRolledNpcSnapshot(pin) {
     out += '<div style="padding:6px 10px;background:rgba(0,0,0,0.2);border-radius:6px">';
     out += equipFields.map(p => row(p[0], p[1])).join('');
     out += '</div></div>';
+  }
+
+  // Notes (PCs only; rolled NPCs don't have a notes field)
+  if (n.notes && String(n.notes).trim()) {
+    out += '<div style="margin-bottom:10px"><div style="font-family:\'Exo 2\',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:4px">NOTES</div>';
+    out += '<div style="padding:6px 10px;background:rgba(0,0,0,0.2);border-radius:6px;font-size:11px;color:var(--text);line-height:1.5;white-space:pre-wrap">' + escapeHtml(String(n.notes)) + '</div></div>';
   }
 
   return out;
@@ -8570,12 +8649,151 @@ function corkboardSendToTracker(type, id, side) {
 
 // ---- Player Character modal ----
 let editingPcId = null;
+let pcSkillsDraft = []; // working copy of { name, attr, dice, specs:[{name,dice}] } entries
+
+// Build the dice-value options for the dropdowns (0D through 15D+2 in pip steps)
+function pcDiceOptions() {
+  const out = ['0D'];
+  for (let d = 1; d <= 15; d++) {
+    out.push(d + 'D');
+    out.push(d + 'D+1');
+    out.push(d + 'D+2');
+  }
+  return out;
+}
+function pcPopulateDiceSelect(el, selected) {
+  if (!el) return;
+  const opts = pcDiceOptions();
+  el.innerHTML = opts.map(d => '<option value="' + d + '"' + (d === selected ? ' selected' : '') + '>' + d + '</option>').join('');
+}
+function pcPopulateAllDiceSelects() {
+  const defaults = {
+    pcDex: '2D', pcKno: '2D', pcMec: '2D', pcPer: '2D', pcStr: '2D', pcTec: '2D',
+    pcDmgDice: '4D', pcResDice: '3D',
+    pcForceControl: '1D', pcForceSense: '1D', pcForceAlter: '1D',
+    pcSkillDice: '4D'
+  };
+  Object.keys(defaults).forEach(id => pcPopulateDiceSelect(document.getElementById(id), defaults[id]));
+}
+// Build the skill-name dropdown from SKILLS_DATA, grouped by attribute
+function pcPopulateSkillSelect() {
+  const sel = document.getElementById('pcSkillSelect');
+  if (!sel || typeof SKILLS_DATA === 'undefined' || !SKILLS_DATA.skills) return;
+  const groups = {};
+  SKILLS_DATA.skills.forEach(s => {
+    const a = s.attr || 'Other';
+    if (!groups[a]) groups[a] = [];
+    groups[a].push(s);
+  });
+  const order = ['Dex', 'Per', 'Kno', 'Str', 'Mec', 'Tec'];
+  let html = '<option value="">— Select a skill —</option>';
+  order.forEach(a => {
+    if (!groups[a]) return;
+    html += '<optgroup label="' + a.toUpperCase() + '">';
+    groups[a].slice().sort((x, y) => x.name.localeCompare(y.name)).forEach(s => {
+      html += '<option value="' + escapeHtml(s.name) + '" data-attr="' + a + '">' + escapeHtml(s.name) + '</option>';
+    });
+    html += '</optgroup>';
+  });
+  sel.innerHTML = html;
+}
+
+function togglePcForceSection() {
+  const section = document.getElementById('pcForceSection');
+  if (!section) return;
+  section.style.display = document.getElementById('pcForceSensitive').checked ? 'grid' : 'none';
+}
+
+function pcAddSkillRow() {
+  const sel = document.getElementById('pcSkillSelect');
+  const diceSel = document.getElementById('pcSkillDice');
+  const name = sel.value;
+  if (!name) { alert('Pick a skill first.'); return; }
+  const dice = diceSel.value;
+  // Look up attr from the selected option
+  const opt = sel.options[sel.selectedIndex];
+  const attr = opt ? opt.getAttribute('data-attr') || 'Other' : 'Other';
+  // If this skill is already in the draft, update its dice instead of duplicating
+  const existing = pcSkillsDraft.find(s => s.name === name);
+  if (existing) { existing.dice = dice; }
+  else { pcSkillsDraft.push({ name: name, attr: attr, dice: dice, specs: [] }); }
+  sel.value = '';
+  renderPcSkillList();
+}
+function pcRemoveSkill(idx) {
+  pcSkillsDraft.splice(idx, 1);
+  renderPcSkillList();
+}
+function pcAddSpec(skillIdx) {
+  const row = document.querySelector('.pc-skill-row[data-skill-idx="' + skillIdx + '"]');
+  if (!row) return;
+  // Prevent multiple inline spec editors on the same row
+  if (row.querySelector('.pc-spec-editor')) return;
+  const editor = document.createElement('div');
+  editor.className = 'pc-spec-editor';
+  editor.style.cssText = 'display:flex;gap:6px;width:100%;align-items:center;padding-left:20px;margin-top:4px;flex-wrap:wrap';
+  editor.innerHTML =
+    '<input type="text" class="pc-field pc-spec-name-in" placeholder="specialization (e.g. DL-18)" style="flex:2;min-width:140px;font-size:11px">' +
+    '<select class="pc-dice-sel pc-spec-dice-in" style="flex:1;min-width:80px"></select>' +
+    '<button type="button" class="pc-mini-btn" onclick="pcSaveSpec(' + skillIdx + ',this)">SAVE</button>' +
+    '<button type="button" class="pc-mini-btn" onclick="this.parentElement.remove()">CANCEL</button>';
+  row.appendChild(editor);
+  pcPopulateDiceSelect(editor.querySelector('.pc-spec-dice-in'), pcSkillsDraft[skillIdx].dice);
+  editor.querySelector('.pc-spec-name-in').focus();
+}
+function pcSaveSpec(skillIdx, btn) {
+  const editor = btn.parentElement;
+  const name = editor.querySelector('.pc-spec-name-in').value.trim();
+  const dice = editor.querySelector('.pc-spec-dice-in').value;
+  if (!name) { alert('Enter a specialization name.'); return; }
+  pcSkillsDraft[skillIdx].specs = pcSkillsDraft[skillIdx].specs || [];
+  pcSkillsDraft[skillIdx].specs.push({ name: name, dice: dice });
+  renderPcSkillList();
+}
+function pcRemoveSpec(skillIdx, specIdx) {
+  pcSkillsDraft[skillIdx].specs.splice(specIdx, 1);
+  renderPcSkillList();
+}
+function renderPcSkillList() {
+  const container = document.getElementById('pcSkillList');
+  if (!container) return;
+  if (!pcSkillsDraft.length) {
+    container.innerHTML = '<div style="color:var(--text-dark);font-size:11px;font-style:italic;padding:4px 0">No skills added yet.</div>';
+    return;
+  }
+  const attrOrder = { Dex: 1, Per: 2, Kno: 3, Str: 4, Mec: 5, Tec: 6, Other: 7 };
+  pcSkillsDraft.sort((a, b) => (attrOrder[a.attr] || 9) - (attrOrder[b.attr] || 9) || a.name.localeCompare(b.name));
+  let html = '';
+  pcSkillsDraft.forEach((s, i) => {
+    html += '<div class="pc-skill-row" data-skill-idx="' + i + '">';
+    html += '<span class="pc-skill-name"><span style="color:var(--text-dark);font-size:9px;letter-spacing:1px;margin-right:4px">' + (s.attr || '').toUpperCase() + '</span>' + escapeHtml(s.name) + '</span>';
+    html += '<span class="pc-skill-dice">' + escapeHtml(s.dice) + '</span>';
+    html += '<button type="button" class="pc-mini-btn" onclick="pcAddSpec(' + i + ')">+ spec</button>';
+    html += '<button type="button" class="pc-mini-btn danger" onclick="pcRemoveSkill(' + i + ')">✕</button>';
+    html += '</div>';
+    (s.specs || []).forEach((sp, si) => {
+      html += '<div class="pc-spec-row">';
+      html += '<span class="pc-spec-label">specialization - ' + escapeHtml(sp.name) + ':</span>';
+      html += '<span class="pc-spec-dice">' + escapeHtml(sp.dice) + '</span>';
+      html += '<button type="button" class="pc-mini-btn danger" onclick="pcRemoveSpec(' + i + ',' + si + ')">✕</button>';
+      html += '</div>';
+    });
+  });
+  container.innerHTML = html;
+}
+
 function showAddPlayerCharacter() {
   editingPcId = null;
+  pcSkillsDraft = [];
   document.getElementById('addPcTitle').textContent = 'ADD PLAYER CHARACTER';
-  ['pcName','pcPlayer','pcSpecies','pcRole','pcNotes'].forEach(id => document.getElementById(id).value = '');
-  document.getElementById('pcDmgDice').value = '4D';
-  document.getElementById('pcResDice').value = '3D';
+  ['pcName','pcPlayer','pcSpecies','pcRole','pcArmor','pcNotes'].forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; });
+  document.getElementById('pcCharPoints').value = 5;
+  document.getElementById('pcForcePoints').value = 1;
+  document.getElementById('pcForceSensitive').checked = false;
+  togglePcForceSection();
+  pcPopulateAllDiceSelects();
+  pcPopulateSkillSelect();
+  renderPcSkillList();
   document.getElementById('addPcModal').style.display = 'flex';
   setTimeout(() => document.getElementById('pcName').focus(), 40);
 }
@@ -8587,27 +8805,67 @@ function editPlayerCharacter(id) {
   const pin = corkboardPins.find(p => p.type === 'player-character' && p.id === id);
   if (!pin) return;
   editingPcId = id;
-  document.getElementById('addPcTitle').textContent = 'EDIT PLAYER CHARACTER';
   const d = pin.data || {};
+  pcSkillsDraft = Array.isArray(d.skills) ? JSON.parse(JSON.stringify(d.skills)) : [];
+  document.getElementById('addPcTitle').textContent = 'EDIT PLAYER CHARACTER';
+  // Populate dropdowns first so we can then set values
+  pcPopulateAllDiceSelects();
+  pcPopulateSkillSelect();
+  // Identity
   document.getElementById('pcName').value = pin.title || '';
   document.getElementById('pcPlayer').value = d.player || '';
   document.getElementById('pcSpecies').value = d.species || '';
   document.getElementById('pcRole').value = d.role || '';
-  document.getElementById('pcDmgDice').value = d.dmgDice || '4D';
-  document.getElementById('pcResDice').value = d.resDice || '3D';
+  // Attributes
+  ['Dex','Kno','Mec','Per','Str','Tec'].forEach(a => {
+    const el = document.getElementById('pc' + a);
+    const key = a.toLowerCase();
+    if (el && d[key]) el.value = d[key];
+  });
+  // Combat
+  if (d.dmgDice) document.getElementById('pcDmgDice').value = d.dmgDice;
+  if (d.resDice) document.getElementById('pcResDice').value = d.resDice;
+  document.getElementById('pcArmor').value = d.armor || '';
+  // Points
+  document.getElementById('pcCharPoints').value = d.charPoints != null ? d.charPoints : 5;
+  document.getElementById('pcForcePoints').value = d.forcePoints != null ? d.forcePoints : 1;
+  // Force
+  const fs = !!(d.forceControl || d.forceSense || d.forceAlter || d.forceSensitive === 'Yes' || d.forceSensitive === true);
+  document.getElementById('pcForceSensitive').checked = fs;
+  togglePcForceSection();
+  if (d.forceControl) document.getElementById('pcForceControl').value = d.forceControl;
+  if (d.forceSense) document.getElementById('pcForceSense').value = d.forceSense;
+  if (d.forceAlter) document.getElementById('pcForceAlter').value = d.forceAlter;
+  // Notes
   document.getElementById('pcNotes').value = d.notes || '';
+  renderPcSkillList();
   document.getElementById('addPcModal').style.display = 'flex';
 }
 function savePlayerCharacter() {
   const name = document.getElementById('pcName').value.trim();
   if (!name) { alert('Character name is required.'); return; }
+  const forceOn = document.getElementById('pcForceSensitive').checked;
   const data = {
     player: document.getElementById('pcPlayer').value.trim(),
     species: document.getElementById('pcSpecies').value.trim(),
     role: document.getElementById('pcRole').value.trim(),
-    dmgDice: document.getElementById('pcDmgDice').value.trim() || '4D',
-    resDice: document.getElementById('pcResDice').value.trim() || '3D',
-    notes: document.getElementById('pcNotes').value.trim()
+    dex: document.getElementById('pcDex').value,
+    kno: document.getElementById('pcKno').value,
+    mec: document.getElementById('pcMec').value,
+    per: document.getElementById('pcPer').value,
+    str: document.getElementById('pcStr').value,
+    tec: document.getElementById('pcTec').value,
+    dmgDice: document.getElementById('pcDmgDice').value,
+    resDice: document.getElementById('pcResDice').value,
+    armor: document.getElementById('pcArmor').value.trim(),
+    charPoints: parseInt(document.getElementById('pcCharPoints').value, 10) || 0,
+    forcePoints: parseInt(document.getElementById('pcForcePoints').value, 10) || 0,
+    forceSensitive: forceOn ? 'Yes' : 'No',
+    forceControl: forceOn ? document.getElementById('pcForceControl').value : '',
+    forceSense: forceOn ? document.getElementById('pcForceSense').value : '',
+    forceAlter: forceOn ? document.getElementById('pcForceAlter').value : '',
+    notes: document.getElementById('pcNotes').value.trim(),
+    skills: JSON.parse(JSON.stringify(pcSkillsDraft))
   };
   const subtitleParts = [];
   if (data.species) subtitleParts.push(data.species);
@@ -8621,7 +8879,6 @@ function savePlayerCharacter() {
     data: data
   };
   if (editingPcId) {
-    // Replace existing
     const idx = corkboardPins.findIndex(p => p.type === 'player-character' && p.id === editingPcId);
     if (idx >= 0) {
       pin.pinnedAt = corkboardPins[idx].pinnedAt;
