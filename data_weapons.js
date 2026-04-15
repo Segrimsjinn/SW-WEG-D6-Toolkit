@@ -3461,7 +3461,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Xana MSW-9 Molecular Stiletto",
-  "category": "Knives",
+  "category": "Standard Melee",
   "skill": "Melee combat",
   "cost": "400",
   "availability": "4, R or X",
@@ -3821,7 +3821,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Rodian Ceremonial Dagger",
-  "category": "Knives",
+  "category": "Standard Melee",
   "skill": "Melee combat",
   "cost": "160",
   "availability": "3",
