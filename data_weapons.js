@@ -564,18 +564,6 @@ const WEAPONS_DATA = [
   "source": ""
  },
  {
-  "name": "Stun Gauntlets",
-  "category": "Melee - Stun",
-  "skill": "Brawling",
-  "cost": "300",
-  "availability": "2",
-  "damage": "STR+2D stun",
-  "range": "",
-  "ammo": "10 charges",
-  "game_notes": "",
-  "source": "Gundark's Fantastic Technology (pages 12-13)"
- },
- {
   "name": "Concussion Rifle",
   "category": "Concussion Weapons",
   "skill": "Concussion weapons: rifle",
@@ -2801,18 +2789,6 @@ const WEAPONS_DATA = [
   "source": "Secrets of Naboo (page 49)"
  },
  {
-  "name": "Fear Stick",
-  "category": "Melee - Stun",
-  "skill": "Melee combat: knife",
-  "cost": "600; 50 (refills)",
-  "availability": "4, F",
-  "damage": "2D stun",
-  "range": "",
-  "ammo": "2",
-  "game_notes": "Moderate difficulty. Bio-chemical injection. Difficult stamina/willpower or severe panic attack (flight). Lasts until Heroic roll or 1 hour.",
-  "source": "Galladinium's Fantastic Technologies (pages 68-69)"
- },
- {
   "name": "Flashstick",
   "category": "Melee - Stun",
   "skill": "Melee combat",
@@ -2837,18 +2813,6 @@ const WEAPONS_DATA = [
   "source": "Ultimate Alien Anthology (pages 63-64)"
  },
  {
-  "name": "Hand-Held Contact Stunner",
-  "category": "Melee - Stun",
-  "skill": "Melee combat: contact stunner",
-  "cost": "575",
-  "availability": "2, R",
-  "damage": "4D+2 stun",
-  "range": "",
-  "ammo": "5",
-  "game_notes": "Very Easy difficulty. 15cm cylinder. Easy to hide (+2D vs weapon detectors, +1D vs searches).",
-  "source": "Gundark's Fantastic Technology (page 10)"
- },
- {
   "name": "Neuronic Whip",
   "category": "Melee - Stun",
   "skill": "Melee combat: neuronic whip",
@@ -2859,18 +2823,6 @@ const WEAPONS_DATA = [
   "ammo": "3hr power",
   "game_notes": "Moderate difficulty.",
   "source": "Gundark's Fantastic Technology (pages 10-11)"
- },
- {
-  "name": "Stun Baton",
-  "category": "Melee - Stun",
-  "skill": "Melee combat: stun baton",
-  "cost": "300",
-  "availability": "R",
-  "damage": "STR+2D+2 (STR+1D unpowered)",
-  "range": "",
-  "ammo": "3hr power",
-  "game_notes": "Easy difficulty.",
-  "source": "WEG40042 Han Solo and the Corporate Sector Sourcebook p.116; Gundark's Fantastic Technology (pages 11-12)"
  },
  {
   "name": "Drearian Actiwl Riot Shield",
@@ -2907,18 +2859,6 @@ const WEAPONS_DATA = [
   "ammo": "50 charges",
   "game_notes": "Moderate difficulty. 10kg. Separates into 3 pieces. Body 2D.",
   "source": "Shadows of the Empire Sourcebook (page 113)"
- },
- {
-  "name": "Z2 Stun Baton",
-  "category": "Melee - Stun",
-  "skill": "Melee combat: stun baton",
-  "cost": "400",
-  "availability": "R",
-  "damage": "STR+1D or 5D stun (two settings)",
-  "range": "",
-  "ammo": "3hr power",
-  "game_notes": "Easy difficulty.",
-  "source": "Gundark's Fantastic Technology (page 12)"
  },
  {
   "name": "Antipersonnel Net Gun",
@@ -4294,14 +4234,15 @@ const WEAPONS_DATA = [
  },
  {
   "name": "SoroSuub CS-12 Stun Master",
+  "type": "Hand-Held Contact Stunner",
   "category": "Melee - Stun",
   "damage": "4D+2 stun",
   "range": "",
   "ammo": "5",
   "cost": "575 (power cells 15)",
   "availability": "2, R",
-  "game_notes": "Skill: Melee combat: contact stunner. Very Easy difficulty. Hand-held contact stunner — small cylinder 15cm long, 5cm diameter. Delivers virtually silent electronic stun charge via 13 contact studs. Easy to conceal (+2D to hide against weapon detectors, +1D against physical searches). Consumer grade body strength 1D; military version (1,000 credits) has body strength 3D.",
-  "source": "WEG40132 Operation: Elrood p.85"
+  "game_notes": "Skill: Melee combat: contact stunner. Very Easy difficulty. Hand-held contact stunner — small cylinder 15cm long, 5cm diameter. Delivers virtually silent electronic stun charge via 13 contact studs. Easy to conceal (+2D to hide against weapon detectors, +1D against physical searches). Developed for bodyguards and security forces. Consumer-grade materials can be smuggled through most weapon detectors (body strength 1D); military version (1,000 credits) has body strength 3D.",
+  "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.7; WEG40132 Operation: Elrood p.85"
  },
  {
   "name": "Portable Plasma Cutter",
@@ -4870,7 +4811,7 @@ const WEAPONS_DATA = [
   "availability": "2",
   "damage": "STR+2D (stun)",
   "game_notes": "Skill: Brawling. Ammo: 10 charges. Appear as standard heavy gauntlets with long cuffs. Conceal a tiny battery connected to contact wiring mesh over an insulated glove — delivers stun charge on contact. Useful when disarmed of obvious weapons.",
-  "source": "WEG40143 Pirates & Privateers p.42"
+  "source": "WEG40158 Gundark's Fantastic Technology p.12-13; WEG40143 Pirates & Privateers p.42"
  },
  {
   "category": "Melee - Stun",
@@ -4879,8 +4820,9 @@ const WEAPONS_DATA = [
   "cost": "300",
   "availability": "R",
   "damage": "STR+2D+2 (with stun charge); STR+1D (charge off)",
+  "ammo": "3hr power",
   "game_notes": "Skill: Melee combat. Difficulty: Easy. Short club with small power pack for non-lethal melees.",
-  "source": "WEG40143 Pirates & Privateers p.43"
+  "source": "WEG40042 Han Solo and the Corporate Sector Sourcebook p.116; WEG40158 Gundark's Fantastic Technology p.11-12; WEG40143 Pirates & Privateers p.43"
  },
  {
   "category": "Melee - Stun",
@@ -4927,17 +4869,6 @@ const WEAPONS_DATA = [
   "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.7"
  },
  {
-  "category": "Melee Weapons",
-  "name": "Hand-Held Contact Stunner",
-  "type": "Contact Stunner",
-  "model": "SoroSuub CS-12 Stun Master",
-  "cost": "575 (power cells: 15)",
-  "availability": "2, R",
-  "damage": "4D+2 stun",
-  "game_notes": "Skill: Melee combat: contact stunner. Scale: Character. Ammo: 5. Difficulty: Very Easy. Easy to hide (+2D to hide against weapon detectors, +1D against physical searches). Hand-to-hand stun weapon developed for bodyguards and security forces. A small cylinder 15cm long and 5cm in diameter with a flat disk of 13 contact studs at the forward end that delivers a silent electronic stun charge. Made of consumer-grade materials, it can be smuggled through most weapons detectors.",
-  "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.7"
- },
- {
   "category": "Melee - Stun",
   "name": "Neuronic Whip",
   "type": "Neuronic Whip",
@@ -4960,14 +4891,15 @@ const WEAPONS_DATA = [
   "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.7"
  },
  {
-  "category": "Melee Weapons",
+  "category": "Melee - Stun",
   "name": "Stun Baton (Z2)",
   "type": "Stun Baton",
   "model": "Merr-Sonn Z2 Stun Baton",
   "cost": "400",
   "availability": "R",
   "damage": "STR+1D or 5D stun (two settings)",
-  "game_notes": "Skill: Melee combat: stun baton. Scale: Character. Difficulty: Easy. Power pack lasts for three hours. Two-setting baton used by slavers, riot police, and beings whose job it is to control other sentients. Designed for peace-time officers but also gives slavers an edge — the lethal force setting is rarely used by slavers because property damaged is worthless.",
+  "ammo": "3hr power",
+  "game_notes": "Skill: Melee combat: stun baton. Scale: Character. Difficulty: Easy. Two-setting baton used by slavers, riot police, and beings whose job it is to control other sentients. Designed for peace-time officers but also gives slavers an edge — the lethal force setting is rarely used by slavers because property damaged is worthless.",
   "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.8"
  },
  {
