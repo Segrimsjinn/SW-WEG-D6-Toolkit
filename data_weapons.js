@@ -5079,7 +5079,7 @@ const WEAPONS_DATA = [
   "source": "WEG41017 Star Wars Adventure Journal #17 p.121 (Love Is A Warm Blaster)"
  },
  {
-  "category": "Archaic Slugthrowers",
+  "category": "Archaic Firearms",
   "name": "Exocron Percussion Rifle",
   "type": "Archaic explosive-projectile long arm",
   "cost": "Not available for sale (Exocron-only)",
@@ -5089,7 +5089,7 @@ const WEAPONS_DATA = [
   "source": "WEG40209 The DarkStryder Campaign: Kathol Outback p.69 (The Masters of Exocron)"
  },
  {
-  "category": "Archaic Slugthrowers",
+  "category": "Archaic Firearms",
   "name": "Exocron Percussion Pistol",
   "type": "Archaic explosive-projectile sidearm",
   "cost": "Not available for sale (Exocron-only)",
@@ -5099,7 +5099,18 @@ const WEAPONS_DATA = [
   "source": "WEG40209 The DarkStryder Campaign: Kathol Outback p.72 (The Masters of Exocron)"
  },
  {
-  "category": "Archaic Slugthrowers",
+  "category": "Archaic Firearms",
+  "name": "Exocron Devisor Flash Pistol",
+  "type": "Archaic non-lethal flash weapon",
+  "cost": "Not available for sale",
+  "availability": "3, X (Devisors only)",
+  "damage": "Blinding (no damage)",
+  "range": "",
+  "game_notes": "Skill: Archaic guns: flash pistol. Does no damage. Target must make a Moderate Perception roll or be blinded for 1D rounds. Used by Devisors for self-defense inside the Ministry of Technology. Effective against walker pilots when fired through cockpit viewports.",
+  "source": "WEG40209 The DarkStryder Campaign: Kathol Outback p.77 (The Masters of Exocron)"
+ },
+ {
+  "category": "Archaic Firearms",
   "name": "Exocron Slugthrower Pistol",
   "type": "Archaic ceremonial slugthrower",
   "cost": "Not available for sale",

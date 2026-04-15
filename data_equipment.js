@@ -6380,15 +6380,6 @@ const EQUIPMENT_DATA = [
   "source": "WEG40209 The DarkStryder Campaign: Kathol Outback p.76 (The Masters of Exocron)"
  },
  {
-  "name": "Exocron Devisor Flash Pistol",
-  "category": "Archaic Weapons",
-  "type": "Archaic non-lethal flash weapon",
-  "cost": "Not available for sale",
-  "availability": "3, X (Devisors only)",
-  "game_notes": "Skill: Archaic guns: flash pistol. Does no damage. Target must make a Moderate Perception roll or be blinded for 1D rounds. Used by Devisors for self-defense inside the Ministry of Technology. Effective against walker pilots when fired through cockpit viewports.",
-  "source": "WEG40209 The DarkStryder Campaign: Kathol Outback p.77 (The Masters of Exocron)"
- },
- {
   "name": "Imperial Munitions Rampart II Portable Shield Generator",
   "category": "Security/Surveillance",
   "type": "Portable tactical shield generator",
