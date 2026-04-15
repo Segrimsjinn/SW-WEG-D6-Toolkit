@@ -853,7 +853,7 @@ const WEAPONS_DATA = [
  },
  {
   "name": "Mandroxan Droid Disabler (EDWX-843)",
-  "category": "Energy Weapons",
+  "category": "Ion Weapons",
   "skill": "Blaster",
   "cost": "10,000 (black market)",
   "availability": "4, X",
