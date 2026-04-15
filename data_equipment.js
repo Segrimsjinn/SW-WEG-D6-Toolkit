@@ -209,7 +209,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "A3AA Personal Defense Module",
-  "category": "Combat Armor",
+  "category": "Personal Defense",
   "cost": "8,500",
   "availability": "4, X",
   "game_notes": "Micro-nozzle spray: 5m cloud reduces blaster damage by -2D for ~4 min (3 charges). Alt: 30\u00b0 forward cone. Suit: +2D physical, +1D energy, -1D DEX.",
@@ -385,7 +385,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Shockball Uniform",
-  "category": "Combat Armor",
+  "category": "Recreation",
   "cost": "\u2014",
   "availability": "1",
   "game_notes": "Padding: +2 STR vs physical. Helmet: +1. Includes insulated mitt and scoop.",
@@ -5570,7 +5570,7 @@ const EQUIPMENT_DATA = [
  {
   "name": "CorSec Autoscan Weapons Detector",
   "type": "CorSec Autoscan Weapons Detector",
-  "category": "Sensors",
+  "category": "Security",
   "cost": "7,200",
   "availability": "2, R (restricted to governments)",
   "game_notes": "Stationary weapons detector. Has search 6D to detect hidden energy weapons. Petal-shaped array tracks individuals and vehicles moving within range. Deployed in fixed sites near public thoroughfares and transportation centers. If weapons are detected, an alarm is transmitted to security personnel. Difficulty to detect weapons depends on how well the user has hidden them with hide skill.",
@@ -5597,7 +5597,7 @@ const EQUIPMENT_DATA = [
  {
   "name": "Search-Scan 4 Security Scanner",
   "type": "BlasTech Search-Scan 4",
-  "category": "Sensors",
+  "category": "Security",
   "cost": "9,800",
   "availability": "2, R (restricted to governments)",
   "game_notes": "Multi-capable security scanner used by Imperial and local planetary governments. The size of a large chest — typically wheeled around on a cart or repulsor sled. Contains numerous probes and receptors attached by insulated cables. Highly sensitive — can often penetrate some forms of shielding. Adds +1D to the operator's sensor skill roll. Detects structural anomalies hiding secret compartments, energy signatures showing weapons, life forms, and energy sources within a confined area (docking bay, cargo hold, compartment).",
@@ -6261,7 +6261,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Mist's Modified Krail 1010 Photo-reactive Armor",
-  "category": "Combat Armor",
+  "category": "Powersuits",
   "type": "Modified personal battle armor",
   "cost": "80,000 (with all modifications)",
   "availability": "Basic suit X (illegal on most planets); modified suit is unique",
