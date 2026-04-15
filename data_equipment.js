@@ -3233,7 +3233,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Dendratis Bio-Cocoon",
-  "category": "Hunting & Trapping",
+  "category": "Security",
   "cost": "2,000",
   "availability": "3",
   "game_notes": "Biological containment system — 1.5 sq meter foldable cloth with dormant microorganisms. Remote-activated: organisms swarm over victim, leeching bio-electrical energy to form a cocoon. Victim makes brawling parry to avoid: Moderate (up to 150kg), Easy (151-300kg), Very Easy (301-450kg), no effect over 450kg. Failure: -1D DEX penalty and 1D stun damage immediately. Each subsequent turn: brawling parry difficulty increases one level, DEX penalty increases -1D, stun damage increases +1D. Fully cocooned when DEX penalty matches/exceeds character's DEX or stun knocks them out. Favorite of big-game hunters for live capture.",
