@@ -708,18 +708,6 @@ const WEAPONS_DATA = [
   "source": "WEG40042 Han Solo and the Corporate Sector Sourcebook p.118; Gundark's Fantastic Technology (pages 26-27)"
  },
  {
-  "name": "Merr-Sonn MSD-32 Disruptor",
-  "category": "Disruptor Blasters",
-  "skill": "Blaster: disruptor",
-  "cost": "4,000",
-  "availability": "4, X",
-  "damage": "5D+2",
-  "range": "0-3/5/7",
-  "ammo": "10",
-  "game_notes": "Fire Rate 2.",
-  "source": "Galladinium's Fantastic Technology (page 76)"
- },
- {
   "name": "MSD-36 Heavy Disruptor Pistol",
   "category": "Disruptor Blasters",
   "skill": "Blaster: heavy disruptor",
