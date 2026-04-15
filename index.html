@@ -4560,6 +4560,27 @@ function filterNotableNpcs() {
     return true;
   });
 
+  if (search) {
+    const tier = n => {
+      const name = (n.name || '').toLowerCase();
+      if (name === search) return 0;
+      if (name.startsWith(search)) return 1;
+      // Match on any whitespace-separated name token (e.g. "solo" → "Han Solo")
+      if (name.split(/\s+/).some(t => t.startsWith(search))) return 2;
+      if (name.includes(search)) return 3;
+      if ((n.species || '').toLowerCase().includes(search)) return 4;
+      if ((n.system || '').toLowerCase().includes(search)) return 5;
+      if ((n.affiliations || []).some(a => a.toLowerCase().includes(search))) return 6;
+      if ((n.location || '').toLowerCase().includes(search)) return 7;
+      return 8; // role / type / fallback
+    };
+    filtered.sort((a, b) => {
+      const ta = tier(a), tb = tier(b);
+      if (ta !== tb) return ta - tb;
+      return (a.name || '').localeCompare(b.name || '');
+    });
+  }
+
   document.getElementById('notableNpcCount').textContent = filtered.length + ' OF ' + NOTABLE_NPCS.length + ' NPCs';
 
   if (filtered.length === 0) {
