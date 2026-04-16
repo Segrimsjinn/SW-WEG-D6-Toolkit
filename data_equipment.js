@@ -3484,11 +3484,43 @@ const EQUIPMENT_DATA = [
   "source": "WEG40063 Galaxy Guide 6: Tramp Freighters p.39"
  },
  {
-  "name": "Custom x1/2 Hyperdrive",
+  "name": "Volatile x0.5 Hyperdrive (Salvaged)",
   "category": "Ship Equipment",
-  "cost": "50,000–90,000 (plus 15,000 installation)",
+  "cost": "50,000 (plus 15,000 installation)",
   "availability": "X",
-  "game_notes": "Not commercially available — must be custom built and extremely prone to failure. Weight: 20 metric tons. Some stolen models available on the black market. Very illegal. Finding a willing mechanic is a challenge in itself. Cost varies by parts quality, base hyperdrive cost, and quality of work.",
+  "game_notes": "Salvaged x0.5 hyperdrive pulled from a wreck. Weight: 20 metric tons. Extremely prone to failure — might explode. Very illegal. Finding a willing mechanic is a challenge in itself.",
+  "source": "WEG40063 Galaxy Guide 6: Tramp Freighters p.39"
+ },
+ {
+  "name": "Temperamental x0.5 Hyperdrive (Patched)",
+  "category": "Ship Equipment",
+  "cost": "60,000 (plus 15,000 installation)",
+  "availability": "X",
+  "game_notes": "Patched-together x0.5 hyperdrive. Works, usually. Weight: 20 metric tons. Needs constant babysitting — frequent recalibration between jumps. Very illegal.",
+  "source": "WEG40063 Galaxy Guide 6: Tramp Freighters p.39"
+ },
+ {
+  "name": "Unreliable x0.5 Hyperdrive (Refurbished)",
+  "category": "Ship Equipment",
+  "cost": "70,000 (plus 15,000 installation)",
+  "availability": "X",
+  "game_notes": "Refurbished x0.5 hyperdrive. Decent bones, questionable wiring. Weight: 20 metric tons. Prone to intermittent failures under sustained use. Very illegal.",
+  "source": "WEG40063 Galaxy Guide 6: Tramp Freighters p.39"
+ },
+ {
+  "name": "Serviceable x0.5 Hyperdrive (Custom-Built)",
+  "category": "Ship Equipment",
+  "cost": "80,000 (plus 15,000 installation)",
+  "availability": "X",
+  "game_notes": "Custom-built x0.5 hyperdrive. Proper job, still not factory-spec. Weight: 20 metric tons. Reasonably reliable with regular maintenance. Very illegal.",
+  "source": "WEG40063 Galaxy Guide 6: Tramp Freighters p.39"
+ },
+ {
+  "name": "Dependable x0.5 Hyperdrive (Precision)",
+  "category": "Ship Equipment",
+  "cost": "90,000 (plus 15,000 installation)",
+  "availability": "X",
+  "game_notes": "Precision-built x0.5 hyperdrive — best you'll get outside a military yard. Weight: 20 metric tons. Reliable performance under normal conditions. Very illegal.",
   "source": "WEG40063 Galaxy Guide 6: Tramp Freighters p.39"
  },
  {

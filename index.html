@@ -11263,7 +11263,7 @@ const SHIPYARD = {
 
   EQUIP_SUBTYPES: {
     engine: { label: 'SUBLIGHT ENGINE', keywords: /^(Starscream|Boshaa|Corellian Evader|Incom Starslinger|SoroSuub Boav)/i, statKey: 'space', parseRe: /Space:\s*(\d+)/, weightRe: /Weight:\s*([\d,.]+)\s*metric/i },
-    hyperdrive: { label: 'HYPERDRIVE', keywords: /Hyperdrive/i, statKey: 'hyperdrive', parseRe: /x([\d./]+)/, weightRe: /Weight:\s*([\d,.]+)\s*metric/i },
+    hyperdrive: { label: 'HYPERDRIVE', keywords: /Hyperdrive \(x|x0\.5 Hyperdrive/i, statKey: 'hyperdrive', parseRe: /x([\d./]+)/, weightRe: /Weight:\s*([\d,.]+)\s*metric/i },
     shields: { label: 'SHIELDS', keywords: /Ship Shields|Shield code/i, statKey: 'shields', parseRe: /(?:Shield code:|Shields?\s*\()\s*(\d+D[+\d]*)/, weightRe: /Weight:\s*([\d,.]+)\s*metric/i },
   },
 
@@ -11277,7 +11277,7 @@ const SHIPYARD = {
         const notes = e.game_notes || '';
         let stat = '';
         if (subtype === 'hyperdrive') {
-          const hm = e.name.match(/\(x([\d./]+)\)/);
+          const hm = e.name.match(/\(x([\d./]+)\)/) || e.name.match(/\bx([\d./]+)\s+Hyperdrive/i);
           stat = hm ? 'x' + hm[1] : '';
         } else {
           const sm = notes.match(st.parseRe);
