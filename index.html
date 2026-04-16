@@ -8732,7 +8732,11 @@ function showPinSnapshot(pin) {
     html += renderGenericSnapshot(pin);
   }
   if (pin.type !== 'player-character' && pin.type !== 'random-npc') {
-    html += '<div style="font-size:10px;color:var(--text-dark);font-style:italic;margin-top:10px;line-height:1.5">This is a saved snapshot from when you pinned it. The original generator rolls fresh results each time — this entry won\'t change unless you edit or remove it.</div>';
+    if (pin.shipyard && pin.shipyard.customName) {
+      html += '<div style="font-size:10px;color:var(--text-dark);font-style:italic;margin-top:10px;line-height:1.5">Modified ship stats reflect all shipyard changes. Dock again from the Corkboard to continue modifying.</div>';
+    } else {
+      html += '<div style="font-size:10px;color:var(--text-dark);font-style:italic;margin-top:10px;line-height:1.5">This is a saved snapshot from when you pinned it. The original generator rolls fresh results each time — this entry won\'t change unless you edit or remove it.</div>';
+    }
   }
   html += '<div class="pin-snapshot-actions" style="display:flex;gap:8px;justify-content:flex-end;margin-top:14px;flex-wrap:wrap">';
   html += '<button class="btn btn-primary" onclick="printPinSnapshot()" style="padding:6px 14px;font-size:10px;letter-spacing:1px;background:var(--bg3);color:var(--gold);border:1px solid var(--gold-dim)">⟐ PRINT</button>';
@@ -11623,10 +11627,38 @@ const SHIPYARD = {
       priceHtml +
       '</div>';
     this.renderMods(sy, base, price);
+
+    const modsCost = (sy.log || []).filter(l => l.type === 'mod' || l.type === 'weapon-mod').reduce((s, l) => s + (l.cost || 0), 0);
+    const replaceCost = (sy.replacements || []).reduce((s, r) => s + (r.cost || 0), 0);
+    const bt = this.MOD_TABLES.berthConversion;
+    const berthCost = Object.entries(sy.berthChanges || {}).reduce((s, [k, v]) => s + (bt[k] ? bt[k].cost * v : 0), 0);
+    const costCell = (label, val) => '<div style="flex:1;text-align:center;min-width:80px"><div style="font-family:\'Exo 2\',sans-serif;font-size:7px;color:var(--text-dim);letter-spacing:1px">' + label + '</div><div style="font-family:\'IBM Plex Mono\',monospace;font-size:13px;color:var(--text-dim)">' + val.toLocaleString() + ' cr</div></div>';
+
     document.getElementById('shipyardCosts').innerHTML =
-      '<div style="display:flex;gap:8px;flex-wrap:wrap;padding:8px 10px;background:var(--bg);border:1px solid var(--gold-dim);border-radius:var(--radius-sm);margin-top:10px">' +
-      '<div style="flex:1;text-align:center"><div style="font-family:\'Exo 2\',sans-serif;font-size:7px;color:var(--text-dim);letter-spacing:1px">MODS TOTAL</div><div style="font-family:\'IBM Plex Mono\',monospace;font-size:16px;color:var(--gold);font-weight:700">' + sy.totalCost.toLocaleString() + ' cr</div></div>' +
+      '<div style="display:flex;gap:4px;flex-wrap:wrap;padding:8px 10px;background:var(--bg);border:1px solid var(--gold-dim);border-radius:var(--radius-sm);margin-top:10px;align-items:center">' +
+      (modsCost ? costCell('MODS', modsCost) : '') +
+      (replaceCost ? costCell('REPLACEMENTS', replaceCost) : '') +
+      (berthCost ? costCell('BERTHS', berthCost) : '') +
+      '<div style="flex:1;text-align:center;min-width:100px"><div style="font-family:\'Exo 2\',sans-serif;font-size:7px;color:var(--gold);letter-spacing:1px">GRAND TOTAL</div><div style="font-family:\'IBM Plex Mono\',monospace;font-size:18px;color:var(--gold);font-weight:700">' + sy.totalCost.toLocaleString() + ' cr</div></div>' +
       '</div>';
+
+    // Mod log
+    if (sy.log && sy.log.length) {
+      let logHtml = '<div style="margin-top:10px"><div onclick="document.getElementById(\'shipyardLogDetail\').style.display=document.getElementById(\'shipyardLogDetail\').style.display===\'none\'?\'block\':\'none\'" style="font-family:\'Exo 2\',monospace;font-size:7px;color:var(--text-dim);letter-spacing:1px;cursor:pointer;padding:4px 0">MOD LOG (' + sy.log.length + ' entries) ▾</div>';
+      logHtml += '<div id="shipyardLogDetail" style="display:none;border:1px solid var(--card-border);border-radius:var(--radius-sm);max-height:200px;overflow-y:auto">';
+      sy.log.forEach((l, i) => {
+        let desc = '';
+        if (l.type === 'mod') desc = l.system.toUpperCase() + ' +' + l.level + ' pip';
+        else if (l.type === 'weapon-mod') desc = 'Weapon #' + (l.weaponIdx + 1) + ' ' + l.modType + ' +' + l.level + ' pip';
+        else if (l.type === 'replacement') desc = 'Replaced ' + l.subtype + ' → ' + l.equipName;
+        logHtml += '<div style="display:flex;justify-content:space-between;padding:3px 8px;border-bottom:1px solid var(--card-border);font-size:9px">';
+        logHtml += '<span style="color:var(--text-dim)">' + (i + 1) + '. ' + desc + '</span>';
+        logHtml += '<span style="color:var(--gold)">' + (l.cost || 0).toLocaleString() + ' cr</span>';
+        logHtml += '</div>';
+      });
+      logHtml += '</div></div>';
+      document.getElementById('shipyardCosts').innerHTML += logHtml;
+    }
   }
 };
 
