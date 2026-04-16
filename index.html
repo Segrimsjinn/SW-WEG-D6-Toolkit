@@ -5292,7 +5292,7 @@ let lastRoll = null;
 let rollHistoryList = [];
 
 function adjustDice(delta) {
-  dicePool = Math.max(1, Math.min(20, dicePool + delta));
+  dicePool = Math.max(0, Math.min(25, dicePool + delta));
   document.getElementById('diceCount').textContent = dicePool;
 }
 
@@ -5322,34 +5322,40 @@ function rollDice() {
 
   // Roll normal dice (all except wild die)
   const normalDice = [];
-  for (let i = 0; i < numDice - 1; i++) normalDice.push(rollSingleD6());
-
-  // Roll wild die with exploding 6s
   let wildTotal = 0;
   let wildRolls = [];
   let explodeCount = 0;
-  let wildFirst = rollSingleD6();
-  wildRolls.push(wildFirst);
+  let wildFirst = 0;
+  let isComplication = false;
 
-  if (wildFirst === 1) {
-    // Complication! Wild die = 0 for now, pending player choice
-    wildTotal = 0;
-  } else if (wildFirst === 6) {
-    wildTotal = 6;
-    explodeCount++;
-    let keep = true;
-    while (keep) {
-      let next = rollSingleD6();
-      wildRolls.push(next);
-      wildTotal += next;
-      if (next === 6) { explodeCount++; }
-      else { keep = false; }
-    }
+  if (numDice === 0) {
+    // 0D+pips: no dice rolled, just pips
   } else {
-    wildTotal = wildFirst;
+    for (let i = 0; i < numDice - 1; i++) normalDice.push(rollSingleD6());
+
+    // Roll wild die with exploding 6s
+    wildFirst = rollSingleD6();
+    wildRolls.push(wildFirst);
+
+    if (wildFirst === 1) {
+      wildTotal = 0;
+      isComplication = true;
+    } else if (wildFirst === 6) {
+      wildTotal = 6;
+      explodeCount++;
+      let keep = true;
+      while (keep) {
+        let next = rollSingleD6();
+        wildRolls.push(next);
+        wildTotal += next;
+        if (next === 6) { explodeCount++; }
+        else { keep = false; }
+      }
+    } else {
+      wildTotal = wildFirst;
+    }
   }
 
-  const isComplication = wildFirst === 1;
   const normalTotal = normalDice.reduce((a, b) => a + b, 0);
   const grandTotal = normalTotal + wildTotal + pips;
 
