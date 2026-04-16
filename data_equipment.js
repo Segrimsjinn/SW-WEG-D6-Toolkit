@@ -3475,6 +3475,30 @@ const EQUIPMENT_DATA = [
   "source": "WEG40063 Galaxy Guide 6: Tramp Freighters p.39"
  },
  {
+  "name": "Verpine Asteroid Pusher Ion Drive",
+  "category": "Ship Equipment",
+  "cost": "3,000 (plus installation)",
+  "availability": "2",
+  "game_notes": "Minimal-output ion drive designed by Verpine engineers for asteroid tugs and orbital platforms. Space: 1. Weight: 6 metric tons. Extremely reliable at low speeds. Often found on mining barges and construction rigs.",
+  "source": "House Rule (extrapolated from WEG40063)"
+ },
+ {
+  "name": "Corellian Engineering CL-2 Ion Drive",
+  "category": "Ship Equipment",
+  "cost": "5,000 (plus installation)",
+  "availability": "1",
+  "game_notes": "Budget hauler-class ion drive. Space: 2. Weight: 8 metric tons. Designed for bulk freighters and barges where speed is secondary to reliability and low cost.",
+  "source": "House Rule (extrapolated from WEG40063)"
+ },
+ {
+  "name": "Corellian Engineering CL-3 Ion Drive",
+  "category": "Ship Equipment",
+  "cost": "7,500 (plus installation)",
+  "availability": "1",
+  "game_notes": "Light commercial ion drive. Space: 3. Weight: 9 metric tons. Standard propulsion for medium transports and cargo shuttles. Reliable and easy to service.",
+  "source": "House Rule (extrapolated from WEG40063)"
+ },
+ {
   "name": "SoroSuub Boav Ion Drive",
   "category": "Ship Equipment",
   "type": "SoroSuub Boav Ion Drive",
@@ -3482,6 +3506,38 @@ const EQUIPMENT_DATA = [
   "availability": "2",
   "game_notes": "Simple, economical ion drive unit. Space: 4. Weight: 10 metric tons. Mostly compatible with other SoroSuub hardware. Technicians installing a Boav unit face an increase of one difficulty level in their space transports repair roll for non-SoroSuub ships.",
   "source": "WEG40063 Galaxy Guide 6: Tramp Freighters p.39"
+ },
+ {
+  "name": "Corellian Engineering CE-5 Ion Drive",
+  "category": "Ship Equipment",
+  "cost": "15,000 (plus installation)",
+  "availability": "2",
+  "game_notes": "Fast commercial ion drive. Space: 5. Weight: 11 metric tons. Popular upgrade for freighter captains who need to outrun pirates or make tight delivery windows.",
+  "source": "House Rule (extrapolated from WEG40063)"
+ },
+ {
+  "name": "Sienar Fleet Systems Sprint-7 Ion Drive",
+  "category": "Ship Equipment",
+  "cost": "35,000 (plus installation, 2,500 Imperial permit)",
+  "availability": "2, F",
+  "game_notes": "Military patrol-grade ion drive. Space: 7. Weight: 14 metric tons. Standard propulsion on SFS patrol craft and light corvettes. Requires Imperial permit. Double all difficulties for modifying this drive beyond a +1 modification.",
+  "source": "House Rule (extrapolated from WEG40063)"
+ },
+ {
+  "name": "FreiTek FT-9 Ion Drive",
+  "category": "Ship Equipment",
+  "cost": "80,000 (plus installation)",
+  "availability": "3, R",
+  "game_notes": "Fighter-grade ion drive designed for high-performance starfighters. Space: 9. Weight: 20 metric tons. Developed by FreiTek Inc. for next-generation combat craft. Restricted — military procurement only without black market contacts.",
+  "source": "House Rule (extrapolated from WEG40063)"
+ },
+ {
+  "name": "Incom W-11 Ion Drive",
+  "category": "Ship Equipment",
+  "cost": "300,000 (plus installation)",
+  "availability": "4, X",
+  "game_notes": "Elite interceptor-class ion drive. Space: 11. Weight: 22 metric tons. Derived from Incom's advanced starfighter propulsion program. Possession is a class one infraction in Imperial space. Double all difficulties for modifying this drive and double all modifiers when rolling for mishaps.",
+  "source": "House Rule (extrapolated from WEG40063)"
  },
  {
   "name": "Volatile x0.5 Hyperdrive (Salvaged)",
