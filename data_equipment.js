@@ -3479,7 +3479,7 @@ const EQUIPMENT_DATA = [
   "category": "Ship Equipment",
   "cost": "3,000 (plus installation)",
   "availability": "2",
-  "game_notes": "Minimal-output ion drive designed by Verpine engineers for asteroid tugs and orbital platforms. Space: 1. Weight: 6 metric tons. Extremely reliable at low speeds. Often found on mining barges and construction rigs.",
+  "game_notes": "Minimal-output ion drive designed by Verpine engineers for asteroid tugs and orbital platforms. Space: 1. Weight: 2 metric tons. Extremely reliable at low speeds. Often found on mining barges and construction rigs.",
   "source": "House Rule (extrapolated from WEG40063)"
  },
  {
@@ -3487,7 +3487,7 @@ const EQUIPMENT_DATA = [
   "category": "Ship Equipment",
   "cost": "5,000 (plus installation)",
   "availability": "1",
-  "game_notes": "Budget hauler-class ion drive. Space: 2. Weight: 8 metric tons. Designed for bulk freighters and barges where speed is secondary to reliability and low cost.",
+  "game_notes": "Budget hauler-class ion drive. Space: 2. Weight: 4 metric tons. Designed for bulk freighters and barges where speed is secondary to reliability and low cost.",
   "source": "House Rule (extrapolated from WEG40063)"
  },
  {
@@ -3495,7 +3495,7 @@ const EQUIPMENT_DATA = [
   "category": "Ship Equipment",
   "cost": "7,500 (plus installation)",
   "availability": "1",
-  "game_notes": "Light commercial ion drive. Space: 3. Weight: 9 metric tons. Standard propulsion for medium transports and cargo shuttles. Reliable and easy to service.",
+  "game_notes": "Light commercial ion drive. Space: 3. Weight: 8 metric tons. Standard propulsion for medium transports and cargo shuttles. Reliable and easy to service.",
   "source": "House Rule (extrapolated from WEG40063)"
  },
  {
