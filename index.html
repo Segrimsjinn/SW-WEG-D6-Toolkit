@@ -11058,8 +11058,9 @@ const SHIPYARD = {
     stats.shields = pipsToD6(d6ToPips(base.shields) + (sy.mods.shields || 0));
     stats.weapons = (base.weapons || []).map((w, i) => {
       const wm = sy.mods.weapons && sy.mods.weapons[i] ? sy.mods.weapons[i] : {};
+      const fireLinkBonus = (wm.fireLink || 0) * 3;
       return Object.assign({}, w, {
-        damage: pipsToD6(d6ToPips(w.damage) + (wm.damagePips || 0)),
+        damage: pipsToD6(d6ToPips(w.damage) + fireLinkBonus + (wm.damagePips || 0)),
         fire_control: pipsToD6(d6ToPips(w.fire_control) + (wm.fcPips || 0))
       });
     });
@@ -11230,31 +11231,51 @@ const SHIPYARD = {
       html += '<div style="border:1px solid var(--card-border);border-radius:var(--radius-sm);overflow:hidden">';
       if (!sy.mods.weapons) sy.mods.weapons = [];
       base.weapons.forEach((w, i) => {
-        if (!sy.mods.weapons[i]) sy.mods.weapons[i] = { damagePips: 0, fcPips: 0, rangePct: 0 };
+        if (!sy.mods.weapons[i]) sy.mods.weapons[i] = { damagePips: 0, fcPips: 0, rangePct: 0, fireLink: 0 };
         const wm = sy.mods.weapons[i];
         if (!sy.weaponCosts) sy.weaponCosts = {};
         const savedWCost = sy.weaponCosts[i];
         const matchedCost = this.matchWeaponCost(w.name, w.damage);
         const wCost = savedWCost || matchedCost || 0;
         if (!savedWCost && matchedCost) sy.weaponCosts[i] = matchedCost;
-        const weaponQty = this.parseWeaponQty(w.name);
-        const flSurcharge = this.getFireLinkSurcharge(w.name);
-        const usePrice = (wCost || price) * weaponQty + flSurcharge;
+        const baseQty = this.parseWeaponQty(w.name);
+        const addedLinks = wm.fireLink || 0;
+        const totalQty = baseQty + addedLinks;
+        const isLinked = totalQty > 1;
+        const flSurcharge = isLinked ? (totalQty - 1) * 100 : 0;
+        const usePrice = (wCost || price) * totalQty + flSurcharge;
         const usingShipPrice = !wCost;
-        const baseDmgPips = d6ToPips(w.damage);
+        const fireLinkDmgBonus = addedLinks * 3;
+        const baseDmgPips = d6ToPips(w.damage) + fireLinkDmgBonus;
         const curDmgPips = baseDmgPips + (wm.damagePips || 0);
         const baseFCPips = d6ToPips(w.fire_control);
         const curFCPips = baseFCPips + (wm.fcPips || 0);
         const flNote = flSurcharge ? ' +' + flSurcharge + ' fire-link' : '';
         const costLabel = usingShipPrice ? '<span style="color:var(--red);font-size:7px"> (using ship price — no weapon cost found)</span>' :
           '<span style="color:var(--text-dark);font-size:7px"> mod base: ' + usePrice.toLocaleString() + ' cr' + flNote + '</span>';
+        const linkLabels = ['Single','Twin (+1D)','Triple (+2D)','Quad (+3D)'];
+        const curLinkIdx = totalQty - 1;
+        let linkHtml = '<div style="display:flex;align-items:center;gap:4px;padding:3px 8px;border-bottom:1px solid var(--card-border);font-size:9px">';
+        linkHtml += '<span style="color:var(--text-dim);min-width:90px">FIRE-LINK</span>';
+        linkHtml += '<select onchange="SHIPYARD.setFireLink(' + i + ', parseInt(this.value))" style="padding:2px 4px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--cyan);font-size:9px;font-family:inherit">';
+        for (let fl = 0; fl <= 3; fl++) {
+          const totalAtLevel = baseQty + fl;
+          if (totalAtLevel > 4) continue;
+          const selected = fl === addedLinks ? ' selected' : '';
+          const flCost = fl > 0 ? ' (+' + (fl * 100) + ' cr)' : '';
+          linkHtml += '<option value="' + fl + '"' + selected + '>' + linkLabels[totalAtLevel - 1] + flCost + '</option>';
+        }
+        linkHtml += '</select>';
+        if (addedLinks > 0) linkHtml += '<span style="color:var(--cyan);font-size:8px">+' + addedLinks + 'D damage, +' + (addedLinks * 100) + ' cr link cost</span>';
+        linkHtml += '</div>';
         html += '<div style="display:flex;justify-content:space-between;align-items:center;font-size:9px;color:var(--text);padding:4px 8px;background:var(--bg3);border-bottom:1px solid var(--card-border)">' +
           '<span>' + (w.name || 'Weapon ' + (i+1)) + ' <span style="color:var(--text-dim);font-size:8px">(Dmg ' + (w.damage || '?') + ', FC ' + (w.fire_control || '0D') + ')</span></span>' +
           '<span style="display:flex;align-items:center;gap:3px">' + costLabel +
           ' <button class="ship-sort-btn" onclick="SHIPYARD.adjustWeaponCost(' + i + ',-500)" style="padding:1px 5px;font-size:9px">▼</button>' +
           '<button class="ship-sort-btn" onclick="SHIPYARD.adjustWeaponCost(' + i + ',500)" style="padding:1px 5px;font-size:9px">▲</button>' +
           '</span></div>';
-        html += this.renderModRow('DMG', w.damage || '0D', pipsToD6(curDmgPips), wm.damagePips || 0, 5, 'weaponDamage', usePrice).replace(
+        html += linkHtml;
+        html += this.renderModRow('DMG', pipsToD6(baseDmgPips), pipsToD6(curDmgPips), wm.damagePips || 0, 5, 'weaponDamage', usePrice).replace(
           /SHIPYARD\.applyMod\('weaponDamage'\)/g, 'SHIPYARD.applyWeaponMod(' + i + ',\'damage\')'
         ).replace(
           /SHIPYARD\.removeMod\('weaponDamage'\)/g, 'SHIPYARD.removeWeaponMod(' + i + ',\'damage\')'
@@ -11657,6 +11678,21 @@ const SHIPYARD = {
     sy.mods[system] = level - 1;
     sy.totalCost = Math.max(0, sy.totalCost - cost);
     sy.log = sy.log.filter(l => !(l.type === 'mod' && l.system === system && l.level === level));
+    corkboardSave();
+    this.render();
+  },
+
+  setFireLink(weaponIdx, addedLinks) {
+    if (!this.currentPin) return;
+    const sy = this.currentPin.shipyard;
+    if (!sy.mods.weapons[weaponIdx]) sy.mods.weapons[weaponIdx] = { damagePips: 0, fcPips: 0, rangePct: 0, fireLink: 0 };
+    const oldLinks = sy.mods.weapons[weaponIdx].fireLink || 0;
+    sy.mods.weapons[weaponIdx].fireLink = addedLinks;
+    const linkCostDiff = (addedLinks - oldLinks) * 100;
+    sy.totalCost += linkCostDiff;
+    if (addedLinks !== oldLinks) {
+      sy.log.push({ type: 'fire-link', weaponIdx, from: oldLinks, to: addedLinks, cost: linkCostDiff, ts: Date.now() });
+    }
     corkboardSave();
     this.render();
   },
