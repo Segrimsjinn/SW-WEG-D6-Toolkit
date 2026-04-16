@@ -11037,9 +11037,15 @@ const SHIPYARD = {
       });
     });
     const totalWeight = (sy.replacements || []).reduce((s, r) => s + (r.weight || 0), 0);
-    if (totalWeight) {
+    const bc = sy.berthChanges || {};
+    const berthCargo = ((bc.bunksRemoved || 0) * 5) + ((bc.singlesRemoved || 0) * 10) - ((bc.bunksAdded || 0) * 5) - ((bc.singlesAdded || 0) * 10);
+    const berthPass = -(bc.bunksRemoved || 0) - (bc.singlesRemoved || 0) + (bc.bunksAdded || 0) + (bc.singlesAdded || 0);
+    if (totalWeight || berthCargo) {
       const baseCargo = this.parseCargoTons(base.cargo);
-      stats.cargo = Math.max(0, baseCargo - totalWeight) + ' metric tons';
+      stats.cargo = Math.max(0, baseCargo - totalWeight + berthCargo) + ' metric tons';
+    }
+    if (berthPass) {
+      stats.passengers = String(Math.max(0, (parseInt(base.passengers) || 0) + berthPass));
     }
     return stats;
   },
@@ -11302,6 +11308,88 @@ const SHIPYARD = {
     }
 
     document.getElementById('shipyardReplacements').innerHTML = html;
+    this.renderBerthConversion(sy, base);
+  },
+
+  renderBerthConversion(sy, base) {
+    if (!sy.berthChanges) sy.berthChanges = { bunksRemoved: 0, singlesRemoved: 0, bunksAdded: 0, singlesAdded: 0 };
+    const bc = sy.berthChanges;
+    const basePass = parseInt(base.passengers) || 0;
+    if (!basePass && !bc.bunksAdded && !bc.singlesAdded && !bc.bunksRemoved && !bc.singlesRemoved) {
+      document.getElementById('shipyardLog').innerHTML = '';
+      return;
+    }
+    const baseCargo = this.parseCargoTons(base.cargo);
+    const totalReplacementWeight = (sy.replacements || []).reduce((s, r) => s + (r.weight || 0), 0);
+    const berthCargo = (bc.bunksRemoved * 5) + (bc.singlesRemoved * 10) - (bc.bunksAdded * 5) - (bc.singlesAdded * 10);
+    const berthPass = -bc.bunksRemoved - bc.singlesRemoved + bc.bunksAdded + bc.singlesAdded;
+    const berthCost = (bc.bunksRemoved * 500) + (bc.singlesRemoved * 1000) + (bc.bunksAdded * 2000) + (bc.singlesAdded * 5000);
+    const curPass = Math.max(0, basePass + berthPass);
+    const curCargo = Math.max(0, baseCargo - totalReplacementWeight + berthCargo);
+    const maxRemovable = basePass + bc.bunksAdded + bc.singlesAdded - bc.bunksRemoved - bc.singlesRemoved;
+
+    let html = '<div style="font-family:\'Exo 2\',monospace;font-size:7px;color:var(--cyan);letter-spacing:1px;margin:10px 0 4px">HOUSE RULE — BERTH CONVERSION</div>';
+    html += '<div style="border:1px solid var(--card-border);border-radius:var(--radius-sm);overflow:hidden">';
+
+    html += '<div style="display:flex;align-items:center;gap:8px;padding:6px 8px;border-bottom:1px solid var(--card-border);flex-wrap:wrap">';
+    html += '<div style="min-width:90px;font-family:\'Exo 2\',monospace;font-size:9px;color:var(--text-dim)">PASSENGERS</div>';
+    html += '<span style="font-family:\'IBM Plex Mono\',monospace;font-size:11px;color:var(--text-dim)">' + basePass + '</span>';
+    html += '<span style="color:var(--text-dark)">→</span>';
+    html += '<span style="font-family:\'IBM Plex Mono\',monospace;font-size:11px;color:' + (curPass !== basePass ? 'var(--cyan);font-weight:700' : 'var(--text-dim)') + '">' + curPass + '</span>';
+    html += '<div style="flex:1"></div>';
+    html += '<span style="font-family:\'IBM Plex Mono\',monospace;font-size:9px;color:var(--text-dim)">Cargo: ' + curCargo + ' mt</span>';
+    html += '</div>';
+
+    // Remove berths (gain cargo)
+    html += '<div style="display:flex;align-items:center;gap:6px;padding:4px 8px;border-bottom:1px solid var(--card-border);font-size:9px;flex-wrap:wrap">';
+    html += '<span style="color:var(--text-dim);min-width:150px">Strip Bunk Berth → +5T</span>';
+    html += '<span style="color:var(--green)">500 cr · Easy · 6 hrs</span>';
+    html += '<span style="margin-left:auto;color:var(--text-dim)">×' + bc.bunksRemoved + '</span>';
+    html += '<button class="ship-sort-btn" onclick="SHIPYARD.adjustBerth(\'bunksRemoved\',-1)" style="padding:1px 6px;font-size:10px;color:var(--red)"' + (bc.bunksRemoved <= 0 ? ' disabled' : '') + '>−</button>';
+    html += '<button class="ship-sort-btn" onclick="SHIPYARD.adjustBerth(\'bunksRemoved\',1)" style="padding:1px 6px;font-size:10px;color:var(--green)"' + (maxRemovable <= 0 ? ' disabled' : '') + '>+</button>';
+    html += '</div>';
+
+    html += '<div style="display:flex;align-items:center;gap:6px;padding:4px 8px;border-bottom:1px solid var(--card-border);font-size:9px;flex-wrap:wrap">';
+    html += '<span style="color:var(--text-dim);min-width:150px">Strip Single Berth → +10T</span>';
+    html += '<span style="color:var(--green)">1,000 cr · Easy · 1 day</span>';
+    html += '<span style="margin-left:auto;color:var(--text-dim)">×' + bc.singlesRemoved + '</span>';
+    html += '<button class="ship-sort-btn" onclick="SHIPYARD.adjustBerth(\'singlesRemoved\',-1)" style="padding:1px 6px;font-size:10px;color:var(--red)"' + (bc.singlesRemoved <= 0 ? ' disabled' : '') + '>−</button>';
+    html += '<button class="ship-sort-btn" onclick="SHIPYARD.adjustBerth(\'singlesRemoved\',1)" style="padding:1px 6px;font-size:10px;color:var(--green)"' + (maxRemovable <= 0 ? ' disabled' : '') + '>+</button>';
+    html += '</div>';
+
+    // Add berths (lose cargo)
+    html += '<div style="display:flex;align-items:center;gap:6px;padding:4px 8px;border-bottom:1px solid var(--card-border);font-size:9px;flex-wrap:wrap">';
+    html += '<span style="color:var(--text-dim);min-width:150px">Install Bunk Berth (−5T)</span>';
+    html += '<span style="color:var(--gold)">2,000 cr · Moderate · 2 days</span>';
+    html += '<span style="margin-left:auto;color:var(--text-dim)">×' + bc.bunksAdded + '</span>';
+    html += '<button class="ship-sort-btn" onclick="SHIPYARD.adjustBerth(\'bunksAdded\',-1)" style="padding:1px 6px;font-size:10px;color:var(--red)"' + (bc.bunksAdded <= 0 ? ' disabled' : '') + '>−</button>';
+    html += '<button class="ship-sort-btn" onclick="SHIPYARD.adjustBerth(\'bunksAdded\',1)" style="padding:1px 6px;font-size:10px;color:var(--green)"' + (curCargo < 5 ? ' disabled' : '') + '>+</button>';
+    html += '</div>';
+
+    html += '<div style="display:flex;align-items:center;gap:6px;padding:4px 8px;font-size:9px;flex-wrap:wrap">';
+    html += '<span style="color:var(--text-dim);min-width:150px">Install Single Berth (−10T)</span>';
+    html += '<span style="color:var(--gold)">5,000 cr · Moderate · 3 days</span>';
+    html += '<span style="margin-left:auto;color:var(--text-dim)">×' + bc.singlesAdded + '</span>';
+    html += '<button class="ship-sort-btn" onclick="SHIPYARD.adjustBerth(\'singlesAdded\',-1)" style="padding:1px 6px;font-size:10px;color:var(--red)"' + (bc.singlesAdded <= 0 ? ' disabled' : '') + '>−</button>';
+    html += '<button class="ship-sort-btn" onclick="SHIPYARD.adjustBerth(\'singlesAdded\',1)" style="padding:1px 6px;font-size:10px;color:var(--green)"' + (curCargo < 10 ? ' disabled' : '') + '>+</button>';
+    html += '</div>';
+
+    html += '</div>';
+    if (berthCost) html += '<div style="font-size:9px;color:var(--text-dim);margin-top:4px">Berth conversion cost: <span style="color:var(--gold)">' + berthCost.toLocaleString() + ' cr</span></div>';
+
+    document.getElementById('shipyardLog').innerHTML = html;
+  },
+
+  adjustBerth(key, delta) {
+    if (!this.currentPin) return;
+    const sy = this.currentPin.shipyard;
+    if (!sy.berthChanges) sy.berthChanges = { bunksRemoved: 0, singlesRemoved: 0, bunksAdded: 0, singlesAdded: 0 };
+    const oldCost = (sy.berthChanges.bunksRemoved * 500) + (sy.berthChanges.singlesRemoved * 1000) + (sy.berthChanges.bunksAdded * 2000) + (sy.berthChanges.singlesAdded * 5000);
+    sy.berthChanges[key] = Math.max(0, (sy.berthChanges[key] || 0) + delta);
+    const newCost = (sy.berthChanges.bunksRemoved * 500) + (sy.berthChanges.singlesRemoved * 1000) + (sy.berthChanges.bunksAdded * 2000) + (sy.berthChanges.singlesAdded * 5000);
+    sy.totalCost += (newCost - oldCost);
+    corkboardSave();
+    this.render();
   },
 
   applyReplacement(subtype, equipName) {
