@@ -1592,22 +1592,6 @@ const EQUIPMENT_DATA = [
   "source": ""
  },
  {
-  "name": "Comm Jammer (Ship)",
-  "category": "Ship Equipment",
-  "cost": "2,000",
-  "availability": "2, R",
-  "game_notes": "Ship-mounted communications jammer. Blocks comlink transmissions within 50km radius.",
-  "source": ""
- },
- {
-  "name": "Cotterdam Universal Airlock",
-  "category": "Ship Equipment",
-  "cost": "500",
-  "availability": "1",
-  "game_notes": "Inflatable universal docking seal. Connects ships with incompatible docking ports. Seals in 2 rounds.",
-  "source": ""
- },
- {
   "name": "Hyperdrive Booster",
   "category": "Ship Equipment",
   "cost": "8,000",
@@ -2318,14 +2302,6 @@ const EQUIPMENT_DATA = [
   "availability": "Imperial use only",
   "game_notes": "Type: Arakyd Hunter-Killer Probot. Scale: Capital. Size: 150m tall. Space: 3. Atmosphere: 105; 300 kmh. Hull: 4D. Shields: 1D. DEX 3D (dodge 5D), KNO 2D+2 (bureaucracy 3D, law enforcement: Imperial customs procedures 6D), MEC 3D (starship gunnery 5D, starship shields 5D), PER 4D (search 7D), STR 2D, TEC 2D+2. Sensors: Passive 40/2D, Scan 80/2D+2, Search 100/3D+1, Focus 5/4D+2. Equipped: 4 heavy grasping extensors (+2D lifting), 4 fine work grasping extensors, advanced sensor array with penetrating hullscanners and graphiscan recognition codes (11,000+ registries, cross-references forgeries), internal secure chamber (30x30x10m — holds a light freighter). Weapons: 2 Quad Blaster Cannons (fire-linked, turret, 1-5/10/17, 4D+1), 2 Ion Cannons (turret, 1-3/7/36, 8D), 1 Tractor Beam Projector (front, 1-5/15/30, 5D). Groups can coordinate with up to a dozen others, typically slaved to an Imperial Customs Frigate or Patrol Vessel.",
   "source": "WEG40071 Dark Empire Sourcebook p.133"
- },
- {
-  "name": "BlasTech Plasma Cut Boarding Device",
-  "category": "Ship Equipment",
-  "cost": "4,750",
-  "availability": "X",
-  "game_notes": "Scale: Starfighter. Skill: Starship gunnery. Crew: 2. Mounted on a ship's airlock system with controls just inside the main airlock. The extendable plasma torch (FC 0D, range 4m, damage 8D) slowly cuts through a ship's hull. Roll target ship's hull -2D; if the torch scores a 'lightly damaged' result, it has breached the hull. Once breached, the torch requires a full minute to cut a 1m wide by 2m high hole. The extendable boarding tube attaches to the hull and forms an airtight seal in 30 seconds. Restricted technology — normally used by military smuggling interdiction ships. Illegally obtained torches are often used by pirates and shipjackers.",
-  "source": "WEG40042 Han Solo and the Corporate Sector Sourcebook p.101"
  },
  {
   "name": "BlasTech Sniffer Weapon Detector",
@@ -3721,14 +3697,6 @@ const EQUIPMENT_DATA = [
   "source": "WEG40063 Galaxy Guide 6: Tramp Freighters p.40"
  },
  {
-  "name": "Arakyd Morne-3 Concussion Missile Launcher",
-  "category": "Ship Equipment",
-  "cost": "3,500 (plus 30% Imperial permit fee)",
-  "availability": "",
-  "game_notes": "Fire Control: 1D. Damage: 8D. Weight: 3 metric tons. Includes 10-missile rack. Replacement missiles: 500 credits each. Armor-piercing warhead with compact energy pack detonating on impact. Missiles have no appreciable weight. Requires Imperial permit.",
-  "source": "WEG40063 Galaxy Guide 6: Tramp Freighters p.40"
- },
- {
   "name": "Weapon Link Computer",
   "category": "Ship Equipment",
   "cost": "100 per weapon",
@@ -3808,14 +3776,6 @@ const EQUIPMENT_DATA = [
   "cost": "12,000",
   "availability": "",
   "game_notes": "Huge molecule-thick solar-absorbent sails. Weight: 10 metric tons. Recharges ship's systems in about 15 days in-system, 60 days out-system to fully recharge power cells.",
-  "source": "WEG40063 Galaxy Guide 6: Tramp Freighters p.42"
- },
- {
-  "name": "Tractor Beam",
-  "category": "Ship Equipment",
-  "cost": "8,000",
-  "availability": "",
-  "game_notes": "Beam capable of pulling a smaller vessel closer to the freighter (if the freighter is smaller, it is drawn toward the other ship instead). Fire Control: 2D. Damage: 2D. Weight: 15 metric tons.",
   "source": "WEG40063 Galaxy Guide 6: Tramp Freighters p.42"
  },
  {
@@ -5047,8 +5007,8 @@ const EQUIPMENT_DATA = [
   "cost": "8,000",
   "weight": "15 metric tons",
   "availability": "2",
-  "game_notes": "Scale: Starfighter. Skill: Starship gunnery. Space Range: 1-3/7/15. Atmo Range: 100-300/700/1.5 km. Fire Control: 2D. Damage: 2D. Standard commercial cargo tractor beam, adaptable to less legitimate pursuits.",
-  "source": "WEG40143 Pirates & Privateers p.45"
+  "game_notes": "Scale: Starfighter. Skill: Starship gunnery. Space Range: 1-3/7/15. Atmo Range: 100-300/700/1.5 km. Fire Control: 2D. Damage: 2D. Standard commercial cargo tractor beam, adaptable to less legitimate pursuits. Beam pulls smaller vessel toward freighter (if freighter is smaller, it is drawn toward the other ship instead).",
+  "source": "WEG40143 Pirates & Privateers p.45; WEG40063 Galaxy Guide 6: Tramp Freighters p.42"
  },
  {
   "category": "Ship Equipment",
@@ -5065,8 +5025,8 @@ const EQUIPMENT_DATA = [
   "type": "Arakyd Morne-3 Concussion Missile Launcher",
   "cost": "3,500 (launcher); 500/dumb missile, 1,500/smart missile, 3,000/savant missile",
   "availability": "2, X",
-  "game_notes": "Scale: Starfighter. Skill: Starship gunnery. Space Range: 1-2/8/15. Atmo Range: 100-200/800/1.5 km. Fire Control: 1D. Damage: 8D. Dumb missiles: no tracking. Smart missiles: 4D fire control, move 15 spatial units/round for up to 10 rounds, droid brain picks nearest target if first moves out of range. Savant missiles: act dumb on first round, become smart on second round if they miss.",
-  "source": "WEG40143 Pirates & Privateers p.45"
+  "game_notes": "Scale: Starfighter. Skill: Starship gunnery. Space Range: 1-2/8/15. Atmo Range: 100-200/800/1.5 km. Fire Control: 1D. Damage: 8D. Weight: 3 metric tons. Includes 10-missile rack. Dumb missiles (500 cr): no tracking. Smart missiles (1,500 cr): 4D fire control, move 15 spatial units/round for up to 10 rounds, droid brain picks nearest target if first moves out of range. Savant missiles (3,000 cr): act dumb on first round, become smart on second round if they miss. Requires Imperial permit (30% surcharge).",
+  "source": "WEG40143 Pirates & Privateers p.45; WEG40063 Galaxy Guide 6: Tramp Freighters p.40"
  },
  {
   "category": "Medical",
@@ -5119,8 +5079,8 @@ const EQUIPMENT_DATA = [
   "type": "BlasTech Plasma Cut Boarding Device",
   "cost": "4,750",
   "availability": "X",
-  "game_notes": "Scale: Starfighter. Skill: Starship gunnery. Crew: 2. Mounted on ship's airlock system, controls just inside main airlock. Extendable plasma torch: Fire Control 0D, Range 4m, Damage 8D. Roll target ship's hull -2D; 'lightly damaged' = hull breached. After breach, 1 full minute to cut a 1m x 2m hole. Extendable boarding tube attaches to hull and forms airtight seal in 30 seconds.",
-  "source": "WEG40143 Pirates & Privateers p.48"
+  "game_notes": "Scale: Starfighter. Skill: Starship gunnery. Crew: 2. Mounted on ship's airlock system, controls just inside main airlock. Extendable plasma torch: Fire Control 0D, Range 4m, Damage 8D. Roll target ship's hull -2D; 'lightly damaged' = hull breached. After breach, 1 full minute to cut a 1m x 2m hole. Extendable boarding tube attaches to hull and forms airtight seal in 30 seconds. Restricted technology — normally used by military smuggling interdiction ships. Illegally obtained torches are often used by pirates and shipjackers.",
+  "source": "WEG40143 Pirates & Privateers p.48; WEG40042 Han Solo and the Corporate Sector Sourcebook p.101"
  },
  {
   "category": "Security",
