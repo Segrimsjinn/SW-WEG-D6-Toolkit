@@ -11424,7 +11424,11 @@ const SHIPYARD = {
     html += '<div style="border:1px solid var(--card-border);border-radius:var(--radius-sm);overflow:hidden">';
 
     for (const [subtype, st] of Object.entries(this.EQUIP_SUBTYPES)) {
-      const equips = this.getEquipBySubtype(subtype);
+      const equips = this.getEquipBySubtype(subtype).sort((a, b) => {
+        const aVal = subtype === 'engine' ? (parseInt(a.stat) || 0) : subtype === 'shields' ? d6ToPips(a.stat) : 0;
+        const bVal = subtype === 'engine' ? (parseInt(b.stat) || 0) : subtype === 'shields' ? d6ToPips(b.stat) : 0;
+        return aVal - bVal;
+      });
       const existing = sy.replacements.find(r => r.subtype === subtype);
       html += '<div style="display:flex;align-items:center;gap:6px;padding:6px 8px;border-bottom:1px solid var(--card-border);flex-wrap:wrap">';
       html += '<div style="min-width:90px;font-family:\'Exo 2\',monospace;font-size:9px;color:var(--gold);letter-spacing:1px">' + st.label + '</div>';
@@ -11441,7 +11445,8 @@ const SHIPYARD = {
         html += '<select onchange="SHIPYARD.applyReplacement(\'' + subtype + '\', this.value)" style="flex:1;max-width:300px;padding:4px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:10px;font-family:inherit">';
         html += '<option value="">— Select replacement —</option>';
         for (const eq of equips) {
-          html += '<option value="' + eq.name.replace(/"/g, '&quot;') + '">' + eq.name + ' (' + (eq.stat || '?') + ', ' + eq.cost.toLocaleString() + ' cr, ' + eq.weight + ' mt)</option>';
+          const statPrefix = subtype === 'engine' ? 'Space ' + (eq.stat || '?') + ' — ' : subtype === 'shields' ? (eq.stat || '?') + ' — ' : subtype === 'hyperdrive' ? (eq.stat || '?') + ' — ' : '';
+          html += '<option value="' + eq.name.replace(/"/g, '&quot;') + '">' + statPrefix + eq.name + ' (' + eq.cost.toLocaleString() + ' cr, ' + eq.weight + ' mt)</option>';
         }
         html += '</select>';
       }
