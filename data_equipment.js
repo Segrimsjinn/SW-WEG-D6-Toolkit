@@ -3528,7 +3528,7 @@ const EQUIPMENT_DATA = [
   "category": "Ship Equipment",
   "cost": "80,000 (plus installation)",
   "availability": "3, R",
-  "game_notes": "Fighter-grade ion drive designed for high-performance starfighters. Space: 9. Weight: 20 metric tons. Developed by FreiTek Inc. for next-generation combat craft. Restricted — military procurement only without black market contacts.",
+  "game_notes": "Fighter-grade ion drive designed for high-performance starfighters. Space: 9. Weight: 17 metric tons. Developed by FreiTek Inc. for next-generation combat craft. Restricted — military procurement only without black market contacts.",
   "source": "House Rule (extrapolated from WEG40063)"
  },
  {
