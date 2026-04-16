@@ -11897,11 +11897,12 @@ const SHIPYARD = {
       '<div style="display:flex;justify-content:space-between;align-items:center;padding:8px 10px;background:var(--bg3);border:1px solid var(--gold-dim);border-radius:var(--radius-sm);margin-bottom:10px">' +
       '<div><div style="font-family:\'Exo 2\',monospace;font-size:13px;color:var(--text)">' + base.name + '</div>' +
       '<div style="font-size:10px;color:var(--text-dim)">' + base.craft + (houseRulesEnabled() ?
-        ' <span style="color:#ff9800;font-size:8px">Parts Scale: ' + this.getScaleLabel() +
-        ' <button class=\"ship-sort-btn\" onclick=\"SHIPYARD.adjustScaleMultiplier(-1)\" style=\"padding:0px 4px;font-size:9px;margin:0 1px\">-</button>' +
+        '</div><div style="display:flex;align-items:center;gap:4px;margin-top:2px"><span style="color:#ff9800;font-size:8px">Parts Scale: ' + this.getScaleLabel() +
+        '</span> <button class=\"ship-sort-btn\" onclick=\"SHIPYARD.adjustScaleMultiplier(-1)\" style=\"padding:0px 4px;font-size:9px;margin:0 1px\">-</button>' +
         '<button class=\"ship-sort-btn\" onclick=\"SHIPYARD.adjustScaleMultiplier(1)\" style=\"padding:0px 4px;font-size:9px;margin:0 1px\">+</button>' +
-        '<button class=\"ship-sort-btn\" onclick=\"SHIPYARD.resetScaleMultiplier()\" style=\"padding:0px 4px;font-size:7px;margin:0 1px\">RST</button></span>'
-        : ' <span style="color:var(--text-dark);font-size:8px">' + (base.length || '') + '</span>') + '</div></div>' +
+        '<button class=\"ship-sort-btn\" onclick=\"SHIPYARD.resetScaleMultiplier()\" style=\"padding:0px 4px;font-size:7px;margin:0 1px\">RST</button>' +
+        '<span style="color:var(--text-dark);font-size:7px;margin-left:4px">' + (base.length || '') + ' | <100m=1x, 100-300m=2x, 300-600m=4x, 600-1500m=8x, 1500m+=16x</span></div>'
+        : ' <span style="color:var(--text-dark);font-size:8px">' + (base.length || '') + '</span></div>') + '</div>' +
       priceHtml +
       '</div>';
     this.renderMods(sy, base, price);
