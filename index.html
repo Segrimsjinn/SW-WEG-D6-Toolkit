@@ -1423,7 +1423,10 @@ color:var(--text-dim);min-width:35px;text-align:right;
       <div class="card" id="ships-shipyard" style="margin-top:8px">
         <div class="card-title" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer" onclick="toggleShipyardPanel()">
           <span>⟐ Shipyard <span id="shipyardDockedBadge" style="color:var(--text-dim);font-weight:400;font-size:10px;letter-spacing:1px"></span></span>
-          <span id="shipyardToggleIcon" style="font-size:14px;color:var(--text-dim);transition:transform .2s">▼</span>
+          <span style="display:flex;align-items:center;gap:8px">
+            <label style="font-size:9px;color:var(--text-dim);display:flex;align-items:center;gap:4px;font-weight:400;cursor:pointer" onclick="event.stopPropagation()"><input type="checkbox" class="house-rules-cb" onchange="toggleHouseRules(this.checked)" style="accent-color:#ff9800;width:12px;height:12px"> <span style="color:#ff9800">House Rules</span></label>
+            <span id="shipyardToggleIcon" style="font-size:14px;color:var(--text-dim);transition:transform .2s">▼</span>
+          </span>
         </div>
         <div id="shipyardPanel" style="display:none">
           <div id="shipyardEmpty">
@@ -11944,12 +11947,12 @@ function toggleHouseRules(enabled) {
   document.querySelectorAll('.house-rule-section').forEach(el => {
     el.style.display = enabled ? 'block' : 'none';
   });
+  document.querySelectorAll('.house-rules-cb, #houseRulesToggle').forEach(cb => { cb.checked = enabled; });
   if (SHIPYARD.currentPin) SHIPYARD.render();
 }
 function initHouseRules() {
   const enabled = localStorage.getItem('weg_house_rules') === '1';
-  const cb = document.getElementById('houseRulesToggle');
-  if (cb) cb.checked = enabled;
+  document.querySelectorAll('.house-rules-cb, #houseRulesToggle').forEach(cb => { cb.checked = enabled; });
   document.querySelectorAll('.house-rule-section').forEach(el => {
     el.style.display = enabled ? 'block' : 'none';
   });
