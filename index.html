@@ -2236,7 +2236,9 @@ color:var(--text-dim);min-width:35px;text-align:right;
       </div>
 
       <div class="card" id="gm-shipmods">
-        <div class="card-title" style="display:flex;justify-content:space-between;align-items:center">⟐ Ship Modifications</div>
+        <div class="card-title" style="display:flex;justify-content:space-between;align-items:center">⟐ Ship Modifications
+          <label style="font-size:9px;color:var(--text-dim);display:flex;align-items:center;gap:4px;font-weight:400;cursor:pointer"><input type="checkbox" id="houseRulesToggle" onchange="toggleHouseRules(this.checked)" style="accent-color:#ff9800;width:12px;height:12px"> <span style="color:#ff9800">House Rules</span></label>
+        </div>
         <div style="font-size:9px;color:var(--text-dim);font-style:italic;margin-bottom:8px">All costs are % of original retail price (Weapons/Shields/Range: % of weapon cost). One pip or one Move/Space level at a time. Max +1D+2 or +4 Space. One mod roll per month of game time. Repair bay rental: ~100 cr/day. Labor: 2–3x cost if hiring out. Used parts: half price but may be unreliable.</div>
         <div style="display:flex;gap:10px;flex-wrap:wrap">
           <div style="flex:1;min-width:155px">
@@ -2352,7 +2354,8 @@ color:var(--text-dim);min-width:35px;text-align:right;
               <div style="margin-bottom:3px">• Armor &amp; equipment use weapon mod tables</div>
               <div>• Modifications void all manufacturer warranties</div>
             </div>
-            <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--cyan);letter-spacing:1px;margin:8px 0 3px">HOUSE RULES — BERTH CONVERSION</div>
+            <div class="house-rule-section" style="display:none">
+            <div style="font-family:'Exo 2',monospace;font-size:7px;color:#ff9800;letter-spacing:1px;margin:8px 0 3px">HOUSE RULES — BERTH CONVERSION</div>
             <div style="font-size:10px;color:var(--text-dim);line-height:1.9">
               <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Strip Double Bunk → +5T</span><span>Easy · 200 cr · 3 hours</span></div>
               <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Strip Single Cabin → +5T</span><span>Easy · 500 cr · 6 hours</span></div>
@@ -2368,13 +2371,14 @@ color:var(--text-dim);min-width:35px;text-align:right;
               <div style="display:flex;justify-content:space-between;padding:1px 0"><span>Suite ↔ Brig Suite</span><span>Easy · 1,250 cr · 1 day</span></div>
             </div>
             <div style="font-size:7px;color:var(--text-dark);margin-top:3px;font-style:italic">Double Bunk: stacked bunks, shared refresher (5T). Single Cabin: private bunk, desk, shared refresher (5T). Suite: private refresher, sitting area, viewport (10T). Brig variants add reinforced walls, locked door, and basic monitoring. Labor multiplier applies if hiring out.</div>
-            <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--cyan);letter-spacing:1px;margin:8px 0 3px">HOUSE RULES — SALVAGED PARTS</div>
+            <div style="font-family:'Exo 2',monospace;font-size:7px;color:#ff9800;letter-spacing:1px;margin:8px 0 3px">HOUSE RULES — SALVAGED PARTS</div>
             <div style="font-size:10px;color:var(--text-dim);line-height:1.9">
               <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Lucky Find</span><span>30% repair cost · 2× labor</span></div>
               <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Standard Salvage <span style="font-size:7px;color:var(--text-dim)">(default)</span></span><span>50% repair cost · 2× labor</span></div>
               <div style="display:flex;justify-content:space-between;padding:1px 0"><span>Barely Functional</span><span>90% repair cost · 3× labor</span></div>
             </div>
             <div style="font-size:7px;color:var(--text-dark);margin-top:3px;font-style:italic">No purchase price — cost is repair/refurbishment only. The real value of salvage is availability: you have the part where you are, no dealer required. Barely Functional parts cost nearly as much as new but can be found in the field.</div>
+            </div>
           </div>
         </div>
         <div style="font-size:8px;color:var(--text-dim);margin-top:6px;font-style:italic">Sources: REUP (Revised Expanded Updated) &amp; WEG40063 Galaxy Guide 6: Tramp Freighters Ch.8 · Berth conversion: House Rule</div>
@@ -8142,6 +8146,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (typeof EQUIPMENT_DATA !== 'undefined') {
     document.getElementById('equipCountBadge').textContent = '(' + EQUIPMENT_DATA.length + ')';
   }
+  initHouseRules();
 });
 
 // ============================================================
@@ -11341,13 +11346,16 @@ const SHIPYARD = {
   renderReplacements(sy, base, price) {
     if (!sy.replacements) sy.replacements = [];
     if (!sy.salvageMode) sy.salvageMode = 'none';
+    const showHR = houseRulesEnabled();
     let html = '<div style="font-family:\'Exo 2\',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin:10px 0 4px">COMPONENT REPLACEMENTS</div>';
-    html += '<div style="display:flex;gap:4px;margin-bottom:6px;flex-wrap:wrap;align-items:center">';
-    for (const [key, tier] of Object.entries(this.SALVAGE_TIERS)) {
-      const active = sy.salvageMode === key;
-      html += '<button class="ship-sort-btn" onclick="SHIPYARD.setSalvageMode(\'' + key + '\')" style="padding:3px 8px;font-size:8px;' + (active ? 'border-color:' + tier.color + ';color:' + tier.color : '') + '">' + tier.label + '</button>';
+    if (showHR) {
+      html += '<div style="display:flex;gap:4px;margin-bottom:6px;flex-wrap:wrap;align-items:center">';
+      for (const [key, tier] of Object.entries(this.SALVAGE_TIERS)) {
+        const active = sy.salvageMode === key;
+        html += '<button class="ship-sort-btn" onclick="SHIPYARD.setSalvageMode(\'' + key + '\')" style="padding:3px 8px;font-size:8px;' + (active ? 'border-color:' + tier.color + ';color:' + tier.color : '') + '">' + tier.label + '</button>';
+      }
+      html += '</div>';
     }
-    html += '</div>';
     const salvage = this.SALVAGE_TIERS[sy.salvageMode] || this.SALVAGE_TIERS.none;
     const isSalvage = sy.salvageMode !== 'none';
     html += '<div style="font-size:8px;color:var(--text-dark);margin-bottom:6px;font-style:italic">' +
@@ -11506,7 +11514,8 @@ const SHIPYARD = {
     const curCargo = Math.max(0, baseCargo - totalReplacementWeight + berthCargo);
     const maxRemovable = basePass + addedPass - strippedPass;
 
-    let html = '<div style="font-family:\'Exo 2\',monospace;font-size:7px;color:var(--cyan);letter-spacing:1px;margin:10px 0 4px">HOUSE RULE — BERTH CONVERSION</div>';
+    if (!houseRulesEnabled()) { document.getElementById('shipyardLog').innerHTML = ''; return; }
+    let html = '<div style="font-family:\'Exo 2\',monospace;font-size:7px;color:#ff9800;letter-spacing:1px;margin:10px 0 4px">HOUSE RULE — BERTH CONVERSION</div>';
     html += '<div style="border:1px solid var(--card-border);border-radius:var(--radius-sm);overflow:hidden">';
 
     // Summary bar
@@ -11860,6 +11869,23 @@ const SHIPYARD = {
     }
   }
 };
+
+function toggleHouseRules(enabled) {
+  localStorage.setItem('weg_house_rules', enabled ? '1' : '0');
+  document.querySelectorAll('.house-rule-section').forEach(el => {
+    el.style.display = enabled ? 'block' : 'none';
+  });
+  if (SHIPYARD.currentPin) SHIPYARD.render();
+}
+function initHouseRules() {
+  const enabled = localStorage.getItem('weg_house_rules') === '1';
+  const cb = document.getElementById('houseRulesToggle');
+  if (cb) cb.checked = enabled;
+  document.querySelectorAll('.house-rule-section').forEach(el => {
+    el.style.display = enabled ? 'block' : 'none';
+  });
+}
+function houseRulesEnabled() { return localStorage.getItem('weg_house_rules') === '1'; }
 
 function toggleShipyardPanel() {
   SHIPYARD.open = !SHIPYARD.open;
