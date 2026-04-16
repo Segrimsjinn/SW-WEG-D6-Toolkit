@@ -10828,7 +10828,7 @@ const SHIPYARD = {
     }
     const dupes = corkboardPins.filter(p => p.id === id && p.shipyard && !(p.type === type && p.id === id));
     if (dupes.length) return alert('A ship named "' + id + '" is already in a shipyard berth.');
-    if (!pin.shipyard) {
+    if (!pin.shipyard || !pin.shipyard.base || !pin.shipyard.base.hull) {
       pin.shipyard = {
         base: this.snapshotBase(pin),
         mods: { space: 0, maneuverability: 0, hull: 0, shields: 0, weapons: [] },
@@ -10850,8 +10850,19 @@ const SHIPYARD = {
     jumpTo('ships-shipyard');
   },
 
+  resolveShipData(pin) {
+    if (pin.data && pin.data.hull) return pin.data;
+    if (pin.type === 'starship') {
+      for (const cat of Object.keys(STARSHIP_DATA)) {
+        const found = STARSHIP_DATA[cat].find(s => s.name === pin.id);
+        if (found) return found;
+      }
+    }
+    return pin.data || {};
+  },
+
   snapshotBase(pin) {
-    const d = pin.data || {};
+    const d = this.resolveShipData(pin);
     return {
       name: d.name || pin.title || pin.id,
       craft: d.craft || '',
@@ -10862,7 +10873,7 @@ const SHIPYARD = {
       shields: d.shields || '',
       price_new: d.price_new || '',
       price_used: d.price_used || '',
-      cargo: d.cargo || '',
+      cargo: d.cargo || d.cargo_capacity || '',
       passengers: d.passengers || '',
       weapons: d.weapons ? JSON.parse(JSON.stringify(d.weapons)) : []
     };
