@@ -2354,10 +2354,10 @@ color:var(--text-dim);min-width:35px;text-align:right;
             </div>
             <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--cyan);letter-spacing:1px;margin:8px 0 3px">HOUSE RULES — BERTH CONVERSION</div>
             <div style="font-size:10px;color:var(--text-dim);line-height:1.9">
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Strip Double Bunk → +2T</span><span>Easy · 200 cr · 3 hours</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Strip Double Bunk → +5T</span><span>Easy · 200 cr · 3 hours</span></div>
               <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Strip Single Cabin → +5T</span><span>Easy · 500 cr · 6 hours</span></div>
               <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Strip Suite → +10T</span><span>Easy · 1,000 cr · 1 day</span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Install Double Bunk (−2T)</span><span>Moderate · 800 cr · 1 day</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Install Double Bunk (−5T)</span><span>Moderate · 800 cr · 1 day</span></div>
               <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Install Single Cabin (−5T)</span><span>Moderate · 2,000 cr · 2 days</span></div>
               <div style="display:flex;justify-content:space-between;padding:1px 0"><span>Install Suite (−10T)</span><span>Moderate · 5,000 cr · 3 days</span></div>
             </div>
@@ -2367,7 +2367,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
               <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Cabin ↔ Brig Cabin</span><span>Easy · 500 cr · 6 hours</span></div>
               <div style="display:flex;justify-content:space-between;padding:1px 0"><span>Suite ↔ Brig Suite</span><span>Easy · 1,250 cr · 1 day</span></div>
             </div>
-            <div style="font-size:7px;color:var(--text-dark);margin-top:3px;font-style:italic">Double Bunk: stacked bunks, shared refresher (2T). Single Cabin: private bunk, desk, shared refresher (5T). Suite: private refresher, sitting area, viewport (10T). Brig variants add reinforced walls, locked door, and basic monitoring. Labor multiplier applies if hiring out.</div>
+            <div style="font-size:7px;color:var(--text-dark);margin-top:3px;font-style:italic">Double Bunk: stacked bunks, shared refresher (5T). Single Cabin: private bunk, desk, shared refresher (5T). Suite: private refresher, sitting area, viewport (10T). Brig variants add reinforced walls, locked door, and basic monitoring. Labor multiplier applies if hiring out.</div>
           </div>
         </div>
         <div style="font-size:8px;color:var(--text-dim);margin-top:6px;font-style:italic">Sources: REUP (Revised Expanded Updated) &amp; WEG40063 Galaxy Guide 6: Tramp Freighters Ch.8 · Berth conversion: House Rule</div>
@@ -10887,10 +10887,10 @@ const SHIPYARD = {
       { level: 5, difficulty: 'Heroic', pct: 25, mishap: 3, time: '1 month' }
     ],
     berthConversion: {
-      stripBunk:    { label: 'Strip Double Bunk → +2T',    cost: 200,  difficulty: 'Easy', time: '3 hours', cargo: 2 },
+      stripBunk:    { label: 'Strip Double Bunk → +5T',    cost: 200,  difficulty: 'Easy', time: '3 hours', cargo: 5 },
       stripSingle:  { label: 'Strip Single Cabin → +5T',   cost: 500,  difficulty: 'Easy', time: '6 hours', cargo: 5 },
       stripSuite:   { label: 'Strip Suite → +10T',         cost: 1000, difficulty: 'Easy', time: '1 day',   cargo: 10 },
-      addBunk:      { label: 'Install Double Bunk (−2T)',   cost: 800,  difficulty: 'Moderate', time: '1 day',   cargo: -2 },
+      addBunk:      { label: 'Install Double Bunk (−5T)',   cost: 800,  difficulty: 'Moderate', time: '1 day',   cargo: -5 },
       addSingle:    { label: 'Install Single Cabin (−5T)',  cost: 2000, difficulty: 'Moderate', time: '2 days',  cargo: -5 },
       addSuite:     { label: 'Install Suite (−10T)',        cost: 5000, difficulty: 'Moderate', time: '3 days',  cargo: -10 },
       toBrigBunk:   { label: 'Bunk → Brig Bunk',           cost: 200,  difficulty: 'Easy', time: '3 hours', cargo: 0 },
@@ -11404,7 +11404,7 @@ const SHIPYARD = {
     renderRow('stripSuite', maxRemovable > 0);
 
     html += sectionHead('INSTALL BERTHS ← CARGO');
-    renderRow('addBunk', curCargo >= 2);
+    renderRow('addBunk', curCargo >= 5);
     renderRow('addSingle', curCargo >= 5);
     renderRow('addSuite', curCargo >= 10);
 
