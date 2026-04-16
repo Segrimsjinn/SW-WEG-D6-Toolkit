@@ -11289,7 +11289,7 @@ const SHIPYARD = {
         }
         const wm = notes.match(st.weightRe);
         const weight = wm ? parseFloat(wm[1].replace(/,/g, '')) : 0;
-        return { name: e.name, cost: this.parsePrice(e.cost), stat, weight, source: e.source || '' };
+        return { name: e.name, cost: this.parsePrice(e.cost), stat, weight, source: e.source || '', availability: e.availability || '', notes: e.game_notes || '' };
       });
   },
 
@@ -11315,9 +11315,12 @@ const SHIPYARD = {
       html += '<div style="min-width:90px;font-family:\'Exo 2\',monospace;font-size:9px;color:var(--gold);letter-spacing:1px">' + st.label + '</div>';
 
       if (existing) {
-        html += '<div style="font-family:\'IBM Plex Mono\',monospace;font-size:10px;color:var(--cyan);font-weight:700">' + existing.equipName + '</div>';
-        html += '<span style="font-size:9px;color:var(--text-dim)">(' + existing.cost.toLocaleString() + ' cr, ' + existing.weight + ' mt)</span>';
-        html += '<button class="ship-sort-btn" onclick="SHIPYARD.removeReplacement(\'' + subtype + '\')" style="margin-left:auto;padding:2px 8px;font-size:9px;color:var(--red)">✕ Revert</button>';
+        const rAvailColor = /X/.test(existing.availability||'') ? 'var(--red)' : /R/.test(existing.availability||'') ? 'var(--red)' : /F/.test(existing.availability||'') ? 'var(--gold)' : 'var(--text-dim)';
+        html += '<div style="flex:1"><div style="font-family:\'IBM Plex Mono\',monospace;font-size:10px;color:var(--cyan);font-weight:700">' + existing.equipName + ' <span style="font-size:8px;color:' + rAvailColor + '">' + (existing.availability ? '[' + existing.availability + ']' : '') + '</span></div>';
+        if (existing.notes) html += '<div style="font-size:8px;color:var(--text-dim);line-height:1.4;margin-top:2px">' + existing.notes + '</div>';
+        html += '</div>';
+        html += '<span style="font-size:9px;color:var(--text-dim);white-space:nowrap">' + existing.cost.toLocaleString() + ' cr, ' + existing.weight + ' mt</span>';
+        html += '<button class="ship-sort-btn" onclick="SHIPYARD.removeReplacement(\'' + subtype + '\')" style="padding:2px 8px;font-size:9px;color:var(--red)">✕</button>';
       } else {
         html += '<select onchange="SHIPYARD.applyReplacement(\'' + subtype + '\', this.value)" style="flex:1;max-width:300px;padding:4px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:10px;font-family:inherit">';
         html += '<option value="">— Select replacement —</option>';
@@ -11339,7 +11342,88 @@ const SHIPYARD = {
     }
 
     document.getElementById('shipyardReplacements').innerHTML = html;
+    this.renderAddOns(sy);
     this.renderBerthConversion(sy, base);
+  },
+
+  _addOnCache: null,
+  getAddOnEquipment() {
+    if (this._addOnCache) return this._addOnCache;
+    const excludeNames = /Ion Drive|x0\.5 Hyperdrive|Hyperdrive \(x|Ship Shields \(|Light Blaster Cannon|Light Laser Cannon|Heavy Laser Cannon|Turbolaser|Light Ion Cannon|Medium Ion Cannon|Heavy Ion Cannon|Proton Torpedo|Concussion Missile Launcher|Conner Net|Conner Web|Phase Shifter|Nightcloak|Plasma Torch|Hex Heavy|Tractor Beam|Verpine Asteroid|Corellian Engineering C[LE]|SoroSuub Boav|Incom Starslinger|Incom W-11|Corellian Evader|Sienar Fleet Systems Sprint|Boshaa|FreiTek FT|Starscream/i;
+    this._addOnCache = (typeof EQUIPMENT_DATA !== 'undefined' ? EQUIPMENT_DATA : [])
+      .filter(e => e.category === 'Ship Equipment' && !excludeNames.test(e.name))
+      .filter(e => this.parsePrice(e.cost) > 0)
+      .map(e => {
+        const wm = (e.game_notes || '').match(/Weight:\s*([\d,.]+)\s*metric/i);
+        return { name: e.name, cost: this.parsePrice(e.cost), weight: wm ? parseFloat(wm[1].replace(/,/g, '')) : 0, notes: e.game_notes || '', availability: e.availability || '' };
+      });
+    return this._addOnCache;
+  },
+
+  renderAddOns(sy) {
+    if (!sy.addOns) sy.addOns = [];
+    const equips = this.getAddOnEquipment();
+
+    let html = '<div style="font-family:\'Exo 2\',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin:10px 0 4px">SHIP ADD-ONS</div>';
+    html += '<div style="font-size:8px;color:var(--text-dark);margin-bottom:6px;font-style:italic">Bolt-on equipment: sensor packages, countermeasures, cargo mods, boosters, and accessories.</div>';
+
+    if (sy.addOns.length) {
+      html += '<div style="border:1px solid var(--card-border);border-radius:var(--radius-sm);overflow:hidden;margin-bottom:6px">';
+      sy.addOns.forEach((ao, i) => {
+        const availColor = /X/.test(ao.availability||'') ? 'var(--red)' : /R/.test(ao.availability||'') ? 'var(--red)' : /F/.test(ao.availability||'') ? 'var(--gold)' : 'var(--text-dim)';
+        html += '<div style="padding:6px 8px;border-bottom:1px solid var(--card-border)">';
+        html += '<div style="display:flex;align-items:center;gap:6px;font-size:10px">';
+        html += '<span style="color:var(--text);font-weight:700;flex:1">' + ao.name + '</span>';
+        if (ao.availability) html += '<span style="font-size:8px;color:' + availColor + '">[' + ao.availability + ']</span>';
+        if (ao.weight) html += '<span style="font-size:8px;color:var(--text-dark)">' + ao.weight + ' mt</span>';
+        html += '<span style="color:var(--gold);font-family:\'IBM Plex Mono\',monospace;font-size:9px">' + ao.cost.toLocaleString() + ' cr</span>';
+        html += '<button class="ship-sort-btn" onclick="SHIPYARD.removeAddOn(' + i + ')" style="padding:1px 6px;font-size:9px;color:var(--red)">✕</button>';
+        html += '</div>';
+        if (ao.notes) html += '<div style="font-size:8px;color:var(--text-dim);margin-top:3px;line-height:1.5">' + ao.notes + '</div>';
+        html += '</div>';
+      });
+      html += '</div>';
+    }
+
+    html += '<div style="display:flex;gap:4px;align-items:center">';
+    html += '<select id="shipyardAddOnSelect" style="flex:1;padding:4px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:10px;font-family:inherit">';
+    html += '<option value="">— Add equipment —</option>';
+    for (const eq of equips) {
+      html += '<option value="' + eq.name.replace(/"/g, '&quot;') + '">' + eq.name + ' (' + eq.cost.toLocaleString() + ' cr' + (eq.weight ? ', ' + eq.weight + ' mt' : '') + ')</option>';
+    }
+    html += '</select>';
+    html += '<button class="ship-sort-btn" onclick="SHIPYARD.addAddOn()" style="padding:4px 10px;font-size:10px;color:var(--green)">+ ADD</button>';
+    html += '</div>';
+
+    document.getElementById('shipyardMods').innerHTML = html;
+  },
+
+  addAddOn() {
+    if (!this.currentPin) return;
+    const sel = document.getElementById('shipyardAddOnSelect');
+    if (!sel || !sel.value) return;
+    const equips = this.getAddOnEquipment();
+    const eq = equips.find(e => e.name === sel.value);
+    if (!eq) return;
+    const sy = this.currentPin.shipyard;
+    if (!sy.addOns) sy.addOns = [];
+    sy.addOns.push({ name: eq.name, cost: eq.cost, weight: eq.weight, notes: eq.notes, availability: eq.availability });
+    sy.totalCost += eq.cost;
+    sy.log.push({ type: 'add-on', equipName: eq.name, cost: eq.cost, weight: eq.weight, ts: Date.now() });
+    corkboardSave();
+    this.render();
+  },
+
+  removeAddOn(index) {
+    if (!this.currentPin) return;
+    const sy = this.currentPin.shipyard;
+    if (!sy.addOns || !sy.addOns[index]) return;
+    const ao = sy.addOns[index];
+    sy.totalCost = Math.max(0, sy.totalCost - ao.cost);
+    sy.addOns.splice(index, 1);
+    sy.log = sy.log.filter(l => !(l.type === 'add-on' && l.equipName === ao.name && l.cost === ao.cost));
+    corkboardSave();
+    this.render();
   },
 
   renderBerthConversion(sy, base) {
@@ -11450,7 +11534,7 @@ const SHIPYARD = {
     if (!eq) return;
     if (!sy.replacements) sy.replacements = [];
     sy.replacements = sy.replacements.filter(r => r.subtype !== subtype);
-    sy.replacements.push({ subtype, equipName: eq.name, cost: eq.cost, weight: eq.weight, stat: eq.stat, source: eq.source });
+    sy.replacements.push({ subtype, equipName: eq.name, cost: eq.cost, weight: eq.weight, stat: eq.stat, source: eq.source, availability: eq.availability, notes: eq.notes });
     sy.totalCost += eq.cost;
 
     const st = this.EQUIP_SUBTYPES[subtype];
@@ -11630,6 +11714,7 @@ const SHIPYARD = {
 
     const modsCost = (sy.log || []).filter(l => l.type === 'mod' || l.type === 'weapon-mod').reduce((s, l) => s + (l.cost || 0), 0);
     const replaceCost = (sy.replacements || []).reduce((s, r) => s + (r.cost || 0), 0);
+    const addOnCost = (sy.addOns || []).reduce((s, a) => s + (a.cost || 0), 0);
     const bt = this.MOD_TABLES.berthConversion;
     const berthCost = Object.entries(sy.berthChanges || {}).reduce((s, [k, v]) => s + (bt[k] ? bt[k].cost * v : 0), 0);
     const costCell = (label, val) => '<div style="flex:1;text-align:center;min-width:80px"><div style="font-family:\'Exo 2\',sans-serif;font-size:7px;color:var(--text-dim);letter-spacing:1px">' + label + '</div><div style="font-family:\'IBM Plex Mono\',monospace;font-size:13px;color:var(--text-dim)">' + val.toLocaleString() + ' cr</div></div>';
@@ -11638,6 +11723,7 @@ const SHIPYARD = {
       '<div style="display:flex;gap:4px;flex-wrap:wrap;padding:8px 10px;background:var(--bg);border:1px solid var(--gold-dim);border-radius:var(--radius-sm);margin-top:10px;align-items:center">' +
       (modsCost ? costCell('MODS', modsCost) : '') +
       (replaceCost ? costCell('REPLACEMENTS', replaceCost) : '') +
+      (addOnCost ? costCell('ADD-ONS', addOnCost) : '') +
       (berthCost ? costCell('BERTHS', berthCost) : '') +
       '<div style="flex:1;text-align:center;min-width:100px"><div style="font-family:\'Exo 2\',sans-serif;font-size:7px;color:var(--gold);letter-spacing:1px">GRAND TOTAL</div><div style="font-family:\'IBM Plex Mono\',monospace;font-size:18px;color:var(--gold);font-weight:700">' + sy.totalCost.toLocaleString() + ' cr</div></div>' +
       '</div>';
