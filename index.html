@@ -10918,7 +10918,9 @@ const SHIPYARD = {
         '<button class="ship-sort-btn" onclick="SHIPYARD.adjustPriceMultiplier(-0.1)" style="padding:2px 8px;font-size:12px;font-weight:bold">▼</button>' +
         '<span style="color:var(--gold);min-width:70px;text-align:center">' + price.toLocaleString() + ' cr</span>' +
         '<button class="ship-sort-btn" onclick="SHIPYARD.adjustPriceMultiplier(0.1)" style="padding:2px 8px;font-size:12px;font-weight:bold">▲</button>' +
-        '</div></div>';
+        '</div>' +
+        '<div style="font-size:7px;color:var(--text-dark);margin-top:2px;letter-spacing:0.5px">Military 1.5× · Yachts 2× · Lg Capital 2.2× · Sm Capital 3× · Freighters 4×</div>' +
+        '</div>';
     } else if (price) {
       priceHtml =
         '<div style="text-align:right;font-family:\'IBM Plex Mono\',monospace;font-size:11px">' +
