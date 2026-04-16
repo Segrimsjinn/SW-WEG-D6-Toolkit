@@ -11689,6 +11689,29 @@ const SHIPYARD = {
     return ' [' + tier.label + ', ' + tier.laborMult + '× labor]';
   },
 
+  getPartsBinTotal(sy) {
+    if (!sy.partsBin || !sy.partsBin.length) return 0;
+    return sy.partsBin.reduce((s, p) => s + Math.round((p.value || 0) * (p.sellPct || 25) / 100), 0);
+  },
+
+  adjustPartSellPct(index, delta) {
+    if (!this.currentPin) return;
+    const sy = this.currentPin.shipyard;
+    if (!sy.partsBin || !sy.partsBin[index]) return;
+    sy.partsBin[index].sellPct = Math.max(5, Math.min(50, (sy.partsBin[index].sellPct || 25) + delta));
+    corkboardSave();
+    this.render();
+  },
+
+  removePartFromBin(index) {
+    if (!this.currentPin) return;
+    const sy = this.currentPin.shipyard;
+    if (!sy.partsBin) return;
+    sy.partsBin.splice(index, 1);
+    corkboardSave();
+    this.render();
+  },
+
   applyReplacement(subtype, equipName) {
     if (!this.currentPin || !equipName) return;
     const sy = this.currentPin.shipyard;
@@ -11696,6 +11719,13 @@ const SHIPYARD = {
     const eq = equips.find(e => e.name === equipName);
     if (!eq) return;
     if (!sy.replacements) sy.replacements = [];
+    if (!sy.partsBin) sy.partsBin = [];
+    const oldPart = sy.replacements.find(r => r.subtype === subtype);
+    const oldPartName = oldPart ? oldPart.equipName : 'Stock ' + this.EQUIP_SUBTYPES[subtype].label;
+    const oldPartValue = oldPart ? (oldPart.fullCost || oldPart.cost) : 0;
+    if (oldPartValue > 0) {
+      sy.partsBin.push({ name: oldPartName, value: oldPartValue, sellPct: 25, subtype });
+    }
     sy.replacements = sy.replacements.filter(r => r.subtype !== subtype);
     const actualCost = this.getSalvageCost(eq.cost) * this.getScaleMultiplier();
     const salvageMode = (this.currentPin.shipyard.salvageMode || 'none');
@@ -11907,6 +11937,7 @@ const SHIPYARD = {
       '</div>';
     this.renderMods(sy, base, price);
 
+    const partsBinCredit = this.getPartsBinTotal(sy);
     const modsCost = (sy.log || []).filter(l => l.type === 'mod' || l.type === 'weapon-mod').reduce((s, l) => s + (l.cost || 0), 0);
     const replaceCost = (sy.replacements || []).reduce((s, r) => s + (r.cost || 0), 0);
     const addOnCost = (sy.addOns || []).reduce((s, a) => s + (a.cost || 0), 0);
@@ -11920,8 +11951,33 @@ const SHIPYARD = {
       (replaceCost ? costCell('REPLACEMENTS', replaceCost) : '') +
       (addOnCost ? costCell('ADD-ONS', addOnCost) : '') +
       (berthCost ? costCell('BERTHS', berthCost) : '') +
-      '<div style="flex:1;text-align:center;min-width:100px"><div style="font-family:\'Exo 2\',sans-serif;font-size:7px;color:var(--gold);letter-spacing:1px">GRAND TOTAL</div><div style="font-family:\'IBM Plex Mono\',monospace;font-size:18px;color:var(--gold);font-weight:700">' + sy.totalCost.toLocaleString() + ' cr</div></div>' +
+      (partsBinCredit ? costCell('PARTS BIN', -partsBinCredit) : '') +
+      '<div style="flex:1;text-align:center;min-width:100px"><div style="font-family:\'Exo 2\',sans-serif;font-size:7px;color:var(--gold);letter-spacing:1px">NET TOTAL</div><div style="font-family:\'IBM Plex Mono\',monospace;font-size:18px;color:var(--gold);font-weight:700">' + (sy.totalCost - partsBinCredit).toLocaleString() + ' cr</div></div>' +
       '</div>';
+
+    // Mod log
+    if (sy.log && sy.log.length) {
+    // Parts bin
+    if (sy.partsBin && sy.partsBin.length) {
+      let binHtml = '<div style="margin-top:10px"><div style="font-family:\'Exo 2\',monospace;font-size:7px;color:var(--green);letter-spacing:1px;margin-bottom:4px">PARTS BIN — Removed parts for resale (25% default, adjust per bargain roll)</div>';
+      binHtml += '<div style="border:1px solid var(--card-border);border-radius:var(--radius-sm);overflow:hidden">';
+      sy.partsBin.forEach((p, i) => {
+        const sellValue = Math.round((p.value || 0) * (p.sellPct || 25) / 100);
+        binHtml += '<div style="display:flex;align-items:center;gap:6px;padding:4px 8px;border-bottom:1px solid var(--card-border);font-size:9px">';
+        binHtml += '<span style="color:var(--text);flex:1">' + p.name + '</span>';
+        binHtml += '<span style="color:var(--text-dark);font-size:8px">value: ' + (p.value||0).toLocaleString() + ' cr</span>';
+        binHtml += '<button class="ship-sort-btn" onclick="SHIPYARD.adjustPartSellPct(' + i + ',-5)" style="padding:0px 4px;font-size:9px">-</button>';
+        binHtml += '<span style="color:var(--green);font-family:\'IBM Plex Mono\',monospace;min-width:35px;text-align:center">' + (p.sellPct || 25) + '%</span>';
+        binHtml += '<button class="ship-sort-btn" onclick="SHIPYARD.adjustPartSellPct(' + i + ',5)" style="padding:0px 4px;font-size:9px">+</button>';
+        binHtml += '<span style="color:var(--green);font-family:\'IBM Plex Mono\',monospace;min-width:60px;text-align:right">' + sellValue.toLocaleString() + ' cr</span>';
+        binHtml += '<button class="ship-sort-btn" onclick="SHIPYARD.removePartFromBin(' + i + ')" style="padding:0px 4px;font-size:9px;color:var(--red)">x</button>';
+        binHtml += '</div>';
+      });
+      binHtml += '</div>';
+      binHtml += '<div style="font-size:8px;color:var(--text-dark);margin-top:3px;font-style:italic">Canon: max 25% of new price, 5% if damaged. Adjust % per part based on bargain roll or condition.</div>';
+      binHtml += '</div>';
+      document.getElementById('shipyardCosts').innerHTML += binHtml;
+    }
 
     // Mod log
     if (sy.log && sy.log.length) {
