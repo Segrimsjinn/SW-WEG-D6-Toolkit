@@ -2545,7 +2545,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "CoreDataFiles CFC-100 Corporate Watcher",
-  "category": "General Equipment",
+  "category": "Computers",
   "cost": "12,500 (10,000/year service fee for weekly data upgrades)",
   "availability": "2",
   "game_notes": "Skill: Business. Financial tracking computer covering 10,000+ business conglomerates including Galaxy 500, Surnack's Sentinel 100, and Tradoc Core Index. AI routines find gems of information in huge datastreams. Includes Bank of the Core Investment Division service contract for weekly updates. HoloNet access provides continuous updates. Easy business roll to retrieve company operations info. Moderate+ for hypothetical 'what-if' scenarios and long-term trend analysis. No specialized computer skills to install.",
@@ -2649,7 +2649,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "MerenData Universal Computer Interface",
-  "category": "General Equipment",
+  "category": "Computers",
   "cost": "2,500 (100/year software upgrades)",
   "availability": "1",
   "game_notes": "Skill: Computer programming/repair. Interface card that examines unfamiliar computer systems to determine operating procedures and interprets commands. Computer programming/repair roll required (difficulty varies by how much the system differs from standard). Success adds +1D to all subsequent computer programming/repair rolls on that system. Does not override security programming or permit unauthorized access. Provides easy data transference between otherwise incompatible system architectures.",
@@ -2873,7 +2873,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "MerenData IPI-1000 Electronic ID Display",
-  "category": "General Equipment",
+  "category": "Security",
   "cost": "450",
   "availability": "2, possibly F",
   "game_notes": "Skill: Security. Holographically scans and stores documents up to 30cm x 20cm (up to 12 documents). Data coded under 10 security levels with personal access codes. Displays holos of documents on request while originals remain locked away. Recognized by all major Imperial agencies and banking institutions. Easy security roll to scan documents. Only certified government officials may perform scans. Imperial agencies have standard code override for accessing secured data. Storage of improperly registered or altered materials subject to fine and/or criminal investigation.",
@@ -2929,7 +2929,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Paretaine Sound Bubble SNS-600",
-  "category": "General Equipment",
+  "category": "Sensors",
   "cost": "300",
   "availability": "3",
   "game_notes": "Skill: Sensors. Easy sensors roll for normal operation. Passive mode: 360-degree field out to 5m — sounds outside the radius are absorbed, only sounds within the bubble are heard. Active mode: 60-degree arc out to 10m — dampens sound waves, preventing any aural vibrations from being sensed by live or automated detectors.",
@@ -3313,7 +3313,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "MerenData Duros Bio-Comp 1000",
-  "category": "General Equipment",
+  "category": "Computers",
   "cost": "35,000",
   "availability": "4",
   "game_notes": "Skill: Computer programming/repair. High-performance personal computer integrating biological elements. Microscopic lifeforms in fluid culture react to electrical impulses for mass data storage. Photosynthetic biological entities provide power — virtually independent of external power sources. Hybrid organic compounds in liquid-display unit for 2D and holographic imaging. Bio-chemical fiber stores encoded instructions via modified protein combinations. Larger than average personal computer but maintenance-free.",
@@ -3329,7 +3329,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Mon Calamari Aquatic Computer ACCA-1dx000",
-  "category": "General Equipment",
+  "category": "Computers",
   "cost": "8,000",
   "availability": "4",
   "game_notes": "Skill: Computer programming/repair. Designed for liquid environments using rare Calamari sea minerals for self-generated electrical power — no external power source needed. Non-corrosive native elements for circuitry. Organic microorganism display works up to 200m depth. Calamari crystalline data receptors. Internal battery allows 10 hours use out of water. Advanced AI modules add +1D to computer programming/repair rolls. Also prized as art/collectible.",
@@ -4485,7 +4485,7 @@ const EQUIPMENT_DATA = [
  {
   "name": "Permit Datapad",
   "type": "BoSS Documentation Datapad",
-  "category": "General Equipment",
+  "category": "Computers",
   "cost": "1,500",
   "availability": "2, F",
   "game_notes": "Stores official spacer documentation — ship registry, captain's accreditation, arms load-out permit, operating license. A customized BoSS input plug (available only at BoSS and Imperial Space Ministry offices) is the only legal way to alter data. Has a separate 'read only' interface for downloading info to ship computers. Forgery: Altering data by reversing the 'read only' port to 'write only' requires a Heroic forgery roll (high risk of frying the datapad). Using a custom-made BoSS input plug requires a Difficult forgery roll (plug must be acquired or crafted first). Cracking the datapad casing to change documentation requires a Very Difficult forgery roll. Rolling a 1 on the Wild Die means the forger has accidentally fried the circuitry and destroyed the datapad. Sharp customs officers check for hairline cracks, adhesive drips, casing fractures, or data display malfunctions.",
@@ -4494,7 +4494,7 @@ const EQUIPMENT_DATA = [
  {
   "name": "Archaic Astrogation Plotter",
   "type": "Republic Sienar Systems A-121 Plotter",
-  "category": "General Equipment",
+  "category": "Ship Equipment",
   "cost": "1,000-7,500",
   "availability": "4",
   "game_notes": "Manual astrogation plotter from the pioneer days of hyperspace. Assembly of plastic and metal slide rules, factor wheels, and slot charts. If a pilot has all necessary astrographic information on the point of origin and destination, using the plotter quintuples the time a nav computer would ordinarily take and increases the astrogation difficulty by two levels. Downloading coordinates into the ship's hyperdrive motivators requires a jury-rigged interface with a personal computer or sophisticated datapad — a Very Difficult computer programming/repair roll. Useful as a backup when nav computers and ship data systems are inoperable.",
@@ -4503,7 +4503,7 @@ const EQUIPMENT_DATA = [
  {
   "name": "Headset Comlink",
   "type": "VargeCorp Hands-Free Comlink",
-  "category": "General Equipment",
+  "category": "Communications",
   "cost": "100",
   "availability": "1",
   "game_notes": "Hands-free personal comlink. Speaker microphone mounted on an adjustable boom, voice-activated. Earphone covers one ear, leaving the other free. Dials on the earpiece for channel switching and volume. Some models include plug cords to jack into a ship's intercom system (disables normal comlink transmission while plugged in). The microphone transmitter is voice-activated; a comlink will not activate unless spoken to at or above background noise level.",
@@ -4521,7 +4521,7 @@ const EQUIPMENT_DATA = [
  {
   "name": "Tox Detector",
   "type": "SuriTech Disposable Toxmeter Patch",
-  "category": "General Equipment",
+  "category": "Medical",
   "cost": "20",
   "availability": "2",
   "game_notes": "Flat, half-meter square metallic patch with a deep-blue circle in the center. Adhesive or magnetic backing for mounting on bulkheads. Visually alerts to poisonous fumes — if the center dot turns from deep blue to any degree of fluorescent orange, something noxious is in the air. Manufactured to react with any gas harmful to those breathing standard human atmospheres; some tailored for specific alien biologies. Single-use: once triggered, the chemical reactant cannot revert. Place midway between deckplates and overhead panels. Used detectors can serve as decoy contamination markers.",
@@ -4647,7 +4647,7 @@ const EQUIPMENT_DATA = [
  {
   "name": "Portable Emergency Beacon",
   "type": "Chedak Emergency Pack",
-  "category": "General Equipment",
+  "category": "Survival Gear",
   "cost": "1,000",
   "availability": "2",
   "game_notes": "About the size of two medpacs. Contains one burst beacon broadcasting position on emergency frequency — anyone within 4 light years will pick it up. Strobe marks position for search parties within a few km. Detachable glow rod lantern. Powered by a mini-fusion generator (250 hours capacity). Power jack recharges glow rods, blaster power packs, and low-power accessories — each charge drains about 1 hour from generator. Heat vent with fan warms immediate area. Activated by a rip-cord switch — once activated, cannot be shut off until generator dies. Rigging it for on/off capability is a Moderate Technical task but risks blowing out all powered components.",
@@ -4656,7 +4656,7 @@ const EQUIPMENT_DATA = [
  {
   "name": "Personal Strobe Locator",
   "type": "Saladar Systems Solo Strobe",
-  "category": "General Equipment",
+  "category": "Survival Gear",
   "cost": "100",
   "availability": "2",
   "game_notes": "Comlink-sized personal strobe with a ring for hooking and a retractable spike for ground placement. Flashes once every 5 seconds for up to 20 hours, visible for 3 km. Rechargeable from most energy sources. Can be turned on and off as needed. Can be used as a blinding distraction in dark conditions — flick on for one burst to temporarily blind a target (like a reusable flash grenade).",
@@ -4674,7 +4674,7 @@ const EQUIPMENT_DATA = [
  {
   "name": "Aqua Survival Shelter",
   "type": "Vaterenn Environmentals Flotation Shelter",
-  "category": "General Equipment",
+  "category": "Survival Gear",
   "cost": "2,500",
   "availability": "2",
   "game_notes": "Ocean survival raft. Comes in a pack the size of a large spacer's chest. Grasp rip handle and toss — inflates with rising support struts forming a two-person di-chrome shelter. Flotation material withstands reasonable acidity/saltiness but moderately corrosive liquid eats through it. Built-in homing beacon broadcasts on civilian and military emergency channels up to 4 light years, activates on deployment. Powered by a small fusion generator (250 hours, with heat vent). Detachable supply bundle: 2 weeks rations, glow rod, 6m syntherope, 2 medpacs, large fresh water tank (some models include a water purifier). Includes collapsible bailing bucket and quick-patch repair kit with mini-inflator. No propulsion, but shelter components can be dismantled into a makeshift sail. Supplies support 2 people for 2 weeks; reduce time if more are aboard.",
@@ -4683,7 +4683,7 @@ const EQUIPMENT_DATA = [
  {
   "name": "Electronic Combination Hatch Lock",
   "type": "VargeCorp Cipher Security Seal",
-  "category": "General Equipment",
+  "category": "Security",
   "cost": "750",
   "availability": "2, F",
   "game_notes": "Installing yourself requires a Difficult security roll. Failure means the lock sometimes sticks or doesn't engage all the way. Bypassing requires a Difficult security roll.",
@@ -4692,7 +4692,7 @@ const EQUIPMENT_DATA = [
  {
   "name": "Key Card Ship's Lock",
   "type": "Aratech Cardset System",
-  "category": "General Equipment",
+  "category": "Security",
   "cost": "1,000",
   "availability": "2, F",
   "game_notes": "Installing yourself requires a Difficult security roll. Failure means the lock sometimes sticks or doesn't engage all the way. Comes with two imprinted key cards. Bypassing requires a Very Difficult security roll.",
@@ -4701,7 +4701,7 @@ const EQUIPMENT_DATA = [
  {
   "name": "Remote Control Hatch Lock",
   "type": "VargeCorp Ranged Lock",
-  "category": "General Equipment",
+  "category": "Security",
   "cost": "1,250",
   "availability": "2, F",
   "game_notes": "Installing yourself requires a Very Difficult security roll. Failure means the lock sometimes sticks or doesn't engage all the way. Remote control unit has a range of 30 meters. Bypassing requires a Very Difficult security roll.",
@@ -4710,7 +4710,7 @@ const EQUIPMENT_DATA = [
  {
   "name": "Console Lock Panel",
   "type": "VargeCorp CS-20 Board Plate",
-  "category": "General Equipment",
+  "category": "Security",
   "cost": "300 (electronic combination), 500 (key card)",
   "availability": "2",
   "game_notes": "Large metal plate form-molded to cockpit console contours, slides into place and locks down over controls. Installing yourself requires a Difficult security roll. Failure means the panel sometimes sticks or doesn't engage all the way. Bypassing the lock mechanism requires a Moderate security roll. Takes 6 rounds to engage or remove. Must stow the heavy metal panel during flight. A bit of a hindrance — takes a minute to put on or remove, and needs a second person ideally.",
@@ -4719,7 +4719,7 @@ const EQUIPMENT_DATA = [
  {
   "name": "Console Dead Lock",
   "type": "Arakyd PowerLock 2500",
-  "category": "General Equipment",
+  "category": "Security",
   "cost": "1,000 (electronic combination), 1,500 (key card)",
   "availability": "2",
   "game_notes": "Hooks directly into the power coupling to cockpit controls. When engaged, cuts the energy feed to control boards until the proper combination or key card is used. Installed beneath control panels where not easily noticeable. Have a professional install it — installing yourself requires a Very Difficult security roll; failure damages cockpit instrumentation and controls. Damage by inexperienced thieves often blows command consoles or melts wiring. Bypassing requires a Very Difficult security roll.",
