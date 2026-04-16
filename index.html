@@ -10972,6 +10972,28 @@ const SHIPYARD = {
     return 0;
   },
 
+  parseLength(str) {
+    if (!str) return 0;
+    const m = String(str).replace(/,/g, '').match(/([\d.]+)/);
+    return m ? parseFloat(m[1]) : 0;
+  },
+
+  getScaleMultiplier() {
+    if (!this.currentPin || !this.currentPin.shipyard) return 1;
+    const length = this.parseLength(this.currentPin.shipyard.base.length || '');
+    if (length < 100) return 1;
+    if (length < 300) return 2;
+    if (length < 600) return 4;
+    if (length < 1500) return 8;
+    return 16;
+  },
+
+  getScaleLabel() {
+    const m = this.getScaleMultiplier();
+    const labels = {1:'Starfighter (1x)',2:'Corvette (2x)',4:'Frigate (4x)',8:'Cruiser (8x)',16:'Capital (16x)'};
+    return labels[m] || m + 'x';
+  },
+
   parsePrice(str) {
     if (!str) return 0;
     const m = String(str).replace(/,/g, '').match(/(\d+)/);
@@ -11030,6 +11052,8 @@ const SHIPYARD = {
     return {
       name: d.name || pin.title || pin.id,
       craft: d.craft || '',
+      length: d.length || '',
+      scale: d.scale || '',
       space: d.space || '',
       maneuverability: d.maneuverability || '',
       hyperdrive: d.hyperdrive || '',
@@ -11155,7 +11179,8 @@ const SHIPYARD = {
     const table = this.MOD_TABLES[system];
     const next = modLevel < maxLevel ? table[modLevel] : null;
     const labor = this.getLaborMultiplier();
-    const nextCost = next ? Math.round(price * next.pct / 100 * labor) : 0;
+    const scale = this.getScaleMultiplier();
+    const nextCost = next ? Math.round(price * next.pct / 100 * labor * scale) : 0;
     const atMax = modLevel >= maxLevel;
     const diffColor = next ? (next.mishap >= 2 ? 'var(--red)' : 'var(--gold)') : '';
 
@@ -11465,7 +11490,7 @@ const SHIPYARD = {
     if (!eq) return;
     const sy = this.currentPin.shipyard;
     if (!sy.addOns) sy.addOns = [];
-    const actualCost = this.getSalvageCost(eq.cost);
+    const actualCost = this.getSalvageCost(eq.cost) * this.getScaleMultiplier();
     const salvageMode = (this.currentPin.shipyard.salvageMode || 'none');
     sy.addOns.push({ name: eq.name, cost: actualCost, fullCost: eq.cost, weight: eq.weight, notes: eq.notes, availability: eq.availability, salvage: salvageMode !== 'none' ? salvageMode : undefined });
     sy.totalCost += actualCost;
@@ -11630,7 +11655,7 @@ const SHIPYARD = {
     if (!eq) return;
     if (!sy.replacements) sy.replacements = [];
     sy.replacements = sy.replacements.filter(r => r.subtype !== subtype);
-    const actualCost = this.getSalvageCost(eq.cost);
+    const actualCost = this.getSalvageCost(eq.cost) * this.getScaleMultiplier();
     const salvageMode = (this.currentPin.shipyard.salvageMode || 'none');
     sy.replacements.push({ subtype, equipName: eq.name, cost: actualCost, fullCost: eq.cost, weight: eq.weight, stat: eq.stat, source: eq.source, availability: eq.availability, notes: eq.notes, salvage: salvageMode !== 'none' ? salvageMode : undefined });
     sy.totalCost += actualCost;
@@ -11681,7 +11706,7 @@ const SHIPYARD = {
     const step = table[level];
     if (!step) return;
     const price = this.getRetailPrice();
-    const cost = Math.round(price * step.pct / 100 * this.getLaborMultiplier());
+    const cost = Math.round(price * step.pct / 100 * this.getLaborMultiplier() * this.getScaleMultiplier());
     sy.mods[system] = level + 1;
     sy.totalCost += cost;
     sy.log.push({ type: 'mod', system, level: level + 1, cost, difficulty: step.difficulty, time: step.time, mishap: step.mishap, ts: Date.now() });
@@ -11697,7 +11722,7 @@ const SHIPYARD = {
     const table = this.MOD_TABLES[system];
     const step = table[level - 1];
     const price = this.getRetailPrice();
-    const cost = Math.round(price * step.pct / 100 * this.getLaborMultiplier());
+    const cost = Math.round(price * step.pct / 100 * this.getLaborMultiplier() * this.getScaleMultiplier());
     sy.mods[system] = level - 1;
     sy.totalCost = Math.max(0, sy.totalCost - cost);
     sy.log = sy.log.filter(l => !(l.type === 'mod' && l.system === system && l.level === level));
@@ -11744,7 +11769,7 @@ const SHIPYARD = {
     const perWeaponCost = (sy.weaponCosts && sy.weaponCosts[weaponIdx]) || this.matchWeaponCost(w.name, w.damage) || this.getRetailPrice();
     const weaponQty = this.parseWeaponQty(w.name);
     const wCost = perWeaponCost * weaponQty + this.getFireLinkSurcharge(w.name);
-    const cost = Math.round(wCost * step.pct / 100 * this.getLaborMultiplier());
+    const cost = Math.round(wCost * step.pct / 100 * this.getLaborMultiplier() * this.getScaleMultiplier());
     wm[key] = level + 1;
     sy.totalCost += cost;
     sy.log.push({ type: 'weapon-mod', weaponIdx, modType, level: level + 1, cost, difficulty: step.difficulty, time: step.time, mishap: step.mishap, ts: Date.now() });
@@ -11766,7 +11791,7 @@ const SHIPYARD = {
     const perWeaponCost = (sy.weaponCosts && sy.weaponCosts[weaponIdx]) || this.matchWeaponCost(w.name, w.damage) || this.getRetailPrice();
     const weaponQty = this.parseWeaponQty(w.name);
     const wCost = perWeaponCost * weaponQty + this.getFireLinkSurcharge(w.name);
-    const cost = Math.round(wCost * step.pct / 100 * this.getLaborMultiplier());
+    const cost = Math.round(wCost * step.pct / 100 * this.getLaborMultiplier() * this.getScaleMultiplier());
     wm[key] = level - 1;
     sy.totalCost = Math.max(0, sy.totalCost - cost);
     sy.log = sy.log.filter(l => !(l.type === 'weapon-mod' && l.weaponIdx === weaponIdx && l.modType === modType && l.level === level));
@@ -11829,7 +11854,7 @@ const SHIPYARD = {
       '</div>' +
       '<div style="display:flex;justify-content:space-between;align-items:center;padding:8px 10px;background:var(--bg3);border:1px solid var(--gold-dim);border-radius:var(--radius-sm);margin-bottom:10px">' +
       '<div><div style="font-family:\'Exo 2\',monospace;font-size:13px;color:var(--text)">' + base.name + '</div>' +
-      '<div style="font-size:10px;color:var(--text-dim)">' + base.craft + '</div></div>' +
+      '<div style="font-size:10px;color:var(--text-dim)">' + base.craft + ' <span style="color:var(--gold);font-size:8px">Scale: ' + this.getScaleLabel() + '</span></div></div>' +
       priceHtml +
       '</div>';
     this.renderMods(sy, base, price);
