@@ -11179,8 +11179,7 @@ const SHIPYARD = {
     const table = this.MOD_TABLES[system];
     const next = modLevel < maxLevel ? table[modLevel] : null;
     const labor = this.getLaborMultiplier();
-    const scale = this.getScaleMultiplier();
-    const nextCost = next ? Math.round(price * next.pct / 100 * labor * scale) : 0;
+    const nextCost = next ? Math.round(price * next.pct / 100 * labor) : 0;
     const atMax = modLevel >= maxLevel;
     const diffColor = next ? (next.mishap >= 2 ? 'var(--red)' : 'var(--gold)') : '';
 
@@ -11706,7 +11705,7 @@ const SHIPYARD = {
     const step = table[level];
     if (!step) return;
     const price = this.getRetailPrice();
-    const cost = Math.round(price * step.pct / 100 * this.getLaborMultiplier() * this.getScaleMultiplier());
+    const cost = Math.round(price * step.pct / 100 * this.getLaborMultiplier());
     sy.mods[system] = level + 1;
     sy.totalCost += cost;
     sy.log.push({ type: 'mod', system, level: level + 1, cost, difficulty: step.difficulty, time: step.time, mishap: step.mishap, ts: Date.now() });
@@ -11722,7 +11721,7 @@ const SHIPYARD = {
     const table = this.MOD_TABLES[system];
     const step = table[level - 1];
     const price = this.getRetailPrice();
-    const cost = Math.round(price * step.pct / 100 * this.getLaborMultiplier() * this.getScaleMultiplier());
+    const cost = Math.round(price * step.pct / 100 * this.getLaborMultiplier());
     sy.mods[system] = level - 1;
     sy.totalCost = Math.max(0, sy.totalCost - cost);
     sy.log = sy.log.filter(l => !(l.type === 'mod' && l.system === system && l.level === level));
@@ -11769,7 +11768,7 @@ const SHIPYARD = {
     const perWeaponCost = (sy.weaponCosts && sy.weaponCosts[weaponIdx]) || this.matchWeaponCost(w.name, w.damage) || this.getRetailPrice();
     const weaponQty = this.parseWeaponQty(w.name);
     const wCost = perWeaponCost * weaponQty + this.getFireLinkSurcharge(w.name);
-    const cost = Math.round(wCost * step.pct / 100 * this.getLaborMultiplier() * this.getScaleMultiplier());
+    const cost = Math.round(wCost * step.pct / 100 * this.getLaborMultiplier());
     wm[key] = level + 1;
     sy.totalCost += cost;
     sy.log.push({ type: 'weapon-mod', weaponIdx, modType, level: level + 1, cost, difficulty: step.difficulty, time: step.time, mishap: step.mishap, ts: Date.now() });
@@ -11791,7 +11790,7 @@ const SHIPYARD = {
     const perWeaponCost = (sy.weaponCosts && sy.weaponCosts[weaponIdx]) || this.matchWeaponCost(w.name, w.damage) || this.getRetailPrice();
     const weaponQty = this.parseWeaponQty(w.name);
     const wCost = perWeaponCost * weaponQty + this.getFireLinkSurcharge(w.name);
-    const cost = Math.round(wCost * step.pct / 100 * this.getLaborMultiplier() * this.getScaleMultiplier());
+    const cost = Math.round(wCost * step.pct / 100 * this.getLaborMultiplier());
     wm[key] = level - 1;
     sy.totalCost = Math.max(0, sy.totalCost - cost);
     sy.log = sy.log.filter(l => !(l.type === 'weapon-mod' && l.weaponIdx === weaponIdx && l.modType === modType && l.level === level));
