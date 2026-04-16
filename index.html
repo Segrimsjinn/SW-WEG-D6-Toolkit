@@ -10978,20 +10978,52 @@ const SHIPYARD = {
     return m ? parseFloat(m[1]) : 0;
   },
 
-  getScaleMultiplier() {
-    if (!this.currentPin || !this.currentPin.shipyard) return 1;
+  SCALE_DEFAULTS: [
+    { max: 100, label: 'Starfighter', mult: 1 },
+    { max: 300, label: 'Corvette', mult: 2 },
+    { max: 600, label: 'Frigate', mult: 4 },
+    { max: 1500, label: 'Cruiser', mult: 8 },
+    { max: Infinity, label: 'Capital', mult: 16 }
+  ],
+
+  getScaleTier() {
+    if (!this.currentPin || !this.currentPin.shipyard) return this.SCALE_DEFAULTS[0];
     const length = this.parseLength(this.currentPin.shipyard.base.length || '');
-    if (length < 100) return 1;
-    if (length < 300) return 2;
-    if (length < 600) return 4;
-    if (length < 1500) return 8;
-    return 16;
+    for (const tier of this.SCALE_DEFAULTS) {
+      if (length < tier.max) return tier;
+    }
+    return this.SCALE_DEFAULTS[this.SCALE_DEFAULTS.length - 1];
+  },
+
+  getScaleMultiplier() {
+    if (!houseRulesEnabled()) return 1;
+    if (!this.currentPin || !this.currentPin.shipyard) return 1;
+    const sy = this.currentPin.shipyard;
+    if (sy.scaleOverride !== undefined) return sy.scaleOverride;
+    return this.getScaleTier().mult;
+  },
+
+  adjustScaleMultiplier(delta) {
+    if (!this.currentPin) return;
+    const sy = this.currentPin.shipyard;
+    const current = sy.scaleOverride !== undefined ? sy.scaleOverride : this.getScaleTier().mult;
+    sy.scaleOverride = Math.max(1, current + delta);
+    corkboardSave();
+    this.render();
+  },
+
+  resetScaleMultiplier() {
+    if (!this.currentPin) return;
+    delete this.currentPin.shipyard.scaleOverride;
+    corkboardSave();
+    this.render();
   },
 
   getScaleLabel() {
-    const m = this.getScaleMultiplier();
-    const labels = {1:'Starfighter (1x)',2:'Corvette (2x)',4:'Frigate (4x)',8:'Cruiser (8x)',16:'Capital (16x)'};
-    return labels[m] || m + 'x';
+    const tier = this.getScaleTier();
+    const mult = this.getScaleMultiplier();
+    const isOverride = this.currentPin && this.currentPin.shipyard && this.currentPin.shipyard.scaleOverride !== undefined;
+    return tier.label + ' (' + mult + 'x' + (isOverride ? ', custom' : '') + ')';
   },
 
   parsePrice(str) {
@@ -11853,7 +11885,12 @@ const SHIPYARD = {
       '</div>' +
       '<div style="display:flex;justify-content:space-between;align-items:center;padding:8px 10px;background:var(--bg3);border:1px solid var(--gold-dim);border-radius:var(--radius-sm);margin-bottom:10px">' +
       '<div><div style="font-family:\'Exo 2\',monospace;font-size:13px;color:var(--text)">' + base.name + '</div>' +
-      '<div style="font-size:10px;color:var(--text-dim)">' + base.craft + ' <span style="color:var(--gold);font-size:8px">Scale: ' + this.getScaleLabel() + '</span></div></div>' +
+      '<div style="font-size:10px;color:var(--text-dim)">' + base.craft + (houseRulesEnabled() ?
+        ' <span style="color:#ff9800;font-size:8px">Parts Scale: ' + this.getScaleLabel() +
+        ' <button class=\"ship-sort-btn\" onclick=\"SHIPYARD.adjustScaleMultiplier(-1)\" style=\"padding:0px 4px;font-size:9px;margin:0 1px\">-</button>' +
+        '<button class=\"ship-sort-btn\" onclick=\"SHIPYARD.adjustScaleMultiplier(1)\" style=\"padding:0px 4px;font-size:9px;margin:0 1px\">+</button>' +
+        '<button class=\"ship-sort-btn\" onclick=\"SHIPYARD.resetScaleMultiplier()\" style=\"padding:0px 4px;font-size:7px;margin:0 1px\">RST</button></span>'
+        : ' <span style="color:var(--text-dark);font-size:8px">' + (base.length || '') + '</span>') + '</div></div>' +
       priceHtml +
       '</div>';
     this.renderMods(sy, base, price);
