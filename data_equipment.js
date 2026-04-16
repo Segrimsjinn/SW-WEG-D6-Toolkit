@@ -3593,6 +3593,14 @@ const EQUIPMENT_DATA = [
   "source": "WEG40063 Galaxy Guide 6: Tramp Freighters p.40"
  },
  {
+  "name": "Ship Shields (4D)",
+  "category": "Ship Equipment",
+  "cost": "45,000",
+  "availability": "3, R",
+  "game_notes": "Heavy-duty combined particle and ray/energy shields. Shield code: 4D. Weight: 12 metric tons. Military-grade output typically found on assault yachts and heavy freighters. Requires Imperial permit.",
+  "source": "House Rule (extrapolated from WEG40063)"
+ },
+ {
   "name": "Taim & Bak Kd-3 Light Blaster Cannon",
   "category": "Ship Equipment",
   "cost": "1,000 (plus 30% Imperial permit fee)",
