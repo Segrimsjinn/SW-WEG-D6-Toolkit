@@ -1270,6 +1270,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
           <button class="jump-pill" onclick="jumpTo('ships-database')">Starships</button>
           <button class="jump-pill" onclick="jumpTo('ships-vehicles')">Vehicles</button>
           <button class="jump-pill" onclick="jumpTo('ships-equipment')">Ship Equipment</button>
+          <button class="jump-pill" onclick="jumpTo('ships-shipyard')">Shipyard</button>
           <button class="jump-pill" onclick="jumpTo('ships-builder')">Ship Builder</button>
         </div>
       </div>
@@ -1415,6 +1416,33 @@ color:var(--text-dim);min-width:35px;text-align:right;
           </div>
           <div id="shipEquipList" style="max-height:300px;overflow-y:auto;margin-bottom:8px"></div>
           <div id="shipEquipDetail" style="display:none"></div>
+        </div>
+      </div>
+
+      <!-- SHIPYARD -->
+      <div class="card" id="ships-shipyard" style="margin-top:8px">
+        <div class="card-title" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer" onclick="toggleShipyardPanel()">
+          <span>⟐ Shipyard <span id="shipyardDockedBadge" style="color:var(--text-dim);font-weight:400;font-size:10px;letter-spacing:1px"></span></span>
+          <span id="shipyardToggleIcon" style="font-size:14px;color:var(--text-dim);transition:transform .2s">▼</span>
+        </div>
+        <div id="shipyardPanel" style="display:none">
+          <div id="shipyardEmpty">
+            <div style="font-size:11px;color:var(--text-dim);margin-bottom:10px;line-height:1.6">
+              Dock a pinned ship to apply modifications using WEG rules — upgrade drives, hull, shields, weapons, or swap entire components from Ship Equipment. Pin a starship from the database first, then tap <span style="color:var(--gold)">🔧 DOCK</span> on its Corkboard card to bring it into the Shipyard.
+            </div>
+            <div style="text-align:center;padding:20px;color:var(--text-dark);font-style:italic;border:1px dashed var(--card-border);border-radius:var(--radius-sm)">No ship docked. Pin a ship from the Starship Database, then dock it from the Corkboard.</div>
+          </div>
+          <div id="shipyardDocked" style="display:none">
+            <div id="shipyardHeader"></div>
+            <div id="shipyardStats"></div>
+            <div id="shipyardMods"></div>
+            <div id="shipyardReplacements"></div>
+            <div id="shipyardCosts"></div>
+            <div id="shipyardLog"></div>
+            <div style="margin-top:12px;text-align:right">
+              <button onclick="SHIPYARD.undock()" style="padding:8px 16px;background:var(--bg3);color:var(--red);border:1px solid rgba(107,42,42,0.6);border-radius:var(--radius-sm);cursor:pointer;font-family:'Exo 2',monospace;font-size:10px;letter-spacing:1px">⟐ UNDOCK</button>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -3060,6 +3088,7 @@ const NAV_CARDS = [
   {id:'ships-database', label:'Starship Database', tab:'ships', group:'Ships'},
   {id:'ships-vehicles', label:'Vehicle Database', tab:'ships', group:'Ships'},
   {id:'ships-equipment', label:'Ship Equipment', tab:'ships', group:'Ships'},
+  {id:'ships-shipyard', label:'Shipyard', tab:'ships', group:'Ships'},
   {id:'ships-builder', label:'Ship Builder', tab:'ships', group:'Ships'},
   // Dice (gm)
   {id:'gm-dice', label:'D6 Dice Roller', tab:'gm', group:'Dice'},
@@ -8501,6 +8530,11 @@ function renderCorkboardCard(pin) {
   } else if (pin.type === 'notable-npc') {
     actions += '<button class="cb-btn" onclick="copyNotableNpcToCustom(\'' + idAttr.replace(/'/g, "\\'") + '\')" title="Save an editable copy as a Player Character">📋 SAVE A COPY</button>';
   }
+  if (pin.type === 'starship' || pin.type === 'built-ship') {
+    const docked = SHIPYARD.currentPin && SHIPYARD.currentPin.type === pin.type && SHIPYARD.currentPin.id === pin.id;
+    const dockLabel = docked ? '🔧 DOCKED' : (pin.shipyard ? '🔧 RE-DOCK' : '🔧 DOCK');
+    actions += '<button class="cb-btn" style="color:var(--cyan);border-color:var(--cyan)" onclick="SHIPYARD.dockFromCorkboard(\'' + pin.type + '\', \'' + idAttr.replace(/'/g, "\\'") + '\')">' + dockLabel + '</button>';
+  }
   actions += '<button class="cb-btn cb-btn-remove" onclick="corkboardRemove(\'' + pin.type + '\', \'' + idAttr.replace(/'/g, "\\'") + '\')">✕ REMOVE</button>';
   return '<div class="cb-card ' + cls + '">' +
     '<div class="cb-head"><span class="cb-title">' + escapeHtml(pin.title) + '</span><span class="cb-type">' + escapeHtml(typeLabel) + '</span></div>' +
@@ -10711,6 +10745,164 @@ const SB = {
     doc.save(safeName + '_Ship_Sheet.pdf');
   },
 };
+
+// ============================================================
+// SHIPYARD — Dock & Modify Pinned Ships
+// ============================================================
+const SHIPYARD = {
+  open: false,
+  currentPin: null,
+
+  MOD_TABLES: {
+    space: [
+      { level: 1, difficulty: 'Moderate', pct: 10, mishap: 1, time: '1 day' },
+      { level: 2, difficulty: 'Difficult', pct: 15, mishap: 1, time: '2 days' },
+      { level: 3, difficulty: 'Very Difficult', pct: 20, mishap: 2, time: '1 week' },
+      { level: 4, difficulty: 'Heroic', pct: 25, mishap: 3, time: '1 month' }
+    ],
+    maneuverability: [
+      { pips: 1, difficulty: 'Easy', pct: 5, mishap: 1, time: '6 hours' },
+      { pips: 2, difficulty: 'Moderate', pct: 10, mishap: 1, time: '1 day' },
+      { pips: 3, difficulty: 'Difficult', pct: 15, mishap: 1, time: '2 days' },
+      { pips: 4, difficulty: 'Very Difficult', pct: 20, mishap: 2, time: '1 week' },
+      { pips: 5, difficulty: 'Heroic', pct: 25, mishap: 3, time: '1 month' }
+    ],
+    hyperdrive: [
+      { from: 'x4', to: 'x3', difficulty: 'Easy', pct: 10, mishap: 1, time: '6 hours' },
+      { from: 'x3', to: 'x2', difficulty: 'Moderate', pct: 15, mishap: 1, time: '1 day' },
+      { from: 'x2', to: 'x1', difficulty: 'Very Difficult', pct: 25, mishap: 2, time: '1 week' },
+      { from: 'x1', to: 'x0.5', difficulty: 'Heroic', pct: 35, mishap: 3, time: '1 month' }
+    ],
+    hull: [
+      { pips: 1, difficulty: 'Moderate', pct: 10, mishap: 1, time: '1 day' },
+      { pips: 2, difficulty: 'Difficult', pct: 15, mishap: 1, time: '2 days' },
+      { pips: 3, difficulty: 'Very Difficult', pct: 20, mishap: 2, time: '1 week' },
+      { pips: 4, difficulty: 'Heroic', pct: 25, mishap: 3, time: '1 month' }
+    ],
+    shields: [
+      { pips: 1, difficulty: 'Easy', pct: 15, mishap: 1, time: '6 hours' },
+      { pips: 2, difficulty: 'Moderate', pct: 25, mishap: 1, time: '1 day' },
+      { pips: 3, difficulty: 'Difficult', pct: 30, mishap: 1, time: '2 days' },
+      { pips: 4, difficulty: 'Very Difficult', pct: 35, mishap: 2, time: '1 week' },
+      { pips: 5, difficulty: 'Heroic', pct: 50, mishap: 3, time: '1 month' }
+    ],
+    weaponDamage: [
+      { pips: 1, difficulty: 'Easy', pct: 15, mishap: 1, time: '6 hours' },
+      { pips: 2, difficulty: 'Moderate', pct: 25, mishap: 1, time: '1 day' },
+      { pips: 3, difficulty: 'Difficult', pct: 30, mishap: 1, time: '2 days' },
+      { pips: 4, difficulty: 'Very Difficult', pct: 35, mishap: 2, time: '1 week' },
+      { pips: 5, difficulty: 'Heroic', pct: 50, mishap: 3, time: '1 month' }
+    ],
+    weaponRange: [
+      { level: 1, difficulty: 'Easy', pct: 5, mishap: 1, time: '6 hours' },
+      { level: 2, difficulty: 'Moderate', pct: 10, mishap: 1, time: '1 day' },
+      { level: 3, difficulty: 'Difficult', pct: 15, mishap: 1, time: '2 days' },
+      { level: 4, difficulty: 'Very Difficult', pct: 20, mishap: 2, time: '1 week' },
+      { level: 5, difficulty: 'Heroic', pct: 25, mishap: 3, time: '1 month' }
+    ],
+    berthConversion: [
+      { label: 'Bunk Berth → 5T cargo', cost: 500, difficulty: 'Easy', time: '6 hours', cargoGain: 5, passLoss: 1 },
+      { label: 'Single Berth → 10T cargo', cost: 1000, difficulty: 'Easy', time: '1 day', cargoGain: 10, passLoss: 1 },
+      { label: '5T cargo → Bunk Berth', cost: 2000, difficulty: 'Moderate', time: '2 days', cargoGain: -5, passLoss: -1 },
+      { label: '10T cargo → Single Berth', cost: 5000, difficulty: 'Moderate', time: '3 days', cargoGain: -10, passLoss: -1 }
+    ]
+  },
+
+  parsePrice(str) {
+    if (!str) return 0;
+    const m = String(str).replace(/,/g, '').match(/(\d+)/);
+    return m ? parseInt(m[1]) : 0;
+  },
+
+  dockFromCorkboard(type, id) {
+    const pin = corkboardPins.find(p => p.type === type && p.id === id);
+    if (!pin) return alert('Ship not found on Corkboard.');
+    if (this.currentPin && this.currentPin.type === type && this.currentPin.id === id) {
+      switchTab('ships');
+      jumpTo('ships-shipyard');
+      return;
+    }
+    if (this.currentPin) {
+      if (!confirm('Undock ' + (this.currentPin.title || this.currentPin.id) + ' first?')) return;
+      this.undock();
+    }
+    const dupes = corkboardPins.filter(p => p.id === id && p.shipyard && !(p.type === type && p.id === id));
+    if (dupes.length) return alert('A ship named "' + id + '" is already in a shipyard berth.');
+    if (!pin.shipyard) {
+      pin.shipyard = {
+        base: this.snapshotBase(pin),
+        mods: { space: 0, maneuverability: 0, hull: 0, shields: 0, weapons: [] },
+        hyperdriveSteps: 0,
+        replacements: [],
+        berthChanges: [],
+        totalCost: 0,
+        log: [],
+        dockedAt: Date.now()
+      };
+      corkboardSave();
+    }
+    this.currentPin = pin;
+    this.open = true;
+    document.getElementById('shipyardPanel').style.display = 'block';
+    document.getElementById('shipyardToggleIcon').textContent = '▲';
+    this.render();
+    switchTab('ships');
+    jumpTo('ships-shipyard');
+  },
+
+  snapshotBase(pin) {
+    const d = pin.data || {};
+    return {
+      name: d.name || pin.title || pin.id,
+      craft: d.craft || '',
+      space: d.space || '',
+      maneuverability: d.maneuverability || '',
+      hyperdrive: d.hyperdrive || '',
+      hull: d.hull || '',
+      shields: d.shields || '',
+      price_new: d.price_new || '',
+      price_used: d.price_used || '',
+      cargo: d.cargo || '',
+      passengers: d.passengers || '',
+      weapons: d.weapons ? JSON.parse(JSON.stringify(d.weapons)) : []
+    };
+  },
+
+  undock() {
+    this.currentPin = null;
+    document.getElementById('shipyardDockedBadge').textContent = '';
+    document.getElementById('shipyardDocked').style.display = 'none';
+    document.getElementById('shipyardEmpty').style.display = 'block';
+  },
+
+  render() {
+    if (!this.currentPin || !this.currentPin.shipyard) return;
+    const sy = this.currentPin.shipyard;
+    const base = sy.base;
+    const price = this.parsePrice(base.price_new) || this.parsePrice(base.price_used) * 2;
+    document.getElementById('shipyardDockedBadge').textContent = '— ' + base.name;
+    document.getElementById('shipyardEmpty').style.display = 'none';
+    document.getElementById('shipyardDocked').style.display = 'block';
+    document.getElementById('shipyardHeader').innerHTML =
+      '<div style="display:flex;justify-content:space-between;align-items:center;padding:8px 10px;background:var(--bg3);border:1px solid var(--gold-dim);border-radius:var(--radius-sm);margin-bottom:10px">' +
+      '<div><div style="font-family:\'Exo 2\',monospace;font-size:14px;color:var(--gold);font-weight:700">' + base.name + '</div>' +
+      '<div style="font-size:10px;color:var(--text-dim)">' + base.craft + '</div></div>' +
+      '<div style="text-align:right;font-family:\'IBM Plex Mono\',monospace;font-size:11px"><div style="color:var(--text-dim)">Retail</div><div style="color:var(--gold)">' + (price ? price.toLocaleString() + ' cr' : 'Unknown') + '</div></div>' +
+      '</div>';
+    document.getElementById('shipyardStats').innerHTML = '<div style="font-size:10px;color:var(--text-dim);padding:8px;text-align:center;font-style:italic">Modification controls coming soon — Phase 2</div>';
+    document.getElementById('shipyardCosts').innerHTML =
+      '<div style="display:flex;gap:8px;flex-wrap:wrap;padding:8px 10px;background:var(--bg);border:1px solid var(--gold-dim);border-radius:var(--radius-sm);margin-top:10px">' +
+      '<div style="flex:1;text-align:center"><div style="font-family:\'Exo 2\',sans-serif;font-size:7px;color:var(--text-dim);letter-spacing:1px">MODS TOTAL</div><div style="font-family:\'IBM Plex Mono\',monospace;font-size:16px;color:var(--gold);font-weight:700">' + sy.totalCost.toLocaleString() + ' cr</div></div>' +
+      '</div>';
+  }
+};
+
+function toggleShipyardPanel() {
+  SHIPYARD.open = !SHIPYARD.open;
+  document.getElementById('shipyardPanel').style.display = SHIPYARD.open ? 'block' : 'none';
+  document.getElementById('shipyardToggleIcon').textContent = SHIPYARD.open ? '▲' : '▼';
+  if (SHIPYARD.open && SHIPYARD.currentPin) SHIPYARD.render();
+}
 
 function toggleShipBuilder() {
   SB.open = !SB.open;
