@@ -10879,7 +10879,53 @@ const SHIPYARD = {
     };
   },
 
+  setCustomName(name) {
+    if (!this.currentPin || !this.currentPin.shipyard) return;
+    this.currentPin.shipyard.customName = name.trim();
+    corkboardSave();
+  },
+
+  buildModifiedStats() {
+    if (!this.currentPin || !this.currentPin.shipyard) return null;
+    const sy = this.currentPin.shipyard;
+    const base = sy.base;
+    const stats = {};
+    stats.space = String((parseInt(base.space) || 0) + (sy.mods.space || 0));
+    stats.maneuverability = pipsToD6(d6ToPips(base.maneuverability) + (sy.mods.maneuverability || 0));
+    const hyperIdx = this.hyperLadderIndex(base.hyperdrive);
+    stats.hyperdrive = hyperIdx >= 0 && hyperIdx + (sy.mods.hyperdrive || 0) < this.HYPER_LADDER.length
+      ? this.HYPER_LADDER[hyperIdx + (sy.mods.hyperdrive || 0)] : (base.hyperdrive || '');
+    stats.hull = pipsToD6(d6ToPips(base.hull) + (sy.mods.hull || 0));
+    stats.shields = pipsToD6(d6ToPips(base.shields) + (sy.mods.shields || 0));
+    stats.weapons = (base.weapons || []).map((w, i) => {
+      const wm = sy.mods.weapons && sy.mods.weapons[i] ? sy.mods.weapons[i] : {};
+      return Object.assign({}, w, { damage: pipsToD6(d6ToPips(w.damage) + (wm.damagePips || 0)) });
+    });
+    return stats;
+  },
+
   undock() {
+    if (!this.currentPin) return;
+    const sy = this.currentPin.shipyard;
+    const hasAnyMods = sy && (sy.totalCost > 0);
+    if (hasAnyMods) {
+      const name = sy.customName || '';
+      if (!name) {
+        alert('Name your ship before undocking to save your modifications.');
+        const input = document.getElementById('shipyardNameInput');
+        if (input) input.focus();
+        return;
+      }
+      this.currentPin.title = name;
+      this.currentPin.subtitle = sy.base.name + ' (Modified)';
+      const modStats = this.buildModifiedStats();
+      if (modStats) {
+        if (!this.currentPin.data) this.currentPin.data = {};
+        Object.assign(this.currentPin.data, this.resolveShipData(this.currentPin), modStats);
+      }
+      corkboardSave();
+      corkboardRender();
+    }
     this.currentPin = null;
     document.getElementById('shipyardDockedBadge').textContent = '';
     document.getElementById('shipyardDocked').style.display = 'none';
@@ -11130,9 +11176,16 @@ const SHIPYARD = {
         '<div style="color:var(--red)">No price data</div></div>';
     }
 
+    const shipName = sy.customName || '';
     document.getElementById('shipyardHeader').innerHTML =
+      '<div style="display:flex;align-items:center;gap:8px;padding:6px 10px;margin-bottom:4px">' +
+      '<label style="font-family:\'Exo 2\',monospace;font-size:8px;color:var(--gold);letter-spacing:1px;white-space:nowrap">SHIP NAME</label>' +
+      '<input id="shipyardNameInput" type="text" value="' + (shipName ? shipName.replace(/"/g,'&quot;') : '') + '" placeholder="Name your ship to save changes on undock" ' +
+      'onchange="SHIPYARD.setCustomName(this.value)" ' +
+      'style="flex:1;background:var(--bg);border:1px solid var(--card-border);border-radius:var(--radius-sm);padding:6px 10px;color:var(--text);font-family:\'IBM Plex Mono\',monospace;font-size:12px">' +
+      '</div>' +
       '<div style="display:flex;justify-content:space-between;align-items:center;padding:8px 10px;background:var(--bg3);border:1px solid var(--gold-dim);border-radius:var(--radius-sm);margin-bottom:10px">' +
-      '<div><div style="font-family:\'Exo 2\',monospace;font-size:14px;color:var(--gold);font-weight:700">' + base.name + '</div>' +
+      '<div><div style="font-family:\'Exo 2\',monospace;font-size:13px;color:var(--text)">' + base.name + '</div>' +
       '<div style="font-size:10px;color:var(--text-dim)">' + base.craft + '</div></div>' +
       priceHtml +
       '</div>';
