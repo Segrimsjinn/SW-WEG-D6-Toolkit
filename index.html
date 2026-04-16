@@ -2354,12 +2354,20 @@ color:var(--text-dim);min-width:35px;text-align:right;
             </div>
             <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--cyan);letter-spacing:1px;margin:8px 0 3px">HOUSE RULES — BERTH CONVERSION</div>
             <div style="font-size:10px;color:var(--text-dim);line-height:1.9">
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Bunk Berth → 5T cargo</span><span>Easy · 500 cr · 6 hours</span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Single Berth → 10T cargo</span><span>Easy · 1,000 cr · 1 day</span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>5T cargo → Bunk Berth</span><span>Moderate · 2,000 cr · 2 days</span></div>
-              <div style="display:flex;justify-content:space-between;padding:1px 0"><span>10T cargo → Single Berth</span><span>Moderate · 5,000 cr · 3 days</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Strip Double Bunk → +2T</span><span>Easy · 200 cr · 3 hours</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Strip Single Cabin → +5T</span><span>Easy · 500 cr · 6 hours</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Strip Suite → +10T</span><span>Easy · 1,000 cr · 1 day</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Install Double Bunk (−2T)</span><span>Moderate · 800 cr · 1 day</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Install Single Cabin (−5T)</span><span>Moderate · 2,000 cr · 2 days</span></div>
+              <div style="display:flex;justify-content:space-between;padding:1px 0"><span>Install Suite (−10T)</span><span>Moderate · 5,000 cr · 3 days</span></div>
             </div>
-            <div style="font-size:7px;color:var(--text-dark);margin-top:3px;font-style:italic">Tearout is cheap (removing bunks, disconnecting life support). Adding berths costs more (installing plumbing, wiring, partitions). Labor multiplier applies if hiring out.</div>
+            <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--red);letter-spacing:1px;margin:6px 0 3px">BRIG CONVERSION (25% of install cost)</div>
+            <div style="font-size:10px;color:var(--text-dim);line-height:1.9">
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Bunk ↔ Brig Bunk</span><span>Easy · 200 cr · 3 hours</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Cabin ↔ Brig Cabin</span><span>Easy · 500 cr · 6 hours</span></div>
+              <div style="display:flex;justify-content:space-between;padding:1px 0"><span>Suite ↔ Brig Suite</span><span>Easy · 1,250 cr · 1 day</span></div>
+            </div>
+            <div style="font-size:7px;color:var(--text-dark);margin-top:3px;font-style:italic">Double Bunk: stacked bunks, shared refresher (2T). Single Cabin: private bunk, desk, shared refresher (5T). Suite: private refresher, sitting area, viewport (10T). Brig variants add reinforced walls, locked door, and basic monitoring. Labor multiplier applies if hiring out.</div>
           </div>
         </div>
         <div style="font-size:8px;color:var(--text-dim);margin-top:6px;font-style:italic">Sources: REUP (Revised Expanded Updated) &amp; WEG40063 Galaxy Guide 6: Tramp Freighters Ch.8 · Berth conversion: House Rule</div>
@@ -10878,12 +10886,20 @@ const SHIPYARD = {
       { level: 4, difficulty: 'Very Difficult', pct: 20, mishap: 2, time: '1 week' },
       { level: 5, difficulty: 'Heroic', pct: 25, mishap: 3, time: '1 month' }
     ],
-    berthConversion: [
-      { label: 'Bunk Berth → 5T cargo', cost: 500, difficulty: 'Easy', time: '6 hours', cargoGain: 5, passLoss: 1 },
-      { label: 'Single Berth → 10T cargo', cost: 1000, difficulty: 'Easy', time: '1 day', cargoGain: 10, passLoss: 1 },
-      { label: '5T cargo → Bunk Berth', cost: 2000, difficulty: 'Moderate', time: '2 days', cargoGain: -5, passLoss: -1 },
-      { label: '10T cargo → Single Berth', cost: 5000, difficulty: 'Moderate', time: '3 days', cargoGain: -10, passLoss: -1 }
-    ]
+    berthConversion: {
+      stripBunk:    { label: 'Strip Double Bunk → +2T',    cost: 200,  difficulty: 'Easy', time: '3 hours', cargo: 2 },
+      stripSingle:  { label: 'Strip Single Cabin → +5T',   cost: 500,  difficulty: 'Easy', time: '6 hours', cargo: 5 },
+      stripSuite:   { label: 'Strip Suite → +10T',         cost: 1000, difficulty: 'Easy', time: '1 day',   cargo: 10 },
+      addBunk:      { label: 'Install Double Bunk (−2T)',   cost: 800,  difficulty: 'Moderate', time: '1 day',   cargo: -2 },
+      addSingle:    { label: 'Install Single Cabin (−5T)',  cost: 2000, difficulty: 'Moderate', time: '2 days',  cargo: -5 },
+      addSuite:     { label: 'Install Suite (−10T)',        cost: 5000, difficulty: 'Moderate', time: '3 days',  cargo: -10 },
+      toBrigBunk:   { label: 'Bunk → Brig Bunk',           cost: 200,  difficulty: 'Easy', time: '3 hours', cargo: 0 },
+      toBrigSingle: { label: 'Cabin → Brig Cabin',         cost: 500,  difficulty: 'Easy', time: '6 hours', cargo: 0 },
+      toBrigSuite:  { label: 'Suite → Brig Suite',         cost: 1250, difficulty: 'Easy', time: '1 day',   cargo: 0 },
+      toPassBunk:   { label: 'Brig Bunk → Bunk',           cost: 200,  difficulty: 'Easy', time: '3 hours', cargo: 0 },
+      toPassSingle: { label: 'Brig Cabin → Cabin',         cost: 500,  difficulty: 'Easy', time: '6 hours', cargo: 0 },
+      toPassSuite:  { label: 'Brig Suite → Suite',         cost: 1250, difficulty: 'Easy', time: '1 day',   cargo: 0 }
+    }
   },
 
   _equipWeaponCache: null,
@@ -11038,14 +11054,25 @@ const SHIPYARD = {
     });
     const totalWeight = (sy.replacements || []).reduce((s, r) => s + (r.weight || 0), 0);
     const bc = sy.berthChanges || {};
-    const berthCargo = ((bc.bunksRemoved || 0) * 5) + ((bc.singlesRemoved || 0) * 10) - ((bc.bunksAdded || 0) * 5) - ((bc.singlesAdded || 0) * 10);
-    const berthPass = -(bc.bunksRemoved || 0) - (bc.singlesRemoved || 0) + (bc.bunksAdded || 0) + (bc.singlesAdded || 0);
+    const bt = this.MOD_TABLES.berthConversion;
+    let berthCargo = 0;
+    for (const [key, count] of Object.entries(bc)) {
+      if (!count || !bt[key]) continue;
+      berthCargo += bt[key].cargo * count;
+    }
+    const strippedPass = (bc.stripBunk||0) + (bc.stripSingle||0) + (bc.stripSuite||0);
+    const addedPass = (bc.addBunk||0) + (bc.addSingle||0) + (bc.addSuite||0);
+    const berthPass = addedPass - strippedPass;
+    const brigCells = (bc.toBrigBunk||0) + (bc.toBrigSingle||0) + (bc.toBrigSuite||0) - (bc.toPassBunk||0) - (bc.toPassSingle||0) - (bc.toPassSuite||0);
     if (totalWeight || berthCargo) {
       const baseCargo = this.parseCargoTons(base.cargo);
       stats.cargo = Math.max(0, baseCargo - totalWeight + berthCargo) + ' metric tons';
     }
     if (berthPass) {
       stats.passengers = String(Math.max(0, (parseInt(base.passengers) || 0) + berthPass));
+    }
+    if (brigCells > 0) {
+      stats.prisoners = String(brigCells);
     }
     return stats;
   },
@@ -11312,67 +11339,84 @@ const SHIPYARD = {
   },
 
   renderBerthConversion(sy, base) {
-    if (!sy.berthChanges) sy.berthChanges = { bunksRemoved: 0, singlesRemoved: 0, bunksAdded: 0, singlesAdded: 0 };
+    const defaults = { stripBunk:0, stripSingle:0, stripSuite:0, addBunk:0, addSingle:0, addSuite:0, toBrigBunk:0, toBrigSingle:0, toBrigSuite:0, toPassBunk:0, toPassSingle:0, toPassSuite:0 };
+    if (!sy.berthChanges) sy.berthChanges = Object.assign({}, defaults);
     const bc = sy.berthChanges;
     const basePass = parseInt(base.passengers) || 0;
-    if (!basePass && !bc.bunksAdded && !bc.singlesAdded && !bc.bunksRemoved && !bc.singlesRemoved) {
+    const hasAny = Object.values(bc).some(v => v > 0);
+    if (!basePass && !hasAny) {
       document.getElementById('shipyardLog').innerHTML = '';
       return;
     }
     const baseCargo = this.parseCargoTons(base.cargo);
     const totalReplacementWeight = (sy.replacements || []).reduce((s, r) => s + (r.weight || 0), 0);
-    const berthCargo = (bc.bunksRemoved * 5) + (bc.singlesRemoved * 10) - (bc.bunksAdded * 5) - (bc.singlesAdded * 10);
-    const berthPass = -bc.bunksRemoved - bc.singlesRemoved + bc.bunksAdded + bc.singlesAdded;
-    const berthCost = (bc.bunksRemoved * 500) + (bc.singlesRemoved * 1000) + (bc.bunksAdded * 2000) + (bc.singlesAdded * 5000);
-    const curPass = Math.max(0, basePass + berthPass);
+    const bt = this.MOD_TABLES.berthConversion;
+
+    let berthCargo = 0, berthCost = 0;
+    for (const [key, count] of Object.entries(bc)) {
+      if (!count || !bt[key]) continue;
+      berthCargo += bt[key].cargo * count;
+      berthCost += bt[key].cost * count;
+    }
+
+    const strippedPass = (bc.stripBunk||0) + (bc.stripSingle||0) + (bc.stripSuite||0);
+    const addedPass = (bc.addBunk||0) + (bc.addSingle||0) + (bc.addSuite||0);
+    const curPassengers = Math.max(0, basePass - strippedPass + addedPass);
+    const brigCells = (bc.toBrigBunk||0) + (bc.toBrigSingle||0) + (bc.toBrigSuite||0) - (bc.toPassBunk||0) - (bc.toPassSingle||0) - (bc.toPassSuite||0);
     const curCargo = Math.max(0, baseCargo - totalReplacementWeight + berthCargo);
-    const maxRemovable = basePass + bc.bunksAdded + bc.singlesAdded - bc.bunksRemoved - bc.singlesRemoved;
+    const maxRemovable = basePass + addedPass - strippedPass;
 
     let html = '<div style="font-family:\'Exo 2\',monospace;font-size:7px;color:var(--cyan);letter-spacing:1px;margin:10px 0 4px">HOUSE RULE — BERTH CONVERSION</div>';
     html += '<div style="border:1px solid var(--card-border);border-radius:var(--radius-sm);overflow:hidden">';
 
+    // Summary bar
     html += '<div style="display:flex;align-items:center;gap:8px;padding:6px 8px;border-bottom:1px solid var(--card-border);flex-wrap:wrap">';
-    html += '<div style="min-width:90px;font-family:\'Exo 2\',monospace;font-size:9px;color:var(--text-dim)">PASSENGERS</div>';
-    html += '<span style="font-family:\'IBM Plex Mono\',monospace;font-size:11px;color:var(--text-dim)">' + basePass + '</span>';
+    html += '<div style="font-family:\'Exo 2\',monospace;font-size:9px;color:var(--text-dim)">BERTHS</div>';
+    html += '<span style="font-family:\'IBM Plex Mono\',monospace;font-size:11px;color:var(--text-dim)">' + basePass + ' pass</span>';
     html += '<span style="color:var(--text-dark)">→</span>';
-    html += '<span style="font-family:\'IBM Plex Mono\',monospace;font-size:11px;color:' + (curPass !== basePass ? 'var(--cyan);font-weight:700' : 'var(--text-dim)') + '">' + curPass + '</span>';
+    html += '<span style="font-family:\'IBM Plex Mono\',monospace;font-size:11px;color:' + (curPassengers !== basePass ? 'var(--cyan);font-weight:700' : 'var(--text-dim)') + '">' + curPassengers + ' pass</span>';
+    if (brigCells > 0) html += '<span style="font-family:\'IBM Plex Mono\',monospace;font-size:11px;color:var(--red);font-weight:700">+ ' + brigCells + ' brig</span>';
     html += '<div style="flex:1"></div>';
     html += '<span style="font-family:\'IBM Plex Mono\',monospace;font-size:9px;color:var(--text-dim)">Cargo: ' + curCargo + ' mt</span>';
     html += '</div>';
 
-    // Remove berths (gain cargo)
-    html += '<div style="display:flex;align-items:center;gap:6px;padding:4px 8px;border-bottom:1px solid var(--card-border);font-size:9px;flex-wrap:wrap">';
-    html += '<span style="color:var(--text-dim);min-width:150px">Strip Bunk Berth → +5T</span>';
-    html += '<span style="color:var(--green)">500 cr · Easy · 6 hrs</span>';
-    html += '<span style="margin-left:auto;color:var(--text-dim)">×' + bc.bunksRemoved + '</span>';
-    html += '<button class="ship-sort-btn" onclick="SHIPYARD.adjustBerth(\'bunksRemoved\',-1)" style="padding:1px 6px;font-size:10px;color:var(--red)"' + (bc.bunksRemoved <= 0 ? ' disabled' : '') + '>−</button>';
-    html += '<button class="ship-sort-btn" onclick="SHIPYARD.adjustBerth(\'bunksRemoved\',1)" style="padding:1px 6px;font-size:10px;color:var(--green)"' + (maxRemovable <= 0 ? ' disabled' : '') + '>+</button>';
-    html += '</div>';
+    // Section header helper
+    const sectionHead = (label) => '<div style="font-size:8px;color:var(--gold);padding:4px 8px;background:var(--bg);border-bottom:1px solid var(--card-border);letter-spacing:1px;font-family:\'Exo 2\',monospace">' + label + '</div>';
 
-    html += '<div style="display:flex;align-items:center;gap:6px;padding:4px 8px;border-bottom:1px solid var(--card-border);font-size:9px;flex-wrap:wrap">';
-    html += '<span style="color:var(--text-dim);min-width:150px">Strip Single Berth → +10T</span>';
-    html += '<span style="color:var(--green)">1,000 cr · Easy · 1 day</span>';
-    html += '<span style="margin-left:auto;color:var(--text-dim)">×' + bc.singlesRemoved + '</span>';
-    html += '<button class="ship-sort-btn" onclick="SHIPYARD.adjustBerth(\'singlesRemoved\',-1)" style="padding:1px 6px;font-size:10px;color:var(--red)"' + (bc.singlesRemoved <= 0 ? ' disabled' : '') + '>−</button>';
-    html += '<button class="ship-sort-btn" onclick="SHIPYARD.adjustBerth(\'singlesRemoved\',1)" style="padding:1px 6px;font-size:10px;color:var(--green)"' + (maxRemovable <= 0 ? ' disabled' : '') + '>+</button>';
-    html += '</div>';
+    const renderRow = (key, canDo) => {
+      const t = bt[key];
+      const count = bc[key] || 0;
+      const isBrig = key.startsWith('toBrig') || key.startsWith('toPass');
+      const isStrip = key.startsWith('strip');
+      const color = isStrip ? 'var(--green)' : isBrig ? 'var(--red)' : 'var(--gold)';
+      html += '<div style="display:flex;align-items:center;gap:6px;padding:3px 8px;border-bottom:1px solid var(--card-border);font-size:9px;flex-wrap:wrap">';
+      html += '<span style="color:var(--text-dim);min-width:150px">' + t.label + '</span>';
+      html += '<span style="color:' + color + '">' + t.cost.toLocaleString() + ' cr · ' + t.difficulty + ' · ' + t.time + '</span>';
+      html += '<span style="margin-left:auto;color:var(--text-dim)">×' + count + '</span>';
+      html += '<button class="ship-sort-btn" onclick="SHIPYARD.adjustBerth(\'' + key + '\',-1)" style="padding:1px 6px;font-size:10px;color:var(--red)"' + (count <= 0 ? ' disabled' : '') + '>−</button>';
+      html += '<button class="ship-sort-btn" onclick="SHIPYARD.adjustBerth(\'' + key + '\',1)" style="padding:1px 6px;font-size:10px;color:var(--green)"' + (!canDo ? ' disabled' : '') + '>+</button>';
+      html += '</div>';
+    };
 
-    // Add berths (lose cargo)
-    html += '<div style="display:flex;align-items:center;gap:6px;padding:4px 8px;border-bottom:1px solid var(--card-border);font-size:9px;flex-wrap:wrap">';
-    html += '<span style="color:var(--text-dim);min-width:150px">Install Bunk Berth (−5T)</span>';
-    html += '<span style="color:var(--gold)">2,000 cr · Moderate · 2 days</span>';
-    html += '<span style="margin-left:auto;color:var(--text-dim)">×' + bc.bunksAdded + '</span>';
-    html += '<button class="ship-sort-btn" onclick="SHIPYARD.adjustBerth(\'bunksAdded\',-1)" style="padding:1px 6px;font-size:10px;color:var(--red)"' + (bc.bunksAdded <= 0 ? ' disabled' : '') + '>−</button>';
-    html += '<button class="ship-sort-btn" onclick="SHIPYARD.adjustBerth(\'bunksAdded\',1)" style="padding:1px 6px;font-size:10px;color:var(--green)"' + (curCargo < 5 ? ' disabled' : '') + '>+</button>';
-    html += '</div>';
+    html += sectionHead('STRIP BERTHS → CARGO');
+    renderRow('stripBunk', maxRemovable > 0);
+    renderRow('stripSingle', maxRemovable > 0);
+    renderRow('stripSuite', maxRemovable > 0);
 
-    html += '<div style="display:flex;align-items:center;gap:6px;padding:4px 8px;font-size:9px;flex-wrap:wrap">';
-    html += '<span style="color:var(--text-dim);min-width:150px">Install Single Berth (−10T)</span>';
-    html += '<span style="color:var(--gold)">5,000 cr · Moderate · 3 days</span>';
-    html += '<span style="margin-left:auto;color:var(--text-dim)">×' + bc.singlesAdded + '</span>';
-    html += '<button class="ship-sort-btn" onclick="SHIPYARD.adjustBerth(\'singlesAdded\',-1)" style="padding:1px 6px;font-size:10px;color:var(--red)"' + (bc.singlesAdded <= 0 ? ' disabled' : '') + '>−</button>';
-    html += '<button class="ship-sort-btn" onclick="SHIPYARD.adjustBerth(\'singlesAdded\',1)" style="padding:1px 6px;font-size:10px;color:var(--green)"' + (curCargo < 10 ? ' disabled' : '') + '>+</button>';
-    html += '</div>';
+    html += sectionHead('INSTALL BERTHS ← CARGO');
+    renderRow('addBunk', curCargo >= 2);
+    renderRow('addSingle', curCargo >= 5);
+    renderRow('addSuite', curCargo >= 10);
+
+    html += sectionHead('CONVERT TO BRIG (25% of install)');
+    renderRow('toBrigBunk', curPassengers > brigCells);
+    renderRow('toBrigSingle', curPassengers > brigCells);
+    renderRow('toBrigSuite', curPassengers > brigCells);
+
+    html += sectionHead('CONVERT BRIG → PASSENGER (25% of install)');
+    renderRow('toPassBunk', brigCells > 0);
+    renderRow('toPassSingle', brigCells > 0);
+    renderRow('toPassSuite', brigCells > 0);
 
     html += '</div>';
     if (berthCost) html += '<div style="font-size:9px;color:var(--text-dim);margin-top:4px">Berth conversion cost: <span style="color:var(--gold)">' + berthCost.toLocaleString() + ' cr</span></div>';
@@ -11383,10 +11427,12 @@ const SHIPYARD = {
   adjustBerth(key, delta) {
     if (!this.currentPin) return;
     const sy = this.currentPin.shipyard;
-    if (!sy.berthChanges) sy.berthChanges = { bunksRemoved: 0, singlesRemoved: 0, bunksAdded: 0, singlesAdded: 0 };
-    const oldCost = (sy.berthChanges.bunksRemoved * 500) + (sy.berthChanges.singlesRemoved * 1000) + (sy.berthChanges.bunksAdded * 2000) + (sy.berthChanges.singlesAdded * 5000);
+    const defaults = { stripBunk:0, stripSingle:0, stripSuite:0, addBunk:0, addSingle:0, addSuite:0, toBrigBunk:0, toBrigSingle:0, toBrigSuite:0, toPassBunk:0, toPassSingle:0, toPassSuite:0 };
+    if (!sy.berthChanges) sy.berthChanges = Object.assign({}, defaults);
+    const bt = this.MOD_TABLES.berthConversion;
+    const oldCost = Object.entries(sy.berthChanges).reduce((s,[k,v]) => s + (bt[k] ? bt[k].cost * v : 0), 0);
     sy.berthChanges[key] = Math.max(0, (sy.berthChanges[key] || 0) + delta);
-    const newCost = (sy.berthChanges.bunksRemoved * 500) + (sy.berthChanges.singlesRemoved * 1000) + (sy.berthChanges.bunksAdded * 2000) + (sy.berthChanges.singlesAdded * 5000);
+    const newCost = Object.entries(sy.berthChanges).reduce((s,[k,v]) => s + (bt[k] ? bt[k].cost * v : 0), 0);
     sy.totalCost += (newCost - oldCost);
     corkboardSave();
     this.render();
