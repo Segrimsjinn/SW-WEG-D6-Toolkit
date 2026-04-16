@@ -10872,6 +10872,37 @@ const SHIPYARD = {
     ]
   },
 
+  _equipWeaponCache: null,
+  getEquipWeapons() {
+    if (this._equipWeaponCache) return this._equipWeaponCache;
+    this._equipWeaponCache = (typeof EQUIPMENT_DATA !== 'undefined' ? EQUIPMENT_DATA : [])
+      .filter(e => e.category === 'Ship Equipment' && e.game_notes && /Damage:|Fire Control|Cannon|Laser|Ion|Torpedo|Missile|Turbolaser|Tractor|Blaster/i.test(e.game_notes))
+      .map(e => {
+        const dm = e.game_notes.match(/Damage:\s*(\d+D[+\d]*)/);
+        return { name: e.name, cost: e.cost || '', damage: dm ? dm[1] : '', raw: e };
+      });
+    return this._equipWeaponCache;
+  },
+
+  matchWeaponCost(weaponName, weaponDamage) {
+    const equips = this.getEquipWeapons();
+    if (!equips.length) return 0;
+    const clean = String(weaponName).replace(/^\d+\s+/,'').replace(/\s*\(.*?\)\s*/g,'').replace(/fire[- ]?linked|fire separately/gi,'').trim().toLowerCase();
+    let best = null, bestScore = 0;
+    for (const eq of equips) {
+      const eqClean = eq.name.toLowerCase();
+      let score = 0;
+      const words = clean.split(/\s+/);
+      for (const w of words) { if (eqClean.includes(w) && w.length > 2) score += 1; }
+      if (weaponDamage && eq.damage === weaponDamage) score += 2;
+      if (eqClean === clean) score += 5;
+      if (eqClean.includes(clean) || clean.includes(eqClean)) score += 3;
+      if (score > bestScore) { bestScore = score; best = eq; }
+    }
+    if (best && bestScore >= 2) return this.parsePrice(best.cost);
+    return 0;
+  },
+
   parsePrice(str) {
     if (!str) return 0;
     const m = String(str).replace(/,/g, '').match(/(\d+)/);
@@ -11115,13 +11146,25 @@ const SHIPYARD = {
       base.weapons.forEach((w, i) => {
         if (!sy.mods.weapons[i]) sy.mods.weapons[i] = { damagePips: 0, fcPips: 0, rangePct: 0 };
         const wm = sy.mods.weapons[i];
-        const wCost = this.parsePrice(w.cost) || 0;
+        if (!sy.weaponCosts) sy.weaponCosts = {};
+        const savedWCost = sy.weaponCosts[i];
+        const matchedCost = this.matchWeaponCost(w.name, w.damage);
+        const wCost = savedWCost || matchedCost || 0;
+        if (!savedWCost && matchedCost) sy.weaponCosts[i] = matchedCost;
         const usePrice = wCost || price;
+        const usingShipPrice = !wCost;
         const baseDmgPips = d6ToPips(w.damage);
         const curDmgPips = baseDmgPips + (wm.damagePips || 0);
         const baseFCPips = d6ToPips(w.fire_control);
         const curFCPips = baseFCPips + (wm.fcPips || 0);
-        html += '<div style="font-size:9px;color:var(--text);padding:4px 8px;background:var(--bg3);border-bottom:1px solid var(--card-border)">' + (w.name || 'Weapon ' + (i+1)) + ' <span style="color:var(--text-dim);font-size:8px">(Dmg ' + (w.damage || '?') + ', FC ' + (w.fire_control || '0D') + ')</span></div>';
+        const costLabel = usingShipPrice ? '<span style="color:var(--red);font-size:7px"> (using ship price — no weapon cost found)</span>' :
+          '<span style="color:var(--text-dark);font-size:7px"> weapon cost: ' + usePrice.toLocaleString() + ' cr</span>';
+        html += '<div style="display:flex;justify-content:space-between;align-items:center;font-size:9px;color:var(--text);padding:4px 8px;background:var(--bg3);border-bottom:1px solid var(--card-border)">' +
+          '<span>' + (w.name || 'Weapon ' + (i+1)) + ' <span style="color:var(--text-dim);font-size:8px">(Dmg ' + (w.damage || '?') + ', FC ' + (w.fire_control || '0D') + ')</span></span>' +
+          '<span style="display:flex;align-items:center;gap:3px">' + costLabel +
+          ' <button class="ship-sort-btn" onclick="SHIPYARD.adjustWeaponCost(' + i + ',-500)" style="padding:1px 5px;font-size:9px">▼</button>' +
+          '<button class="ship-sort-btn" onclick="SHIPYARD.adjustWeaponCost(' + i + ',500)" style="padding:1px 5px;font-size:9px">▲</button>' +
+          '</span></div>';
         html += this.renderModRow('DMG', w.damage || '0D', pipsToD6(curDmgPips), wm.damagePips || 0, 5, 'weaponDamage', usePrice).replace(
           /SHIPYARD\.applyMod\('weaponDamage'\)/g, 'SHIPYARD.applyWeaponMod(' + i + ',\'damage\')'
         ).replace(
@@ -11174,6 +11217,16 @@ const SHIPYARD = {
     this.render();
   },
 
+  adjustWeaponCost(weaponIdx, delta) {
+    if (!this.currentPin || !this.currentPin.shipyard) return;
+    const sy = this.currentPin.shipyard;
+    if (!sy.weaponCosts) sy.weaponCosts = {};
+    const current = sy.weaponCosts[weaponIdx] || 0;
+    sy.weaponCosts[weaponIdx] = Math.max(100, current + delta);
+    corkboardSave();
+    this.render();
+  },
+
   applyWeaponMod(weaponIdx, modType) {
     if (!this.currentPin) return;
     const sy = this.currentPin.shipyard;
@@ -11185,7 +11238,7 @@ const SHIPYARD = {
     if (level >= 5) return;
     const step = table[level];
     const w = sy.base.weapons[weaponIdx];
-    const wCost = this.parsePrice(w.cost) || this.getRetailPrice();
+    const wCost = (sy.weaponCosts && sy.weaponCosts[weaponIdx]) || this.matchWeaponCost(w.name, w.damage) || this.getRetailPrice();
     const cost = Math.round(wCost * step.pct / 100);
     wm[key] = level + 1;
     sy.totalCost += cost;
@@ -11205,7 +11258,7 @@ const SHIPYARD = {
     if (level <= 0) return;
     const step = table[level - 1];
     const w = sy.base.weapons[weaponIdx];
-    const wCost = this.parsePrice(w.cost) || this.getRetailPrice();
+    const wCost = (sy.weaponCosts && sy.weaponCosts[weaponIdx]) || this.matchWeaponCost(w.name, w.damage) || this.getRetailPrice();
     const cost = Math.round(wCost * step.pct / 100);
     wm[key] = level - 1;
     sy.totalCost = Math.max(0, sy.totalCost - cost);
