@@ -801,7 +801,7 @@ const WEAPONS_DATA = [
   "range": "5-10/30/50",
   "ammo": "10 (power pack)",
   "game_notes": "Anti-droid weapon. Fires phased energy particles that cling to a droid's exterior and disrupt neural pattern flow. When hit, droids suffer -1D to skill and attribute rolls for 3 rounds if stunned; otherwise rendered 'unconscious' per Stun Damage rules. No permanent damage, but a diagnostic overhaul and power-up is required to reactivate the droid.",
-  "source": "WEG40075 Galaxy Guide 11: Criminal Organizations p.81"
+  "source": "WEG40075 Galaxy Guide 11: Criminal Organizations p.81; WEG40158 Gundark's Fantastic Technology: Personal Gear p.107"
  },
  {
   "name": "8-Gauge Shotgun",
@@ -1777,40 +1777,16 @@ const WEAPONS_DATA = [
   "source": ""
  },
  {
-  "name": "Malkite Poisoner's Kit",
+  "name": "See Equipment → Drugs & Toxins",
   "category": "Poisons",
-  "skill": "Various",
-  "cost": "800,000",
-  "availability": "4, X",
-  "damage": "Death (2 rounds)",
-  "range": "Contact/0.5m (aerosol)",
-  "ammo": "",
-  "game_notes": "H'gartha neurotoxin: death on contact in 2 rounds. No antidote except bacta immersion (resumes on removal). Includes aerosol spray, needles, disruption field generator, pheromone zone generator, scanner jammer, heat sealer. +1D hide. +2 difficulty levels to detect.",
-  "source": "Gundark's Fantastic Technology (page 109)"
- },
- {
-  "name": "Millaflower Extract",
-  "category": "Poisons",
-  "skill": "\u2014",
-  "cost": "15-30 (30 doses)",
-  "availability": "3, R",
-  "damage": "Variable",
+  "skill": "—",
+  "cost": "—",
+  "availability": "—",
+  "damage": "—",
   "range": "",
   "ammo": "",
-  "game_notes": "Tranquilizer. Dose 1: Relaxed. Dose 2: Uninhibited. Dose 3: Drunken (-2 all). Dose 4: Unconscious. Dose 5: Paralysis (death in 1hr without care). Dose 6: Heart failure (immediate death without care). Duration: 10hrs minus STR dice.",
-  "source": "Secrets of Naboo (page 54)"
- },
- {
-  "name": "Sith Poison",
-  "category": "Poisons",
-  "skill": "\u2014",
-  "cost": "Not for sale",
-  "availability": "4",
-  "damage": "2D + Dark Side corruption",
-  "range": "",
-  "ammo": "",
-  "game_notes": "Ingested or injected. VD STR or 2D damage. Feeds anger: VD willpower/Control when spending FP or calls on Dark Side (gaining DSP). 5 successful resists to purge. Created via Alchemy (Heroic Alter).",
-  "source": "Dark Side Sourcebook (page 65)"
+  "game_notes": "All poisons and toxins have been moved to the Equipment Lookup under the 'Drugs & Toxins' category.",
+  "source": ""
  },
  {
   "name": "Adumari Blastsword",
@@ -5215,6 +5191,18 @@ const WEAPONS_DATA = [
   "range": "",
   "game_notes": "Skill: Demolitions. Reusable electric detonator designed to trigger TasCorp Blaststicks. One detonator can trigger up to five blaststicks simultaneously via electrical wires. Programmable up to one-minute time delay, but all linked blaststicks fire on a single button press. The detonator itself is not destroyed in the blast as long as it is set up outside the blast area.",
   "source": "WEG41015 Star Wars Adventure Journal #15 p.187 (Tasariq: The Crystal Planet)"
+ },
+ {
+  "name": "Modified BothiCorp Remote Detonator Glove",
+  "category": "Grenades & Explosives",
+  "skill": "Demolitions: detonator glove",
+  "cost": "300 (glove), 200 (c-chips and parts)",
+  "availability": "X",
+  "damage": "—",
+  "range": "300m (comlink signal)",
+  "ammo": "—",
+  "game_notes": "Remote demolition controller. Originally a BothiCorp Labor Droid Remote Glove for controlling cargo-handling BI labor droids. Moderate computer repair roll to modify command chips and programming. Easy demolitions roll to synchronize each explosive device's remote detonator to the glove's comlink. Controls up to 200 individual explosive devices at 300 meters range. Created by Lieutenant Morgan Q. Raventhorn; near-standard Special Ops gear.",
+  "source": "WEG41017 Star Wars Adventure Journal #17 p.78 (Special Ops: The Art of Infiltration)"
  }
 // --- END OF WEAPONS_DATA ---
 ];

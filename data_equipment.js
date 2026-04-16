@@ -689,7 +689,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Death Stick",
-  "category": "Drugs",
+  "category": "Drugs & Toxins",
   "cost": "Variable",
   "availability": "2, X",
   "game_notes": "Hallucinogenic narcotic. Initial euphoria, then -1D to all attributes for 1D hours. Highly addictive and degenerative.",
@@ -697,7 +697,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Emotion Suppressant",
-  "category": "Drugs",
+  "category": "Drugs & Toxins",
   "cost": "100",
   "availability": "2",
   "game_notes": "Suppresses emotional responses. +2D to resist intimidation and fear effects. -1D to Perception for 4 hours.",
@@ -705,7 +705,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Glitterstim Spice",
-  "category": "Drugs",
+  "category": "Drugs & Toxins",
   "cost": "Variable",
   "availability": "4, X",
   "game_notes": "Telepathic spice from Kessel. Grants short-term telepathy (Sense equivalent at 2D for 1D minutes). Highly addictive. Moderate willpower to resist addiction per use.",
@@ -713,7 +713,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Myostim Unit",
-  "category": "Drugs",
+  "category": "Drugs & Toxins",
   "cost": "500",
   "availability": "2",
   "game_notes": "Electrical muscle stimulator. +1D STR for 1 hour. After effects: -1D STR for 2 hours.",
@@ -721,7 +721,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Ryll Spice",
-  "category": "Drugs",
+  "category": "Drugs & Toxins",
   "cost": "Variable",
   "availability": "2, X",
   "game_notes": "Medicinal spice from Ryloth. Used in legitimate medicine but also recreationally. Medical: aids healing. Recreational: euphoria, -1D Perception while under effects.",
@@ -969,7 +969,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Vitapill",
-  "category": "Drugs",
+  "category": "Drugs & Toxins",
   "cost": "25",
   "availability": "1",
   "game_notes": "Nutritional supplement. Sustains a being for 1 day without food.",
@@ -3137,7 +3137,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Dalesepp HPD-100 Heat Pod",
-  "category": "Security",
+  "category": "Sensors",
   "cost": "70",
   "availability": "3, F",
   "game_notes": "Skill: Thrown weapons. Grenade-sized heat generator deployable manually or via grenade launcher. Emits ever-widening zone of light and heat blanketing up to 20m radius for 15 minutes. Increases difficulty of heat-based sensors or tracking by two levels (varies by type, distance, other factors). Operator slips under cover of the more powerful generators.",
@@ -3361,7 +3361,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Golan Personal Combat Threat Analyzer",
-  "category": "Security",
+  "category": "Sensors",
   "cost": "4,500",
   "availability": "4",
   "game_notes": "Provides +1D bonus to tactics or search rolls in specific combat situations. Identifies attacker locations, determines number and types of weapons in use, evaluates situation and suggests where next attack will come from. Results given as percentage probability of attack type, origin and predicted future action. GM can use to give hints without divulging all facts.",
@@ -5376,18 +5376,9 @@ const EQUIPMENT_DATA = [
   "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.104"
  },
  {
-  "name": "Droid Disabler",
-  "type": "Mandroxan Exports Defense Weapon EDWX-843",
-  "category": "Security",
-  "cost": "10,000 (black market)",
-  "availability": "4, X",
-  "game_notes": "Skill: Blaster. Scale: Character. Ammo: 10 (power pack). Range: 5-10/30/50. Damage: 6D stun (+1D for each hit after the first). Anti-droid weapon that fires a tight beam of phased energy particles which disrupt a droid's internal electrical impulses. Unlike a simple electrical charge, these phased particles cling to the droid's exterior and continue to build their charge. When hit, droids suffer -1D to skill and attribute rolls for 3 rounds if stunned; otherwise rendered 'unconscious' per stun damage rules. No permanent damage — a diagnostic overhaul and power-up will reactivate the droid. Useful when you need to recover data from a target droid intact.",
-  "source": "WEG40158 Gundark's Fantastic Technology: Personal Gear p.107"
- },
- {
   "name": "Malkite Poisoner's Kit",
   "type": "Malkite Poisoner's Kit",
-  "category": "Security",
+  "category": "Drugs & Toxins",
   "cost": "800,000",
   "availability": "4, X",
   "game_notes": "Illegal assassination tool used by the Malkite Poisoners — a deadly sect within the Outer Rim Malkite Ring assassins. A small unadorned duraplas box with a sophisticated locking mechanism (+1D to hide attempts due to small size). Contains: vials of H'gartha liquid neurotoxin (kills target on contact within two rounds; no known antidote save bacta immersion, and the poison resumes once removed; +2 levels to (A) medicine/first aid difficulty to detect); needles (Difficult sneak + Moderate melee combat to apply); aerosol spray applicators (must be within 0.5m, Moderate Dexterity or Poisoner is also exposed); Disruption Field Override Generator (within 1m of medical scanner, Moderate computer programming/repair, increases (A) medicine/first aid difficulty by one level to detect cause of death); Pheromone Zone Generator (within 3m of food sniffers, +1 level search/investigation difficulty); Scanner Jammer (within 2m of airborne-substance sensor, +1 level detection difficulty); Heat-Sealer (Moderate Dexterity or sneak, instantly closes puncture wounds in one round). Malkite honor creed forbids using any tools beyond those in the kit.",
@@ -5621,7 +5612,7 @@ const EQUIPMENT_DATA = [
  ,{
   "name": "Xebonica (Imperial Security Neurotoxin)",
   "type": "Imperial Intelligence Class A Code Red Security Substance",
-  "category": "Drugs",
+  "category": "Drugs & Toxins",
   "cost": "Restricted (Imperial Intelligence issue only)",
   "availability": "4, X",
   "game_notes": "Slow-acting time-released neurotoxin issued by Imperial Intelligence to garrison commanders and field operatives, mandatory for all Class A Code Red individuals (research scientists, weapons manufacturers, and others carrying top-priority information) during transfer from native worlds to secure areas. Includes a bio-masking agent to prevent easy detection. Antidote: Trypanid 20 mcg at 10-hour intervals for standard humans, as directed for other lifeforms — without the antidote the active ingredient becomes lethal far more rapidly. Symptoms in human and similar life-forms follow the standard pattern for invasive neurotoxin poisoning. Imperial Intelligence advises commanders to provide cover stories that give the subject sufficient cause to seek regular medical checks at the required intervals. Custom variants exist — Major Pedrin used a sub-variant on Ketrian Altronel that the standard Trypanid antidote could not counter.",
@@ -5630,7 +5621,7 @@ const EQUIPMENT_DATA = [
  ,{
   "name": "Mangoriza (Imperial Security Neurotoxin)",
   "type": "Imperial Intelligence Class A Code Red Security Substance",
-  "category": "Drugs",
+  "category": "Drugs & Toxins",
   "cost": "Restricted (Imperial Intelligence issue only)",
   "availability": "4, X",
   "game_notes": "Slow-acting time-released neurotoxin issued by Imperial Intelligence as an alternate to Xebonica for use on Class A Code Red individuals. Includes a bio-masking agent to prevent easy detection. Antidote: Alaswal-XT 40 mcg at 10-hour intervals for standard humans, as directed for other lifeforms — without the antidote the active ingredient becomes lethal far more rapidly. Symptoms follow the standard invasive neurotoxin pattern. Intelligence Command continually rotates the chemicals on issue to defeat terrorist counter-intelligence; supplies must be regularly upgraded.",
@@ -6014,7 +6005,7 @@ const EQUIPMENT_DATA = [
   "source": "WEG41017 Star Wars Adventure Journal #17 p.75-76 (Special Ops: The Art of Infiltration)"
  },
  {
-  "category": "Security",
+  "category": "Tools",
   "name": "Modified BothiCorp Remote Detonator Glove",
   "type": "Outlaw Tech Remote Demolition Controller",
   "cost": "300 (glove), 200 (c-chips and parts)",
@@ -6051,7 +6042,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Imperial Munitions Rampart II Portable Shield Generator",
-  "category": "Security",
+  "category": "Shields",
   "type": "Portable tactical shield generator",
   "cost": "Not generally available",
   "availability": "3, R",
@@ -6186,6 +6177,22 @@ const EQUIPMENT_DATA = [
   "availability": "2",
   "game_notes": "Size: 1.6m. Move: 11. DEX 3D (blaster 7D, dodge 8D, running 4D), KNO 1D (law enforcement: Lamuir IV), MEC 1D, PER 1D, STR 1D, TEC 1D. Equipped with: two auto-balance arms, body armor (+2D to Strength to resist damage), internal blaster rifle (5D, range 5-30/100/200). Recently purchased by Lemuir IV Spaceport Security and augmented with law enforcement SkillWare.",
   "source": "WEG40147 Tapani Sector Instant Adventures p.9 (The Mecetti File)"
+ },
+ {
+  "name": "Millaflower Extract",
+  "category": "Drugs & Toxins",
+  "cost": "15-30 (30 doses)",
+  "availability": "3, R",
+  "game_notes": "Tranquilizer. Dose 1: Relaxed. Dose 2: Uninhibited. Dose 3: Drunken (-2 all). Dose 4: Unconscious. Dose 5: Paralysis (death in 1hr without care). Dose 6: Heart failure (immediate death without care). Duration: 10hrs minus STR dice.",
+  "source": "Secrets of Naboo p.54"
+ },
+ {
+  "name": "Sith Poison",
+  "category": "Drugs & Toxins",
+  "cost": "Not for sale",
+  "availability": "4",
+  "game_notes": "Ingested or injected. Very Difficult STR or 2D damage. Feeds anger: Very Difficult willpower/Control when spending Force Points or calling on the Dark Side (gaining DSP). 5 successful resists to purge. Created via Sith Alchemy (Heroic Alter roll).",
+  "source": "Dark Side Sourcebook p.65"
  }
 // --- END OF EQUIPMENT_DATA ---
 ];
