@@ -11262,7 +11262,7 @@ const SHIPYARD = {
   },
 
   EQUIP_SUBTYPES: {
-    engine: { label: 'SUBLIGHT ENGINE', keywords: /Ion Drive|ion engine|Sublight/i, statKey: 'space', parseRe: /Space:\s*(\d+)/, weightRe: /Weight:\s*([\d,.]+)\s*metric/i },
+    engine: { label: 'SUBLIGHT ENGINE', keywords: /^(Starscream|Boshaa|Corellian Evader|Incom Starslinger|SoroSuub Boav)/i, statKey: 'space', parseRe: /Space:\s*(\d+)/, weightRe: /Weight:\s*([\d,.]+)\s*metric/i },
     hyperdrive: { label: 'HYPERDRIVE', keywords: /Hyperdrive/i, statKey: 'hyperdrive', parseRe: /x([\d./]+)/, weightRe: /Weight:\s*([\d,.]+)\s*metric/i },
     shields: { label: 'SHIELDS', keywords: /Ship Shields|Shield code/i, statKey: 'shields', parseRe: /(?:Shield code:|Shields?\s*\()\s*(\d+D[+\d]*)/, weightRe: /Weight:\s*([\d,.]+)\s*metric/i },
   },
