@@ -10898,11 +10898,21 @@ const SHIPYARD = {
     return this._equipWeaponCache;
   },
 
+  parseWeaponQty(weaponName) {
+    const n = String(weaponName).trim();
+    const numMatch = n.match(/^(\d+)\s+/);
+    if (numMatch) return parseInt(numMatch[1]);
+    const wordMap = { 'twin': 2, 'double': 2, 'dual': 2, 'triple': 3, 'quad': 4 };
+    const lower = n.toLowerCase();
+    for (const [word, qty] of Object.entries(wordMap)) {
+      if (lower.startsWith(word + ' ') || lower.includes(' ' + word + ' ')) return qty;
+    }
+    return 1;
+  },
+
   getFireLinkCount(weaponName) {
-    const n = String(weaponName);
-    const qtyMatch = n.match(/^(\d+)\s+/);
-    const qty = qtyMatch ? parseInt(qtyMatch[1]) : 1;
-    const isLinked = /fire[- ]?link/i.test(n);
+    const qty = this.parseWeaponQty(weaponName);
+    const isLinked = /fire[- ]?link|quad|triple|twin|double|dual/i.test(String(weaponName));
     return isLinked && qty > 1 ? qty : 1;
   },
 
@@ -11178,7 +11188,7 @@ const SHIPYARD = {
         const matchedCost = this.matchWeaponCost(w.name, w.damage);
         const wCost = savedWCost || matchedCost || 0;
         if (!savedWCost && matchedCost) sy.weaponCosts[i] = matchedCost;
-        const weaponQty = parseInt(String(w.name).match(/^(\d+)\s+/) ? String(w.name).match(/^(\d+)\s+/)[1] : '1') || 1;
+        const weaponQty = this.parseWeaponQty(w.name);
         const flSurcharge = this.getFireLinkSurcharge(w.name);
         const usePrice = (wCost || price) * weaponQty + flSurcharge;
         const usingShipPrice = !wCost;
