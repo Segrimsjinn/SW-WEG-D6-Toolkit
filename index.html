@@ -2296,6 +2296,20 @@ color:var(--text-dim);min-width:35px;text-align:right;
               <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Dmg +1D+1</span><span>V.Difficult · 35% · <span style="color:var(--red)">+2</span></span></div>
               <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Dmg +1D+2 <span style="font-size:7px;color:var(--text-dim)">(max)</span></span><span>Heroic · 50% · <span style="color:var(--red)">+3</span></span></div>
             </div>
+            <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin:8px 0 3px">FIRE CONTROL <span style="color:var(--text-dim);font-weight:normal">(% of weapon cost)</span></div>
+            <div style="font-size:10px;color:var(--text-dim);line-height:1.9">
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>FC +1</span><span>Easy · 15% · <span style="color:var(--gold)">+1</span></span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>FC +2</span><span>Moderate · 25% · <span style="color:var(--gold)">+1</span></span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>FC +1D</span><span>Difficult · 30% · <span style="color:var(--gold)">+1</span></span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>FC +1D+1</span><span>V.Difficult · 35% · <span style="color:var(--red)">+2</span></span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>FC +1D+2 <span style="font-size:7px;color:var(--text-dim)">(max)</span></span><span>Heroic · 50% · <span style="color:var(--red)">+3</span></span></div>
+            </div>
+            <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin:8px 0 3px">FIRE-LINKING &amp; COCKPIT FIRE</div>
+            <div style="font-size:10px;color:var(--text-dim);line-height:1.9">
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Fire-link (per weapon)</span><span>Easy · 100 cr · 1 hour</span></div>
+              <div style="display:flex;justify-content:space-between;padding:1px 0"><span>Cockpit fire (turret)</span><span>Easy · 100 cr · 1 hour</span></div>
+            </div>
+            <div style="font-size:7px;color:var(--text-dark);margin-top:3px;font-style:italic">Fire-linking adds 100 cr per weapon to the base weapon cost for modification % calculations. Cockpit fire adds 100 cr to allow a turret weapon to be fired from the pilot's seat.</div>
             <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin:8px 0 3px">WEAPON RANGE <span style="color:var(--text-dim);font-weight:normal">(% of weapon cost)</span></div>
             <div style="font-size:10px;color:var(--text-dim);line-height:1.9">
               <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Range +5%</span><span>Easy · 5% · <span style="color:var(--gold)">+1</span></span></div>
@@ -10884,6 +10898,19 @@ const SHIPYARD = {
     return this._equipWeaponCache;
   },
 
+  getFireLinkCount(weaponName) {
+    const n = String(weaponName);
+    const qtyMatch = n.match(/^(\d+)\s+/);
+    const qty = qtyMatch ? parseInt(qtyMatch[1]) : 1;
+    const isLinked = /fire[- ]?link/i.test(n);
+    return isLinked && qty > 1 ? qty : 1;
+  },
+
+  getFireLinkSurcharge(weaponName) {
+    const count = this.getFireLinkCount(weaponName);
+    return count > 1 ? (count - 1) * 100 : 0;
+  },
+
   matchWeaponCost(weaponName, weaponDamage) {
     const equips = this.getEquipWeapons();
     if (!equips.length) return 0;
@@ -11151,14 +11178,16 @@ const SHIPYARD = {
         const matchedCost = this.matchWeaponCost(w.name, w.damage);
         const wCost = savedWCost || matchedCost || 0;
         if (!savedWCost && matchedCost) sy.weaponCosts[i] = matchedCost;
-        const usePrice = wCost || price;
+        const flSurcharge = this.getFireLinkSurcharge(w.name);
+        const usePrice = (wCost || price) + flSurcharge;
         const usingShipPrice = !wCost;
         const baseDmgPips = d6ToPips(w.damage);
         const curDmgPips = baseDmgPips + (wm.damagePips || 0);
         const baseFCPips = d6ToPips(w.fire_control);
         const curFCPips = baseFCPips + (wm.fcPips || 0);
+        const flNote = flSurcharge ? ' +' + flSurcharge + ' fire-link' : '';
         const costLabel = usingShipPrice ? '<span style="color:var(--red);font-size:7px"> (using ship price — no weapon cost found)</span>' :
-          '<span style="color:var(--text-dark);font-size:7px"> weapon cost: ' + usePrice.toLocaleString() + ' cr</span>';
+          '<span style="color:var(--text-dark);font-size:7px"> mod base: ' + usePrice.toLocaleString() + ' cr' + flNote + '</span>';
         html += '<div style="display:flex;justify-content:space-between;align-items:center;font-size:9px;color:var(--text);padding:4px 8px;background:var(--bg3);border-bottom:1px solid var(--card-border)">' +
           '<span>' + (w.name || 'Weapon ' + (i+1)) + ' <span style="color:var(--text-dim);font-size:8px">(Dmg ' + (w.damage || '?') + ', FC ' + (w.fire_control || '0D') + ')</span></span>' +
           '<span style="display:flex;align-items:center;gap:3px">' + costLabel +
@@ -11238,7 +11267,8 @@ const SHIPYARD = {
     if (level >= 5) return;
     const step = table[level];
     const w = sy.base.weapons[weaponIdx];
-    const wCost = (sy.weaponCosts && sy.weaponCosts[weaponIdx]) || this.matchWeaponCost(w.name, w.damage) || this.getRetailPrice();
+    const baseCost = (sy.weaponCosts && sy.weaponCosts[weaponIdx]) || this.matchWeaponCost(w.name, w.damage) || this.getRetailPrice();
+    const wCost = baseCost + this.getFireLinkSurcharge(w.name);
     const cost = Math.round(wCost * step.pct / 100);
     wm[key] = level + 1;
     sy.totalCost += cost;
@@ -11258,7 +11288,8 @@ const SHIPYARD = {
     if (level <= 0) return;
     const step = table[level - 1];
     const w = sy.base.weapons[weaponIdx];
-    const wCost = (sy.weaponCosts && sy.weaponCosts[weaponIdx]) || this.matchWeaponCost(w.name, w.damage) || this.getRetailPrice();
+    const baseCost = (sy.weaponCosts && sy.weaponCosts[weaponIdx]) || this.matchWeaponCost(w.name, w.damage) || this.getRetailPrice();
+    const wCost = baseCost + this.getFireLinkSurcharge(w.name);
     const cost = Math.round(wCost * step.pct / 100);
     wm[key] = level - 1;
     sy.totalCost = Math.max(0, sy.totalCost - cost);
