@@ -10850,6 +10850,13 @@ const SHIPYARD = {
       { pips: 4, difficulty: 'Very Difficult', pct: 35, mishap: 2, time: '1 week' },
       { pips: 5, difficulty: 'Heroic', pct: 50, mishap: 3, time: '1 month' }
     ],
+    weaponFC: [
+      { pips: 1, difficulty: 'Easy', pct: 15, mishap: 1, time: '6 hours' },
+      { pips: 2, difficulty: 'Moderate', pct: 25, mishap: 1, time: '1 day' },
+      { pips: 3, difficulty: 'Difficult', pct: 30, mishap: 1, time: '2 days' },
+      { pips: 4, difficulty: 'Very Difficult', pct: 35, mishap: 2, time: '1 week' },
+      { pips: 5, difficulty: 'Heroic', pct: 50, mishap: 3, time: '1 month' }
+    ],
     weaponRange: [
       { level: 1, difficulty: 'Easy', pct: 5, mishap: 1, time: '6 hours' },
       { level: 2, difficulty: 'Moderate', pct: 10, mishap: 1, time: '1 day' },
@@ -10956,7 +10963,10 @@ const SHIPYARD = {
     stats.shields = pipsToD6(d6ToPips(base.shields) + (sy.mods.shields || 0));
     stats.weapons = (base.weapons || []).map((w, i) => {
       const wm = sy.mods.weapons && sy.mods.weapons[i] ? sy.mods.weapons[i] : {};
-      return Object.assign({}, w, { damage: pipsToD6(d6ToPips(w.damage) + (wm.damagePips || 0)) });
+      return Object.assign({}, w, {
+        damage: pipsToD6(d6ToPips(w.damage) + (wm.damagePips || 0)),
+        fire_control: pipsToD6(d6ToPips(w.fire_control) + (wm.fcPips || 0))
+      });
     });
     return stats;
   },
@@ -11103,17 +11113,24 @@ const SHIPYARD = {
       html += '<div style="border:1px solid var(--card-border);border-radius:var(--radius-sm);overflow:hidden">';
       if (!sy.mods.weapons) sy.mods.weapons = [];
       base.weapons.forEach((w, i) => {
-        if (!sy.mods.weapons[i]) sy.mods.weapons[i] = { damagePips: 0, rangePct: 0 };
+        if (!sy.mods.weapons[i]) sy.mods.weapons[i] = { damagePips: 0, fcPips: 0, rangePct: 0 };
         const wm = sy.mods.weapons[i];
         const wCost = this.parsePrice(w.cost) || 0;
         const usePrice = wCost || price;
         const baseDmgPips = d6ToPips(w.damage);
         const curDmgPips = baseDmgPips + (wm.damagePips || 0);
-        html += '<div style="font-size:9px;color:var(--text);padding:4px 8px;background:var(--bg3);border-bottom:1px solid var(--card-border)">' + (w.name || 'Weapon ' + (i+1)) + ' <span style="color:var(--text-dim);font-size:8px">(' + (w.damage || '?') + ')</span></div>';
+        const baseFCPips = d6ToPips(w.fire_control);
+        const curFCPips = baseFCPips + (wm.fcPips || 0);
+        html += '<div style="font-size:9px;color:var(--text);padding:4px 8px;background:var(--bg3);border-bottom:1px solid var(--card-border)">' + (w.name || 'Weapon ' + (i+1)) + ' <span style="color:var(--text-dim);font-size:8px">(Dmg ' + (w.damage || '?') + ', FC ' + (w.fire_control || '0D') + ')</span></div>';
         html += this.renderModRow('DMG', w.damage || '0D', pipsToD6(curDmgPips), wm.damagePips || 0, 5, 'weaponDamage', usePrice).replace(
           /SHIPYARD\.applyMod\('weaponDamage'\)/g, 'SHIPYARD.applyWeaponMod(' + i + ',\'damage\')'
         ).replace(
           /SHIPYARD\.removeMod\('weaponDamage'\)/g, 'SHIPYARD.removeWeaponMod(' + i + ',\'damage\')'
+        );
+        html += this.renderModRow('FC', w.fire_control || '0D', pipsToD6(curFCPips), wm.fcPips || 0, 5, 'weaponFC', usePrice).replace(
+          /SHIPYARD\.applyMod\('weaponFC'\)/g, 'SHIPYARD.applyWeaponMod(' + i + ',\'fc\')'
+        ).replace(
+          /SHIPYARD\.removeMod\('weaponFC'\)/g, 'SHIPYARD.removeWeaponMod(' + i + ',\'fc\')'
         );
       });
       html += '</div>';
@@ -11162,8 +11179,8 @@ const SHIPYARD = {
     const sy = this.currentPin.shipyard;
     if (!sy.mods.weapons[weaponIdx]) sy.mods.weapons[weaponIdx] = { damagePips: 0, rangePct: 0 };
     const wm = sy.mods.weapons[weaponIdx];
-    const key = modType === 'damage' ? 'damagePips' : 'rangePct';
-    const table = modType === 'damage' ? this.MOD_TABLES.weaponDamage : this.MOD_TABLES.weaponRange;
+    const key = modType === 'damage' ? 'damagePips' : modType === 'fc' ? 'fcPips' : 'rangePct';
+    const table = modType === 'damage' ? this.MOD_TABLES.weaponDamage : modType === 'fc' ? this.MOD_TABLES.weaponFC : this.MOD_TABLES.weaponRange;
     const level = wm[key] || 0;
     if (level >= 5) return;
     const step = table[level];
@@ -11182,8 +11199,8 @@ const SHIPYARD = {
     const sy = this.currentPin.shipyard;
     const wm = sy.mods.weapons[weaponIdx];
     if (!wm) return;
-    const key = modType === 'damage' ? 'damagePips' : 'rangePct';
-    const table = modType === 'damage' ? this.MOD_TABLES.weaponDamage : this.MOD_TABLES.weaponRange;
+    const key = modType === 'damage' ? 'damagePips' : modType === 'fc' ? 'fcPips' : 'rangePct';
+    const table = modType === 'damage' ? this.MOD_TABLES.weaponDamage : modType === 'fc' ? this.MOD_TABLES.weaponFC : this.MOD_TABLES.weaponRange;
     const level = wm[key] || 0;
     if (level <= 0) return;
     const step = table[level - 1];
