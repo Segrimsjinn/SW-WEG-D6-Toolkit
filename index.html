@@ -10896,6 +10896,193 @@ const SHIPYARD = {
     this.render();
   },
 
+  HYPER_LADDER: ['x15','x10','x6','x4','x3','x2','x1','x0.5'],
+
+  hyperLadderIndex(code) {
+    if (!code) return -1;
+    const c = String(code).toLowerCase().replace(/\s/g,'');
+    return this.HYPER_LADDER.findIndex(h => h === c || c.startsWith(h));
+  },
+
+  renderModRow(label, baseStat, currentStat, modLevel, maxLevel, system, price) {
+    const table = this.MOD_TABLES[system];
+    const next = modLevel < maxLevel ? table[modLevel] : null;
+    const nextCost = next ? Math.round(price * next.pct / 100) : 0;
+    const atMax = modLevel >= maxLevel;
+    const diffColor = next ? (next.mishap >= 2 ? 'var(--red)' : 'var(--gold)') : '';
+
+    let html = '<div style="display:flex;align-items:center;gap:6px;padding:6px 8px;border-bottom:1px solid var(--card-border);flex-wrap:wrap">';
+    html += '<div style="min-width:90px;font-family:\'Exo 2\',monospace;font-size:9px;color:var(--gold);letter-spacing:1px">' + label + '</div>';
+    html += '<div style="min-width:50px;font-family:\'IBM Plex Mono\',monospace;font-size:11px;color:var(--text-dim)">' + baseStat + '</div>';
+    html += '<span style="color:var(--text-dark)">→</span>';
+    html += '<div style="min-width:50px;font-family:\'IBM Plex Mono\',monospace;font-size:11px;color:' + (modLevel > 0 ? 'var(--cyan)' : 'var(--text-dim)') + ';font-weight:' + (modLevel > 0 ? '700' : '400') + '">' + currentStat + '</div>';
+
+    if (atMax) {
+      html += '<span style="font-family:\'Exo 2\',monospace;font-size:8px;color:var(--red);letter-spacing:1px;margin-left:auto">MAX</span>';
+    } else if (next) {
+      html += '<div style="flex:1;font-size:9px;color:var(--text-dim);text-align:right">';
+      html += '<span style="color:' + diffColor + '">' + next.difficulty + '</span>';
+      html += ' · <span style="color:var(--green)">' + nextCost.toLocaleString() + ' cr</span>';
+      html += ' · ' + next.time;
+      html += ' · <span style="color:' + diffColor + '">' + next.mishap + 'D mishap</span>';
+      html += '</div>';
+    }
+
+    html += '<div style="display:flex;gap:2px;margin-left:4px">';
+    if (modLevel > 0) {
+      html += '<button class="ship-sort-btn" onclick="SHIPYARD.removeMod(\'' + system + '\')" style="padding:2px 8px;font-size:11px;color:var(--red)">−</button>';
+    }
+    if (!atMax) {
+      html += '<button class="ship-sort-btn" onclick="SHIPYARD.applyMod(\'' + system + '\')" style="padding:2px 8px;font-size:11px;color:var(--green)">+</button>';
+    }
+    html += '</div></div>';
+    return html;
+  },
+
+  renderMods(sy, base, price) {
+    let html = '<div style="font-family:\'Exo 2\',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin:8px 0 4px">SYSTEM MODIFICATIONS</div>';
+    html += '<div style="border:1px solid var(--card-border);border-radius:var(--radius-sm);overflow:hidden">';
+
+    // Space (integer-based, max +4)
+    const baseSpace = parseInt(base.space) || 0;
+    const curSpace = baseSpace + (sy.mods.space || 0);
+    html += this.renderModRow('SPACE', baseSpace, curSpace, sy.mods.space || 0, 4, 'space', price);
+
+    // Maneuverability (pip-based, max +5 pips = +1D+2)
+    const baseManPips = d6ToPips(base.maneuverability);
+    const curManPips = baseManPips + (sy.mods.maneuverability || 0);
+    html += this.renderModRow('MANEUVER', base.maneuverability || '0D', pipsToD6(curManPips), sy.mods.maneuverability || 0, 5, 'maneuverability', price);
+
+    // Hyperdrive (step ladder)
+    const baseHyperIdx = this.hyperLadderIndex(base.hyperdrive);
+    const curHyperIdx = baseHyperIdx >= 0 ? baseHyperIdx + (sy.mods.hyperdrive || 0) : -1;
+    const hyperTable = this.MOD_TABLES.hyperdrive;
+    const hyperModLevel = sy.mods.hyperdrive || 0;
+    let hyperMax = 0;
+    if (baseHyperIdx >= 0) {
+      for (let i = 0; i < hyperTable.length; i++) {
+        const fromIdx = this.HYPER_LADDER.indexOf(hyperTable[i].from);
+        if (baseHyperIdx + i <= fromIdx || baseHyperIdx === fromIdx) hyperMax = i + 1;
+        else break;
+      }
+      hyperMax = Math.min(hyperMax, this.HYPER_LADDER.length - 1 - baseHyperIdx);
+    }
+    const baseHyperLabel = baseHyperIdx >= 0 ? this.HYPER_LADDER[baseHyperIdx] : (base.hyperdrive || 'None');
+    const curHyperLabel = curHyperIdx >= 0 && curHyperIdx < this.HYPER_LADDER.length ? this.HYPER_LADDER[curHyperIdx] : baseHyperLabel;
+    html += this.renderModRow('HYPERDRIVE', baseHyperLabel, curHyperLabel, hyperModLevel, hyperMax, 'hyperdrive', price);
+
+    // Hull (pip-based, max +4 pips = +1D+1)
+    const baseHullPips = d6ToPips(base.hull);
+    const curHullPips = baseHullPips + (sy.mods.hull || 0);
+    html += this.renderModRow('HULL', base.hull || '0D', pipsToD6(curHullPips), sy.mods.hull || 0, 4, 'hull', price);
+
+    // Shields (pip-based, max +5 pips = +1D+2)
+    const baseShieldPips = d6ToPips(base.shields);
+    const curShieldPips = baseShieldPips + (sy.mods.shields || 0);
+    html += this.renderModRow('SHIELDS', base.shields || '0D', pipsToD6(curShieldPips), sy.mods.shields || 0, 5, 'shields', price);
+
+    html += '</div>';
+
+    // Weapons
+    if (base.weapons && base.weapons.length > 0) {
+      html += '<div style="font-family:\'Exo 2\',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin:10px 0 4px">WEAPON MODIFICATIONS</div>';
+      html += '<div style="border:1px solid var(--card-border);border-radius:var(--radius-sm);overflow:hidden">';
+      if (!sy.mods.weapons) sy.mods.weapons = [];
+      base.weapons.forEach((w, i) => {
+        if (!sy.mods.weapons[i]) sy.mods.weapons[i] = { damagePips: 0, rangePct: 0 };
+        const wm = sy.mods.weapons[i];
+        const wCost = this.parsePrice(w.cost) || 0;
+        const usePrice = wCost || price;
+        const baseDmgPips = d6ToPips(w.damage);
+        const curDmgPips = baseDmgPips + (wm.damagePips || 0);
+        html += '<div style="font-size:9px;color:var(--text);padding:4px 8px;background:var(--bg3);border-bottom:1px solid var(--card-border)">' + (w.name || 'Weapon ' + (i+1)) + ' <span style="color:var(--text-dim);font-size:8px">(' + (w.damage || '?') + ')</span></div>';
+        html += this.renderModRow('DMG', w.damage || '0D', pipsToD6(curDmgPips), wm.damagePips || 0, 5, 'weaponDamage', usePrice).replace(
+          /SHIPYARD\.applyMod\('weaponDamage'\)/g, 'SHIPYARD.applyWeaponMod(' + i + ',\'damage\')'
+        ).replace(
+          /SHIPYARD\.removeMod\('weaponDamage'\)/g, 'SHIPYARD.removeWeaponMod(' + i + ',\'damage\')'
+        );
+      });
+      html += '</div>';
+    }
+
+    document.getElementById('shipyardStats').innerHTML = html;
+    document.getElementById('shipyardMods').innerHTML = '';
+  },
+
+  applyMod(system) {
+    if (!this.currentPin) return;
+    const sy = this.currentPin.shipyard;
+    const table = this.MOD_TABLES[system];
+    const level = sy.mods[system] || 0;
+    const max = system === 'space' ? 4 : system === 'hull' ? 4 : system === 'hyperdrive' ? table.length : 5;
+    if (level >= max) return;
+    const step = table[level];
+    if (!step) return;
+    const price = this.getRetailPrice();
+    const cost = Math.round(price * step.pct / 100);
+    sy.mods[system] = level + 1;
+    sy.totalCost += cost;
+    sy.log.push({ type: 'mod', system, level: level + 1, cost, difficulty: step.difficulty, time: step.time, mishap: step.mishap, ts: Date.now() });
+    corkboardSave();
+    this.render();
+  },
+
+  removeMod(system) {
+    if (!this.currentPin) return;
+    const sy = this.currentPin.shipyard;
+    const level = sy.mods[system] || 0;
+    if (level <= 0) return;
+    const table = this.MOD_TABLES[system];
+    const step = table[level - 1];
+    const price = this.getRetailPrice();
+    const cost = Math.round(price * step.pct / 100);
+    sy.mods[system] = level - 1;
+    sy.totalCost = Math.max(0, sy.totalCost - cost);
+    sy.log = sy.log.filter(l => !(l.type === 'mod' && l.system === system && l.level === level));
+    corkboardSave();
+    this.render();
+  },
+
+  applyWeaponMod(weaponIdx, modType) {
+    if (!this.currentPin) return;
+    const sy = this.currentPin.shipyard;
+    if (!sy.mods.weapons[weaponIdx]) sy.mods.weapons[weaponIdx] = { damagePips: 0, rangePct: 0 };
+    const wm = sy.mods.weapons[weaponIdx];
+    const key = modType === 'damage' ? 'damagePips' : 'rangePct';
+    const table = modType === 'damage' ? this.MOD_TABLES.weaponDamage : this.MOD_TABLES.weaponRange;
+    const level = wm[key] || 0;
+    if (level >= 5) return;
+    const step = table[level];
+    const w = sy.base.weapons[weaponIdx];
+    const wCost = this.parsePrice(w.cost) || this.getRetailPrice();
+    const cost = Math.round(wCost * step.pct / 100);
+    wm[key] = level + 1;
+    sy.totalCost += cost;
+    sy.log.push({ type: 'weapon-mod', weaponIdx, modType, level: level + 1, cost, difficulty: step.difficulty, time: step.time, mishap: step.mishap, ts: Date.now() });
+    corkboardSave();
+    this.render();
+  },
+
+  removeWeaponMod(weaponIdx, modType) {
+    if (!this.currentPin) return;
+    const sy = this.currentPin.shipyard;
+    const wm = sy.mods.weapons[weaponIdx];
+    if (!wm) return;
+    const key = modType === 'damage' ? 'damagePips' : 'rangePct';
+    const table = modType === 'damage' ? this.MOD_TABLES.weaponDamage : this.MOD_TABLES.weaponRange;
+    const level = wm[key] || 0;
+    if (level <= 0) return;
+    const step = table[level - 1];
+    const w = sy.base.weapons[weaponIdx];
+    const wCost = this.parsePrice(w.cost) || this.getRetailPrice();
+    const cost = Math.round(wCost * step.pct / 100);
+    wm[key] = level - 1;
+    sy.totalCost = Math.max(0, sy.totalCost - cost);
+    sy.log = sy.log.filter(l => !(l.type === 'weapon-mod' && l.weaponIdx === weaponIdx && l.modType === modType && l.level === level));
+    corkboardSave();
+    this.render();
+  },
+
   render() {
     if (!this.currentPin || !this.currentPin.shipyard) return;
     const sy = this.currentPin.shipyard;
@@ -10938,7 +11125,7 @@ const SHIPYARD = {
       '<div style="font-size:10px;color:var(--text-dim)">' + base.craft + '</div></div>' +
       priceHtml +
       '</div>';
-    document.getElementById('shipyardStats').innerHTML = '<div style="font-size:10px;color:var(--text-dim);padding:8px;text-align:center;font-style:italic">Modification controls coming soon — Phase 2</div>';
+    this.renderMods(sy, base, price);
     document.getElementById('shipyardCosts').innerHTML =
       '<div style="display:flex;gap:8px;flex-wrap:wrap;padding:8px 10px;background:var(--bg);border:1px solid var(--gold-dim);border-radius:var(--radius-sm);margin-top:10px">' +
       '<div style="flex:1;text-align:center"><div style="font-family:\'Exo 2\',sans-serif;font-size:7px;color:var(--text-dim);letter-spacing:1px">MODS TOTAL</div><div style="font-family:\'IBM Plex Mono\',monospace;font-size:16px;color:var(--gold);font-weight:700">' + sy.totalCost.toLocaleString() + ' cr</div></div>' +
