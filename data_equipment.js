@@ -2937,7 +2937,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Mahled Servo Slippers",
-  "category": "Survival Gear",
+  "category": "Jet Packs",
   "cost": "2,500 per pair (foot/leg or hand/arm)",
   "availability": "3",
   "game_notes": "Repulsorlift assisted leg and arm braces using muscle stimulators, repulsor compensators and movement servos. On high gravity worlds: foot/leg braces alone negate Movement penalties and cut Dexterity penalties by 2 pips. Hand/arm braces alone cut Dexterity penalties by 2 pips. Both pairs together completely negate all Dexterity penalties. Also helps impaired individuals with motor skills.",
@@ -3169,7 +3169,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Aratech R82 Jump Boots",
-  "category": "Survival Gear",
+  "category": "Jet Packs",
   "cost": "150 (25 fuel)",
   "availability": "2",
   "game_notes": "Combination repulsor and rocket unit lighter than standard rocket packs. Allows boosted jumps or simple gliding. Thin strong cables drawn to knee attach to pants/leggings for support. Control cables reach user's hands. Repulsorlift engine: 1 hour before power pack replacement, 35m flight ceiling, Move 18. Rocket jets: 5 blasts of fuel, up to 35m vertical or 50m horizontal per blast.",
@@ -3425,7 +3425,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "SeaScape Aquasuit (Hardshell)",
-  "category": "Survival Gear",
+  "category": "Environmental Suits",
   "cost": "400",
   "availability": "1 (coastal), 2 (elsewhere)",
   "game_notes": "Skill: Swimming. Heavy diving suit providing internal atmosphere with 6 hours of air. Reinforced ribbing adds +2 pips to Strength for damage resistance only. Allows dives to 200 meters. Flippers and onboard propulsion unit add 2D to swimming skill with underwater Move rate of 12. Dexterity codes only reduced on land. Helmet comlink with 2km range. Swimming rolls not needed for basic underwater movement.",
@@ -3433,7 +3433,7 @@ const EQUIPMENT_DATA = [
  },
  {
   "name": "Haileycraft MaxMode Flotation Lifter",
-  "category": "Survival Gear",
+  "category": "Tools",
   "cost": "1,000",
   "availability": "3 (coastal), 4 (elsewhere)",
   "game_notes": "Skill: Repulsorlift operation. Underwater mechanical device for lifting light loads to the surface. Two large air canisters mounted on a frame with a sling. Water let in to sink, expelled to raise. About 1 meter long, can be dismantled to fit in a small boat hull. Can handle supply crates plus three divers on straps, plus the driver sitting atop. No motor — goes up and down only, must be manually maneuvered.",
@@ -5774,7 +5774,7 @@ const EQUIPMENT_DATA = [
  ,{
   "name": "TasCorp Essential Miner's Gear (Mining Kit)",
   "type": "Tasari Mining Utility Kit",
-  "category": "Survival Gear",
+  "category": "Tools",
   "cost": "200 credits",
   "availability": "3",
   "game_notes": "A complete mining kit provides all non-power equipment needed for successful tasar crystal mining, packed into a sturdy backpack. Contents: basic manual-excavation tools for tasar crystals or blaststick-debris sifting, one week of military-style dried rations, a Tasari breath mask, and two personal Tasari oxygen tanks. The backpack is designed so that miners can repurpose it to carry tasar crystals once they start eating their rations. Provides characters excavating tasar crystals with +1D to Search or mining skill rolls. Widely used by both native Tasari and cash-poor, ill-prepared off-worlders starting their quest for tasar crystal fortune.",
