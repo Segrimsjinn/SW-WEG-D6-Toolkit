@@ -10875,19 +10875,66 @@ const SHIPYARD = {
     document.getElementById('shipyardEmpty').style.display = 'block';
   },
 
+  getRetailPrice() {
+    if (!this.currentPin || !this.currentPin.shipyard) return 0;
+    const sy = this.currentPin.shipyard;
+    const base = sy.base;
+    const rawNew = this.parsePrice(base.price_new);
+    if (rawNew) return rawNew;
+    const rawUsed = this.parsePrice(base.price_used);
+    if (!rawUsed) return 0;
+    const mult = sy.priceMultiplier || 4.0;
+    return Math.round(rawUsed * mult);
+  },
+
+  adjustPriceMultiplier(delta) {
+    if (!this.currentPin || !this.currentPin.shipyard) return;
+    const sy = this.currentPin.shipyard;
+    const current = sy.priceMultiplier || 4.0;
+    sy.priceMultiplier = Math.max(1.0, Math.round((current + delta) * 10) / 10);
+    corkboardSave();
+    this.render();
+  },
+
   render() {
     if (!this.currentPin || !this.currentPin.shipyard) return;
     const sy = this.currentPin.shipyard;
     const base = sy.base;
-    const price = this.parsePrice(base.price_new) || this.parsePrice(base.price_used) * 2;
+    const rawNew = this.parsePrice(base.price_new);
+    const rawUsed = this.parsePrice(base.price_used);
+    const price = this.getRetailPrice();
+    const isEstimated = !rawNew && rawUsed;
     document.getElementById('shipyardDockedBadge').textContent = '— ' + base.name;
     document.getElementById('shipyardEmpty').style.display = 'none';
     document.getElementById('shipyardDocked').style.display = 'block';
+
+    let priceHtml;
+    if (isEstimated) {
+      const mult = sy.priceMultiplier || 4.0;
+      priceHtml =
+        '<div style="text-align:right;font-family:\'IBM Plex Mono\',monospace;font-size:11px">' +
+        '<div style="color:var(--text-dim)">Est. Retail <span style="font-size:8px;color:var(--cyan)">(used ' + rawUsed.toLocaleString() + ' × ' + mult.toFixed(1) + ')</span></div>' +
+        '<div style="display:flex;align-items:center;justify-content:flex-end;gap:4px">' +
+        '<button class="ship-sort-btn" onclick="SHIPYARD.adjustPriceMultiplier(-0.1)" style="padding:2px 8px;font-size:12px;font-weight:bold">▼</button>' +
+        '<span style="color:var(--gold);min-width:70px;text-align:center">' + price.toLocaleString() + ' cr</span>' +
+        '<button class="ship-sort-btn" onclick="SHIPYARD.adjustPriceMultiplier(0.1)" style="padding:2px 8px;font-size:12px;font-weight:bold">▲</button>' +
+        '</div></div>';
+    } else if (price) {
+      priceHtml =
+        '<div style="text-align:right;font-family:\'IBM Plex Mono\',monospace;font-size:11px">' +
+        '<div style="color:var(--text-dim)">Retail</div>' +
+        '<div style="color:var(--gold)">' + price.toLocaleString() + ' cr</div></div>';
+    } else {
+      priceHtml =
+        '<div style="text-align:right;font-family:\'IBM Plex Mono\',monospace;font-size:11px">' +
+        '<div style="color:var(--red)">No price data</div></div>';
+    }
+
     document.getElementById('shipyardHeader').innerHTML =
       '<div style="display:flex;justify-content:space-between;align-items:center;padding:8px 10px;background:var(--bg3);border:1px solid var(--gold-dim);border-radius:var(--radius-sm);margin-bottom:10px">' +
       '<div><div style="font-family:\'Exo 2\',monospace;font-size:14px;color:var(--gold);font-weight:700">' + base.name + '</div>' +
       '<div style="font-size:10px;color:var(--text-dim)">' + base.craft + '</div></div>' +
-      '<div style="text-align:right;font-family:\'IBM Plex Mono\',monospace;font-size:11px"><div style="color:var(--text-dim)">Retail</div><div style="color:var(--gold)">' + (price ? price.toLocaleString() + ' cr' : 'Unknown') + '</div></div>' +
+      priceHtml +
       '</div>';
     document.getElementById('shipyardStats').innerHTML = '<div style="font-size:10px;color:var(--text-dim);padding:8px;text-align:center;font-style:italic">Modification controls coming soon — Phase 2</div>';
     document.getElementById('shipyardCosts').innerHTML =
