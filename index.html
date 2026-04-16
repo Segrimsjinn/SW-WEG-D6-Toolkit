@@ -11149,7 +11149,8 @@ const SHIPYARD = {
   renderModRow(label, baseStat, currentStat, modLevel, maxLevel, system, price) {
     const table = this.MOD_TABLES[system];
     const next = modLevel < maxLevel ? table[modLevel] : null;
-    const nextCost = next ? Math.round(price * next.pct / 100) : 0;
+    const labor = this.getLaborMultiplier();
+    const nextCost = next ? Math.round(price * next.pct / 100 * labor) : 0;
     const atMax = modLevel >= maxLevel;
     const diffColor = next ? (next.mishap >= 2 ? 'var(--red)' : 'var(--gold)') : '';
 
@@ -11577,6 +11578,19 @@ const SHIPYARD = {
     this.render();
   },
 
+  adjustLabor(delta) {
+    if (!this.currentPin) return;
+    const sy = this.currentPin.shipyard;
+    sy.laborMultiplier = Math.max(1, Math.min(5, (sy.laborMultiplier || 1) + delta));
+    corkboardSave();
+    this.render();
+  },
+
+  getLaborMultiplier() {
+    if (!this.currentPin) return 1;
+    return this.currentPin.shipyard.laborMultiplier || 1;
+  },
+
   setSalvageMode(mode) {
     if (!this.currentPin) return;
     this.currentPin.shipyard.salvageMode = mode;
@@ -11658,7 +11672,7 @@ const SHIPYARD = {
     const step = table[level];
     if (!step) return;
     const price = this.getRetailPrice();
-    const cost = Math.round(price * step.pct / 100);
+    const cost = Math.round(price * step.pct / 100 * this.getLaborMultiplier());
     sy.mods[system] = level + 1;
     sy.totalCost += cost;
     sy.log.push({ type: 'mod', system, level: level + 1, cost, difficulty: step.difficulty, time: step.time, mishap: step.mishap, ts: Date.now() });
@@ -11674,7 +11688,7 @@ const SHIPYARD = {
     const table = this.MOD_TABLES[system];
     const step = table[level - 1];
     const price = this.getRetailPrice();
-    const cost = Math.round(price * step.pct / 100);
+    const cost = Math.round(price * step.pct / 100 * this.getLaborMultiplier());
     sy.mods[system] = level - 1;
     sy.totalCost = Math.max(0, sy.totalCost - cost);
     sy.log = sy.log.filter(l => !(l.type === 'mod' && l.system === system && l.level === level));
@@ -11721,7 +11735,7 @@ const SHIPYARD = {
     const perWeaponCost = (sy.weaponCosts && sy.weaponCosts[weaponIdx]) || this.matchWeaponCost(w.name, w.damage) || this.getRetailPrice();
     const weaponQty = this.parseWeaponQty(w.name);
     const wCost = perWeaponCost * weaponQty + this.getFireLinkSurcharge(w.name);
-    const cost = Math.round(wCost * step.pct / 100);
+    const cost = Math.round(wCost * step.pct / 100 * this.getLaborMultiplier());
     wm[key] = level + 1;
     sy.totalCost += cost;
     sy.log.push({ type: 'weapon-mod', weaponIdx, modType, level: level + 1, cost, difficulty: step.difficulty, time: step.time, mishap: step.mishap, ts: Date.now() });
@@ -11743,7 +11757,7 @@ const SHIPYARD = {
     const perWeaponCost = (sy.weaponCosts && sy.weaponCosts[weaponIdx]) || this.matchWeaponCost(w.name, w.damage) || this.getRetailPrice();
     const weaponQty = this.parseWeaponQty(w.name);
     const wCost = perWeaponCost * weaponQty + this.getFireLinkSurcharge(w.name);
-    const cost = Math.round(wCost * step.pct / 100);
+    const cost = Math.round(wCost * step.pct / 100 * this.getLaborMultiplier());
     wm[key] = level - 1;
     sy.totalCost = Math.max(0, sy.totalCost - cost);
     sy.log = sy.log.filter(l => !(l.type === 'weapon-mod' && l.weaponIdx === weaponIdx && l.modType === modType && l.level === level));
@@ -11788,12 +11802,21 @@ const SHIPYARD = {
     }
 
     const shipName = sy.customName || '';
+    const laborMult = sy.laborMultiplier || 1;
+    const laborLabels = {1:'DIY (1×)', 2:'Avail 4 — Core (2×)', 3:'Avail 3 — Mid Rim (3×)', 4:'Avail 2 — Outer Rim (4×)', 5:'Avail 1 — Fringe (5×)'};
+    const laborColors = {1:'var(--text-dim)', 2:'var(--green)', 3:'var(--cyan)', 4:'var(--gold)', 5:'var(--red)'};
     document.getElementById('shipyardHeader').innerHTML =
       '<div style="display:flex;align-items:center;gap:8px;padding:6px 10px;margin-bottom:4px">' +
       '<label style="font-family:\'Exo 2\',monospace;font-size:8px;color:var(--gold);letter-spacing:1px;white-space:nowrap">SHIP NAME</label>' +
       '<input id="shipyardNameInput" type="text" value="' + (shipName ? shipName.replace(/"/g,'&quot;') : '') + '" placeholder="Name your ship to save changes on undock" ' +
       'onchange="SHIPYARD.setCustomName(this.value)" ' +
       'style="flex:1;background:var(--bg);border:1px solid var(--card-border);border-radius:var(--radius-sm);padding:6px 10px;color:var(--text);font-family:\'IBM Plex Mono\',monospace;font-size:12px">' +
+      '</div>' +
+      '<div style="display:flex;align-items:center;gap:6px;padding:4px 10px;margin-bottom:4px">' +
+      '<label style="font-family:\'Exo 2\',monospace;font-size:8px;color:var(--text-dim);letter-spacing:1px;white-space:nowrap">LABOR RATE</label>' +
+      '<button class="ship-sort-btn" onclick="SHIPYARD.adjustLabor(-1)" style="padding:2px 8px;font-size:12px;font-weight:bold">▼</button>' +
+      '<span style="font-family:\'IBM Plex Mono\',monospace;font-size:11px;color:' + laborColors[laborMult] + ';min-width:160px;text-align:center">' + laborLabels[laborMult] + '</span>' +
+      '<button class="ship-sort-btn" onclick="SHIPYARD.adjustLabor(1)" style="padding:2px 8px;font-size:12px;font-weight:bold">▲</button>' +
       '</div>' +
       '<div style="display:flex;justify-content:space-between;align-items:center;padding:8px 10px;background:var(--bg3);border:1px solid var(--gold-dim);border-radius:var(--radius-sm);margin-bottom:10px">' +
       '<div><div style="font-family:\'Exo 2\',monospace;font-size:13px;color:var(--text)">' + base.name + '</div>' +
