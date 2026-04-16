@@ -2368,6 +2368,13 @@ color:var(--text-dim);min-width:35px;text-align:right;
               <div style="display:flex;justify-content:space-between;padding:1px 0"><span>Suite ↔ Brig Suite</span><span>Easy · 1,250 cr · 1 day</span></div>
             </div>
             <div style="font-size:7px;color:var(--text-dark);margin-top:3px;font-style:italic">Double Bunk: stacked bunks, shared refresher (5T). Single Cabin: private bunk, desk, shared refresher (5T). Suite: private refresher, sitting area, viewport (10T). Brig variants add reinforced walls, locked door, and basic monitoring. Labor multiplier applies if hiring out.</div>
+            <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--cyan);letter-spacing:1px;margin:8px 0 3px">HOUSE RULES — SALVAGED PARTS</div>
+            <div style="font-size:10px;color:var(--text-dim);line-height:1.9">
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Lucky Find</span><span>30% repair cost · 2× labor</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Standard Salvage <span style="font-size:7px;color:var(--text-dim)">(default)</span></span><span>50% repair cost · 2× labor</span></div>
+              <div style="display:flex;justify-content:space-between;padding:1px 0"><span>Barely Functional</span><span>90% repair cost · 3× labor</span></div>
+            </div>
+            <div style="font-size:7px;color:var(--text-dark);margin-top:3px;font-style:italic">No purchase price — cost is repair/refurbishment only. The real value of salvage is availability: you have the part where you are, no dealer required. Barely Functional parts cost nearly as much as new but can be found in the field.</div>
           </div>
         </div>
         <div style="font-size:8px;color:var(--text-dim);margin-top:6px;font-style:italic">Sources: REUP (Revised Expanded Updated) &amp; WEG40063 Galaxy Guide 6: Tramp Freighters Ch.8 · Berth conversion: House Rule</div>
@@ -11302,10 +11309,29 @@ const SHIPYARD = {
     return val;
   },
 
+  SALVAGE_TIERS: {
+    none:     { label: 'New Purchase', pct: 100, laborMult: 1, color: 'var(--green)' },
+    lucky:    { label: 'Lucky Find (30%)', pct: 30, laborMult: 2, color: 'var(--cyan)' },
+    standard: { label: 'Standard Salvage (50%)', pct: 50, laborMult: 2, color: 'var(--gold)' },
+    barely:   { label: 'Barely Functional (90%)', pct: 90, laborMult: 3, color: 'var(--red)' }
+  },
+
   renderReplacements(sy, base, price) {
     if (!sy.replacements) sy.replacements = [];
+    if (!sy.salvageMode) sy.salvageMode = 'none';
     let html = '<div style="font-family:\'Exo 2\',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin:10px 0 4px">COMPONENT REPLACEMENTS</div>';
-    html += '<div style="font-size:8px;color:var(--text-dark);margin-bottom:6px;font-style:italic">Replace an entire system with new hardware from Ship Equipment. Resets modification ceiling for that system. Weight subtracts from cargo.</div>';
+    html += '<div style="display:flex;gap:4px;margin-bottom:6px;flex-wrap:wrap;align-items:center">';
+    for (const [key, tier] of Object.entries(this.SALVAGE_TIERS)) {
+      const active = sy.salvageMode === key;
+      html += '<button class="ship-sort-btn" onclick="SHIPYARD.setSalvageMode(\'' + key + '\')" style="padding:3px 8px;font-size:8px;' + (active ? 'border-color:' + tier.color + ';color:' + tier.color : '') + '">' + tier.label + '</button>';
+    }
+    html += '</div>';
+    const salvage = this.SALVAGE_TIERS[sy.salvageMode] || this.SALVAGE_TIERS.none;
+    const isSalvage = sy.salvageMode !== 'none';
+    html += '<div style="font-size:8px;color:var(--text-dark);margin-bottom:6px;font-style:italic">' +
+      (isSalvage ? 'Salvaged parts: ' + salvage.pct + '% repair cost (no purchase price), ' + salvage.laborMult + '× install labor. Part is available where you found it — no dealer required.'
+       : 'Replace an entire system with new hardware from Ship Equipment. Resets modification ceiling for that system. Weight subtracts from cargo.') +
+      '</div>';
     html += '<div style="border:1px solid var(--card-border);border-radius:var(--radius-sm);overflow:hidden">';
 
     for (const [subtype, st] of Object.entries(this.EQUIP_SUBTYPES)) {
@@ -11319,7 +11345,8 @@ const SHIPYARD = {
         html += '<div style="flex:1"><div style="font-family:\'IBM Plex Mono\',monospace;font-size:10px;color:var(--cyan);font-weight:700">' + existing.equipName + ' <span style="font-size:8px;color:' + rAvailColor + '">' + (existing.availability ? '[' + existing.availability + ']' : '') + '</span></div>';
         if (existing.notes) html += '<div style="font-size:8px;color:var(--text-dim);line-height:1.4;margin-top:2px">' + existing.notes + '</div>';
         html += '</div>';
-        html += '<span style="font-size:9px;color:var(--text-dim);white-space:nowrap">' + existing.cost.toLocaleString() + ' cr, ' + existing.weight + ' mt</span>';
+        const costLabel = existing.salvage ? '<span style="color:var(--cyan)">' + existing.cost.toLocaleString() + ' cr</span> <span style="font-size:7px;color:var(--text-dark)">(salvage ' + (this.SALVAGE_TIERS[existing.salvage]||{}).pct + '% of ' + (existing.fullCost||existing.cost).toLocaleString() + ')</span>' : existing.cost.toLocaleString() + ' cr';
+        html += '<span style="font-size:9px;color:var(--text-dim);white-space:nowrap">' + costLabel + ', ' + existing.weight + ' mt</span>';
         html += '<button class="ship-sort-btn" onclick="SHIPYARD.removeReplacement(\'' + subtype + '\')" style="padding:2px 8px;font-size:9px;color:var(--red)">✕</button>';
       } else {
         html += '<select onchange="SHIPYARD.applyReplacement(\'' + subtype + '\', this.value)" style="flex:1;max-width:300px;padding:4px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:10px;font-family:inherit">';
@@ -11376,7 +11403,8 @@ const SHIPYARD = {
         html += '<span style="color:var(--text);font-weight:700;flex:1">' + ao.name + '</span>';
         if (ao.availability) html += '<span style="font-size:8px;color:' + availColor + '">[' + ao.availability + ']</span>';
         if (ao.weight) html += '<span style="font-size:8px;color:var(--text-dark)">' + ao.weight + ' mt</span>';
-        html += '<span style="color:var(--gold);font-family:\'IBM Plex Mono\',monospace;font-size:9px">' + ao.cost.toLocaleString() + ' cr</span>';
+        const aoCostLabel = ao.salvage ? ao.cost.toLocaleString() + ' cr <span style="font-size:7px;color:var(--text-dark)">(salvage)</span>' : ao.cost.toLocaleString() + ' cr';
+        html += '<span style="color:var(--gold);font-family:\'IBM Plex Mono\',monospace;font-size:9px">' + aoCostLabel + '</span>';
         html += '<button class="ship-sort-btn" onclick="SHIPYARD.removeAddOn(' + i + ')" style="padding:1px 6px;font-size:9px;color:var(--red)">✕</button>';
         html += '</div>';
         if (ao.notes) html += '<div style="font-size:8px;color:var(--text-dim);margin-top:3px;line-height:1.5">' + ao.notes + '</div>';
@@ -11407,8 +11435,10 @@ const SHIPYARD = {
     if (!eq) return;
     const sy = this.currentPin.shipyard;
     if (!sy.addOns) sy.addOns = [];
-    sy.addOns.push({ name: eq.name, cost: eq.cost, weight: eq.weight, notes: eq.notes, availability: eq.availability });
-    sy.totalCost += eq.cost;
+    const actualCost = this.getSalvageCost(eq.cost);
+    const salvageMode = (this.currentPin.shipyard.salvageMode || 'none');
+    sy.addOns.push({ name: eq.name, cost: actualCost, fullCost: eq.cost, weight: eq.weight, notes: eq.notes, availability: eq.availability, salvage: salvageMode !== 'none' ? salvageMode : undefined });
+    sy.totalCost += actualCost;
     sy.log.push({ type: 'add-on', equipName: eq.name, cost: eq.cost, weight: eq.weight, ts: Date.now() });
     corkboardSave();
     this.render();
@@ -11526,6 +11556,28 @@ const SHIPYARD = {
     this.render();
   },
 
+  setSalvageMode(mode) {
+    if (!this.currentPin) return;
+    this.currentPin.shipyard.salvageMode = mode;
+    corkboardSave();
+    this.render();
+  },
+
+  getSalvageCost(fullCost) {
+    if (!this.currentPin) return fullCost;
+    const mode = this.currentPin.shipyard.salvageMode || 'none';
+    const tier = this.SALVAGE_TIERS[mode] || this.SALVAGE_TIERS.none;
+    return Math.round(fullCost * tier.pct / 100);
+  },
+
+  getSalvageLabel() {
+    if (!this.currentPin) return '';
+    const mode = this.currentPin.shipyard.salvageMode || 'none';
+    if (mode === 'none') return '';
+    const tier = this.SALVAGE_TIERS[mode];
+    return ' [' + tier.label + ', ' + tier.laborMult + '× labor]';
+  },
+
   applyReplacement(subtype, equipName) {
     if (!this.currentPin || !equipName) return;
     const sy = this.currentPin.shipyard;
@@ -11534,8 +11586,10 @@ const SHIPYARD = {
     if (!eq) return;
     if (!sy.replacements) sy.replacements = [];
     sy.replacements = sy.replacements.filter(r => r.subtype !== subtype);
-    sy.replacements.push({ subtype, equipName: eq.name, cost: eq.cost, weight: eq.weight, stat: eq.stat, source: eq.source, availability: eq.availability, notes: eq.notes });
-    sy.totalCost += eq.cost;
+    const actualCost = this.getSalvageCost(eq.cost);
+    const salvageMode = (this.currentPin.shipyard.salvageMode || 'none');
+    sy.replacements.push({ subtype, equipName: eq.name, cost: actualCost, fullCost: eq.cost, weight: eq.weight, stat: eq.stat, source: eq.source, availability: eq.availability, notes: eq.notes, salvage: salvageMode !== 'none' ? salvageMode : undefined });
+    sy.totalCost += actualCost;
 
     const st = this.EQUIP_SUBTYPES[subtype];
     if (st.statKey === 'space') {
