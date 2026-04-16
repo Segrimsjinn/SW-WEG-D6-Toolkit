@@ -11036,6 +11036,11 @@ const SHIPYARD = {
         fire_control: pipsToD6(d6ToPips(w.fire_control) + (wm.fcPips || 0))
       });
     });
+    const totalWeight = (sy.replacements || []).reduce((s, r) => s + (r.weight || 0), 0);
+    if (totalWeight) {
+      const baseCargo = this.parseCargoTons(base.cargo);
+      stats.cargo = Math.max(0, baseCargo - totalWeight) + ' metric tons';
+    }
     return stats;
   },
 
@@ -11220,7 +11225,130 @@ const SHIPYARD = {
     }
 
     document.getElementById('shipyardStats').innerHTML = html;
-    document.getElementById('shipyardMods').innerHTML = '';
+    this.renderReplacements(sy, base, price);
+  },
+
+  EQUIP_SUBTYPES: {
+    engine: { label: 'SUBLIGHT ENGINE', keywords: /Ion Drive|ion engine|Sublight/i, statKey: 'space', parseRe: /Space:\s*(\d+)/, weightRe: /Weight:\s*([\d,.]+)\s*metric/i },
+    hyperdrive: { label: 'HYPERDRIVE', keywords: /Hyperdrive/i, statKey: 'hyperdrive', parseRe: /x([\d./]+)/, weightRe: /Weight:\s*([\d,.]+)\s*metric/i },
+    shields: { label: 'SHIELDS', keywords: /Ship Shields|Shield code/i, statKey: 'shields', parseRe: /(?:Shield code:|Shields?\s*\()\s*(\d+D[+\d]*)/, weightRe: /Weight:\s*([\d,.]+)\s*metric/i },
+  },
+
+  getEquipBySubtype(subtype) {
+    const st = this.EQUIP_SUBTYPES[subtype];
+    if (!st) return [];
+    return (typeof EQUIPMENT_DATA !== 'undefined' ? EQUIPMENT_DATA : [])
+      .filter(e => e.category === 'Ship Equipment' && (st.keywords.test(e.name) || st.keywords.test(e.game_notes || '')))
+      .filter(e => this.parsePrice(e.cost) > 0)
+      .map(e => {
+        const notes = e.game_notes || '';
+        let stat = '';
+        if (subtype === 'hyperdrive') {
+          const hm = e.name.match(/\(x([\d./]+)\)/);
+          stat = hm ? 'x' + hm[1] : '';
+        } else {
+          const sm = notes.match(st.parseRe);
+          stat = sm ? sm[1] : '';
+        }
+        const wm = notes.match(st.weightRe);
+        const weight = wm ? parseFloat(wm[1].replace(/,/g, '')) : 0;
+        return { name: e.name, cost: this.parsePrice(e.cost), stat, weight, source: e.source || '' };
+      });
+  },
+
+  parseCargoTons(cargoStr) {
+    if (!cargoStr) return 0;
+    const m = String(cargoStr).replace(/,/g, '').match(/([\d.]+)/);
+    if (!m) return 0;
+    const val = parseFloat(m[1]);
+    if (/kg/i.test(cargoStr)) return val / 1000;
+    return val;
+  },
+
+  renderReplacements(sy, base, price) {
+    if (!sy.replacements) sy.replacements = [];
+    let html = '<div style="font-family:\'Exo 2\',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin:10px 0 4px">COMPONENT REPLACEMENTS</div>';
+    html += '<div style="font-size:8px;color:var(--text-dark);margin-bottom:6px;font-style:italic">Replace an entire system with new hardware from Ship Equipment. Resets modification ceiling for that system. Weight subtracts from cargo.</div>';
+    html += '<div style="border:1px solid var(--card-border);border-radius:var(--radius-sm);overflow:hidden">';
+
+    for (const [subtype, st] of Object.entries(this.EQUIP_SUBTYPES)) {
+      const equips = this.getEquipBySubtype(subtype);
+      const existing = sy.replacements.find(r => r.subtype === subtype);
+      html += '<div style="display:flex;align-items:center;gap:6px;padding:6px 8px;border-bottom:1px solid var(--card-border);flex-wrap:wrap">';
+      html += '<div style="min-width:90px;font-family:\'Exo 2\',monospace;font-size:9px;color:var(--gold);letter-spacing:1px">' + st.label + '</div>';
+
+      if (existing) {
+        html += '<div style="font-family:\'IBM Plex Mono\',monospace;font-size:10px;color:var(--cyan);font-weight:700">' + existing.equipName + '</div>';
+        html += '<span style="font-size:9px;color:var(--text-dim)">(' + existing.cost.toLocaleString() + ' cr, ' + existing.weight + ' mt)</span>';
+        html += '<button class="ship-sort-btn" onclick="SHIPYARD.removeReplacement(\'' + subtype + '\')" style="margin-left:auto;padding:2px 8px;font-size:9px;color:var(--red)">✕ Revert</button>';
+      } else {
+        html += '<select onchange="SHIPYARD.applyReplacement(\'' + subtype + '\', this.value)" style="flex:1;max-width:300px;padding:4px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:10px;font-family:inherit">';
+        html += '<option value="">— Select replacement —</option>';
+        for (const eq of equips) {
+          html += '<option value="' + eq.name.replace(/"/g, '&quot;') + '">' + eq.name + ' (' + (eq.stat || '?') + ', ' + eq.cost.toLocaleString() + ' cr, ' + eq.weight + ' mt)</option>';
+        }
+        html += '</select>';
+      }
+      html += '</div>';
+    }
+
+    html += '</div>';
+
+    const totalReplacementWeight = sy.replacements.reduce((s, r) => s + (r.weight || 0), 0);
+    const baseCargo = this.parseCargoTons(base.cargo);
+    const remainingCargo = Math.max(0, baseCargo - totalReplacementWeight);
+    if (sy.replacements.length) {
+      html += '<div style="font-size:9px;color:var(--text-dim);margin-top:4px">Cargo impact: ' + baseCargo + ' mt base − ' + totalReplacementWeight + ' mt replacements = <span style="color:' + (remainingCargo > 0 ? 'var(--cyan)' : 'var(--red)') + '">' + remainingCargo + ' mt remaining</span></div>';
+    }
+
+    document.getElementById('shipyardReplacements').innerHTML = html;
+  },
+
+  applyReplacement(subtype, equipName) {
+    if (!this.currentPin || !equipName) return;
+    const sy = this.currentPin.shipyard;
+    const equips = this.getEquipBySubtype(subtype);
+    const eq = equips.find(e => e.name === equipName);
+    if (!eq) return;
+    if (!sy.replacements) sy.replacements = [];
+    sy.replacements = sy.replacements.filter(r => r.subtype !== subtype);
+    sy.replacements.push({ subtype, equipName: eq.name, cost: eq.cost, weight: eq.weight, stat: eq.stat, source: eq.source });
+    sy.totalCost += eq.cost;
+
+    const st = this.EQUIP_SUBTYPES[subtype];
+    if (st.statKey === 'space') {
+      sy.mods.space = 0;
+      sy.base.space = eq.stat || sy.base.space;
+    } else if (st.statKey === 'hyperdrive') {
+      sy.mods.hyperdrive = 0;
+      sy.base.hyperdrive = eq.stat || sy.base.hyperdrive;
+    } else if (st.statKey === 'shields') {
+      sy.mods.shields = 0;
+      sy.base.shields = eq.stat || sy.base.shields;
+    }
+
+    sy.log.push({ type: 'replacement', subtype, equipName: eq.name, cost: eq.cost, weight: eq.weight, stat: eq.stat, ts: Date.now() });
+    corkboardSave();
+    this.render();
+  },
+
+  removeReplacement(subtype) {
+    if (!this.currentPin) return;
+    const sy = this.currentPin.shipyard;
+    const existing = sy.replacements.find(r => r.subtype === subtype);
+    if (!existing) return;
+    sy.totalCost = Math.max(0, sy.totalCost - existing.cost);
+    sy.replacements = sy.replacements.filter(r => r.subtype !== subtype);
+
+    const originalBase = this.snapshotBase(this.currentPin);
+    const st = this.EQUIP_SUBTYPES[subtype];
+    if (st.statKey === 'space') sy.base.space = originalBase.space;
+    else if (st.statKey === 'hyperdrive') sy.base.hyperdrive = originalBase.hyperdrive;
+    else if (st.statKey === 'shields') sy.base.shields = originalBase.shields;
+
+    sy.log = sy.log.filter(l => !(l.type === 'replacement' && l.subtype === subtype));
+    corkboardSave();
+    this.render();
   },
 
   applyMod(system) {
