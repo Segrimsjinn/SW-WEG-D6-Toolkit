@@ -11404,6 +11404,9 @@ const SHIPYARD = {
     if (!sy.salvageMode) sy.salvageMode = 'none';
     const showHR = houseRulesEnabled();
     let html = '<div style="font-family:\'Exo 2\',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin:10px 0 4px">COMPONENT REPLACEMENTS</div>';
+    if (!showHR) {
+      html += '<div style="font-size:8px;color:var(--text-dark);margin-bottom:6px;font-style:italic">Replacement parts and pricing are based on starfighter-scale ships. Enable House Rules for capital-scale cost adjustments and salvage options.</div>';
+    }
     if (showHR) {
       html += '<div style="display:flex;gap:4px;margin-bottom:6px;flex-wrap:wrap;align-items:center">';
       for (const [key, tier] of Object.entries(this.SALVAGE_TIERS)) {
