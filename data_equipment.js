@@ -624,14 +624,6 @@ const EQUIPMENT_DATA = [
   "source": ""
  },
  {
-  "name": "Cybot Galactica FL Exploration Droid",
-  "category": "Droids",
-  "cost": "",
-  "availability": "",
-  "game_notes": "Scout Companion Droid. Height: 1m. Move: 10. DEX 2D, KNO 1D (survival 4D), MEC 2D (communications 2D, sensors 5D), PER 1D (hide 2D, sneak 2D, search 3D), STR 1D (lifting 2D), TEC 1D (security 2D). Four legs, heavy grasper jaw (designed for holding without crushing), video/hearing/odor sensor arrays on head, movement sensor, communications link to ship computer. Limited verbal communication — narrow range of warning sounds.",
-  "source": "WEG40061 Galaxy Guide 8: Scouts"
- },
- {
   "name": "PackTack 41LT-R MULE Droid",
   "category": "Droids",
   "cost": "",
@@ -1904,14 +1896,6 @@ const EQUIPMENT_DATA = [
   "source": "WEG40091 Rebel Alliance Sourcebook p.105"
  },
  {
-  "name": "LesTech Explorer Droid",
-  "category": "Droids",
-  "cost": "13,000 (5,500 used)",
-  "availability": "",
-  "game_notes": "Exploration and survey droid. Height: 1.3m. Move: 5 (treads). DEX 1D, KNO 1D (planetary systems 4D+2, survival 4D+2), MEC 1D, PER 1D (search 4D+2), STR 5D, TEC 1D. Seismic sensors (+1D search for ground vibrations and source identification). Movement sensors (+1D search to spot moving objects up to 500m). Electromagnetic spectrum sensors. Visual and infrared range sensors. Radiation sensors (detects levels harmful to organics). Heavy grasper arm (+1D lifting). Fine manipulator arm (+1D to DEX/TEC tasks requiring fine manipulation, used to gather samples). Holcam. Specimen hopper (5kg capacity).",
-  "source": "WEG40091 Rebel Alliance Sourcebook p.117"
- },
- {
   "name": "Industrial Automaton V1 Pilot Droid",
   "category": "Droids",
   "cost": "11,800 (9,600 used)",
@@ -1968,14 +1952,6 @@ const EQUIPMENT_DATA = [
   "source": "WEG40093 Star Wars Sourcebook p.57"
  },
  {
-  "name": "Cybot Galactica IC-M General Utility Droid",
-  "category": "Droids",
-  "cost": "500 (used)",
-  "availability": "",
-  "game_notes": "Commonly called the 'Eyesee-em.' Height: 1.5m. Move: 7 (caterpillar treads). DEX 1D, KNO 1D, MEC 2D, PER 2D, STR 3D (lifting 5D), TEC 4D (computer programming/repair 5D, general repair 5D, machinery repair 5D). Seven manipulator arms with interchangeable attachments. Rear storage bay with cleaning fluids, supplies, and tools. Fitted with restraining bolt and locational transponder (very difficult to remove). Performs maintenance, lighting replacement, groundskeeping, and tourist directions on Coruscant.",
-  "source": "WEG40114 The Jedi Academy Sourcebook p.141"
- },
- {
   "name": "Industrial Automaton 2-ZH Surgical Droid",
   "category": "Droids",
   "cost": "3,000 (used)",
@@ -2030,30 +2006,6 @@ const EQUIPMENT_DATA = [
   "availability": "1",
   "game_notes": "Public information and directions droid. Height: 1.3m. Move: 3 (treadwell locomotion). DEX 1D, KNO 4D (languages 5D), MEC 1D, PER 1D, STR 1D, TEC 1D (computer programming/repair 4D). Equipped: box frame body, treadwell locomotion unit, video sensor, vocabulator speech/sound system, extendible I/O computer jack. Programmed with up to two dozen languages (customizable at purchase). I/O jack access is hardwired to lowest data levels only — cannot be used to slice into protected data even by a skilled slicer. Rebel operatives have modified these droids with extra c-boards to add voice and visual ID recognition, converting them into inconspicuous dead-drop points for messages and datacards (concealed datacard slot behind a service panel).",
   "source": "WEG40122 Shadows of the Empire p.105"
- },
- {
-  "name": "Arakyd AS-M12 Seeker Message Droid",
-  "category": "Droids",
-  "cost": "4,000",
-  "availability": "2",
-  "game_notes": "Compact globe-shaped message droid hovering on repulsorlift. Height: 0.5m. Move: 10. DEX 1D, KNO 2D (planetary systems 3D), MEC 1D (sensors 3D), PER 2D (search 4D), STR 2D, TEC 1D (computer programming/repair 3D). Equipped: repulsorlift generator, visual and audial sensors, vocabulator speech/sound system (normally Basic only; additional languages purchasable), retractable fine-work grasper arm, holographic projector/recorder (hidden behind access panel; databanks deleted seconds after message delivery), computer I/O jack. Loaded into a hyperspace transport pod (sold separately) for interstellar delivery; pod and droid are retrievable and reusable after modest refitting. Special Abilities — Message Security: will not convey information without proper passcode; circumventing without the passcode requires a Heroic droid programming roll. Some owners modify units to self-destruct after delivery.",
-  "source": "WEG40122 Shadows of the Empire p.108"
- },
- {
-  "name": "Arakyd Seeker Transport (Message Droid Hyperspace Pod)",
-  "category": "Droids",
-  "cost": "20,000",
-  "availability": "2",
-  "game_notes": "Single-use hyperspace delivery pod for the AS-M12 message droid. Craft: Arakyd Seeker Transport. Scale: Starfighter. Length: 2m. Crew: None (fully automated droid brain; astrogation 4D, space transports 4D). Passengers: 1 message droid. Consumables: 1 month. Hyperdrive x1 (limited to 1 jump). Space 6. Atmosphere 330/950 kmh. Hull 1D+2. Sensors — Passive 20/1D, Scan 40/2D, Search 60/3D, Focus 3/4D. Pod and droid are retrievable and reusable after modest refitting.",
-  "source": "WEG40122 Shadows of the Empire p.108"
- },
- {
-  "name": "Cybot Galactica A9G Archive Droid",
-  "category": "Droids",
-  "cost": "8,000",
-  "availability": "2",
-  "game_notes": "Data storage and retrieval droid. Height: 1.7m. Move: 9. DEX 2D, KNO 2D (bureaucracy: library science 4D, bureaucracy: Alliance information storage 12D), MEC 1D, PER 1D, STR 1D+2, TEC 2D (computer programming/repair 5D). Equipped: Kraren XI Superprocessor (rapid data collation), Cybot Galactica Data-Sifter software (+1D to all computer programming/repair rolls involving data searches), humanoid body (head, two arms, two legs). Suited for single-task operations and small to mid-size library systems; prone to glitches in large Core World university systems. Rebel Alliance uses several throughout the fleet for military data retrieval, including the war room on the Headquarters Frigate. Can tap into the Alliance data network for instant access to documents, encyclopedias, intelligence reports, and galactic news networks.",
-  "source": "WEG40085 The Truce at Bakura p.134"
  },
  {
   "name": "Arakyd \"Stiletto\" Imperial Security Droid",
@@ -2256,14 +2208,6 @@ const EQUIPMENT_DATA = [
   "source": "REUP Star Wars RPG: Revised Expanded Updated p.374"
  },
  {
-  "name": "IT-0 Interrogator Droid",
-  "category": "Droids",
-  "cost": "10,000",
-  "availability": "4, X",
-  "game_notes": "Height: 1m. Move: 3 (repulsorlift). DEX 1D (dodge 3D, melee combat 3D, melee combat: interrogation tools 4D+1), KNO 3D (alien species 4D, humanoid biology 5D, intimidation 6D, intimidation: interrogation 7D), MEC 2D (sensors 3D), PER 4D (investigation 5D, search 5D), STR 3D, TEC 2D (first aid 5D, (A) medicine 5D, security 4D). Equipped: repulsorlift engine, visual/sound sensor package, vocabulator, laser scalpel (2D), hypodermic injectors (4D stun), power shears (5D), grasping claw (+1D lifting). Imperial manufacture only; distributed to ISB, senior Moffs, military intelligence, CompForce, and Inquisition. Designed to bring subjects to the brink of physical damage without permanent harm — carries medical supplies to patch victims between sessions.",
-  "source": "REUP Star Wars RPG: Revised Expanded Updated p.373"
- },
- {
   "name": "FX-6 Medical Droid",
   "category": "Droids",
   "cost": "4,300",
@@ -2326,14 +2270,6 @@ const EQUIPMENT_DATA = [
   "availability": "",
   "game_notes": "Custom-made by an expert to fit a specific weapon. Molded around the weapon's shape with no bumps or details to slow the draw. Adds +1 to +2D or more to blaster skill when quickdrawing. Price varies by quality and customization. QUICKDRAW RULES: Character uses blaster skill or specialization with an appropriate weapon (blaster pistol, hold-out blaster, heavy blaster pistol). Character may not do anything else in the round, including dodge — quickdrawing characters are easy marks for anyone else. Character splits blaster skill dice between speed draw dice and accuracy dice. Both characters roll speed draw dice — highest fires first. The first shooter then rolls accuracy dice to hit. Actions are NOT simultaneous: the second character may only fire back if not injured. A character stunned by a quickdraw shot loses -3D off all following shots that round. A character wounded or worse cannot return fire. Multiple shots suffer multi-action penalties to both speed draw and accuracy dice. Against dodging opponents: roll speed draw vs target's dodge — if speed draw is higher, shoot at normal range difficulty only (dodge doesn't add); if dodge is higher, dodge roll adds to range difficulty.",
   "source": "WEG40042 Han Solo and the Corporate Sector Sourcebook p.121"
- },
- {
-  "name": "Serv-O-Droid DC5-1 Freight Droid",
-  "category": "Droids",
-  "cost": "4,500",
-  "availability": "",
-  "game_notes": "Height: 2.8m. Move: 6. DEX 2D, KNO 1D, MEC 1D, PER 1D, STR 4D (lifting 10D), TEC 1D (security 4D). Equipped: four extendible manipulators, one pair heavy caterpillar treads, one pair lifting claws, cranial turret with audio/video sensor, remote directional transponder, armored chassis (+1D), laser scanner. Cargo Code Database: laser scanner identifies each cargo module's identity band and correlates it to where it should be off-loaded; can also recode an identity band for new cargoes.",
-  "source": "WEG40042 Han Solo and the Corporate Sector Sourcebook p.126"
  },
  {
   "name": "CSA Harvester Droid CD-2",
@@ -2430,14 +2366,6 @@ const EQUIPMENT_DATA = [
   "availability": "",
   "game_notes": "Height: 1.6m. Move: 7. DEX 2D (running 2D+1), KNO 2D+2 (alien species 3D, cultures 3D, languages 3D+1), MEC 1D+1 (communications 4D, ground vehicle operation 2D+1, hover vehicle operation 2D, repulsorlift operation 2D+2, sensors 2D), PER 1D+1 ((A) injury/ailment diagnostics 2D), STR 1D+1, TEC 2D (first aid 6D). Equipped: humanoid body, two visual/auditory sensor recorders (Human range), vocabulator, AA-1 Verbobrain. Medical Database: 50,000 common illnesses and diseases with search/retrieval for advanced first aid in crisis situations. Medical SupportLink: maintains direct comlink to nearest medical facility with two-way data transmission via planetary communication grids.",
   "source": "WEG40025 Galladinium's Fantastic Technology p.20"
- },
- {
-  "name": "Cybot Galactica Guardian Droid",
-  "category": "Droids",
-  "cost": "4,000 (new), 2,000 (used)",
-  "availability": "",
-  "game_notes": "Height: 1.5m. Move: 13. DEX 2D (blaster 4D, brawling parry 2D+1, dodge 3D+2, melee combat 4D, melee parry 4D, running 4D), KNO 1D (alien species 2D, intimidation 4D), MEC 3D (communications 2D, sensors 4D), PER 2D (search 3D), STR 3D (brawling 4D), TEC 1D. Four legs. Hinged grasping jaw with retractable blade incisors (STR+2). Retractable blaster (3D, 0-3/10/20). Two visual/auditory sensor recorders (Human range). Loyalty Imprint: absolute obedience to master and designated family members. Reacts to potential threats to defend against attackers unless countermanded by designated family member.",
-  "source": "WEG40025 Galladinium's Fantastic Technology p.19"
  },
  {
   "name": "Caldrahlsen C4LR Litigation Droid",
@@ -4220,7 +4148,7 @@ const EQUIPMENT_DATA = [
   "cost": "8,000 (used only)",
   "availability": "2",
   "game_notes": "First-degree droid. Height: 1.7m. Move: 9. DEX 2D, KNO 2D (Bureaucracy: Library Science 4D), MEC 1D, PER 1D, STR 1D+2, TEC 2D (Computer Programming/Repair 5D). Humanoid body (two arms, two legs, head). Kraren XI Superprocessor for rapid data collation. Cybot Galactica Data-Sifter software (+1D to computer programming/repair rolls involving data searches). Designed for computer and library system management — data storage, collation, and analysis. Not terribly successful in high-traffic environments due to glitches and poor judgement, but useful for smaller-scale applications. Advanced personality matrix. Popular with the Rebel Alliance for processing raw field intelligence.",
-  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.43"
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.43; WEG41014 Star Wars Adventure Journal #14 p.252; WEG40085 The Truce at Bakura p.134"
  },
  {
   "name": "Arakyd Seeker AS-M12 Message Droid",
@@ -4228,7 +4156,7 @@ const EQUIPMENT_DATA = [
   "cost": "4,000",
   "availability": "2",
   "game_notes": "Second-degree droid. Height: 0.5m. Move: 10. DEX 1D, KNO 2D (Planetary Systems 3D), MEC 1D (Sensors 3D), PER 2D (Search 4D), STR 2D, TEC 1D (Computer Programming/Repair 3D). Compact globe with repulsorlift generator, visual/audial sensors, vocabulator, retractable fine work grasper arm, holographic projector/recorder, computer I/O jack. Message security: will not convey information without proper passcode (Heroic droid programming to circumvent). Can travel system-to-system via civilian version of Arakyd Viper probe droid hyperspace pod. Has hardwired data storage buffer storing launch coordinates in directional module. Elementary personality matrix. Reliable system-to-system communication, typically limited to military or corporate use due to cost. Can be rigged as an explosive seeker with detonite and proximity detonator.",
-  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.44"
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.44; WEG40122 Shadows of the Empire p.108"
  },
  {
   "name": "TelBrinTel GHT Medevac Droid",
@@ -4292,7 +4220,7 @@ const EQUIPMENT_DATA = [
   "cost": "13,000 (new), 5,500 (used)",
   "availability": "2, F",
   "game_notes": "Second-degree droid. Height: 1.3m. Move: 5. DEX 1D, KNO 1D (Planetary Systems 4D+2, Survival 4D+2), MEC 1D, PER 1D (Search 4D+2), STR 5D, TEC 1D. Seismic sensors (+1D to search for ground vibrations and source identification), movement sensors (+1D to search for moving objects up to 500m), electromagnetic sensors (monitors EM spectrum), dual photoreceptors (visual and infrared), radiation sensors (detects levels harmful to organics), heavy grasper arm (+1D to lifting), fine work manipulator arm (+1D to Dexterity/Technical skills for sample gathering), holocam, specimen hopper (5kg), heavy treads. Elementary personality matrix. Handles dangerous initial exploration duties for scouts — full sensor package and holorecording. Tread system requires alignment before each deployment or droid may overcompensate on control.",
-  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.56"
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.56; WEG40091 Rebel Alliance Sourcebook p.117"
  },
  {
   "name": "Industrial Automaton P2 Astromech Prototype",
@@ -4404,7 +4332,7 @@ const EQUIPMENT_DATA = [
   "cost": "2,750",
   "availability": "3",
   "game_notes": "Fifth-degree droid. Height: 1m. Move: 10 (legs). DEX 2D, KNO 1D (Survival 4D), MEC 2D (Communications 2D, Sensors 5D), PER 1D (Hide 2D, Sneak 2D, Search 3D), STR 1D (Lifting 2D), TEC 1D (Security 2D). Four legs, heavy grasper jaw (holds targets without crushing damage), two photoreceptors (human range), auditory sensors (human range), olfactory sensors, motion sensor array (+1D to search for detecting movement, 50m range), communications link to base-ship computer extending from rear, binary vocoder. Elementary personality matrix. Companion and protector for scouts in unknown space — exceptional sensor array forewarns of approaching life forms or vehicles. Can assist injured organics by pulling them to safety and back to a waiting ship. Chassis can be reprogrammed and rebuilt as heavily-armed bodyguards.",
-  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.78"
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.78; WEG40061 Galaxy Guide 8: Scouts"
  },
  {
   "name": "Veril Line Systems I-C2 Construction Droid",
@@ -4444,7 +4372,7 @@ const EQUIPMENT_DATA = [
   "cost": "20,000",
   "availability": "2",
   "game_notes": "Starfighter-scale automated hyperspace pod for message droids. Length: 2m. Crew: None (droid brain with Astrogation 4D, Space Transports 4D). Passengers: 1 message droid. Consumables: 1 month. Hyperdrive x1. Nav computer limited to 1 jump. Space: 6. Atmosphere: 330; 950 km/h. Hull: 1D+2. Sensors — Passive: 20/1D, Scan: 40/2D, Search: 60/3D, Focus: 3/4D. No weapons. Susceptible to spacejacking — Alliance has captured several. Often modified by criminals to haul small cargo instead of message droids.",
-  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.44"
+  "source": "WEG40116 Cynabar's Fantastic Technology: Droids p.44; WEG40122 Shadows of the Empire p.108"
  },
  {
   "name": "Imperial Orbital Nightcloak",
@@ -5630,7 +5558,7 @@ const EQUIPMENT_DATA = [
   "cost": "1,700 credits (new), 500 credits (used)",
   "availability": "2, R",
   "game_notes": "Second Degree Droid. Personality: None. Height: 1.5m. Move: 7. DEX 1D, KNO 1D, MEC 2D, PER 2D, STR 3D (lifting 5D), TEC 4D (computer programming/repair 5D, general repair 8D+1, machinery repair 5D). Equipped with: photoreceptor/auditory receiver (human range), seven manipulator arms with interchangeable fixtures, heavy Treadwell locomotion, rear storage bay containing various cleaning and repair tools, two heads (allows the unit to access data such as Imperial building codes and scheduled tasks while performing the job at hand). Designed to maintain and clean the lower levels of Coruscant for the Empire. Programming allows minor structural repairs (changing dead light fixtures) to minor landscaping (weeding walkways). Many IC-Ms have been purchased by other system and local governments to save on the cost of organic workers. SMUGGLER NOTE: since IC-Ms operate deep in the Coruscant underlevels they are harder to keep under Imperial surveillance and easier to co-opt for illegal purposes — recommended for covert communication memory-buffer relay on Imperial Center as an alternative to the closely-monitored IN-4 message droids.",
-  "source": "WEG41014 Star Wars Adventure Journal #14 p.249 (Cynabar's Droid Datalog)"
+  "source": "WEG41014 Star Wars Adventure Journal #14 p.249 (Cynabar's Droid Datalog); WEG40114 The Jedi Academy Sourcebook p.141"
  }
  ,{
   "name": "Cybot Galactica M4 Message Droid",
@@ -5642,22 +5570,13 @@ const EQUIPMENT_DATA = [
   "source": "WEG41014 Star Wars Adventure Journal #14 p.249 (Cynabar's Droid Datalog); WEG40025 Galladinium's Fantastic Technology p.24"
  }
  ,{
-  "name": "Industrial Automaton A9G Data Storage Droid",
-  "type": "Industrial Automaton A9G Series Data Storage Unit",
-  "category": "Droids",
-  "cost": "8,000 credits",
-  "availability": "2",
-  "game_notes": "Third Degree Droid. Personality: Moderate. Height: 1.7m. Move: 9. DEX 2D, KNO 2D (bureaucracy: library science 4D), MEC 1D, PER 1D, STR 1D+2, TEC 2D (computer programming/repair 3D). Equipped with: Kraren XI Superprocessors (rapid data collation), Cybot Galactica Data-Sifter software (+1D to all computer programming/repair rolls involving data searches), humanoid body construction (head, two arms, two legs). Designed to handle the arduous task of cataloging and maintaining vast amounts of datafiles for libraries both public and private — capable of processing catalogs at incredibly high accuracy, perfect as a retrieval device. However, given a substandard memory core that makes its primary high-end storage function 'glitch-prone'; many large libraries have either replaced the core or purchased multiple A9Gs to handle specific departments. The Rebel Alliance has obtained and modified several A9Gs to assist with military strategy based on previous Imperial activities. RUMOR: Someone is buying up large numbers of A9Gs on Ryloth — price is good, risk is low.",
-  "source": "WEG41014 Star Wars Adventure Journal #14 p.252 (Cynabar's Droid Datalog)"
- }
- ,{
   "name": "Cybot Galactica Guardian-class Droid",
   "type": "Cybot Galactica Guardian-class Protector/Companion Droid",
   "category": "Droids",
   "cost": "4,000 credits (new), 2,000 credits (used)",
   "availability": "2, F",
   "game_notes": "Fourth Degree Droid. Personality: Elementary. Height: 1.5m (roughly canine in appearance). Move: 13. DEX 2D (blaster 4D, brawling parry 2D+1, dodge 3D+2, melee combat 4D, melee parry 4D, running 4D), KNO 1D (alien species 2D, intimidation 4D), MEC 3D (communications 2D, sensors 4D), PER 2D (search 3D), STR 3D (brawling 4D), TEC 1D. Equipped with: four legs, hinged grasping jaw with retractable blade incisors (STR+2 damage), two visual/auditory sensor recorders (human range), retractable blaster (3D damage, ranges 0-3/10/20). LOYALTY IMPRINT special ability: absolute obedience to master and designated family members; will defend would-be attackers in a potential threat situation unless directly countermanded by a designated family member. Made extremely popular by a series of children's holotexts and favored by parents who require a protector/companion for children. Modders frequently retrofit Guardians with sensor packages, tracking SkillWare, automaps (excellent scouting assistants), or — less commonly — combat SkillWare and metal claws/fangs for freighter security duty (the modified version actually growls).",
-  "source": "WEG41014 Star Wars Adventure Journal #14 p.257 (Cynabar's Droid Datalog)"
+  "source": "WEG41014 Star Wars Adventure Journal #14 p.257 (Cynabar's Droid Datalog); WEG40025 Galladinium's Fantastic Technology p.19"
  }
  ,{
   "name": "Cybot Galactica LIN Demolitionmech Mining Droid",
@@ -5693,7 +5612,7 @@ const EQUIPMENT_DATA = [
   "cost": "4,500 credits",
   "availability": "1",
   "game_notes": "Fifth Degree Droid. Personality: None. Height: 2.8m. Move: 6. DEX 2D, KNO 1D, MEC 1D, PER 1D, STR 4D (lifting 10D), TEC 1D (security 4D). Equipped with: four extendible manipulators, one pair of heavy treads, one pair of lifting claws, cranial turret with audio/video sensor, remote directional transponder, armored chassis (+1D physical and energy), laser scanner. CARGO CODE DATABASE special ability: the laser scanner identifies each cargo module's identity band on the side of the module and correlates it to where the module should be off-loaded; the scanner can also re-code identity bands for new cargoes. Popular on Imperial-aligned worlds where Customs officials tend to trust the droid's internal cargo manifests — with creative reprogramming, falsifying records is straightforward. WARNING: the DC5-1 has a hardwired memory backup that automatically dumps a copy of the original system parameters anytime primary programming is altered. Smart Customs officials check the backup memory.",
-  "source": "WEG41014 Star Wars Adventure Journal #14 p.263 (Cynabar's Droid Datalog)"
+  "source": "WEG41014 Star Wars Adventure Journal #14 p.263 (Cynabar's Droid Datalog); WEG40042 Han Solo and the Corporate Sector Sourcebook p.126"
  }
  ,{
   "name": "Industrial Automaton L2 Base Labor Droid",
