@@ -10891,7 +10891,7 @@ const SHIPYARD = {
     if (!this.currentPin || !this.currentPin.shipyard) return;
     const sy = this.currentPin.shipyard;
     const current = sy.priceMultiplier || 4.0;
-    sy.priceMultiplier = Math.max(1.0, Math.round((current + delta) * 10) / 10);
+    sy.priceMultiplier = Math.max(1.5, Math.min(5.0, Math.round((current + delta) * 10) / 10));
     corkboardSave();
     this.render();
   },
