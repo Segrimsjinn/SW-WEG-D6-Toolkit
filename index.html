@@ -8590,9 +8590,15 @@ function corkboardOpen(type, id) {
       }, 80);
       break;
     }
-    case 'starship':
-      openStarshipByName(id);
+    case 'starship': {
+      const shipPin = corkboardPins.find(p => p.type === type && p.id === id);
+      if (shipPin && shipPin.shipyard && shipPin.shipyard.customName) {
+        showPinSnapshot(shipPin);
+      } else {
+        openStarshipByName(id);
+      }
       break;
+    }
     case 'vehicle':
       openVehicleByName(id);
       break;
@@ -8698,6 +8704,8 @@ function showPinSnapshot(pin) {
   if (pin.subtitle) html += '<div style="font-size:11px;color:var(--text-dim);margin-bottom:12px">' + escapeHtml(pin.subtitle) + '</div>';
   if (pin.type === 'random-npc' || pin.type === 'player-character') {
     html += renderRolledNpcSnapshot(pin);
+  } else if (pin.type === 'starship' && pin.shipyard && pin.shipyard.customName) {
+    html += renderShipSnapshot(pin);
   } else {
     html += renderGenericSnapshot(pin);
   }
@@ -8838,6 +8846,55 @@ function renderRolledNpcSnapshot(pin) {
 }
 
 // Generic key/value renderer for alien, creature, wild system, built ship pins
+function renderShipSnapshot(pin) {
+  const d = pin.data || {};
+  const sy = pin.shipyard || {};
+  const base = sy.base || {};
+  const row = (label, val, baseVal) => {
+    if (!val && val !== 0) return '';
+    const changed = baseVal && String(val) !== String(baseVal);
+    return '<div style="display:flex;gap:8px;padding:3px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:11px">' +
+      '<span style="color:var(--text-dim);min-width:110px;flex-shrink:0">' + label + '</span>' +
+      '<span style="color:' + (changed ? 'var(--cyan);font-weight:700' : 'var(--text)') + '">' + escapeHtml(String(val)) + '</span>' +
+      (changed ? '<span style="color:var(--text-dark);font-size:9px">(was ' + escapeHtml(String(baseVal)) + ')</span>' : '') +
+      '</div>';
+  };
+  let html = '<div style="padding:10px;background:rgba(0,0,0,0.2);border-radius:6px;margin-bottom:10px">';
+  html += row('Craft', d.craft, '');
+  html += row('Scale', d.scale, '');
+  html += row('Length', d.length, '');
+  html += row('Crew', d.crew, '');
+  html += row('Passengers', d.passengers, '');
+  html += row('Cargo', d.cargo || d.cargo_capacity, '');
+  html += row('Consumables', d.consumables, '');
+  html += row('Hyperdrive', d.hyperdrive, base.hyperdrive);
+  html += row('Nav Computer', d.nav_computer, '');
+  html += row('Space', d.space, base.space);
+  html += row('Atmosphere', d.atmosphere || d.atmosphere_speed, '');
+  html += row('Maneuverability', d.maneuverability, base.maneuverability);
+  html += row('Hull', d.hull, base.hull);
+  html += row('Shields', d.shields, base.shields);
+  if (d.sensors_passive) html += row('Sensors', 'P: ' + d.sensors_passive + ' / S: ' + (d.sensors_scan||'') + ' / Sr: ' + (d.sensors_search||'') + ' / F: ' + (d.sensors_focus||''), '');
+  if (d.weapons && Array.isArray(d.weapons) && d.weapons.length) {
+    html += '<div style="font-family:\'Exo 2\',monospace;font-size:8px;color:var(--gold);letter-spacing:1px;margin:8px 0 4px">WEAPONS</div>';
+    d.weapons.forEach((w, i) => {
+      const baseW = base.weapons && base.weapons[i] ? base.weapons[i] : {};
+      html += '<div style="padding:2px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:11px">';
+      html += '<span style="color:var(--text)">' + escapeHtml(w.name || 'Weapon') + '</span>';
+      const dmgChanged = baseW.damage && w.damage !== baseW.damage;
+      html += ' — <span style="color:' + (dmgChanged ? 'var(--cyan);font-weight:700' : 'var(--text-dim)') + '">Dmg: ' + (w.damage || '?') + '</span>';
+      if (dmgChanged) html += ' <span style="color:var(--text-dark);font-size:9px">(was ' + baseW.damage + ')</span>';
+      if (w.fire_control) html += ', FC: ' + w.fire_control;
+      if (w.space_range) html += ', Range: ' + w.space_range;
+      html += '</div>';
+    });
+  }
+  if (d.of_note) html += '<div style="margin-top:8px;font-size:10px;color:var(--text-dim);line-height:1.5">' + escapeHtml(d.of_note) + '</div>';
+  if (sy.totalCost) html += '<div style="margin-top:8px;font-family:\'IBM Plex Mono\',monospace;font-size:11px;color:var(--gold)">Modification Cost: ' + sy.totalCost.toLocaleString() + ' cr</div>';
+  html += '</div>';
+  return html;
+}
+
 function renderGenericSnapshot(pin) {
   const d = pin.data || {};
   const rows = Object.keys(d).filter(k => d[k] !== '' && d[k] != null);
