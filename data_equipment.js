@@ -3684,7 +3684,7 @@ const EQUIPMENT_DATA = [
   "type": "Capital-Scale Weapon Capacitor Bypass",
   "cost": "8,000",
   "availability": "2, R",
-  "game_notes": "Allows mounting of ONE capital-scale weapon on a starfighter-scale ship without a full reactor retrofit. Weapon can only fire once every 3 rounds due to capacitor recharge. Does not stack — one shunt, one weapon. Requires Moderate space transports repair to install.",
+  "game_notes": "Allows mounting of ONE capital-scale weapon on a starfighter-scale ship without a full reactor retrofit. Weapon fires on every 3rd round only (rounds 3, 6, 9, etc.) — the capacitor cannot hold a charge or it will burn out, so it must cycle up from cold each time. Does not stack — one shunt, one weapon. Requires Moderate space transports repair to install.",
   "source": "Mock-up (house rule)"
  },
  {
