@@ -696,7 +696,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
     <div class="app-subtitle">NPC Generator &amp; Astrogation &amp; Starships</div>
     <button class="app-help-btn" onclick="openHowTo()" title="How to Use This Toolkit">? HOW TO</button>
     <div id="visitorBadge" style="position:absolute;bottom:4px;left:12px;font-family:'Exo 2',monospace;font-size:8px;color:var(--text-dark);letter-spacing:1px;line-height:1.4;text-align:left" title="Total visitors">
-      <span id="statVisitors" style="color:var(--gold);font-weight:700">—</span> COMMANDERS · <span style="font-size:7px;letter-spacing:0.5px">v1.0.935</span>
+      <span id="statVisitors" style="color:var(--gold);font-weight:700">—</span> COMMANDERS · <span style="font-size:7px;letter-spacing:0.5px">v1.0.936</span>
     </div>
   </header>
 
@@ -9245,15 +9245,36 @@ function pcPopulateEquipGrid(data) {
   const d = data || {};
   const droidComponents = collectDroidComponents();
   let html = '';
+  const weaponSlotCats = {
+    weapon1: ['Hold-Out Blasters','Sporting Blasters','Blaster Pistols','Heavy Blaster Pistols'],
+    weapon2: ['Blaster Carbines','Sporting Blaster Rifles','Blaster Rifles','Projectile Weapons','Slugthrowers','Firearms','Archaic Firearms','Dart Shooters'],
+    weapon3: ['Repeating Blasters','Disruptor Blasters','Misc Blasters','Ion Weapons','Energy Weapons','Stun Blasters','Flame Projectors','Sonic Weapons','Particle Weapons','Concussion Weapons','Specialty Weapons'],
+    melee: ['Melee Weapons','Melee - Powered','Melee - Stun','Thrown Weapons']
+  };
   NPC_EQUIP_SLOTS.forEach(slot => {
-    const items = (typeof NPC_DATA !== 'undefined' && Array.isArray(NPC_DATA[slot.key])) ? NPC_DATA[slot.key] : [];
+    const wCats = weaponSlotCats[slot.key];
+    const useWeaponDB = wCats && typeof WEAPONS_DATA !== 'undefined';
+    const items = useWeaponDB ? [] : ((typeof NPC_DATA !== 'undefined' && Array.isArray(NPC_DATA[slot.key])) ? NPC_DATA[slot.key] : []);
     const current = d[slot.key] && d[slot.key] !== '--' ? String(d[slot.key]) : '';
-    const inStandard = items.includes(current);
+    const allNames = useWeaponDB ? WEAPONS_DATA.map(w => w.name) : items;
+    const inStandard = allNames.includes(current);
     const inDroid = droidComponents.includes(current);
-    const hasCurrent = current && !inStandard && !inDroid; // preserve legacy/free-text values
+    const hasCurrent = current && !inStandard && !inDroid;
     let opts = '<option value="">— ' + slot.label + ' —</option>';
     if (hasCurrent) opts += '<option value="' + escapeHtml(current) + '" selected>' + escapeHtml(current) + '</option>';
-    if (items.length) {
+    if (useWeaponDB) {
+      wCats.forEach(cat => {
+        const catWeapons = WEAPONS_DATA.filter(w => w.category === cat);
+        if (!catWeapons.length) return;
+        opts += '<optgroup label="' + escapeHtml(cat) + '">';
+        catWeapons.forEach(w => {
+          const sel = (w.name === current) ? ' selected' : '';
+          const label = w.name + ' — ' + (w.damage || '?') + ' (' + (w.range || '?') + ')';
+          opts += '<option value="' + escapeHtml(w.name) + '"' + sel + '>' + escapeHtml(label) + '</option>';
+        });
+        opts += '</optgroup>';
+      });
+    } else if (items.length) {
       opts += '<optgroup label="' + escapeHtml(slot.label) + '">';
       items.forEach(item => {
         const sel = (item === current) ? ' selected' : '';
