@@ -3670,6 +3670,15 @@ const EQUIPMENT_DATA = [
   "source": "Mock-up (house rule)"
  },
  {
+  "name": "Capital Power Plant Retrofit",
+  "category": "Ship Equipment",
+  "type": "Aftermarket Capital-Grade Reactor",
+  "cost": "150,000",
+  "availability": "2, X",
+  "game_notes": "Replaces stock starfighter-scale power plant with a capital-grade reactor. Weight: 40 metric tons (stock unit ~10 mt, net +30 mt). Enables mounting of capital-scale weapons and shields on starfighter-scale hulls. Requires Very Difficult space transports repair roll and 2 weeks of drydock installation. Highly restricted — Imperial permit required.",
+  "source": "Mock-up (house rule)"
+ },
+ {
   "name": "Ship Shields (1D)",
   "category": "Ship Equipment",
   "cost": "4,000",
