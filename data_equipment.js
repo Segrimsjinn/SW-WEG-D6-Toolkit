@@ -3479,7 +3479,7 @@ const EQUIPMENT_DATA = [
   "category": "Ship Equipment",
   "cost": "3,000 (plus installation)",
   "availability": "2",
-  "game_notes": "Minimal-output ion drive designed by Verpine engineers for asteroid tugs and orbital platforms. Space: 1. Weight: 2 metric tons. Extremely reliable at low speeds. Often found on mining barges and construction rigs.",
+  "game_notes": "Verpine hive-craft ion drive, hand-tuned by Roche asteroid artisans for low-profile mining and salvage work. Weight: 2 metric tons. Space: 1. Not rated for combat maneuvering; thruster output is optimized for sustained low-speed burns rather than emergency acceleration.",
   "source": "House Rule (extrapolated from WEG40063)"
  },
  {
@@ -3487,7 +3487,7 @@ const EQUIPMENT_DATA = [
   "category": "Ship Equipment",
   "cost": "5,000 (plus installation)",
   "availability": "1",
-  "game_notes": "Budget hauler-class ion drive. Space: 2. Weight: 4 metric tons. Designed for bulk freighters and barges where speed is secondary to reliability and low cost.",
+  "game_notes": "Corellian Engineering Corporation CL-2 civilian ion drive, the workhorse of the budget freighter market. Weight: 4 metric tons. Space: 2. Reliable and cheap to overhaul, though CEC's own technicians refer to the CL-2 as 'the minimum acceptable option.'",
   "source": "House Rule (extrapolated from WEG40063)"
  },
  {
@@ -3495,7 +3495,7 @@ const EQUIPMENT_DATA = [
   "category": "Ship Equipment",
   "cost": "7,500 (plus installation)",
   "availability": "1",
-  "game_notes": "Light commercial ion drive. Space: 3. Weight: 8 metric tons. Standard propulsion for medium transports and cargo shuttles. Reliable and easy to service.",
+  "game_notes": "Corellian Engineering Corporation CL-3 mid-range ion drive, standard fitment on most CEC light freighters from the Clone Wars era onward. Weight: 8 metric tons. Space: 3. A proven design with widespread parts availability across the Outer Rim.",
   "source": "House Rule (extrapolated from WEG40063)"
  },
  {
@@ -3512,7 +3512,7 @@ const EQUIPMENT_DATA = [
   "category": "Ship Equipment",
   "cost": "15,000 (plus installation)",
   "availability": "2",
-  "game_notes": "Fast commercial ion drive. Space: 5. Weight: 11 metric tons. Popular upgrade for freighter captains who need to outrun pirates or make tight delivery windows.",
+  "game_notes": "Corellian Engineering Corporation CE-5 performance ion drive, CEC's answer to independent operators who want respectable speed without military price tags. Weight: 11 metric tons. Space: 5. Popular with courier services and smugglers alike.",
   "source": "House Rule (extrapolated from WEG40063)"
  },
  {
@@ -3520,7 +3520,7 @@ const EQUIPMENT_DATA = [
   "category": "Ship Equipment",
   "cost": "35,000 (plus installation, 2,500 Imperial permit)",
   "availability": "2, F",
-  "game_notes": "Military patrol-grade ion drive. Space: 7. Weight: 14 metric tons. Standard propulsion on SFS patrol craft and light corvettes. Requires Imperial permit. Double all difficulties for modifying this drive beyond a +1 modification.",
+  "game_notes": "Sienar Fleet Systems Sprint-7 patrol ion drive, developed for Imperial customs cutters and light patrol craft. Weight: 14 metric tons. Space: 7. Tuned for rapid intercept burns; installation requires SFS-certified technicians and Imperial licensing documentation. Double all difficulties for modifying this drive beyond a +1 modification.",
   "source": "House Rule (extrapolated from WEG40063)"
  },
  {
@@ -3528,7 +3528,7 @@ const EQUIPMENT_DATA = [
   "category": "Ship Equipment",
   "cost": "80,000 (plus installation)",
   "availability": "3, R",
-  "game_notes": "Fighter-grade ion drive designed for high-performance starfighters. Space: 9. Weight: 17 metric tons. Developed by FreiTek Inc. for next-generation combat craft. Restricted — military procurement only without black market contacts.",
+  "game_notes": "FreiTek Inc. FT-9 combat ion drive, engineered to Alliance specifications for high-stress tactical environments. Weight: 17 metric tons. Space: 9. Field-serviceable under combat conditions and tolerant of power fluctuations from weapons fire. Restricted — military procurement only without black market contacts.",
   "source": "House Rule (extrapolated from WEG40063)"
  },
  {
@@ -3536,7 +3536,7 @@ const EQUIPMENT_DATA = [
   "category": "Ship Equipment",
   "cost": "300,000 (plus installation)",
   "availability": "4, X",
-  "game_notes": "Elite interceptor-class ion drive. Space: 11. Weight: 22 metric tons. Derived from Incom's advanced starfighter propulsion program. Possession is a class one infraction in Imperial space. Double all difficulties for modifying this drive and double all modifiers when rolling for mishaps.",
+  "game_notes": "Incom Corporation W-11 high-performance ion drive, the same drive family used in the RZ-1 A-wing interceptor. Weight: 22 metric tons. Space: 11. Requires a reinforced drive housing and active coolant management; pushes most hulls to their structural limits. Possession is a class one infraction in Imperial space. Double all difficulties for modifying this drive and double all modifiers when rolling for mishaps.",
   "source": "House Rule (extrapolated from WEG40063)"
  },
  {
@@ -3630,7 +3630,7 @@ const EQUIPMENT_DATA = [
   "type": "Generic Budget Backup Unit",
   "cost": "2,000",
   "availability": "1",
-  "game_notes": "Emergency backup hyperdrive, class x6. Weight: 7 metric tons. Slow but reliable enough for an emergency jump to the nearest system. Must be overhauled after each use.",
+  "game_notes": "Commercial backup x6 hyperdrive. Weight: 7 metric tons. Intended for emergency use only; requires full overhaul after each hyperspace jump. Slower than the x5 variant and correspondingly less expensive.",
   "source": "Mock-up (house rule)"
  },
  {
@@ -3639,7 +3639,7 @@ const EQUIPMENT_DATA = [
   "type": "Generic Economy Backup Unit",
   "cost": "1,500",
   "availability": "1",
-  "game_notes": "Emergency backup hyperdrive, class x8. Weight: 6 metric tons. Bare-minimum hyperspace capability for emergency retreats. Must be overhauled after each use.",
+  "game_notes": "Commercial backup x8 hyperdrive. Weight: 6 metric tons. Bare-minimum emergency backup unit popular with budget freighter operators. Requires overhaul after each use; not recommended for routes with tight transfer windows.",
   "source": "Mock-up (house rule)"
  },
  {
@@ -3648,7 +3648,7 @@ const EQUIPMENT_DATA = [
   "type": "Generic Surplus Backup Unit",
   "cost": "1,000",
   "availability": "1",
-  "game_notes": "Emergency backup hyperdrive, class x10. Weight: 5 metric tons. Cheap surplus unit — gets you there eventually. Must be overhauled after each use.",
+  "game_notes": "Commercial backup x10 hyperdrive. Weight: 5 metric tons. At this multiplier, destination accuracy degrades noticeably on long jumps. Requires overhaul after each use. Sold under a dozen house brands across the Outer Rim.",
   "source": "Mock-up (house rule)"
  },
  {
@@ -3657,7 +3657,7 @@ const EQUIPMENT_DATA = [
   "type": "Generic Salvage Backup Unit",
   "cost": "750",
   "availability": "1",
-  "game_notes": "Emergency backup hyperdrive, class x12. Weight: 4 metric tons. Bottom-shelf backup — barely functional but better than nothing. Must be overhauled after each use.",
+  "game_notes": "Commercial backup x12 hyperdrive. Weight: 4 metric tons. Emergency-only unit with marginal navigation tolerances. Requires overhaul after each use; crews are advised to plot only short, well-charted jumps.",
   "source": "Mock-up (house rule)"
  },
  {
@@ -3666,7 +3666,7 @@ const EQUIPMENT_DATA = [
   "type": "Generic Junkyard Backup Unit",
   "cost": "500",
   "availability": "1",
-  "game_notes": "Emergency backup hyperdrive, class x15. Weight: 3 metric tons. Absolute bottom of the barrel — pray to the Force it gets you somewhere. Must be overhauled after each use.",
+  "game_notes": "Commercial backup x15 hyperdrive. Weight: 3 metric tons. The slowest, cheapest backup drive on the legal market — sometimes called a 'coffin jump' by freighter crews. Requires overhaul after each use; jump accuracy at this multiplier is best described as optimistic.",
   "source": "Mock-up (house rule)"
  },
  {
@@ -3675,7 +3675,7 @@ const EQUIPMENT_DATA = [
   "type": "Aftermarket Capital-Grade Reactor",
   "cost": "150,000",
   "availability": "2, X",
-  "game_notes": "Replaces stock starfighter-scale power plant with a capital-grade reactor. Weight: 40 metric tons (stock unit ~10 mt, net +30 mt). Enables mounting of capital-scale weapons and shields on starfighter-scale hulls. Requires Very Difficult space transports repair roll and 2 weeks of drydock installation. Highly restricted — Imperial permit required.",
+  "game_notes": "Industrial-grade capital-class reactor core, field-adapted for installation in starfighter and light freighter hulls by specialist shipyards. Weight: 40 metric tons (stock unit ~10 mt, net +30 mt). Replaces the stock reactor entirely, providing the sustained power output necessary to operate capital-scale weapons and shield systems. Requires Very Difficult space transports repair roll and 2 weeks of drydock installation. Hull must be re-evaluated for structural load after installation. Highly restricted — Imperial permit required.",
   "source": "Mock-up (house rule)"
  },
  {
@@ -3684,7 +3684,7 @@ const EQUIPMENT_DATA = [
   "type": "Capital-Scale Weapon Capacitor Bypass",
   "cost": "8,000",
   "availability": "2, R",
-  "game_notes": "Allows mounting of ONE capital-scale weapon on a starfighter-scale ship without a full reactor retrofit. Weapon fires on every 3rd round only (rounds 3, 6, 9, etc.) — the capacitor cannot hold a charge or it will burn out, so it must cycle up from cold each time. Does not stack — one shunt, one weapon. Requires Moderate space transports repair to install.",
+  "game_notes": "Experimental charge-cycling shunt array that allows a single capital-scale weapon to be mounted on a starfighter-class hull by accumulating power across multiple firing cycles. The weapon may only fire on rounds 3, 6, 9, etc. — the capacitor cannot hold charge indefinitely and dumps any unspent energy to prevent overload. Does not stack — one shunt, one weapon. Requires Moderate space transports repair to install.",
   "source": "Mock-up (house rule)"
  },
  {
@@ -3693,7 +3693,7 @@ const EQUIPMENT_DATA = [
   "type": "Dedicated Targeting Computer Station",
   "cost": "5,000",
   "availability": "2",
-  "game_notes": "Scale: Capital. Dedicated fire control station for one weapon type on one fire arc. Weight: 5 metric tons. Raises base fire control to 3D for all fire-linked weapons of the same type within the covered arc (e.g. all turbolasers on the right arc). Does not stack — one station per weapon type per arc. Only applies to fire-linked weapon groups. Add one per arc/type combination needed.",
+  "game_notes": "Fabritech FC-9 dedicated fire control station — a hardwired targeting computer and sensor suite assigned to a single weapon type on a single fire arc. Scale: Capital. Weight: 5 metric tons. Provides 3D fire control for all fire-linked weapons of the same type within the covered arc (e.g. all turbolasers on the right arc). The system cannot be reassigned between engagements without a full recalibration. Does not stack — one station per weapon type per arc. Not compatible with independently aimed mounts.",
   "source": "Mock-up (house rule)"
  },
  {
