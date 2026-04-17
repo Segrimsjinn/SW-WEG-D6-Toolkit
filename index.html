@@ -11470,17 +11470,25 @@ const SHIPYARD = {
       html += '<div style="font-size:8px;color:var(--text-dark);margin-bottom:6px;font-style:italic">Replacement parts and pricing are based on starfighter-scale ships. Enable House Rules for capital-scale cost adjustments and salvage options.</div>';
     }
     if (showHR) {
+      if (!sy.salvagePcts) sy.salvagePcts = {};
       html += '<div style="display:flex;gap:4px;margin-bottom:6px;flex-wrap:wrap;align-items:center">';
       for (const [key, tier] of Object.entries(this.SALVAGE_TIERS)) {
         const active = sy.salvageMode === key;
-        html += '<button class="ship-sort-btn" onclick="SHIPYARD.setSalvageMode(\'' + key + '\')" style="padding:3px 8px;font-size:8px;' + (active ? 'border-color:' + tier.color + ';color:' + tier.color : '') + '">' + tier.label + '</button>';
+        const pct = key === 'none' ? 100 : (sy.salvagePcts[key] !== undefined ? sy.salvagePcts[key] : tier.pct);
+        const label = key === 'none' ? tier.label : tier.label.replace(/\d+%/, pct + '%');
+        html += '<button class="ship-sort-btn" onclick="SHIPYARD.setSalvageMode(\'' + key + '\')" style="padding:3px 8px;font-size:8px;' + (active ? 'border-color:' + tier.color + ';color:' + tier.color : '') + '">' + label + '</button>';
+        if (key !== 'none') {
+          html += '<button class="ship-sort-btn" onclick="SHIPYARD.adjustSalvagePct(\'' + key + '\',-5)" style="padding:1px 4px;font-size:8px;margin-left:-4px">▼</button>';
+          html += '<button class="ship-sort-btn" onclick="SHIPYARD.adjustSalvagePct(\'' + key + '\',5)" style="padding:1px 4px;font-size:8px;margin-right:4px">▲</button>';
+        }
       }
       html += '</div>';
     }
+    const salvagePct = sy.salvageMode === 'none' ? 100 : (sy.salvagePcts && sy.salvagePcts[sy.salvageMode] !== undefined ? sy.salvagePcts[sy.salvageMode] : (this.SALVAGE_TIERS[sy.salvageMode] || {}).pct || 100);
     const salvage = this.SALVAGE_TIERS[sy.salvageMode] || this.SALVAGE_TIERS.none;
     const isSalvage = sy.salvageMode !== 'none';
     html += '<div style="font-size:8px;color:var(--text-dark);margin-bottom:6px;font-style:italic">' +
-      (isSalvage ? 'Salvaged parts: ' + salvage.pct + '% repair cost (no purchase price), ' + salvage.laborMult + '× install labor. Part is available where you found it — no dealer required.'
+      (isSalvage ? 'Salvaged parts: ' + salvagePct + '% repair cost (no purchase price), ' + salvage.laborMult + '× install labor. Part is available where you found it — no dealer required.'
        : 'Replace an entire system with new hardware from Ship Equipment. Resets modification ceiling for that system. Weight subtracts from cargo.') +
       '</div>';
     html += '<div style="border:1px solid var(--card-border);border-radius:var(--radius-sm);overflow:hidden">';
@@ -11969,11 +11977,24 @@ const SHIPYARD = {
     this.render();
   },
 
+  adjustSalvagePct(tierKey, delta) {
+    if (!this.currentPin) return;
+    const sy = this.currentPin.shipyard;
+    if (!sy.salvagePcts) sy.salvagePcts = {};
+    const base = sy.salvagePcts[tierKey] !== undefined ? sy.salvagePcts[tierKey] : this.SALVAGE_TIERS[tierKey].pct;
+    sy.salvagePcts[tierKey] = Math.max(5, Math.min(95, base + delta));
+    corkboardSave();
+    this.render();
+  },
+
   getSalvageCost(fullCost) {
     if (!this.currentPin) return fullCost;
-    const mode = this.currentPin.shipyard.salvageMode || 'none';
+    const sy = this.currentPin.shipyard;
+    const mode = sy.salvageMode || 'none';
+    if (mode === 'none') return fullCost;
     const tier = this.SALVAGE_TIERS[mode] || this.SALVAGE_TIERS.none;
-    return Math.round(fullCost * tier.pct / 100);
+    const pct = sy.salvagePcts && sy.salvagePcts[mode] !== undefined ? sy.salvagePcts[mode] : tier.pct;
+    return Math.round(fullCost * pct / 100);
   },
 
   getSalvageLabel() {
