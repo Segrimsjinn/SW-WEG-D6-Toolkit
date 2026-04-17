@@ -2814,12 +2814,24 @@ color:var(--text-dim);min-width:35px;text-align:right;
 
         <!-- Ships Tab -->
         <div style="margin-bottom:14px">
-          <div style="font-family:'Exo 2',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:5px">⟐ SHIPS TAB — Starship Database &amp; Builder</div>
+          <div style="font-family:'Exo 2',monospace;font-size:9px;color:var(--gold);letter-spacing:1px;margin-bottom:5px">⟐ SHIPS TAB — Starship Database, Builder &amp; Docking Bay</div>
           <div style="font-size:12px;color:var(--text-dim);line-height:1.7">
             <p style="margin-bottom:6px"><span style="color:var(--cyan)">Starship Database</span> — Browse or search the full WEG starship database. Sort by A-Z, rank, hull, speed, price, or cargo. Filter by era (Old Republic → Legacy). Tap any entry to expand its full stat block: scale, crew, passengers, cargo, hyperdrive, maneuverability, hull, shields, sensors, weapons. Use <em>⟐ COMPARE</em> to stack two ships side-by-side.</p>
             <p style="margin-bottom:6px"><span style="color:var(--cyan)">Vehicle Database</span> — Speeders, walkers, starfighters (character-scale through vehicle-scale). Same filtering and availability/legality support as the NPC-tab weapon lookup.</p>
             <p style="margin-bottom:6px"><span style="color:var(--cyan)">Ship Equipment</span> — Drives, shields, sensors, ship weapons (laser cannons, turbolasers, etc.), countermeasures, fuel systems, tractor beams, secret compartments, and other accessories from the sourcebooks.</p>
-            <p style="margin-bottom:6px"><span style="color:var(--cyan)">Ship Builder</span> — Build a custom starship from scratch, apply modifications, and track costs. Uses the rules from the Ship Modifications quick reference on the Dice tab.</p>
+            <p style="margin-bottom:6px"><span style="color:var(--cyan)">Ship Builder</span> — Build a custom starship from scratch using WEG construction rules. Configure size, crew, cargo, drives, weapons, and sensors. Pin the finished build to the Corkboard.</p>
+            <p style="margin-bottom:6px"><span style="color:var(--cyan)">Docking Bay</span> — The modification workshop for pinned ships. Pin a starship from the database, then tap <em>🔧 DOCK</em> on its Corkboard card to bring it in. Once docked you can:</p>
+            <ul style="margin:0 0 6px 16px;padding:0;list-style:disc;font-size:12px;color:var(--text-dim);line-height:1.7">
+              <li><b>System Mods</b> — Upgrade Space, Maneuverability, Hyperdrive, Backup HD, Hull, and Shields one pip at a time (% of ship price × labor rate). Each step shows difficulty, cost, time, and mishap dice.</li>
+              <li><b>Weapon Mods</b> — Improve Damage and Fire Control on existing weapons. Adjust fire-linking (Single → Twin → Triple → Quad). Remove stock weapons to the parts bin.</li>
+              <li><b>Add-Ons</b> — Bolt on new equipment from the Ship Equipment catalog: sensors, countermeasures, weapons, fuel systems, cargo compartments, and more. Weapons added here can be configured with quantity (1–4) and fire-linking, then <em>⚙ MOUNT</em> to install them as moddable ship weapons.</li>
+              <li><b>Component Replacements</b> — Swap entire drives, hyperdrives, shields, or backup hyperdrives from the equipment catalog. Old parts go to the parts bin for resale credit.</li>
+              <li><b>Salvage Mode</b> — New Purchase, Lucky Find (30%), Standard Salvage (50%), or Barely Functional (90%) — affects replacement and add-on costs.</li>
+              <li><b>Parts Bin</b> — Removed parts, weapons, and add-ons accumulate here with resale value (default 25%, adjustable per bargain roll). Includes opposed bargain roll reference tables.</li>
+              <li><b>Berth Conversion</b> <span style="color:#ff9800">(house rule)</span> — Convert passenger berths to/from Double Bunks, Single Cabins, or Suites, with optional brig variants. Affects cargo and passenger counts.</li>
+              <li><b>Scale Gating</b> — Capital-scale weapons are locked on starfighter hulls unless a <em>Capital Power Plant Retrofit</em> (150K, full access) or <em>Capital Capacitor Shunt</em> (8K, one weapon, fires every 3rd round) is installed.</li>
+            </ul>
+            <p style="margin-bottom:6px">Name your ship before undocking to save modifications. Tap <em>VIEW</em> on the Corkboard card to see the full modified stat block with "was X" comparisons. Use <em>PRINT</em> for a table-ready snapshot.</p>
           </div>
         </div>
 
