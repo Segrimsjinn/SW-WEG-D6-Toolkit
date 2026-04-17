@@ -696,7 +696,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
     <div class="app-subtitle">NPC Generator &amp; Astrogation &amp; Starships</div>
     <button class="app-help-btn" onclick="openHowTo()" title="How to Use This Toolkit">? HOW TO</button>
     <div id="visitorBadge" style="position:absolute;bottom:4px;left:12px;font-family:'Exo 2',monospace;font-size:8px;color:var(--text-dark);letter-spacing:1px;line-height:1.4;text-align:left" title="Total visitors">
-      <span id="statVisitors" style="color:var(--gold);font-weight:700">—</span> COMMANDERS · <span style="font-size:7px;letter-spacing:0.5px">v1.0.922</span>
+      <span id="statVisitors" style="color:var(--gold);font-weight:700">—</span> COMMANDERS · <span style="font-size:7px;letter-spacing:0.5px">v1.0.923</span>
     </div>
   </header>
 
@@ -8183,10 +8183,12 @@ function getShipEquipData() {
   return EQUIPMENT_DATA.filter(e => e.category === 'Ship Equipment');
 }
 
+function isHouseRuleEquip(e) { return /Mock-up|House Rule/i.test(e.source || ''); }
 function filterShipEquip() {
   const data = getShipEquipData();
   const q = (document.getElementById('shipEquipSearch').value || '').toLowerCase();
-  shipEquipFiltered = q ? data.filter(e => [e.name, e.game_notes, e.cost, e.source, e.type || ''].join(' ').toLowerCase().includes(q)) : data;
+  const hr = houseRulesEnabled();
+  shipEquipFiltered = (q ? data.filter(e => [e.name, e.game_notes, e.cost, e.source, e.type || ''].join(' ').toLowerCase().includes(q)) : data).filter(e => hr || !isHouseRuleEquip(e));
   document.getElementById('shipEquipCountBadge').textContent = '(' + data.length + ')';
   renderShipEquipList();
 }
@@ -8197,10 +8199,13 @@ function renderShipEquipList() {
   let html = '<div style="font-size:10px;color:var(--text-dim);margin-bottom:6px;font-family:\'Exo 2\',monospace;letter-spacing:1px">' + shipEquipFiltered.length + ' ITEMS</div>';
   shipEquipFiltered.forEach((e, i) => {
     const costShort = (e.cost || '—').length > 20 ? (e.cost || '—').substring(0, 18) + '…' : (e.cost || '—');
+    const hr = isHouseRuleEquip(e);
+    const costColor = hr ? '#ff9800' : 'var(--green)';
+    const hrBadge = hr ? ' <span style="font-size:7px;color:#ff9800;letter-spacing:0.5px">⚙ HOUSE RULE</span>' : '';
     html += '<div onclick="showShipEquipItem(' + i + ')" style="display:flex;align-items:center;justify-content:space-between;padding:8px 10px;margin-bottom:2px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);cursor:pointer;transition:border-color .15s" onmouseover="this.style.borderColor=\'var(--gold-dim)\'" onmouseout="this.style.borderColor=\'var(--card-border)\'">'
-      + '<div style="flex:1;min-width:0"><div style="font-size:13px;color:var(--gold);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">' + e.name + '</div>'
+      + '<div style="flex:1;min-width:0"><div style="font-size:13px;color:var(--gold);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">' + e.name + hrBadge + '</div>'
       + '<div style="font-size:10px;color:var(--text-dim)">' + (e.type || 'Ship Equipment') + '</div></div>'
-      + '<div style="flex-shrink:0;margin-left:8px"><span style="font-size:10px;color:var(--green);font-family:\'IBM Plex Mono\',monospace">' + formatCost(costShort) + '</span></div></div>';
+      + '<div style="flex-shrink:0;margin-left:8px"><span style="font-size:10px;color:' + costColor + ';font-family:\'IBM Plex Mono\',monospace">' + formatCost(costShort) + '</span></div></div>';
   });
   el.innerHTML = html;
 }
@@ -8211,7 +8216,9 @@ function showShipEquipItem(idx) {
   const el = document.getElementById('shipEquipDetail');
   el.style.display = 'block';
   let infoHtml = '<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:10px">';
-  infoHtml += '<div style="background:var(--bg);border:1px solid var(--card-border);border-radius:var(--radius-sm);padding:6px 8px"><div style="font-family:\'Exo 2\',monospace;font-size:8px;color:var(--text-dim);letter-spacing:1px;margin-bottom:2px">COST</div><div style="font-family:\'IBM Plex Mono\',monospace;font-size:12px;color:var(--green)">' + formatCost(e.cost || '—') + '</div></div>';
+  const isHR = isHouseRuleEquip(e);
+  const detailCostColor = isHR ? '#ff9800' : 'var(--green)';
+  infoHtml += '<div style="background:var(--bg);border:1px solid var(--card-border);border-radius:var(--radius-sm);padding:6px 8px"><div style="font-family:\'Exo 2\',monospace;font-size:8px;color:var(--text-dim);letter-spacing:1px;margin-bottom:2px">COST' + (isHR ? ' <span style="color:#ff9800">⚙ HOUSE RULE</span>' : '') + '</div><div style="font-family:\'IBM Plex Mono\',monospace;font-size:12px;color:' + detailCostColor + '">' + formatCost(e.cost || '—') + '</div></div>';
   infoHtml += '<div style="background:var(--bg);border:1px solid var(--card-border);border-radius:var(--radius-sm);padding:6px 8px"><div style="font-family:\'Exo 2\',monospace;font-size:8px;color:var(--text-dim);letter-spacing:1px;margin-bottom:2px">AVAILABILITY</div><div style="font-family:\'IBM Plex Mono\',monospace;font-size:12px;color:var(--cyan)">' + (e.availability || '—') + '</div></div>';
   infoHtml += '</div>';
   let notesHtml = '';
@@ -11506,7 +11513,8 @@ const SHIPYARD = {
     html += '<div style="border:1px solid var(--card-border);border-radius:var(--radius-sm);overflow:hidden">';
 
     for (const [subtype, st] of Object.entries(this.EQUIP_SUBTYPES)) {
-      const equips = this.getEquipBySubtype(subtype).sort((a, b) => {
+      const hrOn = houseRulesEnabled();
+      const equips = this.getEquipBySubtype(subtype).filter(e => hrOn || !/Mock-up|House Rule/i.test(e.source || '')).sort((a, b) => {
         const aVal = subtype === 'engine' ? (parseInt(a.stat) || 0) : subtype === 'shields' ? d6ToPips(a.stat) : subtype === 'backupHyperdrive' ? (parseFloat(a.stat.replace('x','')) || 99) : 0;
         const bVal = subtype === 'engine' ? (parseInt(b.stat) || 0) : subtype === 'shields' ? d6ToPips(b.stat) : subtype === 'backupHyperdrive' ? (parseFloat(b.stat.replace('x','')) || 99) : 0;
         return aVal - bVal;
@@ -11607,7 +11615,8 @@ const SHIPYARD = {
         const dmgM = (e.game_notes || '').match(/Damage:\s*(\d+D[+\d]*)/);
         const fcM = (e.game_notes || '').match(/Fire Control:\s*(\d+D[+\d]*)/);
         const strM = (e.game_notes || '').match(/Strength:\s*(\d+D[+\d]*)/);
-        return { name: e.name, cost: this.parsePrice(e.cost), weight: wm ? parseFloat(wm[1].replace(/,/g, '')) : 0, notes: e.game_notes || '', availability: e.availability || '', group, scale, damage: dmgM ? dmgM[1] : '', fc: fcM ? fcM[1] : '', strength: strM ? strM[1] : '' };
+        const isHR = /Mock-up|House Rule/i.test(e.source || '');
+        return { name: e.name, cost: this.parsePrice(e.cost), weight: wm ? parseFloat(wm[1].replace(/,/g, '')) : 0, notes: e.game_notes || '', availability: e.availability || '', group, scale, damage: dmgM ? dmgM[1] : '', fc: fcM ? fcM[1] : '', strength: strM ? strM[1] : '', isHR };
       });
     return this._addOnCache;
   },
@@ -11670,7 +11679,8 @@ const SHIPYARD = {
     const groupLabels = Object.fromEntries(this.ADD_ON_GROUPS.map(g => [g.key, g.label]));
     groupLabels.misc = 'Other';
     for (const gk of groupOrder) {
-      const items = equips.filter(e => e.group === gk);
+      const hrOn = houseRulesEnabled();
+      const items = equips.filter(e => e.group === gk && (hrOn || !e.isHR));
       if (!items.length) continue;
       html += '<optgroup label="' + groupLabels[gk] + '">';
       const shipScale = (base && base.scale || '').toLowerCase().trim();
@@ -12420,6 +12430,7 @@ function toggleHouseRules(enabled) {
   });
   document.querySelectorAll('.house-rules-cb, #houseRulesToggle').forEach(cb => { cb.checked = enabled; });
   if (SHIPYARD.currentPin) SHIPYARD.render();
+  if (typeof filterShipEquip === 'function') filterShipEquip();
 }
 function initHouseRules() {
   const enabled = localStorage.getItem('weg_house_rules') === '1';
