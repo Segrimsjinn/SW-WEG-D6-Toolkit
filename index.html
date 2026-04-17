@@ -696,7 +696,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
     <div class="app-subtitle">NPC Generator &amp; Astrogation &amp; Starships</div>
     <button class="app-help-btn" onclick="openHowTo()" title="How to Use This Toolkit">? HOW TO</button>
     <div id="visitorBadge" style="position:absolute;bottom:4px;left:12px;font-family:'Exo 2',monospace;font-size:8px;color:var(--text-dark);letter-spacing:1px;line-height:1.4;text-align:left" title="Total visitors">
-      <span id="statVisitors" style="color:var(--gold);font-weight:700">—</span> COMMANDERS · <span style="font-size:7px;letter-spacing:0.5px">v1.0.923</span>
+      <span id="statVisitors" style="color:var(--gold);font-weight:700">—</span> COMMANDERS · <span style="font-size:7px;letter-spacing:0.5px">v1.0.924</span>
     </div>
   </header>
 
@@ -1405,7 +1405,10 @@ color:var(--text-dim);min-width:35px;text-align:right;
       <div class="card" id="ships-equipment" style="margin-top:8px">
         <div class="card-title" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer" onclick="toggleShipEquipPanel()">
           <span>⟐ Ship Equipment <span id="shipEquipCountBadge" style="color:var(--text-dim);font-weight:400;font-size:10px;letter-spacing:1px"></span></span>
-          <span id="shipEquipToggleIcon" style="font-size:14px;color:var(--text-dim);transition:transform .2s">▼</span>
+          <span style="display:flex;align-items:center;gap:8px">
+            <label style="font-size:9px;color:var(--text-dim);display:flex;align-items:center;gap:4px;font-weight:400;cursor:pointer" onclick="event.stopPropagation()"><input type="checkbox" class="house-rules-cb" onchange="toggleHouseRules(this.checked)" style="accent-color:#ff9800;width:12px;height:12px"> <span style="color:#ff9800">House Rules</span></label>
+            <span id="shipEquipToggleIcon" style="font-size:14px;color:var(--text-dim);transition:transform .2s">▼</span>
+          </span>
         </div>
         <div id="shipEquipPanel" style="display:none">
           <input type="text" id="shipEquipSearch" placeholder="Search drives, weapons, shields, sensors..." oninput="filterShipEquip()"
