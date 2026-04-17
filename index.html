@@ -11128,7 +11128,7 @@ const SHIPYARD = {
         fire_control: pipsToD6(d6ToPips(w.fire_control) + (wm.fcPips || 0))
       });
     });
-    const totalWeight = (sy.replacements || []).reduce((s, r) => s + (r.weight || 0), 0);
+    const totalWeight = (sy.replacements || []).reduce((s, r) => s + (r.weight || 0), 0) - (sy.partsBin || []).reduce((s, p) => s + (p.weight || 0), 0);
     const bc = sy.berthChanges || {};
     const bt = this.MOD_TABLES.berthConversion;
     let berthCargo = 0;
@@ -11459,10 +11459,12 @@ const SHIPYARD = {
     html += '</div>';
 
     const totalReplacementWeight = sy.replacements.reduce((s, r) => s + (r.weight || 0), 0);
+    const partsBinWeight = (sy.partsBin || []).reduce((s, p) => s + (p.weight || 0), 0);
+    const netWeight = totalReplacementWeight - partsBinWeight;
     const baseCargo = this.parseCargoTons(base.cargo);
-    const remainingCargo = Math.max(0, baseCargo - totalReplacementWeight);
+    const remainingCargo = Math.max(0, baseCargo - netWeight);
     if (sy.replacements.length) {
-      html += '<div style="font-size:9px;color:var(--text-dim);margin-top:4px">Cargo impact: ' + baseCargo + ' mt base − ' + totalReplacementWeight + ' mt replacements = <span style="color:' + (remainingCargo > 0 ? 'var(--cyan)' : 'var(--red)') + '">' + remainingCargo + ' mt remaining</span></div>';
+      html += '<div style="font-size:9px;color:var(--text-dim);margin-top:4px">Cargo impact: ' + baseCargo + ' mt base − ' + totalReplacementWeight + ' mt new + ' + partsBinWeight + ' mt removed = <span style="color:' + (remainingCargo > 0 ? 'var(--cyan)' : 'var(--red)') + '">' + remainingCargo + ' mt remaining</span></div>';
     }
 
     document.getElementById('shipyardReplacements').innerHTML = html;
@@ -11564,7 +11566,7 @@ const SHIPYARD = {
       return;
     }
     const baseCargo = this.parseCargoTons(base.cargo);
-    const totalReplacementWeight = (sy.replacements || []).reduce((s, r) => s + (r.weight || 0), 0);
+    const totalReplacementWeight = (sy.replacements || []).reduce((s, r) => s + (r.weight || 0), 0) - (sy.partsBin || []).reduce((s, p) => s + (p.weight || 0), 0);
     const bt = this.MOD_TABLES.berthConversion;
 
     let berthCargo = 0, berthCost = 0;
@@ -11721,19 +11723,21 @@ const SHIPYARD = {
     if (!sy.replacements) sy.replacements = [];
     if (!sy.partsBin) sy.partsBin = [];
     const oldPart = sy.replacements.find(r => r.subtype === subtype);
-    let oldPartName, oldPartValue;
+    let oldPartName, oldPartValue, oldPartWeight = 0;
     if (oldPart) {
       oldPartName = oldPart.equipName;
       oldPartValue = oldPart.fullCost || oldPart.cost;
+      oldPartWeight = oldPart.weight || 0;
     } else {
       oldPartName = 'Stock ' + this.EQUIP_SUBTYPES[subtype].label;
       const st = this.EQUIP_SUBTYPES[subtype];
-      const baseStat = sy.base[st.statKey] || '';
+      const baseStat = String(sy.base[st.statKey] || '').replace(/\s*\(.*\)/, '').trim();
       const match = equips.find(e => e.stat === baseStat || e.stat === String(parseInt(baseStat)));
       oldPartValue = match ? match.cost : 0;
+      oldPartWeight = match ? match.weight : 0;
     }
-    if (oldPartValue > 0) {
-      sy.partsBin.push({ name: oldPartName + (oldPartValue ? '' : ' (est.)'), value: oldPartValue, sellPct: 25, subtype });
+    if (oldPartValue > 0 || oldPartWeight > 0) {
+      sy.partsBin.push({ name: oldPartName, value: oldPartValue || 0, weight: oldPartWeight, sellPct: 25, subtype });
     }
     sy.replacements = sy.replacements.filter(r => r.subtype !== subtype);
     const actualCost = this.getSalvageCost(eq.cost) * this.getScaleMultiplier();
@@ -11972,6 +11976,7 @@ const SHIPYARD = {
         const sellValue = Math.round((p.value || 0) * (p.sellPct || 25) / 100);
         binHtml += '<div style="display:flex;align-items:center;gap:6px;padding:4px 8px;border-bottom:1px solid var(--card-border);font-size:9px">';
         binHtml += '<span style="color:var(--text);flex:1">' + p.name + '</span>';
+        if (p.weight) binHtml += '<span style="color:var(--text-dark);font-size:8px">' + p.weight + ' mt</span>';
         binHtml += '<span style="color:var(--text-dark);font-size:8px">value: ' + (p.value||0).toLocaleString() + ' cr</span>';
         binHtml += '<button class="ship-sort-btn" onclick="SHIPYARD.adjustPartSellPct(' + i + ',-5)" style="padding:0px 4px;font-size:9px">-</button>';
         binHtml += '<span style="color:var(--green);font-family:\'IBM Plex Mono\',monospace;min-width:35px;text-align:center">' + (p.sellPct || 25) + '%</span>';
