@@ -11573,7 +11573,7 @@ const SHIPYARD = {
       const hasCapitalReactor = (sy.addOns || []).some(a => /Capital Power Plant/i.test(a.name));
       const effectiveScale = hasCapitalReactor ? 'capital' : shipScale;
       for (const eq of items) {
-        const mismatch = eq.scale && effectiveScale && eq.scale !== effectiveScale;
+        const mismatch = eq.scale === 'capital' && effectiveScale === 'starfighter';
         const label = eq.name + ' (' + eq.cost.toLocaleString() + ' cr' + (eq.weight ? ', ' + eq.weight + ' mt' : '') + ')' + (mismatch ? ' ⚠ ' + eq.scale + ' scale' : '');
         html += '<option value="' + eq.name.replace(/"/g, '&quot;') + '"' + (mismatch ? ' disabled style="color:#666;text-decoration:line-through"' : '') + '>' + label + '</option>';
       }
