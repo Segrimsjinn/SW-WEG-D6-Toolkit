@@ -11545,15 +11545,39 @@ const SHIPYARD = {
       html += '<div style="border:1px solid var(--card-border);border-radius:var(--radius-sm);overflow:hidden;margin-bottom:6px">';
       sy.addOns.forEach((ao, i) => {
         const availColor = /X/.test(ao.availability||'') ? 'var(--red)' : /R/.test(ao.availability||'') ? 'var(--red)' : /F/.test(ao.availability||'') ? 'var(--gold)' : 'var(--text-dim)';
+        const isWeapon = ao.qty !== undefined;
+        const qty = ao.qty || 1;
+        const linked = ao.fireLink || false;
+        const unitCost = ao.fullCost || ao.cost;
+        const flSurcharge = linked && qty > 1 ? (qty - 1) * 100 : 0;
+        const totalCost = isWeapon ? unitCost * qty + flSurcharge : ao.cost;
+        const totalWeight = isWeapon ? (ao.weight || 0) * qty : (ao.weight || 0);
+        const linkLabels = {1:'Single',2:'Twin (+1D)',3:'Triple (+2D)',4:'Quad (+3D)'};
         html += '<div style="padding:6px 8px;border-bottom:1px solid var(--card-border)">';
         html += '<div style="display:flex;align-items:center;gap:6px;font-size:10px">';
-        html += '<span style="color:var(--text);font-weight:700;flex:1">' + ao.name + '</span>';
+        html += '<span style="color:var(--text);font-weight:700;flex:1">' + (isWeapon && qty > 1 ? qty + '× ' : '') + ao.name + '</span>';
         if (ao.availability) html += '<span style="font-size:8px;color:' + availColor + '">[' + ao.availability + ']</span>';
-        if (ao.weight) html += '<span style="font-size:8px;color:var(--text-dark)">' + ao.weight + ' mt</span>';
-        const aoCostLabel = ao.salvage ? ao.cost.toLocaleString() + ' cr <span style="font-size:7px;color:var(--text-dark)">(salvage)</span>' : ao.cost.toLocaleString() + ' cr';
-        html += '<span style="color:var(--gold);font-family:\'IBM Plex Mono\',monospace;font-size:9px">' + aoCostLabel + '</span>';
+        if (totalWeight) html += '<span style="font-size:8px;color:var(--text-dark)">' + totalWeight + ' mt</span>';
+        const displayCost = isWeapon ? totalCost : ao.cost;
+        const costLabel = ao.salvage ? displayCost.toLocaleString() + ' cr <span style="font-size:7px;color:var(--text-dark)">(salvage)</span>' : displayCost.toLocaleString() + ' cr';
+        html += '<span style="color:var(--gold);font-family:\'IBM Plex Mono\',monospace;font-size:9px">' + costLabel + '</span>';
         html += '<button class="ship-sort-btn" onclick="SHIPYARD.removeAddOn(' + i + ')" style="padding:1px 6px;font-size:9px;color:var(--red)">✕</button>';
         html += '</div>';
+        if (isWeapon) {
+          html += '<div style="display:flex;align-items:center;gap:8px;margin-top:4px;font-size:9px">';
+          html += '<span style="color:var(--text-dim)">Qty:</span>';
+          html += '<button class="ship-sort-btn" onclick="SHIPYARD.adjustAddOnQty(' + i + ',-1)" style="padding:1px 6px;font-size:10px"' + (qty <= 1 ? ' disabled' : '') + '>−</button>';
+          html += '<span style="color:var(--cyan);min-width:16px;text-align:center">' + qty + '</span>';
+          html += '<button class="ship-sort-btn" onclick="SHIPYARD.adjustAddOnQty(' + i + ',1)" style="padding:1px 6px;font-size:10px"' + (qty >= 4 ? ' disabled' : '') + '>+</button>';
+          if (qty > 1) {
+            html += '<label style="display:flex;align-items:center;gap:3px;margin-left:8px;cursor:pointer">';
+            html += '<input type="checkbox" ' + (linked ? 'checked' : '') + ' onchange="SHIPYARD.toggleAddOnFireLink(' + i + ')" style="accent-color:var(--gold);width:12px;height:12px">';
+            html += '<span style="color:' + (linked ? 'var(--cyan)' : 'var(--text-dim)') + '">' + (linked ? linkLabels[qty] + ' fire-linked' : 'Fire-link') + '</span>';
+            html += '</label>';
+            if (linked) html += '<span style="font-size:8px;color:var(--text-dark)">+' + flSurcharge + ' cr link cost</span>';
+          }
+          html += '</div>';
+        }
         if (ao.notes) html += '<div style="font-size:8px;color:var(--text-dim);margin-top:3px;line-height:1.5">' + ao.notes + '</div>';
         html += '</div>';
       });
@@ -11603,7 +11627,8 @@ const SHIPYARD = {
     if (!sy.addOns) sy.addOns = [];
     const actualCost = this.getSalvageCost(eq.cost) * this.getScaleMultiplier();
     const salvageMode = (this.currentPin.shipyard.salvageMode || 'none');
-    sy.addOns.push({ name: eq.name, cost: actualCost, fullCost: eq.cost, weight: eq.weight, notes: eq.notes, availability: eq.availability, salvage: salvageMode !== 'none' ? salvageMode : undefined });
+    const isWeapon = /Damage:\s*\d+D|Cannon|Laser|Turbolaser|Ion Cannon|Torpedo|Missile|Tractor Beam/i.test(eq.name + ' ' + eq.notes);
+    sy.addOns.push({ name: eq.name, cost: actualCost, fullCost: eq.cost, weight: eq.weight, notes: eq.notes, availability: eq.availability, salvage: salvageMode !== 'none' ? salvageMode : undefined, qty: isWeapon ? 1 : undefined, fireLink: isWeapon ? false : undefined });
     sy.totalCost += actualCost;
     sy.log.push({ type: 'add-on', equipName: eq.name, cost: eq.cost, weight: eq.weight, ts: Date.now() });
     corkboardSave();
@@ -11621,18 +11646,66 @@ const SHIPYARD = {
     preview.innerHTML = (eq.availability ? '<span style="color:' + availColor + '">[' + eq.availability + ']</span> ' : '') + eq.notes;
   },
 
+  getAddOnCost(ao) {
+    if (ao.qty !== undefined) {
+      const qty = ao.qty || 1;
+      const unit = ao.fullCost || ao.cost;
+      const fl = ao.fireLink && qty > 1 ? (qty - 1) * 100 : 0;
+      return unit * qty + fl;
+    }
+    return ao.cost;
+  },
+
+  recalcAddOnCosts() {
+    if (!this.currentPin) return;
+    const sy = this.currentPin.shipyard;
+    const modsCost = (sy.log || []).filter(l => l.type === 'mod' || l.type === 'weapon-mod').reduce((s, l) => s + (l.cost || 0), 0);
+    const replaceCost = (sy.replacements || []).reduce((s, r) => s + (r.cost || 0), 0);
+    const addOnCost = (sy.addOns || []).reduce((s, a) => s + this.getAddOnCost(a), 0);
+    const bt = this.MOD_TABLES.berthConversion;
+    const berthCost = Object.entries(sy.berthChanges || {}).reduce((s, [k, v]) => s + (bt[k] ? bt[k].cost * v : 0), 0);
+    sy.totalCost = modsCost + replaceCost + addOnCost + berthCost;
+  },
+
+  adjustAddOnQty(index, delta) {
+    if (!this.currentPin) return;
+    const sy = this.currentPin.shipyard;
+    if (!sy.addOns || !sy.addOns[index]) return;
+    const ao = sy.addOns[index];
+    if (ao.qty === undefined) return;
+    ao.qty = Math.max(1, Math.min(4, ao.qty + delta));
+    if (ao.qty <= 1) ao.fireLink = false;
+    this.recalcAddOnCosts();
+    corkboardSave();
+    this.render();
+  },
+
+  toggleAddOnFireLink(index) {
+    if (!this.currentPin) return;
+    const sy = this.currentPin.shipyard;
+    if (!sy.addOns || !sy.addOns[index]) return;
+    const ao = sy.addOns[index];
+    if (ao.qty === undefined || ao.qty <= 1) return;
+    ao.fireLink = !ao.fireLink;
+    this.recalcAddOnCosts();
+    corkboardSave();
+    this.render();
+  },
+
   removeAddOn(index) {
     if (!this.currentPin) return;
     const sy = this.currentPin.shipyard;
     if (!sy.addOns || !sy.addOns[index]) return;
     const ao = sy.addOns[index];
-    sy.totalCost = Math.max(0, sy.totalCost - ao.cost);
     if (!sy.partsBin) sy.partsBin = [];
-    const partValue = ao.fullCost || ao.cost;
-    if (partValue > 0 || ao.weight > 0) {
-      sy.partsBin.push({ name: ao.name, value: partValue, weight: ao.weight || 0, sellPct: 25, subtype: 'add-on' });
+    const qty = ao.qty || 1;
+    const partValue = (ao.fullCost || ao.cost) * qty;
+    const partWeight = (ao.weight || 0) * qty;
+    if (partValue > 0 || partWeight > 0) {
+      sy.partsBin.push({ name: (qty > 1 ? qty + '× ' : '') + ao.name, value: partValue, weight: partWeight, sellPct: 25, subtype: 'add-on' });
     }
     sy.addOns.splice(index, 1);
+    this.recalcAddOnCosts();
     sy.log.push({ type: 'remove-add-on', equipName: ao.name, ts: Date.now() });
     corkboardSave();
     this.render();
@@ -12098,7 +12171,7 @@ const SHIPYARD = {
     const partsBinCredit = this.getPartsBinTotal(sy);
     const modsCost = (sy.log || []).filter(l => l.type === 'mod' || l.type === 'weapon-mod').reduce((s, l) => s + (l.cost || 0), 0);
     const replaceCost = (sy.replacements || []).reduce((s, r) => s + (r.cost || 0), 0);
-    const addOnCost = (sy.addOns || []).reduce((s, a) => s + (a.cost || 0), 0);
+    const addOnCost = (sy.addOns || []).reduce((s, a) => s + this.getAddOnCost(a), 0);
     const bt = this.MOD_TABLES.berthConversion;
     const berthCost = Object.entries(sy.berthChanges || {}).reduce((s, [k, v]) => s + (bt[k] ? bt[k].cost * v : 0), 0);
     const costCell = (label, val) => '<div style="flex:1;text-align:center;min-width:80px"><div style="font-family:\'Exo 2\',sans-serif;font-size:7px;color:var(--text-dim);letter-spacing:1px">' + label + '</div><div style="font-family:\'IBM Plex Mono\',monospace;font-size:13px;color:var(--text-dim)">' + val.toLocaleString() + ' cr</div></div>';
