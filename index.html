@@ -11506,7 +11506,7 @@ const SHIPYARD = {
     { key: 'sensors', label: 'Sensors', match: /Electro-Photo|Full Spectrum|Dedicated Energy|Life-Form/i },
     { key: 'countermeasures', label: 'Countermeasures', match: /Jammer|Baffling|Sensor Mask|Sensor Decoy|Copycat|Comm Jammer/i },
     { key: 'drive', label: 'Drive & Navigation', match: /Hyperdrive Booster|HD 5-D|Baffled Drive|Astrogation|Diagnostic Filter|Nav Computer/i },
-    { key: 'weapons', label: 'Weapons & Ordnance', match: /Weapon Link|Ion Cannon|Proton Torpedo|Concussion Missile/i },
+    { key: 'weapons', label: 'Weapons & Ordnance', match: /Weapon Link|Ion Cannon|Proton Torpedo|Concussion Missile|Blaster Cannon|Laser Cannon|Turbolaser|Conner Net|Conner Web|Plasma Torch|Tractor Beam|GenaTech Zeta|Hex Heavy/i },
     { key: 'fuel', label: 'Fuel & Power', match: /Fuel Converter|Atmospheric Scoop|Solar Converter|Backup Battery/i },
     { key: 'cargo', label: 'Cargo & Smuggling', match: /Secret Cargo|Cargo Jettison|Transponder/i },
     { key: 'security', label: 'Security & Boarding', match: /Stun Steps|Universal Airlock|Cotterdam/i },
@@ -11515,7 +11515,7 @@ const SHIPYARD = {
 
   getAddOnEquipment() {
     if (this._addOnCache) return this._addOnCache;
-    const excludeNames = /Ion Drive|x0\.5 Hyperdrive|Hyperdrive \(x|Ship Shields \(|Light Blaster Cannon|Light Laser Cannon|Heavy Laser Cannon|Turbolaser|Light Ion Cannon|Medium Ion Cannon|Heavy Ion Cannon|Conner Net|Conner Web|Phase Shifter|Nightcloak|Plasma Torch|Hex Heavy|Tractor Beam|Verpine Asteroid|Corellian Engineering C[LE]|SoroSuub Boav|Incom Starslinger|Incom W-11|Corellian Evader|Sienar Fleet Systems Sprint|Boshaa|FreiTek FT|Starscream|Backup Hyperdrive/i;
+    const excludeNames = /Ion Drive|x0\.5 Hyperdrive|Hyperdrive \(x|Ship Shields \(|Verpine Asteroid|Corellian Engineering C[LE]|SoroSuub Boav|Incom Starslinger|Incom W-11|Corellian Evader|Sienar Fleet Systems Sprint|Boshaa|FreiTek FT|Starscream|Backup Hyperdrive|Phase Shifter|Nightcloak/i;
     this._addOnCache = (typeof EQUIPMENT_DATA !== 'undefined' ? EQUIPMENT_DATA : [])
       .filter(e => e.category === 'Ship Equipment' && !excludeNames.test(e.name))
       .filter(e => this.parsePrice(e.cost) > 0)
