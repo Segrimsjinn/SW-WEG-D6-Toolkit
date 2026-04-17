@@ -696,7 +696,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
     <div class="app-subtitle">NPC Generator &amp; Astrogation &amp; Starships</div>
     <button class="app-help-btn" onclick="openHowTo()" title="How to Use This Toolkit">? HOW TO</button>
     <div id="visitorBadge" style="position:absolute;bottom:4px;left:12px;font-family:'Exo 2',monospace;font-size:8px;color:var(--text-dark);letter-spacing:1px;line-height:1.4;text-align:left" title="Total visitors">
-      <span id="statVisitors" style="color:var(--gold);font-weight:700">—</span> COMMANDERS · <span style="font-size:7px;letter-spacing:0.5px">v1.0.930</span>
+      <span id="statVisitors" style="color:var(--gold);font-weight:700">—</span> COMMANDERS · <span style="font-size:7px;letter-spacing:0.5px">v1.0.931</span>
     </div>
   </header>
 
@@ -1271,6 +1271,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
           <button class="jump-pill" onclick="jumpTo('ships-vehicles')">Vehicles</button>
           <button class="jump-pill" onclick="jumpTo('ships-equipment')">Ship Equipment</button>
           <button class="jump-pill" onclick="jumpTo('ships-shipyard')">Docking Bay</button>
+          <button class="jump-pill" onclick="jumpTo('ships-garage')">Garage</button>
           <button class="jump-pill" onclick="jumpTo('ships-builder')">Ship Builder</button>
         </div>
       </div>
@@ -1447,6 +1448,30 @@ color:var(--text-dim);min-width:35px;text-align:right;
             <div id="shipyardLog"></div>
             <div style="margin-top:12px;text-align:right">
               <button onclick="SHIPYARD.undock()" style="padding:8px 16px;background:var(--bg3);color:var(--red);border:1px solid rgba(107,42,42,0.6);border-radius:var(--radius-sm);cursor:pointer;font-family:'Exo 2',monospace;font-size:10px;letter-spacing:1px">⟐ UNDOCK</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GARAGE -->
+      <div class="card" id="ships-garage" style="margin-top:8px">
+        <div class="card-title" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer" onclick="toggleGaragePanel()">
+          <span>⟐ Garage <span id="garageDockedBadge" style="color:var(--text-dim);font-weight:400;font-size:10px;letter-spacing:1px"></span></span>
+          <span id="garageToggleIcon" style="font-size:14px;color:var(--text-dim);transition:transform .2s">▼</span>
+        </div>
+        <div id="garagePanel" style="display:none">
+          <div id="garageEmpty">
+            <div style="font-size:11px;color:var(--text-dim);margin-bottom:10px;line-height:1.6">
+              Modify a pinned vehicle using WEG rules — upgrade move, maneuverability, body, shields, and weapons. Pin a vehicle from the database first, then tap <span style="color:var(--gold)">🔧 DOCK</span> on its Corkboard card to bring it into the Garage.
+            </div>
+            <div style="text-align:center;padding:20px;color:var(--text-dark);font-style:italic;border:1px dashed var(--card-border);border-radius:var(--radius-sm)">No vehicle docked. Pin a vehicle from the Vehicle Database, then dock it from the Corkboard.</div>
+          </div>
+          <div id="garageDocked" style="display:none">
+            <div id="garageHeader"></div>
+            <div id="garageStats"></div>
+            <div id="garageCosts"></div>
+            <div style="margin-top:12px;text-align:right">
+              <button onclick="GARAGE.undock()" style="padding:8px 16px;background:var(--bg3);color:var(--red);border:1px solid rgba(107,42,42,0.6);border-radius:var(--radius-sm);cursor:pointer;font-family:'Exo 2',monospace;font-size:10px;letter-spacing:1px">⟐ UNDOCK</button>
             </div>
           </div>
         </div>
@@ -3140,6 +3165,7 @@ const NAV_CARDS = [
   {id:'ships-vehicles', label:'Vehicle Database', tab:'ships', group:'Ships'},
   {id:'ships-equipment', label:'Ship Equipment', tab:'ships', group:'Ships'},
   {id:'ships-shipyard', label:'Docking Bay', tab:'ships', group:'Ships'},
+  {id:'ships-garage', label:'Garage', tab:'ships', group:'Ships'},
   {id:'ships-builder', label:'Ship Builder', tab:'ships', group:'Ships'},
   // Dice (gm)
   {id:'gm-dice', label:'D6 Dice Roller', tab:'gm', group:'Dice'},
@@ -8594,6 +8620,11 @@ function renderCorkboardCard(pin) {
     const dockLabel = docked ? '🔧 DOCKED' : (pin.shipyard ? '🔧 RE-DOCK' : '🔧 DOCK');
     actions += '<button class="cb-btn" style="color:var(--cyan);border-color:var(--cyan)" onclick="SHIPYARD.dockFromCorkboard(\'' + pin.type + '\', \'' + idAttr.replace(/'/g, "\\'") + '\')">' + dockLabel + '</button>';
   }
+  if (pin.type === 'vehicle') {
+    const docked = GARAGE.currentPin && GARAGE.currentPin.type === pin.type && GARAGE.currentPin.id === pin.id;
+    const dockLabel = docked ? '🔧 DOCKED' : (pin.garage ? '🔧 RE-DOCK' : '🔧 DOCK');
+    actions += '<button class="cb-btn" style="color:var(--cyan);border-color:var(--cyan)" onclick="GARAGE.dockFromCorkboard(\'' + pin.type + '\', \'' + idAttr.replace(/'/g, "\\'") + '\')">' + dockLabel + '</button>';
+  }
   actions += '<button class="cb-btn cb-btn-remove" onclick="corkboardRemove(\'' + pin.type + '\', \'' + idAttr.replace(/'/g, "\\'") + '\')">✕ REMOVE</button>';
   return '<div class="cb-card ' + cls + '">' +
     '<div class="cb-head"><span class="cb-title">' + escapeHtml(pin.title) + '</span><span class="cb-type">' + escapeHtml(typeLabel) + '</span></div>' +
@@ -8765,12 +8796,14 @@ function showPinSnapshot(pin) {
     html += renderRolledNpcSnapshot(pin);
   } else if (pin.type === 'starship' && pin.shipyard && pin.shipyard.customName) {
     html += renderShipSnapshot(pin);
+  } else if (pin.type === 'vehicle' && pin.garage && pin.garage.customName) {
+    html += renderVehicleSnapshot(pin);
   } else {
     html += renderGenericSnapshot(pin);
   }
   if (pin.type !== 'player-character' && pin.type !== 'random-npc') {
-    if (pin.shipyard && pin.shipyard.customName) {
-      html += '<div style="font-size:10px;color:var(--text-dark);font-style:italic;margin-top:10px;line-height:1.5">Modified ship stats reflect all shipyard changes. Dock again from the Corkboard to continue modifying.</div>';
+    if ((pin.shipyard && pin.shipyard.customName) || (pin.garage && pin.garage.customName)) {
+      html += '<div style="font-size:10px;color:var(--text-dark);font-style:italic;margin-top:10px;line-height:1.5">Modified stats reflect all workshop changes. Dock again from the Corkboard to continue modifying.</div>';
     } else {
       html += '<div style="font-size:10px;color:var(--text-dark);font-style:italic;margin-top:10px;line-height:1.5">This is a saved snapshot from when you pinned it. The original generator rolls fresh results each time — this entry won\'t change unless you edit or remove it.</div>';
     }
@@ -9008,6 +9041,50 @@ function renderShipSnapshot(pin) {
       addOns.forEach(ao => {
         html += '<div style="font-size:10px;color:var(--text-dim);padding:1px 0">⟐ Add-on: ' + (ao.qty && ao.qty > 1 ? ao.qty + '× ' : '') + ao.name + ' (' + (ao.cost||0).toLocaleString() + ' cr)</div>';
       });
+    }
+    html += '</div>';
+  }
+  html += '</div>';
+  return html;
+}
+
+function renderVehicleSnapshot(pin) {
+  const d = pin.data || {};
+  const gy = pin.garage || {};
+  const base = gy.base || {};
+  const row = (label, val, baseVal) => {
+    if (!val && val !== 0) return '';
+    const changed = baseVal && String(val) !== String(baseVal);
+    return '<div style="display:flex;gap:8px;padding:3px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:11px">' +
+      '<span style="color:var(--text-dim);min-width:110px;flex-shrink:0">' + label + '</span>' +
+      '<span style="color:' + (changed ? 'var(--cyan);font-weight:700' : 'var(--text)') + '">' + escapeHtml(String(val)) + '</span>' +
+      (changed ? '<span style="color:var(--text-dark);font-size:9px">(was ' + escapeHtml(String(baseVal)) + ')</span>' : '') +
+      '</div>';
+  };
+  let html = '<div style="padding:10px;background:rgba(0,0,0,0.2);border-radius:6px;margin-bottom:10px">';
+  html += row('Category', d.category || base.category, '');
+  html += row('Scale', d.scale || base.scale, '');
+  html += row('Length', d.length || base.length, '');
+  html += row('Skill', d.skill || base.skill, '');
+  html += row('Crew', d.crew || base.crew, '');
+  html += row('Passengers', d.passengers || base.passengers, '');
+  html += row('Cargo', d.cargo || base.cargo, '');
+  html += row('Cover', d.cover || base.cover, '');
+  html += row('Move', d.move, base.move);
+  html += row('Maneuverability', d.maneuverability, base.maneuverability);
+  html += row('Body', d.body, base.body);
+  if (d.shields || base.shields) html += row('Shields', d.shields, base.shields);
+  if (d.weapons) html += row('Weapons', typeof d.weapons === 'string' ? d.weapons : JSON.stringify(d.weapons), '');
+  if (gy.totalCost) html += '<div style="margin-top:8px;font-family:\'IBM Plex Mono\',monospace;font-size:11px;color:var(--gold)">Modification Cost: ' + gy.totalCost.toLocaleString() + ' cr</div>';
+  const log = gy.log || [];
+  if (log.length) {
+    html += '<div style="margin-top:10px;border-top:1px solid var(--card-border);padding-top:8px">';
+    html += '<div style="font-family:\'Exo 2\',monospace;font-size:8px;color:var(--gold);letter-spacing:1px;margin-bottom:6px">MODIFICATION LOG</div>';
+    const modGroups = {};
+    log.filter(l => l.type === 'mod').forEach(l => { if (!modGroups[l.system]) modGroups[l.system] = 0; modGroups[l.system] = Math.max(modGroups[l.system], l.level); });
+    for (const [sys, lvl] of Object.entries(modGroups)) {
+      const totalCost = log.filter(l => l.type === 'mod' && l.system === sys).reduce((s, l) => s + (l.cost||0), 0);
+      html += '<div style="font-size:10px;color:var(--text-dim);padding:1px 0">⟐ ' + sys.toUpperCase() + ' modded +' + lvl + ' (' + totalCost.toLocaleString() + ' cr)</div>';
     }
     html += '</div>';
   }
@@ -12508,6 +12585,264 @@ function toggleShipyardPanel() {
   document.getElementById('shipyardToggleIcon').textContent = SHIPYARD.open ? '▲' : '▼';
   if (SHIPYARD.open && SHIPYARD.currentPin) SHIPYARD.render();
 }
+
+function toggleGaragePanel() {
+  GARAGE.open = !GARAGE.open;
+  document.getElementById('garagePanel').style.display = GARAGE.open ? 'block' : 'none';
+  document.getElementById('garageToggleIcon').textContent = GARAGE.open ? '▲' : '▼';
+  if (GARAGE.open && GARAGE.currentPin) GARAGE.render();
+}
+
+const GARAGE = {
+  open: false,
+  currentPin: null,
+
+  resolveVehicleData(pin) {
+    if (pin.data && pin.data.body) return pin.data;
+    if (pin.type === 'vehicle') {
+      const found = (typeof VEHICLES_DATA !== 'undefined' ? VEHICLES_DATA : []).find(v => v.name === pin.id);
+      if (found) return found;
+    }
+    return pin.data || {};
+  },
+
+  snapshotBase(pin) {
+    const d = this.resolveVehicleData(pin);
+    return {
+      name: d.name || pin.title || pin.id,
+      category: d.category || '',
+      scale: d.scale || '',
+      length: d.length || '',
+      skill: d.skill || '',
+      crew: d.crew || '',
+      passengers: d.passengers || '',
+      cargo: d.cargo || '',
+      cover: d.cover || '',
+      cost: d.cost || '',
+      move: d.move || '',
+      maneuverability: d.maneuverability || '',
+      body: d.body || '',
+      shields: d.shields || '',
+      weapons: d.weapons ? (typeof d.weapons === 'string' ? d.weapons : JSON.parse(JSON.stringify(d.weapons))) : ''
+    };
+  },
+
+  parsePrice(str) { return SHIPYARD.parsePrice(str); },
+  getLaborMultiplier() { if (!this.currentPin) return 1; return this.currentPin.garage.laborMultiplier || 1; },
+
+  getRetailPrice() {
+    if (!this.currentPin || !this.currentPin.garage) return 0;
+    const base = this.currentPin.garage.base;
+    const costStr = base.cost || '';
+    const m = costStr.replace(/,/g, '').match(/([\d.]+)/);
+    return m ? Math.round(parseFloat(m[0])) : 0;
+  },
+
+  dockFromCorkboard(type, id) {
+    const pin = corkboardPins.find(p => p.type === type && p.id === id);
+    if (!pin) return;
+    if (!pin.garage) {
+      pin.garage = {
+        base: this.snapshotBase(pin),
+        mods: { move: 0, maneuverability: 0, body: 0, shields: 0 },
+        totalCost: 0,
+        log: [],
+        dockedAt: Date.now()
+      };
+      corkboardSave();
+    }
+    if (!pin.garage.base.body) pin.garage.base = this.snapshotBase(pin);
+    this.currentPin = pin;
+    this.open = true;
+    document.getElementById('garagePanel').style.display = 'block';
+    document.getElementById('garageToggleIcon').textContent = '▲';
+    this.render();
+    switchTab('ships');
+    jumpTo('ships-garage');
+  },
+
+  undock() {
+    if (this.currentPin && this.currentPin.garage) {
+      const gy = this.currentPin.garage;
+      if (!gy.customName) { alert('Name your vehicle before undocking to save modifications.'); return; }
+      const modStats = this.buildModifiedStats();
+      if (modStats) {
+        if (!this.currentPin.data) this.currentPin.data = {};
+        Object.assign(this.currentPin.data, this.resolveVehicleData(this.currentPin), modStats);
+      }
+      corkboardSave();
+      corkboardRender();
+    }
+    this.currentPin = null;
+    document.getElementById('garageDockedBadge').textContent = '';
+    document.getElementById('garageDocked').style.display = 'none';
+    document.getElementById('garageEmpty').style.display = 'block';
+  },
+
+  setCustomName(name) {
+    if (!this.currentPin || !this.currentPin.garage) return;
+    this.currentPin.garage.customName = name.trim();
+    corkboardSave();
+  },
+
+  buildModifiedStats() {
+    if (!this.currentPin || !this.currentPin.garage) return null;
+    const gy = this.currentPin.garage;
+    const base = gy.base;
+    const stats = {};
+    const baseMove = String(base.move || '').match(/(\d+)/);
+    stats.move = baseMove ? String(parseInt(baseMove[1]) + (gy.mods.move || 0)) : base.move;
+    stats.maneuverability = pipsToD6(d6ToPips(base.maneuverability) + (gy.mods.maneuverability || 0));
+    stats.body = pipsToD6(d6ToPips(base.body) + (gy.mods.body || 0));
+    stats.shields = pipsToD6(d6ToPips(base.shields) + (gy.mods.shields || 0));
+    return stats;
+  },
+
+  renderModRow(label, baseStat, currentStat, modLevel, maxLevel, system, price) {
+    const tableKey = system === 'move' ? 'space' : system === 'body' ? 'hull' : system;
+    const table = SHIPYARD.MOD_TABLES[tableKey];
+    const next = modLevel < maxLevel ? table[modLevel] : null;
+    const labor = this.getLaborMultiplier();
+    const nextCost = next ? Math.round(price * next.pct / 100 * labor) : 0;
+    const atMax = modLevel >= maxLevel;
+    const diffColor = next ? (next.mishap >= 2 ? 'var(--red)' : 'var(--gold)') : '';
+    let html = '<div style="display:flex;align-items:center;gap:6px;padding:6px 8px;border-bottom:1px solid var(--card-border);flex-wrap:wrap">';
+    html += '<div style="min-width:90px;font-family:\'Exo 2\',monospace;font-size:9px;color:var(--gold);letter-spacing:1px">' + label + '</div>';
+    html += '<div style="min-width:50px;font-family:\'IBM Plex Mono\',monospace;font-size:11px;color:var(--text-dim)">' + baseStat + '</div>';
+    html += '<span style="color:var(--text-dark)">→</span>';
+    html += '<div style="min-width:50px;font-family:\'IBM Plex Mono\',monospace;font-size:11px;color:' + (modLevel > 0 ? 'var(--cyan)' : 'var(--text-dim)') + ';font-weight:' + (modLevel > 0 ? '700' : '400') + '">' + currentStat + '</div>';
+    if (atMax) {
+      let totalSpent = 0;
+      for (let s = 0; s < modLevel; s++) { totalSpent += Math.round(price * table[s].pct / 100 * this.getLaborMultiplier()); }
+      html += '<span style="font-family:\'Exo 2\',monospace;font-size:8px;color:var(--red);letter-spacing:1px;margin-left:auto">MAX · <span style="color:var(--green)">' + totalSpent.toLocaleString() + ' cr spent</span></span>';
+    } else if (next) {
+      html += '<div style="flex:1;font-size:9px;color:var(--text-dim);text-align:right">';
+      html += '<span style="color:' + diffColor + '">' + next.difficulty + '</span>';
+      html += ' · <span style="color:var(--green)">' + nextCost.toLocaleString() + ' cr</span>';
+      html += ' · ' + next.time;
+      html += ' · <span style="color:' + diffColor + '">' + next.mishap + 'D mishap</span>';
+      html += '</div>';
+    }
+    html += '<div style="display:flex;gap:2px;margin-left:4px">';
+    if (modLevel > 0) html += '<button class="ship-sort-btn" onclick="GARAGE.removeMod(\'' + system + '\')" style="padding:2px 8px;font-size:11px;color:var(--red)">−</button>';
+    if (!atMax) html += '<button class="ship-sort-btn" onclick="GARAGE.applyMod(\'' + system + '\')" style="padding:2px 8px;font-size:11px;color:var(--green)">+</button>';
+    html += '</div></div>';
+    return html;
+  },
+
+  applyMod(system) {
+    if (!this.currentPin) return;
+    const gy = this.currentPin.garage;
+    const tableKey = system === 'move' ? 'space' : system === 'body' ? 'hull' : system;
+    const table = SHIPYARD.MOD_TABLES[tableKey];
+    const level = gy.mods[system] || 0;
+    const max = system === 'move' ? 4 : system === 'body' ? 4 : 5;
+    if (level >= max) return;
+    const step = table[level];
+    if (!step) return;
+    const price = this.getRetailPrice();
+    const cost = Math.round(price * step.pct / 100 * this.getLaborMultiplier());
+    gy.mods[system] = level + 1;
+    gy.totalCost += cost;
+    gy.log.push({ type: 'mod', system, level: level + 1, cost, difficulty: step.difficulty, time: step.time, mishap: step.mishap, ts: Date.now() });
+    corkboardSave();
+    this.render();
+  },
+
+  removeMod(system) {
+    if (!this.currentPin) return;
+    const gy = this.currentPin.garage;
+    const level = gy.mods[system] || 0;
+    if (level <= 0) return;
+    const tableKey = system === 'move' ? 'space' : system === 'body' ? 'hull' : system;
+    const table = SHIPYARD.MOD_TABLES[tableKey];
+    const step = table[level - 1];
+    const price = this.getRetailPrice();
+    const cost = Math.round(price * step.pct / 100 * this.getLaborMultiplier());
+    gy.mods[system] = level - 1;
+    gy.totalCost = Math.max(0, gy.totalCost - cost);
+    gy.log = gy.log.filter(l => !(l.type === 'mod' && l.system === system && l.level === level));
+    corkboardSave();
+    this.render();
+  },
+
+  adjustLabor(delta) {
+    if (!this.currentPin) return;
+    const gy = this.currentPin.garage;
+    gy.laborMultiplier = Math.max(1, Math.min(5, (gy.laborMultiplier || 1) + delta));
+    corkboardSave();
+    this.render();
+  },
+
+  render() {
+    if (!this.currentPin || !this.currentPin.garage) return;
+    const gy = this.currentPin.garage;
+    const base = gy.base;
+    const price = this.getRetailPrice();
+
+    document.getElementById('garageDockedBadge').textContent = '— ' + base.name;
+    document.getElementById('garageEmpty').style.display = 'none';
+    document.getElementById('garageDocked').style.display = 'block';
+
+    const vehName = gy.customName || '';
+    const laborMult = gy.laborMultiplier || 1;
+    const laborLabels = {1:'DIY (1×)', 2:'Avail 4 — Core (2×)', 3:'Avail 3 — Mid Rim (3×)', 4:'Avail 2 — Outer Rim (4×)', 5:'Avail 1 — Fringe (5×)'};
+    const laborColors = {1:'var(--text-dim)', 2:'var(--green)', 3:'var(--cyan)', 4:'var(--gold)', 5:'var(--red)'};
+
+    document.getElementById('garageHeader').innerHTML =
+      '<div style="display:flex;align-items:center;gap:8px;padding:6px 10px;margin-bottom:4px">' +
+      '<label style="font-family:\'Exo 2\',monospace;font-size:8px;color:var(--gold);letter-spacing:1px;white-space:nowrap">VEHICLE NAME</label>' +
+      '<input id="garageNameInput" type="text" value="' + (vehName ? vehName.replace(/"/g,'&quot;') : '') + '" placeholder="Name your vehicle to save changes on undock" ' +
+      'onchange="GARAGE.setCustomName(this.value)" ' +
+      'style="flex:1;background:var(--bg);border:1px solid var(--card-border);border-radius:var(--radius-sm);padding:6px 10px;color:var(--text);font-family:\'IBM Plex Mono\',monospace;font-size:12px">' +
+      '</div>' +
+      '<div style="display:flex;justify-content:space-between;align-items:center;padding:8px 10px;background:var(--bg3);border:1px solid var(--gold-dim);border-radius:var(--radius-sm);margin-bottom:10px">' +
+      '<div><div style="font-family:\'Exo 2\',monospace;font-size:13px;color:var(--text)">' + base.name + '</div>' +
+      '<div style="font-size:10px;color:var(--text-dim)">' + (base.category || '') + ' · ' + (base.scale || '') + ' · ' + (base.length || '') + '</div></div>' +
+      (price ? '<div style="text-align:right;font-family:\'IBM Plex Mono\',monospace;font-size:11px"><div style="color:var(--text-dim)">Retail</div><div style="color:var(--gold)">' + price.toLocaleString() + ' cr</div></div>' : '<div style="text-align:right;font-family:\'IBM Plex Mono\',monospace;font-size:11px;color:var(--red)">No price data</div>') +
+      '</div>';
+
+    let html = '<div style="font-family:\'Exo 2\',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin:8px 0 4px">SYSTEM MODIFICATIONS</div>';
+    html += '<div style="border:1px solid var(--card-border);border-radius:var(--radius-sm);overflow:hidden">';
+
+    const baseMove = String(base.move || '').match(/(\d+)/);
+    const baseMoveVal = baseMove ? parseInt(baseMove[1]) : 0;
+    const curMove = baseMoveVal + (gy.mods.move || 0);
+    html += this.renderModRow('MOVE', baseMoveVal, curMove, gy.mods.move || 0, 4, 'move', price);
+
+    const baseManPips = d6ToPips(base.maneuverability);
+    const curManPips = baseManPips + (gy.mods.maneuverability || 0);
+    html += this.renderModRow('MANEUVER', base.maneuverability || '0D', pipsToD6(curManPips), gy.mods.maneuverability || 0, 5, 'maneuverability', price);
+
+    const baseBodyPips = d6ToPips(base.body);
+    const curBodyPips = baseBodyPips + (gy.mods.body || 0);
+    html += this.renderModRow('BODY', base.body || '0D', pipsToD6(curBodyPips), gy.mods.body || 0, 4, 'body', price);
+
+    if (base.shields) {
+      const baseShieldPips = d6ToPips(base.shields);
+      const curShieldPips = baseShieldPips + (gy.mods.shields || 0);
+      html += this.renderModRow('SHIELDS', base.shields, pipsToD6(curShieldPips), gy.mods.shields || 0, 5, 'shields', price);
+    }
+
+    html += '</div>';
+    document.getElementById('garageStats').innerHTML = html;
+
+    const modsCost = (gy.log || []).filter(l => l.type === 'mod').reduce((s, l) => s + (l.cost || 0), 0);
+    const costCell = (label, val) => '<div style="flex:1;text-align:center;min-width:80px"><div style="font-family:\'Exo 2\',sans-serif;font-size:7px;color:var(--text-dim);letter-spacing:1px">' + label + '</div><div style="font-family:\'IBM Plex Mono\',monospace;font-size:13px;color:var(--text-dim)">' + val.toLocaleString() + ' cr</div></div>';
+
+    document.getElementById('garageCosts').innerHTML =
+      '<div style="display:flex;gap:4px;flex-wrap:wrap;padding:8px 10px;background:var(--bg);border:1px solid var(--gold-dim);border-radius:var(--radius-sm);margin-top:10px;align-items:center">' +
+      '<div style="text-align:center;min-width:80px"><div style="font-family:\'Exo 2\',sans-serif;font-size:7px;color:var(--text-dim);letter-spacing:1px">LABOR RATE</div>' +
+      '<div style="display:flex;align-items:center;justify-content:center;gap:3px">' +
+      '<button class="ship-sort-btn" onclick="GARAGE.adjustLabor(-1)" style="padding:1px 6px;font-size:10px;font-weight:bold">▼</button>' +
+      '<span style="font-family:\'IBM Plex Mono\',monospace;font-size:10px;color:' + laborColors[laborMult] + ';min-width:120px;text-align:center">' + laborLabels[laborMult] + '</span>' +
+      '<button class="ship-sort-btn" onclick="GARAGE.adjustLabor(1)" style="padding:1px 6px;font-size:10px;font-weight:bold">▲</button>' +
+      '</div></div>' +
+      (modsCost ? costCell('MODS', modsCost) : '') +
+      '<div style="flex:1;text-align:center;min-width:100px"><div style="font-family:\'Exo 2\',sans-serif;font-size:7px;color:var(--gold);letter-spacing:1px">NET TOTAL</div><div style="font-family:\'IBM Plex Mono\',monospace;font-size:18px;color:var(--gold);font-weight:700">' + gy.totalCost.toLocaleString() + ' cr</div></div>' +
+      '</div>';
+  }
+};
 
 function toggleShipBuilder() {
   SB.open = !SB.open;
