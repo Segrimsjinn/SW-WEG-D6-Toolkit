@@ -11515,10 +11515,27 @@ const SHIPYARD = {
         const staged = sy.stagedReplacement && sy.stagedReplacement.subtype === subtype ? sy.stagedReplacement : null;
         if (staged) {
           const sAvailColor = /X/.test(staged.availability||'') ? 'var(--red)' : /R/.test(staged.availability||'') ? 'var(--red)' : /F/.test(staged.availability||'') ? 'var(--gold)' : 'var(--text-dim)';
+          const actualCost = this.getSalvageCost(staged.cost) * this.getScaleMultiplier();
+          const stSub = this.EQUIP_SUBTYPES[subtype];
+          const baseStat = String(sy.base[stSub.statKey] || '').replace(/\s*\(.*\)/, '').trim();
+          const oldMatch = equips.find(e => e.stat === baseStat || e.stat === String(parseInt(baseStat)));
+          const oldValue = oldMatch ? oldMatch.cost : 0;
+          const oldWeight = oldMatch ? oldMatch.weight : 0;
+          const binCredit = Math.round(oldValue * 0.25);
+          const netCost = actualCost - binCredit;
+          const baseCargo = this.parseCargoTons(base.cargo);
+          const curWeight = this.getTotalWeightImpact(sy);
+          const afterWeight = curWeight - oldWeight + staged.weight;
+          const afterCargo = Math.max(0, baseCargo - afterWeight);
           html += '<div style="flex:1"><div style="font-family:\'IBM Plex Mono\',monospace;font-size:10px;color:var(--text);font-weight:700">' + staged.name + ' <span style="font-size:8px;color:' + sAvailColor + '">' + (staged.availability ? '[' + staged.availability + ']' : '') + '</span></div>';
           html += '<div style="font-size:8px;color:var(--text-dim);line-height:1.4;margin-top:2px">' + staged.notes + '</div>';
-          html += '</div>';
-          html += '<span style="font-size:9px;color:var(--text-dim);white-space:nowrap">' + staged.cost.toLocaleString() + ' cr, ' + staged.weight + ' mt</span>';
+          html += '<div style="font-size:8px;margin-top:3px;line-height:1.6">';
+          html += '<span style="color:var(--gold)">Install: ' + actualCost.toLocaleString() + ' cr</span>';
+          if (isSalvage) html += ' <span style="color:var(--text-dark)">(' + salvagePct + '% of ' + staged.cost.toLocaleString() + ')</span>';
+          if (oldValue) html += ' · <span style="color:var(--green)">Old part bin: ~' + binCredit.toLocaleString() + ' cr</span>';
+          html += ' · <span style="color:' + (netCost > 0 ? 'var(--cyan)' : 'var(--green)') + '">Net: ' + netCost.toLocaleString() + ' cr</span>';
+          html += ' · <span style="color:var(--text-dim)">' + staged.weight + ' mt → Cargo: ' + afterCargo + ' mt</span>';
+          html += '</div></div>';
           html += '<button class="ship-sort-btn" onclick="SHIPYARD.commitReplacement()" style="padding:2px 8px;font-size:9px;color:var(--green)">⚙ INSTALL</button>';
           html += '<button class="ship-sort-btn" onclick="SHIPYARD.cancelStage()" style="padding:2px 8px;font-size:9px;color:var(--red)">✕</button>';
         } else {
