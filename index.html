@@ -11638,6 +11638,30 @@ const SHIPYARD = {
     this.render();
   },
 
+  matchWeaponWeight(weaponName, weaponDamage) {
+    const equips = (typeof EQUIPMENT_DATA !== 'undefined' ? EQUIPMENT_DATA : [])
+      .filter(e => e.category === 'Ship Equipment' && e.game_notes && /Damage:|Cannon|Laser|Turbolaser|Ion|Torpedo|Missile|Tractor/i.test(e.game_notes));
+    const clean = String(weaponName).replace(/^\d+\s+/,'').replace(/\s*\(.*?\)\s*/g,'').replace(/fire[- ]?linked|fire separately/gi,'').trim().toLowerCase();
+    let best = null, bestScore = 0;
+    for (const eq of equips) {
+      const eqClean = eq.name.toLowerCase();
+      const notes = eq.game_notes || '';
+      let score = 0;
+      const words = clean.split(/\s+/);
+      for (const w of words) { if (eqClean.includes(w) && w.length > 2) score += 1; }
+      const dm = notes.match(/Damage:\s*(\d+D[+\d]*)/);
+      if (weaponDamage && dm && dm[1] === weaponDamage) score += 2;
+      if (eqClean === clean) score += 5;
+      if (eqClean.includes(clean) || clean.includes(eqClean)) score += 3;
+      if (score > bestScore) { bestScore = score; best = eq; }
+    }
+    if (best && bestScore >= 2) {
+      const wm = (best.game_notes || '').match(/Weight:\s*([\d,.]+)\s*metric/i);
+      return wm ? parseFloat(wm[1].replace(/,/g, '')) : 0;
+    }
+    return 0;
+  },
+
   binWeapon(index) {
     if (!this.currentPin) return;
     const sy = this.currentPin.shipyard;
@@ -11648,8 +11672,8 @@ const SHIPYARD = {
     const wCost = (sy.weaponCosts && sy.weaponCosts[index]) || this.matchWeaponCost(w.name, w.damage) || 0;
     const qty = this.parseWeaponQty(w.name);
     const totalValue = wCost * qty;
-    const wm = (e => (e || '').match(/Weight:\s*([\d,.]+)\s*metric/i))(w.game_notes);
-    const weight = wm ? parseFloat(wm[1]) : 0;
+    const unitWeight = this.matchWeaponWeight(w.name, w.damage);
+    const weight = unitWeight * qty;
     if (totalValue > 0 || weight > 0) {
       sy.partsBin.push({ name: w.name || 'Weapon', value: totalValue, weight: weight, sellPct: 25, subtype: 'weapon' });
     }
