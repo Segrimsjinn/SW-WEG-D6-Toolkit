@@ -2376,9 +2376,9 @@ color:var(--text-dim);min-width:35px;text-align:right;
             <div style="font-size:7px;color:var(--text-dark);margin-top:3px;font-style:italic">Double Bunk: stacked bunks, shared refresher (5T). Single Cabin: private bunk, desk, shared refresher (5T). Suite: private refresher, sitting area, viewport (10T). Brig variants add reinforced walls, locked door, and basic monitoring. Labor multiplier applies if hiring out.</div>
             <div style="font-family:'Exo 2',monospace;font-size:7px;color:#ff9800;letter-spacing:1px;margin:8px 0 3px">HOUSE RULES — SALVAGED PARTS</div>
             <div style="font-size:10px;color:var(--text-dim);line-height:1.9">
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Lucky Find</span><span>30% repair cost · 2× labor</span></div>
-              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Standard Salvage <span style="font-size:7px;color:var(--text-dim)">(default)</span></span><span>50% repair cost · 2× labor</span></div>
-              <div style="display:flex;justify-content:space-between;padding:1px 0"><span>Barely Functional</span><span>90% repair cost · 3× labor</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Lucky Find</span><span>10% repair cost · 2× labor</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Standard Salvage <span style="font-size:7px;color:var(--text-dim)">(default)</span></span><span>25% repair cost · 2× labor</span></div>
+              <div style="display:flex;justify-content:space-between;padding:1px 0"><span>Barely Functional</span><span>60% repair cost · 3× labor</span></div>
             </div>
             <div style="font-size:7px;color:var(--text-dark);margin-top:3px;font-style:italic">No purchase price — cost is repair/refurbishment only. The real value of salvage is availability: you have the part where you are, no dealer required. Barely Functional parts cost nearly as much as new but can be found in the field.</div>
             </div>
@@ -2826,7 +2826,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
               <li><b>Weapon Mods</b> — Improve Damage and Fire Control on existing weapons. Adjust fire-linking (Single → Twin → Triple → Quad). Remove stock weapons to the parts bin.</li>
               <li><b>Add-Ons</b> — Bolt on new equipment from the Ship Equipment catalog: sensors, countermeasures, weapons, fuel systems, cargo compartments, and more. Weapons added here can be configured with quantity (1–4) and fire-linking, then <em>⚙ MOUNT</em> to install them as moddable ship weapons.</li>
               <li><b>Component Replacements</b> — Swap entire drives, hyperdrives, shields, or backup hyperdrives from the equipment catalog. Old parts go to the parts bin for resale credit.</li>
-              <li><b>Salvage Mode</b> — New Purchase, Lucky Find (30%), Standard Salvage (50%), or Barely Functional (90%) — affects replacement and add-on costs.</li>
+              <li><b>Salvage Mode</b> — New Purchase, Lucky Find (10%), Standard Salvage (25%), or Barely Functional (60%) — affects replacement and add-on costs.</li>
               <li><b>Parts Bin</b> — Removed parts, weapons, and add-ons accumulate here with resale value (default 25%, adjustable per bargain roll). Includes opposed bargain roll reference tables.</li>
               <li><b>Berth Conversion</b> <span style="color:#ff9800">(house rule)</span> — Convert passenger berths to/from Double Bunks, Single Cabins, or Suites, with optional brig variants. Affects cargo and passenger counts.</li>
               <li><b>Scale Gating</b> — Capital-scale weapons are locked on starfighter hulls unless a <em>Capital Power Plant Retrofit</em> (150K, full access) or <em>Capital Capacitor Shunt</em> (8K, one weapon, fires every 3rd round) is installed.</li>
@@ -11456,9 +11456,9 @@ const SHIPYARD = {
 
   SALVAGE_TIERS: {
     none:     { label: 'New Purchase', pct: 100, laborMult: 1, color: 'var(--green)' },
-    lucky:    { label: 'Lucky Find (30%)', pct: 30, laborMult: 2, color: 'var(--cyan)' },
-    standard: { label: 'Standard Salvage (50%)', pct: 50, laborMult: 2, color: 'var(--gold)' },
-    barely:   { label: 'Barely Functional (90%)', pct: 90, laborMult: 3, color: 'var(--red)' }
+    lucky:    { label: 'Lucky Find (10%)', pct: 10, laborMult: 2, color: 'var(--cyan)' },
+    standard: { label: 'Standard Salvage (25%)', pct: 25, laborMult: 2, color: 'var(--gold)' },
+    barely:   { label: 'Barely Functional (60%)', pct: 60, laborMult: 3, color: 'var(--red)' }
   },
 
   renderReplacements(sy, base, price) {
