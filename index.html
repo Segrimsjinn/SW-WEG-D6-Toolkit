@@ -11220,7 +11220,8 @@ const SHIPYARD = {
   },
 
   renderModRow(label, baseStat, currentStat, modLevel, maxLevel, system, price) {
-    const table = this.MOD_TABLES[system];
+    const tableKey = system === 'backupHyperdrive' ? 'hyperdrive' : system;
+    const table = this.MOD_TABLES[tableKey];
     const next = modLevel < maxLevel ? table[modLevel] : null;
     const labor = this.getLaborMultiplier();
     const nextCost = next ? Math.round(price * next.pct / 100 * labor) : 0;
