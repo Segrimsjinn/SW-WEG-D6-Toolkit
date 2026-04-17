@@ -8928,6 +8928,7 @@ function renderShipSnapshot(pin) {
   html += row('Maneuverability', d.maneuverability, base.maneuverability);
   html += row('Hull', d.hull, base.hull);
   html += row('Shields', d.shields, base.shields);
+  html += row('Backup Shields', d.backupShields, base.backupShields);
   if (d.sensors_passive) html += row('Sensors', 'P: ' + d.sensors_passive + ' / S: ' + (d.sensors_scan||'') + ' / Sr: ' + (d.sensors_search||'') + ' / F: ' + (d.sensors_focus||''), '');
   if (d.weapons && Array.isArray(d.weapons) && d.weapons.length) {
     html += '<div style="font-family:\'Exo 2\',monospace;font-size:8px;color:var(--gold);letter-spacing:1px;margin:8px 0 4px">WEAPONS</div>';
@@ -11068,7 +11069,7 @@ const SHIPYARD = {
     if (!pin.shipyard || !pin.shipyard.base || !pin.shipyard.base.hull) {
       pin.shipyard = {
         base: this.snapshotBase(pin),
-        mods: { space: 0, maneuverability: 0, hull: 0, shields: 0, backupHyperdrive: 0, weapons: [] },
+        mods: { space: 0, maneuverability: 0, hull: 0, shields: 0, backupHyperdrive: 0, backupShields: 0, weapons: [] },
         hyperdriveSteps: 0,
         replacements: [],
         berthChanges: [],
@@ -11109,6 +11110,7 @@ const SHIPYARD = {
       maneuverability: d.maneuverability || '',
       hyperdrive: String(d.hyperdrive || '').replace(/\s*\(.*\)/, '').trim(),
       backupHyperdrive: d.backup_hyperdrive || d.backupHyperdrive || (function(h){ const m = String(h||'').match(/\((x[\d.]+)\s*Bkup\)/i); return m ? m[1] : ''; })(d.hyperdrive),
+      backupShields: d.backupShields || '',
       hull: d.hull || '',
       shields: d.shields || '',
       price_new: d.price_new || '',
@@ -11144,6 +11146,9 @@ const SHIPYARD = {
     }
     stats.hull = pipsToD6(d6ToPips(base.hull) + (sy.mods.hull || 0));
     stats.shields = pipsToD6(d6ToPips(base.shields) + (sy.mods.shields || 0));
+    if (base.backupShields) {
+      stats.backupShields = pipsToD6(d6ToPips(base.backupShields) + (sy.mods.backupShields || 0));
+    }
     stats.weapons = (base.weapons || []).map((w, i) => {
       const wm = sy.mods.weapons && sy.mods.weapons[i] ? sy.mods.weapons[i] : {};
       const fireLinkBonus = (wm.fireLink || 0) * 3;
@@ -11239,7 +11244,7 @@ const SHIPYARD = {
   },
 
   renderModRow(label, baseStat, currentStat, modLevel, maxLevel, system, price) {
-    const tableKey = system === 'backupHyperdrive' ? 'hyperdrive' : system;
+    const tableKey = system === 'backupHyperdrive' ? 'hyperdrive' : system === 'backupShields' ? 'shields' : system;
     const table = this.MOD_TABLES[tableKey];
     const next = modLevel < maxLevel ? table[modLevel] : null;
     const labor = this.getLaborMultiplier();
@@ -11337,6 +11342,12 @@ const SHIPYARD = {
     const curShieldPips = baseShieldPips + (sy.mods.shields || 0);
     html += this.renderModRow('SHIELDS', base.shields || '0D', pipsToD6(curShieldPips), sy.mods.shields || 0, 5, 'shields', price);
 
+    if (base.backupShields) {
+      const baseBkShPips = d6ToPips(base.backupShields);
+      const curBkShPips = baseBkShPips + (sy.mods.backupShields || 0);
+      html += this.renderModRow('BKUP SHIELDS', base.backupShields, pipsToD6(curBkShPips), sy.mods.backupShields || 0, 5, 'backupShields', price);
+    }
+
     html += '</div>';
 
     // Weapons
@@ -11413,6 +11424,7 @@ const SHIPYARD = {
     hyperdrive: { label: 'HYPERDRIVE', keywords: /Hyperdrive \(x|x0\.5 Hyperdrive/i, statKey: 'hyperdrive', parseRe: /x([\d./]+)/, weightRe: /Weight:\s*([\d,.]+)\s*metric/i },
     shields: { label: 'SHIELDS', keywords: /Ship Shields|Shield code/i, statKey: 'shields', parseRe: /(?:Shield code:|Shields?\s*\()\s*(\d+D[+\d]*)/, weightRe: /Weight:\s*([\d,.]+)\s*metric/i },
     backupHyperdrive: { label: 'BACKUP HYPERDRIVE', keywords: /Backup Hyperdrive \(x/i, statKey: 'backupHyperdrive', parseRe: /x([\d./]+)/, weightRe: /Weight:\s*([\d,.]+)\s*metric/i },
+    backupShields: { label: 'BACKUP SHIELDS', keywords: /Backup Shield Generator/i, statKey: 'backupShields', parseRe: /(?:Backup shield code:|Generator\s*\()\s*(\d+D[+\d]*)/, weightRe: /Weight:\s*([\d,.]+)\s*metric/i },
   },
 
   getEquipBySubtype(subtype) {
@@ -12110,6 +12122,7 @@ const SHIPYARD = {
     else if (st.statKey === 'hyperdrive') { sy.mods.hyperdrive = 0; sy.base.hyperdrive = staged.stat || sy.base.hyperdrive; }
     else if (st.statKey === 'shields') { sy.mods.shields = 0; sy.base.shields = staged.stat || sy.base.shields; }
     else if (st.statKey === 'backupHyperdrive') { sy.mods.backupHyperdrive = 0; sy.base.backupHyperdrive = staged.stat || sy.base.backupHyperdrive; }
+    else if (st.statKey === 'backupShields') { sy.mods.backupShields = 0; sy.base.backupShields = staged.stat || sy.base.backupShields; }
 
     sy.log.push({ type: 'replacement', subtype, equipName: staged.name, cost: staged.cost, weight: staged.weight, stat: staged.stat, ts: Date.now() });
     if (sy.stagedReplacements) delete sy.stagedReplacements[subtype];
@@ -12136,6 +12149,7 @@ const SHIPYARD = {
     else if (st.statKey === 'hyperdrive') { sy.base.hyperdrive = originalBase.hyperdrive; sy.mods.hyperdrive = 0; }
     else if (st.statKey === 'shields') { sy.base.shields = originalBase.shields; sy.mods.shields = 0; }
     else if (st.statKey === 'backupHyperdrive') { sy.base.backupHyperdrive = originalBase.backupHyperdrive; sy.mods.backupHyperdrive = 0; }
+    else if (st.statKey === 'backupShields') { sy.base.backupShields = originalBase.backupShields; sy.mods.backupShields = 0; }
 
     sy.log = sy.log.filter(l => !(l.type === 'replacement' && l.subtype === subtype));
     sy.log.push({ type: 'revert-stock', subtype, ts: Date.now() });
@@ -12146,7 +12160,7 @@ const SHIPYARD = {
   applyMod(system) {
     if (!this.currentPin) return;
     const sy = this.currentPin.shipyard;
-    const tableKey = system === 'backupHyperdrive' ? 'hyperdrive' : system;
+    const tableKey = system === 'backupHyperdrive' ? 'hyperdrive' : system === 'backupShields' ? 'shields' : system;
     const table = this.MOD_TABLES[tableKey];
     const level = sy.mods[system] || 0;
     const max = system === 'space' ? 4 : system === 'hull' ? 4 : (system === 'hyperdrive' || system === 'backupHyperdrive') ? table.length : 5;
@@ -12167,7 +12181,7 @@ const SHIPYARD = {
     const sy = this.currentPin.shipyard;
     const level = sy.mods[system] || 0;
     if (level <= 0) return;
-    const tableKey = system === 'backupHyperdrive' ? 'hyperdrive' : system;
+    const tableKey = system === 'backupHyperdrive' ? 'hyperdrive' : system === 'backupShields' ? 'shields' : system;
     const table = this.MOD_TABLES[tableKey];
     const step = table[level - 1];
     const price = this.getRetailPrice();

@@ -3864,6 +3864,38 @@ const EQUIPMENT_DATA = [
   "source": "House Rule (extrapolated from WEG40063)"
  },
  {
+  "name": "Backup Shield Generator (1D)",
+  "category": "Ship Equipment",
+  "cost": "9,000",
+  "availability": "2",
+  "game_notes": "Redundant shield generator providing backup protection. Backup shield code: 1D. Weight: 6 metric tons. Activates when primary shields fail or can be run simultaneously at GM discretion.",
+  "source": "Mock-up (house rule)"
+ },
+ {
+  "name": "Backup Shield Generator (2D)",
+  "category": "Ship Equipment",
+  "cost": "15,000",
+  "availability": "2",
+  "game_notes": "Redundant shield generator providing backup protection. Backup shield code: 2D. Weight: 8 metric tons. Activates when primary shields fail or can be run simultaneously at GM discretion.",
+  "source": "Mock-up (house rule)"
+ },
+ {
+  "name": "Backup Shield Generator (3D)",
+  "category": "Ship Equipment",
+  "cost": "25,000",
+  "availability": "2, R",
+  "game_notes": "Redundant shield generator providing backup protection. Backup shield code: 3D. Weight: 10 metric tons. Activates when primary shields fail or can be run simultaneously at GM discretion.",
+  "source": "Mock-up (house rule)"
+ },
+ {
+  "name": "Backup Shield Generator (4D)",
+  "category": "Ship Equipment",
+  "cost": "50,000",
+  "availability": "3, R",
+  "game_notes": "Redundant shield generator providing heavy backup protection. Backup shield code: 4D. Weight: 12 metric tons. Military-grade redundancy typically found on capital escorts and VIP transports.",
+  "source": "Mock-up (house rule)"
+ },
+ {
   "name": "Taim & Bak Kd-3 Light Blaster Cannon",
   "category": "Ship Equipment",
   "cost": "1,000 (plus 30% Imperial permit fee)",
