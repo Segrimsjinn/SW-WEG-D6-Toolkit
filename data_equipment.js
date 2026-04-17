@@ -3702,7 +3702,7 @@ const EQUIPMENT_DATA = [
   "type": "Capital-Scale Laser Cannon",
   "cost": "8,000",
   "availability": "2, R",
-  "game_notes": "Scale: Capital. Skill: Capital ship gunnery. Fire Control: 2D. Space Range: 1-3/12/25. Damage: 3D. Weight: 4 metric tons.",
+  "game_notes": "Taim & Bak LC-17 capital laser cannon, a scaled-up derivative of the manufacturer's successful starfighter line. Scale: Capital. Skill: Capital ship gunnery. Fire Control: 2D. Space Range: 1-3/12/25. Damage: 3D. Weight: 4 metric tons. A cost-effective anti-fighter and point-defense option for smaller capital hulls.",
   "source": "Mock-up (derived from ship builder)"
  },
  {
@@ -3711,7 +3711,7 @@ const EQUIPMENT_DATA = [
   "type": "Capital-Scale Heavy Laser Cannon",
   "cost": "10,000",
   "availability": "2, R",
-  "game_notes": "Scale: Capital. Skill: Capital ship gunnery. Fire Control: 2D. Space Range: 1-3/12/25. Damage: 4D. Weight: 5 metric tons.",
+  "game_notes": "Taim & Bak HLC-22 capital heavy laser cannon, designed for convoy escort vessels and system patrol craft that need credible anti-ship punch without turbolaser infrastructure. Scale: Capital. Skill: Capital ship gunnery. Fire Control: 2D. Space Range: 1-3/12/25. Damage: 4D. Weight: 5 metric tons.",
   "source": "Mock-up (derived from ship builder)"
  },
  {
@@ -3720,7 +3720,7 @@ const EQUIPMENT_DATA = [
   "type": "Capital-Scale Light Turbolaser",
   "cost": "10,000",
   "availability": "2, R",
-  "game_notes": "Scale: Capital. Skill: Capital ship gunnery. Fire Control: 2D. Space Range: 3-15/35/75. Damage: 3D. Weight: 5 metric tons.",
+  "game_notes": "Kuat Drive Yards LTL-9 light turbolaser, a compact fleet-support weapon favored by escort frigates and converted merchant hulls. Scale: Capital. Skill: Capital ship gunnery. Fire Control: 2D. Space Range: 3-15/35/75. Damage: 3D. Weight: 5 metric tons. Lower power draw than standard turbolasers makes it viable on hulls without dedicated reactor cores.",
   "source": "Mock-up (derived from ship builder)"
  },
  {
@@ -3729,7 +3729,7 @@ const EQUIPMENT_DATA = [
   "type": "Capital-Scale Turbolaser",
   "cost": "12,000",
   "availability": "2, R",
-  "game_notes": "Scale: Capital. Skill: Capital ship gunnery. Fire Control: 2D. Space Range: 3-15/35/75. Damage: 4D. Weight: 6 metric tons.",
+  "game_notes": "Kuat Drive Yards TL-40 turbolaser, the backbone armament of most Imperial escorts and mid-tier warships. Scale: Capital. Skill: Capital ship gunnery. Fire Control: 2D. Space Range: 3-15/35/75. Damage: 4D. Weight: 6 metric tons. Robust, well-documented, and available throughout the galaxy wherever KDY maintains service contracts.",
   "source": "Mock-up (derived from ship builder)"
  },
  {
@@ -3738,7 +3738,7 @@ const EQUIPMENT_DATA = [
   "type": "Capital-Scale Heavy Turbolaser",
   "cost": "18,000",
   "availability": "2, X",
-  "game_notes": "Scale: Capital. Skill: Capital ship gunnery. Fire Control: 2D. Space Range: 3-15/35/75. Damage: 5D. Weight: 8 metric tons.",
+  "game_notes": "Kuat Drive Yards HTL-7 heavy turbolaser, a ship-of-the-line weapon found on Star Destroyers and heavy cruisers. Scale: Capital. Skill: Capital ship gunnery. Fire Control: 2D. Space Range: 3-15/35/75. Damage: 5D. Weight: 8 metric tons. Requires a dedicated power conduit and reinforced mount; installation on non-warship hulls is possible but not advisable.",
   "source": "Mock-up (derived from ship builder)"
  },
  {
@@ -3747,7 +3747,7 @@ const EQUIPMENT_DATA = [
   "type": "Capital-Scale Double Turbolaser",
   "cost": "25,000",
   "availability": "2, X",
-  "game_notes": "Scale: Capital. Skill: Capital ship gunnery. Fire Control: 2D. Space Range: 3-15/35/75. Damage: 6D. Weight: 12 metric tons.",
+  "game_notes": "Kuat Drive Yards DTL-2 double turbolaser, twin-linked barrels sharing a single mount and fire control system for maximum sustained output. Scale: Capital. Skill: Capital ship gunnery. Fire Control: 2D. Space Range: 3-15/35/75. Damage: 6D. Weight: 12 metric tons. A common upgrade on aging warships whose point-defense armament has fallen behind the threat environment.",
   "source": "Mock-up (derived from ship builder)"
  },
  {
@@ -3756,7 +3756,7 @@ const EQUIPMENT_DATA = [
   "type": "Capital-Scale Turbolaser Battery",
   "cost": "40,000",
   "availability": "2, X",
-  "game_notes": "Scale: Capital. Skill: Capital ship gunnery. Fire Control: 1D. Space Range: 3-15/35/75. Damage: 7D. Weight: 16 metric tons. Multi-barrel volley-fire assembly — trades accuracy for raw firepower.",
+  "game_notes": "Kuat Drive Yards TLB-12 turbolaser battery, a multi-barrel fire-linked array designed to saturate a firing arc with overlapping fire. Scale: Capital. Skill: Capital ship gunnery. Fire Control: 1D. Space Range: 3-15/35/75. Damage: 7D. Weight: 16 metric tons. Fire control is deliberately simplified — at this damage output, precision is secondary to volume of fire.",
   "source": "Mock-up (derived from ship builder)"
  },
  {
@@ -3765,7 +3765,7 @@ const EQUIPMENT_DATA = [
   "type": "Capital-Scale Light Ion Cannon",
   "cost": "8,000",
   "availability": "2, R",
-  "game_notes": "Scale: Capital. Skill: Capital ship gunnery. Fire Control: 2D. Space Range: 1-10/25/50. Damage: 3D (ion). Weight: 3 metric tons.",
+  "game_notes": "Comar LIC-4 light ion cannon, compact enough for corvette-class hulls and frequently used as a boarding-support weapon by Imperial customs frigates. Scale: Capital. Skill: Capital ship gunnery. Fire Control: 2D. Space Range: 1-10/25/50. Damage: 3D (ion). Weight: 3 metric tons.",
   "source": "Mock-up (derived from ship builder)"
  },
  {
@@ -3774,7 +3774,7 @@ const EQUIPMENT_DATA = [
   "type": "Capital-Scale Ion Cannon",
   "cost": "10,000",
   "availability": "2, R",
-  "game_notes": "Scale: Capital. Skill: Capital ship gunnery. Fire Control: 2D. Space Range: 1-10/25/50. Damage: 4D (ion). Weight: 4 metric tons.",
+  "game_notes": "Comar IC-18 ion cannon, the standard system-disabling weapon of the Imperial Navy's line warships. Scale: Capital. Skill: Capital ship gunnery. Fire Control: 2D. Space Range: 1-10/25/50. Damage: 4D (ion). Weight: 4 metric tons.",
   "source": "Mock-up (derived from ship builder)"
  },
  {
@@ -3783,7 +3783,7 @@ const EQUIPMENT_DATA = [
   "type": "Capital-Scale Heavy Ion Cannon",
   "cost": "15,000",
   "availability": "2, X",
-  "game_notes": "Scale: Capital. Skill: Capital ship gunnery. Fire Control: 2D. Space Range: 1-10/25/50. Damage: 5D (ion). Weight: 6 metric tons.",
+  "game_notes": "Comar HIC-7 heavy ion cannon, a theater-denial weapon capable of disabling destroyer-scale targets with a sustained barrage. Scale: Capital. Skill: Capital ship gunnery. Fire Control: 2D. Space Range: 1-10/25/50. Damage: 5D (ion). Weight: 6 metric tons. Power requirements are significant; most hulls mounting the HIC-7 require dedicated reactor shunting.",
   "source": "Mock-up (derived from ship builder)"
  },
  {
@@ -3792,7 +3792,7 @@ const EQUIPMENT_DATA = [
   "type": "Capital-Scale Proton Torpedo Launcher",
   "cost": "8,000",
   "availability": "2, R",
-  "game_notes": "Scale: Capital. Skill: Capital ship gunnery. Fire Control: 3D. Space Range: 2-12/30/60. Damage: 6D. Weight: 3 metric tons. Includes 10-torpedo magazine.",
+  "game_notes": "Arakyd Warhead Systems PT-10 capital proton torpedo launcher, a ten-round magazine-fed tube designed for alpha-strike opening salvos. Scale: Capital. Skill: Capital ship gunnery. Fire Control: 3D. Space Range: 2-12/30/60. Damage: 6D. Weight: 3 metric tons. Reloading the magazine requires shipyard support or a dedicated ordnance crew between engagements.",
   "source": "Mock-up (derived from ship builder)"
  },
  {
@@ -3801,7 +3801,7 @@ const EQUIPMENT_DATA = [
   "type": "Capital-Scale Concussion Missile Launcher",
   "cost": "12,000",
   "availability": "2, X",
-  "game_notes": "Scale: Capital. Skill: Capital ship gunnery. Fire Control: 2D. Space Range: 2-5/30/60. Damage: 9D. Weight: 4 metric tons. Includes 10-missile magazine.",
+  "game_notes": "Arakyd Warhead Systems CMT-10 capital concussion missile launcher, ten-round ready magazine for sustained anti-ship fire. Scale: Capital. Skill: Capital ship gunnery. Fire Control: 2D. Space Range: 2-5/30/60. Damage: 9D. Weight: 4 metric tons. Higher damage output than proton torpedoes at the cost of reduced accuracy and shorter effective range.",
   "source": "Mock-up (derived from ship builder)"
  },
  {
@@ -3810,7 +3810,7 @@ const EQUIPMENT_DATA = [
   "type": "Capital-Scale Light Tractor Beam Projector",
   "cost": "8,000",
   "availability": "2",
-  "game_notes": "Scale: Capital. Skill: Capital ship gunnery. Fire Control: 2D. Space Range: 1-5/15/30. Strength: 4D. Weight: 4 metric tons.",
+  "game_notes": "Kuat Entralla Drive Yards LTB-3 light tractor beam projector, standard boarding-support equipment on customs vessels and picket frigates. Scale: Capital. Skill: Capital ship gunnery. Fire Control: 2D. Space Range: 1-5/15/30. Strength: 4D. Weight: 4 metric tons. Effective against starfighters and small transports; not rated for holding destroyer-class hulls.",
   "source": "Mock-up (derived from ship builder)"
  },
  {
@@ -3819,7 +3819,7 @@ const EQUIPMENT_DATA = [
   "type": "Capital-Scale Tractor Beam Projector",
   "cost": "15,000",
   "availability": "2",
-  "game_notes": "Scale: Capital. Skill: Capital ship gunnery. Fire Control: 2D. Space Range: 1-5/15/30. Strength: 5D. Weight: 6 metric tons.",
+  "game_notes": "Kuat Entralla Drive Yards TB-15 tractor beam projector, fleet-standard equipment for carrier recovery operations and warship interdiction duties. Scale: Capital. Skill: Capital ship gunnery. Fire Control: 2D. Space Range: 1-5/15/30. Strength: 5D. Weight: 6 metric tons. Operators are warned that attempting to hold a vessel making a misjump risks catastrophic projector feedback.",
   "source": "Mock-up (derived from ship builder)"
  },
  {
@@ -3828,7 +3828,7 @@ const EQUIPMENT_DATA = [
   "type": "Capital-Scale Heavy Tractor Beam Projector",
   "cost": "20,000",
   "availability": "2, R",
-  "game_notes": "Scale: Capital. Skill: Capital ship gunnery. Fire Control: 2D. Space Range: 1-5/15/30. Strength: 6D. Weight: 8 metric tons.",
+  "game_notes": "Kuat Entralla Drive Yards HTB-9 heavy tractor beam projector, a warship-grade restraint system capable of immobilizing mid-size capital vessels. Scale: Capital. Skill: Capital ship gunnery. Fire Control: 2D. Space Range: 1-5/15/30. Strength: 6D. Weight: 8 metric tons. Found on Star Destroyers and sector command ships; requires a dedicated operator station.",
   "source": "Mock-up (derived from ship builder)"
  },
  {
@@ -3860,7 +3860,7 @@ const EQUIPMENT_DATA = [
   "category": "Ship Equipment",
   "cost": "45,000",
   "availability": "3, R",
-  "game_notes": "Heavy-duty combined particle and ray/energy shields. Shield code: 4D. Weight: 12 metric tons. Military-grade output typically found on assault yachts and heavy freighters. Requires Imperial permit.",
+  "game_notes": "Nordoxicon-38 heavy military shield generator, a surplus capital-grade unit refitted for starfighter and freighter hulls by specialist yards. Shield code: 4D. Weight: 12 metric tons. Draws substantially more power than commercial shield systems and requires active monitoring; preferred by military contractors, serious privateers, and anyone who expects to take fire.",
   "source": "House Rule (extrapolated from WEG40063)"
  },
  {
@@ -3868,7 +3868,7 @@ const EQUIPMENT_DATA = [
   "category": "Ship Equipment",
   "cost": "9,000",
   "availability": "2",
-  "game_notes": "Redundant shield generator providing backup protection. Backup shield code: 1D. Weight: 6 metric tons. Activates when primary shields fail or can be run simultaneously at GM discretion.",
+  "game_notes": "Nordoxicon RS-1 redundant shield generator, a lightweight emergency unit that activates automatically when primary shields fail. Backup shield code: 1D. Weight: 6 metric tons. Price includes custom wiring harness and dedicated console controls. Provides minimal but meaningful protection during the moments it takes a crew to respond to primary shield loss.",
   "source": "Mock-up (house rule)"
  },
  {
@@ -3876,7 +3876,7 @@ const EQUIPMENT_DATA = [
   "category": "Ship Equipment",
   "cost": "15,000",
   "availability": "2",
-  "game_notes": "Redundant shield generator providing backup protection. Backup shield code: 2D. Weight: 8 metric tons. Activates when primary shields fail or can be run simultaneously at GM discretion.",
+  "game_notes": "Nordoxicon RS-2 redundant shield generator, a mid-grade backup unit common on courier vessels and light transports operating in contested space. Backup shield code: 2D. Weight: 8 metric tons. Price includes custom wiring harness and dedicated console controls. Activates on primary shield failure; output sufficient to absorb light weapons fire while repairs are attempted.",
   "source": "Mock-up (house rule)"
  },
  {
@@ -3884,7 +3884,7 @@ const EQUIPMENT_DATA = [
   "category": "Ship Equipment",
   "cost": "25,000",
   "availability": "2, R",
-  "game_notes": "Redundant shield generator providing backup protection. Backup shield code: 3D. Weight: 10 metric tons. Activates when primary shields fail or can be run simultaneously at GM discretion.",
+  "game_notes": "Nordoxicon RS-3 redundant shield generator, a robust backup system favored by independent captains who have learned not to trust their primary shields in a fight. Backup shield code: 3D. Weight: 10 metric tons. Price includes custom wiring harness and dedicated console controls. At this output level, the distinction between 'backup' and 'second primary' becomes academic.",
   "source": "Mock-up (house rule)"
  },
  {
@@ -3892,7 +3892,7 @@ const EQUIPMENT_DATA = [
   "category": "Ship Equipment",
   "cost": "50,000",
   "availability": "3, R",
-  "game_notes": "Redundant shield generator providing heavy backup protection. Backup shield code: 4D. Weight: 12 metric tons. Military-grade redundancy typically found on capital escorts and VIP transports.",
+  "game_notes": "Nordoxicon RS-4 heavy redundant shield generator, a military-specification backup unit that effectively doubles a vessel's shield endurance when the primary system is knocked out. Backup shield code: 4D. Weight: 12 metric tons. Price includes custom wiring harness and dedicated console controls for independent operation. Installation requires the same structural reinforcement as the primary shield system.",
   "source": "Mock-up (house rule)"
  },
  {
