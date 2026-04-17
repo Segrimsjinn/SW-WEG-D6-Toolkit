@@ -11053,7 +11053,7 @@ const SHIPYARD = {
     if (!pin.shipyard || !pin.shipyard.base || !pin.shipyard.base.hull) {
       pin.shipyard = {
         base: this.snapshotBase(pin),
-        mods: { space: 0, maneuverability: 0, hull: 0, shields: 0, weapons: [] },
+        mods: { space: 0, maneuverability: 0, hull: 0, shields: 0, backupHyperdrive: 0, weapons: [] },
         hyperdriveSteps: 0,
         replacements: [],
         berthChanges: [],
@@ -11120,7 +11120,13 @@ const SHIPYARD = {
     const hyperIdx = this.hyperLadderIndex(base.hyperdrive);
     stats.hyperdrive = hyperIdx >= 0 && hyperIdx + (sy.mods.hyperdrive || 0) < this.HYPER_LADDER.length
       ? this.HYPER_LADDER[hyperIdx + (sy.mods.hyperdrive || 0)] : (base.hyperdrive || '');
-    stats.backup_hyperdrive = base.backupHyperdrive || '';
+    if (base.backupHyperdrive) {
+      const bkIdx = this.hyperLadderIndex(base.backupHyperdrive);
+      stats.backup_hyperdrive = bkIdx >= 0 && bkIdx + (sy.mods.backupHyperdrive || 0) < this.HYPER_LADDER.length
+        ? this.HYPER_LADDER[bkIdx + (sy.mods.backupHyperdrive || 0)] : (base.backupHyperdrive || '');
+    } else {
+      stats.backup_hyperdrive = '';
+    }
     stats.hull = pipsToD6(d6ToPips(base.hull) + (sy.mods.hull || 0));
     stats.shields = pipsToD6(d6ToPips(base.shields) + (sy.mods.shields || 0));
     stats.weapons = (base.weapons || []).map((w, i) => {
@@ -11205,7 +11211,7 @@ const SHIPYARD = {
     this.render();
   },
 
-  HYPER_LADDER: ['x15','x10','x6','x4','x3','x2','x1','x0.5'],
+  HYPER_LADDER: ['x15','x14','x13','x12','x11','x10','x9','x8','x7','x6','x5','x4','x3','x2','x1','x0.5'],
 
   hyperLadderIndex(code) {
     if (!code) return -1;
@@ -11280,6 +11286,24 @@ const SHIPYARD = {
     const baseHyperLabel = baseHyperIdx >= 0 ? this.HYPER_LADDER[baseHyperIdx] : (base.hyperdrive || 'None');
     const curHyperLabel = curHyperIdx >= 0 && curHyperIdx < this.HYPER_LADDER.length ? this.HYPER_LADDER[curHyperIdx] : baseHyperLabel;
     html += this.renderModRow('HYPERDRIVE', baseHyperLabel, curHyperLabel, hyperModLevel, hyperMax, 'hyperdrive', price);
+
+    if (base.backupHyperdrive) {
+      const baseBkIdx = this.hyperLadderIndex(base.backupHyperdrive);
+      const bkModLevel = sy.mods.backupHyperdrive || 0;
+      const curBkIdx = baseBkIdx >= 0 ? baseBkIdx + bkModLevel : -1;
+      let bkMax = 0;
+      if (baseBkIdx >= 0) {
+        for (let i = 0; i < hyperTable.length; i++) {
+          const fromIdx = this.HYPER_LADDER.indexOf(hyperTable[i].from);
+          if (baseBkIdx + i <= fromIdx || baseBkIdx === fromIdx) bkMax = i + 1;
+          else break;
+        }
+        bkMax = Math.min(bkMax, this.HYPER_LADDER.length - 1 - baseBkIdx);
+      }
+      const baseBkLabel = baseBkIdx >= 0 ? this.HYPER_LADDER[baseBkIdx] : (base.backupHyperdrive || 'None');
+      const curBkLabel = curBkIdx >= 0 && curBkIdx < this.HYPER_LADDER.length ? this.HYPER_LADDER[curBkIdx] : baseBkLabel;
+      html += this.renderModRow('BACKUP HD', baseBkLabel, curBkLabel, bkModLevel, bkMax, 'backupHyperdrive', price);
+    }
 
     // Hull (pip-based, max +4 pips = +1D+1)
     const baseHullPips = d6ToPips(base.hull);
@@ -11760,6 +11784,7 @@ const SHIPYARD = {
       sy.mods.shields = 0;
       sy.base.shields = eq.stat || sy.base.shields;
     } else if (st.statKey === 'backupHyperdrive') {
+      sy.mods.backupHyperdrive = 0;
       sy.base.backupHyperdrive = eq.stat || sy.base.backupHyperdrive;
     }
 
@@ -11791,9 +11816,10 @@ const SHIPYARD = {
   applyMod(system) {
     if (!this.currentPin) return;
     const sy = this.currentPin.shipyard;
-    const table = this.MOD_TABLES[system];
+    const tableKey = system === 'backupHyperdrive' ? 'hyperdrive' : system;
+    const table = this.MOD_TABLES[tableKey];
     const level = sy.mods[system] || 0;
-    const max = system === 'space' ? 4 : system === 'hull' ? 4 : system === 'hyperdrive' ? table.length : 5;
+    const max = system === 'space' ? 4 : system === 'hull' ? 4 : (system === 'hyperdrive' || system === 'backupHyperdrive') ? table.length : 5;
     if (level >= max) return;
     const step = table[level];
     if (!step) return;
@@ -11811,7 +11837,8 @@ const SHIPYARD = {
     const sy = this.currentPin.shipyard;
     const level = sy.mods[system] || 0;
     if (level <= 0) return;
-    const table = this.MOD_TABLES[system];
+    const tableKey = system === 'backupHyperdrive' ? 'hyperdrive' : system;
+    const table = this.MOD_TABLES[tableKey];
     const step = table[level - 1];
     const price = this.getRetailPrice();
     const cost = Math.round(price * step.pct / 100 * this.getLaborMultiplier());
