@@ -11137,7 +11137,11 @@ const SHIPYARD = {
         fire_control: pipsToD6(d6ToPips(w.fire_control) + (wm.fcPips || 0))
       });
     });
-    const totalWeight = (sy.replacements || []).reduce((s, r) => s + (r.weight || 0), 0) - (sy.partsBin || []).reduce((s, p) => s + (p.weight || 0), 0);
+    const replaceWeight = (sy.replacements || []).reduce((s, r) => s + (r.weight || 0), 0);
+    const partsBinWeight = (sy.partsBin || []).reduce((s, p) => s + (p.weight || 0), 0);
+    const addOnWeight = (sy.addOns || []).reduce((s, a) => s + (a.weight || 0) * (a.qty || 1), 0);
+    const mountedWeight = (sy.log || []).filter(l => l.type === 'mount-weapon').reduce((s, l) => s + (l.weight || 0), 0);
+    const totalWeight = replaceWeight - partsBinWeight + addOnWeight + mountedWeight;
     const bc = sy.berthChanges || {};
     const bt = this.MOD_TABLES.berthConversion;
     let berthCargo = 0;
@@ -11736,7 +11740,8 @@ const SHIPYARD = {
     sy.mods.weapons.push({ damagePips: 0, fcPips: 0, rangePct: 0, fireLink: 0 });
     sy.addOns.splice(index, 1);
     this.recalcAddOnCosts();
-    sy.log.push({ type: 'mount-weapon', weaponName: qtyPrefix + ao.name + linkSuffix, cost: this.getAddOnCost(ao), ts: Date.now() });
+    const mountWeight = (ao.weight || 0) * qty;
+    sy.log.push({ type: 'mount-weapon', weaponName: qtyPrefix + ao.name + linkSuffix, cost: this.getAddOnCost(ao), weight: mountWeight, ts: Date.now() });
     corkboardSave();
     this.render();
   },
