@@ -1270,7 +1270,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
           <button class="jump-pill" onclick="jumpTo('ships-database')">Starships</button>
           <button class="jump-pill" onclick="jumpTo('ships-vehicles')">Vehicles</button>
           <button class="jump-pill" onclick="jumpTo('ships-equipment')">Ship Equipment</button>
-          <button class="jump-pill" onclick="jumpTo('ships-shipyard')">Shipyard</button>
+          <button class="jump-pill" onclick="jumpTo('ships-shipyard')">Docking Bay</button>
           <button class="jump-pill" onclick="jumpTo('ships-builder')">Ship Builder</button>
         </div>
       </div>
@@ -1422,7 +1422,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
       <!-- SHIPYARD -->
       <div class="card" id="ships-shipyard" style="margin-top:8px">
         <div class="card-title" style="display:flex;align-items:center;justify-content:space-between;cursor:pointer" onclick="toggleShipyardPanel()">
-          <span>⟐ Shipyard <span id="shipyardDockedBadge" style="color:var(--text-dim);font-weight:400;font-size:10px;letter-spacing:1px"></span></span>
+          <span>⟐ Docking Bay <span id="shipyardDockedBadge" style="color:var(--text-dim);font-weight:400;font-size:10px;letter-spacing:1px"></span></span>
           <span style="display:flex;align-items:center;gap:8px">
             <label style="font-size:9px;color:var(--text-dim);display:flex;align-items:center;gap:4px;font-weight:400;cursor:pointer" onclick="event.stopPropagation()"><input type="checkbox" class="house-rules-cb" onchange="toggleHouseRules(this.checked)" style="accent-color:#ff9800;width:12px;height:12px"> <span style="color:#ff9800">House Rules</span></label>
             <span id="shipyardToggleIcon" style="font-size:14px;color:var(--text-dim);transition:transform .2s">▼</span>
@@ -1431,7 +1431,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
         <div id="shipyardPanel" style="display:none">
           <div id="shipyardEmpty">
             <div style="font-size:11px;color:var(--text-dim);margin-bottom:10px;line-height:1.6">
-              Dock a pinned ship to apply modifications using WEG rules — upgrade drives, hull, shields, weapons, or swap entire components from Ship Equipment. Pin a starship from the database first, then tap <span style="color:var(--gold)">🔧 DOCK</span> on its Corkboard card to bring it into the Shipyard.
+              Dock a pinned ship to apply modifications using WEG rules — upgrade drives, hull, shields, weapons, or swap entire components from Ship Equipment. Pin a starship from the database first, then tap <span style="color:var(--gold)">🔧 DOCK</span> on its Corkboard card to bring it into the Docking Bay.
             </div>
             <div style="text-align:center;padding:20px;color:var(--text-dark);font-style:italic;border:1px dashed var(--card-border);border-radius:var(--radius-sm)">No ship docked. Pin a ship from the Starship Database, then dock it from the Corkboard.</div>
           </div>
@@ -3124,7 +3124,7 @@ const NAV_CARDS = [
   {id:'ships-database', label:'Starship Database', tab:'ships', group:'Ships'},
   {id:'ships-vehicles', label:'Vehicle Database', tab:'ships', group:'Ships'},
   {id:'ships-equipment', label:'Ship Equipment', tab:'ships', group:'Ships'},
-  {id:'ships-shipyard', label:'Shipyard', tab:'ships', group:'Ships'},
+  {id:'ships-shipyard', label:'Docking Bay', tab:'ships', group:'Ships'},
   {id:'ships-builder', label:'Ship Builder', tab:'ships', group:'Ships'},
   // Dice (gm)
   {id:'gm-dice', label:'D6 Dice Roller', tab:'gm', group:'Dice'},
