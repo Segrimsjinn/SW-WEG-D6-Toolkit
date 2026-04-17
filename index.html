@@ -11510,15 +11510,26 @@ const SHIPYARD = {
         html += '</div>';
         const costLabel = existing.salvage ? '<span style="color:var(--cyan)">' + existing.cost.toLocaleString() + ' cr</span> <span style="font-size:7px;color:var(--text-dark)">(salvage ' + (this.SALVAGE_TIERS[existing.salvage]||{}).pct + '% of ' + (existing.fullCost||existing.cost).toLocaleString() + ')</span>' : existing.cost.toLocaleString() + ' cr';
         html += '<span style="font-size:9px;color:var(--text-dim);white-space:nowrap">' + costLabel + ', ' + existing.weight + ' mt</span>';
-        html += '<button class="ship-sort-btn" onclick="SHIPYARD.removeReplacement(\'' + subtype + '\')" style="padding:2px 8px;font-size:9px;color:var(--red)">✕</button>';
+        html += '<button class="ship-sort-btn" onclick="SHIPYARD.revertToStock(\'' + subtype + '\')" style="padding:2px 8px;font-size:8px;color:var(--gold)" title="Revert to stock part">⟲ STOCK</button>';
       } else {
-        html += '<select onchange="SHIPYARD.applyReplacement(\'' + subtype + '\', this.value)" style="flex:1;max-width:300px;padding:4px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:10px;font-family:inherit">';
-        html += '<option value="">— Select replacement —</option>';
-        for (const eq of equips) {
-          const statPrefix = subtype === 'engine' ? 'Space ' + (eq.stat || '?') + ' — ' : subtype === 'shields' ? (eq.stat || '?') + ' — ' : subtype === 'hyperdrive' ? (eq.stat || '?') + ' — ' : '';
-          html += '<option value="' + eq.name.replace(/"/g, '&quot;') + '">' + statPrefix + eq.name + ' (' + eq.cost.toLocaleString() + ' cr, ' + eq.weight + ' mt)</option>';
+        const staged = sy.stagedReplacement && sy.stagedReplacement.subtype === subtype ? sy.stagedReplacement : null;
+        if (staged) {
+          const sAvailColor = /X/.test(staged.availability||'') ? 'var(--red)' : /R/.test(staged.availability||'') ? 'var(--red)' : /F/.test(staged.availability||'') ? 'var(--gold)' : 'var(--text-dim)';
+          html += '<div style="flex:1"><div style="font-family:\'IBM Plex Mono\',monospace;font-size:10px;color:var(--text);font-weight:700">' + staged.name + ' <span style="font-size:8px;color:' + sAvailColor + '">' + (staged.availability ? '[' + staged.availability + ']' : '') + '</span></div>';
+          html += '<div style="font-size:8px;color:var(--text-dim);line-height:1.4;margin-top:2px">' + staged.notes + '</div>';
+          html += '</div>';
+          html += '<span style="font-size:9px;color:var(--text-dim);white-space:nowrap">' + staged.cost.toLocaleString() + ' cr, ' + staged.weight + ' mt</span>';
+          html += '<button class="ship-sort-btn" onclick="SHIPYARD.commitReplacement()" style="padding:2px 8px;font-size:9px;color:var(--green)">⚙ INSTALL</button>';
+          html += '<button class="ship-sort-btn" onclick="SHIPYARD.cancelStage()" style="padding:2px 8px;font-size:9px;color:var(--red)">✕</button>';
+        } else {
+          html += '<select onchange="SHIPYARD.stageReplacement(\'' + subtype + '\', this.value)" style="flex:1;max-width:300px;padding:4px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:10px;font-family:inherit">';
+          html += '<option value="">— Select replacement —</option>';
+          for (const eq of equips) {
+            const statPrefix = subtype === 'engine' ? 'Space ' + (eq.stat || '?') + ' — ' : subtype === 'shields' ? (eq.stat || '?') + ' — ' : subtype === 'hyperdrive' ? (eq.stat || '?') + ' — ' : subtype === 'backupHyperdrive' ? (eq.stat || '?') + ' — ' : '';
+            html += '<option value="' + eq.name.replace(/"/g, '&quot;') + '">' + statPrefix + eq.name + ' (' + eq.cost.toLocaleString() + ' cr, ' + eq.weight + ' mt)</option>';
+          }
+          html += '</select>';
         }
-        html += '</select>';
       }
       html += '</div>';
     }
@@ -12028,12 +12039,29 @@ const SHIPYARD = {
     this.render();
   },
 
-  applyReplacement(subtype, equipName) {
+  stageReplacement(subtype, equipName) {
     if (!this.currentPin || !equipName) return;
     const sy = this.currentPin.shipyard;
     const equips = this.getEquipBySubtype(subtype);
     const eq = equips.find(e => e.name === equipName);
     if (!eq) return;
+    sy.stagedReplacement = { subtype, name: eq.name, cost: eq.cost, weight: eq.weight, stat: eq.stat, source: eq.source, availability: eq.availability, notes: eq.notes };
+    this.render();
+  },
+
+  cancelStage() {
+    if (!this.currentPin) return;
+    delete this.currentPin.shipyard.stagedReplacement;
+    this.render();
+  },
+
+  commitReplacement() {
+    if (!this.currentPin) return;
+    const sy = this.currentPin.shipyard;
+    const staged = sy.stagedReplacement;
+    if (!staged) return;
+    const subtype = staged.subtype;
+    const equips = this.getEquipBySubtype(subtype);
     if (!sy.replacements) sy.replacements = [];
     if (!sy.partsBin) sy.partsBin = [];
     const oldPart = sy.replacements.find(r => r.subtype === subtype);
@@ -12054,47 +12082,45 @@ const SHIPYARD = {
       sy.partsBin.push({ name: oldPartName, value: oldPartValue || 0, weight: oldPartWeight, sellPct: 25, subtype });
     }
     sy.replacements = sy.replacements.filter(r => r.subtype !== subtype);
-    const actualCost = this.getSalvageCost(eq.cost) * this.getScaleMultiplier();
-    const salvageMode = (this.currentPin.shipyard.salvageMode || 'none');
-    sy.replacements.push({ subtype, equipName: eq.name, cost: actualCost, fullCost: eq.cost, weight: eq.weight, stat: eq.stat, source: eq.source, availability: eq.availability, notes: eq.notes, salvage: salvageMode !== 'none' ? salvageMode : undefined });
+    const actualCost = this.getSalvageCost(staged.cost) * this.getScaleMultiplier();
+    const salvageMode = (sy.salvageMode || 'none');
+    sy.replacements.push({ subtype, equipName: staged.name, cost: actualCost, fullCost: staged.cost, weight: staged.weight, stat: staged.stat, source: staged.source, availability: staged.availability, notes: staged.notes, salvage: salvageMode !== 'none' ? salvageMode : undefined });
     sy.totalCost += actualCost;
 
     const st = this.EQUIP_SUBTYPES[subtype];
-    if (st.statKey === 'space') {
-      sy.mods.space = 0;
-      sy.base.space = eq.stat || sy.base.space;
-    } else if (st.statKey === 'hyperdrive') {
-      sy.mods.hyperdrive = 0;
-      sy.base.hyperdrive = eq.stat || sy.base.hyperdrive;
-    } else if (st.statKey === 'shields') {
-      sy.mods.shields = 0;
-      sy.base.shields = eq.stat || sy.base.shields;
-    } else if (st.statKey === 'backupHyperdrive') {
-      sy.mods.backupHyperdrive = 0;
-      sy.base.backupHyperdrive = eq.stat || sy.base.backupHyperdrive;
-    }
+    if (st.statKey === 'space') { sy.mods.space = 0; sy.base.space = staged.stat || sy.base.space; }
+    else if (st.statKey === 'hyperdrive') { sy.mods.hyperdrive = 0; sy.base.hyperdrive = staged.stat || sy.base.hyperdrive; }
+    else if (st.statKey === 'shields') { sy.mods.shields = 0; sy.base.shields = staged.stat || sy.base.shields; }
+    else if (st.statKey === 'backupHyperdrive') { sy.mods.backupHyperdrive = 0; sy.base.backupHyperdrive = staged.stat || sy.base.backupHyperdrive; }
 
-    sy.log.push({ type: 'replacement', subtype, equipName: eq.name, cost: eq.cost, weight: eq.weight, stat: eq.stat, ts: Date.now() });
+    sy.log.push({ type: 'replacement', subtype, equipName: staged.name, cost: staged.cost, weight: staged.weight, stat: staged.stat, ts: Date.now() });
+    delete sy.stagedReplacement;
     corkboardSave();
     this.render();
   },
 
-  removeReplacement(subtype) {
+  revertToStock(subtype) {
     if (!this.currentPin) return;
     const sy = this.currentPin.shipyard;
     const existing = sy.replacements.find(r => r.subtype === subtype);
     if (!existing) return;
+    if (!sy.partsBin) sy.partsBin = [];
+    const partValue = existing.fullCost || existing.cost;
+    if (partValue > 0 || existing.weight > 0) {
+      sy.partsBin.push({ name: existing.equipName, value: partValue, weight: existing.weight || 0, sellPct: 25, subtype: 'replacement' });
+    }
     sy.totalCost = Math.max(0, sy.totalCost - existing.cost);
     sy.replacements = sy.replacements.filter(r => r.subtype !== subtype);
 
     const originalBase = this.snapshotBase(this.currentPin);
     const st = this.EQUIP_SUBTYPES[subtype];
-    if (st.statKey === 'space') sy.base.space = originalBase.space;
-    else if (st.statKey === 'hyperdrive') sy.base.hyperdrive = originalBase.hyperdrive;
-    else if (st.statKey === 'shields') sy.base.shields = originalBase.shields;
-    else if (st.statKey === 'backupHyperdrive') sy.base.backupHyperdrive = originalBase.backupHyperdrive;
+    if (st.statKey === 'space') { sy.base.space = originalBase.space; sy.mods.space = 0; }
+    else if (st.statKey === 'hyperdrive') { sy.base.hyperdrive = originalBase.hyperdrive; sy.mods.hyperdrive = 0; }
+    else if (st.statKey === 'shields') { sy.base.shields = originalBase.shields; sy.mods.shields = 0; }
+    else if (st.statKey === 'backupHyperdrive') { sy.base.backupHyperdrive = originalBase.backupHyperdrive; sy.mods.backupHyperdrive = 0; }
 
     sy.log = sy.log.filter(l => !(l.type === 'replacement' && l.subtype === subtype));
+    sy.log.push({ type: 'revert-stock', subtype, ts: Date.now() });
     corkboardSave();
     this.render();
   },
