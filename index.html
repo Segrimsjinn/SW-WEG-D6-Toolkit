@@ -11235,7 +11235,9 @@ const SHIPYARD = {
     html += '<div style="min-width:50px;font-family:\'IBM Plex Mono\',monospace;font-size:11px;color:' + (modLevel > 0 ? 'var(--cyan)' : 'var(--text-dim)') + ';font-weight:' + (modLevel > 0 ? '700' : '400') + '">' + currentStat + '</div>';
 
     if (atMax) {
-      html += '<span style="font-family:\'Exo 2\',monospace;font-size:8px;color:var(--red);letter-spacing:1px;margin-left:auto">MAX</span>';
+      let totalSpent = 0;
+      for (let s = 0; s < modLevel; s++) { totalSpent += Math.round(price * table[s].pct / 100 * this.getLaborMultiplier()); }
+      html += '<span style="font-family:\'Exo 2\',monospace;font-size:8px;color:var(--red);letter-spacing:1px;margin-left:auto">MAX · <span style="color:var(--green)">' + totalSpent.toLocaleString() + ' cr spent</span></span>';
     } else if (next) {
       html += '<div style="flex:1;font-size:9px;color:var(--text-dim);text-align:right">';
       html += '<span style="color:' + diffColor + '">' + next.difficulty + '</span>';
