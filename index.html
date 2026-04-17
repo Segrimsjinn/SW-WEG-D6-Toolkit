@@ -10960,9 +10960,12 @@ const SHIPYARD = {
   matchWeaponCost(weaponName, weaponDamage) {
     const equips = this.getEquipWeapons();
     if (!equips.length) return 0;
+    const shipScale = (this.currentPin && this.currentPin.shipyard && this.currentPin.shipyard.base.scale || '').toLowerCase();
     const clean = String(weaponName).replace(/^\d+\s+/,'').replace(/\s*\(.*?\)\s*/g,'').replace(/fire[- ]?linked|fire separately/gi,'').trim().toLowerCase();
     let best = null, bestScore = 0;
     for (const eq of equips) {
+      const eqScale = /Scale:\s*Capital/i.test(eq.raw && eq.raw.game_notes || '') ? 'capital' : 'starfighter';
+      if (shipScale && eqScale !== shipScale) continue;
       const eqClean = eq.name.toLowerCase();
       let score = 0;
       const words = clean.split(/\s+/);
@@ -11772,11 +11775,14 @@ const SHIPYARD = {
   },
 
   matchWeaponWeight(weaponName, weaponDamage) {
+    const shipScale = (this.currentPin && this.currentPin.shipyard && this.currentPin.shipyard.base.scale || '').toLowerCase();
     const equips = (typeof EQUIPMENT_DATA !== 'undefined' ? EQUIPMENT_DATA : [])
       .filter(e => e.category === 'Ship Equipment' && e.game_notes && /Damage:|Cannon|Laser|Turbolaser|Ion|Torpedo|Missile|Tractor/i.test(e.game_notes));
     const clean = String(weaponName).replace(/^\d+\s+/,'').replace(/\s*\(.*?\)\s*/g,'').replace(/fire[- ]?linked|fire separately/gi,'').trim().toLowerCase();
     let best = null, bestScore = 0;
     for (const eq of equips) {
+      const eqScale = /Scale:\s*Capital/i.test(eq.game_notes || '') ? 'capital' : 'starfighter';
+      if (shipScale && eqScale !== shipScale) continue;
       const eqClean = eq.name.toLowerCase();
       const notes = eq.game_notes || '';
       let score = 0;
