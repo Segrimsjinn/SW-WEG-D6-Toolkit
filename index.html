@@ -696,7 +696,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
     <div class="app-subtitle">NPC Generator &amp; Astrogation &amp; Starships</div>
     <button class="app-help-btn" onclick="openHowTo()" title="How to Use This Toolkit">? HOW TO</button>
     <div id="visitorBadge" style="position:absolute;bottom:4px;left:12px;font-family:'Exo 2',monospace;font-size:8px;color:var(--text-dark);letter-spacing:1px;line-height:1.4;text-align:left" title="Total visitors">
-      <span id="statVisitors" style="color:var(--gold);font-weight:700">—</span> COMMANDERS · <span style="font-size:7px;letter-spacing:0.5px">v1.0.933</span>
+      <span id="statVisitors" style="color:var(--gold);font-weight:700">—</span> COMMANDERS · <span style="font-size:7px;letter-spacing:0.5px">v1.0.934</span>
     </div>
   </header>
 
@@ -12878,13 +12878,20 @@ const ARMORER = {
     for (const w of WEAPONS_DATA) {
       const wn = w.name.toLowerCase();
       let score = 0;
-      if (wn === raw || wn === stripped) score = 10;
-      else if (raw.includes(wn) || stripped.includes(wn)) score = 7;
-      else if (wn.includes(stripped) && stripped.length > 5) score = 5;
+      if (wn === raw || wn === stripped) { score = 10; }
+      else if (raw.includes(wn) || stripped.includes(wn)) { score = 7; }
       else {
-        const words = stripped.split(/[\s-]+/).filter(w => w.length > 2);
-        const matched = words.filter(word => wn.includes(word)).length;
-        if (matched >= 2) score = matched;
+        const words = stripped.split(/[\s-]+/).filter(w => w.length >= 2);
+        const wnWords = wn.split(/[\s-]+/);
+        let matched = 0;
+        for (const word of words) {
+          if (/^\d+$/.test(word)) {
+            if (wnWords.some(ww => ww === word || ww === 'model' + word || ww.endsWith('-' + word))) matched++;
+          } else {
+            if (wnWords.some(ww => ww.includes(word) || word.includes(ww))) matched++;
+          }
+        }
+        if (matched >= 2) score = matched + (matched === words.length ? 3 : 0);
       }
       if (score > bestScore) { bestScore = score; best = w; }
     }
