@@ -696,7 +696,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
     <div class="app-subtitle">NPC Generator &amp; Astrogation &amp; Starships</div>
     <button class="app-help-btn" onclick="openHowTo()" title="How to Use This Toolkit">? HOW TO</button>
     <div id="visitorBadge" style="position:absolute;bottom:4px;left:12px;font-family:'Exo 2',monospace;font-size:8px;color:var(--text-dark);letter-spacing:1px;line-height:1.4;text-align:left" title="Total visitors">
-      <span id="statVisitors" style="color:var(--gold);font-weight:700">—</span> COMMANDERS · <span style="font-size:7px;letter-spacing:0.5px">v1.0.928</span>
+      <span id="statVisitors" style="color:var(--gold);font-weight:700">—</span> COMMANDERS · <span style="font-size:7px;letter-spacing:0.5px">v1.0.929</span>
     </div>
   </header>
 
@@ -11511,7 +11511,7 @@ const SHIPYARD = {
     const isSalvage = sy.salvageMode !== 'none';
     html += '<div style="font-size:8px;color:var(--text-dark);margin-bottom:6px;font-style:italic">' +
       (isSalvage ? 'Salvaged parts: ' + salvagePct + '% parts + (parts × ½ used labor × ' + salvage.laborMult + '× salvage × ' + this.getLaborMultiplier() + '× port). No purchase price — part is available where you found it.'
-       : 'Replace an entire system with new hardware. Cost = parts + (parts × ' + this.getLaborMultiplier() + '× labor). Weight subtracts from cargo.') +
+       : 'Replace an entire system with new hardware. Cost = parts + (parts × ' + this.getLaborMultiplier() + ' × ½ labor). Weight subtracts from cargo.') +
       '</div>';
     html += '<div style="border:1px solid var(--card-border);border-radius:var(--radius-sm);overflow:hidden">';
 
@@ -12045,7 +12045,7 @@ const SHIPYARD = {
     const sy = this.currentPin.shipyard;
     const mode = sy.salvageMode || 'none';
     const labor = this.getLaborMultiplier();
-    if (mode === 'none') return Math.round(fullCost + fullCost * labor);
+    if (mode === 'none') return Math.round(fullCost + fullCost * labor * 0.5);
     const tier = this.SALVAGE_TIERS[mode] || this.SALVAGE_TIERS.none;
     const pct = sy.salvagePcts && sy.salvagePcts[mode] !== undefined ? sy.salvagePcts[mode] : tier.pct;
     const parts = fullCost * pct / 100;
