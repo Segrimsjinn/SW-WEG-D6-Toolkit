@@ -3679,6 +3679,150 @@ const EQUIPMENT_DATA = [
   "source": "Mock-up (house rule)"
  },
  {
+  "name": "Fire Control Station",
+  "category": "Ship Equipment",
+  "type": "Dedicated Targeting Computer Station",
+  "cost": "5,000",
+  "availability": "2",
+  "game_notes": "Scale: Capital. Dedicated fire control station for one weapon type on one fire arc. Weight: 5 metric tons. Raises base fire control to 3D for all fire-linked weapons of the same type within the covered arc (e.g. all turbolasers on the right arc). Does not stack — one station per weapon type per arc. Only applies to fire-linked weapon groups. Add one per arc/type combination needed.",
+  "source": "Mock-up (house rule)"
+ },
+ {
+  "name": "Capital Laser Cannon",
+  "category": "Ship Equipment",
+  "type": "Capital-Scale Laser Cannon",
+  "cost": "8,000",
+  "availability": "2, R",
+  "game_notes": "Scale: Capital. Skill: Capital ship gunnery. Fire Control: 2D. Space Range: 1-3/12/25. Damage: 3D. Weight: 4 metric tons.",
+  "source": "Mock-up (derived from ship builder)"
+ },
+ {
+  "name": "Capital Heavy Laser Cannon",
+  "category": "Ship Equipment",
+  "type": "Capital-Scale Heavy Laser Cannon",
+  "cost": "10,000",
+  "availability": "2, R",
+  "game_notes": "Scale: Capital. Skill: Capital ship gunnery. Fire Control: 2D. Space Range: 1-3/12/25. Damage: 4D. Weight: 5 metric tons.",
+  "source": "Mock-up (derived from ship builder)"
+ },
+ {
+  "name": "Capital Light Turbolaser",
+  "category": "Ship Equipment",
+  "type": "Capital-Scale Light Turbolaser",
+  "cost": "10,000",
+  "availability": "2, R",
+  "game_notes": "Scale: Capital. Skill: Capital ship gunnery. Fire Control: 2D. Space Range: 3-15/35/75. Damage: 3D. Weight: 5 metric tons.",
+  "source": "Mock-up (derived from ship builder)"
+ },
+ {
+  "name": "Capital Turbolaser",
+  "category": "Ship Equipment",
+  "type": "Capital-Scale Turbolaser",
+  "cost": "12,000",
+  "availability": "2, R",
+  "game_notes": "Scale: Capital. Skill: Capital ship gunnery. Fire Control: 2D. Space Range: 3-15/35/75. Damage: 4D. Weight: 6 metric tons.",
+  "source": "Mock-up (derived from ship builder)"
+ },
+ {
+  "name": "Capital Heavy Turbolaser",
+  "category": "Ship Equipment",
+  "type": "Capital-Scale Heavy Turbolaser",
+  "cost": "18,000",
+  "availability": "2, X",
+  "game_notes": "Scale: Capital. Skill: Capital ship gunnery. Fire Control: 2D. Space Range: 3-15/35/75. Damage: 5D. Weight: 8 metric tons.",
+  "source": "Mock-up (derived from ship builder)"
+ },
+ {
+  "name": "Capital Double Turbolaser",
+  "category": "Ship Equipment",
+  "type": "Capital-Scale Double Turbolaser",
+  "cost": "25,000",
+  "availability": "2, X",
+  "game_notes": "Scale: Capital. Skill: Capital ship gunnery. Fire Control: 2D. Space Range: 3-15/35/75. Damage: 6D. Weight: 12 metric tons.",
+  "source": "Mock-up (derived from ship builder)"
+ },
+ {
+  "name": "Capital Turbolaser Battery",
+  "category": "Ship Equipment",
+  "type": "Capital-Scale Turbolaser Battery",
+  "cost": "40,000",
+  "availability": "2, X",
+  "game_notes": "Scale: Capital. Skill: Capital ship gunnery. Fire Control: 1D. Space Range: 3-15/35/75. Damage: 7D. Weight: 16 metric tons. Multi-barrel volley-fire assembly — trades accuracy for raw firepower.",
+  "source": "Mock-up (derived from ship builder)"
+ },
+ {
+  "name": "Capital Light Ion Cannon",
+  "category": "Ship Equipment",
+  "type": "Capital-Scale Light Ion Cannon",
+  "cost": "8,000",
+  "availability": "2, R",
+  "game_notes": "Scale: Capital. Skill: Capital ship gunnery. Fire Control: 2D. Space Range: 1-10/25/50. Damage: 3D (ion). Weight: 3 metric tons.",
+  "source": "Mock-up (derived from ship builder)"
+ },
+ {
+  "name": "Capital Ion Cannon",
+  "category": "Ship Equipment",
+  "type": "Capital-Scale Ion Cannon",
+  "cost": "10,000",
+  "availability": "2, R",
+  "game_notes": "Scale: Capital. Skill: Capital ship gunnery. Fire Control: 2D. Space Range: 1-10/25/50. Damage: 4D (ion). Weight: 4 metric tons.",
+  "source": "Mock-up (derived from ship builder)"
+ },
+ {
+  "name": "Capital Heavy Ion Cannon",
+  "category": "Ship Equipment",
+  "type": "Capital-Scale Heavy Ion Cannon",
+  "cost": "15,000",
+  "availability": "2, X",
+  "game_notes": "Scale: Capital. Skill: Capital ship gunnery. Fire Control: 2D. Space Range: 1-10/25/50. Damage: 5D (ion). Weight: 6 metric tons.",
+  "source": "Mock-up (derived from ship builder)"
+ },
+ {
+  "name": "Capital Proton Torpedo Tube (x10)",
+  "category": "Ship Equipment",
+  "type": "Capital-Scale Proton Torpedo Launcher",
+  "cost": "8,000",
+  "availability": "2, R",
+  "game_notes": "Scale: Capital. Skill: Capital ship gunnery. Fire Control: 3D. Space Range: 2-12/30/60. Damage: 6D. Weight: 3 metric tons. Includes 10-torpedo magazine.",
+  "source": "Mock-up (derived from ship builder)"
+ },
+ {
+  "name": "Capital Concussion Missile Tube (x10)",
+  "category": "Ship Equipment",
+  "type": "Capital-Scale Concussion Missile Launcher",
+  "cost": "12,000",
+  "availability": "2, X",
+  "game_notes": "Scale: Capital. Skill: Capital ship gunnery. Fire Control: 2D. Space Range: 2-5/30/60. Damage: 9D. Weight: 4 metric tons. Includes 10-missile magazine.",
+  "source": "Mock-up (derived from ship builder)"
+ },
+ {
+  "name": "Capital Light Tractor Beam",
+  "category": "Ship Equipment",
+  "type": "Capital-Scale Light Tractor Beam Projector",
+  "cost": "8,000",
+  "availability": "2",
+  "game_notes": "Scale: Capital. Skill: Capital ship gunnery. Fire Control: 2D. Space Range: 1-5/15/30. Strength: 4D. Weight: 4 metric tons.",
+  "source": "Mock-up (derived from ship builder)"
+ },
+ {
+  "name": "Capital Tractor Beam",
+  "category": "Ship Equipment",
+  "type": "Capital-Scale Tractor Beam Projector",
+  "cost": "15,000",
+  "availability": "2",
+  "game_notes": "Scale: Capital. Skill: Capital ship gunnery. Fire Control: 2D. Space Range: 1-5/15/30. Strength: 5D. Weight: 6 metric tons.",
+  "source": "Mock-up (derived from ship builder)"
+ },
+ {
+  "name": "Capital Heavy Tractor Beam",
+  "category": "Ship Equipment",
+  "type": "Capital-Scale Heavy Tractor Beam Projector",
+  "cost": "20,000",
+  "availability": "2, R",
+  "game_notes": "Scale: Capital. Skill: Capital ship gunnery. Fire Control: 2D. Space Range: 1-5/15/30. Strength: 6D. Weight: 8 metric tons.",
+  "source": "Mock-up (derived from ship builder)"
+ },
+ {
   "name": "Ship Shields (1D)",
   "category": "Ship Equipment",
   "cost": "4,000",
