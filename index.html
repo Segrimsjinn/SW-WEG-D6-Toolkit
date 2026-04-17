@@ -11366,6 +11366,7 @@ const SHIPYARD = {
           '<span style="display:flex;align-items:center;gap:3px">' + costLabel +
           ' <button class="ship-sort-btn" onclick="SHIPYARD.adjustWeaponCost(' + i + ',-500)" style="padding:1px 5px;font-size:9px">▼</button>' +
           '<button class="ship-sort-btn" onclick="SHIPYARD.adjustWeaponCost(' + i + ',500)" style="padding:1px 5px;font-size:9px">▲</button>' +
+          ' <button class="ship-sort-btn" onclick="SHIPYARD.binWeapon(' + i + ')" style="padding:1px 6px;font-size:9px;color:var(--red)" title="Remove weapon to parts bin">🗑</button>' +
           '</span></div>';
         html += linkHtml;
         html += this.renderModRow('DMG', pipsToD6(baseDmgPips), pipsToD6(curDmgPips), wm.damagePips || 0, 5, 'weaponDamage', usePrice).replace(
@@ -11626,8 +11627,45 @@ const SHIPYARD = {
     if (!sy.addOns || !sy.addOns[index]) return;
     const ao = sy.addOns[index];
     sy.totalCost = Math.max(0, sy.totalCost - ao.cost);
+    if (!sy.partsBin) sy.partsBin = [];
+    const partValue = ao.fullCost || ao.cost;
+    if (partValue > 0 || ao.weight > 0) {
+      sy.partsBin.push({ name: ao.name, value: partValue, weight: ao.weight || 0, sellPct: 25, subtype: 'add-on' });
+    }
     sy.addOns.splice(index, 1);
-    sy.log = sy.log.filter(l => !(l.type === 'add-on' && l.equipName === ao.name && l.cost === ao.cost));
+    sy.log.push({ type: 'remove-add-on', equipName: ao.name, ts: Date.now() });
+    corkboardSave();
+    this.render();
+  },
+
+  binWeapon(index) {
+    if (!this.currentPin) return;
+    const sy = this.currentPin.shipyard;
+    const base = sy.base;
+    if (!base.weapons || !base.weapons[index]) return;
+    const w = base.weapons[index];
+    if (!sy.partsBin) sy.partsBin = [];
+    const wCost = (sy.weaponCosts && sy.weaponCosts[index]) || this.matchWeaponCost(w.name, w.damage) || 0;
+    const qty = this.parseWeaponQty(w.name);
+    const totalValue = wCost * qty;
+    const wm = (e => (e || '').match(/Weight:\s*([\d,.]+)\s*metric/i))(w.game_notes);
+    const weight = wm ? parseFloat(wm[1]) : 0;
+    if (totalValue > 0 || weight > 0) {
+      sy.partsBin.push({ name: w.name || 'Weapon', value: totalValue, weight: weight, sellPct: 25, subtype: 'weapon' });
+    }
+    base.weapons.splice(index, 1);
+    if (sy.mods.weapons) sy.mods.weapons.splice(index, 1);
+    if (sy.weaponCosts) {
+      delete sy.weaponCosts[index];
+      const shifted = {};
+      for (const [k, v] of Object.entries(sy.weaponCosts)) {
+        const ki = parseInt(k);
+        if (ki > index) shifted[ki - 1] = v;
+        else if (ki < index) shifted[ki] = v;
+      }
+      sy.weaponCosts = shifted;
+    }
+    sy.log.push({ type: 'bin-weapon', weaponName: w.name, value: totalValue, ts: Date.now() });
     corkboardSave();
     this.render();
   },
