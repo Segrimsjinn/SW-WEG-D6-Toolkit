@@ -696,7 +696,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
     <div class="app-subtitle">NPC Generator &amp; Astrogation &amp; Starships</div>
     <button class="app-help-btn" onclick="openHowTo()" title="How to Use This Toolkit">? HOW TO</button>
     <div id="visitorBadge" style="position:absolute;bottom:4px;left:12px;font-family:'Exo 2',monospace;font-size:8px;color:var(--text-dark);letter-spacing:1px;line-height:1.4;text-align:left" title="Total visitors">
-      <span id="statVisitors" style="color:var(--gold);font-weight:700">—</span> COMMANDERS · <span style="font-size:7px;letter-spacing:0.5px">v1.0.929</span>
+      <span id="statVisitors" style="color:var(--gold);font-weight:700">—</span> COMMANDERS · <span style="font-size:7px;letter-spacing:0.5px">v1.0.930</span>
     </div>
   </header>
 
@@ -8956,6 +8956,61 @@ function renderShipSnapshot(pin) {
   }
   if (d.of_note) html += '<div style="margin-top:8px;font-size:10px;color:var(--text-dim);line-height:1.5">' + escapeHtml(d.of_note) + '</div>';
   if (sy.totalCost) html += '<div style="margin-top:8px;font-family:\'IBM Plex Mono\',monospace;font-size:11px;color:var(--gold)">Modification Cost: ' + sy.totalCost.toLocaleString() + ' cr</div>';
+  const log = sy.log || [];
+  if (log.length) {
+    html += '<div style="margin-top:10px;border-top:1px solid var(--card-border);padding-top:8px">';
+    html += '<div style="font-family:\'Exo 2\',monospace;font-size:8px;color:var(--gold);letter-spacing:1px;margin-bottom:6px">MODIFICATION LOG</div>';
+    const replacements = log.filter(l => l.type === 'replacement');
+    const mods = log.filter(l => l.type === 'mod');
+    const weaponMods = log.filter(l => l.type === 'weapon-mod');
+    const mounted = log.filter(l => l.type === 'mount-weapon');
+    const fireLinks = log.filter(l => l.type === 'fire-link');
+    const binned = log.filter(l => l.type === 'bin-weapon');
+    if (replacements.length) {
+      replacements.forEach(l => {
+        html += '<div style="font-size:10px;color:var(--text-dim);padding:1px 0">⟐ Replaced ' + (l.subtype || '').toUpperCase() + ' → ' + l.equipName + ' (' + (l.cost||0).toLocaleString() + ' cr)</div>';
+      });
+    }
+    if (mods.length) {
+      const modGroups = {};
+      mods.forEach(l => { if (!modGroups[l.system]) modGroups[l.system] = 0; modGroups[l.system] = Math.max(modGroups[l.system], l.level); });
+      for (const [sys, lvl] of Object.entries(modGroups)) {
+        const totalCost = mods.filter(l => l.system === sys).reduce((s, l) => s + (l.cost||0), 0);
+        html += '<div style="font-size:10px;color:var(--text-dim);padding:1px 0">⟐ ' + sys.toUpperCase() + ' modded +' + lvl + ' (' + totalCost.toLocaleString() + ' cr)</div>';
+      }
+    }
+    if (weaponMods.length) {
+      const wmGroups = {};
+      weaponMods.forEach(l => { const k = l.weaponIdx + '-' + l.modType; if (!wmGroups[k]) wmGroups[k] = { idx: l.weaponIdx, type: l.modType, level: 0, cost: 0 }; wmGroups[k].level = Math.max(wmGroups[k].level, l.level); wmGroups[k].cost += l.cost || 0; });
+      for (const wm of Object.values(wmGroups)) {
+        const wName = base.weapons && base.weapons[wm.idx] ? base.weapons[wm.idx].name : 'Weapon ' + (wm.idx+1);
+        html += '<div style="font-size:10px;color:var(--text-dim);padding:1px 0">⟐ ' + wName + ' ' + wm.type.toUpperCase() + ' modded +' + wm.level + ' (' + wm.cost.toLocaleString() + ' cr)</div>';
+      }
+    }
+    if (mounted.length) {
+      mounted.forEach(l => {
+        html += '<div style="font-size:10px;color:var(--text-dim);padding:1px 0">⟐ Mounted ' + l.weaponName + ' (' + (l.cost||0).toLocaleString() + ' cr)</div>';
+      });
+    }
+    if (binned.length) {
+      binned.forEach(l => {
+        html += '<div style="font-size:10px;color:var(--text-dim);padding:1px 0">⟐ Removed ' + l.weaponName + ' (bin value ' + (l.value||0).toLocaleString() + ' cr)</div>';
+      });
+    }
+    if (fireLinks.length) {
+      fireLinks.forEach(l => {
+        const wName = base.weapons && base.weapons[l.weaponIdx] ? base.weapons[l.weaponIdx].name : 'Weapon ' + (l.weaponIdx+1);
+        html += '<div style="font-size:10px;color:var(--text-dim);padding:1px 0">⟐ ' + wName + ' fire-linked ×' + l.to + ' (' + (l.cost||0).toLocaleString() + ' cr)</div>';
+      });
+    }
+    const addOns = sy.addOns || [];
+    if (addOns.length) {
+      addOns.forEach(ao => {
+        html += '<div style="font-size:10px;color:var(--text-dim);padding:1px 0">⟐ Add-on: ' + (ao.qty && ao.qty > 1 ? ao.qty + '× ' : '') + ao.name + ' (' + (ao.cost||0).toLocaleString() + ' cr)</div>';
+      });
+    }
+    html += '</div>';
+  }
   html += '</div>';
   return html;
 }
