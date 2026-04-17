@@ -696,7 +696,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
     <div class="app-subtitle">NPC Generator &amp; Astrogation &amp; Starships</div>
     <button class="app-help-btn" onclick="openHowTo()" title="How to Use This Toolkit">? HOW TO</button>
     <div id="visitorBadge" style="position:absolute;bottom:4px;left:12px;font-family:'Exo 2',monospace;font-size:8px;color:var(--text-dark);letter-spacing:1px;line-height:1.4;text-align:left" title="Total visitors">
-      <span id="statVisitors" style="color:var(--gold);font-weight:700">—</span> COMMANDERS · <span style="font-size:7px;letter-spacing:0.5px">v1.0.931</span>
+      <span id="statVisitors" style="color:var(--gold);font-weight:700">—</span> COMMANDERS · <span style="font-size:7px;letter-spacing:0.5px">v1.0.932</span>
     </div>
   </header>
 
@@ -2986,6 +2986,13 @@ color:var(--text-dim);min-width:35px;text-align:right;
   <div style="background:var(--bg);border:2px solid var(--gold-dim);border-radius:var(--radius);max-width:640px;width:100%;max-height:90vh;overflow-y:auto;padding:20px 18px;position:relative;margin:auto">
     <button onclick="hidePinSnapshot()" style="position:absolute;top:8px;right:12px;background:none;border:none;color:var(--text-dim);font-size:22px;cursor:pointer;padding:4px 8px;line-height:1" title="Close">&times;</button>
     <div id="pinSnapshotBody"></div>
+  </div>
+</div>
+
+<div id="armorerModal" style="display:none;position:fixed;inset:0;z-index:10001;align-items:flex-start;justify-content:center;background:rgba(0,0,0,.8);padding:16px;overflow-y:auto" onclick="if(event.target===this)ARMORER.close()">
+  <div style="background:var(--bg);border:2px solid var(--cyan);border-radius:var(--radius);max-width:560px;width:100%;max-height:90vh;overflow-y:auto;padding:20px 18px;position:relative;margin:auto">
+    <button onclick="ARMORER.close()" style="position:absolute;top:8px;right:12px;background:none;border:none;color:var(--text-dim);font-size:22px;cursor:pointer;padding:4px 8px;line-height:1" title="Close">&times;</button>
+    <div id="armorerBody"></div>
   </div>
 </div>
 
@@ -9254,8 +9261,10 @@ function pcPopulateEquipGrid(data) {
       });
       opts += '</optgroup>';
     }
+    const isWeaponSlot = /^weapon\d$/.test(slot.key);
+    const benchBtn = isWeaponSlot ? '<button type="button" onclick="ARMORER.openFromSlot(\'' + slot.key + '\')" style="padding:2px 6px;background:none;border:1px solid var(--cyan);border-radius:var(--radius-sm);color:var(--cyan);font-size:8px;cursor:pointer;white-space:nowrap" title="Send to Armorer\'s Bench">🔧 MOD</button>' : '';
     html += '<label style="display:flex;flex-direction:column;gap:2px;min-width:0">'
-         +  '<span class="pc-field-lbl" style="font-size:8px">' + slot.label.toUpperCase() + '</span>'
+         +  '<div style="display:flex;align-items:center;justify-content:space-between"><span class="pc-field-lbl" style="font-size:8px">' + slot.label.toUpperCase() + '</span>' + benchBtn + '</div>'
          +  '<select id="pcEquip_' + slot.key + '" class="pc-field" style="font-size:11px;padding:5px 6px">' + opts + '</select>'
          +  '</label>';
   });
@@ -12841,6 +12850,162 @@ const GARAGE = {
       (modsCost ? costCell('MODS', modsCost) : '') +
       '<div style="flex:1;text-align:center;min-width:100px"><div style="font-family:\'Exo 2\',sans-serif;font-size:7px;color:var(--gold);letter-spacing:1px">NET TOTAL</div><div style="font-family:\'IBM Plex Mono\',monospace;font-size:18px;color:var(--gold);font-weight:700">' + gy.totalCost.toLocaleString() + ' cr</div></div>' +
       '</div>';
+  }
+};
+
+const ARMORER = {
+  slotKey: null,
+  weaponName: '',
+  weaponData: null,
+  damageMod: 0,
+  scope: '',
+  customName: '',
+
+  MODDABLE_SKILLS: /blaster|bowcaster|firearms|firearm|slugthrower|projectile|archaic gun/i,
+
+  SCOPES: [
+    { name: 'Novaless Ultrasonic Sighting System', bonus: '+1D+2', note: '+1D+2 to blaster when aiming (1 round). Max 50m effective range.', cost: 300 },
+    { name: 'SoroSuub True-Site System', bonus: '+1D', note: '+1D to blaster. Visible crosshair in dark — blocked by polarized filters.', cost: 150 }
+  ],
+
+  MOD_TABLE: SHIPYARD.MOD_TABLES.weaponDamage,
+
+  lookupWeapon(name) {
+    if (!name || typeof WEAPONS_DATA === 'undefined') return null;
+    const clean = name.toLowerCase().trim();
+    return WEAPONS_DATA.find(w => w.name.toLowerCase() === clean) || WEAPONS_DATA.find(w => clean.includes(w.name.toLowerCase())) || null;
+  },
+
+  openFromSlot(slotKey) {
+    const el = document.getElementById('pcEquip_' + slotKey);
+    if (!el || !el.value) { alert('Select a weapon in this slot first.'); return; }
+    this.slotKey = slotKey;
+    this.weaponName = el.value;
+    this.weaponData = this.lookupWeapon(this.weaponName);
+    if (!this.weaponData) { alert('Could not find "' + this.weaponName + '" in the weapons database. Only standard weapons can be modified.'); return; }
+    if (!this.MODDABLE_SKILLS.test(this.weaponData.skill || '')) { alert((this.weaponData.skill || 'This weapon') + ' — cannot be modified on the bench. Only ranged weapons (blasters, bowcasters, firearms, slugthrowers).'); return; }
+    this.damageMod = 0;
+    this.scope = '';
+    this.customName = '';
+    this.render();
+    document.getElementById('armorerModal').style.display = 'flex';
+  },
+
+  close() {
+    document.getElementById('armorerModal').style.display = 'none';
+    this.slotKey = null;
+  },
+
+  render() {
+    const w = this.weaponData;
+    if (!w) return;
+    const baseDmgPips = d6ToPips(w.damage);
+    const curDmgPips = baseDmgPips + this.damageMod;
+    const price = SHIPYARD.parsePrice(w.cost) || 0;
+    const table = this.MOD_TABLE;
+    const level = this.damageMod;
+    const maxLevel = 5;
+    const next = level < maxLevel ? table[level] : null;
+    const nextCost = next ? Math.round(price * next.pct / 100) : 0;
+    const atMax = level >= maxLevel;
+
+    let totalCost = 0;
+    for (let i = 0; i < level; i++) { totalCost += Math.round(price * table[i].pct / 100); }
+    const scopeObj = this.SCOPES.find(s => s.name === this.scope);
+    if (scopeObj) totalCost += scopeObj.cost;
+
+    const hasBuiltinFC = /FC\s*\d|Fire Control\s*\d|scope|sight/i.test(w.game_notes || '');
+
+    let html = '<div style="font-family:\'Exo 2\',monospace;font-size:10px;color:var(--cyan);letter-spacing:1.5px;margin-bottom:10px">⟐ ARMORER\'S BENCH</div>';
+
+    html += '<div style="background:var(--bg3);border:1px solid var(--card-border);border-radius:var(--radius-sm);padding:10px;margin-bottom:12px">';
+    html += '<div style="font-family:\'Exo 2\',monospace;font-size:13px;color:var(--gold);font-weight:700">' + w.name + '</div>';
+    html += '<div style="font-size:10px;color:var(--text-dim);margin-top:2px">' + w.category + ' · ' + (w.skill || '') + '</div>';
+    html += '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:8px">';
+    html += '<div style="background:var(--bg);border:1px solid var(--card-border);border-radius:var(--radius-sm);padding:4px 6px"><div style="font-size:7px;color:var(--text-dim);letter-spacing:1px">DAMAGE</div><div style="font-size:12px;color:var(--text)">' + (w.damage || '?') + '</div></div>';
+    html += '<div style="background:var(--bg);border:1px solid var(--card-border);border-radius:var(--radius-sm);padding:4px 6px"><div style="font-size:7px;color:var(--text-dim);letter-spacing:1px">RANGE</div><div style="font-size:12px;color:var(--text)">' + (w.range || '?') + '</div></div>';
+    html += '<div style="background:var(--bg);border:1px solid var(--card-border);border-radius:var(--radius-sm);padding:4px 6px"><div style="font-size:7px;color:var(--text-dim);letter-spacing:1px">COST</div><div style="font-size:12px;color:var(--green)">' + (w.cost || '?') + '</div></div>';
+    html += '</div>';
+    if (w.game_notes) html += '<div style="font-size:10px;color:var(--text-dim);margin-top:6px;line-height:1.5">' + w.game_notes + '</div>';
+    html += '</div>';
+
+    html += '<div style="font-family:\'Exo 2\',monospace;font-size:8px;color:var(--gold);letter-spacing:1px;margin-bottom:6px">DAMAGE MODIFICATION</div>';
+    html += '<div style="display:flex;align-items:center;gap:6px;padding:6px 8px;border:1px solid var(--card-border);border-radius:var(--radius-sm);margin-bottom:10px">';
+    html += '<span style="min-width:60px;font-family:\'IBM Plex Mono\',monospace;font-size:11px;color:var(--text-dim)">' + (w.damage || '?') + '</span>';
+    html += '<span style="color:var(--text-dark)">→</span>';
+    html += '<span style="min-width:60px;font-family:\'IBM Plex Mono\',monospace;font-size:11px;color:' + (level > 0 ? 'var(--cyan);font-weight:700' : 'var(--text-dim)') + '">' + pipsToD6(curDmgPips) + '</span>';
+    if (atMax) {
+      html += '<span style="font-size:8px;color:var(--red);margin-left:auto">MAX</span>';
+    } else if (next) {
+      html += '<div style="flex:1;font-size:9px;color:var(--text-dim);text-align:right">';
+      html += '<span style="color:var(--gold)">' + next.difficulty + '</span>';
+      html += ' · <span style="color:var(--green)">' + nextCost.toLocaleString() + ' cr</span>';
+      html += ' · ' + next.time;
+      html += '</div>';
+    }
+    html += '<div style="display:flex;gap:2px;margin-left:4px">';
+    if (level > 0) html += '<button class="ship-sort-btn" onclick="ARMORER.damageMod--;ARMORER.render()" style="padding:2px 8px;font-size:11px;color:var(--red)">−</button>';
+    if (!atMax) html += '<button class="ship-sort-btn" onclick="ARMORER.damageMod++;ARMORER.render()" style="padding:2px 8px;font-size:11px;color:var(--green)">+</button>';
+    html += '</div></div>';
+
+    html += '<div style="font-family:\'Exo 2\',monospace;font-size:8px;color:var(--gold);letter-spacing:1px;margin-bottom:6px">SCOPE / SIGHTING SYSTEM</div>';
+    if (hasBuiltinFC) {
+      html += '<div style="font-size:9px;color:var(--text-dim);margin-bottom:8px;padding:4px 8px;border:1px solid var(--card-border);border-radius:var(--radius-sm)">⚠ This weapon has a built-in targeting system. Adding an external scope is not recommended — effects do not stack.</div>';
+    }
+    html += '<div style="display:flex;flex-direction:column;gap:4px;margin-bottom:12px">';
+    html += '<label style="display:flex;align-items:center;gap:6px;font-size:10px;cursor:pointer"><input type="radio" name="armorerScope" value="" ' + (!this.scope ? 'checked' : '') + ' onchange="ARMORER.scope=\'\';ARMORER.render()" style="accent-color:var(--cyan)"> <span style="color:var(--text-dim)">No scope</span></label>';
+    this.SCOPES.forEach(s => {
+      html += '<label style="display:flex;align-items:center;gap:6px;font-size:10px;cursor:pointer"><input type="radio" name="armorerScope" value="' + s.name + '" ' + (this.scope === s.name ? 'checked' : '') + ' onchange="ARMORER.scope=\'' + s.name.replace(/'/g, "\\'") + '\';ARMORER.render()" style="accent-color:var(--cyan)"> <span style="color:var(--text)">' + s.name + '</span> <span style="color:var(--cyan)">' + s.bonus + '</span> <span style="color:var(--green)">' + s.cost + ' cr</span></label>';
+      html += '<div style="font-size:8px;color:var(--text-dim);margin-left:24px;margin-bottom:2px">' + s.note + '</div>';
+    });
+    html += '</div>';
+
+    html += '<div style="font-family:\'Exo 2\',monospace;font-size:8px;color:var(--gold);letter-spacing:1px;margin-bottom:6px">NAME YOUR WEAPON</div>';
+    html += '<input id="armorerName" type="text" value="' + this.customName.replace(/"/g, '&quot;') + '" placeholder="e.g. Lucky\'s DL-44" oninput="ARMORER.customName=this.value" style="width:100%;padding:8px 10px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-family:\'IBM Plex Mono\',monospace;font-size:12px;margin-bottom:12px">';
+
+    html += '<div style="display:flex;justify-content:space-between;align-items:center;padding:8px 10px;background:var(--bg3);border:1px solid var(--gold-dim);border-radius:var(--radius-sm);margin-bottom:12px">';
+    html += '<div style="font-family:\'Exo 2\',sans-serif;font-size:7px;color:var(--text-dim);letter-spacing:1px">TOTAL COST</div>';
+    html += '<div style="font-family:\'IBM Plex Mono\',monospace;font-size:18px;color:var(--gold);font-weight:700">' + totalCost.toLocaleString() + ' cr</div>';
+    html += '</div>';
+
+    html += '<div style="display:flex;gap:8px;justify-content:flex-end">';
+    html += '<button onclick="ARMORER.close()" style="padding:8px 16px;background:var(--bg3);color:var(--text-dim);border:1px solid var(--card-border);border-radius:var(--radius-sm);cursor:pointer;font-family:\'Exo 2\',monospace;font-size:10px;letter-spacing:1px">CANCEL</button>';
+    html += '<button onclick="ARMORER.save()" style="padding:8px 16px;background:var(--bg3);color:var(--green);border:1px solid var(--green);border-radius:var(--radius-sm);cursor:pointer;font-family:\'Exo 2\',monospace;font-size:10px;letter-spacing:1px">⚙ SAVE TO NPC</button>';
+    html += '</div>';
+
+    document.getElementById('armorerBody').innerHTML = html;
+  },
+
+  save() {
+    if (!this.slotKey || !this.weaponData) return;
+    const w = this.weaponData;
+    const baseDmgPips = d6ToPips(w.damage);
+    const curDmg = pipsToD6(baseDmgPips + this.damageMod);
+    const displayName = this.customName.trim() || w.name;
+    const scopeObj = this.SCOPES.find(s => s.name === this.scope);
+
+    const el = document.getElementById('pcEquip_' + this.slotKey);
+    if (el) {
+      const opt = document.createElement('option');
+      opt.value = displayName;
+      opt.textContent = displayName;
+      opt.selected = true;
+      el.appendChild(opt);
+    }
+
+    let noteLines = [];
+    noteLines.push(displayName + ' (Modified ' + w.name + ')');
+    noteLines.push('Damage: ' + curDmg + (this.damageMod > 0 ? ' (was ' + w.damage + ', +' + this.damageMod + ' pips)' : ''));
+    if (w.range) noteLines.push('Range: ' + w.range);
+    if (scopeObj) noteLines.push('Scope: ' + scopeObj.name + ' (' + scopeObj.bonus + ' to blaster when aiming)');
+
+    const notesEl = document.getElementById('pcNotes');
+    if (notesEl) {
+      const existing = notesEl.value.trim();
+      notesEl.value = existing ? existing + '\n\n' + noteLines.join('\n') : noteLines.join('\n');
+    }
+
+    this.close();
   }
 };
 
