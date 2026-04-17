@@ -11431,6 +11431,14 @@ const SHIPYARD = {
     return val;
   },
 
+  getTotalWeightImpact(sy) {
+    const replaceW = (sy.replacements || []).reduce((s, r) => s + (r.weight || 0), 0);
+    const partsBinW = (sy.partsBin || []).reduce((s, p) => s + (p.weight || 0), 0);
+    const addOnW = (sy.addOns || []).reduce((s, a) => s + (a.weight || 0) * (a.qty || 1), 0);
+    const mountedW = (sy.log || []).filter(l => l.type === 'mount-weapon').reduce((s, l) => s + (l.weight || 0), 0);
+    return replaceW - partsBinW + addOnW + mountedW;
+  },
+
   SALVAGE_TIERS: {
     none:     { label: 'New Purchase', pct: 100, laborMult: 1, color: 'var(--green)' },
     lucky:    { label: 'Lucky Find (30%)', pct: 30, laborMult: 2, color: 'var(--cyan)' },
@@ -11494,13 +11502,11 @@ const SHIPYARD = {
 
     html += '</div>';
 
-    const totalReplacementWeight = sy.replacements.reduce((s, r) => s + (r.weight || 0), 0);
-    const partsBinWeight = (sy.partsBin || []).reduce((s, p) => s + (p.weight || 0), 0);
-    const netWeight = totalReplacementWeight - partsBinWeight;
+    const netWeight = this.getTotalWeightImpact(sy);
     const baseCargo = this.parseCargoTons(base.cargo);
     const remainingCargo = Math.max(0, baseCargo - netWeight);
-    if (sy.replacements.length) {
-      html += '<div style="font-size:9px;color:var(--text-dim);margin-top:4px">Cargo impact: ' + baseCargo + ' mt base − ' + totalReplacementWeight + ' mt new + ' + partsBinWeight + ' mt removed = <span style="color:' + (remainingCargo > 0 ? 'var(--cyan)' : 'var(--red)') + '">' + remainingCargo + ' mt remaining</span></div>';
+    if (netWeight) {
+      html += '<div style="font-size:9px;color:var(--text-dim);margin-top:4px">Cargo: ' + baseCargo + ' mt base − ' + netWeight + ' mt installed = <span style="color:' + (remainingCargo > 0 ? 'var(--cyan)' : 'var(--red)') + '">' + remainingCargo + ' mt remaining</span></div>';
     }
 
     document.getElementById('shipyardReplacements').innerHTML = html;
@@ -11835,7 +11841,7 @@ const SHIPYARD = {
       return;
     }
     const baseCargo = this.parseCargoTons(base.cargo);
-    const totalReplacementWeight = (sy.replacements || []).reduce((s, r) => s + (r.weight || 0), 0) - (sy.partsBin || []).reduce((s, p) => s + (p.weight || 0), 0);
+    const totalReplacementWeight = this.getTotalWeightImpact(sy);
     const bt = this.MOD_TABLES.berthConversion;
 
     let berthCargo = 0, berthCost = 0;
@@ -12196,21 +12202,12 @@ const SHIPYARD = {
     }
 
     const shipName = sy.customName || '';
-    const laborMult = sy.laborMultiplier || 1;
-    const laborLabels = {1:'DIY (1×)', 2:'Avail 4 — Core (2×)', 3:'Avail 3 — Mid Rim (3×)', 4:'Avail 2 — Outer Rim (4×)', 5:'Avail 1 — Fringe (5×)'};
-    const laborColors = {1:'var(--text-dim)', 2:'var(--green)', 3:'var(--cyan)', 4:'var(--gold)', 5:'var(--red)'};
     document.getElementById('shipyardHeader').innerHTML =
       '<div style="display:flex;align-items:center;gap:8px;padding:6px 10px;margin-bottom:4px">' +
       '<label style="font-family:\'Exo 2\',monospace;font-size:8px;color:var(--gold);letter-spacing:1px;white-space:nowrap">SHIP NAME</label>' +
       '<input id="shipyardNameInput" type="text" value="' + (shipName ? shipName.replace(/"/g,'&quot;') : '') + '" placeholder="Name your ship to save changes on undock" ' +
       'onchange="SHIPYARD.setCustomName(this.value)" ' +
       'style="flex:1;background:var(--bg);border:1px solid var(--card-border);border-radius:var(--radius-sm);padding:6px 10px;color:var(--text);font-family:\'IBM Plex Mono\',monospace;font-size:12px">' +
-      '</div>' +
-      '<div style="display:flex;align-items:center;gap:6px;padding:4px 10px;margin-bottom:4px">' +
-      '<label style="font-family:\'Exo 2\',monospace;font-size:8px;color:var(--text-dim);letter-spacing:1px;white-space:nowrap">LABOR RATE</label>' +
-      '<button class="ship-sort-btn" onclick="SHIPYARD.adjustLabor(-1)" style="padding:2px 8px;font-size:12px;font-weight:bold">▼</button>' +
-      '<span style="font-family:\'IBM Plex Mono\',monospace;font-size:11px;color:' + laborColors[laborMult] + ';min-width:160px;text-align:center">' + laborLabels[laborMult] + '</span>' +
-      '<button class="ship-sort-btn" onclick="SHIPYARD.adjustLabor(1)" style="padding:2px 8px;font-size:12px;font-weight:bold">▲</button>' +
       '</div>' +
       '<div style="display:flex;justify-content:space-between;align-items:center;padding:8px 10px;background:var(--bg3);border:1px solid var(--gold-dim);border-radius:var(--radius-sm);margin-bottom:10px">' +
       '<div><div style="font-family:\'Exo 2\',monospace;font-size:13px;color:var(--text)">' + base.name + '</div>' +
@@ -12234,8 +12231,17 @@ const SHIPYARD = {
     const berthCost = Object.entries(sy.berthChanges || {}).reduce((s, [k, v]) => s + (bt[k] ? bt[k].cost * v : 0), 0);
     const costCell = (label, val) => '<div style="flex:1;text-align:center;min-width:80px"><div style="font-family:\'Exo 2\',sans-serif;font-size:7px;color:var(--text-dim);letter-spacing:1px">' + label + '</div><div style="font-family:\'IBM Plex Mono\',monospace;font-size:13px;color:var(--text-dim)">' + val.toLocaleString() + ' cr</div></div>';
 
+    const laborMult = sy.laborMultiplier || 1;
+    const laborLabels = {1:'DIY (1×)', 2:'Avail 4 — Core (2×)', 3:'Avail 3 — Mid Rim (3×)', 4:'Avail 2 — Outer Rim (4×)', 5:'Avail 1 — Fringe (5×)'};
+    const laborColors = {1:'var(--text-dim)', 2:'var(--green)', 3:'var(--cyan)', 4:'var(--gold)', 5:'var(--red)'};
     document.getElementById('shipyardCosts').innerHTML =
       '<div style="display:flex;gap:4px;flex-wrap:wrap;padding:8px 10px;background:var(--bg);border:1px solid var(--gold-dim);border-radius:var(--radius-sm);margin-top:10px;align-items:center">' +
+      '<div style="text-align:center;min-width:80px"><div style="font-family:\'Exo 2\',sans-serif;font-size:7px;color:var(--text-dim);letter-spacing:1px">LABOR RATE</div>' +
+      '<div style="display:flex;align-items:center;justify-content:center;gap:3px">' +
+      '<button class="ship-sort-btn" onclick="SHIPYARD.adjustLabor(-1)" style="padding:1px 6px;font-size:10px;font-weight:bold">▼</button>' +
+      '<span style="font-family:\'IBM Plex Mono\',monospace;font-size:10px;color:' + laborColors[laborMult] + ';min-width:120px;text-align:center">' + laborLabels[laborMult] + '</span>' +
+      '<button class="ship-sort-btn" onclick="SHIPYARD.adjustLabor(1)" style="padding:1px 6px;font-size:10px;font-weight:bold">▲</button>' +
+      '</div></div>' +
       (modsCost ? costCell('MODS', modsCost) : '') +
       (mountCost ? costCell('WEAPONS', mountCost) : '') +
       (replaceCost ? costCell('REPLACEMENTS', replaceCost) : '') +
