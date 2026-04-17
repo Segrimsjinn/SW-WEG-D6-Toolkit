@@ -12090,7 +12090,6 @@ const SHIPYARD = {
     const sy = this.currentPin.shipyard;
     const staged = sy.stagedReplacements && sy.stagedReplacements[subtype];
     if (!staged) return;
-    const subtype = staged.subtype;
     const equips = this.getEquipBySubtype(subtype);
     if (!sy.replacements) sy.replacements = [];
     if (!sy.partsBin) sy.partsBin = [];
