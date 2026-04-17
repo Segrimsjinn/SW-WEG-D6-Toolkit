@@ -11721,10 +11721,19 @@ const SHIPYARD = {
     if (!sy.replacements) sy.replacements = [];
     if (!sy.partsBin) sy.partsBin = [];
     const oldPart = sy.replacements.find(r => r.subtype === subtype);
-    const oldPartName = oldPart ? oldPart.equipName : 'Stock ' + this.EQUIP_SUBTYPES[subtype].label;
-    const oldPartValue = oldPart ? (oldPart.fullCost || oldPart.cost) : 0;
+    let oldPartName, oldPartValue;
+    if (oldPart) {
+      oldPartName = oldPart.equipName;
+      oldPartValue = oldPart.fullCost || oldPart.cost;
+    } else {
+      oldPartName = 'Stock ' + this.EQUIP_SUBTYPES[subtype].label;
+      const st = this.EQUIP_SUBTYPES[subtype];
+      const baseStat = sy.base[st.statKey] || '';
+      const match = equips.find(e => e.stat === baseStat || e.stat === String(parseInt(baseStat)));
+      oldPartValue = match ? match.cost : 0;
+    }
     if (oldPartValue > 0) {
-      sy.partsBin.push({ name: oldPartName, value: oldPartValue, sellPct: 25, subtype });
+      sy.partsBin.push({ name: oldPartName + (oldPartValue ? '' : ' (est.)'), value: oldPartValue, sellPct: 25, subtype });
     }
     sy.replacements = sy.replacements.filter(r => r.subtype !== subtype);
     const actualCost = this.getSalvageCost(eq.cost) * this.getScaleMultiplier();
