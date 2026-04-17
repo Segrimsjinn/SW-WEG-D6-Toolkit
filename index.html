@@ -696,7 +696,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
     <div class="app-subtitle">NPC Generator &amp; Astrogation &amp; Starships</div>
     <button class="app-help-btn" onclick="openHowTo()" title="How to Use This Toolkit">? HOW TO</button>
     <div id="visitorBadge" style="position:absolute;bottom:4px;left:12px;font-family:'Exo 2',monospace;font-size:8px;color:var(--text-dark);letter-spacing:1px;line-height:1.4;text-align:left" title="Total visitors">
-      <span id="statVisitors" style="color:var(--gold);font-weight:700">—</span> COMMANDERS · <span style="font-size:7px;letter-spacing:0.5px">v1.0.934</span>
+      <span id="statVisitors" style="color:var(--gold);font-weight:700">—</span> COMMANDERS · <span style="font-size:7px;letter-spacing:0.5px">v1.0.935</span>
     </div>
   </header>
 
@@ -1005,6 +1005,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
                 <div class="fluff-row"><span class="fluff-lbl">Force</span><span id="fluffFS" class="fluff-val"></span></div>
                 <div class="fluff-row"><span class="fluff-lbl">Credits</span><span id="fluffCreds" class="fluff-val"></span></div>
                 <div class="fluff-row"><span class="fluff-lbl">FP / CP</span><span class="fluff-val"><span id="fluffFP"></span> / <span id="fluffCP"></span></span></div>
+                <div class="fluff-row" id="fluffDSRow" style="display:none"><span class="fluff-lbl" style="color:var(--red)">Dark Side</span><span id="fluffDS" class="fluff-val" style="color:var(--red)"></span></div>
               </div>
             </div>
             <div id="storyFactor" class="lore-block" style="display:none">
@@ -2745,9 +2746,10 @@ color:var(--text-dim);min-width:35px;text-align:right;
 
         <!-- CHARACTER POINTS / FORCE -->
         <div style="font-family:'Exo 2',monospace;font-size:9px;color:var(--gold);letter-spacing:1.5px;margin:12px 0 6px;padding-bottom:3px;border-bottom:1px solid var(--card-border)">⟐ POINTS &amp; FORCE</div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px">
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:8px">
           <label style="display:flex;flex-direction:column;gap:3px"><span class="pc-field-lbl">CHARACTER POINTS</span><input type="number" id="pcCharPoints" min="0" class="pc-field" value="5"></label>
           <label style="display:flex;flex-direction:column;gap:3px"><span class="pc-field-lbl">FORCE POINTS</span><input type="number" id="pcForcePoints" min="0" class="pc-field" value="1"></label>
+          <label style="display:flex;flex-direction:column;gap:3px"><span class="pc-field-lbl" style="color:var(--red)">DARK SIDE POINTS</span><input type="number" id="pcDarkSidePoints" min="0" class="pc-field" value="0"></label>
         </div>
         <label style="display:flex;align-items:center;gap:8px;margin-bottom:8px;cursor:pointer;font-size:11px;color:var(--text)"><input type="checkbox" id="pcForceSensitive" onchange="togglePcForceSection()" style="accent-color:var(--purple);width:14px;height:14px"> Force Sensitive</label>
         <div id="pcForceSection" style="display:none;margin-bottom:10px">
@@ -4237,6 +4239,12 @@ function displayNPC() {
   document.getElementById('fluffCreds').innerHTML = formatCost(npc.credits);
   document.getElementById('fluffFP').textContent = npc.forcePoints;
   document.getElementById('fluffCP').textContent = npc.charPoints;
+  const dsRow = document.getElementById('fluffDSRow');
+  const dsEl = document.getElementById('fluffDS');
+  if (dsRow && dsEl) {
+    if (npc.darkSidePoints) { dsEl.textContent = npc.darkSidePoints; dsRow.style.display = ''; }
+    else { dsRow.style.display = 'none'; }
+  }
 
   // Skills
   const skillsOut = document.getElementById('skillsOutput');
@@ -8842,7 +8850,7 @@ function renderRolledNpcSnapshot(pin) {
     row('Player', n.player), row('Sex', n.sex), row('Height', n.height),
     row('Move', n.move), row('Credits', n.credits),
     row('Force Sensitive', n.forceSensitive),
-    row('Force Points', n.forcePoints), row('Character Points', n.charPoints)
+    row('Force Points', n.forcePoints), row('Dark Side Points', n.darkSidePoints), row('Character Points', n.charPoints)
   ].filter(Boolean).join('');
   if (fluff) out += '<div style="padding:6px 10px;background:rgba(0,0,0,0.2);border-radius:6px;margin-bottom:10px">' + fluff + '</div>';
 
@@ -9552,6 +9560,7 @@ function showAddPlayerCharacter() {
   ['pcName','pcPlayer','pcSpecies','pcRole','pcNotes'].forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; });
   document.getElementById('pcCharPoints').value = 5;
   document.getElementById('pcForcePoints').value = 1;
+  document.getElementById('pcDarkSidePoints').value = 0;
   document.getElementById('pcForceSensitive').checked = false;
   togglePcForceSection();
   pcPopulateAllDiceSelects();
@@ -9602,6 +9611,7 @@ function copyNotableNpcToCustom(pinId) {
     armor: src.equipment || '',
     charPoints: src.characterPoints != null ? src.characterPoints : 5,
     forcePoints: src.forcePoints != null ? src.forcePoints : 1,
+    darkSidePoints: src.darkSidePoints || 0,
     forceSensitive: (src.forcePoints && src.forcePoints >= 3) ? 'Yes' : 'No',
     forceControl: '', forceSense: '', forceAlter: '',
     notes: src.capsule || '',
@@ -9748,6 +9758,7 @@ function editCharacterInForm(type, id) {
   // Points
   document.getElementById('pcCharPoints').value = d.charPoints != null ? d.charPoints : 5;
   document.getElementById('pcForcePoints').value = d.forcePoints != null ? d.forcePoints : 1;
+  document.getElementById('pcDarkSidePoints').value = d.darkSidePoints != null ? d.darkSidePoints : 0;
   // Force
   const fs = !!(d.forceControl || d.forceSense || d.forceAlter || d.forceSensitive === 'Yes' || d.forceSensitive === true);
   document.getElementById('pcForceSensitive').checked = fs;
@@ -9780,6 +9791,7 @@ function savePlayerCharacter() {
     ...pcCollectEquipSlots(),
     charPoints: parseInt(document.getElementById('pcCharPoints').value, 10) || 0,
     forcePoints: parseInt(document.getElementById('pcForcePoints').value, 10) || 0,
+    darkSidePoints: parseInt(document.getElementById('pcDarkSidePoints').value, 10) || 0,
     forceSensitive: forceOn ? 'Yes' : 'No',
     forceControl: forceOn ? document.getElementById('pcForceControl').value : '',
     forceSense: forceOn ? document.getElementById('pcForceSense').value : '',
