@@ -11974,8 +11974,8 @@ const SHIPYARD = {
         binHtml += '</div>';
       });
       binHtml += '</div>';
-      binHtml += '<div onclick="document.getElementById(\'shipyardBargainRef\').style.display=document.getElementById(\'shipyardBargainRef\').style.display===\'none\'?\'block\':\'none\'" style="font-size:8px;color:var(--text-dark);margin-top:3px;font-style:italic;cursor:pointer">Canon: max 25% of new, 5% if damaged. Adjust per opposed bargain roll. ▾ Bargain Reference</div>';
-      binHtml += '<div id="shipyardBargainRef" style="display:none;margin-top:6px;display:flex;gap:10px;flex-wrap:wrap">';
+      binHtml += '<div onclick="var el=document.getElementById(&quot;shipyardBargainRef&quot;);el.style.display=el.style.display===&quot;none&quot;?&quot;flex&quot;:&quot;none&quot;" style="font-size:8px;color:var(--text-dark);margin-top:3px;font-style:italic;cursor:pointer">Canon: max 25% of new, 5% if damaged. Adjust per opposed bargain roll. ▾ Bargain Reference</div>';
+      binHtml += '<div id="shipyardBargainRef" style="display:none;margin-top:6px;gap:10px;flex-wrap:wrap">';
       binHtml += '<div style="flex:1;min-width:140px"><div style="font-family:\'Exo 2\',monospace;font-size:7px;color:var(--green);letter-spacing:1px;margin-bottom:3px">SELLING (Parts Bin)</div>';
       binHtml += '<div style="font-size:9px;color:var(--text-dim);line-height:1.8">';
       binHtml += '<div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span style="color:var(--red)">Lose by 10+</span><span>10%</span></div>';
