@@ -11512,7 +11512,7 @@ const SHIPYARD = {
         html += '<span style="font-size:9px;color:var(--text-dim);white-space:nowrap">' + costLabel + ', ' + existing.weight + ' mt</span>';
         html += '<button class="ship-sort-btn" onclick="SHIPYARD.revertToStock(\'' + subtype + '\')" style="padding:2px 8px;font-size:8px;color:var(--gold)" title="Revert to stock part">⟲ STOCK</button>';
       } else {
-        const staged = sy.stagedReplacement && sy.stagedReplacement.subtype === subtype ? sy.stagedReplacement : null;
+        const staged = sy.stagedReplacements && sy.stagedReplacements[subtype] ? sy.stagedReplacements[subtype] : null;
         if (staged) {
           const sAvailColor = /X/.test(staged.availability||'') ? 'var(--red)' : /R/.test(staged.availability||'') ? 'var(--red)' : /F/.test(staged.availability||'') ? 'var(--gold)' : 'var(--text-dim)';
           const actualCost = this.getSalvageCost(staged.cost) * this.getScaleMultiplier();
@@ -11536,8 +11536,8 @@ const SHIPYARD = {
           html += ' · <span style="color:' + (netCost > 0 ? 'var(--cyan)' : 'var(--green)') + '">Net: ' + netCost.toLocaleString() + ' cr</span>';
           html += ' · <span style="color:var(--text-dim)">' + staged.weight + ' mt → Cargo: ' + afterCargo + ' mt</span>';
           html += '</div></div>';
-          html += '<button class="ship-sort-btn" onclick="SHIPYARD.commitReplacement()" style="padding:2px 8px;font-size:9px;color:var(--green)">⚙ INSTALL</button>';
-          html += '<button class="ship-sort-btn" onclick="SHIPYARD.cancelStage()" style="padding:2px 8px;font-size:9px;color:var(--red)">✕</button>';
+          html += '<button class="ship-sort-btn" onclick="SHIPYARD.commitReplacement(\'' + subtype + '\')" style="padding:2px 8px;font-size:9px;color:var(--green)">⚙ INSTALL</button>';
+          html += '<button class="ship-sort-btn" onclick="SHIPYARD.cancelStage(\'' + subtype + '\')" style="padding:2px 8px;font-size:9px;color:var(--red)">✕</button>';
         } else {
           html += '<select onchange="SHIPYARD.stageReplacement(\'' + subtype + '\', this.value)" style="flex:1;max-width:300px;padding:4px;background:var(--bg2);border:1px solid var(--card-border);border-radius:var(--radius-sm);color:var(--text);font-size:10px;font-family:inherit">';
           html += '<option value="">— Select replacement —</option>';
@@ -12062,20 +12062,21 @@ const SHIPYARD = {
     const equips = this.getEquipBySubtype(subtype);
     const eq = equips.find(e => e.name === equipName);
     if (!eq) return;
-    sy.stagedReplacement = { subtype, name: eq.name, cost: eq.cost, weight: eq.weight, stat: eq.stat, source: eq.source, availability: eq.availability, notes: eq.notes };
+    if (!sy.stagedReplacements) sy.stagedReplacements = {};
+    sy.stagedReplacements[subtype] = { subtype, name: eq.name, cost: eq.cost, weight: eq.weight, stat: eq.stat, source: eq.source, availability: eq.availability, notes: eq.notes };
     this.render();
   },
 
-  cancelStage() {
+  cancelStage(subtype) {
     if (!this.currentPin) return;
-    delete this.currentPin.shipyard.stagedReplacement;
+    if (this.currentPin.shipyard.stagedReplacements) delete this.currentPin.shipyard.stagedReplacements[subtype];
     this.render();
   },
 
-  commitReplacement() {
+  commitReplacement(subtype) {
     if (!this.currentPin) return;
     const sy = this.currentPin.shipyard;
-    const staged = sy.stagedReplacement;
+    const staged = sy.stagedReplacements && sy.stagedReplacements[subtype];
     if (!staged) return;
     const subtype = staged.subtype;
     const equips = this.getEquipBySubtype(subtype);
@@ -12111,7 +12112,7 @@ const SHIPYARD = {
     else if (st.statKey === 'backupHyperdrive') { sy.mods.backupHyperdrive = 0; sy.base.backupHyperdrive = staged.stat || sy.base.backupHyperdrive; }
 
     sy.log.push({ type: 'replacement', subtype, equipName: staged.name, cost: staged.cost, weight: staged.weight, stat: staged.stat, ts: Date.now() });
-    delete sy.stagedReplacement;
+    if (sy.stagedReplacements) delete sy.stagedReplacements[subtype];
     corkboardSave();
     this.render();
   },
