@@ -11497,7 +11497,7 @@ const SHIPYARD = {
     }
 
     document.getElementById('shipyardReplacements').innerHTML = html;
-    this.renderAddOns(sy);
+    this.renderAddOns(sy, base);
     this.renderBerthConversion(sy, base);
   },
 
@@ -11525,12 +11525,15 @@ const SHIPYARD = {
         for (const g of this.ADD_ON_GROUPS) {
           if (g.match.test(e.name) || g.match.test(e.game_notes || '')) { group = g.key; break; }
         }
-        return { name: e.name, cost: this.parsePrice(e.cost), weight: wm ? parseFloat(wm[1].replace(/,/g, '')) : 0, notes: e.game_notes || '', availability: e.availability || '', group };
+        const sm = (e.game_notes || '').match(/Scale:\s*(Starfighter|Capital|Death Star)/i);
+        const isWeapon = /Cannon|Turbolaser|Torpedo|Missile|Conner|Plasma Torch|Tractor Beam|GenaTech|Hex Heavy/i.test(e.name);
+        const scale = sm ? sm[1].toLowerCase() : (isWeapon ? 'starfighter' : '');
+        return { name: e.name, cost: this.parsePrice(e.cost), weight: wm ? parseFloat(wm[1].replace(/,/g, '')) : 0, notes: e.game_notes || '', availability: e.availability || '', group, scale };
       });
     return this._addOnCache;
   },
 
-  renderAddOns(sy) {
+  renderAddOns(sy, base) {
     if (!sy.addOns) sy.addOns = [];
     const equips = this.getAddOnEquipment();
 
@@ -11566,8 +11569,11 @@ const SHIPYARD = {
       const items = equips.filter(e => e.group === gk);
       if (!items.length) continue;
       html += '<optgroup label="' + groupLabels[gk] + '">';
+      const shipScale = (base && base.scale || '').toLowerCase().trim();
       for (const eq of items) {
-        html += '<option value="' + eq.name.replace(/"/g, '&quot;') + '">' + eq.name + ' (' + eq.cost.toLocaleString() + ' cr' + (eq.weight ? ', ' + eq.weight + ' mt' : '') + ')</option>';
+        const mismatch = eq.scale && shipScale && eq.scale !== shipScale;
+        const label = eq.name + ' (' + eq.cost.toLocaleString() + ' cr' + (eq.weight ? ', ' + eq.weight + ' mt' : '') + ')' + (mismatch ? ' ⚠ ' + eq.scale + ' scale' : '');
+        html += '<option value="' + eq.name.replace(/"/g, '&quot;') + '"' + (mismatch ? ' disabled style="color:#666;text-decoration:line-through"' : '') + '>' + label + '</option>';
       }
       html += '</optgroup>';
     }
