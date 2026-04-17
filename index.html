@@ -11955,8 +11955,6 @@ const SHIPYARD = {
       '<div style="flex:1;text-align:center;min-width:100px"><div style="font-family:\'Exo 2\',sans-serif;font-size:7px;color:var(--gold);letter-spacing:1px">NET TOTAL</div><div style="font-family:\'IBM Plex Mono\',monospace;font-size:18px;color:var(--gold);font-weight:700">' + (sy.totalCost - partsBinCredit).toLocaleString() + ' cr</div></div>' +
       '</div>';
 
-    // Mod log
-    if (sy.log && sy.log.length) {
     // Parts bin
     if (sy.partsBin && sy.partsBin.length) {
       let binHtml = '<div style="margin-top:10px"><div style="font-family:\'Exo 2\',monospace;font-size:7px;color:var(--green);letter-spacing:1px;margin-bottom:4px">PARTS BIN — Removed parts for resale (25% default, adjust per bargain roll)</div>';
