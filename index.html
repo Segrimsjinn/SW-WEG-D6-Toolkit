@@ -11579,6 +11579,7 @@ const SHIPYARD = {
             html += '</label>';
             if (linked) html += '<span style="font-size:8px;color:var(--text-dark)">+' + flSurcharge + ' cr link cost</span>';
           }
+          html += '<button class="ship-sort-btn" onclick="SHIPYARD.mountWeapon(' + i + ')" style="padding:2px 8px;font-size:9px;color:var(--green);margin-left:auto">⚙ MOUNT</button>';
           html += '</div>';
         }
         if (ao.notes) html += '<div style="font-size:8px;color:var(--text-dim);margin-top:3px;line-height:1.5">' + ao.notes + '</div>';
@@ -11667,11 +11668,12 @@ const SHIPYARD = {
     if (!this.currentPin) return;
     const sy = this.currentPin.shipyard;
     const modsCost = (sy.log || []).filter(l => l.type === 'mod' || l.type === 'weapon-mod').reduce((s, l) => s + (l.cost || 0), 0);
+    const mountCost = (sy.log || []).filter(l => l.type === 'mount-weapon').reduce((s, l) => s + (l.cost || 0), 0);
     const replaceCost = (sy.replacements || []).reduce((s, r) => s + (r.cost || 0), 0);
     const addOnCost = (sy.addOns || []).reduce((s, a) => s + this.getAddOnCost(a), 0);
     const bt = this.MOD_TABLES.berthConversion;
     const berthCost = Object.entries(sy.berthChanges || {}).reduce((s, [k, v]) => s + (bt[k] ? bt[k].cost * v : 0), 0);
-    sy.totalCost = modsCost + replaceCost + addOnCost + berthCost;
+    sy.totalCost = modsCost + mountCost + replaceCost + addOnCost + berthCost;
   },
 
   adjustAddOnQty(index, delta) {
@@ -11695,6 +11697,44 @@ const SHIPYARD = {
     if (ao.qty === undefined || ao.qty <= 1) return;
     ao.fireLink = !ao.fireLink;
     this.recalcAddOnCosts();
+    corkboardSave();
+    this.render();
+  },
+
+  mountWeapon(index) {
+    if (!this.currentPin) return;
+    const sy = this.currentPin.shipyard;
+    if (!sy.addOns || !sy.addOns[index]) return;
+    const ao = sy.addOns[index];
+    if (ao.qty === undefined) return;
+    const base = sy.base;
+    if (!base.weapons) base.weapons = [];
+    const qty = ao.qty || 1;
+    const linked = ao.fireLink && qty > 1;
+    const notes = ao.notes || '';
+    const dmgM = notes.match(/Damage:\s*(\d+D[+\d]*)/);
+    const fcM = notes.match(/Fire Control:\s*(\d+D[+\d]*)/);
+    const rangeM = notes.match(/Space Range:\s*([\d\-/]+)/);
+    const strM = notes.match(/Strength:\s*(\d+D[+\d]*)/);
+    const skillM = notes.match(/Skill:\s*([^.]+)/);
+    const qtyPrefix = qty > 1 ? qty + ' ' : '';
+    const linkSuffix = linked ? ' (fire-linked)' : '';
+    const baseDmg = dmgM ? dmgM[1] : '';
+    const linkBonus = linked ? (qty - 1) * 3 : 0;
+    const finalDmg = linkBonus > 0 ? pipsToD6(d6ToPips(baseDmg) + linkBonus) : baseDmg;
+    base.weapons.push({
+      name: qtyPrefix + ao.name + linkSuffix,
+      damage: finalDmg || '',
+      fire_control: fcM ? fcM[1] : '',
+      space_range: rangeM ? rangeM[1] : '',
+      strength: strM ? strM[1] : '',
+      skill: skillM ? skillM[1].trim() : ''
+    });
+    if (!sy.mods.weapons) sy.mods.weapons = [];
+    sy.mods.weapons.push({ damagePips: 0, fcPips: 0, rangePct: 0, fireLink: 0 });
+    sy.addOns.splice(index, 1);
+    this.recalcAddOnCosts();
+    sy.log.push({ type: 'mount-weapon', weaponName: qtyPrefix + ao.name + linkSuffix, cost: this.getAddOnCost(ao), ts: Date.now() });
     corkboardSave();
     this.render();
   },
@@ -11769,7 +11809,10 @@ const SHIPYARD = {
       }
       sy.weaponCosts = shifted;
     }
+    const mountIdx = sy.log.findIndex(l => l.type === 'mount-weapon' && l.weaponName === w.name);
+    if (mountIdx >= 0) sy.log.splice(mountIdx, 1);
     sy.log.push({ type: 'bin-weapon', weaponName: w.name, value: totalValue, ts: Date.now() });
+    this.recalcAddOnCosts();
     corkboardSave();
     this.render();
   },
@@ -12177,6 +12220,7 @@ const SHIPYARD = {
 
     const partsBinCredit = this.getPartsBinTotal(sy);
     const modsCost = (sy.log || []).filter(l => l.type === 'mod' || l.type === 'weapon-mod').reduce((s, l) => s + (l.cost || 0), 0);
+    const mountCost = (sy.log || []).filter(l => l.type === 'mount-weapon').reduce((s, l) => s + (l.cost || 0), 0);
     const replaceCost = (sy.replacements || []).reduce((s, r) => s + (r.cost || 0), 0);
     const addOnCost = (sy.addOns || []).reduce((s, a) => s + this.getAddOnCost(a), 0);
     const bt = this.MOD_TABLES.berthConversion;
@@ -12186,6 +12230,7 @@ const SHIPYARD = {
     document.getElementById('shipyardCosts').innerHTML =
       '<div style="display:flex;gap:4px;flex-wrap:wrap;padding:8px 10px;background:var(--bg);border:1px solid var(--gold-dim);border-radius:var(--radius-sm);margin-top:10px;align-items:center">' +
       (modsCost ? costCell('MODS', modsCost) : '') +
+      (mountCost ? costCell('WEAPONS', mountCost) : '') +
       (replaceCost ? costCell('REPLACEMENTS', replaceCost) : '') +
       (addOnCost ? costCell('ADD-ONS', addOnCost) : '') +
       (berthCost ? costCell('BERTHS', berthCost) : '') +
