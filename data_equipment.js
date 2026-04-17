@@ -3621,7 +3621,7 @@ const EQUIPMENT_DATA = [
   "type": "Sienar Fleet Systems Lifesaver 1000 Reserve Hyperdrive",
   "cost": "2,500 (plus installation)",
   "availability": "1",
-  "game_notes": "Commercial backup x5 hyperdrive. Weight: 8 metric tons. Only recommended as a backup hyperdrive and must be overhauled after each use.",
+  "game_notes": "Commercial backup x5 hyperdrive. Weight: 8 metric tons. Only recommended as a backup hyperdrive and must be overhauled after each use. Estimates for overhaul range from 10-50%, normally 25% — 625 cr.",
   "source": "WEG40063 Galaxy Guide 6: Tramp Freighters p.39"
  },
  {
@@ -3630,7 +3630,7 @@ const EQUIPMENT_DATA = [
   "type": "Generic Budget Backup Unit",
   "cost": "2,000",
   "availability": "1",
-  "game_notes": "Commercial backup x6 hyperdrive. Weight: 7 metric tons. Intended for emergency use only; requires full overhaul after each hyperspace jump. Slower than the x5 variant and correspondingly less expensive.",
+  "game_notes": "Commercial backup x6 hyperdrive. Weight: 7 metric tons. Intended for emergency use only; requires full overhaul after each hyperspace jump. Slower than the x5 variant and correspondingly less expensive. Estimates for overhaul range from 10-50%, normally 25% — 500 cr.",
   "source": "Mock-up (house rule)"
  },
  {
@@ -3639,7 +3639,7 @@ const EQUIPMENT_DATA = [
   "type": "Generic Economy Backup Unit",
   "cost": "1,500",
   "availability": "1",
-  "game_notes": "Commercial backup x8 hyperdrive. Weight: 6 metric tons. Bare-minimum emergency backup unit popular with budget freighter operators. Requires overhaul after each use; not recommended for routes with tight transfer windows.",
+  "game_notes": "Commercial backup x8 hyperdrive. Weight: 6 metric tons. Bare-minimum emergency backup unit popular with budget freighter operators. Requires overhaul after each use; not recommended for routes with tight transfer windows. Estimates for overhaul range from 10-50%, normally 25% — 375 cr.",
   "source": "Mock-up (house rule)"
  },
  {
@@ -3648,7 +3648,7 @@ const EQUIPMENT_DATA = [
   "type": "Generic Surplus Backup Unit",
   "cost": "1,000",
   "availability": "1",
-  "game_notes": "Commercial backup x10 hyperdrive. Weight: 5 metric tons. At this multiplier, destination accuracy degrades noticeably on long jumps. Requires overhaul after each use. Sold under a dozen house brands across the Outer Rim.",
+  "game_notes": "Commercial backup x10 hyperdrive. Weight: 5 metric tons. At this multiplier, destination accuracy degrades noticeably on long jumps. Requires overhaul after each use. Sold under a dozen house brands across the Outer Rim. Estimates for overhaul range from 10-50%, normally 25% — 250 cr.",
   "source": "Mock-up (house rule)"
  },
  {
@@ -3657,7 +3657,7 @@ const EQUIPMENT_DATA = [
   "type": "Generic Salvage Backup Unit",
   "cost": "750",
   "availability": "1",
-  "game_notes": "Commercial backup x12 hyperdrive. Weight: 4 metric tons. Emergency-only unit with marginal navigation tolerances. Requires overhaul after each use; crews are advised to plot only short, well-charted jumps.",
+  "game_notes": "Commercial backup x12 hyperdrive. Weight: 4 metric tons. Emergency-only unit with marginal navigation tolerances. Requires overhaul after each use; crews are advised to plot only short, well-charted jumps. Estimates for overhaul range from 10-50%, normally 25% — 188 cr.",
   "source": "Mock-up (house rule)"
  },
  {
@@ -3666,7 +3666,7 @@ const EQUIPMENT_DATA = [
   "type": "Generic Junkyard Backup Unit",
   "cost": "500",
   "availability": "1",
-  "game_notes": "Commercial backup x15 hyperdrive. Weight: 3 metric tons. The slowest, cheapest backup drive on the legal market — sometimes called a 'coffin jump' by freighter crews. Requires overhaul after each use; jump accuracy at this multiplier is best described as optimistic.",
+  "game_notes": "Commercial backup x15 hyperdrive. Weight: 3 metric tons. The slowest, cheapest backup drive on the legal market — sometimes called a 'coffin jump' by freighter crews. Requires overhaul after each use; jump accuracy at this multiplier is best described as optimistic. Estimates for overhaul range from 10-50%, normally 25% — 125 cr.",
   "source": "Mock-up (house rule)"
  },
  {
