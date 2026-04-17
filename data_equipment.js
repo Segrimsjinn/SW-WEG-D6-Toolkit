@@ -3679,6 +3679,15 @@ const EQUIPMENT_DATA = [
   "source": "Mock-up (house rule)"
  },
  {
+  "name": "Capital Capacitor Shunt",
+  "category": "Ship Equipment",
+  "type": "Capital-Scale Weapon Capacitor Bypass",
+  "cost": "8,000",
+  "availability": "2, R",
+  "game_notes": "Allows mounting of ONE capital-scale weapon on a starfighter-scale ship without a full reactor retrofit. Weapon can only fire once every 3 rounds due to capacitor recharge. Does not stack — one shunt, one weapon. Requires Moderate space transports repair to install.",
+  "source": "Mock-up (house rule)"
+ },
+ {
   "name": "Fire Control Station",
   "category": "Ship Equipment",
   "type": "Dedicated Targeting Computer Station",

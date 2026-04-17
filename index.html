@@ -11507,7 +11507,7 @@ const SHIPYARD = {
     { key: 'countermeasures', label: 'Countermeasures', match: /Jammer|Baffling|Sensor Mask|Sensor Decoy|Copycat|Comm Jammer/i },
     { key: 'drive', label: 'Drive & Navigation', match: /Hyperdrive Booster|HD 5-D|Baffled Drive|Astrogation|Diagnostic Filter|Nav Computer/i },
     { key: 'weapons', label: 'Weapons & Ordnance', match: /Weapon Link|Fire Control Station|Ion Cannon|Proton Torpedo|Concussion Missile|Blaster Cannon|Laser Cannon|Turbolaser|Conner Net|Conner Web|Plasma Torch|Tractor Beam|GenaTech Zeta|Hex Heavy/i },
-    { key: 'fuel', label: 'Fuel & Power', match: /Fuel Converter|Atmospheric Scoop|Solar Converter|Backup Battery|Capital Power Plant/i },
+    { key: 'fuel', label: 'Fuel & Power', match: /Fuel Converter|Atmospheric Scoop|Solar Converter|Backup Battery|Capital Power Plant|Capital Capacitor Shunt/i },
     { key: 'cargo', label: 'Cargo & Smuggling', match: /Secret Cargo|Cargo Jettison|Transponder/i },
     { key: 'security', label: 'Security & Boarding', match: /Stun Steps|Universal Airlock|Cotterdam/i },
     { key: 'hull', label: 'Hull & Repair', match: /Vacuum Seal/i },
@@ -11571,9 +11571,13 @@ const SHIPYARD = {
       html += '<optgroup label="' + groupLabels[gk] + '">';
       const shipScale = (base && base.scale || '').toLowerCase().trim();
       const hasCapitalReactor = (sy.addOns || []).some(a => /Capital Power Plant/i.test(a.name));
+      const hasCapShunt = (sy.addOns || []).some(a => /Capital Capacitor Shunt/i.test(a.name));
+      const capWeaponInstalled = (sy.addOns || []).some(a => /^Capital (Laser|Heavy Laser|Light Turbo|Turbo|Heavy Turbo|Double Turbo|Light Ion|Ion|Heavy Ion|Proton|Concussion)/i.test(a.name));
       const effectiveScale = hasCapitalReactor ? 'capital' : shipScale;
       for (const eq of items) {
-        const mismatch = eq.scale === 'capital' && effectiveScale === 'starfighter';
+        const isCapWeapon = /^Capital (Laser|Heavy Laser|Light Turbo|Turbo|Heavy Turbo|Double Turbo|Light Ion|Ion|Heavy Ion|Proton|Concussion)/i.test(eq.name);
+        const shuntFull = hasCapShunt && !hasCapitalReactor && isCapWeapon && capWeaponInstalled;
+        const mismatch = (eq.scale === 'capital' && effectiveScale === 'starfighter' && !hasCapShunt) || shuntFull;
         const label = eq.name + ' (' + eq.cost.toLocaleString() + ' cr' + (eq.weight ? ', ' + eq.weight + ' mt' : '') + ')' + (mismatch ? ' ⚠ ' + eq.scale + ' scale' : '');
         html += '<option value="' + eq.name.replace(/"/g, '&quot;') + '"' + (mismatch ? ' disabled style="color:#666;text-decoration:line-through"' : '') + '>' + label + '</option>';
       }
