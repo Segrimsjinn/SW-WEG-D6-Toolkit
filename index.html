@@ -12004,7 +12004,7 @@ const SHIPYARD = {
 
     // Mod log
     if (sy.log && sy.log.length) {
-      let logHtml = '<div style="margin-top:10px"><div onclick="document.getElementById(\'shipyardLogDetail\').style.display=document.getElementById(\'shipyardLogDetail\').style.display===\'none\'?\'block\':\'none\'" style="font-family:\'Exo 2\',monospace;font-size:7px;color:var(--text-dim);letter-spacing:1px;cursor:pointer;padding:4px 0">MOD LOG (' + sy.log.length + ' entries) ▾</div>';
+      let logHtml = '<div style="margin-top:10px"><div onclick="var el=document.getElementById(&quot;shipyardLogDetail&quot;);el.style.display=el.style.display===&quot;none&quot;?&quot;block&quot;:&quot;none&quot;" style="font-family:Exo 2,monospace;font-size:7px;color:var(--text-dim);letter-spacing:1px;cursor:pointer;padding:4px 0">MOD LOG (' + sy.log.length + ' entries) &#9662;</div>';
       logHtml += '<div id="shipyardLogDetail" style="display:none;border:1px solid var(--card-border);border-radius:var(--radius-sm);max-height:200px;overflow-y:auto">';
       sy.log.forEach((l, i) => {
         let desc = '';
