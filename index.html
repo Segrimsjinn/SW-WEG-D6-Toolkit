@@ -11529,7 +11529,10 @@ const SHIPYARD = {
         const sm = (e.game_notes || '').match(/Scale:\s*(Starfighter|Capital|Death Star)/i);
         const isWeapon = /Cannon|Turbolaser|Torpedo|Missile|Conner|Plasma Torch|Tractor Beam|GenaTech|Hex Heavy/i.test(e.name);
         const scale = sm ? sm[1].toLowerCase() : (isWeapon ? 'starfighter' : '');
-        return { name: e.name, cost: this.parsePrice(e.cost), weight: wm ? parseFloat(wm[1].replace(/,/g, '')) : 0, notes: e.game_notes || '', availability: e.availability || '', group, scale };
+        const dmgM = (e.game_notes || '').match(/Damage:\s*(\d+D[+\d]*)/);
+        const fcM = (e.game_notes || '').match(/Fire Control:\s*(\d+D[+\d]*)/);
+        const strM = (e.game_notes || '').match(/Strength:\s*(\d+D[+\d]*)/);
+        return { name: e.name, cost: this.parsePrice(e.cost), weight: wm ? parseFloat(wm[1].replace(/,/g, '')) : 0, notes: e.game_notes || '', availability: e.availability || '', group, scale, damage: dmgM ? dmgM[1] : '', fc: fcM ? fcM[1] : '', strength: strM ? strM[1] : '' };
       });
     return this._addOnCache;
   },
@@ -11603,7 +11606,11 @@ const SHIPYARD = {
         const isCapWeapon = /^Capital (Laser|Heavy Laser|Light Turbo|Turbo|Heavy Turbo|Double Turbo|Light Ion|Ion|Heavy Ion|Proton|Concussion)/i.test(eq.name);
         const shuntFull = hasCapShunt && !hasCapitalReactor && isCapWeapon && capWeaponInstalled;
         const mismatch = (eq.scale === 'capital' && effectiveScale === 'starfighter' && !hasCapShunt) || shuntFull;
-        const label = eq.name + ' (' + eq.cost.toLocaleString() + ' cr' + (eq.weight ? ', ' + eq.weight + ' mt' : '') + ')' + (mismatch ? ' ⚠ ' + eq.scale + ' scale' : '');
+        let stats = '';
+        if (eq.damage) stats += ' D:' + eq.damage;
+        if (eq.strength) stats += ' Str:' + eq.strength;
+        if (eq.fc) stats += ' FC:' + eq.fc;
+        const label = eq.name + (stats ? ' [' + stats.trim() + ']' : '') + ' (' + eq.cost.toLocaleString() + ' cr' + (eq.weight ? ', ' + eq.weight + ' mt' : '') + ')' + (mismatch ? ' ⚠ ' + eq.scale + ' scale' : '');
         html += '<option value="' + eq.name.replace(/"/g, '&quot;') + '"' + (mismatch ? ' disabled style="color:#666;text-decoration:line-through"' : '') + '>' + label + '</option>';
       }
       html += '</optgroup>';
