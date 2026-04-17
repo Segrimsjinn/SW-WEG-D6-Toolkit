@@ -3625,6 +3625,51 @@ const EQUIPMENT_DATA = [
   "source": "WEG40063 Galaxy Guide 6: Tramp Freighters p.39"
  },
  {
+  "name": "Backup Hyperdrive (x6)",
+  "category": "Ship Equipment",
+  "type": "Generic Budget Backup Unit",
+  "cost": "2,000",
+  "availability": "1",
+  "game_notes": "Emergency backup hyperdrive, class x6. Weight: 7 metric tons. Slow but reliable enough for an emergency jump to the nearest system. Must be overhauled after each use.",
+  "source": "Mock-up (house rule)"
+ },
+ {
+  "name": "Backup Hyperdrive (x8)",
+  "category": "Ship Equipment",
+  "type": "Generic Economy Backup Unit",
+  "cost": "1,500",
+  "availability": "1",
+  "game_notes": "Emergency backup hyperdrive, class x8. Weight: 6 metric tons. Bare-minimum hyperspace capability for emergency retreats. Must be overhauled after each use.",
+  "source": "Mock-up (house rule)"
+ },
+ {
+  "name": "Backup Hyperdrive (x10)",
+  "category": "Ship Equipment",
+  "type": "Generic Surplus Backup Unit",
+  "cost": "1,000",
+  "availability": "1",
+  "game_notes": "Emergency backup hyperdrive, class x10. Weight: 5 metric tons. Cheap surplus unit — gets you there eventually. Must be overhauled after each use.",
+  "source": "Mock-up (house rule)"
+ },
+ {
+  "name": "Backup Hyperdrive (x12)",
+  "category": "Ship Equipment",
+  "type": "Generic Salvage Backup Unit",
+  "cost": "750",
+  "availability": "1",
+  "game_notes": "Emergency backup hyperdrive, class x12. Weight: 4 metric tons. Bottom-shelf backup — barely functional but better than nothing. Must be overhauled after each use.",
+  "source": "Mock-up (house rule)"
+ },
+ {
+  "name": "Backup Hyperdrive (x15)",
+  "category": "Ship Equipment",
+  "type": "Generic Junkyard Backup Unit",
+  "cost": "500",
+  "availability": "1",
+  "game_notes": "Emergency backup hyperdrive, class x15. Weight: 3 metric tons. Absolute bottom of the barrel — pray to the Force it gets you somewhere. Must be overhauled after each use.",
+  "source": "Mock-up (house rule)"
+ },
+ {
   "name": "Ship Shields (1D)",
   "category": "Ship Equipment",
   "cost": "4,000",

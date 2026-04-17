@@ -8909,6 +8909,7 @@ function renderShipSnapshot(pin) {
   html += row('Cargo', d.cargo || d.cargo_capacity, '');
   html += row('Consumables', d.consumables, '');
   html += row('Hyperdrive', d.hyperdrive, base.hyperdrive);
+  html += row('Backup Hyperdrive', d.backup_hyperdrive, base.backupHyperdrive);
   html += row('Nav Computer', d.nav_computer, '');
   html += row('Space', d.space, base.space);
   html += row('Atmosphere', d.atmosphere || d.atmosphere_speed, '');
@@ -11092,6 +11093,7 @@ const SHIPYARD = {
       space: d.space || '',
       maneuverability: d.maneuverability || '',
       hyperdrive: d.hyperdrive || '',
+      backupHyperdrive: d.backup_hyperdrive || d.backupHyperdrive || '',
       hull: d.hull || '',
       shields: d.shields || '',
       price_new: d.price_new || '',
@@ -11118,6 +11120,7 @@ const SHIPYARD = {
     const hyperIdx = this.hyperLadderIndex(base.hyperdrive);
     stats.hyperdrive = hyperIdx >= 0 && hyperIdx + (sy.mods.hyperdrive || 0) < this.HYPER_LADDER.length
       ? this.HYPER_LADDER[hyperIdx + (sy.mods.hyperdrive || 0)] : (base.hyperdrive || '');
+    stats.backup_hyperdrive = base.backupHyperdrive || '';
     stats.hull = pipsToD6(d6ToPips(base.hull) + (sy.mods.hull || 0));
     stats.shields = pipsToD6(d6ToPips(base.shields) + (sy.mods.shields || 0));
     stats.weapons = (base.weapons || []).map((w, i) => {
@@ -11362,6 +11365,7 @@ const SHIPYARD = {
     engine: { label: 'SUBLIGHT ENGINE', keywords: /^(Verpine Asteroid|Corellian Engineering C[LE]|SoroSuub Boav|Incom (Starslinger|W-11)|Corellian Evader|Sienar Fleet Systems Sprint|Boshaa|FreiTek FT|Starscream)/i, statKey: 'space', parseRe: /Space:\s*(\d+)/, weightRe: /Weight:\s*([\d,.]+)\s*metric/i },
     hyperdrive: { label: 'HYPERDRIVE', keywords: /Hyperdrive \(x|x0\.5 Hyperdrive/i, statKey: 'hyperdrive', parseRe: /x([\d./]+)/, weightRe: /Weight:\s*([\d,.]+)\s*metric/i },
     shields: { label: 'SHIELDS', keywords: /Ship Shields|Shield code/i, statKey: 'shields', parseRe: /(?:Shield code:|Shields?\s*\()\s*(\d+D[+\d]*)/, weightRe: /Weight:\s*([\d,.]+)\s*metric/i },
+    backupHyperdrive: { label: 'BACKUP HYPERDRIVE', keywords: /Backup Hyperdrive \(x/i, statKey: 'backupHyperdrive', parseRe: /x([\d./]+)/, weightRe: /Weight:\s*([\d,.]+)\s*metric/i },
   },
 
   getEquipBySubtype(subtype) {
@@ -11373,7 +11377,7 @@ const SHIPYARD = {
       .map(e => {
         const notes = e.game_notes || '';
         let stat = '';
-        if (subtype === 'hyperdrive') {
+        if (subtype === 'hyperdrive' || subtype === 'backupHyperdrive') {
           const hm = e.name.match(/\(x([\d./]+)\)/) || e.name.match(/\bx([\d./]+)\s+Hyperdrive/i);
           stat = hm ? 'x' + hm[1] : '';
         } else {
@@ -11428,8 +11432,8 @@ const SHIPYARD = {
 
     for (const [subtype, st] of Object.entries(this.EQUIP_SUBTYPES)) {
       const equips = this.getEquipBySubtype(subtype).sort((a, b) => {
-        const aVal = subtype === 'engine' ? (parseInt(a.stat) || 0) : subtype === 'shields' ? d6ToPips(a.stat) : 0;
-        const bVal = subtype === 'engine' ? (parseInt(b.stat) || 0) : subtype === 'shields' ? d6ToPips(b.stat) : 0;
+        const aVal = subtype === 'engine' ? (parseInt(a.stat) || 0) : subtype === 'shields' ? d6ToPips(a.stat) : subtype === 'backupHyperdrive' ? (parseFloat(a.stat.replace('x','')) || 99) : 0;
+        const bVal = subtype === 'engine' ? (parseInt(b.stat) || 0) : subtype === 'shields' ? d6ToPips(b.stat) : subtype === 'backupHyperdrive' ? (parseFloat(b.stat.replace('x','')) || 99) : 0;
         return aVal - bVal;
       });
       const existing = sy.replacements.find(r => r.subtype === subtype);
@@ -11755,6 +11759,8 @@ const SHIPYARD = {
     } else if (st.statKey === 'shields') {
       sy.mods.shields = 0;
       sy.base.shields = eq.stat || sy.base.shields;
+    } else if (st.statKey === 'backupHyperdrive') {
+      sy.base.backupHyperdrive = eq.stat || sy.base.backupHyperdrive;
     }
 
     sy.log.push({ type: 'replacement', subtype, equipName: eq.name, cost: eq.cost, weight: eq.weight, stat: eq.stat, ts: Date.now() });
@@ -11775,6 +11781,7 @@ const SHIPYARD = {
     if (st.statKey === 'space') sy.base.space = originalBase.space;
     else if (st.statKey === 'hyperdrive') sy.base.hyperdrive = originalBase.hyperdrive;
     else if (st.statKey === 'shields') sy.base.shields = originalBase.shields;
+    else if (st.statKey === 'backupHyperdrive') sy.base.backupHyperdrive = originalBase.backupHyperdrive;
 
     sy.log = sy.log.filter(l => !(l.type === 'replacement' && l.subtype === subtype));
     corkboardSave();
