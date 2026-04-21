@@ -1538,6 +1538,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
           <button class="jump-pill" onclick="jumpTo('gm-mishaps')">Mishap Tables</button>
           <button class="jump-pill" onclick="jumpTo('gm-damage')">Damage & Healing</button>
           <button class="jump-pill" onclick="jumpTo('gm-equipment')">Equipment Chart</button>
+          <button class="jump-pill" onclick="jumpTo('gm-spacecraft')">Spacecraft Data</button>
         </div>
       </div>
       <div class="card" id="gm-dice">
@@ -3067,6 +3068,84 @@ color:var(--text-dim);min-width:35px;text-align:right;
         <div style="font-size:8px;color:var(--text-dim);margin-top:6px;font-style:italic">Source: WEG40135 Star Wars Revised & Expanded GM Screen. Prices in Galactic Credits. NA = Not Available on open market.</div>
       </div>
 
+      <div class="card" id="gm-spacecraft">
+        <div class="card-title" style="display:flex;justify-content:space-between;align-items:center">⟐ Spacecraft Performance Data</div>
+        <div style="font-size:9px;color:var(--text-dim);font-style:italic;margin-bottom:8px">WEG40135 GM Screen — Revised & Expanded. * = Fire-linked. § = Ionization damage. † = Corrected from R&E.</div>
+
+        <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin-bottom:3px">STARFIGHTERS</div>
+        <div style="overflow-x:auto;margin-bottom:12px">
+          <table style="font-size:9px;color:var(--text-dim);border-collapse:collapse;width:100%;min-width:700px">
+            <tr style="color:var(--text-dark);border-bottom:1px solid var(--card-border)"><th style="text-align:left;padding:2px 4px">Ship</th><th style="text-align:center;padding:2px 4px">Man</th><th style="text-align:center;padding:2px 4px">Space</th><th style="text-align:center;padding:2px 4px">Atmo</th><th style="text-align:center;padding:2px 4px">Hull</th><th style="text-align:center;padding:2px 4px">Shields</th><th style="text-align:left;padding:2px 4px">Weapons</th><th style="text-align:center;padding:2px 4px">FC</th><th style="text-align:center;padding:2px 4px">Dmg</th></tr>
+            <tr style="border-bottom:1px solid var(--card-border)"><td style="padding:2px 4px">A-wing</td><td style="text-align:center">4D</td><td style="text-align:center">12</td><td style="text-align:center">450; 1,300</td><td style="text-align:center">2D+2</td><td style="text-align:center">1D</td><td style="padding:2px 4px">2 laser cannons*</td><td style="text-align:center">3D</td><td style="text-align:center">5D</td></tr>
+            <tr style="border-bottom:1px solid var(--card-border)"><td></td><td></td><td></td><td></td><td></td><td></td><td style="padding:2px 4px;color:var(--text-dark)">Enemy targeting jammer</td><td style="text-align:center">—</td><td style="text-align:center;font-size:8px">−2D FC</td></tr>
+            <tr style="border-bottom:1px solid var(--card-border)"><td style="padding:2px 4px">B-wing</td><td style="text-align:center">1D+1</td><td style="text-align:center">6</td><td style="text-align:center">330; 950</td><td style="text-align:center">3D</td><td style="text-align:center">2D</td><td style="padding:2px 4px">Laser cannon</td><td style="text-align:center">1D</td><td style="text-align:center">3D†</td></tr>
+            <tr style="border-bottom:1px solid var(--card-border)"><td></td><td></td><td></td><td></td><td></td><td></td><td style="padding:2px 4px">3 medium ion cannons*§</td><td style="text-align:center">4D</td><td style="text-align:center">4D</td></tr>
+            <tr style="border-bottom:1px solid var(--card-border)"><td></td><td></td><td></td><td></td><td></td><td></td><td style="padding:2px 4px">2 proton torpedo launchers</td><td style="text-align:center">2D</td><td style="text-align:center">9D</td></tr>
+            <tr style="border-bottom:1px solid var(--card-border)"><td></td><td></td><td></td><td></td><td></td><td></td><td style="padding:2px 4px">2 auto blasters</td><td style="text-align:center">2D</td><td style="text-align:center">3D</td></tr>
+            <tr style="border-bottom:1px solid var(--card-border)"><td style="padding:2px 4px">X-wing</td><td style="text-align:center">3D</td><td style="text-align:center">8</td><td style="text-align:center">365; 1,050</td><td style="text-align:center">4D</td><td style="text-align:center">1D</td><td style="padding:2px 4px">4 laser cannons*</td><td style="text-align:center">3D</td><td style="text-align:center">6D</td></tr>
+            <tr style="border-bottom:1px solid var(--card-border)"><td></td><td></td><td></td><td></td><td></td><td></td><td style="padding:2px 4px">2 proton torpedo launchers</td><td style="text-align:center">2D</td><td style="text-align:center">9D</td></tr>
+            <tr style="border-bottom:1px solid var(--card-border)"><td style="padding:2px 4px">Y-wing</td><td style="text-align:center">2D</td><td style="text-align:center">7</td><td style="text-align:center">350; 1,000</td><td style="text-align:center">4D</td><td style="text-align:center">1D+2</td><td style="padding:2px 4px">2 laser cannons*</td><td style="text-align:center">2D</td><td style="text-align:center">5D</td></tr>
+            <tr style="border-bottom:1px solid var(--card-border)"><td></td><td></td><td></td><td></td><td></td><td></td><td style="padding:2px 4px">2 proton torpedo launchers</td><td style="text-align:center">2D</td><td style="text-align:center">9D</td></tr>
+            <tr style="border-bottom:1px solid var(--card-border)"><td></td><td></td><td></td><td></td><td></td><td></td><td style="padding:2px 4px">2 light ion cannons*§</td><td style="text-align:center">3D</td><td style="text-align:center">4D</td></tr>
+            <tr style="border-bottom:1px solid var(--card-border)"><td style="padding:2px 4px">TIE/ln</td><td style="text-align:center">2D</td><td style="text-align:center">10</td><td style="text-align:center">415; 1,200</td><td style="text-align:center">2D</td><td style="text-align:center">—</td><td style="padding:2px 4px">2 laser cannons*</td><td style="text-align:center">2D</td><td style="text-align:center">5D</td></tr>
+            <tr style="border-bottom:1px solid var(--card-border)"><td style="padding:2px 4px">TIE interceptor</td><td style="text-align:center">3D+2</td><td style="text-align:center">11</td><td style="text-align:center">435; 1,250</td><td style="text-align:center">3D</td><td style="text-align:center">—</td><td style="padding:2px 4px">4 laser cannons*</td><td style="text-align:center">3D</td><td style="text-align:center">6D</td></tr>
+            <tr style="border-bottom:1px solid var(--card-border)"><td style="padding:2px 4px">TIE bomber</td><td style="text-align:center">—</td><td style="text-align:center">6</td><td style="text-align:center">295; 850</td><td style="text-align:center">4D+1</td><td style="text-align:center">—</td><td style="padding:2px 4px">2 laser cannons*</td><td style="text-align:center">2D</td><td style="text-align:center">3D+2</td></tr>
+            <tr style="border-bottom:1px solid var(--card-border)"><td></td><td></td><td></td><td></td><td></td><td></td><td style="padding:2px 4px">Concussion missiles (16)</td><td style="text-align:center">3D</td><td style="text-align:center">9D</td></tr>
+            <tr><td style="padding:2px 4px">Z-95 Headhunter</td><td style="text-align:center">1D</td><td style="text-align:center">7</td><td style="text-align:center">400; 1,150</td><td style="text-align:center">4D</td><td style="text-align:center">1D</td><td style="padding:2px 4px">2 triple blasters*</td><td style="text-align:center">1D</td><td style="text-align:center">3D</td></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td style="padding:2px 4px">Concussion missiles</td><td style="text-align:center">1D+2</td><td style="text-align:center">7D</td></tr>
+          </table>
+        </div>
+
+        <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin-bottom:3px">SPACE TRANSPORTS &amp; FREIGHTERS — Starfighter-scale</div>
+        <div style="overflow-x:auto;margin-bottom:12px">
+          <table style="font-size:9px;color:var(--text-dim);border-collapse:collapse;width:100%;min-width:700px">
+            <tr style="color:var(--text-dark);border-bottom:1px solid var(--card-border)"><th style="text-align:left;padding:2px 4px">Ship</th><th style="text-align:center;padding:2px 4px">Man</th><th style="text-align:center;padding:2px 4px">Space</th><th style="text-align:center;padding:2px 4px">Atmo</th><th style="text-align:center;padding:2px 4px">Hull</th><th style="text-align:center;padding:2px 4px">Shields</th><th style="text-align:left;padding:2px 4px">Weapons</th><th style="text-align:center;padding:2px 4px">FC</th><th style="text-align:center;padding:2px 4px">Dmg</th></tr>
+            <tr style="border-bottom:1px solid var(--card-border)"><td style="padding:2px 4px">YT-1300 (stock)</td><td style="text-align:center">—</td><td style="text-align:center">4</td><td style="text-align:center">280; 800†</td><td style="text-align:center">4D</td><td style="text-align:center">—</td><td style="padding:2px 4px">Laser cannon</td><td style="text-align:center">1D</td><td style="text-align:center">4D</td></tr>
+            <tr style="border-bottom:1px solid var(--card-border)"><td style="padding:2px 4px"><em>Millennium Falcon</em></td><td style="text-align:center">2D</td><td style="text-align:center">8</td><td style="text-align:center">365; 1,050</td><td style="text-align:center">6D</td><td style="text-align:center">3D</td><td style="padding:2px 4px">2 quad laser cannons</td><td style="text-align:center">3D</td><td style="text-align:center">6D</td></tr>
+            <tr style="border-bottom:1px solid var(--card-border)"><td></td><td></td><td></td><td></td><td></td><td></td><td style="padding:2px 4px">2 concussion missile tubes*</td><td style="text-align:center">3D+1</td><td style="text-align:center">9D</td></tr>
+            <tr style="border-bottom:1px solid var(--card-border)"><td style="padding:2px 4px">Ghtroc 720</td><td style="text-align:center">1D</td><td style="text-align:center">3</td><td style="text-align:center">260; 750</td><td style="text-align:center">3D+2</td><td style="text-align:center">1D</td><td style="padding:2px 4px">1 double laser cannon</td><td style="text-align:center">1D</td><td style="text-align:center">4D</td></tr>
+            <tr style="border-bottom:1px solid var(--card-border)"><td style="padding:2px 4px">Imperial Customs Guardian</td><td style="text-align:center">1D</td><td style="text-align:center">9</td><td style="text-align:center">400; 1,150</td><td style="text-align:center">5D</td><td style="text-align:center">2D</td><td style="padding:2px 4px">4 laser cannons</td><td style="text-align:center">2D+2</td><td style="text-align:center">5D</td></tr>
+            <tr style="border-bottom:1px solid var(--card-border)"><td style="padding:2px 4px">Lone Scout-A</td><td style="text-align:center">—</td><td style="text-align:center">5</td><td style="text-align:center">295; 850</td><td style="text-align:center">4D</td><td style="text-align:center">1D</td><td style="padding:2px 4px">Laser cannon</td><td style="text-align:center">—</td><td style="text-align:center">4D</td></tr>
+            <tr><td style="padding:2px 4px">Lambda shuttle</td><td style="text-align:center">1D</td><td style="text-align:center">5</td><td style="text-align:center">295; 850</td><td style="text-align:center">4D</td><td style="text-align:center">1D+2</td><td style="padding:2px 4px">3 double blaster cannons</td><td style="text-align:center">2D</td><td style="text-align:center">4D</td></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td style="padding:2px 4px">2 double blaster cannons*</td><td style="text-align:center">3D+1</td><td style="text-align:center">4D</td></tr>
+          </table>
+        </div>
+
+        <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin-bottom:3px">CAPITAL SHIPS — Capital-scale</div>
+        <div style="overflow-x:auto;margin-bottom:8px">
+          <table style="font-size:9px;color:var(--text-dim);border-collapse:collapse;width:100%;min-width:700px">
+            <tr style="color:var(--text-dark);border-bottom:1px solid var(--card-border)"><th style="text-align:left;padding:2px 4px">Ship</th><th style="text-align:center;padding:2px 4px">Man</th><th style="text-align:center;padding:2px 4px">Space</th><th style="text-align:center;padding:2px 4px">Atmo</th><th style="text-align:center;padding:2px 4px">Hull</th><th style="text-align:center;padding:2px 4px">Shields</th><th style="text-align:left;padding:2px 4px">Weapons</th><th style="text-align:center;padding:2px 4px">FC</th><th style="text-align:center;padding:2px 4px">Dmg</th></tr>
+            <tr style="border-bottom:1px solid var(--card-border)"><td style="padding:2px 4px">Imperial Star Destroyer</td><td style="text-align:center">1D</td><td style="text-align:center">6</td><td style="text-align:center">—</td><td style="text-align:center">7D</td><td style="text-align:center">3D</td><td style="padding:2px 4px">60 turbolaser batteries</td><td style="text-align:center">4D</td><td style="text-align:center">5D</td></tr>
+            <tr style="border-bottom:1px solid var(--card-border)"><td></td><td></td><td></td><td></td><td></td><td></td><td style="padding:2px 4px">60 ion cannon batteries§</td><td style="text-align:center">2D+2</td><td style="text-align:center">3D</td></tr>
+            <tr style="border-bottom:1px solid var(--card-border)"><td></td><td></td><td></td><td></td><td></td><td></td><td style="padding:2px 4px">10 tractor beam projectors</td><td style="text-align:center">4D</td><td style="text-align:center">6D</td></tr>
+            <tr style="border-bottom:1px solid var(--card-border)"><td style="padding:2px 4px">Mon Cal Star Cruiser</td><td style="text-align:center">2D</td><td style="text-align:center">6</td><td style="text-align:center">—</td><td style="text-align:center">6D</td><td style="text-align:center">3D**</td><td style="padding:2px 4px">48 turbolaser batteries</td><td style="text-align:center">2D</td><td style="text-align:center">4D</td></tr>
+            <tr style="border-bottom:1px solid var(--card-border)"><td></td><td></td><td></td><td></td><td></td><td></td><td style="padding:2px 4px">20 ion cannon batteries§</td><td style="text-align:center">3D</td><td style="text-align:center">3D</td></tr>
+            <tr style="border-bottom:1px solid var(--card-border)"><td></td><td></td><td></td><td></td><td></td><td></td><td style="padding:2px 4px">6 tractor beam projectors</td><td style="text-align:center">2D+2</td><td style="text-align:center">4D</td></tr>
+            <tr style="border-bottom:1px solid var(--card-border)"><td style="padding:2px 4px">Corellian corvette</td><td style="text-align:center">2D</td><td style="text-align:center">6</td><td style="text-align:center">330; 950</td><td style="text-align:center">4D</td><td style="text-align:center">2D</td><td style="padding:2px 4px">6 double turbolaser cannons</td><td style="text-align:center">3D</td><td style="text-align:center">4D+2</td></tr>
+            <tr style="border-bottom:1px solid var(--card-border)"><td style="padding:2px 4px">Nebulon-B frigate</td><td style="text-align:center">1D</td><td style="text-align:center">4</td><td style="text-align:center">280; 800</td><td style="text-align:center">3D+2</td><td style="text-align:center">2D</td><td style="padding:2px 4px">12 turbolaser batteries</td><td style="text-align:center">3D</td><td style="text-align:center">4D</td></tr>
+            <tr style="border-bottom:1px solid var(--card-border)"><td></td><td></td><td></td><td></td><td></td><td></td><td style="padding:2px 4px">12 laser cannons***</td><td style="text-align:center">2D</td><td style="text-align:center">2D</td></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td style="padding:2px 4px">2 tractor beam projectors</td><td style="text-align:center">2D</td><td style="text-align:center">4D</td></tr>
+          </table>
+        </div>
+        <div style="font-size:8px;color:var(--text-dark);line-height:1.5;margin-bottom:4px">
+          ** 6D backup shields. *** Starfighter-scale.
+        </div>
+
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
+          <div style="flex:1;min-width:160px">
+            <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin-bottom:3px">COVER MODIFIERS</div>
+            <div style="font-size:9px;color:var(--text-dim);line-height:1.6">
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>1/4 cover</span><span>+1D to difficulty</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>1/2 cover</span><span>+2D to difficulty</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>3/4 cover</span><span>+4D to difficulty</span></div>
+              <div style="display:flex;justify-content:space-between;padding:1px 0"><span>Full cover</span><span>Cannot be hit</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="font-size:8px;color:var(--text-dim);margin-top:8px;font-style:italic">Source: WEG40135 Star Wars Revised & Expanded GM Screen. † Corrected from original R&E printing.</div>
+      </div>
+
     </div>
 
     <!-- TAB: GAZETTEERS -->
@@ -3597,6 +3676,7 @@ const NAV_CARDS = [
   {id:'gm-mishaps', label:'Starship Mishap Tables', tab:'gm', group:'Dice'},
   {id:'gm-damage', label:'Damage & Healing', tab:'gm', group:'Dice'},
   {id:'gm-equipment', label:'Equipment Quick Reference', tab:'gm', group:'Dice'},
+  {id:'gm-spacecraft', label:'Spacecraft Performance Data', tab:'gm', group:'Dice'},
   // Settings
   {id:'settings-calibration', label:'Speed Calibration', tab:'settings', group:'Settings'},
   {id:'settings-howto', label:'How to Use This Toolkit', tab:'settings', group:'Settings'},
