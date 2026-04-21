@@ -696,7 +696,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
     <div class="app-subtitle">NPC Generator &amp; Astrogation &amp; Starships</div>
     <button class="app-help-btn" onclick="openHowTo()" title="How to Use This Toolkit">? HOW TO</button>
     <div id="visitorBadge" style="position:absolute;bottom:4px;left:12px;font-family:'Exo 2',monospace;font-size:8px;color:var(--text-dark);letter-spacing:1px;line-height:1.4;text-align:left" title="Total visitors">
-      <span id="statVisitors" style="color:var(--gold);font-weight:700">—</span> COMMANDERS · <span style="font-size:7px;letter-spacing:0.5px">v1.0.937</span>
+      <span id="statVisitors" style="color:var(--gold);font-weight:700">—</span> COMMANDERS · <span style="font-size:7px;letter-spacing:0.5px">v1.0.938</span>
     </div>
   </header>
 
@@ -1536,6 +1536,7 @@ color:var(--text-dim);min-width:35px;text-align:right;
           <button class="jump-pill" onclick="jumpTo('gm-shipmods')">Ship Mods</button>
           <button class="jump-pill" onclick="jumpTo('gm-repairs')">Ship Repairs</button>
           <button class="jump-pill" onclick="jumpTo('gm-mishaps')">Mishap Tables</button>
+          <button class="jump-pill" onclick="jumpTo('gm-damage')">Damage & Healing</button>
         </div>
       </div>
       <div class="card" id="gm-dice">
@@ -2662,6 +2663,178 @@ color:var(--text-dim);min-width:35px;text-align:right;
         <div style="font-size:8px;color:var(--text-dim);margin-top:6px;font-style:italic">Sources: REUP (Revised Expanded Updated) quick tables &amp; WEG40063 Galaxy Guide 6: Tramp Freighters Ch.8 detailed tables. All use 1D rolls. "rnds" = combat rounds. "fix" = space transports repair (or starship weapon repair for weapons).</div>
       </div>
 
+      <div class="card" id="gm-damage">
+        <div class="card-title" style="display:flex;justify-content:space-between;align-items:center">⟐ Damage & Healing Reference</div>
+        <div style="font-size:9px;color:var(--text-dim);font-style:italic;margin-bottom:8px">WEG40135 GM Screen — Revised & Expanded</div>
+
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px">
+
+          <div style="flex:1;min-width:280px">
+            <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin-bottom:3px">DAMAGE CHART — Damage Roll − Strength/Body/Hull Roll</div>
+            <div style="font-size:9px;color:var(--text-dim);line-height:1.6">
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:2px 0;font-weight:700;color:var(--text-dark)"><span>Roll ></span><span>Characters</span><span>Vehicles/Ships</span><span>Ion Effect</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span style="color:var(--text-dim);min-width:35px">0–3</span><span style="min-width:90px">Stunned</span><span style="min-width:100px">Shields blown / Ionized</span><span style="min-width:80px">Controls ionized</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span style="color:var(--gold);min-width:35px">4–8</span><span style="min-width:90px">Wounded</span><span style="min-width:100px">Lightly damaged</span><span style="min-width:80px">2 controls ionized</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span style="color:var(--gold);min-width:35px">9–12</span><span style="min-width:90px">Incapacitated</span><span style="min-width:100px">Heavily damaged</span><span style="min-width:80px">3 controls ionized</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span style="color:var(--red);min-width:35px">13–15</span><span style="min-width:90px">Mortally wounded</span><span style="min-width:100px">Severely damaged</span><span style="min-width:80px">4 controls ionized</span></div>
+              <div style="display:flex;justify-content:space-between;padding:1px 0"><span style="color:var(--red);min-width:35px">16+</span><span style="min-width:90px">Killed</span><span style="min-width:100px">Destroyed</span><span style="min-width:80px">Controls dead</span></div>
+            </div>
+          </div>
+
+          <div style="flex:1;min-width:220px">
+            <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin-bottom:3px">FALLING DAMAGE</div>
+            <div style="font-size:9px;color:var(--text-dim);line-height:1.6">
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>3–6 meters</span><span>2D</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>7–12 meters</span><span>3D</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>13–18 meters</span><span>4D</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>19–30 meters</span><span>5D</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>31–50 meters</span><span>7D</span></div>
+              <div style="display:flex;justify-content:space-between;padding:1px 0"><span>51+ meters</span><span>9D</span></div>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin-bottom:3px">CHARACTER INJURY EFFECTS</div>
+        <div style="font-size:9px;color:var(--text-dim);line-height:1.6;margin-bottom:12px">
+          <div style="border-bottom:1px solid var(--card-border);padding:2px 0"><span style="color:var(--text)">Stunned</span> (per stun): −1D for that round and next round. Stun "in effect" for half hour. If suffering from as many stuns as Strength dice, unconscious for 2D minutes. Remove stuns by resting one minute.</div>
+          <div style="border-bottom:1px solid var(--card-border);padding:2px 0"><span style="color:var(--gold)">Wounded</span>: Falls prone, no actions for rest of round. −1D to all actions until healed.</div>
+          <div style="border-bottom:1px solid var(--card-border);padding:2px 0"><span style="color:var(--gold)">Wounded Twice</span>: A wounded character wounded again is wounded twice. Falls prone, no actions for rest of round. −2D to all actions until healed. A wounded twice character wounded again is incapacitated.</div>
+          <div style="border-bottom:1px solid var(--card-border);padding:2px 0"><span style="color:var(--red)">Incapacitated</span>: Falls prone; unconscious for 10D minutes. If wounded or incapacitated again, mortally wounded.</div>
+          <div style="border-bottom:1px solid var(--card-border);padding:2px 0"><span style="color:var(--red)">Mortally Wounded</span>: Knocked unconscious. Roll 2D after each round: if roll less than number of rounds since mortally wounded, character dies.</div>
+          <div style="padding:2px 0"><span style="color:var(--text-dim)">Weapons set for stun</span>: A "wounded" or worse result means unconscious for 2D minutes.</div>
+        </div>
+
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px">
+
+          <div style="flex:1;min-width:280px">
+            <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin-bottom:3px">STARSHIP DAMAGE</div>
+            <div style="font-size:9px;color:var(--text-dim);line-height:1.6">
+              <div style="border-bottom:1px solid var(--card-border);padding:2px 0"><span style="color:var(--text)">Shields Blown</span>: −1D from shields. If no dice in shields, controls ionized.</div>
+              <div style="border-bottom:1px solid var(--card-border);padding:2px 0"><span style="color:var(--text)">Controls Ionized</span>: −1D from maneuverability, shields and weapon FC and damage for rest of round and next round. If suffering as many ionized results as maneuverability dice, controls frozen for next two rounds — ship maintains speed/direction, cannot turn, fire, or use shields.</div>
+              <div style="border-bottom:1px solid var(--card-border);padding:2px 0"><span style="color:var(--gold)">Lightly Damaged</span> (can stack): Roll 1D: <b>1</b> −1D maneuverability (if 0D: −1 Move) · <b>2</b> One weapon destroyed · <b>3</b> One weapon inoperative (lightly damaged) · <b>4</b> Hyperdrive damaged (double astrogation time; +10 difficulty for 1-round jump) · <b>5</b> −1D shields (if none: ionized) · <b>6</b> −1 Move</div>
+              <div style="border-bottom:1px solid var(--card-border);padding:2px 0"><span style="color:var(--gold)">Heavily Damaged</span> (if already light/heavy → severe): Roll 1D: <b>1</b> −2D maneuverability (if 0D: −2 Move) · <b>2</b> Lose weapon system in one fire arc · <b>3</b> All weapons of one type in one arc destroyed · <b>4</b> Hyperdrive damaged (+10 all astrogation) · <b>5</b> −2D shields (if none: ionized) · <b>6</b> −2 Moves</div>
+              <div style="border-bottom:1px solid var(--card-border);padding:2px 0"><span style="color:var(--red)">Severely Damaged</span> (if already light/heavy/severe → destroyed): Roll 1D: <b>1</b> Dead in space (all drives destroyed) · <b>2</b> Overloaded generator (explodes in 1D rounds) · <b>3</b> Disabled hyperdrives · <b>4</b> Disabled weapons (1D: 1–4 severely damaged, 5–6 destroyed) · <b>5</b> Structural damage (disintegrates in 1D rounds) · <b>6</b> Destroyed</div>
+              <div style="padding:2px 0"><span style="color:var(--red)">Destroyed</span>: Ship instantly destroyed.</div>
+            </div>
+          </div>
+
+          <div style="flex:1;min-width:280px">
+            <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin-bottom:3px">VEHICLE DAMAGE</div>
+            <div style="font-size:9px;color:var(--text-dim);line-height:1.6">
+              <div style="border-bottom:1px solid var(--card-border);padding:2px 0"><span style="color:var(--text)">Shields Blown</span>: −1D from shields. If no dice in shields, controls ionized.</div>
+              <div style="border-bottom:1px solid var(--card-border);padding:2px 0"><span style="color:var(--text)">Controls Ionized</span>: −1D from maneuverability, shields and weapon FC and damage for rest of round and next round. If suffering as many ionized results as maneuverability dice, controls dead for next two rounds — vehicle maintains speed/direction, cannot turn, fire, or use shields.</div>
+              <div style="border-bottom:1px solid var(--card-border);padding:2px 0"><span style="color:var(--gold)">Lightly Damaged</span> (can stack): Roll 1D: <b>1–3</b> −1D maneuverability (if 0D: −1 Move) · <b>4</b> One weapon destroyed · <b>5–6</b> −1 Move</div>
+              <div style="border-bottom:1px solid var(--card-border);padding:2px 0"><span style="color:var(--gold)">Heavily Damaged</span> (if already light/heavy → severe): Roll 1D: <b>1–3</b> −2D maneuverability until repaired (if 0D: −2 Move) · <b>4–6</b> −2 Move</div>
+              <div style="border-bottom:1px solid var(--card-border);padding:2px 0"><span style="color:var(--red)">Severely Damaged</span> (if already light/heavy/severe → destroyed): Roll 1D: <b>1–2</b> Destroyed powerplant (ground: crash at high/all-out speed, roll to stop at cruising/cautious; flying: Moderate+ roll to avoid crash) · <b>3</b> Overloaded generator (explodes in 1D rounds) · <b>4</b> All weapons disabled · <b>5</b> Structural damage (1D rounds to eject before explosion) · <b>6</b> Destroyed</div>
+              <div style="padding:2px 0"><span style="color:var(--red)">Destroyed</span>: Vehicle instantly destroyed.</div>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px">
+
+          <div style="flex:1;min-width:160px">
+            <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin-bottom:3px">LOST MOVES (additive)</div>
+            <div style="font-size:9px;color:var(--text-dim);line-height:1.6">
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>−1 Move</span><span>Limited to high speed</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>−2 Moves</span><span>Limited to cruising speed</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>−3 Moves</span><span>Limited to cautious speed</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>−4 Moves</span><span>Dead in space / cannot move</span></div>
+              <div style="display:flex;justify-content:space-between;padding:1px 0"><span style="color:var(--red)">−5 Moves</span><span style="color:var(--red)">Destroyed</span></div>
+            </div>
+          </div>
+
+          <div style="flex:1;min-width:200px">
+            <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin-bottom:3px">TRACTOR BEAMS — Damage Roll > Hull Roll</div>
+            <div style="font-size:9px;color:var(--text-dim);line-height:1.6">
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0;color:var(--text-dark)"><span>Roll ></span><span>Reeled In</span><span>Damage</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>0–3</span><span>No change</span><span>No damage</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>4–8</span><span>1 space unit</span><span>−1 Move</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>9–12</span><span>2 space units</span><span>−2 Moves</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>13–15</span><span>3 space units</span><span>−3 Moves</span></div>
+              <div style="display:flex;justify-content:space-between;padding:1px 0"><span>16+</span><span>4 space units</span><span>−4 Moves</span></div>
+            </div>
+          </div>
+
+          <div style="flex:1;min-width:140px">
+            <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin-bottom:3px">SHIELDS — Arc Difficulty</div>
+            <div style="font-size:9px;color:var(--text-dim);line-height:1.6">
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Covered arc</span><span>—</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>1 arc away</span><span>Easy</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>2 arcs away</span><span>Moderate</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>3 arcs away</span><span>Difficult</span></div>
+              <div style="display:flex;justify-content:space-between;padding:1px 0"><span>4 arcs away</span><span>Very Difficult</span></div>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin-bottom:3px">NATURAL HEALING — Roll full Strength after rest period</div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px">
+          <div style="flex:1;min-width:200px">
+            <div style="font-size:9px;color:var(--text-dim);line-height:1.6">
+              <div style="font-size:8px;color:var(--gold);padding:2px 0;border-bottom:1px solid var(--card-border)">Wounded — rest 3 days</div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>2–4</span><span style="color:var(--red)">Worsens to wounded twice</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>5–6</span><span>Remains wounded</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>7+</span><span style="color:var(--green)">Fully healed</span></div>
+            </div>
+          </div>
+          <div style="flex:1;min-width:200px">
+            <div style="font-size:9px;color:var(--text-dim);line-height:1.6">
+              <div style="font-size:8px;color:var(--gold);padding:2px 0;border-bottom:1px solid var(--card-border)">Wounded Twice — rest 3 days</div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>2–4</span><span style="color:var(--red)">Worsens to incapacitated</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>5–6</span><span>Remains wounded twice</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>7+</span><span style="color:var(--green)">Improves to wounded</span></div>
+            </div>
+          </div>
+          <div style="flex:1;min-width:200px">
+            <div style="font-size:9px;color:var(--text-dim);line-height:1.6">
+              <div style="font-size:8px;color:var(--gold);padding:2px 0;border-bottom:1px solid var(--card-border)">Incapacitated — rest 2 weeks</div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>2–4</span><span style="color:var(--red)">Worsens to mortally wounded</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>5–6</span><span>Remains incapacitated</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>7+</span><span style="color:var(--green)">Improves to wounded twice</span></div>
+            </div>
+          </div>
+          <div style="flex:1;min-width:200px">
+            <div style="font-size:9px;color:var(--text-dim);line-height:1.6">
+              <div style="font-size:8px;color:var(--red);padding:2px 0;border-bottom:1px solid var(--card-border)">Mortally Wounded — rest 1 month (35 days)</div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>2–4</span><span style="color:var(--red)">Character dies</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>5–6</span><span>Remains mortally wounded</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>7+</span><span style="color:var(--green)">Improves to incapacitated</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <div style="flex:1;min-width:240px">
+            <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin-bottom:3px">MEDPACS — First Aid skill</div>
+            <div style="font-size:9px;color:var(--text-dim);line-height:1.6">
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0;color:var(--text-dark)"><span>Wound Level</span><span>Difficulty</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Stunned</span><span style="color:var(--green)">Very Easy</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Wounded</span><span style="color:var(--green)">Easy</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Wounded Twice</span><span style="color:var(--gold)">Moderate</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Incapacitated</span><span style="color:var(--gold)">Difficult</span></div>
+              <div style="display:flex;justify-content:space-between;padding:1px 0"><span>Mortally Wounded</span><span style="color:var(--red)">Very Difficult</span></div>
+              <div style="margin-top:4px;font-size:8px;color:var(--text-dark)">If unsuccessful, patient remains the same. If roll misses by 10+, no more medpacs for 24 hours. Each additional medpac per day increases difficulty one level.</div>
+            </div>
+          </div>
+          <div style="flex:1;min-width:240px">
+            <div style="font-family:'Exo 2',monospace;font-size:7px;color:var(--gold);letter-spacing:1px;margin-bottom:3px">BACTA TANKS — Very Easy Medicine or Heroic First Aid</div>
+            <div style="font-size:9px;color:var(--text-dim);line-height:1.6">
+              <div style="margin-bottom:4px">If roll fails, patient's injury worsens two levels. If roll succeeds, character fully heals:</div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0;color:var(--text-dark)"><span>Wound Level</span><span>Treatment Time</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Wounded</span><span>1D hours</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Wounded Twice</span><span>4D hours</span></div>
+              <div style="display:flex;justify-content:space-between;border-bottom:1px solid var(--card-border);padding:1px 0"><span>Incapacitated</span><span>1D days</span></div>
+              <div style="display:flex;justify-content:space-between;padding:1px 0"><span>Mortally Wounded</span><span>10 days</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
     </div>
 
     <!-- TAB: GAZETTEERS -->
@@ -3190,6 +3363,7 @@ const NAV_CARDS = [
   {id:'gm-shipmods', label:'Ship Modifications', tab:'gm', group:'Dice'},
   {id:'gm-repairs', label:'Ship Repairs & Spaceport', tab:'gm', group:'Dice'},
   {id:'gm-mishaps', label:'Starship Mishap Tables', tab:'gm', group:'Dice'},
+  {id:'gm-damage', label:'Damage & Healing', tab:'gm', group:'Dice'},
   // Settings
   {id:'settings-calibration', label:'Speed Calibration', tab:'settings', group:'Settings'},
   {id:'settings-howto', label:'How to Use This Toolkit', tab:'settings', group:'Settings'},
