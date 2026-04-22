@@ -636,6 +636,7 @@ const MUD = {
     const invItem = { id: item.id, name: item.name, description: item.description || item.name };
     if (item.damage) { invItem.damage = item.damage; invItem.combatType = item.combatType; invItem.stunOnly = item.stunOnly || false; }
     if (item.consumable) { invItem.consumable = true; invItem.effect = item.effect; }
+    if (item.armor) { invItem.armor = item.armor; }
     this.state.inventory.push(invItem);
 
     this.print('{npc}' + shop.name + '{/npc} takes your credits and slides the {item}' + item.name + '{/item} across the counter.');
@@ -2036,7 +2037,15 @@ const MUD_COMBAT = {
 
   getPlayerStrPips() {
     const c = MUD.state.character;
-    return c ? c.attrs.Str : 6;
+    if (!c) return 6;
+    let total = c.attrs.Str;
+    // Add armor — best of physical or energy depending on attack, but for simplicity add all worn armor
+    for (const item of MUD.state.inventory) {
+      if (item.armor) {
+        total += item.armor.physical || 0; // use physical as base soak bonus
+      }
+    }
+    return total;
   },
 
   // How many attacks per round based on skill pips
