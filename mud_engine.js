@@ -3225,7 +3225,7 @@ const MUD_BOUNTY = {
         items: []
       },
       talk: [
-        { text: '"' + b.name + ' eyes you warily. \"You want something? I don\'t know you.\"" }
+        { text: b.name + ' eyes you warily. "You want something? I don\'t know you."' }
       ],
       isBountyTarget: true
     };
