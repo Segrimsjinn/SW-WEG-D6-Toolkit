@@ -364,7 +364,7 @@ const RACES_DATA = {
     ]
   },
   "Advozse": {
-    "baseDice": "12D",
+    "baseDice": "11D",
     "Dex": [
       "1D",
       "1D+1",
@@ -748,7 +748,7 @@ const RACES_DATA = {
     ]
   },
   "Anomid": {
-    "baseDice": "12D",
+    "baseDice": "8D",
     "Dex": [
       "1D",
       "1D+1",
@@ -1033,7 +1033,7 @@ const RACES_DATA = {
     ]
   },
   "Anzat": {
-    "baseDice": "12D",
+    "baseDice": "14D",
     "Dex": [
       "2D",
       "2D+1",
@@ -1224,7 +1224,7 @@ const RACES_DATA = {
     ]
   },
   "Aramandi": {
-    "baseDice": "12D",
+    "baseDice": "11D",
     "Dex": [
       "2D",
       "2D+1",
@@ -1409,7 +1409,7 @@ const RACES_DATA = {
     ]
   },
   "Arkanian": {
-    "baseDice": "12D",
+    "baseDice": "13D",
     "Dex": [
       "1D",
       "1D+1",
@@ -2001,7 +2001,7 @@ const RACES_DATA = {
     ]
   },
   "Baragwin": {
-    "baseDice": "12D",
+    "baseDice": "11D+1",
     "Dex": [
       "1D+1",
       "1D+2",
@@ -2767,7 +2767,7 @@ const RACES_DATA = {
     ]
   },
   "Buzchub": {
-    "baseDice": "12D",
+    "baseDice": "11D+1",
     "Dex": [
       "2D",
       "2D+1",
@@ -3736,7 +3736,7 @@ const RACES_DATA = {
     ]
   },
   "Cizerack": {
-    "baseDice": "12D",
+    "baseDice": "16D",
     "Dex": [
       "2D",
       "2D+1",
@@ -3942,7 +3942,7 @@ const RACES_DATA = {
     ]
   },
   "Coynite": {
-    "baseDice": "12D",
+    "baseDice": "13D",
     "Dex": [
       "2D",
       "2D+1",
@@ -4063,7 +4063,7 @@ const RACES_DATA = {
     ]
   },
   "Cragmoloid": {
-    "baseDice": "12D",
+    "baseDice": "11D",
     "Dex": [
       "1D",
       "1D+1",
@@ -5417,7 +5417,7 @@ const RACES_DATA = {
     ]
   },
   "Falleen": {
-    "baseDice": "12D",
+    "baseDice": "13D",
     "Dex": [
       "2D",
       "2D+1",
@@ -5828,7 +5828,7 @@ const RACES_DATA = {
     ]
   },
   "Filvian": {
-    "baseDice": "12D",
+    "baseDice": "10D",
     "Dex": [
       "1D",
       "1D+1",
@@ -6226,7 +6226,7 @@ const RACES_DATA = {
     ]
   },
   "Gamorrean": {
-    "baseDice": "12D",
+    "baseDice": "11D",
     "Dex": [
       "2D",
       "2D+1",
@@ -7242,7 +7242,7 @@ const RACES_DATA = {
     ]
   },
   "Hutt": {
-    "baseDice": "12D",
+    "baseDice": "14D",
     "Dex": [
       "0D+1",
       "0D+2",
@@ -9995,7 +9995,7 @@ const RACES_DATA = {
     ]
   },
   "Mrissi": {
-    "baseDice": "12D",
+    "baseDice": "7D",
     "Dex": [
       "1D",
       "1D+1",
@@ -10158,8 +10158,8 @@ const RACES_DATA = {
       "Reduced Attributes: Mrlssti only have 8D in starting attribute dice (instead of the standard 12D), reflecting their diminutive size and frailty.\n\nReverse Engineering: Mrlssti are exceptional at figuring out how technology works and are widely regarded as scholars and scientists, particularly in computer and starship design."
     ]
   },
-  "Mulgaari": {
-    "baseDice": "12D",
+  "Mugaari": {
+    "baseDice": "11D",
     "Dex": [
       "1D",
       "1D+1",
@@ -10912,7 +10912,7 @@ const RACES_DATA = {
     ]
   },
   "Nautolan": {
-    "baseDice": "12D",
+    "baseDice": "11D",
     "Dex": [
       "1D+1",
       "1D+2",
@@ -12062,7 +12062,7 @@ const RACES_DATA = {
     ]
   },
   "Ossan": {
-    "baseDice": "12D",
+    "baseDice": "10D",
     "Dex": [
       "1D",
       "1D+1",
@@ -12522,7 +12522,7 @@ const RACES_DATA = {
     ]
   },
   "Pa'lowick": {
-    "baseDice": "12D",
+    "baseDice": "10D",
     "Dex": [
       "1D",
       "1D+1",
@@ -14193,7 +14193,7 @@ const RACES_DATA = {
     ]
   },
   "Sludir": {
-    "baseDice": "12D",
+    "baseDice": "13D",
     "Dex": [
       "2D",
       "2D+1",
@@ -14289,7 +14289,7 @@ const RACES_DATA = {
     ]
   },
   "Sluissi": {
-    "baseDice": "12D",
+    "baseDice": "13D",
     "Dex": [
       "1D",
       "1D+1",
@@ -14753,7 +14753,7 @@ const RACES_DATA = {
     ]
   },
   "Talz": {
-    "baseDice": "12D",
+    "baseDice": "11D",
     "Dex": [
       "2D",
       "2D+1",
@@ -15695,7 +15695,7 @@ const RACES_DATA = {
     ]
   },
   "Tinnell": {
-    "baseDice": "12D",
+    "baseDice": "13D",
     "Dex": [
       "2D",
       "2D+1",
@@ -15784,7 +15784,7 @@ const RACES_DATA = {
     ]
   },
   "Togruta": {
-    "baseDice": "12D",
+    "baseDice": "13D",
     "Dex": [
       "2D",
       "2D+1",
@@ -16479,7 +16479,7 @@ const RACES_DATA = {
     ]
   },
   "Twi'lek": {
-    "baseDice": "12D",
+    "baseDice": "11D",
     "Dex": [
       "1D",
       "1D+1",
@@ -17635,7 +17635,7 @@ const RACES_DATA = {
     ]
   },
   "Werbol": {
-    "baseDice": "12D",
+    "baseDice": "11D",
     "Dex": [
       "2D",
       "2D+1",
@@ -17722,7 +17722,7 @@ const RACES_DATA = {
     ]
   },
   "Whiphid": {
-    "baseDice": "12D",
+    "baseDice": "11D",
     "Dex": [
       "2D",
       "2D+1",
@@ -17910,7 +17910,7 @@ const RACES_DATA = {
     ]
   },
   "Woostoid": {
-    "baseDice": "12D",
+    "baseDice": "10D",
     "Dex": [
       "1D",
       "1D+1",

@@ -106,7 +106,7 @@
                   "Mon Calamari",
                   "Mrissi",
                   "Mrlssti",
-                  "Mulgaari",
+                  "Mugaari",
                   "Murachaun",
                   "Mustafarian",
                   "Muun",

@@ -109,7 +109,7 @@ const RACE_IMAGES = {
   'Mon Calimari': 'image086.jpg',
   'Mrissi': 'image195.jpg',
   'Mrlssti': 'image196.jpg',
-  'Mulgaari': 'image087.jpg',
+  'Mugaari': 'image087.jpg',
   'Murachaun': 'image088.jpg',
   'Mustafarian': 'image089.jpg',
   'Muun': 'image090.jpg',
