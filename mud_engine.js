@@ -138,6 +138,7 @@ const MUD = {
       delete this.state.blockedRooms[roomId]; // cleared
     }
     this.state.ticks++;
+    this.state.flags['sneaking'] = false; // normal movement breaks stealth
     this.state.currentRoom = roomId;
     MUD_MINE.moveSpider(); // spider patrols on every tick
     MUD_MINE.checkSpiderEncounter(roomId); // check if player walked into spider
@@ -1152,33 +1153,65 @@ const MUD = {
 
     const targetRoom = room.exits[dir];
 
-    // Roll Sneak vs difficulty (Moderate = 12, harder in some rooms)
+    // Blocked room check
+    const blockedTick = this.state.blockedRooms[targetRoom];
+    if (blockedTick != null && (this.state.ticks - blockedTick) < 25) {
+      this.print('{red}The passage is blocked by rubble.{/red}');
+      return;
+    }
+
+    // Roll Sneak once, then each NPC rolls Perception to spot you
     const sneakPips = MUD_COMBAT.getPlayerSkillPips('Sneak');
     const sneakRoll = MUD_COMBAT.rollPips(sneakPips);
-    const difficulty = 12 + Math.floor(Math.random() * 4); // 12-15
 
-    this.print(raw || 'sneak ' + direction, 'command');
-    this.print('{dim}You move quietly...{/dim}');
-    this.print('{dim}Sneak: {/dim}{gold}' + sneakRoll + '{/gold}{dim} vs difficulty {/dim}{gold}' + difficulty + '{/gold}');
+    this.print('{dim}You press against the wall and move quietly...{/dim}');
 
     // Move to the room
     this.state.ticks++;
     MUD_MINE.moveSpider();
     this.state.currentRoom = targetRoom;
 
-    if (sneakRoll >= difficulty) {
-      this.print('{green}You slip in unnoticed.{/green}');
-      this.state.flags['sneaking'] = true;
-      this.displayRoom(targetRoom);
+    // Gather all NPCs who could perceive — room NPCs + bounty target
+    const destRoom = ROOMS_DATA[targetRoom];
+    const perceivers = [];
+    if (destRoom && destRoom.npcs) {
+      for (const [id, npc] of Object.entries(destRoom.npcs)) {
+        if (!this.isNpcDefeated(targetRoom, id)) {
+          // Use Search skill if they have it, otherwise Perception attribute (~Per pips), fallback 6
+          const perPips = npc.combat ? (npc.combat.search || npc.combat.dodge || 6) : 6;
+          perceivers.push({ name: npc.name, pips: perPips });
+        }
+      }
+    }
+    if (MUD_BOUNTY.isTargetInRoom(targetRoom) && !MUD_BOUNTY.isBountyComplete()) {
+      const bt = MUD_BOUNTY.getCurrentBounty();
+      const perPips = bt.combat ? (bt.combat.dodge || 9) : 9;
+      perceivers.push({ name: bt.name, pips: perPips, isBounty: true });
+    }
 
-      // Check if bounty target is here
+    // Each NPC tries to spot you
+    let spotted = false;
+    let spotter = null;
+    for (const p of perceivers) {
+      const perRoll = MUD_COMBAT.rollPips(p.pips);
+      if (perRoll > sneakRoll) {
+        spotted = true;
+        spotter = p;
+        break;
+      }
+    }
+
+    this.displayRoom(targetRoom);
+
+    if (!spotted) {
+      this.state.flags['sneaking'] = true;
+      this.print('{dim}...you remain in the shadows.{/dim}');
       if (MUD_BOUNTY.isTargetInRoom(targetRoom) && !MUD_BOUNTY.isBountyComplete()) {
-        this.print('{dim}You have the element of surprise. Your first attack will be undefended.{/dim}');
+        this.print('{dim}Your first attack will be undefended.{/dim}');
       }
     } else {
-      this.print('{red}You make too much noise — you\'ve been noticed.{/red}');
       this.state.flags['sneaking'] = false;
-      this.displayRoom(targetRoom);
+      this.print('{red}' + spotter.name + ' glances at you as you enter the room.{/red}');
       MUD_MINE.checkSpiderEncounter(targetRoom);
     }
 
@@ -2853,6 +2886,12 @@ const MUD_MINE = {
     // Player is in the same room as the spider!
     const room = ROOMS_DATA[roomId];
     if (room && room.mine && room.mine.lit) return; // spider won't enter lit rooms
+
+    // Sneaking past — spider doesn't notice
+    if (MUD.state.flags['sneaking']) {
+      MUD.print('{dim}Something large shifts in the darkness nearby... but it hasn\'t noticed you. Yet.{/dim}');
+      return;
+    }
 
     MUD.printBlank();
     MUD.print('{red}═══════════════════════════════════════════════════{/red}');
