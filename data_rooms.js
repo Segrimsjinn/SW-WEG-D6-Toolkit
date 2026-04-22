@@ -20,6 +20,7 @@ const ROOMS_DATA = {
         name: "2-1B Medical Droid",
         keywords: ["droid", "medical", "2-1b", "doc"],
         look: "The 2-1B surgical droid regards you with calm photoreceptors. Its vocabulator emits a faint hum, ready to dispense medical advice whether you want it or not.",
+        combat: { blaster: 6, dodge: 6, meleeParry: 3, brawlParry: 3, brawl: 3, str: 6, damage: 9, weaponType: 'dodge', weaponName: 'stun injector', stunOnly: true, security: true },
         talk: [
           { once: "med_droid_intro", text: "The droid's photoreceptors brighten. \"Ah, you're up and about. Good. Your vitals have stabilized nicely. I've treated the worst of your injuries — bruised ribs, mild concussion, some superficial burns. Nothing a few days of rest won't finish.\"\n\nIt pauses, adjusting a dial on the monitor.\n\n\"I'd recommend checking in with Station Administration on the main concourse. They'll want to register you. Without papers, you won't be able to find work, book passage, or do much of anything on this station.\"\n\nThe droid tilts its head. \"And between you and me — don't linger in the corridors too long without credits. Drifter's Anchorage isn't the most... charitable place.\"" },
           { text: "\"Your vitals look stable. I'd suggest heading to Station Administration — north through the corridor to the main concourse, then follow the signs. And do try not to get shot before your ribs finish healing.\"" }
@@ -115,6 +116,7 @@ const ROOMS_DATA = {
         name: "Administrator Vylen",
         keywords: ["admin", "administrator", "voss", "woman", "officer"],
         look: "A human woman in her forties with close-cropped grey hair and sharp eyes that have seen too many fabricated identification documents. Her uniform is Imperial-cut but stripped of rank insignia — Remnant administrative corps, probably. A nameplate on her desk reads: ADM. K. VYLEN.",
+        combat: { blaster: 10, dodge: 9, meleeParry: 6, brawlParry: 6, brawl: 6, str: 7, damage: 12, weaponType: 'dodge', weaponName: 'hold-out blaster', stunOnly: false, security: true },
         talk: [
           { once: "admin_intro", text: "{npc}Administrator Vylen{/npc} looks up from her terminal, studying you with a practiced eye.\n\n\"The escape pod survivor. The medical droid flagged your arrival.\" She pulls up something on her screen. \"No ID, no transit papers, no credit chit. Not exactly a strong start.\"\n\nShe taps a few keys. \"Here's how this works. I register you in our system, you get a temporary station pass. That lets you move freely, take on posted work, and use the cantina without getting hassled by security. In return, you follow station rules and don't cause problems.\"\n\nShe slides a datapad across the desk. \"Standard waiver. You agree not to hold the station liable for... well, anything, really. Sign it and you're a registered resident of Drifter's Anchorage.\"\n\n\"Ready? Let's get you into the system.\"", action: "chargen" },
           { cond: "character_created", text: "\"You're already in the system. Try not to make me regret it.\"" },
@@ -141,6 +143,7 @@ const ROOMS_DATA = {
         name: "Grek",
         keywords: ["bartender", "besalisk", "grek", "barkeep"],
         look: "A heavyset Besalisk with mottled green-brown skin and four thick arms that move with surprising dexterity behind the bar. His lower left hand has a cybernetic replacement — cheap but functional. He watches the room with the calm authority of someone who keeps a scatter-gun under the counter and isn't shy about using it.",
+        combat: { blaster: 12, dodge: 9, meleeParry: 10, brawlParry: 12, brawl: 13, str: 13, damage: 15, weaponType: 'dodge', weaponName: 'scatter-gun', stunOnly: false, security: true },
         talk: [
           { once: "grek_intro", text: "{npc}Grek{/npc} glances at you with one eye while his other three arms continue pouring drinks.\n\n\"New face. Escape pod, right? Word travels fast on a station this size.\" One of his hands drops a glass of something murky on the bar in front of you. \"On the house. First one only — after that, you pay like everyone else.\"\n\nHe leans one massive arm on the bar. \"Name's Grek. I own this place. You want to eat, drink, or hear the latest gossip, this is where you come. You want trouble, take it to the docking bay — I just had the floor re-sealed.\"\n\n\"Once you've got some credits together, come back and I might know about some work. Always someone on this station who needs something done and doesn't want to do it themselves.\"" },
           { text: "\"You again. You look like you could use a drink, but I look like I could use paying customers. Come back when you've got credits, or something interesting to tell me.\"" }
@@ -151,10 +154,11 @@ const ROOMS_DATA = {
 
   "docking_access": {
     name: "Docking Bay Access Corridor",
-    description: "A wide industrial corridor leading to the station's docking facilities. The floor is grated metal, and through the gaps you can see {item}conduits{/item} and cable runs snaking into the station's guts. Heavy blast {item}doors{/item} line both sides — individual docking bay airlocks, each with a status {item}panels{/item} showing green (occupied), red (sealed), or dark (empty).\n\nThe main concourse lies to the west. A large set of doors to the east opens into the main docking bay observation deck.",
+    description: "A wide industrial corridor leading to the station's docking facilities. The floor is grated metal, and through the gaps you can see {item}conduits{/item} and cable runs snaking into the station's guts. Heavy blast {item}doors{/item} line both sides — individual docking bay airlocks, each with a status {item}panels{/item} showing green (occupied), red (sealed), or dark (empty).\n\nThe main concourse lies to the west. A large set of doors to the east opens into the main docking bay observation deck. To the south, a reinforced door is marked: TRAINING BAY.",
     exits: {
       west: "main_concourse",
-      east: "docking_bay"
+      east: "docking_bay",
+      south: "training_bay"
     },
     objects: {
       "doors": "The blast doors are numbered DB-01 through DB-12. Most show green — occupied. A few are dark. DB-07 has a hand-written 'OUT OF ORDER' sign taped over its status panel. The doors themselves are Imperial-spec: thick, magnetically sealed, and designed to contain explosive decompression.",
@@ -180,9 +184,35 @@ const ROOMS_DATA = {
         name: "Dockmaster Renn",
         keywords: ["dockmaster", "renn", "duros"],
         look: "A lean Duros with faded blue skin and large red eyes that seem to catalog every ship, crate, and person in the bay simultaneously. His dockmaster's vest is covered in pockets, each stuffed with datapads, styluses, and what appears to be a half-eaten ration bar. A heavy blaster pistol sits openly on his hip — standard equipment for someone who handles docking disputes.",
+        combat: { blaster: 12, dodge: 10, meleeParry: 7, brawlParry: 7, brawl: 7, str: 7, damage: 15, weaponType: 'dodge', weaponName: 'heavy blaster pistol', stunOnly: false, security: true },
         talk: [
           { once: "renn_intro", text: "{npc}Dockmaster Renn{/npc} turns those large red eyes on you, evaluating.\n\n\"Ah. The pod survivor.\" His voice has the characteristic Duros rasp. \"I processed your escape pod's wreckage — or what was left of it. Standard Imperial pod, military-grade. No markings, no serial numbers. Someone went to a lot of trouble to scrub that pod clean before you ended up in it.\"\n\nHe shrugs, turning back to the bay. \"Not my business. My business is ships. When you've got the credits for one, come see me. I handle all sales and berth assignments on the station.\"\n\nHe nods toward the bay below. \"Got a few vessels for sale right now, if you're the type to dream. That Z-95 down there's been sitting for weeks. Previous owner couldn't pay his docking fees.\"" },
           { text: "\"Still window shopping? Can't blame you. A ship's the only real freedom in this galaxy.\" He glances at the bay. \"Save up your credits. I'll be here when you're ready.\"" }
+        ]
+      }
+    }
+  },
+
+  "training_bay": {
+    name: "Training Bay",
+    description: "A converted cargo bay turned into a makeshift training facility. Blast-scarred durasteel walls show the marks of countless practice sessions. A row of {item}targets{/item} lines the far wall — scoring plates that flash when hit. The floor is padded with heavy mats, and a weapons {item}rack{/item} along one wall holds practice equipment.\n\nA {npc}training droid{/npc} stands at the center of the bay, its photoreceptors scanning for the next opponent. A sign by the door reads: 'ALL WEAPONS SET TO STUN — NO EXCEPTIONS.'\n\nThe docking access corridor lies to the north.",
+    exits: {
+      north: "docking_access"
+    },
+    objects: {
+      "targets": "Scoring plates mounted on the far wall, each about torso-sized. They flash green on a hit, red on a miss. The accuracy tracking system above them appears to be broken — nobody's kept score in a while.",
+      "rack": "A weapons rack holding practice equipment: a training blaster (set to stun), a padded combat staff, and a set of sparring gloves. The blaster has 'PROPERTY OF DRIFTER'S ANCHORAGE — DO NOT REMOVE' etched into the grip.\n\n{dim}Weapon keywords for combat:{/dim}\n  {green}blast{/green} <target> — Blaster skill, defended by Dodge\n  {green}knife{/green} <target> — Melee Combat, defended by Melee Parry\n  {green}punch{/green} <target> — Brawling, defended by Brawling Parry\n  {green}saber{/green} <target> — Lightsabers, defended by Melee Parry\n  {green}flee{/green} — attempt to disengage from combat",
+      "sign": "A plasteel sign bolted to the wall: 'TRAINING BAY RULES: 1) All weapons stun only. 2) No lethal modifications. 3) Medical droid on standby. 4) Management not responsible for bruised egos. 5) If the droid beats you, you buy it a lubricant.'",
+      "mats": "Thick padded mats covering the deck — enough cushioning to break a fall without breaking a spine. They're worn smooth in the center from heavy use."
+    },
+    npcs: {
+      "training_droid": {
+        name: "Training Droid",
+        keywords: ["droid", "training", "combat droid", "sparring"],
+        look: "A boxy Mark IV combat training droid, about 1.5 meters tall. Its chassis is dented and scorched from countless sparring sessions, but it moves with smooth mechanical precision. A glowing blue band around its torso indicates stun-only mode. Its vocabulator occasionally emits encouraging beeps between rounds.\n\n{dim}To fight it, type: {/dim}{green}blast droid{/green}{dim}, {/dim}{green}punch droid{/green}{dim}, or {/dim}{green}knife droid{/green}",
+        combat: { blaster: 8, dodge: 7, meleeParry: 7, brawlParry: 7, brawl: 7, str: 7, damage: 8, weaponType: 'dodge', weaponName: 'stun blaster', stunOnly: true, security: false },
+        talk: [
+          { text: "The training droid beeps twice and assumes a ready stance. Its vocabulator crackles:\n\n\"COMBAT TRAINING PROTOCOL READY. STUN MODE ACTIVE. INITIATE WHEN READY.\"\n\n{dim}Attack it to start a sparring match: {/dim}{green}blast droid{/green}{dim}, {/dim}{green}punch droid{/green}{dim}, or {/dim}{green}knife droid{/green}" }
         ]
       }
     }

@@ -9,10 +9,12 @@ const MUD = {
     flags: {},          // persistent flags like "med_droid_intro"
     inventory: [],      // { id, name, description }
     credits: 0,
-    character: null,    // placeholder for Step 2 character creator
+    character: null,
     history: [],        // command history for up/down arrow
     historyIdx: -1,
-    started: false
+    started: false,
+    ticks: 0,           // total room moves — drives respawn timers
+    defeatedNpcs: {}    // { "roomId:npcId": tickWhenDefeated }
   },
 
   SAVE_KEY: 'muddLiteStation_save',
@@ -90,8 +92,8 @@ const MUD = {
       this.print('{dim}Exits: ' + exits.join(', ') + '{/dim}');
     }
 
-    // Show NPCs present
-    const npcKeys = Object.keys(room.npcs || {});
+    // Show NPCs present (skip defeated ones)
+    const npcKeys = Object.keys(room.npcs || {}).filter(k => !this.isNpcDefeated(roomId, k));
     if (npcKeys.length) {
       const names = npcKeys.map(k => room.npcs[k].name);
       this.print('{dim}You see: ' + names.join(', ') + '{/dim}');
@@ -104,10 +106,24 @@ const MUD = {
       this.print("You can't go that way.", 'error');
       return false;
     }
+    // Combat check — can't just walk away from a fight (unless fleeing)
+    if (MUD_COMBAT.active) {
+      this.print("You're in combat! Type {green}flee{/green} to disengage.", 'error');
+      return false;
+    }
+    this.state.ticks++;
     this.state.currentRoom = roomId;
     this.displayRoom(roomId);
     this.autoSave();
     return true;
+  },
+
+  // Check if an NPC is currently defeated (not yet respawned)
+  isNpcDefeated(roomId, npcId) {
+    const key = roomId + ':' + npcId;
+    const defeatTick = this.state.defeatedNpcs[key];
+    if (defeatTick == null) return false;
+    return (this.state.ticks - defeatTick) < 25; // respawn after 25 ticks
   },
 
   // --- Direction aliases ---
@@ -154,6 +170,12 @@ const MUD = {
     // Route to character creator if active
     if (MUD_CHARGEN.phase) {
       MUD_CHARGEN.handleInput(input);
+      return;
+    }
+
+    // Route to combat if active
+    if (MUD_COMBAT.active) {
+      MUD_COMBAT.handleInput(input);
       return;
     }
 
@@ -217,6 +239,23 @@ const MUD = {
       case '?':
       case 'commands':
         return this.doHelp();
+
+      // Combat initiation
+      case 'blast':
+      case 'shoot':
+      case 'knife':
+      case 'melee':
+      case 'slash':
+      case 'saber':
+      case 'punch':
+      case 'brawl':
+      case 'kick':
+      case 'attack':
+        if (cmd === 'attack') {
+          this.print('How? Use: {green}blast{/green}, {green}knife{/green}, {green}punch{/green}, or {green}saber{/green} <target>', 'error');
+          return;
+        }
+        return MUD_COMBAT.initiate(cmd, arg);
 
       case 'save':
         return this.doSave();
@@ -444,6 +483,14 @@ const MUD = {
     this.print('  {green}status{/green}  — check your current status');
     this.print('  {green}credits{/green}  — check your credit balance');
     this.print('');
+    this.print('{gold}Combat:{/gold}');
+    this.print('  {green}blast{/green} <target>  — attack with Blaster (vs Dodge)');
+    this.print('  {green}knife{/green} <target>  — attack with Melee Combat (vs Melee Parry)');
+    this.print('  {green}punch{/green} <target>  — attack with Brawling (vs Brawling Parry)');
+    this.print('  {green}saber{/green} <target>  — attack with Lightsabers (vs Melee Parry)');
+    this.print('  {green}flee{/green}  — attempt to disengage and run');
+    this.print('  {dim}First strike is undefended. 7D+ in skill = extra attacks.{/dim}');
+    this.print('');
     this.print('{gold}System:{/gold}');
     this.print('  {green}save{/green}  — save your game');
     this.print('  {green}load{/green}  — load your saved game');
@@ -475,7 +522,9 @@ const MUD = {
         inventory: this.state.inventory,
         credits: this.state.credits,
         character: this.state.character,
-        started: this.state.started
+        started: this.state.started,
+        ticks: this.state.ticks,
+        defeatedNpcs: this.state.defeatedNpcs
       };
       localStorage.setItem(this.SAVE_KEY, JSON.stringify(save));
       return true;
@@ -496,6 +545,8 @@ const MUD = {
       this.state.credits = save.credits || 0;
       this.state.character = save.character || null;
       this.state.started = save.started || false;
+      this.state.ticks = save.ticks || 0;
+      this.state.defeatedNpcs = save.defeatedNpcs || {};
       return true;
     } catch (e) {
       console.error('MUD load failed:', e);
@@ -1109,6 +1160,612 @@ const MUD_CHARGEN = {
     MUD.printBlank();
     MUD.print('{dim}Character saved. Check stats anytime with {/dim}{green}status{/green}{dim}.{/dim}');
 
+    MUD.autoSave();
+  }
+};
+
+// ============================================================
+// COMBAT ENGINE
+// ============================================================
+
+const MUD_COMBAT = {
+
+  active: false,
+  enemies: [],        // [{ id, name, combat, wounds, stunTurns }]
+  round: 0,
+  playerActedThisRound: false,
+  securityCalled: false,
+  securityArriveRound: 0,
+
+  // Attack type → skill / defense mapping
+  ATTACK_TYPES: {
+    blast:  { skill: 'Blaster',       defense: 'dodge',     attr: 'Dex', type: 'ranged',  verb: 'shoots at',  weaponKey: 'blaster' },
+    shoot:  { skill: 'Blaster',       defense: 'dodge',     attr: 'Dex', type: 'ranged',  verb: 'shoots at',  weaponKey: 'blaster' },
+    knife:  { skill: 'Melee Combat',  defense: 'meleeParry', attr: 'Dex', type: 'melee',  verb: 'slashes at', weaponKey: 'melee' },
+    melee:  { skill: 'Melee Combat',  defense: 'meleeParry', attr: 'Dex', type: 'melee',  verb: 'strikes at', weaponKey: 'melee' },
+    slash:  { skill: 'Melee Combat',  defense: 'meleeParry', attr: 'Dex', type: 'melee',  verb: 'slashes at', weaponKey: 'melee' },
+    saber:  { skill: 'Lightsabers',   defense: 'meleeParry', attr: 'Dex', type: 'melee',  verb: 'swings at',  weaponKey: 'saber' },
+    punch:  { skill: 'Brawling',      defense: 'brawlParry', attr: 'Str', type: 'brawl',  verb: 'punches',    weaponKey: 'brawl' },
+    brawl:  { skill: 'Brawling',      defense: 'brawlParry', attr: 'Str', type: 'brawl',  verb: 'attacks',    weaponKey: 'brawl' },
+    kick:   { skill: 'Brawling',      defense: 'brawlParry', attr: 'Str', type: 'brawl',  verb: 'kicks',      weaponKey: 'brawl' }
+  },
+
+  // --- D6 Dice Rolling ---
+  rollPips(pips) {
+    // Roll dice for a pip value. Wild die: first die — 6 explodes, 1 = remove highest
+    const dice = Math.floor(pips / 3);
+    const bonus = pips % 3;
+    if (dice === 0) return bonus;
+
+    let total = bonus;
+    const rolls = [];
+
+    // Wild die (first)
+    let wild = Math.floor(Math.random() * 6) + 1;
+    if (wild === 6) {
+      total += 6;
+      let explode = Math.floor(Math.random() * 6) + 1;
+      while (explode === 6) {
+        total += 6;
+        explode = Math.floor(Math.random() * 6) + 1;
+      }
+      total += explode;
+    } else if (wild === 1 && dice > 1) {
+      // Wild die 1: wild counts as 0, remove highest other die
+      rolls.push(0); // wild contributes nothing
+      for (let i = 1; i < dice; i++) rolls.push(Math.floor(Math.random() * 6) + 1);
+      rolls.sort((a, b) => b - a);
+      rolls.shift(); // remove highest
+      total += rolls.reduce((a, b) => a + b, 0);
+      return Math.max(1, total);
+    } else {
+      total += wild;
+    }
+
+    // Regular dice
+    for (let i = 1; i < dice; i++) {
+      total += Math.floor(Math.random() * 6) + 1;
+    }
+
+    return Math.max(1, total);
+  },
+
+  // Get player's skill pips (or fall back to attribute)
+  getPlayerSkillPips(skillName) {
+    const c = MUD.state.character;
+    if (!c) return 6; // 2D fallback
+    if (c.skills[skillName]) return c.skills[skillName];
+    // Fall back to parent attribute
+    const def = MUD_CHARGEN.SKILLS.find(s => s.name === skillName);
+    if (def && c.attrs[def.attr]) return c.attrs[def.attr];
+    return 6;
+  },
+
+  getPlayerDefensePips(defenseType) {
+    const c = MUD.state.character;
+    if (!c) return 6;
+    const map = {
+      dodge: 'Dodge',
+      meleeParry: 'Melee Parry',
+      brawlParry: 'Brawling Parry'
+    };
+    const skillName = map[defenseType] || 'Dodge';
+    return this.getPlayerSkillPips(skillName);
+  },
+
+  getPlayerStrPips() {
+    const c = MUD.state.character;
+    return c ? c.attrs.Str : 6;
+  },
+
+  // How many attacks per round based on skill pips
+  getAttacksPerRound(skillPips) {
+    return Math.max(1, Math.floor(skillPips / 21)); // every 7D (21 pips) = 1 attack
+  },
+
+  // Multi-action penalty in pips (1D per extra action = 3 pips per extra)
+  multiActionPenalty(numActions) {
+    return (numActions - 1) * 3;
+  },
+
+  // Wound levels
+  WOUND_LEVELS: ['healthy', 'stunned', 'wounded', 'wounded2x', 'incapacitated', 'mortally', 'dead'],
+
+  woundIndex(w) {
+    return this.WOUND_LEVELS.indexOf(w) || 0;
+  },
+
+  applyDamageResult(diff, currentWound) {
+    // diff = damageRoll - strRoll
+    const ci = this.woundIndex(currentWound);
+    if (diff <= 0) return currentWound; // no effect
+    if (diff <= 3) {  // stunned
+      return ci >= this.woundIndex('stunned') ? this.WOUND_LEVELS[Math.min(ci + 1, 6)] : 'stunned';
+    }
+    if (diff <= 8) {  // wounded
+      if (currentWound === 'wounded') return 'wounded2x';
+      return ci >= this.woundIndex('wounded') ? this.WOUND_LEVELS[Math.min(ci + 1, 6)] : 'wounded';
+    }
+    if (diff <= 12) return 'incapacitated';
+    if (diff <= 15) return 'mortally';
+    return 'dead';
+  },
+
+  woundPenaltyPips(wound) {
+    switch (wound) {
+      case 'wounded': return 3;    // -1D
+      case 'wounded2x': return 6;  // -2D
+      default: return 0;
+    }
+  },
+
+  woundLabel(w) {
+    const labels = { healthy: '{green}Healthy{/green}', stunned: '{gold}Stunned{/gold}', wounded: '{gold}Wounded{/gold}',
+      wounded2x: '{red}Wounded Twice{/red}', incapacitated: '{red}Incapacitated{/red}', mortally: '{red}Mortally Wounded{/red}', dead: '{red}Dead{/red}' };
+    return labels[w] || w;
+  },
+
+  // --- Initiate Combat ---
+  initiate(attackCmd, targetName) {
+    if (!MUD.state.character) {
+      MUD.print("You need to create a character first. Talk to Administrator Vylen.", 'error');
+      return;
+    }
+
+    const atkType = this.ATTACK_TYPES[attackCmd];
+    if (!atkType) {
+      MUD.print("Unknown attack type. Try: {green}blast{/green}, {green}knife{/green}, {green}punch{/green}, {green}saber{/green}", 'error');
+      return;
+    }
+
+    // Find NPC
+    const npc = MUD.findNpc(targetName);
+    if (!npc) {
+      MUD.print("There's nobody called '" + targetName + "' here.", 'error');
+      return;
+    }
+
+    // Check if NPC is defeated
+    const room = ROOMS_DATA[MUD.state.currentRoom];
+    const npcId = Object.keys(room.npcs).find(k => room.npcs[k] === npc);
+    if (MUD.isNpcDefeated(MUD.state.currentRoom, npcId)) {
+      MUD.print("They're already down.", 'error');
+      return;
+    }
+
+    if (!npc.combat) {
+      MUD.print(npc.name + " doesn't seem like a combatant.", 'error');
+      return;
+    }
+
+    // Start combat
+    this.active = true;
+    this.round = 1;
+    this.playerActedThisRound = false;
+    this.securityCalled = false;
+
+    // Build enemy from NPC combat data
+    this.enemies = [{
+      id: npcId,
+      roomId: MUD.state.currentRoom,
+      name: npc.name,
+      combat: npc.combat,
+      wounds: 'healthy',
+      stunTurns: 0
+    }];
+
+    // Call security if flagged
+    if (npc.combat.security) {
+      this.securityCalled = true;
+      this.securityArriveRound = this.round + 2; // security arrives in 2 rounds
+      MUD.print('{red}An alarm blares — station security has been alerted!{/red}');
+    }
+
+    MUD.printBlank();
+    MUD.print('{red}═══ COMBAT — Round ' + this.round + ' ═══{/red}');
+
+    // First attack — player initiated, no dodge on first shot
+    this.resolvePlayerAttack(atkType, this.enemies[0], true);
+    this.playerActedThisRound = true;
+
+    // If enemy still standing, they retaliate
+    if (!this.isCombatOver()) {
+      this.processEnemyTurns();
+    }
+
+    if (!this.isCombatOver()) {
+      this.promptNextRound();
+    }
+  },
+
+  // --- Player Attack ---
+  resolvePlayerAttack(atkType, enemy, isFirstStrike) {
+    const c = MUD.state.character;
+    const skillPips = this.getPlayerSkillPips(atkType.skill);
+    const numAttacks = this.getAttacksPerRound(skillPips);
+    const penalty = this.multiActionPenalty(numAttacks);
+    const woundPen = this.woundPenaltyPips(c.wounds);
+
+    for (let atk = 0; atk < numAttacks; atk++) {
+      if (this.woundIndex(enemy.wounds) >= this.woundIndex('incapacitated')) break;
+
+      const effectiveSkill = Math.max(3, skillPips - penalty - woundPen);
+      const attackRoll = this.rollPips(effectiveSkill);
+
+      // Defense — first shot of combat has no dodge; subsequent attacks get dodged
+      let defenseRoll = 0;
+      if (!isFirstStrike || atk > 0) {
+        const defKey = atkType.defense;
+        const defPips = enemy.combat[defKey] || enemy.combat.dodge || 6;
+        const enemyWoundPen = this.woundPenaltyPips(enemy.wounds);
+        defenseRoll = this.rollPips(Math.max(3, defPips - enemyWoundPen));
+      }
+
+      const atkLabel = numAttacks > 1 ? ' (attack ' + (atk + 1) + ')' : '';
+      MUD.print('{dim}You ' + atkType.verb + ' ' + enemy.name + atkLabel + ': {/dim}{gold}' + attackRoll + '{/gold}{dim} vs defense {/dim}{gold}' + defenseRoll + '{/gold}');
+
+      if (attackRoll > defenseRoll) {
+        // Hit! Roll damage vs STR
+        const weapon = this.getPlayerWeaponDamage(atkType);
+        const damageRoll = this.rollPips(Math.max(3, weapon.pips - penalty));
+        const strRoll = this.rollPips(enemy.combat.str || 6);
+        const diff = damageRoll - strRoll;
+
+        MUD.print('{dim}  Damage: {/dim}{gold}' + damageRoll + '{/gold}{dim} vs soak {/dim}{gold}' + strRoll + '{/gold}{dim} (diff ' + (diff > 0 ? '+' : '') + diff + '){/dim}');
+
+        const oldWound = enemy.wounds;
+        enemy.wounds = this.applyDamageResult(diff, enemy.wounds);
+
+        if (weapon.stunOnly) {
+          // Stun weapons can't go past incapacitated
+          if (this.woundIndex(enemy.wounds) > this.woundIndex('incapacitated')) {
+            enemy.wounds = 'incapacitated';
+          }
+          if (enemy.wounds !== oldWound) {
+            MUD.print('  ' + enemy.name + ' is ' + this.woundLabel(enemy.wounds) + ' {dim}(stun){/dim}');
+          } else {
+            MUD.print('  {dim}No effect.{/dim}');
+          }
+        } else {
+          if (enemy.wounds !== oldWound) {
+            MUD.print('  ' + enemy.name + ' is ' + this.woundLabel(enemy.wounds) + '!');
+          } else {
+            MUD.print('  {dim}No effect.{/dim}');
+          }
+        }
+      } else {
+        MUD.print('  {dim}Miss!{/dim}');
+      }
+
+      isFirstStrike = false; // only the very first attack of combat is undefended
+    }
+
+    // Check if enemy is down
+    if (this.woundIndex(enemy.wounds) >= this.woundIndex('incapacitated')) {
+      MUD.print('{green}' + enemy.name + ' is down!{/green}');
+      MUD.state.defeatedNpcs[enemy.roomId + ':' + enemy.id] = MUD.state.ticks;
+      this.enemies = this.enemies.filter(e => e !== enemy);
+    }
+  },
+
+  getPlayerWeaponDamage(atkType) {
+    // Check equipped weapon in inventory matching type
+    const weapon = MUD.state.inventory.find(it => it.combatType === atkType.weaponKey);
+    if (weapon) return { pips: MUD_CHARGEN.diceToPips(weapon.damage), stunOnly: weapon.stunOnly || false };
+
+    // Fallback — unarmed/improvised
+    if (atkType.type === 'brawl') return { pips: MUD.state.character.attrs.Str, stunOnly: false }; // STR damage
+    if (atkType.type === 'melee') return { pips: MUD.state.character.attrs.Str + 3, stunOnly: false }; // STR+1D improvised
+    // No blaster equipped
+    return { pips: 9, stunOnly: false }; // 3D fallback
+  },
+
+  // --- Enemy Turns ---
+  processEnemyTurns() {
+    const c = MUD.state.character;
+
+    for (const enemy of this.enemies) {
+      if (this.woundIndex(enemy.wounds) >= this.woundIndex('incapacitated')) continue;
+      if (enemy.stunTurns > 0) {
+        enemy.stunTurns--;
+        MUD.print('{dim}' + enemy.name + ' is stunned and loses their action.{/dim}');
+        continue;
+      }
+
+      // Enemy attacks player
+      const atkPips = enemy.combat.blaster || enemy.combat.melee || enemy.combat.brawl || 6;
+      const enemyWoundPen = this.woundPenaltyPips(enemy.wounds);
+      const numAttacks = this.getAttacksPerRound(atkPips);
+      const penalty = this.multiActionPenalty(numAttacks);
+
+      for (let atk = 0; atk < numAttacks; atk++) {
+        if (this.woundIndex(c.wounds) >= this.woundIndex('incapacitated')) break;
+
+        const effectiveAtk = Math.max(3, atkPips - penalty - enemyWoundPen);
+        const attackRoll = this.rollPips(effectiveAtk);
+
+        // Player defends — determine defense type based on enemy weapon
+        const defType = enemy.combat.weaponType || 'dodge';
+        const defPips = this.getPlayerDefensePips(defType);
+        const playerWoundPen = this.woundPenaltyPips(c.wounds);
+        const defenseRoll = (this.round === 1 && atk === 0 && !this.playerActedThisRound) ?
+          0 : this.rollPips(Math.max(3, defPips - playerWoundPen));
+
+        const atkLabel = numAttacks > 1 ? ' (attack ' + (atk + 1) + ')' : '';
+        const weaponName = enemy.combat.weaponName || 'weapon';
+        MUD.print('{dim}' + enemy.name + ' fires ' + weaponName + atkLabel + ': {/dim}{red}' + attackRoll + '{/red}{dim} vs your defense {/dim}{gold}' + defenseRoll + '{/gold}');
+
+        if (attackRoll > defenseRoll) {
+          const dmgPips = enemy.combat.damage || 12;
+          const damageRoll = this.rollPips(Math.max(3, dmgPips - penalty));
+          const strRoll = this.rollPips(Math.max(3, this.getPlayerStrPips() - playerWoundPen));
+          const diff = damageRoll - strRoll;
+
+          MUD.print('{dim}  Damage: {/dim}{red}' + damageRoll + '{/red}{dim} vs your soak {/dim}{gold}' + strRoll + '{/gold}{dim} (diff ' + (diff > 0 ? '+' : '') + diff + '){/dim}');
+
+          const oldWound = c.wounds;
+          c.wounds = this.applyDamageResult(diff, c.wounds);
+
+          if (enemy.combat.stunOnly) {
+            if (this.woundIndex(c.wounds) > this.woundIndex('incapacitated')) {
+              c.wounds = 'incapacitated';
+            }
+          }
+
+          if (c.wounds !== oldWound) {
+            MUD.print('  You are ' + this.woundLabel(c.wounds) + '!');
+          } else {
+            MUD.print('  {dim}No effect on you.{/dim}');
+          }
+        } else {
+          MUD.print('  {dim}They miss!{/dim}');
+        }
+      }
+    }
+
+    // Check security arrival
+    if (this.securityCalled && this.round >= this.securityArriveRound && !this.enemies.find(e => e.id === 'security')) {
+      this.spawnSecurity();
+    }
+
+    // Check player death
+    if (this.woundIndex(c.wounds) >= this.woundIndex('incapacitated')) {
+      this.handlePlayerDown();
+    }
+  },
+
+  // --- Security ---
+  spawnSecurity() {
+    MUD.printBlank();
+    MUD.print('{red}Heavy boots pound the deck — station security arrives!{/red}');
+    MUD.print('{npc}Station Security Marshal{/npc} levels a heavy blaster at you. "Drop it. NOW."');
+
+    this.enemies.push({
+      id: 'security',
+      roomId: MUD.state.currentRoom,
+      name: 'Security Marshal',
+      combat: {
+        blaster: 15,       // 5D
+        dodge: 12,         // 4D
+        meleeParry: 9,     // 3D
+        brawlParry: 9,     // 3D
+        brawl: 12,         // 4D
+        str: 10,           // 3D+1
+        damage: 15,        // 5D heavy blaster
+        weaponType: 'dodge',
+        weaponName: 'heavy blaster',
+        stunOnly: false,
+        security: false,   // don't re-trigger security
+        chase: true        // follows fleeing players
+      },
+      wounds: 'healthy',
+      stunTurns: 0
+    });
+  },
+
+  // --- Fleeing ---
+  flee(direction) {
+    if (!this.active) {
+      MUD.print("You're not in combat.", 'error');
+      return;
+    }
+
+    // Roll dodge vs enemy attack to flee
+    const c = MUD.state.character;
+    const dodgePips = this.getPlayerDefensePips('dodge');
+    const dodgeRoll = this.rollPips(Math.max(3, dodgePips - this.woundPenaltyPips(c.wounds)));
+
+    // Best enemy tries to stop you
+    let bestAtk = 0;
+    for (const enemy of this.enemies) {
+      if (this.woundIndex(enemy.wounds) >= this.woundIndex('incapacitated')) continue;
+      const atkPips = enemy.combat.blaster || enemy.combat.melee || enemy.combat.brawl || 6;
+      const roll = this.rollPips(Math.max(3, atkPips - this.woundPenaltyPips(enemy.wounds)));
+      if (roll > bestAtk) bestAtk = roll;
+    }
+
+    MUD.print('{dim}You attempt to flee: dodge {/dim}{gold}' + dodgeRoll + '{/gold}{dim} vs {/dim}{red}' + bestAtk + '{/red}');
+
+    if (dodgeRoll >= bestAtk) {
+      MUD.print('{green}You break free and run!{/green}');
+      this.endCombat();
+
+      // Pick a valid exit
+      const room = ROOMS_DATA[MUD.state.currentRoom];
+      const exits = Object.keys(room.exits || {});
+      if (direction && room.exits[direction]) {
+        MUD.moveTo(room.exits[direction]);
+      } else if (exits.length) {
+        MUD.moveTo(room.exits[exits[0]]); // flee to first available exit
+      }
+
+      // Security follows
+      if (this.securityCalled) {
+        MUD.print('{red}Security is pursuing you!{/red}');
+        // Security will be in the next room — re-engage on next tick
+        // For now just flag it; full pursuit comes with more rooms
+      }
+    } else {
+      MUD.print('{red}They block your escape!{/red}');
+      // Enemy gets a free attack
+      this.processEnemyTurns();
+      if (!this.isCombatOver()) {
+        this.promptNextRound();
+      }
+    }
+  },
+
+  // --- Player Down ---
+  handlePlayerDown() {
+    const c = MUD.state.character;
+    this.endCombat();
+
+    MUD.printBlank();
+    MUD.print('{red}═══════════════════════════════════════════════════{/red}');
+    MUD.print('{red}            YOU HAVE BEEN DEFEATED{/red}');
+    MUD.print('{red}═══════════════════════════════════════════════════{/red}');
+    MUD.printBlank();
+    MUD.print('{dim}Everything goes dark...{/dim}');
+    MUD.printBlank();
+
+    // Credit penalty
+    const penalty = Math.min(5000, Math.floor(MUD.state.credits * 0.9));
+    if (penalty > 0) {
+      MUD.state.credits -= penalty;
+      MUD.print('{red}Medical bills: -' + penalty + ' credits{/red}');
+    }
+
+    // Heal and respawn
+    c.wounds = 'healthy';
+    MUD.state.currentRoom = 'infirmary';
+    MUD.state.ticks += 5; // time passes while unconscious
+
+    MUD.printBlank();
+    MUD.print('{dim}You wake up in the station infirmary. Again. The 2-1B droid regards you with what might be disapproval.{/dim}');
+    MUD.printBlank();
+    MUD.print('{npc}2-1B Medical Droid{/npc}: "You really should stop doing that. I\'m running out of bacta patches."');
+    MUD.printBlank();
+
+    MUD.displayRoom('infirmary');
+    MUD.autoSave();
+  },
+
+  // --- Round Management ---
+  promptNextRound() {
+    this.round++;
+    MUD.printBlank();
+    MUD.print('{red}═══ Round ' + this.round + ' ═══{/red}');
+
+    // Show status
+    for (const enemy of this.enemies) {
+      if (this.woundIndex(enemy.wounds) < this.woundIndex('incapacitated')) {
+        MUD.print('  ' + enemy.name + ': ' + this.woundLabel(enemy.wounds));
+      }
+    }
+    MUD.print('  You: ' + this.woundLabel(MUD.state.character.wounds));
+    MUD.printBlank();
+    MUD.print('{dim}Attack ({/dim}{green}blast{/green}{dim}/{/dim}{green}knife{/green}{dim}/{/dim}{green}punch{/green}{dim}/{/dim}{green}saber{/green}{dim} <target>) or {/dim}{green}flee{/green}');
+    this.playerActedThisRound = false;
+  },
+
+  // --- Handle combat-mode input ---
+  handleInput(input) {
+    const raw = input.trim();
+    if (!raw) return;
+
+    MUD.print(raw, 'command');
+    MUD.state.history.push(raw);
+    if (MUD.state.history.length > 50) MUD.state.history.shift();
+    MUD.state.historyIdx = -1;
+
+    const parts = raw.toLowerCase().split(/\s+/);
+    const cmd = parts[0];
+    const arg = parts.slice(1).join(' ');
+
+    if (cmd === 'flee' || cmd === 'run' || cmd === 'escape') {
+      this.flee(arg);
+      return;
+    }
+
+    if (cmd === 'status' || cmd === 'stats') {
+      MUD.doStatus();
+      return;
+    }
+
+    if (cmd === 'look' || cmd === 'l') {
+      MUD.doLook();
+      return;
+    }
+
+    const atkType = this.ATTACK_TYPES[cmd];
+    if (atkType) {
+      if (this.playerActedThisRound) {
+        MUD.print('You already acted this round. Wait for enemies to respond.', 'error');
+        return;
+      }
+
+      // Find target from remaining enemies
+      let target = null;
+      if (arg) {
+        target = this.enemies.find(e =>
+          this.woundIndex(e.wounds) < this.woundIndex('incapacitated') &&
+          (e.name.toLowerCase().includes(arg) || e.id.toLowerCase().includes(arg))
+        );
+      }
+      if (!target) {
+        // Default to first standing enemy
+        target = this.enemies.find(e => this.woundIndex(e.wounds) < this.woundIndex('incapacitated'));
+      }
+
+      if (!target) {
+        MUD.print('No enemies left standing!');
+        this.endCombat();
+        return;
+      }
+
+      this.resolvePlayerAttack(atkType, target, false);
+      this.playerActedThisRound = true;
+
+      if (!this.isCombatOver()) {
+        this.processEnemyTurns();
+      }
+
+      if (!this.isCombatOver()) {
+        this.promptNextRound();
+      }
+      return;
+    }
+
+    MUD.print('{dim}In combat — attack ({/dim}{green}blast{/green}{dim}/{/dim}{green}knife{/green}{dim}/{/dim}{green}punch{/green}{dim}/{/dim}{green}saber{/green}{dim} <target>) or {/dim}{green}flee{/green}', 'error');
+  },
+
+  isCombatOver() {
+    if (!this.active) return true;
+
+    // All enemies down?
+    const standing = this.enemies.filter(e => this.woundIndex(e.wounds) < this.woundIndex('incapacitated'));
+    if (!standing.length) {
+      MUD.printBlank();
+      MUD.print('{green}Combat over — all enemies defeated.{/green}');
+      this.endCombat();
+      return true;
+    }
+
+    // Player down?
+    if (this.woundIndex(MUD.state.character.wounds) >= this.woundIndex('incapacitated')) {
+      this.handlePlayerDown();
+      return true;
+    }
+
+    return false;
+  },
+
+  endCombat() {
+    this.active = false;
+    this.enemies = [];
+    this.round = 0;
+    this.playerActedThisRound = false;
+    this.securityCalled = false;
     MUD.autoSave();
   }
 };
