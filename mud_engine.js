@@ -75,7 +75,14 @@ const MUD = {
 
     this.printBlank();
     this.print('{gold}[ ' + room.name + ' ]{/gold}');
-    this.print(room.description);
+
+    // Hard mode strips interactive keyword hints
+    let desc = room.description;
+    if (this.state.character && this.state.character.hardMode) {
+      desc = desc.replace(/\{item\}([\s\S]*?)\{\/item\}/g, '$1');
+      desc = desc.replace(/\{npc\}([\s\S]*?)\{\/npc\}/g, '$1');
+    }
+    this.print(desc);
 
     // Show exits
     const exits = Object.keys(room.exits || {});
@@ -144,6 +151,12 @@ const MUD = {
 
   // --- Command Parser ---
   processCommand(input) {
+    // Route to character creator if active
+    if (MUD_CHARGEN.phase) {
+      MUD_CHARGEN.handleInput(input);
+      return;
+    }
+
     const raw = input.trim();
     if (!raw) return;
 
@@ -304,26 +317,41 @@ const MUD = {
 
     // Find the appropriate dialogue line
     for (const line of npc.talk) {
+      // Conditional line — only show if flag is set
+      if (line.cond) {
+        if (!this.state.flags[line.cond]) continue;
+        this.printBlank();
+        this.print(line.text);
+        if (line.action) this.handleDialogueAction(line.action);
+        return;
+      }
+      // Once-only line — plays once, then sets a flag
       if (line.once) {
-        // This dialogue plays once, then sets a flag
         if (!this.state.flags[line.once]) {
           this.state.flags[line.once] = true;
           this.printBlank();
           this.print(line.text);
+          if (line.action) this.handleDialogueAction(line.action);
           this.autoSave();
           return;
         }
-        // Already seen this once-line, skip to next
         continue;
       }
       // Default dialogue (no condition)
       this.printBlank();
       this.print(line.text);
+      if (line.action) this.handleDialogueAction(line.action);
       return;
     }
 
     // Fallback if all lines were once-only and already seen
     this.print(npc.name + " has nothing more to say.");
+  },
+
+  handleDialogueAction(action) {
+    if (action === 'chargen' && !this.state.flags['character_created']) {
+      MUD_CHARGEN.start();
+    }
   },
 
   doTake(target) {
@@ -371,15 +399,29 @@ const MUD = {
   },
 
   doStatus() {
-    // Placeholder for character stats — Step 2
-    this.print('{gold}Status:{/gold}');
+    const c = this.state.character;
+    if (!c) {
+      this.print('{gold}Status:{/gold}');
+      this.print('  Location: {gold}' + (ROOMS_DATA[this.state.currentRoom]?.name || 'Unknown') + '{/gold}');
+      this.print('  Character: {dim}(not yet created — talk to Administrator Vylen){/dim}');
+      return;
+    }
+
+    this.print('{gold}═════════════════════════════════════{/gold}');
+    this.print('{gold}  ' + c.name + '{/gold}  {dim}(' + c.species + '){/dim}');
+    this.print('{gold}═════════════════════════════════════{/gold}');
     this.print('  Location: {gold}' + (ROOMS_DATA[this.state.currentRoom]?.name || 'Unknown') + '{/gold}');
-    this.print('  Credits: {gold}' + this.state.credits + '{/gold}');
-    this.print('  Items: ' + (this.state.inventory.length || 'none'));
-    if (this.state.character) {
-      this.print('  Character: {gold}' + this.state.character.name + '{/gold} (' + this.state.character.species + ')');
-    } else {
-      this.print('  Character: {dim}(not yet created){/dim}');
+    this.print('  Credits:  {gold}' + this.state.credits + '{/gold}');
+    this.print('  Wounds:   ' + (c.wounds === 'healthy' ? '{green}Healthy{/green}' : '{red}' + c.wounds + '{/red}'));
+    this.printBlank();
+    this.print('{gold}Attributes:{/gold}');
+    for (const attr of MUD_CHARGEN.ATTR_NAMES) {
+      this.print('  ' + MUD_CHARGEN.ATTR_FULL[attr].padEnd(12) + ' ' + MUD_CHARGEN.pipsToDice(c.attrs[attr]));
+    }
+    this.printBlank();
+    this.print('{gold}Skills:{/gold}');
+    for (const [name, pips] of Object.entries(c.skills)) {
+      this.print('  ' + name.padEnd(28) + ' ' + MUD_CHARGEN.pipsToDice(pips));
     }
   },
 
@@ -548,4 +590,525 @@ const MUD = {
     this.autoSave();
   }
 
+};
+
+// ============================================================
+// CHARACTER CREATOR
+// ============================================================
+
+const MUD_CHARGEN = {
+
+  // Available species for the MUD
+  SPECIES: ['Human', 'Wookiee', 'Mon Calamari', 'Rodian', 'Bothan', 'Sullustan', 'Trandoshan', 'Duro'],
+
+  // All non-advanced skills from data_skills.js, curated for MUD
+  SKILLS: [
+    // DEX
+    { name: 'Blaster', attr: 'Dex' },
+    { name: 'Brawling Parry', attr: 'Dex' },
+    { name: 'Dodge', attr: 'Dex' },
+    { name: 'Grenade', attr: 'Dex' },
+    { name: 'Heavy Weapons', attr: 'Dex' },
+    { name: 'Melee Combat', attr: 'Dex' },
+    { name: 'Melee Parry', attr: 'Dex' },
+    { name: 'Pick Pocket', attr: 'Dex' },
+    { name: 'Running', attr: 'Dex' },
+    { name: 'Thrown Weapon', attr: 'Dex' },
+    { name: 'Vehicle Blasters', attr: 'Dex' },
+    // KNO
+    { name: 'Alien Species', attr: 'Kno' },
+    { name: 'Bureaucracy', attr: 'Kno' },
+    { name: 'Business', attr: 'Kno' },
+    { name: 'Cultures', attr: 'Kno' },
+    { name: 'Intimidation', attr: 'Kno' },
+    { name: 'Languages', attr: 'Kno' },
+    { name: 'Law Enforcement', attr: 'Kno' },
+    { name: 'Planetary Systems', attr: 'Kno' },
+    { name: 'Streetwise', attr: 'Kno' },
+    { name: 'Survival', attr: 'Kno' },
+    { name: 'Tactics', attr: 'Kno' },
+    { name: 'Value', attr: 'Kno' },
+    { name: 'Willpower', attr: 'Kno' },
+    // MEC
+    { name: 'Astrogation', attr: 'Mec' },
+    { name: 'Beast Riding', attr: 'Mec' },
+    { name: 'Communications', attr: 'Mec' },
+    { name: 'Ground Vehicle Operation', attr: 'Mec' },
+    { name: 'Hover Vehicle Operation', attr: 'Mec' },
+    { name: 'Repulsorlift Operation', attr: 'Mec' },
+    { name: 'Sensors', attr: 'Mec' },
+    { name: 'Space Transports', attr: 'Mec' },
+    { name: 'Starfighter Piloting', attr: 'Mec' },
+    { name: 'Starship Gunnery', attr: 'Mec' },
+    { name: 'Starship Shields', attr: 'Mec' },
+    { name: 'Swoop Operation', attr: 'Mec' },
+    // PER
+    { name: 'Bargain', attr: 'Per' },
+    { name: 'Command', attr: 'Per' },
+    { name: 'Con', attr: 'Per' },
+    { name: 'Forgery', attr: 'Per' },
+    { name: 'Gambling', attr: 'Per' },
+    { name: 'Hide', attr: 'Per' },
+    { name: 'Investigation', attr: 'Per' },
+    { name: 'Persuasion', attr: 'Per' },
+    { name: 'Search', attr: 'Per' },
+    { name: 'Sneak', attr: 'Per' },
+    // STR
+    { name: 'Brawling', attr: 'Str' },
+    { name: 'Climbing/Jumping', attr: 'Str' },
+    { name: 'Lifting', attr: 'Str' },
+    { name: 'Stamina', attr: 'Str' },
+    { name: 'Swimming', attr: 'Str' },
+    // TEC
+    { name: 'Blaster Repair', attr: 'Tec' },
+    { name: 'Computer Programming/Repair', attr: 'Tec' },
+    { name: 'Demolitions', attr: 'Tec' },
+    { name: 'Droid Programming', attr: 'Tec' },
+    { name: 'Droid Repair', attr: 'Tec' },
+    { name: 'First Aid', attr: 'Tec' },
+    { name: 'Ground Vehicle Repair', attr: 'Tec' },
+    { name: 'Repulsorlift Repair', attr: 'Tec' },
+    { name: 'Security', attr: 'Tec' },
+    { name: 'Space Transports Repair', attr: 'Tec' },
+    { name: 'Starship Weapon Repair', attr: 'Tec' }
+  ],
+
+  ATTR_NAMES: ['Dex', 'Kno', 'Mec', 'Per', 'Str', 'Tec'],
+  ATTR_FULL: { Dex: 'DEXTERITY', Kno: 'KNOWLEDGE', Mec: 'MECHANICAL', Per: 'PERCEPTION', Str: 'STRENGTH', Tec: 'TECHNICAL' },
+
+  // State during creation
+  phase: null,   // 'species', 'attributes', 'skills', 'hardmode', 'name', 'confirm'
+  species: null,
+  attrs: {},     // { Dex: pipValue, Kno: pipValue, ... }
+  attrMins: {},
+  attrMaxs: {},
+  totalPips: 0,
+  spentPips: 0,
+  skills: [],
+  hardMode: false,
+  charName: '',
+  state_confirmDone: false,
+
+  // --- Dice <-> Pip conversion ---
+  diceToPips(diceStr) {
+    const m = String(diceStr).match(/(\d+)D?(?:\+(\d))?/i);
+    if (!m) return 0;
+    return parseInt(m[1]) * 3 + (parseInt(m[2]) || 0);
+  },
+
+  pipsToDice(pips) {
+    const d = Math.floor(pips / 3);
+    const r = pips % 3;
+    if (r === 0) return d + 'D';
+    return d + 'D+' + r;
+  },
+
+  // --- Start character creation ---
+  start() {
+    this.phase = 'species';
+    this.species = null;
+    this.attrs = {};
+    this.attrMins = {};
+    this.attrMaxs = {};
+    this.skills = [];
+    this.hardMode = false;
+    this.charName = '';
+    this.state_confirmDone = false;
+
+    MUD.printBlank();
+    MUD.print('{gold}═══════════════════════════════════════════════════{/gold}');
+    MUD.print('{gold}            CHARACTER REGISTRATION{/gold}');
+    MUD.print('{gold}═══════════════════════════════════════════════════{/gold}');
+    MUD.printBlank();
+    MUD.print('{npc}Administrator Vylen{/npc} slides a datapad across the desk.');
+    MUD.printBlank();
+    MUD.print('"Let\'s start with the basics. What species are you?"');
+    MUD.printBlank();
+
+    for (let i = 0; i < this.SPECIES.length; i++) {
+      const sp = this.SPECIES[i];
+      const race = RACES_DATA[sp];
+      const specAb = race && race.SpecAb ? race.SpecAb[0] : '';
+      const brief = specAb ? specAb.split('.')[0] + '.' : '';
+      MUD.print('  {green}' + (i + 1) + '{/green}. {gold}' + sp + '{/gold}' + (brief ? ' — {dim}' + brief + '{/dim}' : ''));
+    }
+
+    MUD.printBlank();
+    MUD.print('{dim}Type a number (1-' + this.SPECIES.length + ') or the species name.{/dim}');
+  },
+
+  // --- Process input during chargen ---
+  handleInput(input) {
+    const raw = input.trim();
+    if (!raw) return;
+
+    MUD.print(raw, 'command');
+    MUD.state.history.push(raw);
+    if (MUD.state.history.length > 50) MUD.state.history.shift();
+    MUD.state.historyIdx = -1;
+
+    switch (this.phase) {
+      case 'species': return this.handleSpecies(raw);
+      case 'attributes': return this.handleAttributes(raw);
+      case 'skills': return this.handleSkills(raw);
+      case 'hardmode': return this.handleHardMode(raw);
+      case 'name': return this.handleName(raw);
+      case 'confirm': return this.handleConfirm(raw);
+    }
+  },
+
+  // --- Phase: Species Selection ---
+  handleSpecies(input) {
+    const num = parseInt(input);
+    let species = null;
+
+    if (num >= 1 && num <= this.SPECIES.length) {
+      species = this.SPECIES[num - 1];
+    } else {
+      const low = input.toLowerCase();
+      species = this.SPECIES.find(s => s.toLowerCase() === low || s.toLowerCase().startsWith(low));
+    }
+
+    if (!species) {
+      MUD.print('"I don\'t recognize that species. Try again — pick a number or name from the list."', 'error');
+      return;
+    }
+
+    this.species = species;
+    const race = RACES_DATA[species];
+
+    // Calculate pip budget
+    const basePips = this.diceToPips(race.baseDice);
+    this.totalPips = basePips + 18; // +6D hero bonus = +18 pips
+
+    // Set mins/maxes from race data
+    for (const attr of this.ATTR_NAMES) {
+      const vals = race[attr];
+      this.attrMins[attr] = this.diceToPips(vals[0]);
+      this.attrMaxs[attr] = this.diceToPips(vals[vals.length - 1]);
+      this.attrs[attr] = this.attrMins[attr]; // start at minimum
+    }
+
+    this.spentPips = Object.values(this.attrs).reduce((a, b) => a + b, 0);
+
+    MUD.printBlank();
+    MUD.print('{npc}Administrator Vylen{/npc} nods. "{gold}' + species + '{/gold}. Very well."');
+    MUD.printBlank();
+    MUD.print('"Now I need to assess your capabilities. You have {gold}' + this.pipsToDice(this.totalPips) + '{/gold} total to distribute across your six attributes."');
+    MUD.printBlank();
+
+    this.phase = 'attributes';
+    this.showAttributeStatus();
+    MUD.print('{dim}Commands: {/dim}{green}set <attr> <dice>{/green}{dim} (e.g. "set dex 3d+2"), {/dim}{green}done{/green}{dim} when finished.{/dim}');
+    MUD.print('{dim}Shorthand: dex, kno, mec, per, str, tec. Also: {/dim}{green}reset{/green}{dim}, {/dim}{green}status{/green}');
+  },
+
+  showAttributeStatus() {
+    const remaining = this.totalPips - this.spentPips;
+    MUD.print('{gold}Remaining: ' + this.pipsToDice(remaining) + ' (' + remaining + ' pips){/gold}');
+    MUD.printBlank();
+    for (const attr of this.ATTR_NAMES) {
+      const cur = this.pipsToDice(this.attrs[attr]);
+      const min = this.pipsToDice(this.attrMins[attr]);
+      const max = this.pipsToDice(this.attrMaxs[attr]);
+      const full = this.ATTR_FULL[attr];
+      const isMin = this.attrs[attr] === this.attrMins[attr];
+      MUD.print('  ' + (isMin ? '{dim}' : '{green}') + full.padEnd(12) + ' ' + cur.padEnd(5) + (isMin ? '{/dim}' : '{/green}') + '  {dim}(' + min + ' – ' + max + '){/dim}');
+    }
+    MUD.printBlank();
+  },
+
+  // --- Phase: Attribute Distribution ---
+  handleAttributes(input) {
+    const low = input.toLowerCase().trim();
+
+    if (low === 'done') {
+      const remaining = this.totalPips - this.spentPips;
+      if (remaining > 0 && !this.state_confirmDone) {
+        MUD.print('"You still have {gold}' + this.pipsToDice(remaining) + '{/gold} unassigned. Type {green}done{/green} again to confirm, or keep assigning."');
+        this.state_confirmDone = true;
+        return;
+      }
+      this.state_confirmDone = false;
+      this.phase = 'skills';
+      this.showSkillSelection();
+      return;
+    }
+
+    this.state_confirmDone = false;
+
+    if (low === 'status' || low === 'show') {
+      this.showAttributeStatus();
+      return;
+    }
+
+    if (low === 'reset') {
+      for (const attr of this.ATTR_NAMES) {
+        this.attrs[attr] = this.attrMins[attr];
+      }
+      this.spentPips = Object.values(this.attrs).reduce((a, b) => a + b, 0);
+      MUD.print('{dim}All attributes reset to minimums.{/dim}', 'system');
+      this.showAttributeStatus();
+      return;
+    }
+
+    // Parse "set dex 3d+2" or "dex 3d+2" or "dex 3d"
+    const cleaned = low.replace(/^set\s+/, '');
+    const m = cleaned.match(/^(\w+)\s+(\d+d?\+?\d*)/i);
+    if (!m) {
+      MUD.print('{dim}Format: {/dim}{green}set dex 3d+2{/green}{dim} — or: {/dim}{green}status{/green}{dim} / {/dim}{green}reset{/green}{dim} / {/dim}{green}done{/green}', 'error');
+      return;
+    }
+
+    const attrInput = m[1].toLowerCase();
+    const attrMap = { dex: 'Dex', dexterity: 'Dex', kno: 'Kno', knowledge: 'Kno', mec: 'Mec', mechanical: 'Mec', per: 'Per', perception: 'Per', str: 'Str', strength: 'Str', tec: 'Tec', technical: 'Tec' };
+    const attr = attrMap[attrInput];
+
+    if (!attr) {
+      MUD.print('"I don\'t recognize that attribute. Use: dex, kno, mec, per, str, or tec."', 'error');
+      return;
+    }
+
+    const diceMatch = m[2].match(/(\d+)d?(?:\+(\d))?/i);
+    if (!diceMatch) {
+      MUD.print('Invalid dice format. Use format like 3D+2, 3D, 2D+1.', 'error');
+      return;
+    }
+    const targetVal = parseInt(diceMatch[1]) * 3 + (parseInt(diceMatch[2]) || 0);
+
+    if (targetVal < this.attrMins[attr]) {
+      MUD.print('"Below minimum. ' + this.ATTR_FULL[attr] + ' must be at least {gold}' + this.pipsToDice(this.attrMins[attr]) + '{/gold}."', 'error');
+      return;
+    }
+
+    if (targetVal > this.attrMaxs[attr]) {
+      MUD.print('"Exceeds maximum. ' + this.ATTR_FULL[attr] + ' can\'t go above {gold}' + this.pipsToDice(this.attrMaxs[attr]) + '{/gold}."', 'error');
+      return;
+    }
+
+    const oldVal = this.attrs[attr];
+    const diff = targetVal - oldVal;
+    const remaining = this.totalPips - this.spentPips;
+
+    if (diff > remaining) {
+      MUD.print('"Only {gold}' + this.pipsToDice(remaining) + '{/gold} left. That change needs ' + this.pipsToDice(diff) + '."', 'error');
+      return;
+    }
+
+    this.attrs[attr] = targetVal;
+    this.spentPips += diff;
+
+    MUD.print('{green}' + this.ATTR_FULL[attr] + ' set to ' + this.pipsToDice(targetVal) + '{/green}');
+    this.showAttributeStatus();
+  },
+
+  // --- Phase: Skill Selection ---
+  showSkillSelection() {
+    const remaining = 7 - this.skills.length;
+    MUD.printBlank();
+    MUD.print('{npc}Administrator Vylen{/npc} scrolls to the next section.');
+    MUD.printBlank();
+    MUD.print('"Select {gold}7 skills{/gold} you\'re proficient in. Each starts at 1D above its parent attribute."');
+    MUD.printBlank();
+
+    for (const attr of this.ATTR_NAMES) {
+      const attrSkills = this.SKILLS.filter(s => s.attr === attr);
+      const attrVal = this.pipsToDice(this.attrs[attr]);
+      const skillVal = this.pipsToDice(this.attrs[attr] + 3);
+      MUD.print('{gold}' + this.ATTR_FULL[attr] + ' (' + attrVal + ' → skill at ' + skillVal + '){/gold}');
+      for (const s of attrSkills) {
+        const picked = this.skills.includes(s.name);
+        if (picked) {
+          MUD.print('  {green}✓ ' + s.name + '{/green}');
+        } else {
+          MUD.print('  {dim}•{/dim} {item}' + s.name + '{/item}');
+        }
+      }
+    }
+
+    MUD.printBlank();
+    MUD.print('{dim}' + remaining + ' pick' + (remaining !== 1 ? 's' : '') + ' remaining. Type a skill name to select. {/dim}{green}remove <skill>{/green}{dim} to deselect. {/dim}{green}done{/green}{dim} when finished.{/dim}');
+  },
+
+  handleSkills(input) {
+    const low = input.toLowerCase().trim();
+
+    if (low === 'done') {
+      if (this.skills.length < 7) {
+        MUD.print('"You still have ' + (7 - this.skills.length) + ' pick' + (7 - this.skills.length !== 1 ? 's' : '') + ' remaining."', 'error');
+        return;
+      }
+      this.phase = 'hardmode';
+      this.showHardMode();
+      return;
+    }
+
+    if (low === 'status' || low === 'show' || low === 'list') {
+      this.showSkillSelection();
+      return;
+    }
+
+    if (low.startsWith('remove ') || low.startsWith('drop ')) {
+      const skillName = low.replace(/^(remove|drop)\s+/, '');
+      const idx = this.skills.findIndex(s => s.toLowerCase() === skillName || s.toLowerCase().startsWith(skillName));
+      if (idx === -1) {
+        MUD.print("You haven't picked that skill.", 'error');
+        return;
+      }
+      const removed = this.skills.splice(idx, 1)[0];
+      MUD.print('{dim}Removed: ' + removed + '. ' + (7 - this.skills.length) + ' picks remaining.{/dim}', 'system');
+      return;
+    }
+
+    if (this.skills.length >= 7) {
+      MUD.print('"Already at 7 skills. {green}remove <skill>{/green} to swap, or {green}done{/green} to continue."', 'error');
+      return;
+    }
+
+    // Find matching skill — exact first, then prefix
+    let match = this.SKILLS.find(s => s.name.toLowerCase() === low);
+    if (!match) match = this.SKILLS.find(s => s.name.toLowerCase().startsWith(low));
+    if (!match) {
+      MUD.print('"I don\'t see that skill on the list. Check the spelling."', 'error');
+      return;
+    }
+
+    if (this.skills.includes(match.name)) {
+      MUD.print('"You\'ve already picked ' + match.name + '."', 'error');
+      return;
+    }
+
+    this.skills.push(match.name);
+    const skillVal = this.pipsToDice(this.attrs[match.attr] + 3);
+    MUD.print('{green}✓ ' + match.name + ' (' + skillVal + '){/green}  {dim}— ' + (7 - this.skills.length) + ' remaining{/dim}');
+
+    if (this.skills.length === 7) {
+      MUD.print('{dim}All 7 skills selected. Type {/dim}{green}done{/green}{dim} to continue or {/dim}{green}remove <skill>{/green}{dim} to swap.{/dim}');
+    }
+  },
+
+  // --- Phase: Hard Mode ---
+  showHardMode() {
+    MUD.printBlank();
+    MUD.print('{npc}Administrator Vylen{/npc} leans back, studying you.');
+    MUD.printBlank();
+    MUD.print('"One more thing. Station terminals can highlight interactive elements — objects to examine, people to talk to. Some residents prefer to figure things out themselves."');
+    MUD.printBlank();
+    MUD.print('"Do you want {gold}keyword highlighting{/gold} in room descriptions?"');
+    MUD.print('  {green}yes{/green} — color-coded hints {dim}(recommended){/dim}');
+    MUD.print('  {green}no{/green}  — hard mode, no hints');
+  },
+
+  handleHardMode(input) {
+    const low = input.toLowerCase().trim();
+    if (low === 'yes' || low === 'y') {
+      this.hardMode = false;
+      MUD.print('{dim}Keyword highlighting enabled.{/dim}', 'system');
+    } else if (low === 'no' || low === 'n') {
+      this.hardMode = true;
+      MUD.print('{dim}Hard mode — no hints. Good luck.{/dim}', 'system');
+    } else {
+      MUD.print('{green}yes{/green} or {green}no{/green}?', 'error');
+      return;
+    }
+    this.phase = 'name';
+    this.showNamePrompt();
+  },
+
+  // --- Phase: Name ---
+  showNamePrompt() {
+    MUD.printBlank();
+    MUD.print('{npc}Administrator Vylen{/npc} positions her fingers over the keyboard.');
+    MUD.printBlank();
+    MUD.print('"And what name should I register you under?"');
+    MUD.print('{dim}Type your character\'s name.{/dim}');
+  },
+
+  handleName(input) {
+    const name = input.trim();
+    if (name.length < 2) {
+      MUD.print('"That\'s not really a name. Try again."', 'error');
+      return;
+    }
+    if (name.length > 30) {
+      MUD.print('"Let\'s keep it under 30 characters."', 'error');
+      return;
+    }
+    this.charName = name;
+    this.phase = 'confirm';
+    this.showConfirmation();
+  },
+
+  // --- Phase: Confirmation ---
+  showConfirmation() {
+    MUD.printBlank();
+    MUD.print('{gold}═══════════════════════════════════════════════════{/gold}');
+    MUD.print('{gold}            REGISTRATION SUMMARY{/gold}');
+    MUD.print('{gold}═══════════════════════════════════════════════════{/gold}');
+    MUD.printBlank();
+    MUD.print('  Name:    {gold}' + this.charName + '{/gold}');
+    MUD.print('  Species: {gold}' + this.species + '{/gold}');
+    MUD.print('  Mode:    ' + (this.hardMode ? '{red}Hard Mode{/red}' : '{green}Standard{/green}'));
+    MUD.printBlank();
+    MUD.print('{gold}Attributes:{/gold}');
+    for (const attr of this.ATTR_NAMES) {
+      MUD.print('  ' + this.ATTR_FULL[attr].padEnd(12) + ' {green}' + this.pipsToDice(this.attrs[attr]) + '{/green}');
+    }
+    MUD.printBlank();
+    MUD.print('{gold}Skills ({/gold}{green}+1D{/green}{gold} above attribute):{/gold}');
+    for (const skill of this.skills) {
+      const def = this.SKILLS.find(s => s.name === skill);
+      const val = this.pipsToDice(this.attrs[def.attr] + 3);
+      MUD.print('  {green}' + skill + '{/green} {dim}' + val + '{/dim}');
+    }
+    MUD.printBlank();
+    MUD.print('{npc}Administrator Vylen{/npc}: "Does everything look correct?"');
+    MUD.print('  {green}yes{/green} — confirm and begin');
+    MUD.print('  {green}no{/green}  — start over');
+  },
+
+  handleConfirm(input) {
+    const low = input.toLowerCase().trim();
+    if (low === 'yes' || low === 'y') {
+      this.finalize();
+    } else if (low === 'no' || low === 'n') {
+      MUD.print('{dim}Starting over...{/dim}', 'system');
+      this.start();
+    } else {
+      MUD.print('{green}yes{/green} or {green}no{/green}?', 'error');
+    }
+  },
+
+  // --- Finalize character ---
+  finalize() {
+    const skills = {};
+    for (const skill of this.skills) {
+      const def = this.SKILLS.find(s => s.name === skill);
+      skills[skill] = this.attrs[def.attr] + 3; // stored as pips
+    }
+
+    MUD.state.character = {
+      name: this.charName,
+      species: this.species,
+      attrs: { ...this.attrs },
+      skills: skills,
+      wounds: 'healthy',
+      hardMode: this.hardMode
+    };
+
+    this.phase = null;
+    MUD.state.flags['character_created'] = true;
+
+    MUD.printBlank();
+    MUD.print('{npc}Administrator Vylen{/npc} taps a final key and a chime sounds.');
+    MUD.printBlank();
+    MUD.print('"Registration complete. Welcome to Drifter\'s Anchorage, {gold}' + this.charName + '{/gold}."');
+    MUD.print('She slides a thin plascard across the desk — your station pass.');
+    MUD.printBlank();
+    MUD.print('"You\'re free to move about the station. I\'d suggest the cantina — Grek usually knows who\'s hiring. And the docking bay if you want to dream about your own ship."');
+    MUD.printBlank();
+    MUD.print('{dim}Character saved. Check stats anytime with {/dim}{green}status{/green}{dim}.{/dim}');
+
+    MUD.autoSave();
+  }
 };
