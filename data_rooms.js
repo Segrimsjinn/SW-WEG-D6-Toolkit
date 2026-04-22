@@ -88,7 +88,7 @@ const ROOMS_DATA = {
 
   "main_concourse": {
     name: "Main Concourse",
-    description: "The main concourse of Drifter's Anchorage is a wide, vaulted corridor that serves as the station's central hub. A {item}crowd{/item} of spacers, merchants, and hard-eyed individuals flows in both directions. Overhead, a cracked {item}holodisplay{/item} cycles through trade postings and docking schedules in flickering blue text.\n\nThe medical wing lies to the south. A cantina's neon {item}sign{/item} glows to the west, its muffled music bleeding through the doorway. The docking bay access corridor stretches east. To the north, a transparisteel-fronted office bears the sign: STATION ADMINISTRATION. A narrow, poorly lit passage leads southwest into the station's maintenance levels. To the northwest, a shopfront with a flickering neon sign reads: SURPLUS & SALVAGE. A reinforced door to the northeast bears the emblem of station security: MARSHAL'S OFFICE.",
+    description: "The main concourse of Drifter's Anchorage is a wide, vaulted corridor that serves as the station's central hub. A {item}crowd{/item} of spacers, merchants, and hard-eyed individuals flows in both directions. Overhead, a cracked {item}holodisplay{/item} cycles through trade postings and docking schedules in flickering blue text.\n\nThe medical wing lies to the south. A cantina's neon {item}sign{/item} glows to the west, its muffled music bleeding through the doorway. The docking bay access corridor stretches east. To the north, a transparisteel-fronted office bears the sign: STATION ADMINISTRATION. A narrow, poorly lit passage leads southwest into the station's maintenance levels. To the northwest, a shopfront with a flickering neon sign reads: SURPLUS & SALVAGE. A reinforced door to the northeast bears the emblem of station security: MARSHAL'S OFFICE. A grated stairwell descends to the lower deck.",
     exits: {
       south: "med_corridor",
       west: "cantina",
@@ -96,7 +96,8 @@ const ROOMS_DATA = {
       north: "admin_office",
       southwest: "maintenance_sub",
       northwest: "general_store",
-      northeast: "marshal_office"
+      northeast: "marshal_office",
+      down: "lower_concourse"
     },
     objects: {
       "holodisplay": "The cracked holodisplay cycles through listings:\n  {dim}• CARGO HAULER NEEDED — Bulk freight to Muunilinst. Payment on delivery. No questions.{/dim}\n  {dim}• MINING CREW — 3-week rotation, Asteroid Belt Gamma-7. Hazard pay included.{/dim}\n  {dim}• WANTED: Ship mechanic. Must have own tools. See Docking Bay 3.{/dim}\n  {dim}• PUBLIC NOTICE: Unlicensed weapons discharge in the concourse will be met with lethal force. — Station Security{/dim}\nMost of the listings look weeks old.",
@@ -627,6 +628,223 @@ const ROOMS_DATA = {
     },
     npcs: {},
     mine: { lit: false, vein: { id: 'crystal_chamber', name: 'Chamber Quartz', maxNodes: 5, value: 150, depthTier: 4 } }
+  },
+
+  // ============================================================
+  // LOWER DECK — The Underbelly
+  // ============================================================
+
+  "lower_concourse": {
+    name: "Lower Deck — Concourse",
+    description: "The lower deck of Drifter's Anchorage is everything the upper concourse pretends not to be. The ceiling is lower here, the lighting dimmer, and the air carries the smell of cheap stimcaf and recycled sweat. Exposed {item}pipes{/item} and cable runs line the walls. The {item}crowd{/item} is rougher — dock workers, off-shift miners, and people whose business thrives in shadow.\n\nA grated stairwell leads up to the main concourse. A battered neon sign to the west reads: THE BILGE RAT. A cluttered market stretches to the east — the {item}flopmarket{/item}. A dark corridor leads south deeper into the lower deck.",
+    exits: {
+      up: "main_concourse",
+      west: "dive_bar",
+      east: "flopmarket",
+      south: "dark_corridor"
+    },
+    objects: {
+      "pipes": "Exposed conduit and cable runs, some leaking coolant, others humming with power. Down here, maintenance is an afterthought. Someone has tapped into one of the power lines with an improvised junction — illegal, but nobody's checking.",
+      "crowd": "Harder faces than upstairs. A pair of Weequay in stained jumpsuits sharing a bottle. A Devaronian woman counting credit chips at a fold-out table. A skinny human kid darting between legs, pickpocketing with more ambition than skill. Everyone minds their own business, aggressively.",
+      "flopmarket": "You can see makeshift stalls and blankets spread with salvage, contraband, and junk stretching into a wide corridor to the east."
+    },
+    npcs: {
+      "dockworker": {
+        name: "Grizzled Dockworker",
+        keywords: ["dockworker", "worker", "dock hand", "grizzled"],
+        look: "A barrel-chested Aqualish in a sleeveless utility vest, his tusks stained with stimcaf. He's leaning against the wall nursing a bottle of something that smells flammable. His arms are covered in faded tattoos — ship registry numbers, from the look of them.",
+        combat: { blaster: 9, dodge: 7, meleeParry: 8, brawlParry: 10, brawl: 11, str: 12, damage: 10, weaponType: 'brawlParry', weaponName: 'fists', stunOnly: false, security: false },
+        talk: [
+          { text: "The Aqualish grunts and gestures with his bottle.\n\n\"Upper deck's for tourists. Down here's where the real station lives.\" He takes a long pull. \"You want work that pays under the table, check the Bilge Rat. You want cheap gear, hit the flopmarket. You want trouble...\" He grins, showing stained tusks. \"Just keep walking south.\"" },
+          { text: "\"You again. I don't know nothing about nobody. Buy me a drink sometime and maybe I'll remember something.\"" }
+        ]
+      }
+    },
+    lowerDeck: true
+  },
+
+  "dive_bar": {
+    name: "The Bilge Rat",
+    description: "If The Rusty Hydrospanner is rough, The Bilge Rat is a war crime against hospitality. The lighting is whatever filters through the haze of tabac smoke. The {item}bar{/item} is a sheet of corrugated metal propped on fuel drums. {item}Booths{/item} line the walls, most occupied by people who don't want to be seen.\n\nA scarred Trandoshan named {npc}Sska{/npc} tends bar with the warmth of a glacier. A {item}door{/item} in the back wall is marked 'PRIVATE' in three languages.\n\nThe lower concourse is back to the east.",
+    exits: {
+      east: "lower_concourse",
+      west: "guild_back"
+    },
+    objects: {
+      "bar": "A sheet of corrugated durasteel balanced on repurposed fuel drums. The surface is sticky with things you'd rather not identify. A hand-scrawled menu offers three options: 'Grog (5cr)', 'Strong Grog (10cr)', and 'Why (25cr)'. No further description is provided for any of them.",
+      "booths": "Dim alcoves carved into the walls, each with a table and bench seats worn smooth. The booths are positioned to prevent anyone from reading lips or seeing datapads. A Rodian and a human are conducting some kind of deal in the far booth — credit chips and data cards changing hands.",
+      "door": "A heavy door marked 'PRIVATE' in Basic, Huttese, and what might be Rodian. It's unlocked — whoever's behind it isn't worried about uninvited guests. Or they're confident they can handle them."
+    },
+    npcs: {
+      "bartender": {
+        name: "Sska",
+        keywords: ["sska", "bartender", "trandoshan", "barkeep"],
+        look: "A lean Trandoshan with dark green scales and amber eyes that reflect the dim light. A long scar runs from her jaw to her shoulder — blaster graze, by the look of it. She polishes a glass with a rag that's dirtier than the glass.",
+        combat: { blaster: 12, dodge: 10, meleeParry: 11, brawlParry: 11, brawl: 12, str: 12, damage: 13, weaponType: 'dodge', weaponName: 'sawn-off blaster', stunOnly: false, security: false },
+        trainer: {
+          skills: ['Intimidation', 'Streetwise', 'Survival']
+        },
+        talk: [
+          { text: "{npc}Sska{/npc} fixes you with one amber eye.\n\n\"Drink or leave.\" A pause. \"Or if you're looking for the guild, door's in the back. Tell them Sska didn't see you.\"\n\nShe goes back to polishing her glass.\n\n{dim}She teaches street skills. Type {/dim}{green}train{/green}{dim} to see what she offers.{/dim}" },
+          { text: "\"The Hunters' Guild operates out of the back. I don't know nothing, I don't see nothing. That's why I'm still alive.\"" }
+        ]
+      },
+      "smuggler": {
+        name: "Nervous Smuggler",
+        keywords: ["smuggler", "nervous", "human"],
+        look: "A wiry human male in a flight jacket, eyes constantly darting to the exits. He's nursing a drink he hasn't touched, and one hand stays under the table — probably resting on a blaster. He looks like he's waiting for someone, or hiding from someone. Maybe both.",
+        combat: { blaster: 10, dodge: 9, meleeParry: 6, brawlParry: 6, brawl: 7, str: 7, damage: 12, weaponType: 'dodge', weaponName: 'blaster pistol', stunOnly: false, security: false },
+        talk: [
+          { text: "The smuggler flinches when you approach.\n\n\"I'm not here. You didn't see me. We never had this conversation.\" He pauses. \"...Unless you're buying. I might know where to get things. Things that aren't on the shelves upstairs, if you catch my meaning.\"" },
+          { text: "\"I said I'm not here. Move along.\"" }
+        ]
+      }
+    },
+    lowerDeck: true
+  },
+
+  "guild_back": {
+    name: "Bounty Guild — Back Office",
+    description: "Behind the 'PRIVATE' door, the atmosphere shifts. The room is clean, organized, and surprisingly professional. A {item}bounty board{/item} dominates one wall — holographic displays cycling through faces, crimes, and credit amounts. Weapon racks line another wall, and a {item}terminal{/item} hums in the corner.\n\nA Devaronian named {npc}Vexx{/npc} sits behind a desk piled with datapads, horns gleaming in the blue light of the bounty board.\n\nThe dive bar is back to the east.",
+    exits: {
+      east: "dive_bar"
+    },
+    objects: {
+      "bounty board": "A wall-mounted holographic display cycling through active bounties. Most are off-station — targets scattered across the sector, well beyond your reach without a ship. But one section is marked 'LOCAL — STATION ACTIVE' in red.\n\n{dim}Type {/dim}{green}bounty{/green}{dim} to see today's active local bounty.{/dim}",
+      "terminal": "A secure terminal linked to the regional bounty network. Incoming and outgoing bounty postings, payment confirmations, and target intel. You'd need guild access to use it properly.",
+      "weapons": "A well-maintained rack of blasters, vibroblades, stun cuffs, and a few items you can't identify. Guild equipment — not for sale, but guild members can borrow gear for active bounties."
+    },
+    npcs: {
+      "guildmaster": {
+        name: "Vexx",
+        keywords: ["vexx", "guildmaster", "devaronian", "guild"],
+        look: "A Devaronian male with polished black horns and an easy smile that doesn't reach his eyes. He wears a well-cut jacket over a blaster holster — the kind of outfit that says 'I negotiate first, but I always win the negotiation.' A guild badge gleams on his lapel.",
+        combat: { blaster: 14, dodge: 13, meleeParry: 10, brawlParry: 10, brawl: 10, str: 10, damage: 15, weaponType: 'dodge', weaponName: 'heavy blaster pistol', stunOnly: false, security: false },
+        trainer: {
+          skills: ['Investigation', 'Search', 'Streetwise', 'Con', 'Sneak', 'Hide']
+        },
+        talk: [
+          { once: "guild_intro", text: "{npc}Vexx{/npc} looks up from his datapads, one eyebrow raised.\n\n\"Well, well. Fresh meat.\" He leans back, studying you. \"You look like someone who needs credits and isn't too particular about how they earn them. Am I wrong?\"\n\nHe gestures at the bounty board. \"I run the local guild chapter. Small operation, but legitimate — as legitimate as bounty hunting gets, anyway. We get skip-traces, warrant pickups, the occasional 'problem that needs solving.'\"\n\n\"Here's how it works. Every cycle I post a local bounty — someone on this station who's wanted. You take the job, you find them, you bring them down. Dead or alive, though alive pays better. Use your head — ask around, investigate, sneak up on them if you can. Brute force works too, but it's messy.\"\n\n\"Check the {item}bounty board{/item} or type {green}bounty{/green} to see what's active. I also teach the trade — {green}train{/green} if you want to sharpen your skills.\"\n\nHe grins. \"Welcome to the guild. Try not to die on your first job.\"" },
+          { text: "\"Check the board — {green}bounty{/green} for the active job. Or {green}train{/green} if you want to get better before you take on the next one.\"" },
+          { text: "\"The real money's off-station. Sector-wide bounties, big targets, serious credits. But you'd need a ship for those. Something to work toward.\"" }
+        ]
+      }
+    },
+    lowerDeck: true
+  },
+
+  "flopmarket": {
+    name: "Lower Deck — Flopmarket",
+    description: "A wide corridor converted into an open-air market — if you can call recycled station air 'open.' Blankets and tarp-covered {item}stalls{/item} line both sides, selling everything from salvaged ship parts to dubious food to items that definitely fell off a cargo manifest somewhere.\n\nA Bith {npc}junk dealer{/npc} presides over the largest stall, surrounded by mountains of salvage. The lower concourse is back to the west.",
+    exits: {
+      west: "lower_concourse"
+    },
+    objects: {
+      "stalls": "Dozens of makeshift stalls selling a chaotic mix of goods. Used power cells, mismatched boots, ration packs of questionable vintage, holonovels, droid parts, and a suspicious number of blaster power packs sold 'no questions asked.' The prices are lower than upstairs, but so is the quality."
+    },
+    npcs: {
+      "junk_dealer": {
+        name: "Fizz",
+        keywords: ["fizz", "junk dealer", "bith", "dealer", "junk"],
+        look: "A Bith with oversized cranial lobes and large, watery black eyes that somehow manage to look simultaneously bored and calculating. He sits atop a throne made entirely of stacked droid chassis, surrounded by piles of salvage that seem to obey their own gravitational rules.",
+        combat: { blaster: 7, dodge: 8, meleeParry: 5, brawlParry: 5, brawl: 5, str: 5, damage: 9, weaponType: 'dodge', weaponName: 'hold-out blaster', stunOnly: false, security: false },
+        talk: [
+          { text: "{npc}Fizz{/npc} blinks slowly from atop his salvage throne.\n\n\"Everything's for sale. Nothing's guaranteed. Refund policy is: there is no refund policy.\" He gestures at the chaos around him. \"I also buy. Anything. The more questionable the provenance, the better the price.\"" },
+          { text: "\"Still browsing? Take your time. I'm not going anywhere. Neither is any of this.\"" }
+        ]
+      },
+      "gambler_loser": {
+        name: "Down-on-his-luck Gambler",
+        keywords: ["gambler", "loser", "down"],
+        look: "A haggard Sullustan sitting on an overturned crate, staring at an empty credit pouch. His clothes were expensive once — now they're just wrinkled and stained. He has the hollow eyes of someone who's lost everything at the sabacc table and is working out what to do next.",
+        combat: { blaster: 7, dodge: 8, meleeParry: 5, brawlParry: 5, brawl: 5, str: 6, damage: 9, weaponType: 'dodge', weaponName: 'sporting blaster', stunOnly: false, security: false },
+        talk: [
+          { text: "The Sullustan looks up with bloodshot eyes.\n\n\"Don't play sabacc with the dealer upstairs. He's a cheat. Well... he's not, he's just better than everyone. Which is worse, really.\"\n\nHe sighs deeply. \"I used to have a ship, you know. A nice one. Had.\"" },
+          { text: "\"If you hear about anyone looking for a co-pilot, let me know. I can fly anything. I just can't afford anything.\"" }
+        ]
+      }
+    },
+    lowerDeck: true
+  },
+
+  "dark_corridor": {
+    name: "Lower Deck — Dark Corridor",
+    description: "{dim}The lights are sparse down here — every other fixture is dead or stolen.{/dim} A narrow corridor stretches between unmarked {item}doors{/item}. The air is stale and carries a metallic tang. {item}Graffiti{/item} marks the walls — gang tags, warnings, and arrows pointing to destinations that probably don't exist anymore.\n\nA {npc}lookout{/npc} sits on a crate near the south end, watching traffic with practiced disinterest.\n\nThe lower concourse is back to the north. Unmarked doors lead southeast and southwest.",
+    exits: {
+      north: "lower_concourse",
+      southeast: "hideout_1",
+      southwest: "hideout_2"
+    },
+    objects: {
+      "doors": "Unmarked durasteel doors, some welded shut, others hanging ajar. The ones that are still in use have no signage — if you belong here, you know which one is yours. If you don't belong here, that's your problem.",
+      "graffiti": "Gang tags in luminescent paint — 'VOID DEMONS', 'BLACK NEXU', and a crude skull with the words 'PAY YOUR DEBTS' underneath. An arrow points south with the helpful label 'BAD IDEA.' Someone has crossed it out and written 'WORSE IDEA.'"
+    },
+    npcs: {
+      "lookout": {
+        name: "Gang Lookout",
+        keywords: ["lookout", "gang", "kid", "spotter"],
+        look: "A scrawny Twi'lek teenager perched on a cargo crate, legs dangling. She's young but her eyes are old — scanning everyone who passes with the alertness of someone who's learned the hard way what happens when you don't pay attention.",
+        combat: { blaster: 8, dodge: 11, meleeParry: 6, brawlParry: 6, brawl: 7, str: 5, damage: 9, weaponType: 'dodge', weaponName: 'blaster pistol', stunOnly: false, security: false },
+        talk: [
+          { text: "The Twi'lek sizes you up with a quick flick of her lekku.\n\n\"You don't look like you belong down here.\" She shrugs. \"But neither did I, once. Keep your head down and your credits close.\"" },
+          { text: "\"I see things. I hear things. Mostly I forget things. It's healthier that way.\"" }
+        ]
+      }
+    },
+    lowerDeck: true
+  },
+
+  "hideout_1": {
+    name: "Lower Deck — Abandoned Quarters",
+    description: "A section of decommissioned crew quarters, long since stripped of anything valuable. {item}Bunks{/item} are stacked three high along the walls, their mattresses removed. The floor is littered with {item}debris{/item} — food wrappers, empty power cells, and a few scattered personal effects left behind by whoever lived here last.\n\nThe dark corridor is back to the northwest.",
+    exits: {
+      northwest: "dark_corridor"
+    },
+    objects: {
+      "bunks": "Three-tier crew bunks bolted to the walls, Imperial standard issue. The mattresses are gone but some of the frames still have personal storage compartments — all empty, all forced open at some point.",
+      "debris": "The usual detritus of transient occupation. Ration wrappers, a cracked datapad with a dead battery, an empty blaster power pack, and a single boot with no match. The stories these walls could tell are probably depressing."
+    },
+    npcs: {
+      "squatter": {
+        name: "Twitchy Squatter",
+        keywords: ["squatter", "twitchy", "human"],
+        look: "A gaunt human male huddled in a lower bunk, wrapped in a thermal blanket. His eyes dart constantly and he flinches at sounds. Spice withdrawal, maybe, or just the paranoia that comes from sleeping in a place like this. He's probably harmless. Probably.",
+        combat: { blaster: 6, dodge: 7, meleeParry: 5, brawlParry: 5, brawl: 6, str: 5, damage: 6, weaponType: 'dodge', weaponName: 'shiv', stunOnly: false, security: false },
+        talk: [
+          { text: "The squatter pulls his blanket tighter.\n\n\"I didn't see nothing. I don't know nothing. Please just leave me alone.\"" },
+          { text: "\"...Sometimes people come through here. Different people. They don't stay long. I don't ask why.\"" }
+        ]
+      }
+    },
+    lowerDeck: true
+  },
+
+  "hideout_2": {
+    name: "Lower Deck — Storage Bay",
+    description: "A disused storage bay converted into... something. {item}Crates{/item} are stacked to create makeshift walls and partitions, forming a maze of narrow passages within the bay. It smells of machine oil, old food, and desperation. A {item}workbench{/item} in one corner has tools scattered across it.\n\nThe dark corridor is back to the northeast.",
+    exits: {
+      northeast: "dark_corridor"
+    },
+    objects: {
+      "crates": "Stacked cargo crates forming walls and partitions. Some are empty, some are sealed and heavy. The arrangement creates several hidden alcoves — perfect for stashing goods, holding meetings, or hiding from people you owe money to.",
+      "workbench": "A cluttered workbench with soldering tools, a multitool, wire strippers, and what appears to be a half-disassembled comlink. Someone's been modifying equipment down here — probably nothing legal."
+    },
+    npcs: {
+      "mechanic": {
+        name: "Underground Mechanic",
+        keywords: ["mechanic", "underground", "tech"],
+        look: "A heavyset Sullustan female with grease-stained hands and a pair of magnifying goggles pushed up on her forehead. She's elbow-deep in what might have been a security droid, rewiring its motivator with casual expertise.",
+        combat: { blaster: 8, dodge: 7, meleeParry: 7, brawlParry: 7, brawl: 8, str: 8, damage: 10, weaponType: 'dodge', weaponName: 'heavy hydrospanner', stunOnly: false, security: false },
+        trainer: {
+          skills: ['Demolitions', 'Droid Programming', 'Droid Repair', 'Computer Programming/Repair', 'Security']
+        },
+        talk: [
+          { text: "{npc}Underground Mechanic{/npc} glances up from her work.\n\n\"If the marshal sent you, I'm just fixing droids. Nothing illegal here.\" She pauses. \"If the marshal didn't send you... I fix other things too. And I teach. Cheaper than upstairs, and no questions asked.\"\n\n{dim}She teaches tech skills. Type {/dim}{green}train{/green}{dim} to see what she offers.{/dim}" },
+          { text: "\"Need something sliced, rewired, or made to look like an accident? Talk to me. Need training? {green}train{/green}. Need a friend? Try upstairs.\"" }
+        ]
+      }
+    },
+    lowerDeck: true
   }
 
 };

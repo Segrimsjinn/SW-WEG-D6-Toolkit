@@ -101,13 +101,20 @@ const MUD = {
     const npcKeys = Object.keys(room.npcs || {});
     const active = npcKeys.filter(k => !this.isNpcDefeated(roomId, k));
     const down = npcKeys.filter(k => this.isNpcDefeated(roomId, k));
-    if (active.length) {
-      const names = active.map(k => room.npcs[k].name);
+    const names = active.map(k => room.npcs[k].name);
+
+    // Add bounty target if present in this room
+    if (MUD_BOUNTY.isTargetInRoom(roomId)) {
+      const bt = MUD_BOUNTY.getCurrentBounty();
+      names.push(bt.name);
+    }
+
+    if (names.length) {
       this.print('{dim}You see: ' + names.join(', ') + '{/dim}');
     }
     if (down.length) {
-      const names = down.map(k => room.npcs[k].name);
-      this.print('{red}Unconscious: ' + names.join(', ') + '{/red}');
+      const downNames = down.map(k => room.npcs[k].name);
+      this.print('{red}Unconscious: ' + downNames.join(', ') + '{/red}');
     }
   },
 
@@ -164,12 +171,21 @@ const MUD = {
   // --- NPC lookup ---
   findNpc(keyword) {
     const room = ROOMS_DATA[this.state.currentRoom];
-    if (!room || !room.npcs) return null;
+    if (!room) return null;
     const kw = keyword.toLowerCase();
-    for (const [id, npc] of Object.entries(room.npcs)) {
-      if (id.toLowerCase() === kw) return npc;
-      if (npc.name.toLowerCase().includes(kw)) return npc;
-      if (npc.keywords && npc.keywords.some(k => k === kw)) return npc;
+    // Check room NPCs
+    if (room.npcs) {
+      for (const [id, npc] of Object.entries(room.npcs)) {
+        if (this.isNpcDefeated(this.state.currentRoom, id)) continue;
+        if (id.toLowerCase() === kw) return npc;
+        if (npc.name.toLowerCase().includes(kw)) return npc;
+        if (npc.keywords && npc.keywords.some(k => k === kw)) return npc;
+      }
+    }
+    // Check bounty target
+    if (MUD_BOUNTY.isTargetInRoom(this.state.currentRoom)) {
+      const bt = MUD_BOUNTY.getTargetNpc();
+      if (bt.name.toLowerCase().includes(kw) || bt.keywords.some(k => k === kw)) return bt;
     }
     return null;
   },
@@ -331,6 +347,18 @@ const MUD = {
       case 'train':
       case 'learn':
         return this.doTrain(arg);
+
+      case 'bounty':
+      case 'bounties':
+        return MUD_BOUNTY.showBounty();
+
+      case 'ask':
+        // "ask <npc> about bounty" or "ask <npc>"
+        const askParts = arg.replace(/\s+about\s+bounty$/i, '');
+        return MUD_BOUNTY.askAbout(askParts);
+
+      case 'sneak':
+        return this.doSneak(arg);
 
       case 'save':
         return this.doSave();
@@ -1101,6 +1129,57 @@ const MUD = {
     this.autoSave();
   },
 
+  doSneak(direction) {
+    if (!this.state.character) { this.print("You need a character first.", 'error'); return; }
+    if (MUD_COMBAT.active) { this.print("You can't sneak during combat!", 'error'); return; }
+
+    if (!direction) {
+      this.print('{dim}Sneak where? Use {/dim}{green}sneak <direction>{/green}{dim} to move quietly into a room.{/dim}', 'error');
+      return;
+    }
+
+    const dir = this.DIR_MAP[direction.toLowerCase()] || direction.toLowerCase();
+    const room = ROOMS_DATA[this.state.currentRoom];
+    if (!room || !room.exits || !room.exits[dir]) {
+      this.print("You can't go " + dir + " from here.", 'error');
+      return;
+    }
+
+    const targetRoom = room.exits[dir];
+
+    // Roll Sneak vs difficulty (Moderate = 12, harder in some rooms)
+    const sneakPips = MUD_COMBAT.getPlayerSkillPips('Sneak');
+    const sneakRoll = MUD_COMBAT.rollPips(sneakPips);
+    const difficulty = 12 + Math.floor(Math.random() * 4); // 12-15
+
+    this.print(raw || 'sneak ' + direction, 'command');
+    this.print('{dim}You move quietly...{/dim}');
+    this.print('{dim}Sneak: {/dim}{gold}' + sneakRoll + '{/gold}{dim} vs difficulty {/dim}{gold}' + difficulty + '{/gold}');
+
+    // Move to the room
+    this.state.ticks++;
+    MUD_MINE.moveSpider();
+    this.state.currentRoom = targetRoom;
+
+    if (sneakRoll >= difficulty) {
+      this.print('{green}You slip in unnoticed.{/green}');
+      this.state.flags['sneaking'] = true;
+      this.displayRoom(targetRoom);
+
+      // Check if bounty target is here
+      if (MUD_BOUNTY.isTargetInRoom(targetRoom) && !MUD_BOUNTY.isBountyComplete()) {
+        this.print('{dim}You have the element of surprise. Your first attack will be undefended.{/dim}');
+      }
+    } else {
+      this.print('{red}You make too much noise — you\'ve been noticed.{/red}');
+      this.state.flags['sneaking'] = false;
+      this.displayRoom(targetRoom);
+      MUD_MINE.checkSpiderEncounter(targetRoom);
+    }
+
+    this.autoSave();
+  },
+
   doSleep() {
     if (!this.state.character) { this.print("You need a character first.", 'error'); return; }
     if (MUD_COMBAT.active) { this.print("You can't sleep during combat!", 'error'); return; }
@@ -1298,6 +1377,10 @@ const MUD = {
     this.print('  {green}wheel{/green} <type> <amt>  — jubilee wheel');
     this.print('  {green}mine{/green}         — extract quartz at a vein');
     this.print('  {green}train{/green}        — improve skills with a teacher');
+    this.print('  {green}bounty{/green}       — check active bounty');
+    this.print('  {green}ask{/green} <npc>    — ask an NPC about the bounty');
+    this.print('  {green}sneak{/green} <dir>  — move quietly into a room');
+    this.print('  {green}sleep{/green}        — rest at the flophouse (25 cr)');
     this.print('');
     this.print('{gold}Information:{/gold}');
     this.print('  {green}inventory{/green} / {green}i{/green}  — check your belongings');
@@ -2192,7 +2275,9 @@ const MUD_COMBAT = {
       name: npc.name,
       combat: npc.combat,
       wounds: 'healthy',
-      stunTurns: 0
+      stunTurns: 0,
+      loot: npc.loot || null,
+      isBountyTarget: npc.isBountyTarget || false
     }];
 
     // Call security if flagged
@@ -2312,6 +2397,11 @@ const MUD_COMBAT = {
             MUD.print('  {green}+' + award + ' Character Points{/green}');
           }
         }
+      }
+
+      // Check if this was a bounty target
+      if (enemy.isBountyTarget) {
+        MUD_BOUNTY.onTargetDefeated();
       }
 
       this.enemies = this.enemies.filter(e => e !== enemy);
@@ -2937,5 +3027,162 @@ const MUD_MINE = {
       MUD.state.mineVeins[veinId] = { mined: 0, rootMined: 0, lastMinedTick: 0, depletedTick: null, fullyDepleted: false };
     }
     return MUD.state.mineVeins[veinId];
+  }
+};
+
+// ============================================================
+// BOUNTY SYSTEM
+// ============================================================
+
+const MUD_BOUNTY = {
+
+  // Bounty target pool — these NPCs blend into lower deck rooms
+  TARGETS: [
+    { name: 'Krell Vos', species: 'Human', crime: 'Cargo theft and assault', reward: 200, cp: 3,
+      room: 'flopmarket', description: 'A stocky human with a shaved head and a scar across his nose. He\'s browsing the stalls, trying to look casual.',
+      combat: { blaster: 10, dodge: 9, meleeParry: 8, brawlParry: 9, brawl: 10, str: 10, damage: 12, weaponType: 'dodge', weaponName: 'blaster pistol', stunOnly: false, security: false },
+      intel: { streetwise: 'Word is Krell likes to shop the flopmarket for stolen goods.', investigation: 'The theft report says he\'s armed with a standard blaster. Nothing fancy.', persuasion: 'A local says he\'s jumpy — might run if he spots you first.' }
+    },
+    { name: 'Yara Shenn', species: 'Twi\'lek', crime: 'Smuggling and forged documents', reward: 300, cp: 3,
+      room: 'dive_bar', description: 'A green-skinned Twi\'lek nursing a drink in a back booth. She keeps glancing at the door.',
+      combat: { blaster: 11, dodge: 12, meleeParry: 7, brawlParry: 7, brawl: 7, str: 7, damage: 12, weaponType: 'dodge', weaponName: 'blaster pistol', stunOnly: false, security: false },
+      intel: { streetwise: 'Yara\'s been hanging around the Bilge Rat. She\'s fast — good luck catching her off guard.', investigation: 'Her file says she\'s a runner, not a fighter. High dodge, low strength.', intimidation: 'Someone on the dark corridor says she owes money to the wrong people. Desperate.' }
+    },
+    { name: 'Gor Tannath', species: 'Gamorrean', crime: 'Aggravated assault — three counts', reward: 400, cp: 4,
+      room: 'dark_corridor', description: 'A massive Gamorrean leaning against the wall, arms crossed. He\'s watching the corridor like he owns it.',
+      combat: { blaster: 6, dodge: 7, meleeParry: 11, brawlParry: 12, brawl: 14, str: 14, damage: 14, weaponType: 'brawlParry', weaponName: 'fists', stunOnly: false, security: false },
+      intel: { streetwise: 'Gor hangs out in the dark corridor. Big guy — don\'t let him get his hands on you.', investigation: 'Three assault charges — all brawling. He doesn\'t use blasters. Melee range is his game.', search: 'You spot fresh knuckle-marks on the wall near the corridor. Recent fight.' }
+    },
+    { name: 'Dex Corrin', species: 'Human', crime: 'Data theft and slicing', reward: 350, cp: 4,
+      room: 'hideout_2', description: 'A thin human hunched over a datapad in the corner, fingers flying across the screen. He hasn\'t looked up once.',
+      combat: { blaster: 9, dodge: 10, meleeParry: 6, brawlParry: 6, brawl: 6, str: 6, damage: 12, weaponType: 'dodge', weaponName: 'hold-out blaster', stunOnly: false, security: false },
+      intel: { streetwise: 'The slicer? He holes up in the storage bay. Paranoid — got traps set up.', investigation: 'He\'s a slicer, not a soldier. Weak in a fight but hard to find.', con: 'You could probably talk your way close before he realizes you\'re not a client.' }
+    },
+    { name: 'Nix Ferrago', species: 'Rodian', crime: 'Murder — wanted alive preferred', reward: 500, cp: 5,
+      room: 'hideout_1', description: 'A Rodian sitting perfectly still in the shadows of an upper bunk. His large eyes track everything in the room. A heavy blaster sits across his lap.',
+      combat: { blaster: 14, dodge: 12, meleeParry: 9, brawlParry: 9, brawl: 9, str: 9, damage: 15, weaponType: 'dodge', weaponName: 'heavy blaster pistol', stunOnly: false, security: false },
+      intel: { streetwise: 'Nix is a killer. Professional. He\'s hiding in the abandoned quarters. Be careful.', investigation: 'Murder charge — he\'s armed and dangerous. Heavy blaster, good shot. Don\'t miss.', intimidation: 'Even the gangs leave Nix alone. That tells you everything.' }
+    }
+  ],
+
+  // Rooms where bounty targets can appear as "ambient" NPCs
+  BOUNTY_ROOMS: ['flopmarket', 'dive_bar', 'dark_corridor', 'hideout_1', 'hideout_2'],
+
+  // Get the current bounty based on tick cycle (rotates every 25 ticks)
+  getCurrentBounty() {
+    const cycle = Math.floor(MUD.state.ticks / 25);
+    return this.TARGETS[cycle % this.TARGETS.length];
+  },
+
+  // Check if the current bounty has been completed this cycle
+  isBountyComplete() {
+    const cycle = Math.floor(MUD.state.ticks / 25);
+    return MUD.state.flags['bountyComplete_' + cycle] || false;
+  },
+
+  completeBounty() {
+    const cycle = Math.floor(MUD.state.ticks / 25);
+    MUD.state.flags['bountyComplete_' + cycle] = true;
+  },
+
+  // Show the active bounty
+  showBounty() {
+    if (!MUD.state.character) { MUD.print("You need a character first.", 'error'); return; }
+
+    if (this.isBountyComplete()) {
+      MUD.print('{dim}No active bounties right now. Check back after some time passes.{/dim}');
+      return;
+    }
+
+    const b = this.getCurrentBounty();
+    MUD.printBlank();
+    MUD.print('{red}═══ ACTIVE BOUNTY ═══{/red}');
+    MUD.print('  Target:  {gold}' + b.name + '{/gold} {dim}(' + b.species + '){/dim}');
+    MUD.print('  Crime:   ' + b.crime);
+    MUD.print('  Reward:  {gold}' + b.reward + ' credits{/gold}');
+    MUD.printBlank();
+    MUD.print('{dim}Use {/dim}{green}ask <npc> about bounty{/green}{dim} to gather intel from people around the lower deck.{/dim}');
+    MUD.print('{dim}Use {/dim}{green}sneak{/green}{dim} when entering the target\'s room for a surprise attack.{/dim}');
+  },
+
+  // Ask an NPC about the current bounty — skill check for intel
+  askAbout(npcTarget) {
+    if (!MUD.state.character) { MUD.print("You need a character first.", 'error'); return; }
+    if (this.isBountyComplete()) { MUD.print("No active bounty to ask about.", 'error'); return; }
+
+    const npc = MUD.findNpc(npcTarget);
+    if (!npc) { MUD.print("There's nobody called '" + npcTarget + "' here.", 'error'); return; }
+
+    const bounty = this.getCurrentBounty();
+    const intel = bounty.intel;
+
+    // Try skills in order of usefulness — each NPC responds to different approaches
+    const skills = ['streetwise', 'investigation', 'persuasion', 'intimidation', 'search', 'con'];
+    let bestSkill = null;
+    let bestInfo = null;
+
+    for (const skill of skills) {
+      if (intel[skill]) {
+        const skillName = skill.charAt(0).toUpperCase() + skill.slice(1);
+        const fullName = skill === 'con' ? 'Con' : skill === 'search' ? 'Search' : skillName;
+        const pips = MUD_COMBAT.getPlayerSkillPips(fullName);
+        const roll = MUD_COMBAT.rollPips(pips);
+        const difficulty = 10 + Math.floor(Math.random() * 6); // Moderate-ish
+
+        if (roll >= difficulty) {
+          bestSkill = fullName;
+          bestInfo = intel[skill];
+          break;
+        }
+      }
+    }
+
+    MUD.printBlank();
+    if (bestInfo) {
+      MUD.print('{npc}' + npc.name + '{/npc} lowers their voice.');
+      MUD.print('"' + bestInfo + '"');
+      MUD.print('{dim}(' + bestSkill + ' check succeeded){/dim}');
+    } else {
+      MUD.print('{npc}' + npc.name + '{/npc} shrugs. "Don\'t know nothing about that. Try someone else."');
+      MUD.print('{dim}(skill check failed — try another NPC or improve your skills){/dim}');
+    }
+  },
+
+  // Check if the bounty target is in the current room and add them as a temporary NPC
+  isTargetInRoom(roomId) {
+    if (this.isBountyComplete()) return false;
+    const b = this.getCurrentBounty();
+    return b.room === roomId;
+  },
+
+  getTargetNpc() {
+    const b = this.getCurrentBounty();
+    return {
+      name: b.name,
+      keywords: b.name.toLowerCase().split(' '),
+      look: b.description + '\n\n{red}This is the bounty target — ' + b.crime + '. Reward: ' + b.reward + ' credits.{/red}',
+      combat: b.combat,
+      loot: {
+        credits: { min: 10, max: 50 },
+        cp: b.cp,
+        items: []
+      },
+      talk: [
+        { text: '"' + b.name + ' eyes you warily. \"You want something? I don\'t know you.\"" }
+      ],
+      isBountyTarget: true
+    };
+  },
+
+  // Called when a bounty target is defeated
+  onTargetDefeated() {
+    const b = this.getCurrentBounty();
+    this.completeBounty();
+    MUD.printBlank();
+    MUD.print('{gold}═══ BOUNTY COMPLETE ═══{/gold}');
+    MUD.print('{gold}' + b.name + ' has been neutralized.{/gold}');
+    MUD.print('{gold}+' + b.reward + ' credits (bounty reward){/gold}');
+    MUD.state.credits += b.reward;
+    MUD.autoSave();
   }
 };
