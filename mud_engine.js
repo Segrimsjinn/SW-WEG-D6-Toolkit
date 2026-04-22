@@ -3243,7 +3243,7 @@ const MUD_BOUNTY = {
     MUD.state.inventory.push({
       id: 'bounty_chip_' + b.name.replace(/\s/g, '_').toLowerCase(),
       name: 'Bounty Chip — ' + b.name,
-      description: 'A coded credit chip keyed to the bounty on ' + b.name + '. Worth ' + b.reward + ' credits when turned in to the Bounty Guild. If you die with this, the infirmary takes it to cover your medical bills.',
+      description: 'A coded credit chip keyed to the bounty on ' + b.name + '. Worth ' + b.reward + ' credits.\n\n{dim}Return to Vexx at the Bounty Guild (Bilge Rat back room) and type {/dim}{green}turn in{/green}{dim} to collect. If you die carrying this, the infirmary takes it.{/dim}',
       isBountyChip: true,
       bountyReward: b.reward,
       bountyTarget: b.name
