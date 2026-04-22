@@ -15,7 +15,8 @@ const MUD = {
     started: false,
     ticks: 0,           // total room moves — drives respawn timers
     defeatedNpcs: {},   // { "roomId:npcId": tickWhenDefeated }
-    lootedNpcs: {}      // { "roomId:npcId": tickWhenLooted } — resets on respawn
+    lootedNpcs: {},     // { "roomId:npcId": tickWhenLooted } — resets on respawn
+    killCounts: {}      // { "roomId:npcId": totalKills } — for CP diminishing returns
   },
 
   SAVE_KEY: 'muddLiteStation_save',
@@ -510,11 +511,23 @@ const MUD = {
       }
     }
 
-    // Character points
-    if (npc.loot.cp) {
-      if (this.state.character) {
-        this.state.character.cp = (this.state.character.cp || 0) + npc.loot.cp;
-        this.print('  {green}+' + npc.loot.cp + ' Character Points{/green}');
+    // Character points — diminishing returns
+    // Base CP sets kills-per-tier. Each tier gives (base - tier#) CP.
+    // e.g. base 2: tier0=2 (×2 kills), tier1=1 (×2 kills), tier2=0
+    // e.g. base 3: tier0=3 (×3 kills), tier1=2 (×3 kills), tier2=1 (×3 kills), tier3=0
+    if (npc.loot.cp && this.state.character) {
+      const baseCp = npc.loot.cp;
+      const kills = this.state.killCounts[key] || 0;
+      this.state.killCounts[key] = kills + 1;
+
+      const tier = Math.floor(kills / baseCp);
+      const award = Math.max(0, baseCp - tier);
+
+      if (award > 0) {
+        this.state.character.cp = (this.state.character.cp || 0) + award;
+        this.print('  {green}+' + award + ' Character Points{/green}');
+      } else {
+        this.print('  {dim}No Character Points — nothing left to learn from this fight.{/dim}');
       }
     }
 
@@ -815,7 +828,8 @@ const MUD = {
         started: this.state.started,
         ticks: this.state.ticks,
         defeatedNpcs: this.state.defeatedNpcs,
-        lootedNpcs: this.state.lootedNpcs
+        lootedNpcs: this.state.lootedNpcs,
+        killCounts: this.state.killCounts
       };
       localStorage.setItem(this.SAVE_KEY, JSON.stringify(save));
       return true;
@@ -839,6 +853,7 @@ const MUD = {
       this.state.ticks = save.ticks || 0;
       this.state.defeatedNpcs = save.defeatedNpcs || {};
       this.state.lootedNpcs = save.lootedNpcs || {};
+      this.state.killCounts = save.killCounts || {};
       return true;
     } catch (e) {
       console.error('MUD load failed:', e);
