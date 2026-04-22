@@ -3052,27 +3052,27 @@ const MUD_BOUNTY = {
 
   // Bounty target pool — these NPCs blend into lower deck rooms
   TARGETS: [
-    { name: 'Krell Vos', species: 'Human', crime: 'Cargo theft and assault', reward: 200, cp: 3,
+    { name: 'Krell Vos', species: 'Human', crime: 'Cargo theft and assault', reward: 500, cp: 3,
       room: 'flopmarket', description: 'A stocky human with a shaved head and a scar across his nose. He\'s browsing the stalls, trying to look casual.',
       combat: { blaster: 10, dodge: 9, meleeParry: 8, brawlParry: 9, brawl: 10, str: 10, damage: 12, weaponType: 'dodge', weaponName: 'blaster pistol', stunOnly: false, security: false },
       intel: { streetwise: 'Word is Krell likes to shop the flopmarket for stolen goods.', investigation: 'The theft report says he\'s armed with a standard blaster. Nothing fancy.', persuasion: 'A local says he\'s jumpy — might run if he spots you first.' }
     },
-    { name: 'Yara Shenn', species: 'Twi\'lek', crime: 'Smuggling and forged documents', reward: 300, cp: 3,
+    { name: 'Yara Shenn', species: 'Twi\'lek', crime: 'Smuggling and forged documents', reward: 1000, cp: 3,
       room: 'dive_bar', description: 'A green-skinned Twi\'lek nursing a drink in a back booth. She keeps glancing at the door.',
       combat: { blaster: 11, dodge: 12, meleeParry: 7, brawlParry: 7, brawl: 7, str: 7, damage: 12, weaponType: 'dodge', weaponName: 'blaster pistol', stunOnly: false, security: false },
       intel: { streetwise: 'Yara\'s been hanging around the Bilge Rat. She\'s fast — good luck catching her off guard.', investigation: 'Her file says she\'s a runner, not a fighter. High dodge, low strength.', intimidation: 'Someone on the dark corridor says she owes money to the wrong people. Desperate.' }
     },
-    { name: 'Gor Tannath', species: 'Gamorrean', crime: 'Aggravated assault — three counts', reward: 400, cp: 4,
+    { name: 'Gor Tannath', species: 'Gamorrean', crime: 'Aggravated assault — three counts', reward: 1500, cp: 4,
       room: 'dark_corridor', description: 'A massive Gamorrean leaning against the wall, arms crossed. He\'s watching the corridor like he owns it.',
       combat: { blaster: 6, dodge: 7, meleeParry: 11, brawlParry: 12, brawl: 14, str: 14, damage: 14, weaponType: 'brawlParry', weaponName: 'fists', stunOnly: false, security: false },
       intel: { streetwise: 'Gor hangs out in the dark corridor. Big guy — don\'t let him get his hands on you.', investigation: 'Three assault charges — all brawling. He doesn\'t use blasters. Melee range is his game.', search: 'You spot fresh knuckle-marks on the wall near the corridor. Recent fight.' }
     },
-    { name: 'Dex Corrin', species: 'Human', crime: 'Data theft and slicing', reward: 350, cp: 4,
+    { name: 'Dex Corrin', species: 'Human', crime: 'Data theft and slicing', reward: 2000, cp: 4,
       room: 'hideout_2', description: 'A thin human hunched over a datapad in the corner, fingers flying across the screen. He hasn\'t looked up once.',
       combat: { blaster: 9, dodge: 10, meleeParry: 6, brawlParry: 6, brawl: 6, str: 6, damage: 12, weaponType: 'dodge', weaponName: 'hold-out blaster', stunOnly: false, security: false },
       intel: { streetwise: 'The slicer? He holes up in the storage bay. Paranoid — got traps set up.', investigation: 'He\'s a slicer, not a soldier. Weak in a fight but hard to find.', con: 'You could probably talk your way close before he realizes you\'re not a client.' }
     },
-    { name: 'Nix Ferrago', species: 'Rodian', crime: 'Murder — wanted alive preferred', reward: 500, cp: 5,
+    { name: 'Nix Ferrago', species: 'Rodian', crime: 'Murder — wanted alive preferred', reward: 3000, cp: 5,
       room: 'hideout_1', description: 'A Rodian sitting perfectly still in the shadows of an upper bunk. His large eyes track everything in the room. A heavy blaster sits across his lap.',
       combat: { blaster: 14, dodge: 12, meleeParry: 9, brawlParry: 9, brawl: 9, str: 9, damage: 15, weaponType: 'dodge', weaponName: 'heavy blaster pistol', stunOnly: false, security: false },
       intel: { streetwise: 'Nix is a killer. Professional. He\'s hiding in the abandoned quarters. Be careful.', investigation: 'Murder charge — he\'s armed and dangerous. Heavy blaster, good shot. Don\'t miss.', intimidation: 'Even the gangs leave Nix alone. That tells you everything.' }
