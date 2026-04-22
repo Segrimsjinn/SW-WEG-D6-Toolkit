@@ -5,7 +5,7 @@ const ROOMS_DATA = {
 
   "infirmary": {
     name: "Station Infirmary",
-    description: "Harsh white light fills this sterile medical bay. Two rows of narrow cots line the walls, most empty. A 2-1B surgical droid stands near a wall-mounted vitals monitor, its photoreceptors dimly pulsing. The antiseptic smell of bacta hangs in the recycled air. A sliding door to the north leads into the medical wing corridor.",
+    description: "Harsh white light fills this sterile medical bay. Two rows of narrow {item}cot{/item}s line the walls, most empty. A {npc}2-1B{/npc} surgical {npc}droid{/npc} stands near a wall-mounted {item}monitor{/item}, its photoreceptors dimly pulsing. The antiseptic smell of {item}bacta{/item} hangs in the recycled air. A sliding door to the north leads into the medical wing corridor.",
     exits: {
       north: "med_corridor"
     },
@@ -54,7 +54,7 @@ const ROOMS_DATA = {
 
   "med_corridor": {
     name: "Medical Wing Corridor",
-    description: "A narrow corridor with scuffed durasteel plating underfoot. Harsh overhead strips flicker intermittently, casting uneven light. The infirmary lies to the south, and the corridor opens north into the bustle of the main concourse. To the east, a small alcove offers a viewport looking out into space.",
+    description: "A narrow {item}corridor{/item} with scuffed durasteel plating underfoot. Harsh overhead {item}lights{/item} flicker intermittently, casting uneven light. The infirmary lies to the south, and the corridor opens north into the bustle of the main concourse. To the east, a small alcove offers a viewport looking out into space.",
     exits: {
       south: "infirmary",
       north: "main_concourse",
@@ -69,7 +69,7 @@ const ROOMS_DATA = {
 
   "viewport_alcove": {
     name: "Viewport Alcove",
-    description: "A small alcove carved from the corridor wall, dominated by a transparisteel viewport two meters wide. Beyond the glass, the star-flecked void stretches endlessly. The angular bulk of Drifter's Anchorage extends below — you can see docking pylons, hull plating scarred by micrometeorites, and the faint blue glow of the station's ventral thrusters holding position. In the far distance, the pale disc of a planet catches the light of a nearby star.",
+    description: "A small alcove carved from the corridor wall, dominated by a transparisteel {item}viewport{/item} two meters wide. Beyond the glass, the star-flecked void stretches endlessly. The angular bulk of Drifter's Anchorage extends below — you can see docking pylons, hull plating scarred by micrometeorites, and the faint blue glow of the {item}station{/item}'s ventral thrusters holding position. In the far distance, the pale disc of a {item}planet{/item} catches the light of a nearby star.",
     exits: {
       west: "med_corridor"
     },
@@ -83,7 +83,7 @@ const ROOMS_DATA = {
 
   "main_concourse": {
     name: "Main Concourse",
-    description: "The main concourse of Drifter's Anchorage is a wide, vaulted corridor that serves as the station's central hub. Foot traffic flows in both directions — spacers, merchants, a few hard-eyed individuals who could be anything from bounty hunters to off-duty Remnant officers. Overhead, a cracked holodisplay cycles through trade postings and docking schedules in flickering blue text.\n\nThe medical wing lies to the south. A cantina's neon sign glows to the west, its muffled music bleeding through the doorway. The docking bay access corridor stretches east. To the north, a transparisteel-fronted office bears the sign: STATION ADMINISTRATION.",
+    description: "The main concourse of Drifter's Anchorage is a wide, vaulted corridor that serves as the station's central hub. A {item}crowd{/item} of spacers, merchants, and hard-eyed individuals flows in both directions. Overhead, a cracked {item}holodisplay{/item} cycles through trade postings and docking schedules in flickering blue text.\n\nThe medical wing lies to the south. A cantina's neon {item}sign{/item} glows to the west, its muffled music bleeding through the doorway. The docking bay access corridor stretches east. To the north, a transparisteel-fronted office bears the sign: STATION ADMINISTRATION.",
     exits: {
       south: "med_corridor",
       west: "cantina",
@@ -100,7 +100,7 @@ const ROOMS_DATA = {
 
   "admin_office": {
     name: "Station Administration",
-    description: "A small, surprisingly orderly office behind a transparisteel partition. A human woman in a crisp but worn uniform sits behind a terminal, processing what seems like an endless queue of datapads. The walls are lined with filing cabinets and a single Imperial-era motivational poster that someone has defaced with a crude drawing of a mynock. A security camera blinks red in the corner.",
+    description: "A small, surprisingly orderly office behind a transparisteel partition. {npc}Voss{/npc}, a human woman in a crisp but worn uniform, sits behind a {item}terminal{/item}, processing what seems like an endless queue of datapads. The walls are lined with {item}cabinets{/item} and a single Imperial-era {item}poster{/item} that someone has defaced with a crude drawing of a mynock. A security {item}camera{/item} blinks red in the corner.",
     exits: {
       south: "main_concourse"
     },
@@ -125,7 +125,7 @@ const ROOMS_DATA = {
 
   "cantina": {
     name: "The Rusty Hydrospanner",
-    description: "The station cantina is dim and loud, exactly the way its clientele prefers it. Mismatched lighting casts everything in shades of amber and shadow. A long bar runs along the far wall, tended by a surly-looking Besalisk whose four arms keep glasses moving with mechanical efficiency. Scattered tables fill the floor, occupied by the usual assortment of spacers, drifters, and people who'd rather not be looked at too closely.\n\nA jukebox droid in the corner plays something vaguely jizz-like at a volume that discourages eavesdropping. The exit back to the main concourse is to the east.",
+    description: "The station cantina is dim and loud, exactly the way its clientele prefers it. Mismatched lighting casts everything in shades of amber and shadow. A long {item}bar{/item} runs along the far wall, tended by a surly-looking Besalisk named {npc}Grek{/npc} whose four arms keep glasses moving with mechanical efficiency. Scattered {item}tables{/item} fill the floor, occupied by the usual assortment of spacers, drifters, and people who'd rather not be looked at too closely.\n\nA {item}jukebox{/item} droid in the corner plays something vaguely jizz-like at a volume that discourages eavesdropping. The exit back to the main concourse is to the east.",
     exits: {
       east: "main_concourse"
     },
@@ -150,7 +150,7 @@ const ROOMS_DATA = {
 
   "docking_access": {
     name: "Docking Bay Access Corridor",
-    description: "A wide industrial corridor leading to the station's docking facilities. The floor is grated metal, and through the gaps you can see conduits and cable runs snaking into the station's guts. Heavy blast doors line both sides — individual docking bay airlocks, each with a status panel showing green (occupied), red (sealed), or dark (empty).\n\nThe main concourse lies to the west. A large set of doors to the east opens into the main docking bay observation deck.",
+    description: "A wide industrial corridor leading to the station's docking facilities. The floor is grated metal, and through the gaps you can see {item}conduits{/item} and cable runs snaking into the station's guts. Heavy blast {item}doors{/item} line both sides — individual docking bay airlocks, each with a status {item}panels{/item} showing green (occupied), red (sealed), or dark (empty).\n\nThe main concourse lies to the west. A large set of doors to the east opens into the main docking bay observation deck.",
     exits: {
       west: "main_concourse",
       east: "docking_bay"
@@ -165,7 +165,7 @@ const ROOMS_DATA = {
 
   "docking_bay": {
     name: "Docking Bay Observation Deck",
-    description: "A wide observation platform overlooking the station's main docking bay through a wall of reinforced transparisteel. Below, the cavernous bay stretches out — a vast space of landing pads, fuel lines, and cargo loaders. Ships of various sizes sit on the deck, from single-pilot fighters to mid-bulk freighters. Maintenance crews and loading droids move between them.\n\nA grizzled Duros in a dockmaster's vest leans against the railing, surveying the bay with proprietary interest. The access corridor lies back to the west.",
+    description: "A wide observation platform overlooking the station's main docking {item}bay{/item} through a wall of reinforced transparisteel. Below, the cavernous bay stretches out — a vast space of landing pads, fuel lines, and cargo loaders. {item}Ships{/item} of various sizes sit on the deck, from single-pilot fighters to mid-bulk freighters. Maintenance crews and loading droids move between them.\n\nA grizzled Duros named {npc}Renn{/npc} in a dockmaster's vest leans against the {item}railing{/item}, surveying the bay with proprietary interest. The access corridor lies back to the west.",
     exits: {
       west: "docking_access"
     },
