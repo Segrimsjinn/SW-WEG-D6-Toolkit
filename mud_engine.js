@@ -92,11 +92,17 @@ const MUD = {
       this.print('{dim}Exits: ' + exits.join(', ') + '{/dim}');
     }
 
-    // Show NPCs present (skip defeated ones)
-    const npcKeys = Object.keys(room.npcs || {}).filter(k => !this.isNpcDefeated(roomId, k));
-    if (npcKeys.length) {
-      const names = npcKeys.map(k => room.npcs[k].name);
+    // Show NPCs present — active and defeated
+    const npcKeys = Object.keys(room.npcs || {});
+    const active = npcKeys.filter(k => !this.isNpcDefeated(roomId, k));
+    const down = npcKeys.filter(k => this.isNpcDefeated(roomId, k));
+    if (active.length) {
+      const names = active.map(k => room.npcs[k].name);
       this.print('{dim}You see: ' + names.join(', ') + '{/dim}');
+    }
+    if (down.length) {
+      const names = down.map(k => room.npcs[k].name);
+      this.print('{red}Unconscious: ' + names.join(', ') + '{/red}');
     }
   },
 
