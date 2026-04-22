@@ -670,7 +670,7 @@ const MUD = {
 
     // Roll player Bargain vs shopkeeper Con (or Bargain)
     const playerPips = MUD_COMBAT.getPlayerSkillPips('Bargain');
-    const shopPips = 12; // Toydarian merchant — 4D bargain
+    const shopPips = 14; // Toydarian merchant — 4D+2 bargain
     const playerRoll = MUD_COMBAT.rollPips(playerPips);
     const shopRoll = MUD_COMBAT.rollPips(shopPips);
     const diff = playerRoll - shopRoll;
