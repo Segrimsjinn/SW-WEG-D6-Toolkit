@@ -187,6 +187,16 @@ const MUD = {
       return;
     }
 
+    // Route to pending sale confirmation
+    if (this.pendingSale) {
+      this.print(input.trim(), 'command');
+      this.state.history.push(input.trim());
+      if (this.state.history.length > 50) this.state.history.shift();
+      this.state.historyIdx = -1;
+      this.handlePendingSale(input);
+      return;
+    }
+
     const raw = input.trim();
     if (!raw) return;
 
@@ -596,6 +606,8 @@ const MUD = {
     this.autoSave();
   },
 
+  pendingSale: null, // { idx, item, shop, sellPrice, baseValue, pct }
+
   doSell(target) {
     const shop = this.findShop();
     if (!shop) { this.print("There's no shop here. Find a merchant.", 'error'); return; }
@@ -611,13 +623,36 @@ const MUD = {
     const sellPrice = Math.max(1, Math.floor(baseValue * rate));
     const pct = Math.round(rate * 100);
 
-    this.state.inventory.splice(idx, 1);
-    this.state.credits += sellPrice;
+    this.pendingSale = { idx, item, shop, sellPrice, baseValue, pct };
 
     this.print('{npc}' + shop.name + '{/npc} examines the {item}' + item.name + '{/item} and nods.');
     this.print('"I\'ll give you ' + sellPrice + ' credits for that." {dim}(' + pct + '% of ' + baseValue + '){/dim}');
-    this.print('{gold}+' + sellPrice + ' credits. Balance: ' + this.state.credits + '{/gold}');
-    this.autoSave();
+    this.printBlank();
+    this.print('  {green}yes{/green} — accept the offer');
+    this.print('  {green}no{/green}  — keep your item');
+    this.print('  {green}bargain{/green} — haggle for a better rate first');
+  },
+
+  handlePendingSale(input) {
+    const low = input.toLowerCase().trim();
+    const sale = this.pendingSale;
+
+    if (low === 'yes' || low === 'y') {
+      this.state.inventory.splice(sale.idx, 1);
+      this.state.credits += sale.sellPrice;
+      this.print('{gold}+' + sale.sellPrice + ' credits. Balance: ' + this.state.credits + '{/gold}');
+      this.pendingSale = null;
+      this.autoSave();
+    } else if (low === 'no' || low === 'n') {
+      this.print('"Suit yourself." ' + sale.shop.name + ' shrugs and turns away.');
+      this.pendingSale = null;
+    } else if (low === 'bargain' || low === 'haggle') {
+      this.pendingSale = null;
+      this.doBargain();
+      this.print('{dim}Try selling again with the new rate.{/dim}');
+    } else {
+      this.print('{green}yes{/green}, {green}no{/green}, or {green}bargain{/green}?', 'error');
+    }
   },
 
   doBargain() {
