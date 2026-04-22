@@ -749,14 +749,15 @@ const MUD = {
     this.print('  CP:       {gold}' + (c.cp || 0) + '{/gold}');
     this.print('  Wounds:   ' + (c.wounds === 'healthy' ? '{green}Healthy{/green}' : '{red}' + c.wounds + '{/red}'));
     this.printBlank();
-    this.print('{gold}Attributes:{/gold}');
     for (const attr of MUD_CHARGEN.ATTR_NAMES) {
-      this.print('  ' + MUD_CHARGEN.ATTR_FULL[attr].padEnd(12) + ' ' + MUD_CHARGEN.pipsToDice(c.attrs[attr]));
-    }
-    this.printBlank();
-    this.print('{gold}Skills:{/gold}');
-    for (const [name, pips] of Object.entries(c.skills)) {
-      this.print('  ' + name.padEnd(28) + ' ' + MUD_CHARGEN.pipsToDice(pips));
+      this.print('{gold}' + MUD_CHARGEN.ATTR_FULL[attr] + '{/gold}  ' + MUD_CHARGEN.pipsToDice(c.attrs[attr]));
+      // Show skills under their parent attribute
+      for (const [name, pips] of Object.entries(c.skills)) {
+        const def = MUD_CHARGEN.SKILLS.find(s => s.name === name);
+        if (def && def.attr === attr) {
+          this.print('    {dim}' + name + '{/dim}  ' + MUD_CHARGEN.pipsToDice(pips));
+        }
+      }
     }
   },
 
