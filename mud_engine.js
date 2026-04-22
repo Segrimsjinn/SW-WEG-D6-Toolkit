@@ -366,6 +366,11 @@ const MUD = {
       case 'sneak':
         return this.doSneak(arg);
 
+      case 'pickpocket':
+      case 'pp':
+      case 'steal':
+        return this.doPickpocket(arg);
+
       case 'save':
         return this.doSave();
 
@@ -1135,6 +1140,125 @@ const MUD = {
     this.autoSave();
   },
 
+  // NPCs behind counters or in protected positions — can't pickpocket
+  PP_IMMUNE: ['shopkeeper', 'admin', 'marshal', 'dealer', 'bartender', 'med_droid', 'guildmaster', 'foreman', 'dockmaster', 'instructor'],
+
+  doPickpocket(arg) {
+    if (!this.state.character) { this.print("You need a character first.", 'error'); return; }
+    if (MUD_COMBAT.active) { this.print("Not during combat!", 'error'); return; }
+    if (!this.state.flags['sneaking']) {
+      this.print("{dim}You need to be sneaking first. Use {/dim}{green}sneak <direction>{/green}{dim} to enter a room unseen, then pickpocket.{/dim}", 'error');
+      return;
+    }
+
+    if (!arg) {
+      this.print('{dim}Usage: {/dim}{green}pp <target>{/green}{dim} for credits, {/dim}{green}pp blaster <target>{/green}{dim} or {/dim}{green}pp knife <target>{/green}{dim} for a weapon.{/dim}', 'error');
+      return;
+    }
+
+    // Parse: "pp <target>" or "pp blaster <target>" or "pp knife <target>"
+    const parts = arg.toLowerCase().split(/\s+/);
+    let stealType = 'credits'; // default
+    let targetName;
+
+    if (parts[0] === 'blaster' || parts[0] === 'knife' || parts[0] === 'melee' || parts[0] === 'saber') {
+      stealType = parts[0] === 'knife' || parts[0] === 'melee' ? 'melee' : parts[0];
+      targetName = parts.slice(1).join(' ');
+    } else {
+      targetName = parts.join(' ');
+    }
+
+    if (!targetName) {
+      this.print('Pickpocket whom?', 'error');
+      return;
+    }
+
+    // Find NPC
+    const npc = this.findNpc(targetName);
+    if (!npc) {
+      this.print("There's nobody called '" + targetName + "' here.", 'error');
+      return;
+    }
+
+    // Check immunity
+    const room = ROOMS_DATA[this.state.currentRoom];
+    if (room && room.npcs) {
+      for (const [id, n] of Object.entries(room.npcs)) {
+        if (n === npc && this.PP_IMMUNE.includes(id)) {
+          this.print('"' + npc.name + ' is too well-positioned — you can\'t get close enough without being seen."');
+          return;
+        }
+      }
+    }
+
+    // Roll Pick Pocket vs NPC Perception
+    const ppPips = MUD_COMBAT.getPlayerSkillPips('Pick Pocket');
+    const ppRoll = MUD_COMBAT.rollPips(ppPips);
+    const perPips = npc.combat ? (npc.combat.dodge || 9) : 9;
+    const perRoll = MUD_COMBAT.rollPips(perPips);
+
+    this.printBlank();
+    this.print('{dim}Your fingers move carefully...{/dim}');
+
+    if (ppRoll <= perRoll) {
+      // Caught!
+      this.state.flags['sneaking'] = false;
+      this.print('{red}' + npc.name + ' catches your hand! "What do you think you\'re doing?!"{/red}');
+
+      // Hostile NPCs attack, others just alert
+      if (npc.combat && !npc.combat.security) {
+        this.print('{red}They go for a weapon!{/red}');
+        MUD_COMBAT.initiate('punch', targetName);
+      } else {
+        this.print('{red}You\'ve been spotted. Your cover is blown.{/red}');
+      }
+      return;
+    }
+
+    // Success!
+    if (stealType === 'credits') {
+      // Steal 10-50 credits
+      const stolen = 10 + Math.floor(Math.random() * 41);
+      this.state.credits += stolen;
+      this.print('{green}Your fingers find a credit pouch... +' + stolen + ' credits.{/green}');
+      this.print('{dim}Balance: ' + this.state.credits + '{/dim}');
+    } else if (stealType === 'blaster') {
+      if (!npc.combat || !npc.combat.weaponName || !npc.combat.weaponName.toLowerCase().includes('blaster')) {
+        this.print('{dim}They don\'t seem to have a blaster you can reach.{/dim}');
+        return;
+      }
+      const wpn = {
+        id: 'stolen_blaster',
+        name: 'Stolen ' + npc.combat.weaponName.charAt(0).toUpperCase() + npc.combat.weaponName.slice(1),
+        description: 'A ' + npc.combat.weaponName + ' lifted from ' + npc.name + '. They probably want it back.\n\n{dim}Combat: {/dim}{green}blast{/green}{dim} <target>{/dim}',
+        damage: MUD_CHARGEN.pipsToDice(npc.combat.damage),
+        combatType: 'blaster'
+      };
+      this.state.inventory.push(wpn);
+      this.print('{green}You slide their ' + npc.combat.weaponName + ' out of its holster... {item}' + wpn.name + '{/item}{/green}');
+    } else if (stealType === 'melee' || stealType === 'saber') {
+      // Check if they have a melee-type weapon description
+      const wn = npc.combat ? npc.combat.weaponName || '' : '';
+      const isMelee = wn.includes('blade') || wn.includes('knife') || wn.includes('shiv') || wn.includes('pike') || wn.includes('saber') || wn.includes('staff') || wn.includes('spanner');
+      if (!isMelee) {
+        this.print('{dim}They don\'t seem to have a melee weapon you can lift.{/dim}');
+        return;
+      }
+      const wpn = {
+        id: 'stolen_melee',
+        name: 'Stolen ' + wn.charAt(0).toUpperCase() + wn.slice(1),
+        description: 'A ' + wn + ' taken from ' + npc.name + '.\n\n{dim}Combat: {/dim}{green}knife{/green}{dim} <target>{/dim}',
+        damage: MUD_CHARGEN.pipsToDice(npc.combat.damage),
+        combatType: 'melee'
+      };
+      this.state.inventory.push(wpn);
+      this.print('{green}You ease the ' + wn + ' from their belt... {item}' + wpn.name + '{/item}{/green}');
+    }
+
+    // Sneaking is maintained after a successful pickpocket
+    this.autoSave();
+  },
+
   doSneak(direction) {
     if (!this.state.character) { this.print("You need a character first.", 'error'); return; }
     if (MUD_COMBAT.active) { this.print("You can't sneak during combat!", 'error'); return; }
@@ -1460,6 +1584,9 @@ const MUD = {
     this.print('  {green}bounty{/green}       — check active bounty');
     this.print('  {green}ask{/green} <npc>    — ask an NPC about the bounty');
     this.print('  {green}sneak{/green} <dir>  — move quietly into a room');
+    this.print('  {green}pp{/green} <target>   — pickpocket credits (while sneaking)');
+    this.print('  {green}pp blaster{/green} <target> — steal their blaster');
+    this.print('  {green}pp knife{/green} <target>  — steal their melee weapon');
     this.print('  {green}sleep{/green}        — rest at the flophouse (25 cr)');
     this.print('');
     this.print('{gold}Information:{/gold}');
