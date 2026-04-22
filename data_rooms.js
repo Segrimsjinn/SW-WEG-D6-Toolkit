@@ -26,7 +26,8 @@ const ROOMS_DATA = {
         },
         talk: [
           { once: "med_droid_intro", text: "The droid's photoreceptors brighten. \"Ah, you're up and about. Good. Your vitals have stabilized nicely. I've treated the worst of your injuries — bruised ribs, mild concussion, some superficial burns. Nothing a few days of rest won't finish.\"\n\nIt pauses, adjusting a dial on the monitor.\n\n\"I'd recommend checking in with Station Administration on the main concourse. They'll want to register you. Without papers, you won't be able to find work, book passage, or do much of anything on this station.\"\n\nThe droid tilts its head. \"And between you and me — don't linger in the corridors too long without credits. Drifter's Anchorage isn't the most... charitable place.\"" },
-          { text: "\"Your vitals look stable. I'd suggest heading to Station Administration — north through the corridor to the main concourse, then follow the signs. And do try not to get shot before your ribs finish healing.\"" }
+          { text: "\"Your vitals look stable. I'd suggest heading to Station Administration — north through the corridor to the main concourse, then follow the signs. And do try not to get shot before your ribs finish healing.\"" },
+          { text: "\"I can teach you the basics of field medicine, but if you're serious about it, a proper medical academy on one of the Core Worlds is where real surgical training happens. You'd need to get off this station first, of course.\"" }
         ]
       }
     },
@@ -129,7 +130,8 @@ const ROOMS_DATA = {
         talk: [
           { once: "admin_intro", text: "{npc}Administrator Vylen{/npc} looks up from her terminal, studying you with a practiced eye.\n\n\"The escape pod survivor. The medical droid flagged your arrival.\" She pulls up something on her screen. \"No ID, no transit papers, no credit chit. Not exactly a strong start.\"\n\nShe taps a few keys. \"Here's how this works. I register you in our system, you get a temporary station pass. That lets you move freely, take on posted work, and use the cantina without getting hassled by security. In return, you follow station rules and don't cause problems.\"\n\nShe slides a datapad across the desk. \"Standard waiver. You agree not to hold the station liable for... well, anything, really. Sign it and you're a registered resident of Drifter's Anchorage.\"\n\n\"Ready? Let's get you into the system.\"", action: "chargen" },
           { cond: "character_created", text: "\"You're already in the system. Try not to make me regret it.\"" },
-          { text: "\"Still sorting yourself out? Take your time — but not too much time. Unregistered residents make security nervous, and you don't want to make security nervous.\"\n\n{dim}Type {/dim}{green}talk vylen{/green}{dim} again when you're ready to register.{/dim}", action: "chargen" }
+          { text: "\"Still sorting yourself out? Take your time — but not too much time. Unregistered residents make security nervous, and you don't want to make security nervous.\"\n\n{dim}Type {/dim}{green}talk vylen{/green}{dim} again when you're ready to register.{/dim}", action: "chargen" },
+          { text: "\"What I teach here is station-level administration. The Diplomatic Corps on Coruscant, or the Bureaucratic Guild — they train people who actually shape policy. You'd need to get off-station to pursue that, though.\"" }
         ]
       }
     }
@@ -159,7 +161,8 @@ const ROOMS_DATA = {
         },
         talk: [
           { once: "grek_intro", text: "{npc}Grek{/npc} glances at you with one eye while his other three arms continue pouring drinks.\n\n\"New face. Escape pod, right? Word travels fast on a station this size.\" One of his hands drops a glass of something murky on the bar in front of you. \"On the house. First one only — after that, you pay like everyone else.\"\n\nHe leans one massive arm on the bar. \"Name's Grek. I own this place. You want to eat, drink, or hear the latest gossip, this is where you come. You want trouble, take it to the docking bay — I just had the floor re-sealed.\"\n\n\"Once you've got some credits together, come back and I might know about some work. Always someone on this station who needs something done and doesn't want to do it themselves.\"" },
-          { text: "\"You again. You look like you could use a drink, but I look like I could use paying customers. Come back when you've got credits, or something interesting to tell me.\"" }
+          { text: "\"You again. You look like you could use a drink, but I look like I could use paying customers. Come back when you've got credits, or something interesting to tell me.\"" },
+          { text: "\"You want real street education? The Bounty Hunters' Guild has training programs — if you've got the stomach for it. Or I know people on Tatooine who could teach you things no academy would. Either way, you'd have to get off this rock first.\"" }
         ]
       }
     }
@@ -204,7 +207,8 @@ const ROOMS_DATA = {
         },
         talk: [
           { once: "renn_intro", text: "{npc}Dockmaster Renn{/npc} turns those large red eyes on you, evaluating.\n\n\"Ah. The pod survivor.\" His voice has the characteristic Duros rasp. \"I processed your escape pod's wreckage — or what was left of it. Standard Imperial pod, military-grade. No markings, no serial numbers. Someone went to a lot of trouble to scrub that pod clean before you ended up in it.\"\n\nHe shrugs, turning back to the bay. \"Not my business. My business is ships. When you've got the credits for one, come see me. I handle all sales and berth assignments on the station.\"\n\nHe nods toward the bay below. \"Got a few vessels for sale right now, if you're the type to dream. That Z-95 down there's been sitting for weeks. Previous owner couldn't pay his docking fees.\"" },
-          { text: "\"Still window shopping? Can't blame you. A ship's the only real freedom in this galaxy.\" He glances at the bay. \"Save up your credits. I'll be here when you're ready.\"" }
+          { text: "\"Still window shopping? Can't blame you. A ship's the only real freedom in this galaxy.\" He glances at the bay. \"Save up your credits. I'll be here when you're ready.\"" },
+          { text: "\"What I know, I learned in forty years of docking ships and pulling wrecks apart. But the Spacers' Guild runs proper certification, and Corellian Engineering has an apprenticeship that'll make you a real shipwright. You'd need to get off-station to find either one, though.\"" }
         ]
       }
     }
@@ -233,7 +237,8 @@ const ROOMS_DATA = {
         },
         talk: [
           { once: "marshal_intro", text: "{npc}Marshal Corso{/npc} looks up from his monitors, amber eyes narrowing.\n\n\"New resident. I've seen your file — escape pod, no ID, no history.\" He leans back. \"I don't care where you came from. I care what you do while you're here.\"\n\nHe taps the desk. \"Station rules are simple. Don't start fights on the concourse. Don't steal from the shops. Don't kill anyone who doesn't deserve it. Break the rules and my security teams will make you regret it.\"\n\nHe pauses. \"That said — I could use people with the right instincts. If you want to learn how to think like security, how to investigate, how to command a situation — I can teach you. For a fee.\"\n\n{dim}Type {/dim}{green}train{/green}{dim} to see what he teaches.{/dim}" },
-          { text: "\"Keep your nose clean and we won't have problems. You want training, type {green}train{/green}.\"" }
+          { text: "\"Keep your nose clean and we won't have problems. You want training, type {green}train{/green}.\"" },
+          { text: "\"What I teach is enough to keep order on a station like this. But if you want real credentials — the CorSec Academy on Corellia, or the Imperial Security Bureau if you've got the nerve — they train proper law enforcement. You'd need to get off-station to apply.\"" }
         ]
       }
     }
@@ -263,7 +268,8 @@ const ROOMS_DATA = {
         },
         gambling: 17, // 5D+2 — need ~6D to start winning consistently
         talk: [
-          { text: "{npc}Sabacc Dealer{/npc} glances up from the cards.\n\n\"Looking to play? Bets are 1, 5, 10, or 25 credits.\"\n\nHe taps the table. \"Standard rules. Your Gambling against mine. Beat me, you double your bet. Lose, the house keeps it. Push means your credits come back.\"\n\n{dim}Type {/dim}{green}gamble <amount>{/green}{dim} to play a hand. Bets: 1, 5, 10, or 25.{/dim}" }
+          { text: "{npc}Sabacc Dealer{/npc} glances up from the cards.\n\n\"Looking to play? Bets are 1, 5, 10, or 25 credits.\"\n\nHe taps the table. \"Standard rules. Your Gambling against mine. Beat me, you double your bet. Lose, the house keeps it. Push means your credits come back.\"\n\n{dim}Type {/dim}{green}gamble <amount>{/green}{dim} to play a hand. Bets: 1, 5, 10, or 25.{/dim}" },
+          { text: "The dealer shuffles absently. \"The tricks I teach are good enough for station games. But if you want to run with real operators — the Smugglers' Alliance, or the guilds on Nar Shaddaa — that's a different level. You'd have to get off-station first. And survive the audition.\"" }
         ]
       }
     }
@@ -304,7 +310,8 @@ const ROOMS_DATA = {
           sellRate: 0.25
         },
         talk: [
-          { text: "{npc}Kex{/npc} buzzes over, wings humming.\n\n\"Ah, a customer! Or a browser. I get a lot of browsers.\" He gestures at the packed shelves. \"Everything you see is for sale. Fair prices — well, fair for this station.\"\n\nHe taps the price board. \"Check the {item}price list{/item} on the wall. {green}buy{/green} what you need, {green}sell{/green} what you don't. I take anything that's not bolted down — twenty-five percent of market value, take it or leave it.\"\n\nHe hovers closer, lowering his voice. \"And if you find anything... interesting... down in the maintenance levels, I don't ask where it came from.\"" }
+          { text: "{npc}Kex{/npc} buzzes over, wings humming.\n\n\"Ah, a customer! Or a browser. I get a lot of browsers.\" He gestures at the packed shelves. \"Everything you see is for sale. Fair prices — well, fair for this station.\"\n\nHe taps the price board. \"Check the {item}price list{/item} on the wall. {green}buy{/green} what you need, {green}sell{/green} what you don't. I take anything that's not bolted down — twenty-five percent of market value, take it or leave it.\"\n\nHe hovers closer, lowering his voice. \"And if you find anything... interesting... down in the maintenance levels, I don't ask where it came from.\"" },
+          { text: "\"What I teach you is how not to get swindled. The Traders' Guild or the Commerce Guild — they train people to run real operations. Supply chains, interstellar contracts. You'd have to get off this station to find them, but it's good money.\"" }
         ]
       }
     }
@@ -378,7 +385,8 @@ const ROOMS_DATA = {
           skills: ['Blaster', 'Brawling Parry', 'Dodge', 'Melee Combat', 'Melee Parry', 'Heavy Weapons', 'Grenade', 'Running', 'Thrown Weapon', 'Vehicle Blasters', 'Brawling']
         },
         talk: [
-          { text: "{npc}Instructor Denn{/npc} uncrosses his arms and looks you over.\n\n\"You want to learn how to fight — or how to fight better. That's why people come to me.\"\n\nHe flexes his cybernetic hand. \"I teach combat skills. Blasters, blades, brawling, dodging — anything that keeps you alive when someone's trying to kill you. Costs Character Points to improve. The more you know, the more it costs to learn the next step.\"\n\nHe nods toward the mats. \"Type {green}train{/green} to see what I can teach and what it'll cost. You'll need the Character Points — earn them by fighting.\"" }
+          { text: "{npc}Instructor Denn{/npc} uncrosses his arms and looks you over.\n\n\"You want to learn how to fight — or how to fight better. That's why people come to me.\"\n\nHe flexes his cybernetic hand. \"I teach combat skills. Blasters, blades, brawling, dodging — anything that keeps you alive when someone's trying to kill you. Costs Character Points to improve. The more you know, the more it costs to learn the next step.\"\n\nHe nods toward the mats. \"Type {green}train{/green} to see what I can teach and what it'll cost. You'll need the Character Points — earn them by fighting.\"" },
+          { text: "\"If you're serious about combat, the Mercenary Guild on Ord Mantell trains for free — if you can get there. And pass the entrance exam.\"" }
         ]
       },
       "training_droid": {
@@ -419,7 +427,8 @@ const ROOMS_DATA = {
         },
         talk: [
           { once: "foreman_intro", text: "{npc}Foreman Takka{/npc} looks up from her datapad, antennae twitching.\n\n\"You here to work? Good. We're always short-handed — the smart ones leave after their first cave spider sighting, and the dumb ones... well.\"\n\nShe gestures south toward the shuttle. \"The mine's on Gamma-7, a rock about two klicks from the station. Regenerative quartz — the crystal grows back over time, so we never run out. Just head in, find a vein, and {green}mine{/green} it. Bring the quartz back and sell it at the shop.\"\n\n\"You'll need a {item}Mining Kit{/item} — helmet, glow rod, and pick. Grab one from Surplus & Salvage on the concourse. Thirty credits. We don't hand out gear anymore.\"\n\n\"Fair warning: don't get greedy. You overwork a vein and the ceiling comes down. And stay in the lit sections unless you want to meet our resident cave spider. She doesn't come into the light, but the deep tunnels are her territory.\"\n\n{dim}Buy a Mining Kit from the shop, then head south. Type {/dim}{green}mine{/green}{dim} at a quartz vein to extract crystals.{/dim}" },
-          { text: "\"Still here? The mine's south. Find quartz, dig it out, sell it topside. Don't die.\"" }
+          { text: "\"Still here? The mine's south. Find quartz, dig it out, sell it topside. Don't die.\"" },
+          { text: "\"The Miners' Guild runs proper operations on the big asteroid fields — full safety gear, union wages, pension plans. Not like this scrape-and-pray outfit. You'd have to get off-station to sign up, but it beats dying in a cave spider's nest.\"" }
         ]
       }
     }
