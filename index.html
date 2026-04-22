@@ -3270,6 +3270,21 @@ color:var(--text-dim);min-width:35px;text-align:right;
       </div>
     </div>
 
+    <!-- TAB: MUDD-LITE STATION -->
+    <div id="tab-mud" class="tab-panel">
+      <div id="mud-screen" style="background:#08080c;border:1px solid #1a1a2e;border-radius:8px;padding:0;font-family:'Courier New',Consolas,monospace;height:calc(100vh - 100px);display:flex;flex-direction:column;overflow:hidden;position:relative">
+        <div style="background:#0c0c14;padding:6px 12px;border-bottom:1px solid #1a1a2e;display:flex;justify-content:space-between;align-items:center">
+          <span style="font-size:10px;color:var(--gold);letter-spacing:2px;font-family:'Exo 2',monospace">S.U.D — SINGLE USER DUNGEON</span>
+          <span style="font-size:9px;color:#445">DRIFTER'S ANCHORAGE — BASTION SYSTEM</span>
+        </div>
+        <div id="mud-output" style="flex:1;overflow-y:auto;padding:12px 14px;font-size:12px;line-height:1.7;color:#9ab;scrollbar-width:thin;scrollbar-color:#1a1a2e #08080c"></div>
+        <div style="display:flex;align-items:center;border-top:1px solid #1a1a2e;padding:8px 12px;background:#0a0a12">
+          <span style="color:var(--gold);margin-right:6px;font-size:13px;font-weight:700">&gt;</span>
+          <input id="mud-input" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" style="flex:1;background:transparent;border:none;color:#cde;font-family:'Courier New',Consolas,monospace;font-size:12px;outline:none;caret-color:var(--gold)" placeholder="Type a command...">
+        </div>
+      </div>
+    </div>
+
     <!-- TAB 6: SETTINGS -->
     <div id="tab-settings" class="tab-panel">
       <div class="jump-to-menu">
@@ -3459,6 +3474,10 @@ color:var(--text-dim);min-width:35px;text-align:right;
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="4" cy="5" r="2" fill="currentColor"/><circle cx="19" cy="17" r="3"/><ellipse cx="19" cy="17" rx="5" ry="1.5" fill="none"/><path d="M6 6l10 9" stroke-dasharray="2 2"/><path d="M14 13l2 2M16 13l-2 2"/></svg>
       GAZETTE
     </button>
+    <button class="nav-btn" onclick="switchTab('mud');if(!MUD._inited){MUD._inited=true;MUD.init()}" data-tab="mud">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M6 8h2M6 11h4" stroke-linecap="round"/></svg>
+      S.U.D
+    </button>
     <button class="nav-btn" onclick="switchTab('settings')" data-tab="settings">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
       SETTINGS
@@ -3568,6 +3587,8 @@ color:var(--text-dim);min-width:35px;text-align:right;
 <script src="data_aliengen.js"></script>
 <script src="data_gazetteers.js"></script>
 <script src="data_library.js"></script>
+<script src="data_rooms.js"></script>
+<script src="mud_engine.js"></script>
 
 <script>
 // ============================================================
@@ -3677,6 +3698,8 @@ const NAV_CARDS = [
   {id:'gm-damage', label:'Damage & Healing', tab:'gm', group:'Dice'},
   {id:'gm-equipment', label:'Equipment Quick Reference', tab:'gm', group:'Dice'},
   {id:'gm-spacecraft', label:'Spacecraft Performance Data', tab:'gm', group:'Dice'},
+  // MUD
+  {id:'mud-screen', label:'S.U.D — Single User Dungeon', tab:'mud', group:'S.U.D'},
   // Settings
   {id:'settings-calibration', label:'Speed Calibration', tab:'settings', group:'Settings'},
   {id:'settings-howto', label:'How to Use This Toolkit', tab:'settings', group:'Settings'},
