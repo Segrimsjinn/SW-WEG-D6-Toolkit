@@ -290,6 +290,11 @@ const MUD = {
       case 'haggle':
         return this.doBargain();
 
+      case 'gamble':
+      case 'play':
+      case 'bet':
+        return this.doGamble(arg);
+
       case 'use':
         return this.doUse(arg);
 
@@ -732,6 +737,66 @@ const MUD = {
     this.print("You're not sure how to use the " + item.name + " right now.");
   },
 
+  doGamble(arg) {
+    if (!this.state.character) { this.print("You need a character first.", 'error'); return; }
+
+    // Find a dealer NPC in the room
+    const room = ROOMS_DATA[this.state.currentRoom];
+    let dealerNpc = null;
+    if (room && room.npcs) {
+      for (const npc of Object.values(room.npcs)) {
+        if (npc.gambling) { dealerNpc = npc; break; }
+      }
+    }
+    if (!dealerNpc) { this.print("There's nobody here to gamble with.", 'error'); return; }
+
+    const bet = parseInt(arg);
+    if (!bet || bet < 25) { this.print('"Minimum bet is 25 credits."', 'error'); return; }
+    if (bet > this.state.credits) { this.print('"You\'ve only got ' + this.state.credits + ' credits. Can\'t bet what you don\'t have."', 'error'); return; }
+
+    const playerPips = MUD_COMBAT.getPlayerSkillPips('Gambling');
+    const dealerPips = dealerNpc.gambling;
+
+    const playerRoll = MUD_COMBAT.rollPips(playerPips);
+    const dealerRoll = MUD_COMBAT.rollPips(dealerPips);
+    const diff = playerRoll - dealerRoll;
+
+    this.printBlank();
+    this.print('{gold}═══ Sabacc Hand — ' + bet + ' credits ═══{/gold}');
+    this.print('{dim}Your Gambling: {/dim}{gold}' + playerRoll + '{/gold}{dim} vs Dealer: {/dim}{gold}' + dealerRoll + '{/gold}');
+    this.printBlank();
+
+    if (diff > 5) {
+      // Big win — pure sabacc
+      const winnings = bet * 2;
+      this.state.credits += winnings;
+      this.print('{green}Pure Sabacc! The table erupts. You rake in ' + winnings + ' credits.{/green}');
+      this.print('{dim}Balance: ' + this.state.credits + '{/dim}');
+    } else if (diff > 0) {
+      // Regular win
+      this.state.credits += bet;
+      this.print('{green}You win the hand! +' + bet + ' credits.{/green}');
+      this.print('{dim}Balance: ' + this.state.credits + '{/dim}');
+    } else if (diff === 0) {
+      // Push
+      this.print('{gold}Push — the hand is a draw. Your credits come back.{/gold}');
+      this.print('{dim}Balance: ' + this.state.credits + '{/dim}');
+    } else if (diff > -5) {
+      // Regular loss
+      this.state.credits -= bet;
+      this.print('{red}You lose the hand. -' + bet + ' credits.{/red}');
+      this.print('{dim}Balance: ' + this.state.credits + '{/dim}');
+    } else {
+      // Bombed out — lose double
+      const loss = Math.min(bet * 2, this.state.credits);
+      this.state.credits -= loss;
+      this.print('{red}Bombed out! The randomizer shifts and your hand collapses. -' + loss + ' credits.{/red}');
+      this.print('{dim}Balance: ' + this.state.credits + '{/dim}');
+    }
+
+    this.autoSave();
+  },
+
   doDrop(target) {
     if (!target) {
       this.print('Drop what?', 'error');
@@ -816,6 +881,7 @@ const MUD = {
     this.print('  {green}buy{/green} <item>    — purchase from shop');
     this.print('  {green}sell{/green} <item>   — sell from inventory (25% base)');
     this.print('  {green}bargain{/green}      — haggle for better sell rate');
+    this.print('  {green}gamble{/green} <amt>  — play sabacc (min 25 credits)');
     this.print('');
     this.print('{gold}Information:{/gold}');
     this.print('  {green}inventory{/green} / {green}i{/green}  — check your belongings');

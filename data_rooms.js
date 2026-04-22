@@ -130,9 +130,10 @@ const ROOMS_DATA = {
 
   "cantina": {
     name: "The Rusty Hydrospanner",
-    description: "The station cantina is dim and loud, exactly the way its clientele prefers it. Mismatched lighting casts everything in shades of amber and shadow. A long {item}bar{/item} runs along the far wall, tended by a surly-looking Besalisk named {npc}Grek{/npc} whose four arms keep glasses moving with mechanical efficiency. Scattered {item}tables{/item} fill the floor, occupied by the usual assortment of spacers, drifters, and people who'd rather not be looked at too closely.\n\nA {item}jukebox{/item} droid in the corner plays something vaguely jizz-like at a volume that discourages eavesdropping. The exit back to the main concourse is to the east.",
+    description: "The station cantina is dim and loud, exactly the way its clientele prefers it. Mismatched lighting casts everything in shades of amber and shadow. A long {item}bar{/item} runs along the far wall, tended by a surly-looking Besalisk named {npc}Grek{/npc} whose four arms keep glasses moving with mechanical efficiency. Scattered {item}tables{/item} fill the floor, occupied by the usual assortment of spacers, drifters, and people who'd rather not be looked at too closely.\n\nA {item}jukebox{/item} droid in the corner plays something vaguely jizz-like at a volume that discourages eavesdropping. The exit back to the main concourse is to the east. A bead curtain to the west leads to a dimly lit back room — you catch the sound of shuffling cards and clinking chips.",
     exits: {
-      east: "main_concourse"
+      east: "main_concourse",
+      west: "back_room"
     },
     objects: {
       "bar": "The bar is a slab of scarred durasteel that might have once been a cargo loading ramp, mounted on industrial supports. Its surface is etched with countless rings from glasses and the occasional blaster scorch mark. A hand-painted sign behind it reads: 'NO CREDIT. NO TABS. NO EXCEPTIONS.'",
@@ -190,6 +191,32 @@ const ROOMS_DATA = {
         talk: [
           { once: "renn_intro", text: "{npc}Dockmaster Renn{/npc} turns those large red eyes on you, evaluating.\n\n\"Ah. The pod survivor.\" His voice has the characteristic Duros rasp. \"I processed your escape pod's wreckage — or what was left of it. Standard Imperial pod, military-grade. No markings, no serial numbers. Someone went to a lot of trouble to scrub that pod clean before you ended up in it.\"\n\nHe shrugs, turning back to the bay. \"Not my business. My business is ships. When you've got the credits for one, come see me. I handle all sales and berth assignments on the station.\"\n\nHe nods toward the bay below. \"Got a few vessels for sale right now, if you're the type to dream. That Z-95 down there's been sitting for weeks. Previous owner couldn't pay his docking fees.\"" },
           { text: "\"Still window shopping? Can't blame you. A ship's the only real freedom in this galaxy.\" He glances at the bay. \"Save up your credits. I'll be here when you're ready.\"" }
+        ]
+      }
+    }
+  },
+
+  "back_room": {
+    name: "The Back Room",
+    description: "Past the bead curtain, the cantina's back room is a haze of smoke and low conversation. A single overhead lamp casts a pool of light over a large sabacc {item}table{/item} surrounded by mismatched chairs. The walls are lined with faded holoposters of podracing champions and swoop jockeys.\n\nA grizzled {npc}dealer{/npc} sits at the head of the table, shuffling a deck of cards with mechanical precision. A few other players occupy the remaining seats — a nervous-looking Sullustan, a scarred human woman, and a Rodian who hasn't blinked in a while.\n\nThe cantina is back to the east.",
+    exits: {
+      east: "cantina"
+    },
+    objects: {
+      "table": "A hexagonal sabacc table with worn felt and built-in chip trays. The randomizer is a cheap aftermarket model bolted to the center — it sparks occasionally when it cycles. Minimum buy-in appears to be 25 credits.\n\n{dim}Type {/dim}{green}gamble <amount>{/green}{dim} to play a hand of sabacc. Uses your Gambling skill vs the dealer's.{/dim}",
+      "chips": "Stacks of credit chips in various denominations. The house chips are stamped with a crude hydrospanner logo — Grek's branding, apparently.",
+      "players": "The other players at the table: a sweating Sullustan who keeps checking his chrono, a hard-faced human woman with a cybernetic eye, and a Rodian whose pile of chips suggests he's been here a while. None of them look like they'd take kindly to cheating.",
+      "posters": "Faded holoposters line the walls — podracers from Malastare, swoop champions from Nar Shaddaa, and what appears to be a signed portrait of a Twi'lek dancer. Someone has drawn a mustache on the dancer."
+    },
+    npcs: {
+      "dealer": {
+        name: "Sabacc Dealer",
+        keywords: ["dealer", "sabacc", "card dealer"],
+        look: "A thin human male with slicked-back grey hair and hands that move with the precision of a droid. His expression is permanently neutral — the face of someone who's dealt ten thousand hands and stopped caring about the outcome of any of them. A small earpiece suggests he's in contact with the house — probably Grek.",
+        combat: { blaster: 9, dodge: 9, meleeParry: 6, brawlParry: 6, brawl: 6, str: 7, damage: 9, weaponType: 'dodge', weaponName: 'hold-out blaster', stunOnly: false, security: true },
+        gambling: 14, // 4D+2 — tough but beatable
+        talk: [
+          { text: "{npc}Sabacc Dealer{/npc} glances up from the cards.\n\n\"Looking to play? Buy-in starts at 25 credits. No upper limit — if you've got the nerve.\"\n\nHe taps the table. \"Standard rules. Your Gambling against mine. Beat me, you double your bet. Lose, the house keeps it. Push means your credits come back.\"\n\n{dim}Type {/dim}{green}gamble <amount>{/green}{dim} to play a hand. Minimum 25 credits.{/dim}" }
         ]
       }
     }
