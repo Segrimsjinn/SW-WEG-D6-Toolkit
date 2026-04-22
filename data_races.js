@@ -1,5 +1,6 @@
 const RACES_DATA = {
   "Human": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -89,6 +90,7 @@ const RACES_DATA = {
     ]
   },
   "Near-Human": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -178,6 +180,7 @@ const RACES_DATA = {
     ]
   },
   "Adarian": {
+    "baseDice": "12D",
     "Dex": [
       "1D+1",
       "1D+2",
@@ -267,6 +270,7 @@ const RACES_DATA = {
     ]
   },
   "Adnerem": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -360,6 +364,7 @@ const RACES_DATA = {
     ]
   },
   "Advozse": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -464,6 +469,7 @@ const RACES_DATA = {
     ]
   },
   "Aleena": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -554,6 +560,7 @@ const RACES_DATA = {
     ]
   },
   "Amanin": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -650,6 +657,7 @@ const RACES_DATA = {
     ]
   },
   "Annoo-Dat": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -740,6 +748,7 @@ const RACES_DATA = {
     ]
   },
   "Anomid": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -839,6 +848,7 @@ const RACES_DATA = {
     ]
   },
   "Ansionan": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -920,6 +930,7 @@ const RACES_DATA = {
     ]
   },
   "Anx": {
+    "baseDice": "12D",
     "Dex": [
       "1D+1",
       "1D+2",
@@ -1022,6 +1033,7 @@ const RACES_DATA = {
     ]
   },
   "Anzat": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -1121,6 +1133,7 @@ const RACES_DATA = {
     ]
   },
   "Aqualish": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -1211,6 +1224,7 @@ const RACES_DATA = {
     ]
   },
   "Aramandi": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -1308,6 +1322,7 @@ const RACES_DATA = {
     ]
   },
   "Arcona": {
+    "baseDice": "12D",
     "Dex": [
       "1D+1",
       "1D+2",
@@ -1394,6 +1409,7 @@ const RACES_DATA = {
     ]
   },
   "Arkanian": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -1498,6 +1514,7 @@ const RACES_DATA = {
     ]
   },
   "Arpor-Lan": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -1587,6 +1604,7 @@ const RACES_DATA = {
     ]
   },
   "Ayrou": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -1686,6 +1704,7 @@ const RACES_DATA = {
     ]
   },
   "Balinaka": {
+    "baseDice": "12D",
     "Dex": [
       "1D+2",
       "2D",
@@ -1777,6 +1796,7 @@ const RACES_DATA = {
     ]
   },
   "Balosar": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -1880,6 +1900,7 @@ const RACES_DATA = {
     ]
   },
   "Barabel": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -1980,6 +2001,7 @@ const RACES_DATA = {
     ]
   },
   "Baragwin": {
+    "baseDice": "12D",
     "Dex": [
       "1D+1",
       "1D+2",
@@ -2071,6 +2093,7 @@ const RACES_DATA = {
     ]
   },
   "Besalisk": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -2171,6 +2194,7 @@ const RACES_DATA = {
     ]
   },
   "Bimm": {
+    "baseDice": "12D",
     "Dex": [
       "1D+1",
       "1D+2",
@@ -2268,6 +2292,7 @@ const RACES_DATA = {
     ]
   },
   "Bith": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -2376,6 +2401,7 @@ const RACES_DATA = {
     ]
   },
   "Blood Carver": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -2471,6 +2497,7 @@ const RACES_DATA = {
     ]
   },
   "Bosph": {
+    "baseDice": "12D",
     "Dex": [
       "1D+2",
       "2D",
@@ -2559,6 +2586,7 @@ const RACES_DATA = {
     ]
   },
   "Bothan": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -2650,6 +2678,7 @@ const RACES_DATA = {
     ]
   },
   "Brubb": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -2738,6 +2767,7 @@ const RACES_DATA = {
     ]
   },
   "Buzchub": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -2828,6 +2858,7 @@ const RACES_DATA = {
     ]
   },
   "Caamasi": {
+    "baseDice": "12D",
     "Dex": [
       "1D+2",
       "2D",
@@ -2928,6 +2959,7 @@ const RACES_DATA = {
     ]
   },
   "Carosite": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -3023,6 +3055,7 @@ const RACES_DATA = {
     ]
   },
   "Cerean": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -3117,6 +3150,7 @@ const RACES_DATA = {
     ]
   },
   "Cha'a": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -3206,6 +3240,7 @@ const RACES_DATA = {
     ]
   },
   "Chadra-Fan": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -3296,6 +3331,7 @@ const RACES_DATA = {
     ]
   },
   "Chagrian": {
+    "baseDice": "12D",
     "Dex": [
       "1D+1",
       "1D+2",
@@ -3403,6 +3439,7 @@ const RACES_DATA = {
     ]
   },
   "Chevin": {
+    "baseDice": "12D",
     "Dex": [
       "1D+1",
       "1D+2",
@@ -3505,6 +3542,7 @@ const RACES_DATA = {
     ]
   },
   "Chikarri": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -3589,6 +3627,7 @@ const RACES_DATA = {
     ]
   },
   "Chiss": {
+    "baseDice": "12D",
     "Dex": [
       "1D+1",
       "1D+2",
@@ -3697,6 +3736,7 @@ const RACES_DATA = {
     ]
   },
   "Cizerack": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -3796,6 +3836,7 @@ const RACES_DATA = {
     ]
   },
   "Clawdite": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -3901,6 +3942,7 @@ const RACES_DATA = {
     ]
   },
   "Coynite": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -4021,6 +4063,7 @@ const RACES_DATA = {
     ]
   },
   "Cragmoloid": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -4124,6 +4167,7 @@ const RACES_DATA = {
     ]
   },
   "Dazouri": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -4213,6 +4257,7 @@ const RACES_DATA = {
     ]
   },
   "Defel": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -4300,6 +4345,7 @@ const RACES_DATA = {
     ]
   },
   "Devaronian": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -4395,6 +4441,7 @@ const RACES_DATA = {
     ]
   },
   "Draethos": {
+    "baseDice": "12D",
     "Dex": [
       "1D+1",
       "1D+2",
@@ -4496,6 +4543,7 @@ const RACES_DATA = {
     ]
   },
   "Drall": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -4591,6 +4639,7 @@ const RACES_DATA = {
     ]
   },
   "Dresselian": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -4680,6 +4729,7 @@ const RACES_DATA = {
     ]
   },
   "Dug": {
+    "baseDice": "12D",
     "Dex": [
       "2D+2",
       "3D",
@@ -4780,6 +4830,7 @@ const RACES_DATA = {
     ]
   },
   "Dulok": {
+    "baseDice": "12D",
     "Dex": [
       "2D+2",
       "3D",
@@ -4863,6 +4914,7 @@ const RACES_DATA = {
     ]
   },
   "Duro": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -4961,6 +5013,7 @@ const RACES_DATA = {
     ]
   },
   "Elomin": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -5054,6 +5107,7 @@ const RACES_DATA = {
     ]
   },
   "Em'liy": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -5154,6 +5208,7 @@ const RACES_DATA = {
     ]
   },
   "Esoomian": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -5264,6 +5319,7 @@ const RACES_DATA = {
     ]
   },
   "Ewok": {
+    "baseDice": "12D",
     "Dex": [
       "1D+2",
       "2D",
@@ -5361,6 +5417,7 @@ const RACES_DATA = {
     ]
   },
   "Falleen": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -5465,6 +5522,7 @@ const RACES_DATA = {
     ]
   },
   "Farghul": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -5568,6 +5626,7 @@ const RACES_DATA = {
     ]
   },
   "Feeorin": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -5668,6 +5727,7 @@ const RACES_DATA = {
     ]
   },
   "Fian": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -5768,6 +5828,7 @@ const RACES_DATA = {
     ]
   },
   "Filvian": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -5872,6 +5933,7 @@ const RACES_DATA = {
     ]
   },
   "Firrerreo": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -5962,6 +6024,7 @@ const RACES_DATA = {
     ]
   },
   "Frozian": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -6062,6 +6125,7 @@ const RACES_DATA = {
     ]
   },
   "Gacerite": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -6162,6 +6226,7 @@ const RACES_DATA = {
     ]
   },
   "Gamorrean": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -6238,6 +6303,7 @@ const RACES_DATA = {
     ]
   },
   "Gand": {
+    "baseDice": "12D",
     "Dex": [
       "1D+1",
       "1D+2",
@@ -6349,6 +6415,7 @@ const RACES_DATA = {
     ]
   },
   "Givin": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -6434,6 +6501,7 @@ const RACES_DATA = {
     ]
   },
   "Gotal": {
+    "baseDice": "12D",
     "Dex": [
       "1D+2",
       "2D",
@@ -6523,6 +6591,7 @@ const RACES_DATA = {
     ]
   },
   "Gran": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -6620,6 +6689,7 @@ const RACES_DATA = {
     ]
   },
   "Geelan": {
+    "baseDice": "12D",
     "Dex": [
       "2D+2",
       "3D",
@@ -6708,6 +6778,7 @@ const RACES_DATA = {
     ]
   },
   "Gree": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -6792,6 +6863,7 @@ const RACES_DATA = {
     ]
   },
   "Gungun": {
+    "baseDice": "12D",
     "Dex": [
       "1D+1",
       "1D+2",
@@ -6894,6 +6966,7 @@ const RACES_DATA = {
     ]
   },
   "Herglic": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -6987,6 +7060,7 @@ const RACES_DATA = {
     ]
   },
   "Ho'Din": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -7074,6 +7148,7 @@ const RACES_DATA = {
     ]
   },
   "Houk": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -7167,6 +7242,7 @@ const RACES_DATA = {
     ]
   },
   "Hutt": {
+    "baseDice": "12D",
     "Dex": [
       "0D+1",
       "0D+2",
@@ -7268,6 +7344,7 @@ const RACES_DATA = {
     ]
   },
   "Hysalrian": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -7357,6 +7434,7 @@ const RACES_DATA = {
     ]
   },
   "Iotran": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -7451,6 +7529,7 @@ const RACES_DATA = {
     ]
   },
   "Ishi Tib": {
+    "baseDice": "12D",
     "Dex": [
       "1D+1",
       "1D+2",
@@ -7542,6 +7621,7 @@ const RACES_DATA = {
     ]
   },
   "Issori": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -7630,6 +7710,7 @@ const RACES_DATA = {
     ]
   },
   "Ithorian": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -7720,6 +7801,7 @@ const RACES_DATA = {
     ]
   },
   "Jarell": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -7794,6 +7876,7 @@ const RACES_DATA = {
     ]
   },
   "Jawa": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -7886,6 +7969,7 @@ const RACES_DATA = {
     ]
   },
   "Jenet": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -7983,6 +8067,7 @@ const RACES_DATA = {
     ]
   },
   "Kaleesh": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -8071,6 +8156,7 @@ const RACES_DATA = {
     ]
   },
   "Kaminoan": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -8170,6 +8256,7 @@ const RACES_DATA = {
     ]
   },
   "Kel Dor": {
+    "baseDice": "12D",
     "Dex": [
       "1D+1",
       "1D+2",
@@ -8278,6 +8365,7 @@ const RACES_DATA = {
     ]
   },
   "Kerestian": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -8371,6 +8459,7 @@ const RACES_DATA = {
     ]
   },
   "Khil": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -8477,6 +8566,7 @@ const RACES_DATA = {
     ]
   },
   "Klatooinian": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -8568,6 +8658,7 @@ const RACES_DATA = {
     ]
   },
   "Krytollak": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -8664,6 +8755,7 @@ const RACES_DATA = {
     ]
   },
   "Kobok": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -8752,6 +8844,7 @@ const RACES_DATA = {
     ]
   },
   "Koorivar": {
+    "baseDice": "12D",
     "Dex": [
       "1D+1",
       "1D+2",
@@ -8856,6 +8949,7 @@ const RACES_DATA = {
     ]
   },
   "Kubaz": {
+    "baseDice": "12D",
     "Dex": [
       "1D+2",
       "2D",
@@ -8947,6 +9041,7 @@ const RACES_DATA = {
     ]
   },
   "Kushiban": {
+    "baseDice": "12D",
     "Dex": [
       "3D",
       "3D+1",
@@ -9039,6 +9134,7 @@ const RACES_DATA = {
     ]
   },
   "Kwa": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -9125,6 +9221,7 @@ const RACES_DATA = {
     ]
   },
   "Lafrarian": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -9234,6 +9331,7 @@ const RACES_DATA = {
     ]
   },
   "Lannik": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -9335,6 +9433,7 @@ const RACES_DATA = {
     ]
   },
   "Lasat": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -9424,6 +9523,7 @@ const RACES_DATA = {
     ]
   },
   "Marasan": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -9511,6 +9611,7 @@ const RACES_DATA = {
     ]
   },
   "Meri": {
+    "baseDice": "12D",
     "Dex": [
       "3D+2",
       "4D",
@@ -9612,6 +9713,7 @@ const RACES_DATA = {
     ]
   },
   "M'shinn": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -9699,6 +9801,7 @@ const RACES_DATA = {
     ]
   },
   "Miraluka": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -9792,6 +9895,7 @@ const RACES_DATA = {
     ]
   },
   "Mon Calamari": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -9891,6 +9995,7 @@ const RACES_DATA = {
     ]
   },
   "Mrissi": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -9980,6 +10085,7 @@ const RACES_DATA = {
     ]
   },
   "Mrlssti": {
+    "baseDice": "12D",
     "Dex": [
       "1D+2",
       "2D",
@@ -10053,6 +10159,7 @@ const RACES_DATA = {
     ]
   },
   "Mulgaari": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -10148,6 +10255,7 @@ const RACES_DATA = {
     ]
   },
   "Murachaun": {
+    "baseDice": "12D",
     "Dex": [
       "1D+1",
       "1D+2",
@@ -10240,6 +10348,7 @@ const RACES_DATA = {
     ]
   },
   "Mustafarian": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -10315,6 +10424,7 @@ const RACES_DATA = {
     ]
   },
   "Muun": {
+    "baseDice": "12D",
     "Dex": [
       "1D+1",
       "1D+2",
@@ -10416,6 +10526,7 @@ const RACES_DATA = {
     ]
   },
   "Myneyrsh": {
+    "baseDice": "12D",
     "Dex": [
       "2D+1",
       "2D+2",
@@ -10504,6 +10615,7 @@ const RACES_DATA = {
     ]
   },
   "Nagai": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -10603,6 +10715,7 @@ const RACES_DATA = {
     ]
   },
   "Najib": {
+    "baseDice": "12D",
     "Dex": [
       "1D+1",
       "1D+2",
@@ -10694,6 +10807,7 @@ const RACES_DATA = {
     ]
   },
   "Nalroni": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -10798,6 +10912,7 @@ const RACES_DATA = {
     ]
   },
   "Nautolan": {
+    "baseDice": "12D",
     "Dex": [
       "1D+1",
       "1D+2",
@@ -10897,6 +11012,7 @@ const RACES_DATA = {
     ]
   },
   "Neimoidian": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -10998,6 +11114,7 @@ const RACES_DATA = {
     ]
   },
   "Nikto": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -11084,6 +11201,7 @@ const RACES_DATA = {
     ]
   },
   "Nimbanel": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -11175,6 +11293,7 @@ const RACES_DATA = {
     ]
   },
   "Nosaurian": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -11277,6 +11396,7 @@ const RACES_DATA = {
     ]
   },
   "Nuknog": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -11376,6 +11496,7 @@ const RACES_DATA = {
     ]
   },
   "Oblee": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -11466,6 +11587,7 @@ const RACES_DATA = {
     ]
   },
   "Omwati": {
+    "baseDice": "12D",
     "Dex": [
       "1D+1",
       "1D+2",
@@ -11568,6 +11690,7 @@ const RACES_DATA = {
     ]
   },
   "Ongree": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -11657,6 +11780,7 @@ const RACES_DATA = {
     ]
   },
   "Orfite": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -11756,6 +11880,7 @@ const RACES_DATA = {
     ]
   },
   "Orrem": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -11846,6 +11971,7 @@ const RACES_DATA = {
     ]
   },
   "Ortolan": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -11936,6 +12062,7 @@ const RACES_DATA = {
     ]
   },
   "Ossan": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -12021,6 +12148,7 @@ const RACES_DATA = {
     ]
   },
   "Oswaft": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -12109,6 +12237,7 @@ const RACES_DATA = {
     ]
   },
   "Pacithhip": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -12212,6 +12341,7 @@ const RACES_DATA = {
     ]
   },
   "Pantoran": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -12302,6 +12432,7 @@ const RACES_DATA = {
     ]
   },
   "Pau'an": {
+    "baseDice": "12D",
     "Dex": [
       "1D+2",
       "2D",
@@ -12391,6 +12522,7 @@ const RACES_DATA = {
     ]
   },
   "Pa'lowick": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -12495,6 +12627,7 @@ const RACES_DATA = {
     ]
   },
   "Phindian": {
+    "baseDice": "12D",
     "Dex": [
       "1D+1",
       "1D+2",
@@ -12591,6 +12724,7 @@ const RACES_DATA = {
     ]
   },
   "Pho Ph'eahian": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -12701,6 +12835,7 @@ const RACES_DATA = {
     ]
   },
   "Kallidahin": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -12791,6 +12926,7 @@ const RACES_DATA = {
     ]
   },
   "Poss'Nomin": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -12896,6 +13032,7 @@ const RACES_DATA = {
     ]
   },
   "Psadan": {
+    "baseDice": "12D",
     "Dex": [
       "1D+2",
       "2D",
@@ -12978,6 +13115,7 @@ const RACES_DATA = {
     ]
   },
   "Quarren": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -13062,6 +13200,7 @@ const RACES_DATA = {
     ]
   },
   "Rakririan": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -13172,6 +13311,7 @@ const RACES_DATA = {
     ]
   },
   "Ranth": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -13268,6 +13408,7 @@ const RACES_DATA = {
     ]
   },
   "Revwien": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -13367,6 +13508,7 @@ const RACES_DATA = {
     ]
   },
   "Riileb": {
+    "baseDice": "12D",
     "Dex": [
       "1D+2",
       "2D",
@@ -13457,6 +13599,7 @@ const RACES_DATA = {
     ]
   },
   "Rodian": {
+    "baseDice": "12D",
     "Dex": [
       "1D+2",
       "2D",
@@ -13552,6 +13695,7 @@ const RACES_DATA = {
     ]
   },
   "Tusken Raider": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -13653,6 +13797,7 @@ const RACES_DATA = {
     ]
   },
   "Saurton": {
+    "baseDice": "12D",
     "Dex": [
       "1D+2",
       "2D",
@@ -13750,6 +13895,7 @@ const RACES_DATA = {
     ]
   },
   "Selonian": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -13840,6 +13986,7 @@ const RACES_DATA = {
     ]
   },
   "Shistavanen": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -13949,6 +14096,7 @@ const RACES_DATA = {
     ]
   },
   "Skrilling": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -14045,6 +14193,7 @@ const RACES_DATA = {
     ]
   },
   "Sludir": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -14140,6 +14289,7 @@ const RACES_DATA = {
     ]
   },
   "Sluissi": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -14228,6 +14378,7 @@ const RACES_DATA = {
     ]
   },
   "Snivvian": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -14321,6 +14472,7 @@ const RACES_DATA = {
     ]
   },
   "Squib": {
+    "baseDice": "12D",
     "Dex": [
       "2D+2",
       "3D",
@@ -14410,6 +14562,7 @@ const RACES_DATA = {
     ]
   },
   "Sullustan": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -14501,6 +14654,7 @@ const RACES_DATA = {
     ]
   },
   "Svivreni": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -14599,6 +14753,7 @@ const RACES_DATA = {
     ]
   },
   "Talz": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -14688,6 +14843,7 @@ const RACES_DATA = {
     ]
   },
   "Tarasin": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -14789,6 +14945,7 @@ const RACES_DATA = {
     ]
   },
   "Tarro": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -14884,6 +15041,7 @@ const RACES_DATA = {
     ]
   },
   "Tasari": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -14977,6 +15135,7 @@ const RACES_DATA = {
     ]
   },
   "Taung": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -15066,6 +15225,7 @@ const RACES_DATA = {
     ]
   },
   "Teek": {
+    "baseDice": "12D",
     "Dex": [
       "3D",
       "3D+1",
@@ -15147,6 +15307,7 @@ const RACES_DATA = {
     ]
   },
   "Teltior": {
+    "baseDice": "12D",
     "Dex": [
       "3D",
       "3D+1",
@@ -15248,6 +15409,7 @@ const RACES_DATA = {
     ]
   },
   "Thakwaash": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -15346,6 +15508,7 @@ const RACES_DATA = {
     ]
   },
   "Thisspian": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -15446,6 +15609,7 @@ const RACES_DATA = {
     ]
   },
   "Tiss'shar": {
+    "baseDice": "12D",
     "Dex": [
       "2D+1",
       "2D+2",
@@ -15531,6 +15695,7 @@ const RACES_DATA = {
     ]
   },
   "Tinnell": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -15619,6 +15784,7 @@ const RACES_DATA = {
     ]
   },
   "Togruta": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -15720,6 +15886,7 @@ const RACES_DATA = {
     ]
   },
   "Togorian": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -15821,6 +15988,7 @@ const RACES_DATA = {
     ]
   },
   "Toong": {
+    "baseDice": "12D",
     "Dex": [
       "2D+1",
       "2D+2",
@@ -15921,6 +16089,7 @@ const RACES_DATA = {
     ]
   },
   "Toydarian": {
+    "baseDice": "12D",
     "Dex": [
       "2D+1",
       "2D+2",
@@ -16020,6 +16189,7 @@ const RACES_DATA = {
     ]
   },
   "Trandoshan": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -16112,6 +16282,7 @@ const RACES_DATA = {
     ]
   },
   "Trianii": {
+    "baseDice": "12D",
     "Dex": [
       "2D+1",
       "2D+2",
@@ -16208,6 +16379,7 @@ const RACES_DATA = {
     ]
   },
   "Tunroth": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -16307,6 +16479,7 @@ const RACES_DATA = {
     ]
   },
   "Twi'lek": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -16399,6 +16572,7 @@ const RACES_DATA = {
     ]
   },
   "Tynnan": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -16506,6 +16680,7 @@ const RACES_DATA = {
     ]
   },
   "Ubese": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -16597,6 +16772,7 @@ const RACES_DATA = {
     ]
   },
   "Ugnaught": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -16689,6 +16865,7 @@ const RACES_DATA = {
     ]
   },
   "Ugor": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -16796,6 +16973,7 @@ const RACES_DATA = {
     ]
   },
   "Uukaablian": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -16892,6 +17070,7 @@ const RACES_DATA = {
     ]
   },
   "Vaathkree": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -16990,6 +17169,7 @@ const RACES_DATA = {
     ]
   },
   "Vernol": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -17083,6 +17263,7 @@ const RACES_DATA = {
     ]
   },
   "Verpine": {
+    "baseDice": "12D",
     "Dex": [
       "1D+1",
       "1D+2",
@@ -17174,6 +17355,7 @@ const RACES_DATA = {
     ]
   },
   "Vodran": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -17261,6 +17443,7 @@ const RACES_DATA = {
     ]
   },
   "Vratix": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -17352,6 +17535,7 @@ const RACES_DATA = {
     ]
   },
   "Weequay": {
+    "baseDice": "12D",
     "Dex": [
       "1D+1",
       "1D+2",
@@ -17451,6 +17635,7 @@ const RACES_DATA = {
     ]
   },
   "Werbol": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -17537,6 +17722,7 @@ const RACES_DATA = {
     ]
   },
   "Whiphid": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -17629,6 +17815,7 @@ const RACES_DATA = {
     ]
   },
   "Wookiee": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -17723,6 +17910,7 @@ const RACES_DATA = {
     ]
   },
   "Woostoid": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -17819,6 +18007,7 @@ const RACES_DATA = {
     ]
   },
   "Xi'Dec": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -17944,6 +18133,7 @@ const RACES_DATA = {
     ]
   },
   "Xexto": {
+    "baseDice": "12D",
     "Dex": [
       "2D+1",
       "2D+2",
@@ -18044,6 +18234,7 @@ const RACES_DATA = {
     ]
   },
   "Yagai": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -18144,6 +18335,7 @@ const RACES_DATA = {
     ]
   },
   "Yagai Drone": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -18234,6 +18426,7 @@ const RACES_DATA = {
     ]
   },
   "Yevetha": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
@@ -18324,6 +18517,7 @@ const RACES_DATA = {
     ]
   },
   "Yinchorri": {
+    "baseDice": "12D",
     "Dex": [
       "1D+1",
       "1D+2",
@@ -18425,6 +18619,7 @@ const RACES_DATA = {
     ]
   },
   "Zabrak": {
+    "baseDice": "12D",
     "Dex": [
       "1D+1",
       "1D+2",
@@ -18526,6 +18721,7 @@ const RACES_DATA = {
     ]
   },
   "Zexx": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -18618,6 +18814,7 @@ const RACES_DATA = {
     ]
   },
   "ZeHethbra": {
+    "baseDice": "12D",
     "Dex": [
       "1D",
       "1D+1",
@@ -18713,6 +18910,7 @@ const RACES_DATA = {
     ]
   },
   "Krish": {
+    "baseDice": "12D",
     "Dex": [
       "2D",
       "2D+1",
