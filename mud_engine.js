@@ -2498,6 +2498,12 @@ const MUD_MINE = {
       return;
     }
 
+    // Require mining kit
+    if (!MUD.state.inventory.find(it => it.id === 'mining_kit')) {
+      MUD.print("You don't have a mining kit. Buy one from {item}Surplus & Salvage{/item} on the main concourse — 30 credits.");
+      return;
+    }
+
     const vein = room.mine.vein;
     const vs = this.getVeinState(vein.id);
 
