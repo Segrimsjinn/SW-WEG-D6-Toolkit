@@ -16,7 +16,9 @@ const MUD = {
     ticks: 0,           // total room moves — drives respawn timers
     defeatedNpcs: {},   // { "roomId:npcId": tickWhenDefeated }
     lootedNpcs: {},     // { "roomId:npcId": tickWhenLooted } — resets on respawn
-    killCounts: {}      // { "roomId:npcId": totalKills } — for CP diminishing returns
+    killCounts: {},     // { "roomId:npcId": totalKills } — for CP diminishing returns
+    mineVeins: {},      // { veinId: { mined: #, lastMinedTick: #, depletedTick: # } }
+    spiderRoom: 'deep_vein_1' // current cave spider location
   },
 
   SAVE_KEY: 'muddLiteStation_save',
@@ -121,6 +123,8 @@ const MUD = {
     }
     this.state.ticks++;
     this.state.currentRoom = roomId;
+    MUD_MINE.moveSpider(); // spider patrols on every tick
+    MUD_MINE.checkSpiderEncounter(roomId); // check if player walked into spider
     this.displayRoom(roomId);
     this.autoSave();
     return true;
@@ -305,6 +309,11 @@ const MUD = {
 
       case 'use':
         return this.doUse(arg);
+
+      case 'mine':
+      case 'dig':
+      case 'extract':
+        return MUD_MINE.doMine();
 
       case 'save':
         return this.doSave();
@@ -587,6 +596,8 @@ const MUD = {
         }
       }
     }
+    // Quartz sells at its embedded value
+    if (item.sellValue) return item.sellValue;
     // Fallback prices by type
     if (item.combatType === 'blaster') return 300;
     if (item.combatType === 'melee') return 150;
@@ -1025,7 +1036,10 @@ const MUD = {
     this.print('  {green}buy{/green} <item>    — purchase from shop');
     this.print('  {green}sell{/green} <item>   — sell from inventory (25% base)');
     this.print('  {green}bargain{/green}      — haggle for better sell rate');
-    this.print('  {green}gamble{/green} <amt>  — play sabacc (min 25 credits)');
+    this.print('  {green}gamble{/green} <amt>  — play sabacc');
+    this.print('  {green}chance{/green} high/low <amt> — chance cubes');
+    this.print('  {green}wheel{/green} <type> <amt>  — jubilee wheel');
+    this.print('  {green}mine{/green}         — extract quartz at a vein');
     this.print('');
     this.print('{gold}Information:{/gold}');
     this.print('  {green}inventory{/green} / {green}i{/green}  — check your belongings');
@@ -1075,7 +1089,9 @@ const MUD = {
         ticks: this.state.ticks,
         defeatedNpcs: this.state.defeatedNpcs,
         lootedNpcs: this.state.lootedNpcs,
-        killCounts: this.state.killCounts
+        killCounts: this.state.killCounts,
+        mineVeins: this.state.mineVeins,
+        spiderRoom: this.state.spiderRoom
       };
       localStorage.setItem(this.SAVE_KEY, JSON.stringify(save));
       return true;
@@ -1100,6 +1116,8 @@ const MUD = {
       this.state.defeatedNpcs = save.defeatedNpcs || {};
       this.state.lootedNpcs = save.lootedNpcs || {};
       this.state.killCounts = save.killCounts || {};
+      this.state.mineVeins = save.mineVeins || {};
+      this.state.spiderRoom = save.spiderRoom || 'deep_vein_1';
       return true;
     } catch (e) {
       console.error('MUD load failed:', e);
@@ -1998,6 +2016,35 @@ const MUD_COMBAT = {
     if (this.woundIndex(enemy.wounds) >= this.woundIndex('incapacitated')) {
       MUD.print('{green}' + enemy.name + ' is down!{/green}');
       MUD.state.defeatedNpcs[enemy.roomId + ':' + enemy.id] = MUD.state.ticks;
+
+      // Auto-loot dynamically spawned enemies (like the cave spider)
+      if (enemy.loot) {
+        MUD.printBlank();
+        MUD.print('{gold}You search the remains...{/gold}');
+        if (enemy.loot.items) {
+          for (const item of enemy.loot.items) {
+            if (item.chance && Math.random() > item.chance) continue;
+            const invItem = { id: item.id, name: item.name, description: item.description || item.name };
+            if (item.sellValue) invItem.sellValue = item.sellValue;
+            if (item.damage) { invItem.damage = item.damage; invItem.combatType = item.combatType; }
+            MUD.state.inventory.push(invItem);
+            MUD.print('  {item}' + item.name + '{/item}');
+          }
+        }
+        if (enemy.loot.cp && MUD.state.character) {
+          const key = enemy.roomId + ':' + enemy.id;
+          const baseCp = enemy.loot.cp;
+          const kills = MUD.state.killCounts[key] || 0;
+          MUD.state.killCounts[key] = kills + 1;
+          const tier = Math.floor(kills / baseCp);
+          const award = Math.max(0, baseCp - tier);
+          if (award > 0) {
+            MUD.state.character.cp = (MUD.state.character.cp || 0) + award;
+            MUD.print('  {green}+' + award + ' Character Points{/green}');
+          }
+        }
+      }
+
       this.enemies = this.enemies.filter(e => e !== enemy);
     }
   },
@@ -2321,5 +2368,217 @@ const MUD_COMBAT = {
     this.playerActedThisRound = false;
     this.securityCalled = false;
     MUD.autoSave();
+  }
+};
+
+// ============================================================
+// MINING SYSTEM
+// ============================================================
+
+const MUD_MINE = {
+
+  // Spider figure-8 patrol path through dark rooms
+  SPIDER_PATROL: ['deep_vein_1', 'deep_junction', 'deep_vein_2', 'deep_vein_3', 'crystal_chamber', 'deep_vein_3', 'deep_vein_1', 'deep_junction'],
+  spiderPatrolIdx: 0,
+
+  // Small ambient spiderlings — flavor text, non-aggressive
+  SPIDERLING_ROOMS: ['vein_west', 'vein_east', 'deep_junction'],
+  SPIDERLING_CHANCE: 0.25, // 25% chance to see one when entering a room
+
+  // Move the big spider one step on its patrol
+  moveSpider() {
+    this.spiderPatrolIdx = (this.spiderPatrolIdx + 1) % this.SPIDER_PATROL.length;
+    MUD.state.spiderRoom = this.SPIDER_PATROL[this.spiderPatrolIdx];
+  },
+
+  // Check if the player just walked into the spider's room
+  checkSpiderEncounter(roomId) {
+    if (roomId !== MUD.state.spiderRoom) {
+      // Spiderling flavor text in lower lit areas
+      if (this.SPIDERLING_ROOMS.includes(roomId) && Math.random() < this.SPIDERLING_CHANCE) {
+        setTimeout(() => {
+          MUD.print('{dim}A small cave spiderling scuttles across the floor and disappears into a crack in the rock. Harmless — but a reminder of what lurks deeper.{/dim}');
+        }, 500);
+      }
+      return;
+    }
+
+    // Player is in the same room as the spider!
+    const room = ROOMS_DATA[roomId];
+    if (room && room.mine && room.mine.lit) return; // spider won't enter lit rooms
+
+    MUD.printBlank();
+    MUD.print('{red}═══════════════════════════════════════════════════{/red}');
+    MUD.print('{red}A massive shape lunges from the darkness!{/red}');
+    MUD.print('{red}═══════════════════════════════════════════════════{/red}');
+    MUD.printBlank();
+    MUD.print('The Gamma-7 cave spider — three meters of armored chitin, mandibles, and malice — drops from the ceiling directly in front of you. Its cluster of eyes reflects your glow rod light like wet obsidian.');
+    MUD.printBlank();
+
+    // Force combat with the spider
+    MUD_COMBAT.active = true;
+    MUD_COMBAT.round = 1;
+    MUD_COMBAT.playerActedThisRound = false;
+    MUD_COMBAT.securityCalled = false;
+    MUD_COMBAT.enemies = [{
+      id: 'cave_spider',
+      roomId: roomId,
+      name: 'Cave Spider',
+      combat: {
+        blaster: 0,
+        dodge: 12,         // 4D
+        meleeParry: 10,    // 3D+1
+        brawlParry: 13,    // 4D+1
+        brawl: 15,         // 5D — mandible strike
+        melee: 0,
+        str: 16,           // 5D+1 — heavily armored
+        damage: 16,        // 5D+1 mandible damage
+        weaponType: 'brawlParry',
+        weaponName: 'mandibles',
+        stunOnly: false,
+        security: false
+      },
+      wounds: 'healthy',
+      stunTurns: 0,
+      loot: {
+        credits: { min: 0, max: 0 },
+        cp: 3,
+        items: [
+          { id: 'large_chitin', name: 'Large Spider Chitin Plate', description: 'A thick slab of cave spider chitin — nearly half a meter across. Extremely tough and lightweight. Armorers prize these for custom armor inserts.', sellValue: 60, chance: 0.8 },
+          { id: 'large_chitin_2', name: 'Large Spider Chitin Plate', description: 'A thick slab of cave spider chitin — nearly half a meter across. Extremely tough and lightweight. Armorers prize these for custom armor inserts.', sellValue: 60, chance: 0.5 },
+          { id: 'large_silk', name: 'Large Spider Silk Bundle', description: 'A thick coil of cave spider silk — strong enough to use as syntherope. Worth good money to the right buyer.', sellValue: 45, chance: 0.8 },
+          { id: 'large_silk_2', name: 'Large Spider Silk Bundle', description: 'A thick coil of cave spider silk — strong enough to use as syntherope. Worth good money to the right buyer.', sellValue: 45, chance: 0.5 },
+          { id: 'spider_fang', name: 'Cave Spider Fang', description: 'A wickedly curved fang from a Gamma-7 cave spider. Could be fashioned into a blade or sold as a trophy. The venom gland is still attached.', sellValue: 100, chance: 0.3 }
+        ]
+      }
+    }];
+
+    MUD.print('{red}═══ COMBAT — Round 1 ═══{/red}');
+    MUD.print('{dim}The spider strikes first! Fight ({/dim}{green}punch{/green}{dim}/{/dim}{green}knife{/green}{dim}/{/dim}{green}blast{/green}{dim}) or {/dim}{green}flee{/green}{dim}!{/dim}');
+
+    // Spider gets first strike — player walked into it
+    MUD_COMBAT.processEnemyTurns();
+    if (!MUD_COMBAT.isCombatOver()) {
+      MUD_COMBAT.playerActedThisRound = false;
+    }
+  },
+
+  // --- Mining ---
+  doMine() {
+    if (!MUD.state.character) { MUD.print("You need a character first.", 'error'); return; }
+    if (MUD_COMBAT.active) { MUD.print("You can't mine during combat!", 'error'); return; }
+
+    const room = ROOMS_DATA[MUD.state.currentRoom];
+    if (!room || !room.mine || !room.mine.vein) {
+      MUD.print("There's nothing to mine here.");
+      return;
+    }
+
+    const vein = room.mine.vein;
+    const veinState = this.getVeinState(vein.id);
+
+    // Check if depleted
+    if (veinState.mined >= vein.maxNodes) {
+      const ticksSinceDepleted = MUD.state.ticks - (veinState.depletedTick || 0);
+      if (ticksSinceDepleted < 50) {
+        const remaining = 50 - ticksSinceDepleted;
+        MUD.print('{dim}This vein has been mined out. The quartz needs time to regenerate. Check back later.{/dim}');
+        return;
+      } else {
+        // Regenerated!
+        veinState.mined = 0;
+        veinState.depletedTick = null;
+      }
+    }
+
+    // Collapse risk — increases with each extraction from this vein
+    const collapseChance = veinState.mined * 0.08; // 0%, 8%, 16%, 24%, 32%...
+    if (Math.random() < collapseChance) {
+      MUD.printBlank();
+      MUD.print('{red}CAVE-IN!{/red}');
+      MUD.print('{red}The ceiling cracks and tonnes of rock come crashing down! You throw yourself back as dust and debris fill the tunnel.{/red}');
+
+      // Damage the player — roll 4D vs STR
+      const dmgRoll = MUD_COMBAT.rollPips(12); // 4D collapse damage
+      const strRoll = MUD_COMBAT.rollPips(MUD.state.character.attrs.Str);
+      const diff = dmgRoll - strRoll;
+      const oldWound = MUD.state.character.wounds;
+      MUD.state.character.wounds = MUD_COMBAT.applyDamageResult(diff, MUD.state.character.wounds);
+
+      MUD.print('{dim}Collapse damage: {/dim}{red}' + dmgRoll + '{/red}{dim} vs your Strength: {/dim}{gold}' + strRoll + '{/gold}');
+
+      if (MUD.state.character.wounds !== oldWound) {
+        MUD.print('You are ' + MUD_COMBAT.woundLabel(MUD.state.character.wounds) + '!');
+      } else {
+        MUD.print('{green}You scramble clear — shaken but unhurt.{/green}');
+      }
+
+      // Deplete the vein on collapse
+      veinState.mined = vein.maxNodes;
+      veinState.depletedTick = MUD.state.ticks;
+      MUD.print('{dim}The vein is buried under rubble. It will take time for the quartz to grow through the debris.{/dim}');
+
+      // Check if player died from collapse
+      if (MUD_COMBAT.woundIndex(MUD.state.character.wounds) >= MUD_COMBAT.woundIndex('incapacitated')) {
+        MUD_COMBAT.handlePlayerDown();
+      }
+
+      MUD.autoSave();
+      return;
+    }
+
+    // Successful extraction
+    veinState.mined++;
+    veinState.lastMinedTick = MUD.state.ticks;
+
+    // Mark depleted if we hit max
+    if (veinState.mined >= vein.maxNodes) {
+      veinState.depletedTick = MUD.state.ticks;
+    }
+
+    // Value varies slightly
+    const valueVariance = Math.floor(vein.value * 0.2);
+    const crystalValue = vein.value + Math.floor(Math.random() * valueVariance * 2) - valueVariance;
+
+    // Add quartz to inventory
+    const crystalItem = {
+      id: 'quartz_' + vein.depthTier,
+      name: vein.name + ' Crystal',
+      description: 'A chunk of regenerative quartz from ' + vein.name + '. Worth about ' + crystalValue + ' credits to a buyer.\n\n{dim}Sell at Surplus & Salvage with {/dim}{green}sell quartz{/green}',
+      sellValue: crystalValue
+    };
+    MUD.state.inventory.push(crystalItem);
+
+    const nodesLeft = vein.maxNodes - veinState.mined;
+    MUD.printBlank();
+    MUD.print('{green}You work the quartz vein with your pick, extracting a crystal.{/green}');
+    MUD.print('  {item}' + crystalItem.name + '{/item} {dim}(~' + crystalValue + ' cr){/dim}');
+
+    if (nodesLeft > 0) {
+      MUD.print('{dim}' + nodesLeft + ' node' + (nodesLeft !== 1 ? 's' : '') + ' remaining in this vein.{/dim}');
+    } else {
+      MUD.print('{gold}The vein is mined out. The quartz will regenerate over time.{/gold}');
+    }
+
+    // Warn about collapse risk
+    if (veinState.mined >= 2) {
+      MUD.print('{dim}The ceiling groans. The rock feels less stable...{/dim}');
+    }
+
+    // Spider might hear mining in dark rooms
+    if (!room.mine.lit && MUD.state.spiderRoom !== MUD.state.currentRoom) {
+      if (Math.random() < 0.2) {
+        MUD.print('{red}You hear skittering echoing from a nearby tunnel. Something heard you working.{/red}');
+      }
+    }
+
+    MUD.autoSave();
+  },
+
+  getVeinState(veinId) {
+    if (!MUD.state.mineVeins[veinId]) {
+      MUD.state.mineVeins[veinId] = { mined: 0, lastMinedTick: 0, depletedTick: null };
+    }
+    return MUD.state.mineVeins[veinId];
   }
 };

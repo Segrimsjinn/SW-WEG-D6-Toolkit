@@ -173,9 +173,10 @@ const ROOMS_DATA = {
 
   "docking_bay": {
     name: "Docking Bay Observation Deck",
-    description: "A wide observation platform overlooking the station's main docking {item}bay{/item} through a wall of reinforced transparisteel. Below, the cavernous bay stretches out — a vast space of landing pads, fuel lines, and cargo loaders. {item}Ships{/item} of various sizes sit on the deck, from single-pilot fighters to mid-bulk freighters. Maintenance crews and loading droids move between them.\n\nA grizzled Duros named {npc}Renn{/npc} in a dockmaster's vest leans against the {item}railing{/item}, surveying the bay with proprietary interest. The access corridor lies back to the west.",
+    description: "A wide observation platform overlooking the station's main docking {item}bay{/item} through a wall of reinforced transparisteel. Below, the cavernous bay stretches out — a vast space of landing pads, fuel lines, and cargo loaders. {item}Ships{/item} of various sizes sit on the deck, from single-pilot fighters to mid-bulk freighters. Maintenance crews and loading droids move between them.\n\nA grizzled Duros named {npc}Renn{/npc} in a dockmaster's vest leans against the {item}railing{/item}, surveying the bay with proprietary interest. The access corridor lies back to the west. A lift to the south is marked: MINE SHUTTLE — PAD 7.",
     exits: {
-      west: "docking_access"
+      west: "docking_access",
+      south: "mine_shuttle"
     },
     objects: {
       "bay": "The main docking bay is an impressive space — clearly this station's primary reason for existing. You count at least eight ships on the deck below: a couple of beat-up YT-series freighters, a Corellian Action VI transport taking on cargo, what looks like a decommissioned Z-95 Headhunter with its weapons stripped, and several smaller craft you can't identify from up here. Fuel lines and power cables snake across the deck like mechanical serpents.",
@@ -329,6 +330,213 @@ const ROOMS_DATA = {
         ]
       }
     }
+  },
+
+  // ============================================================
+  // ASTEROID MINE — Gamma-7 Mining Facility
+  // ============================================================
+
+  "mine_shuttle": {
+    name: "Mine Shuttle — Pad 7",
+    description: "A cramped shuttle bay holding a battered industrial transport — the daily run to Asteroid Gamma-7. The shuttle is little more than a pressurized cargo container with engines bolted on. A {item}schedule{/item} board on the wall shows departure times. A {npc}foreman{/npc} in a hard hat and high-vis vest checks names off a datapad near the boarding ramp.\n\nThe docking bay observation deck is back to the north.",
+    exits: {
+      north: "docking_bay",
+      south: "mine_entrance"
+    },
+    objects: {
+      "schedule": "The shuttle schedule reads:\n  {dim}GAMMA-7 MINING FACILITY — Continuous service{/dim}\n  {dim}Shift rate: 0 credits (you keep what you mine){/dim}\n  {dim}Company provides: helmet, glow rod, basic pick{/dim}\n  {dim}Company NOT responsible for: injury, death, cave spiders{/dim}",
+      "shuttle": "A Sienar Fleet Systems cargo shuttle that has seen far better days. The hull is pockmarked with micrometeorite impacts and the port engine nacelle is held together with welding and optimism. It smells like dust, sweat, and ozone inside."
+    },
+    npcs: {
+      "foreman": {
+        name: "Foreman Takka",
+        keywords: ["foreman", "takka", "boss", "supervisor"],
+        look: "A stocky Rodian female in industrial coveralls and a scuffed hard hat. Her large eyes are perpetually narrowed against imaginary dust, even on the station. A mining pick hangs from her belt loop and a comlink crackles on her shoulder.",
+        combat: { blaster: 10, dodge: 8, meleeParry: 9, brawlParry: 9, brawl: 10, str: 9, damage: 10, weaponType: 'dodge', weaponName: 'mining blaster', stunOnly: false, security: true },
+        talk: [
+          { once: "foreman_intro", text: "{npc}Foreman Takka{/npc} looks up from her datapad, antennae twitching.\n\n\"You here to work? Good. We're always short-handed — the smart ones leave after their first cave spider sighting, and the dumb ones... well.\"\n\nShe gestures south toward the shuttle. \"The mine's on Gamma-7, a rock about two klicks from the station. Regenerative quartz — the crystal grows back over time, so we never run out. Just head in, find a vein, and {green}mine{/green} it. Bring the quartz back and sell it at the shop.\"\n\n\"Fair warning: don't get greedy. You overwork a vein and the ceiling comes down. And stay in the lit sections unless you want to meet our resident cave spider. She doesn't come into the light, but the deep tunnels are her territory.\"\n\n{dim}Head south to enter the mine. Type {/dim}{green}mine{/green}{dim} at a quartz vein to extract crystals.{/dim}" },
+          { text: "\"Still here? The mine's south. Find quartz, dig it out, sell it topside. Don't die.\"" }
+        ]
+      }
+    }
+  },
+
+  "mine_entrance": {
+    name: "Gamma-7 — Mine Entrance",
+    description: "The airlock opens into a wide natural cavern converted into a mining operation. Industrial flood{item}lights{/item} bathe everything in harsh white, bolted to support beams driven into the rock. The air is cold and tastes of mineral dust. A set of metal {item}rails{/item} for ore carts runs deeper into the asteroid.\n\nThe shuttle bay is back to the north. A reinforced tunnel leads south into {item}Shaft Alpha{/item}.",
+    exits: {
+      north: "mine_shuttle",
+      south: "shaft_alpha"
+    },
+    objects: {
+      "lights": "Heavy-duty industrial floodlights clamped to the ceiling beams. They hum loudly and throw sharp shadows against the cavern walls. A hand-painted sign near the nearest one reads: 'DO NOT TURN OFF LIGHTS — YOU WILL DIE.'",
+      "rails": "Narrow-gauge ore cart rails, rusted but functional. They run from a loading platform near the airlock deep into the tunnels. An empty ore cart sits abandoned near the entrance, half-filled with rock dust.",
+      "shaft alpha": "The main tunnel leading deeper into the asteroid. The walls are rough-hewn rock with occasional veins of pale crystal catching the light. Support beams every few meters keep the ceiling from becoming the floor."
+    },
+    npcs: {},
+    mine: { lit: true }
+  },
+
+  "shaft_alpha": {
+    name: "Gamma-7 — Shaft Alpha",
+    description: "A broad tunnel cut through dark grey rock, well-lit by a string of industrial {item}lamps{/item} bolted to the ceiling. The air hums with the distant vibration of drilling equipment somewhere deeper in the complex. Pale veins of regenerative {item}quartz{/item} glitter in the walls — this section has been picked over but not stripped bare.\n\nThe mine entrance is to the north. The tunnel forks ahead — {item}Vein West{/item} branches to the west, and {item}Vein East{/item} branches to the east.",
+    exits: {
+      north: "mine_entrance",
+      west: "vein_west",
+      east: "vein_east"
+    },
+    objects: {
+      "lamps": "Industrial glow strips strung along the ceiling, casting steady white light. They're powered by a generator somewhere near the entrance — you can hear its faint hum. As long as these stay on, the cave spiders stay deep.",
+      "quartz": "Thin veins of regenerative quartz run through the rock walls. This section has been mined frequently — the crystals here are small and just starting to regrow. The deeper veins will have larger deposits."
+    },
+    npcs: {},
+    mine: { lit: true, vein: { id: 'shaft_alpha', name: 'Shaft Alpha Quartz', maxNodes: 2, value: 15, depthTier: 0 } }
+  },
+
+  "vein_west": {
+    name: "Gamma-7 — Vein West",
+    description: "A narrower side tunnel branching west from the main shaft. The {item}lights{/item} are sparser here — older fixtures that flicker occasionally. Thick bands of pale {item}quartz{/item} run through the walls, some of the crystals as long as your forearm. The rock is stable but you can see old {item}cracks{/item} in the ceiling where previous collapses were shored up with durasteel beams.\n\nShaft Alpha is back to the east. A dark passage continues south toward the deep junction.",
+    exits: {
+      east: "shaft_alpha",
+      south: "deep_junction"
+    },
+    objects: {
+      "lights": "Older-model glow strips, some of them dead, others flickering. This section is right on the edge of the safe zone. Beyond here, the lights give out entirely.",
+      "quartz": "Healthy veins of regenerative quartz — the crystals are well-formed and gleaming. This is a productive mining spot. Each extraction takes a chunk but the quartz will regrow given time.",
+      "cracks": "Hairline fractures in the ceiling rock, reinforced with durasteel cross-beams. Evidence that this tunnel has collapsed before. Mining carefully is advisable — every extraction weakens the ceiling a little more."
+    },
+    npcs: {
+      "spiderling": {
+        name: "Cave Spiderling",
+        keywords: ["spiderling", "spider", "little spider", "small spider"],
+        look: "A cave spiderling about the size of a dinner plate — pale chitin, eight spindly legs, and tiny mandibles that click nervously. It skitters along the wall, more interested in insects than you. Harmless unless cornered.\n\n{dim}You could {/dim}{green}punch spiderling{/green}{dim} or {/dim}{green}knife spiderling{/green}{dim} if you want its chitin and silk.{/dim}",
+        combat: { blaster: 3, dodge: 10, meleeParry: 3, brawlParry: 3, brawl: 6, str: 3, damage: 3, weaponType: 'brawlParry', weaponName: 'tiny mandibles', stunOnly: false, security: false },
+        loot: {
+          credits: 0,
+          cp: 0,
+          items: [
+            { id: 'spider_chitin', name: 'Spider Chitin Plate', description: 'A small plate of cave spider chitin — lightweight, tough, and slightly translucent. Crafters and armorers pay decent money for these.', sellValue: 20, chance: 0.7 },
+            { id: 'spider_silk', name: 'Spider Silk Bundle', description: 'A tangle of cave spider silk — incredibly strong for its weight. Used in lightweight armor weaves and medical sutures.', sellValue: 15, chance: 0.5 }
+          ]
+        },
+        talk: [
+          { text: "The spiderling clicks its mandibles and retreats a few centimeters. It doesn't understand Basic. Or much of anything, really." }
+        ]
+      }
+    },
+    mine: { lit: true, vein: { id: 'vein_west', name: 'Western Quartz', maxNodes: 3, value: 25, depthTier: 1 } }
+  },
+
+  "vein_east": {
+    name: "Gamma-7 — Vein East",
+    description: "A side tunnel angling east, supported by heavy rock pillars left in place by the miners. The {item}lights{/item} cast long shadows between the pillars. Rich bands of {item}quartz{/item} stripe the walls in pale blue-white, catching the light beautifully. Dust motes drift in the still air.\n\nShaft Alpha is back to the west. A dark opening to the south descends toward the deep junction.",
+    exits: {
+      west: "shaft_alpha",
+      south: "deep_junction"
+    },
+    objects: {
+      "lights": "Mounted on the support pillars, these lights are in decent condition. You can see where the illumination ends though — the southern passage drops into complete darkness.",
+      "quartz": "Thick veins of blue-white regenerative quartz. The crystals here are dense and well-formed — more valuable than the picked-over stuff near the entrance."
+    },
+    npcs: {
+      "spiderling": {
+        name: "Cave Spiderling",
+        keywords: ["spiderling", "spider", "little spider", "small spider"],
+        look: "A cave spiderling about the size of a dinner plate — pale chitin, eight spindly legs, and tiny mandibles that click nervously. It skitters along the wall, more interested in insects than you. Harmless unless cornered.\n\n{dim}You could {/dim}{green}punch spiderling{/green}{dim} or {/dim}{green}knife spiderling{/green}{dim} if you want its chitin and silk.{/dim}",
+        combat: { blaster: 3, dodge: 10, meleeParry: 3, brawlParry: 3, brawl: 6, str: 3, damage: 3, weaponType: 'brawlParry', weaponName: 'tiny mandibles', stunOnly: false, security: false },
+        loot: {
+          credits: 0,
+          cp: 0,
+          items: [
+            { id: 'spider_chitin', name: 'Spider Chitin Plate', description: 'A small plate of cave spider chitin — lightweight, tough, and slightly translucent. Crafters and armorers pay decent money for these.', sellValue: 20, chance: 0.7 },
+            { id: 'spider_silk', name: 'Spider Silk Bundle', description: 'A tangle of cave spider silk — incredibly strong for its weight. Used in lightweight armor weaves and medical sutures.', sellValue: 15, chance: 0.5 }
+          ]
+        },
+        talk: [
+          { text: "The spiderling clicks its mandibles and retreats a few centimeters. It doesn't understand Basic. Or much of anything, really." }
+        ]
+      }
+    },
+    mine: { lit: true, vein: { id: 'vein_east', name: 'Eastern Quartz', maxNodes: 3, value: 25, depthTier: 1 } }
+  },
+
+  "deep_junction": {
+    name: "Gamma-7 — Deep Junction",
+    description: "{red}The lights end here.{/red} You stand at a junction where the lit tunnels give way to absolute darkness. The air is colder, damper, and carries a faint organic smell — something lives down here. Your glow rod barely penetrates the gloom.\n\nThick veins of {item}quartz{/item} glitter in your light — larger and more valuable than anything in the upper tunnels. But the {item}darkness{/item} presses in from all sides. You can hear something skittering in the deep passages.\n\nLit tunnels lead north to Vein West and north to Vein East. Dark passages continue southwest and southeast into the deep veins.",
+    exits: {
+      northwest: "vein_west",
+      northeast: "vein_east",
+      southwest: "deep_vein_1",
+      southeast: "deep_vein_2"
+    },
+    objects: {
+      "quartz": "Massive crystal formations jut from the walls and ceiling — some as thick as your arm. The regenerative quartz down here has had time to grow undisturbed. It's worth considerably more than the surface veins.",
+      "darkness": "Beyond your glow rod's feeble circle of light, the tunnels stretch into impenetrable blackness. You can hear the faint click-click of something moving on stone. Something large."
+    },
+    npcs: {},
+    mine: { lit: false, vein: { id: 'deep_junction', name: 'Deep Junction Quartz', maxNodes: 3, value: 50, depthTier: 2 } }
+  },
+
+  "deep_vein_1": {
+    name: "Gamma-7 — Deep Vein Alpha",
+    description: "{red}Deep territory.{/red} A winding passage through raw, unworked rock. Your light catches massive {item}quartz{/item} formations erupting from the walls — pristine crystals that have never been touched by a mining pick. The silence is broken only by the drip of water and the occasional distant {item}skittering{/item}.\n\nThe deep junction is back to the northeast. A narrow crawlway continues south.",
+    exits: {
+      northeast: "deep_junction",
+      south: "deep_vein_3"
+    },
+    objects: {
+      "quartz": "Pristine regenerative quartz — the largest crystals you've seen. They pulse with a faint inner light, almost alive. Extremely valuable, but mining down here is risky. The spider patrols these tunnels.",
+      "skittering": "A rhythmic clicking sound echoing from somewhere in the darkness. Multiple legs on stone. It's getting closer — or further away. Hard to tell with the echoes."
+    },
+    npcs: {},
+    mine: { lit: false, vein: { id: 'deep_vein_1', name: 'Deep Vein Alpha Quartz', maxNodes: 4, value: 75, depthTier: 3 } }
+  },
+
+  "deep_vein_2": {
+    name: "Gamma-7 — Deep Vein Beta",
+    description: "{red}Deep territory.{/red} A jagged passage with a low ceiling that forces you to crouch. Massive {item}quartz{/item} crystals grow from every surface — floor, walls, ceiling — creating a glittering forest of pale crystal. The air is thick with mineral dust. {item}Webbing{/item} stretches between some of the larger formations.\n\nThe deep junction is back to the northwest. A tight passage continues south.",
+    exits: {
+      northwest: "deep_junction",
+      south: "deep_vein_3"
+    },
+    objects: {
+      "quartz": "The quartz down here grows in massive clusters, some crystals as long as your leg. They hum faintly when you touch them — the regenerative matrix is strong this deep. Worth a fortune if you can get them out alive.",
+      "webbing": "Thick strands of something organic stretch between the crystal formations — pale, sticky, and strong. Definitely not natural mineral deposits. Something built these. Something big."
+    },
+    npcs: {},
+    mine: { lit: false, vein: { id: 'deep_vein_2', name: 'Deep Vein Beta Quartz', maxNodes: 4, value: 75, depthTier: 3 } }
+  },
+
+  "deep_vein_3": {
+    name: "Gamma-7 — Deep Vein Gamma",
+    description: "{red}Deep territory.{/red} The two deep passages converge into a broader chamber. {item}Quartz{/item} formations here are enormous — pillars of crystal stretching from floor to ceiling, pulsing with faint luminescence. The cave spider's {item}nest{/item} is clearly nearby — thick {item}webbing{/item} covers much of the ceiling and a musky animal smell permeates the air.\n\nPassages lead north to Deep Vein Alpha and north to Deep Vein Beta. A large opening continues south to the Crystal Chamber.",
+    exits: {
+      north: "deep_vein_1",
+      northeast: "deep_vein_2",
+      south: "crystal_chamber"
+    },
+    objects: {
+      "quartz": "Crystal pillars thick enough that you couldn't wrap your arms around them. The regenerative quartz down here is ancient — decades or centuries of undisturbed growth. Each crystal extracted is worth a small fortune.",
+      "webbing": "Dense organic webbing crisscrosses the ceiling and upper walls. Some of it is old and brittle; some is fresh and glistening. The spider has been here recently.",
+      "nest": "You can see the remnants of shed chitin plates and what might be old egg casings wedged into a crack in the wall. The spider uses this passage regularly."
+    },
+    npcs: {},
+    mine: { lit: false, vein: { id: 'deep_vein_3', name: 'Deep Vein Gamma Quartz', maxNodes: 4, value: 100, depthTier: 3 } }
+  },
+
+  "crystal_chamber": {
+    name: "Gamma-7 — Crystal Chamber",
+    description: "{red}The heart of the mine.{/red} A vast natural cavern whose walls, floor, and ceiling are almost entirely regenerative {item}quartz{/item}. The crystals' natural luminescence fills the space with an ethereal pale glow — beautiful and deeply unsettling this far underground. The chamber is easily thirty meters across.\n\nThis is the richest deposit in Gamma-7 — and the center of the cave spider's territory. Fresh {item}webbing{/item} and {item}drag marks{/item} on the crystal floor tell you this is a feeding ground.\n\nThe only exit leads north back to Deep Vein Gamma.",
+    exits: {
+      north: "deep_vein_3"
+    },
+    objects: {
+      "quartz": "The mother lode. Every surface gleams with regenerative quartz in massive, pristine formations. Some crystals are as tall as you are. A single extraction here is worth more than a day's work in the upper tunnels. The risk matches the reward.",
+      "webbing": "Thick, fresh webbing in elaborate patterns — this isn't random construction, it's a trap web. The spider uses the crystal chamber as a hunting ground, stringing webs between the larger formations to snare anything that wanders in.",
+      "drag marks": "Scrape marks across the crystal floor where something heavy has been dragged. A few scattered pieces of mining equipment — a helmet, a broken pick, a single boot — suggest that not every miner who came down here made it back out."
+    },
+    npcs: {},
+    mine: { lit: false, vein: { id: 'crystal_chamber', name: 'Chamber Quartz', maxNodes: 5, value: 150, depthTier: 4 } }
   }
 
 };
