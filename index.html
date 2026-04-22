@@ -81,7 +81,7 @@ padding:16px;display:none;
 }
 .tab-panel.active{display:block}
 #tab-mud.active{display:flex}
-@media(max-width:1100px){#mud-sidebar{display:none !important}#mud-cmd-toggle{display:inline-block !important}}
+@media(max-width:1100px){#mud-sidebar{display:none !important}#mud-leftbar{display:none !important}#mud-cmd-toggle{display:inline-block !important}}
 .mud-dd-open{display:block !important}
 
 /* NAV BAR */
@@ -3275,6 +3275,28 @@ color:var(--text-dim);min-width:35px;text-align:right;
 
     <!-- TAB: MUDD-LITE STATION -->
     <div id="tab-mud" class="tab-panel" style="justify-content:center;align-items:flex-start;padding:12px 8px;gap:12px">
+      <div id="mud-leftbar" style="width:180px;flex-shrink:0;height:calc(100vh - 120px);font-family:'Courier New',Consolas,monospace;font-size:10px;color:#556;line-height:1.6;overflow-y:auto;padding:8px 0">
+        <div style="color:#f66;font-family:'Exo 2',monospace;font-size:9px;letter-spacing:2px;margin-bottom:4px">&#9888; UNDER CONSTRUCTION</div>
+        <div style="color:#445;font-size:9px;line-height:1.5;margin-bottom:14px">S.U.D is an active work in progress. Expect new features, rooms, and systems as development continues.</div>
+        <div style="color:var(--gold);font-family:'Exo 2',monospace;font-size:8px;letter-spacing:2px;margin-bottom:6px;border-bottom:1px solid #1a1a2e;padding-bottom:4px">WHAT IS A M.U.D?</div>
+        <div style="color:#445;font-size:9px;line-height:1.5;margin-bottom:14px">A Multi-User Dungeon was a text-based online RPG from the early days of the internet — no graphics, just words, imagination, and a command prompt. Players explored rooms, fought monsters, talked to NPCs, and traded loot by typing commands.</div>
+        <div style="color:var(--gold);font-family:'Exo 2',monospace;font-size:8px;letter-spacing:2px;margin-bottom:6px;border-bottom:1px solid #1a1a2e;padding-bottom:4px">S.U.D — SINGLE USER DUNGEON</div>
+        <div style="color:#445;font-size:9px;line-height:1.5;margin-bottom:14px">A single-player tribute to that era, set in the Star Wars D6 universe. Wake up on a space station with nothing — explore, work, fight, and earn your way to a ship of your own.</div>
+        <div style="color:var(--gold);font-family:'Exo 2',monospace;font-size:8px;letter-spacing:2px;margin-bottom:6px;border-bottom:1px solid #1a1a2e;padding-bottom:4px">ROADMAP</div>
+        <div style="font-size:9px;line-height:1.7">
+          <div><span style="color:#6a8">&#10003;</span> <span style="color:#6a8">Room engine + navigation</span></div>
+          <div><span style="color:#6a8">&#10003;</span> <span style="color:#6a8">NPC dialogue</span></div>
+          <div><span style="color:#6a8">&#10003;</span> <span style="color:#6a8">Save / load system</span></div>
+          <div><span style="color:#445">&#9744;</span> <span style="color:#556">Character creator</span></div>
+          <div><span style="color:#445">&#9744;</span> <span style="color:#556">Skill checks</span></div>
+          <div><span style="color:#445">&#9744;</span> <span style="color:#556">Combat system</span></div>
+          <div><span style="color:#445">&#9744;</span> <span style="color:#556">Economy + shops</span></div>
+          <div><span style="color:#445">&#9744;</span> <span style="color:#556">Starport hub rooms</span></div>
+          <div><span style="color:#445">&#9744;</span> <span style="color:#556">Mining Moon missions</span></div>
+          <div><span style="color:#445">&#9744;</span> <span style="color:#556">Trade Planet zone</span></div>
+          <div><span style="color:#445">&#9744;</span> <span style="color:#556">Scrapper World zone</span></div>
+        </div>
+      </div>
       <div id="mud-screen" style="background:#08080c;border:1px solid #1a1a2e;border-radius:8px;padding:0;font-family:'Courier New',Consolas,monospace;height:calc(100vh - 120px);max-width:860px;width:100%;display:flex;flex-direction:column;overflow:hidden;position:relative;box-shadow:0 0 30px rgba(0,0,0,0.8),0 0 8px rgba(30,40,60,0.5),inset 0 0 60px rgba(0,0,0,0.3)">
         <div style="background:linear-gradient(180deg,#10101a,#0c0c14);padding:8px 14px;border-bottom:1px solid #1a1a2e;display:flex;justify-content:space-between;align-items:center">
           <span style="font-size:10px;color:var(--gold);letter-spacing:2px;font-family:'Exo 2',monospace">S.U.D — SINGLE USER DUNGEON</span>
