@@ -1956,6 +1956,7 @@ const MUD_COMBAT = {
   playerActedThisRound: false,
   securityCalled: false,
   securityArriveRound: 0,
+  lastKilledBy: null,  // { name, weaponType, weaponName } — what downed the player
 
   // Attack type → skill / defense mapping
   ATTACK_TYPES: {
@@ -2323,6 +2324,9 @@ const MUD_COMBAT = {
 
           if (c.wounds !== oldWound) {
             MUD.print('  You are ' + this.woundLabel(c.wounds) + '!');
+            if (this.woundIndex(c.wounds) >= this.woundIndex('incapacitated')) {
+              this.lastKilledBy = { name: enemy.name, weaponType: enemy.combat.weaponType || 'dodge', weaponName: enemy.combat.weaponName || 'weapon' };
+            }
           } else {
             MUD.print('  {dim}No effect on you.{/dim}');
           }
@@ -2452,7 +2456,23 @@ const MUD_COMBAT = {
     MUD.printBlank();
     MUD.print('{dim}You wake up in the station infirmary. Again. The 2-1B droid regards you with what might be disapproval.{/dim}');
     MUD.printBlank();
-    MUD.print('{npc}2-1B Medical Droid{/npc}: "You really should stop doing that. I\'m running out of bacta patches."');
+
+    // Contextual advice based on what killed them
+    const kb = MUD_COMBAT.lastKilledBy;
+    if (kb) {
+      const defenseMap = {
+        dodge: { skill: 'Dodge', tip: 'Your Dodge skill could use work — learn to read where the shots are going before they get there.' },
+        brawlParry: { skill: 'Brawling Parry', tip: 'You need to learn to block. Brawling Parry training would keep those hits from landing.' },
+        meleeParry: { skill: 'Melee Parry', tip: 'A blade is only as dangerous as your inability to parry it. Melee Parry training would help considerably.' }
+      };
+      const def = defenseMap[kb.weaponType] || defenseMap.dodge;
+      MUD.print('{npc}2-1B Medical Droid{/npc}: "' + kb.name + ' put you down with a ' + kb.weaponName + '. I\'ve patched worse, but not by much."');
+      MUD.printBlank();
+      MUD.print('{npc}2-1B Medical Droid{/npc}: "Medical opinion? ' + def.tip + ' And more Strength never hurts — the tougher you are, the more you can absorb before ending up back on my table."');
+      MUD_COMBAT.lastKilledBy = null;
+    } else {
+      MUD.print('{npc}2-1B Medical Droid{/npc}: "You really should stop doing that. I\'m running out of bacta patches."');
+    }
     MUD.printBlank();
 
     MUD.displayRoom('infirmary');
@@ -2809,6 +2829,7 @@ const MUD_MINE = {
       }
 
       if (MUD_COMBAT.woundIndex(MUD.state.character.wounds) >= MUD_COMBAT.woundIndex('incapacitated')) {
+        MUD_COMBAT.lastKilledBy = { name: 'a cave-in', weaponType: 'dodge', weaponName: 'falling rock' };
         MUD_COMBAT.handlePlayerDown();
       }
 
