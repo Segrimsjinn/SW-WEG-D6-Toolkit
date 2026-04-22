@@ -84,12 +84,13 @@ const ROOMS_DATA = {
 
   "main_concourse": {
     name: "Main Concourse",
-    description: "The main concourse of Drifter's Anchorage is a wide, vaulted corridor that serves as the station's central hub. A {item}crowd{/item} of spacers, merchants, and hard-eyed individuals flows in both directions. Overhead, a cracked {item}holodisplay{/item} cycles through trade postings and docking schedules in flickering blue text.\n\nThe medical wing lies to the south. A cantina's neon {item}sign{/item} glows to the west, its muffled music bleeding through the doorway. The docking bay access corridor stretches east. To the north, a transparisteel-fronted office bears the sign: STATION ADMINISTRATION.",
+    description: "The main concourse of Drifter's Anchorage is a wide, vaulted corridor that serves as the station's central hub. A {item}crowd{/item} of spacers, merchants, and hard-eyed individuals flows in both directions. Overhead, a cracked {item}holodisplay{/item} cycles through trade postings and docking schedules in flickering blue text.\n\nThe medical wing lies to the south. A cantina's neon {item}sign{/item} glows to the west, its muffled music bleeding through the doorway. The docking bay access corridor stretches east. To the north, a transparisteel-fronted office bears the sign: STATION ADMINISTRATION. A narrow, poorly lit passage leads southwest into the station's maintenance levels.",
     exits: {
       south: "med_corridor",
       west: "cantina",
       east: "docking_access",
-      north: "admin_office"
+      north: "admin_office",
+      southwest: "maintenance_sub"
     },
     objects: {
       "holodisplay": "The cracked holodisplay cycles through listings:\n  {dim}• CARGO HAULER NEEDED — Bulk freight to Muunilinst. Payment on delivery. No questions.{/dim}\n  {dim}• MINING CREW — 3-week rotation, Asteroid Belt Gamma-7. Hazard pay included.{/dim}\n  {dim}• WANTED: Ship mechanic. Must have own tools. See Docking Bay 3.{/dim}\n  {dim}• PUBLIC NOTICE: Unlicensed weapons discharge in the concourse will be met with lethal force. — Station Security{/dim}\nMost of the listings look weeks old.",
@@ -188,6 +189,52 @@ const ROOMS_DATA = {
         talk: [
           { once: "renn_intro", text: "{npc}Dockmaster Renn{/npc} turns those large red eyes on you, evaluating.\n\n\"Ah. The pod survivor.\" His voice has the characteristic Duros rasp. \"I processed your escape pod's wreckage — or what was left of it. Standard Imperial pod, military-grade. No markings, no serial numbers. Someone went to a lot of trouble to scrub that pod clean before you ended up in it.\"\n\nHe shrugs, turning back to the bay. \"Not my business. My business is ships. When you've got the credits for one, come see me. I handle all sales and berth assignments on the station.\"\n\nHe nods toward the bay below. \"Got a few vessels for sale right now, if you're the type to dream. That Z-95 down there's been sitting for weeks. Previous owner couldn't pay his docking fees.\"" },
           { text: "\"Still window shopping? Can't blame you. A ship's the only real freedom in this galaxy.\" He glances at the bay. \"Save up your credits. I'll be here when you're ready.\"" }
+        ]
+      }
+    }
+  },
+
+  "maintenance_sub": {
+    name: "Maintenance Sublevel — Back Alley",
+    description: "A cramped passage between exposed conduit runs and leaking pipes, lit by a single flickering emergency strip that casts everything in sickly yellow. The air is thick with the smell of coolant and rust. {item}Graffiti{/item} covers the walls — gang tags, crude drawings, and what appears to be a tally of debts owed. Puddles of condensation reflect the dim light.\n\nA narrow stairwell leads northeast back up to the main concourse. The passage continues south into deeper maintenance tunnels, but a collapsed {item}bulkhead{/item} blocks the way.\n\nA {npc}thug{/npc} leans against the far wall, watching you with unfriendly eyes.",
+    exits: {
+      northeast: "main_concourse"
+    },
+    objects: {
+      "graffiti": "A mess of spray-painted tags in Aurebesh and Basic. 'VOID DEMONS RUN THIS DECK' is scrawled across one wall in red. Below it, someone added in smaller text: 'Void Demons couldn't run a refresher.' A series of tally marks near the floor might be tracking fights — or kills.",
+      "bulkhead": "A collapsed section of ceiling has blocked the passage south. Durasteel beams and shattered plating form an impassable barrier. Whatever's beyond it has been sealed off for a long time — rust has welded the debris together.",
+      "puddles": "Murky puddles of condensation and coolant runoff. They smell faintly of ozone and machine oil. Not the kind of water you'd want to drink, even on a station this rough.",
+      "pipes": "Exposed pipes of various diameters run along the ceiling and walls, some wrapped in deteriorating insulation, others bare and warm to the touch. One of them hisses steam at irregular intervals."
+    },
+    npcs: {
+      "thug": {
+        name: "Station Thug",
+        keywords: ["thug", "tough", "punk", "guy"],
+        look: "A heavyset human male with a scarred face, wearing a stained utility jumpsuit with the sleeves torn off. A crude vibroblade is strapped to his thigh and a cheap blaster pistol sits in a hip holster. He has the look of someone who's been on the wrong side of the law for so long he's forgotten which side is which.",
+        combat: {
+          blaster: 9,         // 3D
+          dodge: 7,           // 2D+1
+          meleeParry: 8,      // 2D+2
+          brawlParry: 8,      // 2D+2
+          brawl: 10,          // 3D+1
+          melee: 9,           // 3D
+          str: 10,            // 3D+1
+          damage: 12,         // 4D blaster pistol
+          weaponType: 'dodge',
+          weaponName: 'cheap blaster pistol',
+          stunOnly: false,
+          security: false     // no security down here
+        },
+        loot: {
+          credits: { min: 15, max: 75 },
+          cp: 2,
+          items: [
+            { id: 'cheap_blaster', name: 'Cheap Blaster Pistol', description: 'A worn-out BlasTech knockoff. The power pack is half-depleted and the barrel is slightly warped, but it still fires. Damage: 3D+2.\n\n{dim}Combat: {/dim}{green}blast{/green}{dim} <target> — uses Blaster skill, defended by Dodge.{/dim}', damage: '3D+2', combatType: 'blaster', chance: 0.5 },
+            { id: 'vibroblade', name: 'Crude Vibroblade', description: 'A low-quality vibroblade with a chipped edge and a motor that rattles when activated. Damage: STR+2D.\n\n{dim}Combat: {/dim}{green}knife{/green}{dim} <target> — uses Melee Combat skill, defended by Melee Parry.{/dim}', damage: '5D+1', combatType: 'melee', chance: 0.4 }
+          ]
+        },
+        talk: [
+          { text: "The thug pushes off the wall and squares up to you.\n\n\"Wrong turn, spacer. This ain't the promenade.\" He cracks his knuckles. \"Toll's fifty credits. Or you can try walking past me. Your call.\"\n\n{dim}You could pay ({/dim}{green}pay thug{/green}{dim}), fight ({/dim}{green}blast thug{/green}{dim} / {/dim}{green}punch thug{/green}{dim} / {/dim}{green}knife thug{/green}{dim}), or leave ({/dim}{green}ne{/green}{dim}).{/dim}" }
         ]
       }
     }

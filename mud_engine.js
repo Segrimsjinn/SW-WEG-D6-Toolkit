@@ -14,7 +14,8 @@ const MUD = {
     historyIdx: -1,
     started: false,
     ticks: 0,           // total room moves — drives respawn timers
-    defeatedNpcs: {}    // { "roomId:npcId": tickWhenDefeated }
+    defeatedNpcs: {},   // { "roomId:npcId": tickWhenDefeated }
+    lootedNpcs: {}      // { "roomId:npcId": tickWhenLooted } — resets on respawn
   },
 
   SAVE_KEY: 'muddLiteStation_save',
@@ -233,6 +234,10 @@ const MUD = {
       case 'pickup':
         return this.doTake(arg);
 
+      case 'loot':
+      case 'search':
+        return this.doLoot(arg);
+
       case 'drop':
         return this.doDrop(arg);
 
@@ -408,6 +413,100 @@ const MUD = {
     this.print("There's nothing here you can take right now.");
   },
 
+  doLoot(target) {
+    if (!target) {
+      // Auto-loot: find any lootable defeated NPC in this room
+      const room = ROOMS_DATA[this.state.currentRoom];
+      if (!room || !room.npcs) { this.print("Nothing to loot here.", 'error'); return; }
+      const lootable = Object.keys(room.npcs).find(k =>
+        this.isNpcDefeated(this.state.currentRoom, k) &&
+        !this.isNpcLooted(this.state.currentRoom, k) &&
+        room.npcs[k].loot
+      );
+      if (!lootable) { this.print("Nothing to loot here.", 'error'); return; }
+      return this.lootNpc(this.state.currentRoom, lootable, room.npcs[lootable]);
+    }
+
+    // Find matching defeated NPC
+    const room = ROOMS_DATA[this.state.currentRoom];
+    if (!room || !room.npcs) { this.print("Nothing to loot here.", 'error'); return; }
+    const kw = target.toLowerCase();
+    const npcId = Object.keys(room.npcs).find(k => {
+      const npc = room.npcs[k];
+      return this.isNpcDefeated(this.state.currentRoom, k) &&
+        (k.toLowerCase().includes(kw) || npc.name.toLowerCase().includes(kw) ||
+        (npc.keywords && npc.keywords.some(w => w === kw)));
+    });
+
+    if (!npcId) {
+      this.print("There's nobody unconscious here matching '" + target + "' to loot.", 'error');
+      return;
+    }
+
+    if (this.isNpcLooted(this.state.currentRoom, npcId)) {
+      this.print("You've already searched them. Nothing left.", 'error');
+      return;
+    }
+
+    const npc = room.npcs[npcId];
+    if (!npc.loot) {
+      this.print("You search " + npc.name + " but find nothing worth taking.");
+      this.state.lootedNpcs[this.state.currentRoom + ':' + npcId] = this.state.ticks;
+      this.autoSave();
+      return;
+    }
+
+    this.lootNpc(this.state.currentRoom, npcId, npc);
+  },
+
+  isNpcLooted(roomId, npcId) {
+    const key = roomId + ':' + npcId;
+    const lootTick = this.state.lootedNpcs[key];
+    if (lootTick == null) return false;
+    const defeatTick = this.state.defeatedNpcs[key];
+    if (defeatTick == null) return false;
+    return lootTick >= defeatTick; // looted since last defeat
+  },
+
+  lootNpc(roomId, npcId, npc) {
+    const key = roomId + ':' + npcId;
+    this.state.lootedNpcs[key] = this.state.ticks;
+
+    this.printBlank();
+    this.print('{gold}You search ' + npc.name + '...{/gold}');
+
+    // Credits
+    if (npc.loot.credits) {
+      const amt = typeof npc.loot.credits === 'object' ?
+        Math.floor(Math.random() * (npc.loot.credits.max - npc.loot.credits.min + 1)) + npc.loot.credits.min :
+        npc.loot.credits;
+      this.state.credits += amt;
+      this.print('  {gold}+' + amt + ' credits{/gold}');
+    }
+
+    // Items
+    if (npc.loot.items) {
+      for (const item of npc.loot.items) {
+        // Check drop chance
+        if (item.chance && Math.random() > item.chance) continue;
+        const invItem = { id: item.id, name: item.name, description: item.description || item.name };
+        if (item.damage) { invItem.damage = item.damage; invItem.combatType = item.combatType; invItem.stunOnly = item.stunOnly || false; }
+        this.state.inventory.push(invItem);
+        this.print('  {item}' + item.name + '{/item}');
+      }
+    }
+
+    // Character points
+    if (npc.loot.cp) {
+      if (this.state.character) {
+        this.state.character.cp = (this.state.character.cp || 0) + npc.loot.cp;
+        this.print('  {green}+' + npc.loot.cp + ' Character Points{/green}');
+      }
+    }
+
+    this.autoSave();
+  },
+
   doDrop(target) {
     if (!target) {
       this.print('Drop what?', 'error');
@@ -457,6 +556,7 @@ const MUD = {
     this.print('{gold}═════════════════════════════════════{/gold}');
     this.print('  Location: {gold}' + (ROOMS_DATA[this.state.currentRoom]?.name || 'Unknown') + '{/gold}');
     this.print('  Credits:  {gold}' + this.state.credits + '{/gold}');
+    this.print('  CP:       {gold}' + (c.cp || 0) + '{/gold}');
     this.print('  Wounds:   ' + (c.wounds === 'healthy' ? '{green}Healthy{/green}' : '{red}' + c.wounds + '{/red}'));
     this.printBlank();
     this.print('{gold}Attributes:{/gold}');
@@ -483,6 +583,7 @@ const MUD = {
     this.print('  {green}talk{/green} <person>  — talk to someone');
     this.print('  {green}take{/green} / {green}get{/green} <item>  — pick something up');
     this.print('  {green}drop{/green} <item>  — drop an item');
+    this.print('  {green}loot{/green} <body>  — search a defeated NPC');
     this.print('');
     this.print('{gold}Information:{/gold}');
     this.print('  {green}inventory{/green} / {green}i{/green}  — check your belongings');
@@ -530,7 +631,8 @@ const MUD = {
         character: this.state.character,
         started: this.state.started,
         ticks: this.state.ticks,
-        defeatedNpcs: this.state.defeatedNpcs
+        defeatedNpcs: this.state.defeatedNpcs,
+        lootedNpcs: this.state.lootedNpcs
       };
       localStorage.setItem(this.SAVE_KEY, JSON.stringify(save));
       return true;
@@ -553,6 +655,7 @@ const MUD = {
       this.state.started = save.started || false;
       this.state.ticks = save.ticks || 0;
       this.state.defeatedNpcs = save.defeatedNpcs || {};
+      this.state.lootedNpcs = save.lootedNpcs || {};
       return true;
     } catch (e) {
       console.error('MUD load failed:', e);
@@ -1150,7 +1253,8 @@ const MUD_CHARGEN = {
       attrs: { ...this.attrs },
       skills: skills,
       wounds: 'healthy',
-      hardMode: this.hardMode
+      hardMode: this.hardMode,
+      cp: 5  // starting character points
     };
 
     this.phase = null;
