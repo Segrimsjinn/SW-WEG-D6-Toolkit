@@ -907,7 +907,7 @@ const MUD = {
 
     this.printBlank();
     this.print('{gold}═══ Sabacc Hand — ' + bet + ' credits ═══{/gold}');
-    this.print('{dim}Your Gambling: {/dim}{gold}' + playerRoll + '{/gold}{dim} vs Dealer: {/dim}{gold}' + dealerRoll + '{/gold}');
+    this.print('{dim}The cards are dealt...{/dim}');
     this.printBlank();
 
     if (diff > 5) {
