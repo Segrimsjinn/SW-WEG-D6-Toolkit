@@ -310,6 +310,7 @@ const MUD = {
 
       case 'buy':
       case 'purchase':
+        if (arg && arg.toLowerCase() === 'ship') return this.doBuyShip();
         return this.doBuy(arg);
 
       case 'sell':
@@ -1181,6 +1182,48 @@ const MUD = {
       MUD_MINE.checkSpiderEncounter(targetRoom);
     }
 
+    this.autoSave();
+  },
+
+  doBuyShip() {
+    if (!this.state.character) { this.print("You need a character first.", 'error'); return; }
+    if (this.state.currentRoom !== 'docking_bay') {
+      this.print("You need to be at the docking bay observation deck to buy a ship. Talk to Dockmaster Renn.", 'error');
+      return;
+    }
+    if (this.state.flags['owns_ship']) {
+      this.print("You already own the Ghtroc 720. She's on pad 4 — not that you can fly her anywhere yet. But she's yours.");
+      return;
+    }
+
+    const price = 23000;
+    if (this.state.credits < price) {
+      this.print('{npc}Dockmaster Renn{/npc}: "The Ghtroc\'s ' + price + ' credits. You\'ve got ' + this.state.credits + '. Keep saving."');
+      return;
+    }
+
+    this.state.credits -= price;
+    this.state.flags['owns_ship'] = true;
+
+    this.printBlank();
+    this.print('{gold}═══════════════════════════════════════════════════{/gold}');
+    this.print('{gold}         YOU BOUGHT A SHIP{/gold}');
+    this.print('{gold}═══════════════════════════════════════════════════{/gold}');
+    this.printBlank();
+    this.print('{npc}Dockmaster Renn{/npc} counts the credits twice, then slides a keycard across the railing.');
+    this.printBlank();
+    this.print('"She\'s all yours. Pad 4. Registration\'s been transferred — try not to crash her before you clear the station\'s mass shadow."');
+    this.printBlank();
+    this.print('He pauses, those large red eyes softening just slightly.');
+    this.printBlank();
+    this.print('"You came here with nothing — no name, no credits, no future. And now you\'ve got a ship." He turns back to the bay. "That\'s not nothing. That\'s the whole galaxy."');
+    this.printBlank();
+    this.print('{dim}The {/dim}{gold}Ghtroc 720{/gold}{dim} is yours. A battered, temperamental, beautiful freighter with a working hyperdrive and enough cargo space to make a living. The stars are calling.{/dim}');
+    this.printBlank();
+    this.print('{gold}Congratulations — you\'ve completed the first chapter of your story on Drifter\'s Anchorage.{/gold}');
+    this.print('{dim}More adventures coming soon. For now, the station is yours to explore, the mine is yours to work, and the bounties keep coming. Save up, train up, gear up. The galaxy isn\'t going anywhere.{/dim}');
+    this.printBlank();
+    this.print('{dim}Balance: ' + this.state.credits + ' credits{/dim}');
     this.autoSave();
   },
 
