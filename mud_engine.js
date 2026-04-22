@@ -779,6 +779,16 @@ const MUD = {
     return null;
   },
 
+  // Training fee per pip based on the dice tier you're training into
+  // Half the galactic scale: 1D=5, 2D=12, 3D=25, 4D=50, 5D=100, 6D=250
+  TRAIN_FEE: [0, 5, 5, 5, 12, 12, 12, 25, 25, 25, 50, 50, 50, 100, 100, 100, 250, 250, 250],
+  TRAIN_CAP: 18, // 6D — max trainable at this station
+
+  getTrainFee(targetPips) {
+    if (targetPips >= this.TRAIN_FEE.length) return 250;
+    return this.TRAIN_FEE[targetPips] || 5;
+  },
+
   doTrain(arg) {
     if (!this.state.character) { this.print("You need a character first.", 'error'); return; }
 
@@ -789,28 +799,34 @@ const MUD = {
     const available = trainer.trainer.skills;
 
     if (!arg) {
-      // Show trainable skills and costs
       this.printBlank();
       this.print('{gold}═══ ' + trainer.name + ' — Training ═══{/gold}');
-      this.print('{dim}Your CP: {/dim}{gold}' + (c.cp || 0) + '{/gold}');
+      this.print('{dim}Your CP: {/dim}{gold}' + (c.cp || 0) + '{/gold}{dim}  Credits: {/dim}{gold}' + this.state.credits + '{/gold}');
       this.printBlank();
 
       for (const skillName of available) {
         const def = MUD_CHARGEN.SKILLS.find(s => s.name === skillName);
         if (!def) continue;
-        const currentPips = c.skills[skillName] || c.attrs[def.attr]; // attribute if no skill
+        const currentPips = c.skills[skillName] || c.attrs[def.attr];
         const hasSkill = !!c.skills[skillName];
         const currentDice = MUD_CHARGEN.pipsToDice(currentPips);
 
+        if (currentPips >= this.TRAIN_CAP) {
+          this.print('  {dim}' + skillName + '  ' + currentDice + ' — MAXED (find a better teacher){/dim}');
+          continue;
+        }
+
         if (!hasSkill) {
-          // Learn new skill: 1 CP, starts at attribute+1pip
-          const newVal = MUD_CHARGEN.pipsToDice(c.attrs[def.attr] + 1);
-          this.print('  {item}' + skillName + '{/item}  {dim}NEW → ' + newVal + '{/dim}  {green}1 CP{/green}');
+          const newPips = c.attrs[def.attr] + 1;
+          const fee = this.getTrainFee(newPips);
+          const newVal = MUD_CHARGEN.pipsToDice(newPips);
+          this.print('  {item}' + skillName + '{/item}  {dim}NEW → ' + newVal + '{/dim}  {green}1 CP + ' + fee + ' cr{/green}');
         } else {
-          // Improve: cost = current number of dice
-          const cost = Math.floor(currentPips / 3);
-          const newVal = MUD_CHARGEN.pipsToDice(currentPips + 1);
-          this.print('  {item}' + skillName + '{/item}  {dim}' + currentDice + ' → ' + newVal + '{/dim}  {green}' + cost + ' CP{/green}');
+          const cpCost = Math.floor(currentPips / 3);
+          const newPips = currentPips + 1;
+          const fee = this.getTrainFee(newPips);
+          const newVal = MUD_CHARGEN.pipsToDice(newPips);
+          this.print('  {item}' + skillName + '{/item}  {dim}' + currentDice + ' → ' + newVal + '{/dim}  {green}' + cpCost + ' CP + ' + fee + ' cr{/green}');
         }
       }
 
@@ -833,30 +849,45 @@ const MUD = {
     const hasSkill = !!c.skills[skillName];
     const currentPips = c.skills[skillName] || c.attrs[def.attr];
 
-    let cost;
-    if (!hasSkill) {
-      cost = 1; // new skill with teacher
-    } else {
-      cost = Math.floor(currentPips / 3); // dice count
+    // Cap check
+    if (currentPips >= this.TRAIN_CAP) {
+      this.print('"You\'ve surpassed what I can teach. You\'ll need to find a master — someone off-station."', 'error');
+      return;
     }
 
-    if ((c.cp || 0) < cost) {
-      this.print('"You need ' + cost + ' Character Points for that. You\'ve got ' + (c.cp || 0) + '. Come back when you\'ve earned more."', 'error');
+    let cpCost, newPips;
+    if (!hasSkill) {
+      cpCost = 1;
+      newPips = c.attrs[def.attr] + 1;
+    } else {
+      cpCost = Math.floor(currentPips / 3);
+      newPips = currentPips + 1;
+    }
+    const fee = this.getTrainFee(newPips);
+
+    if ((c.cp || 0) < cpCost) {
+      this.print('"You need ' + cpCost + ' Character Points. You\'ve got ' + (c.cp || 0) + '. Earn more in a fight."', 'error');
+      return;
+    }
+    if (this.state.credits < fee) {
+      this.print('"Training costs ' + fee + ' credits. You\'ve got ' + this.state.credits + '. Come back when you can pay."', 'error');
       return;
     }
 
     // Apply training
-    c.cp -= cost;
+    c.cp -= cpCost;
+    this.state.credits -= fee;
     if (!hasSkill) {
-      c.skills[skillName] = c.attrs[def.attr] + 1; // attribute + 1 pip
+      c.skills[skillName] = newPips;
     } else {
-      c.skills[skillName] = currentPips + 1;
+      c.skills[skillName] = newPips;
     }
 
-    const newVal = MUD_CHARGEN.pipsToDice(c.skills[skillName]);
+    const newVal = MUD_CHARGEN.pipsToDice(newPips);
     this.printBlank();
     this.print('{npc}' + trainer.name + '{/npc} nods approvingly.');
-    this.print('{green}' + skillName + ' improved to ' + newVal + '{/green} {dim}(-' + cost + ' CP, ' + c.cp + ' remaining){/dim}');
+    this.print('{green}' + skillName + ' improved to ' + newVal + '{/green} {dim}(-' + cpCost + ' CP, -' + fee + ' cr){/dim}');
+    this.print('{dim}CP: ' + c.cp + '  Credits: ' + this.state.credits + '{/dim}');
     this.autoSave();
   },
 
