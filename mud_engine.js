@@ -750,8 +750,9 @@ const MUD = {
     }
     if (!dealerNpc) { this.print("There's nobody here to gamble with.", 'error'); return; }
 
+    const validBets = [1, 5, 10, 25];
     const bet = parseInt(arg);
-    if (!bet || bet < 25) { this.print('"Minimum bet is 25 credits."', 'error'); return; }
+    if (!bet || !validBets.includes(bet)) { this.print('"Bets are 1, 5, 10, or 25 credits."', 'error'); return; }
     if (bet > this.state.credits) { this.print('"You\'ve only got ' + this.state.credits + ' credits. Can\'t bet what you don\'t have."', 'error'); return; }
 
     const playerPips = MUD_COMBAT.getPlayerSkillPips('Gambling');

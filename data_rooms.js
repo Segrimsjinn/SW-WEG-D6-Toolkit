@@ -203,7 +203,7 @@ const ROOMS_DATA = {
       east: "cantina"
     },
     objects: {
-      "table": "A hexagonal sabacc table with worn felt and built-in chip trays. The randomizer is a cheap aftermarket model bolted to the center — it sparks occasionally when it cycles. Minimum buy-in appears to be 25 credits.\n\n{dim}Type {/dim}{green}gamble <amount>{/green}{dim} to play a hand of sabacc. Uses your Gambling skill vs the dealer's.{/dim}",
+      "table": "A hexagonal sabacc table with worn felt and built-in chip trays. The randomizer is a cheap aftermarket model bolted to the center — it sparks occasionally when it cycles. Bets are 1, 5, 10, or 25 credits.\n\n{dim}Type {/dim}{green}gamble <amount>{/green}{dim} to play a hand. Bets: 1, 5, 10, or 25 credits.{/dim}",
       "chips": "Stacks of credit chips in various denominations. The house chips are stamped with a crude hydrospanner logo — Grek's branding, apparently.",
       "players": "The other players at the table: a sweating Sullustan who keeps checking his chrono, a hard-faced human woman with a cybernetic eye, and a Rodian whose pile of chips suggests he's been here a while. None of them look like they'd take kindly to cheating.",
       "posters": "Faded holoposters line the walls — podracers from Malastare, swoop champions from Nar Shaddaa, and what appears to be a signed portrait of a Twi'lek dancer. Someone has drawn a mustache on the dancer."
@@ -216,7 +216,7 @@ const ROOMS_DATA = {
         combat: { blaster: 9, dodge: 9, meleeParry: 6, brawlParry: 6, brawl: 6, str: 7, damage: 9, weaponType: 'dodge', weaponName: 'hold-out blaster', stunOnly: false, security: true },
         gambling: 17, // 5D+2 — need ~6D to start winning consistently
         talk: [
-          { text: "{npc}Sabacc Dealer{/npc} glances up from the cards.\n\n\"Looking to play? Buy-in starts at 25 credits. No upper limit — if you've got the nerve.\"\n\nHe taps the table. \"Standard rules. Your Gambling against mine. Beat me, you double your bet. Lose, the house keeps it. Push means your credits come back.\"\n\n{dim}Type {/dim}{green}gamble <amount>{/green}{dim} to play a hand. Minimum 25 credits.{/dim}" }
+          { text: "{npc}Sabacc Dealer{/npc} glances up from the cards.\n\n\"Looking to play? Bets are 1, 5, 10, or 25 credits.\"\n\nHe taps the table. \"Standard rules. Your Gambling against mine. Beat me, you double your bet. Lose, the house keeps it. Push means your credits come back.\"\n\n{dim}Type {/dim}{green}gamble <amount>{/green}{dim} to play a hand. Bets: 1, 5, 10, or 25.{/dim}" }
         ]
       }
     }
