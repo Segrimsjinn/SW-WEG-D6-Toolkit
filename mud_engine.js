@@ -782,7 +782,7 @@ const MUD = {
   // Training fee per pip based on the dice tier you're training into
   // Half the galactic scale: 1D=5, 2D=12, 3D=25, 4D=50, 5D=100, 6D=250
   TRAIN_FEE: [0, 5, 5, 5, 12, 12, 12, 25, 25, 25, 50, 50, 50, 100, 100, 100, 250, 250, 250],
-  TRAIN_CAP: 18, // 6D — max trainable at this station
+  TRAIN_CAP: 20, // 6D+2 — max trainable at this station
 
   getTrainFee(targetPips) {
     if (targetPips >= this.TRAIN_FEE.length) return 250;
