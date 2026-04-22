@@ -324,6 +324,10 @@ const MUD = {
       case 'extract':
         return MUD_MINE.doMine();
 
+      case 'train':
+      case 'learn':
+        return this.doTrain(arg);
+
       case 'save':
         return this.doSave();
 
@@ -765,6 +769,97 @@ const MUD = {
     this.print("You're not sure how to use the " + item.name + " right now.");
   },
 
+  // --- Training / Skill Improvement ---
+  findTrainer() {
+    const room = ROOMS_DATA[this.state.currentRoom];
+    if (!room || !room.npcs) return null;
+    for (const [id, npc] of Object.entries(room.npcs)) {
+      if (npc.trainer && !this.isNpcDefeated(this.state.currentRoom, id)) return npc;
+    }
+    return null;
+  },
+
+  doTrain(arg) {
+    if (!this.state.character) { this.print("You need a character first.", 'error'); return; }
+
+    const trainer = this.findTrainer();
+    if (!trainer) { this.print("There's nobody here who can teach you.", 'error'); return; }
+
+    const c = this.state.character;
+    const available = trainer.trainer.skills;
+
+    if (!arg) {
+      // Show trainable skills and costs
+      this.printBlank();
+      this.print('{gold}═══ ' + trainer.name + ' — Training ═══{/gold}');
+      this.print('{dim}Your CP: {/dim}{gold}' + (c.cp || 0) + '{/gold}');
+      this.printBlank();
+
+      for (const skillName of available) {
+        const def = MUD_CHARGEN.SKILLS.find(s => s.name === skillName);
+        if (!def) continue;
+        const currentPips = c.skills[skillName] || c.attrs[def.attr]; // attribute if no skill
+        const hasSkill = !!c.skills[skillName];
+        const currentDice = MUD_CHARGEN.pipsToDice(currentPips);
+
+        if (!hasSkill) {
+          // Learn new skill: 1 CP, starts at attribute+1pip
+          const newVal = MUD_CHARGEN.pipsToDice(c.attrs[def.attr] + 1);
+          this.print('  {item}' + skillName + '{/item}  {dim}NEW → ' + newVal + '{/dim}  {green}1 CP{/green}');
+        } else {
+          // Improve: cost = current number of dice
+          const cost = Math.floor(currentPips / 3);
+          const newVal = MUD_CHARGEN.pipsToDice(currentPips + 1);
+          this.print('  {item}' + skillName + '{/item}  {dim}' + currentDice + ' → ' + newVal + '{/dim}  {green}' + cost + ' CP{/green}');
+        }
+      }
+
+      this.printBlank();
+      this.print('{dim}Type {/dim}{green}train <skill name>{/green}{dim} to improve a skill.{/dim}');
+      return;
+    }
+
+    // Train a specific skill
+    const low = arg.toLowerCase();
+    const skillName = available.find(s => s.toLowerCase() === low || s.toLowerCase().startsWith(low));
+    if (!skillName) {
+      this.print('"I don\'t teach that. Type {green}train{/green} to see what I offer."', 'error');
+      return;
+    }
+
+    const def = MUD_CHARGEN.SKILLS.find(s => s.name === skillName);
+    if (!def) return;
+
+    const hasSkill = !!c.skills[skillName];
+    const currentPips = c.skills[skillName] || c.attrs[def.attr];
+
+    let cost;
+    if (!hasSkill) {
+      cost = 1; // new skill with teacher
+    } else {
+      cost = Math.floor(currentPips / 3); // dice count
+    }
+
+    if ((c.cp || 0) < cost) {
+      this.print('"You need ' + cost + ' Character Points for that. You\'ve got ' + (c.cp || 0) + '. Come back when you\'ve earned more."', 'error');
+      return;
+    }
+
+    // Apply training
+    c.cp -= cost;
+    if (!hasSkill) {
+      c.skills[skillName] = c.attrs[def.attr] + 1; // attribute + 1 pip
+    } else {
+      c.skills[skillName] = currentPips + 1;
+    }
+
+    const newVal = MUD_CHARGEN.pipsToDice(c.skills[skillName]);
+    this.printBlank();
+    this.print('{npc}' + trainer.name + '{/npc} nods approvingly.');
+    this.print('{green}' + skillName + ' improved to ' + newVal + '{/green} {dim}(-' + cost + ' CP, ' + c.cp + ' remaining){/dim}');
+    this.autoSave();
+  },
+
   // --- Chance Cubes (2D6 high/low) ---
   doChance(arg) {
     if (!this.state.character) { this.print("You need a character first.", 'error'); return; }
@@ -1049,6 +1144,7 @@ const MUD = {
     this.print('  {green}chance{/green} high/low <amt> — chance cubes');
     this.print('  {green}wheel{/green} <type> <amt>  — jubilee wheel');
     this.print('  {green}mine{/green}         — extract quartz at a vein');
+    this.print('  {green}train{/green}        — improve skills with a teacher');
     this.print('');
     this.print('{gold}Information:{/gold}');
     this.print('  {green}inventory{/green} / {green}i{/green}  — check your belongings');

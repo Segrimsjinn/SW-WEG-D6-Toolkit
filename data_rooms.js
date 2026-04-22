@@ -310,7 +310,7 @@ const ROOMS_DATA = {
 
   "training_bay": {
     name: "Training Bay",
-    description: "A converted cargo bay turned into a makeshift training facility. Blast-scarred durasteel walls show the marks of countless practice sessions. A row of {item}targets{/item} lines the far wall — scoring plates that flash when hit. The floor is padded with heavy mats, and a weapons {item}rack{/item} along one wall holds practice equipment.\n\nA {npc}training droid{/npc} stands at the center of the bay, its photoreceptors scanning for the next opponent. A sign by the door reads: 'ALL WEAPONS SET TO STUN — NO EXCEPTIONS.'\n\nThe docking access corridor lies to the north.",
+    description: "A converted cargo bay turned into a makeshift training facility. Blast-scarred durasteel walls show the marks of countless practice sessions. A row of {item}targets{/item} lines the far wall — scoring plates that flash when hit. The floor is padded with heavy {item}mats{/item}, and a weapons {item}rack{/item} along one wall holds practice equipment.\n\nA {npc}training droid{/npc} stands at the center of the bay, its photoreceptors scanning for the next opponent. In the corner, a grizzled {npc}instructor{/npc} watches the room with crossed arms. A {item}sign{/item} by the door reads: 'ALL WEAPONS SET TO STUN — NO EXCEPTIONS.'\n\nThe docking access corridor lies to the north.",
     exits: {
       north: "docking_access"
     },
@@ -321,6 +321,18 @@ const ROOMS_DATA = {
       "mats": "Thick padded mats covering the deck — enough cushioning to break a fall without breaking a spine. They're worn smooth in the center from heavy use."
     },
     npcs: {
+      "instructor": {
+        name: "Instructor Denn",
+        keywords: ["instructor", "denn", "teacher", "trainer"],
+        look: "A scarred human male in his fifties with a military bearing — straight back, steady hands, eyes that miss nothing. His left arm is cybernetic from the elbow down, polished chrome that whirs softly when he moves. Former Imperial Army, by the look of him, though he doesn't wear insignia anymore.\n\n{dim}Type {/dim}{green}train{/green}{dim} to see what he can teach you.{/dim}",
+        combat: { blaster: 15, dodge: 14, meleeParry: 14, brawlParry: 13, brawl: 13, str: 10, damage: 15, weaponType: 'dodge', weaponName: 'heavy blaster', stunOnly: false, security: true },
+        trainer: {
+          skills: ['Blaster', 'Brawling Parry', 'Dodge', 'Melee Combat', 'Melee Parry', 'Heavy Weapons', 'Grenade', 'Running', 'Thrown Weapon', 'Vehicle Blasters', 'Brawling']
+        },
+        talk: [
+          { text: "{npc}Instructor Denn{/npc} uncrosses his arms and looks you over.\n\n\"You want to learn how to fight — or how to fight better. That's why people come to me.\"\n\nHe flexes his cybernetic hand. \"I teach combat skills. Blasters, blades, brawling, dodging — anything that keeps you alive when someone's trying to kill you. Costs Character Points to improve. The more you know, the more it costs to learn the next step.\"\n\nHe nods toward the mats. \"Type {green}train{/green} to see what I can teach and what it'll cost. You'll need the Character Points — earn them by fighting.\"" }
+        ]
+      },
       "training_droid": {
         name: "Training Droid",
         keywords: ["droid", "training", "combat droid", "sparring"],
