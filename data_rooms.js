@@ -19,8 +19,11 @@ const ROOMS_DATA = {
       "med_droid": {
         name: "2-1B Medical Droid",
         keywords: ["droid", "medical", "2-1b", "doc"],
-        look: "The 2-1B surgical droid regards you with calm photoreceptors. Its vocabulator emits a faint hum, ready to dispense medical advice whether you want it or not.",
+        look: "The 2-1B surgical droid regards you with calm photoreceptors. Its vocabulator emits a faint hum, ready to dispense medical advice whether you want it or not.\n\n{dim}It can teach basic field medicine. Type {/dim}{green}train{/green}{dim} to learn.{/dim}",
         combat: { blaster: 6, dodge: 6, meleeParry: 3, brawlParry: 3, brawl: 3, str: 6, damage: 9, weaponType: 'dodge', weaponName: 'stun injector', stunOnly: true, security: true },
+        trainer: {
+          skills: ['First Aid']
+        },
         talk: [
           { once: "med_droid_intro", text: "The droid's photoreceptors brighten. \"Ah, you're up and about. Good. Your vitals have stabilized nicely. I've treated the worst of your injuries — bruised ribs, mild concussion, some superficial burns. Nothing a few days of rest won't finish.\"\n\nIt pauses, adjusting a dial on the monitor.\n\n\"I'd recommend checking in with Station Administration on the main concourse. They'll want to register you. Without papers, you won't be able to find work, book passage, or do much of anything on this station.\"\n\nThe droid tilts its head. \"And between you and me — don't linger in the corridors too long without credits. Drifter's Anchorage isn't the most... charitable place.\"" },
           { text: "\"Your vitals look stable. I'd suggest heading to Station Administration — north through the corridor to the main concourse, then follow the signs. And do try not to get shot before your ribs finish healing.\"" }
@@ -84,14 +87,15 @@ const ROOMS_DATA = {
 
   "main_concourse": {
     name: "Main Concourse",
-    description: "The main concourse of Drifter's Anchorage is a wide, vaulted corridor that serves as the station's central hub. A {item}crowd{/item} of spacers, merchants, and hard-eyed individuals flows in both directions. Overhead, a cracked {item}holodisplay{/item} cycles through trade postings and docking schedules in flickering blue text.\n\nThe medical wing lies to the south. A cantina's neon {item}sign{/item} glows to the west, its muffled music bleeding through the doorway. The docking bay access corridor stretches east. To the north, a transparisteel-fronted office bears the sign: STATION ADMINISTRATION. A narrow, poorly lit passage leads southwest into the station's maintenance levels. To the northwest, a shopfront with a flickering neon sign reads: SURPLUS & SALVAGE.",
+    description: "The main concourse of Drifter's Anchorage is a wide, vaulted corridor that serves as the station's central hub. A {item}crowd{/item} of spacers, merchants, and hard-eyed individuals flows in both directions. Overhead, a cracked {item}holodisplay{/item} cycles through trade postings and docking schedules in flickering blue text.\n\nThe medical wing lies to the south. A cantina's neon {item}sign{/item} glows to the west, its muffled music bleeding through the doorway. The docking bay access corridor stretches east. To the north, a transparisteel-fronted office bears the sign: STATION ADMINISTRATION. A narrow, poorly lit passage leads southwest into the station's maintenance levels. To the northwest, a shopfront with a flickering neon sign reads: SURPLUS & SALVAGE. A reinforced door to the northeast bears the emblem of station security: MARSHAL'S OFFICE.",
     exits: {
       south: "med_corridor",
       west: "cantina",
       east: "docking_access",
       north: "admin_office",
       southwest: "maintenance_sub",
-      northwest: "general_store"
+      northwest: "general_store",
+      northeast: "marshal_office"
     },
     objects: {
       "holodisplay": "The cracked holodisplay cycles through listings:\n  {dim}• CARGO HAULER NEEDED — Bulk freight to Muunilinst. Payment on delivery. No questions.{/dim}\n  {dim}• MINING CREW — 3-week rotation, Asteroid Belt Gamma-7. Hazard pay included.{/dim}\n  {dim}• WANTED: Ship mechanic. Must have own tools. See Docking Bay 3.{/dim}\n  {dim}• PUBLIC NOTICE: Unlicensed weapons discharge in the concourse will be met with lethal force. — Station Security{/dim}\nMost of the listings look weeks old.",
@@ -116,9 +120,12 @@ const ROOMS_DATA = {
     npcs: {
       "admin": {
         name: "Administrator Vylen",
-        keywords: ["admin", "administrator", "voss", "woman", "officer"],
-        look: "A human woman in her forties with close-cropped grey hair and sharp eyes that have seen too many fabricated identification documents. Her uniform is Imperial-cut but stripped of rank insignia — Remnant administrative corps, probably. A nameplate on her desk reads: ADM. K. VYLEN.",
+        keywords: ["admin", "administrator", "vylen", "woman", "officer"],
+        look: "A human woman in her forties with close-cropped grey hair and sharp eyes that have seen too many fabricated identification documents. Her uniform is Imperial-cut but stripped of rank insignia — Remnant administrative corps, probably. A nameplate on her desk reads: ADM. K. VYLEN.\n\n{dim}She also teaches administrative and social skills. Type {/dim}{green}train{/green}{dim} to see her courses.{/dim}",
         combat: { blaster: 10, dodge: 9, meleeParry: 6, brawlParry: 6, brawl: 6, str: 7, damage: 12, weaponType: 'dodge', weaponName: 'hold-out blaster', stunOnly: false, security: true },
+        trainer: {
+          skills: ['Bureaucracy', 'Persuasion', 'Languages', 'Cultures', 'Alien Species', 'Planetary Systems']
+        },
         talk: [
           { once: "admin_intro", text: "{npc}Administrator Vylen{/npc} looks up from her terminal, studying you with a practiced eye.\n\n\"The escape pod survivor. The medical droid flagged your arrival.\" She pulls up something on her screen. \"No ID, no transit papers, no credit chit. Not exactly a strong start.\"\n\nShe taps a few keys. \"Here's how this works. I register you in our system, you get a temporary station pass. That lets you move freely, take on posted work, and use the cantina without getting hassled by security. In return, you follow station rules and don't cause problems.\"\n\nShe slides a datapad across the desk. \"Standard waiver. You agree not to hold the station liable for... well, anything, really. Sign it and you're a registered resident of Drifter's Anchorage.\"\n\n\"Ready? Let's get you into the system.\"", action: "chargen" },
           { cond: "character_created", text: "\"You're already in the system. Try not to make me regret it.\"" },
@@ -145,8 +152,11 @@ const ROOMS_DATA = {
       "bartender": {
         name: "Grek",
         keywords: ["bartender", "besalisk", "grek", "barkeep"],
-        look: "A heavyset Besalisk with mottled green-brown skin and four thick arms that move with surprising dexterity behind the bar. His lower left hand has a cybernetic replacement — cheap but functional. He watches the room with the calm authority of someone who keeps a scatter-gun under the counter and isn't shy about using it.",
+        look: "A heavyset Besalisk with mottled green-brown skin and four thick arms that move with surprising dexterity behind the bar. His lower left hand has a cybernetic replacement — cheap but functional. He watches the room with the calm authority of someone who keeps a scatter-gun under the counter and isn't shy about using it.\n\n{dim}Grek knows the streets. Type {/dim}{green}train{/green}{dim} for what he can teach.{/dim}",
         combat: { blaster: 12, dodge: 9, meleeParry: 10, brawlParry: 12, brawl: 13, str: 13, damage: 15, weaponType: 'dodge', weaponName: 'scatter-gun', stunOnly: false, security: true },
+        trainer: {
+          skills: ['Streetwise', 'Intimidation', 'Survival']
+        },
         talk: [
           { once: "grek_intro", text: "{npc}Grek{/npc} glances at you with one eye while his other three arms continue pouring drinks.\n\n\"New face. Escape pod, right? Word travels fast on a station this size.\" One of his hands drops a glass of something murky on the bar in front of you. \"On the house. First one only — after that, you pay like everyone else.\"\n\nHe leans one massive arm on the bar. \"Name's Grek. I own this place. You want to eat, drink, or hear the latest gossip, this is where you come. You want trouble, take it to the docking bay — I just had the floor re-sealed.\"\n\n\"Once you've got some credits together, come back and I might know about some work. Always someone on this station who needs something done and doesn't want to do it themselves.\"" },
           { text: "\"You again. You look like you could use a drink, but I look like I could use paying customers. Come back when you've got credits, or something interesting to tell me.\"" }
@@ -187,11 +197,43 @@ const ROOMS_DATA = {
       "dockmaster": {
         name: "Dockmaster Renn",
         keywords: ["dockmaster", "renn", "duros"],
-        look: "A lean Duros with faded blue skin and large red eyes that seem to catalog every ship, crate, and person in the bay simultaneously. His dockmaster's vest is covered in pockets, each stuffed with datapads, styluses, and what appears to be a half-eaten ration bar. A heavy blaster pistol sits openly on his hip — standard equipment for someone who handles docking disputes.",
+        look: "A lean Duros with faded blue skin and large red eyes that seem to catalog every ship, crate, and person in the bay simultaneously. His dockmaster's vest is covered in pockets, each stuffed with datapads, styluses, and what appears to be a half-eaten ration bar. A heavy blaster pistol sits openly on his hip — standard equipment for someone who handles docking disputes.\n\n{dim}Renn knows ships inside and out. Type {/dim}{green}train{/green}{dim} to learn from him.{/dim}",
         combat: { blaster: 12, dodge: 10, meleeParry: 7, brawlParry: 7, brawl: 7, str: 7, damage: 15, weaponType: 'dodge', weaponName: 'heavy blaster pistol', stunOnly: false, security: true },
+        trainer: {
+          skills: ['Space Transports', 'Astrogation', 'Starship Gunnery', 'Starship Shields', 'Sensors', 'Communications', 'Repulsorlift Operation', 'Blaster Repair', 'Computer Programming/Repair', 'Droid Repair', 'Repulsorlift Repair', 'Security', 'Space Transports Repair', 'Starship Weapon Repair']
+        },
         talk: [
           { once: "renn_intro", text: "{npc}Dockmaster Renn{/npc} turns those large red eyes on you, evaluating.\n\n\"Ah. The pod survivor.\" His voice has the characteristic Duros rasp. \"I processed your escape pod's wreckage — or what was left of it. Standard Imperial pod, military-grade. No markings, no serial numbers. Someone went to a lot of trouble to scrub that pod clean before you ended up in it.\"\n\nHe shrugs, turning back to the bay. \"Not my business. My business is ships. When you've got the credits for one, come see me. I handle all sales and berth assignments on the station.\"\n\nHe nods toward the bay below. \"Got a few vessels for sale right now, if you're the type to dream. That Z-95 down there's been sitting for weeks. Previous owner couldn't pay his docking fees.\"" },
           { text: "\"Still window shopping? Can't blame you. A ship's the only real freedom in this galaxy.\" He glances at the bay. \"Save up your credits. I'll be here when you're ready.\"" }
+        ]
+      }
+    }
+  },
+
+  "marshal_office": {
+    name: "Marshal's Office",
+    description: "A no-nonsense security office with reinforced walls and a single narrow window of armored transparisteel looking out onto the concourse. {item}Wanted posters{/item} line one wall — a mix of local troublemakers and galaxy-wide bounties. A weapons {item}locker{/item} stands in the corner, securely locked. The {item}desk{/item} is neat, organized, and dominated by a bank of security monitors.\n\n{npc}Marshal Corso{/npc} sits behind the desk, eyes flicking between the monitors and whoever just walked through his door.\n\nThe main concourse is back to the southwest.",
+    exits: {
+      southwest: "main_concourse"
+    },
+    objects: {
+      "wanted posters": "A dozen wanted posters tacked to the wall. Most are local — docking fee defaulters, a repeat brawler banned from the cantina, someone who stole a maintenance droid. A few are Imperial Remnant bounties with serious credit amounts attached. One poster in the corner has been there so long the ink has faded to illegibility.",
+      "locker": "A heavy weapons locker bolted to the floor and wall. Durasteel construction with a biometric lock. Through the narrow viewing slit you can see blaster rifles, stun cuffs, and what looks like a riot shield. Standard station security armory.",
+      "desk": "Marshal Corso's desk is military-neat. A bank of six security monitors shows feeds from around the station — the concourse, docking bay, cantina entrance, and several corridor junctions. A half-empty mug of caf sits next to a blaster cleaning kit.",
+      "monitors": "Six security feeds cycling through station cameras. The resolution is grainy but functional. You can see the usual traffic on the concourse, a loading operation in the docking bay, and — on monitor four — the maintenance sublevel, where a familiar-looking thug is loitering."
+    },
+    npcs: {
+      "marshal": {
+        name: "Marshal Corso",
+        keywords: ["marshal", "corso", "security", "law"],
+        look: "A broad-shouldered Zabrak male with a crown of vestigial horns and sharp amber eyes that seem to be running a threat assessment on everyone in the room, including you. His uniform is crisp station security grey with a marshal's badge on the chest. A heavy blaster pistol and a pair of stun cuffs hang from his belt. He moves with the controlled economy of someone who's been in a lot of fights and won most of them.",
+        combat: { blaster: 16, dodge: 14, meleeParry: 13, brawlParry: 13, brawl: 13, str: 12, damage: 15, weaponType: 'dodge', weaponName: 'heavy blaster', stunOnly: false, security: false },
+        trainer: {
+          skills: ['Law Enforcement', 'Investigation', 'Search', 'Command', 'Tactics', 'Willpower']
+        },
+        talk: [
+          { once: "marshal_intro", text: "{npc}Marshal Corso{/npc} looks up from his monitors, amber eyes narrowing.\n\n\"New resident. I've seen your file — escape pod, no ID, no history.\" He leans back. \"I don't care where you came from. I care what you do while you're here.\"\n\nHe taps the desk. \"Station rules are simple. Don't start fights on the concourse. Don't steal from the shops. Don't kill anyone who doesn't deserve it. Break the rules and my security teams will make you regret it.\"\n\nHe pauses. \"That said — I could use people with the right instincts. If you want to learn how to think like security, how to investigate, how to command a situation — I can teach you. For a fee.\"\n\n{dim}Type {/dim}{green}train{/green}{dim} to see what he teaches.{/dim}" },
+          { text: "\"Keep your nose clean and we won't have problems. You want training, type {green}train{/green}.\"" }
         ]
       }
     }
@@ -214,8 +256,11 @@ const ROOMS_DATA = {
       "dealer": {
         name: "Sabacc Dealer",
         keywords: ["dealer", "sabacc", "card dealer"],
-        look: "A thin human male with slicked-back grey hair and hands that move with the precision of a droid. His expression is permanently neutral — the face of someone who's dealt ten thousand hands and stopped caring about the outcome of any of them. A small earpiece suggests he's in contact with the house — probably Grek.",
+        look: "A thin human male with slicked-back grey hair and hands that move with the precision of a droid. His expression is permanently neutral — the face of someone who's dealt ten thousand hands and stopped caring about the outcome of any of them. A small earpiece suggests he's in contact with the house — probably Grek.\n\n{dim}He teaches the subtler arts. Type {/dim}{green}train{/green}{dim} between hands.{/dim}",
         combat: { blaster: 9, dodge: 9, meleeParry: 6, brawlParry: 6, brawl: 6, str: 7, damage: 9, weaponType: 'dodge', weaponName: 'hold-out blaster', stunOnly: false, security: true },
+        trainer: {
+          skills: ['Gambling', 'Con', 'Forgery', 'Hide', 'Sneak', 'Pick Pocket']
+        },
         gambling: 17, // 5D+2 — need ~6D to start winning consistently
         talk: [
           { text: "{npc}Sabacc Dealer{/npc} glances up from the cards.\n\n\"Looking to play? Bets are 1, 5, 10, or 25 credits.\"\n\nHe taps the table. \"Standard rules. Your Gambling against mine. Beat me, you double your bet. Lose, the house keeps it. Push means your credits come back.\"\n\n{dim}Type {/dim}{green}gamble <amount>{/green}{dim} to play a hand. Bets: 1, 5, 10, or 25.{/dim}" }
@@ -239,8 +284,11 @@ const ROOMS_DATA = {
       "shopkeeper": {
         name: "Kex",
         keywords: ["shopkeeper", "kex", "toydarian", "merchant", "shop"],
-        look: "A portly Toydarian with patchy blue-grey skin and stubby wings that somehow keep his bulk airborne. His snout twitches constantly as he appraises everything in the room — including you. A money belt cinches his waist, jangling with credit chips. His small, shrewd eyes miss nothing.",
+        look: "A portly Toydarian with patchy blue-grey skin and stubby wings that somehow keep his bulk airborne. His snout twitches constantly as he appraises everything in the room — including you. A money belt cinches his waist, jangling with credit chips. His small, shrewd eyes miss nothing.\n\n{dim}He'll teach you the trade. Type {/dim}{green}train{/green}{dim} to learn.{/dim}",
         combat: { blaster: 10, dodge: 12, meleeParry: 6, brawlParry: 6, brawl: 6, str: 5, damage: 12, weaponType: 'dodge', weaponName: 'heavy blaster', stunOnly: false, security: true },
+        trainer: {
+          skills: ['Bargain', 'Value', 'Business']
+        },
         shop: {
           buy: [
             { id: 'blaster_pistol', name: 'Blaster Pistol', price: 500, description: 'A standard BlasTech DL-18 blaster pistol in working condition. Reliable, accurate, nothing fancy. Damage: 4D.\n\n{dim}Combat: {/dim}{green}blast{/green}{dim} <target> — uses Blaster skill, defended by Dodge.{/dim}', damage: '4D', combatType: 'blaster' },
@@ -364,8 +412,11 @@ const ROOMS_DATA = {
       "foreman": {
         name: "Foreman Takka",
         keywords: ["foreman", "takka", "boss", "supervisor"],
-        look: "A stocky Rodian female in industrial coveralls and a scuffed hard hat. Her large eyes are perpetually narrowed against imaginary dust, even on the station. A mining pick hangs from her belt loop and a comlink crackles on her shoulder.",
+        look: "A stocky Rodian female in industrial coveralls and a scuffed hard hat. Her large eyes are perpetually narrowed against imaginary dust, even on the station. A mining pick hangs from her belt loop and a comlink crackles on her shoulder.\n\n{dim}She'll toughen you up. Type {/dim}{green}train{/green}{dim} to see what she teaches.{/dim}",
         combat: { blaster: 10, dodge: 8, meleeParry: 9, brawlParry: 9, brawl: 10, str: 9, damage: 10, weaponType: 'dodge', weaponName: 'mining blaster', stunOnly: false, security: true },
+        trainer: {
+          skills: ['Stamina', 'Climbing/Jumping', 'Lifting', 'Swimming']
+        },
         talk: [
           { once: "foreman_intro", text: "{npc}Foreman Takka{/npc} looks up from her datapad, antennae twitching.\n\n\"You here to work? Good. We're always short-handed — the smart ones leave after their first cave spider sighting, and the dumb ones... well.\"\n\nShe gestures south toward the shuttle. \"The mine's on Gamma-7, a rock about two klicks from the station. Regenerative quartz — the crystal grows back over time, so we never run out. Just head in, find a vein, and {green}mine{/green} it. Bring the quartz back and sell it at the shop.\"\n\n\"You'll need a {item}Mining Kit{/item} — helmet, glow rod, and pick. Grab one from Surplus & Salvage on the concourse. Thirty credits. We don't hand out gear anymore.\"\n\n\"Fair warning: don't get greedy. You overwork a vein and the ceiling comes down. And stay in the lit sections unless you want to meet our resident cave spider. She doesn't come into the light, but the deep tunnels are her territory.\"\n\n{dim}Buy a Mining Kit from the shop, then head south. Type {/dim}{green}mine{/green}{dim} at a quartz vein to extract crystals.{/dim}" },
           { text: "\"Still here? The mine's south. Find quartz, dig it out, sell it topside. Don't die.\"" }
