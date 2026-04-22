@@ -2487,6 +2487,7 @@ const MUD_MINE = {
   },
 
   // --- Mining ---
+  // Phase 1: Mine nodes (safe). Phase 2: Quartz Root exposed (1/6 collapse per chunk).
   doMine() {
     if (!MUD.state.character) { MUD.print("You need a character first.", 'error'); return; }
     if (MUD_COMBAT.active) { MUD.print("You can't mine during combat!", 'error'); return; }
@@ -2498,32 +2499,82 @@ const MUD_MINE = {
     }
 
     const vein = room.mine.vein;
-    const veinState = this.getVeinState(vein.id);
+    const vs = this.getVeinState(vein.id);
 
-    // Check if depleted
-    if (veinState.mined >= vein.maxNodes) {
-      const ticksSinceDepleted = MUD.state.ticks - (veinState.depletedTick || 0);
-      if (ticksSinceDepleted < 50) {
-        const remaining = 50 - ticksSinceDepleted;
-        MUD.print('{dim}This vein has been mined out. The quartz needs time to regenerate. Check back later.{/dim}');
+    // Check if fully depleted (nodes + root all gone)
+    if (vs.fullyDepleted) {
+      const ticksSince = MUD.state.ticks - (vs.depletedTick || 0);
+      if (ticksSince < 50) {
+        MUD.print('{dim}This vein has been mined out completely. The quartz needs time to regenerate.{/dim}');
         return;
       } else {
         // Regenerated!
-        veinState.mined = 0;
-        veinState.depletedTick = null;
+        vs.mined = 0;
+        vs.rootMined = 0;
+        vs.fullyDepleted = false;
+        vs.depletedTick = null;
       }
     }
 
-    // Collapse risk — flat 1/6 chance per extraction
+    // Phase 1: Normal nodes (safe)
+    if (vs.mined < vein.maxNodes) {
+      vs.mined++;
+      vs.lastMinedTick = MUD.state.ticks;
+
+      const valueVariance = Math.floor(vein.value * 0.2);
+      const crystalValue = vein.value + Math.floor(Math.random() * valueVariance * 2) - valueVariance;
+
+      const crystalItem = {
+        id: 'quartz_' + vein.depthTier,
+        name: vein.name + ' Crystal',
+        description: 'A chunk of regenerative quartz from ' + vein.name + '. Worth about ' + crystalValue + ' credits to a buyer.\n\n{dim}Sell at Surplus & Salvage with {/dim}{green}sell quartz{/green}',
+        sellValue: crystalValue
+      };
+      MUD.state.inventory.push(crystalItem);
+
+      const nodesLeft = vein.maxNodes - vs.mined;
+      MUD.printBlank();
+      MUD.print('{green}You work the quartz vein with your pick, extracting a crystal.{/green}');
+      MUD.print('  {item}' + crystalItem.name + '{/item} {dim}(~' + crystalValue + ' cr){/dim}');
+
+      if (nodesLeft > 0) {
+        MUD.print('{dim}' + nodesLeft + ' node' + (nodesLeft !== 1 ? 's' : '') + ' remaining in this vein.{/dim}');
+      } else {
+        MUD.print('{gold}The nodes are cleared. A {/gold}{item}Quartz Root{/item}{gold} is now visible, flush with the wall.{/gold}');
+        MUD.print('{dim}The root has 3 chunks. Mining it risks a cave-in. Type {/dim}{green}mine{/green}{dim} to try.{/dim}');
+      }
+
+      // Spider might hear mining in dark rooms
+      if (!room.mine.lit && MUD.state.spiderRoom !== MUD.state.currentRoom) {
+        if (Math.random() < 0.2) {
+          MUD.print('{red}You hear skittering echoing from a nearby tunnel. Something heard you working.{/red}');
+        }
+      }
+
+      MUD.autoSave();
+      return;
+    }
+
+    // Phase 2: Quartz Root — 1/6 collapse risk per chunk
+    if (vs.rootMined >= 3) {
+      // Root fully extracted, vein depleted
+      vs.fullyDepleted = true;
+      vs.depletedTick = MUD.state.ticks;
+      MUD.print('{dim}The root is completely extracted. The vein needs time to regenerate.{/dim}');
+      MUD.autoSave();
+      return;
+    }
+
+    // Collapse check — 1 in 6
     if (Math.floor(Math.random() * 6) === 0) {
       MUD.printBlank();
       MUD.print('{red}CAVE-IN!{/red}');
-      MUD.print('{red}The ceiling cracks and tonnes of rock come crashing down!{/red}');
+      MUD.print('{red}The root fractures and the ceiling comes down!{/red}');
 
       // Dodge check — 2D6 damage if failed
       const dodgePips = MUD_COMBAT.getPlayerDefensePips('dodge');
       const dodgeRoll = MUD_COMBAT.rollPips(dodgePips);
-      const dmgRoll = MUD_COMBAT.rollPips(6); // 2D6 falling rock
+      const dmgRoll = MUD_COMBAT.rollPips(6); // 2D falling rock
       MUD.print('{dim}You dive for cover — Dodge: {/dim}{gold}' + dodgeRoll + '{/gold}{dim} vs debris: {/dim}{red}' + dmgRoll + '{/red}');
 
       if (dodgeRoll >= dmgRoll) {
@@ -2539,12 +2590,10 @@ const MUD_MINE = {
         }
       }
 
-      // Block this room for 25 ticks
+      // Block room + deplete vein
       MUD.state.blockedRooms[MUD.state.currentRoom] = MUD.state.ticks;
-
-      // Deplete the vein
-      veinState.mined = vein.maxNodes;
-      veinState.depletedTick = MUD.state.ticks;
+      vs.fullyDepleted = true;
+      vs.depletedTick = MUD.state.ticks;
 
       // Force player toward exit
       const exitRoom = this.COLLAPSE_EXIT[MUD.state.currentRoom];
@@ -2556,7 +2605,6 @@ const MUD_MINE = {
         MUD.displayRoom(exitRoom);
       }
 
-      // Check if player died
       if (MUD_COMBAT.woundIndex(MUD.state.character.wounds) >= MUD_COMBAT.woundIndex('incapacitated')) {
         MUD_COMBAT.handlePlayerDown();
       }
@@ -2565,48 +2613,35 @@ const MUD_MINE = {
       return;
     }
 
-    // Successful extraction
-    veinState.mined++;
-    veinState.lastMinedTick = MUD.state.ticks;
+    // Successful root chunk extraction
+    vs.rootMined = (vs.rootMined || 0) + 1;
 
-    // Mark depleted if we hit max
-    if (veinState.mined >= vein.maxNodes) {
-      veinState.depletedTick = MUD.state.ticks;
-    }
-
-    // Value varies slightly
-    const valueVariance = Math.floor(vein.value * 0.2);
-    const crystalValue = vein.value + Math.floor(Math.random() * valueVariance * 2) - valueVariance;
-
-    // Add quartz to inventory
-    const crystalItem = {
-      id: 'quartz_' + vein.depthTier,
-      name: vein.name + ' Crystal',
-      description: 'A chunk of regenerative quartz from ' + vein.name + '. Worth about ' + crystalValue + ' credits to a buyer.\n\n{dim}Sell at Surplus & Salvage with {/dim}{green}sell quartz{/green}',
-      sellValue: crystalValue
+    const rootValue = Math.floor(vein.value * 1.5) + Math.floor(Math.random() * Math.floor(vein.value * 0.3));
+    const rootItem = {
+      id: 'quartz_root_' + vein.depthTier,
+      name: vein.name + ' Root Crystal',
+      description: 'A dense chunk of quartz root — the deep-growth core of a regenerative vein. Worth considerably more than surface crystals.\n\n{dim}Sell at Surplus & Salvage with {/dim}{green}sell root{/green}',
+      sellValue: rootValue
     };
-    MUD.state.inventory.push(crystalItem);
+    MUD.state.inventory.push(rootItem);
 
-    const nodesLeft = vein.maxNodes - veinState.mined;
+    const chunksLeft = 3 - vs.rootMined;
     MUD.printBlank();
-    MUD.print('{green}You work the quartz vein with your pick, extracting a crystal.{/green}');
-    MUD.print('  {item}' + crystalItem.name + '{/item} {dim}(~' + crystalValue + ' cr){/dim}');
+    MUD.print('{green}You carefully chip at the Quartz Root...{/green}');
+    MUD.print('  {item}' + rootItem.name + '{/item} {dim}(~' + rootValue + ' cr){/dim}');
 
-    if (nodesLeft > 0) {
-      MUD.print('{dim}' + nodesLeft + ' node' + (nodesLeft !== 1 ? 's' : '') + ' remaining in this vein.{/dim}');
+    if (chunksLeft > 0) {
+      MUD.print('{gold}' + chunksLeft + ' chunk' + (chunksLeft !== 1 ? 's' : '') + ' of root remaining. The ceiling groans ominously...{/gold}');
     } else {
-      MUD.print('{gold}The vein is mined out. The quartz will regenerate over time.{/gold}');
+      vs.fullyDepleted = true;
+      vs.depletedTick = MUD.state.ticks;
+      MUD.print('{gold}The root is fully extracted! The vein will regenerate over time.{/gold}');
     }
 
-    // Warn about collapse risk
-    if (veinState.mined >= 2) {
-      MUD.print('{dim}The ceiling groans. The rock feels less stable...{/dim}');
-    }
-
-    // Spider might hear mining in dark rooms
+    // Spider alert in dark rooms
     if (!room.mine.lit && MUD.state.spiderRoom !== MUD.state.currentRoom) {
-      if (Math.random() < 0.2) {
-        MUD.print('{red}You hear skittering echoing from a nearby tunnel. Something heard you working.{/red}');
+      if (Math.random() < 0.3) {
+        MUD.print('{red}Something is moving in the darkness nearby...{/red}');
       }
     }
 
@@ -2615,7 +2650,7 @@ const MUD_MINE = {
 
   getVeinState(veinId) {
     if (!MUD.state.mineVeins[veinId]) {
-      MUD.state.mineVeins[veinId] = { mined: 0, lastMinedTick: 0, depletedTick: null };
+      MUD.state.mineVeins[veinId] = { mined: 0, rootMined: 0, lastMinedTick: 0, depletedTick: null, fullyDepleted: false };
     }
     return MUD.state.mineVeins[veinId];
   }
