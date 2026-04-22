@@ -817,10 +817,11 @@ const MUD = {
         }
 
         if (!hasSkill) {
+          const attrDice = Math.floor(c.attrs[def.attr] / 3);
           const newPips = c.attrs[def.attr] + 1;
           const fee = this.getTrainFee(newPips);
           const newVal = MUD_CHARGEN.pipsToDice(newPips);
-          this.print('  {item}' + skillName + '{/item}  {dim}NEW → ' + newVal + '{/dim}  {green}1 CP + ' + fee + ' cr{/green}');
+          this.print('  {item}' + skillName + '{/item}  {dim}NEW → ' + newVal + '{/dim}  {green}' + attrDice + ' CP + ' + fee + ' cr{/green}');
         } else {
           const cpCost = Math.floor(currentPips / 3);
           const newPips = currentPips + 1;
@@ -857,7 +858,7 @@ const MUD = {
 
     let cpCost, newPips;
     if (!hasSkill) {
-      cpCost = 1;
+      cpCost = Math.floor(c.attrs[def.attr] / 3); // cost = attribute dice
       newPips = c.attrs[def.attr] + 1;
     } else {
       cpCost = Math.floor(currentPips / 3);
