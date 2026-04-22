@@ -291,9 +291,17 @@ const MUD = {
         return this.doBargain();
 
       case 'gamble':
+      case 'sabacc':
       case 'play':
-      case 'bet':
         return this.doGamble(arg);
+
+      case 'chance':
+      case 'cubes':
+        return this.doChance(arg);
+
+      case 'wheel':
+      case 'jubilee':
+        return this.doWheel(arg);
 
       case 'use':
         return this.doUse(arg);
@@ -735,6 +743,141 @@ const MUD = {
     }
 
     this.print("You're not sure how to use the " + item.name + " right now.");
+  },
+
+  // --- Chance Cubes (2D6 high/low) ---
+  doChance(arg) {
+    if (!this.state.character) { this.print("You need a character first.", 'error'); return; }
+    const room = ROOMS_DATA[this.state.currentRoom];
+    if (!room || !room.npcs) { this.print("There's nowhere to gamble here.", 'error'); return; }
+    let hasDealer = false;
+    for (const npc of Object.values(room.npcs)) { if (npc.gambling) { hasDealer = true; break; } }
+    if (!hasDealer) { this.print("There's nowhere to gamble here.", 'error'); return; }
+
+    const parts = (arg || '').toLowerCase().split(/\s+/);
+    const call = parts[0];
+    const bet = parseInt(parts[1]);
+
+    if (!call || !['high', 'low'].includes(call) || !bet) {
+      this.print('{dim}Usage: {/dim}{green}chance high <bet>{/green}{dim} or {/dim}{green}chance low <bet>{/green}{dim}. Bets: 1, 5, 10, 25.{/dim}', 'error');
+      return;
+    }
+    const validBets = [1, 5, 10, 25];
+    if (!validBets.includes(bet)) { this.print('"Bets are 1, 5, 10, or 25 credits."', 'error'); return; }
+    if (bet > this.state.credits) { this.print('"Not enough credits."', 'error'); return; }
+
+    const d1 = Math.floor(Math.random() * 6) + 1;
+    const d2 = Math.floor(Math.random() * 6) + 1;
+    const total = d1 + d2;
+
+    this.printBlank();
+    this.print('{gold}═══ Chance Cubes ═══{/gold}');
+    this.print('{dim}The cubes tumble...{/dim} {gold}' + d1 + '{/gold} + {gold}' + d2 + '{/gold} = {gold}' + total + '{/gold}  {dim}(you called ' + call + '){/dim}');
+
+    if (total === 7) {
+      this.state.credits -= bet;
+      this.print('{red}Seven — house takes it. -' + bet + ' credits.{/red}');
+    } else if ((call === 'high' && total >= 8) || (call === 'low' && total <= 6)) {
+      this.state.credits += bet;
+      this.print('{green}You win! +' + bet + ' credits.{/green}');
+    } else {
+      this.state.credits -= bet;
+      this.print('{red}Wrong call. -' + bet + ' credits.{/red}');
+    }
+    this.print('{dim}Balance: ' + this.state.credits + '{/dim}');
+    this.autoSave();
+  },
+
+  // --- Jubilee Wheel (4D6 roulette) ---
+  doWheel(arg) {
+    if (!this.state.character) { this.print("You need a character first.", 'error'); return; }
+    const room = ROOMS_DATA[this.state.currentRoom];
+    if (!room || !room.npcs) { this.print("There's nowhere to gamble here.", 'error'); return; }
+    let hasDealer = false;
+    for (const npc of Object.values(room.npcs)) { if (npc.gambling) { hasDealer = true; break; } }
+    if (!hasDealer) { this.print("There's nowhere to gamble here.", 'error'); return; }
+
+    const parts = (arg || '').toLowerCase().split(/\s+/);
+    const betType = parts[0];
+    const betArg = parts[1];
+    const validBets = [1, 5, 10, 25];
+
+    if (!betType) {
+      this.print('{gold}Jubilee Wheel — 4D6 (range 4-24){/gold}');
+      this.print('  {green}wheel number <#> <bet>{/green}  — pick exact total (pays 10:1, 14 pays 3:1)');
+      this.print('  {green}wheel odd <bet>{/green}         — odd total (pays 1:1)');
+      this.print('  {green}wheel even <bet>{/green}        — even total (pays 1:1)');
+      this.print('  {green}wheel high <bet>{/green}        — 15-24 (pays 1:1)');
+      this.print('  {green}wheel low <bet>{/green}         — 4-13 (pays 1:1)');
+      this.print('  {green}wheel top <bet>{/green}         — 18-24 (pays 2:1)');
+      this.print('  {green}wheel mid <bet>{/green}         — 11-17 (pays 2:1)');
+      this.print('  {green}wheel bottom <bet>{/green}      — 4-10 (pays 2:1)');
+      this.print('{dim}Bets: 1, 5, 10, or 25 credits.{/dim}');
+      return;
+    }
+
+    // Roll 4D6
+    const dice = [0,0,0,0].map(() => Math.floor(Math.random() * 6) + 1);
+    const total = dice.reduce((a,b) => a + b, 0);
+    const diceStr = dice.join(' + ');
+
+    let bet, won = false, payout = 0, label = '';
+
+    if (betType === 'number' || betType === 'num' || betType === '#') {
+      const num = parseInt(betArg);
+      bet = parseInt(parts[2]);
+      if (!num || num < 4 || num > 24 || !bet) { this.print('{dim}Usage: {/dim}{green}wheel number <4-24> <bet>{/green}', 'error'); return; }
+      if (!validBets.includes(bet)) { this.print('"Bets are 1, 5, 10, or 25."', 'error'); return; }
+      if (bet > this.state.credits) { this.print('"Not enough credits."', 'error'); return; }
+      label = 'number ' + num;
+      if (total === num) {
+        won = true;
+        payout = num === 14 ? bet * 3 : bet * 10;
+      }
+    } else if (['odd', 'even', 'high', 'low', 'top', 'mid', 'middle', 'bottom', 'bot'].includes(betType)) {
+      bet = parseInt(betArg);
+      if (!bet) { this.print('{dim}Usage: {/dim}{green}wheel ' + betType + ' <bet>{/green}', 'error'); return; }
+      if (!validBets.includes(bet)) { this.print('"Bets are 1, 5, 10, or 25."', 'error'); return; }
+      if (bet > this.state.credits) { this.print('"Not enough credits."', 'error'); return; }
+      label = betType;
+
+      if (betType === 'odd') {
+        if (total !== 14 && total % 2 === 1) { won = true; payout = bet; }
+      } else if (betType === 'even') {
+        if (total !== 14 && total % 2 === 0) { won = true; payout = bet; }
+      } else if (betType === 'high') {
+        if (total >= 15) { won = true; payout = bet; }
+      } else if (betType === 'low') {
+        if (total <= 13) { won = true; payout = bet; }
+      } else if (betType === 'top') {
+        if (total >= 18) { won = true; payout = bet * 2; }
+      } else if (betType === 'mid' || betType === 'middle') {
+        if (total >= 11 && total <= 17) { won = true; payout = bet * 2; }
+      } else if (betType === 'bottom' || betType === 'bot') {
+        if (total <= 10) { won = true; payout = bet * 2; }
+      }
+    } else {
+      this.print('Unknown bet type. Type {green}wheel{/green} to see options.', 'error');
+      return;
+    }
+
+    this.printBlank();
+    this.print('{gold}═══ Jubilee Wheel ═══{/gold}');
+    this.print('{dim}The wheel spins...{/dim} {gold}' + diceStr + '{/gold} = {gold}' + total + '{/gold}  {dim}(you bet ' + label + '){/dim}');
+
+    if (won) {
+      this.state.credits += payout;
+      this.print('{green}Winner! +' + payout + ' credits.{/green}');
+    } else {
+      this.state.credits -= bet;
+      if (total === 14 && ['odd','even','high','low'].includes(betType)) {
+        this.print('{red}Fourteen — house number. -' + bet + ' credits.{/red}');
+      } else {
+        this.print('{red}No luck. -' + bet + ' credits.{/red}');
+      }
+    }
+    this.print('{dim}Balance: ' + this.state.credits + '{/dim}');
+    this.autoSave();
   },
 
   doGamble(arg) {
