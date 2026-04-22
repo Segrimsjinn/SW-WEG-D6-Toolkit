@@ -139,10 +139,11 @@ const ROOMS_DATA = {
 
   "cantina": {
     name: "The Rusty Hydrospanner",
-    description: "The station cantina is dim and loud, exactly the way its clientele prefers it. Mismatched lighting casts everything in shades of amber and shadow. A long {item}bar{/item} runs along the far wall, tended by a surly-looking Besalisk named {npc}Grek{/npc} whose four arms keep glasses moving with mechanical efficiency. Scattered {item}tables{/item} fill the floor, occupied by the usual assortment of spacers, drifters, and people who'd rather not be looked at too closely.\n\nA {item}jukebox{/item} droid in the corner plays something vaguely jizz-like at a volume that discourages eavesdropping. The exit back to the main concourse is to the east. A bead curtain to the west leads to a dimly lit back room — you catch the sound of shuffling cards and clinking chips.",
+    description: "The station cantina is dim and loud, exactly the way its clientele prefers it. Mismatched lighting casts everything in shades of amber and shadow. A long {item}bar{/item} runs along the far wall, tended by a surly-looking Besalisk named {npc}Grek{/npc} whose four arms keep glasses moving with mechanical efficiency. Scattered {item}tables{/item} fill the floor, occupied by the usual assortment of spacers, drifters, and people who'd rather not be looked at too closely.\n\nA {item}jukebox{/item} droid in the corner plays something vaguely jizz-like at a volume that discourages eavesdropping. The exit back to the main concourse is to the east. A bead curtain to the west leads to a dimly lit back room. A narrow staircase leads up to the flophouse rooms.",
     exits: {
       east: "main_concourse",
-      west: "back_room"
+      west: "back_room",
+      up: "flophouse"
     },
     objects: {
       "bar": "The bar is a slab of scarred durasteel that might have once been a cargo loading ramp, mounted on industrial supports. Its surface is etched with countless rings from glasses and the occasional blaster scorch mark. A hand-painted sign behind it reads: 'NO CREDIT. NO TABS. NO EXCEPTIONS.'",
@@ -242,6 +243,20 @@ const ROOMS_DATA = {
         ]
       }
     }
+  },
+
+  "flophouse": {
+    name: "Flophouse — Upstairs Rooms",
+    description: "A narrow corridor above the cantina lined with identical doors, each leading to a tiny room barely large enough for a {item}cot{/item} and a locker. The walls are thin enough to hear the music from below — and the arguments from next door. A faded {item}sign{/item} on the wall lists the rates.\n\nThe staircase back down to the cantina is below.",
+    exits: {
+      down: "cantina"
+    },
+    objects: {
+      "cot": "A narrow cot with a lumpy mattress and a single blanket that's seen better decades. It's not comfortable, but it's horizontal and it's indoors. That's luxury on a station like this.\n\n{dim}Type {/dim}{green}sleep{/green}{dim} to rent a room and rest. Costs 25 credits. Advances time by 50 ticks, resetting veins and respawning NPCs. Requires at least 15 ticks of activity since your last rest.{/dim}",
+      "sign": "A hand-painted sign:\n\n{gold}FLOPHOUSE RATES{/gold}\n  Cot & locker: {item}25 credits{/item} per rest\n  No refunds. No room service.\n  No blasters discharged indoors.\n  Violators will be ejected. From the airlock.",
+      "locker": "A small metal locker bolted to the wall beside each cot. The lock is mechanical — a simple keypad code. Enough to keep honest people out."
+    },
+    npcs: {}
   },
 
   "back_room": {

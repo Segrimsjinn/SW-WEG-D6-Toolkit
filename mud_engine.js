@@ -324,6 +324,10 @@ const MUD = {
       case 'extract':
         return MUD_MINE.doMine();
 
+      case 'sleep':
+      case 'rest':
+        return this.doSleep();
+
       case 'train':
       case 'learn':
         return this.doTrain(arg);
@@ -1094,6 +1098,53 @@ const MUD = {
       }
     }
     this.print('{dim}Balance: ' + this.state.credits + '{/dim}');
+    this.autoSave();
+  },
+
+  doSleep() {
+    if (!this.state.character) { this.print("You need a character first.", 'error'); return; }
+    if (MUD_COMBAT.active) { this.print("You can't sleep during combat!", 'error'); return; }
+    if (this.state.currentRoom !== 'flophouse') {
+      this.print("You need a place to sleep. Try the flophouse above the cantina.", 'error');
+      return;
+    }
+
+    // Check minimum activity
+    const lastSleep = this.state.flags['lastSleepTick'] || 0;
+    const ticksSinceSleep = this.state.ticks - lastSleep;
+    if (ticksSinceSleep < 15) {
+      this.print('"You just slept. Get out there and do something first." {dim}(' + (15 - ticksSinceSleep) + ' more ticks needed){/dim}', 'error');
+      return;
+    }
+
+    if (this.state.credits < 25) {
+      this.print('"Room\'s 25 credits. You\'ve got ' + this.state.credits + '. Try the floor in the maintenance sublevel — it\'s free, if you don\'t mind the company."', 'error');
+      return;
+    }
+
+    this.state.credits -= 25;
+    this.state.flags['lastSleepTick'] = this.state.ticks;
+    this.state.ticks += 50;
+
+    // Heal if wounded
+    const c = this.state.character;
+    if (c.wounds !== 'healthy') {
+      const wi = MUD_COMBAT.woundIndex(c.wounds);
+      c.wounds = MUD_COMBAT.WOUND_LEVELS[Math.max(0, wi - 1)];
+    }
+
+    this.printBlank();
+    this.print('{dim}You hand over 25 credits and collapse onto the cot. The mattress is terrible. The music from below never stops. Somehow, you sleep anyway.{/dim}');
+    this.printBlank();
+    this.print('{dim}...{/dim}');
+    this.printBlank();
+    this.print('{dim}You wake feeling rested. Time has passed — the station has moved on without you.{/dim}');
+    if (c.wounds !== 'healthy') {
+      this.print('{green}Your injuries have improved: ' + MUD_COMBAT.woundLabel(c.wounds) + '{/green}');
+    } else {
+      this.print('{green}You feel rested and healthy.{/green}');
+    }
+    this.print('{dim}-25 credits. Balance: ' + this.state.credits + '{/dim}');
     this.autoSave();
   },
 
