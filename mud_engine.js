@@ -798,12 +798,42 @@ const MUD = {
     const c = this.state.character;
     const available = trainer.trainer.skills;
 
+    // Determine which attributes this trainer covers (from their skill list)
+    const trainerAttrs = [...new Set(available.map(s => {
+      const def = MUD_CHARGEN.SKILLS.find(sk => sk.name === s);
+      return def ? def.attr : null;
+    }).filter(Boolean))];
+
     if (!arg) {
       this.printBlank();
       this.print('{gold}═══ ' + trainer.name + ' — Training ═══{/gold}');
       this.print('{dim}Your CP: {/dim}{gold}' + (c.cp || 0) + '{/gold}{dim}  Credits: {/dim}{gold}' + this.state.credits + '{/gold}');
-      this.printBlank();
 
+      // Show trainable attributes
+      if (trainerAttrs.length) {
+        this.printBlank();
+        this.print('{gold}Attributes:{/gold} {dim}(10× current dice in CP){/dim}');
+        for (const attr of trainerAttrs) {
+          const currentPips = c.attrs[attr];
+          const race = RACES_DATA[c.species];
+          const maxPips = race ? MUD_CHARGEN.diceToPips(race[attr][race[attr].length - 1]) : this.TRAIN_CAP;
+          const cap = Math.min(maxPips, this.TRAIN_CAP);
+          const currentDice = MUD_CHARGEN.pipsToDice(currentPips);
+
+          if (currentPips >= cap) {
+            this.print('  {dim}' + MUD_CHARGEN.ATTR_FULL[attr] + '  ' + currentDice + ' — MAXED{/dim}');
+          } else {
+            const cpCost = Math.floor(currentPips / 3) * 10;
+            const newVal = MUD_CHARGEN.pipsToDice(currentPips + 1);
+            const fee = this.getTrainFee(currentPips + 1) * 4;
+            this.print('  {item}' + MUD_CHARGEN.ATTR_FULL[attr] + '{/item}  {dim}' + currentDice + ' → ' + newVal + '{/dim}  {green}' + cpCost + ' CP + ' + fee + ' cr{/green}');
+          }
+        }
+      }
+
+      // Show trainable skills
+      this.printBlank();
+      this.print('{gold}Skills:{/gold}');
       for (const skillName of available) {
         const def = MUD_CHARGEN.SKILLS.find(s => s.name === skillName);
         if (!def) continue;
@@ -832,12 +862,57 @@ const MUD = {
       }
 
       this.printBlank();
-      this.print('{dim}Type {/dim}{green}train <skill name>{/green}{dim} to improve a skill.{/dim}');
+      this.print('{dim}Type {/dim}{green}train <skill or attribute>{/green}{dim} to improve.{/dim}');
       return;
     }
 
-    // Train a specific skill
+    // --- Train a specific skill or attribute ---
     const low = arg.toLowerCase();
+
+    // Check if it's an attribute
+    const attrMap = { dex: 'Dex', dexterity: 'Dex', kno: 'Kno', knowledge: 'Kno', mec: 'Mec', mechanical: 'Mec', per: 'Per', perception: 'Per', str: 'Str', strength: 'Str', tec: 'Tec', technical: 'Tec' };
+    const attr = attrMap[low];
+    if (attr && trainerAttrs.includes(attr)) {
+      const currentPips = c.attrs[attr];
+      const race = RACES_DATA[c.species];
+      const maxPips = race ? MUD_CHARGEN.diceToPips(race[attr][race[attr].length - 1]) : this.TRAIN_CAP;
+      const cap = Math.min(maxPips, this.TRAIN_CAP);
+
+      if (currentPips >= cap) {
+        if (currentPips >= maxPips) {
+          this.print('"That\'s your species\' maximum for ' + MUD_CHARGEN.ATTR_FULL[attr] + '. Can\'t push past biology."', 'error');
+        } else {
+          this.print('"You\'ve surpassed what I can teach. Find a master off-station."', 'error');
+        }
+        return;
+      }
+
+      const cpCost = Math.floor(currentPips / 3) * 10;
+      const fee = this.getTrainFee(currentPips + 1) * 4;
+
+      if ((c.cp || 0) < cpCost) {
+        this.print('"Attribute training costs ' + cpCost + ' CP. You\'ve got ' + (c.cp || 0) + '."', 'error');
+        return;
+      }
+      if (this.state.credits < fee) {
+        this.print('"That\'ll be ' + fee + ' credits. You\'ve got ' + this.state.credits + '."', 'error');
+        return;
+      }
+
+      c.cp -= cpCost;
+      this.state.credits -= fee;
+      c.attrs[attr] = currentPips + 1;
+
+      const newVal = MUD_CHARGEN.pipsToDice(currentPips + 1);
+      this.printBlank();
+      this.print('{npc}' + trainer.name + '{/npc} puts you through an intense regimen.');
+      this.print('{green}' + MUD_CHARGEN.ATTR_FULL[attr] + ' improved to ' + newVal + '{/green} {dim}(-' + cpCost + ' CP, -' + fee + ' cr){/dim}');
+      this.print('{dim}CP: ' + c.cp + '  Credits: ' + this.state.credits + '{/dim}');
+      this.autoSave();
+      return;
+    }
+
+    // Otherwise, train a skill
     const skillName = available.find(s => s.toLowerCase() === low || s.toLowerCase().startsWith(low));
     if (!skillName) {
       this.print('"I don\'t teach that. Type {green}train{/green} to see what I offer."', 'error');
@@ -850,7 +925,6 @@ const MUD = {
     const hasSkill = !!c.skills[skillName];
     const currentPips = c.skills[skillName] || c.attrs[def.attr];
 
-    // Cap check
     if (currentPips >= this.TRAIN_CAP) {
       this.print('"You\'ve surpassed what I can teach. You\'ll need to find a master — someone off-station."', 'error');
       return;
@@ -858,7 +932,7 @@ const MUD = {
 
     let cpCost, newPips;
     if (!hasSkill) {
-      cpCost = Math.floor(c.attrs[def.attr] / 3); // cost = attribute dice
+      cpCost = Math.floor(c.attrs[def.attr] / 3);
       newPips = c.attrs[def.attr] + 1;
     } else {
       cpCost = Math.floor(currentPips / 3);
@@ -875,14 +949,9 @@ const MUD = {
       return;
     }
 
-    // Apply training
     c.cp -= cpCost;
     this.state.credits -= fee;
-    if (!hasSkill) {
-      c.skills[skillName] = newPips;
-    } else {
-      c.skills[skillName] = newPips;
-    }
+    c.skills[skillName] = newPips;
 
     const newVal = MUD_CHARGEN.pipsToDice(newPips);
     this.printBlank();
