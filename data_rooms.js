@@ -84,13 +84,14 @@ const ROOMS_DATA = {
 
   "main_concourse": {
     name: "Main Concourse",
-    description: "The main concourse of Drifter's Anchorage is a wide, vaulted corridor that serves as the station's central hub. A {item}crowd{/item} of spacers, merchants, and hard-eyed individuals flows in both directions. Overhead, a cracked {item}holodisplay{/item} cycles through trade postings and docking schedules in flickering blue text.\n\nThe medical wing lies to the south. A cantina's neon {item}sign{/item} glows to the west, its muffled music bleeding through the doorway. The docking bay access corridor stretches east. To the north, a transparisteel-fronted office bears the sign: STATION ADMINISTRATION. A narrow, poorly lit passage leads southwest into the station's maintenance levels.",
+    description: "The main concourse of Drifter's Anchorage is a wide, vaulted corridor that serves as the station's central hub. A {item}crowd{/item} of spacers, merchants, and hard-eyed individuals flows in both directions. Overhead, a cracked {item}holodisplay{/item} cycles through trade postings and docking schedules in flickering blue text.\n\nThe medical wing lies to the south. A cantina's neon {item}sign{/item} glows to the west, its muffled music bleeding through the doorway. The docking bay access corridor stretches east. To the north, a transparisteel-fronted office bears the sign: STATION ADMINISTRATION. A narrow, poorly lit passage leads southwest into the station's maintenance levels. To the northwest, a shopfront with a flickering neon sign reads: SURPLUS & SALVAGE.",
     exits: {
       south: "med_corridor",
       west: "cantina",
       east: "docking_access",
       north: "admin_office",
-      southwest: "maintenance_sub"
+      southwest: "maintenance_sub",
+      northwest: "general_store"
     },
     objects: {
       "holodisplay": "The cracked holodisplay cycles through listings:\n  {dim}• CARGO HAULER NEEDED — Bulk freight to Muunilinst. Payment on delivery. No questions.{/dim}\n  {dim}• MINING CREW — 3-week rotation, Asteroid Belt Gamma-7. Hazard pay included.{/dim}\n  {dim}• WANTED: Ship mechanic. Must have own tools. See Docking Bay 3.{/dim}\n  {dim}• PUBLIC NOTICE: Unlicensed weapons discharge in the concourse will be met with lethal force. — Station Security{/dim}\nMost of the listings look weeks old.",
@@ -189,6 +190,43 @@ const ROOMS_DATA = {
         talk: [
           { once: "renn_intro", text: "{npc}Dockmaster Renn{/npc} turns those large red eyes on you, evaluating.\n\n\"Ah. The pod survivor.\" His voice has the characteristic Duros rasp. \"I processed your escape pod's wreckage — or what was left of it. Standard Imperial pod, military-grade. No markings, no serial numbers. Someone went to a lot of trouble to scrub that pod clean before you ended up in it.\"\n\nHe shrugs, turning back to the bay. \"Not my business. My business is ships. When you've got the credits for one, come see me. I handle all sales and berth assignments on the station.\"\n\nHe nods toward the bay below. \"Got a few vessels for sale right now, if you're the type to dream. That Z-95 down there's been sitting for weeks. Previous owner couldn't pay his docking fees.\"" },
           { text: "\"Still window shopping? Can't blame you. A ship's the only real freedom in this galaxy.\" He glances at the bay. \"Save up your credits. I'll be here when you're ready.\"" }
+        ]
+      }
+    }
+  },
+
+  "general_store": {
+    name: "Surplus & Salvage",
+    description: "A cluttered shop crammed floor-to-ceiling with merchandise. Display cases hold blasters, vibroblades, and assorted gear in varying states of repair. Shelves line every wall, stacked with medpacs, power packs, tools, and equipment that ranges from nearly-new to barely-functional. The air smells of gun oil and solder.\n\nA Toydarian shopkeeper hovers behind a reinforced {item}counter{/item}, wings buzzing. A {item}price list{/item} is mounted on the wall. The main concourse is back to the southeast.",
+    exits: {
+      southeast: "main_concourse"
+    },
+    objects: {
+      "counter": "A heavy durasteel counter with a transparisteel display top showing the higher-end merchandise — a few decent blasters, a vibroblade with an intact edge, and a rack of medpacs. A small sign reads: 'YOU BREAK IT, YOU BUY IT. YOU STEAL IT, I SHOOT YOU.'",
+      "price list": "A price board mounted on the wall:\n\n{gold}═══ FOR SALE ═══{/gold}\n  {item}Blaster Pistol{/item}        500 cr  — 4D damage {dim}(blast){/dim}\n  {item}Heavy Blaster Pistol{/item}  750 cr  — 5D damage {dim}(blast){/dim}\n  {item}Vibroblade{/item}            250 cr  — STR+2D damage {dim}(knife){/dim}\n  {item}Force Pike{/item}            500 cr  — STR+2D damage {dim}(knife){/dim}\n  {item}Medpac{/item}                100 cr  — heals one wound level\n  {item}Breath Mask{/item}            50 cr  — survival gear\n  {item}Glow Rod{/item}               10 cr  — light source\n  {item}Comlink{/item}                25 cr  — personal communicator\n\n{dim}Type {/dim}{green}buy <item>{/green}{dim} to purchase. Type {/dim}{green}sell <item>{/green}{dim} to sell from inventory (25% of value).{/dim}",
+      "shelves": "Rows upon rows of merchandise, much of it second-hand. You spot power converters, restraining bolts, hydrospanners, breath masks, glow rods, ration packs, and about a dozen things you can't identify. Some of it has blaster scoring. Some of it might have blood on it. You don't ask."
+    },
+    npcs: {
+      "shopkeeper": {
+        name: "Kex",
+        keywords: ["shopkeeper", "kex", "toydarian", "merchant", "shop"],
+        look: "A portly Toydarian with patchy blue-grey skin and stubby wings that somehow keep his bulk airborne. His snout twitches constantly as he appraises everything in the room — including you. A money belt cinches his waist, jangling with credit chips. His small, shrewd eyes miss nothing.",
+        combat: { blaster: 10, dodge: 12, meleeParry: 6, brawlParry: 6, brawl: 6, str: 5, damage: 12, weaponType: 'dodge', weaponName: 'heavy blaster', stunOnly: false, security: true },
+        shop: {
+          buy: [
+            { id: 'blaster_pistol', name: 'Blaster Pistol', price: 500, description: 'A standard BlasTech DL-18 blaster pistol in working condition. Reliable, accurate, nothing fancy. Damage: 4D.\n\n{dim}Combat: {/dim}{green}blast{/green}{dim} <target> — uses Blaster skill, defended by Dodge.{/dim}', damage: '4D', combatType: 'blaster' },
+            { id: 'heavy_blaster_pistol', name: 'Heavy Blaster Pistol', price: 750, description: 'A BlasTech DL-44 heavy blaster pistol. Packs a serious punch at the cost of range. Damage: 5D.\n\n{dim}Combat: {/dim}{green}blast{/green}{dim} <target> — uses Blaster skill, defended by Dodge.{/dim}', damage: '5D', combatType: 'blaster' },
+            { id: 'vibroblade', name: 'Vibroblade', price: 250, description: 'A standard-issue vibroblade with an ultrasonic edge. Quiet, reliable, and legal on most stations. Damage: STR+2D.\n\n{dim}Combat: {/dim}{green}knife{/green}{dim} <target> — uses Melee Combat skill, defended by Melee Parry.{/dim}', damage: '5D', combatType: 'melee' },
+            { id: 'force_pike', name: 'Force Pike', price: 500, description: 'An electrified melee weapon favored by guards and enforcers. The stun tip can be toggled to lethal. Damage: STR+2D.\n\n{dim}Combat: {/dim}{green}knife{/green}{dim} <target> — uses Melee Combat skill, defended by Melee Parry.{/dim}', damage: '5D', combatType: 'melee' },
+            { id: 'medpac', name: 'Medpac', price: 100, description: 'A standard field medical kit. Contains bandages, bacta patches, antiseptic spray, and a stimulant injector. One use — heals one wound level.\n\n{dim}Use: {/dim}{green}use medpac{/green}', consumable: true, effect: 'heal' },
+            { id: 'breath_mask', name: 'Breath Mask', price: 50, description: 'A compact respirator that filters toxins and provides breathable air in hostile atmospheres. Good for about four hours of continuous use.' },
+            { id: 'glow_rod', name: 'Glow Rod', price: 10, description: 'A portable light source. Illuminates about a 20-meter radius. Standard expedition gear.' },
+            { id: 'comlink', name: 'Comlink', price: 25, description: 'A personal comlink with a range of about 50 kilometers in atmosphere, or low orbit. Standard civilian model.' }
+          ],
+          sellRate: 0.25
+        },
+        talk: [
+          { text: "{npc}Kex{/npc} buzzes over, wings humming.\n\n\"Ah, a customer! Or a browser. I get a lot of browsers.\" He gestures at the packed shelves. \"Everything you see is for sale. Fair prices — well, fair for this station.\"\n\nHe taps the price board. \"Check the {item}price list{/item} on the wall. {green}buy{/green} what you need, {green}sell{/green} what you don't. I take anything that's not bolted down — twenty-five percent of market value, take it or leave it.\"\n\nHe hovers closer, lowering his voice. \"And if you find anything... interesting... down in the maintenance levels, I don't ask where it came from.\"" }
         ]
       }
     }

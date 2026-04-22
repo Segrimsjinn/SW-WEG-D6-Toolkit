@@ -268,6 +268,20 @@ const MUD = {
         }
         return MUD_COMBAT.initiate(cmd, arg);
 
+      case 'buy':
+      case 'purchase':
+        return this.doBuy(arg);
+
+      case 'sell':
+        return this.doSell(arg);
+
+      case 'bargain':
+      case 'haggle':
+        return this.doBargain();
+
+      case 'use':
+        return this.doUse(arg);
+
       case 'save':
         return this.doSave();
 
@@ -507,6 +521,169 @@ const MUD = {
     this.autoSave();
   },
 
+  // --- Shop System ---
+  findShop() {
+    const room = ROOMS_DATA[this.state.currentRoom];
+    if (!room || !room.npcs) return null;
+    for (const [id, npc] of Object.entries(room.npcs)) {
+      if (npc.shop && !this.isNpcDefeated(this.state.currentRoom, id)) return npc;
+    }
+    return null;
+  },
+
+  getSellRate() {
+    // Check if bargain bonus is active
+    const bt = this.state.flags['bargainTick'];
+    if (bt != null && (this.state.ticks - bt) < 25) {
+      return this.state.flags['bargainRate'] || 0.25;
+    }
+    return 0.25; // default 25%
+  },
+
+  getItemValue(item) {
+    // Check if it matches a shop item to get base price
+    const room = ROOMS_DATA[this.state.currentRoom];
+    if (room && room.npcs) {
+      for (const npc of Object.values(room.npcs)) {
+        if (npc.shop && npc.shop.buy) {
+          const match = npc.shop.buy.find(s => s.id === item.id || s.name.toLowerCase() === item.name.toLowerCase());
+          if (match) return match.price;
+        }
+      }
+    }
+    // Fallback prices by type
+    if (item.combatType === 'blaster') return 300;
+    if (item.combatType === 'melee') return 150;
+    if (item.consumable) return 50;
+    return 25; // junk
+  },
+
+  doBuy(target) {
+    const shop = this.findShop();
+    if (!shop) { this.print("There's no shop here. Find a merchant.", 'error'); return; }
+    if (!target) { this.print('Buy what? Check the {item}price list{/item} on the wall.', 'error'); return; }
+
+    const kw = target.toLowerCase();
+    const item = shop.shop.buy.find(s => s.name.toLowerCase() === kw || s.name.toLowerCase().startsWith(kw) || s.id === kw);
+    if (!item) { this.print('"I don\'t have anything called \'' + target + '\'. Check the {item}price list{/item}."', 'error'); return; }
+
+    if (this.state.credits < item.price) {
+      this.print('"That\'s ' + item.price + ' credits. You\'ve got ' + this.state.credits + '. Come back when you can afford it."', 'error');
+      return;
+    }
+
+    this.state.credits -= item.price;
+    const invItem = { id: item.id, name: item.name, description: item.description || item.name };
+    if (item.damage) { invItem.damage = item.damage; invItem.combatType = item.combatType; invItem.stunOnly = item.stunOnly || false; }
+    if (item.consumable) { invItem.consumable = true; invItem.effect = item.effect; }
+    this.state.inventory.push(invItem);
+
+    this.print('{npc}' + shop.name + '{/npc} takes your credits and slides the {item}' + item.name + '{/item} across the counter.');
+    this.print('{dim}-' + item.price + ' credits. Balance: ' + this.state.credits + '{/dim}');
+    this.autoSave();
+  },
+
+  doSell(target) {
+    const shop = this.findShop();
+    if (!shop) { this.print("There's no shop here. Find a merchant.", 'error'); return; }
+    if (!target) { this.print('Sell what? Check your {green}inventory{/green}.', 'error'); return; }
+
+    const kw = target.toLowerCase();
+    const idx = this.state.inventory.findIndex(it => it.name.toLowerCase() === kw || it.name.toLowerCase().startsWith(kw) || it.id === kw);
+    if (idx === -1) { this.print("You're not carrying anything called '" + target + "'.", 'error'); return; }
+
+    const item = this.state.inventory[idx];
+    const baseValue = this.getItemValue(item);
+    const rate = this.getSellRate();
+    const sellPrice = Math.max(1, Math.floor(baseValue * rate));
+    const pct = Math.round(rate * 100);
+
+    this.state.inventory.splice(idx, 1);
+    this.state.credits += sellPrice;
+
+    this.print('{npc}' + shop.name + '{/npc} examines the {item}' + item.name + '{/item} and nods.');
+    this.print('"I\'ll give you ' + sellPrice + ' credits for that." {dim}(' + pct + '% of ' + baseValue + '){/dim}');
+    this.print('{gold}+' + sellPrice + ' credits. Balance: ' + this.state.credits + '{/gold}');
+    this.autoSave();
+  },
+
+  doBargain() {
+    const shop = this.findShop();
+    if (!shop) { this.print("There's nobody here to bargain with.", 'error'); return; }
+    if (!this.state.character) { this.print("You need a character first.", 'error'); return; }
+
+    // Check if already bargained recently
+    const bt = this.state.flags['bargainTick'];
+    if (bt != null && (this.state.ticks - bt) < 25) {
+      const rate = this.state.flags['bargainRate'] || 0.25;
+      this.print('"We already settled on a rate — ' + Math.round(rate * 100) + '%. Come back later if you want to renegotiate."');
+      return;
+    }
+
+    // Roll player Bargain vs shopkeeper Con (or Bargain)
+    const playerPips = MUD_COMBAT.getPlayerSkillPips('Bargain');
+    const shopPips = 12; // Toydarian merchant — 4D bargain
+    const playerRoll = MUD_COMBAT.rollPips(playerPips);
+    const shopRoll = MUD_COMBAT.rollPips(shopPips);
+    const diff = playerRoll - shopRoll;
+
+    this.printBlank();
+    this.print('{dim}Your Bargain: {/dim}{gold}' + playerRoll + '{/gold}{dim} vs ' + shop.name + ': {/dim}{gold}' + shopRoll + '{/gold}');
+
+    let rate;
+    if (diff >= 15) {
+      rate = 0.50;
+      this.print('{green}' + shop.name + ' looks stunned. "You drive a hard bargain. Fifty percent. For today."{/green}');
+    } else if (diff >= 10) {
+      rate = 0.45;
+      this.print('{green}"Fine, fine! Forty-five percent. You\'re robbing me blind."{/green}');
+    } else if (diff >= 5) {
+      rate = 0.40;
+      this.print('{green}"Alright, forty percent. But that\'s my final offer."{/green}');
+    } else if (diff >= 1) {
+      rate = 0.35;
+      this.print('{green}"Thirty-five percent. Fair enough for the both of us."{/green}');
+    } else if (diff >= -4) {
+      rate = 0.25;
+      this.print('{dim}"Nice try. Standard rate — twenty-five percent. Take it or leave it."{/dim}');
+    } else {
+      rate = 0.20;
+      this.print('{red}"Ha! You insult me with that offer. Twenty percent — and be grateful I\'m buying at all."{/red}');
+    }
+
+    this.state.flags['bargainTick'] = this.state.ticks;
+    this.state.flags['bargainRate'] = rate;
+    this.print('{dim}Sell rate set to ' + Math.round(rate * 100) + '% for the next 25 moves.{/dim}');
+    this.autoSave();
+  },
+
+  doUse(target) {
+    if (!target) { this.print('Use what?', 'error'); return; }
+    const kw = target.toLowerCase();
+    const idx = this.state.inventory.findIndex(it => it.name.toLowerCase().startsWith(kw) || it.id === kw);
+    if (idx === -1) { this.print("You don't have anything called '" + target + "'.", 'error'); return; }
+
+    const item = this.state.inventory[idx];
+    if (!item.consumable) { this.print("You can't use the " + item.name + " that way.", 'error'); return; }
+
+    if (item.effect === 'heal') {
+      const c = this.state.character;
+      if (!c) return;
+      if (c.wounds === 'healthy') {
+        this.print("You're not injured. No point wasting a medpac.");
+        return;
+      }
+      const wi = MUD_COMBAT.woundIndex(c.wounds);
+      c.wounds = MUD_COMBAT.WOUND_LEVELS[Math.max(0, wi - 1)];
+      this.state.inventory.splice(idx, 1);
+      this.print('{green}You apply the medpac. You are now: ' + MUD_COMBAT.woundLabel(c.wounds) + '{/green}');
+      this.autoSave();
+      return;
+    }
+
+    this.print("You're not sure how to use the " + item.name + " right now.");
+  },
+
   doDrop(target) {
     if (!target) {
       this.print('Drop what?', 'error');
@@ -584,6 +761,12 @@ const MUD = {
     this.print('  {green}take{/green} / {green}get{/green} <item>  — pick something up');
     this.print('  {green}drop{/green} <item>  — drop an item');
     this.print('  {green}loot{/green} <body>  — search a defeated NPC');
+    this.print('  {green}use{/green} <item>   — use a consumable (medpac, etc.)');
+    this.print('');
+    this.print('{gold}Shop (in stores):{/gold}');
+    this.print('  {green}buy{/green} <item>    — purchase from shop');
+    this.print('  {green}sell{/green} <item>   — sell from inventory (25% base)');
+    this.print('  {green}bargain{/green}      — haggle for better sell rate');
     this.print('');
     this.print('{gold}Information:{/gold}');
     this.print('  {green}inventory{/green} / {green}i{/green}  — check your belongings');
