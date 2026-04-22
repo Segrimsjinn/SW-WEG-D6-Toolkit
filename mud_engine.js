@@ -352,6 +352,10 @@ const MUD = {
       case 'bounties':
         return MUD_BOUNTY.showBounty();
 
+      case 'turn':
+        if (arg.toLowerCase() === 'in') return MUD_BOUNTY.turnIn();
+        break;
+
       case 'ask':
         // "ask <npc> about bounty" or "ask <npc>"
         const askParts = arg.replace(/\s+about\s+bounty$/i, '');
@@ -2592,6 +2596,16 @@ const MUD_COMBAT = {
     MUD.printBlank();
 
     // Credit penalty
+    // Bounty chips confiscated for medical bills
+    const chips = MUD.state.inventory.filter(it => it.isBountyChip);
+    if (chips.length) {
+      let chipTotal = 0;
+      for (const chip of chips) chipTotal += chip.bountyReward;
+      MUD.state.inventory = MUD.state.inventory.filter(it => !it.isBountyChip);
+      MUD.print('{red}Your bounty chips were seized to cover medical expenses. -' + chipTotal + ' credits in bounties lost.{/red}');
+    }
+
+    // Remaining credit penalty
     const penalty = Math.min(5000, Math.floor(MUD.state.credits * 0.9));
     if (penalty > 0) {
       MUD.state.credits -= penalty;
@@ -3179,10 +3193,56 @@ const MUD_BOUNTY = {
     const b = this.getCurrentBounty();
     this.completeBounty();
     MUD.printBlank();
-    MUD.print('{gold}═══ BOUNTY COMPLETE ═══{/gold}');
-    MUD.print('{gold}' + b.name + ' has been neutralized.{/gold}');
-    MUD.print('{gold}+' + b.reward + ' credits (bounty reward){/gold}');
-    MUD.state.credits += b.reward;
+    MUD.print('{gold}' + b.name + ' is down. You find a {item}Bounty Chip{/item} on them — proof of completion.{/gold}');
+    MUD.print('{dim}Bring it back to Vexx at the guild to collect your reward. Type {/dim}{green}turn in{/green}{dim} at the guild office.{/dim}');
+    MUD.print('{red}Warning: if you die carrying a bounty chip, it goes to cover your medical bills.{/red}');
+
+    MUD.state.inventory.push({
+      id: 'bounty_chip_' + b.name.replace(/\s/g, '_').toLowerCase(),
+      name: 'Bounty Chip — ' + b.name,
+      description: 'A coded credit chip keyed to the bounty on ' + b.name + '. Worth ' + b.reward + ' credits when turned in to the Bounty Guild. If you die with this, the infirmary takes it to cover your medical bills.',
+      isBountyChip: true,
+      bountyReward: b.reward,
+      bountyTarget: b.name
+    });
+    MUD.autoSave();
+  },
+
+  // Turn in bounty chips at the guild
+  turnIn() {
+    if (MUD.state.currentRoom !== 'guild_back') {
+      MUD.print("You need to be at the Bounty Guild office to turn in bounty chips.", 'error');
+      return;
+    }
+
+    const chips = MUD.state.inventory.filter(it => it.isBountyChip);
+    if (!chips.length) {
+      MUD.print('{npc}Vexx{/npc}: "You don\'t have any bounty chips to turn in. Go earn some."');
+      return;
+    }
+
+    MUD.printBlank();
+    let totalCredits = 0;
+    let totalCp = 0;
+    for (const chip of chips) {
+      totalCredits += chip.bountyReward;
+      MUD.print('{gold}Turned in: ' + chip.bountyTarget + ' — +' + chip.bountyReward + ' credits{/gold}');
+    }
+
+    // CP award for turning in
+    totalCp = chips.length * 2;
+    if (MUD.state.character) {
+      MUD.state.character.cp = (MUD.state.character.cp || 0) + totalCp;
+    }
+
+    // Remove all chips from inventory
+    MUD.state.inventory = MUD.state.inventory.filter(it => !it.isBountyChip);
+    MUD.state.credits += totalCredits;
+
+    MUD.printBlank();
+    MUD.print('{npc}Vexx{/npc} verifies each chip and transfers the credits.');
+    MUD.print('{gold}Total: +' + totalCredits + ' credits, +' + totalCp + ' CP{/gold}');
+    MUD.print('{dim}Balance: ' + MUD.state.credits + ' credits, ' + MUD.state.character.cp + ' CP{/dim}');
     MUD.autoSave();
   }
 };
