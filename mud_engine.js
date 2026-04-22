@@ -18,7 +18,8 @@ const MUD = {
     lootedNpcs: {},     // { "roomId:npcId": tickWhenLooted } — resets on respawn
     killCounts: {},     // { "roomId:npcId": totalKills } — for CP diminishing returns
     mineVeins: {},      // { veinId: { mined: #, lastMinedTick: #, depletedTick: # } }
-    spiderRoom: 'deep_vein_1' // current cave spider location
+    spiderRoom: 'deep_vein_1', // current cave spider location
+    blockedRooms: {}    // { roomId: tickWhenBlocked } — collapsed rooms, clear after 25 ticks
   },
 
   SAVE_KEY: 'muddLiteStation_save',
@@ -120,6 +121,14 @@ const MUD = {
     if (MUD_COMBAT.active) {
       this.print("You're in combat! Type {green}flee{/green} to disengage.", 'error');
       return false;
+    }
+    // Blocked room check (cave-in)
+    const blockedTick = this.state.blockedRooms[roomId];
+    if (blockedTick != null && (this.state.ticks - blockedTick) < 25) {
+      this.print('{red}The passage is blocked by rubble from a cave-in. It will take time to clear.{/red}');
+      return false;
+    } else if (blockedTick != null) {
+      delete this.state.blockedRooms[roomId]; // cleared
     }
     this.state.ticks++;
     this.state.currentRoom = roomId;
@@ -1091,7 +1100,8 @@ const MUD = {
         lootedNpcs: this.state.lootedNpcs,
         killCounts: this.state.killCounts,
         mineVeins: this.state.mineVeins,
-        spiderRoom: this.state.spiderRoom
+        spiderRoom: this.state.spiderRoom,
+        blockedRooms: this.state.blockedRooms
       };
       localStorage.setItem(this.SAVE_KEY, JSON.stringify(save));
       return true;
@@ -1118,6 +1128,7 @@ const MUD = {
       this.state.killCounts = save.killCounts || {};
       this.state.mineVeins = save.mineVeins || {};
       this.state.spiderRoom = save.spiderRoom || 'deep_vein_1';
+      this.state.blockedRooms = save.blockedRooms || {};
       return true;
     } catch (e) {
       console.error('MUD load failed:', e);
@@ -2379,6 +2390,18 @@ const MUD_MINE = {
 
   // Spider figure-8 patrol path through dark rooms
   SPIDER_PATROL: ['deep_vein_1', 'deep_junction', 'deep_vein_2', 'deep_vein_3', 'crystal_chamber', 'deep_vein_3', 'deep_vein_1', 'deep_junction'],
+
+  // Exit direction for collapse — pushes player toward mine entrance
+  COLLAPSE_EXIT: {
+    shaft_alpha: 'mine_entrance',
+    vein_west: 'shaft_alpha',
+    vein_east: 'shaft_alpha',
+    deep_junction: 'vein_west',
+    deep_vein_1: 'deep_junction',
+    deep_vein_2: 'deep_junction',
+    deep_vein_3: 'deep_vein_1',
+    crystal_chamber: 'deep_vein_3'
+  },
   spiderPatrolIdx: 0,
 
   // Small ambient spiderlings — flavor text, non-aggressive
@@ -2491,34 +2514,49 @@ const MUD_MINE = {
       }
     }
 
-    // Collapse risk — increases with each extraction from this vein
-    const collapseChance = veinState.mined * 0.08; // 0%, 8%, 16%, 24%, 32%...
-    if (Math.random() < collapseChance) {
+    // Collapse risk — flat 1/6 chance per extraction
+    if (Math.floor(Math.random() * 6) === 0) {
       MUD.printBlank();
       MUD.print('{red}CAVE-IN!{/red}');
-      MUD.print('{red}The ceiling cracks and tonnes of rock come crashing down! You throw yourself back as dust and debris fill the tunnel.{/red}');
+      MUD.print('{red}The ceiling cracks and tonnes of rock come crashing down!{/red}');
 
-      // Damage the player — roll 4D vs STR
-      const dmgRoll = MUD_COMBAT.rollPips(12); // 4D collapse damage
-      const strRoll = MUD_COMBAT.rollPips(MUD.state.character.attrs.Str);
-      const diff = dmgRoll - strRoll;
-      const oldWound = MUD.state.character.wounds;
-      MUD.state.character.wounds = MUD_COMBAT.applyDamageResult(diff, MUD.state.character.wounds);
+      // Dodge check — 2D6 damage if failed
+      const dodgePips = MUD_COMBAT.getPlayerDefensePips('dodge');
+      const dodgeRoll = MUD_COMBAT.rollPips(dodgePips);
+      const dmgRoll = MUD_COMBAT.rollPips(6); // 2D6 falling rock
+      MUD.print('{dim}You dive for cover — Dodge: {/dim}{gold}' + dodgeRoll + '{/gold}{dim} vs debris: {/dim}{red}' + dmgRoll + '{/red}');
 
-      MUD.print('{dim}Collapse damage: {/dim}{red}' + dmgRoll + '{/red}{dim} vs your Strength: {/dim}{gold}' + strRoll + '{/gold}');
-
-      if (MUD.state.character.wounds !== oldWound) {
-        MUD.print('You are ' + MUD_COMBAT.woundLabel(MUD.state.character.wounds) + '!');
+      if (dodgeRoll >= dmgRoll) {
+        MUD.print('{green}You roll clear of the worst of it!{/green}');
       } else {
-        MUD.print('{green}You scramble clear — shaken but unhurt.{/green}');
+        const strRoll = MUD_COMBAT.rollPips(MUD.state.character.attrs.Str);
+        const diff = dmgRoll - strRoll;
+        const oldWound = MUD.state.character.wounds;
+        MUD.state.character.wounds = MUD_COMBAT.applyDamageResult(diff, MUD.state.character.wounds);
+        MUD.print('{dim}Damage: {/dim}{red}' + dmgRoll + '{/red}{dim} vs Strength: {/dim}{gold}' + strRoll + '{/gold}');
+        if (MUD.state.character.wounds !== oldWound) {
+          MUD.print('You are ' + MUD_COMBAT.woundLabel(MUD.state.character.wounds) + '!');
+        }
       }
 
-      // Deplete the vein on collapse
+      // Block this room for 25 ticks
+      MUD.state.blockedRooms[MUD.state.currentRoom] = MUD.state.ticks;
+
+      // Deplete the vein
       veinState.mined = vein.maxNodes;
       veinState.depletedTick = MUD.state.ticks;
-      MUD.print('{dim}The vein is buried under rubble. It will take time for the quartz to grow through the debris.{/dim}');
 
-      // Check if player died from collapse
+      // Force player toward exit
+      const exitRoom = this.COLLAPSE_EXIT[MUD.state.currentRoom];
+      if (exitRoom) {
+        MUD.print('{gold}The collapse forces you back!{/gold}');
+        MUD.state.currentRoom = exitRoom;
+        MUD.state.ticks++;
+        this.moveSpider();
+        MUD.displayRoom(exitRoom);
+      }
+
+      // Check if player died
       if (MUD_COMBAT.woundIndex(MUD.state.character.wounds) >= MUD_COMBAT.woundIndex('incapacitated')) {
         MUD_COMBAT.handlePlayerDown();
       }
