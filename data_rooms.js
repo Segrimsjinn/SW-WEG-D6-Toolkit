@@ -214,7 +214,7 @@ const ROOMS_DATA = {
         keywords: ["dealer", "sabacc", "card dealer"],
         look: "A thin human male with slicked-back grey hair and hands that move with the precision of a droid. His expression is permanently neutral — the face of someone who's dealt ten thousand hands and stopped caring about the outcome of any of them. A small earpiece suggests he's in contact with the house — probably Grek.",
         combat: { blaster: 9, dodge: 9, meleeParry: 6, brawlParry: 6, brawl: 6, str: 7, damage: 9, weaponType: 'dodge', weaponName: 'hold-out blaster', stunOnly: false, security: true },
-        gambling: 14, // 4D+2 — tough but beatable
+        gambling: 17, // 5D+2 — need ~6D to start winning consistently
         talk: [
           { text: "{npc}Sabacc Dealer{/npc} glances up from the cards.\n\n\"Looking to play? Buy-in starts at 25 credits. No upper limit — if you've got the nerve.\"\n\nHe taps the table. \"Standard rules. Your Gambling against mine. Beat me, you double your bet. Lose, the house keeps it. Push means your credits come back.\"\n\n{dim}Type {/dim}{green}gamble <amount>{/green}{dim} to play a hand. Minimum 25 credits.{/dim}" }
         ]
