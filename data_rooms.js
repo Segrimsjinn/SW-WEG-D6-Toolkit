@@ -895,11 +895,12 @@ const ROOMS_DATA = {
 
   "besc_docking": {
     name: "Docking Ring — Berth Row",
-    description: "A wide circular corridor curves around the outer edge of the Bescane commercial docking facility. Berth hatches line the outer wall, each marked with a number and occupancy light — most glow red. The inner wall is bare duracrete stamped with the Galentro Heavy Works logo every ten meters. {item}Speakers{/item} mounted at intervals crackle with periodic announcements.\n\nA large {item}sign{/item} above the inner archway reads in block Aurebesh:\n{red}⚠ GALENTRO SECURITY NOTICE: ENERGY WEAPONS AND EXPLOSIVES ARE PROHIBITED BEYOND THIS POINT. ALL PERSONS ENTERING THE FACILITY ARE SUBJECT TO SEARCH. VIOLATORS WILL BE DETAINED. ⚠{/red}\n\nYour ship in Berth 7 is to the west. The customs checkpoint lies to the north. A doorway to the east marked with a red cross leads to the port medical clinic.",
+    description: "A wide circular corridor curves around the outer edge of the Bescane commercial docking facility. Berth hatches line the outer wall, each marked with a number and occupancy light — most glow red. The inner wall is bare duracrete stamped with the Galentro Heavy Works logo every ten meters. {item}Speakers{/item} mounted at intervals crackle with periodic announcements.\n\nA large {item}sign{/item} above the inner archway reads in block Aurebesh:\n{red}⚠ GALENTRO SECURITY NOTICE: ENERGY WEAPONS AND EXPLOSIVES ARE PROHIBITED BEYOND THIS POINT. ALL PERSONS ENTERING THE FACILITY ARE SUBJECT TO SEARCH. VIOLATORS WILL BE DETAINED. ⚠{/red}\n\nYour ship in Berth 7 is to the west. The customs checkpoint lies to the north. A doorway to the east marked with a red cross leads to the port medical clinic. A clean, well-lit doorway to the south displays the Imperial crest.",
     exits: {
       west: "besc_ship",
       north: "besc_customs",
-      east: "besc_medbay"
+      east: "besc_medbay",
+      south: "besc_imperial_post"
     },
     objects: {
       "speakers": "Ceiling-mounted speakers emit a cycle of announcements in a flat corporate voice:\n\n\"Reminder: all energy weapons, explosive devices, and Class-C restricted materials must be declared at the customs checkpoint. Galentro Heavy Works assumes no liability for confiscated property.\"\n\n\"Shift change for Processing Hub Gamma in two standard hours. All contract workers report to your assigned stations.\"\n\n\"Bescane welcomes you. Productivity is prosperity.\"",
@@ -933,7 +934,8 @@ const ROOMS_DATA = {
           str: 6, damage: 9, weaponType: 'dodge', weaponName: 'sedative injector', stunOnly: true, security: true
         },
         trainer: {
-          skills: ['First Aid']
+          skills: ['First Aid'],
+          cap: 26
         },
         talk: [
           { once: "besc_med_intro", text: "The GH-7 unit swivels toward you with mechanical precision.\n\n\"Welcome to Galentro Health Services, Port Medical Clinic. I am GH-7, your designated medical analysis unit. Treatment is available at standard Galentro rates.\"\n\nIt pauses. \"Please note: Galentro Health Services is not liable for injuries sustained during unauthorized combat, industrial accidents outside your contracted work zone, or adverse reactions to synthetic food products sold at BanthaQuik franchises.\"" },
@@ -1012,10 +1014,11 @@ const ROOMS_DATA = {
 
   "besc_transit": {
     name: "Transit Platform",
-    description: "A busy elevated platform where cargo trams and personnel shuttles connect the docking facility to the greater hub network. A large {item}directory{/item} board shows routes to various hubs across Bescane — most marked 'WORKERS ONLY.' A {npc}dispatcher{/npc} sits behind a scratched transparisteel window at a {item}job board{/item} kiosk, managing freight courier assignments.\n\nThe customs checkpoint is to the south. The hub concourse lies to the north.",
+    description: "A busy elevated platform where cargo trams and personnel shuttles connect the docking facility to the greater hub network. A large {item}directory{/item} board shows routes to various hubs across Bescane — most marked 'WORKERS ONLY.' A {npc}dispatcher{/npc} sits behind a scratched transparisteel window at a {item}job board{/item} kiosk, managing freight courier assignments.\n\nThe customs checkpoint is to the south. The hub concourse lies to the north. A polished doorway to the west bears the Commerce Guild emblem.",
     exits: {
       south: "besc_customs",
-      north: "besc_concourse"
+      north: "besc_concourse",
+      west: "besc_merchant_hall"
     },
     objects: {
       "directory": "A flickering holographic directory lists transit routes:\n\n  HUB GAMMA — Processing (WORKERS ONLY)\n  HUB DELTA — Residential Block 4 (WORKERS ONLY)\n  HUB SIGMA — Heavy Manufacturing (RESTRICTED)\n  LUMCHUGGER'S HUB — Entertainment District (OPEN)\n\nOnly the entertainment district is accessible to non-contract personnel.",
@@ -1267,10 +1270,11 @@ const ROOMS_DATA = {
 
   "besc_outskirts": {
     name: "Hub Outskirts",
-    description: "The edge of Lumchugger's Hub, where the neon glow fades and the corridor walls give way to raw duracrete and exposed industrial piping. The crowds thin out here — only people with business outside the hub proper come this far. {item}Graffiti{/item} and Cooper Dray's {item}swoop markings{/item} cover the walls in fluorescent paint. The air tastes of chemical runoff from the processing hubs nearby.\n\nSquatters' Row is to the north. A cracked service road continues south toward the outer perimeter.",
+    description: "The edge of Lumchugger's Hub, where the neon glow fades and the corridor walls give way to raw duracrete and exposed industrial piping. The crowds thin out here — only people with business outside the hub proper come this far. {item}Graffiti{/item} and Cooper Dray's {item}swoop markings{/item} cover the walls in fluorescent paint. The air tastes of chemical runoff from the processing hubs nearby.\n\nSquatters' Row is to the north. A cracked service road continues south toward the outer perimeter. A concealed hatch to the west is marked with a faint swoop symbol.",
     exits: {
       north: "besc_squatters",
-      south: "besc_outerroad"
+      south: "besc_outerroad",
+      west: "besc_rebel_hideout"
     },
     objects: {
       "graffiti": "Gang tags, political slogans ('GALENTRO = SLAVERY'), crude drawings, and what might be a map of sewer access points scratched into the duracrete. One recurring tag reads 'C.S.' with a swoop silhouette — Cooper's Swoopers.",
@@ -1299,9 +1303,10 @@ const ROOMS_DATA = {
 
   "besc_guild": {
     name: "Bounty Hunter Guild Post",
-    description: "A reinforced prefab building with a heavy blast door and narrow viewslits for windows. Inside, the walls are lined with {item}bounty postings{/item} — holographic wanted notices cycling through faces and reward amounts. A {item}weapons locker{/item} near the door holds checked-in gear — the guild enforces its own rules here, not Galentro's.\n\nA scarred {npc}guild agent{/npc} sits behind an armored desk, managing contracts.\n\nThe outer road is to the east.",
+    description: "A reinforced prefab building with a heavy blast door and narrow viewslits for windows. Inside, the walls are lined with {item}bounty postings{/item} — holographic wanted notices cycling through faces and reward amounts. A {item}weapons locker{/item} near the door holds checked-in gear — the guild enforces its own rules here, not Galentro's.\n\nA scarred {npc}guild agent{/npc} sits behind an armored desk, managing contracts. A reinforced door to the west leads to the training bay.\n\nThe outer road is to the east.",
     exits: {
-      east: "besc_outerroad"
+      east: "besc_outerroad",
+      west: "besc_guild_training"
     },
     objects: {
       "bounty postings": "Holographic wanted notices cycle through a wall-mounted display rack. Faces rotate with names, last known locations, and bounty amounts in Imperial credits. Some are marked 'DEAD OR ALIVE,' others 'ALIVE ONLY — REDUCED PAYMENT FOR CORPSE.' A few have red 'CLAIMED' stamps across them.\n\n{dim}Type {/dim}{green}bounty{/green}{dim} to see available contracts.{/dim}",
@@ -1349,6 +1354,246 @@ const ROOMS_DATA = {
     },
     npcs: {},
     bescane: true
+  },
+
+  // ============================================================
+  // BESCANE — Guild Halls (join one, train to 8D+2)
+  // ============================================================
+
+  "besc_merchant_hall": {
+    name: "Commerce Guild — Bescane Chapter",
+    description: "A clean, well-lit office suite tucked behind the transit platform — the only space in Lumchugger's Hub that looks like actual money flows through it. Polished durasteel desks, functioning climate control, and a holographic {item}trade board{/item} showing commodity prices across a dozen systems. The Galentro logo is conspicuously absent — the Commerce Guild operates on its own authority here.\n\nThree senior guild members run the chapter's training programs:\n\nA sharp-dressed {npc}broker{/npc} manages negotiations training near the trade board. A grizzled {npc}navigator{/npc} reviews star charts at a nav console. A compact {npc}enforcer{/npc} runs self-defense drills in the back.\n\nThe transit platform is to the east.",
+    exits: {
+      east: "besc_transit"
+    },
+    objects: {
+      "trade board": "A holographic commodity trading board showing live prices: durasteel, tibanna gas, bacta, spice, foodstuffs, electronics. Prices fluctuate in real time. A scrolling ticker at the bottom reads: 'COMMERCE GUILD — TRADE IS THE LIFEBLOOD OF CIVILIZATION.'",
+      "desks": "Polished durasteel desks with integrated datapads and secure comm terminals. Each desk has a small Commerce Guild placard and a neatly organized stack of trade manifests.",
+      "charter": "A framed Commerce Guild charter on the wall: 'To facilitate free and fair trade across all systems, regardless of political affiliation. Established 312 BBY. Bescane Chapter, est. 14 BBY.'"
+    },
+    npcs: {
+      "broker": {
+        name: "Trade Broker Salenne",
+        keywords: ["broker", "salenne", "trader"],
+        look: "A Twi'lek woman in expensive business attire — tailored jacket, polished boots, and a Commerce Guild medallion at her throat. She moves between clients with practiced ease, switching languages mid-sentence without missing a beat.\n\n{dim}She trains KNOWLEDGE and PERCEPTION skills. Type {/dim}{green}train{/green}{dim} to see what she offers.{/dim}",
+        combat: { blaster: 10, dodge: 14, meleeParry: 8, brawlParry: 8, brawl: 8, melee: 8, str: 7, damage: 10, weaponType: 'dodge', weaponName: 'hold-out blaster', stunOnly: false, security: true },
+        trainer: {
+          skills: ['Alien Species', 'Bureaucracy', 'Business', 'Cultures', 'Intimidation', 'Languages', 'Law Enforcement', 'Planetary Systems', 'Streetwise', 'Survival', 'Tactics', 'Value', 'Willpower', 'Bargain', 'Command', 'Con', 'Forgery', 'Gambling', 'Hide', 'Investigation', 'Persuasion', 'Search', 'Sneak'],
+          cap: 26
+        },
+        talk: [
+          { once: "salenne_intro", text: "{npc}Trade Broker Salenne{/npc} looks up from her datapad with a professional smile.\n\n\"Welcome to the Commerce Guild, associate. I handle negotiation training — persuasion, con, bargain, everything you need to close deals that make both parties think they won.\" She gestures at the trade board. \"Knowledge is profit. Languages, cultures, alien species, planetary systems — the more you know about who you're trading with, the more you'll earn.\"\n\n{dim}Type {/dim}{green}train{/green}{dim} to see available training.{/dim}" },
+          { text: "\"Ready to sharpen those negotiation skills? {green}train{/green} to see what I offer.\"" }
+        ]
+      },
+      "navigator": {
+        name: "Navigator Koss",
+        keywords: ["navigator", "koss", "pilot"],
+        look: "A weathered human male with deep-set eyes and the spacer's squint of someone who's spent decades reading star charts. His hands are scarred from cockpit work and his flight jacket is faded but immaculate. A Commerce Guild navigation patch sits on his shoulder.\n\n{dim}He trains MECHANICAL and TECHNICAL skills. Type {/dim}{green}train{/green}{dim} to see what he offers.{/dim}",
+        combat: { blaster: 12, dodge: 12, meleeParry: 8, brawlParry: 8, brawl: 9, melee: 8, str: 9, damage: 12, weaponType: 'dodge', weaponName: 'blaster pistol', stunOnly: false, security: true },
+        trainer: {
+          skills: ['Astrogation', 'Beast Riding', 'Communications', 'Ground Vehicle Operation', 'Hover Vehicle Operation', 'Repulsorlift Operation', 'Sensors', 'Space Transports', 'Starfighter Piloting', 'Starship Gunnery', 'Starship Shields', 'Swoop Operation', 'Blaster Repair', 'Computer Programming/Repair', 'Demolitions', 'Droid Programming', 'Droid Repair', 'First Aid', 'Ground Vehicle Repair', 'Repulsorlift Repair', 'Security', 'Space Transports Repair', 'Starship Weapon Repair'],
+          cap: 26
+        },
+        talk: [
+          { once: "koss_intro", text: "{npc}Navigator Koss{/npc} glances up from a star chart projection.\n\n\"Pilot, eh? I've flown the Hydian Way to the Perlemian Trade Route and back more times than I can count. If it has a cockpit or a hyperdrive, I can teach you to fly it, fix it, or shoot from it.\"\n\nHe taps the nav console. \"The Commerce Guild needs pilots who can navigate, maintain their own ships, and handle themselves when pirates show up. I make sure our people can do all three.\"\n\n{dim}Type {/dim}{green}train{/green}{dim} to see available training.{/dim}" },
+          { text: "\"Ships don't fly themselves — well, some do, but not well. {green}train{/green} if you want to learn.\"" }
+        ]
+      },
+      "enforcer": {
+        name: "Kira Voss",
+        keywords: ["enforcer", "kira", "voss", "bodyguard"],
+        look: "A muscular Zabrak woman with facial tattoos and a no-nonsense expression. She runs self-defense training for guild members — because trade routes are dangerous and merchants who can't fight don't stay merchants for long. Her knuckles are wrapped in fighting tape.\n\n{dim}She trains DEXTERITY and STRENGTH skills. Type {/dim}{green}train{/green}{dim} to see what she offers.{/dim}",
+        combat: { blaster: 16, dodge: 17, meleeParry: 16, brawlParry: 17, brawl: 18, melee: 16, str: 13, damage: 15, weaponType: 'brawl', weaponName: 'wrapped fists', stunOnly: false, security: true },
+        trainer: {
+          skills: ['Blaster', 'Brawling Parry', 'Dodge', 'Grenade', 'Heavy Weapons', 'Melee Combat', 'Melee Parry', 'Pick Pocket', 'Running', 'Thrown Weapon', 'Vehicle Blasters', 'Brawling', 'Climbing/Jumping', 'Lifting', 'Stamina', 'Swimming'],
+          cap: 26
+        },
+        talk: [
+          { once: "kira_intro", text: "{npc}Kira Voss{/npc} sizes you up with a fighter's eye.\n\n\"I train guild members to survive. Not everyone out there plays fair — pirates, bandits, Imperial shakedowns, corporate muscle. If you can't defend yourself, your cargo, and your ship, you're just a donation to someone else's retirement fund.\"\n\nShe cracks her knuckles. \"I teach everything from blaster work to bare-knuckle brawling. You won't be pretty when I'm done with you, but you'll be alive.\"\n\n{dim}Type {/dim}{green}train{/green}{dim} to see available training.{/dim}" },
+          { text: "\"You want to hit harder or dodge faster? {green}train{/green}. Let's work.\"" }
+        ]
+      }
+    },
+    bescane: true,
+    guildRoom: 'merchant'
+  },
+
+  "besc_rebel_hideout": {
+    name: "The Pipeline — Rebel Safe House",
+    description: "A hidden chamber beneath the outskirts, sealed behind a blast door disguised as a collapsed wall section. Inside, it's surprisingly well-equipped — {item}comm gear{/item}, weapons racks, medical supplies, and a holographic {item}planning table{/item} projecting a tactical map of Bescane's hub network. Cooper Dray's swoop gang runs this as a staging point for getting indebted workers off-planet.\n\nThree resistance operatives handle training:\n\nA scarred {npc}commando{/npc} runs combat drills. A quiet {npc}spymaster{/npc} teaches intelligence tradecraft. A grease-stained {npc}tech specialist{/npc} maintains the equipment.\n\nThe outskirts are back to the east.",
+    exits: {
+      east: "besc_outskirts"
+    },
+    objects: {
+      "comm gear": "A bank of encrypted comm equipment, all hardened against Galentro's signal jammers. Frequencies rotate on a randomized schedule. A red light blinks steadily — incoming messages from off-world contacts.",
+      "planning table": "A holographic tactical projector showing a 3D map of Lumchugger's Hub, with patrol routes marked in red, safe corridors in green, and extraction points in blue. Notes in the margin reference 'Pipeline runs' — the operation to smuggle workers off Bescane.",
+      "weapons racks": "Blasters, vibroblades, detonators, and stun grenades — all illegal on Bescane. The weapons are clean and well-maintained. A hand-lettered sign reads: 'CHECK YOUR WEAPON IN, CHECK YOUR WEAPON OUT. NO EXCEPTIONS — DRAY.'"
+    },
+    npcs: {
+      "commando": {
+        name: "Sergeant Mora",
+        keywords: ["sergeant", "mora", "commando", "soldier"],
+        look: "A battle-hardened Mirialan woman with geometric facial tattoos and a cybernetic left arm. She wears a battered rebel-era combat vest under her civilian clothes and moves with the coiled precision of someone who's survived more firefights than she can count.\n\n{dim}She trains DEXTERITY and STRENGTH skills. Type {/dim}{green}train{/green}{dim} to see what she offers.{/dim}",
+        combat: { blaster: 20, dodge: 19, meleeParry: 17, brawlParry: 17, brawl: 18, melee: 17, str: 12, damage: 15, weaponType: 'dodge', weaponName: 'modified blaster rifle', stunOnly: false, security: true },
+        trainer: {
+          skills: ['Blaster', 'Brawling Parry', 'Dodge', 'Grenade', 'Heavy Weapons', 'Melee Combat', 'Melee Parry', 'Pick Pocket', 'Running', 'Thrown Weapon', 'Vehicle Blasters', 'Brawling', 'Climbing/Jumping', 'Lifting', 'Stamina', 'Swimming']
+        cap: 26
+        },
+        talk: [
+          { once: "mora_intro", text: "{npc}Sergeant Mora{/npc} looks you over, her cybernetic arm whirring softly.\n\n\"Cooper vouched for you. That's enough for now.\" She gestures at the training area. \"I don't make soldiers — the galaxy's got enough of those. I teach people to survive fights they didn't start and finish ones they did.\"\n\nHer expression softens slightly. \"Most of the people who come through here are factory workers who've never held a blaster. You've clearly handled yourself. Good. I can push you further than anyone on that station could.\"\n\n{dim}Type {/dim}{green}train{/green}{dim} to see available training.{/dim}" },
+          { text: "\"Ready to train? {green}train{/green}. I don't go easy, but you'll thank me later.\"" }
+        ]
+      },
+      "spymaster": {
+        name: "Whisper",
+        keywords: ["whisper", "spymaster", "spy", "intel"],
+        look: "A thin human of indeterminate age and gender, with forgettable features — the kind of person your eyes slide right past. They speak softly and rarely use their real name. A datapad is perpetually in one hand.\n\n{dim}They train PERCEPTION and KNOWLEDGE skills. Type {/dim}{green}train{/green}{dim} to see what they offer.{/dim}",
+        combat: { blaster: 12, dodge: 18, meleeParry: 10, brawlParry: 10, brawl: 10, melee: 12, str: 8, damage: 10, weaponType: 'dodge', weaponName: 'concealed blaster', stunOnly: false, security: true },
+        trainer: {
+          skills: ['Alien Species', 'Bureaucracy', 'Business', 'Cultures', 'Intimidation', 'Languages', 'Law Enforcement', 'Planetary Systems', 'Streetwise', 'Survival', 'Tactics', 'Value', 'Willpower', 'Bargain', 'Command', 'Con', 'Forgery', 'Gambling', 'Hide', 'Investigation', 'Persuasion', 'Search', 'Sneak']
+        cap: 26
+        },
+        talk: [
+          { once: "whisper_intro", text: "The operative looks up from their datapad. When they speak, their voice is barely above a murmur.\n\n\"I teach the skills that keep people alive without firing a shot. Infiltration, information gathering, persuasion, deception.\" A faint smile. \"The Empire has millions of soldiers. We have information. Guess which wins more battles.\"\n\nThey tap the datapad. \"I can also teach you how systems work — bureaucracy, law enforcement, how to navigate Imperial checkpoints without raising flags. Knowledge is the best weapon nobody can confiscate.\"\n\n{dim}Type {/dim}{green}train{/green}{dim} to see available training.{/dim}" },
+          { text: "\"Information is ammunition. {green}train{/green} to load up.\"" }
+        ]
+      },
+      "tech_specialist": {
+        name: "Patch",
+        keywords: ["patch", "tech", "specialist", "mechanic"],
+        look: "A stocky Sullustan with grease-stained coveralls and a tool belt that weighs more than most people's luggage. She maintains the safe house's equipment — comms, weapons, vehicles, droids — and somehow keeps it all running with parts salvaged from Galentro's scrap heaps.\n\n{dim}She trains MECHANICAL and TECHNICAL skills. Type {/dim}{green}train{/green}{dim} to see what she offers.{/dim}",
+        combat: { blaster: 10, dodge: 12, meleeParry: 10, brawlParry: 10, brawl: 10, melee: 10, str: 10, damage: 12, weaponType: 'dodge', weaponName: 'blaster pistol', stunOnly: false, security: true },
+        trainer: {
+          skills: ['Astrogation', 'Beast Riding', 'Communications', 'Ground Vehicle Operation', 'Hover Vehicle Operation', 'Repulsorlift Operation', 'Sensors', 'Space Transports', 'Starfighter Piloting', 'Starship Gunnery', 'Starship Shields', 'Swoop Operation', 'Blaster Repair', 'Computer Programming/Repair', 'Demolitions', 'Droid Programming', 'Droid Repair', 'First Aid', 'Ground Vehicle Repair', 'Repulsorlift Repair', 'Security', 'Space Transports Repair', 'Starship Weapon Repair']
+        cap: 26
+        },
+        talk: [
+          { once: "patch_intro", text: "{npc}Patch{/npc} doesn't look up from the comm unit she's rewiring.\n\n\"Mm. New recruit.\" She gestures vaguely with a hydrospanner. \"I keep everything running. Comms, ships, swoops, droids, slicing rigs. If it has circuits and it's broken, I fix it. If it's not broken, I make it better.\"\n\nShe finally looks up, her large Sullustan eyes blinking. \"I can teach you to do the same. Piloting, astrogation, repairs, demolitions — the resistance needs people who can handle tech as well as they handle a blaster.\"\n\n{dim}Type {/dim}{green}train{/green}{dim} to see available training.{/dim}" },
+          { text: "\"Need tech training? {green}train{/green}. And hand me that flux coupler while you're at it.\"" }
+        ]
+      }
+    },
+    bescane: true,
+    guildRoom: 'rebel'
+  },
+
+  "besc_imperial_post": {
+    name: "Imperial Recruitment Office",
+    description: "A pristine, brightly-lit office decorated with Imperial propaganda — recruitment {item}posters{/item}, holographic displays of Star Destroyers, and the unmistakable scent of military-grade cleaning solution. Everything is squared away, every surface polished, every piece of furniture regulation-standard. An {item}Imperial banner{/item} hangs behind the main desk.\n\nThree Imperial personnel run the auxiliary training program:\n\nA rigid {npc}lieutenant{/npc} manages weapons and flight qualifications. A sharp-eyed {npc}intelligence officer{/npc} handles administrative training. A massive {npc}drill sergeant{/npc} runs physical conditioning.\n\nThe docking ring is to the west.",
+    exits: {
+      west: "besc_docking"
+    },
+    objects: {
+      "posters": "Imperial recruitment posters line the walls: 'SERVE THE EMPIRE — BUILD THE FUTURE,' 'THE NAVY NEEDS YOU,' 'ORDER THROUGH STRENGTH,' and one that reads 'REPORT REBEL ACTIVITY — REWARD GUARANTEED' with a bounty hotline number.",
+      "imperial banner": "The Imperial crest — a stylized gear-and-starburst — displayed on a large banner behind the main desk. Below it: 'OBTREXTA SECTOR COMMAND — AUXILIARY TRAINING DIVISION.' The fabric is immaculate.",
+      "displays": "Holographic displays cycle through Imperial Navy recruitment footage: Star Destroyers in formation, TIE fighters in combat, stormtroopers on parade. It's impressive propaganda, regardless of your politics."
+    },
+    npcs: {
+      "lieutenant": {
+        name: "Lieutenant Vel",
+        keywords: ["lieutenant", "vel", "officer", "imperial"],
+        look: "A young human male in a crisp Imperial Navy uniform with a lieutenant's rank plaque. His posture is textbook perfect, his boots mirror-polished, and his expression radiates the earnest intensity of a true believer. He handles weapons qualification and flight certification.\n\n{dim}He trains DEXTERITY and MECHANICAL skills. Type {/dim}{green}train{/green}{dim} to see what he offers.{/dim}",
+        combat: { blaster: 18, dodge: 16, meleeParry: 14, brawlParry: 14, brawl: 14, melee: 14, str: 10, damage: 14, weaponType: 'dodge', weaponName: 'officer\'s blaster', stunOnly: false, security: true },
+        trainer: {
+          skills: ['Blaster', 'Brawling Parry', 'Dodge', 'Grenade', 'Heavy Weapons', 'Melee Combat', 'Melee Parry', 'Pick Pocket', 'Running', 'Thrown Weapon', 'Vehicle Blasters', 'Astrogation', 'Beast Riding', 'Communications', 'Ground Vehicle Operation', 'Hover Vehicle Operation', 'Repulsorlift Operation', 'Sensors', 'Space Transports', 'Starfighter Piloting', 'Starship Gunnery', 'Starship Shields', 'Swoop Operation']
+        cap: 26
+        },
+        talk: [
+          { once: "vel_intro", text: "{npc}Lieutenant Vel{/npc} stands and offers a crisp salute.\n\n\"Welcome to the Imperial Auxiliary Training Program. I'm Lieutenant Vel, weapons and flight qualification officer.\" His voice carries the clipped precision of Academy training.\n\n\"The Empire offers the finest combat and piloting instruction in the galaxy — and as an auxiliary associate, you'll have access to training that civilian institutions can't match. Blaster marksmanship, starfighter tactics, capital ship systems — we cover it all.\"\n\nHe straightens his already-straight uniform. \"Serve the Empire, and the Empire serves you.\"\n\n{dim}Type {/dim}{green}train{/green}{dim} to see available training.{/dim}" },
+          { text: "\"Ready for training? {green}train{/green}. Imperial standards are high, but so are the results.\"" }
+        ]
+      },
+      "intelligence_officer": {
+        name: "Agent Thessik",
+        keywords: ["agent", "thessik", "intelligence", "iss"],
+        look: "A middle-aged Chiss woman in a dark ISB uniform — unusual for a non-human in Imperial service, which speaks to either exceptional ability or exceptional connections. Her red eyes miss nothing, and she speaks with deliberate precision.\n\n{dim}She trains KNOWLEDGE and PERCEPTION skills. Type {/dim}{green}train{/green}{dim} to see what she offers.{/dim}",
+        combat: { blaster: 14, dodge: 16, meleeParry: 10, brawlParry: 10, brawl: 10, melee: 10, str: 8, damage: 12, weaponType: 'dodge', weaponName: 'ISB blaster', stunOnly: false, security: true },
+        trainer: {
+          skills: ['Alien Species', 'Bureaucracy', 'Business', 'Cultures', 'Intimidation', 'Languages', 'Law Enforcement', 'Planetary Systems', 'Streetwise', 'Survival', 'Tactics', 'Value', 'Willpower', 'Bargain', 'Command', 'Con', 'Forgery', 'Gambling', 'Hide', 'Investigation', 'Persuasion', 'Search', 'Sneak']
+        cap: 26
+        },
+        talk: [
+          { once: "thessik_intro", text: "{npc}Agent Thessik{/npc} regards you with luminous red eyes.\n\n\"I handle intelligence training — the skills that win wars without firing a shot.\" Her voice is calm, measured. \"Investigation, interrogation, bureaucratic navigation, counterintelligence. The Empire runs on information as much as it runs on Star Destroyers.\"\n\nShe steeples her fingers. \"I also teach the social arts — persuasion, command, deception. An Imperial officer must be as effective in a negotiation as on a battlefield.\"\n\n{dim}Type {/dim}{green}train{/green}{dim} to see available training.{/dim}" },
+          { text: "\"Knowledge is power, and power is order. {green}train{/green} when you're ready.\"" }
+        ]
+      },
+      "drill_sergeant": {
+        name: "Sergeant Major Krakk",
+        keywords: ["sergeant", "krakk", "drill", "major"],
+        look: "An enormous Besalisk in Imperial Army fatigues, his four arms crossed over a chest that could stop a blaster bolt through sheer mass. His voice can be heard through duracrete walls. He runs physical conditioning and technical engineering training.\n\n{dim}He trains STRENGTH and TECHNICAL skills. Type {/dim}{green}train{/green}{dim} to see what he offers.{/dim}",
+        combat: { blaster: 14, dodge: 12, meleeParry: 16, brawlParry: 18, brawl: 20, melee: 16, str: 16, damage: 18, weaponType: 'brawl', weaponName: 'four massive fists', stunOnly: true, security: true },
+        trainer: {
+          skills: ['Brawling', 'Climbing/Jumping', 'Lifting', 'Stamina', 'Swimming', 'Blaster Repair', 'Computer Programming/Repair', 'Demolitions', 'Droid Programming', 'Droid Repair', 'First Aid', 'Ground Vehicle Repair', 'Repulsorlift Repair', 'Security', 'Space Transports Repair', 'Starship Weapon Repair']
+        cap: 26
+        },
+        talk: [
+          { once: "krakk_intro", text: "{npc}Sergeant Major Krakk{/npc} turns all four eyes on you. His voice hits you like a concussion grenade.\n\n\"YOU WANT TO SERVE THE EMPIRE? THEN YOU WILL BE STRONG. YOU WILL BE TOUGH. YOU WILL BE CAPABLE OF MAINTAINING YOUR OWN EQUIPMENT IN THE FIELD BECAUSE THE SUPPLY DEPOT IS THREE SYSTEMS AWAY AND YOUR REPAIR DROID JUST GOT SHOT.\"\n\nHe lowers his voice to merely deafening. \"I train physical conditioning and combat engineering. Brawling, stamina, climbing, swimming, plus every repair skill from blasters to capital ships. When I'm done with you, you'll be able to punch through a blast door and then fix it afterward.\"\n\n{dim}Type {/dim}{green}train{/green}{dim} to see available training.{/dim}" },
+          { text: "\"STOP STANDING AROUND. {green}train{/green} OR GET OUT OF MY OFFICE.\"" }
+        ]
+      }
+    },
+    bescane: true,
+    guildRoom: 'imperial'
+  },
+
+  "besc_guild_training": {
+    name: "Bounty Hunter Guild — Training Bay",
+    description: "The back section of the guild post, behind a reinforced door that only opens for guild members. The room is set up as a practical training facility — a {item}firing range{/item} along one wall, {item}combat dummies{/item} in the center, and a {item}tracking station{/item} with sensor equipment and holographic simulation rigs.\n\nThree guild veterans run the training programs:\n\nA deadly-looking {npc}marksman{/npc} oversees the range. A wiry {npc}tracker{/npc} works at the tracking station. A hulking {npc}enforcer{/npc} maintains the vehicles in the back bay.\n\nThe guild front office is to the east.",
+    exits: {
+      east: "besc_guild"
+    },
+    objects: {
+      "firing range": "A blaster range with adjustable holographic targets at various distances. Scorch marks cover the far wall. A rack of practice weapons sits nearby — the guild lets members train with real hardware.",
+      "combat dummies": "Reinforced training dummies designed to absorb blaster bolts and melee strikes. Several have been beaten into unrecognizable shapes and replaced so many times there's a stack of spares in the corner.",
+      "tracking station": "A sophisticated sensor and tracking station with holographic simulation capability. It can replay bounty scenarios — fugitive pursuit through urban environments, wilderness tracking, ship identification and intercept calculations."
+    },
+    npcs: {
+      "marksman": {
+        name: "Deadshot Ren",
+        keywords: ["deadshot", "ren", "marksman", "shooter"],
+        look: "A scarred Devaronian with one horn broken short and cybernetic targeting optics replacing his left eye. He was one of the guild's top hunters before a job went bad and cost him his depth perception — the cybernetic more than compensates. He rarely speaks, but when he does, people listen.\n\n{dim}He trains DEXTERITY and PERCEPTION skills. Type {/dim}{green}train{/green}{dim} to see what he offers.{/dim}",
+        combat: { blaster: 22, dodge: 18, meleeParry: 14, brawlParry: 14, brawl: 14, melee: 16, str: 11, damage: 16, weaponType: 'dodge', weaponName: 'custom heavy blaster', stunOnly: false, security: true },
+        trainer: {
+          skills: ['Blaster', 'Brawling Parry', 'Dodge', 'Grenade', 'Heavy Weapons', 'Melee Combat', 'Melee Parry', 'Pick Pocket', 'Running', 'Thrown Weapon', 'Vehicle Blasters', 'Bargain', 'Command', 'Con', 'Forgery', 'Gambling', 'Hide', 'Investigation', 'Persuasion', 'Search', 'Sneak']
+        cap: 26
+        },
+        talk: [
+          { once: "deadshot_intro", text: "{npc}Deadshot Ren{/npc} doesn't look up from the blaster he's disassembling.\n\n\"You passed Hask's test. Good.\" His cybernetic eye whirs, refocusing on you. \"I teach the sharp end — combat, tracking, stealth, investigation. Everything you need to find a target and bring them down.\"\n\nHe slides a blaster across the counter. \"The difference between a bounty hunter and a thug is precision. I teach precision.\"\n\n{dim}Type {/dim}{green}train{/green}{dim} to see available training.{/dim}" },
+          { text: "\"Range is open. {green}train{/green} if you want to get better.\"" }
+        ]
+      },
+      "tracker": {
+        name: "Venn",
+        keywords: ["venn", "tracker", "scout"],
+        look: "A wiry Bothan with tawny fur and restless eyes that never stop scanning. She's the guild's lead tracker — the one they call when a target goes to ground. Her knowledge of systems, species behavior, and survival techniques is encyclopedic.\n\n{dim}She trains KNOWLEDGE and STRENGTH skills. Type {/dim}{green}train{/green}{dim} to see what she offers.{/dim}",
+        combat: { blaster: 14, dodge: 16, meleeParry: 12, brawlParry: 14, brawl: 14, melee: 12, str: 11, damage: 13, weaponType: 'dodge', weaponName: 'sporting blaster', stunOnly: false, security: true },
+        trainer: {
+          skills: ['Alien Species', 'Bureaucracy', 'Business', 'Cultures', 'Intimidation', 'Languages', 'Law Enforcement', 'Planetary Systems', 'Streetwise', 'Survival', 'Tactics', 'Value', 'Willpower', 'Brawling', 'Climbing/Jumping', 'Lifting', 'Stamina', 'Swimming']
+        cap: 26
+        },
+        talk: [
+          { once: "venn_intro", text: "{npc}Venn{/npc}'s fur ripples — the Bothan equivalent of sizing you up.\n\n\"Every target has a pattern. Species behavior, cultural habits, known associates, favorite systems.\" She pulls up a holographic star map. \"I teach you to think like your quarry. Where they'll run, how they'll hide, what'll flush them out.\"\n\nShe flexes her clawed hands. \"And when the tracking's done and you've cornered them, you need to be strong enough to take them down. I teach that too.\"\n\n{dim}Type {/dim}{green}train{/green}{dim} to see available training.{/dim}" },
+          { text: "\"A good hunter knows the prey better than the prey knows itself. {green}train{/green} to learn how.\"" }
+        ]
+      },
+      "guild_enforcer": {
+        name: "Torque",
+        keywords: ["torque", "enforcer", "mechanic"],
+        look: "A massive Trandoshan with scarred scales and oil-stained hands. He's the guild's vehicle and tech specialist — maintaining pursuit craft, slicing security systems, and rigging the kind of surveillance equipment that makes targets very uncomfortable. Despite his size, he's surprisingly precise with electronics.\n\n{dim}He trains MECHANICAL and TECHNICAL skills. Type {/dim}{green}train{/green}{dim} to see what he offers.{/dim}",
+        combat: { blaster: 14, dodge: 12, meleeParry: 16, brawlParry: 16, brawl: 18, melee: 16, str: 15, damage: 17, weaponType: 'brawl', weaponName: 'clawed fists', stunOnly: false, security: true },
+        trainer: {
+          skills: ['Astrogation', 'Beast Riding', 'Communications', 'Ground Vehicle Operation', 'Hover Vehicle Operation', 'Repulsorlift Operation', 'Sensors', 'Space Transports', 'Starfighter Piloting', 'Starship Gunnery', 'Starship Shields', 'Swoop Operation', 'Blaster Repair', 'Computer Programming/Repair', 'Demolitions', 'Droid Programming', 'Droid Repair', 'First Aid', 'Ground Vehicle Repair', 'Repulsorlift Repair', 'Security', 'Space Transports Repair', 'Starship Weapon Repair']
+        cap: 26
+        },
+        talk: [
+          { once: "torque_intro", text: "{npc}Torque{/npc} drops a heavy hydrospanner on the workbench and turns his reptilian gaze on you.\n\n\"Hask saysss you're guild now.\" His voice is a deep rumble with a sibilant edge. \"Good. Guild needsss people who can handle machines. Pursuit craft, sensor rigsss, slicing equipment, demolitionsss.\"\n\nHe gestures at a dismantled speeder in the back bay. \"A hunter who can't maintain their own gear is a dead hunter. I make sure our people don't die from ssstupid mechanical failuresss.\"\n\n{dim}Type {/dim}{green}train{/green}{dim} to see available training.{/dim}" },
+          { text: "\"Machinesss don't lie. {green}train{/green} if you want to learn their language.\"" }
+        ]
+      }
+    },
+    bescane: true,
+    guildRoom: 'bounty'
   }
 
 };

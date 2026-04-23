@@ -25,7 +25,8 @@ const MUD = {
     locker: [],         // items stashed on ship { id, name, description, ... }
     trooperRoom: null,   // current stormtrooper patrol location (null = not on Bescane)
     courierJob: null,    // { pickup, deliver, item, pay, bonus, tickLimit, startTick }
-    shipSystems: {}      // { hyperdrive, shields, sensors, weapons, hull, sublight, landing } — null=ok, 'damaged'
+    shipSystems: {},     // { hyperdrive, shields, sensors, weapons, hull, sublight, landing } — null=ok, 'damaged'
+    guild: null          // 'merchant', 'rebel', 'imperial', 'bounty' — exclusive, one per character
   },
 
   SAVE_KEY: 'muddLiteStation_save',
@@ -157,10 +158,23 @@ const MUD = {
     } else if (blockedTick != null) {
       delete this.state.blockedRooms[roomId]; // cleared
     }
-    // Backroom lock — cantina west exit requires password
+    // Backroom lock — cantina east exit requires password
     if (roomId === 'besc_backroom' && !this.state.flags['mott_password']) {
       this.print("There's no obvious exit that way.", 'error');
       return false;
+    }
+
+    // Guild room lock — must be a member to enter
+    const destRoom = ROOMS_DATA[roomId];
+    if (destRoom && destRoom.guildRoom) {
+      if (!this.state.guild) {
+        this.print('"Members only. You\'ll need to join first."', 'error');
+        return false;
+      }
+      if (this.state.guild !== destRoom.guildRoom) {
+        this.print('"This isn\'t your guild. You\'re ' + this.GUILD_NAMES[this.state.guild] + '."', 'error');
+        return false;
+      }
     }
 
     const fromRoom = this.state.currentRoom;
@@ -249,6 +263,16 @@ const MUD = {
     // Route to combat if active
     if (MUD_COMBAT.active) {
       MUD_COMBAT.handleInput(input);
+      return;
+    }
+
+    // Route to pending guild join confirmation
+    if (this.pendingGuildJoin) {
+      this.print(input.trim(), 'command');
+      this.state.history.push(input.trim());
+      if (this.state.history.length > 50) this.state.history.shift();
+      this.state.historyIdx = -1;
+      this.handlePendingGuildJoin(input);
       return;
     }
 
@@ -429,6 +453,11 @@ const MUD = {
       case 'pp':
       case 'steal':
         return this.doPickpocket(arg);
+
+      case 'join':
+      case 'enlist':
+      case 'enroll':
+        return this.doJoinGuild();
 
       case 'stash':
       case 'store':
@@ -986,6 +1015,7 @@ const MUD = {
 
     const trainer = this.findTrainer();
     if (!trainer) { this.print("There's nobody here who can teach you.", 'error'); return; }
+    const trainCap = (trainer.trainer && trainer.trainer.cap) || this.TRAIN_CAP;
 
     const c = this.state.character;
     const available = trainer.trainer.skills;
@@ -1008,8 +1038,8 @@ const MUD = {
         for (const attr of trainerAttrs) {
           const currentPips = c.attrs[attr];
           const race = RACES_DATA[c.species];
-          const maxPips = race ? MUD_CHARGEN.diceToPips(race[attr][race[attr].length - 1]) : this.TRAIN_CAP;
-          const cap = Math.min(maxPips, this.TRAIN_CAP);
+          const maxPips = race ? MUD_CHARGEN.diceToPips(race[attr][race[attr].length - 1]) : trainCap;
+          const cap = Math.min(maxPips, trainCap);
           const currentDice = MUD_CHARGEN.pipsToDice(currentPips);
 
           if (currentPips >= cap) {
@@ -1033,7 +1063,7 @@ const MUD = {
         const hasSkill = !!c.skills[skillName];
         const currentDice = MUD_CHARGEN.pipsToDice(currentPips);
 
-        if (currentPips >= this.TRAIN_CAP) {
+        if (currentPips >= trainCap) {
           this.print('  {dim}' + skillName + '  ' + currentDice + ' — MAXED (find a better teacher){/dim}');
           continue;
         }
@@ -1067,8 +1097,8 @@ const MUD = {
     if (attr && trainerAttrs.includes(attr)) {
       const currentPips = c.attrs[attr];
       const race = RACES_DATA[c.species];
-      const maxPips = race ? MUD_CHARGEN.diceToPips(race[attr][race[attr].length - 1]) : this.TRAIN_CAP;
-      const cap = Math.min(maxPips, this.TRAIN_CAP);
+      const maxPips = race ? MUD_CHARGEN.diceToPips(race[attr][race[attr].length - 1]) : trainCap;
+      const cap = Math.min(maxPips, trainCap);
 
       if (currentPips >= cap) {
         if (currentPips >= maxPips) {
@@ -1117,8 +1147,8 @@ const MUD = {
     const hasSkill = !!c.skills[skillName];
     const currentPips = c.skills[skillName] || c.attrs[def.attr];
 
-    if (currentPips >= this.TRAIN_CAP) {
-      this.print('"You\'ve surpassed what I can teach. You\'ll need to find a master — someone off-station."', 'error');
+    if (currentPips >= trainCap) {
+      this.print('"You\'ve surpassed what I can teach. You\'ll need to find a better teacher."', 'error');
       return;
     }
 
@@ -2241,6 +2271,119 @@ const MUD = {
     this.autoSave();
   },
 
+  // ============================================================
+  // BESCANE — Guild System (join one, exclusive)
+  // ============================================================
+
+  GUILD_NAMES: {
+    merchant: 'Commerce Guild',
+    rebel: 'Rebel Network',
+    imperial: 'Imperial Auxiliary',
+    bounty: 'Bounty Hunter Guild'
+  },
+
+  GUILD_ROOMS: {
+    merchant: 'besc_merchant_hall',
+    rebel: 'besc_rebel_hideout',
+    imperial: 'besc_imperial_post',
+    bounty: 'besc_guild_training'
+  },
+
+  // Which rooms trigger the join prompt
+  GUILD_JOIN_ROOMS: {
+    besc_merchant_hall: 'merchant',
+    besc_rebel_hideout: 'rebel',
+    besc_imperial_post: 'imperial',
+    besc_guild: 'bounty'
+  },
+
+  pendingGuildJoin: null,
+
+  doJoinGuild() {
+    if (!this.state.character) { this.print("You need a character first.", 'error'); return; }
+
+    // Check which guild this room belongs to
+    const guildId = this.GUILD_JOIN_ROOMS[this.state.currentRoom];
+    if (!guildId) {
+      this.print("There's no guild to join here.", 'error');
+      return;
+    }
+
+    if (this.state.guild === guildId) {
+      this.print("You're already a member of the " + this.GUILD_NAMES[guildId] + ".");
+      return;
+    }
+
+    if (this.state.guild) {
+      this.print("You're already a member of the " + this.GUILD_NAMES[this.state.guild] + ". You can't join another guild without leaving first.", 'error');
+      return;
+    }
+
+    // Bounty hunter guild requires quest completion
+    if (guildId === 'bounty' && !this.state.flags['bounty_guild_quest']) {
+      this.print('{npc}Hask{/npc} holds up a clawed hand.');
+      this.printBlank();
+      this.print('"You want in? Prove it. Bring me a completed bounty chip — any contract, any target. Come back with proof you can hunt and I\'ll sign you up."');
+      this.print('{dim}Complete a bounty contract and return to Hask to join the guild.{/dim}');
+      return;
+    }
+
+    // Show confirmation prompt
+    const name = this.GUILD_NAMES[guildId];
+    this.printBlank();
+    this.print('{gold}═══ Join ' + name + '? ═══{/gold}');
+    this.printBlank();
+    this.print('Guild membership is exclusive — you can only belong to one guild at a time.');
+    this.print('{red}Warning: Leaving a guild may result in reputation loss, restricted access, and other penalties.{/red}');
+    this.printBlank();
+    this.print('Perks of joining the {gold}' + name + '{/gold}:');
+    this.print('  • Access to guild training facilities (skills up to {gold}8D+2{/gold})');
+    this.print('  • Three expert trainers covering all six attributes');
+    if (guildId === 'merchant') this.print('  • Commerce Guild trade network and contacts');
+    if (guildId === 'rebel') this.print('  • Resistance safe house and intelligence network');
+    if (guildId === 'imperial') this.print('  • Imperial resources and military-grade training');
+    if (guildId === 'bounty') this.print('  • Guild bounty contracts and weapons privileges');
+    this.printBlank();
+    this.print('{dim}Type {/dim}{green}yes{/green}{dim} to join or {/dim}{green}no{/green}{dim} to decline.{/dim}');
+
+    this.pendingGuildJoin = guildId;
+  },
+
+  handlePendingGuildJoin(input) {
+    const response = input.trim().toLowerCase();
+    const guildId = this.pendingGuildJoin;
+    this.pendingGuildJoin = null;
+
+    if (response === 'yes' || response === 'y') {
+      this.state.guild = guildId;
+      const name = this.GUILD_NAMES[guildId];
+      this.printBlank();
+      this.print('{gold}═══════════════════════════════════════════════════{/gold}');
+      this.print('{gold}    You have joined the ' + name + '{/gold}');
+      this.print('{gold}═══════════════════════════════════════════════════{/gold}');
+      this.printBlank();
+
+      if (guildId === 'merchant') {
+        this.print('{npc}Trade Broker Salenne{/npc} pins a Commerce Guild medallion to your jacket.');
+        this.print('"Welcome, associate. The guild\'s training facilities are now open to you. Invest in yourself — it\'s the best trade you\'ll ever make."');
+      } else if (guildId === 'rebel') {
+        this.print('{npc}Sergeant Mora{/npc} clasps your hand with her cybernetic arm.');
+        this.print('"You\'re one of us now. The Pipeline is your safe house — train here, plan here, rest here. Just don\'t lead anyone back to this door."');
+      } else if (guildId === 'imperial') {
+        this.print('{npc}Lieutenant Vel{/npc} administers a brief oath and stamps your credentials.');
+        this.print('"Welcome to the Imperial Auxiliary. You now have access to the finest training program in the Obtrexta Sector. The Empire expects results."');
+      } else if (guildId === 'bounty') {
+        this.print('{npc}Hask{/npc} slides a guild sigil across the desk — a targeting reticle over a clenched fist.');
+        this.print('"You\'re guild now. Training bay\'s in the back. Deadshot, Venn, and Torque will push you further than anyone on the station ever could. Don\'t make me regret this."');
+      }
+      this.printBlank();
+      this.print('{dim}Guild training rooms are now accessible. Train skills up to {/dim}{gold}8D+2{/gold}{dim}.{/dim}');
+      this.autoSave();
+    } else {
+      this.print('{dim}You decide not to join right now.{/dim}');
+    }
+  },
+
   doGamble(arg) {
     if (!this.state.character) { this.print("You need a character first.", 'error'); return; }
 
@@ -2559,12 +2702,13 @@ const MUD = {
     this.print('  {green}flee{/green}  — attempt to disengage and run');
     this.print('  {dim}First strike is undefended. 7D+ in skill = extra attacks.{/dim}');
     this.print('');
-    this.print('{gold}Ship (on your ship):{/gold}');
+    this.print('{gold}Ship & Guild:{/gold}');
     this.print('  {green}stash{/green} <item>  — store item in ship locker');
     this.print('  {green}retrieve{/green} <item> — take item from locker');
     this.print('  {green}locker{/green}       — view locker contents');
     this.print('  {green}repair{/green}       — view/repair ship systems');
     this.print('  {green}deliver{/green}      — hand over courier package');
+    this.print('  {green}join{/green}         — join a guild (at guild locations)');
     this.print('');
     this.print('{gold}System:{/gold}');
     this.print('  {green}save{/green}  — save your game');
@@ -2609,7 +2753,8 @@ const MUD = {
         locker: this.state.locker,
         trooperRoom: this.state.trooperRoom,
         courierJob: this.state.courierJob,
-        shipSystems: this.state.shipSystems
+        shipSystems: this.state.shipSystems,
+        guild: this.state.guild
       };
       localStorage.setItem(this.SAVE_KEY, JSON.stringify(save));
       return true;
@@ -2642,6 +2787,7 @@ const MUD = {
       this.state.trooperRoom = save.trooperRoom || null;
       this.state.courierJob = save.courierJob || null;
       this.state.shipSystems = save.shipSystems || {};
+      this.state.guild = save.guild || null;
       return true;
     } catch (e) {
       console.error('MUD load failed:', e);
