@@ -223,13 +223,13 @@ const ROOMS_DATA = {
         shop: {
           name: "Renn's Ship Parts",
           inventory: [
-            { id: 'hyperdrive_parts', name: 'Hyperdrive Regulator', description: 'A refurbished hyperdrive motivator regulator. Renn\'s markup is steep, but it\'s right here.', price: 1600, category: 'ship_parts' },
-            { id: 'shield_parts', name: 'Shield Generator Coil', description: 'A replacement deflector shield generator coil. Station prices.', price: 1200, category: 'ship_parts' },
-            { id: 'sensor_parts', name: 'Sensor Array Module', description: 'A mid-grade sensor array processing module.', price: 1000, category: 'ship_parts' },
-            { id: 'weapon_parts', name: 'Laser Cannon Actuator', description: 'A replacement firing actuator for a standard light laser cannon mount.', price: 1400, category: 'ship_parts' },
-            { id: 'hull_parts', name: 'Hull Plating Sheets', description: 'Molecularly-bonded hull plates. Not cheap this far from a factory.', price: 1000, category: 'ship_parts' },
-            { id: 'sublight_parts', name: 'Ion Drive Thrust Regulator', description: 'A reconditioned ion drive thrust regulator.', price: 1300, category: 'ship_parts' },
-            { id: 'landing_parts', name: 'Landing Gear Hydraulics', description: 'A complete hydraulic assembly for freighter-class landing struts.', price: 800, category: 'ship_parts' }
+            { id: 'hyperdrive_parts', name: 'Hyperdrive Regulator', description: 'A refurbished hyperdrive motivator regulator. Station markup, but it\'s right here.', price: 1120, category: 'ship_parts' },
+            { id: 'shield_parts', name: 'Shield Generator Coil', description: 'A replacement deflector shield generator coil. Station prices.', price: 840, category: 'ship_parts' },
+            { id: 'sensor_parts', name: 'Sensor Array Module', description: 'A mid-grade sensor array processing module.', price: 700, category: 'ship_parts' },
+            { id: 'weapon_parts', name: 'Laser Cannon Actuator', description: 'A replacement firing actuator for a standard light laser cannon mount.', price: 980, category: 'ship_parts' },
+            { id: 'hull_parts', name: 'Hull Plating Sheets', description: 'Molecularly-bonded hull plates. Not cheap this far from a factory.', price: 700, category: 'ship_parts' },
+            { id: 'sublight_parts', name: 'Ion Drive Thrust Regulator', description: 'A reconditioned ion drive thrust regulator.', price: 910, category: 'ship_parts' },
+            { id: 'landing_parts', name: 'Landing Gear Hydraulics', description: 'A complete hydraulic assembly for freighter-class landing struts.', price: 560, category: 'ship_parts' }
           ],
           buyRate: 1.0,
           sellRate: 0.25
