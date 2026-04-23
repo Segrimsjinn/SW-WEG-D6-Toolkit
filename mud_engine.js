@@ -3025,8 +3025,8 @@ const MUD_COMBAT = {
       MUD.print('{red}Your bounty chips were seized to cover medical expenses. -' + chipTotal + ' credits in bounties lost.{/red}');
     }
 
-    // Remaining credit penalty
-    const penalty = Math.min(5000, Math.floor(MUD.state.credits * 0.9));
+    // Medical bills — 500 credits or 50% of what you have if less than 500
+    const penalty = MUD.state.credits >= 500 ? 500 : Math.floor(MUD.state.credits * 0.5);
     if (penalty > 0) {
       MUD.state.credits -= penalty;
       MUD.print('{red}Medical bills: -' + penalty + ' credits{/red}');
