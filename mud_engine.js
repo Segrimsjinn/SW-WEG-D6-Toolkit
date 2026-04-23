@@ -9,6 +9,7 @@ const MUD = {
     flags: {},          // persistent flags like "med_droid_intro"
     inventory: [],      // { id, name, description }
     credits: 0,
+    bank: 0,            // banked credits — safe from death and theft
     character: null,
     history: [],        // command history for up/down arrow
     historyIdx: -1,
@@ -324,6 +325,15 @@ const MUD = {
 
       case 'unkeep':
         return this.doUnkeep(arg);
+
+      case 'deposit':
+        return this.doDeposit(arg);
+
+      case 'withdraw':
+        return this.doWithdraw(arg);
+
+      case 'balance':
+        return this.doBalance();
 
       case 'bargain':
       case 'haggle':
@@ -1243,7 +1253,7 @@ const MUD = {
   },
 
   // NPCs behind counters or in protected positions — can't pickpocket
-  PP_IMMUNE: ['shopkeeper', 'admin', 'marshal', 'dealer', 'med_droid'],
+  PP_IMMUNE: ['shopkeeper', 'admin', 'marshal', 'dealer', 'med_droid', 'banker'],
 
   doPayFine() {
     if (this.state.currentRoom !== 'marshal_office') {
@@ -1708,6 +1718,65 @@ const MUD = {
     this.autoSave();
   },
 
+  findBanker() {
+    const room = ROOMS_DATA[this.state.currentRoom];
+    if (!room || !room.npcs || !room.npcs.banker) return null;
+    if (this.isNpcDefeated(this.state.currentRoom, 'banker')) return null;
+    return room.npcs.banker;
+  },
+
+  doDeposit(arg) {
+    const banker = this.findBanker();
+    if (!banker) { this.print("There's no bank here. Find Nul Vreen in the admin office.", 'error'); return; }
+    if (!arg || arg.toLowerCase() === 'all') {
+      if (this.state.credits <= 0) { this.print('"You have nothing to deposit."', 'error'); return; }
+      const amt = this.state.credits;
+      this.state.bank += amt;
+      this.state.credits = 0;
+      this.print('{npc}Nul Vreen{/npc} processes the transaction with a single tap.');
+      this.print('{gold}Deposited ' + amt + ' credits. Bank balance: ' + this.state.bank + '{/gold}');
+      this.autoSave();
+      return;
+    }
+    const amt = parseInt(arg);
+    if (!amt || amt <= 0) { this.print('"Please specify an amount."', 'error'); return; }
+    if (amt > this.state.credits) { this.print('"You only have ' + this.state.credits + ' credits on hand."', 'error'); return; }
+    this.state.credits -= amt;
+    this.state.bank += amt;
+    this.print('{npc}Nul Vreen{/npc} processes the transaction with a single tap.');
+    this.print('{gold}Deposited ' + amt + ' credits. Bank: ' + this.state.bank + ' | On hand: ' + this.state.credits + '{/gold}');
+    this.autoSave();
+  },
+
+  doWithdraw(arg) {
+    const banker = this.findBanker();
+    if (!banker) { this.print("There's no bank here. Find Nul Vreen in the admin office.", 'error'); return; }
+    if (!arg || arg.toLowerCase() === 'all') {
+      if (this.state.bank <= 0) { this.print('"Your account is empty."', 'error'); return; }
+      const amt = this.state.bank;
+      this.state.credits += amt;
+      this.state.bank = 0;
+      this.print('{npc}Nul Vreen{/npc} counts out the credits precisely.');
+      this.print('{gold}Withdrew ' + amt + ' credits. On hand: ' + this.state.credits + '{/gold}');
+      this.autoSave();
+      return;
+    }
+    const amt = parseInt(arg);
+    if (!amt || amt <= 0) { this.print('"Please specify an amount."', 'error'); return; }
+    if (amt > this.state.bank) { this.print('"Your balance is only ' + this.state.bank + ' credits."', 'error'); return; }
+    this.state.bank -= amt;
+    this.state.credits += amt;
+    this.print('{npc}Nul Vreen{/npc} counts out the credits precisely.');
+    this.print('{gold}Withdrew ' + amt + ' credits. Bank: ' + this.state.bank + ' | On hand: ' + this.state.credits + '{/gold}');
+    this.autoSave();
+  },
+
+  doBalance() {
+    this.print('{gold}On hand: ' + this.state.credits + ' credits{/gold}');
+    this.print('{gold}Banked:  ' + this.state.bank + ' credits{/gold}');
+    this.print('{gold}Total:   ' + (this.state.credits + this.state.bank) + ' credits{/gold}');
+  },
+
   doSellAll() {
     const shop = this.findShop();
     if (!shop) { this.print("There's no shop here.", 'error'); return; }
@@ -1754,7 +1823,7 @@ const MUD = {
     this.print('{gold}  ' + c.name + '{/gold}  {dim}(' + c.species + '){/dim}');
     this.print('{gold}═════════════════════════════════════{/gold}');
     this.print('  Location: {gold}' + (ROOMS_DATA[this.state.currentRoom]?.name || 'Unknown') + '{/gold}');
-    this.print('  Credits:  {gold}' + this.state.credits + '{/gold}');
+    this.print('  Credits:  {gold}' + this.state.credits + '{/gold}' + (this.state.bank ? '  {dim}(bank: ' + this.state.bank + '){/dim}' : ''));
     this.print('  CP:       {gold}' + (c.cp || 0) + '{/gold}');
     this.print('  Wounds:   ' + (c.wounds === 'healthy' ? '{green}Healthy{/green}' : '{red}' + c.wounds + '{/red}'));
     this.printBlank();
@@ -1788,6 +1857,9 @@ const MUD = {
     this.print('  {green}keep{/green} <item>  — protect item from sell all');
     this.print('  {green}unkeep{/green} <item> — move back to sellable bag');
     this.print('  {green}sell all{/green}     — sell all unprotected items');
+    this.print('  {green}deposit{/green} <amt> — bank credits (safe from death)');
+    this.print('  {green}withdraw{/green} <amt> — take credits out');
+    this.print('  {green}balance{/green}      — check bank balance');
     this.print('');
     this.print('{gold}Shop (in stores):{/gold}');
     this.print('  {green}buy{/green} <item>    — purchase from shop');
@@ -1849,6 +1921,7 @@ const MUD = {
         flags: this.state.flags,
         inventory: this.state.inventory,
         credits: this.state.credits,
+        bank: this.state.bank,
         character: this.state.character,
         started: this.state.started,
         ticks: this.state.ticks,
@@ -1876,6 +1949,7 @@ const MUD = {
       this.state.flags = save.flags || {};
       this.state.inventory = save.inventory || [];
       this.state.credits = save.credits || 0;
+      this.state.bank = save.bank || 0;
       this.state.character = save.character || null;
       this.state.started = save.started || false;
       this.state.ticks = save.ticks || 0;

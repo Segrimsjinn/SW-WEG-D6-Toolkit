@@ -109,7 +109,7 @@ const ROOMS_DATA = {
 
   "admin_office": {
     name: "Station Administration",
-    description: "A small, surprisingly orderly office behind a transparisteel partition. {npc}Vylen{/npc}, a human woman in a crisp but worn uniform, sits behind a {item}terminal{/item}, processing what seems like an endless queue of datapads. The walls are lined with {item}cabinets{/item} and a single Imperial-era {item}poster{/item} that someone has defaced with a crude drawing of a mynock. A security {item}camera{/item} blinks red in the corner.",
+    description: "A small, surprisingly orderly office behind a transparisteel partition. {npc}Vylen{/npc}, a human woman in a crisp but worn uniform, sits behind a {item}terminal{/item}, processing what seems like an endless queue of datapads. Beside her, a tall {npc}Muun{/npc} in a dark suit manages a banking {item}counter{/item} with quiet efficiency. The walls are lined with {item}cabinets{/item} and a single Imperial-era {item}poster{/item} that someone has defaced with a crude drawing of a mynock. A security {item}camera{/item} blinks red in the corner.",
     exits: {
       south: "main_concourse"
     },
@@ -117,7 +117,8 @@ const ROOMS_DATA = {
       "terminal": "A standard Imperial administrative terminal, its casing yellowed with age but its screen sharp and bright. Data scrolls past too quickly to read from this angle.",
       "poster": "An old Imperial COMPNOR recruitment poster: 'THE EMPIRE NEEDS YOU — SERVE WITH PRIDE.' Someone has drawn a mynock eating the stormtrooper's helmet. Below that, in smaller handwriting: 'Anchorage needs you too. Pay's worse.'",
       "camera": "A security camera mounted in the corner, its red indicator light blinking steadily. It looks newer than anything else in the room — someone takes security seriously, even if the decor suggests otherwise.",
-      "cabinets": "Row after row of old-fashioned filing cabinets. In an age of datapads and holonet access, the presence of physical files suggests either extreme paranoia about slicing, or a bureaucracy too stubborn to modernize. Probably both."
+      "cabinets": "Row after row of old-fashioned filing cabinets. In an age of datapads and holonet access, the presence of physical files suggests either extreme paranoia about slicing, or a bureaucracy too stubborn to modernize. Probably both.",
+      "counter": "A small banking counter with reinforced transparisteel and a credit slot. A holographic display shows current exchange rates and account balances. Clean, efficient, very Muun.\n\n{dim}Commands: {/dim}{green}deposit <amount>{/green}{dim}, {/dim}{green}withdraw <amount>{/green}{dim}, {/dim}{green}balance{/green}"
     },
     npcs: {
       "admin": {
@@ -133,6 +134,16 @@ const ROOMS_DATA = {
           { cond: "character_created", text: "\"You're already in the system. Try not to make me regret it.\"" },
           { text: "\"Still sorting yourself out? Take your time — but not too much time. Unregistered residents make security nervous, and you don't want to make security nervous.\"\n\n{dim}Type {/dim}{green}talk vylen{/green}{dim} again when you're ready to register.{/dim}", action: "chargen" },
           { text: "\"What I teach here is station-level administration. The Diplomatic Corps on Coruscant, or the Bureaucratic Guild — they train people who actually shape policy. You'd need to get off-station to pursue that, though.\"" }
+        ]
+      },
+      "banker": {
+        name: "Nul Vreen",
+        keywords: ["banker", "muun", "nul", "vreen", "bank"],
+        look: "A tall, thin Muun with elongated features and pale skin, dressed in a perfectly tailored dark suit that probably cost more than everything else in this office combined. His long fingers move across a datapad with mechanical precision. He regards you with the polite detachment of someone who views all organic life as a series of account balances.\n\n{dim}Commands: {/dim}{green}deposit <amount>{/green}{dim}, {/dim}{green}withdraw <amount>{/green}{dim}, {/dim}{green}balance{/green}",
+        combat: { blaster: 7, dodge: 8, meleeParry: 5, brawlParry: 5, brawl: 5, str: 5, damage: 9, weaponType: 'dodge', weaponName: 'hold-out blaster', stunOnly: false, security: true },
+        talk: [
+          { once: "banker_intro", text: "{npc}Nul Vreen{/npc} inclines his head precisely 15 degrees — no more, no less.\n\n\"I manage the station's credit depository. Deposit your credits with me and they are secure — protected from... misfortune.\" His thin lips curve slightly. \"Death, theft, unfortunate gambling incidents. Your balance remains untouched.\"\n\nHe taps his datapad. \"{green}deposit{/green} credits in, {green}withdraw{/green} credits out, {green}balance{/green} to check. Simple. Even for non-Muun.\"" },
+          { text: "\"Your account is always available. {green}deposit{/green}, {green}withdraw{/green}, or {green}balance{/green}. I charge no fees. The satisfaction of proper financial management is payment enough.\"" }
         ]
       }
     }
