@@ -2162,7 +2162,7 @@ const MUD = {
 const MUD_CHARGEN = {
 
   // Available species for the MUD
-  SPECIES: ['Human', 'Wookiee', 'Mon Calamari', 'Rodian', 'Bothan', 'Sullustan', 'Trandoshan', 'Duro'],
+  SPECIES: ['Human', 'Wookiee', 'Mon Calamari', 'Rodian', 'Zabrak', 'Sullustan', 'Trandoshan', 'Duro'],
 
   // All non-advanced skills from data_skills.js, curated for MUD
   SKILLS: [
