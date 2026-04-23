@@ -2415,8 +2415,8 @@ const MUD = {
     if (guildId === 'bounty' && !this.state.flags['bounty_guild_quest']) {
       this.print('{npc}Hask{/npc} holds up a clawed hand.');
       this.printBlank();
-      this.print('"You want in? Prove it. Bring me a completed bounty chip — any contract, any target. Come back with proof you can hunt and I\'ll sign you up."');
-      this.print('{dim}Complete a bounty contract and return to Hask to join the guild.{/dim}');
+      this.print('"You want in? Prove it. I don\'t let amateurs through that door." He taps a bounty posting on the wall — one of the higher-value targets. "Bring me a chip worth 3,500 credits or more. Show me you can handle the real work, not just chasing debt skippers. Then we\'ll talk."');
+      this.print('{dim}Turn in a bounty chip worth 3,500+ credits to Hask to earn guild membership.{/dim}');
       return;
     }
 
@@ -4830,9 +4830,15 @@ const MUD_BOUNTY = {
       return;
     }
 
-    // Check if this is the first turn-in at Hask — unlocks bounty guild quest
+    // Check if turning in a 3500+ chip at Hask — unlocks bounty guild membership
     if (MUD.state.currentRoom === 'besc_guild' && !MUD.state.flags['bounty_guild_quest']) {
-      MUD.state.flags['bounty_guild_quest'] = true;
+      const bigChip = chips.find(c => c.bountyReward >= 3500);
+      if (bigChip) {
+        MUD.state.flags['bounty_guild_quest'] = true;
+        MUD.printBlank();
+        MUD.print('{npc}Hask{/npc} looks at the chip, then back at you. His compound eyes widen slightly.');
+        MUD.print('"' + bigChip.bountyTarget + '. That\'s not a small-time collar." He nods slowly. "You\'ve earned your place. The training bay is open to you — type {green}join{/green} when you\'re ready."');
+      }
     }
 
     MUD.printBlank();
