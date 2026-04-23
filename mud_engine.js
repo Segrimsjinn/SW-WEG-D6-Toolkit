@@ -359,6 +359,10 @@ const MUD = {
         if (arg.toLowerCase() === 'in') return MUD_BOUNTY.turnIn();
         break;
 
+      case 'pay':
+        if (arg.toLowerCase() === 'fine') return this.doPayFine();
+        break;
+
       case 'ask':
         // "ask <npc> about bounty" or "ask <npc>"
         const askParts = arg.replace(/\s+about\s+bounty$/i, '');
@@ -1152,6 +1156,20 @@ const MUD = {
       return;
     }
 
+    // Marshal's office — offer to pay off the bounty
+    if (roomId === 'marshal_office') {
+      const fine = 200;
+      this.printBlank();
+      this.print('{npc}Marshal Corso{/npc} looks up. "I\'ve got a report on you. Pickpocketing." He taps his desk.');
+      if (this.state.credits >= fine) {
+        this.print('"Pay the ' + fine + ' credit fine and I clear your record. Or walk out and take your chances."');
+        this.print('{dim}Type {/dim}{green}pay fine{/green}{dim} to clear your bounty, or leave.{/dim}');
+      } else {
+        this.print('"Fine\'s ' + fine + ' credits. You\'ve got ' + this.state.credits + '. Come back when you can pay — or enjoy looking over your shoulder."');
+      }
+      return;
+    }
+
     const room = ROOMS_DATA[roomId];
     if (!room || !room.lowerDeck) return; // only enforced on lower deck
 
@@ -1172,6 +1190,29 @@ const MUD = {
 
   // NPCs behind counters or in protected positions — can't pickpocket
   PP_IMMUNE: ['shopkeeper', 'admin', 'marshal', 'dealer', 'med_droid'],
+
+  doPayFine() {
+    if (this.state.currentRoom !== 'marshal_office') {
+      this.print("You need to be at the Marshal's office to pay a fine.", 'error');
+      return;
+    }
+    if (!this.state.flags['pp_bounty']) {
+      this.print('{npc}Marshal Corso{/npc}: "You\'re clean. No outstanding warrants."');
+      return;
+    }
+    const fine = 200;
+    if (this.state.credits < fine) {
+      this.print('"You need ' + fine + ' credits. You\'ve got ' + this.state.credits + '. Come back when you can pay."', 'error');
+      return;
+    }
+    this.state.credits -= fine;
+    this.state.flags['pp_bounty'] = false;
+    this.printBlank();
+    this.print('{npc}Marshal Corso{/npc} takes the credits and taps his terminal.');
+    this.print('"Record cleared. Don\'t make me do this again — next time the fine doubles."');
+    this.print('{dim}-' + fine + ' credits. Balance: ' + this.state.credits + '. Bounty cleared.{/dim}');
+    this.autoSave();
+  },
 
   doPickpocket(arg) {
     if (!this.state.character) { this.print("You need a character first.", 'error'); return; }
