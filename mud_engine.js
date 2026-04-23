@@ -4080,14 +4080,21 @@ const MUD_COMBAT = {
     MUD.print('{dim}Everything goes dark...{/dim}');
     MUD.printBlank();
 
-    // Credit penalty
-    // Bounty chips confiscated for medical bills
+    // Bounty chips — 1 in 6 chance each chip is seized for medical bills
     const chips = MUD.state.inventory.filter(it => it.isBountyChip);
     if (chips.length) {
-      let chipTotal = 0;
-      for (const chip of chips) chipTotal += chip.bountyReward;
-      MUD.state.inventory = MUD.state.inventory.filter(it => !it.isBountyChip);
-      MUD.print('{red}Your bounty chips were seized to cover medical expenses. -' + chipTotal + ' credits in bounties lost.{/red}');
+      const lost = [];
+      for (const chip of chips) {
+        if (Math.floor(Math.random() * 6) === 0) {
+          lost.push(chip);
+        }
+      }
+      if (lost.length) {
+        let chipTotal = 0;
+        for (const chip of lost) chipTotal += chip.bountyReward;
+        MUD.state.inventory = MUD.state.inventory.filter(it => !lost.includes(it));
+        MUD.print('{red}Not all rescuers are completely honest people — looks like ' + (lost.length > 1 ? lost.length + ' bounty chips were' : 'your bounty chip was') + ' lost this time. -' + chipTotal + ' credits in bounties gone.{/red}');
+      }
     }
 
     // Medical bills — 500 credits or 50% of what you have if less than 500
@@ -4611,9 +4618,69 @@ const MUD_BOUNTY = {
   // Rooms where bounty targets can appear as "ambient" NPCs
   BOUNTY_ROOMS: ['flopmarket', 'dive_bar', 'dark_corridor', 'hideout_1', 'hideout_2'],
 
+  // Bescane bounty targets — separate pool, same 25-tick rotation
+  BESCANE_TARGETS: [
+    { name: 'Joss Pell', species: 'Human', crime: 'Contract violation — fled Galentro labor debt', reward: 500, cp: 3,
+      room: 'besc_squatters', description: 'A gaunt human man crouched between two huts, nervously watching the alley. His Galentro-issue coveralls are faded but still visible under a ragged poncho.',
+      combat: { blaster: 8, dodge: 9, meleeParry: 7, brawlParry: 8, brawl: 9, str: 8, damage: 10, weaponType: 'melee', weaponName: 'improvised shiv', stunOnly: false, security: false },
+      intel: { streetwise: 'Pell\'s hiding in the Rows. Scared — ran from his factory contract. Not much of a fighter.', investigation: 'Contract skipper. He owes Galentro three years of labor debt. They want him back on the line.', persuasion: 'Someone in the Rows says he\'s been begging for food. Desperate.' }
+    },
+    { name: 'Mira Kast', species: 'Human', crime: 'Theft — market stall burglaries', reward: 1000, cp: 3,
+      room: 'besc_banthaquik', description: 'A lean human woman with quick, darting eyes, leaning against a BanthaQuik kiosk. Her jacket has suspiciously deep pockets.',
+      combat: { blaster: 10, dodge: 13, meleeParry: 8, brawlParry: 8, brawl: 8, str: 7, damage: 10, weaponType: 'dodge', weaponName: 'hold-out blaster', stunOnly: false, security: false },
+      intel: { streetwise: 'Mira works the food alley. Lifts credits and small goods while people eat.', investigation: 'She\'s fast. High dodge — hard to pin down. Hit first or she\'ll rabbit.', search: 'Fresh bootprints near the BanthaQuik kiosks. Someone\'s been casing the delivery window.' }
+    },
+    { name: 'Rusk Vane', species: 'Weequay', crime: 'Spice dealing — distribution of processed glitterstim', reward: 1500, cp: 4,
+      room: 'besc_outskirts', description: 'A weathered Weequay with deep-set eyes and ritualistic scars across his leathery face. He\'s sitting on a crate, slowly unwrapping a small packet.',
+      combat: { blaster: 12, dodge: 10, meleeParry: 12, brawlParry: 11, brawl: 13, str: 12, damage: 14, weaponType: 'melee', weaponName: 'vibroknife', stunOnly: false, security: false },
+      intel: { streetwise: 'Rusk deals glitterstim out near the outskirts. Tough but predictable — always in the same spot.', intimidation: 'The Weequay doesn\'t scare easy. You\'ll probably have to fight him.', investigation: 'Distribution charge. He\'s a middleman — buys from off-world runners, sells to factory workers. Armed with a blade.' }
+    },
+    { name: 'Taka Reen', species: 'Rodian', crime: 'Smuggling — contraband weapons past customs', reward: 2000, cp: 4,
+      room: 'besc_wasteland', description: 'A Rodian in a long coat pacing near a rusted cargo hauler, occasionally checking a handheld scanner. A large duffel bag sits at her feet.',
+      combat: { blaster: 14, dodge: 13, meleeParry: 9, brawlParry: 9, brawl: 9, str: 9, damage: 14, weaponType: 'dodge', weaponName: 'blaster carbine', stunOnly: false, security: false },
+      intel: { streetwise: 'Taka runs blasters through the wasteland. She\'s got a carbine and she knows how to use it.', investigation: 'Weapons smuggler. She uses the wasteland for dead drops — too far out for troopers to bother.', search: 'Fresh tracks in the industrial slag heading toward the decommissioned haulers.' }
+    },
+    { name: 'Brekk', species: 'Gamorrean', crime: 'Extortion and assault — gang enforcer', reward: 2500, cp: 5,
+      room: 'besc_outerroad', description: 'A massive Gamorrean with a scarred snout, cracking his knuckles as he leans against a warehouse wall. He\'s built like a cargo container and twice as dense.',
+      combat: { blaster: 7, dodge: 9, meleeParry: 14, brawlParry: 15, brawl: 17, str: 16, damage: 18, weaponType: 'brawlParry', weaponName: 'massive fists', stunOnly: false, security: false },
+      intel: { streetwise: 'Brekk runs a protection racket on the outer road. Shakes down anyone who doesn\'t pay the \'transit fee.\'', intimidation: 'Even the other gangs avoid Brekk. He broke a Trandoshan\'s arm for looking at him wrong.', investigation: 'Pure muscle. No blaster — all brawling. Keep your distance if you can.' }
+    },
+    { name: 'Siv Thorn', species: 'Human', crime: 'Arms trafficking — military-grade weapons', reward: 3000, cp: 5,
+      room: 'besc_wasteland', description: 'A cold-eyed human in a military surplus jacket, sitting atop a decommissioned excavator with a rifle across his knees. He has the bearing of ex-military gone freelance.',
+      combat: { blaster: 16, dodge: 14, meleeParry: 11, brawlParry: 11, brawl: 11, str: 11, damage: 16, weaponType: 'dodge', weaponName: 'blaster rifle', stunOnly: false, security: false },
+      intel: { streetwise: 'Thorn sells Imperial surplus hardware out of the wasteland. Rifles, detonators, the works.', investigation: 'Ex-Imperial Army. Dishonorably discharged. Now he sells the gear he used to carry. Good shot.', con: 'He sells to anyone with credits. You could get close as a buyer before he realizes.' }
+    },
+    { name: 'Grissak', species: 'Trandoshan', crime: 'Assault — ex-Galentro enforcer, multiple warrants', reward: 3500, cp: 5,
+      room: 'besc_outerroad', description: 'A scarred Trandoshan in torn Galentro security coveralls, pacing the perimeter road. One eye is missing, replaced by a crude cybernetic implant. His claws are stained.',
+      combat: { blaster: 13, dodge: 12, meleeParry: 15, brawlParry: 16, brawl: 18, melee: 16, str: 15, damage: 17, weaponType: 'brawlParry', weaponName: 'clawed fists', stunOnly: false, security: false },
+      intel: { streetwise: 'Grissak used to work Galentro security. Got fired for excessive force — on Bescane, that takes effort.', investigation: 'Multiple assault warrants. He\'s fast for his size and those claws are natural weapons.', intimidation: 'A Trandoshan rogue enforcer with nothing to lose. Don\'t underestimate him.' }
+    },
+    { name: 'Sera Voss', species: 'Human', crime: 'Corporate espionage — Galentro manufacturing data theft', reward: 4000, cp: 6,
+      room: 'besc_outskirts', description: 'A sharp-featured human woman in a nondescript grey jacket, scrolling through data on a concealed wrist-screen. She moves like someone used to not being noticed.',
+      combat: { blaster: 15, dodge: 16, meleeParry: 10, brawlParry: 10, brawl: 10, str: 8, damage: 13, weaponType: 'dodge', weaponName: 'modified blaster pistol', stunOnly: false, security: false },
+      intel: { streetwise: 'Sera\'s been selling Galentro production data to competitors. Smart and dangerous — she\'ll run before she fights.', investigation: 'Corporate spy. High dodge, good shot. She\'ll try to evade first, shoot second.', search: 'Fresh data jack marks on the hub\'s external maintenance panels. Someone\'s been slicing.' }
+    },
+    { name: 'Harkon Dreel', species: 'Human', crime: 'Industrial sabotage — destroyed Processing Hub Sigma reactor', reward: 5000, cp: 7,
+      room: 'besc_wasteland', description: 'A powerfully built human with burn scars covering half his face and neck. He sits motionless in the shadow of a rusted excavator, a heavy blaster rifle resting across his legs. His eyes are calm and dead.',
+      combat: { blaster: 19, dodge: 16, meleeParry: 14, brawlParry: 14, brawl: 15, str: 13, damage: 18, weaponType: 'dodge', weaponName: 'heavy blaster rifle', stunOnly: false, security: false },
+      intel: { streetwise: 'Dreel blew up a reactor in Hub Sigma. Killed eleven workers. Galentro wants him alive but they\'ll settle for dead.', investigation: 'Ex-demolitions expert. Armed with a heavy blaster rifle — deadly at range. The burn scars are from his own handiwork.', intimidation: 'Nobody\'s seen Dreel flinch at anything. He\'s past caring. That makes him the most dangerous kind of target.' }
+    }
+  ],
+
+  BESCANE_BOUNTY_ROOMS: ['besc_squatters', 'besc_banthaquik', 'besc_outskirts', 'besc_wasteland', 'besc_outerroad'],
+
+  // Determine if player is on Bescane
+  isOnBescane() {
+    const room = ROOMS_DATA[MUD.state.currentRoom];
+    return room && room.bescane;
+  },
+
   // Get the current bounty based on tick cycle (rotates every 25 ticks)
   getCurrentBounty() {
     const cycle = Math.floor(MUD.state.ticks / 25);
+    if (this.isOnBescane()) {
+      return this.BESCANE_TARGETS[cycle % this.BESCANE_TARGETS.length];
+    }
     return this.TARGETS[cycle % this.TARGETS.length];
   },
 
@@ -4694,12 +4761,22 @@ const MUD_BOUNTY = {
   // Check if the bounty target is in the current room and add them as a temporary NPC
   isTargetInRoom(roomId) {
     if (this.isBountyComplete()) return false;
-    const b = this.getCurrentBounty();
+    // Check the appropriate pool based on room location
+    const room = ROOMS_DATA[roomId];
+    const onBescane = room && room.bescane;
+    const cycle = Math.floor(MUD.state.ticks / 25);
+    const targets = onBescane ? this.BESCANE_TARGETS : this.TARGETS;
+    const b = targets[cycle % targets.length];
     return b.room === roomId;
   },
 
   getTargetNpc() {
-    const b = this.getCurrentBounty();
+    // Use room-based lookup to get the right target even when checking from Bescane rooms
+    const room = ROOMS_DATA[MUD.state.currentRoom];
+    const onBescane = room && room.bescane;
+    const cycle = Math.floor(MUD.state.ticks / 25);
+    const targets = onBescane ? this.BESCANE_TARGETS : this.TARGETS;
+    const b = targets[cycle % targets.length];
     return {
       name: b.name,
       keywords: b.name.toLowerCase().split(' '),
@@ -4724,7 +4801,7 @@ const MUD_BOUNTY = {
     MUD.printBlank();
     MUD.print('{gold}' + b.name + ' is down. You find a {item}Bounty Chip{/item} on them — proof of completion.{/gold}');
     MUD.print('{dim}Bring it back to Vexx at the guild to collect your reward. Type {/dim}{green}turn in{/green}{dim} at the guild office.{/dim}');
-    MUD.print('{red}Warning: if you die carrying a bounty chip, it goes to cover your medical bills.{/red}');
+    MUD.print('{red}Warning: if you die carrying a bounty chip, there\'s a chance the medbay seizes it for expenses.{/red}');
 
     MUD.state.inventory.push({
       id: 'bounty_chip_' + b.name.replace(/\s/g, '_').toLowerCase(),
@@ -4737,17 +4814,25 @@ const MUD_BOUNTY = {
     MUD.autoSave();
   },
 
-  // Turn in bounty chips at the guild
+  // Turn in bounty chips at any guild office
+  TURNIN_ROOMS: { guild_back: 'Vexx', besc_guild: 'Hask' },
+
   turnIn() {
-    if (MUD.state.currentRoom !== 'guild_back') {
-      MUD.print("You need to be at the Bounty Guild office to turn in bounty chips.", 'error');
+    const handler = this.TURNIN_ROOMS[MUD.state.currentRoom];
+    if (!handler) {
+      MUD.print("You need to be at a Bounty Guild office to turn in bounty chips.", 'error');
       return;
     }
 
     const chips = MUD.state.inventory.filter(it => it.isBountyChip);
     if (!chips.length) {
-      MUD.print('{npc}Vexx{/npc}: "You don\'t have any bounty chips to turn in. Go earn some."');
+      MUD.print('{npc}' + handler + '{/npc}: "You don\'t have any bounty chips to turn in. Go earn some."');
       return;
+    }
+
+    // Check if this is the first turn-in at Hask — unlocks bounty guild quest
+    if (MUD.state.currentRoom === 'besc_guild' && !MUD.state.flags['bounty_guild_quest']) {
+      MUD.state.flags['bounty_guild_quest'] = true;
     }
 
     MUD.printBlank();
@@ -4769,7 +4854,7 @@ const MUD_BOUNTY = {
     MUD.state.credits += totalCredits;
 
     MUD.printBlank();
-    MUD.print('{npc}Vexx{/npc} verifies each chip and transfers the credits.');
+    MUD.print('{npc}' + handler + '{/npc} verifies each chip and transfers the credits.');
     MUD.print('{gold}Total: +' + totalCredits + ' credits, +' + totalCp + ' CP{/gold}');
     MUD.print('{dim}Balance: ' + MUD.state.credits + ' credits, ' + MUD.state.character.cp + ' CP{/dim}');
     MUD.autoSave();
