@@ -220,8 +220,23 @@ const ROOMS_DATA = {
         trainer: {
           skills: ['Space Transports', 'Astrogation', 'Starship Gunnery', 'Starship Shields', 'Sensors', 'Communications', 'Repulsorlift Operation', 'Blaster Repair', 'Computer Programming/Repair', 'Droid Repair', 'Repulsorlift Repair', 'Security', 'Space Transports Repair', 'Starship Weapon Repair']
         },
+        shop: {
+          name: "Renn's Ship Parts",
+          inventory: [
+            { id: 'hyperdrive_parts', name: 'Hyperdrive Regulator', description: 'A refurbished hyperdrive motivator regulator. Renn\'s markup is steep, but it\'s right here.', price: 1600, category: 'ship_parts' },
+            { id: 'shield_parts', name: 'Shield Generator Coil', description: 'A replacement deflector shield generator coil. Station prices.', price: 1200, category: 'ship_parts' },
+            { id: 'sensor_parts', name: 'Sensor Array Module', description: 'A mid-grade sensor array processing module.', price: 1000, category: 'ship_parts' },
+            { id: 'weapon_parts', name: 'Laser Cannon Actuator', description: 'A replacement firing actuator for a standard light laser cannon mount.', price: 1400, category: 'ship_parts' },
+            { id: 'hull_parts', name: 'Hull Plating Sheets', description: 'Molecularly-bonded hull plates. Not cheap this far from a factory.', price: 1000, category: 'ship_parts' },
+            { id: 'sublight_parts', name: 'Ion Drive Thrust Regulator', description: 'A reconditioned ion drive thrust regulator.', price: 1300, category: 'ship_parts' },
+            { id: 'landing_parts', name: 'Landing Gear Hydraulics', description: 'A complete hydraulic assembly for freighter-class landing struts.', price: 800, category: 'ship_parts' }
+          ],
+          buyRate: 1.0,
+          sellRate: 0.25
+        },
         talk: [
           { once: "renn_intro", text: "{npc}Dockmaster Renn{/npc} turns those large red eyes on you, evaluating.\n\n\"Ah. The pod survivor.\" His voice has the characteristic Duros rasp. \"I processed your escape pod's wreckage — or what was left of it. Standard Imperial pod, military-grade. No markings, no serial numbers. Someone went to a lot of trouble to scrub that pod clean before you ended up in it.\"\n\nHe shrugs, turning back to the bay. \"Not my business. My business is ships. When you've got the credits for one, come see me. I handle all sales and berth assignments on the station.\"\n\nHe nods toward the bay below. \"See that {item}Ghtroc 720{/item} on pad 4? Previous owner left in a hurry — gambling debts. She's not much to look at, but she's got a working hyperdrive and cargo space. Twenty-three thousand credits and she's yours. Probably the cheapest ticket off this rock you'll find.\"\n\n{dim}Type {/dim}{green}buy ship{/green}{dim} when you have 23,000 credits.{/dim}" },
+          { cond: "owns_ship", text: "{npc}Dockmaster Renn{/npc} nods at your ship.\n\n\"How are the repairs coming? I've got parts if you need them — {green}buy{/green} to see what I stock. Not cheap, I'll warn you — station markup. Bescane's got a proper parts market if you can get past customs. Cheaper, but further.\"\n\nHe taps the railing. \"Once your hyperdrive and sublight are working, type {green}depart{/green} and I'll clear you for launch.\"" },
           { text: "\"The Ghtroc's still sitting on pad 4. Twenty-three thousand credits. A ship's the only real freedom in this galaxy — and probably the only way you're getting off this station.\" He glances at the bay. \"{green}buy ship{/green} when you're ready.\"" },
           { text: "\"What I know, I learned in forty years of docking ships and pulling wrecks apart. But the Spacers' Guild runs proper certification, and Corellian Engineering has an apprenticeship that'll make you a real shipwright. You'd need to get off-station to find either one, though.\"" }
         ]

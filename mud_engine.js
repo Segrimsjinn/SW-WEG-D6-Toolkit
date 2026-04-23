@@ -480,6 +480,12 @@ const MUD = {
       case 'locker':
         return this.doShowLocker();
 
+      case 'depart':
+      case 'launch':
+      case 'fly':
+      case 'takeoff':
+        return this.doDepart();
+
       case 'refuel':
         return this.doRefuel();
 
@@ -1718,6 +1724,15 @@ const MUD = {
     this.state.credits -= price;
     this.state.flags['owns_ship'] = true;
 
+    // Roll 1D3 random damaged systems (never life support)
+    const systems = ['hyperdrive', 'shields', 'sensors', 'weapons', 'hull', 'sublight', 'landing'];
+    const shuffled = systems.sort(() => Math.random() - 0.5);
+    const numDamaged = 1 + Math.floor(Math.random() * 3); // 1-3
+    const damaged = shuffled.slice(0, numDamaged);
+    for (const sys of damaged) {
+      this.state.shipSystems[sys] = 'damaged';
+    }
+
     this.printBlank();
     this.print('{gold}═══════════════════════════════════════════════════{/gold}');
     this.print('{gold}         YOU BOUGHT A SHIP{/gold}');
@@ -1725,16 +1740,25 @@ const MUD = {
     this.printBlank();
     this.print('{npc}Dockmaster Renn{/npc} counts the credits twice, then slides a keycard across the railing.');
     this.printBlank();
-    this.print('"She\'s all yours. Pad 4. Registration\'s been transferred — try not to crash her before you clear the station\'s mass shadow."');
+    this.print('"She\'s all yours. Pad 4. Registration\'s been transferred."');
     this.printBlank();
     this.print('He pauses, those large red eyes softening just slightly.');
     this.printBlank();
     this.print('"You came here with nothing — no name, no credits, no future. And now you\'ve got a ship." He turns back to the bay. "That\'s not nothing. That\'s the whole galaxy."');
     this.printBlank();
-    this.print('{dim}The {/dim}{gold}Ghtroc 720{/gold}{dim} is yours. A battered, temperamental, beautiful freighter with a working hyperdrive and enough cargo space to make a living. The stars are calling.{/dim}');
+    this.print('Then he winces. "Fair warning — she\'s been sitting on that pad for a while. Ran a diagnostic when I prepped the sale..." He pulls up a datapad.');
     this.printBlank();
-    this.print('{gold}Congratulations — you\'ve completed the first chapter of your story on Drifter\'s Anchorage.{/gold}');
-    this.print('{dim}More adventures coming soon. For now, the station is yours to explore, the mine is yours to work, and the bounties keep coming. Save up, train up, gear up. The galaxy isn\'t going anywhere.{/dim}');
+    this.print('{red}═ SHIP DIAGNOSTIC — GHTROC 720 ═{/red}');
+    for (const sys of damaged) {
+      this.print('{red}  ▸ ' + this.SHIP_SYSTEM_NAMES[sys] + ' — NEEDS REPAIR{/red}');
+    }
+    this.printBlank();
+    this.print('{npc}Dockmaster Renn{/npc}: "She\'ll fly, but not far in this condition. You\'ll want to get those systems fixed before you try any long jumps. I sell parts — or you can try Bescane. Bigger planet, cheaper parts, but you\'ll have to get past Imperial customs first."');
+    this.printBlank();
+    this.print('{dim}Repair your ship before departing. Buy parts from {/dim}{npc}Renn{/npc}{dim} or fly to Bescane for cheaper options.{/dim}');
+    this.print('{dim}Type {/dim}{green}depart{/green}{dim} at the docking bay when your ship is spaceworthy.{/dim}');
+    this.printBlank();
+    this.print('{gold}Chapter 2 begins.{/gold}');
     this.printBlank();
     this.print('{dim}Balance: ' + this.state.credits + ' credits{/dim}');
     this.autoSave();
@@ -1956,6 +1980,94 @@ const MUD = {
       this.print('{red}Repair failed — the parts were consumed. You\'ll need another set.{/red}');
       this.print('{dim}(Tip: train Space Transports Repair to improve your chances.){/dim}');
     }
+    this.autoSave();
+  },
+
+  doDepart() {
+    if (!this.state.character) { this.print("You need a character first.", 'error'); return; }
+    if (!this.state.flags['owns_ship']) {
+      this.print("You don't have a ship.", 'error');
+      return;
+    }
+
+    // Must be at docking bay (station) or besc_ship (Bescane)
+    const atStation = this.state.currentRoom === 'docking_bay';
+    const atBescane = this.state.currentRoom === 'besc_ship';
+    if (!atStation && !atBescane) {
+      this.print("You need to be at your ship to depart.", 'error');
+      return;
+    }
+
+    // Check for life support damage — grounded
+    if (this.state.shipSystems['lifesupport'] === 'damaged') {
+      this.print('{red}Your life support systems are damaged. The ship is not spaceworthy — you\'d suffocate before clearing orbit.{/red}');
+      this.print('{dim}Repair life support before attempting to fly.{/dim}');
+      return;
+    }
+
+    // Check for critical systems — must have hyperdrive working
+    if (this.state.shipSystems['hyperdrive'] === 'damaged') {
+      this.print('{red}Your hyperdrive is damaged. You can\'t make the jump without it.{/red}');
+      this.print('{dim}Repair the hyperdrive first. Type {/dim}{green}repair{/green}{dim} on your ship to check systems.{/dim}');
+      return;
+    }
+
+    // Check for sublight engines — need them to leave dock
+    if (this.state.shipSystems['sublight'] === 'damaged') {
+      this.print('{red}Your sublight engines are damaged. You can\'t even leave the dock.{/red}');
+      this.print('{dim}Repair sublight engines first.{/dim}');
+      return;
+    }
+
+    if (atStation) {
+      // Departing station → Bescane
+      this.printBlank();
+      this.print('{gold}═══════════════════════════════════════════════════{/gold}');
+      this.print('{gold}              DEPARTURE{/gold}');
+      this.print('{gold}═══════════════════════════════════════════════════{/gold}');
+      this.printBlank();
+      this.print('{dim}You fire up the Ghtroc\'s engines. The docking clamps release with a heavy clunk and the ship lifts free of the pad.{/dim}');
+      this.printBlank();
+      this.print('{npc}Dockmaster Renn{/npc} over the comm: "Safe travels. And remember — answer the Imperials\' questions honestly. They don\'t have a sense of humor."');
+      this.printBlank();
+
+      // Astrogation check
+      const c = this.state.character;
+      const astro = c.skills['Astrogation'] || c.skills['astrogation'];
+      const astroPips = astro ? MUD_CHARGEN.diceToPips(astro) : (MUD_CHARGEN.diceToPips(c.attributes.MECHANICAL || '2D') || 6);
+      const roll = MUD_COMBAT.rollPips(astroPips);
+      const difficulty = 10; // Easy — Bescane is same grid square (K-3)
+
+      if (roll >= difficulty) {
+        this.print('{dim}You punch in the coordinates for Bescane and pull the hyperspace lever. The stars stretch into lines...{/dim}');
+        this.printBlank();
+        this.print('{dim}...and snap back. The grey-brown disc of Bescane fills the viewport.{/dim}');
+      } else {
+        this.print('{dim}You punch in the coordinates and pull the lever. The stars stretch... wobble... and snap back. The navicomputer recalculates.{/dim}');
+        this.printBlank();
+        this.print('{dim}A rough jump — took longer than it should have. But Bescane is ahead.{/dim}');
+        this.state.ticks += 5; // penalty for bad astrogation
+      }
+
+      this.printBlank();
+      // Trigger Imperial checkpoint
+      MUD_IMPERIAL.start();
+
+    } else if (atBescane) {
+      // Departing Bescane → back to station
+      this.printBlank();
+      this.print('{dim}You fire up the engines and lift off from Berth 7. Bescane\'s grey skyline drops away below.{/dim}');
+      this.printBlank();
+      this.print('{dim}The hyperspace jump back to Drifter\'s Anchorage is uneventful. The station\'s familiar silhouette appears against the starfield.{/dim}');
+      this.printBlank();
+
+      this.state.currentRoom = 'docking_bay';
+      this.state.ticks += 5;
+      this.print('{dim}You dock at the station. Home sweet station.{/dim}');
+      this.printBlank();
+      this.displayRoom('docking_bay');
+    }
+
     this.autoSave();
   },
 
@@ -2801,6 +2913,7 @@ const MUD = {
     this.print('  {dim}First strike is undefended. 7D+ in skill = extra attacks.{/dim}');
     this.print('');
     this.print('{gold}Ship & Guild:{/gold}');
+    this.print('  {green}depart{/green}       — launch ship and travel');
     this.print('  {green}stash{/green} <item>  — store item in ship locker');
     this.print('  {green}retrieve{/green} <item> — take item from locker');
     this.print('  {green}locker{/green}       — view locker contents');
