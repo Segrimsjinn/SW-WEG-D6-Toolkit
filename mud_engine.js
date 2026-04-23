@@ -705,7 +705,9 @@ const MUD = {
 
     const item = this.state.inventory[idx];
     const baseValue = this.getItemValue(item);
-    const rate = this.getSellRate();
+    // Kex buys raw materials (quartz, spider parts) at full value — that's his trade
+    const isRawMaterial = item.id && (item.id.startsWith('quartz_') || item.id.startsWith('spider_') || item.id.startsWith('large_'));
+    const rate = isRawMaterial ? 1.0 : this.getSellRate();
     const sellPrice = Math.max(1, Math.floor(baseValue * rate));
     const pct = Math.round(rate * 100);
 
@@ -3301,7 +3303,7 @@ const MUD_MINE = {
     // Successful root chunk extraction
     vs.rootMined = (vs.rootMined || 0) + 1;
 
-    const rootValue = Math.floor(vein.value * 1.5) + Math.floor(Math.random() * Math.floor(vein.value * 0.3));
+    const rootValue = Math.floor(vein.value * 3) + Math.floor(Math.random() * Math.floor(vein.value * 0.5));
     const rootItem = {
       id: 'quartz_root_' + vein.depthTier,
       name: vein.name + ' Root Crystal',
