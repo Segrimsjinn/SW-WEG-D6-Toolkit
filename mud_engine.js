@@ -254,6 +254,12 @@ const MUD = {
 
   // --- Command Parser ---
   processCommand(input) {
+    // Route to Imperial checkpoint conversation if active
+    if (MUD_IMPERIAL.phase) {
+      MUD_IMPERIAL.handleInput(input);
+      return;
+    }
+
     // Route to character creator if active
     if (MUD_CHARGEN.phase) {
       MUD_CHARGEN.handleInput(input);
@@ -4863,6 +4869,252 @@ const MUD_BOUNTY = {
     MUD.print('{npc}' + handler + '{/npc} verifies each chip and transfers the credits.');
     MUD.print('{gold}Total: +' + totalCredits + ' credits, +' + totalCp + ' CP{/gold}');
     MUD.print('{dim}Balance: ' + MUD.state.credits + ' credits, ' + MUD.state.character.cp + ' CP{/dim}');
+    MUD.autoSave();
+  }
+};
+
+// ============================================================
+// IMPERIAL CHECKPOINT — Conversation gate before Bescane docking
+// ============================================================
+const MUD_IMPERIAL = {
+
+  phase: null, // null, 'identity', 'ship', 'business', 'warning', 'failed'
+
+  // Start the Imperial checkpoint conversation
+  start() {
+    this.phase = 'identity';
+    MUD.printBlank();
+    MUD.print('{red}═══════════════════════════════════════════════════{/red}');
+    MUD.print('{red}     IMPERIAL CUSTOMS — BESCANE APPROACH{/red}');
+    MUD.print('{red}═══════════════════════════════════════════════════{/red}');
+    MUD.printBlank();
+    MUD.print('{dim}Your comm crackles to life as you drop out of hyperspace. A Star Destroyer silhouette fills the upper viewport — an Imperial Customs frigate, flanked by a patrol of TIE fighters.{/dim}');
+    MUD.printBlank();
+    MUD.print('{npc}Imperial Officer{/npc}: "Unidentified freighter, this is Imperial Customs Patrol {gold}Vigilance{/gold}. You are entering Obtrexta Sector controlled space. Cut your engines and prepare for inspection."');
+    MUD.printBlank();
+    MUD.print('{npc}Imperial Officer{/npc}: "State your identity and point of origin. How did you come to be in this sector?"');
+    MUD.printBlank();
+    MUD.print('  {green}1{/green}) "I\'m a survivor from Drifter\'s Anchorage — came in on an escape pod months ago, bought this ship with honest work."');
+    MUD.print('  {green}2{/green}) "I\'m a freelance trader out of Coruscant. Just passing through on a cargo run."');
+    MUD.print('  {green}3{/green}) "Name\'s not important. I\'m a private citizen and I have a right to travel freely."');
+    MUD.printBlank();
+    MUD.print('{dim}Type {/dim}{green}1{/green}{dim}, {/dim}{green}2{/green}{dim}, or {/dim}{green}3{/green}{dim} to respond.{/dim}');
+  },
+
+  handleInput(input) {
+    const raw = input.trim();
+    MUD.print(raw, 'command');
+    MUD.state.history.push(raw);
+    if (MUD.state.history.length > 50) MUD.state.history.shift();
+    MUD.state.historyIdx = -1;
+
+    const choice = raw.charAt(0);
+
+    switch (this.phase) {
+
+      case 'identity':
+        if (choice === '1') {
+          // Truth — passes
+          MUD.printBlank();
+          MUD.print('{npc}Imperial Officer{/npc}: "Drifter\'s Anchorage... yes, we have records of that station. Escape pod survivor." A pause while he checks something off-screen. "That checks out. Moving on."');
+          this.promptShip();
+        } else if (choice === '2') {
+          MUD.printBlank();
+          MUD.print('{npc}Imperial Officer{/npc}: "Coruscant, you say." A long pause. "Interesting. Because your ship\'s transponder shows no registered flight plan from the Core, and this vessel\'s registration was transferred at Drifter\'s Anchorage three days ago."');
+          MUD.printBlank();
+          MUD.print('His voice hardens. "Care to try again?"');
+          this.fail();
+        } else if (choice === '3') {
+          MUD.printBlank();
+          MUD.print('{npc}Imperial Officer{/npc}: "A right to travel freely." His tone is ice. "This is Imperial controlled space. You have the right to answer my questions, or you have the right to turn your ship around. Choose."');
+          this.fail();
+        } else {
+          MUD.print('{dim}Type {/dim}{green}1{/green}{dim}, {/dim}{green}2{/green}{dim}, or {/dim}{green}3{/green}{dim}.{/dim}');
+        }
+        break;
+
+      case 'ship':
+        if (choice === '1') {
+          // Truth — passes
+          MUD.printBlank();
+          MUD.print('{npc}Imperial Officer{/npc}: "Bought it off a Duros dockmaster on the station." He checks the registration again. "Purchase price... 23,000 credits. That\'s a lot of honest work on a backwater station."');
+          MUD.printBlank();
+          MUD.print('A pause. "But the paperwork is in order. Continue."');
+          this.promptBusiness();
+        } else if (choice === '2') {
+          MUD.printBlank();
+          MUD.print('{npc}Imperial Officer{/npc}: "Won it in a sabacc game." Another pause. "The registration transfer form has a purchase receipt for 23,000 credits attached to it. Signed by a Dockmaster Renn."');
+          MUD.printBlank();
+          MUD.print('"That\'s a very expensive sabacc hand. And a very sloppy lie."');
+          this.fail();
+        } else if (choice === '3') {
+          MUD.printBlank();
+          MUD.print('{npc}Imperial Officer{/npc}: "Inherited it." He lets the silence stretch. "From whom? Because the previous owner is still alive and filed a sale receipt three days ago."');
+          MUD.printBlank();
+          MUD.print('"You\'re wasting my time."');
+          this.fail();
+        } else {
+          MUD.print('{dim}Type {/dim}{green}1{/green}{dim}, {/dim}{green}2{/green}{dim}, or {/dim}{green}3{/green}{dim}.{/dim}');
+        }
+        break;
+
+      case 'business':
+        if (choice === '1') {
+          // Truth — passes
+          MUD.printBlank();
+          MUD.print('{npc}Imperial Officer{/npc}: "Repairs. Bescane does have the facilities." He nods slowly. "Galentro runs a competent port operation, I\'ll give them that."');
+          MUD.printBlank();
+          MUD.print('A final check of his datapad. "Your documentation is in order. Transponder code logged. You are cleared to dock at Lumchugger\'s Hub commercial facility."');
+          MUD.printBlank();
+          MUD.print('"Welcome to Bescane. Obey local regulations, keep your weapons stowed, and don\'t cause trouble. {gold}Vigilance{/gold} out."');
+          MUD.printBlank();
+          MUD.print('{dim}The comm goes silent. The TIE fighters peel away and the frigate\'s running lights recede into the starfield.{/dim}');
+          this.pass();
+        } else if (choice === '2') {
+          MUD.printBlank();
+          MUD.print('{npc}Imperial Officer{/npc}: "Looking for work as a cargo hauler." He checks his screen. "With a ship that has multiple damaged systems and no cargo manifest on file?"');
+          MUD.printBlank();
+          MUD.print('"You don\'t haul cargo in a ship that can barely fly. Try again — somewhere else."');
+          this.fail();
+        } else if (choice === '3') {
+          MUD.printBlank();
+          MUD.print('{npc}Imperial Officer{/npc}: "Visiting a friend." His voice is flat. "Name and address of this friend?"');
+          MUD.printBlank();
+          MUD.print('The silence stretches. He doesn\'t wait for an answer.');
+          MUD.print('"That\'s what I thought."');
+          this.fail();
+        } else {
+          MUD.print('{dim}Type {/dim}{green}1{/green}{dim}, {/dim}{green}2{/green}{dim}, or {/dim}{green}3{/green}{dim}.{/dim}');
+        }
+        break;
+
+      case 'warning':
+        if (choice === '1' || raw.toLowerCase() === 'turn' || raw.toLowerCase() === 'back' || raw.toLowerCase() === 'leave') {
+          // Comply — return to station
+          MUD.printBlank();
+          MUD.print('{dim}You bring the Ghtroc about and engage the hyperdrive. Drifter\'s Anchorage it is — for now.{/dim}');
+          this.phase = null;
+          MUD.state.currentRoom = 'docking_bay';
+          MUD.printBlank();
+          MUD.print('{dim}You dock back at the station. Rest up and try again — the truth goes a long way with Imperial customs.{/dim}');
+          MUD.displayRoom('docking_bay');
+          MUD.autoSave();
+        } else if (choice === '2' || raw.toLowerCase() === 'push' || raw.toLowerCase() === 'dock' || raw.toLowerCase() === 'ignore') {
+          // Defy — escalation
+          MUD.printBlank();
+          MUD.print('{red}You push the throttle forward toward Bescane.{/red}');
+          MUD.printBlank();
+          MUD.print('{npc}Imperial Officer{/npc}: "Freighter, you are in violation of Imperial customs directive. This is your FINAL warning. Cut your engines or we will open fire."');
+          MUD.printBlank();
+          MUD.print('{dim}Four TIE fighters break formation and swing toward your ship. The frigate\'s turbolaser batteries begin tracking you.{/dim}');
+          MUD.printBlank();
+          MUD.print('{red}Your ship shudders as laser fire stitches across the hull. The Ghtroc was never built to fight a customs frigate and a TIE squadron.{/red}');
+          MUD.printBlank();
+          MUD.print('{dim}Everything goes dark...{/dim}');
+          MUD.printBlank();
+
+          // Ship damage penalty — one additional system damaged
+          const systems = ['hyperdrive', 'shields', 'sensors', 'weapons', 'hull', 'sublight', 'landing'];
+          const working = systems.filter(s => MUD.state.shipSystems[s] !== 'damaged');
+          if (working.length) {
+            const dmgSys = working[Math.floor(Math.random() * working.length)];
+            MUD.state.shipSystems[dmgSys] = 'damaged';
+            MUD.print('{red}Your ' + MUD.SHIP_SYSTEM_NAMES[dmgSys] + ' took additional damage from the engagement.{/red}');
+          }
+
+          // Check if life support should break (only from space death)
+          if (!MUD.state.shipSystems['lifesupport'] && MUD.state.flags['space_death_count']) {
+            const deaths = MUD.state.flags['space_death_count'];
+            if (deaths >= 2) {
+              MUD.state.shipSystems['lifesupport'] = 'damaged';
+              MUD.print('{red}CRITICAL: Life support systems damaged. Your ship is not spaceworthy until repaired.{/red}');
+            }
+          }
+          MUD.state.flags['space_death_count'] = (MUD.state.flags['space_death_count'] || 0) + 1;
+
+          // Respawn at Renn's dock
+          this.phase = null;
+          const c = MUD.state.character;
+          if (c) c.wounds = 'healthy';
+          MUD.state.currentRoom = 'docking_bay';
+          MUD.state.ticks += 10;
+
+          MUD.printBlank();
+          MUD.print('{dim}You wake up in the station docking bay. Dockmaster Renn is standing over you, arms crossed.{/dim}');
+          MUD.printBlank();
+          MUD.print('{npc}Dockmaster Renn{/npc}: "The Imperial patrol towed your ship back. Again." He shakes his head. "You can\'t fight a customs frigate in a Ghtroc 720. Nobody can. Just answer their questions honestly and they\'ll let you through."');
+
+          // Credit penalty
+          const penalty = MUD.state.credits >= 500 ? 500 : Math.floor(MUD.state.credits * 0.5);
+          if (penalty > 0) {
+            MUD.state.credits -= penalty;
+            MUD.print('{red}Towing and salvage fees: -' + penalty + ' credits{/red}');
+          }
+
+          MUD.printBlank();
+          MUD.displayRoom('docking_bay');
+          MUD.autoSave();
+        } else {
+          MUD.print('{dim}Type {/dim}{green}1{/green}{dim} to turn back, or {/dim}{green}2{/green}{dim} to push past the blockade.{/dim}');
+        }
+        break;
+    }
+  },
+
+  promptShip() {
+    this.phase = 'ship';
+    MUD.printBlank();
+    MUD.print('{npc}Imperial Officer{/npc}: "And this vessel — a Ghtroc 720, registration transferred recently. How did you acquire it?"');
+    MUD.printBlank();
+    MUD.print('  {green}1{/green}) "Bought it off Dockmaster Renn at the station. Saved up from bounty work, mining, and odd jobs."');
+    MUD.print('  {green}2{/green}) "Won it in a sabacc game. Lucky hand."');
+    MUD.print('  {green}3{/green}) "Inherited it. Family ship."');
+    MUD.printBlank();
+    MUD.print('{dim}Type {/dim}{green}1{/green}{dim}, {/dim}{green}2{/green}{dim}, or {/dim}{green}3{/green}{dim} to respond.{/dim}');
+  },
+
+  promptBusiness() {
+    this.phase = 'business';
+    MUD.printBlank();
+    MUD.print('{npc}Imperial Officer{/npc}: "Final question. What is your business on Bescane?"');
+    MUD.printBlank();
+    MUD.print('  {green}1{/green}) "My ship needs repairs. Bescane has the parts and facilities I need."');
+    MUD.print('  {green}2{/green}) "Looking for work as a cargo hauler. Heard Bescane has freight opportunities."');
+    MUD.print('  {green}3{/green}) "Visiting a friend. Personal business."');
+    MUD.printBlank();
+    MUD.print('{dim}Type {/dim}{green}1{/green}{dim}, {/dim}{green}2{/green}{dim}, or {/dim}{green}3{/green}{dim} to respond.{/dim}');
+  },
+
+  fail() {
+    this.phase = 'warning';
+    MUD.printBlank();
+    MUD.print('{red}═══ CUSTOMS DENIED ═══{/red}');
+    MUD.printBlank();
+    MUD.print('{npc}Imperial Officer{/npc}: "Your story doesn\'t check out. Turn your ship around and return to your point of origin. Do NOT attempt to dock at Bescane."');
+    MUD.printBlank();
+    MUD.print('{dim}You can comply and head back, or try to push past the blockade...{/dim}');
+    MUD.printBlank();
+    MUD.print('  {green}1{/green}) Turn back to Drifter\'s Anchorage');
+    MUD.print('  {red}2{/red}) Push past the blockade toward Bescane');
+    MUD.printBlank();
+    MUD.print('{dim}Type {/dim}{green}1{/green}{dim} or {/dim}{green}2{/green}{dim}.{/dim}');
+  },
+
+  pass() {
+    this.phase = null;
+    MUD.state.flags['imperial_cleared'] = true;
+    MUD.printBlank();
+    MUD.print('{dim}Your ship descends through Bescane\'s hazy atmosphere. Below, the planet is an unbroken sprawl of factories, smokestacks, and industrial complexes stretching to every horizon. The docking facility\'s beacon guides you in.{/dim}');
+    MUD.printBlank();
+    MUD.print('{gold}═══════════════════════════════════════════════════{/gold}');
+    MUD.print('{gold}        WELCOME TO BESCANE{/gold}');
+    MUD.print('{gold}═══════════════════════════════════════════════════{/gold}');
+    MUD.printBlank();
+    MUD.print('{dim}The Ghtroc 720 settles into Docking Berth 7 with a shudder and a hiss of hydraulics. Through the viewport: grey walls, harsh lighting, and the distant rumble of a planet that never stops working.{/dim}');
+    MUD.printBlank();
+
+    MUD.state.currentRoom = 'besc_ship';
+    MUD.displayRoom('besc_ship');
     MUD.autoSave();
   }
 };
