@@ -316,7 +316,14 @@ const MUD = {
         return this.doBuy(arg);
 
       case 'sell':
+        if (arg && arg.toLowerCase() === 'all') return this.doSellAll();
         return this.doSell(arg);
+
+      case 'keep':
+        return this.doKeep(arg);
+
+      case 'unkeep':
+        return this.doUnkeep(arg);
 
       case 'bargain':
       case 'haggle':
@@ -1650,16 +1657,88 @@ const MUD = {
       this.print("You've got nothing. Not a credit to your name, not a tool in your pocket. Just the clothes on your back — and those aren't even yours.");
       return;
     }
-    let text = '{gold}Inventory:{/gold}';
-    if (this.state.credits) text += '\n  Credits: {gold}' + this.state.credits + '{/gold}';
-    if (this.state.inventory.length) {
-      for (const item of this.state.inventory) {
-        text += '\n  {item}' + item.name + '{/item}';
+
+    const kept = this.state.inventory.filter(it => it.kept);
+    const loose = this.state.inventory.filter(it => !it.kept);
+
+    this.print('{gold}Inventory:{/gold}');
+    if (this.state.credits) this.print('  Credits: {gold}' + this.state.credits + '{/gold}');
+    if (this.state.character) this.print('  CP: {gold}' + (this.state.character.cp || 0) + '{/gold}');
+
+    if (kept.length) {
+      this.printBlank();
+      this.print('{gold}Kept:{/gold} {dim}(protected from sell all){/dim}');
+      for (const item of kept) {
+        this.print('  {green}★{/green} {item}' + item.name + '{/item}');
       }
-    } else {
-      text += '\n  {dim}(no items){/dim}';
     }
-    this.print(text);
+
+    if (loose.length) {
+      this.printBlank();
+      this.print('{gold}Bag:{/gold}');
+      for (const item of loose) {
+        this.print('  {item}' + item.name + '{/item}');
+      }
+    } else if (!kept.length) {
+      this.print('  {dim}(no items){/dim}');
+    }
+
+    if (loose.length) {
+      this.print('{dim}Use {/dim}{green}keep <item>{/green}{dim} to protect items. {/dim}{green}sell all{/green}{dim} sells unprotected items.{/dim}');
+    }
+  },
+
+  doKeep(arg) {
+    if (!arg) { this.print('Keep what? Type {green}keep <item name>{/green}.', 'error'); return; }
+    const kw = arg.toLowerCase();
+    const item = this.state.inventory.find(it => !it.kept && (it.name.toLowerCase().startsWith(kw) || it.id === kw));
+    if (!item) { this.print("No loose item matching '" + arg + "' in your bag.", 'error'); return; }
+    item.kept = true;
+    this.print('{green}★ ' + item.name + ' marked as kept.{/green}');
+    this.autoSave();
+  },
+
+  doUnkeep(arg) {
+    if (!arg) { this.print('Unkeep what? Type {green}unkeep <item name>{/green}.', 'error'); return; }
+    const kw = arg.toLowerCase();
+    const item = this.state.inventory.find(it => it.kept && (it.name.toLowerCase().startsWith(kw) || it.id === kw));
+    if (!item) { this.print("No kept item matching '" + arg + "'.", 'error'); return; }
+    item.kept = false;
+    this.print('{dim}' + item.name + ' moved back to bag.{/dim}');
+    this.autoSave();
+  },
+
+  doSellAll() {
+    const shop = this.findShop();
+    if (!shop) { this.print("There's no shop here.", 'error'); return; }
+
+    const sellable = this.state.inventory.filter(it => !it.kept && !it.isBountyChip);
+    if (!sellable.length) {
+      this.print('"Nothing to sell. Your bag\'s empty — or everything is kept."');
+      return;
+    }
+
+    let totalCredits = 0;
+    const lines = [];
+    for (const item of sellable) {
+      const baseValue = this.getItemValue(item);
+      const isRawMaterial = item.id && (item.id.startsWith('quartz_') || item.id.startsWith('spider_') || item.id.startsWith('large_'));
+      const rate = isRawMaterial ? 1.0 : this.getSellRate();
+      const sellPrice = Math.max(1, Math.floor(baseValue * rate));
+      totalCredits += sellPrice;
+      lines.push('  {item}' + item.name + '{/item} {dim}' + sellPrice + ' cr{/dim}');
+    }
+
+    // Remove sold items
+    this.state.inventory = this.state.inventory.filter(it => it.kept || it.isBountyChip);
+    this.state.credits += totalCredits;
+
+    this.printBlank();
+    this.print('{npc}' + shop.name + '{/npc} looks through your bag and starts counting.');
+    for (const line of lines) this.print(line);
+    this.printBlank();
+    this.print('{gold}Total: +' + totalCredits + ' credits. Balance: ' + this.state.credits + '{/gold}');
+    this.autoSave();
   },
 
   doStatus() {
@@ -1706,6 +1785,9 @@ const MUD = {
     this.print('  {green}drop{/green} <item>  — drop an item');
     this.print('  {green}loot{/green} <body>  — search a defeated NPC');
     this.print('  {green}use{/green} <item>   — use a consumable (medpac, etc.)');
+    this.print('  {green}keep{/green} <item>  — protect item from sell all');
+    this.print('  {green}unkeep{/green} <item> — move back to sellable bag');
+    this.print('  {green}sell all{/green}     — sell all unprotected items');
     this.print('');
     this.print('{gold}Shop (in stores):{/gold}');
     this.print('  {green}buy{/green} <item>    — purchase from shop');
