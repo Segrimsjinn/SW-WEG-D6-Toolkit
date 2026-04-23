@@ -143,6 +143,7 @@ const MUD = {
     MUD_MINE.moveSpider(); // spider patrols on every tick
     MUD_MINE.checkSpiderEncounter(roomId); // check if player walked into spider
     this.displayRoom(roomId);
+    this.checkPpBounty(roomId); // bounty hunters look for thieves on lower deck
     this.autoSave();
     return true;
   },
@@ -1140,8 +1141,37 @@ const MUD = {
     this.autoSave();
   },
 
+  checkPpBounty(roomId) {
+    if (!this.state.flags['pp_bounty']) return;
+    if (this.state.flags['sneaking']) return; // can't see you
+
+    // Bounty expires after 50 ticks
+    const ticksSince = this.state.ticks - (this.state.flags['pp_bounty_tick'] || 0);
+    if (ticksSince >= 50) {
+      this.state.flags['pp_bounty'] = false;
+      return;
+    }
+
+    const room = ROOMS_DATA[roomId];
+    if (!room || !room.lowerDeck) return; // only enforced on lower deck
+
+    // 30% chance a hunter in this room recognizes you
+    if (Math.random() > 0.3) return;
+
+    // Find a combat-capable NPC in this room
+    const npcKeys = Object.keys(room.npcs || {}).filter(k => !this.isNpcDefeated(roomId, k) && room.npcs[k].combat);
+    if (!npcKeys.length) return;
+
+    const hunterKey = npcKeys[Math.floor(Math.random() * npcKeys.length)];
+    const hunter = room.npcs[hunterKey];
+
+    this.printBlank();
+    this.print('{red}' + hunter.name + ' points at you. "That\'s the pickpocket! There\'s a bounty on this one!"{/red}');
+    MUD_COMBAT.initiate('punch', hunterKey);
+  },
+
   // NPCs behind counters or in protected positions — can't pickpocket
-  PP_IMMUNE: ['shopkeeper', 'admin', 'marshal', 'dealer', 'bartender', 'med_droid', 'guildmaster', 'foreman', 'dockmaster', 'instructor'],
+  PP_IMMUNE: ['shopkeeper', 'admin', 'marshal', 'dealer', 'med_droid'],
 
   doPickpocket(arg) {
     if (!this.state.character) { this.print("You need a character first.", 'error'); return; }
@@ -1205,12 +1235,29 @@ const MUD = {
       this.state.flags['sneaking'] = false;
       this.print('{red}' + npc.name + ' catches your hand! "What do you think you\'re doing?!"{/red}');
 
-      // Hostile NPCs attack, others just alert
-      if (npc.combat && !npc.combat.security) {
-        this.print('{red}They go for a weapon!{/red}');
-        MUD_COMBAT.initiate('punch', targetName);
+      const isLowerDeck = ROOMS_DATA[this.state.currentRoom] && ROOMS_DATA[this.state.currentRoom].lowerDeck;
+
+      if (isLowerDeck) {
+        // Lower deck — NPC fights you, and you get a bounty on your head
+        if (!this.state.flags['pp_bounty']) {
+          this.state.flags['pp_bounty'] = true;
+          this.state.flags['pp_bounty_tick'] = this.state.ticks;
+          this.print('{red}Word will spread fast down here — the hunters will be looking for you.{/red}');
+        }
+        if (npc.combat) {
+          this.print('{red}They go for a weapon!{/red}');
+          MUD_COMBAT.initiate('punch', targetName);
+        }
       } else {
-        this.print('{red}You\'ve been spotted. Your cover is blown.{/red}');
+        // Upper deck — marshal is called
+        this.print('{red}An alarm sounds — station security has been alerted!{/red}');
+        this.print('{red}Marshal Corso is on his way. You should run.{/red}');
+        // Security arrives in 2 ticks — initiate combat with NPC, security spawns
+        if (npc.combat) {
+          MUD_COMBAT.initiate('punch', targetName);
+          MUD_COMBAT.securityCalled = true;
+          MUD_COMBAT.securityArriveRound = MUD_COMBAT.round + 1; // marshal arrives fast upstairs
+        }
       }
       return;
     }
