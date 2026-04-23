@@ -459,6 +459,10 @@ const MUD = {
       case 'enroll':
         return this.doJoinGuild();
 
+      case 'intimidate':
+      case 'threaten':
+        return this.doIntimidate(arg);
+
       case 'stash':
       case 'store':
         return this.doStash(arg);
@@ -792,6 +796,13 @@ const MUD = {
       } else {
         this.print('  {dim}No Character Points — nothing left to learn from this fight.{/dim}');
       }
+    }
+
+    // Check for quest completion triggers on loot
+    if (npcId === 'dreggs' && this.state.flags['mott_debt_quest'] && !this.state.flags['mott_debt_done']) {
+      this.state.flags['mott_debt_done'] = true;
+      this.printBlank();
+      this.print('{dim}You found enough to cover Mott\'s debt. Return to {/dim}{npc}Mott{/npc}{dim} at the Greasy Gripper.{/dim}');
     }
 
     this.autoSave();
@@ -2239,6 +2250,27 @@ const MUD = {
       return;
     }
 
+    // Check if they completed the debt collection quest
+    if (this.state.flags['mott_debt_done']) {
+      this.state.flags['mott_password'] = true;
+      this.printBlank();
+      this.print('{npc}Greasy Mott{/npc} counts the credits, all four eyes satisfied.');
+      this.printBlank();
+      this.print('"Good. Knew you could handle it." He slides a bowl of stew across the bar — on the house. "Back of the kitchen, east wall. Tell the doorman \'grease trap.\' You earned it."');
+      this.printBlank();
+      this.print('{dim}A passage to the east is now accessible.{/dim}');
+      this.autoSave();
+      return;
+    }
+
+    // Check if already given the debt quest
+    if (this.state.flags['mott_debt_quest']) {
+      this.print('{npc}Greasy Mott{/npc} grunts.');
+      this.printBlank();
+      this.print('"You collect from Dreggs yet? Squatters\' Row. Bring me my 200 credits and we\'ll talk."');
+      return;
+    }
+
     // Persuasion or Streetwise check vs difficulty 15 (hard)
     const c = this.state.character;
     const persuade = c.skills['Persuasion'] || c.skills['persuasion'];
@@ -2255,20 +2287,77 @@ const MUD = {
 
     if (roll >= 15) {
       this.state.flags['mott_password'] = true;
-      // Add the west exit to the cantina
       this.printBlank();
       this.print('{npc}Greasy Mott{/npc} studies you for a long moment, all four eyes narrowing.');
       this.printBlank();
-      this.print('"...you\'re not a corpo. And you\'re not stupid enough to be a snitch." He leans across the bar. "Tell the doorman \'grease trap.\' Back of the kitchen, west wall. Don\'t make me regret this."');
+      this.print('"...you\'re not a corpo. And you\'re not stupid enough to be a snitch." He leans across the bar. "Tell the doorman \'grease trap.\' Back of the kitchen, east wall. Don\'t make me regret this."');
       this.printBlank();
-      this.print('{dim}A passage to the west is now accessible.{/dim}');
+      this.print('{dim}A passage to the east is now accessible.{/dim}');
     } else {
       this.print('{npc}Greasy Mott{/npc} stares at you flatly.');
       this.printBlank();
-      this.print('"I serve food. That\'s it. You want conversation, try the Arcade."');
-      this.print('{dim}(Maybe try again with higher Persuasion, Streetwise, or Con.){/dim}');
+      this.print('"I serve food. That\'s it."');
+
+      // If Hask sent them, offer the quest instead
+      if (this.state.flags['hask_intro']) {
+        this.printBlank();
+        this.print('He pauses, studying you. "...Hask sent you."');
+        this.printBlank();
+        this.print('"Fine. I don\'t trust smooth talkers anyway. You want to prove yourself, do me a job. There\'s a deadbeat named {npc}Dreggs{/npc} in Squatters\' Row who owes me 200 credits for three months of tabs. Collect the debt — I don\'t care how — and bring the credits back. Then we\'ll talk."');
+        this.state.flags['mott_debt_quest'] = true;
+        this.printBlank();
+        this.print('{dim}Find {/dim}{npc}Dreggs{/npc}{dim} in Squatters\' Row and collect 200 credits from him.{/dim}');
+      } else {
+        this.print('{dim}(Maybe someone in the hub can point you in the right direction first.){/dim}');
+      }
     }
     this.autoSave();
+  },
+
+  // ============================================================
+  // BESCANE — Intimidation / Debt Collection
+  // ============================================================
+
+  doIntimidate(target) {
+    if (!this.state.character) { this.print("You need a character first.", 'error'); return; }
+    if (!target) { this.print("Intimidate whom?", 'error'); return; }
+
+    const npc = this.findNpc(target);
+    if (!npc) {
+      this.print("There's nobody called '" + target + "' here.", 'error');
+      return;
+    }
+
+    // Special case: Dreggs debt collection
+    if (npc.name === 'Dreggs' && this.state.flags['mott_debt_quest'] && !this.state.flags['mott_debt_done']) {
+      const c = this.state.character;
+      const intim = c.skills['Intimidation'] || c.skills['intimidation'];
+      const intimPips = intim ? MUD_CHARGEN.diceToPips(intim) : (MUD_CHARGEN.diceToPips(c.attributes.KNOWLEDGE) || 6);
+      const roll = MUD_COMBAT.rollPips(intimPips);
+      const difficulty = 10; // easy-moderate — Dreggs is a coward
+
+      this.printBlank();
+      if (roll >= difficulty) {
+        this.state.flags['mott_debt_done'] = true;
+        this.state.credits += 200;
+        this.print('You lean in close. Dreggs shrinks back, all the color draining from his face.');
+        this.printBlank();
+        this.print('"Okay! Okay! Here — here\'s the credits!" He frantically digs through his pockets and shoves a handful of credit chips at you. "Tell Mott we\'re square. Please."');
+        this.printBlank();
+        this.print('{green}+200 credits (Mott\'s debt){/green}');
+        this.print('{dim}Return to {/dim}{npc}Mott{/npc}{dim} at the Greasy Gripper to collect your reward.{/dim}');
+      } else {
+        this.print('You try to look menacing. Dreggs squints at you blearily.');
+        this.printBlank();
+        this.print('"Yeah? And what are YOU gonna do about it?" He clutches his bottle tighter. "I\'ve been threatened by scarier than you. Get lost."');
+        this.print('{dim}(Try again with higher Intimidation, or use a different approach...){/dim}');
+      }
+      this.autoSave();
+      return;
+    }
+
+    // Generic intimidation — not wired for most NPCs yet
+    this.print(npc.name + " doesn't seem impressed.");
   },
 
   // ============================================================

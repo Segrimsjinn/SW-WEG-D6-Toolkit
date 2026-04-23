@@ -1088,7 +1088,8 @@ const ROOMS_DATA = {
         },
         talk: [
           { once: "besc_bartender_intro", text: "The Besalisk bartender slides a drink toward another customer with one hand while wiping the bar with two others and gesturing at you with the fourth.\n\n\"New face. What'll it be? Caf's two credits, anything stronger is five. And before you ask — no, I don't know anything about anything, I don't take messages, and I definitely don't know the guy in the back booth.\" He winks with one enormous eye." },
-          { text: "\"Drink up. The Jawas are about to start their second set and you'll want to be drunk for that.\"" }
+          { text: "\"Drink up. The Jawas are about to start their second set and you'll want to be drunk for that.\"" },
+          { text: "The bartender lowers his voice while polishing a glass with two hands and serving a drink with a third.\n\n\"You didn't hear this from me, but if you need to move goods that the prefect wouldn't smile about, there's a place. The Greasy Gripper — east of the concourse. {npc}Mott{/npc}'s the owner. Doesn't look like much, but he knows people.\"" }
         ]
       },
       "cooper": {
@@ -1264,7 +1265,36 @@ const ROOMS_DATA = {
       "cables": "Stolen power cables snake between the huts, tapped into the hub's main power grid through illegal splices. Sparks occasionally arc between exposed junctions. The whole row is probably one short circuit away from a fire.",
       "bridges": "Narrow plank bridges and rope walkways connect upper-level huts across the alleyways. Figures move along them overhead, silhouetted against the distant ceiling lights."
     },
-    npcs: {},
+    npcs: {
+      "dreggs": {
+        name: "Dreggs",
+        keywords: ["dreggs", "deadbeat", "human", "guy"],
+        look: "A scrawny, unshaven human male slumped against one of the huts, wrapped in a stained thermal blanket. His eyes are bloodshot and darting. He smells like synth-ale and bad decisions. A half-empty bottle sits beside him.",
+        combat: {
+          blaster: 7,         // 2D+1
+          dodge: 8,           // 2D+2
+          meleeParry: 7,      // 2D+1
+          brawlParry: 8,      // 2D+2
+          brawl: 9,           // 3D
+          melee: 7,           // 2D+1
+          str: 8,             // 2D+2
+          damage: 10,         // 3D+1 bottle
+          weaponType: 'melee',
+          weaponName: 'broken bottle',
+          stunOnly: false,
+          security: false
+        },
+        loot: {
+          credits: { min: 180, max: 220 },
+          cp: 1,
+          items: []
+        },
+        talk: [
+          { cond: "mott_debt_quest", text: "Dreggs flinches when you mention Mott's name.\n\n\"Mott sent you? Look, I'm good for it — I just need more time. The factory cut my hours and...\" He trails off, eyeing you nervously.\n\nYou can see he's got credits — he's just spending them on synth-ale instead of his tab.\n\n{dim}You could {/dim}{green}intimidate dreggs{/green}{dim} to make him pay, or just {/dim}{green}punch dreggs{/green}{dim} and loot the credits. Or walk away.{/dim}" },
+          { text: "Dreggs waves a hand at you.\n\n\"Leave me alone. I ain't bothering nobody.\"" }
+        ]
+      }
+    },
     bescane: true
   },
 
@@ -1334,7 +1364,8 @@ const ROOMS_DATA = {
         },
         talk: [
           { once: "hask_intro", text: "The Rodian looks up from a stack of contract flimsiplast.\n\n\"New hunter. I can always tell — you've got that hungry look.\" He gestures at the bounty postings on the wall. \"I'm Hask. I run the guild post out here. Galentro doesn't care what happens past the perimeter road, and we like it that way.\"\n\nHe taps the desk. \"Contracts are simple. I post the target, you bring proof of completion, I pay the bounty. Guild takes a ten percent cut. Don't bring trouble back to the post, don't take contracts you can't finish, and don't try to renegotiate after the fact.\"\n\n{dim}Type {/dim}{green}bounty{/green}{dim} to see available contracts.{/dim}" },
-          { text: "\"Got bounties if you want work. {green}bounty{/green} to see what's open. Bring proof, get paid. Guild takes ten percent.\"" }
+          { text: "\"Got bounties if you want work. {green}bounty{/green} to see what's open. Bring proof, get paid. Guild takes ten percent.\"" },
+          { text: "Hask leans back and pulls aside his vest, revealing a slim holster strapped flat against his ribs. A compact blaster sits inside, nearly invisible under the fabric.\n\n\"See this? Sensor-baffled rig. Walks right past Drace's scanner.\" He lets the vest fall back. \"Now, if you're not the type to talk your way past people — and not everyone is — but you still need to carry heat in the hub, go see {npc}Mott{/npc} at the Greasy Gripper cantina. Do him a favor, he'll introduce you to someone who can set you up. Tell him Hask sent you.\"\n\nHe picks up his vibroknife and goes back to cleaning it. \"Blasters don't do much good locked on your ship.\"" }
         ]
       }
     },
