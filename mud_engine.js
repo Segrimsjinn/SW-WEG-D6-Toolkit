@@ -1720,9 +1720,9 @@ const MUD = {
   },
 
   checkBankInterest() {
-    if (this.state.ticks < 1000) return;
+    if (this.state.ticks < 1500) return;
     if (this.state.bank <= 0) return;
-    if (this.state.ticks % 500 !== 0) return;
+    if (this.state.ticks % 750 !== 0) return;
 
     const interest = Math.max(1, Math.floor(this.state.bank * 0.01));
     this.state.bank += interest;
