@@ -373,7 +373,8 @@ const ROOMS_DATA = {
           cp: 2,
           items: [
             { id: 'cheap_blaster', name: 'Cheap Blaster Pistol', description: 'A worn-out BlasTech knockoff. The power pack is half-depleted and the barrel is slightly warped, but it still fires. Damage: 3D+2.\n\n{dim}Combat: {/dim}{green}blast{/green}{dim} <target> — uses Blaster skill, defended by Dodge.{/dim}', damage: '3D+2', combatType: 'blaster', chance: 0.5 },
-            { id: 'vibroblade', name: 'Crude Vibroblade', description: 'A low-quality vibroblade with a chipped edge and a motor that rattles when activated. Damage: STR+2D.\n\n{dim}Combat: {/dim}{green}knife{/green}{dim} <target> — uses Melee Combat skill, defended by Melee Parry.{/dim}', damage: '5D+1', combatType: 'melee', chance: 0.4 }
+            { id: 'vibroblade', name: 'Crude Vibroblade', description: 'A low-quality vibroblade with a chipped edge and a motor that rattles when activated. Damage: STR+2D.\n\n{dim}Combat: {/dim}{green}knife{/green}{dim} <target> — uses Melee Combat skill, defended by Melee Parry.{/dim}', damage: '5D+1', combatType: 'melee', chance: 0.4 },
+            { id: 'stolen_chrono', name: 'Engraved Chronometer', description: 'A quality chronometer with a scratched but still-legible inscription on the back: \"To K. Corso — 20 years of service. Station Security Division.\"\n\nThis belongs to the Marshal. He\'d probably want it back.\n\n{dim}You could {/dim}{green}sell{/green}{dim} it for quick credits, or return it to {/dim}{npc}Marshal Corso{/npc}{dim} at his office.{/dim}', sellValue: 100, isQuestItem: true, questId: 'corso_chrono', chance: 0.02 }
           ]
         },
         talk: [

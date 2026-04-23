@@ -468,6 +468,9 @@ const MUD = {
       return;
     }
 
+    // Check for quest item turn-ins
+    if (this.checkQuestItems(npc)) return;
+
     if (!npc.talk || !npc.talk.length) {
       this.print(npc.name + " doesn't seem interested in conversation.");
       return;
@@ -504,6 +507,48 @@ const MUD = {
 
     // Fallback if all lines were once-only and already seen
     this.print(npc.name + " has nothing more to say.");
+  },
+
+  // Quest item turn-in when talking to specific NPCs
+  QUEST_TURNINS: {
+    corso_chrono: {
+      npcKeywords: ['marshal', 'corso'],
+      text: '{npc}Marshal Corso{/npc} stops mid-sentence, staring at the chronometer in your hand.\n\n"Where did you get that?" His voice is quiet. He takes it, turns it over, reads the inscription. Something shifts behind those amber eyes.\n\n"This was my father\'s. He served this station for twenty years before me. I thought it was gone forever — lost when the lower deck gangs raided the old security office."\n\nHe carefully sets the chronometer on his desk, then opens a drawer and counts out credits.\n\n"You didn\'t have to bring this back. Most people would have sold it. I won\'t forget this."',
+      reward: 500,
+      cp: 3
+    }
+  },
+
+  checkQuestItems(npc) {
+    for (const [questId, quest] of Object.entries(this.QUEST_TURNINS)) {
+      // Check if this NPC matches
+      const npcMatch = quest.npcKeywords.some(kw => npc.name.toLowerCase().includes(kw));
+      if (!npcMatch) continue;
+
+      // Check if player has the quest item
+      const idx = this.state.inventory.findIndex(it => it.isQuestItem && it.questId === questId);
+      if (idx === -1) continue;
+
+      // Check if already turned in
+      if (this.state.flags['quest_' + questId]) continue;
+
+      // Turn it in!
+      this.state.inventory.splice(idx, 1);
+      this.state.flags['quest_' + questId] = true;
+      this.state.credits += quest.reward;
+      if (quest.cp && this.state.character) {
+        this.state.character.cp = (this.state.character.cp || 0) + quest.cp;
+      }
+
+      this.printBlank();
+      this.print(quest.text);
+      this.printBlank();
+      this.print('{gold}+' + quest.reward + ' credits{/gold}');
+      if (quest.cp) this.print('{green}+' + quest.cp + ' Character Points{/green}');
+      this.autoSave();
+      return true;
+    }
+    return false;
   },
 
   handleDialogueAction(action) {
