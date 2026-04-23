@@ -3859,13 +3859,20 @@ const MUD_COMBAT = {
       MUD.print('{red}Medical bills: -' + penalty + ' credits{/red}');
     }
 
-    // Heal and respawn
+    // Heal and respawn — location depends on where they are
     c.wounds = 'healthy';
-    MUD.state.currentRoom = 'infirmary';
+    const onBescane = ROOMS_DATA[MUD.state.currentRoom] && ROOMS_DATA[MUD.state.currentRoom].bescane;
+    const respawnRoom = onBescane ? 'besc_medbay' : 'infirmary';
+    const droidName = onBescane ? 'GH-7 Medical Droid' : '2-1B Medical Droid';
+    MUD.state.currentRoom = respawnRoom;
     MUD.state.ticks += 5; // time passes while unconscious
 
     MUD.printBlank();
-    MUD.print('{dim}You wake up in the station infirmary. Again. The 2-1B droid regards you with what might be disapproval.{/dim}');
+    if (onBescane) {
+      MUD.print('{dim}You wake up in the Galentro port medical clinic. A GH-7 medical droid stands over you with corporate indifference.{/dim}');
+    } else {
+      MUD.print('{dim}You wake up in the station infirmary. Again. The 2-1B droid regards you with what might be disapproval.{/dim}');
+    }
     MUD.printBlank();
 
     // Contextual advice based on what killed them
@@ -3877,16 +3884,20 @@ const MUD_COMBAT = {
         meleeParry: { skill: 'Melee Parry', tip: 'A blade is only as dangerous as your inability to parry it. Melee Parry training would help considerably.' }
       };
       const def = defenseMap[kb.weaponType] || defenseMap.dodge;
-      MUD.print('{npc}2-1B Medical Droid{/npc}: "' + kb.name + ' put you down with a ' + kb.weaponName + '. I\'ve patched worse, but not by much."');
+      MUD.print('{npc}' + droidName + '{/npc}: "' + kb.name + ' put you down with a ' + kb.weaponName + '. I\'ve patched worse, but not by much."');
       MUD.printBlank();
-      MUD.print('{npc}2-1B Medical Droid{/npc}: "Medical opinion? ' + def.tip + ' And more Strength never hurts — the tougher you are, the more you can absorb before ending up back on my table."');
+      MUD.print('{npc}' + droidName + '{/npc}: "Medical opinion? ' + def.tip + ' And more Strength never hurts — the tougher you are, the more you can absorb before ending up back on my table."');
       MUD_COMBAT.lastKilledBy = null;
     } else {
-      MUD.print('{npc}2-1B Medical Droid{/npc}: "You really should stop doing that. I\'m running out of bacta patches."');
+      if (onBescane) {
+        MUD.print('{npc}GH-7 Medical Droid{/npc}: "Galentro Health Services reminds you that repeated emergency resuscitation may result in diminished cognitive function. Please exercise caution."');
+      } else {
+        MUD.print('{npc}2-1B Medical Droid{/npc}: "You really should stop doing that. I\'m running out of bacta patches."');
+      }
     }
     MUD.printBlank();
 
-    MUD.displayRoom('infirmary');
+    MUD.displayRoom(respawnRoom);
     MUD.autoSave();
   },
 

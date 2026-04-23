@@ -895,10 +895,11 @@ const ROOMS_DATA = {
 
   "besc_docking": {
     name: "Docking Ring — Berth Row",
-    description: "A wide circular corridor curves around the outer edge of the Bescane commercial docking facility. Berth hatches line the outer wall, each marked with a number and occupancy light — most glow red. The inner wall is bare duracrete stamped with the Galentro Heavy Works logo every ten meters. {item}Speakers{/item} mounted at intervals crackle with periodic announcements.\n\nA large {item}sign{/item} above the inner archway reads in block Aurebesh:\n{red}⚠ GALENTRO SECURITY NOTICE: ENERGY WEAPONS AND EXPLOSIVES ARE PROHIBITED BEYOND THIS POINT. ALL PERSONS ENTERING THE FACILITY ARE SUBJECT TO SEARCH. VIOLATORS WILL BE DETAINED. ⚠{/red}\n\nYour ship in Berth 7 is to the west. The customs checkpoint lies to the north.",
+    description: "A wide circular corridor curves around the outer edge of the Bescane commercial docking facility. Berth hatches line the outer wall, each marked with a number and occupancy light — most glow red. The inner wall is bare duracrete stamped with the Galentro Heavy Works logo every ten meters. {item}Speakers{/item} mounted at intervals crackle with periodic announcements.\n\nA large {item}sign{/item} above the inner archway reads in block Aurebesh:\n{red}⚠ GALENTRO SECURITY NOTICE: ENERGY WEAPONS AND EXPLOSIVES ARE PROHIBITED BEYOND THIS POINT. ALL PERSONS ENTERING THE FACILITY ARE SUBJECT TO SEARCH. VIOLATORS WILL BE DETAINED. ⚠{/red}\n\nYour ship in Berth 7 is to the west. The customs checkpoint lies to the north. A doorway to the east marked with a red cross leads to the port medical clinic.",
     exits: {
       west: "besc_ship",
-      north: "besc_customs"
+      north: "besc_customs",
+      east: "besc_medbay"
     },
     objects: {
       "speakers": "Ceiling-mounted speakers emit a cycle of announcements in a flat corporate voice:\n\n\"Reminder: all energy weapons, explosive devices, and Class-C restricted materials must be declared at the customs checkpoint. Galentro Heavy Works assumes no liability for confiscated property.\"\n\n\"Shift change for Processing Hub Gamma in two standard hours. All contract workers report to your assigned stations.\"\n\n\"Bescane welcomes you. Productivity is prosperity.\"",
@@ -909,6 +910,38 @@ const ROOMS_DATA = {
     npcs: {},
     bescane: true,
     publicArea: true
+  },
+
+  "besc_medbay": {
+    name: "Port Medical Clinic",
+    description: "A small but well-equipped medical clinic wedged between two docking berths. The walls are clean white plasteel — a startling contrast to the grimy corridor outside. A {npc}medical droid{/npc} stands at the ready near a row of {item}treatment beds{/item}, its photoreceptors cycling through standby patterns. A {item}bacta dispenser{/item} hums quietly in the corner. A wallboard displays Galentro Health Services rates.\n\nThe docking ring is to the west.",
+    exits: {
+      west: "besc_docking"
+    },
+    objects: {
+      "treatment beds": "Three narrow treatment beds with retractable privacy screens. The mattresses are thin but the medical equipment attached to each headboard is modern — vital sign monitors, automated injectors, and diagnostic scanners. Galentro may not care about its workers, but dead workers don't produce.",
+      "bacta dispenser": "A wall-mounted bacta patch dispenser with a credit slot. The label reads: 'GALENTRO HEALTH SERVICES — 50 CREDITS PER APPLICATION. NOT RESPONSIBLE FOR ALLERGIC REACTIONS.'",
+      "rates": "GALENTRO PORT MEDICAL — RATE SCHEDULE:\n\n  EMERGENCY RESUSCITATION .... 500cr (or 50% balance)\n  BACTA APPLICATION .......... 50cr\n  DIAGNOSTIC SCAN ............ 25cr\n  COMPLAINTS ................. NOT ACCEPTED"
+    },
+    npcs: {
+      "med_droid": {
+        name: "GH-7 Medical Droid",
+        keywords: ["droid", "medical", "gh-7", "doc", "doctor"],
+        look: "A GH-7 medical analysis unit — sleeker and more modern than the battered 2-1B on Drifter's Anchorage, with Galentro Health Services branding on its chassis. Its bedside manner, however, is distinctly corporate.\n\n{dim}It can teach First Aid. Type {/dim}{green}train{/green}{dim} to learn.{/dim}",
+        combat: {
+          blaster: 6, dodge: 8, meleeParry: 4, brawlParry: 4, brawl: 4, melee: 4,
+          str: 6, damage: 9, weaponType: 'dodge', weaponName: 'sedative injector', stunOnly: true, security: true
+        },
+        trainer: {
+          skills: ['First Aid']
+        },
+        talk: [
+          { once: "besc_med_intro", text: "The GH-7 unit swivels toward you with mechanical precision.\n\n\"Welcome to Galentro Health Services, Port Medical Clinic. I am GH-7, your designated medical analysis unit. Treatment is available at standard Galentro rates.\"\n\nIt pauses. \"Please note: Galentro Health Services is not liable for injuries sustained during unauthorized combat, industrial accidents outside your contracted work zone, or adverse reactions to synthetic food products sold at BanthaQuik franchises.\"" },
+          { text: "\"Are you injured? I can provide treatment at standard rates. Or if you wish to learn basic field medicine, I offer training as well. Galentro considers basic first aid knowledge a workforce productivity investment.\"" }
+        ]
+      }
+    },
+    bescane: true
   },
 
   "besc_customs": {
