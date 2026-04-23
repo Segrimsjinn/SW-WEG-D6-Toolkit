@@ -1285,12 +1285,14 @@ const ROOMS_DATA = {
           security: false
         },
         loot: {
-          credits: { min: 180, max: 220 },
+          credits: { min: 15, max: 40 },
           cp: 1,
-          items: []
+          items: [
+            { id: 'mott_datacyl', name: 'Mott\'s Data Cylinder', description: 'A small encrypted data cylinder with a Greasy Gripper cantina logo scratched into the casing. This contains Mott\'s supplier contacts — names, drop points, and pricing for his off-books inventory. Extremely valuable to the wrong people.\n\n{dim}Return this to {/dim}{npc}Mott{/npc}{dim} at the Greasy Gripper.{/dim}', isQuestItem: true, questId: 'mott_datacyl', chance: 1.0 }
+          ]
         },
         talk: [
-          { cond: "mott_debt_quest", text: "Dreggs flinches when you mention Mott's name.\n\n\"Mott sent you? Look, I'm good for it — I just need more time. The factory cut my hours and...\" He trails off, eyeing you nervously.\n\nYou can see he's got credits — he's just spending them on synth-ale instead of his tab.\n\n{dim}You could {/dim}{green}intimidate dreggs{/green}{dim} to make him pay, or just {/dim}{green}punch dreggs{/green}{dim} and loot the credits. Or walk away.{/dim}" },
+          { cond: "mott_debt_quest", text: "Dreggs flinches when you mention Mott's name.\n\n\"Mott sent you? Look, I didn't steal it — I borrowed it! I was gonna copy the supplier list and sell it, but the encryption was too good, so I was gonna return it...\" He trails off, eyeing you nervously.\n\n{dim}You could {/dim}{green}intimidate dreggs{/green}{dim} to make him hand it over, or just {/dim}{green}punch dreggs{/green}{dim} and take it. Or walk away.{/dim}" },
           { text: "Dreggs waves a hand at you.\n\n\"Leave me alone. I ain't bothering nobody.\"" }
         ]
       }

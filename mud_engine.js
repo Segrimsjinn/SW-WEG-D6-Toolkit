@@ -798,13 +798,6 @@ const MUD = {
       }
     }
 
-    // Check for quest completion triggers on loot
-    if (npcId === 'dreggs' && this.state.flags['mott_debt_quest'] && !this.state.flags['mott_debt_done']) {
-      this.state.flags['mott_debt_done'] = true;
-      this.printBlank();
-      this.print('{dim}You found enough to cover Mott\'s debt. Return to {/dim}{npc}Mott{/npc}{dim} at the Greasy Gripper.{/dim}');
-    }
-
     this.autoSave();
   },
 
@@ -2250,24 +2243,31 @@ const MUD = {
       return;
     }
 
-    // Check if they completed the debt collection quest
-    if (this.state.flags['mott_debt_done']) {
+    // Check if they have the stolen data cylinder
+    const cylIdx = this.state.inventory.findIndex(it => it.questId === 'mott_datacyl');
+    if (cylIdx !== -1) {
+      this.state.inventory.splice(cylIdx, 1);
       this.state.flags['mott_password'] = true;
+      this.state.flags['mott_debt_done'] = true;
       this.printBlank();
-      this.print('{npc}Greasy Mott{/npc} counts the credits, all four eyes satisfied.');
+      this.print('{npc}Greasy Mott{/npc} snatches the data cylinder, all four eyes going wide.');
       this.printBlank();
-      this.print('"Good. Knew you could handle it." He slides a bowl of stew across the bar — on the house. "Back of the kitchen, east wall. Tell the doorman \'grease trap.\' You earned it."');
+      this.print('"My supplier list. That little..." He tucks the cylinder under the counter and takes a slow breath. "This could\'ve ruined me if he\'d cracked the encryption. Or sold it to the prefect."');
+      this.printBlank();
+      this.print('He slides a bowl of stew across the bar — on the house.');
+      this.printBlank();
+      this.print('"You did me a real solid. Back of the kitchen, east wall. Tell the doorman \'grease trap.\' You earned it."');
       this.printBlank();
       this.print('{dim}A passage to the east is now accessible.{/dim}');
       this.autoSave();
       return;
     }
 
-    // Check if already given the debt quest
-    if (this.state.flags['mott_debt_quest']) {
+    // Check if already given the quest
+    if (this.state.flags['mott_debt_quest'] && !this.state.flags['mott_debt_done']) {
       this.print('{npc}Greasy Mott{/npc} grunts.');
       this.printBlank();
-      this.print('"You collect from Dreggs yet? Squatters\' Row. Bring me my 200 credits and we\'ll talk."');
+      this.print('"You get my data cylinder back from Dreggs yet? Squatters\' Row. Bring it back and we\'ll talk."');
       return;
     }
 
@@ -2303,10 +2303,10 @@ const MUD = {
         this.printBlank();
         this.print('He pauses, studying you. "...Hask sent you."');
         this.printBlank();
-        this.print('"Fine. I don\'t trust smooth talkers anyway. You want to prove yourself, do me a job. There\'s a deadbeat named {npc}Dreggs{/npc} in Squatters\' Row who owes me 200 credits for three months of tabs. Collect the debt — I don\'t care how — and bring the credits back. Then we\'ll talk."');
+        this.print('"Fine. I don\'t trust smooth talkers anyway. You want to prove yourself, do me a job." His voice drops to a growl. "A lowlife named {npc}Dreggs{/npc} in Squatters\' Row stole something from me — a data cylinder with my supplier contacts. Very sensitive information. Get it back — I don\'t care how — and bring it here. Then we\'ll talk."');
         this.state.flags['mott_debt_quest'] = true;
         this.printBlank();
-        this.print('{dim}Find {/dim}{npc}Dreggs{/npc}{dim} in Squatters\' Row and collect 200 credits from him.{/dim}');
+        this.print('{dim}Find {/dim}{npc}Dreggs{/npc}{dim} in Squatters\' Row and recover Mott\'s data cylinder.{/dim}');
       } else {
         this.print('{dim}(Maybe someone in the hub can point you in the right direction first.){/dim}');
       }
@@ -2338,14 +2338,17 @@ const MUD = {
 
       this.printBlank();
       if (roll >= difficulty) {
-        this.state.flags['mott_debt_done'] = true;
-        this.state.credits += 200;
+        this.state.inventory.push({
+          id: 'mott_datacyl', name: 'Mott\'s Data Cylinder',
+          description: 'A small encrypted data cylinder with a Greasy Gripper cantina logo scratched into the casing. This contains Mott\'s supplier contacts.\n\n{dim}Return this to {/dim}{npc}Mott{/npc}{dim} at the Greasy Gripper.{/dim}',
+          isQuestItem: true, questId: 'mott_datacyl'
+        });
         this.print('You lean in close. Dreggs shrinks back, all the color draining from his face.');
         this.printBlank();
-        this.print('"Okay! Okay! Here — here\'s the credits!" He frantically digs through his pockets and shoves a handful of credit chips at you. "Tell Mott we\'re square. Please."');
+        this.print('"Okay! Okay! Here — take it!" He fumbles through his blanket and produces a small data cylinder. "I couldn\'t crack the encryption anyway. Tell Mott I\'m sorry. Please."');
         this.printBlank();
-        this.print('{green}+200 credits (Mott\'s debt){/green}');
-        this.print('{dim}Return to {/dim}{npc}Mott{/npc}{dim} at the Greasy Gripper to collect your reward.{/dim}');
+        this.print('{item}Received: Mott\'s Data Cylinder{/item}');
+        this.print('{dim}Return to {/dim}{npc}Mott{/npc}{dim} at the Greasy Gripper.{/dim}');
       } else {
         this.print('You try to look menacing. Dreggs squints at you blearily.');
         this.printBlank();
