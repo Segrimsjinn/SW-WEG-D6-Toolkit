@@ -139,6 +139,7 @@ const MUD = {
       delete this.state.blockedRooms[roomId]; // cleared
     }
     this.state.ticks++;
+    this.checkBankInterest();
     this.state.flags['sneaking'] = false; // normal movement breaks stealth
     this.state.currentRoom = roomId;
     MUD_MINE.moveSpider(); // spider patrols on every tick
@@ -1716,6 +1717,16 @@ const MUD = {
     item.kept = false;
     this.print('{dim}' + item.name + ' moved back to bag.{/dim}');
     this.autoSave();
+  },
+
+  checkBankInterest() {
+    if (this.state.ticks < 1000) return;
+    if (this.state.bank <= 0) return;
+    if (this.state.ticks % 500 !== 0) return;
+
+    const interest = Math.max(1, Math.floor(this.state.bank * 0.01));
+    this.state.bank += interest;
+    this.print('{gold}Bank interest: +' + interest + ' credits. Bank balance: ' + this.state.bank + '{/gold}');
   },
 
   findBanker() {
