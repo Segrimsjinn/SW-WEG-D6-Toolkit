@@ -3990,12 +3990,18 @@ const MUD_COMBAT = {
           }
         }
         if (enemy.loot.cp && MUD.state.character) {
-          const key = enemy.roomId + ':' + enemy.id;
-          const baseCp = enemy.loot.cp;
-          const kills = MUD.state.killCounts[key] || 0;
-          MUD.state.killCounts[key] = kills + 1;
-          const tier = Math.floor(kills / baseCp);
-          const award = Math.max(0, baseCp - tier);
+          let award;
+          if (enemy.isBountyTarget) {
+            // Bounty targets: fixed at baseCp - 1 (one tier down, never degrades further)
+            award = Math.max(1, enemy.loot.cp - 1);
+          } else {
+            const key = enemy.roomId + ':' + enemy.id;
+            const baseCp = enemy.loot.cp;
+            const kills = MUD.state.killCounts[key] || 0;
+            MUD.state.killCounts[key] = kills + 1;
+            const tier = Math.floor(kills / baseCp);
+            award = Math.max(0, baseCp - tier);
+          }
           if (award > 0) {
             MUD.state.character.cp = (MUD.state.character.cp || 0) + award;
             MUD.print('  {green}+' + award + ' Character Points{/green}');
