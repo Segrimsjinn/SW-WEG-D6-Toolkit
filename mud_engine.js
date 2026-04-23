@@ -361,6 +361,10 @@ const MUD = {
       case 'extract':
         return MUD_MINE.doMine();
 
+      case 'upgrade':
+      case 'modify':
+        return this.doUpgrade(arg);
+
       case 'sleep':
       case 'rest':
         return this.doSleep();
@@ -1255,6 +1259,91 @@ const MUD = {
 
   // NPCs behind counters or in protected positions — can't pickpocket
   PP_IMMUNE: ['shopkeeper', 'admin', 'marshal', 'dealer', 'med_droid', 'banker'],
+
+  findArmorer() {
+    const room = ROOMS_DATA[this.state.currentRoom];
+    if (!room || !room.npcs || !room.npcs.armorer) return null;
+    if (this.isNpcDefeated(this.state.currentRoom, 'armorer')) return null;
+    return room.npcs.armorer;
+  },
+
+  // Upgrade cost per pip: 150 for first pip, 300 for second
+  UPGRADE_COSTS: [150, 300],
+  UPGRADE_MAX: 2, // max +2 pips at this armorer
+
+  doUpgrade(arg) {
+    if (!this.state.character) { this.print("You need a character first.", 'error'); return; }
+    const armorer = this.findArmorer();
+    if (!armorer) { this.print("There's no armorer here. Try the flopmarket on the lower deck.", 'error'); return; }
+
+    // Find weapons in inventory
+    const weapons = this.state.inventory.filter(it => it.damage && it.combatType);
+
+    if (!weapons.length) {
+      this.print('"You don\'t have any weapons to upgrade. Come back when you\'re carrying."', 'error');
+      return;
+    }
+
+    if (!arg) {
+      // Show upgradeable weapons
+      this.printBlank();
+      this.print('{gold}═══ Torgg — Weapon Upgrades ═══{/gold}');
+      this.printBlank();
+      for (const wpn of weapons) {
+        const upgrades = wpn.upgrades || 0;
+        const currentDmg = wpn.damage;
+        if (upgrades >= this.UPGRADE_MAX) {
+          this.print('  {dim}' + wpn.name + ' (' + currentDmg + ') — MAXED (+' + upgrades + '){/dim}');
+        } else {
+          const cost = this.UPGRADE_COSTS[upgrades];
+          const newDmgPips = MUD_CHARGEN.diceToPips(currentDmg) + 1;
+          const newDmg = MUD_CHARGEN.pipsToDice(newDmgPips);
+          this.print('  {item}' + wpn.name + '{/item}  {dim}' + currentDmg + ' → ' + newDmg + '{/dim}  {green}' + cost + ' cr{/green}' + (upgrades ? '  {dim}(+' + upgrades + ' already){/dim}' : ''));
+        }
+      }
+      this.printBlank();
+      this.print('{dim}Type {/dim}{green}upgrade <weapon name>{/green}{dim} to improve a weapon. Max +2 pips.{/dim}');
+      return;
+    }
+
+    // Find the specific weapon
+    const kw = arg.toLowerCase();
+    const wpn = weapons.find(w => w.name.toLowerCase().startsWith(kw) || w.id === kw);
+    if (!wpn) {
+      this.print('"I don\'t see that weapon. Type {green}upgrade{/green} to see what you\'re carrying."', 'error');
+      return;
+    }
+
+    const upgrades = wpn.upgrades || 0;
+    if (upgrades >= this.UPGRADE_MAX) {
+      this.print('"That\'s already at +' + upgrades + '. I can\'t push it further — you\'d need a real workshop for that."', 'error');
+      return;
+    }
+
+    const cost = this.UPGRADE_COSTS[upgrades];
+    if (this.state.credits < cost) {
+      this.print('"That\'ll be ' + cost + ' credits. You\'ve got ' + this.state.credits + '. Come back when you can pay."', 'error');
+      return;
+    }
+
+    // Apply upgrade
+    this.state.credits -= cost;
+    const oldDmg = wpn.damage;
+    const newDmgPips = MUD_CHARGEN.diceToPips(oldDmg) + 1;
+    wpn.damage = MUD_CHARGEN.pipsToDice(newDmgPips);
+    wpn.upgrades = upgrades + 1;
+
+    // Update description
+    wpn.name = wpn.name.replace(/ \(\+\d\)$/, '') + ' (+' + wpn.upgrades + ')';
+
+    this.printBlank();
+    this.print('{npc}Torgg{/npc} takes the weapon, cracks his knuckles, and gets to work.');
+    this.print('{dim}Sparks fly. Something hisses. He grunts approvingly.{/dim}');
+    this.printBlank();
+    this.print('{green}' + wpn.name + ' upgraded: ' + oldDmg + ' → ' + wpn.damage + '{/green} {dim}(-' + cost + ' cr){/dim}');
+    this.print('{dim}Balance: ' + this.state.credits + '{/dim}');
+    this.autoSave();
+  },
 
   doPayFine() {
     if (this.state.currentRoom !== 'marshal_office') {

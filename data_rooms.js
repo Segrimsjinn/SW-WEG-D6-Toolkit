@@ -767,6 +767,16 @@ const ROOMS_DATA = {
           { text: "\"Still browsing? Take your time. I'm not going anywhere. Neither is any of this.\"" }
         ]
       },
+      "armorer": {
+        name: "Torgg",
+        keywords: ["armorer", "torgg", "trandoshan", "weapons", "upgrade"],
+        look: "A grizzled Trandoshan with one clouded eye and scales scarred by chemical burns — the marks of decades spent working with blaster gas and power cells. His workbench is covered in disassembled weapons, soldering tools, and calibration equipment. A magnifying visor is pushed up on his forehead.\n\n{dim}Type {/dim}{green}upgrade{/green}{dim} to see what he can do for your weapons.{/dim}",
+        combat: { blaster: 11, dodge: 8, meleeParry: 10, brawlParry: 10, brawl: 11, str: 12, damage: 13, weaponType: 'dodge', weaponName: 'modified blaster', stunOnly: false, security: false },
+        talk: [
+          { text: "{npc}Torgg{/npc} squints at you with his good eye.\n\n\"You want your weapon hitting harder, I can do that. Recalibrate the power cell, tighten the focusing crystal, bore out the barrel. Two pips max — I'm good, but I'm not a KDY engineer.\"\n\nHe taps his workbench. \"Costs depend on the work. Type {green}upgrade{/green} to see what I can do and what it'll cost.\"\n\n\"Blasters, vibroblades, whatever you're carrying. Bring it here, I'll make it meaner.\"" },
+          { text: "\"Got something that needs work? {green}upgrade{/green} to see the options. Two pips max on this bench.\"" }
+        ]
+      },
       "gambler_loser": {
         name: "Down-on-his-luck Gambler",
         keywords: ["gambler", "loser", "down"],
