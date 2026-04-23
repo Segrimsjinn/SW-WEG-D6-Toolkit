@@ -20,7 +20,12 @@ const MUD = {
     killCounts: {},     // { "roomId:npcId": totalKills } — for CP diminishing returns
     mineVeins: {},      // { veinId: { mined: #, lastMinedTick: #, depletedTick: # } }
     spiderRoom: 'deep_vein_1', // current cave spider location
-    blockedRooms: {}    // { roomId: tickWhenBlocked } — collapsed rooms, clear after 25 ticks
+    blockedRooms: {},   // { roomId: tickWhenBlocked } — collapsed rooms, clear after 25 ticks
+    // --- Bescane state ---
+    locker: [],         // items stashed on ship { id, name, description, ... }
+    trooperRoom: null,   // current stormtrooper patrol location (null = not on Bescane)
+    courierJob: null,    // { pickup, deliver, item, pay, bonus, tickLimit, startTick }
+    shipSystems: {}      // { hyperdrive, shields, sensors, weapons, hull, sublight, landing } — null=ok, 'damaged'
   },
 
   SAVE_KEY: 'muddLiteStation_save',
@@ -92,8 +97,11 @@ const MUD = {
     }
     this.print(desc);
 
-    // Show exits
-    const exits = Object.keys(room.exits || {});
+    // Show exits — hide backroom if password not known
+    let exits = Object.keys(room.exits || {});
+    if (roomId === 'besc_cantina' && !this.state.flags['mott_password']) {
+      exits = exits.filter(e => room.exits[e] !== 'besc_backroom');
+    }
     if (exits.length) {
       this.print('{dim}Exits: ' + exits.join(', ') + '{/dim}');
     }
@@ -110,12 +118,23 @@ const MUD = {
       names.push(bt.name);
     }
 
+    // Add stormtrooper patrol if in this room
+    if (this.state.trooperRoom === roomId) {
+      names.push('Stormtrooper Patrol (4)');
+    }
+
     if (names.length) {
       this.print('{dim}You see: ' + names.join(', ') + '{/dim}');
     }
     if (down.length) {
       const downNames = down.map(k => room.npcs[k].name);
       this.print('{red}Unconscious: ' + downNames.join(', ') + '{/red}');
+    }
+
+    // Courier package waiting at pickup location
+    if (this.state.courierJob && !this.state.courierJob.pickedUp && roomId === this.state.courierJob.pickup) {
+      this.print('{item}A {gold}' + this.state.courierJob.item + '{/gold}{item} is waiting for pickup here.{/item}');
+      this.print('{dim}Type {/dim}{green}take{/green}{dim} to grab it.{/dim}');
     }
   },
 
@@ -138,13 +157,26 @@ const MUD = {
     } else if (blockedTick != null) {
       delete this.state.blockedRooms[roomId]; // cleared
     }
+    // Backroom lock — cantina west exit requires password
+    if (roomId === 'besc_backroom' && !this.state.flags['mott_password']) {
+      this.print("There's no obvious exit that way.", 'error');
+      return false;
+    }
+
+    const fromRoom = this.state.currentRoom;
     this.state.ticks++;
     this.checkBankInterest();
     this.state.flags['sneaking'] = false; // normal movement breaks stealth
     this.state.currentRoom = roomId;
     MUD_MINE.moveSpider(); // spider patrols on every tick
     MUD_MINE.checkSpiderEncounter(roomId); // check if player walked into spider
+    this.moveTrooper(); // stormtrooper patrol on Bescane
     this.displayRoom(roomId);
+
+    // Bescane-specific checks
+    this.checkCustoms(fromRoom, roomId);
+    this.checkTrooperEncounter(roomId);
+
     this.checkPpBounty(roomId); // bounty hunters look for thieves on lower deck
     this.autoSave();
     return true;
@@ -398,6 +430,27 @@ const MUD = {
       case 'steal':
         return this.doPickpocket(arg);
 
+      case 'stash':
+      case 'store':
+        return this.doStash(arg);
+
+      case 'retrieve':
+      case 'unstash':
+        return this.doRetrieve(arg);
+
+      case 'locker':
+        return this.doShowLocker();
+
+      case 'refuel':
+        return this.doRefuel();
+
+      case 'repair':
+      case 'fix':
+        return this.doRepair(arg);
+
+      case 'deliver':
+        return this.doDeliver();
+
       case 'save':
         return this.doSave();
 
@@ -520,6 +573,15 @@ const MUD = {
         }
         continue;
       }
+      // Special handler tags
+      if (line.text === '[COURIER_JOB]') {
+        this.doCourierTalk();
+        return;
+      }
+      if (line.text === '[PERSUADE_BACKROOM]') {
+        this.doPersuadeMott();
+        return;
+      }
       // Default dialogue (no condition)
       this.printBlank();
       this.print(line.text);
@@ -581,8 +643,20 @@ const MUD = {
 
   doTake(target) {
     if (!target) {
+      // Auto-take: check for courier pickup
+      if (this.doCourierPickup()) return;
       this.print('Take what?', 'error');
       return;
+    }
+    // Check for courier pickup by keyword
+    if (this.state.courierJob && !this.state.courierJob.pickedUp &&
+        this.state.currentRoom === this.state.courierJob.pickup) {
+      const kw = target.toLowerCase();
+      if (this.state.courierJob.item.toLowerCase().includes(kw) ||
+          kw === 'package' || kw === 'crate' || kw === 'box' || kw === 'delivery') {
+        this.doCourierPickup();
+        return;
+      }
     }
     // Placeholder — items on the ground will come with economy system
     this.print("There's nothing here you can take right now.");
@@ -1629,8 +1703,9 @@ const MUD = {
   doSleep() {
     if (!this.state.character) { this.print("You need a character first.", 'error'); return; }
     if (MUD_COMBAT.active) { this.print("You can't sleep during combat!", 'error'); return; }
-    if (this.state.currentRoom !== 'flophouse') {
-      this.print("You need a place to sleep. Try the flophouse above the cantina.", 'error');
+    const onShip = this.state.currentRoom === 'besc_ship';
+    if (this.state.currentRoom !== 'flophouse' && !onShip) {
+      this.print("You need a place to sleep. Try the flophouse above the cantina" + (this.state.flags['owns_ship'] ? ", or your ship bunk." : "."), 'error');
       return;
     }
 
@@ -1642,12 +1717,12 @@ const MUD = {
       return;
     }
 
-    if (this.state.credits < 25) {
+    if (!onShip && this.state.credits < 25) {
       this.print('"Room\'s 25 credits. You\'ve got ' + this.state.credits + '. Try the floor in the maintenance sublevel — it\'s free, if you don\'t mind the company."', 'error');
       return;
     }
 
-    this.state.credits -= 25;
+    if (!onShip) this.state.credits -= 25;
     this.state.flags['lastSleepTick'] = this.state.ticks;
     this.state.ticks += 50;
 
@@ -1659,17 +1734,510 @@ const MUD = {
     }
 
     this.printBlank();
-    this.print('{dim}You hand over 25 credits and collapse onto the cot. The mattress is terrible. The music from below never stops. Somehow, you sleep anyway.{/dim}');
+    if (onShip) {
+      this.print('{dim}You collapse onto your bunk. The ship\'s environmental systems hum softly. No charge for sleeping in your own ship.{/dim}');
+    } else {
+      this.print('{dim}You hand over 25 credits and collapse onto the cot. The mattress is terrible. The music from below never stops. Somehow, you sleep anyway.{/dim}');
+    }
     this.printBlank();
     this.print('{dim}...{/dim}');
     this.printBlank();
-    this.print('{dim}You wake feeling rested. Time has passed — the station has moved on without you.{/dim}');
+    this.print('{dim}You wake feeling rested. Time has passed.{/dim}');
     if (c.wounds !== 'healthy') {
       this.print('{green}Your injuries have improved: ' + MUD_COMBAT.woundLabel(c.wounds) + '{/green}');
     } else {
       this.print('{green}You feel rested and healthy.{/green}');
     }
-    this.print('{dim}-25 credits. Balance: ' + this.state.credits + '{/dim}');
+    if (!onShip) this.print('{dim}-25 credits. Balance: ' + this.state.credits + '{/dim}');
+    this.autoSave();
+  },
+
+  // ============================================================
+  // BESCANE — Locker System (stash/retrieve on your ship)
+  // ============================================================
+
+  doStash(arg) {
+    if (!this.state.character) { this.print("You need a character first.", 'error'); return; }
+    if (this.state.currentRoom !== 'besc_ship') {
+      this.print("You need to be on your ship to use the locker.", 'error');
+      return;
+    }
+    if (!arg) { this.print("Stash what? Usage: {green}stash{/green} <item>", 'error'); return; }
+    const kw = arg.toLowerCase();
+    const idx = this.state.inventory.findIndex(it => it.name.toLowerCase().includes(kw) || it.id.toLowerCase().includes(kw));
+    if (idx === -1) {
+      this.print("You don't have anything like that.", 'error');
+      return;
+    }
+    const item = this.state.inventory.splice(idx, 1)[0];
+    this.state.locker.push(item);
+    this.print('{dim}You place the {/dim}{gold}' + item.name + '{/gold}{dim} in the locker and seal it shut.{/dim}');
+    this.autoSave();
+  },
+
+  doRetrieve(arg) {
+    if (!this.state.character) { this.print("You need a character first.", 'error'); return; }
+    if (this.state.currentRoom !== 'besc_ship') {
+      this.print("You need to be on your ship to access the locker.", 'error');
+      return;
+    }
+    if (!arg) { this.print("Retrieve what? Usage: {green}retrieve{/green} <item>. Type {green}locker{/green} to see contents.", 'error'); return; }
+    const kw = arg.toLowerCase();
+    const idx = this.state.locker.findIndex(it => it.name.toLowerCase().includes(kw) || it.id.toLowerCase().includes(kw));
+    if (idx === -1) {
+      this.print("Nothing like that in the locker.", 'error');
+      return;
+    }
+    const item = this.state.locker.splice(idx, 1)[0];
+    this.state.inventory.push(item);
+    this.print('{dim}You take the {/dim}{gold}' + item.name + '{/gold}{dim} from the locker.{/dim}');
+    this.autoSave();
+  },
+
+  doShowLocker() {
+    if (!this.state.character) { this.print("You need a character first.", 'error'); return; }
+    if (this.state.currentRoom !== 'besc_ship') {
+      this.print("You need to be on your ship to check the locker.", 'error');
+      return;
+    }
+    if (!this.state.locker.length) {
+      this.print('{dim}The locker is empty.{/dim}');
+      return;
+    }
+    this.print('{gold}═ Ship Locker ═{/gold}');
+    this.state.locker.forEach(it => {
+      this.print('  ' + it.name);
+    });
+    this.print('{dim}Use {/dim}{green}retrieve{/green}{dim} <item> to take something out.{/dim}');
+  },
+
+  // ============================================================
+  // BESCANE — Ship Systems (repair, refuel)
+  // ============================================================
+
+  SHIP_SYSTEM_NAMES: {
+    hyperdrive: 'Hyperdrive',
+    shields: 'Shields',
+    sensors: 'Sensors',
+    weapons: 'Laser Cannon',
+    hull: 'Hull Plating',
+    sublight: 'Sublight Engines',
+    landing: 'Landing Gear'
+  },
+
+  SHIP_PARTS_MAP: {
+    hyperdrive: 'hyperdrive_parts',
+    shields: 'shield_parts',
+    sensors: 'sensor_parts',
+    weapons: 'weapon_parts',
+    hull: 'hull_parts',
+    sublight: 'sublight_parts',
+    landing: 'landing_parts'
+  },
+
+  doRepair(arg) {
+    if (!this.state.character) { this.print("You need a character first.", 'error'); return; }
+    if (this.state.currentRoom !== 'besc_ship') {
+      this.print("You need to be on your ship to make repairs.", 'error');
+      return;
+    }
+    if (!arg) {
+      // Show ship status
+      this.print('{gold}═ Ship Systems Status ═{/gold}');
+      let allGood = true;
+      for (const [sys, label] of Object.entries(this.SHIP_SYSTEM_NAMES)) {
+        const status = this.state.shipSystems[sys];
+        if (status === 'damaged') {
+          this.print('  {red}▸ ' + label + ' — DAMAGED{/red}');
+          allGood = false;
+        } else {
+          this.print('  {green}▸ ' + label + ' — Operational{/green}');
+        }
+      }
+      if (allGood) {
+        this.print('{dim}All systems operational. Your ship is spaceworthy.{/dim}');
+      } else {
+        this.print('{dim}Use {/dim}{green}repair{/green}{dim} <system> with the right parts in your inventory.{/dim}');
+      }
+      return;
+    }
+
+    // Find the system to repair
+    const kw = arg.toLowerCase();
+    let targetSys = null;
+    for (const [sys, label] of Object.entries(this.SHIP_SYSTEM_NAMES)) {
+      if (sys.includes(kw) || label.toLowerCase().includes(kw)) {
+        targetSys = sys;
+        break;
+      }
+    }
+    if (!targetSys) {
+      this.print("Unknown system. Type {green}repair{/green} to see ship status.", 'error');
+      return;
+    }
+    if (this.state.shipSystems[targetSys] !== 'damaged') {
+      this.print(this.SHIP_SYSTEM_NAMES[targetSys] + ' is already operational.', 'error');
+      return;
+    }
+
+    // Check for parts
+    const partId = this.SHIP_PARTS_MAP[targetSys];
+    const partIdx = this.state.inventory.findIndex(it => it.id === partId);
+    const lockerIdx = this.state.locker.findIndex(it => it.id === partId);
+
+    if (partIdx === -1 && lockerIdx === -1) {
+      this.print("You need the right parts to repair the " + this.SHIP_SYSTEM_NAMES[targetSys] + ". Check Torza's shop at the outer market.", 'error');
+      return;
+    }
+
+    // Use part from inventory first, then locker
+    if (partIdx !== -1) {
+      this.state.inventory.splice(partIdx, 1);
+    } else {
+      this.state.locker.splice(lockerIdx, 1);
+    }
+
+    // Skill check — Space Transports Repair
+    const c = this.state.character;
+    const repairSkill = c.skills['Space Transports Repair'] || c.skills['space transports repair'];
+    const repairPips = repairSkill ? MUD_CHARGEN.diceToPips(repairSkill) : (MUD_CHARGEN.diceToPips(c.attributes.TECHNICAL) || 6);
+    const roll = MUD_COMBAT.rollPips(repairPips);
+    const difficulty = 12; // moderate difficulty
+
+    if (roll >= difficulty) {
+      this.state.shipSystems[targetSys] = null;
+      this.printBlank();
+      this.print('{green}You install the parts and run diagnostics...{/green}');
+      this.print('{green}' + this.SHIP_SYSTEM_NAMES[targetSys] + ' repaired successfully.{/green}');
+    } else {
+      // Failed — parts consumed but system still damaged
+      this.printBlank();
+      this.print('{red}You install the parts but something isn\'t right. The diagnostic reads red.{/red}');
+      this.print('{red}Repair failed — the parts were consumed. You\'ll need another set.{/red}');
+      this.print('{dim}(Tip: train Space Transports Repair to improve your chances.){/dim}');
+    }
+    this.autoSave();
+  },
+
+  doRefuel() {
+    if (!this.state.character) { this.print("You need a character first.", 'error'); return; }
+    if (this.state.currentRoom !== 'besc_ship') {
+      this.print("You need to be on your ship to refuel.", 'error');
+      return;
+    }
+    this.print('{dim}Fuel systems are not yet implemented. Your ship has enough fuel for now.{/dim}', 'system');
+  },
+
+  // ============================================================
+  // BESCANE — Customs Checkpoint (weapon detection)
+  // ============================================================
+
+  checkCustoms(fromRoom, toRoom) {
+    // Only triggers when passing through customs heading INTO the facility
+    if (toRoom !== 'besc_customs' && fromRoom !== 'besc_customs') return true;
+    // Only check when going from docking side to facility side
+    if (fromRoom === 'besc_docking' && toRoom === 'besc_customs') return true; // entering customs — ok
+    if (fromRoom !== 'besc_customs') return true; // not leaving customs
+    if (toRoom === 'besc_docking') return true; // heading back to ship — no check
+
+    // Check inventory for weapons (energy weapons)
+    const weapons = this.state.inventory.filter(it =>
+      it.combatType === 'blaster' || (it.description && it.description.toLowerCase().includes('blaster'))
+    );
+
+    if (!weapons.length) return true; // clean
+
+    // Check for concealed carry rig
+    const hasHolster = this.state.inventory.some(it => it.id === 'hidden_holster');
+    if (hasHolster && weapons.length <= 1) {
+      // Roll Hide vs Prefect's Search (15 pips = 5D)
+      const c = this.state.character;
+      const hidePips = c.skills['Hide'] || c.skills['hide'];
+      const playerRoll = MUD_COMBAT.rollPips(hidePips ? MUD_CHARGEN.diceToPips(hidePips) : (MUD_CHARGEN.diceToPips(c.attributes.PERCEPTION) || 6));
+      const prefectRoll = MUD_COMBAT.rollPips(15); // 5D search
+
+      if (playerRoll >= prefectRoll) {
+        this.print('{dim}The scanner hums as you pass through. Prefect Drace glances at the readout... and waves you on.{/dim}');
+        return true;
+      }
+    }
+
+    // Caught!
+    this.print('{red}The scanner arch lights up red. An alarm blares.{/red}');
+    this.printBlank();
+    this.print('{npc}Prefect Drace{/npc} steps forward, stun baton crackling.');
+    this.print('"Energy weapon detected. You were warned."');
+    this.printBlank();
+
+    // Confiscate all weapons
+    const confiscated = [];
+    this.state.inventory = this.state.inventory.filter(it => {
+      if (it.combatType === 'blaster' || (it.description && it.description.toLowerCase().includes('blaster'))) {
+        confiscated.push(it.name);
+        return false;
+      }
+      return true;
+    });
+
+    // Fine
+    const fine = 200;
+    const actualFine = Math.min(fine, this.state.credits);
+    this.state.credits -= actualFine;
+
+    confiscated.forEach(name => {
+      this.print('{red}Confiscated: ' + name + '{/red}');
+    });
+    this.print('{red}Fine: ' + actualFine + ' credits{/red}');
+    this.print('{dim}Balance: ' + this.state.credits + ' credits{/dim}');
+    this.printBlank();
+    this.print('"Next time, leave your weapons on your ship. Move along."');
+    this.autoSave();
+    return true; // still allow passage, just with consequences
+  },
+
+  // ============================================================
+  // BESCANE — Stormtrooper Patrol
+  // ============================================================
+
+  TROOPER_PATROL: ['besc_docking', 'besc_customs', 'besc_transit', 'besc_concourse', 'besc_transit', 'besc_customs'],
+  trooperPatrolIdx: 0,
+
+  moveTrooper() {
+    // Only patrol if player is on Bescane
+    const room = ROOMS_DATA[this.state.currentRoom];
+    if (!room || !room.bescane) return;
+
+    this.trooperPatrolIdx = (this.trooperPatrolIdx + 1) % this.TROOPER_PATROL.length;
+    this.state.trooperRoom = this.TROOPER_PATROL[this.trooperPatrolIdx];
+  },
+
+  checkTrooperEncounter(roomId) {
+    if (this.state.trooperRoom !== roomId) return;
+
+    // Troopers in the same room — chance of ID check
+    if (Math.random() > 0.35) return; // 35% chance they bother you
+
+    this.printBlank();
+    this.print('{dim}A squad of four stormtroopers approaches, their white armor scuffed from patrol duty.{/dim}');
+    this.print('"Halt. Routine identification check. State your business."');
+    this.printBlank();
+
+    // Check for weapons — troopers have lower Search than the Prefect (10 pips = 3D+1)
+    const weapons = this.state.inventory.filter(it =>
+      it.combatType === 'blaster' || (it.description && it.description.toLowerCase().includes('blaster'))
+    );
+
+    if (!weapons.length) {
+      this.print('{dim}The squad leader scans your ID chit and waves you through. "Move along."{/dim}');
+      return;
+    }
+
+    // Check for concealed carry rig
+    const hasHolster = this.state.inventory.some(it => it.id === 'hidden_holster');
+    if (hasHolster && weapons.length <= 1) {
+      const c = this.state.character;
+      const hidePips = c.skills['Hide'] || c.skills['hide'];
+      const playerRoll = MUD_COMBAT.rollPips(hidePips ? MUD_CHARGEN.diceToPips(hidePips) : (MUD_CHARGEN.diceToPips(c.attributes.PERCEPTION) || 6));
+      const trooperRoll = MUD_COMBAT.rollPips(10); // 3D+1 search — worse than Prefect
+
+      if (playerRoll >= trooperRoll) {
+        this.print('{dim}The squad leader gives you a pat-down... and finds nothing. "Carry on, citizen."{/dim}');
+        return;
+      }
+    }
+
+    // Caught by troopers — lighter penalty than Prefect
+    this.print('{red}"Weapons violation! Drop it — now!"{/red}');
+    const confiscated = [];
+    this.state.inventory = this.state.inventory.filter(it => {
+      if (it.combatType === 'blaster' || (it.description && it.description.toLowerCase().includes('blaster'))) {
+        confiscated.push(it.name);
+        return false;
+      }
+      return true;
+    });
+    const fine = 100;
+    const actualFine = Math.min(fine, this.state.credits);
+    this.state.credits -= actualFine;
+
+    confiscated.forEach(name => {
+      this.print('{red}Confiscated: ' + name + '{/red}');
+    });
+    this.print('{red}Fine: ' + actualFine + ' credits{/red}');
+    this.print('{dim}"Consider that a warning. Next time it\'ll be a detention cell."{/dim}');
+    this.autoSave();
+  },
+
+  // ============================================================
+  // BESCANE — Courier Job System
+  // ============================================================
+
+  COURIER_LOCATIONS: {
+    besc_market:     'Torza\'s Ship Parts (Outer Market)',
+    besc_cantina:    'Greasy Gripper Cantina',
+    besc_arcade:     'Arcade Omicron',
+    besc_banthaquik: 'BanthaQuik Alley',
+    besc_squatters:  'Squatters\' Row',
+    besc_docking:    'Docking Ring'
+  },
+
+  // Shortest path distances between courier locations (in ticks/rooms)
+  COURIER_DISTANCES: {
+    'besc_market|besc_cantina': 1, 'besc_market|besc_arcade': 1, 'besc_market|besc_squatters': 1,
+    'besc_market|besc_banthaquik': 2, 'besc_market|besc_docking': 4,
+    'besc_cantina|besc_arcade': 2, 'besc_cantina|besc_squatters': 2,
+    'besc_cantina|besc_banthaquik': 3, 'besc_cantina|besc_docking': 1,
+    'besc_arcade|besc_squatters': 2, 'besc_arcade|besc_banthaquik': 1,
+    'besc_arcade|besc_docking': 3,
+    'besc_squatters|besc_banthaquik': 1, 'besc_squatters|besc_docking': 4,
+    'besc_banthaquik|besc_docking': 4
+  },
+
+  getCourierDistance(a, b) {
+    const key1 = a + '|' + b;
+    const key2 = b + '|' + a;
+    return this.COURIER_DISTANCES[key1] || this.COURIER_DISTANCES[key2] || 3;
+  },
+
+  generateCourierJob() {
+    const locs = Object.keys(this.COURIER_LOCATIONS);
+    let pickup, deliver;
+    do {
+      pickup = locs[Math.floor(Math.random() * locs.length)];
+      deliver = locs[Math.floor(Math.random() * locs.length)];
+    } while (pickup === deliver || pickup === 'besc_transit');
+
+    const dist = this.getCourierDistance(pickup, deliver);
+    const basePay = 20 + (dist * 15); // longer runs pay more
+    const bonus = Math.floor(basePay * 0.5); // 50% bonus for fast delivery
+    const tickLimit = dist + 2; // optimal + 2 ticks buffer for bonus
+
+    const items = [
+      'Sealed Crate', 'Parts Package', 'Data Cylinder', 'Medical Supplies',
+      'Ration Box', 'Machinery Components', 'Chemical Canister', 'Tool Kit',
+      'Fabric Roll', 'Electronics Package'
+    ];
+    const itemName = items[Math.floor(Math.random() * items.length)];
+
+    return {
+      pickup: pickup,
+      deliver: deliver,
+      item: itemName,
+      pay: basePay,
+      bonus: bonus,
+      tickLimit: tickLimit,
+      startTick: null, // set when picked up
+      pickedUp: false
+    };
+  },
+
+  doCourierTalk() {
+    // Generate a job offer if none active
+    if (this.state.courierJob && this.state.courierJob.pickedUp) {
+      this.print('"You\'ve already got a package out. Deliver it to ' + this.COURIER_LOCATIONS[this.state.courierJob.deliver] + ' first, then come back."');
+      return;
+    }
+
+    const job = this.generateCourierJob();
+    this.state.courierJob = job;
+    const dist = this.getCourierDistance(job.pickup, job.deliver);
+
+    this.print('{npc}Freight Dispatcher{/npc} checks his datapads.');
+    this.printBlank();
+    this.print('"Got one for you. Pick up a {gold}' + job.item + '{/gold} from {gold}' + this.COURIER_LOCATIONS[job.pickup] + '{/gold}, deliver it to {gold}' + this.COURIER_LOCATIONS[job.deliver] + '{/gold}."');
+    this.printBlank();
+    this.print('"Standard rate: {gold}' + job.pay + ' credits{/gold}. Get it done within ' + job.tickLimit + ' moves of pickup and there\'s a {gold}' + job.bonus + ' credit bonus{/gold}."');
+    this.printBlank();
+    this.print('{dim}Go to the pickup location and type {/dim}{green}take{/green}{dim} to grab the package. Then go to the delivery location and type {/dim}{green}deliver{/green}{dim}. Return here to get paid.{/dim}');
+    this.autoSave();
+  },
+
+  doCourierPickup() {
+    const job = this.state.courierJob;
+    if (!job || job.pickedUp) return false;
+    if (this.state.currentRoom !== job.pickup) return false;
+
+    job.pickedUp = true;
+    job.startTick = this.state.ticks;
+    this.print('{dim}You pick up the {/dim}{gold}' + job.item + '{/gold}{dim}. Deliver it to {/dim}{gold}' + this.COURIER_LOCATIONS[job.deliver] + '{/gold}{dim}.{/dim}');
+    this.autoSave();
+    return true;
+  },
+
+  doDeliver() {
+    if (!this.state.character) { this.print("You need a character first.", 'error'); return; }
+    const job = this.state.courierJob;
+    if (!job || !job.pickedUp) {
+      this.print("You don't have a delivery to make. Talk to the dispatcher at the transit platform.", 'error');
+      return;
+    }
+    if (this.state.currentRoom !== job.deliver) {
+      this.print('"This isn\'t the delivery location. You need to go to {gold}' + this.COURIER_LOCATIONS[job.deliver] + '{/gold}."', 'error');
+      return;
+    }
+
+    const ticksUsed = this.state.ticks - job.startTick;
+    const gotBonus = ticksUsed <= job.tickLimit;
+    const totalPay = job.pay + (gotBonus ? job.bonus : 0);
+
+    this.state.credits += totalPay;
+    this.printBlank();
+    this.print('{dim}You hand over the {/dim}{gold}' + job.item + '{/gold}{dim}. The recipient signs the receipt.{/dim}');
+    this.print('{green}+' + job.pay + ' credits (delivery fee){/green}');
+    if (gotBonus) {
+      this.print('{green}+' + job.bonus + ' credits (speed bonus — ' + ticksUsed + ' moves!){/green}');
+    } else {
+      this.print('{dim}No speed bonus — took ' + ticksUsed + ' moves (needed ' + job.tickLimit + ' or fewer).{/dim}');
+    }
+    this.print('{dim}Return to the dispatcher for another job.{/dim}');
+
+    // Clear the job
+    this.state.courierJob = null;
+    this.autoSave();
+  },
+
+  // ============================================================
+  // BESCANE — Backroom Persuasion (Mott's password)
+  // ============================================================
+
+  doPersuadeMott() {
+    if (!this.state.character) return;
+    if (this.state.currentRoom !== 'besc_cantina') return;
+
+    if (this.state.flags['mott_password']) {
+      this.print('{npc}Greasy Mott{/npc} grunts. "You know the way. Door\'s in the back."');
+      return;
+    }
+
+    // Persuasion or Streetwise check vs difficulty 15 (hard)
+    const c = this.state.character;
+    const persuade = c.skills['Persuasion'] || c.skills['persuasion'];
+    const street = c.skills['Streetwise'] || c.skills['streetwise'];
+    const con = c.skills['Con'] || c.skills['con'];
+
+    // Use best of persuasion, streetwise, or con
+    let bestPips = MUD_CHARGEN.diceToPips(c.attributes.PERCEPTION) || 6;
+    if (persuade) bestPips = Math.max(bestPips, MUD_CHARGEN.diceToPips(persuade));
+    if (street) bestPips = Math.max(bestPips, MUD_CHARGEN.diceToPips(street));
+    if (con) bestPips = Math.max(bestPips, MUD_CHARGEN.diceToPips(con));
+
+    const roll = MUD_COMBAT.rollPips(bestPips);
+
+    if (roll >= 15) {
+      this.state.flags['mott_password'] = true;
+      // Add the west exit to the cantina
+      this.printBlank();
+      this.print('{npc}Greasy Mott{/npc} studies you for a long moment, all four eyes narrowing.');
+      this.printBlank();
+      this.print('"...you\'re not a corpo. And you\'re not stupid enough to be a snitch." He leans across the bar. "Tell the doorman \'grease trap.\' Back of the kitchen, west wall. Don\'t make me regret this."');
+      this.printBlank();
+      this.print('{dim}A passage to the west is now accessible.{/dim}');
+    } else {
+      this.print('{npc}Greasy Mott{/npc} stares at you flatly.');
+      this.printBlank();
+      this.print('"I serve food. That\'s it. You want conversation, try the Arcade."');
+      this.print('{dim}(Maybe try again with higher Persuasion, Streetwise, or Con.){/dim}');
+    }
     this.autoSave();
   },
 
@@ -1991,6 +2559,13 @@ const MUD = {
     this.print('  {green}flee{/green}  — attempt to disengage and run');
     this.print('  {dim}First strike is undefended. 7D+ in skill = extra attacks.{/dim}');
     this.print('');
+    this.print('{gold}Ship (on your ship):{/gold}');
+    this.print('  {green}stash{/green} <item>  — store item in ship locker');
+    this.print('  {green}retrieve{/green} <item> — take item from locker');
+    this.print('  {green}locker{/green}       — view locker contents');
+    this.print('  {green}repair{/green}       — view/repair ship systems');
+    this.print('  {green}deliver{/green}      — hand over courier package');
+    this.print('');
     this.print('{gold}System:{/gold}');
     this.print('  {green}save{/green}  — save your game');
     this.print('  {green}load{/green}  — load your saved game');
@@ -2030,7 +2605,11 @@ const MUD = {
         killCounts: this.state.killCounts,
         mineVeins: this.state.mineVeins,
         spiderRoom: this.state.spiderRoom,
-        blockedRooms: this.state.blockedRooms
+        blockedRooms: this.state.blockedRooms,
+        locker: this.state.locker,
+        trooperRoom: this.state.trooperRoom,
+        courierJob: this.state.courierJob,
+        shipSystems: this.state.shipSystems
       };
       localStorage.setItem(this.SAVE_KEY, JSON.stringify(save));
       return true;
@@ -2059,6 +2638,10 @@ const MUD = {
       this.state.mineVeins = save.mineVeins || {};
       this.state.spiderRoom = save.spiderRoom || 'deep_vein_1';
       this.state.blockedRooms = save.blockedRooms || {};
+      this.state.locker = save.locker || [];
+      this.state.trooperRoom = save.trooperRoom || null;
+      this.state.courierJob = save.courierJob || null;
+      this.state.shipSystems = save.shipSystems || {};
       return true;
     } catch (e) {
       console.error('MUD load failed:', e);

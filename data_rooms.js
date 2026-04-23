@@ -869,6 +869,453 @@ const ROOMS_DATA = {
       }
     },
     lowerDeck: true
+  },
+
+  // ============================================================
+  // BESCANE — Lumchugger's Hub & Docking Facility
+  // ============================================================
+
+  "besc_ship": {
+    name: "Your Ship — Berth 7",
+    description: "The familiar interior of your Ghtroc 720 freighter. The cockpit viewports show the dull grey walls of Docking Berth 7 outside. A {item}locker{/item} bolted to the bulkhead holds your personal gear. The {item}console{/item} on the wall displays ship status and dock services. The {item}bunk{/item} in the aft section looks inviting after a long haul.\n\nThe boarding ramp leads east out to the docking ring.",
+    exits: {
+      east: "besc_docking"
+    },
+    objects: {
+      "locker": "A reinforced durasteel locker with a biometric lock keyed to your palm. Anything too dangerous to carry planetside can be stashed here.\n\n{dim}Use {/dim}{green}stash{/green}{dim} <item> to store gear, {/dim}{green}retrieve{/green}{dim} <item> to take it back. Type {/dim}{green}locker{/green}{dim} to see contents.{/dim}",
+      "console": "The dock services console glows with amber readouts:\n\n  BERTH 7 — DOCKING FEES: PAID (72h)\n  FUEL STATUS: [displayed dynamically]\n  SHIP SYSTEMS: [displayed dynamically]\n\n{dim}Dock commands: {/dim}{green}refuel{/green}{dim}, {/dim}{green}repair{/green}{dim} <system>{/dim}",
+      "bunk": "A narrow but serviceable bunk with a scratchy wool blanket. It beats paying for a flophouse.\n\n{dim}You can {/dim}{green}sleep{/green}{dim} here for free.{/dim}",
+      "ship": "Your Ghtroc 720 — battered but spaceworthy. The curved hull shows scorch marks from micrometeorite impacts and a few suspiciously blaster-shaped burns from the previous owner's adventures. She's not pretty, but she's yours.",
+      "ramp": "The boarding ramp extends down to the docking ring platform. A faded stencil on the ramp housing reads 'WATCH YOUR STEP.'"
+    },
+    npcs: {},
+    bescane: true,
+    shipRoom: true
+  },
+
+  "besc_docking": {
+    name: "Docking Ring — Berth Row",
+    description: "A wide circular corridor curves around the outer edge of the Bescane commercial docking facility. Berth hatches line the outer wall, each marked with a number and occupancy light — most glow red. The inner wall is bare duracrete stamped with the Galentro Heavy Works logo every ten meters. {item}Speakers{/item} mounted at intervals crackle with periodic announcements.\n\nA large {item}sign{/item} above the inner archway reads in block Aurebesh:\n{red}⚠ GALENTRO SECURITY NOTICE: ENERGY WEAPONS AND EXPLOSIVES ARE PROHIBITED BEYOND THIS POINT. ALL PERSONS ENTERING THE FACILITY ARE SUBJECT TO SEARCH. VIOLATORS WILL BE DETAINED. ⚠{/red}\n\nYour ship in Berth 7 is to the west. The customs checkpoint lies to the north.",
+    exits: {
+      west: "besc_ship",
+      north: "besc_customs"
+    },
+    objects: {
+      "speakers": "Ceiling-mounted speakers emit a cycle of announcements in a flat corporate voice:\n\n\"Reminder: all energy weapons, explosive devices, and Class-C restricted materials must be declared at the customs checkpoint. Galentro Heavy Works assumes no liability for confiscated property.\"\n\n\"Shift change for Processing Hub Gamma in two standard hours. All contract workers report to your assigned stations.\"\n\n\"Bescane welcomes you. Productivity is prosperity.\"",
+      "sign": "The security notice is printed in bright red Aurebesh on a backlit panel. Below it in smaller text: 'Galentro Corporate Security Directive 7742-A. Enforcement authority delegated by Imperial Sector Command, Obtrexta Sector.' Someone has scratched 'SLAVES' under the word 'WELCOMES' in the speaker announcement text on the wall nearby.",
+      "berths": "Rows of docking berth hatches, each sealed with heavy blast doors. Most occupancy lights glow red — full. A few flash amber, indicating ships undergoing maintenance. Your berth, number 7, glows green.",
+      "logo": "The Galentro Heavy Works corporate logo: a stylized gear enclosing a planet silhouette, stamped into the duracrete at regular intervals. The motto beneath reads: 'BUILDING TOMORROW'S EMPIRE.'"
+    },
+    npcs: {},
+    bescane: true,
+    publicArea: true
+  },
+
+  "besc_customs": {
+    name: "Customs Checkpoint",
+    description: "A fortified security station where the docking ring meets the main facility. Durasteel barriers funnel foot traffic through a narrow {item}scanner{/item} arch flanked by armored guard booths. A {npc}Prefect{/npc} in black Galentro security armor stands at the central processing desk, flanked by two {npc}enforcer{/npc}s carrying mono-cord whips and steel truncheons.\n\nThe docking ring lies to the south. The transit platform is to the north. A side corridor leads east toward a row of cantinas.",
+    exits: {
+      south: "besc_docking",
+      north: "besc_transit",
+      east: "besc_cantina"
+    },
+    objects: {
+      "scanner": "A full-body scanning arch with a rotating sensor ring. A readout panel on the side displays 'GALENTRO SECURITY — WEAPONS DETECTION SYSTEM' with a Galentro logo. The tech looks military-grade — probably surplus Imperial customs equipment repurposed by the corporation.",
+      "barriers": "Heavy durasteel crowd-control barriers bolted to the floor, forming a serpentine queue. The barriers are scarred with dents and scratches — the marks of people who didn't want to wait in line.",
+      "booths": "Armored guard booths on either side of the scanner arch. Narrow viewslits glow with the blue light of internal monitors. The booths are designed to withstand blaster fire — ironic, given the ban."
+    },
+    npcs: {
+      "prefect": {
+        name: "Prefect Drace",
+        keywords: ["prefect", "drace", "security", "officer", "guard"],
+        look: "Prefect Drace is a broad-shouldered human woman in matte-black Galentro corporate security armor with the rank insignia of a facility prefect — three horizontal bars in silver on her chest plate. Her face is hard and expressionless beneath a cropped grey haircut. A stun baton hangs at her hip, and her eyes miss nothing.\n\n{dim}She runs the customs checkpoint. Energy weapons are confiscated here.{/dim}",
+        combat: {
+          blaster: 15,        // 5D stun baton
+          dodge: 13,          // 4D+1
+          meleeParry: 14,     // 4D+2
+          brawlParry: 13,     // 4D+1
+          brawl: 14,          // 4D+2
+          melee: 15,          // 5D
+          str: 11,            // 3D+2
+          damage: 15,         // 5D stun baton
+          weaponType: 'melee',
+          weaponName: 'stun baton',
+          stunOnly: true,
+          security: true
+        },
+        talk: [
+          { once: "drace_intro", text: "Prefect Drace looks you over with cold efficiency.\n\n\"New arrival. Berth 7.\" She checks a datapad. \"Your docking fees are paid for seventy-two hours. After that, your ship gets impounded.\"\n\nShe gestures at the scanner arch. \"Facility rules are simple: no energy weapons, no explosives, no excuses. You carry it past my checkpoint, I take it and you pay a fine. You resist, my enforcers handle it. Clear?\"\n\nShe waves you through. \"Welcome to Bescane. Try not to cause problems.\"" },
+          { text: "\"Move along. The scanner doesn't lie, and neither do I.\"" },
+          { text: "\"You want to carry a weapon in here, join Galentro Security. Otherwise, leave it on your ship.\"" }
+        ]
+      },
+      "enforcer": {
+        name: "Galentro Enforcer",
+        keywords: ["enforcer", "enforcers", "guard", "guards", "goon"],
+        look: "A pair of heavily-muscled enforcers in padded work coveralls with Galentro patches on the shoulders. They carry mono-cord whips — unbreakable serrated fiber straps that can cut through skin and light armor — and heavy steel truncheons. Their faces have the flat look of men who enjoy their work.",
+        combat: {
+          blaster: 7,         // 2D+1 (no blasters)
+          dodge: 10,          // 3D+1
+          meleeParry: 12,     // 4D
+          brawlParry: 12,     // 4D
+          brawl: 13,          // 4D+1
+          melee: 13,          // 4D+1
+          str: 12,            // 4D
+          damage: 16,         // mono-cord whip STR+1D+1
+          weaponType: 'melee',
+          weaponName: 'mono-cord whip',
+          stunOnly: false,
+          security: true
+        },
+        talk: [
+          { text: "The enforcer stares at you and slowly coils his whip around his fist.\n\n\"Keep walking.\"" }
+        ]
+      }
+    },
+    bescane: true,
+    customsCheckpoint: true,
+    publicArea: true
+  },
+
+  "besc_transit": {
+    name: "Transit Platform",
+    description: "A busy elevated platform where cargo trams and personnel shuttles connect the docking facility to the greater hub network. A large {item}directory{/item} board shows routes to various hubs across Bescane — most marked 'WORKERS ONLY.' A {npc}dispatcher{/npc} sits behind a scratched transparisteel window at a {item}job board{/item} kiosk, managing freight courier assignments.\n\nThe customs checkpoint is to the south. The hub concourse lies to the north.",
+    exits: {
+      south: "besc_customs",
+      north: "besc_concourse"
+    },
+    objects: {
+      "directory": "A flickering holographic directory lists transit routes:\n\n  HUB GAMMA — Processing (WORKERS ONLY)\n  HUB DELTA — Residential Block 4 (WORKERS ONLY)\n  HUB SIGMA — Heavy Manufacturing (RESTRICTED)\n  LUMCHUGGER'S HUB — Entertainment District (OPEN)\n\nOnly the entertainment district is accessible to non-contract personnel.",
+      "job board": "A battered job board terminal next to the dispatcher's window displays available courier assignments. Packages need moving between locations in the hub — quick work for someone with legs and no questions.\n\n{dim}Talk to the {/dim}{npc}dispatcher{/npc}{dim} to pick up a delivery job.{/dim}",
+      "trams": "Cargo trams rumble past on magnetic rails, carrying sealed containers between the hubs. The cars are unmarked except for Galentro inventory codes stenciled on the sides."
+    },
+    npcs: {
+      "dispatcher": {
+        name: "Freight Dispatcher",
+        keywords: ["dispatcher", "freight", "courier"],
+        look: "A tired-looking Sullustan behind scratched transparisteel, surrounded by datapads and empty caf cups. He manages the courier job board — small freight runs that the tram system is too slow or too full to handle.\n\n{dim}Talk to him to get a delivery job. Type {/dim}{green}talk dispatcher{/green}{dim}.{/dim}",
+        combat: {
+          blaster: 6, dodge: 8, meleeParry: 6, brawlParry: 6, brawl: 7, melee: 6,
+          str: 7, damage: 7, weaponType: 'dodge', weaponName: 'datapad', stunOnly: true, security: true
+        },
+        talk: [
+          { once: "dispatcher_intro", text: "The Sullustan looks up from his stack of datapads.\n\n\"Freelancer, huh? Good. We're always short on runners.\" He taps the job board. \"Simple work — pick up a package at one location, deliver it to another. You get paid when you come back here with a signed receipt. Faster you do it, better the bonus.\"\n\nHe slides a flimsiplast sheet through the slot. \"Standard rate's posted. Don't open the packages, don't lose the packages, don't ask what's in the packages. Sound good?\"\n\n{dim}Type {/dim}{green}talk dispatcher{/green}{dim} again when you're ready for a job.{/dim}" },
+          { text: "[COURIER_JOB]" }
+        ]
+      }
+    },
+    bescane: true,
+    publicArea: true
+  },
+
+  "besc_concourse": {
+    name: "Hub Concourse",
+    description: "The main artery of Lumchugger's Hub — a wide, grimy boulevard packed with pedestrian traffic, flickering holo-advertisements, and the constant din of a hundred competing sound systems. Neon signs in a dozen languages compete for attention overhead. The air smells of synthetic food, machine oil, and too many bodies in too small a space. {item}Vendors{/item} hawk cheap goods from wheeled carts along both sides.\n\nThe transit platform lies to the south. A garish neon archway to the north marks the entrance to the {npc}Arcade Omicron{/npc}. A narrow street leads east to a row of cantinas.",
+    exits: {
+      south: "besc_transit",
+      north: "besc_arcade",
+      east: "besc_cantina"
+    },
+    objects: {
+      "vendors": "Street vendors crowd both sides of the concourse, selling everything from synthetic ration packs to bootleg holo-dramas. Most of the goods are cheaply made knockoffs stamped with fake brand logos. One vendor sells 'Genuine Corellian Whiskey' that smells suspiciously like engine coolant.",
+      "market": "To the west, the concourse opens into a sprawl of semi-permanent market stalls and shops — the commercial fringe of Lumchugger's Hub.",
+      "advertisements": "Competing holographic advertisements flicker overhead: gladiator droid bouts at the Arcade, zero-gee dancitorium specials, BanthaQuik meal deals, 'EARN MORE — EXTEND YOUR CONTRACT' Galentro recruitment drives, and a few that are clearly fronts for less legitimate services.",
+      "neon": "The neon glow from a hundred signs paints everything in shifting colors — red, blue, green, gold. Half the signs have burned-out letters. The overall effect is simultaneously exciting and deeply depressing."
+    },
+    npcs: {},
+    bescane: true,
+    publicArea: true
+  },
+
+  "besc_arcade": {
+    name: "Arcade Omicron",
+    description: "The centerpiece club of Lumchugger's Hub. A luxury-grade {item}holozoetroscope{/item} dominates the main floor — a gyroscopic holographic generator endlessly replaying the Death Star exploding while miniature X-wings and TIE fighters dance through the room overhead. The crowd roars and drinks beneath the light show. Side {item}rooms{/item} run scenic replicators of famous worlds. A band called the {item}Screaming Jawas{/item} hammers the back wall with synthesized thunder.\n\nA {npc}bartender{/npc} works the main bar. In a shadowed booth near the back, a {npc}swoop rider{/npc} in a battered leather jacket watches the crowd.\n\nThe hub concourse lies to the south. A side exit to the east opens onto the outer market. A back stairwell to the north leads up to a food alley.",
+    exits: {
+      south: "besc_concourse",
+      east: "besc_market",
+      north: "besc_banthaquik"
+    },
+    objects: {
+      "holozoetroscope": "A massive gyroscopic holographic generator — the kind usually seen only on Coruscant. It projects a full-scale recreation of the Death Star's destruction on an endless loop. The detail is staggering: you can see individual TIE fighters spiraling away from the explosion. The crowd cheers every time it blows, as if seeing it for the first time. An Imperial loyalist would not enjoy this place.",
+      "rooms": "Side rooms along the walls project immersive scenic environments: the twin suns of Tatooine, the wroshyr forests of Kashyyyk, the ice plains of Hoth, the bridge of an Imperial Star Destroyer (that one has a sign reading 'TAKE COMMAND — PHOTO OPPORTUNITY 5cr'), the seashores of Wroona, and the mountains of Ryloth. Patrons wander between them, drinks in hand.",
+      "screaming jawas": "Four musicians on a raised stage at the back wall, all wearing oversized Jawa robes and glowing photoreceptor masks. They're producing an astonishing volume of noise from synthesized instruments. The lead 'Jawa' is actually a very tall Bith. They're terrible. The crowd loves them.",
+      "booth": "A shadowed booth near the back wall, partially screened by a holographic palm tree from the Wroona beach room. Someone who wanted to watch without being watched would choose this spot."
+    },
+    npcs: {
+      "bartender": {
+        name: "Arcade Bartender",
+        keywords: ["bartender", "barkeep", "barman"],
+        look: "A four-armed Besalisk in a stained apron, mixing drinks with mechanical efficiency. He can serve four customers simultaneously and seems to enjoy proving it.",
+        combat: {
+          blaster: 7, dodge: 9, meleeParry: 10, brawlParry: 12, brawl: 13, melee: 10,
+          str: 14, damage: 14, weaponType: 'brawl', weaponName: 'four fists', stunOnly: true, security: true
+        },
+        talk: [
+          { once: "besc_bartender_intro", text: "The Besalisk bartender slides a drink toward another customer with one hand while wiping the bar with two others and gesturing at you with the fourth.\n\n\"New face. What'll it be? Caf's two credits, anything stronger is five. And before you ask — no, I don't know anything about anything, I don't take messages, and I definitely don't know the guy in the back booth.\" He winks with one enormous eye." },
+          { text: "\"Drink up. The Jawas are about to start their second set and you'll want to be drunk for that.\"" }
+        ]
+      },
+      "cooper": {
+        name: "Cooper Dray",
+        keywords: ["cooper", "dray", "swoop", "rider", "swoop rider"],
+        look: "A young human male in a battered swoop rider's leather jacket with a faded racing number on the back. His face is weathered beyond his years, with a thin scar across his jaw and the kind of eyes that are always watching the exits. He sits in the shadows of the back booth, nursing a drink.\n\n{dim}He looks like someone worth talking to.{/dim}",
+        combat: {
+          blaster: 24,        // 7D+2 blaster carbine (but he shouldn't have it here — hidden)
+          dodge: 20,          // 6D+2
+          meleeParry: 10,     // 3D+1
+          brawlParry: 10,     // 3D+1
+          brawl: 18,          // 6D
+          melee: 10,          // 3D+1
+          str: 9,             // 3D
+          damage: 18,         // 5D+2 modified carbine
+          weaponType: 'dodge',
+          weaponName: 'hidden blaster carbine',
+          stunOnly: false,
+          security: true
+        },
+        talk: [
+          { once: "cooper_intro", text: "The swoop rider looks you over without moving his head — just his eyes, tracking you from the shadows.\n\n\"You're from the station. Drifter's Anchorage.\" It's not a question. \"I keep my ears on passive scan. Freighter pilot who bought a ship off old Renn and actually made it through the Imperial checkpoint.\"\n\nHe takes a slow drink. \"Impressive. Most people who land here are contract workers who'll never leave. You're... different.\"\n\nHe leans forward slightly. \"Name's Cooper. I run a swoop crew. If you're looking for work that isn't carrying boxes for Galentro, come talk to me again sometime. But not here. Too many eyes.\"" },
+          { text: "Cooper glances around the room. \"Not here. Walls have ears in Lumchugger's Hub. You want to talk real business, find me in the Rows. South of the market.\"" },
+          { text: "\"Still here? Go make some credits, spacer. We'll talk when the time's right.\"" }
+        ]
+      }
+    },
+    bescane: true
+  },
+
+  "besc_cantina": {
+    name: "Greasy Gripper Cantina",
+    description: "A low-ceilinged cantina crammed between two factory exhaust vents, which explains the perpetual haze and the faint taste of chemicals in the air. {item}Booths{/item} line the walls, their seats patched with industrial tape. A long {item}bar{/item} runs the length of the room, staffed by a surly {npc}cook{/npc} who doubles as bartender. A grease-spattered {item}menu{/item} board hangs behind the counter.\n\nThe hub concourse lies to the west. The customs checkpoint is to the south. A narrow passage north leads deeper into the market district.",
+    exits: {
+      west: "besc_concourse",
+      south: "besc_customs",
+      north: "besc_market",
+      east: "besc_backroom"
+    },
+    objects: {
+      "booths": "Sagging booths with cracked synthleather seats, each table scarred with carved initials, gang tags, and game scores. The lighting is dim enough that you can barely read them.",
+      "bar": "A long durasteel bar top worn smooth by thousands of elbows. Rings from drinks and scorch marks from dropped tabac sticks cover every surface. A hand-lettered sign reads: 'NO TABS. NO CREDIT. NO EXCEPTIONS.'",
+      "menu": "The menu board lists offerings in smudged chalk:\n\n  BANTHA STEW .............. 3cr\n  SYNTH-PROTEIN BLOCK ...... 1cr\n  CAF (REAL) ............... 4cr\n  CAF (SYNTH) .............. 1cr\n  CORELLIAN ALE ............ 5cr\n  'THE SPECIAL' ............ 8cr (DON'T ASK)\n\nEverything is probably the same brown paste in different bowls."
+    },
+    npcs: {
+      "cook": {
+        name: "Greasy Mott",
+        keywords: ["cook", "mott", "bartender", "barkeep"],
+        look: "A heavyset Aqualish in a stained apron, his tusks yellowed and his four eyes narrowed in permanent suspicion. He stirs something in a pot that might be stew and might be engine lubricant — the smell doesn't help clarify. Despite appearances, he hears everything that happens in his cantina.",
+        combat: {
+          blaster: 7, dodge: 8, meleeParry: 10, brawlParry: 11, brawl: 12, melee: 11,
+          str: 13, damage: 15, weaponType: 'melee', weaponName: 'cleaver', stunOnly: false, security: true
+        },
+        talk: [
+          { once: "mott_intro", text: "The Aqualish grunts at you, slopping something brown into a bowl.\n\n\"Sit down or get out. I serve food, not conversation.\" He slides the bowl across the counter. \"Three credits for stew. One for synth-block. The caf is real if you pay four, synth if you pay one. Don't order the Special.\"\n\nHe lowers his voice slightly. \"You want to know what's going on around here, listen. Don't ask. Workers talk when they eat. That's free.\"" },
+          { text: "\"You still here? Order something or give the seat to someone who will.\"" },
+          { text: "[PERSUADE_BACKROOM]" }
+        ]
+      }
+    },
+    bescane: true
+  },
+
+  "besc_backroom": {
+    name: "The Grease Trap",
+    description: "A cramped back room behind the cantina's kitchen, thick with tabac smoke and the hum of a signal jammer bolted to the ceiling. The walls are lined with shelves of mismatched goods — factory components, unmarked crates, and items that definitely didn't come through customs. A single {item}glow panel{/item} casts everything in dim amber light.\n\nA {npc}fence{/npc} sits behind a makeshift counter built from stacked cargo pallets, appraising something through a jeweler's loupe.\n\nThe cantina is back to the west.",
+    exits: {
+      west: "besc_cantina"
+    },
+    objects: {
+      "glow panel": "A single amber glow panel provides the only light. It flickers occasionally — whether from age or the signal jammer's interference is anyone's guess.",
+      "shelves": "Shelves crammed with goods of questionable provenance: factory components still in Galentro packaging (definitely stolen), datapads with wiped memory cores, unmarked bottles, power cells, and a few items wrapped in cloth that you instinctively know not to unwrap.",
+      "jammer": "A heavy-duty signal jammer bolted to the ceiling, its indicator lights pulsing steadily. Nothing electronic gets in or out of this room without Mott knowing about it. Comlinks, trackers, recording devices — all dead in here."
+    },
+    npcs: {
+      "fence": {
+        name: "Vyla",
+        keywords: ["fence", "vyla", "dealer", "buyer"],
+        look: "A sharp-featured Twi'lek woman with pale blue skin and calculating eyes. She examines goods with a jeweler's loupe and a handheld molecular scanner, pricing everything to the tenth of a credit. Her lekku twitch when she's interested in something.\n\n{dim}She buys goods at better rates than surface shops. Type {/dim}{green}sell{/green}{dim} to do business.{/dim}",
+        combat: {
+          blaster: 10, dodge: 14, meleeParry: 9, brawlParry: 9, brawl: 9, melee: 9,
+          str: 8, damage: 10, weaponType: 'dodge', weaponName: 'hold-out blaster', stunOnly: false, security: false
+        },
+        shop: {
+          name: "Vyla's Acquisitions",
+          inventory: [],
+          buyRate: 1.0,
+          sellRate: 0.50
+        },
+        talk: [
+          { once: "vyla_intro", text: "The Twi'lek lowers her loupe and studies you.\n\n\"Mott let you through. That means you're either useful or stupid, and Mott doesn't tolerate stupid.\" She sets down the component she was examining. \"I'm Vyla. I buy things. Things that might have complicated histories. Things that surface merchants can't or won't touch.\"\n\nShe taps the molecular scanner. \"I pay fair — fifty percent of market value. Better than the twenty-five you'll get upstairs from anyone legitimate. And I don't ask where it came from.\"\n\n{dim}Sell items here for double the normal sell rate.{/dim}" },
+          { text: "\"Got something to sell? {green}sell{/green} it. Otherwise, don't loiter — I'm busy.\"" }
+        ]
+      }
+    },
+    bescane: true
+  },
+
+  "besc_market": {
+    name: "Outer Market",
+    description: "A sprawling open-air market filling a wide junction between hub sections. Stalls built from repurposed shipping containers and scrap metal sell everything from machine parts to counterfeit identichips. The air is thick with competing smells — synthetic spices, solder smoke, and the ozone tang of cheap electronics. A {npc}parts dealer{/npc} operates from a large stall marked with starship silhouettes.\n\nThe Arcade Omicron entrance is to the west. A cantina row lies to the south. Squatters' Row sprawls to the east.",
+    exits: {
+      west: "besc_arcade",
+      south: "besc_cantina",
+      east: "besc_squatters"
+    },
+    objects: {
+      "stalls": "Dozens of stalls selling a mix of legitimate and questionable goods. Most vendors eye you warily — an offworlder with credits is either a customer or a mark. Probably both.",
+      "containers": "The market stalls are built from repurposed shipping containers, their original Galentro inventory codes still visible beneath layers of paint and hand-lettered signs. One entrepreneurial vendor has welded two containers together into a two-story shop."
+    },
+    npcs: {
+      "parts_dealer": {
+        name: "Torza's Ship Parts",
+        keywords: ["parts", "dealer", "torza", "parts dealer", "ship parts"],
+        look: "A wiry Toydarian hovers behind a counter piled high with ship components — hyperdrives, shield generators, hull plates, sensor arrays, all of it pulled from decommissioned freighters and factory surplus. Her wings buzz constantly as she darts between inventory.\n\n{dim}She sells ship repair parts. Type {/dim}{green}buy{/green}{dim} to see what's available.{/dim}",
+        combat: {
+          blaster: 7, dodge: 12, meleeParry: 7, brawlParry: 7, brawl: 7, melee: 7,
+          str: 5, damage: 5, weaponType: 'dodge', weaponName: 'wrench', stunOnly: true, security: true
+        },
+        shop: {
+          name: "Torza's Ship Parts",
+          inventory: [
+            { id: 'hyperdrive_parts', name: 'Hyperdrive Regulator', description: 'A refurbished hyperdrive motivator regulator. Compatible with most light freighter hyperdrives including the Ghtroc 720 series.', price: 800, category: 'ship_parts' },
+            { id: 'shield_parts', name: 'Shield Generator Coil', description: 'A replacement deflector shield generator coil. Factory surplus — still sealed in Galentro packaging.', price: 600, category: 'ship_parts' },
+            { id: 'sensor_parts', name: 'Sensor Array Module', description: 'A mid-grade sensor array processing module. Pulls cleaner signal than the stock unit.', price: 500, category: 'ship_parts' },
+            { id: 'weapon_parts', name: 'Laser Cannon Actuator', description: 'A replacement firing actuator for a standard light laser cannon mount.', price: 700, category: 'ship_parts' },
+            { id: 'hull_parts', name: 'Hull Plating Sheets', description: 'Molecularly-bonded suprasteel hull plates, Galentro factory standard. Enough to patch moderate hull damage.', price: 500, category: 'ship_parts' },
+            { id: 'sublight_parts', name: 'Ion Drive Thrust Regulator', description: 'A reconditioned ion drive thrust regulator. Restores standard sublight performance.', price: 650, category: 'ship_parts' },
+            { id: 'landing_parts', name: 'Landing Gear Hydraulics', description: 'A complete hydraulic assembly for freighter-class landing struts. Heavy but essential.', price: 400, category: 'ship_parts' },
+            { id: 'hidden_holster', name: 'Concealed Carry Rig', description: 'A slim, sensor-baffled holster designed to defeat standard weapons scanners. Fits a hold-out blaster or small pistol. Highly illegal on Bescane.\n\n{dim}Wear this to smuggle one small weapon past customs checkpoints.{/dim}', price: 1500, category: 'contraband' },
+            { id: 'medpac', name: 'Medpac', description: 'Standard-issue medical kit. Heals one wound level.\n\n{dim}Use: {/dim}{green}use medpac{/green}', price: 50, category: 'medical' }
+          ],
+          buyRate: 1.0,
+          sellRate: 0.25
+        },
+        talk: [
+          { once: "torza_intro", text: "The Toydarian buzzes over to you, her wings humming.\n\n\"Freighter pilot! I can always tell — you've got that look. Desperate and broke.\" She grins, showing small sharp teeth. \"Torza has what you need. Ship parts, factory surplus, pulled from decommissioned hulks — good quality, better than that Duros on the station charges, I guarantee it.\"\n\nShe leans in conspiratorially. \"And if you need something a little more... {dim}specialized{/dim}... Torza doesn't judge. Credits talk, everything else walks.\"" },
+          { text: "\"You buying or browsing? Parts don't get cheaper with age — well, actually they do, but I don't pass the savings on.\"" },
+          { text: "\"Good parts, fair prices. Better than ordering from Kuat, hah! Those pirates between here and the Core would eat your ship alive. Buy local, fly safe.\"" }
+        ]
+      }
+    },
+    bescane: true,
+    publicArea: true
+  },
+
+  "besc_banthaquik": {
+    name: "BanthaQuik Alley",
+    description: "A narrow service alley lined with identical {item}food kiosks{/item} bearing the orange-and-brown BanthaQuik logo — Bescane's ubiquitous fast-food chain. The smell of rehydrated bantha meat and synthetic spices fills the air. Workers on break crowd around standing tables, shoveling food into their mouths with mechanical efficiency. A {item}delivery window{/item} at the end kiosk has a longer line than the others — mostly nervous-looking types who don't seem hungry.\n\nThe Arcade Omicron lies to the south. Squatters' Row is to the east.",
+    exits: {
+      south: "besc_arcade",
+      east: "besc_squatters"
+    },
+    objects: {
+      "food kiosks": "Identical BanthaQuik branded kiosks with holographic menus rotating above their counters. The menu includes: Tusken Special (bantha-on-a-stick, 2cr), Calamarian Exosquidra Poppets (3cr), Ithor Ooglata Eggs Scrambled (2cr), Rodian Cranker Roots Deeply Oiled (2cr), and Corellia's Pride Fringe Cake (4cr). The food all comes out of the same rehydration unit.",
+      "delivery window": "The last kiosk in the row has a delivery window with a hovering order screen. Unlike the food windows, this one accepts pre-paid delivery orders to specific addresses. A hand-scrawled note says: 'DELIVERY ORDERS PREPAID ONLY — 7cr MINIMUM — ALLOW 2-48 HOURS.'\n\n{dim}This is how you contact Lucky Ordomire. You'd need to know the right order sequence.{/dim}",
+      "tables": "Standing-height tables bolted to the alley floor, their surfaces sticky with food residue. Workers eat in silence, eyes down, then shuffle back to their shifts. Nobody lingers here."
+    },
+    npcs: {},
+    bescane: true
+  },
+
+  "besc_squatters": {
+    name: "Squatters' Row",
+    description: "A claustrophobic maze of light metal-and-plastic {item}huts{/item} crowded along narrow alleyways between the market and the outer hub wall. The structures lean against each other like drunks, connected by tangles of stolen power cables and makeshift bridges. Laundry lines crisscross overhead, blocking what little light filters down from the hub ceiling panels.\n\nThe air here is thick with smoke from cooking fires and the sharp chemical tang of whatever the locals are burning for heat. This is where Bescane's off-the-books population lives — those who've finished their contracts but can't afford passage offworld, or those who never had contracts at all.\n\nThe outer market lies to the west. BanthaQuik food kiosks are to the north. The corridor south leads toward the hub outskirts.",
+    exits: {
+      west: "besc_market",
+      north: "besc_banthaquik",
+      south: "besc_outskirts"
+    },
+    objects: {
+      "huts": "Makeshift shelters assembled from shipping crate panels, factory scrap, and plastic sheeting. Some have been here long enough to acquire a second story, added with questionable engineering. A few have hand-painted signs: 'REPAIRS,' 'FORTUNES TOLD,' 'ROOMS 5cr/NIGHT.'",
+      "cables": "Stolen power cables snake between the huts, tapped into the hub's main power grid through illegal splices. Sparks occasionally arc between exposed junctions. The whole row is probably one short circuit away from a fire.",
+      "bridges": "Narrow plank bridges and rope walkways connect upper-level huts across the alleyways. Figures move along them overhead, silhouetted against the distant ceiling lights."
+    },
+    npcs: {},
+    bescane: true
+  },
+
+  "besc_outskirts": {
+    name: "Hub Outskirts",
+    description: "The edge of Lumchugger's Hub, where the neon glow fades and the corridor walls give way to raw duracrete and exposed industrial piping. The crowds thin out here — only people with business outside the hub proper come this far. {item}Graffiti{/item} and Cooper Dray's {item}swoop markings{/item} cover the walls in fluorescent paint. The air tastes of chemical runoff from the processing hubs nearby.\n\nSquatters' Row is to the north. A cracked service road continues south toward the outer perimeter.",
+    exits: {
+      north: "besc_squatters",
+      south: "besc_outerroad"
+    },
+    objects: {
+      "graffiti": "Gang tags, political slogans ('GALENTRO = SLAVERY'), crude drawings, and what might be a map of sewer access points scratched into the duracrete. One recurring tag reads 'C.S.' with a swoop silhouette — Cooper's Swoopers.",
+      "swoop markings": "Fluorescent paint markings on the walls — arrows, symbols, and what might be a simple code. They look like navigation markers for someone who moves through these corridors regularly. One recurring symbol looks like a stylized swoop bike."
+    },
+    npcs: {},
+    bescane: true
+  },
+
+  "besc_outerroad": {
+    name: "Outer Perimeter Road",
+    description: "A wide industrial access road running along the outer wall of the hub complex. Cargo haulers rumble past at irregular intervals, kicking up grit and chemical dust. The {item}wall{/item} to the east is the outer hull of the hub — beyond it, nothing but factory sprawl and atmosphere processors stretching to the horizon. A few squat {item}buildings{/item} line the road, their purposes unclear from the outside.\n\nTo the west, a battered sign reads '{npc}GUILD{/npc}' in faded Aurebesh with a targeting reticle logo beneath it. The hub outskirts are back to the north. The road continues south toward open ground.",
+    exits: {
+      north: "besc_outskirts",
+      west: "besc_guild",
+      south: "besc_wasteland"
+    },
+    objects: {
+      "wall": "The outer hull of Lumchugger's Hub — thick duracrete panels reinforced with suprasteel bracing. Vent grates release periodic bursts of hot, chemical-laden air from the processing systems within. The wall curves away in both directions, the sheer scale of the hub visible from out here.",
+      "buildings": "Low, squat structures built from prefabricated industrial panels. Most are unmarked warehouses or equipment storage. One has a faded bounty guild sign. Another has its windows blacked out and a heavy lock on the door."
+    },
+    npcs: {},
+    bescane: true,
+    publicArea: true
+  },
+
+  "besc_guild": {
+    name: "Bounty Hunter Guild Post",
+    description: "A reinforced prefab building with a heavy blast door and narrow viewslits for windows. Inside, the walls are lined with {item}bounty postings{/item} — holographic wanted notices cycling through faces and reward amounts. A {item}weapons locker{/item} near the door holds checked-in gear — the guild enforces its own rules here, not Galentro's.\n\nA scarred {npc}guild agent{/npc} sits behind an armored desk, managing contracts.\n\nThe outer road is to the east.",
+    exits: {
+      east: "besc_outerroad"
+    },
+    objects: {
+      "bounty postings": "Holographic wanted notices cycle through a wall-mounted display rack. Faces rotate with names, last known locations, and bounty amounts in Imperial credits. Some are marked 'DEAD OR ALIVE,' others 'ALIVE ONLY — REDUCED PAYMENT FOR CORPSE.' A few have red 'CLAIMED' stamps across them.\n\n{dim}Type {/dim}{green}bounty{/green}{dim} to see available contracts.{/dim}",
+      "weapons locker": "A heavy weapons locker near the entrance. Guild members can carry weapons inside the guild post — one of the few places on Bescane where that's tolerated. The guild has an understanding with Galentro: don't cause trouble in the hubs, and security looks the other way out here.",
+      "desk": "An armored desk built from what looks like a repurposed blast door panel. Scratched tally marks cover one edge — contracts completed, by the look of it."
+    },
+    npcs: {
+      "guild_agent": {
+        name: "Hask",
+        keywords: ["hask", "agent", "guild", "bounty", "rodian"],
+        look: "A lean Rodian with sharp compound eyes and a network of old scars across his snout. He wears a battered guild vest with the Bounty Hunters' Guild sigil — a targeting reticle over a clenched fist. A vibroknife sits on the desk within easy reach, and a heavy blaster is holstered at his hip. Out here, Galentro's weapons ban is a suggestion.\n\n{dim}He runs the guild post. Type {/dim}{green}talk hask{/green}{dim} for contracts.{/dim}",
+        combat: {
+          blaster: 15,        // 5D
+          dodge: 14,          // 4D+2
+          meleeParry: 13,     // 4D+1
+          brawlParry: 12,     // 4D
+          brawl: 12,          // 4D
+          melee: 14,          // 4D+2
+          str: 10,            // 3D+1
+          damage: 14,         // 4D+2 heavy blaster
+          weaponType: 'dodge',
+          weaponName: 'heavy blaster pistol',
+          stunOnly: false,
+          security: false
+        },
+        talk: [
+          { once: "hask_intro", text: "The Rodian looks up from a stack of contract flimsiplast.\n\n\"New hunter. I can always tell — you've got that hungry look.\" He gestures at the bounty postings on the wall. \"I'm Hask. I run the guild post out here. Galentro doesn't care what happens past the perimeter road, and we like it that way.\"\n\nHe taps the desk. \"Contracts are simple. I post the target, you bring proof of completion, I pay the bounty. Guild takes a ten percent cut. Don't bring trouble back to the post, don't take contracts you can't finish, and don't try to renegotiate after the fact.\"\n\n{dim}Type {/dim}{green}bounty{/green}{dim} to see available contracts.{/dim}" },
+          { text: "\"Got bounties if you want work. {green}bounty{/green} to see what's open. Bring proof, get paid. Guild takes ten percent.\"" }
+        ]
+      }
+    },
+    bescane: true
+  },
+
+  "besc_wasteland": {
+    name: "Factory Outskirts — Open Ground",
+    description: "Beyond the perimeter road, the landscape opens into a bleak expanse of compacted industrial waste and abandoned equipment. Decommissioned {item}machinery{/item} rusts in the chemical air — old cargo haulers, stripped-down excavators, and unidentifiable factory components left to decay. The sky overhead is a perpetual grey-brown haze of factory emissions.\n\nThe hub's outer wall looms to the north. There's nothing inviting out here — but nobody's watching, either.\n\nThe perimeter road is back to the north.",
+    exits: {
+      north: "besc_outerroad"
+    },
+    objects: {
+      "machinery": "Mountains of abandoned industrial equipment slowly being consumed by corrosion and chemical weathering. Some pieces are still recognizable — a cargo hauler cab, a mining drill assembly, what might have been a shield generator housing. Others have rusted into abstract sculptures.",
+      "sky": "The sky is a uniform grey-brown blanket of factory emissions. Somewhere up there is a sun, but you'd never know it. Occasional flashes of light from the upper atmosphere mark cargo ships entering or leaving orbit.",
+      "ground": "Compacted industrial waste — layers of slag, chemical residue, and compressed debris forming an uneven, crunching surface. Nothing grows here. Nothing probably ever will."
+    },
+    npcs: {},
+    bescane: true
   }
 
 };
