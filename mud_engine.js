@@ -1417,7 +1417,7 @@ const MUD = {
     }
 
     // Roll Pick Pocket vs NPC Perception
-    const ppPips = MUD_COMBAT.getPlayerSkillPips('Pick Pocket');
+    const ppPips = Math.max(3, MUD_COMBAT.getPlayerSkillPips('Pick Pocket') - MUD_SPECIES.clumsyPenalty());
     const ppRoll = MUD_COMBAT.rollPips(ppPips);
     const perPips = npc.combat ? (npc.combat.dodge || 9) : 9;
     const perRoll = MUD_COMBAT.rollPips(perPips);
@@ -2681,6 +2681,53 @@ const MUD_CHARGEN = {
 // COMBAT ENGINE
 // ============================================================
 
+// ============================================================
+// SPECIES ABILITIES
+// ============================================================
+
+const MUD_SPECIES = {
+  is(species) {
+    return MUD.state.character && MUD.state.character.species === species;
+  },
+
+  // Wookiee Berserker Rage — active during any combat
+  isRaging() {
+    return this.is('Wookiee') && MUD_COMBAT.active;
+  },
+  rageBrawlBonus() { return this.isRaging() ? 6 : 0; },   // +2D brawl damage
+  ragePenalty() { return this.isRaging() ? 6 : 0; },       // -2D non-STR
+
+  // Dark vision — Sullustan, Rodian, Trandoshan
+  hasDarkVision() {
+    return this.is('Sullustan') || this.is('Rodian') || this.is('Trandoshan');
+  },
+  darkPerceptionBonus() { return this.is('Sullustan') ? 6 : 0; }, // +2D search in dark
+
+  // Trandoshan — clumsy fingers
+  clumsyPenalty() { return this.is('Trandoshan') ? 6 : 0; }, // -2D pickpocket
+
+  // Zabrak — +1D Willpower and Stamina
+  hardinessBonus(skillName) {
+    if (!this.is('Zabrak')) return 0;
+    return (skillName === 'Willpower' || skillName === 'Stamina') ? 3 : 0;
+  },
+
+  // Willpower last stand — player only, vs the damage diff that dropped them
+  // Returns true if they stay conscious for one more round
+  willpowerLastStand(damageDiff) {
+    const c = MUD.state.character;
+    if (!c) return false;
+    const wpPips = MUD_COMBAT.getPlayerSkillPips('Willpower') + this.hardinessBonus('Willpower');
+    const roll = MUD_COMBAT.rollPips(wpPips);
+    MUD.print('{dim}Willpower to stay conscious: {/dim}{gold}' + roll + '{/gold}{dim} vs damage overflow {/dim}{gold}' + damageDiff + '{/gold}');
+    if (roll >= damageDiff) {
+      MUD.print('{green}Sheer willpower keeps you standing — one more round!{/green}');
+      return true;
+    }
+    return false;
+  }
+};
+
 const MUD_COMBAT = {
 
   active: false,
@@ -2747,12 +2794,25 @@ const MUD_COMBAT = {
   // Get player's skill pips (or fall back to attribute)
   getPlayerSkillPips(skillName) {
     const c = MUD.state.character;
-    if (!c) return 6; // 2D fallback
-    if (c.skills[skillName]) return c.skills[skillName];
-    // Fall back to parent attribute
-    const def = MUD_CHARGEN.SKILLS.find(s => s.name === skillName);
-    if (def && c.attrs[def.attr]) return c.attrs[def.attr];
-    return 6;
+    if (!c) return 6;
+    let pips = c.skills[skillName] || 0;
+    if (!pips) {
+      const def = MUD_CHARGEN.SKILLS.find(s => s.name === skillName);
+      pips = (def && c.attrs[def.attr]) ? c.attrs[def.attr] : 6;
+    }
+    // Species bonuses
+    pips += MUD_SPECIES.hardinessBonus(skillName); // Zabrak +1D Willpower/Stamina
+    // Sullustan +2D Search/Perception in dark rooms
+    const inDarkRoom = ROOMS_DATA[MUD.state.currentRoom] && ROOMS_DATA[MUD.state.currentRoom].mine && !ROOMS_DATA[MUD.state.currentRoom].mine.lit;
+    if (inDarkRoom && (skillName === 'Search' || skillName === 'Sneak')) {
+      pips += MUD_SPECIES.darkPerceptionBonus();
+    }
+    // Wookiee rage penalty on non-STR skills during combat
+    const def2 = MUD_CHARGEN.SKILLS.find(s => s.name === skillName);
+    if (MUD_SPECIES.isRaging() && def2 && def2.attr !== 'Str') {
+      pips = Math.max(3, pips - MUD_SPECIES.ragePenalty());
+    }
+    return pips;
   },
 
   getPlayerDefensePips(defenseType) {
@@ -2877,6 +2937,12 @@ const MUD_COMBAT = {
       loot: npc.loot || null,
       isBountyTarget: npc.isBountyTarget || false
     }];
+
+    // Wookiee rage notification
+    if (MUD_SPECIES.isRaging()) {
+      MUD.print('{red}A primal roar erupts from your throat — Wookiee berserker rage takes hold!{/red}');
+      MUD.print('{dim}+2D brawl damage, -2D all non-Strength skills{/dim}');
+    }
 
     // Call security if flagged
     if (npc.combat.security) {
@@ -3012,7 +3078,7 @@ const MUD_COMBAT = {
     if (weapon) return { pips: MUD_CHARGEN.diceToPips(weapon.damage), stunOnly: weapon.stunOnly || false };
 
     // Fallback — unarmed/improvised
-    if (atkType.type === 'brawl') return { pips: MUD.state.character.attrs.Str, stunOnly: false }; // STR damage
+    if (atkType.type === 'brawl') return { pips: MUD.state.character.attrs.Str + MUD_SPECIES.rageBrawlBonus(), stunOnly: false }; // STR damage (+2D if Wookiee raging)
     if (atkType.type === 'melee') return { pips: MUD.state.character.attrs.Str + 3, stunOnly: false }; // STR+1D improvised
     // No blaster equipped
     return { pips: 9, stunOnly: false }; // 3D fallback
@@ -3074,6 +3140,10 @@ const MUD_COMBAT = {
             MUD.print('  You are ' + this.woundLabel(c.wounds) + '!');
             if (this.woundIndex(c.wounds) >= this.woundIndex('incapacitated')) {
               this.lastKilledBy = { name: enemy.name, weaponType: enemy.combat.weaponType || 'dodge', weaponName: enemy.combat.weaponName || 'weapon' };
+              // Willpower last stand — player only
+              if (c.wounds !== 'dead' && MUD_SPECIES.willpowerLastStand(diff)) {
+                c.wounds = 'wounded2x'; // stay up at wounded twice
+              }
             }
           } else {
             MUD.print('  {dim}No effect on you.{/dim}');
@@ -3408,6 +3478,33 @@ const MUD_MINE = {
     // Sneaking past — spider doesn't notice
     if (MUD.state.flags['sneaking']) {
       MUD.print('{dim}Something large shifts in the darkness nearby... but it hasn\'t noticed you. Yet.{/dim}');
+      return;
+    }
+
+    // Dark vision species see it coming — no surprise
+    if (MUD_SPECIES.hasDarkVision()) {
+      MUD.printBlank();
+      MUD.print('{gold}Your eyes pierce the darkness — you spot the cave spider before it spots you!{/gold}');
+      MUD.print('{dim}You have the initiative. Attack or flee.{/dim}');
+      // Set up combat but player goes first (no enemy first strike)
+      MUD_COMBAT.active = true;
+      MUD_COMBAT.round = 1;
+      MUD_COMBAT.playerActedThisRound = false;
+      MUD_COMBAT.securityCalled = false;
+      MUD_COMBAT.enemies = [{
+        id: 'cave_spider', roomId: roomId, name: 'Cave Spider',
+        combat: { blaster: 0, dodge: 12, meleeParry: 10, brawlParry: 13, brawl: 15, melee: 0, str: 16, damage: 16, weaponType: 'brawlParry', weaponName: 'mandibles', stunOnly: false, security: false },
+        wounds: 'healthy', stunTurns: 0,
+        loot: { credits: { min: 0, max: 0 }, cp: 3, items: [
+          { id: 'large_chitin', name: 'Large Spider Chitin Plate', description: 'A thick slab of cave spider chitin.', sellValue: 60, chance: 0.8 },
+          { id: 'large_chitin_2', name: 'Large Spider Chitin Plate', description: 'A thick slab of cave spider chitin.', sellValue: 60, chance: 0.5 },
+          { id: 'large_silk', name: 'Large Spider Silk Bundle', description: 'A thick coil of cave spider silk.', sellValue: 45, chance: 0.8 },
+          { id: 'large_silk_2', name: 'Large Spider Silk Bundle', description: 'A thick coil of cave spider silk.', sellValue: 45, chance: 0.5 },
+          { id: 'spider_fang', name: 'Cave Spider Fang', description: 'A wickedly curved fang. The venom gland is still attached.', sellValue: 100, chance: 0.3 }
+        ]}
+      }];
+      MUD.print('{red}═══ COMBAT — Round 1 ═══{/red}');
+      MUD.print('{dim}Attack ({/dim}{green}punch{/green}{dim}/{/dim}{green}knife{/green}{dim}/{/dim}{green}blast{/green}{dim}) or {/dim}{green}flee{/green}{dim}!{/dim}');
       return;
     }
 
