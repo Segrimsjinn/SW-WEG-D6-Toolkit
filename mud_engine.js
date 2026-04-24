@@ -861,12 +861,15 @@ const MUD = {
     const item = shop.shop.buy.find(s => s.name.toLowerCase() === kw || s.name.toLowerCase().startsWith(kw) || s.id === kw);
     if (!item) { this.print('"I don\'t have anything called \'' + target + '\'. Check the {item}price list{/item}."', 'error'); return; }
 
-    if (this.state.credits < item.price) {
-      this.print('"That\'s ' + item.price + ' credits. You\'ve got ' + this.state.credits + '. Come back when you can afford it."', 'error');
+    // Commerce Guild members get 20% discount
+    const price = this.state.guild === 'merchant' ? Math.floor(item.price * 0.80) : item.price;
+
+    if (this.state.credits < price) {
+      this.print('"That\'s ' + price + ' credits. You\'ve got ' + this.state.credits + '. Come back when you can afford it."', 'error');
       return;
     }
 
-    this.state.credits -= item.price;
+    this.state.credits -= price;
     const invItem = { id: item.id, name: item.name, description: item.description || item.name };
     if (item.damage) { invItem.damage = item.damage; invItem.combatType = item.combatType; invItem.stunOnly = item.stunOnly || false; }
     if (item.consumable) { invItem.consumable = true; invItem.effect = item.effect; }
@@ -874,7 +877,11 @@ const MUD = {
     this.state.inventory.push(invItem);
 
     this.print('{npc}' + shop.name + '{/npc} takes your credits and slides the {item}' + item.name + '{/item} across the counter.');
-    this.print('{dim}-' + item.price + ' credits. Balance: ' + this.state.credits + '{/dim}');
+    if (price < item.price) {
+      this.print('{dim}-' + price + ' credits (guild discount). Balance: ' + this.state.credits + '{/dim}');
+    } else {
+      this.print('{dim}-' + price + ' credits. Balance: ' + this.state.credits + '{/dim}');
+    }
     this.autoSave();
   },
 
@@ -895,7 +902,9 @@ const MUD = {
     // Ship parts sell at full value at any ship parts vendor
     const isRawMaterial = item.id && (item.id.startsWith('quartz_') || item.id.startsWith('spider_') || item.id.startsWith('large_'));
     const isShipParts = item.category === 'ship_parts' || (item.id && item.id.endsWith('_parts'));
-    const rate = (isRawMaterial || isShipParts) ? 1.0 : this.getSellRate();
+    // Commerce Guild members get 50% base sell rate
+    const guildSellRate = this.state.guild === 'merchant' ? Math.max(0.50, this.getSellRate()) : this.getSellRate();
+    const rate = (isRawMaterial || isShipParts) ? 1.0 : guildSellRate;
     const sellPrice = Math.max(1, Math.floor(baseValue * rate));
     const pct = Math.round(rate * 100);
 
@@ -2096,6 +2105,12 @@ const MUD = {
     if (fromRoom !== 'besc_customs') return true; // not leaving customs
     if (toRoom === 'besc_docking') return true; // heading back to ship — no check
 
+    // Weapons license — Imperial Auxiliary and Bounty Hunter Guild bypass customs
+    if (this.state.guild === 'imperial' || this.state.guild === 'bounty') {
+      this.print('{dim}Prefect Drace glances at your credentials and waves you through. "Licensed carry. Move along."{/dim}');
+      return true;
+    }
+
     // Check inventory for weapons (energy weapons)
     const weapons = this.state.inventory.filter(it =>
       it.combatType === 'blaster' || (it.description && it.description.toLowerCase().includes('blaster'))
@@ -2175,6 +2190,13 @@ const MUD = {
 
     this.printBlank();
     this.print('{dim}A squad of four stormtroopers approaches, their white armor scuffed from patrol duty.{/dim}');
+
+    // Weapons license — Imperial Auxiliary and Bounty Hunter Guild get waved through
+    if (this.state.guild === 'imperial' || this.state.guild === 'bounty') {
+      this.print('{dim}The squad leader scans your ID. "' + (this.state.guild === 'imperial' ? 'Imperial Auxiliary. Carry on.' : 'Guild hunter. Licensed carry. Move along.') + '"{/dim}');
+      return;
+    }
+
     this.print('"Halt. Routine identification check. State your business."');
     this.printBlank();
 
@@ -2577,18 +2599,23 @@ const MUD = {
       this.print('{gold}═══════════════════════════════════════════════════{/gold}');
       this.printBlank();
 
+      // Guild-specific items and perk announcements
       if (guildId === 'merchant') {
+        this.state.inventory.push({ id: 'guild_medallion', name: 'Commerce Guild Medallion', description: 'A polished durasteel medallion bearing the Commerce Guild emblem — interlocking rings over a star chart. Identifies you as a guild associate.\n\n{green}Perk: 20% discount on all purchases. 50% base sell rate at all shops.{/green}', kept: true, isGuildItem: true });
         this.print('{npc}Trade Broker Salenne{/npc} pins a Commerce Guild medallion to your jacket.');
-        this.print('"Welcome, associate. The guild\'s training facilities are now open to you. Invest in yourself — it\'s the best trade you\'ll ever make."');
+        this.print('"Welcome, associate. Show that medallion at any shop and you\'ll get guild rates — twenty percent off purchases, and vendors know our associates bring quality goods. Fifty percent on everything you sell, no haggling required."');
       } else if (guildId === 'rebel') {
-        this.print('{npc}Sergeant Mora{/npc} clasps your hand with her cybernetic arm.');
-        this.print('"You\'re one of us now. The Pipeline is your safe house — train here, plan here, rest here. Just don\'t lead anyone back to this door."');
+        this.state.inventory.push({ id: 'rebel_sigil', name: 'Resistance Sigil', description: 'A small, unassuming chip etched with a coded Rebel Alliance frequency marker. To most people it looks like a broken credit chip. To the right people, it\'s a lifeline.\n\n{green}Perk: Free medical treatment on death. Bounty chips are never lost.{/green}', kept: true, isGuildItem: true });
+        this.print('{npc}Sergeant Mora{/npc} presses a small chip into your palm.');
+        this.print('"This sigil marks you as one of ours. If you go down, the network will get you patched up — no charge. And your bounty chips are protected — we look after our own, even when they\'re unconscious."');
       } else if (guildId === 'imperial') {
+        this.state.inventory.push({ id: 'imperial_id', name: 'Imperial Auxiliary ID', description: 'An official Imperial Auxiliary identification card with your biometrics encoded. Bears the Imperial crest and Obtrexta Sector Command authorization.\n\n{green}Perk: Licensed to carry weapons. Access to Imperial requisitions (military-grade gear).{/green}', kept: true, isGuildItem: true });
         this.print('{npc}Lieutenant Vel{/npc} administers a brief oath and stamps your credentials.');
-        this.print('"Welcome to the Imperial Auxiliary. You now have access to the finest training program in the Obtrexta Sector. The Empire expects results."');
+        this.print('"This ID authorizes you to carry personal weapons under Imperial Auxiliary regulations. Customs will wave you through. You also have access to the Imperial requisitions catalog — military-grade equipment at subsidized rates."');
       } else if (guildId === 'bounty') {
+        this.state.inventory.push({ id: 'guild_sigil', name: 'Bounty Hunter Guild Sigil', description: 'A heavy durasteel sigil bearing the Bounty Hunters\' Guild emblem — a targeting reticle over a clenched fist. Recognized across the Outer Rim.\n\n{green}Perk: Licensed to carry weapons. Bounty chips are never lost on death.{/green}', kept: true, isGuildItem: true });
         this.print('{npc}Hask{/npc} slides a guild sigil across the desk — a targeting reticle over a clenched fist.');
-        this.print('"You\'re guild now. Training bay\'s in the back. Deadshot, Venn, and Torque will push you further than anyone on the station ever could. Don\'t make me regret this."');
+        this.print('"You\'re guild now. That sigil is your weapons license — Galentro has an arrangement with us. Customs won\'t touch you. And your bounty chips are guild-protected. You go down, we make sure nobody rifles through your pockets."');
       }
       this.printBlank();
       this.print('{dim}Guild training rooms are now accessible. Train skills up to {/dim}{gold}8D+2{/gold}{dim}.{/dim}');
@@ -4209,25 +4236,33 @@ const MUD_COMBAT = {
     MUD.print('{dim}Everything goes dark...{/dim}');
     MUD.printBlank();
 
-    // Bounty chips — 1 in 6 chance each chip is seized for medical bills
+    // Bounty chips — Rebel and Bounty Hunter guilds protect chips; others 1-in-6 loss
+    const chipsProtected = MUD.state.guild === 'rebel' || MUD.state.guild === 'bounty';
     const chips = MUD.state.inventory.filter(it => it.isBountyChip);
     if (chips.length) {
-      const lost = [];
-      for (const chip of chips) {
-        if (Math.floor(Math.random() * 6) === 0) {
-          lost.push(chip);
+      if (chipsProtected) {
+        MUD.print('{dim}Your guild contacts secured your bounty chips during recovery.{/dim}');
+      } else {
+        const lost = [];
+        for (const chip of chips) {
+          if (Math.floor(Math.random() * 6) === 0) {
+            lost.push(chip);
+          }
         }
-      }
-      if (lost.length) {
-        let chipTotal = 0;
-        for (const chip of lost) chipTotal += chip.bountyReward;
-        MUD.state.inventory = MUD.state.inventory.filter(it => !lost.includes(it));
-        MUD.print('{red}Not all rescuers are completely honest people — looks like ' + (lost.length > 1 ? lost.length + ' bounty chips were' : 'your bounty chip was') + ' lost this time. -' + chipTotal + ' credits in bounties gone.{/red}');
+        if (lost.length) {
+          let chipTotal = 0;
+          for (const chip of lost) chipTotal += chip.bountyReward;
+          MUD.state.inventory = MUD.state.inventory.filter(it => !lost.includes(it));
+          MUD.print('{red}Not all rescuers are completely honest people — looks like ' + (lost.length > 1 ? lost.length + ' bounty chips were' : 'your bounty chip was') + ' lost this time. -' + chipTotal + ' credits in bounties gone.{/red}');
+        }
       }
     }
 
-    // Medical bills — 500 credits or 50% of what you have if less than 500
-    const penalty = MUD.state.credits >= 500 ? 500 : Math.floor(MUD.state.credits * 0.5);
+    // Medical bills — Rebel Network gets free rez; others pay 500 or 50%
+    if (MUD.state.guild === 'rebel') {
+      MUD.print('{dim}The resistance network covered your medical expenses.{/dim}');
+    }
+    const penalty = MUD.state.guild === 'rebel' ? 0 : (MUD.state.credits >= 500 ? 500 : Math.floor(MUD.state.credits * 0.5));
     if (penalty > 0) {
       MUD.state.credits -= penalty;
       MUD.print('{red}Medical bills: -' + penalty + ' credits{/red}');

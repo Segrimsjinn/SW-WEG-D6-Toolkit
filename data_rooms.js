@@ -222,7 +222,7 @@ const ROOMS_DATA = {
         },
         shop: {
           name: "Renn's Ship Parts",
-          inventory: [
+          buy: [
             { id: 'hyperdrive_parts', name: 'Hyperdrive Regulator', description: 'A refurbished hyperdrive motivator regulator. Station markup, but it\'s right here.', price: 1120, category: 'ship_parts' },
             { id: 'shield_parts', name: 'Shield Generator Coil', description: 'A replacement deflector shield generator coil. Station prices.', price: 840, category: 'ship_parts' },
             { id: 'sensor_parts', name: 'Sensor Array Module', description: 'A mid-grade sensor array processing module.', price: 700, category: 'ship_parts' },
@@ -1191,7 +1191,7 @@ const ROOMS_DATA = {
         },
         shop: {
           name: "Vyla's Acquisitions",
-          inventory: [],
+          buy: [],
           buyRate: 1.0,
           sellRate: 0.50
         },
@@ -1227,7 +1227,7 @@ const ROOMS_DATA = {
         },
         shop: {
           name: "Torza's Ship Parts",
-          inventory: [
+          buy: [
             { id: 'hyperdrive_parts', name: 'Hyperdrive Regulator', description: 'A refurbished hyperdrive motivator regulator. Compatible with most light freighter hyperdrives including the Ghtroc 720 series.', price: 800, category: 'ship_parts' },
             { id: 'shield_parts', name: 'Shield Generator Coil', description: 'A replacement deflector shield generator coil. Factory surplus — still sealed in Galentro packaging.', price: 600, category: 'ship_parts' },
             { id: 'sensor_parts', name: 'Sensor Array Module', description: 'A mid-grade sensor array processing module. Pulls cleaner signal than the stock unit.', price: 500, category: 'ship_parts' },
@@ -1526,7 +1526,7 @@ const ROOMS_DATA = {
         combat: { blaster: 10, dodge: 8, meleeParry: 10, brawlParry: 10, brawl: 11, melee: 10, str: 11, damage: 13, weaponType: 'melee', weaponName: 'heavy wrench', stunOnly: false, security: true },
         shop: {
           name: "Marek's Salvage",
-          inventory: [
+          buy: [
             { id: 'medpac', name: 'Medpac', description: 'Scavenged medical supplies, repackaged. Works fine.\n\n{dim}Use: {/dim}{green}use medpac{/green}', price: 40, category: 'medical' },
             { id: 'respirator', name: 'Respirator Mask', description: 'A basic respirator for filtering chemical air. Essential deeper in the wastes.', price: 30, category: 'gear' }
           ],
@@ -1560,7 +1560,7 @@ const ROOMS_DATA = {
         combat: { blaster: 9, dodge: 12, meleeParry: 7, brawlParry: 7, brawl: 7, melee: 7, str: 6, damage: 9, weaponType: 'dodge', weaponName: 'hold-out blaster', stunOnly: false, security: false },
         shop: {
           name: "Fizz's Chem Lab",
-          inventory: [
+          buy: [
             { id: 'stim_shot', name: 'Stimulant Shot', description: 'A chemical stimulant that temporarily sharpens reflexes. Probably not entirely legal.\n\n{dim}Use: {/dim}{green}use stim{/green}', price: 75, category: 'chem' },
             { id: 'medpac', name: 'Medpac', description: 'Field medical kit.\n\n{dim}Use: {/dim}{green}use medpac{/green}', price: 45, category: 'medical' }
           ],
@@ -1714,7 +1714,7 @@ const ROOMS_DATA = {
         combat: { blaster: 13, dodge: 12, meleeParry: 10, brawlParry: 10, brawl: 10, melee: 10, str: 9, damage: 13, weaponType: 'dodge', weaponName: 'blaster pistol', stunOnly: false, security: true },
         shop: {
           name: "Sable's Trading Post",
-          inventory: [
+          buy: [
             { id: 'medpac', name: 'Medpac', description: 'Field medical kit.\n\n{dim}Use: {/dim}{green}use medpac{/green}', price: 45, category: 'medical' },
             { id: 'respirator', name: 'Respirator Mask', description: 'Chemical air filtration mask. Essential in the deep wastes.', price: 25, category: 'gear' }
           ],
@@ -1904,6 +1904,29 @@ const ROOMS_DATA = {
         talk: [
           { once: "krakk_intro", text: "{npc}Sergeant Major Krakk{/npc} turns all four eyes on you. His voice hits you like a concussion grenade.\n\n\"YOU WANT TO SERVE THE EMPIRE? THEN YOU WILL BE STRONG. YOU WILL BE TOUGH. YOU WILL BE CAPABLE OF MAINTAINING YOUR OWN EQUIPMENT IN THE FIELD BECAUSE THE SUPPLY DEPOT IS THREE SYSTEMS AWAY AND YOUR REPAIR DROID JUST GOT SHOT.\"\n\nHe lowers his voice to merely deafening. \"I train physical conditioning and combat engineering. Brawling, stamina, climbing, swimming, plus every repair skill from blasters to capital ships. When I'm done with you, you'll be able to punch through a blast door and then fix it afterward.\"\n\n{dim}Type {/dim}{green}train{/green}{dim} to see available training.{/dim}" },
           { text: "\"STOP STANDING AROUND. {green}train{/green} OR GET OUT OF MY OFFICE.\"" }
+        ]
+      },
+      "requisitions": {
+        name: "Requisitions Officer Brenn",
+        keywords: ["requisitions", "brenn", "officer", "supply"],
+        look: "A precise human male in an immaculate Imperial supply corps uniform, seated behind a terminal with access to the Imperial requisitions catalog. His desk is organized with military efficiency.\n\n{dim}He sells military-grade equipment to Imperial Auxiliary members. Type {/dim}{green}buy{/green}{dim} to browse.{/dim}",
+        combat: { blaster: 14, dodge: 12, meleeParry: 8, brawlParry: 8, brawl: 8, melee: 8, str: 9, damage: 14, weaponType: 'dodge', weaponName: 'officer\'s blaster', stunOnly: false, security: true },
+        shop: {
+          name: "Imperial Requisitions",
+          buy: [
+            { id: 'mil_blaster_rifle', name: 'E-11 Blaster Rifle', description: 'Standard Imperial military blaster rifle. Reliable, accurate, and significantly more powerful than civilian models. Damage: 5D.\n\n{dim}Combat: {/dim}{green}blast{/green}{dim} <target>{/dim}', price: 900, damage: '5D', combatType: 'blaster' },
+            { id: 'mil_heavy_blaster', name: 'DL-44 Heavy Blaster Pistol', description: 'Military-grade heavy blaster pistol. The weapon of choice for officers and those who want stopping power in a sidearm. Damage: 5D.\n\n{dim}Combat: {/dim}{green}blast{/green}{dim} <target>{/dim}', price: 750, damage: '5D', combatType: 'blaster' },
+            { id: 'mil_armor', name: 'Imperial Combat Vest', description: 'Reinforced blast vest with integrated trauma plates. Military-grade protection. Armor: +1D+2 physical/energy.\n\n{dim}Worn automatically.{/dim}', price: 600, armor: 5 },
+            { id: 'mil_hyperdrive', name: 'Military Hyperdrive Motivator', description: 'Class 1 hyperdrive motivator — twice as fast as the stock Ghtroc x2 unit. Military specification, factory sealed.', price: 2500, category: 'ship_parts' },
+            { id: 'mil_shields', name: 'Military Shield Generator', description: 'Enhanced deflector shield generator. Significantly better than civilian models. Military specification.', price: 1800, category: 'ship_parts' },
+            { id: 'medpac', name: 'Military Medpac', description: 'Imperial military medical kit. Superior to civilian models.\n\n{dim}Use: {/dim}{green}use medpac{/green}', price: 35, category: 'medical' }
+          ],
+          buyRate: 1.0,
+          sellRate: 0.25
+        },
+        talk: [
+          { once: "brenn_intro", text: "{npc}Requisitions Officer Brenn{/npc} looks up from his terminal.\n\n\"Auxiliary associate. Your credentials check out.\" He pulls up a catalog on screen. \"As an Imperial Auxiliary member, you have access to subsidized military hardware. Weapons, armor, ship components — all at rates well below black market pricing.\"\n\nHe taps the screen. \"The E-11 and DL-44 are standard issue. The combat vest is regulation. And if your ship needs a real hyperdrive or shields, we stock military specification components that outperform anything civilian.\"\n\n{dim}Type {/dim}{green}buy{/green}{dim} to browse the catalog.{/dim}" },
+          { text: "\"The Imperial requisitions catalog is at your disposal. {green}buy{/green} to browse. The Empire equips its people well.\"" }
         ]
       }
     },
