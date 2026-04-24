@@ -229,7 +229,8 @@ const ROOMS_DATA = {
             { id: 'weapon_parts', name: 'Laser Cannon Actuator', description: 'A replacement firing actuator for a standard light laser cannon mount.', price: 980, category: 'ship_parts' },
             { id: 'hull_parts', name: 'Hull Plating Sheets', description: 'Molecularly-bonded hull plates. Not cheap this far from a factory.', price: 700, category: 'ship_parts' },
             { id: 'sublight_parts', name: 'Ion Drive Thrust Regulator', description: 'A reconditioned ion drive thrust regulator.', price: 910, category: 'ship_parts' },
-            { id: 'landing_parts', name: 'Landing Gear Hydraulics', description: 'A complete hydraulic assembly for freighter-class landing struts.', price: 560, category: 'ship_parts' }
+            { id: 'landing_parts', name: 'Landing Gear Hydraulics', description: 'A complete hydraulic assembly for freighter-class landing struts.', price: 560, category: 'ship_parts' },
+            { id: 'lifesupport_parts', name: 'Life Support Module', description: 'A replacement atmospheric recycler and pressure regulation unit. Critical system — without it, your ship is grounded.', price: 1400, category: 'ship_parts' }
           ],
           buyRate: 1.0,
           sellRate: 0.25
@@ -1234,6 +1235,7 @@ const ROOMS_DATA = {
             { id: 'hull_parts', name: 'Hull Plating Sheets', description: 'Molecularly-bonded suprasteel hull plates, Galentro factory standard. Enough to patch moderate hull damage.', price: 500, category: 'ship_parts' },
             { id: 'sublight_parts', name: 'Ion Drive Thrust Regulator', description: 'A reconditioned ion drive thrust regulator. Restores standard sublight performance.', price: 650, category: 'ship_parts' },
             { id: 'landing_parts', name: 'Landing Gear Hydraulics', description: 'A complete hydraulic assembly for freighter-class landing struts. Heavy but essential.', price: 400, category: 'ship_parts' },
+            { id: 'lifesupport_parts', name: 'Life Support Module', description: 'A replacement atmospheric recycler and pressure regulation unit. Critical — without it, your ship can\'t fly.', price: 1000, category: 'ship_parts' },
             { id: 'hidden_holster', name: 'Concealed Carry Rig', description: 'A slim, sensor-baffled holster designed to defeat standard weapons scanners. Fits a hold-out blaster or small pistol. Highly illegal on Bescane.\n\n{dim}Wear this to smuggle one small weapon past customs checkpoints.{/dim}', price: 1500, category: 'contraband' },
             { id: 'medpac', name: 'Medpac', description: 'Standard-issue medical kit. Heals one wound level.\n\n{dim}Use: {/dim}{green}use medpac{/green}', price: 50, category: 'medical' }
           ],
@@ -1681,7 +1683,8 @@ const ROOMS_DATA = {
             { id: 'scrap_metal', name: 'Scrap Metal', description: 'Salvageable metal.', sellValue: 25, chance: 0.5 },
             { id: 'hyperdrive_parts', name: 'Hyperdrive Regulator', description: 'A hyperdrive regulator pulled from a wrecked freighter in the deep wastes. The prize find.', sellValue: 800, category: 'ship_parts', chance: 0.12 },
             { id: 'weapon_parts', name: 'Laser Cannon Actuator', description: 'A cannon actuator from a scrapped gunship.', sellValue: 700, category: 'ship_parts', chance: 0.10 },
-            { id: 'sublight_parts', name: 'Ion Drive Thrust Regulator', description: 'A thrust regulator from deep salvage.', sellValue: 650, category: 'ship_parts', chance: 0.10 }
+            { id: 'sublight_parts', name: 'Ion Drive Thrust Regulator', description: 'A thrust regulator from deep salvage.', sellValue: 650, category: 'ship_parts', chance: 0.10 },
+            { id: 'lifesupport_parts', name: 'Life Support Module', description: 'An atmospheric recycler pulled from a wrecked ship. Rare find in the deep wastes.', sellValue: 1000, category: 'ship_parts', chance: 0.05 }
           ]
         },
         talk: [

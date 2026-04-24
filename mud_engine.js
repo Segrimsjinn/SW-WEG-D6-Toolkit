@@ -1888,7 +1888,8 @@ const MUD = {
     weapons: 'Laser Cannon',
     hull: 'Hull Plating',
     sublight: 'Sublight Engines',
-    landing: 'Landing Gear'
+    landing: 'Landing Gear',
+    lifesupport: 'Life Support'
   },
 
   SHIP_PARTS_MAP: {
@@ -1898,7 +1899,8 @@ const MUD = {
     weapons: 'weapon_parts',
     hull: 'hull_parts',
     sublight: 'sublight_parts',
-    landing: 'landing_parts'
+    landing: 'landing_parts',
+    lifesupport: 'lifesupport_parts'
   },
 
   doRepair(arg) {
