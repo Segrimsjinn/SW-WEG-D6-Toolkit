@@ -1391,9 +1391,10 @@ const ROOMS_DATA = {
 
   "besc_wasteland": {
     name: "Factory Outskirts — Open Ground",
-    description: "Beyond the perimeter road, the landscape opens into a bleak expanse of compacted industrial waste and abandoned equipment. Decommissioned {item}machinery{/item} rusts in the chemical air — old cargo haulers, stripped-down excavators, and unidentifiable factory components left to decay. The sky overhead is a perpetual grey-brown haze of factory emissions.\n\nThe hub's outer wall looms to the north. There's nothing inviting out here — but nobody's watching, either.\n\nThe perimeter road is back to the north.",
+    description: "Beyond the perimeter road, the landscape opens into a bleak expanse of compacted industrial waste and abandoned equipment. Decommissioned {item}machinery{/item} rusts in the chemical air — old cargo haulers, stripped-down excavators, and unidentifiable factory components left to decay. The sky overhead is a perpetual grey-brown haze of factory emissions.\n\nThe hub's outer wall looms to the north. Slag fields stretch to the south — scavenger territory.\n\nThe perimeter road is back to the north.",
     exits: {
-      north: "besc_outerroad"
+      north: "besc_outerroad",
+      south: "besc_slag_east"
     },
     objects: {
       "machinery": "Mountains of abandoned industrial equipment slowly being consumed by corrosion and chemical weathering. Some pieces are still recognizable — a cargo hauler cab, a mining drill assembly, what might have been a shield generator housing. Others have rusted into abstract sculptures.",
@@ -1401,6 +1402,328 @@ const ROOMS_DATA = {
       "ground": "Compacted industrial waste — layers of slag, chemical residue, and compressed debris forming an uneven, crunching surface. Nothing grows here. Nothing probably ever will."
     },
     npcs: {},
+    bescane: true
+  },
+
+  // ============================================================
+  // BESCANE — Salvage Wasteland (3 rings + settlements)
+  // ============================================================
+
+  "besc_slag_east": {
+    name: "Slag Fields — East",
+    description: "A vast field of industrial slag and compacted waste stretching to the haze-choked horizon. Jagged mounds of fused metal and chemical residue form an uneven landscape, punctuated by the rusted skeletons of decommissioned {item}factory modules{/item}. The footing is treacherous — sharp edges and unstable ground everywhere.\n\n{item}Tracks{/item} in the chemical dust suggest others have been through here recently.\n\nThe factory outskirts are back to the north. The slag continues south into the chemical wastes. A trail to the west leads to more slag fields. A beaten path to the east leads to a salvage camp.",
+    exits: {
+      north: "besc_wasteland",
+      south: "besc_chem_east",
+      west: "besc_slag_west",
+      east: "besc_scrapcamp"
+    },
+    objects: {
+      "factory modules": "Gutted factory modules left to rot in the open air. Their walls have been stripped of anything valuable — wiring, plating, circuit boards — leaving hollow duracrete shells. Some have been converted into makeshift shelters by scavengers.",
+      "tracks": "Bootprints and drag marks in the chemical dust. Multiple sets, different sizes. Someone — or several someones — have been hauling salvage through here regularly."
+    },
+    npcs: {
+      "scavenger_weak": {
+        name: "Slag Scavenger",
+        keywords: ["scavenger", "scav", "human"],
+        look: "A wiry figure in a patched enviro-suit with a makeshift respirator, picking through debris with a pry bar. They eye you warily — out here, everyone's a potential threat or a potential score.",
+        combat: {
+          blaster: 8, dodge: 9, meleeParry: 9, brawlParry: 9, brawl: 10, melee: 10,
+          str: 9, damage: 12, weaponType: 'melee', weaponName: 'pry bar', stunOnly: false, security: false
+        },
+        loot: {
+          credits: { min: 10, max: 40 },
+          cp: 2,
+          items: [
+            { id: 'scrap_metal', name: 'Scrap Metal', description: 'A bundle of salvageable metal strips and wire. Worth something to the right buyer.', sellValue: 25, chance: 0.6 },
+            { id: 'hull_parts', name: 'Hull Plating Sheets', description: 'Salvaged hull plating — battered but still molecularly bonded. Could patch up a freighter.', sellValue: 500, category: 'ship_parts', chance: 0.08 },
+            { id: 'landing_parts', name: 'Landing Gear Hydraulics', description: 'A hydraulic assembly pulled from a junked freighter. Functional.', sellValue: 400, category: 'ship_parts', chance: 0.08 }
+          ]
+        },
+        talk: [
+          { text: "The scavenger tightens their grip on the pry bar.\n\n\"This is my patch. Find your own.\"" }
+        ]
+      }
+    },
+    bescane: true,
+    wastelandRing: 1
+  },
+
+  "besc_slag_west": {
+    name: "Slag Fields — West",
+    description: "More slag fields, these ones dominated by the hulk of a collapsed {item}cooling tower{/item} that must have been fifty meters tall before it folded in on itself. Chemical {item}runoff{/item} pools in the depressions between slag mounds, reflecting the hazy sky in sickly colors.\n\nThe eastern slag fields are back to the east. A rough trail south leads deeper into the wastes. To the west, the slag gives way to flattened toxic ground.",
+    exits: {
+      east: "besc_slag_east",
+      south: "besc_chem_west",
+      west: "besc_toxic_flats"
+    },
+    objects: {
+      "cooling tower": "The remains of an industrial cooling tower, collapsed into a heap of twisted durasteel and shattered ceramicrete. The interior is a dark maze of bent supports and fallen catwalks — a good place to hide, if you don't mind the structural instability.",
+      "runoff": "Chemical runoff pooling in low areas between the slag mounds. The liquid shifts between dull orange and vivid green depending on the angle. It smells like hot metal and despair. Don't drink it. Don't touch it. Don't look at it too long."
+    },
+    npcs: {
+      "scavenger_weak2": {
+        name: "Junk Picker",
+        keywords: ["junk", "picker", "scavenger", "duros"],
+        look: "A Duros in goggles and a heavy apron, sorting through a pile of circuit boards with practiced efficiency. A vibroblade hangs from their belt.",
+        combat: {
+          blaster: 7, dodge: 10, meleeParry: 10, brawlParry: 8, brawl: 9, melee: 11,
+          str: 8, damage: 12, weaponType: 'melee', weaponName: 'vibroblade', stunOnly: false, security: false
+        },
+        loot: {
+          credits: { min: 15, max: 50 },
+          cp: 2,
+          items: [
+            { id: 'circuit_boards', name: 'Salvaged Circuit Boards', description: 'A handful of circuit boards pulled from decommissioned equipment. Some still functional.', sellValue: 30, chance: 0.5 },
+            { id: 'sensor_parts', name: 'Sensor Array Module', description: 'A sensor module pulled from a scrapped ship. Dusty but functional.', sellValue: 500, category: 'ship_parts', chance: 0.08 },
+            { id: 'hull_parts', name: 'Hull Plating Sheets', description: 'Salvaged hull plating — battered but still molecularly bonded.', sellValue: 500, category: 'ship_parts', chance: 0.08 }
+          ]
+        },
+        talk: [
+          { text: "The Duros barely looks up. \"Busy. Go away.\"" }
+        ]
+      }
+    },
+    bescane: true,
+    wastelandRing: 1
+  },
+
+  "besc_toxic_flats": {
+    name: "Toxic Flats",
+    description: "A wide, flat expanse of hardened chemical {item}crust{/item} stretching into the haze. The ground here was once a chemical waste slough pool — now dried and cracked into a mosaic of poisonous mineral deposits. The air tastes metallic and burns the back of your throat. {item}Vents{/item} in the crust release occasional jets of hot gas.\n\nA makeshift {item}shack{/item} to the north has smoke rising from a crooked chimney. The slag fields are back to the east.",
+    exits: {
+      east: "besc_slag_west",
+      north: "besc_chemshack"
+    },
+    objects: {
+      "crust": "The dried surface of a former chemical waste pool. It crunches underfoot and leaves stains on your boots. Some patches are thin enough to see dark liquid still pooling beneath.",
+      "vents": "Cracks in the chemical crust that periodically vent hot, toxic gas. They hiss like angry serpents and smell like burning synthetics. Stay upwind.",
+      "shack": "A ramshackle structure built from salvaged factory panels and held together with spot-welds and optimism. Smoke rises from a chimney made of stacked pipe sections."
+    },
+    npcs: {},
+    bescane: true,
+    wastelandRing: 1
+  },
+
+  "besc_scrapcamp": {
+    name: "Scrap Camp",
+    description: "A semi-permanent salvage operation set up in the shell of a gutted factory building. {item}Tarps{/item} have been strung between the remaining walls to keep out the worst of the chemical rain. Piles of sorted salvage — metal, wire, circuit boards, mechanical components — fill the floor space. A portable {item}smelter{/item} glows in the corner.\n\nA grizzled {npc}scrap dealer{/npc} oversees the operation from a makeshift counter.\n\nThe slag fields are back to the west.",
+    exits: {
+      west: "besc_slag_east"
+    },
+    objects: {
+      "tarps": "Heavy industrial tarps strung between the remaining factory walls. They're stained and patched but keep the acid rain off the salvage. A constant drip-drip-drip runs along the edges.",
+      "smelter": "A portable industrial smelter running on scavenged fuel cells. It reduces salvage metal to ingots for easier transport. The heat radiating from it is the warmest thing on this planet.",
+      "salvage": "Piles of sorted materials — durasteel strips, copper wire bundles, intact circuit boards, servo motors, hydraulic cylinders. Everything stripped from the dead factories and sorted by value."
+    },
+    npcs: {
+      "scrap_dealer": {
+        name: "Old Marek",
+        keywords: ["marek", "dealer", "scrap", "old"],
+        look: "A heavyset human man with chemical-scarred hands and a face like crumpled leather. He's been scavenging the wastes for decades and knows the value of every piece of junk on this planet down to the tenth of a credit.\n\n{dim}He buys salvage and ship parts at fair prices. Type {/dim}{green}sell{/green}{dim} to do business.{/dim}",
+        combat: { blaster: 10, dodge: 8, meleeParry: 10, brawlParry: 10, brawl: 11, melee: 10, str: 11, damage: 13, weaponType: 'melee', weaponName: 'heavy wrench', stunOnly: false, security: true },
+        shop: {
+          name: "Marek's Salvage",
+          inventory: [
+            { id: 'medpac', name: 'Medpac', description: 'Scavenged medical supplies, repackaged. Works fine.\n\n{dim}Use: {/dim}{green}use medpac{/green}', price: 40, category: 'medical' },
+            { id: 'respirator', name: 'Respirator Mask', description: 'A basic respirator for filtering chemical air. Essential deeper in the wastes.', price: 30, category: 'gear' }
+          ],
+          buyRate: 1.0,
+          sellRate: 0.35
+        },
+        talk: [
+          { once: "marek_intro", text: "{npc}Old Marek{/npc} squints at you through chemical-scarred eyelids.\n\n\"Offworlder. Can always tell — you're not coughing yet.\" He gestures at the piles of salvage. \"I buy what you bring in. Scrap metal, circuit boards, ship parts — especially ship parts. I pay fair. Better than the hub shops, worse than a proper dealer on a civilized world.\"\n\nHe spits on the ground. \"Word of advice — don't go past the chemical wastes unless you can handle yourself. The deep zone scavengers don't negotiate.\"" },
+          { text: "\"Got salvage? {green}sell{/green} it. I buy everything.\"" }
+        ]
+      }
+    },
+    bescane: true
+  },
+
+  "besc_chemshack": {
+    name: "Chem Processor's Shack",
+    description: "A cramped, sweltering workshop inside a makeshift shack built on the edge of the toxic flats. Glass {item}tubes{/item} and {item}distillers{/item} cover every surface, bubbling with chemical compounds in various stages of refinement. The air is thick with fumes that make your eyes water. A {npc}chem processor{/npc} works the equipment with practiced hands.\n\nThe toxic flats are back to the south.",
+    exits: {
+      south: "besc_toxic_flats"
+    },
+    objects: {
+      "tubes": "Glass tubes running between beakers, condensers, and collection flasks. The liquids inside range from clear to vivid purple. Some glow faintly.",
+      "distillers": "Improvised chemical distillation equipment built from salvaged factory parts. It's crude but functional — this operation has been running for a while."
+    },
+    npcs: {
+      "chem_processor": {
+        name: "Fizz",
+        keywords: ["fizz", "chem", "processor", "dealer"],
+        look: "A twitchy Sullustan with permanently dilated pupils and chemical stains on every piece of clothing. She processes industrial waste into marketable compounds — some legal, some not. Her hands never stop moving.\n\n{dim}She buys raw chemical salvage at good prices. Type {/dim}{green}sell{/green}{dim} to trade.{/dim}",
+        combat: { blaster: 9, dodge: 12, meleeParry: 7, brawlParry: 7, brawl: 7, melee: 7, str: 6, damage: 9, weaponType: 'dodge', weaponName: 'hold-out blaster', stunOnly: false, security: false },
+        shop: {
+          name: "Fizz's Chem Lab",
+          inventory: [
+            { id: 'stim_shot', name: 'Stimulant Shot', description: 'A chemical stimulant that temporarily sharpens reflexes. Probably not entirely legal.\n\n{dim}Use: {/dim}{green}use stim{/green}', price: 75, category: 'chem' },
+            { id: 'medpac', name: 'Medpac', description: 'Field medical kit.\n\n{dim}Use: {/dim}{green}use medpac{/green}', price: 45, category: 'medical' }
+          ],
+          buyRate: 1.0,
+          sellRate: 0.40
+        },
+        talk: [
+          { once: "fizz_intro", text: "{npc}Fizz{/npc} looks up from a bubbling distiller, her large Sullustan eyes blinking rapidly.\n\n\"Customer! Good, good. Fizz buys chemical salvage — industrial compounds, refined metals, anything with molecular value. Also sells medical supplies and... other things.\" She grins. \"Nothing dangerous. Mostly.\"\n\nShe leans closer. \"The crust out there is full of valuable mineral deposits if you know where to look. The deeper you go, the better the finds — but also the meaner the competition.\"" },
+          { text: "\"Bring Fizz chemicals, Fizz pays. Simple. {green}sell{/green} when you're ready.\"" }
+        ]
+      }
+    },
+    bescane: true
+  },
+
+  "besc_chem_east": {
+    name: "Chemical Wastes — East",
+    description: "The slag gives way to a landscape of {item}chemical pools{/item} and corroded industrial ruins. Pipes burst from the ground at odd angles, still leaking colored fluids. The air here requires a respirator for comfort — without one, your lungs burn. Half-collapsed {item}storage tanks{/item} loom in the haze like rusted giants.\n\nThe slag fields are back to the north. The wastes continue south into the dead zone. A corroded walkway leads west to more chemical wastes.",
+    exits: {
+      north: "besc_slag_east",
+      south: "besc_deadzone",
+      west: "besc_chem_west"
+    },
+    objects: {
+      "chemical pools": "Open pools of chemical waste in various colors — amber, green, iridescent blue. Some bubble gently. All are toxic. The edges are crusted with crystallized chemical deposits that might be worth something to the right buyer.",
+      "storage tanks": "Massive cylindrical storage tanks, once used to hold processed chemicals for transport. Most have ruptured or corroded through, their contents long since leaked into the ground."
+    },
+    npcs: {
+      "scavenger_mid": {
+        name: "Waste Rat",
+        keywords: ["waste", "rat", "scavenger", "gang"],
+        look: "A tough-looking human in cobbled-together armor made from factory plating, with a respirator permanently strapped to their face. They carry a blaster that's seen better days and move with the territorial confidence of someone who considers these wastes home turf.",
+        combat: {
+          blaster: 12, dodge: 12, meleeParry: 10, brawlParry: 10, brawl: 11, melee: 11,
+          str: 11, damage: 13, weaponType: 'dodge', weaponName: 'salvaged blaster', stunOnly: false, security: false
+        },
+        loot: {
+          credits: { min: 25, max: 75 },
+          cp: 3,
+          items: [
+            { id: 'chem_crystals', name: 'Chemical Crystals', description: 'Crystallized chemical deposits scraped from the edges of waste pools. Valuable to processors.', sellValue: 50, chance: 0.5 },
+            { id: 'scrap_metal', name: 'Scrap Metal', description: 'Salvageable metal strips and wire.', sellValue: 25, chance: 0.4 },
+            { id: 'shield_parts', name: 'Shield Generator Coil', description: 'A deflector shield coil pulled from a wrecked transport. Surprisingly intact.', sellValue: 600, category: 'ship_parts', chance: 0.10 },
+            { id: 'sublight_parts', name: 'Ion Drive Thrust Regulator', description: 'A thrust regulator from a scrapped freighter. Needs cleaning but functional.', sellValue: 650, category: 'ship_parts', chance: 0.08 }
+          ]
+        },
+        talk: [
+          { text: "The Waste Rat levels their blaster at you.\n\n\"Drop your credits and walk. Or don't walk. Your choice.\"" }
+        ]
+      }
+    },
+    bescane: true,
+    wastelandRing: 2
+  },
+
+  "besc_chem_west": {
+    name: "Chemical Wastes — West",
+    description: "A jagged landscape of corroded pipe networks and collapsed processing equipment. Everything here is coated in a layer of dried chemical residue that crunches like frost underfoot. A massive {item}pipe junction{/item} rises from the ground, its valves frozen open and long dry. The {item}ruins{/item} of a processing station are visible to the south.\n\nThe eastern chemical wastes are to the east. The slag fields are back to the north.",
+    exits: {
+      east: "besc_chem_east",
+      north: "besc_slag_west"
+    },
+    objects: {
+      "pipe junction": "A nexus of industrial pipes, some as wide as a person, converging from multiple directions. The valves are seized open, the interiors dry and coated with crystallized residue. Something small and fast skitters through one of the pipes as you look.",
+      "ruins": "The remains of a chemical processing station — walls half-standing, roof gone, equipment gutted. Scavengers have picked it clean of anything obviously valuable, but deeper investigation might turn up something missed."
+    },
+    npcs: {
+      "scavenger_mid2": {
+        name: "Pipe Gang Runner",
+        keywords: ["pipe", "gang", "runner", "scavenger"],
+        look: "A lean Rodian with chemical burns across their arms, wearing scavenged body armor and carrying a vibro-axe. They use the pipe networks as highways through the wastes.",
+        combat: {
+          blaster: 10, dodge: 13, meleeParry: 12, brawlParry: 11, brawl: 12, melee: 14,
+          str: 11, damage: 15, weaponType: 'melee', weaponName: 'vibro-axe', stunOnly: false, security: false
+        },
+        loot: {
+          credits: { min: 30, max: 80 },
+          cp: 3,
+          items: [
+            { id: 'chem_crystals', name: 'Chemical Crystals', description: 'Crystallized chemical deposits. Valuable to processors.', sellValue: 50, chance: 0.5 },
+            { id: 'circuit_boards', name: 'Salvaged Circuit Boards', description: 'Functional circuit boards from scrapped equipment.', sellValue: 30, chance: 0.4 },
+            { id: 'sensor_parts', name: 'Sensor Array Module', description: 'A sensor module from a wrecked ship. Needs calibration but functional.', sellValue: 500, category: 'ship_parts', chance: 0.10 },
+            { id: 'weapon_parts', name: 'Laser Cannon Actuator', description: 'A cannon actuator pulled from a scrapped gunship. Heavy but intact.', sellValue: 700, category: 'ship_parts', chance: 0.08 }
+          ]
+        },
+        talk: [
+          { text: "The Rodian hisses through their respirator and raises the vibro-axe.\n\n\"Wrong pipe, offworlder.\"" }
+        ]
+      }
+    },
+    bescane: true,
+    wastelandRing: 2
+  },
+
+  "besc_deadzone": {
+    name: "Dead Zone",
+    description: "The deepest reaches of the industrial wasteland. Nothing survives here that doesn't fight to. The ground is a moonscape of {item}impact craters{/item} from old excavation blasts, filled with stagnant chemical lakes. Decommissioned {item}heavy machinery{/item} — the really big stuff, ore processors and blast furnaces — stands like the bones of metal giants. The air is foul enough that every breath stings.\n\nScavengers who work this zone are the hardest and most desperate on the planet.\n\nThe chemical wastes are back to the north. A cluster of lights to the east marks some kind of settlement.",
+    exits: {
+      north: "besc_chem_east",
+      east: "besc_shantytown"
+    },
+    objects: {
+      "impact craters": "Deep pits blasted into the bedrock by industrial excavation charges. Some are dry, others filled with stagnant pools of chemical waste. The edges are sharp and unstable — one wrong step and you're sliding down into something you don't want to swim in.",
+      "heavy machinery": "Massive industrial equipment left to die in the deep wastes. Ore processors the size of buildings, blast furnaces with chimneys reaching into the haze, conveyor systems rusted into immobility. There's valuable salvage in here — if you can get to it before someone else does."
+    },
+    npcs: {
+      "scavenger_hard": {
+        name: "Dead Zone Warlord",
+        keywords: ["warlord", "scavenger", "boss", "trandoshan"],
+        look: "A massive Trandoshan in heavy scavenged armor — Imperial stormtrooper chest plates welded to factory plating, with a servo-assisted arm brace on the left side. They carry a modified blaster rifle and a chain wrapped around one fist. This is someone who's killed to hold their territory and will kill again without hesitation.",
+        combat: {
+          blaster: 16, dodge: 14, meleeParry: 15, brawlParry: 16, brawl: 17, melee: 15,
+          str: 15, damage: 17, weaponType: 'dodge', weaponName: 'modified blaster rifle', stunOnly: false, security: false
+        },
+        loot: {
+          credits: { min: 50, max: 150 },
+          cp: 4,
+          items: [
+            { id: 'chem_crystals', name: 'Chemical Crystals', description: 'Valuable crystallized chemical deposits.', sellValue: 50, chance: 0.6 },
+            { id: 'scrap_metal', name: 'Scrap Metal', description: 'Salvageable metal.', sellValue: 25, chance: 0.5 },
+            { id: 'hyperdrive_parts', name: 'Hyperdrive Regulator', description: 'A hyperdrive regulator pulled from a wrecked freighter in the deep wastes. The prize find.', sellValue: 800, category: 'ship_parts', chance: 0.12 },
+            { id: 'weapon_parts', name: 'Laser Cannon Actuator', description: 'A cannon actuator from a scrapped gunship.', sellValue: 700, category: 'ship_parts', chance: 0.10 },
+            { id: 'sublight_parts', name: 'Ion Drive Thrust Regulator', description: 'A thrust regulator from deep salvage.', sellValue: 650, category: 'ship_parts', chance: 0.10 }
+          ]
+        },
+        talk: [
+          { text: "The Trandoshan's eyes fix on you with predatory stillness.\n\n\"You're in my zone. Everything here is mine. You included, if you don't leave.\"" }
+        ]
+      }
+    },
+    bescane: true,
+    wastelandRing: 3
+  },
+
+  "besc_shantytown": {
+    name: "Shantytown",
+    description: "A ragged cluster of shelters deep in the wastes, built from shipping containers, factory scrap, and sheer stubbornness. A few dozen people live here — the ones who couldn't make it in the hubs and won't go back to Galentro's contract labor. Dim {item}glow-rods{/item} light the narrow paths between shelters. A {npc}trader{/npc} operates from a repurposed cargo container near the center.\n\nThe dead zone is back to the west.",
+    exits: {
+      west: "besc_deadzone"
+    },
+    objects: {
+      "glow-rods": "Salvaged chemical glow-rods jammed into the ground at intervals, casting weak amber light between the shelters. Some flicker. A few have gone out entirely.",
+      "shelters": "Shipping containers, factory panels, and industrial tarps assembled into crude but functional dwellings. Some have doors. Most have curtains. A few have neither — just an opening into darkness."
+    },
+    npcs: {
+      "trader": {
+        name: "Sable",
+        keywords: ["sable", "trader", "woman"],
+        look: "A weathered human woman with close-cropped grey hair and eyes that have seen everything this planet can throw at a person. She runs the shantytown's only trading post from a cargo container, buying salvage from the deep zone scavengers and selling supplies to anyone with credits.\n\n{dim}She buys salvage and ship parts at good rates. Type {/dim}{green}sell{/green}{dim} to trade.{/dim}",
+        combat: { blaster: 13, dodge: 12, meleeParry: 10, brawlParry: 10, brawl: 10, melee: 10, str: 9, damage: 13, weaponType: 'dodge', weaponName: 'blaster pistol', stunOnly: false, security: true },
+        shop: {
+          name: "Sable's Trading Post",
+          inventory: [
+            { id: 'medpac', name: 'Medpac', description: 'Field medical kit.\n\n{dim}Use: {/dim}{green}use medpac{/green}', price: 45, category: 'medical' },
+            { id: 'respirator', name: 'Respirator Mask', description: 'Chemical air filtration mask. Essential in the deep wastes.', price: 25, category: 'gear' }
+          ],
+          buyRate: 1.0,
+          sellRate: 0.40
+        },
+        talk: [
+          { once: "sable_intro", text: "{npc}Sable{/npc} looks you over from behind her counter.\n\n\"Hub dweller. Out here for salvage or running from something?\" She doesn't wait for an answer. \"Doesn't matter. I buy what you bring. Scrap, crystals, circuit boards, ship parts — especially ship parts. I pay better than that Toydarian in the market.\"\n\nShe nods toward the dead zone. \"The deep stuff is where the real money is. Wrecked ships, abandoned factory cores, military surplus that fell off a transport. But the scavengers out there don't share. Watch yourself.\"" },
+          { text: "\"Got goods? {green}sell{/green} them. I buy everything out here.\"" }
+        ]
+      }
+    },
     bescane: true
   },
 

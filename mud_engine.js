@@ -892,8 +892,10 @@ const MUD = {
     const item = this.state.inventory[idx];
     const baseValue = this.getItemValue(item);
     // Kex buys raw materials (quartz, spider parts) at full value — that's his trade
+    // Ship parts sell at full value at any ship parts vendor
     const isRawMaterial = item.id && (item.id.startsWith('quartz_') || item.id.startsWith('spider_') || item.id.startsWith('large_'));
-    const rate = isRawMaterial ? 1.0 : this.getSellRate();
+    const isShipParts = item.category === 'ship_parts' || (item.id && item.id.endsWith('_parts'));
+    const rate = (isRawMaterial || isShipParts) ? 1.0 : this.getSellRate();
     const sellPrice = Math.max(1, Math.floor(baseValue * rate));
     const pct = Math.round(rate * 100);
 
