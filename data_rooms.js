@@ -1245,7 +1245,7 @@ const ROOMS_DATA = {
         talk: [
           { once: "torza_intro", text: "The Toydarian buzzes over to you, her wings humming.\n\n\"Freighter pilot! I can always tell — you've got that look. Desperate and broke.\" She grins, showing small sharp teeth. \"Torza has what you need. Ship parts, factory surplus, pulled from decommissioned hulks — good quality, better than that Duros on the station charges, I guarantee it.\"\n\nShe leans in conspiratorially. \"And if you need something a little more... {dim}specialized{/dim}... Torza doesn't judge. Credits talk, everything else walks.\"" },
           { text: "\"You buying or browsing? Parts don't get cheaper with age — well, actually they do, but I don't pass the savings on.\"" },
-          { text: "\"Good parts, fair prices. Better than ordering from Kuat, hah! Those pirates between here and the Core would eat your ship alive. Buy local, fly safe.\"" }
+          { text: "Torza buzzes closer, lowering her voice. \"Look, if you can't afford the parts... Torza understands. Not everyone lands on Bescane with a full credit pouch.\" She jerks a thumb toward the south. \"Past the outer road, past the perimeter — the slag fields. Old factories, wrecked ships, abandoned equipment. Scavengers pick it clean but there's always more. You might find what you need out there for free.\"\n\nShe grins. \"And if you find parts you don't need, bring them back. Torza buys at full price — salvaged or factory-fresh, a hyperdrive regulator is a hyperdrive regulator.\"" }
         ]
       }
     },
