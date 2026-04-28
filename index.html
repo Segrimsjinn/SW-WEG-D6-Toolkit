@@ -59,8 +59,14 @@ text-align:center;
 .app-help-btn:hover{background:var(--gold-dim);color:var(--bg)}
 .app-find-btn{position:absolute;top:10px;left:12px;background:none;border:1px solid var(--gold-dim);color:var(--gold);font-family:'Orbitron','Exo 2',monospace;font-size:9px;letter-spacing:1px;padding:4px 10px;border-radius:var(--radius-sm);cursor:pointer;line-height:1;z-index:2}
 .app-find-btn:hover{background:var(--gold-dim);color:var(--bg)}
-.app-dnd-toggle{position:absolute;top:10px;left:80px;background:none;border:1px solid #8b3a3a;color:#e06060;font-family:'Orbitron','Exo 2',monospace;font-size:9px;letter-spacing:1px;padding:4px 10px;border-radius:var(--radius-sm);cursor:pointer;line-height:1;z-index:2;text-decoration:none;display:inline-flex;align-items:center;gap:4px;transition:background .2s,color .2s}
-.app-dnd-toggle:hover{background:#e06060;color:#0a0a12}
+.app-mode-toggle{position:absolute;top:8px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:8px;z-index:2}
+.app-mode-active{display:flex;align-items:center;gap:5px;border-radius:20px;padding:3px 10px;font-family:'Exo 2',monospace;font-size:9px;font-weight:700;letter-spacing:1.5px;color:var(--gold);background:rgba(255,215,0,.08)}
+.app-mode-indicator{display:flex;align-items:center;gap:3px;border-radius:20px;border:1px solid rgba(255,215,0,.25);background:rgba(255,215,0,.04);padding:2px 5px;cursor:pointer;text-decoration:none;transition:background .2s,border-color .2s}
+.app-mode-indicator:hover{background:rgba(255,215,0,.12);border-color:rgba(255,215,0,.4)}
+.app-mode-dot{width:6px;height:6px;border-radius:50%;display:block}
+.app-mode-arrow{font-size:8px;font-weight:700;letter-spacing:2px;color:rgba(255,215,0,.4)}
+.app-mode-link{display:flex;align-items:center;gap:5px;border-radius:20px;padding:3px 10px;font-family:'Exo 2',monospace;font-size:9px;font-weight:700;letter-spacing:1.5px;color:#9a6e6e;text-decoration:none;transition:background .2s,color .2s}
+.app-mode-link:hover{color:#e06060;background:rgba(224,96,96,.08)}
 #globalJumpOverlay{position:fixed;inset:0;background:rgba(0,0,0,0.65);z-index:1000;display:none;align-items:flex-start;justify-content:center;padding:10vh 16px 16px}
 #globalJumpOverlay.open{display:flex}
 .global-jump-panel{background:var(--bg);border:1px solid var(--gold-dim);border-radius:var(--radius);width:min(520px,95vw);max-height:80vh;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 12px 32px rgba(0,0,0,0.6)}
@@ -699,10 +705,21 @@ color:var(--text-dim);min-width:35px;text-align:right;
     <button class="app-find-btn" onclick="openGlobalJump()" title="Jump to any card">⟐ FIND</button>
     <div class="app-title">Star Wars D6 Toolkit</div>
     <div class="app-subtitle">NPC Generator &amp; Astrogation &amp; Starships</div>
-    <a href="/dnd/" class="app-dnd-toggle" title="Switch to D&D 5e Character Sheet">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:12px;height:12px"><path d="M14.5 17.5L3 6V3h3l11.5 11.5"/><path d="M13 19l6-6"/><path d="M16 16l4 4"/><path d="M19 21a2 2 0 100-4 2 2 0 000 4z"/><path d="M14.5 5.5L18 2l4 4-3.5 3.5"/><path d="M5 14l4 4"/><path d="M7 17l-4 4"/><path d="M3 21a2 2 0 100-4 2 2 0 000 4z"/></svg>
-      D&D 5e ↔
-    </a>
+    <div class="app-mode-toggle">
+      <span class="app-mode-active">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:14px;height:14px"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        STAR WARS
+      </span>
+      <a href="/dnd/" class="app-mode-indicator" title="Switch to D&D 5e">
+        <span class="app-mode-dot" style="background:var(--gold)"></span>
+        <span class="app-mode-arrow">↔</span>
+        <span class="app-mode-dot" style="background:#e06060"></span>
+      </a>
+      <a href="/dnd/" class="app-mode-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:14px;height:14px"><path d="M14.5 17.5L3 6V3h3l11.5 11.5"/><path d="M13 19l6-6"/><path d="M16 16l4 4"/><path d="M19 21a2 2 0 100-4 2 2 0 000 4z"/><path d="M14.5 5.5L18 2l4 4-3.5 3.5"/><path d="M5 14l4 4"/><path d="M7 17l-4 4"/><path d="M3 21a2 2 0 100-4 2 2 0 000 4z"/></svg>
+        D&amp;D 5e
+      </a>
+    </div>
     <button class="app-help-btn" onclick="openHowTo()" title="How to Use This Toolkit">? HOW TO</button>
     <div id="visitorBadge" style="position:absolute;bottom:4px;left:12px;font-family:'Exo 2',monospace;font-size:8px;color:var(--text-dark);letter-spacing:1px;line-height:1.4;text-align:left" title="Total visitors">
       <span id="statVisitors" style="color:var(--gold);font-weight:700">—</span> COMMANDERS · <span style="font-size:7px;letter-spacing:0.5px">v1.01.057</span>
