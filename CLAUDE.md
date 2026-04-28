@@ -114,6 +114,34 @@ The entire app. Contains all CSS (minified, inline `<style>`), all HTML tab pane
 - Gateway systems are marked with green 🏰 icons in the Route Path display and green diamonds on the map.
 - Gateway system names in the path are clickable links to the Galaxy tab for planet detail.
 
+## D&D 5e Character Sheet (subfolder app)
+
+The `/dnd/` subfolder contains a **separate React+Vite+TypeScript app** — a D&D 5e character sheet tool. It is NOT part of the vanilla JS toolkit; it's a fully independent SPA built with a different tech stack and deployed as static files inside this repo.
+
+### How it works
+- **Source code** lives in a separate project: `c:\Users\styhl\.vscode\dnd char sheet\dnd-sheet\`
+- **Tech stack**: Vite + React + TypeScript + Tailwind CSS 4 + Zustand (state) + Lucide (icons)
+- **Build output** is copied into `SW-WEG-D6-Toolkit/dnd/` (this repo) for deployment via GitHub Pages
+- **Vite base path** is set to `/dnd/` in `vite.config.ts` so all asset URLs are correct
+- **Data**: SRD 5.1 JSON from 5e-bits/5e-database (OGL 1.0a) + PHB content (spells, subclasses, subraces, feats, deities)
+- **State persistence**: Zustand with localStorage (key: `dnd-character-storage`)
+
+### Navigation between apps
+- **SW → D&D**: Red "D&D 5e ↔" link in the Star Wars header (`.app-dnd-toggle` class) links to `/dnd/`
+- **D&D → SW**: Top bar in the D&D app has a "STAR WARS" link back to `/`
+
+### Rebuilding & deploying
+To update the deployed D&D sheet:
+1. Make changes in the D&D source project
+2. Run `npx vite build` in the D&D project
+3. Copy `dist/*` to `SW-WEG-D6-Toolkit/dnd/` (replace all)
+4. Commit and push this repo
+
+### What NOT to do
+- Do NOT edit files in `dnd/` directly — they are build artifacts. Edit the source project instead.
+- Do NOT delete or rename the `dnd/` folder without also removing the header link.
+- The `dnd/` folder is self-contained — it has no dependencies on the Star Wars toolkit's JS/CSS.
+
 ## Key Cross-File Relationships
 
 - **Galaxy search → planet detail**: `PLANETS_DATA` entries link to `SYSTEMS_DATA` via `system` field. A system card becomes clickable when `p.name === sLow`, `p.system === sLow`, `sLow.startsWith(p.name + ' -')`, or `p.aliases.includes(sLow)` (see `index.html` line ~3982).
