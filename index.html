@@ -44,23 +44,36 @@ body{font-family:'Eras Demi ITC','Era Demi','Rajdhani',sans-serif;background:var
 .app-header{
 background:linear-gradient(180deg,#0d0d18 0%,#0a0a12 100%);
 border-bottom:1px solid var(--card-border);
-padding:12px 16px 8px;flex-shrink:0;
+padding:0 0 8px;flex-shrink:0;
 position:relative;z-index:100;
+}
+.app-header-bar{
+display:flex;align-items:center;gap:6px;
+padding:6px 12px;
+border-bottom:1px solid rgba(255,215,0,.08);
+}
+.app-bar-btn{
+background:none;border:1px solid var(--gold-dim);color:var(--gold);
+font-family:'Orbitron','Exo 2',monospace;font-size:9px;letter-spacing:1px;
+padding:3px 8px;border-radius:var(--radius-sm);cursor:pointer;line-height:1;
+text-decoration:none;display:inline-flex;align-items:center;gap:4px;
+transition:background .2s,color .2s;
+}
+.app-bar-btn:hover{background:var(--gold-dim);color:var(--bg)}
+.app-bar-btn-dnd{border-color:#8b3a3a;color:#e06060}
+.app-bar-btn-dnd:hover{background:#e06060;color:#0a0a12}
+.app-bar-visitors{
+margin-left:auto;
+font-family:'Exo 2',monospace;font-size:8px;color:var(--text-dark);letter-spacing:1px;line-height:1;
 }
 .app-title{
 font-family:'Exo 2',monospace;font-weight:900;font-size:14px;
 letter-spacing:3px;text-transform:uppercase;
 background:linear-gradient(135deg,var(--gold) 0%,#fff8c4 50%,var(--gold) 100%);
 -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-text-align:center;
+text-align:center;margin-top:6px;
 }
 .app-subtitle{font-size:10px;color:var(--text-dim);text-align:center;letter-spacing:2px;margin-top:2px}
-.app-help-btn{position:absolute;top:10px;right:12px;background:none;border:1px solid var(--gold-dim);color:var(--gold);font-family:'Orbitron','Exo 2',monospace;font-size:9px;letter-spacing:1px;padding:4px 10px;border-radius:var(--radius-sm);cursor:pointer;line-height:1;z-index:2}
-.app-help-btn:hover{background:var(--gold-dim);color:var(--bg)}
-.app-find-btn{position:absolute;top:10px;left:12px;background:none;border:1px solid var(--gold-dim);color:var(--gold);font-family:'Orbitron','Exo 2',monospace;font-size:9px;letter-spacing:1px;padding:4px 10px;border-radius:var(--radius-sm);cursor:pointer;line-height:1;z-index:2}
-.app-find-btn:hover{background:var(--gold-dim);color:var(--bg)}
-.app-dnd-toggle{position:absolute;top:10px;left:80px;background:none;border:1px solid #8b3a3a;color:#e06060;font-family:'Orbitron','Exo 2',monospace;font-size:9px;letter-spacing:1px;padding:4px 10px;border-radius:var(--radius-sm);cursor:pointer;line-height:1;z-index:2;text-decoration:none;display:inline-flex;align-items:center;gap:4px;transition:background .2s,color .2s}
-.app-dnd-toggle:hover{background:#e06060;color:#0a0a12}
 #globalJumpOverlay{position:fixed;inset:0;background:rgba(0,0,0,0.65);z-index:1000;display:none;align-items:flex-start;justify-content:center;padding:10vh 16px 16px}
 #globalJumpOverlay.open{display:flex}
 .global-jump-panel{background:var(--bg);border:1px solid var(--gold-dim);border-radius:var(--radius);width:min(520px,95vw);max-height:80vh;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 12px 32px rgba(0,0,0,0.6)}
@@ -696,14 +709,16 @@ color:var(--text-dim);min-width:35px;text-align:right;
 
 <div class="app">
   <header class="app-header">
-    <button class="app-find-btn" onclick="openGlobalJump()" title="Jump to any card">⟐ FIND</button>
+    <div class="app-header-bar">
+      <button class="app-bar-btn" onclick="openGlobalJump()" title="Jump to any card">⟐ FIND</button>
+      <a href="/dnd/" class="app-bar-btn app-bar-btn-dnd" title="Switch to D&D 5e Character Sheet">⚔ D&amp;D 5e</a>
+      <button class="app-bar-btn" onclick="openHowTo()" title="How to Use This Toolkit">? HOW TO</button>
+      <div class="app-bar-visitors" id="visitorBadge" title="Total visitors">
+        <span id="statVisitors" style="color:var(--gold);font-weight:700">—</span> COMMANDERS · <span style="font-size:7px;letter-spacing:0.5px">v1.01.057</span>
+      </div>
+    </div>
     <div class="app-title">Star Wars D6 Toolkit</div>
     <div class="app-subtitle">NPC Generator &amp; Astrogation &amp; Starships</div>
-    <a href="/dnd/" class="app-dnd-toggle" title="Switch to D&D 5e Character Sheet">⚔ D&amp;D 5e</a>
-    <button class="app-help-btn" onclick="openHowTo()" title="How to Use This Toolkit">? HOW TO</button>
-    <div id="visitorBadge" style="position:absolute;bottom:4px;left:12px;font-family:'Exo 2',monospace;font-size:8px;color:var(--text-dark);letter-spacing:1px;line-height:1.4;text-align:left" title="Total visitors">
-      <span id="statVisitors" style="color:var(--gold);font-weight:700">—</span> COMMANDERS · <span style="font-size:7px;letter-spacing:0.5px">v1.01.057</span>
-    </div>
   </header>
 
   <div id="globalJumpOverlay" onclick="if(event.target===this)closeGlobalJump()">
